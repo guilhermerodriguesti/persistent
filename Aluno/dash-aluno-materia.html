@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard do Aluno</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-body {
+            font-size: 16px;
+        }
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .alert-vermelho {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        .alert-amarelo {
+            color: #856404;
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+        }
+        .alert-verde {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Dashboard do Aluno</h2>
+    <div class="alert alert-info mb-4">
+        <strong>Aluno:</strong> Maria Silva
+    </div>
+    <div id="ciclo" class="alert alert-info mb-4">
+        <strong>Ciclo Atual:</strong> <a href="ciclo_1.html">Ciclo 1</a> (01/03/2024 - 31/03/2024)
+    </div>
+    <div id="historico-concursos" class="alert alert-info mb-4">
+        <strong>Histórico de Concursos e Notas:</strong>
+        <ul>
+            <li>Concurso A - 2023: 65%</li>
+            <li>Concurso B - 2023: 72%</li>
+            <li>Concurso C - 2024: 78%</li>
+        </ul>
+    </div>
+    <div id="concurso-atual" class="alert alert-success mb-4">
+        <strong>Concurso Atual:</strong> <a href="#">Concurso A - 2024</a>
+        <div class="alert alert-info mt-2">
+            <strong>Média de Acertos Necessária para Passar:</strong> 70%
+        </div>
+    </div>
+    <div class="alert alert-info mb-4">
+        <strong>Progresso nas Fases e Quantidade de Ciclos:</strong>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Disciplina</th>
+                    <th>Fase</th>
+                    <th>Progresso</th>
+                    <th>Ciclo Atual</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Língua Inglesa</td>
+                    <td>Fase 3</td>
+                    <td>20%</td>
+                    <td><a href="ciclo_1.html">Ciclo 1</a></td>
+                </tr>
+                <tr>
+                    <td>Língua Portuguesa</td>
+                    <td>Fase 3</td>
+                    <td>20%</td>
+                    <td><a href="ciclo_1.html">Ciclo 1</a></td>
+                </tr>
+                <tr>
+                    <td>Língua Estrangeira</td>
+                    <td>Fase 3</td>
+                    <td>20%</td>
+                    <td><a href="ciclo_1.html">Ciclo 1</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

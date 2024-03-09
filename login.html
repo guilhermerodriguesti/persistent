@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gerenciamento de Ciclos de Estudo</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="mb-4">Cadastro e Login</h2>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" data-toggle="tab" href="#alunos">Alunos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#professores">Professores</a>
+        </li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="alunos" class="container tab-pane active"><br>
+            <h3>Cadastro de Aluno</h3>
+            <form id="cadastroAluno">
+                <div class="form-group">
+                    <label for="nomeAluno">Nome:</label>
+                    <input type="text" class="form-control" id="nomeAluno" required>
+                </div>
+                <div class="form-group">
+                    <label for="emailAluno">Email:</label>
+                    <input type="email" class="form-control" id="emailAluno" required>
+                </div>
+                <div class="form-group">
+                    <label for="senhaAluno">Senha:</label>
+                    <input type="password" class="form-control" id="senhaAluno" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+            <hr>
+            <h3>Entrar como Aluno</h3>
+            <!-- Formulário de login -->
+        </div>
+        <div id="professores" class="container tab-pane fade"><br>
+            <h3>Cadastro de Professor</h3>
+            <!-- Formulário de cadastro de professores -->
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h2>Inserção de Métricas de Estudo</h2>
+        <form id="metricasEstudo">
+            <!-- Campos para inserção de métricas -->
+        </form>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Aqui você pode adicionar o JavaScript para interação do formulário
+</script>
+</body>
+</html>

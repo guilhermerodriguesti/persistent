@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionar Concurso e Professor Mentor para Alunos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Selecionar Concurso e Professor Mentor para Alunos</h2>
+        <form action="/associar_concurso_professor" method="POST">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nome do Aluno</th>
+                            <th>Concurso</th>
+                            <th>Professor Mentor</th>
+                            <th>Habilitar/Desabilitar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Aluno A</td>
+                            <td>
+                                <select class="form-control" name="concurso_aluno1">
+                                    <option value="">-- Selecione --</option>
+                                    <option value="Concurso A">Concurso A</option>
+                                    <option value="Concurso B">Concurso B</option>
+                                    <!-- Adicionar mais opções conforme necessário -->
+                                </select>
+                            </td>
+                            <td>
+                                <select class="form-control" name="professor_mentor_aluno1">
+                                    <option value="">-- Selecione --</option>
+                                    <option value="Professor A">Professor A</option>
+                                    <option value="Professor B">Professor B</option>
+                                    <!-- Adicionar mais opções conforme necessário -->
+                                </select>
+                            </td>
+                            <td>
+                                <input type="checkbox" id="status_aluno1" name="status_aluno1" value="Habilitado">
+                                <label for="status_aluno1">Habilitar</label>
+                            </td>
+                        </tr>
+                        <!-- Adicione mais linhas conforme necessário -->
+                    </tbody>
+                </table>
+            </div>
+            <button type="submit" class="btn btn-primary">Associar Concurso e Professor</button>
+        </form>
+    </div>
+</body>
+</html>

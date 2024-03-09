@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Estudo Avançado - Aluno</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Registro de Estudo Avançado - Língua Portuguesa</h2>
+    <div id="studyProgress">
+        <div class="form-group">
+            <label for="selectCiclo">Ciclo de Estudo</label>
+            <select class="form-control" id="selectCiclo">
+                <option value="1">Fase 1</option>
+                <option value="2">Fase 2</option>
+                <option value="3">Fase 3</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Questões Certas:</label>
+            <input type="number" class="form-control" id="questoesCertas" placeholder="Certas">
+        </div>
+        <div class="form-group">
+            <label>Questões Resolvidas:</label>
+            <input type="number" class="form-control" id="questoesResolvidas" placeholder="Resolvidas">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" onclick="calcularPorcentagem()">Calcular Porcentagem</button>
+        </div>
+        <div id="resultadoPorcentagem">Porcentagem de Acertos: 0%</div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function calcularPorcentagem() {
+        const questoesCertas = parseInt(document.getElementById('questoesCertas').value) || 0;
+        const questoesResolvidas = parseInt(document.getElementById('questoesResolvidas').value) || 0;
+        if (questoesResolvidas <= 0 || questoesCertas > questoesResolvidas) {
+            alert('Por favor, insira um número válido de questões.');
+            return;
+        }
+        const porcentagemAcertos = (questoesCertas / questoesResolvidas) * 100;
+        document.getElementById('resultadoPorcentagem').innerText = `Porcentagem de Acertos: ${porcentagemAcertos.toFixed(2)}%`;
+
+        // Lógica para avançar automaticamente de fase
+        if (porcentagemAcertos >= 70) {
+            const selectCiclo = document.getElementById('selectCiclo');
+            if (selectCiclo.value < 3) { // Assumindo que 3 é a última fase
+                selectCiclo.value = parseInt(selectCiclo.value) + 1;
+                alert('Parabéns! Você atingiu a porcentagem necessária para avançar para a próxima fase.');
+            } else {
+                alert('Parabéns! Você completou todas as fases com sucesso.');
+            }
+        }
+    }
+</script>
+</body>
+</html>

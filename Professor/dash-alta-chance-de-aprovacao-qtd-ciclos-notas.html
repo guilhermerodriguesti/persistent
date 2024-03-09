@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métricas do Aluno - Dashboard</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .card-body {
+            font-size: 16px;
+        }
+        .alert-success {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+        .alert-vermelho {
+            color: #721c24;
+            background-color: #f8d7da;
+            border-color: #f5c6cb;
+        }
+        .alert-amarelo {
+            color: #856404;
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+        }
+        .alert-verde {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Dashboard de Métricas do Aluno</h2>
+    <div class="alert alert-info mb-4">
+        <strong>Aluno:</strong> João da Silva
+    </div>
+    <div id="ciclos" class="alert alert-info mb-4">
+        <strong>Quantidade de Ciclos:</strong> 3
+    </div>
+    <div id="historico" class="alert alert-info mb-4">
+        <strong>Histórico de Concursos e Notas:</strong>
+        <ul>
+            <li>Concurso A - 2023: 65%</li>
+            <li>Concurso B - 2023: 72%</li>
+            <li>Concurso C - 2024: 78%</li>
+        </ul>
+    </div>
+    <div id="concurso" class="alert alert-success">
+        <strong>Concurso Atual:</strong> Concurso A - 2024
+    </div>
+    <div class="form-group mt-4">
+        <label for="cicloSelect">Selecione o Ciclo do Aluno:</label>
+        <select class="form-control" id="cicloSelect">
+            <option value="1">Ciclo 1 (01/01/2024 - 30/01/2024)</option>
+            <option value="2">Ciclo 2 (01/02/2024 - 28/02/2024)</option>
+            <option value="3">Ciclo 3 (01/03/2024 - 31/03/2024)</option>
+        </select>
+    </div>
+    <table class="table mt-4">
+        <thead>
+            <tr>
+                <th>Matéria</th>
+                <th>Conteúdo</th>
+                <th>Fase</th>
+                <th>Questões Resolvidas</th>
+                <th>Porcentagem de Acertos</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="3">Administração</td>
+                <td>Fundamentos e evolução da administração.</td>
+                <td>1</td>
+                <td>20</td>
+                <td class="alert-verde">80%</td>
+            </tr>
+            <tr>
+                <td>Gestão por competências</td>
+                <td>2</td>
+                <td>25</td>
+                <td>72</td>
+                <td class="alert-verde">72%</td>
+            </tr>
+            <tr>
+                <td>Reengenharia organizacional</td>
+                <td>3</td>
+                <td>18</td>
+                <td>68</td>
+                <td class="alert-amarelo">68%</td>
+            </tr>
+            <tr>
+                <td rowspan="3">Administração Orçamentária e Financeira</td>
+                <td>Orçamento Público</td>
+                <td>1</td>
+                <td>15</td>
+                <td class="alert-amarelo">65%</td>
+            </tr>
+            <tr>
+                <td>Dívida pública</td>
+                <td>2</td>
+                <td>22</td>
+                <td>78</td>
+                <td class="alert-verde">78%</td>
+            </tr>
+            <tr>
+                <td>Amostragem</td>
+                <td>3</td>
+                <td>20</td>
+                <td>75</td>
+                <td class="alert-verde">75%</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    // Atualizar alerta do concurso com base na média de acertos
+    function atualizarAlertaConcurso() {
+        const porcentagens = document.querySelectorAll('td[class^="alert-"]');
+        let soma = 0;
+        for (const porcentagem of porcentagens) {
+            const valor = parseFloat(porcentagem.textContent);
+            if (isNaN(valor)) continue;
+            soma += valor;
+        }
+        const media = soma / porcentagens.length;
+        const divConcurso = document.getElementById('concurso');
+        if (media < 50) {
+            divConcurso.classList.remove('alert-amarelo', 'alert-verde');
+            divConcurso.classList.add('alert-vermelho');
+            divConcurso.innerHTML = '<strong>Concurso Atual:</strong> Concurso A - 2024 (Baixa chance de aprovação)';
+        } else if (media >= 50 && media < 70) {
+            divConcurso.classList.remove('alert-vermelho', 'alert-verde');
+            divConcurso.classList.add('alert-amarelo');
+            divConcurso.innerHTML = '<strong>Concurso Atual:</strong> Concurso A - 2024 (Chance intermediária de aprovação)';
+        } else {
+            divConcurso.classList.remove('alert-vermelho', 'alert-amarelo');
+            divConcurso.classList.add('alert-verde');
+            divConcurso.innerHTML = '<strong>Concurso Atual:</strong> Concurso A - 2024 (Alta chance de aprovação)';
+        }
+    }
+
+    // Atualizar ciclo selecionado
+    function atualizarCicloSelecionado() {
+        const cicloSelect = document.getElementById('cicloSelect');
+        const cicloSelecionado = cicloSelect.options[cicloSelect.selectedIndex].text;
+        const divCiclos = document.getElementById('ciclos');
+        divCiclos.innerHTML = '<strong>Quantidade de Ciclos:</strong> ' + cicloSelecionado;
+    }
+
+    // Executar a atualização do alerta do concurso e do ciclo selecionado ao carregar a página
+    window.onload = function() {
+        atualizarAlertaConcurso();
+        atualizarCicloSelecionado();
+    };
+
+    // Adicionar evento de mudança no ciclo selecionado
+    document.getElementById('cicloSelect').addEventListener('change', function() {
+        atualizarCicloSelecionado();
+    });
+</script>
+</body>
+</html>

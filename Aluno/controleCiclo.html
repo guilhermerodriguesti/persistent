@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Controle de Ciclo de Estudo</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .executado {
+            background-color: #d4edda;
+        }
+        .nao-executado {
+            background-color: #f8d7da;
+        }
+    </style>
+</head>
+<body>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Controle de Ciclo de Estudo</h2>
+    <div class="form-group">
+        <label for="selectCiclo">Selecione o Ciclo:</label>
+        <select class="form-control" id="selectCiclo">
+            <option value="Ciclo1">Ciclo 01</option>
+            <option value="Ciclo2">Ciclo 02</option>
+            <option value="Ciclo3">Ciclo 03</option>
+            <!-- Adicionar mais opções conforme necessário -->
+        </select>
+    </div>
+    <div class="alert alert-info mb-4">
+        <strong>Ciclo Atual:</strong> Ciclo 01 (02/01/2024 - 02/02/2024)
+    </div>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Disciplina</th>
+                    <th>2-Jan</th>
+                    <th>3-Jan</th>
+                    <th>4-Jan</th>
+                    <!-- Adicionar mais colunas conforme necessário -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Língua Portuguesa</td>
+                    <td><input type="checkbox" class="executado" checked></td>
+                    <td><input type="checkbox" class="nao-executado"></td>
+                    <td><input type="checkbox" class="nao-executado"></td>
+                    <!-- Adicionar mais células conforme necessário -->
+                </tr>
+                <tr>
+                    <td>Redes de Computadores</td>
+                    <td><input type="checkbox" class="nao-executado"></td>
+                    <td><input type="checkbox" class="nao-executado"></td>
+                    <td><input type="checkbox" class="nao-executado"></td>
+                    <!-- Adicionar mais células conforme necessário -->
+                </tr>
+                <!-- Adicionar mais linhas para outras disciplinas -->
+            </tbody>
+        </table>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

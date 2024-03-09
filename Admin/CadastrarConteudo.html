@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selecionar Disciplina e Cadastrar Conteúdo</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Selecionar Disciplina e Cadastrar Conteúdo</h2>
+        <form action="/cadastrar_conteudo" method="POST">
+            <div class="form-group">
+                <label for="disciplina">Selecione a Disciplina:</label>
+                <select class="form-control" id="disciplina" name="disciplina" required>
+                    <option value="">-- Selecione --</option>
+                    <option value="Disciplina A">Disciplina A</option>
+                    <option value="Disciplina B">Disciplina B</option>
+                    <!-- Adicionar mais opções conforme necessário -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="tituloConteudo">Título do Conteúdo:</label>
+                <input type="text" class="form-control" id="tituloConteudo" name="tituloConteudo" required>
+            </div>
+            <div class="form-group">
+                <label for="textoConteudo">Texto do Conteúdo:</label>
+                <textarea class="form-control" id="textoConteudo" name="textoConteudo" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Cadastrar Conteúdo</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Associar Concurso com Edital</title>
+    <!-- Adicionar links para estilos CSS, se necessário -->
+</head>
+<body>
+    <h1>Associar Concurso com Edital</h1>
+    <!-- Formulário para associar concurso com edital -->
+    <form action="/associar_concurso_edital" method="POST">
+        <label for="concurso">Concurso:</label>
+        <select id="concurso" name="concurso">
+            <!-- Opções de concursos -->
+            <option value="concurso_a">Concurso A</option>
+            <option value="concurso_b">Concurso B</option>
+            <!-- Adicionar mais opções conforme necessário -->
+        </select>
+        <br>
+        <label for="edital">Edital:</label>
+        <select id="edital" name="edital">
+            <!-- Opções de editais -->
+            <option value="edital_a">Edital A</option>
+            <option value="edital_b">Edital B</option>
+            <!-- Adicionar mais opções conforme necessário -->
+        </select>
+        <br>
+        <button type="submit">Associar</button>
+    </form>
+</body>
+</html>

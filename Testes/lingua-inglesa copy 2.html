@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Língua Inglesa - Controle de Estudo</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Língua Inglesa - Controle de Estudo</h2>
+    <div class="form-group">
+        <label for="selectConteudo">Selecione o Conteúdo</label>
+        <select class="form-control" id="selectConteudo" onchange="habilitarOpcoesEstudo()">
+            <option value="">-- Selecione --</option>
+            <option value="compreensao-textos">Compreensão de Textos Técnicos</option>
+            <option value="itens-gramaticais">Itens Gramaticais</option>
+        </select>
+    </div>
+
+    <div id="opcoesEstudo" style="display: none;">
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th>Fase</th>
+                    <th>Início</th>
+                    <th>Conclusão</th>
+                    <th>Questões Certas</th>
+                    <th>Questões Resolvidas</th>
+                    <th>Porcentagem</th>
+                    <th>Concluída</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="tbodyFases">
+                <!-- As linhas das fases serão adicionadas aqui -->
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    function habilitarOpcoesEstudo() {
+        var conteudoSelecionado = document.getElementById("selectConteudo").value;
+        var opcoesEstudo = document.getElementById("opcoesEstudo");
+
+        if (conteudoSelecionado !== "") {
+            opcoesEstudo.style.display = "block";
+            criarFasesEstudo();
+        } else {
+            opcoesEstudo.style.display = "none";
+        }
+    }
+
+    function criarFasesEstudo() {
+        var tbodyFases = document.getElementById("tbodyFases");
+        tbodyFases.innerHTML = ""; // Limpa o conteúdo atual
+
+        for (var i = 1; i <= 3; i++) { // Criar 3 fases
+            var tr = document.createElement("tr");
+            tr.innerHTML = `
+                <td>Fase ${i}</td>
+                <td><input type="date" class="form-control"></td>
+                <td><input type="date" class="form-control"></td>
+                <td><input type="number" class="form-control" min="0" id="certasFase${i}"></td>
+                <td><input type="number" class="form-control" min="0" id="resolvidasFase${i}" oninput="verificarPreenchimento('certasFase${i}', 'resolvidasFase${i}', 'porcentagemFase${i}', 'checkboxFase${i}')"></td>
+                <td id="porcentagemFase${i}">0%</td>
+                <td><input type="checkbox" id="checkboxFase${i}" onchange="verificarConclusao(${i})"></td>
+                <td id="ciclosRestantesFase${i}">0</td>
+            `;
+            tbodyFases.appendChild(tr);
+        }
+    }
+
+    function verificarPreenchimento(certasId, resolvidasId, porcentagemId, checkboxId) {
+        var certas = parseInt(document.getElementById(certasId).value) || 0;
+        var resolvidas = parseInt(document.getElementById(resolvidasId).value) || 0;
+
+        if (resolvidas > 0 && (certas / resolvidas) * 100 > 70) {
+            document.getElementById(porcentagemId).innerText = `${((certas / resolvidas) * 100).toFixed(2)}%`;
+            document.getElementById(checkboxId).disabled = false;
+        } else {
+            document.getElementById(porcentagemId).innerText = `Porcentagem inválida`;
+            document.getElementById(checkboxId).disabled = true;
+        }
+    }
+
+    function verificarConclusao(fase) {
+        var checkboxId = `checkboxFase${fase}`;
+        var ciclosRestantesId = `ciclosRestantesFase${fase}`;
+
+        var checkbox = document.getElementById(checkboxId);
+        var ciclosRestantes = document.getElementById(ciclosRestantesId);
+
+        if (checkbox.checked) {
+            ciclosRestantes.innerText = "Concluída";
+            for (var i = fase + 1; i <= 3; i++) {
+                document.getElementById(`checkboxFase${i}`).disabled = false;
+            }
+        } else {
+            ciclosRestantes.innerText = 3 - fase;
+            for (var i = fase + 1; i <= 3; i++) {
+                document.getElementById(`checkboxFase${i}`).disabled = true;
+                document.getElementById(`checkboxFase${i}`).checked = false;
+                document.getElementById(`ciclosRestantesFase${i}`).innerText = 3 - i;
+            }
+        }
+    }
+</script>
+</body>
+</html>

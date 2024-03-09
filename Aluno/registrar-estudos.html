@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Estudo - Aluno</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Registro de Métricas de Estudo</h2>
+    <div class="form-group">
+        <label for="selectConcurso">Concurso</label>
+        <select class="form-control" id="selectConcurso">
+            <option>Concurso A - 2024</option>
+            <option>Concurso B - 2024</option>
+            <option>Concurso C - 2024</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="dataHoraCiclo">Data e Hora do Ciclo de Estudo</label>
+        <input type="date" class="form-control mb-2" id="selectCiclo" required>
+        <input type="time" class="form-control" id="selectHora" required>
+    </div>
+    <div class="form-group">
+        <label for="selectMateria">Matéria</label>
+        <select class="form-control" id="selectMateria">
+            <option>Matemática</option>
+            <option>Língua Portuguesa</option>
+            <option>Conhecimentos Gerais</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="selectConteudo">Conteúdo</label>
+        <select class="form-control" id="selectConteudo">
+            <option>Álgebra</option>
+            <option>Gramática</option>
+            <option>Atualidades</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="questoesResolvidas">Questões Resolvidas</label>
+        <input type="number" class="form-control" id="questoesResolvidas" required>
+    </div>
+    <div class="form-group">
+        <label for="questoesCertas">Questões Certas</label>
+        <input type="number" class="form-control" id="questoesCertas" required>
+    </div>
+    <div class="mt-4" id="resultadoPorcentagem">Porcentagem de Acertos: 0%</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function calcularPorcentagem() {
+        const questoesResolvidas = parseInt(document.getElementById('questoesResolvidas').value, 10) || 0;
+        const questoesCertas = parseInt(document.getElementById('questoesCertas').value, 10) || 0;
+
+        if (questoesResolvidas < questoesCertas) {
+            document.getElementById('resultadoPorcentagem').innerHTML = 'Erro: Questões certas não podem exceder questões resolvidas.';
+            return;
+        }
+
+        const porcentagemAcertos = questoesResolvidas > 0 ? (questoesCertas / questoesResolvidas) * 100 : 0;
+        document.getElementById('resultadoPorcentagem').innerHTML = `Porcentagem de Acertos: ${porcentagemAcertos.toFixed(2)}%`;
+    }
+
+    document.getElementById('questoesResolvidas').addEventListener('input', calcularPorcentagem);
+    document.getElementById('questoesCertas').addEventListener('input', calcularPorcentagem);
+
+    function definirDataHoraAtual() {
+        const agora = new Date();
+        const dataFormatada = agora.toISOString().substring(0, 10);
+        const horaFormatada = agora.toTimeString().substring(0, 5);
+
+        document.getElementById('selectCiclo').value = dataFormatada;
+        document.getElementById('selectHora').value = horaFormatada;
+    }
+
+    window.onload = definirDataHoraAtual;
+</script>
+</body>
+</html>

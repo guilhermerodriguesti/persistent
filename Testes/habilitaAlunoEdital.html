@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habilitar Edital/Concurso com o Aluno</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Habilitar Edital/Concurso com o Aluno</h2>
+        <form action="/habilitar_edital" method="POST">
+            <div class="form-group">
+                <label for="aluno">Selecione o Aluno:</label>
+                <select class="form-control" id="aluno" name="aluno" required>
+                    <option value="">-- Selecione --</option>
+                    <option value="Aluno A">Aluno A</option>
+                    <option value="Aluno B">Aluno B</option>
+                    <!-- Adicionar mais opções conforme necessário -->
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="edital">Selecione o Edital/Concurso:</label>
+                <select class="form-control" id="edital" name="edital" required>
+                    <option value="">-- Selecione --</option>
+                    <option value="Edital A">Edital A</option>
+                    <option value="Edital B">Edital B</option>
+                    <!-- Adicionar mais opções conforme necessário -->
+                </select>
+            </div>
+            <button type="submit" class="btn btn-primary">Habilitar</button>
+        </form>
+    </div>
+</body>
+</html>

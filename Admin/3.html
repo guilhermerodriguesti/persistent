@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Conteúdo para Matérias</title>
+    <!-- Adicionar links para estilos CSS, se necessário -->
+</head>
+<body>
+    <h1>Cadastrar Conteúdo para Matérias</h1>
+    <!-- Formulário para cadastrar conteúdo para matérias -->
+    <form action="/cadastrar_conteudo_materias" method="POST">
+        <label for="materia">Matéria:</label>
+        <select id="materia" name="materia">
+            <!-- Opções de matérias -->
+            <option value="portugues">Língua Portuguesa</option>
+            <option value="ingles">Língua Inglesa</option>
+            <!-- Adicionar mais opções conforme necessário -->
+        </select>
+        <br>
+        <label for="conteudo">Conteúdo:</label>
+        <textarea id="conteudo" name="conteudo" rows="4" cols="50"></textarea>
+        <br>
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>

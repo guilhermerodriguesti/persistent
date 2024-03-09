@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avanço de Fase com Base em Porcentagem</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Registro de Estudo - Avanço de Fase</h2>
+    <div id="fase1" class="mt-4">
+        <h3>Fase 1</h3>
+        <div class="form-group">
+            <label>Questões Certas:</label>
+            <input type="number" class="form-control" id="questoesCertasFase1" required>
+        </div>
+        <div class="form-group">
+            <label>Questões Resolvidas:</label>
+            <input type="number" class="form-control" id="questoesResolvidasFase1" required>
+        </div>
+        <div class="form-group">
+            <button onclick="calcularPorcentagemFase('questoesCertasFase1', 'questoesResolvidasFase1', 'porcentagemFase1', 'avancoFase1')" class="btn btn-primary">Calcular Porcentagem e Verificar Avanço</button>
+        </div>
+        <p id="porcentagemFase1">Porcentagem de Acertos: 0%</p>
+        <p id="avancoFase1"></p>
+    </div>
+    <!-- Adicionar mais fases conforme necessário -->
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function calcularPorcentagemFase(certasId, resolvidasId, porcentagemId, avancoId) {
+        const questoesCertas = parseInt(document.getElementById(certasId).value) || 0;
+        const questoesResolvidas = parseInt(document.getElementById(resolvidasId).value) || 0;
+
+        if (questoesResolvidas < questoesCertas) {
+            alert('Erro: Questões certas não podem exceder questões resolvidas.');
+            return;
+        }
+
+        const porcentagemAcertos = questoesResolvidas > 0 ? (questoesCertas / questoesResolvidas) * 100 : 0;
+        document.getElementById(porcentagemId).textContent = `Porcentagem de Acertos: ${porcentagemAcertos.toFixed(2)}%`;
+
+        // Verificar avanço para a próxima fase
+        if (porcentagemAcertos >= 70) {
+            document.getElementById(avancoId).textContent = 'Parabéns! Você pode avançar para a próxima fase.';
+            // Aqui pode-se adicionar lógica para desbloquear a próxima fase automaticamente.
+        } else {
+            document.getElementById(avancoId).textContent = '';
+        }
+    }
+</script>
+</body>
+</html>

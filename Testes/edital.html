@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Estudos - Disciplinas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Plano de Estudos - Disciplinas</h2>
+    <div class="form-group">
+        <label for="selectEdital">Selecione o Edital/Concurso</label>
+        <select class="form-control" id="selectEdital" onchange="habilitarDisciplinas()">
+            <option value="">-- Selecione --</option>
+            <option value="Edital A">Edital A</option>
+            <option value="Edital B">Edital B</option>
+        </select>
+    </div>
+    <div id="disciplinas" class="hidden">
+        <h3>Disciplinas</h3>
+        <div class="row">
+            <div class="col-md-6">
+                <h4>Básicas</h4>
+                <ul>
+                    <li>Língua Portuguesa</li>
+                    <li><a href="lingua-inglesa.html">Língua Inglesa</a></li>
+                    <li>Raciocínio Lógico</li>
+                    <li>Direito Administrativo</li>
+                    <li>Direito Constitucional</li>
+                    <li>Ética na Administração Pública</li>
+                    <li>Estado e Políticas Públicas</li>
+                    <li>Realidade Brasileira Atual</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h4>Específicas</h4>
+                <ul>
+                    <li>Administração</li>
+                    <li>AFO</li>
+                    <li>Atualidades</li>
+                    <li>Estatística</li>
+                    <li>Arquitetura de Computadores</li>
+                    <li>Redes de Computadores</li>
+                    <li>Segurança da Informação</li>
+                    <li>Engenharia de Software</li>
+                    <li>Governança e Gestão de TI</li>
+                    <li>Banco de Dados</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function habilitarDisciplinas() {
+        var selecao = document.getElementById("selectEdital").value;
+        if (selecao !== "") {
+            document.getElementById("disciplinas").classList.remove("hidden");
+        } else {
+            document.getElementById("disciplinas").classList.add("hidden");
+        }
+    }
+</script>
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Estudos - Disciplinas</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Plano de Estudos - Disciplinas</h2>
+    <div class="form-group">
+        <label for="selectAluno">Selecione o Aluno</label>
+        <select class="form-control" id="selectAluno" onchange="habilitarEdital()">
+            <option value="">-- Selecione --</option>
+            <option value="Aluno A">Aluno A</option>
+            <option value="Aluno B">Aluno B</option>
+        </select>
+    </div>
+    <div id="selectEditalDiv" class="hidden">
+        <div class="form-group">
+            <label for="selectEdital">Selecione o Edital/Concurso</label>
+            <select class="form-control" id="selectEdital" onchange="habilitarDisciplinas()">
+                <option value="">-- Selecione --</option>
+                <option value="Edital A">Edital A</option>
+                <option value="Edital B">Edital B</option>
+            </select>
+        </div>
+    </div>
+    <div id="disciplinas" class="hidden">
+        <h3>Disciplinas</h3>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Categoria</th>
+                        <th>Disciplina</th>
+                        <th>Ciclos de Estudo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td rowspan="7">Básicas</td>
+                        <td><a href="lingua-inglesa.html">Língua Inglesa</a></td>
+                        <td>
+                            <select class="form-control" id="cicloLinguaPortuguesa" multiple>
+                                <option value="Ciclo 1">Ciclo 1</option>
+                                <option value="Ciclo 2">Ciclo 2</option>
+                                <option value="Ciclo 3">Ciclo 3</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <!-- Adicionar linhas para as outras disciplinas -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function habilitarEdital() {
+        var selecaoAluno = document.getElementById("selectAluno").value;
+        if (selecaoAluno !== "") {
+            document.getElementById("selectEditalDiv").classList.remove("hidden");
+        } else {
+            document.getElementById("selectEditalDiv").classList.add("hidden");
+        }
+    }
+
+    function habilitarDisciplinas() {
+        var selecaoEdital = document.getElementById("selectEdital").value;
+        if (selecaoEdital !== "") {
+            document.getElementById("disciplinas").classList.remove("hidden");
+        } else {
+            document.getElementById("disciplinas").classList.add("hidden");
+        }
+    }
+</script>
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+</body>
+</html>

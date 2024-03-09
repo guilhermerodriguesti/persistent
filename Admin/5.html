@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atualizar Métricas de Estudo</title>
+    <!-- Adicionar links para estilos CSS, se necessário -->
+</head>
+<body>
+    <h1>Atualizar Métricas de Estudo</h1>
+    <!-- Formulário para o aluno atualizar métricas -->
+    <form action="/atualizar_metricas_estudo" method="POST">
+        <!-- Campos para atualização de métricas -->
+        <label for="desempenho_questoes">Desempenho em Questões:</label>
+        <input type="number" id="desempenho_questoes" name="desempenho_questoes" min="0" max="100">
+        <br>
+        <label for="notas_simulados">Notas em Simulados:</label>
+        <input type="number" id="notas_simulados" name="notas_simulados" min="0" max="10" step="0.1">
+        <br>
+        <!-- Adicionar mais campos conforme necessário -->
+        <button type="submit">Atualizar</button>
+    </form>
+</body>
+</html>
