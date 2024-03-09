@@ -7,8 +7,7 @@ Epic-Crie paginas do Gerenciador de Estudos
 Edital -> Materias -> Conteudo -> Aluno
 
 
-### Todo
-
+### Todo 
 - [ ] Criar Backend 
 - [ ] Definir banco de dados
   - [ ] Criar esquema
@@ -30,4 +29,13 @@ Edital -> Materias -> Conteudo -> Aluno
 
 ### Done ✓
 
-- [x] Create my first TODO.md  
+- [x] Create my first TODO.md
+- [ ] Arquitetura:
+  - [x] linguagem de front: 
+    - [x] [react-bootstrap](https://nextui.org/)
+    - [x] [react-platform](https://vercel.com/)
+  - [x] linguagem de backend
+    - [x] [node-framework](https://strapi.io/)
+    - [x] [node-plataform](https://render.com/)
+  - [x] Banco de dados[[postgres]](https://www.postgresql.org/)
+  - [x] [envio de email](https://sendpulse.com/br) 
