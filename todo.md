@@ -8,7 +8,10 @@ Edital -> Materias -> Conteudo -> Aluno
 
 
 ### Todo
-
+- [ ] arquitetura, 
+- [ ] linguagem de front, 
+- [ ] linguagem de backend 
+- [ ] banco de dados
 - [ ] Criar Backend 
 - [ ] Definir banco de dados
   - [ ] Criar esquema

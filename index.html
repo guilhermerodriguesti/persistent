@@ -18,6 +18,9 @@
                 <li class="nav-item">
                     <a class="nav-link" data-toggle="tab" href="#professor">Área do Professor</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#testes">Testes</a>
+                </li>
             </ul>
         </nav>
 
@@ -43,6 +46,17 @@
                     </ul>
                 </div>
             </div>
+
+            <div id="testes" class="container tab-pane fade"><br>
+                <h2>Área de Testes</h2>
+
+                <div class="mt-3">
+                    <p>Essa é uma nova aba de testes. Adicione aqui o conteúdo ou links de testes.</p>
+                    <ul>
+                        <li><a href="Testes/index.html">Acesse os Testes</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -60,6 +74,8 @@
                 $('.nav-tabs a[href="#professor"]').tab('show');
             } else if (url.indexOf("Aluno/dash-aluno-materia.html") > -1) {
                 $('.nav-tabs a[href="#aluno"]').tab('show');
+            } else if (url.indexOf("Testes/index.html") > -1) {
+                $('.nav-tabs a[href="#testes"]').tab('show');
             }
         });
     </script>
