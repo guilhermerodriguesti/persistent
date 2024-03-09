@@ -31,8 +31,11 @@ Edital -> Materias -> Conteudo -> Aluno
 
 - [x] Create my first TODO.md
 - [ ] Arquitetura:
-  - [x] definido linguagem de front: 
+  - [x] linguagem de front: 
     - [x] [react-bootstrap](https://nextui.org/)
     - [x] [react-platform](https://vercel.com/)
-  - [x] definido linguagem de backend [node](https://strap.io/)
-  - [x] banco de dados[postgres]  
+  - [x] linguagem de backend
+    - [x] [node-framework](https://strapi.io/)
+    - [x] [node-plataform](https://render.com/)
+  - [x] Banco de dados[[postgres]](https://www.postgresql.org/)
+  - [x] [envio de email](https://sendpulse.com/br) 
