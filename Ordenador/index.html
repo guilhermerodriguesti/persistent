@@ -1,24 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Processamento de Dados</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 1200px;
+        }
+    </style>
 </head>
-<body class="container my-5">
-    <h1 class="mb-4">Resultados dos Candidatos</h1>
-    <div class="form-group">
-        <textarea id="inputData" class="form-control" rows="10" placeholder="Insira os dados aqui..."></textarea>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">Ordenar Resultados</h1>
+        <div class="form-group">
+            <label for="inputData">Copie e cole a lista dos classificados:</label>
+            <textarea id="inputData" class="form-control" rows="5" placeholder="Ex: 10028151, Nome do candidato, 78.00, 29.79 / 10113505, Nome do candidato, 85.00, 27.92 / 10001515, Nome do candidato, 85.00, 30.27 / 10003135, Nome do candidato, 86.00, 25.16"></textarea>
+        </div>
+        <button class="btn btn-primary mb-4" onclick="processData()">Gerar Resultados</button>
+        <div id="result" class="table-responsive"></div>
     </div>
-    <button class="btn btn-primary mb-4" onclick="processData()">Processar Dados</button>
-    <div id="result"></div>
 
     <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>

@@ -19,20 +19,20 @@ function processData() {
 }
 
 function renderTable(rows, container) {
-    let tableHTML = '<table class="table table-striped">';
+    let tableHTML = '<table id="resultsTable" class="table table-striped table-bordered">';
     tableHTML += `
         <thead class="thead-dark">
             <tr>
-                <th onclick="sortTable(0)">Inscrição</th>
-                <th onclick="sortTable(1)">Nome</th>
-                <th onclick="sortTable(2)">Nota P1</th>
-                <th onclick="sortTable(3)">Acertos P1</th>
-                <th onclick="sortTable(4)">Nota P2</th>
-                <th onclick="sortTable(5)">Acertos P2</th>
-                <th onclick="sortTable(6)">Nota Final Objetiva</th>
-                <th onclick="sortTable(7)">Nota Provisória Q1 P3</th>
-                <th onclick="sortTable(8)">Nota Provisória Q2 P3</th>
-                <th onclick="sortTable(9)">Nota Provisória Discursiva</th>
+                <th>Inscrição</th>
+                <th>Nome</th>
+                <th>Nota P1</th>
+                <th>Acertos P1</th>
+                <th>Nota P2</th>
+                <th>Acertos P2</th>
+                <th>Nota Final Objetiva</th>
+                <th>Nota Discursiva Q1 P3</th>
+                <th>Nota Discursiva Q2 P3</th>
+                <th>Nota Final Discursiva</th>
             </tr>
         </thead>
         <tbody>
@@ -48,19 +48,17 @@ function renderTable(rows, container) {
 
     tableHTML += '</tbody></table>';
     container.innerHTML = tableHTML;
-}
 
-function sortTable(columnIndex) {
-    const numericColumns = [2, 3, 4, 5, 6, 7, 8, 9];
-    const isNumeric = numericColumns.includes(columnIndex);
-
-    dataRows.sort((a, b) => {
-        if (isNumeric) {
-            return parseFloat(a[columnIndex]) - parseFloat(b[columnIndex]);
-        } else {
-            return a[columnIndex].localeCompare(b[columnIndex]);
-        }
+    // Inicializar DataTables
+    $(document).ready(function() {
+        $('#resultsTable').DataTable({
+            "paging": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "language": {
+                "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json"
+            }
+        });
     });
-
-    renderTable(dataRows, document.getElementById('result'));
 }
