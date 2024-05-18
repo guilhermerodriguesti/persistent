@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tabela de Lei</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        textarea {
+            min-height: 150px;
+            overflow-y: auto; /* Permite rolagem vertical se necessário */
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="mb-3">Formatador de Texto de Lei</h1>
+        <textarea id="textArea" oninput="autoResize()" class="form-control"></textarea><br>
+        <button onclick="formatText()" class="btn btn-primary mb-3">Formatar Texto</button>
+        <table id="lawTable" class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th>TÍTULO</th>
+                    <th>CAPÍTULO</th>
+                    <th>SEÇÃO</th>
+                    <th>ARTIGO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Linhas serão adicionadas aqui pelo JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function autoResize() {
+            var textArea = document.getElementById('textArea');
+            textArea.style.height = 'auto';  // Reset the height
+            textArea.style.height = textArea.scrollHeight + 'px';
+        }
+
+        function formatText() {
+            var text = document.getElementById('textArea').value;
+            var processedText = text.replace(/\. /g, '.\n');
+            var lines = processedText.split('\n');
+            var table = document.getElementById('lawTable').getElementsByTagName('tbody')[0];
+
+            var currentTitle = '';
+            var currentChapter = '';
+            var currentSection = '';
+            var articleContent = '';
+
+            table.innerHTML = '';
+
+            lines.forEach(line => {
+                if (line.startsWith('TÍTULO')) {
+                    currentTitle = line.trim();
+                } else if (line.startsWith('CAPÍTULO')) {
+                    currentChapter = line.trim();
+                } else if (line.startsWith('SEÇÃO')) {
+                    currentSection = line.trim();
+                } else if (line.startsWith('Art.')) {
+                    if (articleContent !== '') {
+                        insertRow(currentTitle, currentChapter, currentSection, articleContent);
+                        articleContent = '';
+                    }
+                    articleContent = line.trim();
+                } else if (line.trim()) {
+                    if (line.includes(';')) {
+                        line = line.replace(/;/g, ';\n');
+                    }
+                    if (line.includes(':')) {
+                        line = line.replace(/:/g, ':\n');
+                    }
+                    articleContent += ' ' + line;
+                }
+            });
+            if (articleContent !== '') {
+                insertRow(currentTitle, currentChapter, currentSection, articleContent);
+            }
+
+            function insertRow(title, chapter, section, content) {
+                var row = table.insertRow();
+                [title, chapter, section, content].forEach(text => {
+                    var cell = row.insertCell();
+                    cell.innerHTML = makeBold(text.replace(/\n/g, '<br>')); // Converte quebras de linha em HTML e adiciona negrito
+                });
+            }
+
+            function makeBold(text) {
+                return text.replace(/\b([A-ZÁÉÍÓÚÂÊÎÔÛÃÕÇ]+)\b/g, '<strong>$1</strong>');
+            }
+        }
+    </script>
+</body>
+</html>

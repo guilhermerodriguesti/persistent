@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Tabela de Lei</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        textarea {
+            width: 98%;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formatador de Texto de Lei</h1>
+    <textarea id="textArea"></textarea><br>
+    <button onclick="formatText()">Formatar Texto</button>
+    <table id="lawTable">
+        <thead>
+            <tr>
+                <th>TÍTULO</th>
+                <th>CAPÍTULO</th>
+                <th>ARTIGO</th>
+                <th>CONTEÚDO</th>
+                <th>DETALHES</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Linhas serão adicionadas aqui pelo JavaScript -->
+        </tbody>
+    </table>
+
+    <script>
+        function formatText() {
+            var text = document.getElementById('textArea').value;
+            var lines = text.split('\n'); // Divide o texto em linhas
+            var table = document.getElementById('lawTable').getElementsByTagName('tbody')[0];
+
+            var currentTitle = '';
+            var currentChapter = '';
+            var articleContent = [];
+
+            table.innerHTML = ''; // Limpa linhas existentes
+
+            lines.forEach(line => {
+                if (line.startsWith('TÍTULO')) {
+                    currentTitle = line.trim();
+                } else if (line.startsWith('CAPÍTULO')) {
+                    currentChapter = line.trim();
+                } else if (line.startsWith('Art.')) {
+                    if (articleContent.length > 0) {
+                        insertRow(articleContent);
+                    }
+                    articleContent = [currentTitle, currentChapter, line.trim(), ''];
+                } else if (articleContent.length && line.trim()) {
+                    if (line.includes(':')) {
+                        let parts = line.split(':');
+                        articleContent[3] += parts[0].trim() + ': ';
+                        articleContent.push(parts.slice(1).join(':').trim());
+                    } else {
+                        articleContent[3] += line.trim() + ' ';
+                    }
+                }
+            });
+            if (articleContent.length > 0) {
+                insertRow(articleContent); // Add last article
+            }
+
+            function insertRow(data) {
+                var row = table.insertRow();
+                data.forEach((text, index) => {
+                    var cell = row.insertCell();
+                    cell.textContent = text;
+                });
+                while (row.cells.length < 5) {
+                    row.insertCell().textContent = '';
+                }
+            }
+        }
+    </script>
+</body>
+</html>
