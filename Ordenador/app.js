@@ -11,9 +11,6 @@ function processData() {
     const lines = cleanedData.split(' / ');
     dataRows = lines.map(line => line.split(', '));
 
-    // Ordenar os dados pelo nome do candidato (índice 1)
-    dataRows.sort((a, b) => a[1].localeCompare(b[1]));
-
     // Gerar a tabela de resultados
     renderTable(dataRows, resultDiv);
 }
@@ -23,6 +20,7 @@ function renderTable(rows, container) {
     tableHTML += `
         <thead class="thead-dark">
             <tr>
+                <th>ID</th>
                 <th>Inscrição</th>
                 <th>Nome</th>
                 <th>Nota P1</th>
@@ -40,6 +38,7 @@ function renderTable(rows, container) {
 
     rows.forEach(row => {
         tableHTML += '<tr>';
+        tableHTML += `<td></td>`; // Placeholder for the dynamic ID
         row.forEach(cell => {
             tableHTML += `<td>${cell}</td>`;
         });
@@ -49,7 +48,7 @@ function renderTable(rows, container) {
     tableHTML += '</tbody></table>';
     container.innerHTML = tableHTML;
 
-    // Inicializar DataTables
+    // Inicializar DataTables com drawCallback para atualizar o ID
     $(document).ready(function() {
         $('#resultsTable').DataTable({
             "paging": true,
@@ -58,6 +57,21 @@ function renderTable(rows, container) {
             "info": true,
             "language": {
                 "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json"
+            },
+            "columnDefs": [
+                {
+                    "targets": 0, // ID column
+                    "orderable": false,
+                    "searchable": false
+                }
+            ],
+            "drawCallback": function(settings) {
+                var api = this.api();
+                api.rows({ page: 'current' }).every(function (rowIdx) {
+                    var data = this.data();
+                    // Update the ID cell with the current row index + 1 (for display purposes)
+                    $(api.cell(rowIdx, 0).node()).html(rowIdx + 1);
+                });
             }
         });
     });
