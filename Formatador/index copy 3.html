@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatador de Texto</title>
+</head>
+<body>
+    <h1>Formatador de Texto</h1>
+
+    <label for="textoInput">Insira o texto:</label><br>
+    <textarea id="textoInput" rows="4" cols="50"></textarea><br><br>
+
+    <button onclick="formatarTexto()">Formatar Texto</button>
+
+    <h2>Texto Formatado</h2>
+    <div id="textoFormatado"></div>
+
+    <script>
+        // Função para formatar o texto
+        function formatarTexto() {
+            var textoEntrada = document.getElementById("textoInput").value;
+            var textoFormatado = '';
+            var caracteresQuebra = [',', '.', ':', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+            var quebraDeLinha = false;
+
+            for (var i = 0; i < textoEntrada.length; i++) {
+                var caractereAtual = textoEntrada[i];
+                textoFormatado += caractereAtual;
+
+                // Verifica se o caractere atual é um caractere de quebra
+                if (caracteresQuebra.includes(caractereAtual)) {
+                    quebraDeLinha = true;
+                } else {
+                    // Se o caractere atual não for um caractere de quebra,
+                    // mas o caractere anterior era, adiciona uma quebra de linha
+                    if (quebraDeLinha) {
+                        textoFormatado += '<br>';
+                        quebraDeLinha = false;
+                    }
+                }
+            }
+
+            document.getElementById("textoFormatado").innerHTML = textoFormatado;
+        }
+    </script>
+</body>
+</html>
