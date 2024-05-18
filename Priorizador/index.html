@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tratamento de Texto</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    .table-container {
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2 class="mt-5">Verificador de Prioridade</h2>
+    <div class="form-group">
+        <textarea class="form-control" id="inputTexto" rows="10" placeholder="Digite o texto aqui..."></textarea>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-primary" onclick="tratarTexto()">Priorizar</button>
+    </div>
+    <div class="table-container">
+        <table class="table table-striped" id="textoTable">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Assunto</th>
+                    <th scope="col">Porcentagem</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+function tratarTexto() {
+  // Obter texto do campo de texto
+  var texto = document.getElementById("inputTexto").value;
+
+  // Dividir o texto em linhas
+  var linhas = texto.split('\n');
+
+  // Inicializar matriz para armazenar dados
+  var dados = [];
+
+  // Iterar sobre as linhas
+  for (var i = 0; i < linhas.length; i += 2) {
+    var texto = linhas[i].trim(); // texto
+    var porcentagem = parseFloat(linhas[i + 1].match(/\d+\.\d+/)[0]); // porcentagem
+
+    // Adicionar à matriz
+    dados.push({ texto: texto, porcentagem: porcentagem });
+  }
+
+  // Ordenar dados pela porcentagem
+  dados.sort((a, b) => b.porcentagem - a.porcentagem);
+
+  // Limpar tabela
+  var tableBody = document.querySelector("#textoTable tbody");
+  tableBody.innerHTML = "";
+
+  // Adicionar dados à tabela
+  for (var i = 0; i < dados.length; i++) {
+    var row = tableBody.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    cell1.textContent = dados[i].texto;
+    cell2.textContent = dados[i].porcentagem + "%";
+  }
+}
+</script>
+
+</body>
+</html>
