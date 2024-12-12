@@ -36,7 +36,7 @@
                 .replace(/([:.])(\s[A-Z])/g, "$1\n$2")
                 .replace(/([,])(\s)/g, "$1\n")
                 .replace(/([.])(\s)/g, "$1\n")
-                .replace(/([;()])/g, "$1\n"); // Quebra linha após ;, ( e )
+                .replace(/([;()])/g, "$1\n"); // Insere quebra de linha após ;, ( e )
 
             var lines = formattedText.split('\n');
             var tbody = document.querySelector('#resultTable tbody');
@@ -67,17 +67,18 @@
 
             // Adiciona cada linha formatada como uma nova linha na tabela
             lines.forEach(function(line) {
-                if (line.trim().length > 0) { // Ignora linhas vazias
+                // Remove os caracteres ;, ( e ) antes de renderizar
+                line = line.replace(/[;()]/g, '').trim();
+
+                if (line.length > 0) { // Ignora linhas vazias após a remoção
                     var row = tbody.insertRow();
                     var cell = row.insertCell(0);
-                    // 1) Destaca a palavra mais frequente com amarelo
-                    // 2) Destaca palavras em maiúsculas com negrito
-                    // 3) Coloca em negrito as palavras que antecedem ':'
+                    // Destaca a palavra mais frequente e as palavras em maiúsculas. 
+                    // Em seguida, coloca em negrito a palavra anterior a ':'
                     cell.innerHTML = line
                         .replace(new RegExp(`\\b${maxWord}\\b`, 'gi'), `<span class="highlight">$&</span>`)
                         .replace(/\b([A-ZÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÄËÏÖÜÑ]{2,})\b/g, '<strong>$1</strong>')
-                        .replace(/\b(\w+):/g, '<strong>$1</strong>:') // Coloca em negrito a palavra anterior a ':'
-                        .trim();
+                        .replace(/\b(\w+):/g, '<strong>$1</strong>:');
                 }
             });
         }
