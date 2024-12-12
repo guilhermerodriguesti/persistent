@@ -67,8 +67,8 @@
 
             // Adiciona cada linha formatada como uma nova linha na tabela
             lines.forEach(function(line) {
-                // Remove os caracteres ;, ( e ) antes de renderizar
-                line = line.replace(/[;()]/g, '').trim();
+                // Remove os caracteres ;, (, ), e agora também as vírgulas antes de renderizar
+                line = line.replace(/[;(),]/g, '').trim();
 
                 if (line.length > 0) { // Ignora linhas vazias após a remoção
                     var row = tbody.insertRow();
