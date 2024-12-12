@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Formatador de Texto</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Formatador de Texto</h1>
+    <textarea id="inputText" rows="10" cols="50" placeholder="Digite seu texto aqui..."></textarea>
+    <br>
+    <button onclick="formatText()">Formatar Texto</button>
+    <h2>Texto Verticalizado</h2>
+    <table id="resultTable">
+        <tr>
+            <th>Texto Verticalizado</th>
+        </tr>
+    </table>
+
+    <script>
+        function formatText() {
+            var text = document.getElementById('inputText').value;
+            var formattedText = text.replace(/(:\s)/g, "$1\n")
+                                    .replace(/([:.])(\s[A-Z])/g, "$1\n$2")
+                                    .replace(/([,])(\s)/g, "$1\n")
+                                    .replace(/([.])(\s)/g, "$1\n");
+
+            var lines = formattedText.split('\n');
+            var table = document.getElementById('resultTable');
+            var existingRows = table.getElementsByTagName('tr');
+            var rowCount = existingRows.length;
+
+            for (var i = rowCount - 1; i > 0; i--) {
+                table.deleteRow(i);
+            }
+
+            lines.forEach(function(line) {
+                var row = table.insertRow();
+                var cell = row.insertCell(0);
+                cell.textContent = line.trim();
+            });
+        }
+    </script>
+</body>
+</html>

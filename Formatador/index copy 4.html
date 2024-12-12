@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatador de Texto</title>
+</head>
+<body>
+    <h1>Formatador de Texto</h1>
+
+    <label for="textoInput">Insira o texto:</label><br>
+    <textarea id="textoInput" rows="4" cols="50"></textarea><br><br>
+
+    <button onclick="formatarTexto()">Formatar Texto</button>
+
+    <h2>Texto Formatado</h2>
+    <div id="textoFormatado"></div>
+
+    <script>
+        // Função para formatar o texto
+        function formatarTexto() {
+            var textoEntrada = document.getElementById("textoInput").value;
+            var textoFormatado = '';
+            var caracteresQuebra = [': ', ', ', '. '];
+
+            for (var i = 0; i < textoEntrada.length; i++) {
+                var caractereAtual = textoEntrada[i];
+                textoFormatado += caractereAtual;
+
+                // Verifica se o caractere atual é um caractere de quebra
+                for (var j = 0; j < caracteresQuebra.length; j++) {
+                    if (textoEntrada.substr(i, caracteresQuebra[j].length) === caracteresQuebra[j] && textoEntrada[i + caracteresQuebra[j].length] !== ' ') {
+                        textoFormatado += '<br>';
+                        // Avança o índice para o final do padrão de quebra
+                        i += caracteresQuebra[j].length - 1;
+                    }
+                }
+            }
+
+            document.getElementById("textoFormatado").innerHTML = textoFormatado;
+        }
+    </script>
+</body>
+</html>

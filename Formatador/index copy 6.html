@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formatador de Texto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container py-4">
+    <h1 class="mb-3">Formatador de Texto</h1>
+    <textarea id="inputText" class="form-control mb-3" rows="10" placeholder="Digite seu texto aqui..."></textarea>
+    <button onclick="formatText()" class="btn btn-primary mb-3">Formatar Texto</button>
+    <h2 class="mb-3">Texto Verticalizado</h2>
+    <table id="resultTable" class="table table-bordered">
+        <thead class="table-light">
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <button onclick="copyTable()" class="btn btn-secondary mt-3">Copiar Conteúdo da Tabela</button>
+
+    <script>
+        function formatText() {
+            var text = document.getElementById('inputText').value;
+            // Normaliza espaços e remove espaços extras
+            text = text.replace(/\s+/g, ' ').trim();
+
+            // Define os critérios de divisão para cada linha nova no texto formatado
+            var formattedText = text.replace(/(:\s)/g, "$1\n")
+                                    .replace(/([:.])(\s[A-Z])/g, "$1\n$2")
+                                    .replace(/([,])(\s)/g, "$1\n")
+                                    .replace(/([.])(\s)/g, "$1\n");
+
+            var lines = formattedText.split('\n');
+            var tbody = document.querySelector('#resultTable tbody');
+
+            // Limpa o corpo da tabela
+            tbody.innerHTML = '';
+
+            // Adiciona cada linha formatada como uma nova linha na tabela
+            lines.forEach(function(line) {
+                if (line.trim().length > 0) { // Ignora linhas vazias
+                    var row = tbody.insertRow();
+                    var cell = row.insertCell(0);
+                    // Destaca palavras em maiúsculas com negrito
+                    cell.innerHTML = line.replace(/\b([A-ZÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÄËÏÖÜÑ]{2,})\b/g, '<strong>$1</strong>').trim();
+                }
+            });
+        }
+
+        function copyTable() {
+            const rows = document.querySelectorAll('#resultTable tr');
+            let textToCopy = '';
+            rows.forEach(row => {
+                textToCopy += row.innerText + '\n';
+            });
+            navigator.clipboard.writeText(textToCopy).then(() => {
+                alert('Conteúdo da tabela copiado para a área de transferência!');
+            }).catch(err => {
+                console.error('Erro ao copiar texto: ', err);
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formatador de Texto</title>
+</head>
+<body>
+    <h1>Formatador de Texto</h1>
+
+    <label for="textoInput">Insira o texto:</label><br>
+    <textarea id="textoInput" rows="4" cols="50"></textarea><br><br>
+
+    <button onclick="formatarTexto()">Formatar Texto</button>
+
+    <h2>Texto Formatado</h2>
+    <table id="tabelaFormatada"></table>
+
+    <script>
+        // Função para formatar o texto
+        function formatarTexto() {
+            var texto = document.getElementById("textoInput").value;
+            // Divide o texto em linhas onde há vírgulas, dois pontos ou números
+            var linhas = texto.split(/[,:0-9]/);
+            var tabelaFormatada = document.getElementById("tabelaFormatada");
+            tabelaFormatada.innerHTML = ""; // Limpa a tabela antes de adicionar as novas linhas
+            for (var i = 0; i < linhas.length; i++) {
+                var linha = document.createElement("tr");
+                var celula = document.createElement("td");
+                celula.textContent = linhas[i].trim(); // Remove espaços em branco antes e depois de cada linha
+                linha.appendChild(celula);
+                tabelaFormatada.appendChild(linha);
+            }
+        }
+    </script>
+</body>
+</html>
