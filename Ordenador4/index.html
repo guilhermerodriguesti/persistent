@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar Resultados CESPE/CEBRASPE</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 1200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4 text-center">Ordenar Resultados CESPE/CEBRASPE</h1>
+        <div class="form-group">
+            <label for="inputData">Copie e cole a lista dos classificados:</label>
+            <textarea id="inputData" class="form-control" rows="5" placeholder="Ex: 10028151, Nome do candidato, 78.00, 29.79, 82.00, 31.45, 160.00, 8.00, 9.00, 17.00 / 10113505, Nome do candidato, 85.00, 27.92, 90.00, 30.00, 175.00, 7.50, 8.50, 16.00 / 10001515, Nome do candidato, 85.00, 30.27, 88.00, 28.50, 173.00, 9.00, 8.00, 17.00 / 10003135, Nome do candidato, 86.00, 25.16, 92.00, 29.00, 178.00, 7.00, 9.00, 16.00"></textarea>
+        </div>
+        <button class="btn btn-primary mb-4" onclick="processData()">Gerar Resultados</button>
+        <div id="result" class="table-responsive"></div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    <script>
+        let dataRows = [];
+
+        function processData() {
+            const inputData = document.getElementById('inputData').value;
+            const resultDiv = document.getElementById('result');
+            // Retirar espaços desnecessários
+            cleanedData = cleanedData.replace(/\s+/g, ' ').trim();
+
+            // Quebrar em linhas e colunas
+            const lines = cleanedData.split(' / ');
+            dataRows = lines.map(line => line.split(', '));
+
+            // Calcular soma das notas e adicionar classificação
+            dataRows.forEach(row => {
+                let notaObjetiva = parseFloat(row[6].replace(',', '.'));
+                let notaDiscursiva = parseFloat(row[9].replace(',', '.'));
+                let somaNotas = notaObjetiva + notaDiscursiva;
+                row.push(somaNotas.toFixed(2).replace('.', ','));
+            });
+
+            // Ordenar por soma das notas em ordem decrescente
+            dataRows.sort((a, b) => parseFloat(b[10].replace(',', '.')) - parseFloat(a[10].replace(',', '.')));
+
+            // Adicionar classificação
+            dataRows.forEach((row, index) => {
+                row.push(index + 1);
+            });
+
+            // Gerar a tabela de resultados
+            renderTable(dataRows, resultDiv);
+        }
+
+        function renderTable(rows, container) {
+            let tableHTML = `
+                <table id="resultsTable" class="table table-striped table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Inscrição</th>
+                            <th>Nome</th>
+                            <th>Nota CB P1</th>
+                            <th>Acertos P1</th>
+                            <th>Nota CE P2</th>
+                            <th>Acertos P2</th>
+                            <th>Nota Objetiva</th>
+                            <th>Nota Discursiva Q1 P3</th>
+                            <th>Nota Discursiva Q2 P3</th>
+                            <th>Nota Discursiva</th>
+                            <th>Soma das Notas</th>
+                            <th>Classificação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+
+            rows.forEach(row => {
+                tableHTML += '<tr>';
+                row.forEach(cell => {
+                    tableHTML += `<td>${cell}</td>`;
+                });
+                tableHTML += '</tr>';
+            });
+
+            tableHTML += '</tbody></table>';
+            container.innerHTML = tableHTML;
+
+            // Inicializar DataTables
+            $(document).ready(function() {
+                $('#resultsTable').DataTable({
+                    "paging": true,
+                    "searching": true,
+                    "ordering": true,
+                    "info": true,
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json"
+                    }
+                });
+            });
+        }
+    </script>
+</body>
+</html>
