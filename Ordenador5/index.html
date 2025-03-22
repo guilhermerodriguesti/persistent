@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenador de Resultados CESPE/CEBRASPE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
+    <style>
+        .container {
+            max-width: 1200px;
+        }
+        .table-responsive {
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="mb-4 text-center">Ordenador de Resultados CESPE/CEBRASPE</h2>
+        
+
+        
+        <!-- Gráficos de Análise -->
+        <div class="row mb-4">
+            <div class="col-12 mb-3">
+                <h4 class="text-center">Análise Estatística dos Candidatos</h4>
+            </div>
+        </div>
+        
+        <!-- Top Candidatos e Comparação de Notas -->
+        <div class="row mb-4">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-danger text-white">
+                        <h5 class="mb-0"><i class="bi bi-trophy"></i> Top 10 Candidatos</h5>
+                    </div>
+                    <div class="card-body p-0">
+                        <div class="table-responsive">
+                            <table class="table table-sm table-hover mb-0">
+                                <thead class="table-light">
+                                    <tr>
+                                        <th>Posição</th>
+                                        <th>Candidato</th>
+                                        <th>Nota</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="top10-table">
+                                    <tr><td colspan="3" class="text-center">Sem dados disponíveis</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0"><i class="bi bi-bar-chart-steps"></i> Distribuição de Notas</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="rangesNotasChart" height="250"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-warning text-dark">
+                        <h5 class="mb-0"><i class="bi bi-layers"></i> CB vs. CE</h5>
+                    </div>
+                    <div class="card-body">
+                        <canvas id="conhecimentosChart" height="250"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Entrada de Dados</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group mb-3">
+                            <label for="inputData" class="form-label">Copie e cole a lista dos candidatos:</label>
+                            <textarea id="inputData" class="form-control" rows="6" placeholder="Ex: 10028151, Nome do candidato, 78.00, 29.79, 82.00, 31.45, 160.00, 8.00, 9.00, 17.00 / 10113505, Nome do candidato, 85.00, 27.92, 90.00, 30.00, 175.00, 7.50, 8.50, 16.00"></textarea>
+                        </div>
+                        <button id="processar" class="btn btn-success">Processar Dados</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" id="busca" class="form-control" placeholder="Buscar por nome ou número de inscrição">
+                    <button id="buscar" class="btn btn-outline-primary">Buscar</button>
+                    <button id="limpar" class="btn btn-outline-secondary">Limpar</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-md-8">
+                <div class="btn-group">
+                    <button id="ordenar-id" class="btn btn-info">Ordenar por Inscrição</button>
+                    <button id="ordenar-nome" class="btn btn-primary">Ordenar por Nome</button>
+                    <button id="ordenar-nota" class="btn btn-secondary">Ordenar por Nota Final</button>
+                </div>
+            </div>
+            <div class="col-md-4 text-end">
+                <button id="analisar-estatisticas" class="btn btn-danger"><i class="bi bi-bar-chart-fill"></i> Executar Análise Estatística</button>
+            </div>
+        </div>
+        
+        <div class="table-responsive">
+            <table id="tabela-candidatos" class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Número de Inscrição</th>
+                        <th>Nome do Candidato</th>
+                        <th>Nota CB P1</th>
+                        <th>Acertos P1</th>
+                        <th>Nota CE P2</th>
+                        <th>Acertos P2</th>
+                        <th>Nota Objetiva</th>
+                        <th>Nota Disc. Q1 P3</th>
+                        <th>Nota Disc. Q2 P3</th>
+                        <th>Nota Discursiva</th>
+                        <th>Soma das Notas</th>
+                        <th>Classificação</th>
+                    </tr>
+                </thead>
+                <tbody id="tabela-body">
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="mt-4 text-muted">
+            <p><small>Total de candidatos: <span id="total-candidatos">0</span></small></p>
+        </div>
+    </div>
+    
+    <!-- Scripts jQuery, Bootstrap, DataTables e Chart.js -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    
+    <script>
+        // Variável global para armazenar os candidatos
+        let candidatos = [];
+        
+        // Função para processar os dados da área de texto
+        document.getElementById("processar").addEventListener("click", function() {
+            const inputData = document.getElementById("inputData").value;
+            processarDadosEntrada(inputData);
+        });
+        
+        function processarDadosEntrada(inputData) {
+            // Limpar espaços desnecessários
+            let dadosLimpos = inputData.replace(/\s+/g, ' ').trim();
+            
+            // Dividir por candidatos (separados por "/")
+            const linhas = dadosLimpos.split(' / ');
+            const dadosCandidatos = [];
+            
+            // Processar cada linha
+            linhas.forEach(linha => {
+                const campos = linha.split(', ');
+                if (campos.length >= 10) { // Formato com notas discursivas
+                    const notaObjetiva = parseFloat(campos[6]);
+                    const notaDiscQ1 = parseFloat(campos[7]);
+                    const notaDiscQ2 = parseFloat(campos[8]);
+                    const notaDiscursiva = parseFloat(campos[9]);
+                    const somaNotas = notaObjetiva + notaDiscursiva;
+                    
+                    dadosCandidatos.push({
+                        id: campos[0],
+                        nome: campos[1],
+                        notaP1: parseFloat(campos[2]),
+                        acertosP1: parseFloat(campos[3]),
+                        notaP2: parseFloat(campos[4]),
+                        acertosP2: parseFloat(campos[5]),
+                        notaObjetiva: notaObjetiva,
+                        notaDiscQ1: notaDiscQ1,
+                        notaDiscQ2: notaDiscQ2,
+                        notaDiscursiva: notaDiscursiva,
+                        somaNotas: somaNotas
+                    });
+                } else if (campos.length >= 7) { // Formato apenas com notas objetivas
+                    dadosCandidatos.push({
+                        id: campos[0],
+                        nome: campos[1],
+                        notaP1: parseFloat(campos[2]),
+                        acertosP1: parseInt(campos[3]),
+                        notaP2: parseFloat(campos[4]),
+                        acertosP2: parseInt(campos[5]),
+                        notaObjetiva: parseFloat(campos[6]),
+                        notaDiscQ1: 0,
+                        notaDiscQ2: 0,
+                        notaDiscursiva: 0,
+                        somaNotas: parseFloat(campos[6])
+                    });
+                }
+            });
+            
+            // Ordenar por soma das notas em ordem decrescente
+            dadosCandidatos.sort((a, b) => b.somaNotas - a.somaNotas);
+            
+            // Adicionar classificação
+            dadosCandidatos.forEach((candidato, index) => {
+                candidato.classificacao = index + 1;
+            });
+            
+            // Atualizar a variável global de candidatos
+            candidatos = dadosCandidatos;
+            
+            // Preencher a tabela com os novos dados
+            preencherTabela(candidatos);
+            
+            // Inicializar DataTable se ainda não estiver inicializado
+            if (!$.fn.DataTable.isDataTable('#tabela-candidatos')) {
+                $('#tabela-candidatos').DataTable({
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/pt-BR.json"
+                    },
+                    "pageLength": 25,
+                    "order": [[1, "asc"]] // Ordenar por nome por padrão
+                });
+            } else {
+                // Recarregar a tabela se já estiver inicializada
+                $('#tabela-candidatos').DataTable().destroy();
+                preencherTabela(candidatos);
+                $('#tabela-candidatos').DataTable({
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/pt-BR.json"
+                    },
+                    "pageLength": 25,
+                    "order": [[1, "asc"]] // Ordenar por nome por padrão
+                });
+            }
+            
+            // Atualizar contadores
+            document.getElementById("total-candidatos").textContent = candidatos.length;
+            // Contador de candidatos removido junto com os cards
+            
+            // Atualizar gráficos
+            atualizarGraficos(candidatos);
+        }
+        
+        function preencherTabela(dados) {
+            const tbody = document.getElementById("tabela-body");
+            tbody.innerHTML = "";
+            dados.forEach(candidato => {
+                const row = `<tr>
+                    <td>${candidato.id}</td>
+                    <td>${candidato.nome}</td>
+                    <td>${candidato.notaP1.toFixed(2)}</td>
+                    <td>${candidato.acertosP1}</td>
+                    <td>${candidato.notaP2.toFixed(2)}</td>
+                    <td>${candidato.acertosP2}</td>
+                    <td>${candidato.notaObjetiva.toFixed(2)}</td>
+                    <td>${candidato.notaDiscQ1.toFixed(2)}</td>
+                    <td>${candidato.notaDiscQ2.toFixed(2)}</td>
+                    <td>${candidato.notaDiscursiva.toFixed(2)}</td>
+                    <td>${candidato.somaNotas.toFixed(2)}</td>
+                    <td>${candidato.classificacao}</td>
+                </tr>`;
+                tbody.innerHTML += row;
+            });
+        }
+
+        function ordenarPorNome() {
+            candidatos.sort((a, b) => a.nome.localeCompare(b.nome));
+            preencherTabela(candidatos);
+        }
+
+        function ordenarPorNota() {
+            candidatos.sort((a, b) => b.somaNotas - a.somaNotas);
+            preencherTabela(candidatos);
+        }
+
+        function ordenarPorId() {
+            candidatos.sort((a, b) => a.id - b.id);
+            preencherTabela(candidatos);
+        }
+
+        function filtrarCandidatos() {
+            const termoBusca = document.getElementById("busca").value.toLowerCase();
+            const candidatosFiltrados = candidatos.filter(candidato => 
+                candidato.nome.toLowerCase().includes(termoBusca) || 
+                candidato.id.toString().includes(termoBusca)
+            );
+            preencherTabela(candidatosFiltrados);
+        }
+
+        function limparFiltro() {
+            document.getElementById("busca").value = "";
+            preencherTabela(candidatos);
+        }
+
+        // Adicionar event listeners
+        document.getElementById("ordenar-nome").addEventListener("click", ordenarPorNome);
+        document.getElementById("ordenar-nota").addEventListener("click", ordenarPorNota);
+        document.getElementById("ordenar-id").addEventListener("click", ordenarPorId);
+        document.getElementById("buscar").addEventListener("click", filtrarCandidatos);
+        document.getElementById("limpar").addEventListener("click", limparFiltro);
+        document.getElementById("busca").addEventListener("keyup", function(event) {
+            if (event.key === "Enter") {
+                filtrarCandidatos();
+            }
+        });
+        
+        // Adicionar event listener para o botão de análise estatística
+        document.getElementById("analisar-estatisticas").addEventListener("click", function() {
+            if (candidatos.length === 0) {
+                alert("Não há dados para análise. Por favor, processe alguns dados primeiro.");
+                return;
+            }
+            
+            // Mostrar indicador de carregamento
+            this.innerHTML = '<i class="bi bi-hourglass-split"></i> Analisando...';
+            this.disabled = true;
+            
+            // Simular processamento (para efeito visual)
+            setTimeout(() => {
+                // Atualizar os gráficos
+                atualizarGraficos(candidatos);
+                
+                // Rolar até a seção de análise estatística
+                document.querySelector('.row.mb-4 h4').scrollIntoView({ behavior: 'smooth' });
+                
+                // Restaurar o botão
+                this.innerHTML = '<i class="bi bi-bar-chart-fill"></i> Executar Análise Estatística';
+                this.disabled = false;
+                
+                // Mostrar mensagem de sucesso
+                alert("Análise estatística concluída com sucesso! Foram analisados " + candidatos.length + " candidatos.");
+            }, 1000);
+        });
+        
+        // Função para atualizar os gráficos com base nos dados dos candidatos
+        function atualizarGraficos(candidatos) {
+            if (candidatos.length === 0) return;
+            
+            // Calcular estatísticas básicas (ainda necessárias para outros gráficos)
+            const mediaNotas = candidatos.reduce((acc, curr) => acc + curr.somaNotas, 0) / candidatos.length;
+            const aprovados = candidatos.filter(c => c.somaNotas >= 60).length;
+            const taxaAprovacao = ((aprovados / candidatos.length) * 100).toFixed(1);
+                
+            // Atualizar tabela Top 10
+            atualizarTabelaTop10(candidatos);
+            
+            // Atualizar gráfico de conhecimentos básicos vs. específicos
+            atualizarGraficoConhecimentos(candidatos);
+            
+            // Atualizar gráfico de ranges de notas
+            atualizarGraficoRanges(candidatos);
+
+            
+            // Gráfico de Distribuição de Notas removido
+            
+            // Gráfico de Composição da Nota removido
+        }
+        
+        // Função para atualizar a tabela de Top 10 candidatos
+        function atualizarTabelaTop10(candidatos) {
+            const top10Table = document.getElementById('top10-table');
+            if (!top10Table) return;
+            
+            // Ordenar candidatos por nota (decrescente)
+            const top10 = [...candidatos].sort((a, b) => b.somaNotas - a.somaNotas).slice(0, 10);
+            
+            // Limpar tabela
+            top10Table.innerHTML = '';
+            
+            // Preencher tabela com top 10
+            if (top10.length === 0) {
+                top10Table.innerHTML = '<tr><td colspan="3" class="text-center">Sem dados disponíveis</td></tr>';
+            } else {
+                top10.forEach((candidato, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td><span class="badge bg-${index < 3 ? 'danger' : 'secondary'} rounded-pill">${index + 1}</span></td>
+                        <td>${candidato.nome.length > 20 ? candidato.nome.substring(0, 20) + '...' : candidato.nome}</td>
+                        <td><strong>${candidato.somaNotas.toFixed(2)}</strong></td>
+                    `;
+                    top10Table.appendChild(row);
+                });
+            }
+        }
+        
+        // Função para atualizar o gráfico de conhecimentos básicos vs. específicos
+        function atualizarGraficoConhecimentos(candidatos) {
+            const conhecimentosCtx = document.getElementById('conhecimentosChart');
+            if (!conhecimentosCtx) return;
+            
+            // Limpar gráfico anterior se existir
+            const existingChart = Chart.getChart(conhecimentosCtx);
+            if (existingChart) {
+                existingChart.destroy();
+            }
+            
+            // Calcular médias de conhecimentos básicos (P1) e específicos (P2)
+            const mediaBasicos = candidatos.reduce((acc, curr) => acc + curr.notaP1, 0) / candidatos.length;
+            const mediaEspecificos = candidatos.reduce((acc, curr) => acc + curr.notaP2, 0) / candidatos.length;
+            
+            // Calcular médias de acertos em conhecimentos básicos e específicos
+            const mediaAcertosBasicos = candidatos.reduce((acc, curr) => acc + curr.acertosP1, 0) / candidatos.length;
+            const mediaAcertosEspecificos = candidatos.reduce((acc, curr) => acc + curr.acertosP2, 0) / candidatos.length;
+            
+            // Criar gráfico de barras comparativas
+            const conhecimentosChart = new Chart(conhecimentosCtx.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: ['CB', 'CE'],
+                    datasets: [{
+                        label: 'Nota Média',
+                        data: [mediaBasicos, mediaEspecificos],
+                        backgroundColor: 'rgba(52, 152, 219, 0.7)',
+                        borderColor: 'rgba(52, 152, 219, 1)',
+                        borderWidth: 1,
+                        yAxisID: 'y'
+                    }, {
+                        label: 'Acertos Médios',
+                        data: [mediaAcertosBasicos, mediaAcertosEspecificos],
+                        backgroundColor: 'rgba(46, 204, 113, 0.7)',
+                        borderColor: 'rgba(46, 204, 113, 1)',
+                        borderWidth: 1,
+                        yAxisID: 'y1'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Desempenho por Tipo de Conhecimento'
+                        }
+                    },
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: {
+                                display: true,
+                                text: 'Nota Média'
+                            },
+                            beginAtZero: true,
+                            max: 100
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: {
+                                display: true,
+                                text: 'Acertos Médios'
+                            },
+                            beginAtZero: true,
+                            grid: {
+                                drawOnChartArea: false
+                            }
+                        }
+                    }
+                }
+            });
+        }
+        
+        // Função para atualizar o gráfico de ranges de notas
+        function atualizarGraficoRanges(candidatos) {
+            const rangesCtx = document.getElementById('rangesNotasChart');
+            if (!rangesCtx) return;
+            
+            // Limpar gráfico anterior se existir
+            const existingChart = Chart.getChart(rangesCtx);
+            if (existingChart) {
+                existingChart.destroy();
+            }
+            
+            // Definir ranges mais detalhados
+            const ranges = {
+                '0-30': 0,
+                '31-40': 0,
+                '41-50': 0,
+                '51-60': 0,
+                '61-70': 0,
+                '71-80': 0,
+                '81-90': 0,
+                '91-100': 0
+            };
+            
+            // Calcular distribuição de candidatos por range
+            candidatos.forEach(candidato => {
+                const nota = candidato.somaNotas;
+                if (nota <= 30) ranges['0-30']++;
+                else if (nota <= 40) ranges['31-40']++;
+                else if (nota <= 50) ranges['41-50']++;
+                else if (nota <= 60) ranges['51-60']++;
+                else if (nota <= 70) ranges['61-70']++;
+                else if (nota <= 80) ranges['71-80']++;
+                else if (nota <= 90) ranges['81-90']++;
+                else ranges['91-100']++;
+            });
+            
+            // Calcular percentuais
+            const total = candidatos.length;
+            const percentuais = Object.entries(ranges).map(([range, count]) => {
+                return {
+                    range,
+                    count,
+                    percent: ((count / total) * 100).toFixed(1)
+                };
+            });
+            
+            // Criar gráfico de barras horizontais
+            const rangesChart = new Chart(rangesCtx.getContext('2d'), {
+                type: 'bar',
+                data: {
+                    labels: Object.keys(ranges),
+                    datasets: [{
+                        label: 'Percentual de Candidatos',
+                        data: percentuais.map(item => item.percent),
+                        backgroundColor: [
+                            'rgba(231, 76, 60, 0.7)',  // 0-30
+                            'rgba(230, 126, 34, 0.7)', // 31-40
+                            'rgba(241, 196, 15, 0.7)', // 41-50
+                            'rgba(243, 156, 18, 0.7)', // 51-60
+                            'rgba(46, 204, 113, 0.7)', // 61-70
+                            'rgba(26, 188, 156, 0.7)', // 71-80
+                            'rgba(52, 152, 219, 0.7)', // 81-90
+                            'rgba(155, 89, 182, 0.7)'  // 91-100
+                        ],
+                        borderColor: [
+                            'rgba(231, 76, 60, 1)',
+                            'rgba(230, 126, 34, 1)',
+                            'rgba(241, 196, 15, 1)',
+                            'rgba(243, 156, 18, 1)',
+                            'rgba(46, 204, 113, 1)',
+                            'rgba(26, 188, 156, 1)',
+                            'rgba(52, 152, 219, 1)',
+                            'rgba(155, 89, 182, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    plugins: {
+                        title: {
+                            display: true,
+                            text: 'Distribuição Percentual por Faixa de Nota'
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const index = context.dataIndex;
+                                    const data = percentuais[index];
+                                    return `${data.percent}% (${data.count} candidatos)`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Percentual (%)'
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
