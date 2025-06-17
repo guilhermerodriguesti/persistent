@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulado Preditivo</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      padding-top: 20px;
+      padding-bottom: 40px;
+    }
+    .card {
+      border-radius: 10px;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+      margin-bottom: 30px;
+    }
+    .card-header {
+      background-color: #f8f9fa;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+      padding: 15px 20px;
+    }
+    .question {
+      display: none;
+    }
+    .question.active {
+      display: block;
+    }
+    .progress {
+      height: 8px;
+      margin-bottom: 20px;
+    }
+    .theme-badge {
+      font-size: 0.8rem;
+      margin-bottom: 15px;
+    }
+    .option-label {
+      display: block;
+      padding: 10px 15px;
+      border: 1px solid #dee2e6;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      transition: all 0.2s ease;
+    }
+    .option-label:hover {
+      background-color: #f1f1f1;
+      cursor: pointer;
+    }
+    input[type="radio"]:checked + .option-label {
+      background-color: #e9ecef;
+      border-color: #ced4da;
+    }
+    .results-card {
+      display: none;
+    }
+    .timer {
+      font-size: 1.2rem;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .answer-status {
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .correct {
+      background-color: rgba(40, 167, 69, 0.1);
+      border-left: 4px solid #28a745;
+    }
+    .incorrect {
+      background-color: rgba(220, 53, 69, 0.1);
+      border-left: 4px solid #dc3545;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-header text-center">
+            <h1 class="h3 mb-0">🧪 Simulado Preditivo</h1>
+          </div>
+          <div class="card-body">
+            <!-- Barra de progresso -->
+            <div class="progress" id="progressBar">
+              <div class="progress-bar bg-primary" role="progressbar" style="width: 2%" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            
+            <!-- Timer -->
+            <div class="timer" id="timer">
+              <i class="far fa-clock"></i> <span id="timeDisplay">00:00:00</span>
+            </div>
+            
+            <!-- Atalhos de teclado -->
+            <div class="text-center mb-3">
+              <small class="text-muted">
+                <i class="fas fa-keyboard me-1"></i> Atalhos: 
+                <span class="badge bg-light text-dark">C</span> para Certo, 
+                <span class="badge bg-light text-dark">E</span> para Errado, 
+                <span class="badge bg-light text-dark">←</span> <span class="badge bg-light text-dark">→</span> para navegar
+              </small>
+            </div>
+            
+            <!-- Formulário de questões -->
+            <form id="quizForm"></form>
+            
+            <!-- Navegação -->
+            <div class="d-flex justify-content-between mt-4" id="navigationControls">
+              <button type="button" id="prevBtn" class="btn btn-outline-secondary">
+                <i class="fas fa-arrow-left me-1"></i> Anterior
+              </button>
+              <div>
+                <span id="questionCounter" class="badge bg-secondary rounded-pill">1/50</span>
+              </div>
+              <button type="button" id="nextBtn" class="btn btn-outline-primary">
+                Próxima <i class="fas fa-arrow-right ms-1"></i>
+              </button>
+              <button type="button" id="submitBtn" class="btn btn-success" style="display:none">
+                <i class="fas fa-check-circle me-1"></i> Finalizar
+              </button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Card de resultados -->
+        <div class="card results-card" id="results">
+          <div class="card-header text-center">
+            <h2 class="h4 mb-0">Resultado Final</h2>
+          </div>
+          <div class="card-body" id="resultsContent"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Bootstrap Bundle com Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const questions = [
+  // Segurança da Informação (12)
+  { text: "O ataque de CSRF ocorre mesmo quando o usuário não está autenticado na aplicação.", answer: "E", comment: "CSRF exige que o usuário esteja autenticado na aplicação alvo.", theme: "Segurança da Informação" },
+  { text: "O uso de HSM impede que chaves privadas sejam exportadas, aumentando a segurança de autoridades certificadoras.", answer: "C", comment: "HSM protege chaves privadas contra extração.", theme: "Segurança da Informação" },
+  { text: "O ataque Evil Twin consiste em capturar dados de usuários conectados a redes legítimas, utilizando um ponto de acesso clonado.", answer: "C", comment: "O atacante cria um ponto falso para enganar o usuário.", theme: "Segurança da Informação" },
+  { text: "O certificado digital é validado com a chave pública do titular do certificado.", answer: "E", comment: "É a chave pública da autoridade certificadora que valida a assinatura.", theme: "Segurança da Informação" },
+  { text: "Exploit kits são ferramentas legítimas utilizadas apenas por desenvolvedores para testar vulnerabilidades.", answer: "E", comment: "Exploit kits são usados por atacantes para comprometer sistemas.", theme: "Segurança da Informação" },
+  { text: "O ransomware normalmente exige a intervenção do usuário para se propagar.", answer: "C", comment: "Geralmente é ativado por cliques em links ou arquivos maliciosos.", theme: "Segurança da Informação" },
+  { text: "O ataque de SQL Injection pode ser evitado com o uso de prepared statements e validação de entrada.", answer: "C", comment: "Essas práticas bloqueiam comandos SQL injetados.", theme: "Segurança da Informação" },
+  { text: "Em ataques de phishing, o invasor geralmente tenta obter dados confidenciais simulando uma entidade confiável.", answer: "C", comment: "Phishing é baseado em engenharia social.", theme: "Segurança da Informação" },
+  { text: "O uso de senhas longas é uma medida suficiente para impedir ataques de força bruta em sistemas expostos à internet.", answer: "E", comment: "Senhas fortes ajudam, mas MFA é necessário.", theme: "Segurança da Informação" },
+  { text: "O firewall de próxima geração (NGFW) possui capacidades de inspeção profunda de pacotes e controle de aplicações.", answer: "C", comment: "NGFW combina filtragem tradicional com recursos avançados.", theme: "Segurança da Informação" },
+  { text: "A autenticação multifator (MFA) utiliza três fatores: conhecimento, posse e biometria.", answer: "C", comment: "MFA aumenta a segurança combinando tipos de autenticação.", theme: "Segurança da Informação" },
+  { text: "A assinatura digital garante apenas a confidencialidade da informação.", answer: "E", comment: "Ela garante integridade e autenticidade, não confidencialidade.", theme: "Segurança da Informação" },
+  { text: "A ISO/IEC 27001 define os requisitos para um Sistema de Gestão de Segurança da Informação (SGSI).", answer: "C", comment: "ISO/IEC 27001 define requisitos para SGSI.", theme: "Segurança da Informação" },
+  { text: "A ISO/IEC 27001 define requisitos para a implementação de um Sistema de Gestão de Segurança da Informação (SGSI).", answer: "C", comment: "ISO/IEC 27001 é o padrão internacional para SGSI.", theme: "Segurança da Informação" },
+  { text: "A autenticação multifator (MFA) combina fatores de conhecimento, posse e inerência para fortalecer a segurança.", answer: "C", comment: "MFA utiliza combinação de diferentes tipos de fatores para autenticação.", theme: "Segurança da Informação" },
+  { text: "No modelo Zero Trust, assume-se que toda rede interna é segura, desde que protegida por firewall.", answer: "E", comment: "Zero Trust assume que nenhuma rede é confiável, nem mesmo a interna.", theme: "Segurança da Informação" },
+  { text: "O OWASP Top 10 lista as dez vulnerabilidades mais críticas em sistemas operacionais.", answer: "E", comment: "OWASP Top 10 foca em vulnerabilidades de aplicações web, não sistemas operacionais.", theme: "Segurança da Informação" },
+  { text: "O protocolo OAuth 2.0 implementa autenticação de usuários diretamente.", answer: "E", comment: "OAuth 2.0 é um protocolo de autorização, não de autenticação; OpenID Connect adiciona autenticação.", theme: "Segurança da Informação" },
+  { text: "A adoção de soluções SIEM permite coleta, correlação e análise de eventos de segurança em tempo real.", answer: "C", comment: "SIEM integra e analisa logs de segurança de múltiplas fontes.", theme: "Segurança da Informação" },
+  { text: "Um ransomware é um malware que criptografa os arquivos da vítima e exige pagamento para liberação.", answer: "C", comment: "Ransomware sequestra dados via criptografia e exige resgate.", theme: "Segurança da Informação" },
+  { text: "Fileless malware é aquele que se instala profundamente no disco rígido, criando arquivos ocultos.", answer: "E", comment: "Fileless malware opera na memória RAM, sem criar arquivos no disco.", theme: "Segurança da Informação" },
+  { text: "O Zero Trust considera que redes internas são confiáveis por padrão.", answer: "E", comment: "Zero Trust não considera redes internas confiáveis.", theme: "Segurança da Informação" },
+  { text: "O OWASP Top 10 inclui falhas como SQL Injection e Cross-Site Scripting.", answer: "C", comment: "OWASP Top 10 lista as maiores vulnerabilidades.", theme: "Segurança da Informação" },
+  { text: "O protocolo OAuth 2.0 é usado para autenticação de usuários, fornecendo informações pessoais.", answer: "E", comment: "OAuth 2.0 é usado para autorização, não autenticação.", theme: "Segurança da Informação" },
+  { text: "FIDO2 permite autenticação sem senha, baseada em chaves públicas.", answer: "C", comment: "FIDO2 usa autenticação baseada em biometria.", theme: "Segurança da Informação" },
+
+  // Criptografia
+  { text: "O modo ECB de cifra é recomendado, pois oferece alta segurança para dados sensíveis.", answer: "E", comment: "ECB não é recomendado para dados sensíveis.", theme: "Criptografia" },
+  { text: "O protocolo TLS usa criptografia assimétrica no handshake e simétrica para a sessão.", answer: "C", comment: "TLS usa criptografia simétrica para sessão.", theme: "Criptografia" },
+  { text: "O algoritmo RSA é simétrico.", answer: "E", comment: "RSA é assimétrico.", theme: "Criptografia" },
+  { text: "Hashes como SHA-2 e SHA-3 garantem integridade dos dados.", answer: "C", comment: "Hashes garantem integridade.", theme: "Criptografia" },
+  { text: "Blockchain garante integridade por meio de hashes encadeados.", answer: "C", comment: "Blockchain usa hashes para garantir integridade.", theme: "Criptografia" },
+  { text: "A criptografia assimétrica utiliza um par de chaves, pública e privada, para operações de cifragem e assinatura.", answer: "C", comment: "Criptografia assimétrica usa par de chaves matematicamente relacionadas.", theme: "Criptografia" },
+  { text: "O modo ECB é altamente recomendado por garantir segurança na cifragem de arquivos grandes.", answer: "E", comment: "ECB é inseguro para arquivos grandes pois preserva padrões nos dados.", theme: "Criptografia" },
+  { text: "O protocolo TLS usa criptografia assimétrica no handshake inicial e simétrica para os dados da sessão.", answer: "C", comment: "TLS usa assimétrica para troca de chaves e simétrica para criptografar dados.", theme: "Criptografia" },
+  { text: "O protocolo Diffie–Hellman permite o estabelecimento de uma chave secreta entre duas partes, mesmo em um canal inseguro.", answer: "C", comment: "Diffie-Hellman permite troca de chaves segura em canais inseguros.", theme: "Criptografia" },
+  { text: "As funções de hash, como SHA-256, devem ser resistentes a colisões, pré-imagem e segunda pré-imagem.", answer: "C", comment: "Funções hash criptográficas devem ter essas três propriedades de segurança.", theme: "Criptografia" },
+  { text: "Blockchain utiliza funções de hash para encadear blocos e garantir sua integridade.", answer: "C", comment: "Blockchain usa hashes para criar dependência entre blocos e detectar alterações.", theme: "Criptografia" },
+  { text: "O modo de operação CBC em criptografia de blocos utiliza um vetor de inicialização (IV) e encadeia blocos cifrados para aumentar a segurança.", answer: "C", comment: "CBC encadeia blocos e usa IV para aumentar a segurança e evitar padrões.", theme: "Criptografia" },
+  { text: "A principal vantagem do ECC sobre RSA é a utilização de chaves menores para o mesmo nível de segurança.", answer: "C", comment: "ECC oferece segurança equivalente com chaves significativamente menores.", theme: "Criptografia" },
+  { text: "Algoritmos de hash como SHA-256 são reversíveis e podem ser utilizados para recuperar os dados originais.", answer: "E", comment: "Funções hash são unidirecionais.", theme: "Criptografia" },
+  { text: "O protocolo Signal, usado em mensageria, oferece sigilo de encaminhamento (forward secrecy) e resistência a comprometimento futuro.", answer: "C", comment: "Signal implementa forward secrecy e post-compromise security.", theme: "Criptografia" },
+  { text: "Criptografia pós-quântica busca desenvolver algoritmos resistentes aos ataques de computadores quânticos.", answer: "C", comment: "Criptografia pós-quântica visa resistir a algoritmos como Shor e Grover.", theme: "Criptografia" },
+    
+  // Banco de Dados (10)
+  { text: "Um banco de dados em 1FN permite a repetição de grupos de dados em uma única coluna.", answer: "E", comment: "1FN elimina grupos repetitivos, exige atomicidade.", theme: "Banco de Dados" },
+  { text: "O comando ROLLBACK em uma transação desfaz todas as operações realizadas desde o BEGIN TRANSACTION.", answer: "C", comment: "Rollback reverte alterações até o início da transação.", theme: "Banco de Dados" },
+  { text: "NoSQL se refere exclusivamente a bancos de dados que não possuem estrutura de chave-valor.", answer: "E", comment: "NoSQL inclui modelos chave-valor, documento, coluna e grafo.", theme: "Banco de Dados" },
+  { text: "Em replicação assíncrona, a consistência dos dados entre os nós é garantida em tempo real.", answer: "E", comment: "Assíncrona pode ter atraso na replicação.", theme: "Banco de Dados" },
+  { text: "A normalização visa reduzir a redundância de dados e melhorar a integridade.", answer: "C", comment: "Normalização estrutura dados para consistência e economia.", theme: "Banco de Dados" },
+  { text: "A propriedade de durabilidade garante que os dados persistam após a conclusão bem-sucedida da transação.", answer: "C", comment: "Durabilidade é o 'D' no ACID.", theme: "Banco de Dados" },
+  { text: "O comando SQL DELETE FROM tabela; remove os registros mas mantém a estrutura da tabela.", answer: "C", comment: "DELETE remove dados sem apagar a tabela.", theme: "Banco de Dados" },
+  { text: "O modelo relacional organiza os dados em tabelas compostas por tuplas e atributos.", answer: "C", comment: "Modelo relacional usa relações (tabelas).", theme: "Banco de Dados" },
+  { text: "A indexação melhora a performance de consultas, mas pode impactar negativamente as operações de escrita.", answer: "C", comment: "Índices aceleram leitura, mas exigem manutenção nas escritas.", theme: "Banco de Dados" },
+  { text: "Em SGBDs relacionais, uma chave primária pode conter valores nulos.", answer: "E", comment: "Chaves primárias devem ser únicas e não nulas.", theme: "Banco de Dados" },
+  { text: "O modelo NoSQL chave-valor é mais adequado para sistemas que exigem consultas relacionais complexas.", answer: "E", comment: "Não é adequado para consultas relacionais.", theme: "Banco de Dados" },
+  { text: "As propriedades ACID garantem que as transações em bancos de dados sejam atômicas, consistentes, isoladas e duráveis.", answer: "C", comment: "ACID é um conjunto de propriedades que garantem confiabilidade nas transações.", theme: "Banco de Dados" },
+  { text: "O comando SQL GRANT SELECT ON tabela TO usuario; pertence ao subconjunto de controle de dados (DCL).", answer: "C", comment: "GRANT é um comando DCL (Data Control Language).", theme: "Banco de Dados" },
+  { text: "O log de transações é um mecanismo utilizado para garantir a durabilidade das transações.", answer: "C", comment: "Logs de transação permitem recuperação e garantem durabilidade.", theme: "Banco de Dados" },
+
+  // Redes de Computadores (7)
+  { text: "O protocolo TCP é orientado à conexão e garante a entrega ordenada dos pacotes.", answer: "C", comment: "TCP assegura confiabilidade e ordem de entrega.", theme: "Redes de Computadores" },
+  { text: "Em redes P2P estruturadas, o uso de DHTs facilita a localização eficiente de arquivos.", answer: "C", comment: "DHTs ajudam a localizar conteúdo com rapidez.", theme: "Redes de Computadores" },
+  { text: "O envenenamento de cache DNS é uma técnica usada para redirecionar os usuários a sites maliciosos.", answer: "C", comment: "DNS poisoning altera respostas para domínios falsos.", theme: "Redes de Computadores" },
+  { text: "Redes P2P descentralizadas e não estruturadas utilizam difusão como método de busca, aumentando o tráfego.", answer: "C", comment: "Técnicas como flooding são comuns nessas redes.", theme: "Redes de Computadores" },
+  { text: "O registro NS em DNS é responsável por delegar autoridade de uma zona para outro servidor.", answer: "C", comment: "O registro NS indica o servidor de nomes autoritativo.", theme: "Redes de Computadores" },
+  { text: "O protocolo UDP é ideal para aplicações que requerem confiabilidade de transmissão.", answer: "E", comment: "UDP não garante entrega nem ordem.", theme: "Redes de Computadores" },
+  { text: "O SCTP é um protocolo que combina características do TCP e UDP e oferece múltiplos fluxos.", answer: "C", comment: "SCTP é orientado a conexão, com múltiplos streams.", theme: "Redes de Computadores" },
+  { text: "No modelo OSI, a camada de transporte é responsável por garantir a entrega confiável de dados fim a fim. (TCP, UDP)", answer: "C", comment: "Camada de transporte garante confiabilidade.", theme: "Redes de Computadores" },
+  { text: "O protocolo DNSSEC garante confidencialidade das consultas DNS.", answer: "E",comment: "DNSSEC garante integridade e autenticidade.", theme: "Redes de Computadores" },
+  { text: "O roteador opera na camada de enlace.", answer: "E", comment: "Roteadores operam na camada de rede.", theme: "Redes de Computadores" },
+  { text: "O protocolo BGP é utilizado para roteamento interno.", answer: "E", comment: "BGP é protocolo de roteamento externo.", theme: "Redes de Computadores" },
+  { text: "O protocolo OSPF utiliza algoritmo de estado de enlace (link-state).", answer: "C", comment: "OSPF utiliza algoritmo de estado de enlace.", theme: "Redes de Computadores" },
+  { text: "O modelo OSI possui sete camadas, das quais a camada de enlace é responsável pela comunicação fim a fim entre hosts.", answer: "E", comment: "A comunicação fim a fim é responsabilidade da camada de transporte; a camada de enlace lida com comunicação entre nós adjacentes.", theme: "Redes de Computadores" },
+  { text: "O protocolo DNS funciona na camada de aplicação e traduz nomes de domínio para endereços IP.", answer: "C", comment: "DNS é um protocolo da camada de aplicação que resolve nomes para endereços IP.", theme: "Redes de Computadores" },
+  { text: "A comutação por pacotes é mais eficiente para dados intermitentes e não requer reserva prévia de recursos na rede.", answer: "C", comment: "Comutação por pacotes é eficiente para tráfego em rajadas e não exige reserva de recursos.", theme: "Redes de Computadores" },
+  { text: "O protocolo OSPF utiliza o algoritmo de vetor de distância para determinar rotas.", answer: "E", comment: "OSPF usa algoritmo de estado de enlace (link-state), não vetor de distância.", theme: "Redes de Computadores" },
+  { text: "VPNs criam túneis criptografados, protegendo dados durante a transmissão sobre redes públicas.", answer: "C", comment: "VPNs encapsulam e criptografam dados para transmissão segura em redes não confiáveis.", theme: "Redes de Computadores" },
+  { text: "O protocolo TCP oferece controle de fluxo, retransmissão e entrega ordenada dos dados.", answer: "C", comment: "TCP garante entrega confiável, ordenada e com controle de fluxo.", theme: "Redes de Computadores" },
+  { text: "Redes TOR operam encapsulando dados em múltiplas camadas de criptografia, promovendo anonimato na comunicação.", answer: "C", comment: "TOR usa criptografia em camadas (como cebola) e múltiplos nós para anonimato.", theme: "Redes de Computadores" },
+  { text: "O protocolo ICMP, utilizado pelo ping, opera na camada de transporte e é confiável.", answer: "E", comment: "ICMP opera na camada de rede, não na de transporte, e não oferece entrega confiável.", theme: "Redes de Computadores" },
+
+  // Mais Segurança da Informação (8)
+
+  { text: "O protocolo ARP é usado para mapear endereços IP para endereços MAC.", answer: "C", comment: "ARP resolve endereços IP para endereços MAC na camada de enlace.", theme: "Redes de Computadores" },
+  { text: "O protocolo HTTPS utiliza o TLS/SSL para criptografar a comunicação entre cliente e servidor.", answer: "C", comment: "HTTPS é HTTP com criptografia TLS/SSL.", theme: "Redes de Computadores" },
+  { text: "O NAT (Network Address Translation) permite que vários dispositivos em uma rede privada compartilhem um único endereço IP público.", answer: "C", comment: "NAT mapeia múltiplos endereços privados para um ou mais públicos.", theme: "Redes de Computadores" },
+  { text: "O protocolo WPA3 introduziu o handshake SAE (Simultaneous Authentication of Equals) para maior segurança.", answer: "C", comment: "WPA3 usa SAE (Dragonfly handshake) para proteção contra ataques de dicionário.", theme: "Redes de Computadores" },
+  { text: "A rede TOR garante anonimato através de criptografia em camadas e roteamento por múltiplos nós.", answer: "C", comment: "TOR usa criptografia em camadas e múltiplos saltos para anonimato.", theme: "Redes de Computadores" },
+  { text: "O protocolo ICMP é utilizado principalmente para estabelecer conexões confiáveis entre hosts.", answer: "E", comment: "ICMP é usado para mensagens de controle e diagnóstico, não para conexões.", theme: "Redes de Computadores" },
+  { text: "O protocolo DHCP atribui automaticamente endereços IP, máscara de sub-rede e gateway para hosts em uma rede.", answer: "C", comment: "DHCP automatiza a configuração de rede para hosts.", theme: "Redes de Computadores" },
+
+  // Sistemas Operacionais e Virtualização (5)
+  { text: "Um sistema multitarefa permite que múltiplos processos compartilhem o processador simultaneamente.", answer: "C", comment: "Multitarefa alterna processos na CPU.", theme: "Sistemas Operacionais" },
+  { text: "O FAT32 permite arquivos de até 4 GB por limitação de bits no sistema de arquivos.", answer: "C", comment: "FAT32 suporta no máximo arquivos de 4 GB.", theme: "Sistemas Operacionais" },
+  { text: "Containers compartilham o kernel do host, mas têm ambientes isolados para seus processos.", answer: "C", comment: "Containers usam namespaces e cgroups para isolamento.", theme: "Sistemas Operacionais" },
+  { text: "A memória virtual permite a execução de programas maiores do que a memória física disponível.", answer: "C", comment: "Ela mapeia espaço de endereçamento lógico para físico.", theme: "Sistemas Operacionais" },
+  { text: "A virtualização de hardware permite que múltiplos sistemas operacionais sejam executados de forma simultânea em um mesmo host físico.", answer: "C", comment: "Virtualização permite múltiplas VMs em um único host.", theme: "Sistemas Operacionais" },
+
+  // Engenharia Reversa (4)
+  { text: "A análise de entropia é útil para identificar se um malware está criptografado ou compactado.", answer: "C", comment: "Alta entropia pode indicar obfuscação.", theme: "Engenharia Reversa" },
+  { text: "O cálculo de entropia de Shannon tende a ser alto em arquivos compactados ou criptografados.", answer: "C", comment: "Criptografia aumenta a aleatoriedade.", theme: "Engenharia Reversa" },
+  { text: "A análise estática de um malware é feita com sua execução em ambiente seguro.", answer: "E", comment: "Isso é análise dinâmica. A estática não executa o código.", theme: "Engenharia Reversa" },
+  { text: "A análise de strings pode revelar comandos e caminhos usados internamente por malwares.", answer: "C", comment: "Strings revelam indícios úteis no binário.", theme: "Engenharia Reversa" },
+
+  // Algoritmos e Programação (5)
+  { text: "O laço do-while executa ao menos uma vez, mesmo que a condição inicial seja falsa.", answer: "C", comment: "do-while verifica condição no fim.", theme: "Algoritmos" },
+  { text: "A complexidade de um algoritmo que percorre uma matriz n x n é O(n²).", answer: "C", comment: "Matriz quadrada tem complexidade quadrática.", theme: "Algoritmos" },
+  { text: "Laços for e while testam a condição antes de executar o bloco.", answer: "C", comment: "Ambos verificam antes de entrar no laço.", theme: "Algoritmos" },
+  { text: "A função de tempo para uma instrução de multiplicação é irrelevante na análise de complexidade assintótica.", answer: "C", comment: "Complexidade ignora custos constantes.", theme: "Algoritmos" },
+  { text: "Expressões regulares são capazes de validar endereços de email e URLs com precisão absoluta.", answer: "E", comment: "Regex pode falhar em muitos casos complexos.", theme: "Algoritmos" },
+
+  // Cloud Computing (4)
+  { text: "No modelo IaaS, o cliente é responsável pelos dados, sistema operacional e aplicações.", answer: "C", comment: "IaaS fornece infraestrutura básica; o restante é do cliente.", theme: "Cloud Computing" },
+  { text: "No modelo SaaS, o provedor gerencia desde a infraestrutura até a aplicação.", answer: "C", comment: "SaaS é entregue pronto para uso.", theme: "Cloud Computing" },
+  { text: "O modelo PaaS fornece um ambiente gerenciado para desenvolvimento e hospedagem de aplicações.", answer: "C", comment: "PaaS abstrai a infraestrutura e permite foco no desenvolvimento.", theme: "Cloud Computing" },
+  { text: "O cliente é responsável pela segurança física dos servidores no modelo IaaS.", answer: "E", comment: "A segurança física é responsabilidade do provedor.", theme: "Cloud Computing" },
+
+  // Armazenamento, RAID e Backup (3)
+  { text: "RAID 0 não oferece redundância, apenas melhora o desempenho com striping de dados.", answer: "C", comment: "RAID 0 distribui dados sem tolerância a falhas.", theme: "Armazenamento e Backup" },
+  { text: "RAID 1 espelha os dados em dois discos, garantindo tolerância a falha.", answer: "C", comment: "RAID 1 é espelhamento puro.", theme: "Armazenamento e Backup" },
+  { text: "Em um ambiente SAN, o uso de switched fabric permite acesso simultâneo de múltiplos hosts às bibliotecas de backup.", answer: "C", comment: "Switched fabric proporciona conectividade eficiente.", theme: "Armazenamento e Backup" },
+
+  // Fundamentos de Computação (10)
+  { text: "Na arquitetura de Von Neumann, programa e dados são armazenados na mesma memória.", answer: "C", comment: "Von Neumann utiliza memória única para programa e dados.", theme: "Fundamentos de Computação" },
+  { text: "Processadores RISC possuem um conjunto maior de instruções que processadores CISC.", answer: "E", comment: "RISC tem conjunto reduzido de instruções, enquanto CISC tem conjunto complexo.", theme: "Fundamentos de Computação" },
+  { text: "A memória cache L1 é mais rápida e menor que a L2 e L3.", answer: "C", comment: "L1 é a mais rápida e menor, seguida por L2 e L3.", theme: "Fundamentos de Computação" },
+  { text: "O barramento de endereços é unidirecional, enquanto o barramento de dados é bidirecional.", answer: "C", comment: "O barramento de endereços é unidirecional (CPU para memória).", theme: "Fundamentos de Computação" },
+  { text: "O kernel do sistema operacional é executado em modo usuário para garantir a segurança.", answer: "E", comment: "O kernel é executado em modo privilegiado (kernel mode).", theme: "Fundamentos de Computação" },
+  { text: "A virtualização baseada em contêineres compartilha o kernel do sistema operacional hospedeiro.", answer: "C", comment: "Contêineres compartilham o kernel do host, diferente de VMs.", theme: "Fundamentos de Computação" },
+  { text: "No gerenciamento de memória, a segmentação pode causar fragmentação externa.", answer: "C", comment: "Segmentação pode resultar em espaços não contíguos na memória.", theme: "Fundamentos de Computação" },
+  { text: "O Kubernetes é uma plataforma para gerenciamento de máquinas virtuais.", answer: "E", comment: "Kubernetes é uma plataforma de orquestração de contêineres.", theme: "Fundamentos de Computação" },
+  { text: "Em sistemas distribuídos, o algoritmo de Paxos é utilizado para consenso entre nós.", answer: "C", comment: "Paxos é um algoritmo de consenso para sistemas distribuídos.", theme: "Fundamentos de Computação" },
+  { text: "O escalonamento Round Robin atribui fatias de tempo iguais para cada processo.", answer: "C", comment: "Round Robin é um algoritmo de escalonamento com quantum fixo.", theme: "Fundamentos de Computação" },
+
+  // Computação Forense (5)
+  { text: "Na computação forense, a cadeia de custódia documenta o histórico cronológico de evidências digitais.", answer: "C", comment: "A cadeia de custódia garante a integridade e rastreabilidade das evidências.", theme: "Computação Forense" },
+  { text: "A análise de memória RAM é irrelevante na computação forense, pois os dados são voláteis.", answer: "E", comment: "A análise de memória RAM é crucial para capturar dados voláteis como processos em execução.", theme: "Computação Forense" },
+  { text: "A ferramenta Volatility é utilizada para análise de dumps de memória RAM.", answer: "C", comment: "Volatility é especializada em análise forense de memória RAM.", theme: "Computação Forense" },
+  { text: "Na coleta de evidências digitais, é recomendado trabalhar diretamente no dispositivo original.", answer: "E", comment: "Deve-se trabalhar em cópias forenses para preservar a evidência original.", theme: "Computação Forense" },
+  { text: "O hash criptográfico é utilizado para verificar a integridade de evidências digitais.", answer: "C", comment: "Hashes garantem que as evidências não foram alteradas após a coleta.", theme: "Computação Forense" },
+
+  // Governança de TI e Legislação (5)
+  { text: "O ITIL 4 introduz o conceito de Service Value System (SVS) como elemento central.", answer: "C", comment: "O SVS é o elemento central do ITIL 4, integrando vários componentes.", theme: "Governança de TI" },
+  { text: "Segundo a LGPD, o consentimento do titular é a única base legal para tratamento de dados pessoais.", answer: "E", comment: "A LGPD prevê outras bases legais além do consentimento.", theme: "Governança de TI" },
+  { text: "A Lei 14.133/2021 estabelece que licitações para contratação de serviços de TI devem considerar a padronização.", answer: "C", comment: "A nova lei de licitações prevê a padronização como critério.", theme: "Governança de TI" },
+  { text: "O Marco Civil da Internet estabelece a neutralidade da rede como princípio fundamental.", answer: "C", comment: "A neutralidade da rede é um dos pilares do Marco Civil da Internet.", theme: "Governança de TI" },
+  { text: "A IN SGD/ME 94/2022 dispõe sobre as contratações de soluções de TI no setor público federal.", answer: "C", comment: "A IN 94/2022 regulamenta contratações de TI no governo federal.", theme: "Governança de TI" },
+
+  // Inteligência Artificial (5)
+  { text: "No aprendizado supervisionado, o algoritmo aprende sem dados rotulados.", answer: "E", comment: "O aprendizado supervisionado requer dados rotulados para treinamento.", theme: "Inteligência Artificial" },
+  { text: "Redes neurais convolucionais (CNN) são especialmente eficazes para processamento de imagens.", answer: "C", comment: "CNNs são otimizadas para reconhecimento de padrões visuais.", theme: "Inteligência Artificial" },
+  { text: "Modelos de linguagem grandes (LLMs) como GPT utilizam arquitetura de transformers.", answer: "C", comment: "LLMs são baseados na arquitetura de transformers com mecanismo de atenção.", theme: "Inteligência Artificial" },
+  { text: "Deepfakes são gerados utilizando Generative Adversarial Networks (GANs) ou modelos difusivos.", answer: "C", comment: "Deepfakes utilizam redes adversariais ou modelos difusivos para geração de conteúdo.", theme: "Inteligência Artificial" },
+  { text: "O aprendizado por reforço é baseado em recompensas e punições para otimizar comportamentos.", answer: "C", comment: "O aprendizado por reforço utiliza sistema de recompensas para aprendizado.", theme: "Inteligência Artificial" },
+
+  // Sistemas Operacionais (8)
+  { text: "No Windows, o NTFS permite definir permissões em nível de arquivo e pasta.", answer: "C", comment: "NTFS suporta ACLs para controle granular de permissões.", theme: "Sistemas Operacionais" },
+  { text: "No Linux, o comando chmod 754 concede permissão de leitura, escrita e execução para todos os usuários.", answer: "E", comment: "754 concede rwx para dono, r-x para grupo e r-- para outros.", theme: "Sistemas Operacionais" },
+  { text: "O registro do Windows armazena configurações do sistema em uma estrutura hierárquica de chaves e valores.", answer: "C", comment: "O registro é um banco de dados hierárquico de configurações.", theme: "Sistemas Operacionais" },
+  { text: "No Linux, o systemd substituiu o init como sistema de inicialização padrão em muitas distribuições.", answer: "C", comment: "O systemd é o sistema de inicialização moderno usado em muitas distribuições Linux.", theme: "Sistemas Operacionais" },
+  { text: "O Android utiliza o modelo de sandbox para isolar aplicativos, onde cada app roda com seu próprio ID de usuário.", answer: "C", comment: "Android usa sandbox baseado em Linux UID para isolar apps.", theme: "Sistemas Operacionais" },
+  { text: "No iOS, todos os aplicativos têm acesso irrestrito aos dados de outros aplicativos instalados.", answer: "E", comment: "iOS implementa sandbox rigoroso, isolando dados entre aplicativos.", theme: "Sistemas Operacionais" },
+  { text: "O Event Viewer do Windows permite visualizar logs de segurança, sistema e aplicações.", answer: "C", comment: "Event Viewer centraliza logs de várias fontes do sistema.", theme: "Sistemas Operacionais" },
+  { text: "No Linux, o diretório /var/log armazena a maioria dos arquivos de log do sistema.", answer: "C", comment: "/var/log é o diretório padrão para logs no Linux.", theme: "Sistemas Operacionais" },
+
+  // Engenharia Reversa (5)
+  { text: "A análise estática de código malicioso permite observar seu comportamento durante a execução.", answer: "E", comment: "A análise estática examina o código sem executá-lo.", theme: "Engenharia Reversa" },
+  { text: "Packers como UPX são utilizados para compactar executáveis, dificultando a engenharia reversa.", answer: "C", comment: "Packers compactam e podem ofuscar código, complicando a análise.", theme: "Engenharia Reversa" },
+  { text: "O IDA Pro é uma ferramenta de desmontagem e depuração utilizada em engenharia reversa.", answer: "C", comment: "IDA Pro é uma ferramenta avançada para análise de código binário.", theme: "Engenharia Reversa" },
+  { text: "Malwares polimórficos alteram seu código a cada infecção para evitar detecção por assinatura.", answer: "C", comment: "Código polimórfico muda sua estrutura mantendo a funcionalidade.", theme: "Engenharia Reversa" },
+  { text: "Em assembly x86, o registrador EAX é frequentemente usado para armazenar o valor de retorno de funções.", answer: "C", comment: "Por convenção, EAX/RAX armazena valores de retorno em x86/x64.", theme: "Engenharia Reversa" },
+
+  // Engenharia Reversa e Forense (6)
+  { text: "Analisadores dinâmicos como x64dbg e OllyDbg permitem executar programas sob inspeção, monitorando chamadas e comportamento.", answer: "C", comment: "Analisadores dinâmicos permitem depuração e monitoramento em tempo real.", theme: "Engenharia Reversa" },
+  { text: "Packers podem ser usados por malware para dificultar a detecção e engenharia reversa de seu código.", answer: "C", comment: "Malwares usam packers para ofuscar código e evitar análise.", theme: "Engenharia Reversa" },
+  { text: "A análise de memória volátil (RAM) não é capaz de capturar credenciais armazenadas temporariamente por aplicações.", answer: "E", comment: "A análise de RAM é capaz, sim, de capturar credenciais, chaves e sessões.", theme: "Computação Forense" },
+  { text: "A ferramenta Wireshark pode ser utilizada em análise forense de rede para identificar tráfego malicioso e conexões suspeitas.", answer: "C", comment: "Wireshark é amplamente usado em forense de rede para análise de tráfego.", theme: "Computação Forense" },
+  { text: "O uso de write-blockers é recomendado durante a aquisição de discos em perícias para garantir a integridade da evidência.", answer: "C", comment: "Write-blockers impedem modificações acidentais em evidências digitais.", theme: "Computação Forense" },
+  { text: "A técnica de timeline forense permite identificar padrões e reconstruir cronologias de atividades de usuários em sistemas computacionais.", answer: "C", comment: "Timelines forenses ajudam a reconstruir a sequência de eventos em investigações.", theme: "Computação Forense" },
+
+  // Mais Fundamentos de Computação (8)
+  { text: "O modelo de arquitetura de computadores Von Neumann permite que dados e instruções compartilhem o mesmo barramento e espaço de memória.", answer: "C", comment: "Na arquitetura Von Neumann, dados e instruções compartilham o mesmo espaço de memória.", theme: "Fundamentos de Computação" },
+  { text: "A arquitetura RISC visa simplificar o hardware utilizando instruções simples e de execução rápida.", answer: "C", comment: "RISC usa conjunto reduzido de instruções simples para otimizar desempenho.", theme: "Fundamentos de Computação" },
+  { text: "Processadores multicore compartilham sempre o mesmo cache L1 entre todos os núcleos.", answer: "E", comment: "Cache L1 é geralmente dedicado a cada núcleo, não compartilhado.", theme: "Fundamentos de Computação" },
+  { text: "No modelo NUMA, o tempo de acesso à memória é uniforme para todos os processadores.", answer: "E", comment: "NUMA (Non-Uniform Memory Access) tem tempos de acesso variáveis dependendo da localização da memória.", theme: "Fundamentos de Computação" },
+  { text: "O middleware é uma camada de software que oferece serviços como autenticação, persistência, filas e mensageria entre aplicações e sistemas operacionais.", answer: "C", comment: "Middleware fornece serviços intermediários entre aplicações e sistemas.", theme: "Fundamentos de Computação" },
+  { text: "A utilização de contêineres como Docker implica na virtualização do hardware físico, de forma análoga aos hypervisores.", answer: "E", comment: "Contêineres virtualizam o sistema operacional, não o hardware como hypervisores.", theme: "Fundamentos de Computação" },
+  { text: "Hyper-Threading é uma tecnologia que permite que cada núcleo físico execute dois threads simultaneamente, otimizando unidades que estariam ociosas.", answer: "C", comment: "Hyper-Threading cria dois threads lógicos em um único núcleo físico.", theme: "Fundamentos de Computação" },
+  { text: "O RAID 6 permite tolerância à falha de até dois discos, mantendo a integridade dos dados.", answer: "C", comment: "RAID 6 usa dupla paridade, permitindo falha de até dois discos.", theme: "Fundamentos de Computação" },
+  { text: "O kernel de um sistema operacional pode ser classificado como monolítico ou microkernel, dependendo de como seus serviços são organizados.", answer: "C", comment: "Kernels podem ser monolíticos (todos serviços no espaço do kernel) ou microkernel (serviços mínimos).", theme: "Fundamentos de Computação" },
+  { text: "Processadores com suporte a Hyper-Threading executam múltiplos processos utilizando múltiplos núcleos físicos.", answer: "E", comment: "Hyper-Threading utiliza múltiplos threads lógicos em um único núcleo físico.", theme: "Fundamentos de Computação" },
+  { text: "O middleware permite que aplicações se comuniquem em ambientes heterogêneos, oferecendo serviços de abstração e comunicação.", answer: "C", comment: "Middleware facilita a comunicação entre aplicações em ambientes diversos.", theme: "Fundamentos de Computação" },
+  { text: "Em um RAID 0, os dados são espelhados em discos redundantes, garantindo alta disponibilidade.", answer: "E", comment: "RAID 0 apenas distribui os dados (striping); não há redundância.", theme: "Fundamentos de Computação" },
+  { text: "CUDA é um framework proprietário da NVIDIA usado para desenvolvimento de aplicações que utilizam processamento paralelo em GPUs.", answer: "C", comment: "CUDA é uma plataforma da NVIDIA para computação paralela em GPUs.", theme: "Fundamentos de Computação" },
+  { text: "Em sistemas operacionais, o gerenciador de memória é responsável por alocar espaço em disco para arquivos e diretórios.", answer: "E", comment: "Isso é papel do gerenciador de arquivos.", theme: "Fundamentos de Computação" },
+  { text: "Em sistemas com arquitetura de multiprocessamento simétrico (SMP), todos os processadores compartilham o mesmo espaço de memória e trabalham de forma cooperativa.", answer: "C", comment: "SMP permite que múltiplos processadores idênticos compartilhem memória e recursos.", theme: "Fundamentos de Computação" },
+  { text: "GPUs são projetadas para processamento paralelo massivo, sendo ideais para workloads como machine learning e renderização gráfica.", answer: "C", comment: "GPUs possuem milhares de núcleos otimizados para processamento paralelo.", theme: "Fundamentos de Computação" },
+  { text: "O conceito de middleware é essencial na computação moderna e abrange sistemas de mensageria, brokers, serviços REST e orquestração.", answer: "C", comment: "Middleware engloba diversas tecnologias de integração e comunicação entre sistemas.", theme: "Fundamentos de Computação" },
+  { text: "A arquitetura CISC (Complex Instruction Set Computing) é caracterizada por instruções simples e pipeline extenso.", answer: "E", comment: "Isso é característica de RISC; CISC usa instruções mais complexas.", theme: "Fundamentos de Computação" }
+
+];
+
+    const form = document.getElementById('quizForm');
+    const resultsDiv = document.getElementById('results');
+    let currentQuestion = 0;
+
+    // Variáveis para o timer
+    let startTime;
+    let timerInterval;
+    
+    function loadQuestions() {
+      questions.forEach((q, index) => {
+        const div = document.createElement('div');
+        div.className = 'question' + (index === 0 ? ' active' : '');
+        div.id = 'q' + index;
+        
+        // Badge para o tema
+        const themeBadge = `<span class="badge bg-info theme-badge">${q.theme}</span>`;
+        
+        // Texto da questão com design melhorado
+        const questionText = `<p class="mb-4">${q.text}</p>`;
+        
+        // Opções de resposta com design melhorado
+        const options = `
+          <div class="options-container">
+            <div class="form-check mb-2">
+              <input class="form-check-input visually-hidden" type="radio" name="q${index}" id="q${index}C" value="C">
+              <label class="option-label" for="q${index}C">
+                <i class="far fa-circle me-2"></i> Certo
+              </label>
+            </div>
+            <div class="form-check mb-2">
+              <input class="form-check-input visually-hidden" type="radio" name="q${index}" id="q${index}E" value="E">
+              <label class="option-label" for="q${index}E">
+                <i class="far fa-circle me-2"></i> Errado
+              </label>
+            </div>
+          </div>
+        `;
+        
+        div.innerHTML = `
+          <h2 class="h5 mb-3">Questão ${index + 1}</h2>
+          ${themeBadge}
+          ${questionText}
+          ${options}
+        `;
+        
+        form.appendChild(div);
+      });
+      
+      // Iniciar o timer quando o simulado começar
+      startTimer();
+      updateQuestionCounter(0);
+    }
+
+    function showQuestion(index) {
+      document.querySelectorAll('.question').forEach((el, i) => {
+        el.classList.remove('active');
+        if (i === index) el.classList.add('active');
+      });
+      
+      // Atualizar barra de progresso
+      const progressPercentage = ((index + 1) / questions.length) * 100;
+      document.querySelector('.progress-bar').style.width = `${progressPercentage}%`;
+      document.querySelector('.progress-bar').setAttribute('aria-valuenow', progressPercentage);
+      
+      // Atualizar navegação
+      document.getElementById('prevBtn').style.display = index === 0 ? 'none' : 'inline-block';
+      document.getElementById('nextBtn').style.display = index === questions.length - 1 ? 'none' : 'inline-block';
+      document.getElementById('submitBtn').style.display = index === questions.length - 1 ? 'inline-block' : 'none';
+      
+      // Atualizar contador de questões
+      updateQuestionCounter(index);
+      
+      // Verificar se a questão já foi respondida e atualizar o estilo
+      updateRadioButtonStyles(index);
+    }
+    
+    function updateQuestionCounter(index) {
+      document.getElementById('questionCounter').textContent = `${index + 1}/${questions.length}`;
+    }
+    
+    function updateRadioButtonStyles(index) {
+      // Verificar se a questão já foi respondida
+      const radios = document.querySelectorAll(`input[name="q${index}"]`);
+      radios.forEach(radio => {
+        const label = document.querySelector(`label[for="${radio.id}"]`);
+        if (radio.checked) {
+          label.querySelector('i').className = 'fas fa-check-circle me-2';
+        } else {
+          label.querySelector('i').className = 'far fa-circle me-2';
+        }
+      });
+    }
+    
+    function startTimer() {
+      startTime = new Date();
+      timerInterval = setInterval(updateTimer, 1000);
+    }
+    
+    function updateTimer() {
+      const now = new Date();
+      const diff = now - startTime;
+      
+      const hours = Math.floor(diff / 3600000);
+      const minutes = Math.floor((diff % 3600000) / 60000);
+      const seconds = Math.floor((diff % 60000) / 1000);
+      
+      document.getElementById('timeDisplay').textContent = 
+        `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+    
+    function stopTimer() {
+      clearInterval(timerInterval);
+    }
+
+    // Adicionar event listeners para os botões de navegação
+    document.getElementById('prevBtn').addEventListener('click', () => {
+      if (currentQuestion > 0) {
+        currentQuestion--;
+        showQuestion(currentQuestion);
+      }
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', () => {
+      if (currentQuestion < questions.length - 1) {
+        currentQuestion++;
+        showQuestion(currentQuestion);
+      }
+    });
+    
+    // Adicionar event listeners para os inputs de rádio
+    document.addEventListener('change', (e) => {
+      if (e.target.type === 'radio' && e.target.name.startsWith('q')) {
+        const questionIndex = parseInt(e.target.name.substring(1));
+        updateRadioButtonStyles(questionIndex);
+      }
+    });
+
+    document.getElementById('submitBtn').addEventListener('click', () => {
+      // Parar o timer quando finalizar o simulado
+      stopTimer();
+      
+      let correct = 0;
+      const results = [];
+      const themeResults = {};
+      let unansweredCount = 0;
+      
+      // Verificar se todas as questões foram respondidas
+      questions.forEach((q, i) => {
+        const selected = form[`q${i}`].value || '';
+        if (!selected) unansweredCount++;
+      });
+      
+      // Alertar sobre questões não respondidas
+      if (unansweredCount > 0) {
+        if (!confirm(`Você deixou ${unansweredCount} questão(ões) sem resposta. Deseja finalizar mesmo assim?`)) {
+          return;
+        }
+      }
+      
+      // Processar resultados
+      questions.forEach((q, i) => {
+        const selected = form[`q${i}`].value || '';
+        const isCorrect = selected === q.answer;
+        if (isCorrect) correct++;
+        
+        results.push({ i, isCorrect, selected, answer: q.answer, comment: q.comment, theme: q.theme });
+        
+        if (!themeResults[q.theme]) themeResults[q.theme] = { total: 0, correct: 0 };
+        themeResults[q.theme].total++;
+        if (isCorrect) themeResults[q.theme].correct++;
+      });
+      
+      // Calcular pontuação final
+      const totalScore = ((correct / questions.length) * 100).toFixed(1);
+      
+      // Criar HTML para os resultados
+      let resultsContent = document.getElementById('resultsContent');
+      
+      // Resumo
+      let html = `
+        <div class="text-center mb-4">
+          <h3 class="mb-3">Pontuação: ${totalScore}%</h3>
+          <div class="progress mb-3">
+            <div class="progress-bar ${totalScore >= 70 ? 'bg-success' : totalScore >= 50 ? 'bg-warning' : 'bg-danger'}" 
+                 role="progressbar" style="width: ${totalScore}%" 
+                 aria-valuenow="${totalScore}" aria-valuemin="0" aria-valuemax="100">
+              ${totalScore}%
+            </div>
+          </div>
+          <p class="mb-0">Acertos: ${correct} de ${questions.length} questões</p>
+          <p class="text-muted">Tempo total: ${document.getElementById('timeDisplay').textContent}</p>
+        </div>
+      `;
+      
+      // Desempenho por tema
+      html += `<h4 class="mb-3">Desempenho por Tema</h4><div class="row">`;
+      
+      for (const [theme, data] of Object.entries(themeResults)) {
+        const perc = ((data.correct / data.total) * 100).toFixed(1);
+        html += `
+          <div class="col-md-6 mb-3">
+            <div class="card h-100">
+              <div class="card-body">
+                <h5 class="card-title">${theme}</h5>
+                <div class="progress mb-2">
+                  <div class="progress-bar ${perc >= 70 ? 'bg-success' : perc >= 50 ? 'bg-warning' : 'bg-danger'}" 
+                       role="progressbar" style="width: ${perc}%" 
+                       aria-valuenow="${perc}" aria-valuemin="0" aria-valuemax="100">
+                    ${perc}%
+                  </div>
+                </div>
+                <p class="card-text">Acertos: ${data.correct}/${data.total}</p>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+      
+      html += `</div><h4 class="mt-4 mb-3">Detalhes por Questão</h4>`;
+      
+      // Detalhes por questão
+      results.forEach(r => {
+        const statusClass = r.isCorrect ? 'correct' : 'incorrect';
+        const statusIcon = r.isCorrect ? 'check-circle' : 'times-circle';
+        const statusText = r.isCorrect ? 'Correta' : 'Incorreta';
+        
+        html += `
+          <div class="answer-status ${statusClass} mb-3">
+            <div class="d-flex justify-content-between">
+              <h5>Questão ${r.i + 1}</h5>
+              <span class="badge ${r.isCorrect ? 'bg-success' : 'bg-danger'}">
+                <i class="fas fa-${statusIcon}"></i> ${statusText}
+              </span>
+            </div>
+            <p><strong>Tema:</strong> ${r.theme}</p>
+            <p>${questions[r.i].text}</p>
+            <p>
+              <strong>Sua resposta:</strong> ${r.selected ? (r.selected === 'C' ? 'Certo' : 'Errado') : 'Não respondida'}<br>
+              <strong>Resposta correta:</strong> ${r.answer === 'C' ? 'Certo' : 'Errado'}
+            </p>
+            <p><strong>Comentário:</strong> ${r.comment}</p>
+          </div>
+        `;
+      });
+      
+      // Botão para reiniciar o simulado
+      html += `
+        <div class="text-center mt-4">
+          <button type="button" class="btn btn-primary" id="restartBtn">
+            <i class="fas fa-redo me-2"></i> Reiniciar Simulado
+          </button>
+        </div>
+      `;
+      
+      // Exibir resultados
+      resultsContent.innerHTML = html;
+      resultsDiv.classList.add('d-block');
+      
+      // Esconder o formulário e controles de navegação
+      document.querySelector('.card-body').style.display = 'none';
+      
+      // Adicionar event listener para o botão de reiniciar
+      document.getElementById('restartBtn').addEventListener('click', () => {
+        location.reload();
+      });
+    });
+
+    // Inicializar o simulado
+    loadQuestions();
+    
+    // Adicionar funcionalidade de atalhos de teclado
+    document.addEventListener('keydown', (e) => {
+      // Setas esquerda/direita para navegação
+      if (e.key === 'ArrowLeft' && currentQuestion > 0) {
+        currentQuestion--;
+        showQuestion(currentQuestion);
+      } else if (e.key === 'ArrowRight' && currentQuestion < questions.length - 1) {
+        currentQuestion++;
+        showQuestion(currentQuestion);
+      }
+      
+      // Teclas c e e para selecionar Certo/Errado
+      if (e.key === 'c' || e.key === 'C') {
+        const radio = document.querySelector(`#q${currentQuestion}C`);
+        if (radio) {
+          radio.checked = true;
+          updateRadioButtonStyles(currentQuestion);
+        }
+      } else if (e.key === 'e' || e.key === 'E') {
+        const radio = document.querySelector(`#q${currentQuestion}E`);
+        if (radio) {
+          radio.checked = true;
+          updateRadioButtonStyles(currentQuestion);
+        }
+      }
+      
+      // Mantendo também as teclas 1 e 2 como alternativa
+      if (e.key === '1') {
+        const radio = document.querySelector(`#q${currentQuestion}C`);
+        if (radio) {
+          radio.checked = true;
+          updateRadioButtonStyles(currentQuestion);
+        }
+      } else if (e.key === '2') {
+        const radio = document.querySelector(`#q${currentQuestion}E`);
+        if (radio) {
+          radio.checked = true;
+          updateRadioButtonStyles(currentQuestion);
+        }
+      }
+    });
+  </script>
+</body>
+</html>

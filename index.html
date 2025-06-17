@@ -349,6 +349,9 @@
                                 <button class="nav-link p-3" id="testes-tab" data-bs-toggle="tab" data-bs-target="#testes" type="button" role="tab" aria-controls="testes" aria-selected="false">
                                     <i class="bi bi-check2-square"></i> <span>Testes</span>
                                 </button>
+                                <button class="nav-link p-3" id="simulador-tab" data-bs-toggle="tab" data-bs-target="#simulador" type="button" role="tab" aria-controls="simulador" aria-selected="false">
+                                    <i class="bi bi-pc-display"></i> <span>Simulador</span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -560,26 +563,220 @@
                 </div>
             </div>
 
-            <div class="tab-pane fade" id="testes" role="tabpanel" aria-labelledby="testes-tab">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="mb-4"><i class="bi bi-check2-square"></i> Testes</h2>
-                        <p class="lead">Avalie seu conhecimento e pratique com simulados.</p>
+                <div class="tab-pane fade" id="buscador" role="tabpanel" aria-labelledby="buscador-tab">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="mb-4"><i class="bi bi-search"></i> Buscador</h2>
+                            <p class="lead">Encontre rapidamente conteúdos específicos em sua base de estudos.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="card">
-                            <div class="card-header bg-success text-white">
-                                <i class="bi bi-journal-check"></i> Simulados
-                            </div>
-                            <div class="card-body">
-                                <p>Realize simulados para testar seus conhecimentos e preparar-se para avaliações.</p>
-                                <a href="Testes/index.html" class="btn btn-success">Acessar Simulados</a>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-info text-white">
+                                    <i class="bi bi-search"></i> Ferramenta de Busca
+                                </div>
+                                <div class="card-body">
+                                    <p>Acesse a ferramenta de busca para encontrar conteúdos específicos.</p>
+                                    <a href="Buscador/index.html" class="btn btn-info">Acessar Buscador</a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <div class="tab-pane fade" id="esquematizador" role="tabpanel" aria-labelledby="esquematizador-tab">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="mb-4"><i class="bi bi-diagram-3"></i> Esquematizador</h2>
+                            <p class="lead">Crie esquemas visuais para melhor compreensão e memorização do conteúdo.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-warning text-dark">
+                                    <i class="bi bi-diagram-3"></i> Ferramenta de Esquematização
+                                </div>
+                                <div class="card-body">
+                                    <p>Crie esquemas visuais para organizar e memorizar conteúdos.</p>
+                                    <a href="Esquematizador/index.html" class="btn btn-warning">Acessar Esquematizador</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="formatador" role="tabpanel" aria-labelledby="formatador-tab">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="mb-4"><i class="bi bi-file-earmark-text"></i> Formatador</h2>
+                            <p class="lead">Formate seus documentos e anotações para melhor organização.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-secondary text-white">
+                                    <i class="bi bi-file-earmark-text"></i> Ferramenta de Formatação
+                                </div>
+                                <div class="card-body">
+                                    <p>Formate seus documentos e anotações para melhor organização e apresentação.</p>
+                                    <a href="Formatador/index.html" class="btn btn-secondary">Acessar Formatador</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="priorizador" role="tabpanel" aria-labelledby="priorizador-tab">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="mb-4"><i class="bi bi-list-ol"></i> Priorizador</h2>
+                            <p class="lead">Organize suas tarefas e conteúdos por prioridade para otimizar seu tempo.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-danger text-white">
+                                    <i class="bi bi-list-ol"></i> Ferramenta de Priorização
+                                </div>
+                                <div class="card-body">
+                                    <p>Organize suas tarefas e conteúdos por prioridade para otimizar seu tempo de estudo.</p>
+                                    <a href="Priorizador/index.html" class="btn btn-danger">Acessar Priorizador</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="ordenador" role="tabpanel" aria-labelledby="ordenador-tab">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="mb-4"><i class="bi bi-sort-numeric-down"></i> Área do Ordenador</h2>
+                            <p class="lead">Ferramentas para ordenação e classificação de resultados.</p>
+                        </div>
+                    </div>
+
+
+                    <!-- Versões do Ordenador e Informações -->
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header bg-primary text-white">
+                                    <i class="bi bi-list-ol"></i> Versões do Ordenador
+                                </div>
+                                <div class="card-body">
+                                    <div class="list-group">
+                                        <a href="Ordenador/index.html" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <i class="bi bi-1-circle-fill me-2"></i> Ordenador 1
+                                                <small class="text-muted d-block">Versão básica de ordenação</small>
+                                            </div>
+                                        </a>
+                                        <a href="Ordenador2/index.html" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <i class="bi bi-2-circle-fill me-2"></i> Ordenador 2
+                                                <small class="text-muted d-block">Ordenação com 2 tipos de conhecimentos</small>
+                                            </div>
+                                        </a>
+                                        <a href="Ordenador3/index.html" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <i class="bi bi-3-circle-fill me-2"></i> Ordenador 3
+                                                <small class="text-muted d-block">Ordenação com 3 tipos de conhecimentos</small>
+                                            </div>
+                                        </a>
+                                        <a href="Ordenador4/index.html" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <i class="bi bi-4-circle-fill me-2"></i> Ordenador 4
+                                                <small class="text-muted d-block">Versão aprimorada com 3 tipos de conhecimentos</small>
+                                            </div>
+                                        </a>
+                                        <a href="Ordenador5/index.html" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center list-group-item-primary">
+                                            <div>
+                                                <i class="bi bi-5-circle-fill me-2"></i> Ordenador 5
+                                                <small class="text-muted d-block">Versão mais recente com interface aprimorada</small>
+                                            </div>
+                                            <span class="badge bg-danger rounded-pill">Novo!</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header bg-info text-white">
+                                    <i class="bi bi-info-circle"></i> Sobre o Ordenador
+                                </div>
+                                <div class="card-body">
+                                    <p>O Ordenador é uma ferramenta que permite classificar e ordenar resultados de candidatos em concursos e avaliações.</p>
+                                    <p>A versão mais recente (Ordenador 5) inclui recursos avançados de classificação e uma interface moderna.</p>
+                                    <a href="Ordenador5/index.html" class="btn btn-primary w-100">
+                                        <i class="bi bi-arrow-right-circle"></i> Acessar Versão Mais Recente
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="testes" role="tabpanel" aria-labelledby="testes-tab">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="mb-4"><i class="bi bi-check2-square"></i> Testes</h2>
+                            <p class="lead">Avalie seu conhecimento e identifique áreas para melhoria.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-warning text-dark">
+                                    <i class="bi bi-question-circle"></i> Testes de Conhecimento
+                                </div>
+                                <div class="card-body">
+                                    <p>Realize testes para avaliar seu nível de conhecimento em diferentes áreas.</p>
+                                    <a href="Testes/index.html" class="btn btn-warning">Acessar Testes</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-pane fade" id="simulador" role="tabpanel" aria-labelledby="simulador-tab">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="mb-4"><i class="bi bi-pc-display"></i> Simulador</h2>
+                            <p class="lead">Pratique com simulações de questões e prepare-se para avaliações.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-info text-white">
+                                    <i class="bi bi-code-square"></i> Questões de Codigo Processo Penal
+                                </div>
+                                <div class="card-body">
+                                    <p>Pratique com questões específicas de Codigo Processo Penal.</p>
+                                    <a href="Simulador/questoes_cpp.html" class="btn btn-info">Acessar Simulador Codigo Processo Penal</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-info text-white">
+                                    <i class="bi bi-journal-text"></i> Questões Específicas
+                                </div>
+                                <div class="card-body">
+                                    <p>Pratique com questões específicas de diversas áreas de conhecimento.</p>
+                                    <a href="Simulador/questoes_especificas.html" class="btn btn-info">Acessar Questões Específicas</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             </div>
         </div>
 
@@ -616,6 +813,8 @@
                 tabToShow = document.querySelector('#priorizador-tab');
             } else if (url.indexOf("Testes/") > -1) {
                 tabToShow = document.querySelector('#testes-tab');
+            } else if (url.indexOf("Simulador/") > -1) {
+                tabToShow = document.querySelector('#simulador-tab');
             } else if (url.indexOf("Ordenador") > -1) {
                 tabToShow = document.querySelector('#ordenador-tab');
             }

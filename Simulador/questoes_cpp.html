@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simulado - Perícia e Exame de Corpo de Delito (CPP)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+    }
+    .question {
+      margin-bottom: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      background-color: #fefefe;
+    }
+    .feedback {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: #e8f5e9;
+      border-left: 5px solid #2e7d32;
+      display: none;
+    }
+    button {
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+    #results {
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #fff3cd;
+      border-left: 5px solid #ff9800;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Simulado Interativo - CPP: Perícia e Corpo de Delito</h1>
+    <div id="quiz"></div>
+    <div id="results"></div>
+  </div>
+  <script>
+const questions = [
+  { text: "001. A realização do exame de corpo de delito é obrigatória sempre que a infração penal deixar vestígios, sendo inadmissível a substituição por prova testemunhal.", answer: false, comment: "Art. 167 CPP permite a substituição por prova testemunhal se os vestígios desaparecerem." },
+  { text: "002. O exame de corpo de delito pode ser feito em qualquer dia e a qualquer hora, inclusive à noite ou em feriados.", answer: true, comment: "Não há limitação legal de horário para o exame, dada sua urgência." },
+  { text: "003. A perícia indireta somente pode ser realizada se autorizada por decisão judicial fundamentada.", answer: false, comment: "Não se exige autorização judicial específica para perícia indireta se os vestígios desaparecerem." },
+  { text: "004. O juiz está vinculado às conclusões do laudo pericial, não podendo decidir de forma contrária à prova técnica.", answer: false, comment: "Art. 182 CPP: o juiz pode rejeitar total ou parcialmente o laudo, desde que fundamente." },
+  { text: "005. Os peritos não oficiais são obrigados a prestar compromisso de bem e fielmente desempenhar o encargo.", answer: true, comment: "Art. 159, §1º do CPP." },
+  { text: "006. Perícias laboratoriais devem guardar amostra suficiente para eventual nova análise.", answer: true, comment: "Art. 160, §1º do CPP." },
+  { text: "007. Na falta de perito oficial, apenas uma pessoa idônea pode realizar o exame de corpo de delito.", answer: false, comment: "Art. 159, §1º: duas pessoas idôneas devem ser nomeadas." },
+  { text: "008. O laudo pericial pode ser elaborado e assinado por um só perito oficial, quando a natureza do exame o permitir.", answer: true, comment: "Art. 159, caput: admite-se apenas um perito oficial." },
+  { text: "009. A confissão do acusado pode, por si só, suprir a falta do exame de corpo de delito em crime que deixa vestígios.", answer: false, comment: "Art. 158 CPP: a confissão não supre a ausência do exame." },
+  { text: "010. O assistente de acusação não tem legitimidade para indicar assistente técnico na perícia.", answer: false, comment: "Art. 159, §5º CPP: qualquer parte pode indicar assistente técnico." },
+  { text: "011. O exame complementar pode ser feito a qualquer tempo, inclusive por solicitação do ofendido.", answer: true, comment: "Art. 168, §2º CPP: permite novo exame por requisição do juiz, MP, ofendido ou defesa." },
+  { text: "012. A autópsia só pode ser realizada seis horas após a morte, sem exceções.", answer: false, comment: "Art. 162 CPP: pode ser feita antes, se os peritos justificarem com base em sinais evidentes de morte." },
+  { text: "013. Quando houver divergência entre peritos, devem ser lavrados laudos separados.", answer: true, comment: "Art. 180 CPP." },
+  { text: "014. Os intérpretes, para fins processuais, são equiparados aos peritos.", answer: true, comment: "Art. 275 CPP." },
+  { text: "015. A perícia de constatação provisória em tráfico de drogas não é admitida como prova da materialidade.", answer: false, comment: "STJ admite o uso excepcional da constatação provisória por perito oficial." },
+  { text: "016. A cadeia de custódia dos vestígios é iniciada no momento em que o material chega ao instituto de criminalística.", answer: false, comment: "Art. 158-A CPP: começa no reconhecimento do vestígio." },
+  { text: "017. A coleta e o acondicionamento dos vestígios fazem parte da cadeia de custódia.", answer: true, comment: "Arts. 158-C e 158-D CPP." },
+  { text: "018. A etapa de 'fixação' na cadeia de custódia diz respeito ao ato de distinguir e individualizar o vestígio.", answer: true, comment: "Art. 158-B, §1º do CPP." },
+  { text: "019. A autoridade policial pode nomear peritos ad hoc em caso de urgência, na ausência de perito oficial.", answer: true, comment: "Art. 159, §1º do CPP." },
+  { text: "020. Os exames de corpo de delito devem ser realizados por dois peritos oficiais, sem exceção.", answer: false, comment: "Art. 159 permite um perito oficial quando a natureza do exame permitir." },
+  { text: "021. Em caso de crime com vestígios, a ausência do exame de corpo de delito gera nulidade absoluta.", answer: true, comment: "Entendimento doutrinário e jurisprudencial com base no art. 158 CPP." },
+  { text: "022. O juiz pode determinar nova perícia caso considere o laudo omisso ou contraditório.", answer: true, comment: "Art. 160 do CPP." },
+  { text: "023. O exame pericial em instrumento usado no crime (ex: pé de cabra) é obrigatório se houver vestígios a serem analisados.", answer: true, comment: "Art. 158 CPP: o exame é obrigatório sempre que houver vestígios." },
+  { text: "024. Laudos periciais devem, sempre que possível, ser acompanhados de provas fotográficas ou esquemas.", answer: true, comment: "Art. 160, §2º do CPP." },
+  { text: "025. O desaparecimento de vestígios impossibilita a instauração de processo penal.", answer: false, comment: "Art. 167 CPP: pode ser suprido por prova testemunhal." },
+  { text: "026. O perito oficial exerce função pública, não sendo necessário prestar compromisso.", answer: true, comment: "Apenas peritos não oficiais precisam prestar compromisso formal." },
+  { text: "027. O assistente técnico pode ser inquirido em audiência.", answer: true, comment: "Art. 159, §5º CPP." },
+  { text: "028. A nomeação de peritos não oficiais é de competência exclusiva do Ministério Público.", answer: false, comment: "Art. 159, §1º CPP: a nomeação é feita por autoridade policial ou judiciária." },
+  { text: "029. A ausência de dois peritos não gera nulidade quando houver laudo de perito oficial único.", answer: true, comment: "Admite-se laudo de um só perito oficial, conforme o art. 159 e jurisprudência." },
+  { text: "030. A perícia é prova de natureza técnica, e o juiz pode complementá-la com outras provas no processo.", answer: true, comment: "Art. 182 CPP: o juiz forma sua convicção com base no conjunto probatório." }
+];
+
+
+    const quizContainer = document.getElementById("quiz");
+    const resultsContainer = document.getElementById("results");
+    let correctCount = 0;
+    let answeredCount = 0;
+
+    questions.forEach((q, index) => {
+      const div = document.createElement("div");
+      div.className = "question";
+
+      const p = document.createElement("p");
+      p.textContent = q.text;
+
+      const trueBtn = document.createElement("button");
+      trueBtn.textContent = "Certo";
+      trueBtn.onclick = () => showFeedback(index, true);
+
+      const falseBtn = document.createElement("button");
+      falseBtn.textContent = "Errado";
+      falseBtn.onclick = () => showFeedback(index, false);
+
+      const feedback = document.createElement("div");
+      feedback.className = "feedback";
+      feedback.id = `feedback-${index}`;
+
+      div.appendChild(p);
+      div.appendChild(trueBtn);
+      div.appendChild(falseBtn);
+      div.appendChild(feedback);
+      quizContainer.appendChild(div);
+    });
+
+    function showFeedback(index, selected) {
+      const feedback = document.getElementById(`feedback-${index}`);
+      const correct = questions[index].answer;
+      const comment = questions[index].comment;
+
+      if (!feedback.innerHTML) {
+        if (selected === correct) correctCount++;
+        answeredCount++;
+      }
+
+      feedback.innerHTML = `<strong>${selected === correct ? "✔️ Acertou!" : "❌ Errou!."}</strong> ${comment}`;
+      feedback.style.display = "block";
+
+      if (answeredCount === questions.length) showResults();
+    }
+
+    function showResults() {
+      const percentage = ((correctCount / questions.length) * 100).toFixed(2);
+      let suggestion = "";
+      if (percentage >= 90) suggestion = "Excelente! Você está pronto para provas sobre o tema.";
+      else if (percentage >= 70) suggestion = "Muito bom! Revise os pontos em que errou para atingir a perfeição.";
+      else suggestion = "Atenção: revise o conteúdo com foco nos conceitos fundamentais do CPP.";
+
+      resultsContainer.innerHTML = `<h3>Resultado Final</h3><p>Acertos: ${correctCount} de ${questions.length} (${percentage}%)</p><p>${suggestion}</p>`;
+      resultsContainer.style.display = "block";
+    }
+  </script>
+</body>
+</html>
