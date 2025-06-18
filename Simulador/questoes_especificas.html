@@ -142,7 +142,44 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     const questions = [
+  // Engenharia Reversa (4)
+  { text: "A análise de entropia é útil para identificar se um malware está criptografado ou compactado.", answer: "C", comment: "Alta entropia pode indicar obfuscação.", theme: "Engenharia Reversa" },
+  { text: "O cálculo de entropia de Shannon tende a ser alto em arquivos compactados ou criptografados.", answer: "C", comment: "Criptografia aumenta a aleatoriedade.", theme: "Engenharia Reversa" },
+  { text: "A análise estática de um malware é feita com sua execução em ambiente seguro.", answer: "E", comment: "Isso é análise dinâmica. A estática não executa o código.", theme: "Engenharia Reversa" },
+  { text: "A análise de strings pode revelar comandos e caminhos usados internamente por malwares.", answer: "C", comment: "Strings revelam indícios úteis no binário.", theme: "Engenharia Reversa" },
+
+  // Computação Forense (5)
+  { text: "Na computação forense, a cadeia de custódia documenta o histórico cronológico de evidências digitais.", answer: "C", comment: "A cadeia de custódia garante a integridade e rastreabilidade das evidências.", theme: "Computação Forense" },
+  { text: "A análise de memória RAM é irrelevante na computação forense, pois os dados são voláteis.", answer: "E", comment: "A análise de memória RAM é crucial para capturar dados voláteis como processos em execução.", theme: "Computação Forense" },
+  { text: "A ferramenta Volatility é utilizada para análise de dumps de memória RAM.", answer: "C", comment: "Volatility é especializada em análise forense de memória RAM.", theme: "Computação Forense" },
+  { text: "Na coleta de evidências digitais, é recomendado trabalhar diretamente no dispositivo original.", answer: "E", comment: "Deve-se trabalhar em cópias forenses para preservar a evidência original.", theme: "Computação Forense" },
+  { text: "O hash criptográfico é utilizado para verificar a integridade de evidências digitais.", answer: "C", comment: "Hashes garantem que as evidências não foram alteradas após a coleta.", theme: "Computação Forense" },
+
+  // Cloud Computing (4)
+  { text: "No modelo IaaS, o cliente é responsável pelos dados, sistema operacional e aplicações.", answer: "C", comment: "IaaS fornece infraestrutura básica; o restante é do cliente.", theme: "Cloud Computing" },
+  { text: "No modelo SaaS, o provedor gerencia desde a infraestrutura até a aplicação.", answer: "C", comment: "SaaS é entregue pronto para uso.", theme: "Cloud Computing" },
+  { text: "O modelo PaaS fornece um ambiente gerenciado para desenvolvimento e hospedagem de aplicações.", answer: "C", comment: "PaaS abstrai a infraestrutura e permite foco no desenvolvimento.", theme: "Cloud Computing" },
+  { text: "O cliente é responsável pela segurança física dos servidores no modelo IaaS.", answer: "E", comment: "A segurança física é responsabilidade do provedor.", theme: "Cloud Computing" },
+  { text: "O modelo de nuvem denominado Containers as a Service (CaaS) permite que os usuários implantem e gerenciem containers usando ferramentas automatizadas e orquestradores como o Kubernetes, fornecendo infraestrutura de container sob demanda.", answer: "C", comment: "CaaS fornece infraestrutura de container sob demanda.", theme: "Cloud Computing" },
+  { text: "No modelo Function as a Service (FaaS), os clientes alugam funções específicas do sistema operacional e, por isso, precisam gerenciar a infraestrutura subjacente para garantir a execução das aplicações.", answer: "E", comment: "No FaaS (como AWS Lambda), o cliente executa trechos de código sob demanda sem se preocupar com servidores ou infraestrutura, que são totalmente gerenciados pelo provedor.", theme: "Cloud Computing" },
+  { text: "No modelo SaaS (Software as a Service), o provedor de nuvem é responsável por toda a infraestrutura, plataforma e software, e o cliente consome os aplicativos prontos para uso por meio da internet, sem necessidade de instalação ou gerenciamento técnico.", answer: "C", comment: "Exemplos de SaaS incluem Google Workspace e Microsoft 365. O usuário apenas consome o software; todo o resto é gerenciado pelo provedor.", theme: "Cloud Computing" },
+  { text: "No modelo IaaS, o provedor de nuvem oferece ao cliente máquinas virtuais, redes e armazenamento, mas o gerenciamento de sistema operacional, aplicativos e dados é de responsabilidade do cliente.", answer: "C", comment: "IaaS fornece os blocos fundamentais da infraestrutura. O cliente tem flexibilidade total, mas também responsabilidade pela configuração.", theme: "Cloud Computing" },
+  { text: "O modelo PaaS (Platform as a Service) fornece ao cliente uma plataforma completa com ferramentas, sistemas operacionais e bancos de dados pré-configurados para o desenvolvimento, teste e publicação de aplicações, sem a necessidade de gerenciar infraestrutura.", answer: "C", comment: "PaaS oferece ambiente de desenvolvimento simplificado. Exemplos: Google App Engine, Heroku, Azure App Services.", theme: "Cloud Computing" },
+
   // Segurança da Informação (12)
+  { text: "Blind SQL injection retorna respostas booleanas para inferir dados.", answer: "C", comment: "É exatamente essa a lógica do ataque.", theme: "Segurança da Informação" },
+  { text: "O ataque de session hijacking envolve o comprometimento do token.", answer: "C", comment: "Pode ocorrer por interceptação ou predição.", theme: "Segurança da Informação" },
+  { text: "CSRF funciona sem que o usuário esteja autenticado.", answer: "E", comment: "O ataque só é bem-sucedido se o usuário estiver autenticado.", theme: "Segurança da Informação" },
+  { text: "A ICP-Brasil é regulamentada pelo ITI.", answer: "C", comment: "Correto. O ITI é o órgão responsável.", theme: "Segurança da Informação" },
+  { text: "HSMs não são recomendados pelo ITI.", answer: "E", comment: "O HSM(Hardware Security Modules) é um dispositivo físico dedicado à geração, armazenamento e proteção de chaves criptográficas, amplamente utilizado por autoridades certificadoras (ACs) e prestadores de serviços de confiança.São altamente recomendados para segurança de chaves privadas.", theme: "Segurança da Informação" },
+  { text: "Campos de certificados digitais podem ser obrigatórios ou facultativos.", answer: "C", comment: "Isso depende do tipo e uso do certificado.", theme: "Segurança da Informação" },
+  { text: "A verificação da assinatura digital só é possível com a chave privada.", answer: "E", comment: "A chave privada assina; a pública verifica.", theme: "Segurança da Informação" },
+  { text: "Keyloggers podem atuar em modo usuário ou kernel.", answer: "C", comment: "Ambos são possíveis em Windows 10.", theme: "Segurança da Informação" },
+  { text: "Arquivos .docx ou .xlsx podem ser vetores de ransomware.", answer: "C", comment: "Muito utilizados para isso em e-mails maliciosos.", theme: "Segurança da Informação" },
+  { text: "Exploit kits não podem propagar worms.", answer: "E", comment: "Podem sim, ao explorar vulnerabilidades iniciais.", theme: "Segurança da Informação" },
+  { text: "O ataque Krack pode fazer Android reinstalar chave de criptografia zerada.", answer: "C", comment: "Ataque afeta WPA2; vulnerabilidades em Android e Linux.", theme: "Segurança da Informação" },
+  { text: "Pixie Dust Attack permite mudar senha WPA2 remotamente.", answer: "E", comment: "O ataque visa obter o PIN WPS para acessar a senha WPA2.", theme: "Segurança da Informação" },
+  { text: "O ataque Evil Twin cria um AP malicioso para interceptar dados.", answer: "C", comment: "Técnica comum em ataques Wi-Fi.", theme: "Segurança da Informação" },
   { text: "O ataque de CSRF ocorre mesmo quando o usuário não está autenticado na aplicação.", answer: "E", comment: "CSRF exige que o usuário esteja autenticado na aplicação alvo.", theme: "Segurança da Informação" },
   { text: "O uso de HSM impede que chaves privadas sejam exportadas, aumentando a segurança de autoridades certificadoras.", answer: "C", comment: "HSM protege chaves privadas contra extração.", theme: "Segurança da Informação" },
   { text: "O ataque Evil Twin consiste em capturar dados de usuários conectados a redes legítimas, utilizando um ponto de acesso clonado.", answer: "C", comment: "O atacante cria um ponto falso para enganar o usuário.", theme: "Segurança da Informação" },
@@ -164,12 +201,12 @@
   { text: "A adoção de soluções SIEM permite coleta, correlação e análise de eventos de segurança em tempo real.", answer: "C", comment: "SIEM integra e analisa logs de segurança de múltiplas fontes.", theme: "Segurança da Informação" },
   { text: "Um ransomware é um malware que criptografa os arquivos da vítima e exige pagamento para liberação.", answer: "C", comment: "Ransomware sequestra dados via criptografia e exige resgate.", theme: "Segurança da Informação" },
   { text: "Fileless malware é aquele que se instala profundamente no disco rígido, criando arquivos ocultos.", answer: "E", comment: "Fileless malware opera na memória RAM, sem criar arquivos no disco.", theme: "Segurança da Informação" },
-  { text: "O Zero Trust considera que redes internas são confiáveis por padrão.", answer: "E", comment: "Zero Trust não considera redes internas confiáveis.", theme: "Segurança da Informação" },
+  { text: "O Zero Trust considera que redes internas são inseguras por padrão.", answer: "C", comment: "Zero Trust não considera redes internas confiáveis.", theme: "Segurança da Informação" },
   { text: "O OWASP Top 10 inclui falhas como SQL Injection e Cross-Site Scripting.", answer: "C", comment: "OWASP Top 10 lista as maiores vulnerabilidades.", theme: "Segurança da Informação" },
   { text: "O protocolo OAuth 2.0 é usado para autenticação de usuários, fornecendo informações pessoais.", answer: "E", comment: "OAuth 2.0 é usado para autorização, não autenticação.", theme: "Segurança da Informação" },
   { text: "FIDO2 permite autenticação sem senha, baseada em chaves públicas.", answer: "C", comment: "FIDO2 usa autenticação baseada em biometria.", theme: "Segurança da Informação" },
   { text: "O ataque DoS tem como objetivo indisponibilizar um serviço, explorando falhas de segurança para obter acesso privilegiado ao sistema da vítima.", answer: "E", comment: "O DoS visa apenas indisponibilizar recursos, não obter acesso ao sistema.", theme: "Segurança da Informação" },
-  { text: "DDoS (Distributed Denial of Service)", answer: "C", comment: "Um ataque DDoS é caracterizado pelo uso coordenado de múltiplas máquinas, frequentemente comprometidas, para enviar requisições simultâneas a um serviço ou servidor, esgotando seus recursos.", theme: "Segurança da Informação" },
+  { text: "DDoS (Distributed Denial of Service) é um ataque que envia pacotes de dados para um alvo, saturando-o e desabilitando-o.", answer: "C", comment: "DDoS envia pacotes de dados para um alvo, saturando-o e desabilitando-o.", theme: "Segurança da Informação" },
   { text: "Botnets são redes formadas por dispositivos infectados, controlados remotamente, que podem ser usados para realizar ataques coordenados, como DDoS ou envio de spam.", answer: "C", comment: "Botnets são redes formadas por dispositivos infectados, controlados remotamente, que podem ser usados para realizar ataques coordenados, como DDoS ou envio de spam.", theme: "Segurança da Informação" },
   { text: "Ataques de phishing consistem no envio de mensagens falsas que visam enganar o usuário para instalar um malware sem o seu consentimento.", answer: "E", comment: "O phishing não necessariamente instala malware, mas foca em capturar dados (senhas, cartões) via engenharia social.", theme: "Segurança da Informação" },
   { text: "Uma vulnerabilidade zero-day é uma falha de segurança que já foi corrigida pelo fabricante, mas ainda não foi aplicada pelo usuário.", answer: "E", comment: "Zero-day refere-se a falhas desconhecidas pelo fornecedor, ainda sem correção.", theme: "Segurança da Informação" },
@@ -188,8 +225,10 @@
   { text: "O XSS permite a execução de scripts maliciosos no navegador da vítima por meio da injeção de código em páginas web, possibilitando o roubo de cookies, credenciais e redirecionamentos", answer: "C", comment: "MAC Flooding envia pacotes UDP a portas aleatórias.", theme: "Segurança da Informação" },
   { text: "DNS Poisoning, ou envenenamento de cache DNS, consiste em modificar as entradas legítimas do cache DNS de um servidor ou cliente, redirecionando os usuários para sites maliciosos", answer: "C", comment: "MAC Flooding envia pacotes UDP a portas aleatórias.", theme: "Segurança da Informação" },
 
-
   // Criptografia
+  { text: "O ataque de Wiener pode expor chaves RSA fracas.", answer: "C", comment: "Quando os parâmetros privados são mal escolhidos.", theme: "Criptografia" },
+  { text: "AES é uma cifra de fluxo (stream cipher).", answer: "E", comment: "AES é cifra de bloco (block cipher).", theme: "Criptografia" },
+  { text: "AES é assimétrico e RSA é simétrico.", answer: "E", comment: "AES é simétrico; RSA é assimétrico.", theme: "Criptografia" },
   { text: "O modo ECB de cifra é recomendado, pois oferece alta segurança para dados sensíveis.", answer: "E", comment: "ECB não é recomendado para dados sensíveis.", theme: "Criptografia" },
   { text: "O protocolo TLS usa criptografia assimétrica no handshake e simétrica para a sessão.", answer: "C", comment: "TLS usa criptografia simétrica para sessão.", theme: "Criptografia" },
   { text: "O algoritmo RSA é simétrico.", answer: "E", comment: "RSA é assimétrico.", theme: "Criptografia" },
@@ -223,6 +262,13 @@
   { text: "O comando SQL GRANT SELECT ON tabela TO usuario; pertence ao subconjunto de controle de dados (DCL).", answer: "C", comment: "GRANT é um comando DCL (Data Control Language).", theme: "Banco de Dados" },
   { text: "O log de transações é um mecanismo utilizado para garantir a durabilidade das transações.", answer: "C", comment: "Logs de transação permitem recuperação e garantem durabilidade.", theme: "Banco de Dados" },
 
+  // DNS e Sistemas de Arquivos
+  { text: "Registro NS resolve um alias para hostname.", answer: "E", comment: "Isso é feito por CNAME; NS indica servidores autoritativos.", theme: "Redes de Computadores" },
+  { text: "Atualizações DNS usam UDP e consultas usam TCP.", answer: "E", comment: "Consultas usam UDP; atualizações e transferências usam TCP.", theme: "Redes de Computadores" },
+  { text: "Pharming redireciona para sites falsos via envenenamento de cache DNS.", answer: "C", comment: "Técnica comum em ataques de manipulação DNS.", theme: "Redes de Computadores" },
+  { text: "O servidor DNS armazena o resultado da consulta no cache do cliente.", answer: "E", comment: "O cliente armazena o resultado em seu próprio cache.", theme: "Redes de Computadores" },
+  { text: "FAT32 permite arquivos de até 120 GB.", answer: "E", comment: "O limite real é 4 GB menos 1 byte por arquivo.", theme: "Sistemas Operacionais" },
+
   // Redes de Computadores (7)
   { text: "O protocolo TCP é orientado à conexão e garante a entrega ordenada dos pacotes.", answer: "C", comment: "TCP assegura confiabilidade e ordem de entrega.", theme: "Redes de Computadores" },
   { text: "Em redes P2P estruturadas, o uso de DHTs facilita a localização eficiente de arquivos.", answer: "C", comment: "DHTs ajudam a localizar conteúdo com rapidez.", theme: "Redes de Computadores" },
@@ -233,7 +279,7 @@
   { text: "O SCTP é um protocolo que combina características do TCP e UDP e oferece múltiplos fluxos.", answer: "C", comment: "SCTP é orientado a conexão, com múltiplos streams.", theme: "Redes de Computadores" },
   { text: "No modelo OSI, a camada de transporte é responsável por garantir a entrega confiável de dados fim a fim. (TCP, UDP)", answer: "C", comment: "Camada de transporte garante confiabilidade.", theme: "Redes de Computadores" },
   { text: "O protocolo DNSSEC garante confidencialidade das consultas DNS.", answer: "E",comment: "DNSSEC garante integridade e autenticidade.", theme: "Redes de Computadores" },
-  { text: "O roteador opera na camada de enlace.", answer: "E", comment: "Roteadores operam na camada de rede.", theme: "Redes de Computadores" },
+  { text: "O roteador opera na camada de rede.", answer: "C", comment: "Roteadores operam na camada de rede.", theme: "Redes de Computadores" },
   { text: "O protocolo BGP é utilizado para roteamento interno.", answer: "E", comment: "BGP é protocolo de roteamento externo.", theme: "Redes de Computadores" },
   { text: "O protocolo OSPF utiliza algoritmo de estado de enlace (link-state).", answer: "C", comment: "OSPF utiliza algoritmo de estado de enlace.", theme: "Redes de Computadores" },
   { text: "O modelo OSI possui sete camadas, das quais a camada de enlace é responsável pela comunicação fim a fim entre hosts.", answer: "E", comment: "A comunicação fim a fim é responsabilidade da camada de transporte; a camada de enlace lida com comunicação entre nós adjacentes.", theme: "Redes de Computadores" },
@@ -248,8 +294,8 @@
   { text: "Entre a camada de aplicação e a de transporte não são transmitidos quadros (frames). Quadros pertencem à camada de enlace; entre as camadas aplicação e transporte são trocadas mensagens ou segmentos, dependendo do protocolo envolvido (TCP ou UDP).", answer: "C", comment: "Entre a camada de aplicação e a de transporte não são transmitidos quadros (frames). Quadros pertencem à camada de enlace; entre as camadas aplicação e transporte são trocadas mensagens ou segmentos, dependendo do protocolo envolvido (TCP ou UDP).", theme: "Redes de Computadores" },
   { text: "O termo \"datagramas\" é usado para camada de rede, não para aplicação-transporte.", answer: "C", comment: "Datagramas pertencem à camada de rede.", theme: "Redes de Computadores" },
   { text: "A camada de interface de rede (ou de acesso à rede) do modelo TCP/IP realiza a vinculação entre o IP (endereço lógico) e o endereço físico da rede (ex: endereço MAC) via ARP (Address Resolution Protocol).", answer: "C", comment: "ARP resolve endereços IP para endereços MAC na camada de enlace.", theme: "Redes de Computadores" },
+  
   // Mais Segurança da Informação (8)
-
   { text: "O protocolo ARP é usado para mapear endereços IP para endereços MAC.", answer: "C", comment: "ARP resolve endereços IP para endereços MAC na camada de enlace.", theme: "Redes de Computadores" },
   { text: "O protocolo HTTPS utiliza o TLS/SSL para criptografar a comunicação entre cliente e servidor.", answer: "C", comment: "HTTPS é HTTP com criptografia TLS/SSL.", theme: "Redes de Computadores" },
   { text: "O NAT (Network Address Translation) permite que vários dispositivos em uma rede privada compartilhem um único endereço IP público.", answer: "C", comment: "NAT mapeia múltiplos endereços privados para um ou mais públicos.", theme: "Redes de Computadores" },
@@ -265,7 +311,6 @@
   { text: "O padrão IEEE 802.1X define um método de controle de acesso à rede baseado em autenticação por porta, comumente utilizado em redes corporativas e que integra-se ao protocolo EAP para autenticar usuários.", answer: "C", comment: "O 802.1X usa EAP sobre LAN (EAPoL) para controlar o acesso, exigindo autenticação antes de liberar o tráfego. É amplamente usado em redes com WPA2-Enterprise.", theme: "Redes de Computadores" },
   { text: "A autenticação baseada em contexto considera variáveis como localização, hora do acesso, dispositivo e comportamento do usuário para permitir ou negar acesso a redes sem fio, sendo uma abordagem típica de políticas adaptativas em ambientes corporativos.", answer: "C", comment: "Esse tipo de autenticação dinâmica é comum em sistemas com políticas de Zero Trust e acesso condicional, aumentando a segurança ao identificar anomalias de uso.", theme: "Redes de Computadores" },
 
-
   // Sistemas Operacionais e Virtualização (5)
   { text: "Um sistema multitarefa permite que múltiplos processos compartilhem o processador simultaneamente.", answer: "C", comment: "Multitarefa alterna processos na CPU.", theme: "Sistemas Operacionais" },
   { text: "O FAT32 permite arquivos de até 4 GB por limitação de bits no sistema de arquivos.", answer: "C", comment: "FAT32 suporta no máximo arquivos de 4 GB.", theme: "Sistemas Operacionais" },
@@ -277,11 +322,14 @@
   { text: "A virtualização por hypervisor permite que múltiplos sistemas operacionais sejam executados simultaneamente sobre um único hardware físico, gerenciando os recursos de CPU, memória e dispositivos de forma independente.", answer: "C", comment: "A virtualização por hypervisor permite que múltiplos sistemas operacionais sejam executados simultaneamente sobre um único hardware físico, gerenciando os recursos de CPU, memória e dispositivos de forma independente.", theme: "Sistemas Operacionais" },
   { text: "Na paravirtualização, o sistema operacional convidado é executado sem necessidade de modificações, pois o hypervisor intercepta todas as instruções privilegiadas automaticamente.", answer: "E", comment: "A paravirtualização exige que o sistema operacional convidado seja modificado para se comunicar diretamente com o hypervisor por meio de chamadas especiais.", theme: "Sistemas Operacionais" },
   { text: "A virtualização assistida por hardware utiliza extensões de processador, como Intel VT-x ou AMD-V, para permitir a execução eficiente de máquinas virtuais com menor overhead.", answer: "C", comment: "Com suporte nativo do processador, a virtualização assistida elimina a necessidade de técnicas como translação binária, melhorando o desempenho e a compatibilidade.", theme: "Sistemas Operacionais" },
-  // Engenharia Reversa (4)
-  { text: "A análise de entropia é útil para identificar se um malware está criptografado ou compactado.", answer: "C", comment: "Alta entropia pode indicar obfuscação.", theme: "Engenharia Reversa" },
-  { text: "O cálculo de entropia de Shannon tende a ser alto em arquivos compactados ou criptografados.", answer: "C", comment: "Criptografia aumenta a aleatoriedade.", theme: "Engenharia Reversa" },
-  { text: "A análise estática de um malware é feita com sua execução em ambiente seguro.", answer: "E", comment: "Isso é análise dinâmica. A estática não executa o código.", theme: "Engenharia Reversa" },
-  { text: "A análise de strings pode revelar comandos e caminhos usados internamente por malwares.", answer: "C", comment: "Strings revelam indícios úteis no binário.", theme: "Engenharia Reversa" },
+
+  // Cloud Computing (4)
+  { text: "No modelo IaaS, a infraestrutura básica de rede é responsabilidade compartilhada.", answer: "E", comment: "A infraestrutura é do provedor; o cliente gerencia OS, dados e apps.", theme: "Cloud Computing" },
+  { text: "O modelo PaaS oferece menos recursos de segurança que o IaaS.", answer: "E", comment: "PaaS oferece mais recursos e menos necessidade de gerenciamento.", theme: "Cloud Computing" },
+  { text: "No modelo IaaS, o cliente é responsável pelos dados, sistema operacional e aplicações.", answer: "C", comment: "IaaS fornece infraestrutura básica; o restante é do cliente.", theme: "Cloud Computing" },
+  { text: "No modelo SaaS, o provedor gerencia desde a infraestrutura até a aplicação.", answer: "C", comment: "SaaS é entregue pronto para uso.", theme: "Cloud Computing" },
+  { text: "O modelo PaaS fornece um ambiente gerenciado para desenvolvimento e hospedagem de aplicações.", answer: "C", comment: "PaaS abstrai a infraestrutura e permite foco no desenvolvimento.", theme: "Cloud Computing" },
+  { text: "O cliente é responsável pela segurança física dos servidores no modelo IaaS.", answer: "E", comment: "A segurança física é responsabilidade do provedor.", theme: "Cloud Computing" },
 
   // Algoritmos e Programação (5)
   { text: "O laço do-while executa ao menos uma vez, mesmo que a condição inicial seja falsa.", answer: "C", comment: "do-while verifica condição no fim.", theme: "Algoritmos" },
@@ -289,18 +337,6 @@
   { text: "Laços for e while testam a condição antes de executar o bloco.", answer: "C", comment: "Ambos verificam antes de entrar no laço.", theme: "Algoritmos" },
   { text: "A função de tempo para uma instrução de multiplicação é irrelevante na análise de complexidade assintótica.", answer: "C", comment: "Complexidade ignora custos constantes.", theme: "Algoritmos" },
   { text: "Expressões regulares são capazes de validar endereços de email e URLs com precisão absoluta.", answer: "E", comment: "Regex pode falhar em muitos casos complexos.", theme: "Algoritmos" },
-
-  // Cloud Computing (4)
-  { text: "No modelo IaaS, o cliente é responsável pelos dados, sistema operacional e aplicações.", answer: "C", comment: "IaaS fornece infraestrutura básica; o restante é do cliente.", theme: "Cloud Computing" },
-  { text: "No modelo SaaS, o provedor gerencia desde a infraestrutura até a aplicação.", answer: "C", comment: "SaaS é entregue pronto para uso.", theme: "Cloud Computing" },
-  { text: "O modelo PaaS fornece um ambiente gerenciado para desenvolvimento e hospedagem de aplicações.", answer: "C", comment: "PaaS abstrai a infraestrutura e permite foco no desenvolvimento.", theme: "Cloud Computing" },
-  { text: "O cliente é responsável pela segurança física dos servidores no modelo IaaS.", answer: "E", comment: "A segurança física é responsabilidade do provedor.", theme: "Cloud Computing" },
-  { text: "O modelo de nuvem denominado Containers as a Service (CaaS) permite que os usuários implantem e gerenciem containers usando ferramentas automatizadas e orquestradores como o Kubernetes, fornecendo infraestrutura de container sob demanda.", answer: "C", comment: "CaaS fornece infraestrutura de container sob demanda.", theme: "Cloud Computing" },
-  { text: "No modelo Function as a Service (FaaS), os clientes alugam funções específicas do sistema operacional e, por isso, precisam gerenciar a infraestrutura subjacente para garantir a execução das aplicações.", answer: "E", comment: "No FaaS (como AWS Lambda), o cliente executa trechos de código sob demanda sem se preocupar com servidores ou infraestrutura, que são totalmente gerenciados pelo provedor.", theme: "Cloud Computing" },
-  { text: "No modelo SaaS (Software as a Service), o provedor de nuvem é responsável por toda a infraestrutura, plataforma e software, e o cliente consome os aplicativos prontos para uso por meio da internet, sem necessidade de instalação ou gerenciamento técnico.", answer: "C", comment: "Exemplos de SaaS incluem Google Workspace e Microsoft 365. O usuário apenas consome o software; todo o resto é gerenciado pelo provedor.", theme: "Cloud Computing" },
-  { text: "No modelo IaaS, o provedor de nuvem oferece ao cliente máquinas virtuais, redes e armazenamento, mas o gerenciamento de sistema operacional, aplicativos e dados é de responsabilidade do cliente.", answer: "C", comment: "IaaS fornece os blocos fundamentais da infraestrutura. O cliente tem flexibilidade total, mas também responsabilidade pela configuração.", theme: "Cloud Computing" },
-  { text: "O modelo PaaS (Platform as a Service) fornece ao cliente uma plataforma completa com ferramentas, sistemas operacionais e bancos de dados pré-configurados para o desenvolvimento, teste e publicação de aplicações, sem a necessidade de gerenciar infraestrutura.", answer: "C", comment: "PaaS oferece ambiente de desenvolvimento simplificado. Exemplos: Google App Engine, Heroku, Azure App Services.", theme: "Cloud Computing" },
-
 
   // Armazenamento, RAID e Backup (3)
   { text: "RAID 0 não oferece redundância, apenas melhora o desempenho com striping de dados.", answer: "C", comment: "RAID 0 distribui dados sem tolerância a falhas.", theme: "Armazenamento e Backup" },
@@ -325,13 +361,6 @@
   { text: "O Kubernetes é uma plataforma para gerenciamento de máquinas virtuais.", answer: "E", comment: "Kubernetes é uma plataforma de orquestração de contêineres.", theme: "Fundamentos de Computação" },
   { text: "Em sistemas distribuídos, o algoritmo de Paxos é utilizado para consenso entre nós.", answer: "C", comment: "Paxos é um algoritmo de consenso para sistemas distribuídos.", theme: "Fundamentos de Computação" },
   { text: "O escalonamento Round Robin atribui fatias de tempo iguais para cada processo.", answer: "C", comment: "Round Robin é um algoritmo de escalonamento com quantum fixo.", theme: "Fundamentos de Computação" },
-
-  // Computação Forense (5)
-  { text: "Na computação forense, a cadeia de custódia documenta o histórico cronológico de evidências digitais.", answer: "C", comment: "A cadeia de custódia garante a integridade e rastreabilidade das evidências.", theme: "Computação Forense" },
-  { text: "A análise de memória RAM é irrelevante na computação forense, pois os dados são voláteis.", answer: "E", comment: "A análise de memória RAM é crucial para capturar dados voláteis como processos em execução.", theme: "Computação Forense" },
-  { text: "A ferramenta Volatility é utilizada para análise de dumps de memória RAM.", answer: "C", comment: "Volatility é especializada em análise forense de memória RAM.", theme: "Computação Forense" },
-  { text: "Na coleta de evidências digitais, é recomendado trabalhar diretamente no dispositivo original.", answer: "E", comment: "Deve-se trabalhar em cópias forenses para preservar a evidência original.", theme: "Computação Forense" },
-  { text: "O hash criptográfico é utilizado para verificar a integridade de evidências digitais.", answer: "C", comment: "Hashes garantem que as evidências não foram alteradas após a coleta.", theme: "Computação Forense" },
 
   // Governança de TI e Legislação (5)
   { text: "O ITIL 4 introduz o conceito de Service Value System (SVS) como elemento central.", answer: "C", comment: "O SVS é o elemento central do ITIL 4, integrando vários componentes.", theme: "Governança de TI" },
@@ -361,8 +390,9 @@
   { text: "No Windows, o sistema de arquivos NTFS suporta criptografia nativa de arquivos e diretórios, permitindo que os arquivos sejam criptografados em nível de sistema.", answer: "C", comment: "NTFS suporta criptografia nativa de arquivos.O EFS (Encrypting File System) é um recurso do Windows que permite criptografar arquivos e diretórios. Esse recurso somente está disponível em volumes formatados com NTFS. Sistemas de arquivos como FAT32, EXT3, EXT4 ou APFS não suportam EFS.", theme: "Sistemas Operacionais" },
   { text: "No Linux, o sistema de arquivos ext4 suporta criptografia nativa de arquivos e diretórios, permitindo que os arquivos sejam criptografados em nível de sistema.", answer: "C", comment: "NTFS suporta criptografia nativa de arquivos.O EFS (Encrypting File System) é um recurso do Windows que permite criptografar arquivos e diretórios. Esse recurso somente está disponível em volumes formatados com NTFS. Sistemas de arquivos como FAT32, EXT3, EXT4 ou APFS não suportam EFS.", theme: "Sistemas Operacionais" },
   
-  
   // Engenharia Reversa (5)
+  { text: "Em um cenário de investigação forense digital de um ataque de ransomware, a análise da entropia de Shannon tende a apresentar um valor próximo de 0.", answer: "E", comment: "A entropia será alta (próxima de 1) se os dados estiverem criptografados.", theme: "Engenharia Reversa" },
+  { text: "A análise de strings em um binário de malware é uma das três técnicas-chave para análise de malware.", answer: "C", comment: "São elas: análise binária, entropia e strings.", theme: "Engenharia Reversa" },
   { text: "A análise estática de código malicioso permite observar seu comportamento durante a execução.", answer: "E", comment: "A análise estática examina o código sem executá-lo.", theme: "Engenharia Reversa" },
   { text: "Packers como UPX são utilizados para compactar executáveis, dificultando a engenharia reversa.", answer: "C", comment: "Packers compactam e podem ofuscar código, complicando a análise.", theme: "Engenharia Reversa" },
   { text: "O IDA Pro é uma ferramenta de desmontagem e depuração utilizada em engenharia reversa.", answer: "C", comment: "IDA Pro é uma ferramenta avançada para análise de código binário.", theme: "Engenharia Reversa" },
@@ -378,7 +408,6 @@
   { text: "A técnica de timeline forense permite identificar padrões e reconstruir cronologias de atividades de usuários em sistemas computacionais.", answer: "C", comment: "Timelines forenses ajudam a reconstruir a sequência de eventos em investigações.", theme: "Computação Forense" },
 
   // Mais Fundamentos de Computação (8)
-  
   { text: "O modelo de arquitetura de computadores Von Neumann permite que dados e instruções compartilhem o mesmo barramento e espaço de memória.", answer: "C", comment: "Na arquitetura Von Neumann, dados e instruções compartilham o mesmo espaço de memória.", theme: "Fundamentos de Computação" },
   { text: "Em sistemas distribuídos com modelo de memória compartilhada, múltiplos nós do sistema podem acessar uma mesma área de memória como se fosse única, o que facilita a programação paralela, embora exija mecanismos robustos de coerência de cache. No contexto da virtualização, emuladores reproduzem arquiteturas completas de hardware, enquanto máquinas virtuais executam sistemas operacionais isolados sobre hipervisores e contêineres compartilham o mesmo kernel do sistema hospedeiro, oferecendo leveza e maior eficiência em ambientes de microserviços.", answer: "C", comment: "Memória compartilhada em sistemas distribuídos: abstrai uma visão única da memória; exige coerência para manter consistência entre caches locais.Emuladores: simulam hardware diferente, permitindo rodar sistemas de outra arquitetura (ex: QEMU, emular ARM no x86).Máquinas virtuais: utilizam hipervisores (Type 1 ou 2) para executar SOs completos.Contêineres: compartilham kernel, são isolados por namespaces/cgroups, ideais para execução leve e modularizada de aplicações.", theme: "Fundamentos de Computação" },
   { text: "A computação quântica baseia-se em qubits, que diferentemente dos bits clássicos, podem representar simultaneamente os estados 0 e 1 por meio do princípio da superposição. Além disso, o entrelaçamento quântico (entanglement) permite que o estado de um qubit dependa do estado de outro, mesmo que estejam fisicamente distantes, característica que pode ser explorada para acelerar certos algoritmos, como o de Shor e o de Grover.", answer: "C", comment: "Qubit: unidade básica da computação quântica, capaz de representar múltiplos estados simultaneamente (superposição).Entrelaçamento (entanglement): correlação entre qubits, fundamental para operações paralelas em escala quântica.Algoritmos: Shor (fatoração de inteiros, impacta criptografia RSA), Grover (busca em listas não ordenadas, √n em vez de n).Esses princípios diferenciam a computação quântica da clássica, com potencial para resolver problemas antes considerados intratáveis.", theme: "Fundamentos de Computação" },
