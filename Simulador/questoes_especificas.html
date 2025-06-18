@@ -175,6 +175,20 @@
 
   // Segurança da Informação (12)
   { text: "Blind SQL injection retorna respostas booleanas para inferir dados.", answer: "C", comment: "É exatamente essa a lógica do ataque.", theme: "Segurança da Informação" },
+  { text: "O ataque de phishing busca induzir a vítima a fornecer informações confidenciais, geralmente simulando a comunicação de uma entidade confiável.", answer: "C", comment: "É exatamente essa a lógica do ataque.", theme: "Segurança da Informação" },
+  { text: "Eavesdropping é uma técnica passiva de ataque em que o invasor intercepta comunicações sem alterar seu conteúdo, com o objetivo de capturar informações confidenciais.", answer: "C", comment: "É exatamente essa a lógica do ataque.", theme: "Segurança da Informação" },
+  { text: "Ataques de DDoS (Distributed Denial of Service) visam comprometer a confidencialidade de sistemas ao interceptar dados sensíveis durante a transmissão.", answer: "E", comment: "DDoS visa a indisponibilidade, não a confidencialidade.", theme: "Segurança da Informação" },
+  { text: "No ataque de ransomware, o atacante criptografa os dados da vítima e exige um pagamento em troca da chave de descriptografia.", answer: "C", comment: "É exatamente essa a lógica do ataque.", theme: "Segurança da Informação" },
+  { text: "Spoofing de IP consiste na falsificação do endereço IP de origem em pacotes enviados, dificultando a identificação do atacante.", answer: "C", comment: "É exatamente essa a lógica do ataque.", theme: "Segurança da Informação" },
+  { text: "Ataques de SQL Injection podem ser evitados utilizando prepared statements e validação rigorosa de entradas.", answer: "C", comment: "É exatamente essa a lógica do ataque.", theme: "Segurança da Informação" },
+  { text: "Ataques XSS (Cross-Site Scripting) se aproveitam de vulnerabilidades em servidores DNS para injetar scripts maliciosos no navegador da vítima.", answer: "E", comment: "XSS é vulnerabilidade em aplicações web, não em DNS.", theme: "Segurança da Informação" },
+  { text: "Buffer overflow ocorre quando um programa tenta gravar dados além do limite de um buffer, o que pode permitir a execução de código malicioso.", answer: "C", comment: "É exatamente essa a lógica do ataque.", theme: "Segurança da Informação" },
+  { text: "No ataque de ARP spoofing, o atacante envia mensagens ARP falsificadas na rede local, associando seu MAC ao IP de outro dispositivo.", answer: "C", comment: "É exatamente essa a lógica do ataque.", theme: "Segurança da Informação" },
+  { text: "Ping da Morte é um ataque baseado no envio de pacotes ICMP fragmentados com tamanho superior ao permitido pelo protocolo, podendo causar falhas no sistema.", answer: "C", comment: "É exatamente essa a lógica do ataque.", theme: "Segurança da Informação" },
+  { text: "Ataques de DNS poisoning visam corromper a tabela de roteamento de switches para redirecionar o tráfego da rede.", answer: "E", comment: "DNS poisoning compromete respostas DNS, não tabelas de roteamento.", theme: "Segurança da Informação" },
+  { text: "No ataque UDP Flood, o invasor envia grande volume de pacotes UDP a portas aleatórias, sobrecarregando o host de destino.", answer: "C", comment: "É exatamente essa a lógica do ataque.", theme: "Segurança da Informação" },
+  { text: "O ataque Zero-Day ocorre quando uma vulnerabilidade recém-descoberta é explorada antes que uma correção seja disponibilizada.", answer: "C", comment: "É exatamente essa a lógica do ataque.", theme: "Segurança da Informação" },
+  { text: "MAC flooding consiste em inundar a tabela CAM de um switch com endereços MAC falsos, forçando o envio de quadros para todas as portas.", answer: "C", comment: "É exatamente essa a lógica do ataque.", theme: "Segurança da Informação" },
   { text: "O ataque de session hijacking envolve o comprometimento do token.", answer: "C", comment: "Pode ocorrer por interceptação ou predição.", theme: "Segurança da Informação" },
   { text: "CSRF funciona sem que o usuário esteja autenticado.", answer: "E", comment: "O ataque só é bem-sucedido se o usuário estiver autenticado.", theme: "Segurança da Informação" },
   { text: "A ICP-Brasil é regulamentada pelo ITI.", answer: "C", comment: "Correto. O ITI é o órgão responsável.", theme: "Segurança da Informação" },
@@ -201,6 +215,30 @@
   { text: "A assinatura digital garante apenas a confidencialidade da informação.", answer: "E", comment: "Ela garante integridade e autenticidade, não confidencialidade.", theme: "Segurança da Informação" },
   { text: "A ISO/IEC 27001 define os requisitos para um Sistema de Gestão de Segurança da Informação (SGSI).", answer: "C", comment: "ISO/IEC 27001 define requisitos para SGSI.", theme: "Segurança da Informação" },
   { text: "A ISO/IEC 27001 define requisitos para a implementação de um Sistema de Gestão de Segurança da Informação (SGSI).", answer: "C", comment: "ISO/IEC 27001 é o padrão internacional para SGSI.", theme: "Segurança da Informação" },
+
+  // Ataques Passivos
+  { text: "Ataques de eavesdropping não alteram o tráfego de dados, apenas monitoram a comunicação para obter informações sigilosas.", answer: "C", comment: "Ataques passivos como eavesdropping apenas interceptam dados sem modificá-los.", theme: "Segurança da Informação" },
+  { text: "Sniffers de rede, utilizados em ataques passivos, interceptam pacotes de dados trafegando em redes locais sem interação com os hosts.", answer: "C", comment: "Sniffers capturam tráfego de rede sem interagir com os hosts.", theme: "Segurança da Informação" },
+  { text: "O ataque de shoulder surfing é considerado ativo, pois envolve alteração do ambiente físico para capturar dados digitados pelo usuário.", answer: "E", comment: "É um ataque passivo visual (observação direta).", theme: "Segurança da Informação" },
+
+  // Ataques Ativos
+  { text: "DDoS (Distributed Denial of Service) é um ataque ativo que visa indisponibilizar um serviço por sobrecarga.", answer: "C", comment: "DDoS é um ataque ativo que modifica o funcionamento normal de um serviço.", theme: "Segurança da Informação" },
+  { text: "Em um ataque de ARP Spoofing, o invasor envia mensagens ARP falsas com o objetivo de interceptar e redirecionar o tráfego da vítima.", answer: "C", comment: "ARP Spoofing é um ataque ativo que modifica tabelas ARP.", theme: "Segurança da Informação" },
+  { text: "Um ataque de replay consiste em capturar e retransmitir dados válidos em um protocolo, podendo enganar sistemas de autenticação.", answer: "C", comment: "Ataques de replay reutilizam dados legítimos para fins maliciosos.", theme: "Segurança da Informação" },
+  { text: "Em ataques de man-in-the-middle, o atacante se posiciona entre duas partes comunicantes, alterando ou injetando mensagens no canal de comunicação.", answer: "C", comment: "MITM permite interceptação e modificação de tráfego entre duas partes.", theme: "Segurança da Informação" },
+
+  // Ataques Físicos
+  { text: "Ataques de Cold Boot envolvem a reinicialização de máquinas para acessar dados criptográficos que permanecem na RAM por alguns segundos.", answer: "C", comment: "Cold Boot explora a persistência de dados na RAM após desligamento.", theme: "Segurança da Informação" },
+  { text: "O uso não autorizado de dispositivos USB com malware pré-instalado configura um ataque físico contra o sistema-alvo.", answer: "C", comment: "Requer acesso físico para inserir o dispositivo malicioso.", theme: "Segurança da Informação" },
+  { text: "Ataques de força bruta que envolvem tentativa contínua de senhas por teclado são classificados como ataques lógicos.", answer: "E", comment: "Ataques de força bruta realizados localmente são físicos; se automatizados por software, são lógicos.", theme: "Segurança da Informação" },
+
+  // Ataques Lógicos
+  { text: "SQL Injection é um ataque lógico que manipula comandos SQL maliciosos para acessar ou modificar dados em um banco de dados.", answer: "C", comment: "SQL Injection explora vulnerabilidades em aplicações web para manipular bancos de dados.", theme: "Segurança da Informação" },
+  { text: "Buffer overflow pode permitir a execução de código arbitrário ao ultrapassar o limite de um buffer de memória.", answer: "C", comment: "Buffer overflow explora limitações de memória para executar código malicioso.", theme: "Segurança da Informação" },
+  { text: "Phishing é um ataque lógico que utiliza engenharia social e páginas falsas para enganar usuários e obter credenciais.", answer: "C", comment: "Phishing combina engenharia social com técnicas lógicas para enganar usuários.", theme: "Segurança da Informação" },
+  { text: "Cross-Site Scripting (XSS) é um tipo de ataque lógico que permite a execução de scripts maliciosos em navegadores de usuários.", answer: "C", comment: "XSS injeta scripts maliciosos que são executados no navegador da vítima.", theme: "Segurança da Informação" },
+  { text: "DNS poisoning insere entradas falsas em caches DNS para redirecionar usuários a sites maliciosos.", answer: "C", comment: "DNS poisoning corrompe caches DNS para manipular resolução de nomes.", theme: "Segurança da Informação" },
+  { text: "Zero-Day refere-se à exploração de uma vulnerabilidade que já foi corrigida, mas ainda não implantada pela vítima.", answer: "E", comment: "Refere-se à exploração de falhas ainda não corrigidas.", theme: "Segurança da Informação" },
   { text: "A autenticação multifator (MFA) combina fatores de conhecimento, posse e inerência para fortalecer a segurança.", answer: "C", comment: "MFA utiliza combinação de diferentes tipos de fatores para autenticação.", theme: "Segurança da Informação" },
   { text: "No modelo Zero Trust, assume-se que toda rede interna é segura, desde que protegida por firewall.", answer: "E", comment: "Zero Trust assume que nenhuma rede é confiável, nem mesmo a interna.", theme: "Segurança da Informação" },
   { text: "O OWASP Top 10 lista as dez vulnerabilidades mais críticas em sistemas operacionais.", answer: "E", comment: "OWASP Top 10 foca em vulnerabilidades de aplicações web, não sistemas operacionais.", theme: "Segurança da Informação" },
@@ -401,7 +439,7 @@
   // Engenharia Reversa e Forense (6)
   { text: "Analisadores dinâmicos como x64dbg e OllyDbg permitem executar programas sob inspeção, monitorando chamadas e comportamento.", answer: "C", comment: "Analisadores dinâmicos permitem depuração e monitoramento em tempo real.", theme: "Engenharia Reversa" },
   { text: "Packers podem ser usados por malware para dificultar a detecção e engenharia reversa de seu código.", answer: "C", comment: "Malwares usam packers para ofuscar código e evitar análise.", theme: "Engenharia Reversa" },
-  { text: "A análise de memória volátil (RAM) não é capaz de capturar credenciais armazenadas temporariamente por aplicações.", answer: "E", comment: "A análise de RAM é capaz, sim, de capturar credenciais, chaves e sessões.", theme: "Computação Forense" },
+  { text: "A análise de memória volátil (RAM) é capaz de capturar credenciais armazenadas temporariamente por aplicações.", answer: "C", comment: "A análise de RAM é capaz, sim, de capturar credenciais, chaves e sessões.", theme: "Computação Forense" },
   { text: "A ferramenta Wireshark pode ser utilizada em análise forense de rede para identificar tráfego malicioso e conexões suspeitas.", answer: "C", comment: "Wireshark é amplamente usado em forense de rede para análise de tráfego.", theme: "Computação Forense" },
   { text: "O uso de write-blockers é recomendado durante a aquisição de discos em perícias para garantir a integridade da evidência.", answer: "C", comment: "Write-blockers impedem modificações acidentais em evidências digitais.", theme: "Computação Forense" },
   { text: "A técnica de timeline forense permite identificar padrões e reconstruir cronologias de atividades de usuários em sistemas computacionais.", answer: "C", comment: "Timelines forenses ajudam a reconstruir a sequência de eventos em investigações.", theme: "Computação Forense" },
