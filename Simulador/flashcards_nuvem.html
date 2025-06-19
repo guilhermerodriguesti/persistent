@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flashcards - Ambientes de Nuvem (Perícia Forense)</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts - Fontes otimizadas para leitura e memorização -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Cores baseadas na psicologia cognitiva para aprendizado */
+      --primary-blue: #2563eb;           /* Azul para concentração e confiança */
+      --secondary-teal: #0d9488;         /* Verde-azulado para calma e foco */
+      --accent-purple: #7c3aed;          /* Roxo para criatividade e memorização */
+      --success-green: #059669;          /* Verde para feedback positivo */
+      --warning-amber: #d97706;          /* Âmbar para atenção moderada */
+      --error-red: #dc2626;              /* Vermelho para alertas importantes */
+      
+      /* Tons neutros para legibilidade */
+      --gray-50: #f9fafb;
+      --gray-100: #f3f4f6;
+      --gray-200: #e5e7eb;
+      --gray-300: #d1d5db;
+      --gray-600: #4b5563;
+      --gray-700: #374151;
+      --gray-800: #1f2937;
+      --gray-900: #111827;
+      
+      /* Gradientes otimizados */
+      --gradient-primary: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-teal) 100%);
+      --gradient-secondary: linear-gradient(135deg, var(--accent-purple) 0%, var(--primary-blue) 100%);
+      --gradient-accent: linear-gradient(135deg, var(--secondary-teal) 0%, var(--success-green) 100%);
+      
+      /* Sombras para profundidade */
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      
+      /* Transições suaves */
+      --transition-fast: 0.15s ease-in-out;
+      --transition-normal: 0.3s ease-in-out;
+      --transition-slow: 0.5s ease-in-out;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--gradient-primary);
+      min-height: 100vh;
+      padding: 1rem;
+      line-height: 1.6;
+      color: var(--gray-800);
+      overflow-x: hidden;
+    }
+
+    /* Container responsivo */
+    .main-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    /* Flashcard container com responsividade */
+    .flashcard-container {
+      perspective: 1000px;
+      height: clamp(350px, 50vh, 500px);
+      margin-bottom: 2rem;
+      width: 100%;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .flashcard {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform var(--transition-slow);
+      transform-style: preserve-3d;
+      cursor: pointer;
+      border-radius: 20px;
+    }
+
+    .flashcard.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .flashcard-front, .flashcard-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      box-shadow: var(--shadow-xl);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(1.5rem, 4vw, 3rem);
+      border: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .flashcard-front {
+      background: var(--gradient-primary);
+      color: white;
+    }
+
+    .flashcard-back {
+      background: var(--gradient-secondary);
+      color: white;
+      transform: rotateY(180deg);
+    }
+
+    .card-content {
+      text-align: left;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-content h4 {
+      font-weight: 600;
+      font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      margin-bottom: 1rem;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .card-content p, .card-content div {
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .card-number {
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .keywords {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      padding: 1rem;
+      border-radius: 12px;
+      margin-top: 1rem;
+      font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .keywords strong {
+      color: rgba(255, 255, 255, 1);
+      font-weight: 600;
+    }
+
+    /* Navegação responsiva */
+    .navigation {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      width: 95%;
+      max-width: 600px;
+    }
+
+    .navigation .btn-group {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      justify-content: center;
+    }
+
+    .navigation .btn {
+      flex: 1;
+      min-width: 80px;
+      max-width: 120px;
+      padding: 0.75rem 1rem;
+      border-radius: 12px;
+      font-weight: 500;
+      font-size: 0.9rem;
+      transition: all var(--transition-normal);
+      border: none;
+      backdrop-filter: blur(10px);
+    }
+
+    .navigation .btn-light {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--gray-700);
+      box-shadow: var(--shadow-md);
+    }
+
+    .navigation .btn-light:hover:not(:disabled) {
+      background: white;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .navigation .btn-outline-light {
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .navigation .btn-outline-light:hover {
+      background: rgba(255, 255, 255, 0.2);
+      border-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .navigation .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* Progress indicator melhorado */
+    .progress-indicator {
+      text-align: center;
+      margin-bottom: 2rem;
+      color: white;
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      font-weight: 500;
+    }
+
+    .progress-bar-container {
+      width: 100%;
+      max-width: 400px;
+      height: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50px;
+      margin: 1rem auto;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background: var(--gradient-accent);
+      border-radius: 50px;
+      transition: width var(--transition-normal);
+    }
+
+    .flip-hint {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.8rem;
+      opacity: 0.7;
+      font-style: italic;
+    }
+
+    .main-title {
+      text-align: center;
+      color: white;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .main-title h1 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .main-title .lead {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      opacity: 0.9;
+      font-weight: 400;
+    }
+
+    /* Painel de ajuda responsivo */
+    .keyboard-shortcuts {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(20px);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 16px;
+      font-size: 0.85rem;
+      max-width: min(300px, 90vw);
+      z-index: 1000;
+      transition: all var(--transition-normal);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: var(--shadow-xl);
+    }
+
+    .keyboard-shortcuts.hidden {
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(-10px);
+    }
+
+    .keyboard-shortcuts h6 {
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .shortcut-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      padding: 0.25rem 0;
+    }
+
+    .shortcut-key {
+      background: var(--gradient-accent);
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.8rem;
+      font-weight: 500;
+      min-width: 60px;
+      text-align: center;
+    }
+
+    .help-toggle {
+      position: fixed;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      padding: 1rem;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1001;
+      transition: all var(--transition-normal);
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .help-toggle:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: scale(1.1);
+    }
+
+    .card-counter {
+      position: fixed;
+      bottom: 6rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      font-family: 'JetBrains Mono', monospace;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Notificações melhoradas */
+    .notification {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(20px);
+      color: white;
+      padding: 1.5rem 2rem;
+      border-radius: 16px;
+      z-index: 2000;
+      font-size: 1.1rem;
+      font-weight: 500;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: var(--shadow-xl);
+      animation: slideIn 0.3s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    /* Responsividade para dispositivos móveis */
+    @media (max-width: 768px) {
+      body {
+        padding: 0.5rem;
+      }
+
+      .flashcard-container {
+        height: clamp(300px, 60vh, 400px);
+        margin-bottom: 1rem;
+      }
+
+      .flashcard-front, .flashcard-back {
+        padding: 1.5rem;
+      }
+
+      .navigation {
+        bottom: 1rem;
+        width: 98%;
+      }
+
+      .navigation .btn {
+        min-width: 60px;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+      }
+
+      .navigation .btn i {
+        font-size: 0.9rem;
+      }
+
+      .card-counter {
+        bottom: 5rem;
+        font-size: 0.8rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .keyboard-shortcuts {
+        top: 0.5rem;
+        right: 0.5rem;
+        left: 0.5rem;
+        max-width: none;
+        padding: 1rem;
+      }
+
+      .help-toggle {
+        top: 0.5rem;
+        left: 0.5rem;
+        width: 45px;
+        height: 45px;
+        padding: 0.8rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .navigation .btn-group {
+        flex-direction: column;
+        gap: 0.3rem;
+      }
+
+      .navigation .btn {
+        width: 100%;
+        max-width: none;
+      }
+
+      .flashcard-front, .flashcard-back {
+        padding: 1rem;
+      }
+
+      .card-number {
+        top: 0.5rem;
+        right: 1rem;
+        padding: 0.3rem 0.8rem;
+        font-size: 0.75rem;
+      }
+    }
+
+    /* Melhorias de acessibilidade */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    /* Focus states para acessibilidade */
+    .btn:focus,
+    .help-toggle:focus,
+    .flashcard:focus {
+      outline: 3px solid var(--warning-amber);
+      outline-offset: 2px;
+    }
+
+    /* Estados de hover melhorados */
+    .flashcard:hover {
+      transform: scale(1.02);
+      transition: transform var(--transition-normal);
+    }
+
+    .flashcard.flipped:hover {
+      transform: rotateY(180deg) scale(1.02);
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="main-title">
+      <h1><i class="fas fa-cloud me-3"></i>Flashcards - Ambientes de Nuvem</h1>
+      <p class="lead">Perícia Forense em Informática - Concurso PF</p>
+    </div>
+    
+    <div class="progress-indicator">
+      <div><span id="currentCard">1</span> / <span id="totalCards">20</span></div>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+    </div>
+    
+    <div class="flashcard-container">
+      <div class="flashcard" id="flashcard" onclick="flipCard()" tabindex="0" role="button" aria-label="Cartão de estudo - clique para virar">
+        <div class="flashcard-front">
+          <div class="card-number">1/20</div>
+          <div class="card-content">
+            <div>
+              <h4 id="frontTitle">Carregando...</h4>
+              <p id="frontContent">Carregando conteúdo...</p>
+            </div>
+            <div class="flip-hint">
+              <i class="fas fa-sync-alt me-1"></i> Clique ou pressione SPACE para ver a resposta
+            </div>
+          </div>
+        </div>
+        <div class="flashcard-back">
+          <div class="card-number">1/20</div>
+          <div class="card-content">
+            <div>
+              <div id="backContent">Carregando resposta...</div>
+              <div class="keywords" id="keywords">
+                <strong>Palavras-chave:</strong> <span id="keywordsList">Carregando...</span>
+              </div>
+            </div>
+            <div class="flip-hint">
+              <i class="fas fa-sync-alt me-1"></i> Clique ou pressione SPACE para ver a pergunta
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão de ajuda -->
+  <button class="help-toggle" id="helpToggle" onclick="toggleHelp()" aria-label="Mostrar atalhos do teclado">
+    <i class="fas fa-question"></i>
+  </button>
+
+  <!-- Painel de atalhos do teclado -->
+  <div class="keyboard-shortcuts" id="keyboardShortcuts" role="dialog" aria-labelledby="shortcuts-title">
+    <h6 id="shortcuts-title"><i class="fas fa-keyboard me-2"></i>Atalhos do Teclado</h6>
+    <div class="shortcut-item">
+      <span>Virar cartão:</span>
+      <span class="shortcut-key">SPACE</span>
+    </div>
+    <div class="shortcut-item">
+      <span>Próximo cartão:</span>
+      <span class="shortcut-key">→</span>
+    </div>
+    <div class="shortcut-item">
+      <span>Cartão anterior:</span>
+      <span class="shortcut-key">←</span>
+    </div>
+    <div class="shortcut-item">
+      <span>Primeiro cartão:</span>
+      <span class="shortcut-key">HOME</span>
+    </div>
+    <div class="shortcut-item">
+      <span>Último cartão:</span>
+      <span class="shortcut-key">END</span>
+    </div>
+    <div class="shortcut-item">
+      <span>Embaralhar:</span>
+      <span class="shortcut-key">S</span>
+    </div>
+    <div class="shortcut-item">
+      <span>Ir para cartão:</span>
+      <span class="shortcut-key">1-9</span>
+    </div>
+    <div class="shortcut-item">
+      <span>Ajuda:</span>
+      <span class="shortcut-key">H</span>
+    </div>
+  </div>
+
+  <!-- Contador de cartões -->
+  <div class="card-counter" role="status" aria-live="polite">
+    Cartão <span id="cardCounter">1</span> de <span id="totalCounter">20</span>
+  </div>
+
+  <!-- Navegação -->
+  <nav class="navigation" role="navigation" aria-label="Navegação dos flashcards">
+    <div class="btn-group" role="group">
+      <button type="button" class="btn btn-light" id="firstBtn" onclick="firstCard()" title="Primeiro cartão (Home)" aria-label="Ir para o primeiro cartão">
+        <i class="fas fa-step-backward"></i>
+      </button>
+      <button type="button" class="btn btn-light" id="prevBtn" onclick="previousCard()" title="Anterior (←)" aria-label="Cartão anterior">
+        <i class="fas fa-arrow-left me-1"></i> <span class="d-none d-sm-inline">Anterior</span>
+      </button>
+      <button type="button" class="btn btn-outline-light" id="flipBtn" onclick="flipCard()" title="Virar cartão (Space)" aria-label="Virar cartão">
+        <i class="fas fa-sync-alt me-1"></i> <span class="d-none d-sm-inline">Virar</span>
+      </button>
+      <button type="button" class="btn btn-outline-light" id="shuffleBtn" onclick="shuffleCards()" title="Embaralhar (S)" aria-label="Embaralhar cartões">
+        <i class="fas fa-random me-1"></i> <span class="d-none d-sm-inline">Embaralhar</span>
+      </button>
+      <button type="button" class="btn btn-light" id="nextBtn" onclick="nextCard()" title="Próximo (→)" aria-label="Próximo cartão">
+        <span class="d-none d-sm-inline">Próximo</span> <i class="fas fa-arrow-right ms-1"></i>
+      </button>
+      <button type="button" class="btn btn-light" id="lastBtn" onclick="lastCard()" title="Último cartão (End)" aria-label="Ir para o último cartão">
+        <i class="fas fa-step-forward"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Bootstrap Bundle com Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const flashcards = [
+      {
+        question: "O que é a computação em nuvem e quais seus principais modelos de serviço?",
+        answer: "A computação em nuvem é a entrega de recursos computacionais (servidores, armazenamento, bancos de dados, redes, software, análises, etc.) pela internet (\"a nuvem\") com um modelo de pagamento conforme o uso. Seus principais modelos de serviço são <strong>IaaS (Infraestrutura como Serviço)</strong>, <strong>PaaS (Plataforma como Serviço)</strong> e <strong>SaaS (Software como Serviço)</strong>.",
+        keywords: "Computação em Nuvem, IaaS, PaaS, SaaS, Modelos de Serviço, Definição"
+      },
+      {
+        question: "Qual a diferença fundamental entre IaaS, PaaS e SaaS em termos de gerenciamento?",
+        answer: "<strong>IaaS:</strong> O provedor gerencia a infraestrutura física (servidores, virtualização, redes), enquanto o cliente gerencia o sistema operacional, aplicações e dados.<br><br><strong>PaaS:</strong> O provedor gerencia a infraestrutura e a plataforma (sistema operacional, middleware), e o cliente gerencia apenas as aplicações e os dados.<br><br><strong>SaaS:</strong> O provedor gerencia tudo, desde a infraestrutura até a aplicação, e o cliente apenas usa o software.",
+        keywords: "IaaS, PaaS, SaaS, Gerenciamento, Responsabilidade, Cliente, Provedor"
+      },
+      {
+        question: "Cite os três maiores provedores de serviços de nuvem pública e suas respectivas participações de mercado aproximadas.",
+        answer: "Os três maiores provedores são:<br><br>1. <strong>Amazon Web Services (AWS)</strong>: Aproximadamente 31-33% do mercado.<br>2. <strong>Microsoft Azure</strong>: Aproximadamente 22-24% do mercado.<br>3. <strong>Google Cloud Platform (GCP)</strong>: Aproximadamente 10-11% do mercado.",
+        keywords: "AWS, Azure, Google Cloud, Provedores de Nuvem, Mercado, Nuvem Pública"
+      },
+      {
+        question: "Quais são os principais desafios na coleta de evidências digitais em ambientes de nuvem para a perícia forense?",
+        answer: "Os principais desafios incluem:<br><br>• <strong>Volatilidade dos dados:</strong> Dados podem ser alterados ou apagados rapidamente.<br>• <strong>Multi-tenancy:</strong> Compartilhamento de infraestrutura entre múltiplos clientes.<br>• <strong>Localização geográfica:</strong> Dados podem estar distribuídos em diferentes países/jurisdições.<br>• <strong>Acesso limitado:</strong> Dependência da colaboração do provedor de nuvem.<br>• <strong>Log de auditoria:</strong> Variedade e granularidade dos logs disponíveis.<br>• <strong>Cadeia de custódia:</strong> Manter a integridade e autenticidade das evidências.",
+        keywords: "Perícia Forense, Nuvem, Evidências Digitais, Desafios, Volatilidade, Multi-tenancy, Jurisdição, Cadeia de Custódia"
+      },
+      {
+        question: "Como a multi-tenancy pode impactar a coleta de evidências forenses em ambientes de nuvem?",
+        answer: "A <strong>multi-tenancy</strong> significa que múltiplos clientes compartilham a mesma infraestrutura física. Isso pode dificultar a isolação de evidências de um único cliente, levantar questões de privacidade para outros clientes e tornar mais complexa a determinação de qual hardware específico foi utilizado por um determinado usuário ou serviço.",
+        keywords: "Multi-tenancy, Nuvem, Perícia Forense, Evidências, Compartilhamento, Privacidade"
+      },
+      {
+        question: "Quais os principais tipos de logs forensicamente relevantes que podem ser coletados em ambientes de nuvem como AWS, Azure ou GCP?",
+        answer: "• <strong>Logs de acesso/autenticação:</strong> Quem acessou o quê e quando.<br><br>• <strong>Logs de auditoria de API:</strong> Registro de chamadas de API feitas na nuvem.<br><br>• <strong>Logs de rede:</strong> Fluxo de tráfego, firewalls, etc.<br><br>• <strong>Logs de eventos do sistema operacional/aplicação:</strong> Dentro de máquinas virtuais ou containers.<br><br>• <strong>Logs de armazenamento:</strong> Acesso a objetos em buckets, blobs.<br><br>• <strong>Logs de segurança:</strong> Eventos de sistemas de detecção de intrusão, WAFs.",
+        keywords: "Logs, Evidências, Nuvem, AWS CloudTrail, Azure Monitor, Google Cloud Logging, Perícia Forense"
+      },
+      {
+        question: "Qual serviço da AWS é crucial para a auditoria e monitoramento de atividades dentro da conta, sendo vital para investigações forenses?",
+        answer: "O serviço <strong>AWS CloudTrail</strong> registra chamadas de API feitas por usuários, funções da AWS e serviços da AWS. Ele fornece um histórico de eventos de atividade da conta, incluindo ações realizadas através do console de gerenciamento, SDKs e linha de comando, sendo fundamental para a perícia.",
+        keywords: "AWS, CloudTrail, Logs, Auditoria, Perícia Forense, Eventos de API"
+      },
+      {
+        question: "No Microsoft Azure, qual serviço permite coletar e analisar logs de recursos e serviços, sendo análogo ao AWS CloudTrail?",
+        answer: "O <strong>Azure Monitor</strong> é o serviço que coleta, analisa e atua sobre dados de telemetria de seus ambientes do Azure e locais. Ele inclui recursos como Logs de Atividade (Eventos de API), Logs de Diagnóstico (logs específicos de recursos) e Métricas, sendo crucial para a análise forense.",
+        keywords: "Azure, Azure Monitor, Logs, Diagnóstico, Atividade, Perícia Forense"
+      },
+      {
+        question: "No Google Cloud Platform (GCP), qual serviço é responsável pela centralização de logs e eventos de auditoria?",
+        answer: "O <strong>Google Cloud Logging</strong> e o <strong>Cloud Audit Logs</strong> são os serviços chave. O Cloud Logging coleta logs de vários serviços e aplicações do GCP, enquanto o Cloud Audit Logs especificamente registra as atividades de administrador e acessos a dados dentro do ambiente GCP.",
+        keywords: "Google Cloud, GCP, Cloud Logging, Cloud Audit Logs, Logs, Auditoria, Perícia Forense"
+      },
+      {
+        question: "Explique o conceito de \"imagem forense\" em ambientes de nuvem e suas limitações.",
+        answer: "Em nuvem, uma \"imagem forense\" de uma máquina virtual (VM) é uma <strong>snapshot</strong> ou uma cópia do disco virtual (EBS Snapshot na AWS, Managed Disk Snapshot no Azure, Persistent Disk Snapshot no GCP). As limitações incluem a dificuldade de capturar a <strong>memória RAM</strong> (volátil e geralmente não acessível para snapshot direto), o impacto na performance da VM durante a criação do snapshot, e a necessidade de cooperação do provedor para garantir a integridade da imagem.",
+        keywords: "Imagem Forense, Snapshot, Máquina Virtual, Nuvem, Limitações, Memória RAM, Volatilidade"
+      },
+      {
+        question: "Quais são os principais desafios relacionados à jurisdição e soberania de dados em investigações forenses na nuvem?",
+        answer: "Os desafios surgem porque os dados podem estar armazenados em servidores localizados em diferentes países, sujeitos a leis distintas. Isso pode complicar a obtenção de mandados de busca, a transferência de dados transfronteiriça e a conformidade com regulamentações de privacidade de cada nação, como o <strong>GDPR</strong> na Europa ou a <strong>LGPD</strong> no Brasil.",
+        keywords: "Jurisdição, Soberania de Dados, Nuvem, Perícia Forense, Leis, Regulamentação, LGPD, GDPR"
+      },
+      {
+        question: "Como a imudabilidade (immutability) pode ser uma vantagem e uma desvantagem para a perícia forense em nuvem?",
+        answer: "<strong>Vantagem:</strong> Objetos em armazenamento imutável (ex: S3 Versioning, Azure Blob Immutability Policy) não podem ser alterados ou apagados, o que ajuda a preservar a integridade das evidências digitais.<br><br><strong>Desvantagem:</strong> Se um atacante alterar a versão de um arquivo, ou se a política de imutabilidade não for bem configurada, pode-se perder acesso à versão original ou a dados necessários para a investigação. Além disso, a cópia de objetos imutáveis pode ser complexa.",
+        keywords: "Imudabilidade, Nuvem, Evidências, S3, Azure Blob, Integridade, Perícia Forense"
+      },
+      {
+        question: "Qual a importância da cadeia de custódia em investigações forenses em ambientes de nuvem?",
+        answer: "A cadeia de custódia é fundamental para garantir a <strong>autenticidade e integridade</strong> das evidências digitais coletadas na nuvem. Ela documenta quem, o quê, onde, quando e como as evidências foram coletadas, manuseadas e armazenadas, assegurando que não foram adulteradas e que podem ser aceitas em tribunal.",
+        keywords: "Cadeia de Custódia, Perícia Forense, Nuvem, Autenticidade, Integridade, Evidências Digitais"
+      },
+      {
+        question: "Em uma investigação forense em AWS, como seria possível obter acesso a um volume EBS de uma instância EC2 comprometida para análise off-line?",
+        answer: "O processo envolve:<br><br>1. Criar um <strong>snapshot</strong> do volume EBS da instância comprometida.<br>2. Criar um <strong>novo volume EBS</strong> a partir desse snapshot.<br>3. Anexar o novo volume EBS a uma <strong>instância EC2 forense</strong> (uma instância controlada pelo perito, preferencialmente isolada da rede principal).<br>4. Montar o volume na instância forense para realizar a análise.",
+        keywords: "AWS, EBS, EC2, Snapshot, Volume, Perícia Forense, Coleta de Evidências"
+      },
+      {
+        question: "No contexto do Azure, como um perito pode obter dados de uma máquina virtual (VM) suspeita para análise forense?",
+        answer: "No Azure, pode-se:<br><br>1. Criar um <strong>snapshot de disco</strong> do disco do sistema operacional ou de dados da VM.<br>2. Exportar o snapshot como um <strong>VHD (Virtual Hard Disk)</strong> para uma Storage Account.<br>3. Baixar o arquivo VHD para análise local ou anexá-lo a outra VM forense no Azure.<br>4. Capturar a <strong>memória RAM</strong> usando ferramentas específicas que podem ser instaladas na VM comprometida (se ainda for possível o acesso).",
+        keywords: "Azure, VM, Disco, Snapshot, VHD, Perícia Forense, Coleta de Evidências, Memória RAM"
+      },
+      {
+        question: "Qual é a importância dos serviços de gerenciamento de identidade e acesso (IAM) na perícia forense?",
+        answer: "Serviços como <strong>AWS IAM</strong>, <strong>Azure AD</strong> e <strong>Google Cloud IAM</strong> são cruciais porque permitem auditar quem tem acesso ao quê, quando e de onde. Em uma investigação, eles fornecem logs detalhados sobre as permissões de usuários e serviços, autenticações bem-sucedidas/falhas, e quais ações foram realizadas por uma identidade específica, ajudando a traçar o perfil do atacante ou do usuário mal-intencionado.",
+        keywords: "IAM, Identidade e Acesso, AWS IAM, Azure AD, Google Cloud IAM, Auditoria, Perícia Forense, Logs, Permissões"
+      },
+      {
+        question: "Explique o conceito de \"evidência volátil\" no contexto da nuvem e cite exemplos.",
+        answer: "Evidências voláteis são aquelas que podem ser perdidas ou alteradas facilmente e rapidamente se a máquina ou serviço for desligado ou reiniciado. Em ambientes de nuvem, exemplos incluem:<br><br>• <strong>Memória RAM</strong> de instâncias EC2, VMs ou containers.<br>• <strong>Conexões de rede ativas</strong>.<br>• <strong>Cache de disco</strong> ou dados em trânsito.<br>• <strong>Processos em execução</strong>.<br><br>A coleta de evidências voláteis geralmente exige acesso direto e ferramentas específicas.",
+        keywords: "Evidência Volátil, Nuvem, Memória RAM, Conexões de Rede, Processos, Perícia Forense"
+      },
+      {
+        question: "Quais ferramentas e abordagens são utilizadas para a análise de logs centralizados em ambientes de nuvem?",
+        answer: "Para a análise de logs centralizados, os peritos utilizam:<br><br>• <strong>Serviços nativos da nuvem:</strong> AWS CloudWatch Logs Insights, Azure Log Analytics (KQL), Google Cloud Logging com BigQuery.<br>• <strong>SIEM (Security Information and Event Management):</strong> Splunk, ELK Stack (Elasticsearch, Logstash, Kibana), IBM QRadar, Microsoft Sentinel.<br>• <strong>Ferramentas de análise de texto:</strong> grep, awk, ou scripts customizados para correlação de eventos.",
+        keywords: "Logs, Análise Forense, SIEM, CloudWatch, Log Analytics, BigQuery, ELK, Splunk, Perícia Forense"
+      },
+      {
+        question: "Como a automação, por meio de ferramentas como AWS Lambda, Azure Functions ou Google Cloud Functions, pode ser um desafio para a perícia forense?",
+        answer: "A automação pode ser um desafio porque:<br><br>• As ações são executadas por <strong>código ou funções sem servidor</strong>, que podem não deixar rastros claros de um \"usuário\" humano.<br>• Os logs de execução podem ser muito granulares ou, por outro lado, insuficientes.<br>• O ambiente de execução é efêmero, dificultando a análise de memória ou estado do processo.<br>• A complexidade de orquestrações entre múltiplas funções ou serviços automatizados.",
+        keywords: "Automação, Serverless, AWS Lambda, Azure Functions, Google Cloud Functions, Perícia Forense, Desafios, Logs"
+      },
+      {
+        question: "Qual a importância de se ter um plano de resposta a incidentes (IRP) que contemple ambientes de nuvem para a PF?",
+        answer: "Um IRP adaptado para a nuvem é vital porque as especificidades dos provedores (AWS, Azure, GCP) e dos modelos de serviço exigem abordagens diferentes das investigações on-premises. O plano deve prever:<br><br>• Como obter acesso e cooperação do provedor.<br>• Ferramentas e técnicas para coleta de evidências na nuvem.<br>• Procedimentos para preservar a cadeia de custódia em ambientes distribuídos.<br>• Responsabilidades claras para a equipe de resposta e a equipe de segurança da nuvem.",
+        keywords: "Resposta a Incidentes, IRP, Nuvem, Perícia Forense, Planejamento, Cooperação, Cadeia de Custódia, Incidentes Cibernéticos"
+      }
+    ];
+
+    let currentCardIndex = 0;
+    let isFlipped = false;
+    let helpVisible = false;
+
+    function updateCard() {
+      const card = flashcards[currentCardIndex];
+      const cardNumber = `${currentCardIndex + 1}/20`;
+      
+      // Atualizar conteúdo
+      document.getElementById('frontTitle').textContent = `Questão ${currentCardIndex + 1}`;
+      document.getElementById('frontContent').textContent = card.question;
+      document.getElementById('backContent').innerHTML = card.answer;
+      document.getElementById('keywordsList').textContent = card.keywords;
+      
+      // Atualizar números
+      document.querySelectorAll('.card-number').forEach(el => el.textContent = cardNumber);
+      document.getElementById('currentCard').textContent = currentCardIndex + 1;
+      document.getElementById('cardCounter').textContent = currentCardIndex + 1;
+      
+      // Reset flip state
+      document.getElementById('flashcard').classList.remove('flipped');
+      isFlipped = false;
+      
+      // Atualizar botões
+      document.getElementById('prevBtn').disabled = currentCardIndex === 0;
+      document.getElementById('firstBtn').disabled = currentCardIndex === 0;
+      document.getElementById('nextBtn').disabled = currentCardIndex === flashcards.length - 1;
+      document.getElementById('lastBtn').disabled = currentCardIndex === flashcards.length - 1;
+    }
+
+    function flipCard() {
+      const flashcard = document.getElementById('flashcard');
+      flashcard.classList.toggle('flipped');
+      isFlipped = !isFlipped;
+    }
+
+    function nextCard() {
+      if (currentCardIndex < flashcards.length - 1) {
+        currentCardIndex++;
+        updateCard();
+      }
+    }
+
+    function previousCard() {
+      if (currentCardIndex > 0) {
+        currentCardIndex--;
+        updateCard();
+      }
+    }
+
+    function firstCard() {
+      currentCardIndex = 0;
+      updateCard();
+    }
+
+    function lastCard() {
+      currentCardIndex = flashcards.length - 1;
+      updateCard();
+    }
+
+    function goToCard(cardNumber) {
+      if (cardNumber >= 1 && cardNumber <= flashcards.length) {
+        currentCardIndex = cardNumber - 1;
+        updateCard();
+      }
+    }
+
+    function shuffleCards() {
+      // Fisher-Yates shuffle
+      for (let i = flashcards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [flashcards[i], flashcards[j]] = [flashcards[j], flashcards[i]];
+      }
+      currentCardIndex = 0;
+      updateCard();
+      
+      // Mostrar notificação
+      showNotification('Cartões embaralhados!');
+    }
+
+    function toggleHelp() {
+      const shortcuts = document.getElementById('keyboardShortcuts');
+      helpVisible = !helpVisible;
+      shortcuts.classList.toggle('hidden', !helpVisible);
+    }
+
+    function showNotification(message) {
+      // Criar notificação temporária
+      const notification = document.createElement('div');
+      notification.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0,0,0,0.8);
+        color: white;
+        padding: 15px 25px;
+        border-radius: 10px;
+        z-index: 2000;
+        font-size: 1.1rem;
+      `;
+      notification.textContent = message;
+      document.body.appendChild(notification);
+      
+      setTimeout(() => {
+        document.body.removeChild(notification);
+      }, 1500);
+    }
+
+    // Atalhos de teclado melhorados
+    document.addEventListener('keydown', (e) => {
+      // Prevenir ação padrão para teclas específicas
+      if (['Space', 'ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(e.code)) {
+        e.preventDefault();
+      }
+
+      switch(e.code) {
+        case 'ArrowLeft':
+          previousCard();
+          break;
+        case 'ArrowRight':
+          nextCard();
+          break;
+        case 'Space':
+        case 'Enter':
+          flipCard();
+          break;
+        case 'Home':
+          firstCard();
+          break;
+        case 'End':
+          lastCard();
+          break;
+        case 'KeyS':
+          shuffleCards();
+          break;
+        case 'KeyH':
+          toggleHelp();
+          break;
+        case 'Digit1':
+        case 'Digit2':
+        case 'Digit3':
+        case 'Digit4':
+        case 'Digit5':
+        case 'Digit6':
+        case 'Digit7':
+        case 'Digit8':
+        case 'Digit9':
+          const cardNum = parseInt(e.code.replace('Digit', ''));
+          goToCard(cardNum);
+          break;
+        case 'Escape':
+          if (helpVisible) {
+            toggleHelp();
+          }
+          break;
+      }
+    });
+
+    // Inicializar
+    document.addEventListener('DOMContentLoaded', () => {
+      document.getElementById('totalCards').textContent = flashcards.length;
+      document.getElementById('totalCounter').textContent = flashcards.length;
+      updateCard();
+      
+      // Ocultar ajuda inicialmente
+      document.getElementById('keyboardShortcuts').classList.add('hidden');
+      
+      // Mostrar dica inicial
+      setTimeout(() => {
+        showNotification('Pressione H para ver os atalhos do teclado');
+      }, 1000);
+    });
+  </script>
+</body>
+</html>
