@@ -85,7 +85,7 @@ if __name__ == "__main__":
     
     js_code = generate_javascript(questions)
     
-    with open('questions_data.js', 'w', encoding='utf-8') as f:
+    with open('quiz_forense.js', 'w', encoding='utf-8') as f:
         f.write(f"const questions = {js_code};")
     
-    print("Arquivo questions_data.js gerado com sucesso!")
+    print("Arquivo quiz_forense.js gerado com sucesso!")

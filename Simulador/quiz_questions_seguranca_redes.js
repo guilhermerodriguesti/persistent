@@ -1,0 +1,302 @@
+const questions = [
+  {
+    "text": "Os sistemas de detecção de intrusão (IDS) baseados em rede (NIDS) são capazes de detectar ataques que ocorrem exclusivamente na camada de aplicação, como SQL injection, independentemente do uso de criptografia SSL/TLS na comunicação.",
+    "answer": "E",
+    "comment": "Os NIDS não conseguem detectar ataques na camada de aplicação quando a comunicação está criptografada (SSL/TLS), pois não têm acesso ao conteúdo dos pacotes. Para detectar SQL injection em tráfego criptografado, seria necessário descriptografar o tráfego ou usar soluções como proxy reverso que terminam a criptografia.",
+    "theme": "IDS/IPS"
+  },
+  {
+    "text": "No contexto de firewalls de próxima geração (NGFW), a inspeção profunda de pacotes (DPI) permite analisar o conteúdo dos dados da camada de aplicação, possibilitando o controle de aplicações específicas independentemente da porta TCP/UDP utilizada.",
+    "answer": "C",
+    "comment": "Os NGFWs utilizam DPI para analisar o conteúdo dos pacotes além dos cabeçalhos, identificando aplicações por suas características de tráfego e não apenas por portas. Isso permite controlar aplicações como Skype ou BitTorrent mesmo quando usam portas não-padrão.",
+    "theme": "Firewall"
+  },
+  {
+    "text": "Um sistema SIEM (Security Information and Event Management) é capaz de correlacionar eventos de segurança em tempo real exclusivamente, não possuindo capacidades de análise forense retrospectiva de incidentes já ocorridos.",
+    "answer": "E",
+    "comment": "Sistemas SIEM possuem tanto capacidades de análise em tempo real quanto retrospectiva. Eles armazenam logs históricos e permitem investigações forenses de incidentes passados, correlacionando eventos que ocorreram em diferentes momentos para identificar padrões de ataque.",
+    "theme": "SIEM"
+  },
+  {
+    "text": "O NAT (Network Address Translation) fornece uma camada adicional de segurança ao ocultar a topologia interna da rede, porém não deve ser considerado um mecanismo de segurança primário, pois não impede ataques direcionados que explorem vulnerabilidades em serviços expostos.",
+    "answer": "C",
+    "comment": "O NAT oferece obscuridade ao ocultar IPs internos, mas não é um controle de segurança efetivo. Ataques podem explorar serviços expostos através de port forwarding ou vulnerabilidades em protocolos que atravessam NAT. A segurança deve basear-se em controles específicos como firewalls e IPS.",
+    "theme": "NAT"
+  },
+  {
+    "text": "Em uma VPN IPSec configurada em modo túnel, tanto o cabeçalho IP original quanto o payload são criptografados, criando um novo cabeçalho IP externo que permite o roteamento através da internet pública.",
+    "answer": "C",
+    "comment": "No modo túnel IPSec, todo o pacote IP original (cabeçalho + payload) é encapsulado e criptografado, sendo adicionado um novo cabeçalho IP externo para roteamento. Isso difere do modo transporte, onde apenas o payload é criptografado.",
+    "theme": "IDS/IPS"
+  },
+  {
+    "text": "Sistemas EDR (Endpoint Detection and Response) focam exclusivamente na detecção de malware conhecido através de assinaturas, não possuindo capacidades de análise comportamental para identificar ameaças desconhecidas.",
+    "answer": "E",
+    "comment": "EDRs modernos utilizam análise comportamental, machine learning e técnicas heurísticas para detectar ameaças desconhecidas e zero-day. Vão além da detecção baseada em assinaturas, monitorando comportamentos anômalos de processos, conexões de rede e atividades do sistema.",
+    "theme": "EDR/XDR"
+  },
+  {
+    "text": "Um proxy transparente intercepta e processa requisições HTTP sem que os clientes precisem ser configurados especificamente para utilizá-lo, operando de forma transparente na camada de rede.",
+    "answer": "C",
+    "comment": "Proxies transparentes interceptam automaticamente o tráfego HTTP através de redirecionamento na camada de rede, sem necessidade de configuração nos clientes. Isso é feito através de técnicas como redirecionamento de rotas ou regras de firewall.",
+    "theme": "Proxy"
+  },
+  {
+    "text": "Sistemas XDR (Extended Detection and Response) integram dados de múltiplas camadas de segurança (endpoint, rede, email, nuvem) para fornecer uma visão unificada e correlacionada de ameaças em todo o ambiente.",
+    "answer": "C",
+    "comment": "XDR expande o conceito de EDR integrando dados de diferentes fontes de segurança, proporcionando correlação cruzada e uma visão holística das ameaças. Isso permite detecção mais eficaz de ataques sofisticados que se espalham por múltiplas camadas.",
+    "theme": "EDR/XDR"
+  },
+  {
+    "text": "Em firewalls stateful, a tabela de estados mantém registro apenas de conexões TCP estabelecidas, não sendo capaz de rastrear sessões UDP devido à natureza connectionless deste protocolo.",
+    "answer": "E",
+    "comment": "Firewalls stateful podem rastrear sessões UDP criando entradas temporárias na tabela de estados baseadas em pares IP:porta origem/destino e timeouts. Embora UDP seja connectionless, o firewall simula estados para permitir respostas legítimas.",
+    "theme": "Firewall"
+  },
+  {
+    "text": "Plataformas SOAR (Security Orchestration, Automation and Response) automatizam respostas a incidentes de segurança através de playbooks pré-definidos, mas não possuem capacidades de orquestração entre diferentes ferramentas de segurança.",
+    "answer": "E",
+    "comment": "A orquestração é uma funcionalidade central dos sistemas SOAR. Eles integram e coordenam múltiplas ferramentas de segurança através de APIs, permitindo workflows automatizados que envolvem diferentes produtos e vendors.",
+    "theme": "SOAR"
+  },
+  {
+    "text": "IPS (Intrusion Prevention System) inline opera diretamente no caminho dos dados, podendo bloquear ataques em tempo real, porém introduz latência adicional na rede devido à necessidade de análise de todos os pacotes.",
+    "answer": "C",
+    "comment": "IPS inline processa todo o tráfego em tempo real para detectar e bloquear ameaças imediatamente, mas isso introduz latência devido ao tempo necessário para análise. A latência pode ser minimizada com hardware dedicado e otimizações de performance.",
+    "theme": "IDS/IPS"
+  },
+  {
+    "text": "Antivírus baseados em nuvem (cloud-based) dependem exclusivamente de conectividade com a internet para funcionar, não oferecendo nenhuma proteção quando o endpoint está offline.",
+    "answer": "E",
+    "comment": "Antivírus baseados em nuvem mantêm um conjunto básico de assinaturas localmente e funcionalidades de proteção essenciais que operam mesmo offline. A conectividade com a nuvem oferece proteção adicional e atualizada, mas não é obrigatória para funcionalidade básica.",
+    "theme": "Ataques"
+  },
+  {
+    "text": "O protocolo DNSSEC utiliza assinaturas digitais para garantir a autenticidade e integridade das respostas DNS, prevenindo ataques de DNS poisoning através da validação criptográfica das resoluções de nomes.",
+    "answer": "C",
+    "comment": "DNSSEC adiciona assinaturas digitais aos registros DNS, permitindo que resolvers validem a autenticidade das respostas. Isso previne manipulação de respostas DNS e ataques de envenenamento de cache.",
+    "theme": "NAT"
+  },
+  {
+    "text": "SPF (Sender Policy Framework) valida emails verificando se o servidor remetente está autorizado a enviar emails para o domínio especificado no cabeçalho \\\"From\\\" da mensagem.",
+    "answer": "E",
+    "comment": "SPF valida se o servidor está autorizado a enviar emails em nome do domínio especificado no envelope MAIL FROM (Return-Path), não necessariamente o cabeçalho \\\"From\\\" visível ao usuário. Esta distinção é importante para entender limitações do SPF.",
+    "theme": "Protocolos"
+  },
+  {
+    "text": "DKIM (DomainKeys Identified Mail) assina criptograficamente partes específicas do email, incluindo cabeçalhos selecionados e o corpo da mensagem, permitindo verificar que o conteúdo não foi alterado em trânsito.",
+    "answer": "C",
+    "comment": "DKIM cria uma assinatura digital de cabeçalhos especificados e do corpo do email, garantindo integridade. O receptor pode verificar a assinatura usando a chave pública publicada no DNS do domínio remetente.",
+    "theme": "Protocolos"
+  },
+  {
+    "text": "DMARC (Domain-based Message Authentication, Reporting and Conformance) funciona independentemente de SPF e DKIM, implementando seu próprio mecanismo de autenticação de emails.",
+    "answer": "E",
+    "comment": "DMARC depende de SPF e/ou DKIM para funcionar. Ele define políticas sobre como tratar emails que falham na verificação SPF e DKIM, incluindo alinhamento de domínios e ações a serem tomadas (none, quarantine, reject).",
+    "theme": "Protocolos"
+  },
+  {
+    "text": "No IPSec, o protocolo AH (Authentication Header) fornece autenticação e integridade dos dados, mas não oferece confidencialidade, mantendo o payload em texto claro.",
+    "answer": "C",
+    "comment": "AH fornece autenticação e integridade através de hash criptográfico, mas não criptografa o payload. Para confidencialidade, deve-se usar ESP (Encapsulating Security Payload) ou combinação AH+ESP.",
+    "theme": "IDS/IPS"
+  },
+  {
+    "text": "ESP (Encapsulating Security Payload) no IPSec pode operar tanto em modo transporte quanto em modo túnel, fornecendo confidencialidade, autenticação e integridade dos dados em ambos os modos.",
+    "answer": "C",
+    "comment": "ESP oferece criptografia (confidencialidade) e autenticação em ambos os modos. No modo transporte, protege apenas o payload; no modo túnel, protege todo o pacote IP original.",
+    "theme": "IDS/IPS"
+  },
+  {
+    "text": "Traffic shaping é uma técnica utilizada para controlar a largura de banda disponível para diferentes tipos de tráfego, podendo ser implementada para otimizar o uso da rede limitando aplicações que consomem muitos recursos.",
+    "answer": "C",
+    "comment": "Traffic shaping controla a taxa de transmissão de dados, permitindo priorização de tráfego crítico e limitação de aplicações que consomem muita banda (P2P, streaming). É implementado através de algoritmos como token bucket e leaky bucket.",
+    "theme": "Monitoramento"
+  },
+  {
+    "text": "Sniffers de rede em ambientes de switches modernos conseguem capturar todo o tráfego da rede sem configuração adicional, pois os switches encaminham automaticamente uma cópia de todos os frames para todas as portas.",
+    "answer": "E",
+    "comment": "Switches modernos enviam tráfego apenas para a porta de destino específica. Para sniffing, é necessário configurar port mirroring/SPAN, usar TAPs de rede, ou explorar vulnerabilidades como MAC flooding para forçar o switch a operar como hub.",
+    "theme": "Ataques"
+  },
+  {
+    "text": "A análise de tráfego em tempo real pode identificar padrões anômalos como picos súbitos de conexões ou comunicação com domínios maliciosos conhecidos, permitindo detecção proativa de ameaças.",
+    "answer": "C",
+    "comment": "Análise de tráfego em tempo real permite detecção de anomalias comportamentais, comunicação com C&C servers, exfiltração de dados e outros indicadores de comprometimento através de correlation com threat intelligence feeds.",
+    "theme": "Monitoramento"
+  },
+  {
+    "text": "Ferramentas de monitoramento de rede baseadas em flow (NetFlow, sFlow) fornecem informações detalhadas sobre o conteúdo dos pacotes, incluindo payloads e cabeçalhos completos das aplicações.",
+    "answer": "E",
+    "comment": "Tecnologias de flow fornecem metadados sobre conexões (IPs origem/destino, portas, protocolos, volumes de dados, timestamps) mas não capturam o conteúdo dos pacotes. Para análise de payload, é necessário packet capture completo.",
+    "theme": "Monitoramento"
+  },
+  {
+    "text": "O protocolo 802.1X utiliza três componentes principais: o suplicante (cliente), o autenticador (ponto de acesso) e o servidor de autenticação (por exemplo, RADIUS), implementando autenticação baseada em porta antes de permitir acesso à rede.",
+    "answer": "C",
+    "comment": "802.1X implementa autenticação port-based com esses três componentes. O suplicante solicita acesso, o autenticador atua como intermediário, e o servidor de autenticação valida as credenciais antes de liberar o acesso à rede.",
+    "theme": "Redes Sem Fio"
+  },
+  {
+    "text": "WPA3 introduziu o protocolo SAE (Simultaneous Authentication of Equals) que substitui o handshake de 4 vias do WPA2, oferecendo proteção contra ataques de força bruta offline em redes com senhas fracas.",
+    "answer": "C",
+    "comment": "SAE (Dragonfly) no WPA3 protege contra ataques de força bruta offline, pois o atacante não consegue capturar material suficiente para quebrar a senha offline, diferentemente do handshake do WPA2 que é vulnerável a ataques de dicionário.",
+    "theme": "Redes Sem Fio"
+  },
+  {
+    "text": "EAP-TLS é considerado um dos métodos EAP mais seguros por utilizar certificados digitais tanto no cliente quanto no servidor, fornecendo autenticação mútua e criando um túnel criptografado para a troca de credenciais.",
+    "answer": "C",
+    "comment": "EAP-TLS oferece autenticação mútua através de certificados X.509, eliminando o risco de servidores fraudulentos e fornecendo forte criptografia. É considerado o padrão-ouro para autenticação 802.1X em ambientes corporativos.",
+    "theme": "VPN"
+  },
+  {
+    "text": "WEP (Wired Equivalent Privacy) utiliza criptografia RC4 com chaves de 64 ou 128 bits, sendo considerado seguro para redes domésticas devido ao algoritmo de criptografia robusto empregado.",
+    "answer": "E",
+    "comment": "WEP possui múltiplas vulnerabilidades críticas: reutilização de IV, chaves fracas do RC4, CRC-32 inadequado para integridade, e pode ser quebrado em minutos com ferramentas modernas. Foi substituído por WPA/WPA2 devido à insegurança.",
+    "theme": "8.4 Segurança de Redes Sem Fio"
+  },
+  {
+    "text": "O ataque Krack (Key Reinstallation Attack) explora vulnerabilidades no handshake de 4 vias do WPA2, forçando a reinstalação de chaves já utilizadas e permitindo decrypt de tráfego em sistemas Linux e Android específicos.",
+    "answer": "C",
+    "comment": "Krack explora a reinstalação de PTK (Pairwise Transient Key) durante o handshake 4-way, reutilizando nonces e permitindo decrypt. Sistemas Linux e Android são particularmente vulneráveis por reinstalarem chave all-zero em certas condições.",
+    "theme": "Protocolos"
+  },
+  {
+    "text": "WPS (Wi-Fi Protected Setup) com PIN de 8 dígitos oferece 10^8 (100 milhões) de combinações possíveis, fornecendo segurança adequada contra ataques de força bruta.",
+    "answer": "E",
+    "comment": "O PIN WPS é verificado em duas partes (primeiros 4 dígitos + últimos 3, pois o 8º é checksum), resultando em apenas 11.000 combinações possíveis (10^4 + 10^3). Isso permite quebra por força bruta em horas, tornando WPS vulnerável.",
+    "theme": "Redes Sem Fio"
+  },
+  {
+    "text": "Autenticação baseada em contexto em redes Wi-Fi pode considerar fatores como localização geográfica, horário de acesso, tipo de dispositivo e comportamento histórico do usuário para determinar níveis de acesso apropriados.",
+    "answer": "C",
+    "comment": "Autenticação contextual usa múltiplos fatores além de credenciais tradicionais para tomar decisões de acesso. Isso inclui geolocalização, time-based access, device fingerprinting e análise comportamental para implementar Zero Trust.",
+    "theme": "Redes Sem Fio"
+  },
+  {
+    "text": "WPA2 Enterprise utiliza chaves pré-compartilhadas (PSK) únicas para cada usuário, oferecendo melhor segurança que WPA2 Personal que usa uma PSK compartilhada por todos os usuários da rede.",
+    "answer": "E",
+    "comment": "WPA2 Enterprise usa autenticação 802.1X com servidor RADIUS, não PSK. Cada usuário recebe chaves de sessão únicas derivadas dinamicamente. WPA2 Personal que usa PSK compartilhada. A confusão está na descrição do Enterprise.",
+    "theme": "Redes Sem Fio"
+  },
+  {
+    "text": "DDoS (Distributed Denial of Service) amplifica ataques utilizando botnets para gerar tráfego massivo, sendo mais eficaz que DoS simples por distribuir a origem do ataque e dificultar filtragem baseada em IP de origem.",
+    "answer": "C",
+    "comment": "DDoS usa múltiplas fontes (botnet) tornando o ataque mais poderoso e difícil de mitigar. A distribuição impede filtragem simples por IP e pode sobrecarregar defesas tradicionais que funcionariam contra DoS de fonte única.",
+    "theme": "Ataques"
+  },
+  {
+    "text": "UDP Flood é eficaz como ataque DoS porque o protocolo UDP requer estabelecimento de conexão, criando overhead no servidor que precisa manter estado para cada conexão UDP recebida.",
+    "answer": "E",
+    "comment": "UDP é connectionless e não requer estabelecimento de conexão. UDP Flood é eficaz porque gera grande volume de tráfego que consome banda e recursos do servidor, não por overhead de estabelecimento de conexão.",
+    "theme": "Ataques"
+  },
+  {
+    "text": "MAC flooding ataca switches enviando frames com endereços MAC de origem falsificados em grande quantidade, causando overflow da tabela CAM e forçando o switch a operar como hub, encaminhando tráfego para todas as portas.",
+    "answer": "C",
+    "comment": "MAC flooding explora o tamanho limitado da tabela CAM do switch. Quando a tabela está cheia, o switch não consegue aprender novos MACs e encaminha frames para todas as portas (modo fail-open), permitindo sniffing.",
+    "theme": "Ataques"
+  },
+  {
+    "text": "ARP Spoofing permite ao atacante interceptar comunicações entre duas máquinas enviando respostas ARP falsas que associam o IP da vítima ao MAC do atacante, redirecionando o tráfego.",
+    "answer": "C",
+    "comment": "ARP Spoofing envia respostas ARP falsas para associar IPs de alvos ao MAC do atacante, posicionando-o como man-in-the-middle. Funciona porque ARP não tem autenticação e hosts confiam em respostas recebidas.",
+    "theme": "Protocolos"
+  },
+  {
+    "text": "SQL Injection explora falhas de validação de entrada em aplicações web, permitindo ao atacante inserir comandos SQL maliciosos que são executados pelo banco de dados, podendo resultar em acesso não autorizado a dados.",
+    "answer": "C",
+    "comment": "SQL Injection ocorre quando entrada do usuário não é adequadamente validada/sanitizada antes de ser incluída em queries SQL, permitindo execução de comandos arbitrários no banco de dados.",
+    "theme": "Ataques"
+  },
+  {
+    "text": "Cross-Site Scripting (XSS) Reflected executa código JavaScript malicioso no navegador da vítima através de scripts armazenados permanentemente no servidor web comprometido.",
+    "answer": "E",
+    "comment": "XSS Reflected não armazena código no servidor. O script malicioso é refletido de volta ao usuário através de parâmetros na URL ou formulários. XSS Stored é que mantém o código malicioso permanentemente no servidor.",
+    "theme": "Ataques"
+  },
+  {
+    "text": "DNS Poisoning consiste em inserir registros DNS falsos no cache de um servidor DNS, redirecionando futuras consultas para servidores controlados pelo atacante.",
+    "answer": "C",
+    "comment": "DNS Cache Poisoning/DNS Spoofing insere registros falsos no cache do resolver DNS, fazendo com que consultas legítimas retornem IPs maliciosos. Pode ser mitigado com DNSSEC e randomização de source ports.",
+    "theme": "Ataques"
+  },
+  {
+    "text": "Buffer overflow em aplicações de rede pode permitir execução remota de código através do envio de dados que excedem o tamanho do buffer, sobrescrevendo endereços de retorno na stack.",
+    "answer": "C",
+    "comment": "Buffer overflow pode sobrescrever dados críticos na memória, incluindo endereços de retorno de funções, permitindo redirecionamento da execução para shellcode. Proteções modernas incluem ASLR, DEP/NX bit e stack canaries.",
+    "theme": "Ataques"
+  },
+  {
+    "text": "Ping da morte (Ping of Death) explora limitações no processamento de pacotes ICMP fragmentados, enviando pings maiores que 65535 bytes que causam crash em sistemas vulneráveis.",
+    "answer": "C",
+    "comment": "Ping da morte envia pacotes ICMP maiores que o máximo permitido (65535 bytes) através de fragmentação IP. Sistemas vulneráveis crasham ao tentar remontar o pacote. Sistemas modernos possuem proteções contra este ataque.",
+    "theme": "Ataques"
+  },
+  {
+    "text": "Zero-day exploits são ataques que aproveitam vulnerabilidades conhecidas publicamente há mais de 30 dias, mas que ainda não possuem patches disponíveis dos fabricantes.",
+    "answer": "E",
+    "comment": "Zero-day exploits aproveitam vulnerabilidades completamente desconhecidas pelos fabricantes e comunidade de segurança. O termo \\\"zero-day\\\" refere-se a zero dias de conhecimento público, não a tempo sem patch.",
+    "theme": "Ataques"
+  },
+  {
+    "text": "Botnets são redes de computadores infectados controlados remotamente por atacantes através de canais de comando e controle (C&C), podendo ser utilizadas para ataques DDoS, spam e mineração de criptomoedas.",
+    "answer": "C",
+    "comment": "Botnets consistem em dispositivos comprometidos (bots/zumbis) controlados via infraestrutura C&C. São monetizadas através de DDoS-for-hire, spam, roubo de dados, mineração de criptomoedas e outras atividades maliciosas.",
+    "theme": "Ataques"
+  },
+  {
+    "text": "Phishing técnico explora vulnerabilidades de software para comprometer sistemas, diferindo do phishing tradicional que depende exclusivamente de engenharia social para obter credenciais.",
+    "answer": "E",
+    "comment": "Phishing é fundamentalmente baseado em engenharia social para enganar usuários e obter credenciais ou informações sensíveis. Ataques que exploram vulnerabilidades de software são categorizados como exploits, não phishing.",
+    "theme": "8.5.1 Ataques a Redes de Computadores"
+  },
+  {
+    "text": "IP Spoofing consiste em falsificar o endereço IP de origem em pacotes de rede, podendo ser utilizado em ataques DDoS reflexivos para amplificar o tráfego direcionado à vítima.",
+    "answer": "C",
+    "comment": "IP Spoofing permite ataques de amplificação usando serviços como DNS, NTP ou memcached. O atacante envia requests pequenos com IP spoofado da vítima, gerando respostas grandes direcionadas ao alvo, amplificando o ataque.",
+    "theme": "Ataques"
+  },
+  {
+    "text": "Ataques DoS aplicação-específicos, como Slowloris, consomem recursos do servidor web mantendo múltiplas conexões HTTP parciais abertas, exaurindo o pool de conexões disponíveis sem gerar tráfego volumoso.",
+    "answer": "C",
+    "comment": "Slowloris mantém conexões HTTP abertas enviando headers parciais lentamente, esgotando threads/conexões do servidor sem consumir muita banda. É eficaz contra servidores com pools limitados de conexões concorrentes.",
+    "theme": "Protocolos"
+  },
+  {
+    "text": "Amplification attacks como DNS amplification são ineficazes para DDoS pois o tráfego de resposta é sempre menor que o tráfego de requisição original enviado pelo atacante.",
+    "answer": "E",
+    "comment": "Amplification attacks são altamente eficazes porque geram respostas maiores que as requisições. Por exemplo, uma query DNS de 60 bytes pode gerar resposta de 4000+ bytes, amplificando o ataque 70x ou mais.",
+    "theme": "Protocolos"
+  },
+  {
+    "text": "O framework MITRE ATT&CK organiza técnicas de atacantes em táticas que representam objetivos em diferentes fases de um ataque, fornecendo uma taxonomia padronizada para análise de ameaças e desenvolvimento de defesas.",
+    "answer": "C",
+    "comment": "MITRE ATT&CK estrutura TTPs (Tactics, Techniques, Procedures) em matriz que mapeia táticas (objetivos) como Initial Access, Persistence, Defense Evasion, com técnicas específicas usadas para alcançar cada objetivo, facilitando threat hunting e detecção.",
+    "theme": "Frameworks"
+  },
+  {
+    "text": "No MITRE ATT&CK, a tática \\\"Command and Control\\\" refere-se exclusivamente ao estabelecimento inicial de conexão com sistemas comprometidos, não incluindo comunicações subsequentes para exfiltração de dados.",
+    "answer": "E",
+    "comment": "Command and Control inclui todas as comunicações entre atacante e sistemas comprometidos, incluindo envio de comandos, recebimento de dados, atualizações de malware e exfiltração. É uma tática contínua, não apenas o estabelecimento inicial.",
+    "theme": "Ataques"
+  },
+  {
+    "text": "CIS Controls (Center for Internet Security) organiza controles de segurança em três categorias de implementação (Basic, Foundational, Organizational) priorizando ações de maior impacto na redução de riscos cibernéticos.",
+    "answer": "C",
+    "comment": "CIS Controls v8 possui 18 controles organizados em Implementation Groups (IG1, IG2, IG3) baseados em recursos e maturidade organizacional, priorizando controles de maior efetividade contra ameaças comuns.",
+    "theme": "Frameworks"
+  },
+  {
+    "text": "NIST Cybersecurity Framework (CSF) estrutura atividades de cibersegurança em cinco funções principais: Identify, Protect, Detect, Respond e Recover, fornecendo abordagem baseada em riscos para gestão de segurança.",
+    "answer": "C",
+    "comment": "O NIST CSF organiza cibersegurança nessas cinco funções centrais, fornecendo estrutura flexível e baseada em riscos que pode ser adaptada para diferentes organizações e setores, facilitando comunicação entre stakeholders técnicos e executivos.",
+    "theme": "Protocolos"
+  },
+  {
+    "text": "APTs (Advanced Persistent Threats) caracterizam-se por ataques direcionados de longa duração, utilizando múltiplas técnicas de evasão e mantendo presença persistente nos sistemas alvo para objetivos específicos como espionagem ou sabotagem.",
+    "answer": "C",
+    "comment": "APTs são campanhas sofisticadas, geralmente state-sponsored, que visam alvos específicos (governos, empresas estratégicas) usando técnicas avançadas, permanência prolongada e objetivos de longo prazo como roubo de propriedade intelectual ou espionagem industrial/política.",
+    "theme": "Protocolos"
+  }
+];

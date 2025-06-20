@@ -141,7 +141,7 @@
   <!-- Bootstrap Bundle com Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- Carregar as questões do arquivo externo -->
-  <script src="questions_data.js"></script>
+  <script src="quiz_forense.js"></script>
   <script>
     let currentQuestion = 0;
     let startTime = new Date();
@@ -384,11 +384,11 @@
         loadQuestions();
         startTimer();
       } else {
-        console.error('Questões não foram carregadas. Verifique se o arquivo questions_data.js está presente.');
+        console.error('Questões não foram carregadas. Verifique se o arquivo quiz_forense.js está presente.');
         document.getElementById('quizForm').innerHTML = `
           <div class="alert alert-danger" role="alert">
             <h4 class="alert-heading">Erro!</h4>
-            <p>Não foi possível carregar as questões. Verifique se o arquivo <code>questions_data.js</code> está presente no mesmo diretório.</p>
+            <p>Não foi possível carregar as questões. Verifique se o arquivo <code>quiz_forense.js</code> está presente no mesmo diretório.</p>
           </div>
         `;
       }
