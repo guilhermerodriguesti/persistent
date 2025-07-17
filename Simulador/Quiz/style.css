@@ -1,6 +1,46 @@
+:root {
+  /* Tema escuro (padrão) */
+  --bg-color: #181a1b;
+  --container-bg: #23272a;
+  --text-color: #f1f1f1;
+  --title-color: #00b4d8;
+  --input-bg: #222831;
+  --input-border: #444;
+  --button-bg: #222831;
+  --button-hover: #00b4d8;
+  --button-text: #f1f1f1;
+  --button-hover-text: #181a1b;
+  --progress-color: #adb5bd;
+  --footer-bg: #23272a;
+  --correct-color: #4caf50;
+  --wrong-color: #e53935;
+  --primary-color: #00b4d8;
+  --shadow-color: rgba(0,0,0,0.5);
+}
+
+[data-theme="light"] {
+  /* Tema claro */
+  --bg-color: #f5f5f5;
+  --container-bg: #ffffff;
+  --text-color: #333333;
+  --title-color: #0077b6;
+  --input-bg: #f9f9f9;
+  --input-border: #cccccc;
+  --button-bg: #e9ecef;
+  --button-hover: #0077b6;
+  --button-text: #333333;
+  --button-hover-text: #ffffff;
+  --progress-color: #6c757d;
+  --footer-bg: #ffffff;
+  --correct-color: #2e7d32;
+  --wrong-color: #c62828;
+  --primary-color: #0077b6;
+  --shadow-color: rgba(0,0,0,0.1);
+}
+
 body {
-  background: #181a1b;
-  color: #f1f1f1;
+  background: var(--bg-color);
+  color: var(--text-color);
   font-family: 'Segoe UI', Arial, sans-serif;
   margin: 0;
   min-height: 100vh;
@@ -9,12 +49,13 @@ body {
   justify-content: center;
   padding: 1rem;
   box-sizing: border-box;
+  transition: background 0.3s, color 0.3s;
 }
 
 #quiz-container {
-  background: #23272a;
+  background: var(--container-bg);
   border-radius: 12px;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.5);
+  box-shadow: 0 4px 32px var(--shadow-color);
   padding: 2rem 2.5rem;
   max-width: 600px;
   width: 100%;
@@ -22,15 +63,17 @@ body {
   flex-direction: column;
   align-items: center;
   box-sizing: border-box;
+  transition: background 0.3s, box-shadow 0.3s;
 }
 
 h1 {
   margin-bottom: 1.5rem;
   font-size: 1.7rem;
-  color: #00b4d8;
+  color: var(--title-color);
   letter-spacing: 1px;
   text-align: center;
   line-height: 1.3;
+  transition: color 0.3s;
 }
 
 #topic-selector {
@@ -43,39 +86,42 @@ h1 {
   display: block;
   margin-bottom: 0.5rem;
   font-size: 1rem;
-  color: #f1f1f1;
+  color: var(--text-color);
+  transition: color 0.3s;
 }
 
 #topic-select {
-  background: #222831;
-  color: #f1f1f1;
-  border: 1px solid #444;
+  background: var(--input-bg);
+  color: var(--text-color);
+  border: 1px solid var(--input-border);
   border-radius: 6px;
   padding: 0.5rem;
   font-size: 1rem;
   margin-right: 1rem;
   min-width: 200px;
   max-width: 100%;
+  transition: background 0.3s, color 0.3s, border-color 0.3s;
 }
 
 #topic-select:focus {
   outline: none;
-  border-color: #00b4d8;
+  border-color: var(--primary-color);
 }
 
 #start-quiz {
-  background: #00b4d8;
-  color: #181a1b;
+  background: var(--primary-color);
+  color: var(--button-hover-text);
   border: none;
   border-radius: 6px;
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 #start-quiz:hover {
-  background: #0099cc;
+  background: var(--button-hover);
+  opacity: 0.9;
 }
 
 #question-area {
@@ -96,20 +142,20 @@ h1 {
 }
 
 button {
-  background: #222831;
-  color: #f1f1f1;
+  background: var(--button-bg);
+  color: var(--button-text);
   border: none;
   border-radius: 6px;
   padding: 0.7rem 1.5rem;
   font-size: 1rem;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
   min-width: 100px;
 }
 
 button:hover:not(:disabled) {
-  background: #00b4d8;
-  color: #181a1b;
+  background: var(--button-hover);
+  color: var(--button-hover-text);
 }
 
 button:disabled {
@@ -128,8 +174,9 @@ button:disabled {
 
 #progress {
   font-size: 0.95rem;
-  color: #adb5bd;
+  color: var(--progress-color);
   text-align: center;
+  transition: color 0.3s;
 }
 
 #score-footer {
@@ -137,24 +184,54 @@ button:disabled {
   bottom: 0;
   left: 0;
   width: 100vw;
-  background: #23272a;
-  color: #f1f1f1;
+  background: var(--footer-bg);
+  color: var(--text-color);
   text-align: center;
   padding: 0.7rem 0;
   font-size: 1.1rem;
   letter-spacing: 1px;
-  box-shadow: 0 -2px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 -2px 12px var(--shadow-color);
   z-index: 10;
+  transition: background 0.3s, color 0.3s, box-shadow 0.3s;
 }
 
 #score-correct {
-  color: #4caf50;
+  color: var(--correct-color);
   font-weight: bold;
+  transition: color 0.3s;
 }
 
 #score-wrong {
-  color: #e53935;
+  color: var(--wrong-color);
   font-weight: bold;
+  transition: color 0.3s;
+}
+
+/* Estilos para o botão de alternância de tema */
+#theme-toggle-container {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+#theme-toggle {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  min-width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: background-color 0.3s;
+}
+
+#theme-toggle:hover {
+  background-color: var(--button-bg);
 }
 
 /* Media Queries para responsividade */

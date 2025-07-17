@@ -15676,6 +15676,8 @@ const scoreCorrect = document.getElementById('score-correct');
 const scoreWrong = document.getElementById('score-wrong');
 const topicSelect = document.getElementById('topic-select');
 const startQuizBtn = document.getElementById('start-quiz');
+const themeToggle = document.getElementById('theme-toggle');
+const themeToggleIcon = document.getElementById('theme-toggle-icon');
 
 function loadQuestions() {
   const selectedTopic = topicSelect.value;
@@ -15793,5 +15795,33 @@ document.addEventListener('keydown', (event) => {
     }
   }
 });
+
+// Funções para gerenciar o tema
+function setTheme(theme) {
+  if (theme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'light');
+    themeToggleIcon.textContent = '☀️';
+    localStorage.setItem('quiz-theme', 'light');
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    themeToggleIcon.textContent = '🌙';
+    localStorage.setItem('quiz-theme', 'dark');
+  }
+}
+
+function toggleTheme() {
+  const currentTheme = localStorage.getItem('quiz-theme') || 'dark';
+  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+  setTheme(newTheme);
+}
+
+// Inicializar tema com base na preferência salva
+const savedTheme = localStorage.getItem('quiz-theme');
+if (savedTheme) {
+  setTheme(savedTheme);
+}
+
+// Event listener para o botão de alternância de tema
+themeToggle.addEventListener('click', toggleTheme);
 
 showQuestion(); 
