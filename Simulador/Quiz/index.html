@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#181a1b">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Quiz CEBRASPE - Perito PF</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="quiz-container">
+    <h1>Quiz CEBRASPE - Perito PF</h1>
+    <div id="topic-selector">
+      <label for="topic-select">Escolha o tópico:</label>
+      <select id="topic-select">
+        <option value="all">Todos os tópicos</option>
+        <option value="fundamentos">1. Fundamentos da computação</option>
+        <option value="sistemas">1.2 Sistemas operacionais</option>
+        <option value="processadores">1.3 Processadores</option>
+        <option value="distribuidos">1.4 Sistemas Distribuídos</option>
+        <option value="virtualizacao">1.5 Tecnologias de virtualização</option>
+        <option value="raid">1.6 RAID: tipos, características e aplicações</option>
+        <option value="sistemas-arquivos">1.7 Sistemas de arquivos NTFS, FAT32, exFAT, EXT3, EXT4, XFS</option>
+        <option value="computacao-quantica">1.8 Computação quântica: conceitos envolvidos</option>
+        <option value="bancos-dados">2.1 Bancos de dados - Arquitetura, modelos lógicos e representação física</option>
+        <option value="bancos-multidimensionais">2.2 Bancos de dados multidimensionais: conceitos envolvidos</option>
+        <option value="sqlite">2.3.1 SGBDs relacionais - SQLite</option>
+        <option value="sql">2.4 Linguagem de consulta estruturada (SQL)</option>
+        <option value="transacoes">2.5 Transações: características e análise de logs</option>
+        <option value="nosql">2.6 NOSQL</option>
+        <option value="engenharia-reversa">3.1 Engenharia reversa - Técnicas e ferramentas de descompilação de programas</option>
+        <option value="debuggers">3.2 Debuggers</option>
+        <option value="malware">3.3 Análise de código malicioso: vírus, backdoors, keyloggers, worms e outros</option>
+        <option value="obfuscacao">3.4 Ofuscação de código</option>
+        <option value="compactadores">3.5 Compactadores de código executável</option>
+        <option value="polimorfico">3.6 Malware polimórfico</option>
+        <option value="sandboxing">3.7 Técnicas de sandboxing</option>
+        <option value="assembly">3.8 Linguagem Assembly</option>
+        <option value="oop">4.1 Noções de linguagens de programação orientadas a objetos: objetos, classes, herança, polimorfismo, sobrecarga de métodos</option>
+        <option value="procedural">4.2 Noções de linguagens procedurais: tipos de dados elementares e estruturados, funções e procedimentos</option>
+        <option value="controleFluxo">4.3 Estruturas de controle de fluxo de execução</option>
+        <option value="compiladores">4.4 Montadores, compiladores, ligadores e interpretadores</option>
+        <option value="linguagens">4.5 Linguagens C, Java, JavaScript e Python</option>
+        <option value="webDev">4.6 Desenvolvimento Web: HTML, XML, JSON, APIs REST/GraphQL</option>
+        <option value="sonarqube">4.7 Análise estática de código fonte: SonarQube</option>
+        <option value="estruturas-dados">5.1 Estruturas de dados: listas, filas, pilhas e árvores</option>
+        <option value="metodos-estruturas">5.2 Métodos de acesso, busca, inserção e ordenação em estruturas de dados</option>
+        <option value="complexidade-algoritmos">5.3 Complexidade de algoritmos</option>
+        <option value="automatos">5.4 Autômatos determinísticos e não-determinísticos</option>
+        <option value="redes-computadores">6.1-6.2 Redes de computadores: Tipos, tecnologias, topologias e técnicas básicas de comunicação</option>
+        <option value="comutacao-interconexao">6.3-6.4 Técnicas de comutação de circuitos, pacotes e células. Elementos de interconexão</option>
+        <option value="iso27001-27002">7.1 Normas NBR ISO/IEC nº 27001:2022 e nº 27002:2022</option>
+        <option value="desenvolvimento-seguro">7.2 Desenvolvimento seguro de aplicações: SDL, CLASP e OWASP Top 10</option>
+        <option value="seguranca-conteineres">7.3 Segurança de contêineres: Docker, Kubernetes e runtime security</option>
+        <option value="autenticacao-autorizacao">7.4 Autenticação e Autorização: características, fundamentos e conceitos envolvidos</option>
+        <option value="sso-saml-oauth-oidc">7.4.1 Single Sign-On (SSO), SAML, OAuth 2.0, OpenId Connect (OIDC)</option>
+        <option value="biometria">7.4.2 Biometria comportamental, reconhecimento facial, análise de íris, voz, impressão digital</option>
+        <option value="fido2-webauthn">7.4.3 Protocolos de autenticação sem senha: FIDO2/WebAuthn</option>
+        <option value="mfa">7.4.4 Múltiplos Fatores de Autenticação (MFA)</option>
+        <option value="malware-7-5">7.5 Malware: virus, keylogger, trojan, spyware, backdoor, worms, rootkit, adware, fileless, ransomware.</option>
+        <option value="osint">7.6 OSINT</option>
+        <option value="esteganografia">7.7 Esteganografia</option>
+        <option value="recuperacao-dados">7.8 Recuperação de dados</option>
+        <option value="recuperacao-arquivos">7.8.1 Principais técnicas de recuperação de arquivos apagados em sistemas de arquivos</option>
+        <option value="ambientes-nuvem">7.8.2 Ambientes de nuvem: AWS, Azure e Google Cloud</option>
+        <option value="seguranca-redes">8. Segurança de redes de computadores. 8.1 Firewall, IPS/IDS, antivírus, EDR, XDR, SOAR, SIEM, NAT, proxy, VPN</option>
+        <option value="protocolos-seguranca">8.2 Protocolos IPSEC, DNSSEC, DMARC, DKIM, SPF</option>
+        <option value="monitoramento-trafego">8.3 Monitoramento e análise de tráfego: sniffers, traffic shaping</option>
+        <option value="seguranca-sem-fio">8.4 Segurança de redes sem fio: EAP, WEP, WPA, WPA2, WPA3, autenticação baseada em contexto, protocolo 802.1X</option>
+        <option value="ataques-redes">8.5 Ataques a redes de computadores: DoS, DDoS, botnets, phishing, etc.</option>
+        <option value="frameworks-seguranca">8.6 Frameworks de segurança: MITRE ATT&CK, CIS Controls, NIST CSF</option>
+        <option value="apt">8.7 Ameaças persistentes avançadas (APTs)</option>
+        <option value="criptografia">9 Criptografia. 9.1 Sistemas criptográficos simétricos e assimétricos. 9.2 Certificação digital. 9.3 Modos de operação de cifras.</option>
+        <option value="algoritmos-criptograficos">9.4 Algoritmos RSA, AES, ECC, IDEA, Twofish, Blowfish, 3DES e RC4.</option>
+        <option value="diffie-hellman-hashes">9.5 Protocolo Diffie–Hellman. 9.6 Hashes criptográficos: algoritmos MD5, SHA-1, SHA-2, SHA-3, colisões.</option>
+        <option value="tecnicas-ataque-cripto">9.7 Técnicas: força bruta, criptoanálise, canal lateral, ataques de texto conhecido/escolhido, Man-in-the-Middle (MITM).</option>
+        <option value="signal-blockchain-cripto">9.8 Protocolo Signal. 9.9 Blockchain. 9.10 Criptomoedas.</option>
+        <option value="windows-gerenciamento">10. Sistema Operacional Windows. 10.1 Sistemas Windows: 10/11, Server 2019/2022. 10.2 Gerenciamento de usuários e permissões de acesso.</option>
+        <option value="windows-logs-registro">10.3 Log de eventos do Windows. 10.4 Registro do Windows.</option>
+        <option value="linux-caracteristicas-permissoes">11 Sistema Operacional Linux. 11.1 Características do sistema operacional Linux. 11.2 Gerenciamento de usuários e permissões de acesso.</option>
+        <option value="linux-servicos-shell">11.3 Configuração, administração e logs de sistema e de serviços: proxy, correio eletrônico, servidor Web, servidor de arquivos. 11.4 Shell e comandos.</option>
+        <option value="mobile-so-seguranca">12 Sistemas operacionais móveis: Android e iOS. 12.1 Arquitetura. 12.2 Segurança: modelos de permissão, sandboxing, criptografia de dados. 12.3 Gerenciamento de memória e processos.</option>
+        <option value="mobile-so-arquivos">12.4 Sistemas de arquivos do Android e iOS.</option>
+        <optgroup label="13 Governança de TI e Legislação aplicada">
+          <option value="gov-ti-itil">13.1 ITIL 4: características gerais</option>
+          <option value="gov-ti-contratacoes">13.2 Contratações de TI: Lei 14.133/2021, Instrução Normativa SGD/ME nº 94/2022</option>
+          <option value="gov-ti-marco-civil">13.3 Marco Civil da Internet (Lei nº 12.965/2014): Responsabilidades de provedores e coleta de logs</option>
+        </optgroup>
+        <optgroup label="14 Inteligência Artificial">
+          <option value="ia-aprendizado-maquina">14.1 Aprendizado de Máquina: supervisionado, não supervisionado, semi-supervisionado, aprendizado por reforço, análise preditiva.</option>
+          <option value="ia-redes-neurais-llm">14.2 Redes Neurais e Deep Learning. 14.3 LLMs e Processamento de linguagem natural. 14.4 Inteligência Artificial Generativa. 14.5 Deepfakes.</option>
+        </optgroup>
+        <optgroup label="15 Computação Forense">
+          <option value="forense-principios-crimes">15 Princípios da computação forense. 15.1 Os crimes cibernéticos e seus vestígios.</option>
+          <option value="forense-coleta-exames">15.2 Identificação, isolamento, preservação e coleta de vestígio cibernético. 15.3 Principais exames realizados em computação forense.</option>
+        </optgroup>
+      </select>
+      <button id="start-quiz">Iniciar Quiz</button>
+    </div>
+    <div id="question-area"></div>
+    <div id="controls">
+      <button id="true-btn">Certo</button>
+      <button id="false-btn">Errado</button>
+      <button id="next-btn" style="display:none;">Próxima</button>
+    </div>
+    <div id="feedback"></div>
+    <div id="progress"></div>
+  </div>
+  <footer id="score-footer">
+    <span id="score-correct">Acertos: 0</span> |
+    <span id="score-wrong">Erros: 0</span>
+  </footer>
+  <script src="quiz.js"></script>
+</body>
+</html> 
