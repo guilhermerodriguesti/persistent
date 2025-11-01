@@ -9,6 +9,16 @@
         .highlight {
             background-color: yellow;
         }
+        
+        /* Estilo para melhor legibilidade */
+        #resultTable td {
+            font-family: 'Segoe UI', 'Roboto', 'Inter', 'Helvetica Neue', Arial, sans-serif;
+            white-space: pre;
+            font-size: 16px;
+            line-height: 1.6;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+        }
     </style>
 </head>
 <body class="container py-4">
@@ -22,7 +32,10 @@
         <tbody>
         </tbody>
     </table>
-    <button onclick="copyTable()" class="btn btn-secondary mt-3">Copiar Conteúdo da Tabela</button>
+    <div class="mt-3">
+        <button onclick="copyTable()" class="btn btn-secondary me-2">Copiar Conteúdo da Tabela</button>
+        <button onclick="copyFormatted()" class="btn btn-success">Copiar com Formatação e Espaços</button>
+    </div>
 
     <script>
         function formatText() {
@@ -32,11 +45,7 @@
 
             // Define os critérios de divisão para cada linha nova no texto formatado
             var formattedText = text
-                .replace(/(:\s)/g, "$1\n")
-                .replace(/([:.])(\s[A-Z])/g, "$1\n$2")
-                .replace(/([,])(\s)/g, "$1\n")
-                .replace(/([.])(\s)/g, "$1\n")
-                .replace(/([;()])/g, "$1\n"); // Insere quebra de linha após ;, ( e )
+                .replace(/([.])(\s)/g, "$1\n"); // Insere quebra de linha apenas após ponto seguido de espaço
 
             var lines = formattedText.split('\n');
             var tbody = document.querySelector('#resultTable tbody');
@@ -67,20 +76,46 @@
 
             // Adiciona cada linha formatada como uma nova linha na tabela
             lines.forEach(function(line) {
-                // Remove os caracteres ;, (, ), ,, e agora também o ponto (.)
-                line = line.replace(/[;(),.]/g, '').trim();
+                // Preserva todos os caracteres de pontuação
+                line = line.trim();
 
                 if (line.length > 0) { // Ignora linhas vazias após a remoção
                     var row = tbody.insertRow();
                     var cell = row.insertCell(0);
+                    
+                    // Aplica indentação estilo YAML baseada na numeração
+                    var indentedLine = applyYamlIndentation(line);
+                    
                     // Destaca a palavra mais frequente e as palavras em maiúsculas. 
                     // Em seguida, coloca em negrito a palavra anterior a ':'
-                    cell.innerHTML = line
+                    cell.innerHTML = indentedLine
                         .replace(new RegExp(`\\b${maxWord}\\b`, 'gi'), `<span class="highlight">$&</span>`)
                         .replace(/\b([A-ZÁÉÍÓÚÀÈÌÒÙÂÊÎÔÛÄËÏÖÜÑ]{2,})\b/g, '<strong>$1</strong>')
                         .replace(/\b(\w+):/g, '<strong>$1</strong>:');
                 }
             });
+        }
+
+        // Função para aplicar indentação estilo YAML
+        function applyYamlIndentation(line) {
+            // Detecta padrões de numeração: 1, 1.1, 1.1.1, etc.
+            var numberPattern = /^(\d+(?:\.\d+)*)\s*(.*)/;
+            var match = line.match(numberPattern);
+            
+            if (match) {
+                var number = match[1];
+                var content = match[2];
+                var dots = (number.match(/\./g) || []).length;
+                
+                // Calcula a indentação: 4 espaços por nível (estilo YAML)
+                var indentSpaces = '&nbsp;'.repeat(dots * 4);
+                
+                // Retorna com indentação + numeração + conteúdo
+                return indentSpaces + number + ' ' + content;
+            }
+            
+            // Se não tem numeração, retorna a linha original
+            return line;
         }
 
         function copyTable() {
@@ -93,6 +128,38 @@
                 alert('Conteúdo da tabela copiado para a área de transferência!');
             }).catch(err => {
                 console.error('Erro ao copiar texto: ', err);
+            });
+        }
+
+        function copyFormatted() {
+            const rows = document.querySelectorAll('#resultTable tbody tr');
+            let formattedText = '';
+            
+            rows.forEach(row => {
+                const cell = row.querySelector('td');
+                if (cell) {
+                    // Extrai o texto preservando os espaços HTML (&nbsp;)
+                    let lineText = cell.innerHTML;
+                    
+                    // Converte &nbsp; para espaços normais
+                    lineText = lineText.replace(/&nbsp;/g, ' ');
+                    
+                    // Remove tags HTML mas preserva o conteúdo
+                    lineText = lineText.replace(/<[^>]*>/g, '');
+                    
+                    // Decodifica entidades HTML
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = lineText;
+                    lineText = tempDiv.textContent || tempDiv.innerText || '';
+                    
+                    formattedText += lineText + '\n';
+                }
+            });
+            
+            navigator.clipboard.writeText(formattedText).then(() => {
+                alert('Texto copiado com formatação e espaços preservados!');
+            }).catch(err => {
+                console.error('Erro ao copiar texto formatado: ', err);
             });
         }
     </script>
