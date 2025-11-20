@@ -352,6 +352,9 @@
                                 <button class="nav-link p-3" id="simulador-tab" data-bs-toggle="tab" data-bs-target="#simulador" type="button" role="tab" aria-controls="simulador" aria-selected="false">
                                     <i class="bi bi-pc-display"></i> <span>Simulador</span>
                                 </button>
+                                <button class="nav-link p-3" id="simulador-tcu-tab" data-bs-toggle="tab" data-bs-target="#simulador-tcu" type="button" role="tab" aria-controls="simulador-tcu" aria-selected="false">
+                                    <i class="bi bi-balance-scale"></i> <span class="d-none d-sm-inline">Simulador TCU</span><span class="d-sm-none">TCU</span>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -744,6 +747,79 @@
                     </div>
                 </div>
 
+                <div class="tab-pane fade" id="simulador-tcu" role="tabpanel" aria-labelledby="simulador-tcu-tab">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="mb-4"><i class="bi bi-balance-scale"></i> Simulador TCU - Auditoria Governamental</h2>
+                            <p class="lead">Prepare-se para o concurso do TCU com questões de Auditoria Governamental e Controle Externo.</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="card">
+                                <div class="card-header bg-primary text-white">
+                                    <i class="bi bi-journal-check"></i> Sobre o Simulador
+                                </div>
+                                <div class="card-body">
+                                    <h5>50 Questões de Certo ou Errado - Técnica Pareto 80/20</h5>
+                                    <p>Simulador completo com questões comentadas sobre os tópicos mais cobrados pela CEBRASPE:</p>
+                                    <ul>
+                                        <li><strong>Lei Orgânica do TCU</strong> (Lei 8.443/1992)</li>
+                                        <li><strong>Constituição Federal</strong> (Arts. 70-75)</li>
+                                        <li><strong>Normas de Auditoria do TCU</strong> (NAT)</li>
+                                        <li><strong>Processos no TCU</strong></li>
+                                        <li><strong>Competências e Jurisdição</strong></li>
+                                        <li><strong>Lei de Responsabilidade Fiscal</strong> (LRF)</li>
+                                        <li><strong>Tipos de Fiscalização e Auditoria</strong></li>
+                                        <li><strong>Responsabilização e Sanções</strong></li>
+                                        <li><strong>Princípios de Controle Externo</strong></li>
+                                        <li><strong>Temas Complementares</strong></li>
+                                    </ul>
+                                    <div class="alert alert-info mt-3">
+                                        <i class="bi bi-info-circle"></i> <strong>Recursos:</strong> Timer, barra de progresso, atalhos de teclado, feedback detalhado e estatísticas finais.
+                                    </div>
+                                    <a href="Simulador_TCU/auditoria_tcu.html" class="btn btn-primary btn-lg w-100 mt-3">
+                                        <i class="bi bi-play-circle-fill"></i> Iniciar Simulador TCU
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header bg-success text-white">
+                                    <i class="bi bi-trophy-fill"></i> Características
+                                </div>
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                        <span>50 questões comentadas</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                        <span>Explicações detalhadas</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                        <span>Interface responsiva</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                        <span>Atalhos de teclado</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-3">
+                                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                        <span>Estatísticas de desempenho</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                        <span>Otimizado para mobile</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="tab-pane fade" id="simulador" role="tabpanel" aria-labelledby="simulador-tab">
                     <div class="row">
                         <div class="col-12">
@@ -848,6 +924,19 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="col-md-6">
+                            <div class="card">
+                                <div class="card-header bg-primary text-white">
+                                    <i class="bi bi-balance-scale"></i> Simulador TCU - Auditoria Governamental
+                                </div>
+                                <div class="card-body">
+                                    <p>Pratique com 50 questões de Certo/Errado sobre Auditoria Governamental e Controle Externo para o concurso do TCU - Banca CEBRASPE.</p>
+                                    <a href="Simulador_TCU/auditoria_tcu.html" class="btn btn-primary">
+                                        <i class="bi bi-play-circle"></i> Acessar Simulador TCU
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -888,7 +977,9 @@
                 tabToShow = document.querySelector('#priorizador-tab');
             } else if (url.indexOf("Testes/") > -1) {
                 tabToShow = document.querySelector('#testes-tab');
-            } else if (url.indexOf("Simulador/") > -1) {
+            } else if (url.indexOf("Simulador_TCU/") > -1) {
+                tabToShow = document.querySelector('#simulador-tcu-tab');
+            } else if (url.indexOf("Simulador/") > -1 || url.indexOf("Simulador_2/") > -1) {
                 tabToShow = document.querySelector('#simulador-tab');
             } else if (url.indexOf("Ordenador") > -1) {
                 tabToShow = document.querySelector('#ordenador-tab');
