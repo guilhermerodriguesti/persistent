@@ -1,0 +1,72 @@
+const questions = [
+    {
+        "id": 313,
+        "category": "Língua Portuguesa (Português) - Paralelismo (...) — (...) Chegaste aos teus vinte e um anos. Estás homem, Janjão, longos bigodes, alguns namoros... — Papai... — Fecha aquela porta; vou dizer-te coisas importantes. Vinte e um anos, algumas apólices, um diploma; podes entrar no parlamento, na magistratura, na imprensa, na lavoura, na indústria, no comércio, nas letras ou nas artes. Qualquer que seja a profissão da tua escolha, o meu desejo é que te faças grande e ilustre, ou, pelo menos, notável; que te levantes acima da obscuridade comum. (...) — Creia que lhe agradeço; mas... que ofício? — Nenhum me parece mais útil do que o de medalhão; foi o sonho da minha mocidade. Acabo, porém, como vês, somente com as esperanças que deposito em ti. (...) — O verdadeiro medalhão começa a manifestar-se entre os quarenta e cinco e cinquenta anos. — ... — Uma vez na carreira, deves pôr todo o cuidado nas ideias que houveres de nutrir para uso alheio e próprio. O melhor será não as ter absolutamente... — Mas quem lhe diz que eu... — Tu, meu filho, se me não engano, pareces dotado da perfeita inópia mental, conveniente ao uso deste nobre ofício. Pode acontecer, porém, que, com a idade, venhas a ser afligido de algumas ideias próprias; nesse caso, será necessário aparelhar fortemente o espírito. — Mas um tal obstáculo é invencível. — O único meio é lançar mão de um regime debilitante: ler compêndios de retórica, ouvir certos discursos etc.; para esse fim, deves evitar as livrarias, mas, de quando em quando, elas serão de grande conveniência para falares do boato do dia; de um contrabando, de qualquer coisa: verás que muitos dos leitores, estimáveis cavalheiros, repetir-te-ão as mesmas opiniões, e uma tal monotonia é saudável. Com tal regime, durante — suponhamos — dois anos, reduzes o intelecto, por mais pródigo que seja, ao equilíbrio comum. — Isto é o diabo! Não poder adornar o estilo, de quando em quando... — Podes empregar figuras expressivas e máximas; sentenças latinas; frases feitas, fórmulas consagradas pelos anos e incrustadas na memória individual e pública. De resto, o ofício te irá ensinando os elementos dessa arte difícil de pensar o pensado... Machado de Assis. Teoria do medalhão . In: Obra completa . Rio de Janeiro: Nova Aguilar, 1994, v. II (com adaptações).",
+        "text": "No que se refere à linguagem, à tipologia textual, às ideias e aos aspectos gramaticais do texto ao lado — Teoria do Medalhão , de Machado de Assis —, julgue o item. 314) 315) 316) Sendo os substantivos que compõem a enumeração entre as linhas 3 e 4 núcleos do complemento da forma verbal “entrar”, seria mantida a correção gramatical do texto caso a combinação da preposição em com o artigo o fosse empregada apenas no primeiro núcleo — “no parlamento” —, sendo suprimida nos demais núcleos.",
+        "answer": "ERRADO",
+        "explanation": "Explicação disponível no sistema Tec Concursos."
+    },
+    {
+        "id": 51,
+        "category": "TI - Gestão e Governança de TI - ITIL v4",
+        "text": "Em relação aos modelos e às referências de governança da tecnologia da informação, julgue o item a seguir. Otimizar e automatizar é um dos princípios orientadores do ITIL v4.",
+        "answer": "CERTO",
+        "explanation": "Explicação disponível no sistema Tec Concursos."
+    },
+    {
+        "id": 810,
+        "category": "Língua Portuguesa (Português) - Locução Verbal Caso alguém pergunte, em um futuro distante, qual terá sido o meio de expressão de maior impacto da era moderna, a resposta será quase unânime: o cinematógrafo. Inventado em 1895 pelos irmãos Lumière para fins científicos, o cinema revelou-se peça fundamental do imaginário coletivo do século XX, seja como fonte de entretenimento, seja como fonte de divulgação cultural de todos os povos do globo. O cinematógrafo aportou no Brasil com Affonso Segretto, imigrante italiano que filmou cenas do porto do Rio de Janeiro e tornou-se nosso primeiro cineasta, em 1898. Um imenso mercado de entretenimento foi montado em torno da capital federal no início do século XX, quando centenas de pequenos filmes foram produzidos e exibidos para plateias urbanas que, em franco crescimento, demandavam lazer e diversão. Nos anos 30, iniciou-se a era do cinema falado. Já então, o pioneiro cinema nacional concorria com o forte esquema de distribuição norte americano, em uma disputa que se estende até os nossos dias. A criação do estúdio Vera Cruz, no final da década de 40, representou o desejo de diretores que, influenciados pelo requinte das produções estrangeiras, procuravam realizar um tipo de cinema mais sofisticado. A reação ao cinema da Vera Cruz representou o movimento que divulgou o cinema nacional para o mundo inteiro: o Cinema Novo. No início da década de 60, um grupo de jovens cineastas começou a realizar uma série de filmes imbuídos de forte temática social. Entre eles, Glauber Rocha, cineasta baiano e símbolo do Cinema Novo. Diretor de filmes como Deus e o Diabo na Terra do Sol (1964) e O Dragão da Maldade Contra o Santo Guerreiro (1968), Glauber tornou-se uma figura conhecida no meio cultural brasileiro, tendo redigido manifestos e artigos na imprensa, rejeitado o cinema popular das chanchadas e defendido uma arte revolucionária que promovesse verdadeira transformação social e política. História do cinema brasileiro . Internet: <http://dc.itamaraty.gov.br> (com adaptações).",
+        "text": "No que se refere às ideias do texto acima e a seus aspectos linguísticos, julgue o item a seguir. A substituição da forma verbal “terá sido” por foi não prejudicaria a correção gramatical nem a coerência do texto.",
+        "answer": "CERTO",
+        "explanation": "Explicação disponível no sistema Tec Concursos."
+    },
+    {
+        "id": 42,
+        "category": "Administração Geral e Pública - Desempenho",
+        "text": "Em relação às funções da administração, a estrutura e comportamento organizacional e gerenciamento de conflitos, julgue o próximo item. A avaliação de desempenho é um processo de avaliação contínua que obriga os funcionários a superarem sistematicamente seus níveis de desempenho.",
+        "answer": "ERRADO",
+        "explanation": "Explicação disponível no sistema Tec Concursos."
+    },
+    {
+        "id": 154,
+        "category": "Direito Constitucional (CF/1988 e Doutrina) - Dos Direitos e Deveres Individuais e Coletivos (art. 5º da CF/1988)",
+        "text": "A respeito de aspectos atinentes à democracia e à cidadania na sociedade contemporânea, julgue o item a seguir, à luz da Constituição Federal de 1988 (CF) e do entendimento jurisprudencial do Supremo Tribunal Federal (STF). O exercício da cidadania popular deve ser compatibilizado com o funcionamento das instituições democráticas, circunstância que impõe limites às garantias constitucionais de liberdade de manifestação e reunião.",
+        "answer": "CERTO",
+        "explanation": "Explicação disponível no sistema Tec Concursos."
+    },
+    {
+        "id": 21,
+        "category": "Língua Portuguesa (Português) - Interpretação de Textos (Compreensão) Bem antes que tentassem me convencer que a data de nascimento da modernidade era um espirro cartesiano , ou então um novo interesse empírico pela natureza que transpira das páginas do Novum Organum de Bacon, ou ainda (mais tarde e mais “marxista”) a abertura dos primeiros bancos — bem antes de tudo isso, quando era rapaz, se ensinava que a modernidade começou em outubro de 1492. Nos livros da escola, o primeiro capítulo dos tempos modernos eram e são as grandes explorações. Entre estas, a viagem de Colombo ocupa um lugar muito especial. Descidas Saara adentro ou intermináveis caravanas por montes e desertos até a China de nada valiam comparadas com a aventura do genovês. Precisa ler Mediterrâneo de Fernand Braudel para conceber o alcance simbólico do pulo além de Gibraltar, não costeando, mas reto para frente. Precisa, entre outras palavras, evocar o mar Mediterrâneo — este pátio comum navegável e navegado por milênios, espécie de útero vital compartilhado — para entender por que a viagem de Colombo acabou e continua sendo uma metáfora do fim do mundo fechado, do abandono da casa materna e paterna. Contardo Calligaris. A psicanálise e o sujeito colonial . In: Edson L. A. Sousa (org.). Psicanálise e colonização: leituras do sintoma social no Brasil. Porto Alegre: Artes e Ofícios, 1999, p. 11-12 (com adaptações).",
+        "text": "Julgue o item que se segue, relativo ao texto precedente. Segundo o autor do texto, o ensino da história da modernidade dirigido aos jovens fixou-se em um passado que se mantém como referência dos tempos modernos apesar das concepções relacionadas ao que foi chamado no texto de “espirro cartesiano”. Certo 22) 23) 24) Errado",
+        "answer": "UNKNOWN",
+        "explanation": "Explicação disponível no sistema Tec Concursos."
+    },
+    {
+        "id": 545,
+        "category": "Língua Portuguesa (Português) - Fatos da Língua Portuguesa (Porque, Por Que, Porquê e Por Quê; Onde, Aonde e Donde; Há e A, etc) Além das condições das rodovias, a segurança nas estradas depende da conduta do motorista. Em caso de problemas mecânicos ou acidentes, é muito importante que o condutor retire o veículo da via para não causar novas colisões. Motorista e passageiros devem se abrigar em um local seguro, se possível, além do acostamento, até que chegue o socorro. A polícia rodoviária orienta o condutor ou passageiro a ligar para o número 190 da polícia militar, que pode localizar o posto policial mais próximo do local do acidente e solicitar ajuda. Muitas vezes, acidentes acabam provocando outros, até mais graves. É importante alertar os outros motoristas de que existe um veículo parado na estrada. O triângulo de sinalização deve ser posicionado a alguns metros do automóvel acidentado, para permitir que os demais usuários da via se antecipem e saibam que existe um problema à frente. Idem, ibidem (com adaptações).",
+        "text": "Julgue o seguinte item, relativo ao texto acima. A correção gramatical do texto seria mantida se, no trecho “posicionado a alguns metros”, o termo “a” fosse substituído por há .",
+        "answer": "ERRADO",
+        "explanation": "Explicação disponível no sistema Tec Concursos."
+    },
+    {
+        "id": 340,
+        "category": "Língua Portuguesa (Português) - Clareza e Correção O item a seguir apresenta trechos adaptados de textos do sítio do TCE/PA.",
+        "text": "Julgue-o quanto à correção gramatical. O evento, que aconteceu no Ginásio da Escola Superior de Educação Física, contou com a participação de diversas instituições, que, durante toda a manhã, prestaram serviços à população.",
+        "answer": "CERTO",
+        "explanation": "Explicação disponível no sistema Tec Concursos."
+    },
+    {
+        "id": 1020,
+        "category": "Geral",
+        "text": "Língua Portuguesa (Português) - Sujeito  Preconceito e discriminação são termos próximos. Por vezes, juridicamente, parecem até a mesma coisa, como se depreende do texto da Lei n.º 7.716, de 5 de janeiro de 1989, complementada pela Lei n.º 9.459, de 15 de maio de 1997: “Serão punidos, na forma desta lei, os crimes resultantes de discriminação ou preconceito de raça, cor, etnia, religião ou procedência nacional”. Mesmo assim, o preconceito pode ser definido como uma ideia de distinção, exclusão ou preferência baseada em raça, sexo, religião, origem social ou geográfica etc.; já a discriminação diz respeito à ação decorrente do preconceito. O preconceito é uma opinião; a discriminação, um comportamento real e efetivo.  Sendo um pensamento,   o preconceito , a rigor, não é crime. Quando se torna uma ação concreta ou uma afirmação pública, passa a ser discriminação e, a partir daí, é alvo da lei. O preconceito é considerado por nós a matriz que origina o ato discriminatório. Sem preconceito, não existiria discriminação. Ausente de sua expressão concreta discriminatória, o preconceito seria apenas uma fantasmagoria psíquica.  Leandro Karnal e Luiz Estevam.  Preconceito:   uma história. São Paulo: Companhia das Letras, 2023 (com adaptações).  Em referência às ideias veiculadas no texto apresentado e a seus aspectos linguísticos, julgue o item seguinte.  No segundo parágrafo, o termo “o preconceito” (primeiro período) é o referente do sujeito das formas verbais “torna”, “passa” e “é” (todas no segundo período).  Certo  Errado",
+        "answer": "CERTO",
+        "explanation": "Explicação disponível no sistema Tec Concursos."
+    },
+    {
+        "id": 644,
+        "category": "Geral",
+        "text": "Língua Portuguesa (Português) - Adjetivo  Texto  Minha condição humana me fascina. Conheço o limite de minha existência e ignoro por que estou nesta terra, mas às vezes o pressinto. Pela experiência cotidiana, concreta e intuitiva, eu me descubro vivo para alguns homens, porque o sorriso e a felicidade deles me condicionam inteiramente, mais ainda para outros que, por acaso, descobri terem emoções semelhantes às minhas.  E cada dia, milhares de vezes, sinto minha vida — corpo e alma — integralmente tributária do   trabalho dos vivos e dos mortos. Gostaria de dar tanto quanto recebo e não paro de receber. Mas depois experimento o sentimento satisfeito de minha solidão e quase demonstro má consciência ao exigir ainda alguma coisa de outrem. Vejo os homens se diferenciarem pelas classes sociais e sei que nada as justifica. Sonho ser acessível e desejável para todos uma vida simples e natural, de corpo e de espírito.  Recuso-me a crer na liberdade e nesse conceito filosófico. Eu não sou livre, e sim às vezes constrangido por pressões estranhas a mim, outras vezes por convicções íntimas. Ainda jovem, fiquei impressionado pela   máxima   de Schopenhauer: “O homem pode, é certo, fazer o que quer, mas não pode querer o que quer”; e hoje, diante do   espetáculo aterrador   das injustiças humanas, essa moral me tranquiliza e me educa.  Albert Einstein.   Como vejo o mundo . Rio de Janeiro:  Nova Frontei ra, 2015 (com adaptações).  Com relação ao texto, julgue o item a seguir.  O adjetivo “aterrador” modifica a palavra “espetáculo”, conferindo-lhe sentido negativo.  Certo  Errado",
+        "answer": "CERTO",
+        "explanation": "Explicação disponível no sistema Tec Concursos."
+    }
+];

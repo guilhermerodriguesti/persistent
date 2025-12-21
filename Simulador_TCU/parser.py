@@ -140,29 +140,97 @@ def parse_simulado(file_path):
 
     return questions
 
+import unicodedata
+import os
+import re
+
+def normalize_text(text):
+    """Normalizes text for folder/file names: no accents, lowercase, underscores."""
+    n = unicodedata.normalize('NFKD', text).encode('ASCII', 'ignore').decode('ASCII')
+    n = n.lower()
+    n = re.sub(r'[^a-z0-9]+', '_', n)
+    return n.strip('_')
+
+def get_context_and_name(filename):
+    """
+    Tries to infer the context (folder) and a clean name from the filename.
+    Example: 'Língua Portuguesa para TCU 2025 1.txt' 
+    -> Context: 'Língua Portuguesa para TCU 2025'
+    -> Name: 'Língua Portuguesa para TCU 2025 1'
+    """
+    base_name = os.path.splitext(filename)[0]
+    
+    # Heuristic: If it ends with a number (like '... 1'), the part before is the context
+    match = re.match(r'^(.*?)\s*(\d+)$', base_name)
+    if match:
+        context = match.group(1).strip()
+    else:
+        # Fallback: group by the first few words or use the whole name if short
+        words = base_name.split(' - ')
+        if len(words) > 1:
+            context = words[0].strip()
+        else:
+            context = base_name
+
+    folder_name = normalize_text(context)
+    file_name_norm = normalize_text(base_name)
+    
+    return folder_name, f"{file_name_norm}_data.js"
+
 def save_to_js(questions, output_path, var_name="questions"):
     with open(output_path, 'w', encoding='utf-8') as f:
         f.write(f"const {var_name} = ")
         json.dump(questions, f, indent=4, ensure_ascii=False)
         f.write(";")
 
+import gen_html
+import gen_quick
+import gen_index
+
 if __name__ == "__main__":
-    files = [
-        "01 - simulado - Tec Concursos - Questões para concursos, provas, editais, simulados_.txt",
-        "02 - simulado - Tec Concursos - Questões para concursos, provas, editais, simulados_.txt",
-        "03 - simulado - Tec Concursos - Questões para concursos, provas, editais, simulados_.txt",
-        "04 - simulado - Tec Concursos - Questões para concursos, provas, editais, simulados_.txt",
-        "05 - simulado - Tec Concursos - Questões para concursos, provas, editais, simulados_.txt"
-    ]
+    # Get the directory where this script is located
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    txt_dir = os.path.join(base_dir, "arquivos_brutos")
+    data_dir = os.path.join(base_dir, "simuladores_gerados")
     
-    base_dir = r"c:\Users\guilherme.rodrigues\Documents\GitHub\persistent\Simulador_TCU"
+    # List all .txt files in the dedicated folder
+    if not os.path.exists(txt_dir):
+        os.makedirs(txt_dir, exist_ok=True)
+        print(f"Folder '{txt_dir}' created. Please place your .txt files there.")
+        exit()
+
+    all_files = [f for f in os.listdir(txt_dir) if f.endswith('.txt')]
     
-    for i, file_name in enumerate(files):
-        file_path = os.path.join(base_dir, file_name)
-        if os.path.exists(file_path):
+    print(f"--- FASE 1: Parsing de {len(all_files)} arquivos ---")
+    
+    for file_name in all_files:
+        file_path = os.path.join(txt_dir, file_name)
+        folder_name, output_js_file = get_context_and_name(file_name)
+        target_dir = os.path.join(data_dir, folder_name)
+        
+        os.makedirs(target_dir, exist_ok=True)
+        
+        try:
             qs = parse_simulado(file_path)
-            output_name = f"simulado_{i+1:02d}_data.js"
-            save_to_js(qs, os.path.join(base_dir, output_name))
-            print(f"  Saved {len(qs)} questions to {output_name}")
-        else:
-            print(f"  File {file_path} not found.")
+            js_path = os.path.join(target_dir, output_js_file)
+            save_to_js(qs, js_path)
+            
+            display_name = gen_html.format_name(output_js_file.replace("_data.js", ""))
+            category_name = gen_html.format_name(folder_name)
+            gen_html.generate_html(js_path, display_name, category_name, base_dir)
+        except Exception as e:
+            print(f"  !! Erro ao processar context '{folder_name}'")
+
+    print("\n--- FASE 2: Gerando Simulado Rápido Aleatório ---")
+    try:
+        gen_quick.generate_quick_sim(10)
+    except Exception as e:
+        print(f"  !! Erro no Simulador Rápido: {e}")
+
+    print("\n--- FASE 3: Atualizando Dashboard Central ---")
+    try:
+        gen_index.update_index()
+    except Exception as e:
+        print(f"  !! Erro ao atualizar Dashboard: {e}")
+
+    print("\nWorkflow Dinâmico Finalizado! Abra index.html para estudar.")
