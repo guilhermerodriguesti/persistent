@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <meta name="description" content="Flashcards para revisão sistematizada de Fiscalização Contábil, Financeira e Orçamentária da Constituição Federal de 1988">
-  <title>Flashcards - Fiscalização Orçamentária (CF/88)</title>
+  <meta name="description"
+    content="Flashcards para revisão sistematizada de Fiscalização Contábil, Financeira e Orçamentária da Constituição Federal de 1988">
+  <title>Flashcards Premium - CF/88 TCU 2025</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
   <style>
     :root {
-      --primary-color: #2563eb;
-      --secondary-color: #10b981;
-      --accent-color: #f59e0b;
-      --background-color: #0f172a;
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #10b981;
+      --accent: #f59e0b;
+      --danger: #ef4444;
+      --background: #0f172a;
       --card-bg: #1e293b;
+      --glass-bg: rgba(30, 41, 59, 0.8);
       --text-primary: #f8fafc;
       --text-secondary: #94a3b8;
-      --border-radius: 16px;
+      --border-color: rgba(148, 163, 184, 0.1);
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -26,124 +39,244 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: var(--background-color);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: radial-gradient(circle at top right, #1e1b4b, #0f172a);
       color: var(--text-primary);
-      height: 100vh;
-      overflow: hidden;
+      min-height: 100vh;
+      overflow-x: hidden;
       position: relative;
-      touch-action: pan-y;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: 'Outfit', sans-serif;
+    }
+
+    /* Background shapes */
+    .bg-shape {
+      position: fixed;
+      z-index: 0;
+      filter: blur(100px);
+      border-radius: 50%;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .shape-1 {
+      width: 500px;
+      height: 500px;
+      background: var(--primary);
+      top: -150px;
+      right: -150px;
+    }
+
+    .shape-2 {
+      width: 400px;
+      height: 400px;
+      background: #9333ea;
+      bottom: -100px;
+      left: -100px;
     }
 
     .app-container {
-      height: 100vh;
+      position: relative;
+      z-index: 1;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      position: relative;
     }
 
-    /* Header fixo estilo Instagram */
+    /* Header Premium */
     .header {
-      position: fixed;
+      position: sticky;
       top: 0;
-      left: 0;
-      right: 0;
       z-index: 100;
-      background: rgba(15, 23, 42, 0.95);
+      background: var(--glass-bg);
       backdrop-filter: blur(20px);
-      padding: env(safe-area-inset-top, 0) 1rem 0.75rem 1rem;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.5rem 2rem;
     }
 
     .header-content {
+      max-width: 1200px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      max-width: 100%;
+      gap: 2rem;
     }
 
-    .logo {
-      font-size: 1.2rem;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .progress-indicator {
+    .logo-section {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
-      font-size: 0.9rem;
-      color: var(--text-secondary);
+      gap: 1rem;
     }
 
-    .menu-btn {
-      background: none;
-      border: none;
-      color: var(--text-primary);
-      font-size: 1.5rem;
-      cursor: pointer;
-      padding: 0.5rem;
-      border-radius: 50%;
-      transition: var(--transition);
-    }
-
-    .menu-btn:active {
-      background: rgba(148, 163, 184, 0.1);
-    }
-
-    /* Container principal dos cards */
-    .cards-container {
-      flex: 1;
-      position: relative;
-      margin-top: calc(env(safe-area-inset-top, 0) + 4rem);
-      margin-bottom: 5rem;
-      overflow: hidden;
-    }
-
-    .card-wrapper {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    .logo-icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 1rem;
-      opacity: 0;
-      transform: translateX(100%);
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .logo-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .header-stats {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .stat-label {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .menu-btn {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      cursor: pointer;
       transition: var(--transition);
     }
 
-    .card-wrapper.active {
-      opacity: 1;
-      transform: translateX(0);
+    .menu-btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: scale(1.05);
     }
 
-    .card-wrapper.prev {
-      opacity: 0;
-      transform: translateX(-100%);
-    }
-
-    .card {
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
       width: 100%;
-      max-width: 400px;
-      height: 70vh;
-      max-height: 600px;
-      perspective: 1000px;
-      cursor: pointer;
+    }
+
+    /* Progress Bar Premium */
+    .progress-section {
+      margin-bottom: 3rem;
+    }
+
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+
+    .progress-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .progress-percentage {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .progress-bar-container {
+      height: 8px;
+      background: rgba(148, 163, 184, 0.1);
+      border-radius: 100px;
+      overflow: hidden;
       position: relative;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--secondary));
+      border-radius: 100px;
+      transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+    }
+
+    /* Card Container */
+    .card-container {
+      position: relative;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      perspective: 1500px;
+    }
+
+    .flashcard {
+      width: 100%;
+      max-width: 700px;
+      height: 500px;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.1s ease;
+    }
+
+    .flashcard:active {
+      transform: scale(0.98);
     }
 
     .card-inner {
       width: 100%;
       height: 100%;
-      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
       transform-style: preserve-3d;
       position: relative;
     }
 
-    .card.flipped .card-inner {
+    .flashcard.flipped .card-inner {
       transform: rotateY(180deg);
     }
 
@@ -152,118 +285,127 @@
       width: 100%;
       height: 100%;
       backface-visibility: hidden;
-      border-radius: var(--border-radius);
-      padding: 2rem;
+      border-radius: 24px;
+      padding: 3rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       text-align: center;
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
-      border: 1px solid rgba(148, 163, 184, 0.1);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      border: 1px solid var(--border-color);
     }
 
     .card-front {
-      background: linear-gradient(135deg, var(--primary-color) 0%, #1d4ed8 100%);
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.95) 0%, rgba(79, 70, 229, 0.95) 100%);
       color: white;
     }
 
     .card-back {
-      background: linear-gradient(135deg, var(--secondary-color) 0%, #059669 100%);
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.95) 0%, rgba(5, 150, 105, 0.95) 100%);
       color: white;
       transform: rotateY(180deg);
     }
 
-    .card-number {
+    .card-badge {
       position: absolute;
-      top: 1rem;
-      right: 1rem;
+      top: 1.5rem;
+      right: 1.5rem;
       background: rgba(255, 255, 255, 0.2);
-      color: white;
-      font-size: 0.8rem;
-      font-weight: 600;
-      padding: 0.5rem 0.75rem;
-      border-radius: 20px;
       backdrop-filter: blur(10px);
+      padding: 0.5rem 1rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
     .card-label {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 1.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 2rem;
       opacity: 0.9;
     }
 
     .card-content {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      flex-grow: 1;
+      font-size: 1.35rem;
+      line-height: 1.8;
+      font-weight: 500;
+      flex: 1;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
     }
 
     .flip-hint {
       position: absolute;
-      bottom: 1rem;
+      bottom: 1.5rem;
       left: 50%;
       transform: translateX(-50%);
       background: rgba(255, 255, 255, 0.2);
-      color: white;
-      font-size: 0.8rem;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
       backdrop-filter: blur(10px);
+      padding: 0.75rem 1.5rem;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
       animation: pulse 2s infinite;
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.6; }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: translateX(-50%) scale(1);
+      }
+
+      50% {
+        opacity: 0.7;
+        transform: translateX(-50%) scale(0.98);
+      }
     }
 
-    /* Controles de navegação */
-    .navigation {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(20px);
-      padding: 1rem 1rem calc(env(safe-area-inset-bottom, 0) + 1rem) 1rem;
-      border-top: 1px solid rgba(148, 163, 184, 0.1);
-      z-index: 100;
-    }
-
-    .nav-controls {
+    /* Navigation Controls */
+    .navigation-controls {
+      margin-top: 3rem;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      max-width: 400px;
-      margin: 0 auto;
+      justify-content: center;
+      gap: 1.5rem;
     }
 
     .nav-btn {
       background: var(--card-bg);
-      border: 1px solid rgba(148, 163, 184, 0.2);
+      border: 1px solid var(--border-color);
       color: var(--text-primary);
-      width: 50px;
-      height: 50px;
+      width: 64px;
+      height: 64px;
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       cursor: pointer;
       transition: var(--transition);
-      touch-action: manipulation;
+      position: relative;
     }
 
-    .nav-btn:active {
+    .nav-btn:hover:not(:disabled) {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: scale(1.1);
+      box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
+    }
+
+    .nav-btn:active:not(:disabled) {
       transform: scale(0.95);
-      background: var(--primary-color);
     }
 
     .nav-btn:disabled {
@@ -272,57 +414,59 @@
     }
 
     .flip-btn {
-      background: var(--accent-color);
-      width: 60px;
-      height: 60px;
-      font-size: 1.5rem;
+      background: linear-gradient(135deg, var(--accent), #ea580c);
+      border: none;
+      width: 80px;
+      height: 80px;
+      font-size: 2rem;
+      box-shadow: 0 10px 25px rgba(245, 158, 11, 0.3);
     }
 
-    .flip-btn:active {
-      background: #d97706;
+    .flip-btn:hover {
+      transform: scale(1.1) rotate(180deg);
+      box-shadow: 0 15px 35px rgba(245, 158, 11, 0.4);
     }
 
-    .progress-bar {
-      width: 100%;
-      height: 3px;
-      background: rgba(148, 163, 184, 0.2);
-      border-radius: 2px;
-      overflow: hidden;
-      margin-bottom: 1rem;
+    /* Action Buttons */
+    .action-buttons {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
     }
 
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-      transition: width 0.3s ease;
-      border-radius: 2px;
-    }
-
-    /* Menu lateral */
-    .side-menu {
-      position: fixed;
-      top: 0;
-      right: -300px;
-      width: 300px;
-      height: 100vh;
+    .action-btn {
       background: var(--card-bg);
-      z-index: 200;
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
       transition: var(--transition);
-      padding: 2rem 1rem;
-      border-left: 1px solid rgba(148, 163, 184, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
     }
 
-    .side-menu.open {
-      right: 0;
+    .action-btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(99, 102, 241, 0.2);
     }
 
+    /* Side Menu Premium */
     .menu-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(5px);
       z-index: 150;
       opacity: 0;
       visibility: hidden;
@@ -334,94 +478,390 @@
       visibility: visible;
     }
 
-    .menu-item {
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -400px;
+      width: 400px;
+      height: 100vh;
+      background: var(--card-bg);
+      z-index: 200;
+      transition: var(--transition);
+      padding: 2rem;
+      overflow-y: auto;
+      border-left: 1px solid var(--border-color);
+    }
+
+    .side-menu.open {
+      right: 0;
+    }
+
+    .menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .menu-title {
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .close-menu-btn {
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.5rem;
       cursor: pointer;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 8px;
       transition: var(--transition);
     }
 
-    .menu-item:hover {
-      background: rgba(148, 163, 184, 0.1);
+    .close-menu-btn:hover {
+      background: var(--danger);
     }
 
-    /* Responsividade */
-    @media (max-width: 480px) {
-      .card {
-        height: 65vh;
+    .menu-section {
+      margin-bottom: 2rem;
+    }
+
+    .menu-section-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .menu-item {
+      background: rgba(148, 163, 184, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-weight: 600;
+    }
+
+    .menu-item:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      transform: translateX(-5px);
+    }
+
+    .menu-item-icon {
+      font-size: 1.25rem;
+      width: 32px;
+      text-align: center;
+    }
+
+    /* Study Stats */
+    .study-stats {
+      background: rgba(148, 163, 184, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+
+    .stat-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .stat-row:last-child {
+      border-bottom: none;
+    }
+
+    .stat-row-label {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    .stat-row-value {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+
+    /* Keyboard Shortcuts */
+    .shortcuts-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .shortcut-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem;
+      background: rgba(148, 163, 184, 0.05);
+      border-radius: 8px;
+    }
+
+    .shortcut-key {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      padding: 0.25rem 0.75rem;
+      border-radius: 6px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header {
+        padding: 1rem;
+      }
+
+      .header-content {
+        flex-wrap: wrap;
+      }
+
+      .header-stats {
+        gap: 1rem;
+      }
+
+      .stat-item {
+        font-size: 0.85rem;
+      }
+
+      .main-content {
+        padding: 2rem 1rem;
+      }
+
+      .flashcard {
+        height: 400px;
       }
 
       .card-face {
-        padding: 1.5rem;
+        padding: 2rem 1.5rem;
       }
 
       .card-content {
-        font-size: 1rem;
+        font-size: 1.1rem;
+      }
+
+      .side-menu {
+        width: 100%;
+        right: -100%;
+      }
+
+      .navigation-controls {
+        gap: 1rem;
+      }
+
+      .nav-btn {
+        width: 56px;
+        height: 56px;
+        font-size: 1.25rem;
+      }
+
+      .flip-btn {
+        width: 72px;
+        height: 72px;
+        font-size: 1.75rem;
       }
     }
 
-    /* Acessibilidade */
+    /* Accessibility */
     @media (prefers-reduced-motion: reduce) {
-      .card-inner,
-      .card-wrapper,
-      .nav-btn {
-        transition: none;
-      }
-
-      .flip-hint {
-        animation: none;
+      * {
+        animation: none !important;
+        transition: none !important;
       }
     }
   </style>
 </head>
+
 <body>
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
   <div class="app-container">
-    <!-- Header fixo estilo Instagram -->
+    <!-- Header Premium -->
     <header class="header">
       <div class="header-content">
-        <div class="logo">Flashcards CF/88</div>
-        <div class="progress-indicator">
-          <span id="currentCard">1</span>/<span id="totalCards">21</span>
+        <div class="logo-section">
+          <div class="logo-icon">📚</div>
+          <div class="logo-text">
+            <div class="logo-title">Flashcards CF/88</div>
+            <div class="logo-subtitle">Fiscalização TCU</div>
+          </div>
         </div>
+
+        <div class="header-stats">
+          <div class="stat-item">
+            <div class="stat-value" id="currentCardNum">1</div>
+            <div class="stat-label">Atual</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="studiedCount">0</div>
+            <div class="stat-label">Estudados</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value">21</div>
+            <div class="stat-label">Total</div>
+          </div>
+        </div>
+
         <button class="menu-btn" onclick="toggleMenu()">☰</button>
       </div>
     </header>
 
-    <!-- Container principal dos cards -->
-    <main class="cards-container" id="cardsContainer">
-      <!-- Cards serão gerados aqui -->
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Progress Section -->
+      <div class="progress-section">
+        <div class="progress-header">
+          <div class="progress-title">Progresso de Estudo</div>
+          <div class="progress-percentage" id="progressPercentage">0%</div>
+        </div>
+        <div class="progress-bar-container">
+          <div class="progress-bar-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <!-- Card Container -->
+      <div class="card-container">
+        <div class="flashcard" id="flashcard" onclick="flipCard()">
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <div class="card-badge">
+                <span id="cardNumber">1/21</span>
+              </div>
+              <div class="card-label">❓ Pergunta</div>
+              <div class="card-content" id="questionText"></div>
+              <div class="flip-hint">
+                <span>🔄</span>
+                <span>Toque para revelar</span>
+              </div>
+            </div>
+            <div class="card-face card-back">
+              <div class="card-badge">
+                <span id="cardNumberBack">1/21</span>
+              </div>
+              <div class="card-label">✅ Resposta</div>
+              <div class="card-content" id="answerText"></div>
+              <div class="flip-hint">
+                <span>🔄</span>
+                <span>Toque para voltar</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Controls -->
+      <div class="navigation-controls">
+        <button class="nav-btn" id="prevBtn" onclick="previousCard()" title="Anterior (←)">←</button>
+        <button class="flip-btn" onclick="flipCard()" title="Virar Card (Espaço)">🔄</button>
+        <button class="nav-btn" id="nextBtn" onclick="nextCard()" title="Próximo (→)">→</button>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button class="action-btn" onclick="shuffleCards()">
+          <span>🔀</span>
+          <span>Embaralhar</span>
+        </button>
+        <button class="action-btn" onclick="resetProgress()">
+          <span>🔄</span>
+          <span>Reiniciar</span>
+        </button>
+        <button class="action-btn" onclick="toggleAutoPlay()">
+          <span id="autoPlayIcon">▶️</span>
+          <span id="autoPlayText">Auto-Play</span>
+        </button>
+      </div>
     </main>
 
-    <!-- Navegação inferior -->
-    <nav class="navigation">
-      <div class="progress-bar">
-        <div class="progress-fill" id="progressFill"></div>
-      </div>
-      <div class="nav-controls">
-        <button class="nav-btn" id="prevBtn" onclick="previousCard()">←</button>
-        <button class="flip-btn" onclick="flipCurrentCard()">🔄</button>
-        <button class="nav-btn" id="nextBtn" onclick="nextCard()">→</button>
-      </div>
-    </nav>
-
-    <!-- Menu lateral -->
+    <!-- Side Menu -->
     <div class="menu-overlay" id="menuOverlay" onclick="closeMenu()"></div>
     <aside class="side-menu" id="sideMenu">
-      <h3 style="margin-bottom: 2rem; color: var(--text-primary);">Opções</h3>
-      <div class="menu-item" onclick="shuffleCards()">
-        🔀 Embaralhar Cards
+      <div class="menu-header">
+        <h3 class="menu-title">Menu</h3>
+        <button class="close-menu-btn" onclick="closeMenu()">✕</button>
       </div>
-      <div class="menu-item" onclick="resetProgress()">
-        🔄 Reiniciar Progresso
+
+      <!-- Study Stats -->
+      <div class="menu-section">
+        <div class="menu-section-title">Estatísticas</div>
+        <div class="study-stats">
+          <div class="stat-row">
+            <span class="stat-row-label">Cards Estudados</span>
+            <span class="stat-row-value" id="menuStudiedCount">0/21</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-row-label">Progresso</span>
+            <span class="stat-row-value" id="menuProgress">0%</span>
+          </div>
+          <div class="stat-row">
+            <span class="stat-row-label">Card Atual</span>
+            <span class="stat-row-value" id="menuCurrentCard">1</span>
+          </div>
+        </div>
       </div>
-      <div class="menu-item" onclick="showAllAnswers()">
-        👁️ Ver Todas Respostas
+
+      <!-- Actions -->
+      <div class="menu-section">
+        <div class="menu-section-title">Ações</div>
+        <div class="menu-item" onclick="shuffleCards()">
+          <span class="menu-item-icon">🔀</span>
+          <span>Embaralhar Cards</span>
+        </div>
+        <div class="menu-item" onclick="resetProgress()">
+          <span class="menu-item-icon">🔄</span>
+          <span>Reiniciar Progresso</span>
+        </div>
+        <div class="menu-item" onclick="goToCard(0)">
+          <span class="menu-item-icon">⏮️</span>
+          <span>Voltar ao Início</span>
+        </div>
+        <div class="menu-item" onclick="markAllAsStudied()">
+          <span class="menu-item-icon">✅</span>
+          <span>Marcar Todos como Estudados</span>
+        </div>
       </div>
-      <div class="menu-item" onclick="goToCard(0)">
-        ⏮️ Voltar ao Início
-      </div>
-      <div class="menu-item" onclick="toggleAutoPlay()">
-        ⏯️ Auto-Play
+
+      <!-- Keyboard Shortcuts -->
+      <div class="menu-section">
+        <div class="menu-section-title">Atalhos de Teclado</div>
+        <div class="shortcuts-list">
+          <div class="shortcut-item">
+            <span>Próximo Card</span>
+            <span class="shortcut-key">→</span>
+          </div>
+          <div class="shortcut-item">
+            <span>Card Anterior</span>
+            <span class="shortcut-key">←</span>
+          </div>
+          <div class="shortcut-item">
+            <span>Virar Card</span>
+            <span class="shortcut-key">Espaço</span>
+          </div>
+          <div class="shortcut-item">
+            <span>Fechar Menu</span>
+            <span class="shortcut-key">Esc</span>
+          </div>
+        </div>
       </div>
     </aside>
   </div>
@@ -429,162 +869,120 @@
   <script>
     const flashcards = [
       ["Quem exerce a fiscalização contábil, financeira, orçamentária, operacional e patrimonial da União?",
-       "Congresso Nacional (controle externo) e sistemas de controle interno de cada Poder."],
+        "Congresso Nacional (controle externo) e sistemas de controle interno de cada Poder."],
       ["O que deve ser observado na fiscalização contábil e financeira da União?",
-       "Legalidade, legitimidade, economicidade, aplicação das subvenções e renúncia de receitas."],
+        "Legalidade, legitimidade, economicidade, aplicação das subvenções e renúncia de receitas."],
       ["Quem é obrigado a prestar contas ao poder público segundo o art. 70, parágrafo único?",
-       "Qualquer pessoa física ou jurídica que administre recursos públicos ou assuma obrigações em nome da União."],
+        "Qualquer pessoa física ou jurídica que administre recursos públicos ou assuma obrigações em nome da União."],
       ["Qual órgão auxilia o Congresso Nacional no exercício do controle externo?",
-       "O Tribunal de Contas da União (TCU)."],
+        "O Tribunal de Contas da União (TCU)."],
       ["Qual é o prazo para o TCU emitir parecer prévio sobre as contas do Presidente da República?",
-       "60 dias a partir do recebimento das contas."],
+        "60 dias a partir do recebimento das contas."],
       ["O TCU pode julgar as contas de quais tipos de agentes públicos?",
-       "Administradores e responsáveis por bens públicos da administração direta e indireta."],
+        "Administradores e responsáveis por bens públicos da administração direta e indireta."],
       ["Em quais atos o TCU deve apreciar a legalidade para fins de registro?",
-       "Admissões de pessoal (exceto cargos comissionados) e concessões de aposentadorias, reformas e pensões."],
+        "Admissões de pessoal (exceto cargos comissionados) e concessões de aposentadorias, reformas e pensões."],
       ["O TCU pode realizar auditorias por iniciativa própria?",
-       "Sim, ou por solicitação da Câmara, Senado, ou comissões técnicas/inquérito."],
+        "Sim, ou por solicitação da Câmara, Senado, ou comissões técnicas/inquérito."],
       ["O que acontece se o órgão não cumpre determinação do TCU?",
-       "O TCU pode sustar o ato e comunicar ao Congresso Nacional."],
+        "O TCU pode sustar o ato e comunicar ao Congresso Nacional."],
       ["As decisões do TCU que impõem débito ou multa têm qual natureza jurídica?",
-       "Têm eficácia de título executivo."],
+        "Têm eficácia de título executivo."],
       ["O que a Comissão Mista pode fazer diante de despesa não autorizada?",
-       "Solicitar esclarecimentos à autoridade (5 dias) e, se insuficientes, pedir pronunciamento ao TCU (30 dias)."],
+        "Solicitar esclarecimentos à autoridade (5 dias) e, se insuficientes, pedir pronunciamento ao TCU (30 dias)."],
       ["O que pode ocorrer se o TCU considerar a despesa irregular e ela causar grave dano?",
-       "A Comissão Mista pode propor ao Congresso a sustação da despesa."],
+        "A Comissão Mista pode propor ao Congresso a sustação da despesa."],
       ["Quantos Ministros compõem o TCU e onde ele está sediado?",
-       "9 Ministros; sede no Distrito Federal."],
+        "9 Ministros; sede no Distrito Federal."],
       ["Quais os requisitos para ser Ministro do TCU?",
-       "Mais de 35 e menos de 70 anos, idoneidade moral, notório saber, 10 anos de experiência compatível."],
+        "Mais de 35 e menos de 70 anos, idoneidade moral, notório saber, 10 anos de experiência compatível."],
       ["Como se dá a escolha dos Ministros do TCU?",
-       "1/3 pelo Presidente (com aprovação do Senado) e 2/3 pelo Congresso Nacional."],
+        "1/3 pelo Presidente (com aprovação do Senado) e 2/3 pelo Congresso Nacional."],
       ["Quais são as garantias dos Ministros do TCU?",
-       "As mesmas dos Ministros do STJ: garantias, impedimentos, vencimentos e aposentadoria conforme o art. 40."],
+        "As mesmas dos Ministros do STJ: garantias, impedimentos, vencimentos e aposentadoria conforme o art. 40."],
       ["Qual a finalidade do sistema de controle interno dos Poderes?",
-       "Avaliar metas, legalidade, eficiência e apoiar o controle externo."],
+        "Avaliar metas, legalidade, eficiência e apoiar o controle externo."],
       ["O que o controle interno deve fazer se encontrar irregularidade?",
-       "Comunicar imediatamente ao TCU, sob pena de responsabilidade solidária."],
+        "Comunicar imediatamente ao TCU, sob pena de responsabilidade solidária."],
       ["Quem pode denunciar irregularidades ao TCU?",
-       "Qualquer cidadão, partido político, associação ou sindicato, conforme a lei."],
+        "Qualquer cidadão, partido político, associação ou sindicato, conforme a lei."],
       ["As normas sobre fiscalização da União aplicam-se a quais outros órgãos?",
-       "TCs dos Estados, do DF e Tribunais/Conselhos de Contas dos Municípios."],
+        "TCs dos Estados, do DF e Tribunais/Conselhos de Contas dos Municípios."],
       ["Como deve ser a composição dos Tribunais de Contas Estaduais, segundo a CF?",
-       "Compostos por 7 Conselheiros, conforme definido nas Constituições Estaduais."]
+        "Compostos por 7 Conselheiros, conforme definido nas Constituições Estaduais."]
     ];
 
     let currentIndex = 0;
     let studiedCards = new Set();
     let currentCards = [...flashcards];
     let autoPlayInterval = null;
-    let touchStartX = 0;
-    let touchEndX = 0;
+    let isAutoPlaying = false;
 
-    function createCard(cardData, index) {
-      const [question, answer] = cardData;
-      const wrapper = document.createElement('div');
-      wrapper.className = 'card-wrapper';
-      wrapper.setAttribute('data-index', index);
-      
-      wrapper.innerHTML = `
-        <div class="card" onclick="flipCurrentCard()">
-          <div class="card-inner">
-            <div class="card-face card-front">
-              <div class="card-number">${index + 1}/21</div>
-              <div class="card-label">Pergunta</div>
-              <div class="card-content">${question}</div>
-              <div class="flip-hint">Toque para ver a resposta</div>
-            </div>
-            <div class="card-face card-back">
-              <div class="card-number">${index + 1}/21</div>
-              <div class="card-label">Resposta</div>
-              <div class="card-content">${answer}</div>
-              <div class="flip-hint">Toque para voltar</div>
-            </div>
-          </div>
-        </div>
-      `;
-      
-      return wrapper;
+    function updateCard() {
+      const [question, answer] = currentCards[currentIndex];
+      document.getElementById('questionText').textContent = question;
+      document.getElementById('answerText').textContent = answer;
+
+      const cardNum = `${currentIndex + 1}/21`;
+      document.getElementById('cardNumber').textContent = cardNum;
+      document.getElementById('cardNumberBack').textContent = cardNum;
+      document.getElementById('currentCardNum').textContent = currentIndex + 1;
+      document.getElementById('menuCurrentCard').textContent = currentIndex + 1;
+
+      updateProgress();
+      updateButtons();
     }
 
-    function renderCards() {
-      const container = document.getElementById('cardsContainer');
-      container.innerHTML = '';
-      
-      currentCards.forEach((cardData, index) => {
-        const cardWrapper = createCard(cardData, index);
-        container.appendChild(cardWrapper);
-      });
-      
-      showCard(currentIndex);
-    }
-
-    function showCard(index) {
-      const wrappers = document.querySelectorAll('.card-wrapper');
-      wrappers.forEach((wrapper, i) => {
-        wrapper.classList.remove('active', 'prev');
-        if (i === index) {
-          wrapper.classList.add('active');
-        } else if (i < index) {
-          wrapper.classList.add('prev');
-        }
-      });
-      
-      updateUI();
-    }
-
-    function updateUI() {
-      document.getElementById('currentCard').textContent = currentIndex + 1;
-      document.getElementById('totalCards').textContent = currentCards.length;
-      
+    function updateProgress() {
       const progress = ((currentIndex + 1) / currentCards.length) * 100;
+      const studiedProgress = (studiedCards.size / currentCards.length) * 100;
+
       document.getElementById('progressFill').style.width = `${progress}%`;
-      
+      document.getElementById('progressPercentage').textContent = `${Math.round(studiedProgress)}%`;
+      document.getElementById('studiedCount').textContent = studiedCards.size;
+      document.getElementById('menuStudiedCount').textContent = `${studiedCards.size}/21`;
+      document.getElementById('menuProgress').textContent = `${Math.round(studiedProgress)}%`;
+    }
+
+    function updateButtons() {
       document.getElementById('prevBtn').disabled = currentIndex === 0;
       document.getElementById('nextBtn').disabled = currentIndex === currentCards.length - 1;
+    }
+
+    function flipCard() {
+      const card = document.getElementById('flashcard');
+      card.classList.toggle('flipped');
+
+      if (card.classList.contains('flipped')) {
+        studiedCards.add(currentIndex);
+        updateProgress();
+      }
     }
 
     function nextCard() {
       if (currentIndex < currentCards.length - 1) {
         currentIndex++;
-        showCard(currentIndex);
-        
-        // Reset flip state
-        const currentCard = document.querySelector('.card-wrapper.active .card');
-        if (currentCard) {
-          currentCard.classList.remove('flipped');
-        }
+        const card = document.getElementById('flashcard');
+        card.classList.remove('flipped');
+        updateCard();
       }
     }
 
     function previousCard() {
       if (currentIndex > 0) {
         currentIndex--;
-        showCard(currentIndex);
-        
-        // Reset flip state
-        const currentCard = document.querySelector('.card-wrapper.active .card');
-        if (currentCard) {
-          currentCard.classList.remove('flipped');
-        }
-      }
-    }
-
-    function flipCurrentCard() {
-      const currentCard = document.querySelector('.card-wrapper.active .card');
-      if (currentCard) {
-        currentCard.classList.toggle('flipped');
-        
-        if (currentCard.classList.contains('flipped')) {
-          studiedCards.add(currentIndex);
-        }
+        const card = document.getElementById('flashcard');
+        card.classList.remove('flipped');
+        updateCard();
       }
     }
 
     function goToCard(index) {
       if (index >= 0 && index < currentCards.length) {
         currentIndex = index;
-        showCard(currentIndex);
+        const card = document.getElementById('flashcard');
+        card.classList.remove('flipped');
+        updateCard();
         closeMenu();
       }
     }
@@ -593,7 +991,9 @@
       currentCards = [...flashcards].sort(() => Math.random() - 0.5);
       currentIndex = 0;
       studiedCards.clear();
-      renderCards();
+      const card = document.getElementById('flashcard');
+      card.classList.remove('flipped');
+      updateCard();
       closeMenu();
     }
 
@@ -601,32 +1001,49 @@
       currentIndex = 0;
       studiedCards.clear();
       currentCards = [...flashcards];
-      renderCards();
+      const card = document.getElementById('flashcard');
+      card.classList.remove('flipped');
+      updateCard();
       closeMenu();
     }
 
-    function showAllAnswers() {
-      const cards = document.querySelectorAll('.card');
-      cards.forEach((card, index) => {
-        card.classList.add('flipped');
-        studiedCards.add(index);
-      });
+    function markAllAsStudied() {
+      for (let i = 0; i < currentCards.length; i++) {
+        studiedCards.add(i);
+      }
+      updateProgress();
       closeMenu();
     }
 
     function toggleAutoPlay() {
-      if (autoPlayInterval) {
+      if (isAutoPlaying) {
         clearInterval(autoPlayInterval);
         autoPlayInterval = null;
+        isAutoPlaying = false;
+        document.getElementById('autoPlayIcon').textContent = '▶️';
+        document.getElementById('autoPlayText').textContent = 'Auto-Play';
       } else {
+        isAutoPlaying = true;
+        document.getElementById('autoPlayIcon').textContent = '⏸️';
+        document.getElementById('autoPlayText').textContent = 'Pausar';
+
         autoPlayInterval = setInterval(() => {
-          if (currentIndex < currentCards.length - 1) {
-            nextCard();
+          const card = document.getElementById('flashcard');
+
+          if (!card.classList.contains('flipped')) {
+            flipCard();
           } else {
-            clearInterval(autoPlayInterval);
-            autoPlayInterval = null;
+            if (currentIndex < currentCards.length - 1) {
+              nextCard();
+            } else {
+              clearInterval(autoPlayInterval);
+              autoPlayInterval = null;
+              isAutoPlaying = false;
+              document.getElementById('autoPlayIcon').textContent = '▶️';
+              document.getElementById('autoPlayText').textContent = 'Auto-Play';
+            }
           }
-        }, 4000);
+        }, 3000);
       }
       closeMenu();
     }
@@ -634,7 +1051,6 @@
     function toggleMenu() {
       const menu = document.getElementById('sideMenu');
       const overlay = document.getElementById('menuOverlay');
-      
       menu.classList.toggle('open');
       overlay.classList.toggle('open');
     }
@@ -642,39 +1058,13 @@
     function closeMenu() {
       const menu = document.getElementById('sideMenu');
       const overlay = document.getElementById('menuOverlay');
-      
       menu.classList.remove('open');
       overlay.classList.remove('open');
     }
 
-    // Suporte a gestos de swipe
-    function handleTouchStart(e) {
-      touchStartX = e.changedTouches[0].screenX;
-    }
-
-    function handleTouchEnd(e) {
-      touchEndX = e.changedTouches[0].screenX;
-      handleSwipe();
-    }
-
-    function handleSwipe() {
-      const swipeThreshold = 50;
-      const diff = touchStartX - touchEndX;
-      
-      if (Math.abs(diff) > swipeThreshold) {
-        if (diff > 0) {
-          // Swipe left - next card
-          nextCard();
-        } else {
-          // Swipe right - previous card
-          previousCard();
-        }
-      }
-    }
-
-    // Atalhos de teclado
+    // Keyboard shortcuts
     document.addEventListener('keydown', (e) => {
-      switch(e.key) {
+      switch (e.key) {
         case 'ArrowLeft':
           e.preventDefault();
           previousCard();
@@ -686,7 +1076,7 @@
         case ' ':
         case 'Enter':
           e.preventDefault();
-          flipCurrentCard();
+          flipCard();
           break;
         case 'Escape':
           closeMenu();
@@ -694,24 +1084,35 @@
       }
     });
 
-    // Event listeners para touch
-    document.addEventListener('touchstart', handleTouchStart, { passive: true });
-    document.addEventListener('touchend', handleTouchEnd, { passive: true });
+    // Touch swipe support
+    let touchStartX = 0;
+    let touchEndX = 0;
 
-    // Inicialização
-    document.addEventListener('DOMContentLoaded', () => {
-      renderCards();
-      
-      // Prevenir zoom no double tap
-      let lastTouchEnd = 0;
-      document.addEventListener('touchend', (e) => {
-        const now = (new Date()).getTime();
-        if (now - lastTouchEnd <= 300) {
-          e.preventDefault();
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+    }, { passive: true });
+
+    function handleSwipe() {
+      const swipeThreshold = 50;
+      const diff = touchStartX - touchEndX;
+
+      if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+          nextCard();
+        } else {
+          previousCard();
         }
-        lastTouchEnd = now;
-      }, false);
-    });
+      }
+    }
+
+    // Initialize
+    updateCard();
   </script>
 </body>
+
 </html>
