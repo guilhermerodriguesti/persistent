@@ -1135,10 +1135,17 @@ function loadExam(type){
   cur=type;qs=[];
   src.forEach(d=>d.q.forEach(q=>qs.push({...q,disciplina:d.d})));
   ans=new Array(qs.length).fill(null);tpq=new Array(qs.length).fill(0);
+  
+  // Ocultar instruções e seletor de exame
+  const instructions = document.querySelector('.instructions');
+  if(instructions) instructions.style.display='none';
   document.getElementById('examSelector').style.display='none';
+  
+  // Mostrar elementos do simulado
   document.getElementById('progressBar').style.display='block';
   document.getElementById('navigation').style.display='flex';
   document.getElementById('timerBar').style.display='block';
+  
   t0=Date.now();idx=0;startTimer();render();updateProg();
 }
 

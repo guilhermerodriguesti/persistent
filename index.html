@@ -12,110 +12,220 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <style>
+        /* ===== VARIÁVEIS CSS ===== */
         :root {
             --primary-color: #3498db;
+            --primary-dark: #2980b9;
             --secondary-color: #2c3e50;
             --accent-color: #e74c3c;
+            --success-color: #27ae60;
+            --warning-color: #f39c12;
+            --info-color: #3498db;
             --light-bg: #f8f9fa;
             --dark-bg: #343a40;
+            --card-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --card-shadow-hover: 0 10px 20px rgba(0,0,0,0.15);
+            --border-radius: 12px;
+            --transition-speed: 0.3s;
+        }
+        
+        /* ===== RESET E BASE ===== */
+        * {
+            box-sizing: border-box;
         }
         
         body {
             font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--light-bg);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            background-attachment: fixed;
             overflow-x: hidden;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         
+        /* ===== HEADER ===== */
         .header {
-            background-color: var(--secondary-color);
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #34495e 100%);
             color: white;
-            padding: 1.5rem 0;
-            margin-bottom: 1.5rem;
-            border-radius: 0 0 10px 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            box-shadow: var(--card-shadow);
         }
         
+        .header h1 {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+        
+        .header .lead {
+            opacity: 0.95;
+            font-weight: 300;
+        }
+        
+        /* ===== CARDS ===== */
         .card {
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-bottom: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--card-shadow);
+            transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+            margin-bottom: 1.5rem;
             border: none;
             height: 100%;
+            overflow: hidden;
+            background: white;
         }
         
         .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-        }
-        
-        /* Desativar hover em dispositivos móveis para melhor desempenho */
-        @media (hover: none) {
-            .card:hover {
-                transform: none;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            }
+            transform: translateY(-8px);
+            box-shadow: var(--card-shadow-hover);
         }
         
         .card-header {
-            border-radius: 10px 10px 0 0 !important;
-            font-weight: bold;
+            border-radius: var(--border-radius) var(--border-radius) 0 0 !important;
+            font-weight: 600;
+            padding: 1rem 1.25rem;
+            border-bottom: none;
+        }
+        
+        .card-body {
+            padding: 1.25rem;
+        }
+        
+        .card-body p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        /* ===== BADGES ===== */
+        .badge {
+            padding: 0.4rem 0.8rem;
+            font-weight: 500;
+            border-radius: 6px;
+        }
+        
+        /* ===== BOTÕES ===== */
+        .btn {
+            border-radius: 8px;
+            padding: 0.6rem 1.2rem;
+            font-weight: 500;
+            transition: all var(--transition-speed) ease;
+            border: none;
         }
         
         .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            box-shadow: 0 4px 8px rgba(52, 152, 219, 0.3);
         }
         
         .btn-primary:hover {
-            background-color: #2980b9;
-            border-color: #2980b9;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, #1f6391 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(52, 152, 219, 0.4);
         }
         
-        /* Estilos para a navegação vertical */
+        .btn i {
+            margin-right: 0.5rem;
+        }
+        
+        /* ===== NAVEGAÇÃO ===== */
+        .nav-pills {
+            gap: 0.5rem;
+        }
+        
         .nav-pills .nav-link {
-            border-radius: 0;
+            border-radius: 8px;
             color: var(--dark-bg);
             border-left: 3px solid transparent;
-            transition: all 0.3s ease;
+            transition: all var(--transition-speed) ease;
+            padding: 0.75rem 1.25rem;
+            font-weight: 500;
         }
         
         .nav-pills .nav-link.active {
-            background-color: rgba(52, 152, 219, 0.1);
+            background: linear-gradient(135deg, rgba(52, 152, 219, 0.15) 0%, rgba(52, 152, 219, 0.05) 100%);
             color: var(--primary-color);
             border-left: 3px solid var(--primary-color);
-            font-weight: bold;
+            font-weight: 600;
         }
         
         .nav-pills .nav-link:hover:not(.active) {
             background-color: rgba(52, 152, 219, 0.05);
             border-left: 3px solid rgba(52, 152, 219, 0.5);
+            transform: translateX(4px);
         }
         
+        .nav-pills .nav-link i {
+            margin-right: 0.5rem;
+        }
+        
+        /* ===== TAB CONTENT ===== */
         .tab-content {
             background-color: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: var(--border-radius);
+            padding: 2rem;
+            box-shadow: var(--card-shadow);
+            min-height: 400px;
         }
         
+        /* ===== ÍCONES ===== */
         .module-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
             color: var(--primary-color);
         }
         
+        /* ===== FOOTER ===== */
         footer {
-            background-color: var(--secondary-color);
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #34495e 100%);
             color: white;
-            padding: 1rem 0;
-            margin-top: 2rem;
-            border-radius: 10px 10px 0 0;
+            padding: 1.5rem 0;
+            margin-top: 3rem;
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
         }
         
-        /* Estilos responsivos */
+        /* ===== UTILITÁRIOS ===== */
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .section-title i {
+            margin-right: 0.75rem;
+            color: var(--primary-color);
+        }
+        
+        /* ===== RESPONSIVIDADE ===== */
+        
+        /* Desativar hover em dispositivos touch */
+        @media (hover: none) {
+            .card:hover {
+                transform: none;
+                box-shadow: var(--card-shadow);
+            }
+            
+            .nav-pills .nav-link:hover:not(.active) {
+                transform: none;
+            }
+        }
+        
+        /* Tablets e Mobile Landscape (768px - 1024px) */
+        @media (max-width: 1024px) {
+            .tab-content {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Tablets Portrait e Mobile Landscape (481px - 768px) */
         @media (max-width: 767.98px) {
+            .header {
+                padding: 1.5rem 0;
+                margin-bottom: 1.5rem;
+            }
+            
             .header h1 {
                 font-size: 1.75rem;
             }
@@ -129,8 +239,9 @@
                 top: 0;
                 z-index: 1000;
                 background-color: var(--light-bg);
-                padding-top: 10px;
+                padding: 10px 0;
                 margin-bottom: 15px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             }
             
             .nav-pills {
@@ -140,13 +251,15 @@
                 white-space: nowrap;
                 -webkit-overflow-scrolling: touch;
                 padding-bottom: 5px;
+                gap: 0.5rem;
             }
             
             .nav-pills .nav-link {
                 border-left: none;
                 border-bottom: 3px solid transparent;
-                padding: 0.5rem 1rem;
+                padding: 0.6rem 1rem;
                 font-size: 0.9rem;
+                flex-shrink: 0;
             }
             
             .nav-pills .nav-link.active {
@@ -159,35 +272,78 @@
                 border-bottom: 3px solid rgba(52, 152, 219, 0.5);
             }
             
-            h2 {
+            .tab-content {
+                padding: 1.25rem;
+            }
+            
+            h2, .section-title {
                 font-size: 1.5rem;
             }
             
             .lead {
                 font-size: 1rem;
             }
-        }
-        
-        /* Ajustes para tablets */
-        @media (min-width: 768px) and (max-width: 991.98px) {
-            .nav-pills .nav-link {
-                padding: 0.75rem 1rem;
-                font-size: 0.9rem;
+            
+            .card-body {
+                padding: 1rem;
             }
             
-            h2 {
-                font-size: 1.75rem;
+            .btn {
+                width: 100%;
+                margin-top: 0.5rem;
             }
         }
         
-        /* Ajustes para dispositivos móveis muito pequenos */
-        @media (max-width: 375px) {
+        /* Mobile Portrait (até 480px) */
+        @media (max-width: 480px) {
+            .header {
+                padding: 1.25rem 0;
+            }
+            
             .header h1 {
                 font-size: 1.5rem;
             }
             
             .header .lead {
                 font-size: 0.9rem;
+            }
+            
+            .nav-pills .nav-link {
+                padding: 0.5rem 0.75rem;
+                font-size: 0.85rem;
+            }
+            
+            .tab-content {
+                padding: 1rem;
+            }
+            
+            .card-body {
+                padding: 0.875rem;
+            }
+            
+            h2, .section-title {
+                font-size: 1.35rem;
+            }
+            
+            .btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .badge {
+                font-size: 0.75rem;
+                padding: 0.3rem 0.6rem;
+            }
+        }
+        
+        /* Extra Small Mobile (até 375px) */
+        @media (max-width: 375px) {
+            .header h1 {
+                font-size: 1.35rem;
+            }
+            
+            .header .lead {
+                font-size: 0.85rem;
             }
             
             .nav-pills .nav-link {
@@ -199,16 +355,15 @@
                 padding: 0.75rem;
             }
             
-            h2 {
-                font-size: 1.25rem;
+            h2, .section-title {
+                font-size: 1.2rem;
             }
             
             .btn {
-                padding: 0.25rem 0.5rem;
-                font-size: 0.875rem;
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
             }
             
-            /* Ajustes específicos para telas muito pequenas */
             .container {
                 padding-left: 10px;
                 padding-right: 10px;
@@ -225,11 +380,12 @@
             }
         }
         
-        /* Suporte para modo escuro */
+        /* ===== MODO ESCURO ===== */
         .dark-mode {
             --light-bg: #121212;
             --dark-bg: #000000;
             color: #e0e0e0;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
         }
         
         .dark-mode .card {
