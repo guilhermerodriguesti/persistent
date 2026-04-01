@@ -1352,6 +1352,7 @@ function showRes(tt){
 function openHelp(){document.getElementById('helpModal').classList.add('show')}
 function closeHelp(){document.getElementById('helpModal').classList.remove('show')}
 window.onclick=function(e){if(e.target.id==='helpModal')closeHelp()}
+if(window.location.hash==='#esquemas'){setTimeout(()=>openHelp(),100)}
 </script>
 
 <div id="helpModal" class="modal">
