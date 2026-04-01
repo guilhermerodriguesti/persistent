@@ -55,7 +55,32 @@ kbd{background:#eee;padding:2px 6px;border-radius:3px;font-size:11px;border:1px 
 .rri{font-weight:700;margin-bottom:5px;display:flex;justify-content:space-between}.rrt{margin:5px 0;line-height:1.4}
 .rbtn{background:#1b5e20;color:#fff;border:none;padding:13px 32px;font-size:16px;cursor:pointer;border-radius:6px;margin:18px auto;display:block;font-weight:600}
 .rbtn:hover{background:#2e7d32}
-@media(max-width:768px){.sg2{grid-template-columns:1fr}.rsg{grid-template-columns:1fr 1fr}.ab{padding:12px 28px;font-size:18px}}
+.help-btn{background:#ff9800;color:#fff;border:none;padding:10px 20px;font-size:14px;cursor:pointer;border-radius:6px;margin:10px auto;display:block;font-weight:600;box-shadow:0 2px 6px rgba(255,152,0,.3)}
+.help-btn:hover{background:#f57c00}
+.modal{display:none;position:fixed;z-index:9999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,.7);overflow-y:auto}
+.modal.show{display:block}
+.modal-content{background:#fff;margin:20px auto;padding:0;border-radius:12px;max-width:900px;box-shadow:0 4px 20px rgba(0,0,0,.3);animation:slideDown .3s}
+@keyframes slideDown{from{opacity:0;transform:translateY(-50px)}to{opacity:1;transform:translateY(0)}}
+.modal-header{background:linear-gradient(135deg,#1b5e20,#2e7d32);color:#fff;padding:20px;border-radius:12px 12px 0 0;display:flex;justify-content:space-between;align-items:center}
+.modal-header h2{margin:0;font-size:22px}
+.close-btn{background:none;border:none;color:#fff;font-size:28px;cursor:pointer;padding:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:.2s}
+.close-btn:hover{background:rgba(255,255,255,.2)}
+.modal-body{padding:24px;max-height:70vh;overflow-y:auto}
+.schema-section{margin-bottom:24px;padding:16px;background:#f9f9f9;border-radius:8px;border-left:4px solid #1b5e20}
+.schema-section h3{color:#1b5e20;margin-bottom:12px;font-size:18px}
+.schema-section h4{color:#2e7d32;margin:12px 0 8px;font-size:15px}
+.schema-box{background:#fff;padding:12px;border-radius:6px;margin:8px 0;border:2px solid #c8e6c9}
+.schema-list{list-style:none;padding:0}
+.schema-list li{padding:6px 0;padding-left:20px;position:relative}
+.schema-list li:before{content:'▸';position:absolute;left:0;color:#1b5e20;font-weight:700}
+.tip-box{background:#fff3e0;border-left:4px solid #ff9800;padding:12px;border-radius:6px;margin:10px 0}
+.tip-box strong{color:#e65100}
+.comparison-table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px}
+.comparison-table th{background:#1b5e20;color:#fff;padding:10px;text-align:left}
+.comparison-table td{padding:8px;border:1px solid #e0e0e0}
+.comparison-table tr:nth-child(even){background:#f9f9f9}
+.mnemonic{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);border-left:4px solid #2e7d32;padding:12px;border-radius:6px;margin:10px 0;font-weight:600;color:#1b5e20}
+@media(max-width:768px){.sg2{grid-template-columns:1fr}.rsg{grid-template-columns:1fr 1fr}.ab{padding:12px 28px;font-size:18px}.modal-content{margin:10px;max-width:calc(100% - 20px)}.modal-body{padding:16px}}
 </style>
 </head>
 <body>
@@ -63,6 +88,7 @@ kbd{background:#eee;padding:2px 6px;border-radius:3px;font-size:11px;border:1px 
 <div class="hdr"><h1>SIMULADO COMPLETO – DIREITO ADMINISTRATIVO</h1><p>909 questões CEBRASPE • Todos os assuntos • CD 2026</p></div>
 <div class="sub" id="sub">&#128202; 909 questões em 64 assuntos • Gabarito imediato • Relatório detalhado</div>
 <div class="inst" id="inst"><strong>INSTRUÇÕES:</strong> Julgue <strong>CERTO (C)</strong> ou <strong>ERRADO (E)</strong>. Teclas: <kbd>C</kbd>/<kbd>E</kbd> responder · <kbd>←</kbd>/<kbd>→</kbd> navegar · <kbd>Enter</kbd> finalizar</div>
+<button class="help-btn" onclick="openHelp()">📚 Esquemas e Dicas de Memorização</button>
 <div class="esel" id="esel">
 <h2>Selecione o Modo:</h2>
 <div class="sg2">
@@ -1322,6 +1348,234 @@ function showRes(tt){
   html+=`</div><button class="rbtn" onclick="location.reload()">Refazer Simulado</button>`;
   const rc=document.getElementById('rc');rc.innerHTML=html;rc.classList.add('a');
 }
+
+function openHelp(){document.getElementById('helpModal').classList.add('show')}
+function closeHelp(){document.getElementById('helpModal').classList.remove('show')}
+window.onclick=function(e){if(e.target.id==='helpModal')closeHelp()}
 </script>
+
+<div id="helpModal" class="modal">
+<div class="modal-content">
+<div class="modal-header">
+<h2>📚 Esquemas e Dicas de Memorização</h2>
+<button class="close-btn" onclick="closeHelp()">&times;</button>
+</div>
+<div class="modal-body">
+
+<div class="schema-section">
+<h3>🔴 LEI DE LICITAÇÕES (Lei 14.133/2021)</h3>
+<div class="mnemonic">💡 MNEMÔNICO: "LIPE" - Legalidade, Impessoalidade, Publicidade, Eficiência</div>
+<div class="schema-box">
+<h4>Princípios Básicos:</h4>
+<ul class="schema-list">
+<li>Legalidade, impessoalidade, moralidade, publicidade, eficiência</li>
+<li>Isonomia, competitividade, proporcionalidade</li>
+<li>Desenvolvimento nacional sustentável</li>
+<li>Julgamento objetivo</li>
+</ul>
+</div>
+<div class="schema-box">
+<h4>Modalidades de Licitação:</h4>
+<table class="comparison-table">
+<tr><th>Modalidade</th><th>Características</th></tr>
+<tr><td>Pregão</td><td>Bens e serviços comuns (preferencial)</td></tr>
+<tr><td>Concorrência</td><td>Obras, serviços e compras de grande valor</td></tr>
+<tr><td>Concurso</td><td>Trabalho técnico, científico ou artístico</td></tr>
+<tr><td>Leilão</td><td>Venda de bens móveis inservíveis</td></tr>
+<tr><td>Diálogo Competitivo</td><td>Inovação tecnológica ou técnica</td></tr>
+</table>
+</div>
+<div class="tip-box"><strong>⚠️ ATENÇÃO:</strong> Dispensa até R$ 100 mil (obras) e R$ 50 mil (outros). Inexigibilidade: inviabilidade de competição.</div>
+</div>
+
+<div class="schema-section">
+<h3>🔵 LEI DE IMPROBIDADE ADMINISTRATIVA (Lei 8.429/1992)</h3>
+<div class="mnemonic">💡 MNEMÔNICO: "EPAD" - Enriquecimento, Prejuízo, Atentado, Decoro</div>
+<div class="schema-box">
+<h4>Tipos de Atos de Improbidade:</h4>
+<ul class="schema-list">
+<li><strong>Enriquecimento ilícito (art. 9º):</strong> Dolo específico</li>
+<li><strong>Prejuízo ao erário (art. 10):</strong> Dolo ou culpa</li>
+<li><strong>Atentado aos princípios (art. 11):</strong> Dolo genérico</li>
+<li><strong>Concessão indevida de benefício (art. 10-A):</strong> Dolo</li>
+</ul>
+</div>
+<div class="schema-box">
+<h4>Sanções (após reforma de 2021):</h4>
+<table class="comparison-table">
+<tr><th>Tipo</th><th>Perda de Bens</th><th>Suspensão Direitos</th><th>Multa</th></tr>
+<tr><td>Enriquecimento</td><td>Até integral</td><td>14 anos</td><td>Até 3x acréscimo</td></tr>
+<tr><td>Prejuízo ao erário</td><td>Até integral</td><td>12 anos</td><td>Até 3x dano</td></tr>
+<tr><td>Atentado princípios</td><td>Até integral</td><td>8 anos</td><td>Até 3 anos remuneração</td></tr>
+</table>
+</div>
+<div class="tip-box"><strong>💡 DICA:</strong> Após 2021, atos culposos NÃO configuram improbidade! Apenas dolo.</div>
+</div>
+
+<div class="schema-section">
+<h3>🟢 LGPD (Lei 13.709/2018)</h3>
+<div class="mnemonic">💡 MNEMÔNICO: "FINALI" - Finalidade, Inadequação, Necessidade, Acesso, Livre, Informação</div>
+<div class="schema-box">
+<h4>Princípios da LGPD:</h4>
+<ul class="schema-list">
+<li>Finalidade: propósito legítimo e específico</li>
+<li>Adequação: compatível com finalidades</li>
+<li>Necessidade: limitação ao mínimo necessário</li>
+<li>Livre acesso: consulta facilitada e gratuita</li>
+<li>Qualidade dos dados: exatidão e atualização</li>
+<li>Transparência: informações claras e acessíveis</li>
+<li>Segurança: medidas técnicas e administrativas</li>
+<li>Prevenção: medidas preventivas</li>
+<li>Não discriminação: vedação de fins discriminatórios</li>
+<li>Responsabilização e prestação de contas</li>
+</ul>
+</div>
+<div class="schema-box">
+<h4>Agentes de Tratamento:</h4>
+<table class="comparison-table">
+<tr><th>Agente</th><th>Função</th></tr>
+<tr><td>Controlador</td><td>Decide sobre tratamento de dados</td></tr>
+<tr><td>Operador</td><td>Realiza tratamento em nome do controlador</td></tr>
+<tr><td>Encarregado (DPO)</td><td>Canal de comunicação entre controlador, titulares e ANPD</td></tr>
+</table>
+</div>
+<div class="tip-box"><strong>⚠️ ATENÇÃO:</strong> Dados sensíveis exigem consentimento específico e destacado!</div>
+</div>
+
+<div class="schema-section">
+<h3>🟡 ADMINISTRAÇÃO INDIRETA</h3>
+<div class="schema-box">
+<h4>Entidades da Administração Indireta:</h4>
+<table class="comparison-table">
+<tr><th>Entidade</th><th>Personalidade</th><th>Regime</th><th>Criação</th></tr>
+<tr><td>Autarquia</td><td>Jurídica de Dir. Público</td><td>Público</td><td>Lei específica</td></tr>
+<tr><td>Fundação Pública</td><td>Jurídica de Dir. Público</td><td>Público</td><td>Lei específica</td></tr>
+<tr><td>Empresa Pública</td><td>Jurídica de Dir. Privado</td><td>Privado</td><td>Autorização por lei</td></tr>
+<tr><td>Soc. Economia Mista</td><td>Jurídica de Dir. Privado</td><td>Privado</td><td>Autorização por lei</td></tr>
+</table>
+</div>
+<div class="mnemonic">💡 LEMBRE-SE: Autarquias e Fundações Públicas = criadas por lei. EP e SEM = autorizadas por lei!</div>
+<div class="tip-box"><strong>💡 DICA:</strong> Empresa Pública = 100% capital público. SEM = maioria capital público + ações privadas.</div>
+</div>
+
+<div class="schema-section">
+<h3>🟣 PODERES ADMINISTRATIVOS</h3>
+<div class="schema-box">
+<h4>Tipos de Poderes:</h4>
+<ul class="schema-list">
+<li><strong>Vinculado:</strong> Sem margem de escolha (lei define tudo)</li>
+<li><strong>Discricionário:</strong> Conveniência e oportunidade</li>
+<li><strong>Hierárquico:</strong> Organizar, ordenar, rever, delegar</li>
+<li><strong>Disciplinar:</strong> Punir infrações funcionais</li>
+<li><strong>Regulamentar:</strong> Expedir decretos e regulamentos</li>
+<li><strong>De Polícia:</strong> Limitar direitos em prol do interesse público</li>
+</ul>
+</div>
+<div class="tip-box"><strong>⚠️ CUIDADO:</strong> Poder hierárquico ≠ Poder disciplinar. Hierarquia organiza; disciplinar pune!</div>
+</div>
+
+<div class="schema-section">
+<h3>🔴 ATOS ADMINISTRATIVOS</h3>
+<div class="mnemonic">💡 MNEMÔNICO: "COFIMOFOB" - COmpetência, FInalidade, FOrma, MOtivo, OBjeto</div>
+<div class="schema-box">
+<h4>Requisitos (Elementos):</h4>
+<ul class="schema-list">
+<li><strong>Competência:</strong> Poder legal para praticar o ato</li>
+<li><strong>Finalidade:</strong> Resultado que a lei quer alcançar</li>
+<li><strong>Forma:</strong> Modo de exteriorização do ato</li>
+<li><strong>Motivo:</strong> Situação de fato e de direito</li>
+<li><strong>Objeto:</strong> Conteúdo do ato</li>
+</ul>
+</div>
+<div class="schema-box">
+<h4>Atributos:</h4>
+<ul class="schema-list">
+<li><strong>Presunção de legitimidade:</strong> Presume-se verdadeiro e legal</li>
+<li><strong>Imperatividade:</strong> Obriga independente de concordância</li>
+<li><strong>Autoexecutoriedade:</strong> Executa sem precisar do Judiciário</li>
+<li><strong>Tipicidade:</strong> Deve corresponder a tipo legal</li>
+</ul>
+</div>
+<div class="tip-box"><strong>💡 DICA:</strong> Anulação = vício de legalidade. Revogação = conveniência e oportunidade.</div>
+</div>
+
+<div class="schema-section">
+<h3>🔵 RESPONSABILIDADE CIVIL DO ESTADO</h3>
+<div class="schema-box">
+<h4>Teorias:</h4>
+<ul class="schema-list">
+<li><strong>Teoria Objetiva:</strong> Responsabilidade independe de culpa (regra geral)</li>
+<li><strong>Teoria Subjetiva:</strong> Depende de culpa (omissão estatal)</li>
+</ul>
+</div>
+<div class="schema-box">
+<h4>Requisitos da Responsabilidade Objetiva:</h4>
+<ul class="schema-list">
+<li>Conduta estatal (ação ou omissão)</li>
+<li>Dano (patrimonial ou moral)</li>
+<li>Nexo causal entre conduta e dano</li>
+</ul>
+</div>
+<div class="mnemonic">💡 REGRA: Ação = objetiva. Omissão = subjetiva (precisa provar culpa)!</div>
+<div class="tip-box"><strong>⚠️ ATENÇÃO:</strong> Direito de regresso contra agente público exige dolo ou culpa!</div>
+</div>
+
+<div class="schema-section">
+<h3>🟢 SERVIÇOS PÚBLICOS</h3>
+<div class="schema-box">
+<h4>Princípios Específicos:</h4>
+<ul class="schema-list">
+<li><strong>Continuidade:</strong> Não pode parar (ressalvas legais)</li>
+<li><strong>Mutabilidade:</strong> Adaptação às necessidades</li>
+<li><strong>Generalidade:</strong> Para todos (universalidade)</li>
+<li><strong>Eficiência:</strong> Qualidade e rapidez</li>
+<li><strong>Modicidade:</strong> Tarifas módicas</li>
+<li><strong>Cortesia:</strong> Bom atendimento</li>
+</ul>
+</div>
+<div class="schema-box">
+<h4>Formas de Prestação:</h4>
+<table class="comparison-table">
+<tr><th>Forma</th><th>Características</th></tr>
+<tr><td>Centralizada</td><td>Pelo próprio ente federativo</td></tr>
+<tr><td>Descentralizada</td><td>Por terceiros (concessão, permissão)</td></tr>
+<tr><td>Desconcentrada</td><td>Distribuição interna de competências</td></tr>
+</table>
+</div>
+</div>
+
+<div class="schema-section">
+<h3>🟡 CONTROLE DA ADMINISTRAÇÃO</h3>
+<div class="schema-box">
+<h4>Tipos de Controle:</h4>
+<ul class="schema-list">
+<li><strong>Administrativo:</strong> Pela própria Administração (autotutela)</li>
+<li><strong>Legislativo:</strong> Pelo Poder Legislativo (com TCU)</li>
+<li><strong>Judicial:</strong> Pelo Poder Judiciário (legalidade)</li>
+<li><strong>Social:</strong> Pela sociedade (participação popular)</li>
+</ul>
+</div>
+<div class="mnemonic">💡 Súmula 473 STF: Administração pode anular (ilegal) e revogar (inconveniente) seus atos!</div>
+</div>
+
+<div class="schema-section">
+<h3>📌 DICAS FINAIS DE MEMORIZAÇÃO</h3>
+<div class="tip-box">
+<strong>🎯 Estratégias de Estudo:</strong><br>
+1. Crie mapas mentais para cada instituto<br>
+2. Compare sempre: anulação x revogação, vinculado x discricionário<br>
+3. Decore os mnemônicos e crie os seus próprios<br>
+4. Faça tabelas comparativas (autarquia x EP x SEM)<br>
+5. Revise as súmulas do STF e STJ sobre Administrativo
+</div>
+<div class="mnemonic">
+💪 LEMBRE-SE: Direito Administrativo é questão de lógica + decoreba estratégica. Use os esquemas antes de cada simulado!
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
 </body>
 </html>
