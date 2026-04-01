@@ -1,0 +1,142 @@
+[
+    {
+        "enunciado": "De acordo com a Constituição Federal de 1988, são Poderes da União, independentes e harmônicos entre si:",
+        "alternativas": [
+            "O Legislativo, o Executivo e o Judiciário.",
+            "O Legislativo Federal, o Legislativo Estadual e o Legislativo Municipal.",
+            "O Executivo Federal, o Executivo Estadual e o Executivo Municipal.",
+            "O Judiciário Federal e o Judiciário Estadual.",
+            "O Ministério Público, a Defensoria Pública e a Advocacia Pública."
+        ],
+        "correta": 0,
+        "disciplina": "Direito Constitucional",
+        "ano": "2024",
+        "banca": "CEBRASPE"
+    },
+    {
+        "enunciado": "Assinale a alternativa que apresenta um direito fundamental previsto na Constituição Federal:",
+        "alternativas": [
+            "Direito à propriedade de bens móveis e imóveis sem qualquer restrição.",
+            "Direito à liberdade de expressão, sendo vedado o anonimato.",
+            "Direito ao voto facultativo para maiores de 16 anos.",
+            "Direito à greve irrestrita para todos os trabalhadores.",
+            "Direito à privacidade absoluta, sem exceções."
+        ],
+        "correta": 1,
+        "disciplina": "Direito Constitucional",
+        "ano": "2024",
+        "banca": "CEBRASPE"
+    },
+    {
+        "enunciado": "Sobre os princípios da Administração Pública, é correto afirmar que:",
+        "alternativas": [
+            "O princípio da legalidade permite ao administrador fazer tudo que não está proibido em lei.",
+            "O princípio da impessoalidade veda a promoção pessoal de autoridades ou servidores públicos.",
+            "O princípio da moralidade é sinônimo de legalidade.",
+            "O princípio da publicidade não admite exceções.",
+            "O princípio da eficiência foi introduzido pela Constituição de 1988."
+        ],
+        "correta": 1,
+        "disciplina": "Direito Administrativo",
+        "ano": "2023",
+        "banca": "FCC"
+    },
+    {
+        "enunciado": "Em relação aos atos administrativos, assinale a alternativa correta:",
+        "alternativas": [
+            "A revogação é a retirada de um ato ilegal do mundo jurídico.",
+            "A anulação pode ser feita por razões de conveniência e oportunidade.",
+            "Os atos vinculados não admitem análise de mérito pelo administrador.",
+            "A convalidação é possível para todos os tipos de vícios.",
+            "A cassação ocorre quando o ato nasce com vício de legalidade."
+        ],
+        "correta": 2,
+        "disciplina": "Direito Administrativo",
+        "ano": "2023",
+        "banca": "FCC"
+    },
+    {
+        "enunciado": "Qual das seguintes opções NÃO é uma característica do protocolo HTTP?",
+        "alternativas": [
+            "É um protocolo stateless (sem estado).",
+            "Utiliza o modelo cliente-servidor.",
+            "Opera na camada de aplicação do modelo OSI.",
+            "Garante a entrega ordenada de pacotes.",
+            "Pode utilizar os métodos GET, POST, PUT e DELETE."
+        ],
+        "correta": 3,
+        "disciplina": "Redes de Computadores",
+        "ano": "2024",
+        "banca": "CESPE"
+    },
+    {
+        "enunciado": "Sobre segurança da informação, é correto afirmar que:",
+        "alternativas": [
+            "A criptografia simétrica utiliza chaves públicas e privadas diferentes.",
+            "O algoritmo RSA é um exemplo de criptografia simétrica.",
+            "A confidencialidade garante que a informação não seja alterada.",
+            "A integridade assegura que apenas pessoas autorizadas acessem a informação.",
+            "O hash MD5 não é mais considerado seguro para aplicações críticas."
+        ],
+        "correta": 4,
+        "disciplina": "Segurança da Informação",
+        "ano": "2024",
+        "banca": "CESPE"
+    },
+    {
+        "enunciado": "No contexto de banco de dados relacionais, qual afirmação está correta?",
+        "alternativas": [
+            "A primeira forma normal (1FN) exige que todos os atributos sejam atômicos.",
+            "Uma chave estrangeira pode conter valores nulos em qualquer situação.",
+            "O comando DELETE CASCADE remove apenas a linha referenciada.",
+            "A normalização sempre melhora o desempenho das consultas.",
+            "Uma tabela pode ter múltiplas chaves primárias."
+        ],
+        "correta": 0,
+        "disciplina": "Banco de Dados",
+        "ano": "2023",
+        "banca": "FCC"
+    },
+    {
+        "enunciado": "Sobre linguagens de programação orientadas a objetos, é INCORRETO afirmar que:",
+        "alternativas": [
+            "O encapsulamento permite ocultar detalhes de implementação.",
+            "A herança permite que uma classe derive características de outra.",
+            "O polimorfismo permite que objetos de diferentes classes sejam tratados de forma uniforme.",
+            "A abstração consiste em expor todos os detalhes internos de uma classe.",
+            "Uma interface define um contrato que as classes devem implementar."
+        ],
+        "correta": 3,
+        "disciplina": "Programação Orientada a Objetos",
+        "ano": "2024",
+        "banca": "CESPE"
+    },
+    {
+        "enunciado": "Em relação aos sistemas operacionais, assinale a alternativa correta:",
+        "alternativas": [
+            "O escalonamento Round-Robin não é adequado para sistemas de tempo compartilhado.",
+            "A paginação elimina completamente a fragmentação externa.",
+            "O deadlock ocorre quando processos aguardam indefinidamente por recursos.",
+            "A memória virtual não pode ser maior que a memória física.",
+            "O kernel do sistema operacional executa em modo usuário."
+        ],
+        "correta": 2,
+        "disciplina": "Sistemas Operacionais",
+        "ano": "2023",
+        "banca": "FCC"
+    },
+    {
+        "enunciado": "Sobre metodologias ágeis de desenvolvimento de software, é correto afirmar:",
+        "alternativas": [
+            "O Scrum define sprints com duração variável conforme a necessidade.",
+            "O Product Owner é responsável por remover impedimentos da equipe.",
+            "O Manifesto Ágil valoriza mais processos e ferramentas do que indivíduos.",
+            "As daily meetings (reuniões diárias) devem ter no máximo 15 minutos.",
+            "O Kanban não permite limitar o trabalho em progresso (WIP)."
+        ],
+        "correta": 3,
+        "disciplina": "Engenharia de Software",
+        "ano": "2024",
+        "banca": "CESPE"
+    }
+]

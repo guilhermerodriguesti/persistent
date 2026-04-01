@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado CD - Policial Legislativo</title>
+<style>
+/* ===== RESET E BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f5f5f5;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: linear-gradient(135deg, #003366, #004080);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-weight: 700;
+}
+
+.header p {
+    font-size: 14px;
+    opacity: .9;
+}
+
+/* ===== INSTRUÇÕES ===== */
+.instructions {
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 15px;
+    font-size: 13px;
+    line-height: 1.7;
+    border-radius: 5px;
+}
+
+.instructions ul {
+    margin-left: 20px;
+    margin-top: 8px;
+}
+
+.instructions li {
+    margin-bottom: 6px;
+}
+
+/* ===== SELETOR DE EXAME ===== */
+.exam-selector {
+    padding: 25px;
+    text-align: center;
+    border-bottom: 2px solid #003366;
+}
+
+.exam-selector h2 {
+    margin-bottom: 15px;
+    color: #003366;
+    font-size: 20px;
+}
+
+.exam-selector button {
+    background: #003366;
+    color: #fff;
+    border: none;
+    padding: 14px 25px;
+    margin: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all .3s;
+    font-weight: 600;
+}
+
+.exam-selector button:hover {
+    background: #004080;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,51,102,.3);
+}
+
+/* ===== BARRA DE PROGRESSO ===== */
+.progress-bar {
+    background: #e0e0e0;
+    height: 28px;
+    margin: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: linear-gradient(90deg, #003366, #0066cc);
+    height: 100%;
+    transition: width .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* ===== TIMER ===== */
+.timer-bar {
+    text-align: center;
+    padding: 12px 8px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #003366;
+    background: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+}
+
+/* ===== QUESTÕES ===== */
+.qc {
+    padding: 25px;
+    display: none;
+}
+
+.qc.active {
+    display: block;
+}
+
+.qh {
+    background: linear-gradient(135deg, #003366, #004080);
+    color: #fff;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.qh h3 {
+    font-size: 15px;
+}
+
+.qh span {
+    font-size: 13px;
+    opacity: .9;
+}
+
+.qn {
+    font-size: 17px;
+    font-weight: 700;
+    color: #003366;
+    margin-bottom: 12px;
+}
+
+.qt {
+    font-size: 15px;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 20px;
+    padding: 18px;
+    background: #fafafa;
+    border-left: 4px solid #003366;
+    white-space: pre-wrap;
+    border-radius: 4px;
+}
+
+/* ===== ALTERNATIVAS ===== */
+.ao {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin: 25px 0;
+    flex-wrap: wrap;
+}
+
+.ab {
+    padding: 18px 45px;
+    font-size: 22px;
+    font-weight: 700;
+    border: 3px solid #003366;
+    background: #fff;
+    color: #003366;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: all .3s;
+    min-width: 110px;
+    text-align: center;
+}
+
+.ab:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+.ab:active {
+    transform: scale(0.98);
+}
+
+.ab.correct {
+    background: #28a745;
+    border-color: #28a745;
+    color: #fff;
+}
+
+.ab.incorrect {
+    background: #dc3545;
+    border-color: #dc3545;
+    color: #fff;
+}
+
+/* ===== FEEDBACK ===== */
+.fb {
+    display: none;
+    margin: 15px 0;
+    padding: 18px;
+    border-radius: 5px;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.fb.show {
+    display: block;
+}
+
+.fb.correct {
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.fb.incorrect {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+/* ===== NAVEGAÇÃO ===== */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-top: 2px solid #ddd;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: #f8f9fa;
+}
+
+.nb {
+    padding: 11px 28px;
+    font-size: 15px;
+    border: none;
+    background: #003366;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all .3s;
+    font-weight: 600;
+}
+
+.nb:hover {
+    background: #004080;
+    transform: translateY(-2px);
+}
+
+.nb:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.fb-btn {
+    background: #28a745;
+    padding: 13px 35px;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.fb-btn:hover {
+    background: #218838;
+}
+
+#navInfo {
+    color: #003366;
+    font-weight: 700;
+    align-self: center;
+    font-size: 14px;
+}
+
+/* ===== RESULTADOS ===== */
+.rc {
+    display: none;
+    padding: 25px;
+}
+
+.rc.active {
+    display: block;
+}
+
+.rh {
+    background: linear-gradient(135deg, #003366, #0066cc);
+    color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.rh h2 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.sd {
+    font-size: 44px;
+    font-weight: 700;
+    margin: 15px 0;
+}
+
+.sg {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.sc {
+    background: #fff;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,.08);
+}
+
+.sc h3 {
+    color: #003366;
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.sv {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 4px 0;
+}
+
+.sl {
+    font-size: 11px;
+    color: #666;
+}
+
+.pc {
+    margin: 25px 0;
+    padding: 18px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.pc h3 {
+    color: #003366;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.dp {
+    margin: 10px 0;
+}
+
+.dn {
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #333;
+    font-size: 13px;
+}
+
+.bc {
+    background: #e0e0e0;
+    height: 26px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.bf {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding-left: 8px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 12px;
+    transition: width .5s;
+}
+
+.bf.high {
+    background: linear-gradient(90deg, #28a745, #5cb85c);
+}
+
+.bf.medium {
+    background: linear-gradient(90deg, #ffc107, #ffb300);
+}
+
+.bf.low {
+    background: linear-gradient(90deg, #dc3545, #e74c3c);
+}
+
+.rec {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    border-radius: 8px;
+    padding: 18px;
+    margin: 25px 0;
+}
+
+.rec h3 {
+    color: #856404;
+    margin-bottom: 12px;
+}
+
+.rec ul {
+    margin-left: 18px;
+}
+
+.rec li {
+    margin: 6px 0;
+    color: #856404;
+    font-size: 13px;
+}
+
+.rec.good {
+    background: #d4edda;
+    border-color: #28a745;
+}
+
+.rec.good h3,
+.rec.good p {
+    color: #155724;
+}
+
+.qr {
+    margin: 25px 0;
+}
+
+.qr h3 {
+    color: #003366;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #003366;
+}
+
+.ri {
+    padding: 12px;
+    margin: 8px 0;
+    border-left: 4px solid #ddd;
+    background: #f9f9f9;
+    font-size: 13px;
+    border-radius: 4px;
+}
+
+.ri.correct {
+    border-left-color: #28a745;
+    background: #d4edda;
+}
+
+.ri.incorrect {
+    border-left-color: #dc3545;
+    background: #f8d7da;
+}
+
+.ri.unanswered {
+    border-left-color: #ffc107;
+    background: #fff3cd;
+}
+
+.rih {
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.rit {
+    margin: 6px 0;
+    line-height: 1.5;
+}
+
+.ra {
+    display: flex;
+    gap: 15px;
+    margin: 6px 0;
+    flex-wrap: wrap;
+}
+
+.rbtn {
+    background: #003366;
+    color: #fff;
+    border: none;
+    padding: 14px 35px;
+    font-size: 17px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 18px auto;
+    display: block;
+    transition: all .3s;
+    font-weight: 600;
+}
+
+.rbtn:hover {
+    background: #004080;
+    transform: translateY(-2px);
+}
+
+kbd {
+    background: #eee;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 2px 6px;
+    font-size: 11px;
+    font-family: 'Courier New', monospace;
+    display: inline-block;
+}
+
+/* ===== MEDIA QUERIES - RESPONSIVIDADE ===== */
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 100%;
+        box-shadow: none;
+    }
+    
+    .qc {
+        padding: 20px;
+    }
+    
+    .rc {
+        padding: 20px;
+    }
+}
+
+/* Tablets Portrait e Mobile Landscape (481px - 768px) */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 16px;
+    }
+    
+    .header p {
+        font-size: 13px;
+    }
+    
+    .instructions {
+        margin: 10px;
+        padding: 12px;
+        font-size: 12px;
+    }
+    
+    .exam-selector {
+        padding: 20px 10px;
+    }
+    
+    .exam-selector h2 {
+        font-size: 18px;
+    }
+    
+    .exam-selector button {
+        width: 100%;
+        max-width: 350px;
+        margin: 6px auto;
+        display: block;
+    }
+    
+    .timer-bar {
+        font-size: 13px;
+        padding: 10px 8px;
+    }
+    
+    .timer-bar span:last-child {
+        display: block;
+        margin-top: 8px;
+        font-size: 11px;
+    }
+    
+    .qc {
+        padding: 15px;
+    }
+    
+    .qh {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .qt {
+        font-size: 14px;
+        padding: 15px;
+    }
+    
+    .ao {
+        gap: 15px;
+    }
+    
+    .ab {
+        padding: 16px 35px;
+        font-size: 20px;
+        min-width: 100px;
+    }
+    
+    .sg {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    
+    .sc {
+        padding: 10px;
+    }
+    
+    .sv {
+        font-size: 22px;
+    }
+    
+    .nav {
+        padding: 12px;
+        gap: 8px;
+    }
+    
+    .nb {
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    #navInfo {
+        width: 100%;
+        text-align: center;
+        order: -1;
+        margin-bottom: 8px;
+    }
+    
+    .fb-btn {
+        width: 100%;
+        margin-top: 8px;
+    }
+    
+    .rh h2 {
+        font-size: 22px;
+    }
+    
+    .sd {
+        font-size: 36px;
+    }
+}
+
+/* Mobile Portrait (até 480px) */
+@media (max-width: 480px) {
+    .header {
+        padding: 15px 10px;
+    }
+    
+    .header h1 {
+        font-size: 14px;
+    }
+    
+    .header p {
+        font-size: 12px;
+    }
+    
+    .instructions {
+        margin: 8px;
+        padding: 10px;
+        font-size: 11px;
+    }
+    
+    .exam-selector {
+        padding: 15px 8px;
+    }
+    
+    .exam-selector h2 {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    
+    .exam-selector button {
+        padding: 12px 20px;
+        font-size: 14px;
+        margin: 5px auto;
+    }
+    
+    .progress-bar {
+        margin: 10px;
+        height: 24px;
+    }
+    
+    .progress-fill {
+        font-size: 11px;
+    }
+    
+    .timer-bar {
+        font-size: 12px;
+        padding: 8px;
+    }
+    
+    kbd {
+        font-size: 10px;
+        padding: 1px 4px;
+    }
+    
+    .qc {
+        padding: 12px;
+    }
+    
+    .qh {
+        padding: 10px;
+    }
+    
+    .qh h3 {
+        font-size: 13px;
+    }
+    
+    .qh span {
+        font-size: 11px;
+    }
+    
+    .qn {
+        font-size: 15px;
+    }
+    
+    .qt {
+        font-size: 13px;
+        padding: 12px;
+        line-height: 1.6;
+    }
+    
+    .ao {
+        gap: 12px;
+        margin: 20px 0;
+    }
+    
+    .ab {
+        padding: 14px 30px;
+        font-size: 18px;
+        min-width: 90px;
+        flex: 1;
+    }
+    
+    .fb {
+        font-size: 13px;
+        padding: 15px;
+    }
+    
+    .nav {
+        padding: 10px;
+    }
+    
+    .nb {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    #navInfo {
+        font-size: 13px;
+    }
+    
+    .fb-btn {
+        padding: 12px 25px;
+        font-size: 15px;
+    }
+    
+    .rc {
+        padding: 12px;
+    }
+    
+    .rh {
+        padding: 20px 15px;
+    }
+    
+    .rh h2 {
+        font-size: 20px;
+    }
+    
+    .sd {
+        font-size: 32px;
+    }
+    
+    .sg {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin: 20px 0;
+    }
+    
+    .sc h3 {
+        font-size: 12px;
+    }
+    
+    .sv {
+        font-size: 20px;
+    }
+    
+    .sl {
+        font-size: 10px;
+    }
+    
+    .pc {
+        padding: 15px;
+        margin: 20px 0;
+    }
+    
+    .pc h3 {
+        font-size: 15px;
+    }
+    
+    .dn {
+        font-size: 12px;
+    }
+    
+    .bf {
+        font-size: 11px;
+    }
+    
+    .rec {
+        padding: 15px;
+        margin: 20px 0;
+    }
+    
+    .rec h3 {
+        font-size: 14px;
+    }
+    
+    .rec li {
+        font-size: 12px;
+    }
+    
+    .ri {
+        padding: 10px;
+        font-size: 12px;
+    }
+    
+    .rbtn {
+        padding: 12px 25px;
+        font-size: 15px;
+        width: 100%;
+    }
+}
+
+/* Extra Small Mobile (até 360px) */
+@media (max-width: 360px) {
+    .header h1 {
+        font-size: 13px;
+    }
+    
+    .exam-selector button {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    
+    .ab {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+    
+    .sg {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>CEBRASPE – CÂMARA DOS DEPUTADOS – Edital: 2025</h1>
+<p>Simulado Interativo – Policial Legislativo</p>
+<p style="margin-top: 8px; font-size: 13px; opacity: 0.85;">📅 Sábado, 04 de Abril de 2026</p>
+</div>
+<div class="instructions">
+<strong>INSTRUÇÕES:</strong>
+<ul>
+<li>Julgue cada item como <strong>CERTO (C)</strong> ou <strong>ERRADO (E)</strong>.</li>
+<li>Feedback imediato após cada resposta. Relatório completo ao final.</li>
+<li>Use os botões de navegação para avançar ou retroceder.</li>
+</ul>
+</div>
+<div class="exam-selector" id="examSelector">
+<h2>Selecione o Simulado:</h2>
+<button onclick="loadExam('cg')">Conhecimentos Gerais (90 itens)</button>
+<button onclick="loadExam('ce')">Conhecimentos Específicos (90 itens)</button>
+<button onclick="loadExam('completo')">Simulado Completo (180 itens)</button>
+</div>
+<div class="timer-bar" id="timerBar" style="display:none">⏱ <span id="timerDisplay">00:00:00</span> &nbsp;|&nbsp; <span style="font-size:12px;font-weight:400;color:#666">⌨ Teclas: <kbd>C</kbd>/<kbd>E</kbd> responder &nbsp; <kbd>←</kbd>/<kbd>→</kbd> navegar &nbsp; <kbd>Enter</kbd> finalizar</span></div>
+<div class="progress-bar" id="progressBar" style="display:none"><div class="progress-fill" id="progressFill">0%</div></div>
+<div id="questionsArea"></div>
+<div class="nav" id="navigation" style="display:none">
+<button class="nb" id="prevBtn" onclick="prev()">← Anterior</button>
+<span id="navInfo" style="color:#003366;font-weight:700;align-self:center"></span>
+<button class="nb" id="nextBtn" onclick="next()">Próxima →</button>
+<button class="nb fb-btn" id="finishBtn" onclick="finish()" style="display:none">Finalizar Simulado</button>
+</div>
+<div class="rc" id="resultsContainer"></div>
+</div>
+<script>
+/* ===== DADOS CG ===== */
+const CG=[
+{d:"Língua Portuguesa",q:[
+{i:1,e:"A comunicação eficaz no serviço público exige clareza e adequação ao público-alvo. A Linguagem Simples busca tornar textos oficiais mais acessíveis, eliminando jargões desnecessários. Essa abordagem não significa empobrecer a linguagem, mas torná-la funcional e democrática.\n\nO texto defende que a Linguagem Simples implica necessariamente redução da qualidade linguística dos documentos oficiais.",r:"E",x:"ERRADO. O texto afirma que 'não significa empobrecer a linguagem'."},
+{i:2,e:"Infere-se do texto que a Linguagem Simples contribui para a democratização do acesso à informação pública.",r:"C",x:"CERTO. O texto menciona tornar textos 'mais acessíveis aos cidadãos', democratizando o acesso."},
+{i:3,e:"Na frase 'Os servidores mantêm suas atribuições durante o recesso', o acento circunflexo em 'mantêm' justifica-se pela regra dos verbos derivados de 'ter' na 3ª pessoa do plural.",r:"C",x:"CERTO. Verbos derivados de 'ter' recebem circunflexo no plural: mantêm, contêm, detêm."},
+{i:4,e:"Em 'Houveram muitas discussões acerca do projeto', o verbo 'haver' está corretamente flexionado.",r:"E",x:"ERRADO. 'Haver' no sentido de existir é impessoal: 'Houve muitas discussões'."},
+{i:5,e:"A vírgula está corretamente empregada em: 'O presidente da comissão, convocou reunião extraordinária'.",r:"E",x:"ERRADO. Vírgula separa indevidamente sujeito do verbo."},
+{i:6,e:"Na frase 'É necessário que se analisem todas as propostas', o 'se' é partícula apassivadora, e o sujeito é 'todas as propostas'.",r:"C",x:"CERTO. Voz passiva sintética: 'todas as propostas' é sujeito paciente. O verbo concorda no plural."},
+{i:7,e:"'Embora' em 'Embora aprovado o projeto, há ressalvas' estabelece relação de concessão.",r:"C",x:"CERTO. 'Embora' é conjunção subordinativa concessiva."},
+{i:8,e:"Em 'O parecer aludiu às questões do relator', a crase está correta pois 'aludir' exige preposição 'a'.",r:"C",x:"CERTO. Aludir a + as questões = às questões."},
+{i:9,e:"Em 'Informamos à Vossa Senhoria que o prazo foi prorrogado', a crase está correta.",r:"E",x:"ERRADO. Não se usa crase antes de pronomes de tratamento."},
+{i:10,e:"'Prefiro mais trabalhar em equipe do que individualmente' atende à regência de 'preferir'.",r:"E",x:"ERRADO. 'Preferir' não admite 'mais...do que'. Correto: 'Prefiro X a Y'."},
+{i:11,e:"Em 'a qual apresentou suas conclusões', o pronome relativo 'a qual' retoma o antecedente e estabelece coesão referencial.",r:"C",x:"CERTO. Pronome relativo como elemento de coesão referencial."},
+{i:12,e:"'O deputado sentiu-se mal após o debate' — 'mal' (advérbio) está corretamente empregado.",r:"C",x:"CERTO. 'Mal' opõe-se a 'bem'; 'mau' opõe-se a 'bom'."},
+{i:13,e:"Em 'Os projetos tramitam há meses', o verbo 'tramitar' exigiria pronome reflexivo.",r:"E",x:"ERRADO. 'Tramitar' é intransitivo, não exige reflexivo."},
+{i:14,e:"'Me informaram sobre a resolução' apresenta colocação pronominal adequada ao registro formal.",r:"E",x:"ERRADO. Não se inicia frase com pronome oblíquo átono no registro formal."},
+{i:15,e:"Em 'O servidor que não cumprir o prazo será notificado', a oração 'que não cumprir o prazo' é adjetiva restritiva.",r:"C",x:"CERTO. Sem vírgula, restringe o sentido de 'servidor'."}
+]},
+{d:"Língua Inglesa",q:[
+{i:16,e:"Legislative drafting is far more than a technical exercise. Drafters wield considerable influence over the final form and substance of legislation.\n\nThe text suggests that drafters have limited influence on legislation.",r:"E",x:"ERRADO. 'Wielding considerable influence' = influência considerável, não limitada."},
+{i:17,e:"According to the text, modern governance requires drafters to have multidisciplinary knowledge.",r:"C",x:"CERTO. O texto menciona necessidade de conhecimento além do jurídico."},
+{i:18,e:"The text indicates that all legislative drafters are elected officials.",r:"E",x:"ERRADO. São frequentemente 'unelected civil servants'."},
+{i:19,e:"There is a potential tension between technical expertise and democratic legitimacy in drafting.",r:"C",x:"CERTO. O texto menciona essa tensão expressamente."},
+{i:20,e:"'The committee has been reviewing the proposal since last month' uses the present perfect continuous correctly to indicate an ongoing action.",r:"C",x:"CERTO. Ação iniciada no passado que continua no presente."},
+{i:21,e:"'Notwithstanding' can be replaced by 'despite' without change in meaning.",r:"C",x:"CERTO. Ambos significam 'apesar de'."},
+{i:22,e:"'If the amendment had been approved, the law would be different now' is a mixed conditional.",r:"C",x:"CERTO. Past perfect (condição passada) + would (resultado presente)."},
+{i:23,e:"'Stakeholder' refers exclusively to shareholders in a company.",r:"E",x:"ERRADO. Refere-se a qualquer parte interessada, não só acionistas."},
+{i:24,e:"'The legislation aims at reducing bureaucracy' — 'at' is correctly used after 'aims'.",r:"C",x:"CERTO. 'Aim at + gerúndio' é construção correta."},
+{i:25,e:"In 'Neither the president nor the members were available', 'were' agrees with the nearest subject.",r:"C",x:"CERTO. Com 'neither...nor', verbo concorda com o sujeito mais próximo."}
+]},
+{d:"Raciocínio Lógico e Estatística",q:[
+{i:26,e:"Se 'Se João é deputado, então foi eleito pelo voto popular' é verdadeira, e João foi eleito pelo voto popular, então necessariamente João é deputado.",r:"E",x:"ERRADO. Falácia da afirmação do consequente."},
+{i:27,e:"A negação de 'Todos os servidores são concursados' é 'Nenhum servidor é concursado'.",r:"E",x:"ERRADO. A negação correta é 'Existe algum servidor que não é concursado'."},
+{i:28,e:"Se 'Pedro é analista ou Maria é técnica' e 'Pedro não é analista' são verdadeiras, então 'Maria é técnica' é verdadeira.",r:"C",x:"CERTO. Silogismo disjuntivo: (p∨q)∧¬p → q."},
+{i:29,e:"'Se chove, então sessão adiada e plenário vazio' equivale a 'Se sessão não adiada ou plenário não vazio, então não chove'.",r:"C",x:"CERTO. Contrapositiva com De Morgan."},
+{i:30,e:"~(p∧q) é equivalente a ~p∨~q (Lei de De Morgan).",r:"C",x:"CERTO. 1ª Lei de De Morgan."},
+{i:31,e:"p→q é falsa somente quando p é V e q é F.",r:"C",x:"CERTO. Única combinação que torna a condicional falsa."},
+{i:32,e:"p→q e ~q→~p são logicamente equivalentes.",r:"C",x:"CERTO. Equivalência por contrapositiva."},
+{i:33,e:"De 10 deputados, escolher presidente e vice (cargos distintos) = 90 maneiras.",r:"C",x:"CERTO. A(10,2) = 10×9 = 90."},
+{i:34,e:"Urna com 5 vermelhas e 3 azuis: P(2 vermelhas sem reposição) > 35%.",r:"C",x:"CERTO. (5/8)×(4/7) = 20/56 ≈ 35,7%."},
+{i:35,e:"Anagramas de 'COMISSÃO' começando com C = 7!.",r:"E",x:"ERRADO. Há 2 letras S repetidas: 7!/2! = 2520."},
+{i:36,e:"20 pessoas (12H, 8M), comissões de 5 com 3H e 2M = C(12,3)×C(8,2).",r:"C",x:"CERTO. 220×28 = 6160."},
+{i:37,e:"A mediana é sempre igual à média aritmética.",r:"E",x:"ERRADO. Só coincidem em distribuições simétricas."},
+{i:38,e:"Multiplicar todos os dados por 2 multiplica o desvio padrão por 2.",r:"C",x:"CERTO. σ(kX) = |k|σ(X)."},
+{i:39,e:"Outliers influenciam a média mas não a mediana de forma significativa.",r:"C",x:"CERTO. Mediana é robusta a valores extremos."},
+{i:40,e:"Na amostragem aleatória simples, todos têm mesma probabilidade de seleção.",r:"C",x:"CERTO. Definição de AAS."}
+]},
+{d:"Direito Constitucional",q:[
+{i:41,e:"A República Federativa do Brasil tem como fundamentos a soberania, a cidadania e a dignidade da pessoa humana, entre outros.",r:"C",x:"CERTO. Art. 1º, I, II e III, CF."},
+{i:42,e:"São direitos sociais (art. 6º CF): educação, saúde, alimentação, trabalho, moradia, transporte, lazer, segurança, previdência, proteção à maternidade/infância e assistência aos desamparados.",r:"C",x:"CERTO. Art. 6º da CF/88."},
+{i:43,e:"A casa é asilo inviolável; nela só se pode penetrar sem consentimento em flagrante, desastre, socorro ou, de dia, por ordem judicial.",r:"C",x:"CERTO. Art. 5º, XI, CF."},
+{i:44,e:"Racismo é crime inafiançável e imprescritível, sujeito a reclusão.",r:"C",x:"CERTO. Art. 5º, XLII, CF."},
+{i:45,e:"A PF exerce com exclusividade as funções de polícia judiciária da União, dos estados e do DF.",r:"E",x:"ERRADO. PF = polícia judiciária da União apenas. Estados = polícias civis."},
+{i:46,e:"O Congresso Nacional compõe-se da Câmara dos Deputados e do Senado Federal.",r:"C",x:"CERTO. Art. 44, CF."},
+{i:47,e:"Lei complementar exige maioria absoluta para aprovação.",r:"C",x:"CERTO. Art. 69, CF."},
+{i:48,e:"PL rejeitado só pode ser reapresentado na mesma sessão por maioria absoluta de qualquer Casa.",r:"C",x:"CERTO. Art. 67, CF."},
+{i:49,e:"Criação de Territórios depende de LC; sua transformação em Estado, de lei ordinária.",r:"E",x:"ERRADO. Ambas dependem de lei complementar (art. 18, §2º)."},
+{i:50,e:"É vedada a acumulação remunerada de cargos públicos, salvo hipóteses constitucionais com compatibilidade de horários.",r:"C",x:"CERTO. Art. 37, XVI, CF."},
+{i:51,e:"Concurso público tem validade de até 2 anos, prorrogável uma vez por igual período.",r:"C",x:"CERTO. Art. 37, III, CF."},
+{i:52,e:"As Forças Armadas destinam-se à defesa da Pátria e à garantia dos poderes constitucionais.",r:"C",x:"CERTO. Art. 142, CF."},
+{i:53,e:"O estado de defesa pode ser decretado pelo Presidente, ouvidos o Conselho da República e o de Defesa Nacional.",r:"C",x:"CERTO. Art. 136, CF."},
+{i:54,e:"A segurança pública é exercida exclusivamente pelas Forças Armadas.",r:"E",x:"ERRADO. Art. 144 CF lista PF, PRF, polícias civis, PMs, bombeiros e polícias penais."},
+{i:55,e:"A intervenção federal pode ser decretada para repelir invasão estrangeira.",r:"C",x:"CERTO. Art. 34, I, CF."}
+]},
+{d:"Legislação Interna da Câmara dos Deputados",q:[
+{i:56,e:"A Câmara compõe-se de representantes do povo, eleitos pelo sistema proporcional.",r:"C",x:"CERTO. Art. 45, CF e art. 1º do RICD."},
+{i:57,e:"A Mesa é composta por Presidente, 2 Vice-Presidentes, 4 Secretários e 4 Suplentes.",r:"C",x:"CERTO. Art. 8º do RICD."},
+{i:58,e:"As sessões podem ser ordinárias, extraordinárias, solenes e secretas.",r:"C",x:"CERTO. Conforme RICD."},
+{i:59,e:"Comissões permanentes subsistem através das legislaturas.",r:"C",x:"CERTO. Art. 22 do RICD."},
+{i:60,e:"O Colégio de Líderes substitui o Plenário em votações de urgência.",r:"E",x:"ERRADO. Colégio de Líderes é órgão de interlocução, não substitui o Plenário."},
+{i:61,e:"A Resolução 18/2003 disciplina a atividade de segurança legislativa e o Departamento de Polícia Legislativa.",r:"C",x:"CERTO. Resolução CD nº 18/2003."},
+{i:62,e:"A administração e economia interna da Câmara são reguladas nos arts. 262 a 273 do RICD.",r:"C",x:"CERTO. Título VIII do RICD."},
+{i:63,e:"A sessão ordinária tem duração de cinco horas, podendo ser prorrogada.",r:"C",x:"CERTO. Art. 66 do RICD."},
+{i:64,e:"O Ato da Mesa nº 234/2025 trata da organização administrativa da Câmara.",r:"C",x:"CERTO. Conforme o edital."},
+{i:65,e:"A Polícia da Câmara é subordinada ao Presidente da República.",r:"E",x:"ERRADO. Subordinada à Mesa da Câmara dos Deputados."}
+]},
+{d:"Direito Administrativo",q:[
+{i:66,e:"Descentralização ocorre quando o Estado transfere execução de serviços a outras pessoas jurídicas.",r:"C",x:"CERTO. Conceito de descentralização administrativa."},
+{i:67,e:"Autarquias são PJ de direito público, criadas por lei específica.",r:"C",x:"CERTO. Art. 37, XIX, CF."},
+{i:68,e:"Empresas públicas e SEM são criadas diretamente por lei.",r:"E",x:"ERRADO. Lei autoriza a criação; efetivam-se pelo registro dos atos constitutivos."},
+{i:69,e:"Requisitos do ato administrativo: competência, finalidade, forma, motivo e objeto.",r:"C",x:"CERTO. Elementos clássicos do ato administrativo."},
+{i:70,e:"A revogação pode ser feita pela administração e pelo Judiciário.",r:"E",x:"ERRADO. Revogação é privativa da administração. Judiciário pode anular, não revogar."},
+{i:71,e:"Estágio probatório federal dura 3 anos.",r:"C",x:"CERTO. Art. 41 CF c/c art. 20 da Lei 8.112/90."},
+{i:72,e:"O poder disciplinar permite apurar infrações e punir servidores.",r:"C",x:"CERTO. Poder disciplinar = faculdade punitiva interna."},
+{i:73,e:"O poder de polícia limita direitos em razão do interesse público.",r:"C",x:"CERTO. Art. 78, CTN."},
+{i:74,e:"A responsabilidade civil do Estado é subjetiva, exigindo prova de culpa.",r:"E",x:"ERRADO. É objetiva (teoria do risco administrativo). Art. 37, §6º, CF."},
+{i:75,e:"O regresso contra o agente depende de dolo ou culpa deste.",r:"C",x:"CERTO. Art. 37, §6º, parte final, CF."},
+{i:76,e:"Após a Lei 14.230/2021, todos os atos de improbidade exigem dolo.",r:"C",x:"CERTO. A reforma eliminou a modalidade culposa de improbidade."},
+{i:77,e:"A LAI (12.527/2011) estabelece publicidade como regra e sigilo como exceção.",r:"C",x:"CERTO. Princípio da máxima divulgação."},
+{i:78,e:"A LGPD aplica-se exclusivamente ao setor privado.",r:"E",x:"ERRADO. Aplica-se também à administração pública (art. 1º e 23 da LGPD)."},
+{i:79,e:"Na Lei 14.133/2021, pregão destina-se a bens e serviços comuns, inclusive engenharia.",r:"C",x:"CERTO. Art. 6º, XLI, e art. 29 da Lei 14.133/2021."},
+{i:80,e:"A Lei 9.784/99 garante contraditório e ampla defesa no processo administrativo federal.",r:"C",x:"CERTO. Art. 2º da Lei 9.784/99."}
+]},
+{d:"Informática e Dados",q:[
+{i:81,e:"Firewall monitora e controla tráfego de rede, bloqueando conexões não autorizadas.",r:"C",x:"CERTO. Função básica do firewall."},
+{i:82,e:"Phishing usa mensagens fraudulentas para capturar informações confidenciais.",r:"C",x:"CERTO. Técnica de engenharia social."},
+{i:83,e:"VPN cria conexão segura e criptografada entre dispositivo e rede remota.",r:"C",x:"CERTO. VPN = túnel criptografado."},
+{i:84,e:"Chave primária identifica univocamente cada registro em banco de dados relacional.",r:"C",x:"CERTO. Definição de primary key."},
+{i:85,e:"Big Data caracteriza-se por volume, velocidade e variedade.",r:"C",x:"CERTO. Os 3 V's do Big Data."},
+{i:86,e:"IPv6 usa endereços de 256 bits.",r:"E",x:"ERRADO. IPv6 usa 128 bits, não 256."},
+{i:87,e:"Ransomware criptografa dados e exige resgate para restaurar o acesso.",r:"C",x:"CERTO. Definição de ransomware."},
+{i:88,e:"Cadeia de custódia digital garante integridade e rastreabilidade de evidências.",r:"C",x:"CERTO. Princípio fundamental da forense digital."},
+{i:89,e:"IA Generativa cria novos conteúdos a partir de padrões aprendidos em treinamento.",r:"C",x:"CERTO. Modelos generativos produzem conteúdo original."},
+{i:90,e:"NAT permite que vários dispositivos internos compartilhem um IP público.",r:"C",x:"CERTO. Network Address Translation."}
+]}
+];
+
+/* ===== DADOS CE ===== */
+const CE=[
+{d:"Atividade de Inteligência",q:[
+{i:91,e:"A atividade de Inteligência compreende obtenção, análise e disseminação de conhecimentos sobre fatos de influência sobre o processo decisório governamental.",r:"C",x:"CERTO. Definição clássica da atividade de Inteligência."},
+{i:92,e:"Contrainteligência neutraliza a inteligência adversa, protegendo conhecimentos sensíveis contra espionagem e sabotagem.",r:"C",x:"CERTO. Ramo defensivo/ofensivo da atividade de Inteligência."},
+{i:93,e:"Operações de Inteligência obtêm dados negados, protegidos contra acesso convencional.",r:"C",x:"CERTO. Operações buscam dados não disponíveis ostensivamente."},
+{i:94,e:"O ciclo de Inteligência: planejamento, reunião de dados, processamento, difusão e avaliação.",r:"C",x:"CERTO. Fases clássicas do ciclo de produção de conhecimentos."},
+{i:95,e:"Contramedidas de vigilância técnica detectam e neutralizam interceptações de comunicações.",r:"C",x:"CERTO. Proteção contra interceptação de sinais."},
+{i:96,e:"A PNI (Decreto 8.793/2016) fixa pressupostos, objetivos e diretrizes em consonância com princípios democráticos.",r:"C",x:"CERTO. Art. 1º do Decreto 8.793/2016."},
+{i:97,e:"Pressupostos da PNI incluem respeito à soberania e à dignidade humana.",r:"C",x:"CERTO. Pressupostos expressos na PNI."},
+{i:98,e:"A PNI reconhece terrorismo, espionagem, crime organizado transnacional e ataques cibernéticos como ameaças.",r:"C",x:"CERTO. Ameaças previstas na PNI."},
+{i:99,e:"A Inteligência prescinde de controle externo, bastando controle interno.",r:"E",x:"ERRADO. Submete-se a controle externo pelo Legislativo e Judiciário."},
+{i:100,e:"Diretriz da PNI: integração e compartilhamento entre órgãos do SISBIN.",r:"C",x:"CERTO. Diretriz expressa."},
+{i:101,e:"O SISBIN é coordenado pela ABIN.",r:"C",x:"CERTO. ABIN é órgão central do SISBIN."},
+{i:102,e:"Risco = probabilidade de evento adverso × magnitude de consequências.",r:"C",x:"CERTO. Conceito de risco na análise de Inteligência."},
+{i:103,e:"Ameaça é evento com potencial de causar dano explorando vulnerabilidades.",r:"C",x:"CERTO. Definição padrão de ameaça."},
+{i:104,e:"Vulnerabilidade é fragilidade que pode ser explorada por ameaças.",r:"C",x:"CERTO. Conceito clássico de vulnerabilidade."},
+{i:105,e:"Gestão de riscos: reduzir, transferir, aceitar ou evitar riscos.",r:"C",x:"CERTO. Quatro respostas clássicas ao risco."},
+{i:106,e:"Análise de risco dispensa avaliação de vulnerabilidades.",r:"E",x:"ERRADO. Exige avaliação conjunta de ameaças, vulnerabilidades e impactos."},
+{i:107,e:"Graus de sigilo: ultrassecreto, secreto e reservado.",r:"C",x:"CERTO. Art. 24, LAI."},
+{i:108,e:"Classificação de sigilo observa necessidade, adequação e proporcionalidade.",r:"C",x:"CERTO. Classificação não pode ser excessiva ou injustificada."},
+{i:109,e:"Criptografia transforma informações em formato ilegível mediante algoritmos matemáticos.",r:"C",x:"CERTO. Técnica fundamental de proteção de dados."},
+{i:110,e:"'Need to know': acesso restrito a quem necessita para suas funções.",r:"C",x:"CERTO. Princípio basilar de segurança da informação."},
+{i:111,e:"Compartimentação divide informações em segmentos isolados, limitando acesso.",r:"C",x:"CERTO. Reduz risco de comprometimento total."},
+{i:112,e:"Cibersegurança protege sistemas, redes e dados contra ataques e vazamentos.",r:"C",x:"CERTO. Componente essencial da segurança da informação."},
+{i:113,e:"Função de assessoramento: fornecer conhecimentos oportunos aos decisores.",r:"C",x:"CERTO. A Inteligência assessora o processo decisório."},
+{i:114,e:"Inteligência estratégica: questões de longo prazo, abrangência nacional/internacional.",r:"C",x:"CERTO. Subsidia decisões de alto nível."},
+{i:115,e:"Inteligência tática: situações específicas e de curto prazo.",r:"C",x:"CERTO. Apoia operações imediatas."},
+{i:116,e:"Cooperação internacional em Inteligência é proibida pelo ordenamento brasileiro.",r:"E",x:"ERRADO. É prevista e incentivada para ameaças transnacionais."},
+{i:117,e:"Cenários prospectivos identificam tendências e projetam desenvolvimentos futuros.",r:"C",x:"CERTO. Ferramenta de planejamento estratégico."},
+{i:118,e:"Contrainteligência defensiva protege; ofensiva identifica e neutraliza agentes adversos.",r:"C",x:"CERTO. Dois ramos da contrainteligência."},
+{i:119,e:"Produção de conhecimentos: coleta, processamento, análise e disseminação.",r:"C",x:"CERTO. Etapas do ciclo de produção."},
+{i:120,e:"Relatórios de Inteligência devem ser objetivos, precisos, oportunos e adequados.",r:"C",x:"CERTO. Atributos essenciais dos produtos de Inteligência."},
+{i:121,e:"Discrição protege fontes, métodos e conhecimentos produzidos.",r:"C",x:"CERTO. Princípio fundamental da atividade."},
+{i:122,e:"Matrizes de probabilidade × impacto priorizam ameaças na análise de risco.",r:"C",x:"CERTO. Ferramenta amplamente utilizada."},
+{i:123,e:"Controle interno: supervisão, auditoria e correição pelos próprios órgãos.",r:"C",x:"CERTO. Complementa o controle externo."},
+{i:124,e:"Transparência e accountability são incompatíveis com a Inteligência.",r:"E",x:"ERRADO. São compatíveis com sigilo e fundamentais ao controle democrático."},
+{i:125,e:"SIGINT é categoria voltada à interceptação e análise de comunicações e sinais eletrônicos.",r:"C",x:"CERTO. Signals Intelligence."}
+]},
+{d:"Direito Penal",q:[
+{i:126,e:"Princípio da legalidade: não há crime sem lei anterior nem pena sem prévia cominação. Retroatividade só para beneficiar o réu.",r:"C",x:"CERTO. Art. 1º CP e art. 5º, XXXIX e XL, CF."},
+{i:127,e:"Lei penal mais grave aplica-se ao crime continuado/permanente se vigente antes da cessação (Súmula 711/STF).",r:"C",x:"CERTO. Súmula 711 do STF."},
+{i:128,e:"Crime = fato típico + ilícito + culpável. Tipicidade = adequação ao tipo penal.",r:"C",x:"CERTO. Conceito analítico tripartido."},
+{i:129,e:"Dolo direto: agente quer o resultado. Dolo eventual: assume o risco.",r:"C",x:"CERTO. Art. 18, I, CP."},
+{i:130,e:"Erro de tipo essencial exclui dolo; se evitável, pune-se por culpa (se prevista).",r:"C",x:"CERTO. Art. 20, CP."},
+{i:131,e:"Estado de necessidade exclui ilicitude quando o sacrifício do bem não era razoável exigir-se.",r:"C",x:"CERTO. Art. 24, CP."},
+{i:132,e:"Legítima defesa: agressão atual/iminente, injusta, reação proporcional.",r:"C",x:"CERTO. Art. 25, CP."},
+{i:133,e:"A imputabilidade penal inicia-se aos 16 anos.",r:"E",x:"ERRADO. Inicia-se aos 18 anos (art. 27 CP, art. 228 CF)."},
+{i:134,e:"Erro de proibição inevitável exclui culpabilidade; evitável reduz a pena.",r:"C",x:"CERTO. Art. 21, CP."},
+{i:135,e:"Peculato: funcionário público apropria-se de bem de que tem posse em razão do cargo.",r:"C",x:"CERTO. Art. 312, CP."},
+{i:136,e:"Participação de menor importância permite redução de 1/6 a 1/3.",r:"C",x:"CERTO. Art. 29, §1º, CP."},
+{i:137,e:"Tentativa: execução iniciada, não consumação por circunstâncias alheias à vontade.",r:"C",x:"CERTO. Art. 14, II, CP."},
+{i:138,e:"Desistência voluntária e arrependimento eficaz: agente responde só pelos atos já praticados.",r:"C",x:"CERTO. Art. 15, CP."},
+{i:139,e:"Crimes contra o Estado Democrático de Direito foram introduzidos pela Lei 14.197/2021.",r:"C",x:"CERTO. Revogou a Lei de Segurança Nacional."},
+{i:140,e:"Corrupção passiva: solicitar/receber vantagem indevida em razão da função.",r:"C",x:"CERTO. Art. 317, CP."}
+]},
+{d:"Direito Processual Penal",q:[
+{i:141,e:"Contraditório assegura participação das partes e manifestação sobre provas da parte contrária.",r:"C",x:"CERTO. Art. 5º, LV, CF."},
+{i:142,e:"Lei processual penal aplica-se desde logo, preservando atos da lei anterior.",r:"C",x:"CERTO. Art. 2º, CPP (tempus regit actum)."},
+{i:143,e:"Inquérito policial é procedimento administrativo, inquisitivo e preparatório.",r:"C",x:"CERTO. Natureza jurídica do IP."},
+{i:144,e:"Indiciamento é ato privativo do delegado de polícia.",r:"C",x:"CERTO. Lei 12.830/2013, art. 2º, §6º."},
+{i:145,e:"Prazo do IP: 10 dias (preso), 30 dias (solto).",r:"C",x:"CERTO. Art. 10, CPP."},
+{i:146,e:"Ação penal pública: MP promove; incondicionada ou condicionada.",r:"C",x:"CERTO. Arts. 24 e 100, CP."},
+{i:147,e:"Provas ilícitas são inadmissíveis e contaminam derivadas (frutos da árvore envenenada).",r:"C",x:"CERTO. Art. 5º, LVI, CF e art. 157, CPP."},
+{i:148,e:"Prisão em flagrante independe de ordem judicial; qualquer pessoa pode efetuar.",r:"C",x:"CERTO. Art. 301, CPP."},
+{i:149,e:"Preventiva: garantia da ordem pública/econômica, conveniência da instrução ou aplicação da lei penal.",r:"C",x:"CERTO. Art. 312, CPP."},
+{i:150,e:"Interceptação telefônica pode ser determinada pelo delegado sem autorização judicial em casos urgentes.",r:"E",x:"ERRADO. Sempre depende de ordem judicial (Lei 9.296/96)."},
+{i:151,e:"Lei 12.850/2013 define crime organizado e prevê colaboração premiada e infiltração de agentes.",r:"C",x:"CERTO. Meios especiais de investigação."},
+{i:152,e:"Lei 9.099/95: Juizados Especiais Criminais para infrações de menor potencial ofensivo.",r:"C",x:"CERTO. Art. 60 e ss."},
+{i:153,e:"Estatuto do Desarmamento (Lei 10.826/2003) tipifica porte ilegal de arma de fogo.",r:"C",x:"CERTO. Arts. 14 e 16."},
+{i:154,e:"Lei 13.869/2019 (abuso de autoridade) exige dolo específico de prejudicar ou beneficiar.",r:"C",x:"CERTO. Art. 1º, §1º."},
+{i:155,e:"A Lei 11.343/2006 prevê pena privativa de liberdade para o usuário de drogas.",r:"E",x:"ERRADO. Art. 28: advertência, prestação de serviços e medida educativa — sem prisão."}
+]},
+{d:"Criminologia e Criminalística",q:[
+{i:156,e:"Criminologia é ciência empírica e interdisciplinar: crime, criminoso, vítima e controle social.",r:"C",x:"CERTO. Quatro objetos da Criminologia."},
+{i:157,e:"Associação diferencial (Sutherland): comportamento criminoso é aprendido em grupos íntimos.",r:"C",x:"CERTO. Teoria sociológica clássica."},
+{i:158,e:"Labeling approach: criminalização é processo seletivo do controle social.",r:"C",x:"CERTO. Teoria do etiquetamento."},
+{i:159,e:"Prevenção primária: políticas de educação, saúde e inclusão social.",r:"C",x:"CERTO. Atua nas causas sociais."},
+{i:160,e:"Prevenção secundária: ações focalizadas em áreas/grupos de risco.",r:"C",x:"CERTO. Policiamento comunitário, programas locais."},
+{i:161,e:"Prevenção terciária: ressocialização e acompanhamento pós-penal para evitar reincidência.",r:"C",x:"CERTO. Foco nos egressos do sistema."},
+{i:162,e:"Criminalística aplica conhecimentos científicos à elucidação de crimes via vestígios materiais.",r:"C",x:"CERTO. Disciplina técnico-científica."},
+{i:163,e:"Perícia criminal é realizada por peritos oficiais para esclarecer fatos.",r:"C",x:"CERTO. Art. 159, CPP."},
+{i:164,e:"Prazo do laudo pericial: 10 dias, prorrogável em casos excepcionais.",r:"C",x:"CERTO. Art. 160, parágrafo único, CPP."},
+{i:165,e:"Documentoscopia examina documentos para verificar autenticidade e identificar falsificações.",r:"C",x:"CERTO. Especialidade pericial."},
+{i:166,e:"Grafotécnica analisa escrita manual para identificar autoria.",r:"C",x:"CERTO. Ramo da documentoscopia."},
+{i:167,e:"Local de crime deve ser isolado e preservado até a perícia.",r:"C",x:"CERTO. Art. 169, CPP."},
+{i:168,e:"Cadeia de custódia: integridade, autenticidade e rastreabilidade dos vestígios.",r:"C",x:"CERTO. Art. 158-A, CPP."},
+{i:169,e:"Fase interna da cadeia: reconhecimento, fixação, coleta e acondicionamento no local.",r:"C",x:"CERTO. Procedimentos realizados no local do crime."},
+{i:170,e:"Vestígio = material bruto; Evidência = vestígio analisado; Indício = circunstância que autoriza inferência.",r:"C",x:"CERTO. Distinção técnico-legal."}
+]},
+{d:"Direitos Humanos",q:[
+{i:171,e:"DH caracterizam-se por universalidade, indivisibilidade, interdependência e inalienabilidade.",r:"C",x:"CERTO. Declaração de Viena, 1993."},
+{i:172,e:"DUDH/1948: todos nascem livres e iguais em dignidade e direitos.",r:"C",x:"CERTO. Art. 1º da DUDH."},
+{i:173,e:"Pacto de São José da Costa Rica criou a Comissão e a Corte Interamericana de DH.",r:"C",x:"CERTO. Sistema interamericano de proteção."},
+{i:174,e:"Tratados de DH aprovados com quórum de EC equivalem a emendas constitucionais.",r:"C",x:"CERTO. Art. 5º, §3º, CF."},
+{i:175,e:"Lei 13.060/2014 disciplina uso de instrumentos de menor potencial ofensivo.",r:"C",x:"CERTO. Regulamenta uso progressivo da força."},
+{i:176,e:"Código de Conduta da ONU: força apenas quando estritamente necessário.",r:"C",x:"CERTO. Resolução 34/169, art. 3º."},
+{i:177,e:"Princípios da ONU (1990): moderação e proporcionalidade no uso da força.",r:"C",x:"CERTO. 8º Congresso (Havana, 1990)."},
+{i:178,e:"Arma de fogo é medida extrema: só em legítima defesa contra ameaça de morte/lesão grave.",r:"C",x:"CERTO. Princípio da ONU."},
+{i:179,e:"Proibição do retrocesso: Estado não pode reduzir proteção de DH já alcançada.",r:"C",x:"CERTO. Princípio internacional reconhecido."},
+{i:180,e:"Formação policial deve incluir DH, ética, uso progressivo da força e resolução pacífica de conflitos.",r:"C",x:"CERTO. Exigência da ONU e da legislação brasileira."}
+]}
+];
+
+/* ===== ENGINE ===== */
+let cur=null,idx=0,ans=[],qs=[],t0=null,tq=null,tpq=[],timer=null;
+
+function loadExam(type){
+  let src;
+  if(type==='cg')src=CG;else if(type==='ce')src=CE;else src=[...CG,...CE];
+  cur=type;qs=[];
+  src.forEach(d=>d.q.forEach(q=>qs.push({...q,disciplina:d.d})));
+  ans=new Array(qs.length).fill(null);tpq=new Array(qs.length).fill(0);
+  document.getElementById('examSelector').style.display='none';
+  document.getElementById('progressBar').style.display='block';
+  document.getElementById('navigation').style.display='flex';
+  document.getElementById('timerBar').style.display='block';
+  t0=Date.now();idx=0;startTimer();render();updateProg();
+}
+
+function startTimer(){
+  timer=setInterval(()=>{
+    let s=Math.floor((Date.now()-t0)/1000),h=Math.floor(s/3600),m=Math.floor((s%3600)/60),ss=s%60;
+    document.getElementById('timerDisplay').textContent=
+      String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0');
+  },1000);
+}
+
+function render(){
+  const a=document.getElementById('questionsArea'),q=qs[idx];tq=Date.now();
+  const done=ans[idx]!==null,ua=ans[idx],ca=q.r;
+  let cBtn='',eBtn='';
+  if(done&&ua==='C')cBtn=ua===ca?'correct':'incorrect';
+  if(done&&ua==='E')eBtn=ua===ca?'correct':'incorrect';
+  a.innerHTML=`<div class="qc active"><div class="qh"><h3>${q.disciplina}</h3><span>Questão ${idx+1} de ${qs.length}</span></div>
+    <div class="qn">Item ${q.i}</div><div class="qt">${q.e}</div>
+    <div class="ao"><button class="ab ${cBtn}" onclick="sel('C')" ${done?'disabled':''}>C</button>
+    <button class="ab ${eBtn}" onclick="sel('E')" ${done?'disabled':''}>E</button></div>
+    <div class="fb ${done?'show':''} ${done?(ua===ca?'correct':'incorrect'):''}">${done?`<strong>${ua===ca?'✓ Correto!':'✗ Incorreto'}</strong><br><br><strong>Gabarito:</strong> ${ca} | <strong>Sua resposta:</strong> ${ua}<br><br><strong>Explicação:</strong> ${q.x}`:''}</div></div>`;
+  document.getElementById('navInfo').textContent=`${idx+1}/${qs.length}`;
+  const p=document.getElementById('prevBtn'),n=document.getElementById('nextBtn'),f=document.getElementById('finishBtn');
+  p.disabled=idx===0;
+  if(idx===qs.length-1){n.style.display='none';f.style.display='block';}
+  else{n.style.display='block';f.style.display='none';}
+}
+
+function sel(a){if(tq)tpq[idx]=Date.now()-tq;ans[idx]=a;render();updateProg();}
+function updateProg(){
+  const done=ans.filter(a=>a!==null).length,pct=Math.round(done/qs.length*100);
+  const f=document.getElementById('progressFill');f.style.width=pct+'%';f.textContent=`${done}/${qs.length} (${pct}%)`;
+}
+function next(){if(idx<qs.length-1){idx++;render();updateProg();window.scrollTo(0,0);}}
+function prev(){if(idx>0){idx--;render();updateProg();window.scrollTo(0,0);}}
+function finish(){
+  const u=ans.filter(a=>a===null).length;
+  if(u>0&&!confirm(`${u} questão(ões) sem resposta. Finalizar?`))return;
+  clearInterval(timer);showResults(Date.now()-t0);
+}
+
+document.addEventListener('keydown',function(ev){
+  if(!qs.length||document.getElementById('resultsContainer').classList.contains('active'))return;
+  const k=ev.key.toUpperCase();
+  if((k==='C'||k==='E')&&ans[idx]===null){ev.preventDefault();sel(k);}
+  else if(k==='ARROWRIGHT'||k==='D'){ev.preventDefault();next();}
+  else if(k==='ARROWLEFT'||k==='A'){ev.preventDefault();prev();}
+  else if(k==='ENTER'&&idx===qs.length-1){ev.preventDefault();finish();}
+});
+
+function showResults(tt){
+  document.getElementById('questionsArea').style.display='none';
+  document.getElementById('navigation').style.display='none';
+  document.getElementById('progressBar').style.display='none';
+  let c=0,w=0,u=0,ds={};
+  qs.forEach((q,i)=>{
+    const ua=ans[i],ok=ua===q.r;
+    if(!ua)u++;else if(ok)c++;else w++;
+    if(!ds[q.disciplina])ds[q.disciplina]={t:0,c:0,w:0,u:0};
+    ds[q.disciplina].t++;
+    if(!ua)ds[q.disciplina].u++;else if(ok)ds[q.disciplina].c++;else ds[q.disciplina].w++;
+  });
+  const tot=qs.length,sc=Math.round(c/tot*100),avg=Math.round(tt/tot/1000);
+  let msg,clr;
+  if(sc>=90){msg='Excelente! Muito bem preparado!';clr='#28a745';}
+  else if(sc>=70){msg='Bom desempenho! Continue!';clr='#5cb85c';}
+  else if(sc>=50){msg='Regular. Foque nos pontos fracos.';clr='#ffc107';}
+  else{msg='Estude mais. Não desanime!';clr='#dc3545';}
+  const weak=Object.entries(ds).map(([n,s])=>({n,p:Math.round(s.c/s.t*100)})).filter(d=>d.p<70).sort((a,b)=>a.p-b.p);
+  let h=`<div class="rh"><h2>Resultado do Simulado</h2><div class="sd" style="color:${clr}">${sc}%</div><p style="font-size:17px">${msg}</p></div>`;
+  const fmt=ms=>{const s=Math.floor(ms/1000),m=Math.floor(s/60);return m+'min '+s%60+'s';};
+  h+=`<div class="sg">
+    <div class="sc"><h3>Corretas</h3><div class="sv" style="color:#28a745">${c}</div><div class="sl">de ${tot}</div></div>
+    <div class="sc"><h3>Incorretas</h3><div class="sv" style="color:#dc3545">${w}</div><div class="sl">de ${tot}</div></div>
+    <div class="sc"><h3>Em Branco</h3><div class="sv" style="color:#ffc107">${u}</div><div class="sl">de ${tot}</div></div>
+    <div class="sc"><h3>Tempo Total</h3><div class="sv" style="color:#0066cc">${fmt(tt)}</div><div class="sl">Média: ${avg}s/item</div></div>
+    <div class="sc"><h3>Aproveitamento</h3><div class="sv" style="color:${clr}">${sc}%</div><div class="sl">geral</div></div>
+    <div class="sc"><h3>Respondidas</h3><div class="sv" style="color:#0066cc">${tot-u}</div><div class="sl">${Math.round((tot-u)/tot*100)}%</div></div>
+  </div>`;
+  h+='<div class="pc"><h3>Desempenho por Disciplina</h3>';
+  Object.entries(ds).forEach(([n,s])=>{
+    const p=Math.round(s.c/s.t*100),cls=p>=70?'high':p>=50?'medium':'low';
+    h+=`<div class="dp"><div class="dn">${n}</div><div class="bc"><div class="bf ${cls}" style="width:${Math.max(p,8)}%">${s.c}/${s.t} (${p}%)</div></div></div>`;
+  });
+  h+='</div>';
+  if(weak.length)h+=`<div class="rec"><h3>📚 Recomendações</h3><ul>${weak.map(d=>`<li><strong>${d.n}</strong> — ${d.p}% de acerto. Revise esta disciplina.</li>`).join('')}</ul></div>`;
+  else h+='<div class="rec good"><h3>🎉 Parabéns!</h3><p>Bom desempenho em todas as disciplinas!</p></div>';
+  h+='<div class="qr"><h3>Revisão das Questões</h3>';
+  qs.forEach((q,i)=>{
+    const ua=ans[i],ok=ua===q.r,cls=!ua?'unanswered':ok?'correct':'incorrect';
+    const icon=!ua?'⚠️':ok?'✓':'✗';
+    h+=`<div class="ri ${cls}"><div class="rih"><span><strong>Q${i+1}</strong> — ${q.disciplina}</span><span>${icon}</span></div>
+      <div class="rit">${q.e.substring(0,120)}${q.e.length>120?'...':''}</div>
+      <div class="ra"><span><strong>Gab:</strong> ${q.r}</span>${ua?`<span><strong>Resp:</strong> ${ua}</span>`:''}</div>
+      <div class="rit"><strong>Explicação:</strong> ${q.x}</div></div>`;
+  });
+  h+='</div><button class="rbtn" onclick="location.reload()">🔄 Novo Simulado</button>';
+  const rc=document.getElementById('resultsContainer');rc.className='rc active';rc.innerHTML=h;
+  window.scrollTo(0,0);
+}
+</script>
+</body>
+</html>
