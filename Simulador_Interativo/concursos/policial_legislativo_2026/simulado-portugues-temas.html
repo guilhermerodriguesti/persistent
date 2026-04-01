@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado Língua Portuguesa – CEBRASPE</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:#f0f2f5;line-height:1.6;color:#333}
+.ctn{max-width:900px;margin:0 auto;background:#fff;min-height:100vh;box-shadow:0 0 20px rgba(0,0,0,.1)}
+.hdr{background:linear-gradient(135deg,#1a237e,#283593);color:#fff;padding:22px;text-align:center}
+.hdr h1{font-size:19px;margin-bottom:4px}.hdr p{font-size:13px;opacity:.85}
+.sub{background:#e8eaf6;padding:10px 18px;font-size:12px;color:#283593;text-align:center;font-weight:600;border-bottom:2px solid #c5cae9}
+.inst{background:#fff8e1;border-left:4px solid #ffc107;padding:14px 18px;margin:14px;font-size:13px}
+.esel{padding:25px;text-align:center}.esel h2{margin-bottom:15px;color:#1a237e;font-size:20px}
+.sg2{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:600px;margin:0 auto}
+.sb{background:#fff;border:2px solid #c5cae9;padding:16px;font-size:14px;cursor:pointer;border-radius:8px;transition:.3s;text-align:left}
+.sb:hover{border-color:#1a237e;background:#e8eaf6}.sb strong{display:block;color:#1a237e;margin-bottom:3px}.sb span{color:#666;font-size:12px}
+.tmr{text-align:center;padding:8px;font-size:14px;font-weight:600;color:#1a237e;background:#e8eaf6;display:none;flex-wrap:wrap;justify-content:center;gap:12px}
+kbd{background:#fff;border:1px solid #c5cae9;border-radius:3px;padding:1px 5px;font-size:11px;font-family:monospace}
+.pb{background:#e0e0e0;height:8px;margin:0 14px;border-radius:4px;overflow:hidden;display:none}.pf{background:linear-gradient(90deg,#1a237e,#3f51b5);height:100%;transition:width .3s}
+.qc{padding:22px;display:none}.qc.a{display:block}
+.qh{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid #e8eaf6}
+.qn{background:#1a237e;color:#fff;width:38px;height:38px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;margin-right:10px}
+.qt{font-size:14px;line-height:1.8;text-align:justify;margin-bottom:20px;padding:16px;background:#fafafa;border-radius:8px;border:1px solid #eee;white-space:pre-wrap}
+.ao{display:flex;gap:15px;justify-content:center;margin:22px 0}
+.ab{padding:15px 42px;font-size:20px;font-weight:700;border:3px solid #1a237e;background:#fff;color:#1a237e;cursor:pointer;border-radius:10px;transition:.3s}
+.ab:hover{background:#e8eaf6;transform:scale(1.05)}
+.ab.ok{background:#2e7d32;border-color:#2e7d32;color:#fff}.ab.no{background:#c62828;border-color:#c62828;color:#fff}
+.fb{display:none;margin:14px 0;border-radius:8px;font-size:13px;line-height:1.7;overflow:hidden}
+.fb.s{display:block}
+.fbh{padding:11px 16px;font-weight:700;font-size:14px}
+.fb.ok .fbh{background:#c8e6c9;color:#1b5e20}.fb.no .fbh{background:#ffcdd2;color:#b71c1c}
+.fbb{padding:14px 16px}.fb.ok .fbb{background:#e8f5e9;color:#2e7d32}.fb.no .fbb{background:#fce4ec;color:#c62828}
+.fbs{margin:8px 0;padding:8px 0;border-top:1px solid rgba(0,0,0,.08)}.fbs:first-child{border:0;margin-top:0;padding-top:0}
+.fbs strong{display:block;margin-bottom:3px;font-size:12px;text-transform:uppercase;letter-spacing:.5px;opacity:.7}
+.dica{background:linear-gradient(135deg,#fff8e1,#fff3e0);border:2px solid #ffb74d;border-radius:8px;padding:11px 14px;margin-top:10px;font-size:13px;color:#e65100;line-height:1.6}
+.dica::before{content:'💡 '}
+.nav{display:flex;justify-content:space-between;padding:14px;border-top:2px solid #e8eaf6;flex-wrap:wrap;gap:8px;background:#fafafa;display:none}
+.nb{padding:10px 24px;font-size:14px;border:none;background:#1a237e;color:#fff;cursor:pointer;border-radius:6px;font-weight:600}
+.nb:hover{background:#283593}.nb:disabled{background:#bbb;cursor:not-allowed}
+.fnb{background:#2e7d32;padding:12px 32px;font-size:16px}.fnb:hover{background:#1b5e20}
+.rc{display:none;padding:22px}.rc.a{display:block}
+.rh{background:linear-gradient(135deg,#1a237e,#3f51b5);color:#fff;padding:28px;border-radius:12px;text-align:center;margin-bottom:22px}
+.rh h2{font-size:24px;margin-bottom:6px}.rsd{font-size:44px;font-weight:700;margin:12px 0}
+.rsg{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:22px 0}
+.rsc{background:#fff;border:2px solid #e0e0e0;border-radius:10px;padding:12px;text-align:center}
+.rsc h3{color:#1a237e;font-size:11px;text-transform:uppercase;letter-spacing:.5px}.rsv{font-size:26px;font-weight:700;margin:3px 0}.rsl{font-size:11px;color:#888}
+.rpc{margin:22px 0;padding:18px;background:#fafafa;border-radius:10px}.rpc h3{color:#1a237e;margin-bottom:14px;text-align:center}
+.rdp{margin:8px 0}.rdn{font-weight:600;margin-bottom:3px;color:#333;font-size:12px;display:flex;justify-content:space-between}
+.rbc{background:#e0e0e0;height:22px;border-radius:4px;overflow:hidden}
+.rbf{height:100%;display:flex;align-items:center;padding-left:8px;color:#fff;font-weight:700;font-size:11px;transition:width .5s}
+.rbf.h{background:linear-gradient(90deg,#2e7d32,#43a047)}.rbf.m{background:linear-gradient(90deg,#f9a825,#fbc02d)}.rbf.l{background:linear-gradient(90deg,#c62828,#e53935)}
+.rrec{border-radius:10px;padding:18px;margin:22px 0}.rrec.w{background:#fff8e1;border:2px solid #ffc107}.rrec.w h3{color:#e65100}.rrec.w li{color:#795548}
+.rrec.g{background:#e8f5e9;border:2px solid #2e7d32}.rrec.g h3,.rrec.g p{color:#1b5e20}
+.rrec h3{margin-bottom:10px}.rrec ul{margin-left:18px}.rrec li{margin:6px 0;font-size:13px}
+.rqr{margin:22px 0}.rqr h3{color:#1a237e;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #1a237e}
+.ri{padding:12px;margin:8px 0;border-left:4px solid #ddd;background:#fafafa;font-size:12px;border-radius:0 6px 6px 0}
+.ri.rok{border-left-color:#2e7d32;background:#e8f5e9}.ri.rno{border-left-color:#c62828;background:#fce4ec}.ri.rna{border-left-color:#ffc107;background:#fff8e1}
+.rri{font-weight:700;margin-bottom:5px;display:flex;justify-content:space-between}.rrt{margin:5px 0;line-height:1.4}
+.rbtn{background:#1a237e;color:#fff;border:none;padding:13px 32px;font-size:16px;cursor:pointer;border-radius:6px;margin:18px auto;display:block;font-weight:600}
+.rbtn:hover{background:#283593}
+@media(max-width:768px){.sg2{grid-template-columns:1fr}.rsg{grid-template-columns:1fr 1fr}.ab{padding:12px 28px;font-size:18px}}
+</style>
+</head>
+<body>
+<div class="ctn">
+<div class="hdr"><h1>SIMULADO – LÍNGUA PORTUGUESA</h1><p>Baseado nos 15 assuntos mais cobrados pela CEBRASPE • CD 2026</p></div>
+<div class="sub" id="sub">📊 945+ questões analisadas • Gabarito + Explicação + Dica de Memorização</div>
+<div class="inst" id="inst"><strong>INSTRUÇÕES:</strong> Julgue <strong>CERTO (C)</strong> ou <strong>ERRADO (E)</strong>. Teclas: <kbd>C</kbd>/<kbd>E</kbd> responder · <kbd>←</kbd>/<kbd>→</kbd> navegar · <kbd>Enter</kbd> finalizar</div>
+<div class="esel" id="esel">
+<h2>Selecione o Modo:</h2>
+<div class="sg2">
+<button class="sb" onclick="load('all')"><strong>🎯 Completo (60 itens)</strong><span>15 assuntos mais cobrados</span></button>
+<button class="sb" onclick="load('top5')"><strong>🔥 TOP 5 (30 itens)</strong><span>Interpretação, Reescrita, Coesão, Conjunção, Concordância</span></button>
+<button class="sb" onclick="load('gram')"><strong>📝 Gramática (30 itens)</strong><span>Crase, Concordância, Regência, Colocação, Verbos</span></button>
+<button class="sb" onclick="load('sem')"><strong>📖 Semântica (25 itens)</strong><span>Interpretação, Coesão, Tipologia, Sinônimos, Figuras</span></button>
+</div></div>
+<div class="tmr" id="tmr">⏱ <span id="td">00:00:00</span> | <span style="font-size:12px;font-weight:400;color:#666"><kbd>C</kbd>/<kbd>E</kbd> <kbd>←</kbd>/<kbd>→</kbd> <kbd>Enter</kbd></span></div>
+<div class="pb" id="pb"><div class="pf" id="pf"></div></div>
+<div id="qa"></div>
+<div class="nav" id="nav">
+<button class="nb" id="pB" onclick="pv()">← Anterior</button>
+<span id="ni" style="color:#1a237e;font-weight:700;align-self:center"></span>
+<button class="nb" id="nB" onclick="nx()">Próxima →</button>
+<button class="nb fnb" id="fB" onclick="fn()" style="display:none">Finalizar</button>
+</div>
+<div class="rc" id="rc"></div>
+</div>
+<script>
+const D=[
+{d:"Interpretação de Textos",q:[
+{i:1,e:"A comunicação não violenta (CNV) busca reformular o modo como nos expressamos e ouvimos os outros, com foco em observação, sentimentos, necessidades e pedidos. A CNV é usada para mediar disputas e conflitos em todos os níveis.\n\nInfere-se do texto que a CNV é aplicável apenas em contextos de mediação formal de conflitos judiciais.",r:"E",x:"O texto afirma que a CNV é usada 'em todos os níveis' e em contextos diversos: relações pessoais, trabalho, política. Não se limita a mediação judicial.",d:"CEBRASPE adora RESTRINGIR o alcance. Palavras como 'apenas', 'somente', 'exclusivamente' quase sempre indicam erro."},
+{i:2,e:"Pesquisadores criaram método que transforma plástico em fertilizante misturando-o a palha de milho por pirólise, gerando carvão poroso que aumenta nutrientes no solo.\n\nO objetivo principal do texto é explicar como diferentes resíduos agrícolas podem ser usados para produzir carvão.",r:"E",x:"O objetivo principal é apresentar uma tecnologia que transforma plástico em adubo. O foco é a solução para o plástico, não os resíduos agrícolas.",d:"Em 'objetivo do texto', a CEBRASPE troca o FOCO PRINCIPAL por aspecto secundário. Pergunte: qual é o TEMA CENTRAL?"},
+{i:3,e:"A presença de questionamentos retóricos em textos argumentativos constitui estratégia para direcionar o raciocínio do leitor para a tese defendida pelo autor.",r:"C",x:"Perguntas retóricas são recursos argumentativos que conduzem o leitor à conclusão desejada, sem esperar resposta efetiva.",d:"Perguntas retóricas = persuasão. Pergunta no texto argumentativo = estratégia para convencer o leitor."},
+{i:4,e:"Texto que defende o compartilhamento de bens ociosos afirma: 'as pessoas não vão mais possuir coisas, vão apenas ter acesso a elas'.\n\nÉ correto afirmar que o autor defende a extinção completa da propriedade privada.",r:"E",x:"Consumo compartilhado não equivale a extinção da propriedade privada. O texto fala em compartilhar bens ociosos, não abolir direitos.",d:"EXTRAPOLAÇÃO: se o texto diz 'A', o item afirma 'A+B+C'. Nunca presuma o que o autor não disse."},
+{i:5,e:"A expressão 'O meio ambiente agradece', ao final de texto sobre sustentabilidade, constitui recurso estilístico de personificação que reforça a conclusão do autor.",r:"C",x:"Atribuir 'agradecer' ao meio ambiente (inanimado) é personificação/prosopopeia, usada como fechamento enfático.",d:"Recurso estilístico no final do texto geralmente é figura de linguagem com função argumentativa."},
+{i:6,e:"Texto predominantemente expositivo que contenha trechos narrativos e descritivos tem sua classificação tipológica invalidada pela presença desses outros tipos.",r:"E",x:"Textos admitem heterogeneidade tipológica. Um texto expositivo pode conter trechos narrativos ou descritivos sem perder sua classificação.",d:"'PREDOMINANTEMENTE X' ≠ 'EXCLUSIVAMENTE X'. Tipos textuais coexistem. A classificação é pelo tipo DOMINANTE."},
+{i:7,e:"Cronista descreve problemas práticos de apartamento novo e depois contempla o mar da varanda, concluindo em pensamento: 'são dois pinheiros grandes e, atrás deles, o mar'.\n\nA recompensa do novo morador é o apartamento estar localizado próximo ao mar.",r:"C",x:"Apesar das pendências práticas (ralo, telefone, colchão), o que encanta o morador são os pinheiros e o mar.",d:"Em crônicas, identifique a MENSAGEM IMPLÍCITA: o que o narrador realmente valoriza vs. o que diz explicitamente."},
+{i:8,e:"Texto afirma: 'A interseção na qual a DC é produzida não é composta por esferas equipolentes', pois a cultura científica tem maior influência.\n\nO texto afirma que as esferas que participam da produção de divulgação científica são equipolentes.",r:"E",x:"O texto diz expressamente o CONTRÁRIO: as esferas NÃO são equipolentes, pois a cultura científica tem maior influência.",d:"A CEBRASPE INVERTE afirmações. Quando o item diz 'o texto afirma X', confira: se diz o contrário, está errado."}
+]},
+{d:"Reescrita de Frases",q:[
+{i:9,e:"Na frase 'Os servidores que não cumprirem o prazo serão notificados', a substituição de 'cumprirem' por 'cumpram' mantém a correção gramatical mas altera a relação temporal.",r:"C",x:"'Cumprirem' (futuro do subjuntivo) = condição futura. 'Cumpram' (presente do subjuntivo) = eventualidade presente. Ambos corretos, mas sentido diferente.",d:"Futuro do subjuntivo (-r): 'Se eu fizer'. Presente do subjuntivo (-a/-e): 'Embora eu faça'. Troca = mudança de sentido."},
+{i:10,e:"'É necessário que se analisem as propostas' pode ser reescrito como 'É necessário analisar as propostas', sem prejuízo da correção e sem alteração de sentido.",r:"C",x:"A oração com subjuntivo e a reduzida de infinitivo são equivalentes neste contexto de oração subordinada substantiva.",d:"'Que + subjuntivo' pode virar infinitivo: 'É preciso que faça' = 'É preciso fazer'. Substituição geralmente VÁLIDA na CEBRASPE."},
+{i:11,e:"Em 'A pesquisa está na segunda geração e dela participam os filhos', a substituição de 'dela' por 'da qual' mantém correção e sentido.",r:"C",x:"'Dela' (de + ela) e 'da qual' são equivalentes, retomando 'pesquisa' como complemento de 'participar de'.",d:"Pronomes oblíquos → relativos: dela = da qual, nele = no qual. Verifique se a preposição se mantém."},
+{i:12,e:"'Waldinger afirma que cultivar relacionamentos é o que traz mais felicidade' teria correção prejudicada se 'é o que' fosse suprimido.",r:"E",x:"Sem 'é o que': 'cultivar relacionamentos traz mais felicidade'. Frase continua correta, apenas mais simples.",d:"Expressões expletivas ('é que', 'é o que') podem ser suprimidas sem prejuízo gramatical. Servem para ÊNFASE apenas."},
+{i:13,e:"Em 'O relatório foi elaborado pela comissão, que apresentou conclusões ontem', substituir 'que' por 'a qual' mantém correção e coesão.",r:"C",x:"'Que' e 'a qual' são relativos equivalentes. 'A qual' retoma 'comissão' (feminino singular), concordando corretamente.",d:"'Que' → 'o/a qual' é substituição SEMPRE possível em adjetivas. O relativo deve concordar em gênero/número com o antecedente."},
+{i:14,e:"No trecho 'o que não significa, contudo, que os agentes estejam autorizados', 'contudo' poderia ser substituído por 'porquanto' sem alteração de sentido.",r:"E",x:"'Contudo' = adversativa (oposição). 'Porquanto' = causal (causa). Relações semânticas completamente diferentes.",d:"Adversativas: mas, porém, contudo, todavia. Causais: porque, porquanto, visto que. NUNCA intercambie!"},
+{i:15,e:"'A maioria dos resíduos é descartada' pode ser reescrita como 'A maioria dos resíduos são descartados'.",r:"C",x:"Com partitivas ('a maioria de'), verbo pode concordar com o núcleo ('maioria'→singular) ou especificador ('resíduos'→plural).",d:"Partitivas (maioria de, parte de, metade de) + plural: verbo SINGULAR ou PLURAL. Ambas aceitas!"},
+{i:16,e:"Em 'Para que comprar um carro se você pode alugar?', substituir 'se' por 'uma vez que' mantém o sentido causal e a correção.",r:"C",x:"O 'se' tem valor causal aqui (= já que). A substituição mantém o sentido de causa/justificativa.",d:"'Se' pode ser condicional OU causal. Quando a situação é CERTA (não hipotética), 'se' = 'já que' = 'uma vez que'."}
+]},
+{d:"Coerência e Coesão",q:[
+{i:17,e:"A expressão 'Com efeito', empregada no início de um período, tem função de reforçar ou confirmar a ideia anteriormente apresentada.",r:"C",x:"'Com efeito' ratifica o que foi dito antes, funcionando como operador argumentativo de confirmação.",d:"Conectivos de confirmação: 'Com efeito', 'De fato', 'Efetivamente'. Todos reforçam a ideia anterior."},
+{i:18,e:"No trecho 'A CNV propicia o diálogo e, a partir disso, a construção de confiança', o pronome 'disso' retoma 'fator que transforma o discurso em prática'.",r:"E",x:"'Disso' retoma a informação mais próxima: 'o diálogo face a face', não 'fator que transforma'.",d:"Pronomes demonstrativos (isso, disso) retomam a informação IMEDIATAMENTE anterior. Verifique o referente mais próximo."},
+{i:19,e:"A conjunção 'pois', quando posposta ao verbo, tem valor conclusivo: 'A medida é necessária; devemos, pois, implementá-la'.",r:"C",x:"'Pois' antes do verbo = causal. 'Pois' depois do verbo = conclusivo.",d:"Macete do 'POIS': ANTES do verbo = CAUSA. DEPOIS do verbo = CONCLUSÃO. Cai em quase toda prova!"},
+{i:20,e:"O emprego de 'Dessa forma' no início de um período indica que o trecho seguinte apresenta uma consequência ou conclusão do exposto anteriormente.",r:"C",x:"'Dessa forma', 'Desse modo', 'Assim' são conectivos que introduzem conclusão ou consequência.",d:"Conectivos conclusivos: portanto, logo, assim, dessa forma, desse modo, por conseguinte."},
+{i:21,e:"Na frase 'A proteção das florestas e sua manutenção', o pronome 'sua' pode referir-se tanto a 'proteção' quanto a 'florestas'.",r:"C",x:"Há ambiguidade referencial: 'sua manutenção' pode ser da proteção ou das florestas. Ambas as leituras são possíveis.",d:"A CEBRASPE cobra AMBIGUIDADE de possessivos. 'Seu/sua' pode gerar referência dupla. Geralmente está CERTO quando diz 'pode referir-se a X ou Y'."},
+{i:22,e:"O relativo 'cujas', em 'as esferas cujas atividades disputam motivos', estabelece relação de posse entre 'esferas' e 'atividades'.",r:"C",x:"'Cujo' expressa posse: as atividades DAS esferas. Concorda com o termo posterior.",d:"CUJO = de + o qual. Indica POSSE. Concorda com o substantivo POSTERIOR. Nunca use artigo depois de 'cujo'."},
+{i:23,e:"Em 'Embora existam coerções, não há como deslocar princípios', a conjunção 'Embora' estabelece relação de concessão.",r:"C",x:"'Embora' é concessiva: introduz obstáculo que NÃO impede a realização do fato da oração principal.",d:"Concessivas: embora, ainda que, mesmo que, conquanto, posto que. Indicam OBSTÁCULO que NÃO impede."},
+{i:24,e:"A expressão 'isto é', em 'comunicação alienante, isto é, os juízos morais', introduz uma retificação da ideia anterior.",r:"E",x:"'Isto é' introduz EXPLICAÇÃO (aposto explicativo), não retificação. Retificação seria 'ou melhor', 'ou antes'.",d:"'Isto é' / 'ou seja' = EXPLICAÇÃO. 'Ou melhor' / 'ou antes' = RETIFICAÇÃO. A CEBRASPE troca um pelo outro!"}
+]},
+{d:"Conjunções e Conectivos",q:[
+{i:25,e:"Na frase 'O Brasil avançou, mas não incluiu a diversidade linguística', 'mas' pode ser substituído por 'todavia' sem alteração de sentido.",r:"C",x:"Ambas são adversativas: mas = todavia = porém = contudo = entretanto = no entanto.",d:"As 6 adversativas intercambiáveis: MAS, PORÉM, CONTUDO, TODAVIA, ENTRETANTO, NO ENTANTO."},
+{i:26,e:"A substituição de 'À medida que' por 'Na medida em que' mantém o sentido de proporcionalidade.",r:"E",x:"'À medida que' = proporção. 'Na medida em que' = causa ('tendo em vista que'). Sentidos DIFERENTES.",d:"'À MEDIDA QUE' = PROPORÇÃO. 'NA MEDIDA EM QUE' = CAUSA. Cai em TODA prova CEBRASPE!"},
+{i:27,e:"'Enquanto' pode ter valor temporal ('enquanto dormia') ou de oposição ('enquanto uns trabalham, outros descansam').",r:"C",x:"'Enquanto' é polissêmico: pode indicar simultaneidade temporal ou contraste/oposição.",d:"'Enquanto' tem 2 valores: TEMPORAL (ao mesmo tempo que) e ADVERSATIVO (ao passo que)."},
+{i:28,e:"Em 'Ainda que a cultura científica tenha maior influência, trata-se de disputas', 'Ainda que' pode ser substituída por 'Desde que' mantendo sentido concessivo.",r:"E",x:"'Ainda que' = concessão. 'Desde que' = condição ou tempo. Relações semânticas diferentes.",d:"'Ainda que'/'Mesmo que' = CONCESSÃO. 'Desde que' = CONDIÇÃO. CEBRASPE troca concessivas por condicionais."},
+{i:29,e:"No período 'Há diferenças entre veículos que sustentam coerções e veículos que ensinam conceitos', a conjunção 'e' une elementos com mesma função sintática.",r:"C",x:"O 'e' une dois termos paralelos de 'diferenças entre': 'veículos que...' e 'veículos que...' – mesma função.",d:"Quando a CEBRASPE pergunta se 'e' une termos de mesma função, identifique os dois termos e verifique o paralelismo."}
+]},
+{d:"Concordância Verbal e Nominal",q:[
+{i:30,e:"Em 'A CNV promove uma escuta, um respeito e uma empatia profundos', o adjetivo 'profundos' está correto no plural masculino por concordar com os três substantivos.",r:"C",x:"Adjetivo posposto a vários substantivos de gêneros diferentes pode ir ao masculino plural (concordância gramatical).",d:"Adjetivo DEPOIS de vários substantivos: MASCULINO PLURAL. Adjetivo ANTES: concorda com o mais próximo."},
+{i:31,e:"Na frase 'Falta recursos para o projeto', a concordância verbal está correta.",r:"E",x:"Sujeito é 'recursos' (plural): 'Faltam recursos'. Com sujeito posposto, o verbo concorda normalmente.",d:"FALTAR, BASTAR, SOBRAR: concordam com o SUJEITO, mesmo posposto. 'Faltam 3 dias' (sujeito: 3 dias)."},
+{i:32,e:"Em '20% da população não tem acesso', seria igualmente correto 'não têm acesso'.",r:"C",x:"Com percentuais + especificador, verbo concorda com o % OU com o substantivo. Ambas corretas.",d:"Percentual + 'de' + substantivo: verbo no SINGULAR ou PLURAL. Ambas aceitas na CEBRASPE!"},
+{i:33,e:"A frase 'Houveram muitas reclamações' está gramaticalmente correta.",r:"E",x:"'Haver' = existir é impessoal: sempre singular. Correto: 'Houve muitas reclamações'.",d:"HAVER=existir → SINGULAR sempre. FAZER temporal → singular: 'Faz 3 anos' (nunca 'fazem')."},
+{i:34,e:"Em 'Precisa-se de funcionários', o verbo está no singular porque 'funcionários' não é sujeito.",r:"C",x:"VTI + 'se' = índice de indeterminação do sujeito → verbo singular. 'Funcionários' é objeto indireto.",d:"VTI + SE = sujeito indeterminado → SINGULAR. VTD + SE = passiva → concorda com sujeito."}
+]},
+{d:"Crase",q:[
+{i:35,e:"Em 'O parecer aludiu às questões levantadas', a crase está correta pois 'aludir' exige preposição 'a' e 'questões' admite artigo feminino.",r:"C",x:"Aludir A + AS questões = ÀS. Crase = preposição 'a' + artigo 'a(s)'.",d:"Fórmula: preposição (do verbo) + artigo (do substantivo). Truque: troque por masculino – se 'ao' aparece, há crase."},
+{i:36,e:"É correto o emprego da crase em 'Informamos à Vossa Senhoria que o prazo foi prorrogado'.",r:"E",x:"Não se usa crase antes de pronomes de tratamento (Vossa Senhoria), exceto 'senhora', 'senhorita', 'dona'.",d:"NUNCA crase antes de: pronomes de tratamento (exceto senhora/dona), pronomes pessoais, verbos."},
+{i:37,e:"A crase é facultativa na frase 'Dirijo-me a(à) Vossa Excelência'.",r:"E",x:"Antes de 'Vossa Excelência' (pronome de tratamento) é PROIBIDA, não facultativa.",d:"Crase FACULTATIVA: nome próprio feminino, possessivo feminino, 'até a'. Fora disso: obrigatória ou proibida."},
+{i:38,e:"Em 'O projeto visa à melhoria das condições de trabalho', a crase está correta.",r:"C",x:"'Visar' (= ter como objetivo) é VTI (visar A) + artigo feminino: visar à melhoria.",d:"VISAR = almejar → VTI (a). ASPIRAR = desejar → VTI (a). Se antes de substantivo feminino → CRASE."},
+{i:39,e:"Está correto: 'A reunião foi marcada para às 14 horas'.",r:"C",x:"Crase obrigatória antes de horas determinadas: 'às 14 horas', 'à meia-noite'.",d:"HORAS determinadas = crase SEMPRE. Se posso dizer 'ao meio-dia', uso crase no feminino."}
+]},
+{d:"Colocação Pronominal",q:[
+{i:40,e:"A frase 'Me informaram sobre a nova resolução' está adequada ao registro formal.",r:"E",x:"No formal, não se inicia frase com pronome átono. Correto: 'Informaram-me'.",d:"NUNCA iniciar frase com pronome átono no formal. Sem atrator = ÊNCLISE (depois do verbo)."},
+{i:41,e:"Em 'Não se trata apenas de dados', a próclise é obrigatória pela presença de 'Não'.",r:"C",x:"Palavras negativas (não, nunca, jamais) são fatores de atração obrigatória: exigem próclise.",d:"Próclise obrigatória: negação, conjunção subordinativa, advérbio, pronome relativo/indefinido. Negação PUXA pronome pra perto."},
+{i:42,e:"'Necessitava-se de recursos adicionais' apresenta colocação pronominal adequada ao padrão formal.",r:"C",x:"Sem fator de próclise, ênclise é a colocação padrão no português formal.",d:"Sem atrator = ÊNCLISE. Futuro do presente/pretérito = MESÓCLISE ou PRÓCLISE com atrator."}
+]},
+{d:"Tipologia e Gênero Textual",q:[
+{i:43,e:"Texto predominantemente dissertativo-expositivo pode conter sequências narrativas e descritivas sem alterar sua classificação tipológica.",r:"C",x:"Tipologia é definida pela PREDOMINÂNCIA, não exclusividade. Outros tipos podem coexistir.",d:"Tipo textual = PREDOMINÂNCIA. Tipos puros são raríssimos."},
+{i:44,e:"O gênero 'crônica' é essencialmente objetivo e impessoal, não admitindo reflexões subjetivas.",r:"E",x:"Crônica é marcada pela subjetividade, olhar pessoal sobre fatos cotidianos, com humor ou lirismo.",d:"Crônica = SUBJETIVO + cotidiano + linguagem leve. Não confunda com notícia (objetiva)."},
+{i:45,e:"Textos injuntivos caracterizam-se pelo uso de verbos no imperativo ou infinitivo, orientando o leitor sobre como realizar ações.",r:"C",x:"Texto injuntivo = instruções. Usa imperativo ('faça') ou infinitivo ('fazer') para guiar ações.",d:"INJUNGIR = instruir. NARRAR = ação/tempo. DESCREVER = características. EXPOR = explicar. ARGUMENTAR = convencer."}
+]},
+{d:"Sinônimos e Significação",q:[
+{i:46,e:"'Equipolentes' pode ser substituído por 'equivalentes' sem alteração de sentido.",r:"C",x:"Equipolente = igual poder/valor = equivalente.",d:"Vocabulário CEBRASPE: equipolente=equivalente, prescindir=dispensar, corroborar=confirmar, rechaçar=rejeitar."},
+{i:47,e:"Em 'usufruem do sensacionalismo', 'usufruem' poderia ser substituído por 'prescindem' sem alterar sentido.",r:"E",x:"Usufruir = aproveitar. Prescindir = dispensar. Sentidos opostos.",d:"PRESCINDIR = dispensar (NÃO precisa). Nunca confunda com 'precisar'. Cai em TODA prova."},
+{i:48,e:"'Outrossim' pode ser empregado com sentido de 'além disso', indicando adição.",r:"C",x:"Outrossim = igualmente, também, além disso. Advérbio de inclusão formal.",d:"Formais: outrossim (também), destarte (dessa forma), mormente (principalmente), conquanto (embora)."}
+]},
+{d:"Sujeito e Termos da Oração",q:[
+{i:49,e:"Em 'Falta investir em educação', o sujeito é 'investir em educação', classificado como sujeito oracional.",r:"C",x:"A oração 'investir em educação' funciona como sujeito de 'falta'. Verbo fica no SINGULAR.",d:"Sujeito oracional: oração inteira é sujeito. 'É necessário estudar' (sujeito: estudar). Verbo SINGULAR."},
+{i:50,e:"Na frase passiva 'Foram analisados, pela comissão, os relatórios', o sujeito é 'pela comissão'.",r:"E",x:"'Pela comissão' é agente da passiva. O sujeito paciente é 'os relatórios'.",d:"Voz passiva: SUJEITO = quem sofre a ação. AGENTE = quem pratica (com 'por/pelo'). CEBRASPE inverte!"}
+]},
+{d:"Tempos e Modos Verbais",q:[
+{i:51,e:"Em 'Se o governo investisse, os resultados seriam melhores', os verbos estão no pretérito imperfeito do subjuntivo e futuro do pretérito do indicativo, respectivamente.",r:"C",x:"'Investisse' = imperfeito do subjuntivo. 'Seriam' = futuro do pretérito. Par hipotético clássico.",d:"Correlação: SE + -SSE (imperfeito subjuntivo) → -RIA (futuro pretérito). 'Se pudesse, faria'."},
+{i:52,e:"Em 'a equipe está pensando em combinar plásticos', o tempo composto 'está pensando' expressa ação habitual.",r:"E",x:"'Está pensando' (presente + gerúndio) = ação EM CURSO, não habitual.",d:"Estar + gerúndio = ação em PROGRESSO. Habitual = presente simples ou 'costuma + infinitivo'."},
+{i:53,e:"O modo subjuntivo expressa certeza e fatos consumados, diferentemente do indicativo, que expressa dúvida.",r:"E",x:"É o CONTRÁRIO. Indicativo = certeza. Subjuntivo = dúvida, hipótese, desejo.",d:"INDICATIVO = realidade. SUBJUNTIVO = hipótese/desejo. IMPERATIVO = ordem. Se inverter, está ERRADO."}
+]},
+{d:"Regência Verbal e Nominal",q:[
+{i:54,e:"'O diretor assistiu o espetáculo' está correto conforme a norma-padrão.",r:"E",x:"Assistir (ver) é VTI: exige 'a'. Correto: 'assistiu ao espetáculo'.",d:"ASSISTIR = ver → VTI (a). ASSISTIR = ajudar → VTD. Dupla regência conforme sentido."},
+{i:55,e:"'Prefiro mais trabalhar em equipe do que individualmente' atende à regência de 'preferir'.",r:"E",x:"'Preferir' não admite 'mais...do que'. Correto: 'Prefiro X a Y'.",d:"PREFERIR = 'Prefiro X a Y' (sem 'mais', sem 'do que'). IMPLICAR = acarretar → VTD (sem preposição)."},
+{i:56,e:"Em 'Os cidadãos aspiram a uma sociedade mais justa', a preposição 'a' é exigida pela regência de 'aspirar' (= desejar).",r:"C",x:"Aspirar (desejar) = VTI (aspirar A). Aspirar (respirar) = VTD.",d:"ASPIRAR = respirar → VTD. ASPIRAR = desejar → VTI (a). Não admite 'lhe': 'Aspiro a isso' (não 'aspiro-lhe')."}
+]},
+{d:"Partícula 'Se'",q:[
+{i:57,e:"Em 'Vendem-se apartamentos', o 'se' é pronome apassivador e 'apartamentos' é sujeito.",r:"C",x:"VTD + 'se' = passiva sintética. 'Apartamentos' é sujeito paciente (= 'Apartamentos são vendidos').",d:"VTD + SE = passiva (verbo concorda com sujeito). VTI + SE = indeterminação (verbo singular)."},
+{i:58,e:"Em 'Necessita-se de profissionais qualificados', o 'se' é partícula apassivadora e 'profissionais' é sujeito.",r:"E",x:"'Necessitar' é VTI, logo 'se' é índice de indeterminação. 'Profissionais' é objeto indireto.",d:"VTI/VI + SE = indeterminação → singular. VTD + SE = passiva → concorda com sujeito paciente."}
+]},
+{d:"Figuras de Linguagem",q:[
+{i:59,e:"Na frase 'O meio ambiente agradece', atribuir 'agradecer' ao meio ambiente constitui prosopopeia (personificação).",r:"C",x:"Prosopopeia = atribuir ações humanas a seres inanimados ou irracionais.",d:"METÁFORA (comparação implícita), METONÍMIA (parte/todo), PROSOPOPEIA (humanizar), IRONIA (oposto), HIPÉRBOLE (exagero)."},
+{i:60,e:"Em 'leram o Machado de Assis completo', há metonímia: nome do autor substitui a referência às obras.",r:"C",x:"Metonímia = substituição com relação de contiguidade. Autor pela obra: ler Machado = ler as obras.",d:"Metonímia: AUTOR pela obra, PARTE pelo todo, MARCA pelo produto. ≠ Metáfora (comparação implícita)."}
+]},
+];
+
+const TOP5=['Interpretação de Textos','Reescrita de Frases','Coerência e Coesão','Conjunções e Conectivos','Concordância Verbal e Nominal'];
+const GRAM=['Crase','Concordância Verbal e Nominal','Regência Verbal e Nominal','Colocação Pronominal','Tempos e Modos Verbais','Partícula \'Se\'','Sujeito e Termos da Oração'];
+const SEM=['Interpretação de Textos','Coerência e Coesão','Tipologia e Gênero Textual','Sinônimos e Significação','Figuras de Linguagem'];
+
+let qs=[],ans=[],tpq=[],idx=0,t0,tq,timer;
+
+function load(t){
+  let src=D;
+  if(t==='top5')src=D.filter(x=>TOP5.includes(x.d));
+  else if(t==='gram')src=D.filter(x=>GRAM.includes(x.d));
+  else if(t==='sem')src=D.filter(x=>SEM.includes(x.d));
+  qs=[];src.forEach(g=>g.q.forEach(q=>qs.push({...q,disciplina:g.d})));
+  ans=new Array(qs.length).fill(null);tpq=new Array(qs.length).fill(0);idx=0;
+  document.getElementById('esel').style.display='none';
+  document.getElementById('inst').style.display='none';
+  document.getElementById('sub').style.display='none';
+  document.getElementById('pb').style.display='block';
+  document.getElementById('nav').style.display='flex';
+  document.getElementById('tmr').style.display='flex';
+  t0=Date.now();startTimer();render();upProg();
+}
+function startTimer(){timer=setInterval(()=>{let s=Math.floor((Date.now()-t0)/1000),h=Math.floor(s/3600),m=Math.floor((s%3600)/60),ss=s%60;document.getElementById('td').textContent=String(h).padStart(2,'0')+':'+String(m).padStart(2,'0')+':'+String(ss).padStart(2,'0');},1000);}
+
+function render(){
+  const a=document.getElementById('qa'),q=qs[idx];tq=Date.now();
+  const dn=ans[idx]!==null,ua=ans[idx],ca=q.r;
+  let cB='',eB='';
+  if(dn&&ua==='C')cB=ua===ca?'ok':'no';
+  if(dn&&ua==='E')eB=ua===ca?'ok':'no';
+  let fbCls=dn?(ua===ca?'ok':'no'):'';
+  a.innerHTML=`<div class="qc a">
+    <div class="qh"><div><span class="qn">${idx+1}</span><strong style="color:#1a237e">${q.disciplina}</strong></div><div style="font-size:13px;color:#666">${idx+1} de ${qs.length}</div></div>
+    <div class="qt">${q.e}</div>
+    <div class="ao"><button class="ab ${cB}" onclick="sel('C')" ${dn?'disabled':''}>C</button><button class="ab ${eB}" onclick="sel('E')" ${dn?'disabled':''}>E</button></div>
+    <div class="fb ${dn?'s':''} ${fbCls}">
+      ${dn?`<div class="fbh">${ua===ca?'✓ Correto!':'✗ Incorreto!'} — Gabarito: ${ca}</div>
+      <div class="fbb">
+        <div class="fbs"><strong>Explicação</strong>${q.x}</div>
+        <div class="dica">${q.d}</div>
+      </div>`:''}
+    </div></div>`;
+  document.getElementById('ni').textContent=`${idx+1}/${qs.length}`;
+  document.getElementById('pB').disabled=idx===0;
+  const nB=document.getElementById('nB'),fB=document.getElementById('fB');
+  if(idx>=qs.length-1){nB.style.display='none';fB.style.display='inline-block';}
+  else{nB.style.display='inline-block';fB.style.display='none';}
+}
+function sel(v){if(tq)tpq[idx]=Date.now()-tq;ans[idx]=v;render();upProg();}
+function upProg(){const dn=ans.filter(a=>a!==null).length,p=Math.round(dn/qs.length*100);document.getElementById('pf').style.width=p+'%';}
+function nx(){if(idx<qs.length-1){idx++;render();window.scrollTo(0,0);}}
+function pv(){if(idx>0){idx--;render();window.scrollTo(0,0);}}
+function fn(){
+  const u=ans.filter(a=>a===null).length;
+  if(u>0&&!confirm(`${u} questão(ões) sem resposta. Finalizar?`))return;
+  clearInterval(timer);showRes(Date.now()-t0);
+}
+
+document.addEventListener('keydown',function(ev){
+  if(!qs.length||document.getElementById('rc').classList.contains('a'))return;
+  const k=ev.key.toUpperCase();
+  if((k==='C'||k==='E')&&ans[idx]===null){ev.preventDefault();sel(k);}
+  else if(k==='ARROWRIGHT'){ev.preventDefault();nx();}
+  else if(k==='ARROWLEFT'){ev.preventDefault();pv();}
+  else if(k==='ENTER'&&idx===qs.length-1){ev.preventDefault();fn();}
+});
+
+function showRes(tt){
+  document.getElementById('qa').style.display='none';
+  document.getElementById('nav').style.display='none';
+  document.getElementById('pb').style.display='none';
+  let c=0,w=0,u=0,ds={};
+  qs.forEach((q,i)=>{
+    const ua=ans[i],ok=ua===q.r;
+    if(!ua)u++;else if(ok)c++;else w++;
+    if(!ds[q.disciplina])ds[q.disciplina]={t:0,c:0,w:0,u:0};
+    ds[q.disciplina].t++;
+    if(!ua)ds[q.disciplina].u++;else if(ok)ds[q.disciplina].c++;else ds[q.disciplina].w++;
+  });
+  const tot=qs.length,pct=Math.round(c/tot*100);
+  const h=Math.floor(tt/3600000),m=Math.floor((tt%3600000)/60000),s=Math.floor((tt%60000)/1000);
+  const tStr=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  let html=`<div class="rh"><h2>📊 Resultado do Simulado</h2><div class="rsd">${pct}%</div><p>${c} acertos de ${tot} questões • Tempo: ${tStr}</p></div>`;
+  html+=`<div class="rsg"><div class="rsc"><h3>Acertos</h3><div class="rsv" style="color:#2e7d32">${c}</div></div>`;
+  html+=`<div class="rsc"><h3>Erros</h3><div class="rsv" style="color:#c62828">${w}</div></div>`;
+  html+=`<div class="rsc"><h3>Em Branco</h3><div class="rsv" style="color:#f9a825">${u}</div></div>`;
+  html+=`<div class="rsc"><h3>Aproveitamento</h3><div class="rsv" style="color:#1a237e">${pct}%</div></div></div>`;
+  html+=`<div class="rpc"><h3>Desempenho por Assunto</h3>`;
+  const sorted=Object.entries(ds).sort((a,b)=>(b[1].c/b[1].t)-(a[1].c/a[1].t));
+  sorted.forEach(([name,v])=>{
+    const dp=v.t>0?Math.round(v.c/v.t*100):0;
+    const cls=dp>=70?'h':dp>=40?'m':'l';
+    html+=`<div class="rdp"><div class="rdn"><span>${name}</span><span>${v.c}/${v.t} (${dp}%)</span></div><div class="rbc"><div class="rbf ${cls}" style="width:${Math.max(dp,8)}%">${dp}%</div></div></div>`;
+  });
+  html+=`</div>`;
+  const weak=sorted.filter(([,v])=>Math.round(v.c/v.t*100)<60);
+  if(weak.length>0){
+    html+=`<div class="rrec w"><h3>⚠️ Assuntos para Revisar</h3><ul>`;
+    weak.forEach(([n,v])=>html+=`<li><strong>${n}</strong> — ${Math.round(v.c/v.t*100)}% (${v.c}/${v.t})</li>`);
+    html+=`</ul></div>`;
+  }
+  if(pct>=70)html+=`<div class="rrec g"><h3>🎉 Excelente!</h3><p>Desempenho acima de 70%. Continue praticando os pontos fracos.</p></div>`;
+  html+=`<div class="rqr"><h3>Revisão Completa</h3>`;
+  qs.forEach((q,i)=>{
+    const ua=ans[i],ok=ua===q.r;
+    const cls=!ua?'rna':ok?'rok':'rno';
+    const icon=!ua?'⬜':ok?'✅':'❌';
+    html+=`<div class="ri ${cls}"><div class="rri"><span>${icon} Q${i+1} — ${q.disciplina}</span><span>Gabarito: ${q.r}${ua?' | Sua: '+ua:' | Em branco'}</span></div>`;
+    html+=`<div class="rrt">${q.e.substring(0,120)}...</div>`;
+    if(!ok)html+=`<div style="margin-top:6px;font-size:12px"><strong>Explicação:</strong> ${q.x}</div><div class="dica" style="margin-top:6px">${q.d}</div>`;
+    html+=`</div>`;
+  });
+  html+=`</div><button class="rbtn" onclick="location.reload()">Refazer Simulado</button>`;
+  const rc=document.getElementById('rc');rc.innerHTML=html;rc.classList.add('a');
+}
+
+</script>
+</body>
+</html>
