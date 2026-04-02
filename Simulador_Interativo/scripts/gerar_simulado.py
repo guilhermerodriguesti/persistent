@@ -136,7 +136,7 @@ def gerar_simulado(concurso, nome_simulado, questoes_json_path=None):
     return True
 
 def atualizar_index_concurso(concurso_dir, concurso_nome):
-    """Atualiza o index.html do concurso com os simulados disponíveis"""
+    """Atualiza o index.html do concurso com os Material Disponíveis"""
     simulados_dir = os.path.join(concurso_dir, 'simulados')
     
     if not os.path.exists(simulados_dir):

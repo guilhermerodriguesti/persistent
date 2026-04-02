@@ -340,7 +340,7 @@ def criar_concurso(nome_concurso, titulo_completo, icone="fa-graduation-cap"):
         <main>
             <h2 class="section-title animate-fade delay-1">
                 <i class="fas fa-list-check"></i>
-                Simulados Disponíveis
+                Material Disponíveis
             </h2>
 
             <div class="row g-4 animate-fade delay-2" id="simuladosContainer">
