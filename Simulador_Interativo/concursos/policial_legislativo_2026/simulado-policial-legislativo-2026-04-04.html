@@ -658,6 +658,130 @@ body {
     transform: translateY(-2px);
 }
 
+/* ===== ESTILO DE IMPRESSÃO CEBRASPE ===== */
+@media print {
+    * {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+    
+    body {
+        background: white;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .container {
+        max-width: 100%;
+        box-shadow: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .print-header {
+        text-align: center;
+        padding: 15px;
+        border-bottom: 2px solid #000;
+        margin-bottom: 20px;
+        page-break-after: avoid;
+    }
+    
+    .print-header h1 {
+        font-size: 14pt;
+        font-weight: bold;
+        margin: 5px 0;
+    }
+    
+    .print-header p {
+        font-size: 10pt;
+        margin: 3px 0;
+    }
+    
+    .print-instructions {
+        padding: 10px 20px;
+        border: 1px solid #000;
+        margin: 0 20px 15px 20px;
+        font-size: 9pt;
+        page-break-after: avoid;
+    }
+    
+    .print-content {
+        column-count: 2;
+        column-gap: 20px;
+        column-rule: 1px solid #ccc;
+        padding: 0 20px;
+        font-size: 10pt;
+        line-height: 1.4;
+    }
+    
+    .print-question {
+        break-inside: avoid;
+        margin-bottom: 15px;
+        page-break-inside: avoid;
+    }
+    
+    .print-question-header {
+        font-weight: bold;
+        margin-bottom: 5px;
+        font-size: 9pt;
+    }
+    
+    .print-question-text {
+        text-align: justify;
+        margin-bottom: 8px;
+    }
+    
+    .print-answer-options {
+        margin-left: 20px;
+        font-size: 10pt;
+    }
+    
+    .print-discipline-header {
+        font-weight: bold;
+        font-size: 11pt;
+        margin: 20px 0 10px 0;
+        padding: 5px 0;
+        border-bottom: 1px solid #000;
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+    
+    /* Ocultar elementos não imprimíveis */
+    .timer-bar,
+    .progress-bar,
+    .nav,
+    .exam-selector,
+    .instructions,
+    .export-buttons,
+    .rbtn,
+    button,
+    .print-btn {
+        display: none !important;
+    }
+}
+
+.print-btn {
+    background: linear-gradient(135deg, #6c757d, #495057);
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    margin: 15px auto;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(108, 117, 125, 0.3);
+}
+
+.print-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(108, 117, 125, 0.4);
+}
+
 kbd {
     background: #eee;
     border: 1px solid #ccc;
@@ -715,6 +839,12 @@ kbd {
         max-width: 350px;
         margin: 6px auto;
         display: block;
+    }
+    
+    .print-btn {
+        padding: 12px 20px;
+        font-size: 14px;
+        max-width: 350px;
     }
     
     .timer-bar {
@@ -800,6 +930,12 @@ kbd {
 @media (max-width: 480px) {
     .header {
         padding: 15px 10px;
+    }
+    
+    .print-btn {
+        padding: 10px 15px;
+        font-size: 13px;
+        max-width: 100%;
     }
     
     .header h1 {
@@ -993,6 +1129,11 @@ kbd {
         font-size: 13px;
     }
     
+    .print-btn {
+        padding: 10px 10px;
+        font-size: 12px;
+    }
+    
     .exam-selector button {
         padding: 10px 15px;
         font-size: 13px;
@@ -1029,6 +1170,7 @@ kbd {
 <button onclick="loadExam('cg')">Conhecimentos Gerais (90 itens)</button>
 <button onclick="loadExam('ce')">Conhecimentos Específicos (90 itens)</button>
 <button onclick="loadExam('completo')">Simulado Completo (180 itens)</button>
+<div style="text-align:center"><button class="print-btn" onclick="generatePrintVersion()">🖨️ Gerar Versão para Impressão</button></div>
 </div>
 <div class="timer-bar" id="timerBar" style="display:none">⏱ <span id="timerDisplay">00:00:00</span> &nbsp;|&nbsp; <span style="font-size:12px;font-weight:400;color:#666">⌨ Teclas: <kbd>C</kbd>/<kbd>E</kbd> responder &nbsp; <kbd>←</kbd>/<kbd>→</kbd> navegar &nbsp; <kbd>Enter</kbd> finalizar</span></div>
 <div class="progress-bar" id="progressBar" style="display:none"><div class="progress-fill" id="progressFill">0%</div></div>
@@ -1449,6 +1591,221 @@ function copyExportText() {
 function closeExportModal() {
   const modal = document.querySelector('.export-modal');
   if(modal) modal.remove();
+}
+
+// ===== FUNÇÃO PARA GERAR VERSÃO IMPRIMÍVEL =====
+function generatePrintVersion() {
+  // Determinar qual conjunto de questões usar
+  const examType = prompt('Qual simulado deseja imprimir?\n1 - Conhecimentos Gerais (90 itens)\n2 - Conhecimentos Específicos (90 itens)\n3 - Simulado Completo (180 itens)\n\nDigite 1, 2 ou 3:');
+  
+  let questionsData = [];
+  if(examType === '1') {
+    CG.forEach(d => d.q.forEach(q => questionsData.push({...q, disciplina: d.d})));
+  } else if(examType === '2') {
+    CE.forEach(d => d.q.forEach(q => questionsData.push({...q, disciplina: d.d})));
+  } else if(examType === '3') {
+    CG.forEach(d => d.q.forEach(q => questionsData.push({...q, disciplina: d.d})));
+    CE.forEach(d => d.q.forEach(q => questionsData.push({...q, disciplina: d.d})));
+  } else {
+    alert('❌ Opção inválida! Por favor, digite 1, 2 ou 3.');
+    return;
+  }
+  
+  // Criar nova janela para impressão
+  const printWindow = window.open('', '_blank');
+  
+  // Verificar se a janela foi bloqueada
+  if(!printWindow || printWindow.closed || typeof printWindow.closed === 'undefined') {
+    alert('⚠️ Pop-up bloqueado!\n\nPor favor, permita pop-ups para este site e tente novamente.\n\nNo Chrome/Edge: Clique no ícone 🚫 na barra de endereços.');
+    return;
+  }
+  
+  let html = `
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado CEBRASPE - Policial Legislativo CD 2026</title>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 10pt;
+  line-height: 1.4;
+  background: white;
+  color: #000;
+}
+
+.print-header {
+  text-align: center;
+  padding: 15px 20px;
+  border-bottom: 2px solid #000;
+  margin-bottom: 20px;
+}
+
+.print-header h1 {
+  font-size: 14pt;
+  font-weight: bold;
+  margin: 5px 0;
+  text-transform: uppercase;
+}
+
+.print-header p {
+  font-size: 10pt;
+  margin: 3px 0;
+}
+
+.print-instructions {
+  padding: 10px 20px;
+  border: 1px solid #000;
+  margin: 0 20px 20px 20px;
+  font-size: 9pt;
+  background: #f5f5f5;
+}
+
+.print-instructions strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.print-content {
+  column-count: 2;
+  column-gap: 20px;
+  column-rule: 1px solid #999;
+  padding: 0 20px 20px 20px;
+}
+
+.print-discipline-header {
+  font-weight: bold;
+  font-size: 11pt;
+  margin: 20px 0 10px 0;
+  padding: 5px 0;
+  border-bottom: 1.5px solid #000;
+  break-after: avoid;
+  column-span: all;
+  text-transform: uppercase;
+}
+
+.print-question {
+  break-inside: avoid;
+  margin-bottom: 15px;
+  page-break-inside: avoid;
+}
+
+.print-question-header {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 9pt;
+}
+
+.print-question-text {
+  text-align: justify;
+  margin-bottom: 8px;
+  text-indent: 0;
+}
+
+.print-answer-line {
+  margin: 8px 0 0 20px;
+  font-size: 10pt;
+}
+
+@media print {
+  @page {
+    size: A4;
+    margin: 15mm;
+  }
+  
+  body {
+    margin: 0;
+  }
+}
+
+.no-print {
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  background: #e3f2fd;
+  border: 2px solid #2196f3;
+  border-radius: 8px;
+}
+
+.no-print button {
+  background: #2196f3;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 14pt;
+  cursor: pointer;
+  border-radius: 6px;
+  margin: 10px;
+  font-weight: bold;
+}
+
+.no-print button:hover {
+  background: #1976d2;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="no-print">
+  <h2>📄 Versão para Impressão Gerada</h2>
+  <p>Clique no botão abaixo para imprimir o simulado no padrão CEBRASPE (duas colunas)</p>
+  <button onclick="window.print()">🖨️ Imprimir Simulado</button>
+  <button onclick="window.close()">✖ Fechar</button>
+</div>
+
+<div class="print-header">
+  <h1>CEBRASPE – Câmara dos Deputados</h1>
+  <p><strong>Cargo:</strong> Policial Legislativo</p>
+  <p><strong>Simulado Interativo</strong> – ${examType === '1' ? 'Conhecimentos Gerais' : examType === '2' ? 'Conhecimentos Específicos' : 'Simulado Completo'}</p>
+  <p>Total de Questões: ${questionsData.length}</p>
+</div>
+
+<div class="print-content">
+`;
+
+  // Agrupar questões por disciplina
+  let currentDiscipline = '';
+  questionsData.forEach((q, index) => {
+    if(q.disciplina !== currentDiscipline) {
+      currentDiscipline = q.disciplina;
+      html += `<div class="print-discipline-header">${currentDiscipline}</div>`;
+    }
+    
+    html += `
+    <div class="print-question">
+      <div class="print-question-text"><strong>${q.i}.</strong> ${q.e}</div>
+    </div>
+    `;
+  });
+  
+  html += `
+</div>
+
+<div style="margin-top: 30px; padding: 20px; border-top: 2px solid #000; text-align: center; font-size: 9pt;">
+  <p><strong>FIM DO SIMULADO</strong></p>
+  <p>Gerado em: ${new Date().toLocaleDateString('pt-BR')} às ${new Date().toLocaleTimeString('pt-BR')}</p>
+</div>
+
+</body>
+</html>
+  `;
+  
+  printWindow.document.write(html);
+  printWindow.document.close();
 }
 </script>
 </body>
