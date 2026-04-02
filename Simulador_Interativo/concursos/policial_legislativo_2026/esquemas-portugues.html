@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Esquemas e Dicas - Língua Portuguesa | CD 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--primary:#1a237e;--primary-dark:#0d1642;--secondary:#10b981;--accent:#f59e0b;--background:#0f172a;--card-bg:rgba(30,41,59,0.7);--glass-border:rgba(255,255,255,0.1);--text-main:#f8fafc;--text-dim:#94a3b8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(circle at top right,#1e1b4b,#0f172a);color:var(--text-main);font-family:'Inter',sans-serif;min-height:100vh;padding:20px}
+h1,h2,h3{font-family:'Outfit',sans-serif}
+.container{max-width:1000px;margin:0 auto}
+.header{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:30px;border-radius:16px;margin-bottom:30px;box-shadow:0 8px 32px rgba(26,35,126,0.3)}
+.header h1{font-size:2rem;margin-bottom:10px;display:flex;align-items:center;gap:15px}
+.header p{opacity:0.9;font-size:1rem}
+.back-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);color:#fff;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:600;transition:all 0.3s;margin-bottom:20px;border:1px solid rgba(255,255,255,0.2)}
+.back-btn:hover{background:rgba(255,255,255,0.2);color:#fff;transform:translateX(-5px)}
+.nav-pills{background:var(--card-bg);backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:12px;padding:15px;margin-bottom:30px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.nav-pills .nav-link{color:var(--text-dim);background:transparent;border:2px solid transparent;padding:10px 20px;border-radius:10px;font-weight:600;transition:all 0.3s}
+.nav-pills .nav-link:hover{color:var(--text-main);background:rgba(255,255,255,0.05)}
+.nav-pills .nav-link.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.schema-section{background:var(--card-bg);backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:16px;padding:30px;margin-bottom:30px;border-left:4px solid var(--primary)}
+.schema-section h3{color:var(--primary);margin-bottom:20px;font-size:1.5rem;display:flex;align-items:center;gap:10px}
+.schema-section h4{color:var(--secondary);margin:20px 0 15px;font-size:1.2rem}
+.schema-box{background:rgba(255,255,255,0.03);padding:20px;border-radius:12px;margin:15px 0;border:2px solid rgba(99,102,241,0.2)}
+.schema-list{list-style:none;padding:0}
+.schema-list li{padding:10px 0;padding-left:30px;position:relative;line-height:1.6}
+.schema-list li:before{content:'▸';position:absolute;left:0;color:var(--primary);font-weight:700;font-size:1.2rem}
+.tip-box{background:linear-gradient(135deg,rgba(245,158,11,0.1),rgba(245,158,11,0.05));border-left:4px solid var(--accent);padding:20px;border-radius:12px;margin:15px 0}
+.tip-box strong{color:var(--accent);font-size:1.1rem}
+.comparison-table{width:100%;border-collapse:collapse;margin:15px 0;font-size:0.95rem;background:rgba(255,255,255,0.02);border-radius:12px;overflow:hidden}
+.comparison-table th{background:var(--primary);color:#fff;padding:15px;text-align:left;font-weight:600}
+.comparison-table td{padding:12px 15px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.comparison-table tr:last-child td{border-bottom:none}
+.comparison-table tr:hover{background:rgba(255,255,255,0.05)}
+.mnemonic{background:linear-gradient(135deg,rgba(99,102,241,0.2),rgba(99,102,241,0.1));border-left:4px solid var(--primary);padding:20px;border-radius:12px;margin:15px 0;font-weight:600;color:var(--text-main);font-size:1.05rem}
+.action-buttons{display:flex;gap:15px;margin-top:40px;flex-wrap:wrap}
+.btn-primary{background:var(--primary);color:#fff;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:10px;transition:all 0.3s;border:none;font-size:1rem}
+.btn-primary:hover{background:var(--primary-dark);color:#fff;transform:translateY(-2px);box-shadow:0 8px 20px rgba(26,35,126,0.4)}
+.btn-secondary{background:var(--secondary);color:#fff;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:10px;transition:all 0.3s}
+.btn-secondary:hover{background:#059669;color:#fff;transform:translateY(-2px)}
+@media(max-width:768px){
+.header h1{font-size:1.5rem}
+.schema-section{padding:20px}
+.nav-pills{flex-direction:column}
+.nav-pills .nav-link{width:100%}
+.action-buttons{flex-direction:column}
+.action-buttons a{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar para Simulados</a>
+
+<div class="header">
+<h1><i class="fas fa-book"></i> Esquemas e Dicas de Memorização</h1>
+<p>Língua Portuguesa • Concurso Policial Legislativo 2026</p>
+</div>
+
+<ul class="nav nav-pills" id="schemaTabs" role="tablist">
+<li class="nav-item"><a class="nav-link active" data-bs-toggle="pill" href="#interpretacao">Interpretação</a></li>
+<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#coesao">Coesão</a></li>
+<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#concordancia">Concordância</a></li>
+<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#regencia">Regência</a></li>
+<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#crase">Crase</a></li>
+<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#pontuacao">Pontuação</a></li>
+<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#pronomes">Pronomes</a></li>
+<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#vozes">Vozes Verbais</a></li>
+</ul>
+
+<div class="tab-content">
+
+<div class="tab-pane fade show active" id="interpretacao">
+<div class="schema-section">
+<h3>🔴 INTERPRETAÇÃO DE TEXTOS</h3>
+<div class="mnemonic">💡 MNEMÔNICO: "FATO" - Foco no texto, Atenção aos detalhes, Tema central, Objetivo do autor</div>
+<div class="schema-box">
+<h4>Estratégias de Interpretação:</h4>
+<ul class="schema-list">
+<li>Leia o texto completo antes de responder</li>
+<li>Identifique o tema central e a tese do autor</li>
+<li>Atenção às palavras-chave e conectivos</li>
+<li>Não extrapole: responda com base no texto</li>
+<li>Cuidado com inferências não autorizadas</li>
+</ul>
+</div>
+<div class="tip-box"><strong>⚠️ ATENÇÃO:</strong> CEBRASPE cobra muito a diferença entre "está no texto" e "pode ser inferido". Fique atento!</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="coesao">
+<div class="schema-section">
+<h3>🔵 COESÃO E COERÊNCIA</h3>
+<div class="mnemonic">💡 MNEMÔNICO: "CACO" - Conectivos, Anáfora, Catáfora, Ordem lógica</div>
+<div class="schema-box">
+<h4>Mecanismos de Coesão:</h4>
+<ul class="schema-list">
+<li><strong>Anáfora:</strong> Retoma termo anterior (ele, isso, tal)</li>
+<li><strong>Catáfora:</strong> Antecipa termo posterior (o seguinte, este)</li>
+<li><strong>Elipse:</strong> Omissão de termo recuperável</li>
+<li><strong>Substituição lexical:</strong> Sinônimos, hiperônimos</li>
+</ul>
+</div>
+<div class="schema-box">
+<h4>Principais Conectivos:</h4>
+<table class="comparison-table">
+<tr><th>Relação</th><th>Conectivos</th></tr>
+<tr><td>Adição</td><td>e, também, além disso, ademais</td></tr>
+<tr><td>Oposição</td><td>mas, porém, contudo, todavia, entretanto</td></tr>
+<tr><td>Causa</td><td>porque, pois, já que, visto que</td></tr>
+<tr><td>Consequência</td><td>logo, portanto, assim, por isso</td></tr>
+<tr><td>Concessão</td><td>embora, ainda que, mesmo que</td></tr>
+<tr><td>Conclusão</td><td>portanto, logo, assim, enfim</td></tr>
+</table>
+</div>
+<div class="tip-box"><strong>💡 DICA:</strong> "Este" aponta para frente (catáfora). "Esse/Aquele" aponta para trás (anáfora).</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="concordancia">
+<div class="schema-section">
+<h3>🟢 CONCORDÂNCIA VERBAL E NOMINAL</h3>
+<div class="mnemonic">💡 MNEMÔNICO: "SUJEITO MANDA" - Identifique o sujeito e faça o verbo concordar!</div>
+<div class="schema-box">
+<h4>Concordância Verbal - Regras Principais:</h4>
+<ul class="schema-list">
+<li><strong>Sujeito simples:</strong> Verbo concorda com o núcleo</li>
+<li><strong>Sujeito composto antes:</strong> Verbo no plural</li>
+<li><strong>Sujeito composto depois:</strong> Plural ou concorda com o mais próximo</li>
+<li><strong>Sujeito coletivo:</strong> Verbo no singular (ou plural se especificado)</li>
+<li><strong>Porcentagem:</strong> Concorda com o numeral ou com o especificador</li>
+</ul>
+</div>
+<div class="schema-box">
+<h4>Casos Especiais:</h4>
+<table class="comparison-table">
+<tr><th>Caso</th><th>Concordância</th></tr>
+<tr><td>Haver (sentido de existir)</td><td>Impessoal - sempre singular</td></tr>
+<tr><td>Fazer (tempo decorrido)</td><td>Impessoal - sempre singular</td></tr>
+<tr><td>Mais de um</td><td>Singular (plural se houver reciprocidade)</td></tr>
+<tr><td>Qual de nós/vós</td><td>Singular ou plural (com pronome)</td></tr>
+<tr><td>Que (pronome relativo)</td><td>Concorda com o antecedente</td></tr>
+</table>
+</div>
+<div class="tip-box"><strong>⚠️ CUIDADO:</strong> "Haviam pessoas" está ERRADO! Correto: "Havia pessoas".</div>
+<div class="schema-box">
+<h4>Concordância Nominal:</h4>
+<table class="comparison-table">
+<tr><th>Expressão</th><th>Concordância</th></tr>
+<tr><td>É proibido/É necessário</td><td>Invariável (sem artigo) / Variável (com artigo)</td></tr>
+<tr><td>Meio</td><td>Advérbio (invariável) / Numeral (variável)</td></tr>
+<tr><td>Bastante</td><td>Advérbio (invariável) / Pronome (variável)</td></tr>
+<tr><td>Anexo/Incluso</td><td>Variável (concorda)</td></tr>
+<tr><td>Em anexo</td><td>Invariável</td></tr>
+</table>
+</div>
+<div class="mnemonic">💡 LEMBRE-SE: "É proibido entrada" (sem artigo). "É proibida a entrada" (com artigo).</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="regencia">
+<div class="schema-section">
+<h3>🟡 REGÊNCIA VERBAL E NOMINAL</h3>
+<div class="schema-box">
+<h4>Verbos Importantes:</h4>
+<table class="comparison-table">
+<tr><th>Verbo</th><th>Regência</th></tr>
+<tr><td>Assistir (ver)</td><td>VTI - a</td></tr>
+<tr><td>Assistir (ajudar)</td><td>VTD ou VTI - a</td></tr>
+<tr><td>Aspirar (respirar)</td><td>VTD</td></tr>
+<tr><td>Aspirar (desejar)</td><td>VTI - a (não aceita lhe)</td></tr>
+<tr><td>Visar (mirar)</td><td>VTD</td></tr>
+<tr><td>Visar (objetivar)</td><td>VTI - a</td></tr>
+<tr><td>Preferir</td><td>VTD + VTI - a (não use "do que")</td></tr>
+<tr><td>Implicar (acarretar)</td><td>VTD (sem preposição)</td></tr>
+</table>
+</div>
+<div class="tip-box"><strong>⚠️ ATENÇÃO:</strong> "Prefiro café A chá" (certo). "Prefiro café DO QUE chá" (errado).</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="crase">
+<div class="schema-section">
+<h3>🔴 CRASE</h3>
+<div class="mnemonic">💡 MNEMÔNICO: "FaVoR" - Feminino, Verbo pede A, Recebe artigo A</div>
+<div class="schema-box">
+<h4>Quando Usar Crase:</h4>
+<ul class="schema-list">
+<li>Palavra feminina que aceita artigo "a"</li>
+<li>Verbo ou nome que exige preposição "a"</li>
+<li>Teste: substitua por palavra masculina (se virar "ao", usa crase)</li>
+</ul>
+</div>
+<div class="schema-box">
+<h4>Casos Obrigatórios:</h4>
+<ul class="schema-list">
+<li>Antes de horas: às 8h, à 1h</li>
+<li>Locuções femininas: à noite, à vontade, à toa</li>
+<li>Antes de "moda de" (implícito): bife à milanesa</li>
+</ul>
+</div>
+<div class="schema-box">
+<h4>Casos Proibidos:</h4>
+<ul class="schema-list">
+<li>Antes de verbo</li>
+<li>Antes de palavra masculina</li>
+<li>Antes de pronomes (exceto possessivos femininos)</li>
+<li>Entre palavras repetidas: cara a cara</li>
+<li>Antes de artigo indefinido: a uma pessoa</li>
+</ul>
+</div>
+<div class="tip-box"><strong>💡 DICA:</strong> "Vou A casa" (sem crase). "Vou À casa dela" (com crase - especificada).</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="pontuacao">
+<div class="schema-section">
+<h3>🔵 PONTUAÇÃO</h3>
+<div class="schema-box">
+<h4>Vírgula - Usos Principais:</h4>
+<ul class="schema-list">
+<li>Separar termos de mesma função sintática</li>
+<li>Isolar aposto explicativo</li>
+<li>Isolar vocativo</li>
+<li>Isolar adjunto adverbial deslocado</li>
+<li>Isolar orações subordinadas adverbiais</li>
+<li>Separar orações coordenadas (exceto com "e")</li>
+</ul>
+</div>
+<div class="tip-box"><strong>⚠️ PROIBIDO:</strong> Vírgula entre sujeito e verbo / verbo e complemento (ordem direta).</div>
+<div class="schema-box">
+<h4>Ponto e Vírgula:</h4>
+<ul class="schema-list">
+<li>Separar itens de enumeração complexa</li>
+<li>Separar orações coordenadas longas</li>
+<li>Antes de conjunções adversativas em períodos longos</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="pronomes">
+<div class="schema-section">
+<h3>🟢 PRONOMES E COLOCAÇÃO PRONOMINAL</h3>
+<div class="schema-box">
+<h4>Colocação Pronominal:</h4>
+<table class="comparison-table">
+<tr><th>Posição</th><th>Quando Usar</th></tr>
+<tr><td>Próclise (antes)</td><td>Palavras atrativas: não, que, quando, etc.</td></tr>
+<tr><td>Ênclise (depois)</td><td>Início de frase, imperativo afirmativo</td></tr>
+<tr><td>Mesóclise (meio)</td><td>Futuro do presente/pretérito (sem atração)</td></tr>
+</table>
+</div>
+<div class="mnemonic">💡 Palavras atrativas: NÃO, QUE, QUANDO, ONDE, COMO, QUEM (atraem próclise)</div>
+<div class="tip-box"><strong>⚠️ ATENÇÃO:</strong> NUNCA inicie frase com pronome oblíquo átono (me, te, se, lhe, o, a).</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="vozes">
+<div class="schema-section">
+<h3>🟡 VOZES VERBAIS</h3>
+<div class="schema-box">
+<h4>Tipos de Voz:</h4>
+<ul class="schema-list">
+<li><strong>Ativa:</strong> Sujeito pratica a ação</li>
+<li><strong>Passiva Analítica:</strong> Ser + particípio</li>
+<li><strong>Passiva Sintética:</strong> VTD + SE (apassivador)</li>
+<li><strong>Reflexiva:</strong> Sujeito pratica e sofre a ação</li>
+</ul>
+</div>
+<div class="tip-box"><strong>💡 DICA:</strong> "Vendem-SE casas" (passiva). "Precisa-SE de casas" (indeterminação - VTI).</div>
+</div>
+</div>
+
+</div>
+
+<div class="schema-section">
+<h3>📌 DICAS FINAIS DE MEMORIZAÇÃO</h3>
+<div class="tip-box">
+<strong>🎯 Estratégias de Estudo:</strong><br><br>
+1. Faça resumos visuais com cores para cada tópico<br>
+2. Crie frases-exemplo para cada regra<br>
+3. Pratique reescrita de frases diariamente<br>
+4. Leia textos de qualidade (jornais, revistas)<br>
+5. Anote as pegadinhas mais comuns da CEBRASPE
+</div>
+<div class="mnemonic">
+💪 LEMBRE-SE: Português é prática constante! Revise os esquemas e faça questões todos os dias. A repetição leva à perfeição!
+</div>
+</div>
+
+<div class="action-buttons">
+<a href="simulado-portugues-completo.html" class="btn-primary">
+<i class="fas fa-play"></i> Iniciar Simulado Completo
+</a>
+<a href="simulado-portugues-temas.html" class="btn-secondary">
+<i class="fas fa-layer-group"></i> Simulado Por Temas
+</a>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

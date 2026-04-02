@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Esquemas e Dicas - Direito Penal e Processual Penal | CD 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--primary:#a855f7;--primary-dark:#9333ea;--secondary:#10b981;--accent:#f59e0b;--background:#0f172a;--card-bg:rgba(30,41,59,0.7);--glass-border:rgba(255,255,255,0.1);--text-main:#f8fafc;--text-dim:#94a3b8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:radial-gradient(circle at top right,#1e1b4b,#0f172a);color:var(--text-main);font-family:'Inter',sans-serif;min-height:100vh;padding:20px}
+h1,h2,h3{font-family:'Outfit',sans-serif}
+.container{max-width:1000px;margin:0 auto}
+.header{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:30px;border-radius:16px;margin-bottom:30px;box-shadow:0 8px 32px rgba(168,85,247,0.3)}
+.header h1{font-size:2rem;margin-bottom:10px;display:flex;align-items:center;gap:15px}
+.header p{opacity:0.9;font-size:1rem}
+.back-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);color:#fff;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:600;transition:all 0.3s;margin-bottom:20px;border:1px solid rgba(255,255,255,0.2)}
+.back-btn:hover{background:rgba(255,255,255,0.2);color:#fff;transform:translateX(-5px)}
+.nav-pills{background:var(--card-bg);backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:12px;padding:15px;margin-bottom:30px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
+.nav-pills .nav-link{color:var(--text-dim);background:transparent;border:2px solid transparent;padding:10px 20px;border-radius:10px;font-weight:600;transition:all 0.3s;font-size:0.9rem}
+.nav-pills .nav-link:hover{color:var(--text-main);background:rgba(255,255,255,0.05)}
+.nav-pills .nav-link.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.schema-section{background:var(--card-bg);backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:16px;padding:30px;margin-bottom:30px;border-left:4px solid var(--primary)}
+.schema-section h3{color:var(--primary);margin-bottom:20px;font-size:1.5rem;display:flex;align-items:center;gap:10px}
+.schema-section h4{color:var(--secondary);margin:20px 0 15px;font-size:1.2rem}
+.schema-box{background:rgba(255,255,255,0.03);padding:20px;border-radius:12px;margin:15px 0;border:2px solid rgba(168,85,247,0.2)}
+.schema-list{list-style:none;padding:0}
+.schema-list li{padding:10px 0;padding-left:30px;position:relative;line-height:1.6}
+.schema-list li:before{content:'▸';position:absolute;left:0;color:var(--primary);font-weight:700;font-size:1.2rem}
+.tip-box{background:linear-gradient(135deg,rgba(245,158,11,0.1),rgba(245,158,11,0.05));border-left:4px solid var(--accent);padding:20px;border-radius:12px;margin:15px 0}
+.tip-box strong{color:var(--accent);font-size:1.1rem}
+.comparison-table{width:100%;border-collapse:collapse;margin:15px 0;font-size:0.95rem;background:rgba(255,255,255,0.02);border-radius:12px;overflow:hidden}
+.comparison-table th{background:var(--primary);color:#fff;padding:15px;text-align:left;font-weight:600}
+.comparison-table td{padding:12px 15px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.comparison-table tr:last-child td{border-bottom:none}
+.comparison-table tr:hover{background:rgba(255,255,255,0.05)}
+.mnemonic{background:linear-gradient(135deg,rgba(168,85,247,0.2),rgba(168,85,247,0.1));border-left:4px solid var(--primary);padding:20px;border-radius:12px;margin:15px 0;font-weight:600;color:var(--text-main);font-size:1.05rem}
+.action-buttons{display:flex;gap:15px;margin-top:40px;flex-wrap:wrap}
+.btn-primary{background:var(--primary);color:#fff;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:10px;transition:all 0.3s;border:none;font-size:1rem}
+.btn-primary:hover{background:var(--primary-dark);color:#fff;transform:translateY(-2px);box-shadow:0 8px 20px rgba(168,85,247,0.4)}
+@media(max-width:768px){
+.header h1{font-size:1.5rem}
+.schema-section{padding:20px}
+.nav-pills{flex-direction:column}
+.nav-pills .nav-link{width:100%}
+.action-buttons{flex-direction:column}
+.action-buttons a{width:100%;justify-content:center}
+}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar para Simulados</a>
+
+<div class="header">
+<h1><i class="fas fa-gavel"></i> Esquemas e Dicas de Memorização</h1>
+<p>Direito Penal e Processual Penal • Concurso Policial Legislativo 2026</p>
+</div>
+
+<ul class="nav nav-pills" id="schemaTabs" role="tablist">
+<li class="nav-item"><a class="nav-link active" data-bs-toggle="pill" href="#abuso">Abuso Autoridade</a></li>
+<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#inquerito">Inquérito</a></li>
+<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#acao">Ação Penal</a></li>
+<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#prisao">Prisão</a></li>
+<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#provas">Provas</a></li>
+<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#concurso">Concurso Pessoas</a></li>
+<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#prescricao">Prescrição</a></li>
+</ul>
+
+<div class="tab-content">
+
+<div class="tab-pane fade show active" id="abuso">
+<div class="schema-section">
+<h3>🔴 LEI DE ABUSO DE AUTORIDADE (Lei 13.869/2019)</h3>
+<div class="mnemonic">💡 MNEMÔNICO: "DOLO ESPECÍFICO" - Exige finalidade específica de prejudicar ou beneficiar</div>
+<div class="schema-box">
+<h4>Elementos do Crime:</h4>
+<ul class="schema-list">
+<li>Sujeito ativo: Agente público ou particular em colaboração</li>
+<li>Elemento subjetivo: DOLO ESPECÍFICO (finalidade de prejudicar)</li>
+<li>Conduta: Violação de direito ou garantia fundamental</li>
+<li>Resultado: Lesão ao direito</li>
+</ul>
+</div>
+<div class="tip-box"><strong>⚠️ ATENÇÃO:</strong> Não há abuso por CULPA! Sempre exige dolo específico.</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="inquerito">
+<div class="schema-section">
+<h3>🔵 INQUÉRITO POLICIAL</h3>
+<div class="mnemonic">💡 MNEMÔNICO: "SIDIE" - Sigiloso, Inquisitivo, Dispensável, Indisponível, Escrito</div>
+<div class="schema-box">
+<h4>Características:</h4>
+<ul class="schema-list">
+<li><strong>Sigiloso:</strong> Pode ser decretado sigilo (não é público)</li>
+<li><strong>Inquisitivo:</strong> Sem contraditório e ampla defesa</li>
+<li><strong>Dispensável:</strong> Não é obrigatório para ação penal</li>
+<li><strong>Indisponível:</strong> Autoridade não pode arquivar</li>
+<li><strong>Escrito:</strong> Deve ser reduzido a termo</li>
+<li><strong>Oficioso:</strong> Polícia inicia de ofício (crimes públicos)</li>
+</ul>
+</div>
+<div class="schema-box">
+<h4>Prazos:</h4>
+<table class="comparison-table">
+<tr><th>Situação</th><th>Prazo</th></tr>
+<tr><td>Indiciado solto</td><td>30 dias (prorrogável)</td></tr>
+<tr><td>Indiciado preso</td><td>10 dias (improrrogável)</td></tr>
+<tr><td>Justiça Federal</td><td>15 dias (preso) / 30 dias (solto)</td></tr>
+</table>
+</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="acao">
+<div class="schema-section">
+<h3>🟢 AÇÃO PENAL</h3>
+<div class="schema-box">
+<h4>Tipos de Ação Penal:</h4>
+<table class="comparison-table">
+<tr><th>Tipo</th><th>Legitimidade</th><th>Condição</th></tr>
+<tr><td>Pública Incondicionada</td><td>MP</td><td>Nenhuma</td></tr>
+<tr><td>Pública Condicionada</td><td>MP</td><td>Representação ou requisição</td></tr>
+<tr><td>Privada</td><td>Vítima/representante</td><td>Queixa-crime</td></tr>
+<tr><td>Privada Subsidiária</td><td>Vítima</td><td>Inércia do MP</td></tr>
+</table>
+</div>
+<div class="mnemonic">💡 REGRA: Ação penal é PÚBLICA INCONDICIONADA (salvo disposição expressa em contrário)</div>
+<div class="tip-box"><strong>💡 DICA:</strong> Prazo para representação: 6 meses. Prazo para queixa-crime: 6 meses.</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="prisao">
+<div class="schema-section">
+<h3>🟡 PRISÃO EM FLAGRANTE</h3>
+<div class="schema-box">
+<h4>Espécies de Flagrante:</h4>
+<ul class="schema-list">
+<li><strong>Próprio:</strong> Está cometendo ou acabou de cometer</li>
+<li><strong>Impróprio (irreal):</strong> Perseguido logo após</li>
+<li><strong>Presumido (ficto):</strong> Encontrado com instrumentos/objetos</li>
+<li><strong>Esperado:</strong> Aguarda-se a prática do crime</li>
+<li><strong>Preparado:</strong> Induzido a cometer (crime impossível)</li>
+<li><strong>Forjado:</strong> Crime inexistente (ilegal)</li>
+</ul>
+</div>
+<div class="tip-box"><strong>⚠️ ATENÇÃO:</strong> Flagrante preparado e forjado são ILEGAIS!</div>
+<div class="schema-box">
+<h4>Audiência de Custódia:</h4>
+<ul class="schema-list">
+<li>Prazo: 24 horas após prisão</li>
+<li>Finalidade: Avaliar legalidade e necessidade</li>
+<li>Possibilidades: Liberdade, medidas cautelares, prisão preventiva</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="provas">
+<div class="schema-section">
+<h3>🟣 PROVAS</h3>
+<div class="schema-box">
+<h4>Princípios das Provas:</h4>
+<ul class="schema-list">
+<li><strong>Contraditório:</strong> Direito de contestar</li>
+<li><strong>Ampla defesa:</strong> Todos os meios legais</li>
+<li><strong>Presunção de inocência:</strong> Ônus da prova é da acusação</li>
+<li><strong>Livre convencimento motivado:</strong> Juiz avalia livremente</li>
+<li><strong>Vedação de provas ilícitas:</strong> Inadmissíveis</li>
+</ul>
+</div>
+<div class="schema-box">
+<h4>Provas Ilícitas vs. Ilegítimas:</h4>
+<table class="comparison-table">
+<tr><th>Tipo</th><th>Vício</th></tr>
+<tr><td>Ilícita</td><td>Viola direito material (Constituição)</td></tr>
+<tr><td>Ilegítima</td><td>Viola norma processual</td></tr>
+</table>
+</div>
+<div class="tip-box"><strong>💡 DICA:</strong> Prova ilícita contamina as derivadas (teoria dos frutos da árvore envenenada).</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="concurso">
+<div class="schema-section">
+<h3>🔴 CONCURSO DE PESSOAS</h3>
+<div class="schema-box">
+<h4>Requisitos:</h4>
+<ul class="schema-list">
+<li>Pluralidade de agentes</li>
+<li>Relevância causal de cada conduta</li>
+<li>Liame subjetivo (vínculo psicológico)</li>
+<li>Identidade de infração penal</li>
+</ul>
+</div>
+<div class="schema-box">
+<h4>Autoria vs. Participação:</h4>
+<table class="comparison-table">
+<tr><th>Tipo</th><th>Conduta</th><th>Pena</th></tr>
+<tr><td>Autor</td><td>Executa o núcleo do tipo</td><td>Integral</td></tr>
+<tr><td>Coautor</td><td>Executa junto com outro</td><td>Integral</td></tr>
+<tr><td>Partícipe</td><td>Auxilia/instiga (não executa)</td><td>Reduzida (1/6 a 1/3)</td></tr>
+</table>
+</div>
+<div class="mnemonic">💡 Teoria do Domínio do Fato: Autor é quem tem controle final sobre o crime</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="prescricao">
+<div class="schema-section">
+<h3>🔵 PRESCRIÇÃO</h3>
+<div class="schema-box">
+<h4>Tipos de Prescrição:</h4>
+<ul class="schema-list">
+<li><strong>Prescrição da pretensão punitiva (PPP):</strong> Antes do trânsito em julgado</li>
+<li><strong>Prescrição da pretensão executória (PPE):</strong> Após trânsito em julgado</li>
+<li><strong>Prescrição retroativa:</strong> Entre data do fato e recebimento da denúncia</li>
+<li><strong>Prescrição intercorrente:</strong> Durante execução (após 1 ano de paralisação)</li>
+</ul>
+</div>
+<div class="schema-box">
+<h4>Prazos (conforme pena máxima):</h4>
+<table class="comparison-table">
+<tr><th>Pena Máxima</th><th>Prazo</th></tr>
+<tr><td>Menos de 1 ano</td><td>3 anos</td></tr>
+<tr><td>1 a 2 anos</td><td>4 anos</td></tr>
+<tr><td>2 a 4 anos</td><td>8 anos</td></tr>
+<tr><td>4 a 8 anos</td><td>12 anos</td></tr>
+<tr><td>8 a 12 anos</td><td>16 anos</td></tr>
+<tr><td>Acima de 12 anos</td><td>20 anos</td></tr>
+</table>
+</div>
+<div class="tip-box"><strong>⚠️ ATENÇÃO:</strong> Menores de 21 anos (ao tempo do fato) e maiores de 70 anos (na sentença): prazo reduzido pela metade!</div>
+</div>
+</div>
+
+</div>
+
+<div class="schema-section">
+<h3>📌 DICAS FINAIS DE MEMORIZAÇÃO</h3>
+<div class="tip-box">
+<strong>🎯 Estratégias de Estudo:</strong><br><br>
+1. Crie linhas do tempo para prazos processuais<br>
+2. Faça tabelas comparativas (prisão preventiva x temporária)<br>
+3. Decore os mnemônicos e adapte para seu estilo<br>
+4. Relacione teoria com jurisprudência do STF/STJ<br>
+5. Pratique casos concretos para fixar conceitos
+</div>
+<div class="mnemonic">
+💪 LEMBRE-SE: Penal e Processual Penal exigem raciocínio lógico + memorização de prazos e requisitos. Revise constantemente!
+</div>
+</div>
+
+<div class="action-buttons">
+<a href="simulado-penal-processual-completo.html" class="btn-primary">
+<i class="fas fa-play"></i> Iniciar Simulado Completo
+</a>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
