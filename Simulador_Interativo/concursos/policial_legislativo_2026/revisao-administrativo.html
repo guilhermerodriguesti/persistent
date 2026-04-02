@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão Direito Administrativo – Policial Legislativo CD 2026</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%);
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+.container { max-width: 960px; margin: 0 auto; padding: 20px; }
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #1a1a5e, #2d1b69);
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+.header::before { content: '⚖️'; position: absolute; font-size: 120px; opacity: 0.06; top: -10px; right: -10px; }
+.header h1 { font-size: 26px; color: #fff; margin-bottom: 8px; letter-spacing: 1px; }
+.header .subtitle { font-size: 14px; color: #b8a0e8; font-weight: 400; }
+.header .badge {
+  display: inline-block; background: rgba(139,92,246,0.2); color: #a78bfa;
+  padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;
+  margin-top: 10px; border: 1px solid rgba(139,92,246,0.3);
+}
+
+/* ===== NAV ===== */
+.nav-bar {
+  display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+  margin-bottom: 25px; padding: 15px; background: rgba(255,255,255,0.04);
+  border-radius: 10px; border: 1px solid rgba(255,255,255,0.06);
+}
+.nav-btn {
+  background: rgba(139,92,246,0.15); color: #b8a0e8; border: 1px solid rgba(139,92,246,0.2);
+  padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 11px;
+  font-weight: 600; transition: all 0.3s; white-space: nowrap;
+}
+.nav-btn:hover, .nav-btn.active {
+  background: #4c1d95; color: #fff; border-color: #7c3aed; transform: translateY(-1px);
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  background: rgba(255,255,255,0.05); border-radius: 12px; margin-bottom: 18px;
+  border: 1px solid rgba(255,255,255,0.08); overflow: hidden; transition: all 0.3s;
+}
+.section:hover { border-color: rgba(139,92,246,0.3); }
+.section-header {
+  display: flex; align-items: center; gap: 12px; padding: 16px 20px;
+  cursor: pointer; background: linear-gradient(135deg, rgba(76,29,149,0.4), rgba(76,29,149,0.2));
+  user-select: none; transition: background 0.3s;
+}
+.section-header:hover { background: linear-gradient(135deg, rgba(76,29,149,0.6), rgba(76,29,149,0.3)); }
+.section-icon { font-size: 26px; flex-shrink: 0; }
+.section-title { font-size: 16px; font-weight: 700; color: #fff; flex: 1; }
+.section-toggle { font-size: 18px; color: #b8a0e8; transition: transform 0.3s; flex-shrink: 0; }
+.section.open .section-toggle { transform: rotate(180deg); }
+.section-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.section.open .section-body { max-height: 12000px; }
+.section-content { padding: 20px; }
+
+/* ===== SUBSECTIONS ===== */
+.subsection { margin-bottom: 20px; }
+.subsection-title {
+  font-size: 14px; font-weight: 700; color: #a78bfa; margin-bottom: 12px;
+  padding-bottom: 6px; border-bottom: 1px solid rgba(167,139,250,0.2);
+  display: flex; align-items: center; gap: 8px;
+}
+
+/* ===== CARDS ===== */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin-bottom: 15px; }
+.card {
+  background: rgba(76,29,149,0.2); border: 1px solid rgba(167,139,250,0.15);
+  border-radius: 8px; padding: 14px; transition: all 0.3s;
+}
+.card:hover { background: rgba(76,29,149,0.35); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+.card-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #fbbf24; font-weight: 700; margin-bottom: 6px; }
+.card-value { font-size: 13px; line-height: 1.6; color: #ccc; }
+
+/* ===== MNEMONIC ===== */
+.mnemonic {
+  background: linear-gradient(135deg, rgba(251,191,36,0.12), rgba(245,158,11,0.08));
+  border: 1px solid rgba(251,191,36,0.3); border-left: 4px solid #fbbf24;
+  border-radius: 8px; padding: 14px 16px; margin: 12px 0;
+}
+.mnemonic-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #fbbf24; font-weight: 700; margin-bottom: 6px; }
+.mnemonic-text { font-size: 18px; font-weight: 800; color: #fcd34d; letter-spacing: 3px; margin-bottom: 4px; }
+.mnemonic-desc { font-size: 13px; color: #ccc; line-height: 1.5; }
+
+/* ===== ALERTS ===== */
+.alert { border-radius: 8px; padding: 14px 16px; margin: 12px 0; font-size: 13px; line-height: 1.6; }
+.alert-danger { background: rgba(220,53,69,0.12); border: 1px solid rgba(220,53,69,0.3); border-left: 4px solid #dc3545; color: #f5a0a8; }
+.alert-info { background: rgba(13,202,240,0.1); border: 1px solid rgba(13,202,240,0.25); border-left: 4px solid #0dcaf0; color: #8ee5f5; }
+.alert-success { background: rgba(25,135,84,0.12); border: 1px solid rgba(25,135,84,0.3); border-left: 4px solid #198754; color: #75d4a7; }
+.alert-warning { background: rgba(251,191,36,0.1); border: 1px solid rgba(251,191,36,0.25); border-left: 4px solid #fbbf24; color: #fcd34d; }
+
+/* ===== LISTS ===== */
+.topic-list { list-style: none; margin: 10px 0; }
+.topic-list li {
+  padding: 10px 14px; margin-bottom: 6px; background: rgba(255,255,255,0.03);
+  border-radius: 6px; border-left: 3px solid #7c3aed; font-size: 13px;
+  line-height: 1.6; transition: all 0.2s;
+}
+.topic-list li:hover { background: rgba(255,255,255,0.06); border-left-color: #a78bfa; }
+.topic-list li strong { color: #a78bfa; }
+
+/* ===== HIGHLIGHTS ===== */
+.hl { color: #fbbf24; font-weight: 700; }
+.hl-blue { color: #a78bfa; font-weight: 700; }
+.hl-green { color: #75d4a7; font-weight: 700; }
+.hl-red { color: #f5a0a8; font-weight: 700; }
+
+/* ===== TABLE ===== */
+.info-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px; }
+.info-table th {
+  background: rgba(76,29,149,0.5); color: #b8a0e8; padding: 10px 12px;
+  text-align: left; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.info-table td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); color: #ccc; line-height: 1.5; }
+.info-table tr:hover td { background: rgba(255,255,255,0.03); }
+
+/* ===== COMP DIAGRAM ===== */
+.comp-diagram { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+.comp-box { background: rgba(76,29,149,0.25); border-radius: 8px; padding: 14px; border: 1px solid rgba(167,139,250,0.15); text-align: center; }
+.comp-box-title { font-size: 12px; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+.comp-box-content { font-size: 12px; color: #ccc; line-height: 1.6; }
+
+/* ===== BACK / CONTROLS ===== */
+.back-btn {
+  display: inline-flex; align-items: center; gap: 6px; background: rgba(255,255,255,0.08);
+  color: #b8a0e8; border: 1px solid rgba(255,255,255,0.1); padding: 8px 16px;
+  border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 600;
+  transition: all 0.3s; margin-bottom: 20px;
+}
+.back-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
+
+.progress-container {
+  display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+  background: rgba(255,255,255,0.04); border-radius: 8px; margin-bottom: 20px;
+  font-size: 13px; color: #b8a0e8;
+}
+.progress-track { flex: 1; height: 8px; background: rgba(255,255,255,0.1); border-radius: 4px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, #7c3aed, #10b981); border-radius: 4px; transition: width 0.5s; width: 0%; }
+.progress-text { font-weight: 700; min-width: 50px; text-align: right; }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
+.ctrl-btn {
+  background: rgba(139,92,246,0.2); color: #a78bfa; border: 1px solid rgba(139,92,246,0.3);
+  padding: 8px 18px; border-radius: 8px; cursor: pointer; font-size: 13px;
+  font-weight: 600; transition: all 0.3s;
+}
+.ctrl-btn:hover { background: rgba(139,92,246,0.4); color: #fff; }
+
+/* ===== VF TABLE ===== */
+.vf-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px; }
+.vf-table th { background: rgba(76,29,149,0.5); color: #b8a0e8; padding: 10px 12px; text-align: left; font-weight: 700; }
+.vf-table td { padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,0.06); color: #ccc; line-height: 1.5; }
+.vf-table .vf-errado { color: #f5a0a8; font-weight: 700; }
+.vf-table .vf-certo { color: #75d4a7; font-weight: 700; }
+
+.footer { text-align: center; padding: 20px; color: #555; font-size: 12px; margin-top: 30px; }
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .container { padding: 12px; }
+  .header h1 { font-size: 20px; }
+  .section-header { padding: 14px 16px; }
+  .section-title { font-size: 14px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .comp-diagram { grid-template-columns: 1fr; }
+  .nav-btn { padding: 5px 8px; font-size: 10px; }
+  .mnemonic-text { font-size: 15px; letter-spacing: 2px; }
+  .info-table, .vf-table { font-size: 11px; }
+  .info-table th, .info-table td, .vf-table th, .vf-table td { padding: 8px 8px; }
+}
+@media (max-width: 480px) {
+  .header { padding: 20px 14px; }
+  .header h1 { font-size: 17px; }
+  .section-content { padding: 14px; }
+  .controls { flex-direction: column; align-items: stretch; }
+  .ctrl-btn { text-align: center; }
+}
+@media print {
+  body { background: #fff; color: #000; }
+  .nav-bar, .controls, .back-btn, .progress-container { display: none; }
+  .section { break-inside: avoid; border: 1px solid #ccc; }
+  .section-body { max-height: none !important; }
+  .section-header { background: #f0f0f0; }
+  .section-title { color: #1a1a5e; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<a href="index.html" class="back-btn">← Voltar ao Início</a>
+
+<div class="header">
+  <h1>⚖️ Revisão – Direito Administrativo</h1>
+  <div class="subtitle">Policial Legislativo – Câmara dos Deputados 2026</div>
+  <div class="badge">🎯 CEBRASPE 2022–2026 • 1000 Questões Analisadas • 4 Guias Consolidados</div>
+</div>
+
+<div class="progress-container">
+  <span>📖 Progresso</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-text" id="progressText">0/12</span>
+</div>
+
+<nav class="nav-bar">
+  <button class="nav-btn" onclick="goTo(0)">1. Org. Administrativa</button>
+  <button class="nav-btn" onclick="goTo(1)">2. Ato Administrativo</button>
+  <button class="nav-btn" onclick="goTo(2)">3. Poderes Adm.</button>
+  <button class="nav-btn" onclick="goTo(3)">4. Lei 8.112</button>
+  <button class="nav-btn" onclick="goTo(4)">5. Improbidade</button>
+  <button class="nav-btn" onclick="goTo(5)">6. LAI</button>
+  <button class="nav-btn" onclick="goTo(6)">7. LGPD</button>
+  <button class="nav-btn" onclick="goTo(7)">8. Controle Adm.</button>
+  <button class="nav-btn" onclick="goTo(8)">9. Resp. Civil</button>
+  <button class="nav-btn" onclick="goTo(9)">10. Processo Adm.</button>
+  <button class="nav-btn" onclick="goTo(10)">11. Agências</button>
+  <button class="nav-btn" onclick="goTo(11)">12. Terceiro Setor</button>
+</nav>
+
+<div class="controls">
+  <button class="ctrl-btn" onclick="expandAll()">📂 Expandir Tudo</button>
+  <button class="ctrl-btn" onclick="collapseAll()">📁 Recolher Tudo</button>
+</div>
+
+<!-- ===== 1. ORGANIZAÇÃO ADMINISTRATIVA ===== -->
+<div class="section open" id="s-0">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🏛️</span>
+    <span class="section-title">1. Organização Administrativa</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <p style="margin-bottom:14px;font-size:13px;color:#aaa;">A Administração Indireta é o conjunto de pessoas jurídicas criadas pelo Estado, por meio da <strong class="hl">descentralização</strong>, para atividades especializadas.</p>
+
+    <div class="subsection">
+      <div class="subsection-title">📋 Características Gerais (Comuns a todas)</div>
+      <ul class="topic-list">
+        <li><strong>Personalidade Jurídica Própria:</strong> São sujeitos de direitos e obrigações.</li>
+        <li><strong>Patrimônio e Receita Próprios:</strong> Não se confundem com o ente instituidor.</li>
+        <li><strong>Ausência de Hierarquia:</strong> Não há subordinação à Adm. Direta, mas sim <span class="hl">Vinculação</span> (Controle Finalístico / Supervisão Ministerial / Tutela).</li>
+        <li><strong>Criação/Extinção:</strong> Dependem sempre de <span class="hl">Lei Específica</span>.</li>
+        <li><strong>Paridade de Formas:</strong> Se a lei criou, apenas a lei pode extinguir.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📊 Quadro Comparativo: Autarquia vs EP vs SEM</div>
+      <table class="info-table">
+        <thead><tr><th>Característica</th><th>Autarquia</th><th>Empresa Pública</th><th>Soc. Econ. Mista</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Personalidade</strong></td><td>Direito <span class="hl-blue">Público</span></td><td>Direito <span class="hl-red">Privado</span></td><td>Direito <span class="hl-red">Privado</span></td></tr>
+          <tr><td><strong>Criação</strong></td><td><span class="hl">Criada</span> por Lei</td><td><span class="hl">Autorizada</span> por Lei</td><td><span class="hl">Autorizada</span> por Lei</td></tr>
+          <tr><td><strong>Atividade</strong></td><td>Típica de Estado</td><td>Serviço ou Econômica</td><td>Serviço ou Econômica</td></tr>
+          <tr><td><strong>Capital</strong></td><td>100% Público</td><td>100% Público</td><td>Misto (Público + Privado)</td></tr>
+          <tr><td><strong>Forma Jurídica</strong></td><td>N/A</td><td>Qualquer (LTDA, SA)</td><td><span class="hl">Apenas S.A.</span></td></tr>
+          <tr><td><strong>Exemplos</strong></td><td>ANM, INSS</td><td>Correios, CAIXA</td><td>Petrobras, BB</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔄 Desconcentração vs Descentralização</div>
+      <div class="comp-diagram">
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#a78bfa">Desconcentração</div>
+          <div class="comp-box-content"><strong>Interna</strong> – mesma PJ<br>Cria <span class="hl-blue">Órgãos</span><br>Existe <span class="hl-red">subordinação</span><br>Sem personalidade jurídica</div>
+        </div>
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#75d4a7">Descentralização</div>
+          <div class="comp-box-content"><strong>Externa</strong> – PJs distintas<br>Cria <span class="hl-green">Entidades</span><br>Sem hierarquia (<span class="hl">vinculação</span>)<br>Personalidade jurídica própria</div>
+        </div>
+      </div>
+      <ul class="topic-list">
+        <li><strong>Descentralização por Colaboração:</strong> Transferência apenas da <span class="hl">execução</span> a particulares (concessionárias). A titularidade permanece com o Estado.</li>
+        <li><strong>Descentralização por Outorga:</strong> Transferência da <span class="hl">titularidade e execução</span> para a Adm. Indireta (ex: criação de autarquia por lei).</li>
+      </ul>
+    </div>
+
+    <div class="alert alert-danger">
+      ⚠️ <strong>Pegadinhas CEBRASPE:</strong><br>
+      • <strong>Fundações Públicas:</strong> Podem ser de direito público (autárquicas) ou privado. LC define área de atuação.<br>
+      • <strong>Consórcios Públicos:</strong> Se associação pública → Adm. Indireta, personalidade de direito público.<br>
+      • <strong>SEM Unipessoal:</strong> NÃO pode ser unipessoal (exige capital de mais de uma pessoa).<br>
+      • <strong>Subsidiárias:</strong> Criação depende de autorização legislativa (pode ser genérica na lei de criação da matriz).
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 2. ATO ADMINISTRATIVO ===== -->
+<div class="section" id="s-1">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">📝</span>
+    <span class="section-title">2. Ato Administrativo</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">📋 Requisitos do Ato</div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Mnemônico – Requisitos</div>
+        <div class="mnemonic-text">CO – FI – FO – MO – OB</div>
+        <div class="mnemonic-desc"><strong>Co</strong>mpetência · <strong>Fi</strong>nalidade · <strong>Fo</strong>rma (geralmente vinculados) · <strong>Mo</strong>tivo · <strong>Ob</strong>jeto (discricionários)</div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⚡ Atributos do Ato</div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Mnemônico – Atributos</div>
+        <div class="mnemonic-text">P A T I</div>
+        <div class="mnemonic-desc"><strong>P</strong>resunção de Legitimidade · <strong>A</strong>utoexecutoriedade · <strong>T</strong>ipicidade · <strong>I</strong>mperatividade</div>
+      </div>
+      <ul class="topic-list">
+        <li><strong>Presunção de Legitimidade:</strong> Presente em <span class="hl">TODOS</span> os atos. É relativa (<em>iuris tantum</em>).</li>
+        <li><strong>Imperatividade:</strong> Impõe-se a terceiros sem concordância. <span class="hl-red">Nem todo ato tem</span> (ex: atos enunciativos, certidões).</li>
+        <li><strong>Autoexecutoriedade:</strong> Executa sem ordem judicial. <span class="hl-red">Cobrança de multa NÃO é autoexecutória</span> (precisa de ação judicial).</li>
+        <li><strong>Tipicidade:</strong> Deve corresponder a figuras previstas em lei.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔚 Extinção do Ato Administrativo</div>
+      <table class="info-table">
+        <thead><tr><th>Causa</th><th>Modalidade</th><th>Efeito</th><th>Quem faz?</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Ilegalidade</strong></td><td><span class="hl-red">Anulação</span></td><td>Ex tunc (retroativo)</td><td>Adm. e Judiciário</td></tr>
+          <tr><td><strong>Inconveniência</strong></td><td><span class="hl-blue">Revogação</span></td><td>Ex nunc (futuro)</td><td>Só a Administração</td></tr>
+          <tr><td><strong>Culpa do Usuário</strong></td><td><span class="hl">Cassação</span></td><td>Ex nunc</td><td>Só a Administração</td></tr>
+          <tr><td><strong>Lei Nova</strong></td><td><span class="hl-green">Caducidade</span></td><td>Ex nunc</td><td>Só a Administração</td></tr>
+        </tbody>
+      </table>
+
+      <div class="alert alert-info">
+        💡 <strong>Limites da Revogação:</strong> Não se revogam atos <strong>vinculados</strong>, atos que geraram <strong>direitos adquiridos</strong>, atos <strong>exauridos</strong> ou meros atos <strong>enunciativos</strong> (certidões, atestados).
+      </div>
+
+      <div class="alert alert-danger">
+        ⚠️ <strong>Teoria dos Motivos Determinantes:</strong> Ato nulo quando os motivos declarados são falsos ou inexistentes.<br>
+        ⚠️ <strong>Convalidação:</strong> Apenas vícios de <span class="hl">forma</span> e <span class="hl">competência</span> (não exclusiva) são sanáveis. Vício de <span class="hl-red">motivo NÃO</span> pode ser convalidado.
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 3. PODERES ADMINISTRATIVOS ===== -->
+<div class="section" id="s-2">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">💪</span>
+    <span class="section-title">3. Poderes Administrativos</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">🚔 Poder de Polícia</div>
+      <p style="margin-bottom:10px;font-size:13px;color:#aaa;">Restringe direitos/liberdades individuais em prol do interesse público. Fundamento: vínculo <strong class="hl">geral</strong> Estado–administrado.</p>
+      <ul class="topic-list">
+        <li><strong>Ciclos:</strong> <span class="hl">Ordem</span> → <span class="hl">Consentimento</span> → <span class="hl">Fiscalização</span> → <span class="hl">Sanção</span></li>
+        <li><strong>Atributos:</strong> Discricionariedade, Autoexecutoriedade e Coercibilidade.</li>
+        <li><strong>Delegação (STF 2026):</strong> É constitucional delegar inclusive a <span class="hl">sanção</span> para estatais de capital majoritário público em regime <span class="hl">não concorrencial</span>.</li>
+        <li><strong>Para Autarquias:</strong> Delegação plenamente possível.</li>
+      </ul>
+
+      <div class="alert alert-warning">
+        ⚠️ <strong>Polícia vs Disciplinar:</strong><br>
+        • <strong>Polícia:</strong> Atinge o particular "comum" (<span class="hl">vínculo geral</span>)<br>
+        • <strong>Disciplinar:</strong> Atinge servidor ou contratado (<span class="hl">vínculo especial</span>)
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📐 Outros Poderes</div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">Hierárquico</div>
+          <div class="card-value">Escalonamento, dar ordens, <strong class="hl-blue">avocar</strong> e <strong class="hl-blue">delegar</strong>.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Disciplinar</div>
+          <div class="card-value">Punir infrações funcionais de quem possui <strong class="hl">vínculo especial</strong> (servidores ou contratados).</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Uso e Abuso de Poder</div>
+          <div class="card-value"><strong class="hl-red">Excesso:</strong> vício na competência<br><strong class="hl-red">Desvio de Finalidade:</strong> vício na finalidade</div>
+        </div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 4. LEI 8.112 ===== -->
+<div class="section" id="s-3">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">👔</span>
+    <span class="section-title">4. Agentes Públicos e Lei 8.112/1990</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">🎓 Admissão e Concurso Público</div>
+      <table class="info-table">
+        <thead><tr><th>Fase</th><th>Prazo</th><th>Detalhe</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Posse</strong></td><td><span class="hl">30 dias</span> da nomeação</td><td>Investidura. Pode ser por procuração.</td></tr>
+          <tr><td><strong>Exercício</strong></td><td><span class="hl">15 dias</span> da posse</td><td>Efetivo desempenho. NÃO pode por procuração.</td></tr>
+        </tbody>
+      </table>
+      <ul class="topic-list">
+        <li><strong>Concurso:</strong> Provas ou Provas e Títulos. Validade: até <span class="hl">2 anos</span>, prorrogável 1x por igual período.</li>
+        <li><strong>Reserva PcD:</strong> Até <span class="hl">20%</span> das vagas.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📊 Estágio Probatório</div>
+      <p style="margin-bottom:10px;font-size:13px;color:#aaa;">Duração: <strong class="hl">36 meses</strong> (estabilidade: 3 anos pela CF).</p>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Fatores Avaliados</div>
+        <div class="mnemonic-text">A D C P R</div>
+        <div class="mnemonic-desc"><strong>A</strong>ssiduidade · <strong>D</strong>isciplina · <strong>C</strong>apacidade de Iniciativa · <strong>P</strong>rodutividade · <strong>R</strong>esponsabilidade</div>
+      </div>
+      <div class="alert alert-info">
+        💡 Não aprovado → <strong>Exonerado</strong> (1º cargo) ou <strong>Reconduzido</strong> (se já era estável em outro cargo).
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🚫 Acumulação de Cargos (Art. 118)</div>
+      <p style="margin-bottom:10px;font-size:13px;color:#aaa;">Regra: <strong class="hl-red">PROIBIÇÃO</strong>. Exceções (com compatibilidade de horários):</p>
+      <ul class="topic-list">
+        <li><strong>2</strong> cargos de professor</li>
+        <li><strong>1</strong> de professor + <strong>1</strong> técnico/científico</li>
+        <li><strong>2</strong> cargos de profissionais de saúde (regulamentadas)</li>
+      </ul>
+      <div class="alert alert-info">💡 Apuração de acúmulo ilegal → rito <span class="hl">sumário</span>.</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⚖️ Regime Disciplinar e Penalidades</div>
+      <table class="info-table">
+        <thead><tr><th>Penalidade</th><th>Prescrição</th><th>Observação</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Demissão</strong></td><td><span class="hl">5 anos</span></td><td>Perda do cargo por infração grave</td></tr>
+          <tr><td><strong>Cassação de Aposentadoria</strong></td><td><span class="hl">5 anos</span></td><td>Falta punível com demissão (na ativa)</td></tr>
+          <tr><td><strong>Suspensão</strong></td><td><span class="hl-blue">2 anos</span></td><td>Até 90 dias; reincidência de advertência</td></tr>
+          <tr><td><strong>Advertência</strong></td><td><span class="hl-green">180 dias</span></td><td>Por escrito; infrações leves</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-danger">
+        ⚠️ <strong>Termo Inicial da Prescrição:</strong> Quando o <span class="hl">fato se torna conhecido</span>, não quando foi praticado!<br>
+        ⚠️ <strong>Absolvição Criminal:</strong> Só repercute na esfera administrativa se negar a <span class="hl">existência do fato</span> ou a <span class="hl">autoria</span>.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔄 Vacância: Demissão vs Exoneração</div>
+      <div class="comp-diagram">
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#f5a0a8">Demissão</div>
+          <div class="comp-box-content">Caráter <strong>PUNITIVO</strong><br>Falta grave (Art. 132)<br>Corrupção, improbidade, abandono (30+ dias)</div>
+        </div>
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#75d4a7">Exoneração</div>
+          <div class="comp-box-content"><strong>NÃO</strong> é punição<br>A pedido do servidor<br>Ou de ofício (ex: não passou no estágio)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📑 Proibições Importantes</div>
+      <ul class="topic-list">
+        <li><strong>Gerência de Empresa:</strong> O servidor <span class="hl-green">pode</span> ser acionista/cotista. <span class="hl-red">NÃO pode</span> ser gerente/administrador. Exceção: licença para tratar de interesse particular.</li>
+        <li><strong>Licenças Remuneradas:</strong> Doença em família, serviço militar, capacitação (após cada 5 anos), maternidade/paternidade.</li>
+        <li><strong>Licenças Não Remuneradas:</strong> Acompanhar cônjuge, atividade política (parcial), interesses particulares (até 3 anos).</li>
+      </ul>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 5. IMPROBIDADE ===== -->
+<div class="section" id="s-4">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🚨</span>
+    <span class="section-title">5. Improbidade Administrativa (Lei 8.429/1992)</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="alert alert-danger">
+      ⚠️ Após a reforma da <strong>Lei 14.230/2021</strong>, o regime tornou-se muito mais restrito e focado no <strong>elemento subjetivo</strong>.
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🎯 O Elemento Subjetivo: O Fim da Culpa</div>
+      <ul class="topic-list">
+        <li><strong>Apenas DOLO:</strong> <span class="hl-red">Não existe mais</span> improbidade na modalidade culposa.</li>
+        <li><strong>Definição de Dolo:</strong> Vontade livre e consciente de alcançar o <span class="hl">resultado ilícito</span>. A mera voluntariedade não basta.</li>
+        <li><strong>Divergência Interpretativa:</strong> Ação baseada em interpretação da lei (mesmo não pacificada) <span class="hl-green">NÃO configura improbidade</span>.</li>
+        <li><strong>Erro Grosseiro:</strong> NÃO se confunde com improbidade. Improbidade exige <span class="hl">dolo específico</span>.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📊 Categorias de Atos de Improbidade</div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">Art. 9º – Enriquecimento Ilícito</div>
+          <div class="card-value">Auferir vantagem patrimonial indevida. Ex: Receber propina, usar servidores em obra privada.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Art. 10 – Prejuízo ao Erário</div>
+          <div class="card-value">Perda patrimonial <strong class="hl">real</strong> do Estado. Mera perda econômica sem dolo não basta.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Art. 11 – Atentado aos Princípios</div>
+          <div class="card-value">Rol agora é <span class="hl">TAXATIVO</span>. Exige "lesividade relevante". Ex: nepotismo, quebra de sigilo.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">👥 Sujeitos e Transmissão</div>
+      <ul class="topic-list">
+        <li><strong>Ativo:</strong> Agente público (conceito amplíssimo) + particular que <span class="hl">induza ou concorra dolosamente</span>.</li>
+        <li><strong>Passivo:</strong> Adm. Direta e Indireta de todos os poderes + entidades privadas que recebam subvenção pública.</li>
+        <li><strong>Herdeiros:</strong> Reparam dano até o <span class="hl">limite da herança</span>. Não é subsidiária com patrimônio pessoal.</li>
+        <li><strong>Prescrição:</strong> <span class="hl">8 anos</span> para punir improbidade.</li>
+        <li><strong>Representação:</strong> Ao <span class="hl">Ministério Público</span> (exclusividade da ação), não ao Judiciário.</li>
+      </ul>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 6. LAI ===== -->
+<div class="section" id="s-5">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">📂</span>
+    <span class="section-title">6. Lei de Acesso à Informação (Lei 12.527/2011)</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">🔒 Graus de Sigilo (Regra de Ouro)</div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">Ultrassecreto</div>
+          <div class="card-value"><span class="hl">25 anos</span><br>Renovável <strong>1x</strong> por igual período</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Secreto</div>
+          <div class="card-value"><span class="hl-blue">15 anos</span></div>
+        </div>
+        <div class="card">
+          <div class="card-label">Reservado</div>
+          <div class="card-value"><span class="hl-green">5 anos</span></div>
+        </div>
+      </div>
+      <div class="alert alert-danger">⚠️ <strong>NÃO existe</strong> o grau "Confidencial" ou "Supersecreto" na LAI!</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📖 Glossário "Cai-Cai" do CEBRASPE</div>
+      <table class="info-table">
+        <thead><tr><th>Termo</th><th>Definição Correta</th><th>Pegadinha</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Disponibilidade</strong></td><td>Info que pode ser conhecida e usada por autorizados</td><td>Confundir com Integridade</td></tr>
+          <tr><td><strong>Integridade</strong></td><td>Info <span class="hl">não modificada</span> (origem, trânsito, destino)</td><td>Dizer "fonte legítima"</td></tr>
+          <tr><td><strong>Autenticidade</strong></td><td>Info de <span class="hl">fonte legítima</span> e identificável</td><td>Dizer "não modificada"</td></tr>
+          <tr><td><strong>Primariedade</strong></td><td>Info coletada na <span class="hl">fonte</span>, máximo detalhamento</td><td>Dizer "completa"</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📋 Regras e Prazos</div>
+      <ul class="topic-list">
+        <li><strong>Pedido:</strong> Identificação do requerente + Especificação da informação. É <span class="hl-red">vedado exigir motivos</span>!</li>
+        <li><strong>Gratuidade:</strong> Busca e fornecimento gratuitos. Podem cobrar <span class="hl">custos de reprodução</span>.</li>
+        <li><strong>Prazos:</strong> Imediato (se disponível) ou até <span class="hl">20 dias</span> + <span class="hl">10 dias</span> prorrogáveis.</li>
+        <li><strong>Recurso:</strong> <span class="hl">10 dias</span> para recorrer; <span class="hl-blue">5 dias</span> para autoridade decidir.</li>
+        <li><strong>Dados Pessoais (Intimidade):</strong> Prazo máximo de restrição de <span class="hl">100 anos</span>.</li>
+      </ul>
+      <div class="alert alert-danger">
+        🚫 Informações sobre <strong>violação de direitos humanos</strong> por agentes públicos <span class="hl-red">NUNCA</span> podem ser sigilosas!<br>
+        🚫 <strong>Documentos Preparatórios:</strong> Acesso restrito ATÉ que o ato decisório seja editado.
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 7. LGPD ===== -->
+<div class="section" id="s-6">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🔐</span>
+    <span class="section-title">7. LGPD (Lei 13.709/2018)</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">📊 Classificação de Dados</div>
+      <div class="comp-diagram">
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#a78bfa">Dados Sensíveis ✅</div>
+          <div class="comp-box-content">Origem racial, convicção religiosa, opinião política, saúde, vida sexual, <strong>biometria</strong></div>
+        </div>
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#f5a0a8">NÃO é Sensível ❌</div>
+          <div class="comp-box-content"><strong>CPF</strong>, Data de Nascimento, Endereço Residencial</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📋 Aplicação e Exceções</div>
+      <table class="info-table">
+        <thead><tr><th>SE APLICA A:</th><th>NÃO SE APLICA A:</th></tr></thead>
+        <tbody>
+          <tr><td>Dados coletados no Brasil (mesmo armazenados fora)</td><td>Fins exclusivamente <span class="hl-red">jornalísticos e artísticos</span></td></tr>
+          <tr><td>Tratamento por PF com fins econômicos</td><td>Fins exclusivamente de <span class="hl-red">segurança pública ou defesa nacional</span></td></tr>
+          <tr><td>Dados de brasileiros ou estrangeiros no Brasil</td><td>Fins exclusivamente <span class="hl-red">particulares e não econômicos</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🏛️ Poder Público e Tratamento</div>
+      <ul class="topic-list">
+        <li><strong>Consentimento:</strong> Livre, informado e inequívoco. Revogável a qualquer momento.</li>
+        <li><strong>Estado sem consentimento:</strong> Pode tratar para: <span class="hl">obrigação legal</span>, <span class="hl">políticas públicas</span>, exercício de direitos em processos.</li>
+        <li><strong>Dados Públicos:</strong> Se o titular tornou manifestamente público → dispensa novo consentimento, mas deve respeitar a <span class="hl">finalidade original</span>.</li>
+      </ul>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 8. CONTROLE DA ADMINISTRAÇÃO ===== -->
+<div class="section" id="s-7">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🔍</span>
+    <span class="section-title">8. Controle da Administração Pública</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">🏗️ Tipos de Controle</div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">Autotutela</div>
+          <div class="card-value">Adm. revê seus próprios atos. <strong class="hl-blue">Anular</strong> (ilegais) e <strong class="hl-blue">Revogar</strong> (inoportunos). Súmulas 346/473 STF.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Tutela (Controle Finalístico)</div>
+          <div class="card-value">Adm. Direta sobre Indireta. Garantir cumprimento da finalidade. <span class="hl-red">NÃO há hierarquia</span>.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Controle Judicial</div>
+          <div class="card-value">Exame de <span class="hl">Legalidade</span>. O juiz <span class="hl-red">nunca</span> substitui o mérito (conveniência/oportunidade).</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Controle Legislativo</div>
+          <div class="card-value">Congresso Nacional com auxílio do <strong class="hl">TCU</strong>. Foco contábil, financeiro e orçamentário.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⏰ Controle quanto ao Momento</div>
+      <ul class="topic-list">
+        <li><strong>Prévio:</strong> Antes do ato (ex: aprovação de nome de embaixador).</li>
+        <li><strong>Concomitante:</strong> Durante a execução (ex: fiscalização de contrato/obra).</li>
+        <li><strong>Posterior:</strong> Após a prática (ex: homologação, anulação).</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⚖️ Sistema de Jurisdição Una (Sistema Inglês)</div>
+      <ul class="topic-list">
+        <li><strong>Definitividade:</strong> Apenas o Judiciário profere decisões com força de <span class="hl">coisa julgada</span>.</li>
+        <li><strong>Limite do Mérito:</strong> O juiz <span class="hl-red">NÃO</span> analisa conveniência/oportunidade, mas analisa <span class="hl">razoabilidade e proporcionalidade</span>.</li>
+        <li><strong>Atos Políticos e Interna Corporis:</strong> <span class="hl-red">Não são imunes!</span> Se lesarem direitos → controle judicial legítimo.</li>
+        <li><strong>Mandado de Segurança:</strong> Direito líquido e certo. Pode ser preventivo ou repressivo. Não cabe se amparado por HC ou HD.</li>
+      </ul>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 9. RESPONSABILIDADE CIVIL ===== -->
+<div class="section" id="s-8">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">💰</span>
+    <span class="section-title">9. Responsabilidade Civil do Estado</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">📋 Regra Geral (Art. 37, §6º CF)</div>
+      <p style="margin-bottom:10px;font-size:13px;color:#aaa;">Responsabilidade <strong class="hl">Objetiva</strong> (Teoria do Risco Administrativo).</p>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">Elementos</div>
+          <div class="card-value"><strong class="hl">Conduta</strong> + <strong class="hl">Dano</strong> + <strong class="hl">Nexo Causal</strong><br><small>NÃO se discute dolo/culpa do Estado</small></div>
+        </div>
+        <div class="card">
+          <div class="card-label">Direito de Regresso</div>
+          <div class="card-value">Estado processa o agente → responsabilidade <span class="hl-red">Subjetiva</span> (precisa provar dolo/culpa do servidor)</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Omissão</div>
+          <div class="card-value">Regra: responsabilidade <span class="hl-red">Subjetiva</span> (falta do serviço). Exceção: dever de custódia (ex: presídios).</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Excludentes</div>
+          <div class="card-value">Culpa exclusiva da vítima, caso fortuito ou força maior.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔴 Teoria do Risco Integral</div>
+      <p style="margin-bottom:10px;font-size:13px;color:#aaa;">Estado vira "segurador universal" – <strong class="hl-red">NÃO aceita excludentes</strong>.</p>
+      <ul class="topic-list">
+        <li><strong>Danos Nucleares</strong></li>
+        <li><strong>Atos Terroristas</strong> em aeronaves</li>
+        <li><strong>Danos ambientais</strong> graves (majoritário)</li>
+      </ul>
+      <div class="alert alert-danger">
+        ⚠️ <strong>Pegadinha:</strong> "Responsabilidade por dano nuclear é subjetiva" → <span class="hl-red">ERRADO</span>. É Risco Integral (Objetiva).
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 10. PROCESSO ADMINISTRATIVO ===== -->
+<div class="section" id="s-9">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">📑</span>
+    <span class="section-title">10. Processo Administrativo Federal (Lei 9.784/99)</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">🚫 O que NÃO pode delegar</div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Mnemônico</div>
+        <div class="mnemonic-text">CE – NO – RA</div>
+        <div class="mnemonic-desc"><strong>CE:</strong> Competência <strong>Exclusiva</strong> por lei · <strong>NO:</strong> Atos de caráter <strong>Normativo</strong> · <strong>RA:</strong> Decisão de <strong>Recursos Administrativos</strong></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📋 Delegação vs Avocação</div>
+      <div class="comp-diagram">
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#a78bfa">Delegação</div>
+          <div class="comp-box-content">Pode ocorrer <strong>sem hierarquia</strong><br>Publicada no meio oficial<br>Revogável a qualquer tempo<br>Decisões mencionam a delegação</div>
+        </div>
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#fcd34d">Avocação</div>
+          <div class="comp-box-content"><strong>Excepcional</strong> e temporária<br><span class="hl-red">Exige hierarquia</span><br>Superior chama competência<br>Não existe avocação permanente</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⏰ Prazos e Regras</div>
+      <ul class="topic-list">
+        <li><strong>Decadência:</strong> A Adm. tem <span class="hl">5 anos</span> para anular atos com efeitos favoráveis, salvo má-fé.</li>
+        <li><strong>Direitos do Administrado:</strong> Ser tratado com respeito, ter ciência da tramitação, formular alegações e produzir provas.</li>
+      </ul>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 11. AGÊNCIAS ===== -->
+<div class="section" id="s-10">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🏢</span>
+    <span class="section-title">11. Agências Reguladoras vs Executivas</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="comp-diagram">
+      <div class="comp-box">
+        <div class="comp-box-title" style="color:#a78bfa">Reguladoras (ANM, ANATEL)</div>
+        <div class="comp-box-content">
+          Autarquias em <strong>Regime Especial</strong><br>
+          Mandato fixo (dirigentes estáveis)<br>
+          Autonomia técnica e financeira<br>
+          Sem subordinação (vinculação)<br>
+          Edita normas técnicas complementares
+        </div>
+      </div>
+      <div class="comp-box">
+        <div class="comp-box-title" style="color:#75d4a7">Executivas (INMETRO)</div>
+        <div class="comp-box-content">
+          <strong>Qualificação</strong> de autarquia/fundação existente<br>
+          Requisitos: Plano estratégico + <strong>Contrato de Gestão</strong><br>
+          Objetivo: Aumentar eficiência<br>
+          Ampliar autonomia
+        </div>
+      </div>
+    </div>
+
+    <div class="alert alert-danger">
+      ⚠️ <strong>Pegadinha:</strong> "Agência Reguladora é subordinada ao Ministério" → <span class="hl-red">ERRADO</span>. Há apenas vinculação/supervisão.
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 12. TERCEIRO SETOR ===== -->
+<div class="section" id="s-11">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🤝</span>
+    <span class="section-title">12. Terceiro Setor (Entidades Paraestatais)</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <p style="margin-bottom:14px;font-size:13px;color:#aaa;">PJs de <strong>direito privado</strong> que atuam "ao lado" do Estado. <span class="hl-red">NÃO integram</span> a Adm. Pública, mas colaboram com ela.</p>
+
+    <div class="subsection">
+      <div class="subsection-title">📊 Quadro Comparativo: OS vs OSCIP</div>
+      <table class="info-table">
+        <thead><tr><th>Característica</th><th>Organização Social (OS)</th><th>OSCIP</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Vínculo</strong></td><td><span class="hl">Contrato de Gestão</span></td><td><span class="hl-blue">Termo de Parceria</span></td></tr>
+          <tr><td><strong>Qualificação</strong></td><td><span class="hl-red">Discricionária</span> (conveniência)</td><td><span class="hl-green">Vinculada</span> (cumpriu a lei, ganha)</td></tr>
+          <tr><td><strong>Órgão</strong></td><td>Ministério da área de atuação</td><td>Ministério da Justiça</td></tr>
+          <tr><td><strong>Cessão de Servidores</strong></td><td>Permitida (ônus para o Estado)</td><td>Vedada (em regra)</td></tr>
+          <tr><td><strong>Conselho</strong></td><td>Com participação do Poder Público</td><td>Sem obrigatoriedade estatal</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🏭 Sistema S (Serviços Sociais Autônomos)</div>
+      <ul class="topic-list">
+        <li><strong>Exemplos:</strong> SESI, SESC, SENAI, SEBRAE.</li>
+        <li><strong>Criação:</strong> Autorização por lei + registro civil.</li>
+        <li><strong>Financiamento:</strong> Contribuições parafiscais (tributos).</li>
+        <li><strong>Licitação:</strong> <span class="hl-red">NÃO segue</span> a Lei 14.133/21, mas deve ter <span class="hl">regulamento próprio</span> baseado nos princípios gerais.</li>
+        <li><strong>Pessoal:</strong> CLT (sem concurso, mas com processo seletivo simplificado).</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⚖️ Atividades Típicas de Estado vs Sociais</div>
+      <table class="info-table">
+        <thead><tr><th>Tipo</th><th>Quem faz?</th><th>Exemplo</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Típica de Estado</strong></td><td>Somente o Estado (poder de império)</td><td>Segurança, Tributação, Justiça</td></tr>
+          <tr><td><strong>Social / Não Exclusiva</strong></td><td>Estado + Terceiro Setor</td><td>Saúde, Educação, Pesquisa</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-warning">
+        💡 <strong>Paraestatais</strong> colaboram com o Estado, mas <span class="hl-red">NÃO SÃO</span> o Estado. Exercem <strong>fomento</strong>. Uma OSCIP não pode aplicar multa de trânsito!
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== CHECKLIST V/F ===== -->
+<div class="section" id="s-vf" style="border-color: rgba(251,191,36,0.3);">
+  <div class="section-header" onclick="toggle(this)" style="background: linear-gradient(135deg, rgba(251,191,36,0.2), rgba(251,191,36,0.1));">
+    <span class="section-icon">✅</span>
+    <span class="section-title" style="color:#fcd34d;">Checklist de Pegadinhas CEBRASPE</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <table class="vf-table">
+      <thead><tr><th>Afirmação do CEBRASPE</th><th>Gabarito</th><th>Justificativa</th></tr></thead>
+      <tbody>
+        <tr><td>"Órgão Público tem personalidade jurídica"</td><td class="vf-errado">ERRADO</td><td>Órgão é desconcentrado, sem PJ.</td></tr>
+        <tr><td>"Judiciário pode revogar ato da Prefeitura"</td><td class="vf-errado">ERRADO</td><td>Judiciário só anula por ilegalidade.</td></tr>
+        <tr><td>"LAI permite pedidos anônimos"</td><td class="vf-errado">ERRADO</td><td>Exige identificação, mas veda exigência de motivo.</td></tr>
+        <tr><td>"Decisão em PAD impede controle judicial"</td><td class="vf-errado">ERRADO</td><td>Jurisdição una permite revisão de qualquer lesão.</td></tr>
+        <tr><td>"A decisão de recursos pode ser delegada"</td><td class="vf-errado">ERRADO</td><td>Vedação expressa (Art. 13 da Lei 9.784).</td></tr>
+        <tr><td>"Agência Reguladora é subordinada ao Ministério"</td><td class="vf-errado">ERRADO</td><td>Há apenas vinculação/supervisão.</td></tr>
+        <tr><td>"Ato com vício de motivo pode ser convalidado"</td><td class="vf-errado">ERRADO</td><td>Só vícios de forma e competência (não exclusiva).</td></tr>
+        <tr><td>"Responsabilidade por dano nuclear é subjetiva"</td><td class="vf-errado">ERRADO</td><td>É Risco Integral (Objetiva).</td></tr>
+      </tbody>
+    </table>
+
+  </div></div>
+</div>
+
+<!-- ===== PRAZOS ===== -->
+<div class="section" id="s-prazos" style="border-color: rgba(13,202,240,0.3);">
+  <div class="section-header" onclick="toggle(this)" style="background: linear-gradient(135deg, rgba(13,202,240,0.2), rgba(13,202,240,0.1));">
+    <span class="section-icon">⏰</span>
+    <span class="section-title" style="color:#8ee5f5;">Resumo Visual: Prazos Importantes</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <table class="info-table">
+      <thead><tr><th>Norma</th><th>Prazo</th><th>Contexto</th></tr></thead>
+      <tbody>
+        <tr><td><strong>LAI</strong></td><td><span class="hl">100 anos</span></td><td>Acesso a dados pessoais (intimidade)</td></tr>
+        <tr><td><strong>LAI</strong></td><td><span class="hl">25 anos</span></td><td>Ultrassecreto (renovável 1x)</td></tr>
+        <tr><td><strong>LAI</strong></td><td><span class="hl-blue">15 anos</span></td><td>Secreto</td></tr>
+        <tr><td><strong>LAI</strong></td><td><span class="hl-green">5 anos</span></td><td>Reservado</td></tr>
+        <tr><td><strong>LAI</strong></td><td>20 + 10 dias</td><td>Resposta ao pedido de informação</td></tr>
+        <tr><td><strong>LIA</strong></td><td><span class="hl">8 anos</span></td><td>Prescrição para punir improbidade</td></tr>
+        <tr><td><strong>8.112</strong></td><td><span class="hl">5 anos</span></td><td>Prescrição – Demissão/Cassação</td></tr>
+        <tr><td><strong>8.112</strong></td><td><span class="hl-blue">2 anos</span></td><td>Prescrição – Suspensão</td></tr>
+        <tr><td><strong>8.112</strong></td><td><span class="hl-green">180 dias</span></td><td>Prescrição – Advertência</td></tr>
+        <tr><td><strong>8.112</strong></td><td>90 dias</td><td>Prazo máximo de suspensão</td></tr>
+        <tr><td><strong>8.112</strong></td><td>30 dias</td><td>Abandono de cargo (faltas consecutivas)</td></tr>
+        <tr><td><strong>8.112</strong></td><td>30 dias</td><td>Posse (da nomeação)</td></tr>
+        <tr><td><strong>8.112</strong></td><td>15 dias</td><td>Exercício (da posse)</td></tr>
+        <tr><td><strong>9.784</strong></td><td><span class="hl">5 anos</span></td><td>Decadência para anular atos favoráveis</td></tr>
+      </tbody>
+    </table>
+
+  </div></div>
+</div>
+
+<div class="footer">
+  Revisão Direito Administrativo – Policial Legislativo CD 2026 | 4 Guias Consolidados | CEBRASPE 2022–2026
+</div>
+
+</div>
+
+<script>
+function toggle(h) { h.closest('.section').classList.toggle('open'); updateProgress(); }
+function expandAll() { document.querySelectorAll('.section').forEach(s => s.classList.add('open')); updateProgress(); }
+function collapseAll() { document.querySelectorAll('.section').forEach(s => s.classList.remove('open')); updateProgress(); }
+function goTo(i) {
+  const s = document.getElementById('s-' + i);
+  if (s) { s.classList.add('open'); s.scrollIntoView({ behavior: 'smooth', block: 'start' }); updateProgress(); }
+}
+function updateProgress() {
+  const all = document.querySelectorAll('.section').length;
+  const open = document.querySelectorAll('.section.open').length;
+  document.getElementById('progressFill').style.width = Math.round((open/all)*100) + '%';
+  document.getElementById('progressText').textContent = open + '/' + all;
+}
+document.addEventListener('keydown', e => {
+  const k = parseInt(e.key);
+  if (k >= 1 && k <= 9) goTo(k - 1);
+  if (e.key === '0') goTo(9);
+  if (e.key === 'a' || e.key === 'A') expandAll();
+  if (e.key === 'r' || e.key === 'R') collapseAll();
+});
+updateProgress();
+</script>
+
+</body>
+</html>
