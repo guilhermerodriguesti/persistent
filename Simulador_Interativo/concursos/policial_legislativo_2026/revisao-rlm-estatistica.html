@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão RLM e Estatística – Policial Legislativo CD 2026</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+.container { max-width: 960px; margin: 0 auto; padding: 20px; }
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center; padding: 30px 20px;
+  background: linear-gradient(135deg, #7c3aed, #8b5cf6);
+  border-radius: 12px; margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(124,58,237,0.2);
+  position: relative; overflow: hidden;
+}
+.header::before { content: '🧠'; position: absolute; font-size: 120px; opacity: 0.06; top: -10px; right: -10px; }
+.header h1 { font-size: 26px; color: #fff; margin-bottom: 8px; letter-spacing: 1px; }
+.header .subtitle { font-size: 14px; color: #e9d5ff; font-weight: 400; }
+.header .badge {
+  display: inline-block; background: rgba(255,255,255,0.15); color: #f3e8ff;
+  padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;
+  margin-top: 10px; border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ===== NAV ===== */
+.nav-bar {
+  display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+  margin-bottom: 25px; padding: 15px; background: #fff;
+  border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.nav-btn {
+  background: #faf5ff; color: #7c3aed; border: 1px solid #d8b4fe;
+  padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 11px;
+  font-weight: 600; transition: all 0.3s; white-space: nowrap;
+}
+.nav-btn:hover, .nav-btn.active {
+  background: #7c3aed; color: #fff; border-color: #7c3aed; transform: translateY(-1px);
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  background: #fff; border-radius: 12px; margin-bottom: 18px;
+  border: 1px solid #e2e8f0; overflow: hidden; transition: all 0.3s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.section:hover { border-color: #d8b4fe; box-shadow: 0 2px 8px rgba(124,58,237,0.1); }
+.section-header {
+  display: flex; align-items: center; gap: 12px; padding: 16px 20px;
+  cursor: pointer; background: linear-gradient(135deg, #faf5ff, #f3e8ff);
+  user-select: none; transition: background 0.3s;
+}
+.section-header:hover { background: linear-gradient(135deg, #f3e8ff, #ede9fe); }
+.section-icon { font-size: 26px; flex-shrink: 0; }
+.section-title { font-size: 16px; font-weight: 700; color: #581c87; flex: 1; }
+.section-toggle { font-size: 18px; color: #7c3aed; transition: transform 0.3s; flex-shrink: 0; }
+.section.open .section-toggle { transform: rotate(180deg); }
+.section-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.section.open .section-body { max-height: 12000px; }
+.section-content { padding: 20px; }
+
+/* ===== SUBSECTIONS ===== */
+.subsection { margin-bottom: 20px; }
+.subsection-title {
+  font-size: 14px; font-weight: 700; color: #7c3aed; margin-bottom: 12px;
+  padding-bottom: 6px; border-bottom: 2px solid #e9d5ff;
+  display: flex; align-items: center; gap: 8px;
+}
+
+/* ===== CARDS ===== */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin-bottom: 15px; }
+.card {
+  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;
+  padding: 14px; transition: all 0.3s;
+}
+.card:hover { background: #faf5ff; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.card-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #b45309; font-weight: 700; margin-bottom: 6px; }
+.card-value { font-size: 13px; line-height: 1.6; color: #475569; }
+
+/* ===== MNEMONIC ===== */
+.mnemonic {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 1px solid #fcd34d; border-left: 4px solid #f59e0b;
+  border-radius: 8px; padding: 14px 16px; margin: 12px 0;
+}
+.mnemonic-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #b45309; font-weight: 700; margin-bottom: 6px; }
+.mnemonic-text { font-size: 18px; font-weight: 800; color: #92400e; letter-spacing: 3px; margin-bottom: 4px; }
+.mnemonic-desc { font-size: 13px; color: #78716c; line-height: 1.5; }
+
+/* ===== ALERTS ===== */
+.alert { border-radius: 8px; padding: 14px 16px; margin: 12px 0; font-size: 13px; line-height: 1.6; }
+.alert-danger { background: #fef2f2; border: 1px solid #fecaca; border-left: 4px solid #dc2626; color: #991b1b; }
+.alert-info { background: #eff6ff; border: 1px solid #bfdbfe; border-left: 4px solid #2563eb; color: #1e40af; }
+.alert-success { background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid #16a34a; color: #166534; }
+.alert-warning { background: #fffbeb; border: 1px solid #fde68a; border-left: 4px solid #f59e0b; color: #92400e; }
+
+/* ===== LISTS ===== */
+.topic-list { list-style: none; margin: 10px 0; }
+.topic-list li {
+  padding: 10px 14px; margin-bottom: 6px; background: #f8fafc;
+  border-radius: 6px; border-left: 3px solid #7c3aed; font-size: 13px;
+  line-height: 1.6; transition: all 0.2s;
+}
+.topic-list li:hover { background: #faf5ff; border-left-color: #6d28d9; }
+.topic-list li strong { color: #6d28d9; }
+
+/* ===== HIGHLIGHTS ===== */
+.hl { color: #b45309; font-weight: 700; }
+.hl-blue { color: #7c3aed; font-weight: 700; }
+.hl-green { color: #16a34a; font-weight: 700; }
+.hl-red { color: #dc2626; font-weight: 700; }
+
+/* ===== TABLE ===== */
+.info-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px; }
+.info-table th {
+  background: #581c87; color: #fff; padding: 10px 12px;
+  text-align: left; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.info-table td { padding: 10px 12px; border-bottom: 1px solid #e2e8f0; color: #475569; line-height: 1.5; }
+.info-table tr:hover td { background: #faf5ff; }
+
+/* ===== COMP DIAGRAM ===== */
+.comp-diagram { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+.comp-box { background: #f8fafc; border-radius: 8px; padding: 14px; border: 1px solid #e2e8f0; text-align: center; }
+.comp-box-title { font-size: 12px; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+.comp-box-content { font-size: 12px; color: #475569; line-height: 1.6; }
+
+/* ===== FORMULA ===== */
+.formula-box {
+  background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #7c3aed;
+  border-radius: 8px; padding: 14px 16px; margin: 10px 0;
+  font-family: 'Courier New', monospace; font-size: 14px; color: #581c87;
+  text-align: center; font-weight: 700;
+}
+
+/* ===== BACK / CONTROLS ===== */
+.back-btn {
+  display: inline-flex; align-items: center; gap: 6px; background: #fff;
+  color: #7c3aed; border: 1px solid #e2e8f0; padding: 8px 16px;
+  border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 600;
+  transition: all 0.3s; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.back-btn:hover { background: #faf5ff; color: #581c87; }
+
+.progress-container {
+  display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+  background: #fff; border-radius: 8px; margin-bottom: 20px;
+  font-size: 13px; color: #581c87; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.progress-track { flex: 1; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, #7c3aed, #a855f7); border-radius: 4px; transition: width 0.5s; width: 0%; }
+.progress-text { font-weight: 700; min-width: 50px; text-align: right; }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
+.ctrl-btn {
+  background: #faf5ff; color: #7c3aed; border: 1px solid #d8b4fe;
+  padding: 8px 18px; border-radius: 8px; cursor: pointer;
+  font-size: 13px; font-weight: 600; transition: all 0.3s;
+}
+.ctrl-btn:hover { background: #7c3aed; color: #fff; }
+
+.footer { text-align: center; padding: 20px; color: #94a3b8; font-size: 12px; margin-top: 30px; }
+
+/* ===== EXEMPLOS ===== */
+.example {
+  background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid #22c55e;
+  border-radius: 8px; padding: 14px 16px; margin: 12px 0;
+}
+.example-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #16a34a; font-weight: 700; margin-bottom: 6px; }
+.example-text { font-size: 13px; color: #166534; line-height: 1.7; }
+.example-text strong { color: #15803d; }
+
+/* ===== QUIZ / QUESTÕES ===== */
+.quiz-block { margin: 16px 0; }
+.quiz-title { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: #7c3aed; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+.quiz-item {
+  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;
+  padding: 14px 16px; margin-bottom: 10px; cursor: pointer; transition: all 0.3s;
+}
+.quiz-item:hover { border-color: #d8b4fe; }
+.quiz-question { font-size: 13px; color: #1e293b; line-height: 1.6; margin-bottom: 8px; }
+.quiz-options { display: flex; gap: 10px; flex-wrap: wrap; }
+.quiz-opt {
+  padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700;
+  cursor: pointer; transition: all 0.3s; border: 2px solid #e2e8f0; background: #fff; color: #475569;
+}
+.quiz-opt:hover { border-color: #7c3aed; color: #7c3aed; }
+.quiz-opt.selected-c { border-color: #16a34a; background: #f0fdf4; color: #16a34a; }
+.quiz-opt.selected-e { border-color: #dc2626; background: #fef2f2; color: #dc2626; }
+.quiz-feedback {
+  max-height: 0; overflow: hidden; transition: max-height 0.4s ease; font-size: 13px; line-height: 1.6;
+}
+.quiz-feedback.show { max-height: 500px; padding-top: 10px; }
+.quiz-answer { padding: 10px 14px; border-radius: 6px; }
+.quiz-answer.correct { background: #f0fdf4; border-left: 3px solid #16a34a; color: #166534; }
+.quiz-answer.wrong { background: #fef2f2; border-left: 3px solid #dc2626; color: #991b1b; }
+
+/* ===== GRÁFICOS HTML ===== */
+.chart-container { margin: 14px 0; }
+.chart-title { font-size: 12px; font-weight: 700; color: #7c3aed; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+.bar-chart { display: flex; flex-direction: column; gap: 6px; }
+.bar-row { display: flex; align-items: center; gap: 10px; }
+.bar-label { font-size: 11px; color: #475569; min-width: 90px; text-align: right; font-weight: 600; }
+.bar-track { flex: 1; height: 22px; background: #e2e8f0; border-radius: 4px; overflow: hidden; position: relative; }
+.bar-fill { height: 100%; border-radius: 4px; transition: width 0.8s ease; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; font-size: 10px; font-weight: 700; color: #fff; }
+.bar-fill.teal { background: linear-gradient(90deg, #0d9488, #14b8a6); }
+.bar-fill.blue { background: linear-gradient(90deg, #2563eb, #3b82f6); }
+.bar-fill.amber { background: linear-gradient(90deg, #d97706, #f59e0b); }
+.bar-fill.red { background: linear-gradient(90deg, #dc2626, #ef4444); }
+.bar-fill.green { background: linear-gradient(90deg, #16a34a, #22c55e); }
+.bar-fill.purple { background: linear-gradient(90deg, #7c3aed, #8b5cf6); }
+
+.boxplot-visual {
+  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;
+  padding: 20px; margin: 12px 0; text-align: center;
+}
+.boxplot-diagram { position: relative; height: 60px; margin: 20px 40px; }
+.boxplot-line { position: absolute; top: 28px; left: 0; right: 0; height: 2px; background: #94a3b8; }
+.boxplot-box { position: absolute; top: 10px; height: 38px; background: rgba(124,58,237,0.15); border: 2px solid #7c3aed; border-radius: 4px; }
+.boxplot-median { position: absolute; top: 8px; height: 42px; width: 3px; background: #dc2626; }
+.boxplot-whisker { position: absolute; top: 28px; height: 2px; background: #475569; }
+.boxplot-tick { position: absolute; top: 20px; height: 18px; width: 2px; background: #475569; }
+.boxplot-labels { display: flex; justify-content: space-between; margin-top: 8px; font-size: 10px; color: #64748b; font-weight: 600; }
+
+/* ===== PIE CHART ===== */
+.pie-chart-container { display: flex; align-items: center; gap: 24px; margin: 14px 0; flex-wrap: wrap; }
+.pie-chart {
+  width: 160px; height: 160px; border-radius: 50%; position: relative; flex-shrink: 0;
+}
+.pie-legend { display: flex; flex-direction: column; gap: 6px; }
+.pie-legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #475569; }
+.pie-legend-color { width: 14px; height: 14px; border-radius: 3px; flex-shrink: 0; }
+
+/* ===== SCATTER PLOT ===== */
+.scatter-container { position: relative; width: 100%; height: 200px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; margin: 14px 0; overflow: hidden; }
+.scatter-axis-y { position: absolute; left: 0; top: 0; bottom: 30px; width: 40px; display: flex; flex-direction: column; justify-content: space-between; align-items: flex-end; padding: 8px 4px; font-size: 10px; color: #94a3b8; font-weight: 600; }
+.scatter-axis-x { position: absolute; bottom: 0; left: 40px; right: 0; height: 30px; display: flex; justify-content: space-between; align-items: center; padding: 0 8px; font-size: 10px; color: #94a3b8; font-weight: 600; }
+.scatter-area { position: absolute; top: 0; left: 40px; right: 0; bottom: 30px; }
+.scatter-dot { position: absolute; width: 10px; height: 10px; border-radius: 50%; background: #7c3aed; opacity: 0.7; transform: translate(-50%, -50%); transition: all 0.3s; }
+.scatter-dot:hover { opacity: 1; transform: translate(-50%, -50%) scale(1.5); }
+.scatter-grid-h { position: absolute; left: 0; right: 0; height: 1px; background: #e2e8f0; }
+.scatter-grid-v { position: absolute; top: 0; bottom: 0; width: 1px; background: #e2e8f0; }
+.scatter-label { position: absolute; bottom: -20px; left: 50%; transform: translateX(-50%); font-size: 11px; color: #7c3aed; font-weight: 700; }
+.scatter-label-y { position: absolute; left: -30px; top: 50%; transform: translateY(-50%) rotate(-90deg); font-size: 11px; color: #7c3aed; font-weight: 700; white-space: nowrap; }
+
+/* ===== HISTOGRAMA ===== */
+.histogram-container { margin: 14px 0; }
+.histogram-bars { display: flex; align-items: flex-end; height: 140px; gap: 0; padding: 0 10px; border-bottom: 2px solid #94a3b8; border-left: 2px solid #94a3b8; position: relative; }
+.histogram-bar { flex: 1; background: linear-gradient(180deg, #7c3aed, #a78bfa); border-radius: 3px 3px 0 0; position: relative; transition: all 0.3s; min-width: 0; }
+.histogram-bar:hover { background: linear-gradient(180deg, #6d28d9, #8b5cf6); }
+.histogram-bar-label { position: absolute; top: -18px; left: 50%; transform: translateX(-50%); font-size: 10px; font-weight: 700; color: #581c87; white-space: nowrap; }
+.histogram-x-labels { display: flex; padding: 4px 10px 0; }
+.histogram-x-label { flex: 1; text-align: center; font-size: 10px; color: #64748b; font-weight: 600; }
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .container { padding: 12px; }
+  .header h1 { font-size: 20px; }
+  .section-header { padding: 14px 16px; }
+  .section-title { font-size: 14px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .comp-diagram { grid-template-columns: 1fr; }
+  .nav-btn { padding: 5px 8px; font-size: 10px; }
+  .mnemonic-text { font-size: 15px; letter-spacing: 2px; }
+  .info-table { font-size: 11px; }
+  .info-table th, .info-table td { padding: 8px 8px; }
+}
+@media (max-width: 480px) {
+  .header { padding: 20px 14px; }
+  .header h1 { font-size: 17px; }
+  .section-content { padding: 14px; }
+  .controls { flex-direction: column; align-items: stretch; }
+  .ctrl-btn { text-align: center; }
+}
+@media print {
+  .nav-bar, .controls, .back-btn, .progress-container { display: none; }
+  .section { break-inside: avoid; }
+  .section-body { max-height: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<a href="index.html" class="back-btn">← Voltar ao Início</a>
+
+<div class="header">
+  <h1>🧠 Revisão – Raciocínio Lógico e Estatística</h1>
+  <div class="subtitle">Policial Legislativo – Câmara dos Deputados 2026</div>
+  <div class="badge">🎯 CEBRASPE 2024–2026 • 6 Temas · Exemplos e Questões Interativas</div>
+</div>
+
+<div class="progress-container">
+  <span>📖 Progresso</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-text" id="progressText">0/6</span>
+</div>
+
+<nav class="nav-bar">
+  <button class="nav-btn" onclick="goTo(0)">1. Estatística</button>
+  <button class="nav-btn" onclick="goTo(1)">2. Visualização</button>
+  <button class="nav-btn" onclick="goTo(2)">3. Combinatória</button>
+  <button class="nav-btn" onclick="goTo(3)">4. Lógica Proposicional</button>
+  <button class="nav-btn" onclick="goTo(4)">5. Argumentação</button>
+  <button class="nav-btn" onclick="goTo(5)">6. Sequências</button>
+</nav>
+
+<div class="controls">
+  <button class="ctrl-btn" onclick="expandAll()">📂 Expandir Tudo</button>
+  <button class="ctrl-btn" onclick="collapseAll()">📁 Recolher Tudo</button>
+</div>
+
+<!-- ===== 1. ESTATÍSTICA E PROBABILIDADE ===== -->
+<div class="section open" id="s-0">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">📐</span>
+    <span class="section-title">1. Estatística e Probabilidade</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">📊 Medidas de Tendência Central</div>
+      <ul class="topic-list">
+        <li><strong>Média (x̄):</strong> Sensível a <span class="hl-red">outliers</span>. Se novo elemento > média antiga, a nova média sobe. Soma = Média × n.</li>
+        <li><strong>Mediana (Q₂):</strong> Valor central do <span class="hl">Rol</span> (dados ordenados). Medida <span class="hl-green">robusta</span>. Se n par, média dos dois centrais.</li>
+        <li><strong>Moda:</strong> Valor mais frequente.</li>
+      </ul>
+      <div class="alert alert-warning">
+        ⚠️ <strong>Média de médias:</strong> Se duas amostras têm tamanhos diferentes, a média global <span class="hl-red">NÃO</span> é a média simples das duas médias — deve-se ponderar pelo tamanho de cada amostra.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📏 Dispersão: Variância e Desvio Padrão</div>
+      <div class="formula-box">s² = Σ(xᵢ − x̄)² / (n−1) &nbsp;&nbsp;|&nbsp;&nbsp; s = √s²</div>
+      <div class="comp-diagram">
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#7c3aed">Variância Amostral (s²)</div>
+          <div class="comp-box-content">Divide por <strong>n − 1</strong><br>Usa quando fala em "estimativa" ou "amostra aleatória"</div>
+        </div>
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#b45309">Variância Populacional (σ²)</div>
+          <div class="comp-box-content">Divide por <strong>n</strong><br>Usa quando tem toda a população</div>
+        </div>
+      </div>
+      <div class="alert alert-danger">
+        ⚠️ <strong>Pegadinhas de Variância:</strong><br>
+        • A variância <span class="hl-red">nunca é negativa</span>. Se o item afirmar que pode ser negativa → ERRADO.<br>
+        • Se todos os valores são iguais → variância e desvio padrão = <span class="hl">zero</span>.<br>
+        • Somar constante a todos os dados: média muda, mas variância/desvio <span class="hl-red">NÃO mudam</span>.<br>
+        • Multiplicar por constante k: desvio × k, variância × k².<br>
+        • Incluir um dado = média antiga → nova variância fica <span class="hl-green">menor</span>.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📦 Quantis e Boxplot</div>
+      <ul class="topic-list">
+        <li><strong>Q₁ (25%):</strong> Início da caixa do boxplot.</li>
+        <li><strong>Q₂ (Mediana, 50%):</strong> <span class="hl">Linha central</span> da caixa. <span class="hl-red">NÃO é a média</span>.</li>
+        <li><strong>Q₃ (75%):</strong> Fim da caixa.</li>
+        <li><strong>Hastes (Whiskers):</strong> Valores mínimos e máximos (excluindo outliers).</li>
+      </ul>
+      <div class="alert alert-info">
+        💡 <strong>Nunca</strong> calcule a mediana antes de colocar os dados em <strong>Rol</strong> (ordem crescente). O erro mais comum é pegar o valor central de uma lista desordenada.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">↗️ Assimetria</div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">Simétrica (Gauss)</div>
+          <div class="card-value"><span class="hl">Média = Mediana = Moda</span></div>
+        </div>
+        <div class="card">
+          <div class="card-label">Assimetria Positiva (Direita)</div>
+          <div class="card-value"><span class="hl">Moda &lt; Mediana &lt; Média</span><br>Cauda longa à direita</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Assimetria Negativa (Esquerda)</div>
+          <div class="card-value"><span class="hl">Média &lt; Mediana &lt; Moda</span><br>Cauda longa à esquerda</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📊 Média para Dados Agrupados</div>
+      <div class="formula-box">x̄ = Σ(xᵢ · fᵢ) / Σfᵢ</div>
+      <p style="font-size:13px;color:#64748b;margin-top:8px;">Cada valor é multiplicado pela sua frequência (peso). É diferente da média simples.</p>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🎲 Probabilidade</div>
+      <div class="formula-box">P(E) = Casos Favoráveis / Espaço Amostral</div>
+      <ul class="topic-list">
+        <li><strong>Independência:</strong> P(A ∩ B) = P(A) × P(B).</li>
+        <li><strong>União:</strong> P(A ∪ B) = P(A) + P(B) − P(A ∩ B). Se mutuamente exclusivos, interseção = 0.</li>
+        <li><strong>Condicional:</strong> "Dado que" ou "sabendo que" → <span class="hl">reduz o espaço amostral</span>.</li>
+        <li><strong>Frequentista:</strong> Baseada na frequência observada em repetidos experimentos.</li>
+        <li><strong>Princípio da Indiferença:</strong> Proposições simétricas → mesma probabilidade.</li>
+      </ul>
+      <div class="formula-box">Combinação: C(n,p) = n! / [p! × (n−p)!]</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📈 Distribuições</div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">Qui-Quadrado (χ²)</div>
+          <div class="card-value">Soma de normais padrão (Z) ao quadrado.<br>Média: <span class="hl">k</span> | Variância: <span class="hl">2k</span><br>Testes de aderência: rejeita H₀ se χ²<sub>cal</sub> > χ²<sub>tab</sub></div>
+        </div>
+        <div class="card">
+          <div class="card-label">Uniforme Contínua [a,b]</div>
+          <div class="card-value">Média: <span class="hl">(a+b)/2</span><br>Variância: <span class="hl">(b−a)²/12</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🧪 Teste de Hipóteses</div>
+      <table class="info-table">
+        <thead><tr><th>Conceito</th><th>Definição</th><th>Símbolo</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Erro Tipo I</strong></td><td>Rejeitar H₀ quando ela é <span class="hl-green">verdadeira</span></td><td>α (Significância)</td></tr>
+          <tr><td><strong>Erro Tipo II</strong></td><td>Aceitar H₀ quando ela é <span class="hl-red">falsa</span></td><td>β</td></tr>
+          <tr><td><strong>Poder do Teste</strong></td><td>Rejeitar H₀ quando ela é falsa (decisão correta)</td><td><span class="hl">1 − β</span></td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-info">
+        💡 Se aumenta α → aumenta o Poder do Teste (1 − β).<br>
+        💡 <strong>Teste Bicaudal:</strong> Quando H₁ usa "diferente" (≠).
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📋 Variáveis Qualitativas</div>
+      <ul class="topic-list">
+        <li><strong>Nominais:</strong> Sem ordem natural (ex: cor, sexo).</li>
+        <li><strong>Ordinais:</strong> Com ordem natural (ex: classe social, grau de instrução).</li>
+      </ul>
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Cálculo de Variância e Desvio Padrão (Passo a Passo)</div>
+      <div class="example-text">
+        <strong>Dados amostrais:</strong> {2, 4, 4, 4, 5, 5, 7, 9}<br>
+        1. <strong>Média:</strong> x̄ = (2+4+4+4+5+5+7+9) / 8 = 40 / 8 = <strong>5</strong><br>
+        2. <strong>Desvios:</strong> (2−5)²=9, (4−5)²=1, (4−5)²=1, (4−5)²=1, (5−5)²=0, (5−5)²=0, (7−5)²=4, (9−5)²=16<br>
+        3. <strong>Soma dos quadrados:</strong> 9+1+1+1+0+0+4+16 = <strong>32</strong><br>
+        4. <strong>Variância amostral:</strong> s² = 32 / (8−1) = 32/7 ≈ <strong>4,57</strong><br>
+        5. <strong>Desvio padrão:</strong> s = √4,57 ≈ <strong>2,14</strong><br>
+        6. <strong>Mediana:</strong> Rol: 2,4,4,4,5,5,7,9 → (4+5)/2 = <strong>4,5</strong><br>
+        7. <strong>Moda:</strong> <strong>4</strong> (aparece 3 vezes)
+      </div>
+    </div>
+
+    <div class="chart-container">
+      <div class="chart-title">📊 Distribuição de Frequências (Exemplo: Notas de 40 Candidatos)</div>
+      <div class="bar-chart">
+        <div class="bar-row"><div class="bar-label">0–2</div><div class="bar-track"><div class="bar-fill red" style="width:10%">4</div></div></div>
+        <div class="bar-row"><div class="bar-label">2–4</div><div class="bar-track"><div class="bar-fill amber" style="width:20%">8</div></div></div>
+        <div class="bar-row"><div class="bar-label">4–6</div><div class="bar-track"><div class="bar-fill teal" style="width:35%">14</div></div></div>
+        <div class="bar-row"><div class="bar-label">6–8</div><div class="bar-track"><div class="bar-fill green" style="width:25%">10</div></div></div>
+        <div class="bar-row"><div class="bar-label">8–10</div><div class="bar-track"><div class="bar-fill blue" style="width:10%">4</div></div></div>
+      </div>
+      <p style="font-size:11px;color:#94a3b8;margin-top:6px;">Distribuição simétrica: Média ≈ Mediana ≈ Moda (classe modal: 4–6)</p>
+    </div>
+
+    <div class="boxplot-visual">
+      <div style="font-size:12px;font-weight:700;color:#7c3aed;margin-bottom:8px;">📦 BOXPLOT – Exemplo Visual (Notas: 10 a 90)</div>
+      <div class="boxplot-diagram">
+        <div class="boxplot-line"></div>
+        <div class="boxplot-whisker" style="left:5%;width:20%"></div>
+        <div class="boxplot-tick" style="left:5%"></div>
+        <div class="boxplot-box" style="left:25%;width:40%"></div>
+        <div class="boxplot-median" style="left:50%"></div>
+        <div class="boxplot-whisker" style="left:65%;width:25%"></div>
+        <div class="boxplot-tick" style="left:90%"></div>
+      </div>
+      <div class="boxplot-labels">
+        <span>Min = 10</span>
+        <span>Q₁ = 30</span>
+        <span style="color:#dc2626;font-weight:700;">Mediana = 50</span>
+        <span>Q₃ = 70</span>
+        <span>Max = 90</span>
+      </div>
+      <p style="font-size:11px;color:#94a3b8;margin-top:10px;">IIQ = Q₃ − Q₁ = 70 − 30 = 40 · A linha vermelha é a <strong>mediana</strong>, NÃO a média.</p>
+    </div>
+
+    <div class="chart-container">
+      <div class="chart-title">↗️ Efeito da Assimetria na Posição das Medidas</div>
+      <div class="bar-chart">
+        <div class="bar-row"><div class="bar-label" style="min-width:130px;">Simétrica</div><div class="bar-track"><div class="bar-fill teal" style="width:50%">Média = Mediana = Moda</div></div></div>
+        <div class="bar-row"><div class="bar-label" style="min-width:130px;">Assim. Positiva →</div><div class="bar-track"><div class="bar-fill amber" style="width:70%">Moda &lt; Mediana &lt; Média</div></div></div>
+        <div class="bar-row"><div class="bar-label" style="min-width:130px;">← Assim. Negativa</div><div class="bar-track"><div class="bar-fill purple" style="width:70%">Média &lt; Mediana &lt; Moda</div></div></div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Propriedades da Variância</div>
+      <div class="example-text">
+        <strong>Dados:</strong> {10, 20, 30} → Média = 20, Variância = 100<br><br>
+        <strong>Somar 5 a todos:</strong> {15, 25, 35} → Média = 25, Variância = <strong>100</strong> (não mudou!)<br>
+        <strong>Multiplicar por 2:</strong> {20, 40, 60} → Média = 40, Variância = 100 × 2² = <strong>400</strong>, Desvio = √100 × 2 = <strong>20</strong><br>
+        <strong>Adicionar a média (20):</strong> {10, 20, 20, 30} → Nova variância < 100 (denominador aumentou, soma dos desvios manteve-se)
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> Se somarmos uma constante k a todos os valores de um conjunto de dados, a variância e o desvio padrão desse conjunto permanecerão inalterados.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-est-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-est-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-est-1"><div class="quiz-answer correct">✅ <strong>CERTO.</strong> Somar uma constante desloca todos os dados igualmente — a dispersão em relação à média não muda. Só a média é afetada.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> Em um boxplot, a linha central da caixa representa a média aritmética dos dados.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-est-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-est-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-est-2"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> A linha central do boxplot é a <strong>mediana</strong> (Q₂), não a média. A média geralmente não é representada no boxplot.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q3.</strong> Em uma distribuição assimétrica à direita (positiva), a média aritmética é maior que a mediana, pois valores extremos superiores "puxam" a média para cima.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-est-3')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-est-3')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-est-3"><div class="quiz-answer correct">✅ <strong>CERTO.</strong> Assimetria positiva (cauda à direita): Moda < Mediana < <strong>Média</strong>. Outliers altos puxam a média para cima.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q4.</strong> Ao se calcular a variância de uma amostra aleatória, utiliza-se o denominador n (número total de observações), assim como na variância populacional.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-est-4')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-est-4')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-est-4"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> A variância <strong>amostral</strong> usa denominador <strong>n − 1</strong> (correção de Bessel). Apenas a variância <strong>populacional</strong> usa n.</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 2. VISUALIZAÇÃO DE DADOS ===== -->
+<div class="section" id="s-1">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">📉</span>
+    <span class="section-title">2. Visualização de Dados</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">Histograma</div>
+        <div class="card-value">Variáveis quantitativas <span class="hl">contínuas</span>. A <strong>área</strong> das barras representa frequência. Barras <strong>contíguas</strong> (coladas).</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Boxplot (Diagrama de Caixa)</div>
+        <div class="card-value">Quartis, dispersão e outliers. O traço central é a <span class="hl">mediana</span>, <span class="hl-red">NÃO</span> a média.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Barras</div>
+        <div class="card-value">Variáveis qualitativas (nominais/ordinais) ou quantitativas discretas. Bom para tendências.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Setores (Pizza)</div>
+        <div class="card-value">Variáveis qualitativas nominais (poucas categorias). <span class="hl-red">Ruim</span> para dados complexos ou ordinais.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Dispersão (Scatter)</div>
+        <div class="card-value">Correlação entre duas variáveis.</div>
+      </div>
+    </div>
+
+    <div class="alert alert-info">
+      💡 <strong>Princípio de Tufte:</strong> Razão dado-tinta – eliminar o que é meramente decorativo.<br>
+      💡 <strong>Storytelling:</strong> Transformar dados em narrativa visual para suporte à decisão.
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📊 Exemplos Visuais de Gráficos</div>
+
+      <!-- Histograma -->
+      <div class="chart-container">
+        <div class="chart-title">📊 Histograma – Distribuição de Idades dos Servidores</div>
+        <div class="histogram-container">
+          <div class="histogram-bars">
+            <div class="histogram-bar" style="height:18%"><div class="histogram-bar-label">5</div></div>
+            <div class="histogram-bar" style="height:32%"><div class="histogram-bar-label">9</div></div>
+            <div class="histogram-bar" style="height:57%"><div class="histogram-bar-label">16</div></div>
+            <div class="histogram-bar" style="height:75%"><div class="histogram-bar-label">21</div></div>
+            <div class="histogram-bar" style="height:100%"><div class="histogram-bar-label">28</div></div>
+            <div class="histogram-bar" style="height:68%"><div class="histogram-bar-label">19</div></div>
+            <div class="histogram-bar" style="height:39%"><div class="histogram-bar-label">11</div></div>
+            <div class="histogram-bar" style="height:14%"><div class="histogram-bar-label">4</div></div>
+          </div>
+          <div class="histogram-x-labels">
+            <div class="histogram-x-label">20–25</div>
+            <div class="histogram-x-label">25–30</div>
+            <div class="histogram-x-label">30–35</div>
+            <div class="histogram-x-label">35–40</div>
+            <div class="histogram-x-label">40–45</div>
+            <div class="histogram-x-label">45–50</div>
+            <div class="histogram-x-label">50–55</div>
+            <div class="histogram-x-label">55–60</div>
+          </div>
+        </div>
+        <p style="font-size:11px;color:#94a3b8;margin-top:6px;">Barras <strong>contíguas</strong> (coladas) → variável contínua. Classe modal: 40–45 anos.</p>
+      </div>
+
+      <!-- Gráfico de Barras -->
+      <div class="chart-container">
+        <div class="chart-title">📊 Gráfico de Barras – Servidores por Departamento</div>
+        <div class="bar-chart">
+          <div class="bar-row"><div class="bar-label">Segurança</div><div class="bar-track"><div class="bar-fill purple" style="width:85%">340</div></div></div>
+          <div class="bar-row"><div class="bar-label">Administrativo</div><div class="bar-track"><div class="bar-fill teal" style="width:62%">248</div></div></div>
+          <div class="bar-row"><div class="bar-label">Legislativo</div><div class="bar-track"><div class="bar-fill blue" style="width:50%">200</div></div></div>
+          <div class="bar-row"><div class="bar-label">TI</div><div class="bar-track"><div class="bar-fill green" style="width:30%">120</div></div></div>
+          <div class="bar-row"><div class="bar-label">Comunicação</div><div class="bar-track"><div class="bar-fill amber" style="width:22%">88</div></div></div>
+        </div>
+        <p style="font-size:11px;color:#94a3b8;margin-top:6px;">Barras <strong>separadas</strong> → variável qualitativa (departamento). Bom para comparar categorias.</p>
+      </div>
+
+      <!-- Gráfico de Setores (Pizza) -->
+      <div class="chart-container">
+        <div class="chart-title">🥧 Gráfico de Setores – Distribuição de Gastos da Câmara</div>
+        <div class="pie-chart-container">
+          <div class="pie-chart" style="background: conic-gradient(#7c3aed 0% 45%, #0d9488 45% 70%, #f59e0b 70% 85%, #dc2626 85% 95%, #64748b 95% 100%);"></div>
+          <div class="pie-legend">
+            <div class="pie-legend-item"><div class="pie-legend-color" style="background:#7c3aed;"></div><strong>Pessoal</strong> – 45%</div>
+            <div class="pie-legend-item"><div class="pie-legend-color" style="background:#0d9488;"></div><strong>Custeio</strong> – 25%</div>
+            <div class="pie-legend-item"><div class="pie-legend-color" style="background:#f59e0b;"></div><strong>Investimento</strong> – 15%</div>
+            <div class="pie-legend-item"><div class="pie-legend-color" style="background:#dc2626;"></div><strong>Serviços</strong> – 10%</div>
+            <div class="pie-legend-item"><div class="pie-legend-color" style="background:#64748b;"></div><strong>Outros</strong> – 5%</div>
+          </div>
+        </div>
+        <p style="font-size:11px;color:#94a3b8;margin-top:6px;">Ideal para poucas categorias nominais. A fatia maior domina a visualização.</p>
+      </div>
+
+      <!-- Gráfico de Dispersão (Scatter) -->
+      <div class="chart-container">
+        <div class="chart-title">🔵 Gráfico de Dispersão – Horas de Estudo × Nota na Prova</div>
+        <div class="scatter-container">
+          <div class="scatter-axis-y">
+            <span>100</span><span>80</span><span>60</span><span>40</span><span>20</span>
+          </div>
+          <div class="scatter-axis-x">
+            <span>2h</span><span>4h</span><span>6h</span><span>8h</span><span>10h</span><span>12h</span>
+          </div>
+          <div class="scatter-area">
+            <div class="scatter-grid-h" style="top:20%"></div>
+            <div class="scatter-grid-h" style="top:40%"></div>
+            <div class="scatter-grid-h" style="top:60%"></div>
+            <div class="scatter-grid-h" style="top:80%"></div>
+            <div class="scatter-dot" style="left:8%;top:78%" title="2h → 35"></div>
+            <div class="scatter-dot" style="left:12%;top:72%" title="2.5h → 40"></div>
+            <div class="scatter-dot" style="left:18%;top:65%" title="3h → 48"></div>
+            <div class="scatter-dot" style="left:25%;top:58%" title="4h → 55"></div>
+            <div class="scatter-dot" style="left:30%;top:52%" title="4.5h → 60"></div>
+            <div class="scatter-dot" style="left:38%;top:48%" title="5h → 63"></div>
+            <div class="scatter-dot" style="left:42%;top:42%" title="5.5h → 68"></div>
+            <div class="scatter-dot" style="left:50%;top:38%" title="6.5h → 72"></div>
+            <div class="scatter-dot" style="left:55%;top:35%" title="7h → 74"></div>
+            <div class="scatter-dot" style="left:62%;top:30%" title="8h → 78"></div>
+            <div class="scatter-dot" style="left:68%;top:25%" title="8.5h → 82"></div>
+            <div class="scatter-dot" style="left:75%;top:22%" title="9.5h → 85"></div>
+            <div class="scatter-dot" style="left:82%;top:18%" title="10h → 88"></div>
+            <div class="scatter-dot" style="left:88%;top:12%" title="11h → 92"></div>
+            <div class="scatter-dot" style="left:95%;top:8%" title="12h → 95"></div>
+          </div>
+        </div>
+        <p style="font-size:11px;color:#94a3b8;margin-top:6px;">Correlação <strong>positiva</strong>: mais horas de estudo → nota mais alta. Cada ponto = 1 candidato.</p>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Escolha do Gráfico Correto</div>
+      <div class="example-text">
+        <strong>Cenário 1:</strong> Mostrar a distribuição de idades de servidores da Câmara → <strong>Histograma</strong> (variável contínua, barras coladas).<br>
+        <strong>Cenário 2:</strong> Comparar salários por departamento → <strong>Boxplot</strong> (mostra mediana, quartis e outliers).<br>
+        <strong>Cenário 3:</strong> Mostrar a proporção de gastos por categoria (pessoal, custeio, investimento) → <strong>Gráfico de Setores (pizza)</strong> (poucas categorias nominais).<br>
+        <strong>Cenário 4:</strong> Verificar se há relação entre horas de estudo e nota na prova → <strong>Gráfico de Dispersão (scatter)</strong>.
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> O histograma é adequado para representar variáveis qualitativas nominais, como cor ou estado civil, sendo as barras separadas por espaçamentos.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-vis-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-vis-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-vis-1"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> O histograma é para variáveis quantitativas <strong>contínuas</strong>, com barras <strong>contíguas</strong> (coladas). Para variáveis qualitativas, use gráfico de <strong>barras</strong> (com espaço entre as barras).</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 3. ANÁLISE COMBINATÓRIA ===== -->
+<div class="section" id="s-2">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🔢</span>
+    <span class="section-title">3. Análise Combinatória</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">🎯 Combinação vs Arranjo/Permutação</div>
+      <div class="comp-diagram">
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#7c3aed">Combinação C(n,p)</div>
+          <div class="comp-box-content">A ordem <strong>NÃO importa</strong><br>Comissões, equipes, grupos<br>C(n,p) = n! / [p!(n−p)!]</div>
+        </div>
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#b45309">Arranjo / Permutação</div>
+          <div class="comp-box-content">A ordem <strong>IMPORTA</strong><br>Senhas, filas, cargos distintos<br>(Presidente vs. Diretor)</div>
+        </div>
+      </div>
+      <div class="alert alert-info">
+        💡 <strong>Dica:</strong> Se trocar a posição dos membros <span class="hl-red">NÃO</span> cria um grupo novo → use <strong>Combinação</strong>. Se a posição/função define um resultado diferente → a ordem importa.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔁 Casos Especiais Recorrentes</div>
+      <ul class="topic-list">
+        <li><strong>Permutação Circular:</strong> Mesa redonda → <span class="hl">(n−1)!</span>. Se há restrições ("duas pessoas não podem sentar juntas"), subtraia os casos indesejados do total.</li>
+        <li><strong>Anagramas com Repetição:</strong> Total de letras! dividido pelo fatorial das repetições. Ex: URUGUAI, FIFA.</li>
+        <li><strong>PFC (Princípio Fundamental da Contagem):</strong> Etapas sucessivas e independentes. Multiplique as possibilidades de cada etapa.</li>
+      </ul>
+    </div>
+
+    <div class="alert alert-danger">
+      ⚠️ <strong>Pegadinha CEBRASPE:</strong> Questões com números altos (ex: "mais de 1 milhão"). Não perca tempo calculando o número exato — faça estimativa ou simplifique frações.
+    </div>
+
+    <div class="alert alert-warning">
+      ⚠️ <strong>"Exatamente x mulheres" vs "Pelo menos x mulheres":</strong> São cálculos completamente diferentes. Atenção redobrada aos detalhes do enunciado!
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Combinação vs Arranjo</div>
+      <div class="example-text">
+        <strong>Cenário:</strong> 10 deputados disponíveis.<br><br>
+        <strong>Combinação:</strong> "Quantas comissões de 3 membros?" → C(10,3) = 10!/(3!·7!) = <strong>120</strong><br>
+        (A ordem NÃO importa — {Ana, Bruno, Carlos} = {Carlos, Ana, Bruno})<br><br>
+        <strong>Arranjo:</strong> "Quantas formas de escolher Presidente, Vice e Secretário?" → A(10,3) = 10·9·8 = <strong>720</strong><br>
+        (A ordem IMPORTA — Presidente=Ana ≠ Presidente=Bruno)<br><br>
+        <strong>Permutação Circular:</strong> "De quantos modos 5 pessoas sentam em mesa redonda?" → (5−1)! = 4! = <strong>24</strong><br><br>
+        <strong>Anagrama com repetição:</strong> "BANANA" → 6 letras, A repete 3×, N repete 2× → 6!/(3!·2!) = 720/12 = <strong>60</strong>
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> Uma comissão parlamentar será formada por 4 membros escolhidos entre 12 deputados. O número de comissões possíveis é igual a C(12,4) = 495.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-comb-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-comb-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-comb-1"><div class="quiz-answer correct">✅ <strong>CERTO.</strong> C(12,4) = 12!/(4!·8!) = (12·11·10·9)/(4·3·2·1) = 11880/24 = <strong>495</strong>. Como é comissão, a ordem não importa → Combinação.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> O número de anagramas distintos da palavra "FIFA" é superior a 15.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-comb-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-comb-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-comb-2"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> FIFA tem 4 letras com F repetido 2× e A repetido 1× e I repetido 1× → 4!/(2!) = 24/2 = <strong>12</strong>. 12 não é superior a 15.</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 4. LÓGICA PROPOSICIONAL ===== -->
+<div class="section" id="s-3">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🧩</span>
+    <span class="section-title">4. Lógica Proposicional</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">🔗 Negações – Leis de De Morgan</div>
+      <table class="info-table">
+        <thead><tr><th>Proposição</th><th>Negação</th><th>Regra Prática</th></tr></thead>
+        <tbody>
+          <tr><td><strong>P ∧ Q</strong> (e)</td><td>¬P ∨ ¬Q</td><td>Nega as duas e troca "e" por "ou"</td></tr>
+          <tr><td><strong>P ∨ Q</strong> (ou)</td><td>¬P ∧ ¬Q</td><td>Nega as duas e troca "ou" por "e"</td></tr>
+          <tr><td><strong>P → Q</strong> (se...então)</td><td>P ∧ ¬Q</td><td><span class="hl">Mantém a 1ª E Nega a 2ª</span> (Regra do Mané)</td></tr>
+          <tr><td><strong>Todo A é B</strong></td><td>Algum A <strong>não</strong> é B</td><td>"Pelo menos um" fura a regra</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔄 Equivalências da Condicional (P → Q)</div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Duas equivalências obrigatórias</div>
+        <div class="mnemonic-text">CONTRA + NEY</div>
+        <div class="mnemonic-desc"><strong>Contrapositiva:</strong> ¬Q → ¬P (inverte e nega)<br><strong>Disjuntiva (Neymar):</strong> ¬P ∨ Q (nega a 1ª OU mantém a 2ª)</div>
+      </div>
+      <div class="alert alert-warning">
+        ⚠️ <strong>Armadilha da "Consequência":</strong><br>
+        • "A é consequência de B" → <span class="hl">B → A</span> (o que causa vem primeiro na lógica)<br>
+        • "A, <strong>pois</strong> B" → <span class="hl">B → A</span><br>
+        • "A, <strong>já que</strong> B" → <span class="hl">B → A</span>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📋 Tabela-Verdade: Conectivos</div>
+      <table class="info-table">
+        <thead><tr><th>Conectivo</th><th>Verdadeira quando</th><th>Falsa quando</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Conjunção (∧)</strong></td><td>Ambas V</td><td>Pelo menos uma F</td></tr>
+          <tr><td><strong>Disjunção (∨)</strong></td><td>Pelo menos uma V</td><td>Ambas F</td></tr>
+          <tr><td><strong>Condicional (→)</strong></td><td>Tudo, <span class="hl-red">exceto V → F</span></td><td>Apenas <span class="hl-red">V → F</span></td></tr>
+          <tr><td><strong>Bicondicional (↔)</strong></td><td>Valores iguais (V-V ou F-F)</td><td>Valores diferentes</td></tr>
+          <tr><td><strong>Disj. Exclusiva (⊻)</strong></td><td>Valores diferentes</td><td>Valores iguais</td></tr>
+        </tbody>
+      </table>
+      <div class="formula-box">Número de linhas = 2ⁿ &nbsp;(n = proposições simples)</div>
+      <div class="alert alert-info">
+        💡 "P" e "¬P" contam como <strong>uma</strong> proposição simples. 4 simples = 16 linhas; 5 simples = 32 linhas.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">✅ Tautologia, Contradição e Contingência</div>
+      <ul class="topic-list">
+        <li><strong>Tautologia:</strong> <span class="hl-green">Sempre verdadeira</span>. Equivalências como a Contrapositiva são tautologias.</li>
+        <li><strong>Contradição:</strong> <span class="hl-red">Sempre falsa</span>.</li>
+        <li><strong>Contingência:</strong> Pode ser V ou F (depende dos valores).</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⚠️ O que NÃO é proposição</div>
+      <ul class="topic-list">
+        <li><strong>Interrogativas:</strong> Perguntas não possuem valor lógico.</li>
+        <li><strong>Exclamativas:</strong> Expressões de sentimento.</li>
+        <li><strong>Imperativas:</strong> Ordens ou pedidos (ex: "Cumpra suas obrigações").</li>
+        <li><strong>Sentenças abertas:</strong> Frases com variáveis sem valor definido (ex: x + 2 = 5).</li>
+        <li><strong>Paradoxos:</strong> Sentenças autorreferenciais (ex: "Esta afirmação é falsa").</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔢 Negação de Quantificadores</div>
+      <table class="info-table">
+        <thead><tr><th>Original</th><th>Negação Correta</th><th>Erro Comum (Pegadinha)</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Todo</strong> A é B</td><td><strong>Algum</strong> A <strong>não</strong> é B</td><td><span class="hl-red">Nenhum A é B</span> (ERRADO!)</td></tr>
+          <tr><td><strong>Nenhum</strong> A é B</td><td><strong>Algum</strong> A é B</td><td>Todo A é B</td></tr>
+          <tr><td><strong>Algum</strong> A é B</td><td><strong>Nenhum</strong> A é B</td><td>Algum A não é B</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Negação e Equivalência na Prática</div>
+      <div class="example-text">
+        <strong>Proposição:</strong> "Se o deputado votou a favor, então o projeto foi aprovado." (P → Q)<br><br>
+        <strong>Negação (Regra do Mané):</strong> "O deputado votou a favor <strong>E</strong> o projeto <strong>NÃO</strong> foi aprovado." (P ∧ ¬Q)<br><br>
+        <strong>Contrapositiva (equivalente):</strong> "Se o projeto NÃO foi aprovado, então o deputado NÃO votou a favor." (¬Q → ¬P)<br><br>
+        <strong>Disjuntiva (Neymar, equivalente):</strong> "O deputado NÃO votou a favor OU o projeto foi aprovado." (¬P ∨ Q)<br><br>
+        <strong>Armadilha:</strong> "A aprovação é <strong>consequência</strong> do voto favorável" → Quem causa vem primeiro: <strong>Voto → Aprovação</strong> (B → A, não A → B!)
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> A negação da proposição "Se chove, então a rua fica molhada" é "Se não chove, então a rua não fica molhada".</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-log-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-log-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-log-1"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> A negação de P → Q é <strong>P ∧ ¬Q</strong> ("Chove E a rua NÃO fica molhada"). O que foi apresentado (¬P → ¬Q) é a <strong>inversa</strong>, não a negação.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> A proposição "Todo servidor é concursado" tem como negação correta "Nenhum servidor é concursado".</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-log-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-log-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-log-2"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> A negação de "Todo A é B" é "<strong>Algum</strong> A <strong>não</strong> é B" (pelo menos um servidor NÃO é concursado). Jamais use "Nenhum" para negar "Todo".</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q3.</strong> Considere a proposição composta P → Q. Se P for falsa, a proposição composta será necessariamente verdadeira, independentemente do valor lógico de Q.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-log-3')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-log-3')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-log-3"><div class="quiz-answer correct">✅ <strong>CERTO.</strong> A condicional só é falsa no caso <strong>V → F</strong>. Se o antecedente (P) é falso, a condicional é verdadeira não importa o consequente.</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 5. ARGUMENTAÇÃO E FALÁCIAS ===== -->
+<div class="section" id="s-4">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">⚖️</span>
+    <span class="section-title">5. Argumentação e Falácias</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">✅ Regras de Inferência Válidas</div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">Modus Ponens</div>
+          <div class="card-value"><strong>Afirmação do Antecedente.</strong><br>Se P → Q é verdade e P ocorre → <span class="hl-green">Q obrigatoriamente ocorre</span>.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Modus Tollens</div>
+          <div class="card-value"><strong>Negação do Consequente.</strong><br>Se P → Q é verdade e ¬Q ocorre → <span class="hl-green">¬P obrigatoriamente ocorre</span>.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">❌ Falácias (Inferências INVÁLIDAS)</div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">Afirmação do Consequente</div>
+          <div class="card-value">"Se chove, rua molha. Rua molhada, logo choveu." → <span class="hl-red">INVÁLIDO</span>. (Alguém pode ter jogado um balde de água).</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Negação do Antecedente</div>
+          <div class="card-value">"Se chove, rua molha. Não choveu, logo rua seca." → <span class="hl-red">INVÁLIDO</span>.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🎭 Falácias de Raciocínio Crítico</div>
+      <ul class="topic-list">
+        <li><strong>Generalização Apressada:</strong> Conclusão global baseada em caso isolado.</li>
+        <li><strong>Falsa Causa (Post Hoc):</strong> "Porque B veio após A, A causou B." → <span class="hl-red">INVÁLIDO</span>.</li>
+        <li><strong>Apelo à Autoridade:</strong> "É verdade porque o especialista X disse." Sem prova lógica.</li>
+        <li><strong>Ad Hominem:</strong> Atacar a <span class="hl-red">pessoa</span>, não o argumento.</li>
+        <li><strong>Falsa Dicotomia:</strong> Fingir que só existem duas opções, ignorando meio-termo.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔍 Diagramas Lógicos (Venn)</div>
+      <ul class="topic-list">
+        <li>Para "Todo", "Algum" e "Nenhum" → desenhe círculos para visualizar interseções.</li>
+        <li>Se houver <span class="hl-red">qualquer</span> possibilidade de a conclusão ser falsa com premissas verdadeiras → argumento <span class="hl-red">INVÁLIDO</span>.</li>
+      </ul>
+      <div class="alert alert-danger">
+        ⚠️ <strong>Pegadinha:</strong> A conclusão pode ser "bonitinha" ou verdadeira no mundo real, mas se não derivar das premissas → o item é <span class="hl-red">ERRADO</span>.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🧩 Puzzles de Associação (Matriz de Decisão)</div>
+      <ul class="topic-list">
+        <li><strong>Técnica:</strong> Construa uma grade cruzando categorias.</li>
+        <li><strong>Pistas Negativas:</strong> "Ana não é cerimonialista" → marque <span class="hl-red">F</span> no cruzamento.</li>
+        <li><strong>Pistas de Exclusão:</strong> Ao colocar um <span class="hl-green">V</span>, preencha toda a linha e coluna com <span class="hl-red">F</span>.</li>
+        <li><strong>Conectivos em pistas:</strong> "Paulo nasceu em Brasília OU Goiânia" + outra pista exclui Brasília → Paulo é de Goiânia.</li>
+      </ul>
+      <div class="alert alert-info">
+        💡 <strong>Dica de Ouro:</strong> Se a questão fornecer tabela parcial, termine de preenchê-la <strong>antes</strong> de ler as assertivas.
+      </div>
+    </div>
+
+    <div class="alert alert-warning">
+      ⚠️ <strong>"Penso, logo existo" é argumento válido?</strong> NÃO. Um argumento exige pelo menos uma premissa e uma conclusão distintas. Frases isoladas ou entimemas (silogismos incompletos) são pegadinhas.
+    </div>
+
+    <div class="alert alert-info">
+      💡 <strong>Condicional com antecedente Falso:</strong> Se P é <span class="hl-red">Falso</span>, então P → Q é <span class="hl-green">Verdadeira</span>, não importa o valor de Q.<br>
+      💡 <strong>Peso do "mas":</strong> Em raciocínio crítico, "mas" foca a atenção na oração que o <strong>segue</strong>.
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Modus Ponens vs Falácia</div>
+      <div class="example-text">
+        <strong>Premissa 1:</strong> "Se o candidato foi aprovado, então ele estudou." (P → Q)<br>
+        <strong>Premissa 2:</strong> "O candidato foi aprovado." (P)<br>
+        <strong>Conclusão (Modus Ponens):</strong> "Logo, ele estudou." (Q) → ✅ <strong>VÁLIDO</strong><br><br>
+        <strong>Agora a falácia:</strong><br>
+        <strong>Premissa 1:</strong> "Se o candidato foi aprovado, então ele estudou." (P → Q)<br>
+        <strong>Premissa 2:</strong> "Ele estudou." (Q)<br>
+        <strong>Conclusão:</strong> "Logo, ele foi aprovado." (P) → ❌ <strong>INVÁLIDO</strong> (Afirmação do Consequente)<br>
+        (Ele pode ter estudado e ainda assim não ter sido aprovado.)
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Puzzle de Associação (Matriz)</div>
+      <div class="example-text">
+        <strong>Cenário:</strong> Ana, Bruno e Carlos ocupam cargos de Analista, Técnico e Assessor.<br>
+        <strong>Pista 1:</strong> Ana não é Analista → marque <span style="color:#dc2626;font-weight:700;">✗</span> em Ana×Analista.<br>
+        <strong>Pista 2:</strong> Bruno não é Assessor → marque <span style="color:#dc2626;font-weight:700;">✗</span> em Bruno×Assessor.<br>
+        <strong>Pista 3:</strong> O Analista é homem → elimine Ana para Analista (já feito). Sobrou Bruno ou Carlos.<br>
+        Como Bruno não é Assessor e Carlos não é Analista (por dedução), então:<br>
+        → <strong>Bruno = Analista</strong>, <strong>Carlos = Assessor</strong>, <strong>Ana = Técnica</strong>.
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> Considere: "Se Pedro estuda, então Pedro passa." Pedro passou. Logo, Pedro estudou. Esse argumento é logicamente válido.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-arg-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-arg-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-arg-1"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> Trata-se da <strong>Falácia da Afirmação do Consequente</strong>. De P → Q e Q, NÃO se pode concluir P. Pedro pode ter passado por outro motivo.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> O argumento "todos os deputados são políticos; João é político; logo, João é deputado" é um exemplo de silogismo válido.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-arg-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-arg-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-arg-2"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> "Todo deputado é político" não significa que todo político é deputado. João pode ser vereador, senador, etc. É uma <strong>falácia do termo médio não distribuído</strong>.</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 6. SEQUÊNCIAS E PADRÕES ===== -->
+<div class="section" id="s-5">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🔁</span>
+    <span class="section-title">6. Sequências e Padrões</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">Fibonacci</div>
+        <div class="card-value">Cada termo = soma dos 2 anteriores.<br><span class="hl">Fₙ = Fₙ₋₁ + Fₙ₋₂</span><br>Comum em crescimento e treinamento.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Ciclos de Repetição</div>
+        <div class="card-value">Movimentos em quadrado/círculo.<br>Identifique o <span class="hl">período do ciclo</span> para prever posições distantes.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Matrizes de Letras</div>
+        <div class="card-value">Para saber a letra na posição N:<br>Divida N pelo <span class="hl">tamanho do bloco</span> repetitivo e olhe o resto.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Fractais</div>
+        <div class="card-value">Padrões geométricos que crescem em potências.<br>Ex: Triângulo de Sierpinski.</div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Sequências na Prática</div>
+      <div class="example-text">
+        <strong>Fibonacci:</strong> 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ...<br>
+        "Qual o 10° termo?" → F₁₀ = <strong>55</strong> (cada termo = soma dos 2 anteriores)<br><br>
+        <strong>Ciclo de Repetição:</strong> Uma formiga anda em um quadrado (4 lados). A cada passo, gira 90° à direita.<br>
+        "Após 103 passos, para qual lado está virada?"<br>
+        103 ÷ 4 = 25 ciclos completos + resto <strong>3</strong> → mesma posição do 3° passo.<br><br>
+        <strong>Matriz de Letras:</strong> Padrão repetitivo "ABCDE" (5 letras).<br>
+        "Qual a 47ª letra?" → 47 ÷ 5 = 9 ciclos + resto <strong>2</strong> → 2ª letra = <strong>B</strong>.<br><br>
+        <strong>Sequência com duas regras alternadas:</strong> 2, 6, 4, 12, 10, 30, 28, ...<br>
+        Regra ímpar: ×3 | Regra par: −2 → Próximo: 28 × 3 = <strong>84</strong>.
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> Na sequência de Fibonacci (1, 1, 2, 3, 5, 8, 13, ...), o 8° termo é igual a 21.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-seq-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-seq-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-seq-1"><div class="quiz-answer correct">✅ <strong>CERTO.</strong> F₁=1, F₂=1, F₃=2, F₄=3, F₅=5, F₆=8, F₇=13, F₈=<strong>21</strong>. Cada termo é a soma dos dois anteriores.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> Uma sequência repete o padrão "XYZW" continuamente. A 50ª letra dessa sequência é X.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-seq-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-seq-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-seq-2"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> O ciclo tem 4 letras. 50 ÷ 4 = 12 ciclos + resto <strong>2</strong>. A 2ª letra do padrão é <strong>Y</strong>, não X.</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<div class="footer">
+  Revisão RLM e Estatística – Policial Legislativo CD 2026 | 6 Temas · Exemplos e Questões | CEBRASPE 2024–2026
+</div>
+
+</div>
+
+<script>
+function toggle(h) { h.closest('.section').classList.toggle('open'); updateProgress(); }
+function expandAll() { document.querySelectorAll('.section').forEach(s => s.classList.add('open')); updateProgress(); }
+function collapseAll() { document.querySelectorAll('.section').forEach(s => s.classList.remove('open')); updateProgress(); }
+function goTo(i) {
+  const s = document.getElementById('s-' + i);
+  if (s) { s.classList.add('open'); s.scrollIntoView({ behavior: 'smooth', block: 'start' }); updateProgress(); }
+}
+function updateProgress() {
+  const all = document.querySelectorAll('.section').length;
+  const open = document.querySelectorAll('.section.open').length;
+  document.getElementById('progressFill').style.width = Math.round((open/all)*100) + '%';
+  document.getElementById('progressText').textContent = open + '/' + all;
+}
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  const k = parseInt(e.key);
+  if (k >= 1 && k <= 6) goTo(k - 1);
+  if (e.key === 'a' || e.key === 'A') expandAll();
+  if (e.key === 'r' || e.key === 'R') collapseAll();
+});
+updateProgress();
+
+function answerQuiz(btn, isCorrect, feedbackId) {
+  const item = btn.closest('.quiz-item');
+  const opts = item.querySelectorAll('.quiz-opt');
+  opts.forEach(o => { o.style.pointerEvents = 'none'; });
+  btn.classList.add(isCorrect ? 'selected-c' : 'selected-e');
+  const fb = document.getElementById(feedbackId);
+  if (fb) fb.classList.add('show');
+}
+</script>
+
+</body>
+</html>

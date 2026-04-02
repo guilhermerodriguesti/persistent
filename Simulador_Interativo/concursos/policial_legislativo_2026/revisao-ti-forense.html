@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão TI e Forense – Policial Legislativo CD 2026</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f7fa;
+  color: #1e293b;
+  min-height: 100vh;
+}
+
+.container { max-width: 960px; margin: 0 auto; padding: 20px; }
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center; padding: 30px 20px;
+  background: linear-gradient(135deg, #0f766e, #0d9488);
+  border-radius: 12px; margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(15,118,110,0.2);
+  position: relative; overflow: hidden;
+}
+.header::before { content: '💻'; position: absolute; font-size: 120px; opacity: 0.06; top: -10px; right: -10px; }
+.header h1 { font-size: 26px; color: #fff; margin-bottom: 8px; letter-spacing: 1px; }
+.header .subtitle { font-size: 14px; color: #99f6e4; font-weight: 400; }
+.header .badge {
+  display: inline-block; background: rgba(255,255,255,0.15); color: #ccfbf1;
+  padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 600;
+  margin-top: 10px; border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ===== NAV ===== */
+.nav-bar {
+  display: flex; flex-wrap: wrap; gap: 6px; justify-content: center;
+  margin-bottom: 25px; padding: 15px; background: #fff;
+  border-radius: 10px; border: 1px solid #e2e8f0; box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.nav-btn {
+  background: #f0fdfa; color: #0f766e; border: 1px solid #99f6e4;
+  padding: 6px 12px; border-radius: 8px; cursor: pointer; font-size: 11px;
+  font-weight: 600; transition: all 0.3s; white-space: nowrap;
+}
+.nav-btn:hover, .nav-btn.active {
+  background: #0f766e; color: #fff; border-color: #0f766e; transform: translateY(-1px);
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  background: #fff; border-radius: 12px; margin-bottom: 18px;
+  border: 1px solid #e2e8f0; overflow: hidden; transition: all 0.3s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.section:hover { border-color: #99f6e4; box-shadow: 0 2px 8px rgba(15,118,110,0.1); }
+.section-header {
+  display: flex; align-items: center; gap: 12px; padding: 16px 20px;
+  cursor: pointer; background: linear-gradient(135deg, #f0fdfa, #ecfdf5);
+  user-select: none; transition: background 0.3s;
+}
+.section-header:hover { background: linear-gradient(135deg, #ccfbf1, #d1fae5); }
+.section-icon { font-size: 26px; flex-shrink: 0; }
+.section-title { font-size: 16px; font-weight: 700; color: #134e4a; flex: 1; }
+.section-toggle { font-size: 18px; color: #0d9488; transition: transform 0.3s; flex-shrink: 0; }
+.section.open .section-toggle { transform: rotate(180deg); }
+.section-body { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.section.open .section-body { max-height: 12000px; }
+.section-content { padding: 20px; }
+
+/* ===== SUBSECTIONS ===== */
+.subsection { margin-bottom: 20px; }
+.subsection-title {
+  font-size: 14px; font-weight: 700; color: #0f766e; margin-bottom: 12px;
+  padding-bottom: 6px; border-bottom: 2px solid #ccfbf1;
+  display: flex; align-items: center; gap: 8px;
+}
+
+/* ===== CARDS ===== */
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; margin-bottom: 15px; }
+.card {
+  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;
+  padding: 14px; transition: all 0.3s;
+}
+.card:hover { background: #f0fdfa; transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.card-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1px; color: #b45309; font-weight: 700; margin-bottom: 6px; }
+.card-value { font-size: 13px; line-height: 1.6; color: #475569; }
+
+/* ===== MNEMONIC ===== */
+.mnemonic {
+  background: linear-gradient(135deg, #fffbeb, #fef3c7);
+  border: 1px solid #fcd34d; border-left: 4px solid #f59e0b;
+  border-radius: 8px; padding: 14px 16px; margin: 12px 0;
+}
+.mnemonic-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #b45309; font-weight: 700; margin-bottom: 6px; }
+.mnemonic-text { font-size: 18px; font-weight: 800; color: #92400e; letter-spacing: 3px; margin-bottom: 4px; }
+.mnemonic-desc { font-size: 13px; color: #78716c; line-height: 1.5; }
+
+/* ===== ALERTS ===== */
+.alert { border-radius: 8px; padding: 14px 16px; margin: 12px 0; font-size: 13px; line-height: 1.6; }
+.alert-danger { background: #fef2f2; border: 1px solid #fecaca; border-left: 4px solid #dc2626; color: #991b1b; }
+.alert-info { background: #eff6ff; border: 1px solid #bfdbfe; border-left: 4px solid #2563eb; color: #1e40af; }
+.alert-success { background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid #16a34a; color: #166534; }
+.alert-warning { background: #fffbeb; border: 1px solid #fde68a; border-left: 4px solid #f59e0b; color: #92400e; }
+
+/* ===== LISTS ===== */
+.topic-list { list-style: none; margin: 10px 0; }
+.topic-list li {
+  padding: 10px 14px; margin-bottom: 6px; background: #f8fafc;
+  border-radius: 6px; border-left: 3px solid #0d9488; font-size: 13px;
+  line-height: 1.6; transition: all 0.2s;
+}
+.topic-list li:hover { background: #f0fdfa; border-left-color: #0f766e; }
+.topic-list li strong { color: #0f766e; }
+
+/* ===== HIGHLIGHTS ===== */
+.hl { color: #b45309; font-weight: 700; }
+.hl-blue { color: #0f766e; font-weight: 700; }
+.hl-green { color: #16a34a; font-weight: 700; }
+.hl-red { color: #dc2626; font-weight: 700; }
+
+/* ===== TABLE ===== */
+.info-table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 12px; }
+.info-table th {
+  background: #134e4a; color: #fff; padding: 10px 12px;
+  text-align: left; font-weight: 700; font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.info-table td { padding: 10px 12px; border-bottom: 1px solid #e2e8f0; color: #475569; line-height: 1.5; }
+.info-table tr:hover td { background: #f0fdfa; }
+
+/* ===== COMP DIAGRAM ===== */
+.comp-diagram { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+.comp-box { background: #f8fafc; border-radius: 8px; padding: 14px; border: 1px solid #e2e8f0; text-align: center; }
+.comp-box-title { font-size: 12px; font-weight: 700; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 1px; }
+.comp-box-content { font-size: 12px; color: #475569; line-height: 1.6; }
+
+/* ===== FORMULA ===== */
+.formula-box {
+  background: #f8fafc; border: 1px solid #e2e8f0; border-left: 4px solid #0d9488;
+  border-radius: 8px; padding: 14px 16px; margin: 10px 0;
+  font-family: 'Courier New', monospace; font-size: 14px; color: #134e4a;
+  text-align: center; font-weight: 700;
+}
+
+/* ===== BACK / CONTROLS ===== */
+.back-btn {
+  display: inline-flex; align-items: center; gap: 6px; background: #fff;
+  color: #0f766e; border: 1px solid #e2e8f0; padding: 8px 16px;
+  border-radius: 8px; text-decoration: none; font-size: 13px; font-weight: 600;
+  transition: all 0.3s; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.back-btn:hover { background: #f0fdfa; color: #134e4a; }
+
+.progress-container {
+  display: flex; align-items: center; gap: 12px; padding: 12px 16px;
+  background: #fff; border-radius: 8px; margin-bottom: 20px;
+  font-size: 13px; color: #134e4a; border: 1px solid #e2e8f0; box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+.progress-track { flex: 1; height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, #0d9488, #16a34a); border-radius: 4px; transition: width 0.5s; width: 0%; }
+.progress-text { font-weight: 700; min-width: 50px; text-align: right; }
+
+.controls { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
+.ctrl-btn {
+  background: #f0fdfa; color: #0f766e; border: 1px solid #99f6e4;
+  padding: 8px 18px; border-radius: 8px; cursor: pointer;
+  font-size: 13px; font-weight: 600; transition: all 0.3s;
+}
+.ctrl-btn:hover { background: #0f766e; color: #fff; }
+
+.footer { text-align: center; padding: 20px; color: #94a3b8; font-size: 12px; margin-top: 30px; }
+
+/* ===== EXEMPLOS ===== */
+.example {
+  background: #f0fdf4; border: 1px solid #bbf7d0; border-left: 4px solid #22c55e;
+  border-radius: 8px; padding: 14px 16px; margin: 12px 0;
+}
+.example-label { font-size: 11px; text-transform: uppercase; letter-spacing: 1.5px; color: #16a34a; font-weight: 700; margin-bottom: 6px; }
+.example-text { font-size: 13px; color: #166534; line-height: 1.7; }
+.example-text strong { color: #15803d; }
+
+/* ===== QUIZ / QUESTÕES ===== */
+.quiz-block { margin: 16px 0; }
+.quiz-title { font-size: 12px; text-transform: uppercase; letter-spacing: 1.5px; color: #0f766e; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+.quiz-item {
+  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;
+  padding: 14px 16px; margin-bottom: 10px; cursor: pointer; transition: all 0.3s;
+}
+.quiz-item:hover { border-color: #99f6e4; }
+.quiz-question { font-size: 13px; color: #1e293b; line-height: 1.6; margin-bottom: 8px; }
+.quiz-options { display: flex; gap: 10px; flex-wrap: wrap; }
+.quiz-opt {
+  padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 700;
+  cursor: pointer; transition: all 0.3s; border: 2px solid #e2e8f0; background: #fff; color: #475569;
+}
+.quiz-opt:hover { border-color: #0d9488; color: #0d9488; }
+.quiz-opt.selected-c { border-color: #16a34a; background: #f0fdf4; color: #16a34a; }
+.quiz-opt.selected-e { border-color: #dc2626; background: #fef2f2; color: #dc2626; }
+.quiz-feedback {
+  max-height: 0; overflow: hidden; transition: max-height 0.4s ease; font-size: 13px; line-height: 1.6;
+}
+.quiz-feedback.show { max-height: 500px; padding-top: 10px; }
+.quiz-answer { padding: 10px 14px; border-radius: 6px; }
+.quiz-answer.correct { background: #f0fdf4; border-left: 3px solid #16a34a; color: #166534; }
+.quiz-answer.wrong { background: #fef2f2; border-left: 3px solid #dc2626; color: #991b1b; }
+
+/* ===== GRÁFICOS HTML ===== */
+.chart-container { margin: 14px 0; }
+.chart-title { font-size: 12px; font-weight: 700; color: #0f766e; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 0.5px; }
+.bar-chart { display: flex; flex-direction: column; gap: 6px; }
+.bar-row { display: flex; align-items: center; gap: 10px; }
+.bar-label { font-size: 11px; color: #475569; min-width: 90px; text-align: right; font-weight: 600; }
+.bar-track { flex: 1; height: 22px; background: #e2e8f0; border-radius: 4px; overflow: hidden; position: relative; }
+.bar-fill { height: 100%; border-radius: 4px; transition: width 0.8s ease; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; font-size: 10px; font-weight: 700; color: #fff; }
+.bar-fill.teal { background: linear-gradient(90deg, #0d9488, #14b8a6); }
+.bar-fill.blue { background: linear-gradient(90deg, #2563eb, #3b82f6); }
+.bar-fill.amber { background: linear-gradient(90deg, #d97706, #f59e0b); }
+.bar-fill.red { background: linear-gradient(90deg, #dc2626, #ef4444); }
+.bar-fill.green { background: linear-gradient(90deg, #16a34a, #22c55e); }
+.bar-fill.purple { background: linear-gradient(90deg, #7c3aed, #8b5cf6); }
+
+.boxplot-visual {
+  background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px;
+  padding: 20px; margin: 12px 0; text-align: center;
+}
+.boxplot-diagram { position: relative; height: 60px; margin: 20px 40px; }
+.boxplot-line { position: absolute; top: 28px; left: 0; right: 0; height: 2px; background: #94a3b8; }
+.boxplot-box { position: absolute; top: 10px; height: 38px; background: rgba(13,148,136,0.15); border: 2px solid #0d9488; border-radius: 4px; }
+.boxplot-median { position: absolute; top: 8px; height: 42px; width: 3px; background: #dc2626; }
+.boxplot-whisker { position: absolute; top: 28px; height: 2px; background: #475569; }
+.boxplot-tick { position: absolute; top: 20px; height: 18px; width: 2px; background: #475569; }
+.boxplot-labels { display: flex; justify-content: space-between; margin-top: 8px; font-size: 10px; color: #64748b; font-weight: 600; }
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .container { padding: 12px; }
+  .header h1 { font-size: 20px; }
+  .section-header { padding: 14px 16px; }
+  .section-title { font-size: 14px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .comp-diagram { grid-template-columns: 1fr; }
+  .nav-btn { padding: 5px 8px; font-size: 10px; }
+  .mnemonic-text { font-size: 15px; letter-spacing: 2px; }
+  .info-table { font-size: 11px; }
+  .info-table th, .info-table td { padding: 8px 8px; }
+}
+@media (max-width: 480px) {
+  .header { padding: 20px 14px; }
+  .header h1 { font-size: 17px; }
+  .section-content { padding: 14px; }
+  .controls { flex-direction: column; align-items: stretch; }
+  .ctrl-btn { text-align: center; }
+}
+@media print {
+  .nav-bar, .controls, .back-btn, .progress-container { display: none; }
+  .section { break-inside: avoid; }
+  .section-body { max-height: none !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<a href="index.html" class="back-btn">← Voltar ao Início</a>
+
+<div class="header">
+  <h1>💻 Revisão – Tecnologia da Informação</h1>
+  <div class="subtitle">Policial Legislativo – Câmara dos Deputados 2026</div>
+  <div class="badge">🎯 CEBRASPE 2024–2026 • 2000 Questões Analisadas • 4 Guias Consolidados</div>
+</div>
+
+<div class="progress-container">
+  <span>📖 Progresso</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-text" id="progressText">0/13</span>
+</div>
+
+<nav class="nav-bar">
+  <button class="nav-btn" onclick="goTo(0)">1. Cloud</button>
+  <button class="nav-btn" onclick="goTo(1)">2. CRISP-DM</button>
+  <button class="nav-btn" onclick="goTo(2)">3. ETL/ELT</button>
+  <button class="nav-btn" onclick="goTo(3)">4. Banco de Dados</button>
+  <button class="nav-btn" onclick="goTo(4)">5. BI &amp; Analytics</button>
+  <button class="nav-btn" onclick="goTo(5)">6. IA &amp; ML</button>
+  <button class="nav-btn" onclick="goTo(6)">7. Segurança</button>
+  <button class="nav-btn" onclick="goTo(7)">8. SO (Win/Android/iOS)</button>
+  <button class="nav-btn" onclick="goTo(8)">9. Office 365</button>
+  <button class="nav-btn" onclick="goTo(9)">10. Redes</button>
+  <button class="nav-btn" onclick="goTo(10)">11. Governança TI</button>
+  <button class="nav-btn" onclick="goTo(11)">12. Hardware</button>
+  <button class="nav-btn" onclick="goTo(12)">13. Forense</button>
+</nav>
+
+<div class="controls">
+  <button class="ctrl-btn" onclick="expandAll()">📂 Expandir Tudo</button>
+  <button class="ctrl-btn" onclick="collapseAll()">📁 Recolher Tudo</button>
+</div>
+
+<!-- ===== 1. CLOUD COMPUTING ===== -->
+<div class="section open" id="s-0">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">☁️</span>
+    <span class="section-title">1. Cloud Computing (Computação em Nuvem)</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">📦 Modelos de Serviço</div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Mnemônico – SPI</div>
+        <div class="mnemonic-text">S – P – I</div>
+        <div class="mnemonic-desc"><strong>S</strong>aaS (Software) · <strong>P</strong>aaS (Plataforma) · <strong>I</strong>aaS (Infraestrutura)</div>
+      </div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">IaaS – Infraestrutura</div>
+          <div class="card-value">O mais básico. Hardware (computação/armazenamento). Cliente gerencia SO, middleware e apps.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">PaaS – Plataforma</div>
+          <div class="card-value">Ambiente para desenvolvimento. Sem gerenciar infraestrutura física.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">SaaS – Software</div>
+          <div class="card-value">Software completo via web. Ex: <span class="hl">Office 365</span>, Gmail.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🏗️ Modelos de Implantação (NIST SP 800-145)</div>
+      <ul class="topic-list">
+        <li><strong>Pública:</strong> Aberta ao público geral; infraestrutura do provedor.</li>
+        <li><strong>Privada:</strong> Uso <span class="hl">exclusivo</span> de uma organização. Pode ser gerenciada por terceiros (<span class="hl-red">não é obrigatoriamente interna</span>).</li>
+        <li><strong>Híbrida:</strong> Combinação de duas ou mais nuvens que permanecem entidades únicas.</li>
+        <li><strong>Comunitária:</strong> Compartilhada por organizações com interesses em comum (ex: conformidade).</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⚡ Características Essenciais</div>
+      <ul class="topic-list">
+        <li><strong>Elasticidade Rápida:</strong> Recursos providos rapidamente (percepção de "ilimitado").</li>
+        <li><strong>Escalabilidade Automática:</strong> Recursos ajustados dinamicamente conforme demanda.</li>
+        <li><strong>Mensuração de Serviço:</strong> Pagamento por uso (on-demand).</li>
+        <li><strong>Resource Pooling:</strong> Modelo multiusuário (multi-tenant).</li>
+      </ul>
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo Prático</div>
+      <div class="example-text">
+        A <strong>Câmara dos Deputados</strong> contrata a AWS para hospedar servidores virtuais (EC2) — isso é <strong>IaaS</strong>.<br>
+        Um desenvolvedor usa o Google App Engine para criar uma aplicação sem se preocupar com servidores — isso é <strong>PaaS</strong>.<br>
+        Um servidor público acessa o Gmail pelo navegador — isso é <strong>SaaS</strong>.<br>
+        Se a Câmara usa nuvem própria (privada) e AWS (pública) juntas → <strong>Nuvem Híbrida</strong>.
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> Na computação em nuvem, o modelo IaaS fornece ao cliente o controle total sobre o sistema operacional, middleware e aplicações, sendo responsável apenas pela infraestrutura física.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-cloud-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-cloud-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-cloud-1"><div class="quiz-answer correct">✅ <strong>CERTO.</strong> No IaaS, o provedor fornece hardware (servidores, armazenamento, rede) e o cliente gerencia SO, middleware e aplicações.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> A nuvem privada é, por definição, uma infraestrutura implantada nas instalações internas da organização, não podendo ser gerenciada por terceiros.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-cloud-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-cloud-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-cloud-2"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> A nuvem privada é de uso exclusivo, mas <strong>pode sim ser gerenciada por terceiros</strong> e estar fora das instalações da organização (NIST SP 800-145).</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 2. CRISP-DM ===== -->
+<div class="section" id="s-1">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">⛏️</span>
+    <span class="section-title">2. Ciência de Dados e Mineração (CRISP-DM)</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">🔄 6 Fases do CRISP-DM</div>
+      <table class="info-table">
+        <thead><tr><th>Fase</th><th>O que acontece</th><th>Pegadinha CEBRASPE</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. Business Understanding</strong></td><td>Define objetivos e critérios de sucesso</td><td>Métricas de sucesso são definidas <span class="hl-red">aqui</span>, não na modelagem</td></tr>
+          <tr><td><strong>2. Data Understanding</strong></td><td>Coleta, descrição e exploração inicial</td><td><span class="hl-red">NÃO</span> inclui construção de modelos preditivos</td></tr>
+          <tr><td><strong>3. Data Preparation</strong></td><td>Limpeza, seleção, transformação</td><td>Etapa <span class="hl">mais demorada</span>. Seleciona o que vai para o modelo</td></tr>
+          <tr><td><strong>4. Modeling</strong></td><td>Algoritmos e teste (treino/teste)</td><td>Divisão treino/validação ocorre aqui</td></tr>
+          <tr><td><strong>5. Evaluation</strong></td><td>Avalia se atende o negócio</td><td>Precede a implantação final</td></tr>
+          <tr><td><strong>6. Deployment</strong></td><td>Produção e relatório</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📊 Tarefas de Mineração</div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">Associação</div>
+          <div class="card-value">Regras "Se X, então Y" (cesta de compras). Indicadores: <span class="hl">Suporte</span> e <span class="hl">Confiança</span>.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Clustering (Agrupamento)</div>
+          <div class="card-value">Técnica <span class="hl-blue">não supervisionada</span>. K-means agrupa por similaridade.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Classificação</div>
+          <div class="card-value"><span class="hl-blue">Supervisionada</span> (rótulos predefinidos). Ex: Naive Bayes, Árvores de Decisão.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Regressão</div>
+          <div class="card-value">Previsão de valores <span class="hl">contínuos</span>. Objetiva predição e estimação.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo Prático – Mineração em Supermercado</div>
+      <div class="example-text">
+        <strong>Associação:</strong> "Clientes que compram fraldas também compram cerveja" → Regra com Suporte = 5% e Confiança = 70%.<br>
+        <strong>Clustering:</strong> Agrupar clientes por perfil de compra sem rótulos prévios (jovens, famílias, idosos).<br>
+        <strong>Classificação:</strong> Prever se um e-mail é spam ou não (rótulo binário: spam/não-spam).<br>
+        <strong>Regressão:</strong> Prever o valor de vendas do próximo trimestre (valor contínuo em R$).
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> Na metodologia CRISP-DM, a fase de Data Understanding inclui a construção de modelos preditivos para avaliar a qualidade dos dados coletados.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-crisp-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-crisp-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-crisp-1"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> A fase de Data Understanding envolve coleta, descrição e exploração inicial. A construção de modelos preditivos ocorre na fase de <strong>Modeling</strong>.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> A clusterização é uma técnica de aprendizado supervisionado que agrupa dados com base em rótulos pré-definidos.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-crisp-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-crisp-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-crisp-2"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> A clusterização é <strong>não supervisionada</strong> — agrupa dados por similaridade <strong>sem rótulos</strong> pré-definidos. Quem usa rótulos é a Classificação (supervisionada).</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 3. ETL/ELT ===== -->
+<div class="section" id="s-2">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🔄</span>
+    <span class="section-title">3. Engenharia de Dados: ETL vs ELT</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="comp-diagram">
+      <div class="comp-box">
+        <div class="comp-box-title" style="color:#0f766e">ETL</div>
+        <div class="comp-box-content">Extract → <strong>Transform</strong> → Load<br>Transformação <span class="hl-red">antes</span> da carga<br>Staging Area<br>Dados estruturados</div>
+      </div>
+      <div class="comp-box">
+        <div class="comp-box-title" style="color:#b45309">ELT</div>
+        <div class="comp-box-content">Extract → Load → <strong>Transform</strong><br>Transformação <span class="hl-green">dentro</span> do destino<br>Big Data (semi/não estruturados)<br>Menor custo de manutenção</div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔧 Técnicas Importantes</div>
+      <ul class="topic-list">
+        <li><strong>Extração Incremental:</strong> Extrai apenas o que <span class="hl">mudou</span> (mais eficiente que Full).</li>
+        <li><strong>Derivação:</strong> Cria novos atributos via cálculos (não é apenas vincular fontes).</li>
+        <li><strong>Limpeza:</strong> Reorganização para qualidade e consistência. Remove dados <span class="hl-red">incorretos</span>, não dados "corretos".</li>
+        <li><strong>Junção:</strong> Vincula dados de diferentes fontes (não confunda com derivação).</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📂 Tipos de Dados</div>
+      <table class="info-table">
+        <thead><tr><th>Tipo</th><th>Características</th><th>Exemplos</th><th>Armazenamento</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Estruturados</strong></td><td>Formato rígido, tabelas</td><td>SQL, números, datas</td><td>RDBMS</td></tr>
+          <tr><td><strong>Semiestruturados</strong></td><td>Sem esquema fixo, mas com tags</td><td>XML, JSON, CSV</td><td>NoSQL / Document DB</td></tr>
+          <tr><td><strong>Não Estruturados</strong></td><td>Sem formato fixo</td><td>PDFs, vídeos, redes sociais</td><td>Data Lakes / NoSQL</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mnemonic">
+      <div class="mnemonic-label">🧠 Big Data – 5 Vs</div>
+      <div class="mnemonic-text">Vo – Ve – Va – Ve – Va</div>
+      <div class="mnemonic-desc"><strong>Vo</strong>lume · <strong>Ve</strong>locidade · <strong>Va</strong>riedade · <strong>Ve</strong>racidade · <strong>Va</strong>lor</div>
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo Prático – ETL vs ELT</div>
+      <div class="example-text">
+        <strong>ETL:</strong> A Câmara extrai dados de sistemas legados (RH, financeiro), <strong>transforma</strong> na Staging Area (padroniza CPFs, corrige datas), e depois carrega no Data Warehouse.<br>
+        <strong>ELT:</strong> Uma empresa de e-commerce despeja logs brutos de navegação direto no Data Lake (AWS S3) e depois transforma com Spark/BigQuery dentro do próprio destino.
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> No processo ELT, a transformação dos dados ocorre em uma área temporária (Staging Area) antes de serem carregados no repositório de destino.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-etl-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-etl-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-etl-1"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> Isso descreve o <strong>ETL</strong>. No ELT, os dados são carregados primeiro e a transformação ocorre <strong>dentro do destino</strong>.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> A limpeza de dados no processo ETL tem como objetivo remover dados incorretos, duplicados ou mal formatados, e não dados considerados corretos.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-etl-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-etl-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-etl-2"><div class="quiz-answer correct">✅ <strong>CERTO.</strong> A limpeza corrige ou remove dados <strong>incorretos, duplicados ou inconsistentes</strong>. Dados corretos são mantidos.</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 4. BANCO DE DADOS ===== -->
+<div class="section" id="s-3">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🗄️</span>
+    <span class="section-title">4. Bancos de Dados Relacionais</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">📋 Conceitos Fundamentais</div>
+      <ul class="topic-list">
+        <li><strong>Estrutura:</strong> Tabelas (Relações), Linhas (Tuplas/Registros), Colunas (Atributos/Campos).</li>
+        <li><strong>Chave Primária (PK):</strong> Valor <span class="hl">único e obrigatório</span>. Pode ser composta.</li>
+        <li><strong>Integridade Referencial:</strong> FK deve corresponder a uma PK existente ou ser nula.</li>
+        <li><strong>Independência Física:</strong> Mudanças na estrutura física não afetam a lógica.</li>
+        <li><strong>Cardinalidade:</strong> 1:1, 1:N, N:N. Relacionamentos N:N viram tabelas associativas.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📊 Normalização</div>
+      <table class="info-table">
+        <thead><tr><th>Forma Normal</th><th>Requisito Principal</th><th>O que elimina?</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1FN</strong></td><td>Atributos <span class="hl">atômicos</span></td><td>Atributos multivalorados e compostos</td></tr>
+          <tr><td><strong>2FN</strong></td><td>1FN + Dependência Funcional <span class="hl">Total</span></td><td>Dependências parciais (chaves compostas)</td></tr>
+          <tr><td><strong>3FN</strong></td><td>2FN + Sem dep. <span class="hl">transitivas</span></td><td>Atributos dependem de não-chave</td></tr>
+          <tr><td><strong>4FN</strong></td><td>3FN (ou BCNF)</td><td>Dependências multivaloradas independentes</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-info">
+        💡 Uma tabela na 3FN está <strong>obrigatoriamente</strong> na 1FN e 2FN. Normalização excessiva pode prejudicar desempenho (excesso de joins).
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">💾 Recuperação em SGBD</div>
+      <ul class="topic-list">
+        <li><strong>COMMIT:</strong> Torna as alterações <span class="hl-green">permanentes</span>.</li>
+        <li><strong>ROLLBACK:</strong> Desfaz transações não confirmadas (garante <span class="hl">atomicidade</span>).</li>
+        <li><strong>LOG:</strong> Registro para recuperação; deve ser armazenado <span class="hl-red">separado</span> dos dados.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📁 Dados Estruturados vs Não Estruturados</div>
+      <div class="comp-diagram">
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#0f766e">Dados Estruturados</div>
+          <div class="comp-box-content">Organizados em <strong>tabelas</strong> com linhas e colunas<br>Esquema fixo e predefinido<br>SQL para consulta<br>Ex: BD relacional, planilhas</div>
+        </div>
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#b45309">Dados Não Estruturados</div>
+          <div class="comp-box-content"><strong>Sem esquema</strong> fixo<br>Texto livre, imagens, vídeos, áudios<br>Armazenados em Data Lakes, NoSQL<br>Ex: e-mails, PDFs, redes sociais</div>
+        </div>
+      </div>
+      <ul class="topic-list">
+        <li><strong>Semiestruturados:</strong> Possuem marcações/tags mas sem esquema rígido. Ex: <span class="hl">JSON</span>, <span class="hl">XML</span>, CSV.</li>
+        <li><strong>NoSQL:</strong> Bancos para dados não estruturados/semiestruturados. Tipos: documento (MongoDB), chave-valor (Redis), colunar (Cassandra), grafo (Neo4j).</li>
+        <li><strong>ACID vs BASE:</strong> Relacional = ACID (consistência forte). NoSQL = BASE (consistência eventual, alta disponibilidade).</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔗 Modelagem Entidade-Relacionamento</div>
+      <ul class="topic-list">
+        <li><strong>N:N:</strong> Sempre resulta em uma terceira tabela (associação/ligação).</li>
+        <li><strong>1:1:</strong> Pode ser na mesma tabela ou em tabelas separadas com FK.</li>
+        <li><strong>Engenharia Reversa:</strong> Obter modelo conceitual a partir do BD existente.</li>
+        <li><strong>Especialização:</strong> Decompor entidade geral em específicas (ex: Pessoa → Física e Jurídica).</li>
+      </ul>
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Normalização Passo a Passo</div>
+      <div class="example-text">
+        <strong>Tabela original:</strong> Aluno(Matrícula, Nome, Telefones, CursoCod, CursoNome)<br>
+        <strong>1FN:</strong> Remover "Telefones" multivalorado → criar tabela AlunoTelefone(Matrícula, Telefone).<br>
+        <strong>2FN:</strong> Se PK = (Matrícula, CursoCod) e CursoNome depende só de CursoCod → mover CursoNome para tabela Curso.<br>
+        <strong>3FN:</strong> Se CursoNome depende de CursoCod (não-chave) → eliminar dependência transitiva separando Curso(CursoCod, CursoNome).
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> Em um banco de dados relacional, a integridade referencial garante que uma chave estrangeira sempre corresponda a um valor existente na chave primária da tabela referenciada ou seja nula.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-bd-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-bd-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-bd-1"><div class="quiz-answer correct">✅ <strong>CERTO.</strong> A FK deve corresponder a uma PK existente ou ser nula. Essa é a definição exata de integridade referencial.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> Uma tabela que se encontra na segunda forma normal (2FN) está, necessariamente, na primeira forma normal (1FN), mas pode conter dependências transitivas.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-bd-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-bd-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-bd-2"><div class="quiz-answer correct">✅ <strong>CERTO.</strong> A 2FN exige estar na 1FN + sem dependências parciais. Dependências transitivas são eliminadas apenas na <strong>3FN</strong>.</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 5. BI & ANALYTICS ===== -->
+<div class="section" id="s-4">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">📊</span>
+    <span class="section-title">5. Business Intelligence e Analytics</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <p style="margin-bottom:12px;font-size:13px;color:#64748b;">BI: Dados → Informação → Decisões → Ações.</p>
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">Descritiva</div>
+        <div class="card-value"><strong>O que aconteceu?</strong><br>Relatórios e dashboards.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Preditiva</div>
+        <div class="card-value"><strong>O que vai acontecer?</strong><br>Modelos de ML/Histórico.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Prescritiva</div>
+        <div class="card-value"><strong>O que devo fazer?</strong><br>Simulações e respostas ideais.</div>
+      </div>
+    </div>
+
+    <div class="alert alert-info">
+      💡 Um bom dashboard <span class="hl-red">NÃO</span> deve exigir codificação complexa para o usuário.
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Tipos de Analytics na Câmara</div>
+      <div class="example-text">
+        <strong>Descritiva:</strong> "Em 2025, a Câmara aprovou 347 projetos de lei." (relatório do que aconteceu)<br>
+        <strong>Preditiva:</strong> "Com base no histórico, prevemos que 380 PLs serão aprovados em 2026." (modelo preditivo)<br>
+        <strong>Prescritiva:</strong> "Para atingir a meta de 400 PLs, recomenda-se ampliar as sessões semanais de 3 para 4." (ação recomendada)
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> A análise preditiva responde à pergunta "o que devo fazer?" e apresenta simulações e respostas ideais para a tomada de decisão.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-bi-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-bi-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-bi-1"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> "O que devo fazer?" é a <strong>análise prescritiva</strong>. A análise preditiva responde "o que vai acontecer?" usando modelos e dados históricos.</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 6. IA & ML ===== -->
+<div class="section" id="s-5">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🤖</span>
+    <span class="section-title">6. Inteligência Artificial e Machine Learning</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">🧠 Conceitos Gerais</div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">IA Generativa</div>
+          <div class="card-value">Cria conteúdos novos (texto, imagem, áudio). Baseada em <span class="hl">Transformers</span> (GPT). Probabilidade conjunta p(x,y).</div>
+        </div>
+        <div class="card">
+          <div class="card-label">IA Discriminativa</div>
+          <div class="card-value">Classifica ou rotula dados existentes. Ex: É spam ou não?</div>
+        </div>
+        <div class="card">
+          <div class="card-label">RAG</div>
+          <div class="card-value"><strong>Retrieval Augmented Generation.</strong> Recupera dados externos para enriquecer o prompt e reduzir <span class="hl-red">"alucinações"</span>.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📐 Algoritmos e Técnicas</div>
+      <div class="comp-diagram">
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#0f766e">Supervisionado</div>
+          <div class="comp-box-content">Dados <strong>rotulados</strong><br>Classificação e Regressão<br>Naive Bayes, Árvores de Decisão</div>
+        </div>
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#b45309">Não Supervisionado</div>
+          <div class="comp-box-content">Dados <strong>sem rótulos</strong><br>Clustering (K-means)<br>PCA (redução de dimensionalidade)</div>
+        </div>
+      </div>
+      <div class="alert alert-danger">
+        ⚠️ <strong>Acurácia</strong> é ruim para classes desbalanceadas. Prefira a curva <strong>ROC/AUC</strong> (quanto mais perto do canto superior esquerdo, melhor).
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">💬 PLN (Processamento de Linguagem Natural)</div>
+      <ul class="topic-list">
+        <li><strong>Tokenização:</strong> Segmentação do texto em tokens (unidades menores).</li>
+        <li><strong>Stemming:</strong> Corta a palavra até o radical (pode gerar palavras <span class="hl-red">sem sentido</span>).</li>
+        <li><strong>Lemmatização:</strong> Reduz à forma canônica (dicionário). Exige análise gramatical (POS Tagging).</li>
+        <li><strong>Bag of Words (BoW):</strong> Vetoriza pela frequência, mas <span class="hl-red">ignora ordem e contexto</span>.</li>
+        <li><strong>Auto-atenção (Transformers):</strong> Foca em partes diferentes da frase para entender contexto de longo alcance.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📊 Mineração de Dados</div>
+      <ul class="topic-list">
+        <li><strong>Conceito:</strong> Processo de descobrir padrões, correlações e anomalias em grandes volumes de dados usando técnicas estatísticas e de ML.</li>
+        <li><strong>KDD (Knowledge Discovery in Databases):</strong> Processo completo: Seleção → Pré-processamento → Transformação → Mineração → Interpretação.</li>
+        <li><strong>Tarefas:</strong> Classificação, Regressão, Clustering, Associação (regras como "quem compra X também compra Y"), Detecção de Anomalias.</li>
+        <li><strong>Regras de Associação:</strong> <strong>Suporte</strong> = frequência do padrão. <strong>Confiança</strong> = probabilidade condicional. <strong>Lift</strong> > 1 indica associação positiva.</li>
+        <li><strong>Diferença:</strong> Mineração <span class="hl-red">≠</span> consulta SQL. Mineração descobre padrões <strong>desconhecidos</strong>; SQL recupera dados <strong>conhecidos</strong>.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🗄️ Big Data: Conceito e 5 V's</div>
+      <ul class="topic-list">
+        <li><strong>Conceito:</strong> Conjuntos de dados tão grandes e complexos que ferramentas tradicionais <span class="hl-red">não conseguem</span> processar eficientemente.</li>
+        <li><strong>Volume:</strong> Terabytes, Petabytes de dados.</li>
+        <li><strong>Velocidade:</strong> Dados gerados e processados em <span class="hl">tempo real</span> ou quase real (streaming).</li>
+        <li><strong>Variedade:</strong> Dados estruturados, semiestruturados e não estruturados (textos, imagens, vídeos, sensores).</li>
+        <li><strong>Veracidade:</strong> Qualidade e confiabilidade dos dados (podem conter ruído, inconsistências).</li>
+        <li><strong>Valor:</strong> Capacidade de extrair <span class="hl-green">informação útil</span> e insights dos dados para tomada de decisão.</li>
+      </ul>
+      <div class="alert alert-info">
+        💡 <strong>Tecnologias:</strong> Hadoop (MapReduce, HDFS), Spark (processamento em memória), Data Lakes, NoSQL.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🤖 IA Generativa: Características</div>
+      <ul class="topic-list">
+        <li><strong>Definição:</strong> Modelos de IA que criam <span class="hl">conteúdo novo</span> (texto, imagem, código, áudio, vídeo) a partir de padrões aprendidos.</li>
+        <li><strong>Base:</strong> Arquitetura <strong>Transformer</strong> (2017, Google). Mecanismo de <span class="hl">auto-atenção</span> para entender contexto.</li>
+        <li><strong>LLMs:</strong> Large Language Models — treinados em bilhões de parâmetros sobre vastos corpus de texto.</li>
+        <li><strong>Exemplos:</strong> GPT (OpenAI), Gemini (Google), Claude (Anthropic), LLaMA (Meta).</li>
+        <li><strong>Alucinações:</strong> Modelo gera informação <span class="hl-red">plausível mas incorreta</span>. RAG e grounding ajudam a mitigar.</li>
+        <li><strong>Prompt Engineering:</strong> Técnica de formular instruções claras para obter melhores respostas do modelo.</li>
+        <li><strong>Fine-tuning:</strong> Ajuste fino do modelo pré-treinado para domínio específico (ex: jurídico, médico).</li>
+        <li><strong>Riscos:</strong> Viés algorítmico, deepfakes, desinformação, questões de propriedade intelectual.</li>
+      </ul>
+    </div>
+
+    <div class="alert alert-info">
+      💡 <strong>Ética no Serviço Público:</strong> Foco em transparência, combate ao viés algorítmico e responsabilidade digital (LGPD).
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Stemming vs Lemmatização</div>
+      <div class="example-text">
+        Palavra: <strong>"correndo"</strong><br>
+        <strong>Stemming:</strong> "corr" (radical bruto — pode não existir no dicionário).<br>
+        <strong>Lemmatização:</strong> "correr" (forma canônica correta do verbo).<br><br>
+        Palavra: <strong>"melhores"</strong><br>
+        <strong>Stemming:</strong> "melhor" (ok neste caso).<br>
+        <strong>Lemmatização:</strong> "bom" (forma canônica do adjetivo no dicionário).
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> A técnica RAG (Retrieval Augmented Generation) tem como objetivo principal substituir o modelo de linguagem por uma base de dados externa para eliminar completamente as alucinações.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-ia-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-ia-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-ia-1"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> O RAG <strong>não substitui</strong> o modelo — ele o complementa recuperando dados externos para <strong>reduzir</strong> (não eliminar) alucinações.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> A IA generativa cria novos conteúdos (texto, imagem, áudio), enquanto a IA discriminativa classifica ou rotula dados existentes.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-ia-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-ia-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-ia-2"><div class="quiz-answer correct">✅ <strong>CERTO.</strong> Generativa = cria novos conteúdos (GPT, DALL-E). Discriminativa = classifica dados existentes (spam ou não-spam).</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 7. SEGURANÇA ===== -->
+<div class="section" id="s-6">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🔒</span>
+    <span class="section-title">7. Segurança da Informação</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">🦠 Malware</div>
+      <table class="info-table">
+        <thead><tr><th>Malware</th><th>Característica Principal</th><th>Detalhe</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Vírus</strong></td><td>Precisa de <span class="hl-red">ação humana</span></td><td>Infecta programas (hospedeiro)</td></tr>
+          <tr><td><strong>Worm</strong></td><td><span class="hl">Auto-propagável</span></td><td>Explora vulnerabilidades na rede, sem ação humana</td></tr>
+          <tr><td><strong>Ransomware</strong></td><td>Criptografa dados + resgate</td><td>Pode exfiltrar dados; backup é a melhor defesa</td></tr>
+          <tr><td><strong>Trojan</strong></td><td>Parece inofensivo</td><td>Executa funções maliciosas escondidas</td></tr>
+          <tr><td><strong>Spyware</strong></td><td>Monitora atividades</td><td>Keylogger (teclado) e Screenlogger (tela)</td></tr>
+          <tr><td><strong>Backdoor</strong></td><td>Porta dos fundos</td><td>RAT = Trojan + Backdoor</td></tr>
+          <tr><td><strong>Adware</strong></td><td>Coleta hábitos</td><td>Exibe anúncios baseados no comportamento</td></tr>
+          <tr><td><strong>Zero-Day Exploit</strong></td><td>Vulnerabilidade <span class="hl-red">desconhecida</span></td><td>Não há patch; antivírus por assinatura falha</td></tr>
+          <tr><td><strong>Keylogger</strong></td><td>Registra <span class="hl-red">teclas</span> digitadas</td><td>Subtipo de spyware; captura senhas e dados</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">👤 Responsabilidades dos Usuários de TI</div>
+      <ul class="topic-list">
+        <li><strong>Senhas:</strong> Não compartilhar, não anotar em local visível, trocar periodicamente. Usar <span class="hl">senhas fortes</span> (mín. 12 caracteres, maiúsculas, minúsculas, números, símbolos).</li>
+        <li><strong>Bloqueio de tela:</strong> Bloquear o computador ao se ausentar (<strong>Win + L</strong>).</li>
+        <li><strong>Software autorizado:</strong> Não instalar programas sem autorização da equipe de TI.</li>
+        <li><strong>E-mails suspeitos:</strong> Não abrir anexos ou clicar em links de remetentes desconhecidos.</li>
+        <li><strong>Dados sensíveis:</strong> Classificar e proteger conforme política institucional. <span class="hl-red">Não enviar</span> dados sigilosos por canais não autorizados.</li>
+        <li><strong>Incidentes:</strong> Reportar <span class="hl">imediatamente</span> qualquer incidente de segurança à equipe responsável.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🎣 Engenharia Social: Phishing, Vishing e Métodos</div>
+      <ul class="topic-list">
+        <li><strong>Phishing:</strong> Fraude via páginas/emails falsos. <span class="hl-red">NÃO é interceptação</span> (isso é Man-in-the-Middle). Canal: <span class="hl">e-mail</span>.</li>
+        <li><strong>Spear Phishing:</strong> Alvo <span class="hl">específico</span> (ex: TI da empresa). Personalizado com dados da vítima.</li>
+        <li><strong>Whaling:</strong> Alvo de <span class="hl">alto escalão</span> (CEOs/CFOs). Engenharia social sofisticada.</li>
+        <li><strong>Vishing:</strong> Phishing por <span class="hl-red">voz/telefone</span>. Criminoso se passa por banco, suporte técnico ou órgão público.</li>
+        <li><strong>Smishing:</strong> Phishing por <span class="hl-red">SMS</span>. Links maliciosos via mensagens de texto.</li>
+        <li><strong>Pharming:</strong> Envenenamento de DNS / redirecionamento de tráfego legítimo para site falso.</li>
+        <li><strong>Pretexting:</strong> Criar uma história/pretexto falso para obter informações (ex: fingir ser do RH).</li>
+        <li><strong>Tailgating:</strong> Seguir pessoa autorizada para entrar em área restrita <span class="hl-red">fisicamente</span>.</li>
+      </ul>
+      <div class="alert alert-danger">
+        ⚠️ <strong>Engenharia Social explora o fator HUMANO, não falhas técnicas.</strong> A melhor defesa é treinamento e conscientização.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🛡️ Aplicativos de Segurança</div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">Antivírus</div>
+          <div class="card-value">Detecta por <strong>assinatura</strong> (conhecidos) e <strong>heurística</strong> (desconhecidos). Falha contra <span class="hl-red">Zero-Day</span> apenas por assinatura.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">EDR (Endpoint Detection and Response)</div>
+          <div class="card-value">Vai além do antivírus: monitora <span class="hl">comportamento em tempo real</span>, detecta ameaças avançadas, permite resposta e investigação remota.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Anti-spyware</div>
+          <div class="card-value">Especializado em detectar e remover <strong>spyware, adware e keyloggers</strong>. Pode ser integrado ao antivírus.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Gerenciador de Senhas</div>
+          <div class="card-value">Armazena senhas em cofre <span class="hl">criptografado</span>. Uma senha mestra desbloqueia todas. Gera senhas aleatórias fortes.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔐 Assinatura e Certificação Digital</div>
+      <ul class="topic-list">
+        <li><strong>Assinatura Digital:</strong> Usa criptografia <span class="hl">assimétrica</span> (chave privada do remetente assina, chave pública verifica). Garante: <span class="hl-green">autenticidade</span>, <span class="hl-green">integridade</span> e <span class="hl-green">não repúdio</span>.</li>
+        <li><strong>NÃO garante:</strong> <span class="hl-red">Confidencialidade</span> (para isso, criptografa-se com a chave pública do destinatário).</li>
+        <li><strong>Certificado Digital:</strong> Documento eletrônico emitido por <strong>Autoridade Certificadora (AC)</strong> que vincula chave pública à identidade do titular.</li>
+        <li><strong>ICP-Brasil:</strong> Infraestrutura de Chaves Públicas Brasileira. AC-Raiz = <strong>ITI</strong> (Instituto Nacional de Tecnologia da Informação).</li>
+        <li><strong>Tipo A1:</strong> Armazenado em <span class="hl">software</span> (arquivo). Validade: 1 ano.</li>
+        <li><strong>Tipo A3:</strong> Armazenado em <span class="hl">hardware</span> (token/smart card). Validade: até 5 anos. Mais seguro.</li>
+        <li><strong>Hash:</strong> Função que gera resumo de tamanho fixo. Usada para verificar integridade. Ex: SHA-256.</li>
+      </ul>
+      <div class="alert alert-info">
+        💡 <strong>Processo:</strong> Remetente calcula o <strong>hash</strong> do documento → criptografa o hash com sua <strong>chave privada</strong> (assinatura) → destinatário descriptografa com a <strong>chave pública</strong> e compara os hashes.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">💾 Backup</div>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-label">Completo (Full)</div>
+          <div class="card-value">Cópia de <strong>todos</strong> os dados. Demorado, restauração rápida (1 mídia).</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Incremental</div>
+          <div class="card-value">Alterado desde o <span class="hl">último backup</span> (qualquer tipo). Rápido p/ gravar, lento p/ restaurar.</div>
+        </div>
+        <div class="card">
+          <div class="card-label">Diferencial</div>
+          <div class="card-value">Alterado desde o último <span class="hl">backup completo</span>. Equilíbrio entre espaço e velocidade.</div>
+        </div>
+      </div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Regra 3-2-1</div>
+        <div class="mnemonic-text">3 – 2 – 1</div>
+        <div class="mnemonic-desc"><strong>3</strong> cópias · <strong>2</strong> mídias diferentes · <strong>1</strong> cópia fora do site (remota)</div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔍 Antivírus</div>
+      <ul class="topic-list">
+        <li><strong>Heurística:</strong> Identifica vírus desconhecidos por comportamento. Pode gerar <span class="hl-red">falsos positivos</span>.</li>
+        <li><strong>Assinatura:</strong> Identifica vírus conhecidos em lista. Menos eficaz contra <span class="hl-red">Zero-Day</span>.</li>
+        <li><strong>Antivírus ≠ Firewall:</strong> Antivírus detecta/remove arquivos; firewall controla tráfego na rede.</li>
+      </ul>
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Cenário de Ataque</div>
+      <div class="example-text">
+        <strong>Cenário:</strong> Um servidor da Câmara recebe um e-mail com anexo "Edital_Final.pdf.exe". Ao abrir:<br>
+        1. O arquivo é um <strong>Trojan</strong> (parece PDF, mas é executável malicioso).<br>
+        2. O Trojan instala um <strong>Backdoor</strong> (RAT) no computador.<br>
+        3. O invasor usa o backdoor para instalar um <strong>Ransomware</strong>, criptografando os arquivos.<br>
+        4. Exige pagamento em Bitcoin para liberar os dados.<br>
+        <strong>Defesa:</strong> Backup 3-2-1 + treinamento contra <strong>Phishing</strong> + antivírus com <strong>heurística</strong>.
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> Diferentemente do vírus, o worm é capaz de se propagar automaticamente pela rede, explorando vulnerabilidades, sem necessidade de ação humana.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-seg-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-seg-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-seg-1"><div class="quiz-answer correct">✅ <strong>CERTO.</strong> O vírus precisa de ação humana (executar o arquivo). O worm é <strong>auto-propagável</strong> pela rede.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> No backup incremental, são copiados todos os dados que foram alterados desde o último backup completo (full).</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-seg-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-seg-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-seg-2"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> Isso descreve o backup <strong>diferencial</strong>. O incremental copia o que mudou desde o <strong>último backup de qualquer tipo</strong> (full, incremental ou diferencial).</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 8. WINDOWS ===== -->
+<div class="section" id="s-7">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🪟</span>
+    <span class="section-title">8. Sistemas Operacionais: Windows, Android e iOS</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <ul class="topic-list">
+      <li><strong>Microsoft Defender:</strong> Antivírus/Antimalware integrado.</li>
+      <li><strong>SmartScreen:</strong> Verifica phishing e arquivos maliciosos na web.</li>
+      <li><strong>SmartApp Control (Win 11):</strong> Executa apenas apps de boa reputação.</li>
+      <li><strong>Firewall:</strong> Bloqueia acessos indevidos. <span class="hl-red">NÃO faz backup</span>.</li>
+      <li><strong>BitLocker:</strong> Criptografia de unidade de disco.</li>
+      <li><strong>OneDrive:</strong> Sincronização/backup na nuvem. Permite edição <span class="hl">offline</span>.</li>
+      <li><strong>Arquivos:</strong> Caracteres proibidos: <code>\ / : * ? " &lt; &gt; |</code>. <span class="hl-red">NÃO diferencia</span> maiúsculas/minúsculas.</li>
+    </ul>
+
+    <div class="subsection">
+      <div class="subsection-title">⌨️ Atalhos Importantes</div>
+      <table class="info-table">
+        <thead><tr><th>Atalho</th><th>Função</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Win + V</strong></td><td>Histórico da área de transferência (múltiplos itens)</td></tr>
+          <tr><td><strong>Win + E</strong></td><td>Explorador de Arquivos</td></tr>
+          <tr><td><strong>Alt + Tab</strong></td><td>Alternar entre janelas (NÃO cria áreas de trabalho)</td></tr>
+          <tr><td><strong>Win + Tab</strong></td><td>Visão de tarefas / áreas de trabalho virtuais</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="alert alert-warning">
+      ⚠️ <strong>Movimentação:</strong> Mesma unidade → <strong>Move</strong> (ajusta ponteiros). Unidades diferentes → <strong>Copia</strong> (permissões NTFS podem mudar).
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🤖 Android</div>
+      <ul class="topic-list">
+        <li><strong>Base:</strong> Kernel <span class="hl">Linux</span>. Código-fonte aberto (AOSP). Desenvolvido pelo Google.</li>
+        <li><strong>Loja:</strong> Google Play Store. Permite instalação de apps de <span class="hl-red">fontes externas</span> (sideloading) — risco de malware.</li>
+        <li><strong>Permissões:</strong> Apps solicitam permissões granulares (câmera, localização, contatos). Usuário pode revogar a qualquer momento.</li>
+        <li><strong>Sandbox:</strong> Cada app roda em processo isolado. Um app <span class="hl-red">não acessa</span> dados de outro diretamente.</li>
+        <li><strong>Fragmentação:</strong> Múltiplos fabricantes → versões diferentes do SO → atualizações de segurança podem <span class="hl-red">demorar</span>.</li>
+        <li><strong>Criptografia:</strong> Criptografia de disco ativada por padrão desde Android 6.0 (Marshmallow).</li>
+        <li><strong>Google Play Protect:</strong> Verificação automática de apps contra malware na Play Store.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🍎 iOS (iPhone/iPad)</div>
+      <ul class="topic-list">
+        <li><strong>Base:</strong> Derivado do macOS (kernel XNU/Darwin). Código <span class="hl">fechado</span> e proprietário da Apple.</li>
+        <li><strong>Loja:</strong> App Store <span class="hl">exclusiva</span>. Apps passam por revisão rigorosa antes da publicação.</li>
+        <li><strong>Sandbox:</strong> Isolamento ainda mais restritivo que Android. Apps <span class="hl-red">não podem</span> acessar o sistema de arquivos livremente.</li>
+        <li><strong>Atualizações:</strong> Centralizadas pela Apple → todos os dispositivos compatíveis recebem <span class="hl-green">simultaneamente</span>.</li>
+        <li><strong>Face ID / Touch ID:</strong> Autenticação biométrica armazenada no <strong>Secure Enclave</strong> (chip dedicado, dados nunca saem do dispositivo).</li>
+        <li><strong>iCloud:</strong> Sincronização e backup na nuvem. Criptografia de ponta a ponta em dados sensíveis.</li>
+        <li><strong>Sideloading:</strong> Historicamente <span class="hl-red">não permitido</span> (sem fontes externas). Mudanças recentes na UE (DMA) podem alterar.</li>
+      </ul>
+    </div>
+
+    <div class="comp-diagram">
+      <div class="comp-box">
+        <div class="comp-box-title" style="color:#16a34a">Android</div>
+        <div class="comp-box-content">Código <strong>aberto</strong> (Linux)<br>Sideloading <strong>permitido</strong><br>Fragmentação de versões<br>Personalização ampla</div>
+      </div>
+      <div class="comp-box">
+        <div class="comp-box-title" style="color:#0f766e">iOS</div>
+        <div class="comp-box-content">Código <strong>fechado</strong> (Apple)<br>App Store <strong>exclusiva</strong><br>Atualizações simultâneas<br>Ecossistema controlado</div>
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Atalhos na Prática</div>
+      <div class="example-text">
+        Você está trabalhando e precisa abrir 3 documentos em pastas diferentes:<br>
+        1. <strong>Win + E</strong> → abre o Explorador de Arquivos.<br>
+        2. Copia textos de vários lugares → <strong>Win + V</strong> → acessa o histórico da área de transferência e cola o item desejado.<br>
+        3. Quer organizar janelas lado a lado → <strong>Win + Tab</strong> → cria áreas de trabalho virtuais (uma para documentos, outra para navegador).
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> No Windows 10/11, ao arrastar um arquivo de uma pasta para outra dentro da mesma unidade (ex: C: para C:), o sistema, por padrão, copia o arquivo para o destino.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-win-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-win-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-win-1"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> Na mesma unidade, o padrão é <strong>mover</strong> (ajusta ponteiros). Só copia quando arrasta entre <strong>unidades diferentes</strong>.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> O Windows diferencia maiúsculas e minúsculas nos nomes de arquivos, de modo que "Relatorio.docx" e "relatorio.docx" podem coexistir na mesma pasta.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-win-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-win-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-win-2"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> O Windows <strong>NÃO diferencia</strong> maiúsculas/minúsculas nos nomes de arquivos. "Relatorio.docx" e "relatorio.docx" são o mesmo arquivo.</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 9. OFFICE 365 ===== -->
+<div class="section" id="s-8">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">📝</span>
+    <span class="section-title">9. Microsoft Office 365</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="card-grid">
+      <div class="card">
+        <div class="card-label">Word</div>
+        <div class="card-value"><strong>Estilos:</strong> Padronização de títulos/seções.<br><strong>Pincel de Formatação:</strong> Copia formatação, não marca cores (isso é Realce).<br>Pode inserir planilha Excel dentro do documento.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">Excel</div>
+        <div class="card-value"><strong>CONT.VALORES:</strong> Conta tudo <span class="hl-red">não vazio</span> (texto, números, erros).<br><strong>CONT.NÚM:</strong> Conta apenas números.<br><strong>ALEATÓRIO():</strong> Valores entre 0 e 1.<br><strong>SOMASE():</strong> Soma com critérios.</div>
+      </div>
+      <div class="card">
+        <div class="card-label">PowerPoint</div>
+        <div class="card-value"><strong>Slide Mestre:</strong> Altera todos os slides baseados nele.<br><strong>Transição:</strong> Efeito <span class="hl">entre</span> slides.<br><strong>Animação:</strong> Efeito em objetos <span class="hl">dentro</span> do slide.</div>
+      </div>
+    </div>
+
+    <div class="alert alert-danger">
+      ⚠️ <strong>Pegadinha Excel:</strong> Se disser que CONT.VALORES conta "apenas números", marque <span class="hl-red">ERRADO</span>. Quem faz isso é CONT.NÚM.
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Funções Excel na Prática</div>
+      <div class="example-text">
+        Planilha com células A1:A5 contendo: <strong>10, "texto", 30, (vazio), #REF!</strong><br>
+        <strong>=CONT.VALORES(A1:A5)</strong> → <strong>4</strong> (conta tudo não vazio: 10, "texto", 30, #REF!)<br>
+        <strong>=CONT.NÚM(A1:A5)</strong> → <strong>2</strong> (conta apenas números: 10, 30)<br>
+        <strong>=SOMA(A1:A5)</strong> → <strong>#REF!</strong> (erro se propaga)<br>
+        <strong>=SOMASE(A1:A5,"&gt;5")</strong> → <strong>40</strong> (soma apenas os valores > 5: 10 + 30)
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> No PowerPoint, a transição é o efeito aplicado a objetos individuais dentro de um slide, como textos e imagens.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-off-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-off-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-off-1"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> Transição é o efeito <strong>entre</strong> slides. Efeitos em objetos <strong>dentro</strong> do slide são <strong>animações</strong>.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> No Word, o Pincel de Formatação permite copiar a formatação de um trecho de texto (fonte, tamanho, cor) e aplicá-la a outro trecho, sem alterar o conteúdo.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-off-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-off-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-off-2"><div class="quiz-answer correct">✅ <strong>CERTO.</strong> O Pincel de Formatação copia apenas a formatação. O conteúdo permanece inalterado. Atenção: ele <strong>não marca cores</strong> (isso é Realce).</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 10. REDES ===== -->
+<div class="section" id="s-9">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🌐</span>
+    <span class="section-title">10. Redes, Firewall e Proxy</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">📡 Tipos de Redes: LAN, MAN e WAN</div>
+      <table class="info-table">
+        <thead><tr><th>Tipo</th><th>Abrangência</th><th>Exemplo</th></tr></thead>
+        <tbody>
+          <tr><td><strong>LAN</strong> (Local Area Network)</td><td>Área local: sala, prédio, campus</td><td>Rede de escritório, laboratório</td></tr>
+          <tr><td><strong>MAN</strong> (Metropolitan Area Network)</td><td>Cidade ou região metropolitana</td><td>Rede entre filiais na mesma cidade</td></tr>
+          <tr><td><strong>WAN</strong> (Wide Area Network)</td><td>Longa distância: países, continentes</td><td>A <span class="hl">Internet</span> é a maior WAN do mundo</td></tr>
+        </tbody>
+      </table>
+      <ul class="topic-list">
+        <li><strong>PAN:</strong> Rede pessoal (Bluetooth, poucos metros).</li>
+        <li><strong>WLAN:</strong> LAN sem fio (Wi-Fi). Padrão IEEE <span class="hl">802.11</span>.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🏢 Internet, Intranet e Extranet</div>
+      <ul class="topic-list">
+        <li><strong>Internet:</strong> Rede pública mundial. Usa TCP/IP, HTTP, HTTPS, DNS, FTP etc.</li>
+        <li><strong>Intranet:</strong> Rede privada e restrita. Usa <span class="hl">mesmos protocolos da Internet</span> (TCP/IP, HTTP, HTTPS). Acessível via VPN.</li>
+        <li><strong>Extranet:</strong> Acesso de parceiros/clientes a partes específicas da Intranet.</li>
+      </ul>
+      <div class="alert alert-danger">
+        ⚠️ O cadeado (HTTPS) sinaliza segurança na conexão, <span class="hl-red">NÃO</span> indica que o site é uma Intranet.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔗 Arquitetura TCP/IP e NAT</div>
+      <table class="info-table">
+        <thead><tr><th>Camada TCP/IP</th><th>Função</th><th>Protocolos</th></tr></thead>
+        <tbody>
+          <tr><td><strong>4. Aplicação</strong></td><td>Interface com o usuário</td><td>HTTP, HTTPS, FTP, SMTP, POP3, IMAP, DNS, DHCP</td></tr>
+          <tr><td><strong>3. Transporte</strong></td><td>Entrega confiável (ou não)</td><td><strong>TCP</strong> (confiável, conexão) · <strong>UDP</strong> (rápido, sem conexão)</td></tr>
+          <tr><td><strong>2. Internet (Rede)</strong></td><td>Endereçamento e roteamento</td><td><strong>IP</strong> (IPv4, IPv6), ICMP, ARP</td></tr>
+          <tr><td><strong>1. Acesso à Rede</strong></td><td>Transmissão física dos bits</td><td>Ethernet, Wi-Fi, PPP</td></tr>
+        </tbody>
+      </table>
+      <ul class="topic-list">
+        <li><strong>IPv4:</strong> 32 bits (ex: 192.168.1.1). Cerca de 4,3 bilhões de endereços.</li>
+        <li><strong>IPv6:</strong> 128 bits (ex: 2001:0db8::1). Resolve escassez de IPv4.</li>
+        <li><strong>NAT (Network Address Translation):</strong> Traduz endereços IP <span class="hl">privados</span> para um IP <span class="hl">público</span>. Permite que vários dispositivos compartilhem um único IP público na Internet.</li>
+        <li><strong>DNS:</strong> Converte nomes de domínio (www.camara.leg.br) em endereços IP.</li>
+        <li><strong>DHCP:</strong> Atribui endereços IP <span class="hl">automaticamente</span> aos dispositivos da rede.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔒 Acesso Remoto: VPN e RDP</div>
+      <div class="comp-diagram">
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#0f766e">VPN (Virtual Private Network)</div>
+          <div class="comp-box-content">Cria <strong>túnel criptografado</strong> pela Internet<br>Acesso seguro à rede interna (Intranet)<br>Protocolos: IPSec, OpenVPN, WireGuard<br>Mascara IP real do usuário</div>
+        </div>
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#b45309">RDP (Remote Desktop Protocol)</div>
+          <div class="comp-box-content">Protocolo Microsoft (porta <span class="hl">3389</span>)<br>Controla computador <strong>remotamente</strong><br>Tela, teclado e mouse à distância<br>Deve usar VPN para acesso externo seguro</div>
+        </div>
+      </div>
+      <div class="alert alert-info">
+        💡 <strong>VPN ≠ Proxy:</strong> VPN criptografa <strong>todo</strong> o tráfego do dispositivo. Proxy redireciona apenas o tráfego de um app/navegador específico.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🛡️ Firewall</div>
+      <ul class="topic-list">
+        <li><strong>Conceito:</strong> Hardware ou software que regula tráfego via regras.</li>
+        <li><strong>Padrão:</strong> <span class="hl-red">Bloqueia</span> inbound, <span class="hl-green">permite</span> outbound (salvo regra).</li>
+        <li><strong>WAF:</strong> Opera na <span class="hl">Camada 7 (Aplicação)</span> do OSI. Diferente dos comuns (Camadas 3/4).</li>
+        <li><strong>Stateful:</strong> Lembra conexões ativas. Se saída foi permitida, retorno é aceito.</li>
+        <li><strong>UTM:</strong> Combina firewall, antivírus, antispyware em uma solução.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔀 Proxy</div>
+      <div class="comp-diagram">
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#0f766e">Proxy Direto</div>
+          <div class="comp-box-content">Intermediário entre <strong>usuário e web</strong><br>Cache para acelerar acesso<br>Filtros de conteúdo</div>
+        </div>
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#b45309">Proxy Reverso</div>
+          <div class="comp-box-content">Protege servidores <strong>backend</strong><br>Balanceamento de carga<br>Não é exclusivo p/ conteúdo dinâmico</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🌍 Navegadores (Chrome, Edge, Firefox)</div>
+      <ul class="topic-list">
+        <li><strong>Chrome:</strong> Sincronização via Conta Google. Verifica senhas vazadas. "Limpar dados" apaga histórico mas <span class="hl-red">NÃO</span> exclui arquivos baixados.</li>
+        <li><strong>Edge:</strong> Modo InPrivate apaga histórico/cookies, mas <span class="hl-red">NÃO</span> remove favoritos ou downloads. VPN integrada (Secure Network). Copilot (IA). F9 = Leitura Avançada.</li>
+        <li><strong>Firefox:</strong> Tags em favoritos. Painel lateral permanente de histórico. Alertas de senhas expostas.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🍪 Cookies e HTTPS</div>
+      <ul class="topic-list">
+        <li><strong>Cookies:</strong> Arquivos de texto no computador do usuário. O usuário <span class="hl-green">pode</span> bloqueá-los.</li>
+        <li><strong>HTTPS:</strong> Criptografia na conexão. Sua presença <span class="hl-red">NÃO</span> garante que o site é uma Intranet.</li>
+      </ul>
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Proxy Direto vs Reverso</div>
+      <div class="example-text">
+        <strong>Proxy Direto:</strong> Um servidor público da Câmara acessa "youtube.com". O proxy intercepta → verifica se está na lista de sites bloqueados → se permitido, faz a requisição em nome do usuário e armazena em cache para acelerar futuros acessos.<br>
+        <strong>Proxy Reverso:</strong> Um cidadão acessa "www.camara.leg.br". O proxy reverso recebe a requisição → decide para qual servidor backend encaminhar (balanceamento de carga) → protege os servidores internos.
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> Um firewall do tipo WAF (Web Application Firewall) atua na camada 3 (rede) do modelo OSI, filtrando pacotes com base nos endereços IP de origem e destino.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-rede-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-rede-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-rede-1"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> O WAF atua na <strong>camada 7 (Aplicação)</strong> do modelo OSI, analisando requisições HTTP/HTTPS. Firewalls comuns atuam nas camadas 3/4.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> A presença do cadeado (HTTPS) na barra de endereço do navegador indica que a conexão está criptografada, mas não garante que o site é legítimo ou seguro.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-rede-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-rede-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-rede-2"><div class="quiz-answer correct">✅ <strong>CERTO.</strong> HTTPS garante que a <strong>conexão</strong> é criptografada, mas sites de phishing também podem usar HTTPS. Não é garantia de legitimidade.</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 11. GOVERNANÇA TI ===== -->
+<div class="section" id="s-10">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🏛️</span>
+    <span class="section-title">11. Gestão e Governança de TI</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">📋 Governança vs Gestão</div>
+      <ul class="topic-list">
+        <li><strong>Governança de TI:</strong> Responsabilidade da <span class="hl">alta administração</span>. Alinhamento Estratégico (TI + Negócio). Não é exclusiva de grandes empresas.</li>
+        <li><strong>Governança Digital:</strong> Não é só tecnologia; envolve políticas, processos e regulamentos para transparência.</li>
+        <li><strong>Accountability:</strong> No setor público = prestação de contas e responsabilidade, não apenas conduta ética.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📦 ITIL – Utilidade vs Garantia</div>
+      <div class="comp-diagram">
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#0f766e">Utilidade</div>
+          <div class="comp-box-content"><strong>O que o serviço faz?</strong><br>Aumento de capacidade/desempenho<br>"Apto para o <span class="hl">propósito</span>"</div>
+        </div>
+        <div class="comp-box">
+          <div class="comp-box-title" style="color:#b45309">Garantia</div>
+          <div class="comp-box-content"><strong>Como é entregue?</strong><br>Disponibilidade, Continuidade, Segurança<br>"Apto para o <span class="hl">uso</span>"</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📊 Governança de Dados (DAMA-DMBOK)</div>
+      <ul class="topic-list">
+        <li><strong>CDO (Chief Data Officer):</strong> Executivo responsável pela estratégia e qualidade dos dados.</li>
+        <li><strong>Data Steward:</strong> Guardião do uso, controle e metadados (atua na área de <span class="hl">negócios</span>).</li>
+        <li><strong>Data Profiling:</strong> "Fotografia inicial" – analisa estrutura e inconsistências antes da limpeza.</li>
+        <li><strong>Metadados:</strong> "Dados sobre dados". Cruciais para integrar fontes distintas.</li>
+        <li><strong>Acurácia:</strong> Dados representam corretamente a realidade (≠ falta de duplicatas).</li>
+        <li><strong>Consistência:</strong> Dados iguais em sistemas diferentes (≠ representação do mundo real).</li>
+      </ul>
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Utilidade vs Garantia (ITIL)</div>
+      <div class="example-text">
+        <strong>Serviço:</strong> Sistema de votação eletrônica da Câmara.<br>
+        <strong>Utilidade (o que faz):</strong> Permite que deputados votem projetos de lei remotamente — aumenta a capacidade legislativa.<br>
+        <strong>Garantia (como é entregue):</strong> O sistema está disponível 99,9% do tempo, com backups diários, criptografia e autenticação por certificado digital.<br>
+        → A Utilidade torna o serviço "apto para o <strong>propósito</strong>"; a Garantia o torna "apto para o <strong>uso</strong>".
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> A governança de TI é uma atividade restrita a grandes empresas que possuem departamentos de tecnologia estruturados.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-gov-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-gov-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-gov-1"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> A governança de TI <strong>não é exclusiva</strong> de grandes empresas. Qualquer organização que utiliza TI pode (e deve) implementar governança.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> No contexto de governança de dados (DAMA-DMBOK), o Data Steward é o responsável estratégico pela política de dados da organização e responde diretamente ao CEO.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-gov-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-gov-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-gov-2"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> O Data Steward é o <strong>guardião operacional</strong> dos dados (controle, uso, metadados) na área de negócios. Quem é o executivo estratégico responsável é o <strong>CDO (Chief Data Officer)</strong>.</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 12. HARDWARE ===== -->
+<div class="section" id="s-11">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🖥️</span>
+    <span class="section-title">12. Arquitetura de Computadores</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">🏗️ Von Neumann</div>
+      <p style="margin-bottom:10px;font-size:13px;color:#64748b;">CPU + Memória + Dispositivos de E/S. Ciclo: <strong>Busca → Decodificação → Execução</strong>.</p>
+      <ul class="topic-list">
+        <li><strong>Memórias:</strong> Registradores > Cache > RAM > Disco. RAM é <span class="hl-red">volátil</span>; ROM não.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔌 Barramentos</div>
+      <ul class="topic-list">
+        <li><strong>PCI Express:</strong> <span class="hl">Serial</span>, ponto a ponto. Canal exclusivo por dispositivo (não compartilha largura de banda).</li>
+        <li><strong>PCI Convencional:</strong> Paralelo, obsoleto para laptops.</li>
+        <li><strong>USB:</strong> Limite de 5m para cabos passivos. Foco em versatilidade de velocidades.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔢 Sistemas de Numeração</div>
+      <ul class="topic-list">
+        <li><strong>Binário → Hexadecimal:</strong> Agrupe de <span class="hl">4 em 4</span> bits. Ex: 1111₂ = F₁₆; 1001₂ = 9₁₆.</li>
+        <li><strong>Complemento de Dois:</strong> Inverter bits e somar 1. Representação de números negativos.</li>
+        <li><strong>16 bits (Signed):</strong> Intervalo de <span class="hl">-32.768</span> a <span class="hl">+32.767</span>. Representar 32.768 positivo causa overflow.</li>
+        <li><strong>Capacidade:</strong> Com n bits → 2ⁿ números distintos.</li>
+      </ul>
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Conversão Binário → Hexadecimal</div>
+      <div class="example-text">
+        Converter <strong>10110011₂</strong> para hexadecimal:<br>
+        1. Agrupe de 4 em 4: <strong>1011</strong> | <strong>0011</strong><br>
+        2. Converta cada grupo: 1011₂ = <strong>B₁₆</strong> (8+2+1=11) | 0011₂ = <strong>3₁₆</strong> (2+1=3)<br>
+        3. Resultado: <strong>B3₁₆</strong><br><br>
+        <strong>Complemento de Dois</strong> para -5 em 8 bits:<br>
+        1. +5 em binário: 00000101<br>
+        2. Inverte bits: 11111010<br>
+        3. Soma 1: <strong>11111011</strong> → representação de -5.
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> Na hierarquia de memórias de um computador, a memória cache é mais rápida que a RAM, porém possui menor capacidade de armazenamento.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-hw-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-hw-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-hw-1"><div class="quiz-answer correct">✅ <strong>CERTO.</strong> Hierarquia: Registradores > Cache > RAM > Disco. Quanto mais rápida, menor a capacidade e maior o custo.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> O barramento PCI Express utiliza transmissão paralela e compartilha a largura de banda entre todos os dispositivos conectados.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-hw-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-hw-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-hw-2"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> O PCI Express usa transmissão <strong>serial</strong>, ponto a ponto, com canal <strong>exclusivo</strong> por dispositivo. Quem é paralelo e compartilhado é o PCI Convencional.</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== 13. FORENSE COMPUTACIONAL ===== -->
+<div class="section" id="s-12">
+  <div class="section-header" onclick="toggle(this)">
+    <span class="section-icon">🔬</span>
+    <span class="section-title">13. Forense Computacional</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">🗂️ Recuperação de Arquivos Apagados</div>
+      <ul class="topic-list">
+        <li><strong>Exclusão lógica:</strong> Ao deletar um arquivo, o SO marca o espaço como <span class="hl">disponível</span>, mas os dados permanecem no disco até serem <span class="hl-red">sobrescritos</span>.</li>
+        <li><strong>Lixeira:</strong> Arquivo movido para a Lixeira ainda está intacto. Exclusão permanente (Shift+Del) remove a referência na MFT/FAT.</li>
+        <li><strong>File Carving:</strong> Técnica que recupera arquivos buscando <strong>assinaturas</strong> (headers/footers) no disco bruto, sem depender do sistema de arquivos.</li>
+        <li><strong>MFT (Master File Table):</strong> Tabela do NTFS que registra metadados de todos os arquivos. Arquivos pequenos podem estar <span class="hl">inteiramente dentro da MFT</span>.</li>
+        <li><strong>Slack Space:</strong> Espaço não utilizado entre o fim do arquivo e o fim do cluster. Pode conter <span class="hl-red">resíduos de dados anteriores</span>.</li>
+        <li><strong>SSD vs HDD:</strong> Em SSDs, o comando <strong>TRIM</strong> zera blocos liberados → recuperação é <span class="hl-red">muito mais difícil</span> que em HDDs.</li>
+      </ul>
+      <div class="alert alert-danger">
+        ⚠️ <strong>Importante:</strong> Quanto mais o disco é utilizado após a exclusão, menor a chance de recuperação (sobrescrita dos setores).
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔍 Identificação, Isolamento, Preservação e Coleta</div>
+      <table class="info-table">
+        <thead><tr><th>Etapa</th><th>Descrição</th><th>Cuidados</th></tr></thead>
+        <tbody>
+          <tr><td><strong>1. Identificação</strong></td><td>Reconhecer e localizar potenciais fontes de evidência digital</td><td>Documentar o estado inicial (fotos, vídeos)</td></tr>
+          <tr><td><strong>2. Isolamento</strong></td><td>Impedir alteração ou destruição das evidências</td><td><span class="hl-red">Não ligar/desligar</span> equipamentos precipitadamente; isolar da rede</td></tr>
+          <tr><td><strong>3. Preservação</strong></td><td>Garantir integridade dos dados coletados</td><td>Calcular <strong>hash</strong> (SHA-256/MD5) antes e depois da cópia</td></tr>
+          <tr><td><strong>4. Coleta</strong></td><td>Criar cópia forense (imagem bit a bit) da mídia</td><td>Usar <strong>bloqueador de escrita</strong> (write blocker) para evitar alterações</td></tr>
+        </tbody>
+      </table>
+      <ul class="topic-list">
+        <li><strong>Imagem Forense:</strong> Cópia <span class="hl">bit a bit</span> (setor a setor) do dispositivo. Formatos: DD (raw), E01 (EnCase), AFF.</li>
+        <li><strong>Write Blocker:</strong> Dispositivo (hardware ou software) que permite <span class="hl-green">leitura</span> mas <span class="hl-red">impede escrita</span> na mídia original.</li>
+        <li><strong>Ordem de Volatilidade (RFC 3227):</strong> Coletar primeiro os dados mais voláteis: Registradores → Cache → RAM → Disco → Logs remotos → Backup.</li>
+        <li><strong>Memória RAM:</strong> Evidência <span class="hl-red">volátil</span> — se desligar o computador, perde-se. Pode conter senhas, processos em execução, conexões ativas.</li>
+      </ul>
+      <div class="alert alert-info">
+        💡 <strong>Princípio de Locard:</strong> "Todo contato deixa um vestígio." Aplicado à forense digital: toda interação com um sistema deixa rastros.
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⛓️ Cadeia de Custódia</div>
+      <ul class="topic-list">
+        <li><strong>Conceito:</strong> Registro documentado de <span class="hl">todos os passos</span> pelos quais uma evidência passa, desde a coleta até a apresentação em juízo.</li>
+        <li><strong>Objetivo:</strong> Garantir <span class="hl-green">autenticidade</span>, <span class="hl-green">integridade</span> e <span class="hl-green">rastreabilidade</span> da prova digital.</li>
+        <li><strong>Registrar:</strong> Quem coletou, quando, onde, como, por quê. Cada transferência de posse deve ser documentada.</li>
+        <li><strong>Hash:</strong> Calculado no momento da coleta e verificado em cada etapa. Se o hash mudar → <span class="hl-red">evidência comprometida</span>.</li>
+        <li><strong>CPP (Art. 158-A a 158-F):</strong> O Código de Processo Penal brasileiro regulamenta a cadeia de custódia. Vestígio deve ser <span class="hl">isolado, coletado, acondicionado, transportado</span> e armazenado adequadamente.</li>
+        <li><strong>Quebra da cadeia:</strong> Evidência pode ser considerada <span class="hl-red">inadmissível</span> em juízo se a cadeia de custódia for violada.</li>
+      </ul>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Etapas da Cadeia de Custódia (CPP)</div>
+        <div class="mnemonic-text">R – I – C – A – T – R – D</div>
+        <div class="mnemonic-desc"><strong>R</strong>econhecimento · <strong>I</strong>solamento · <strong>C</strong>oleta · <strong>A</strong>condicionamento · <strong>T</strong>ransporte · <strong>R</strong>ecebimento · <strong>D</strong>escarte</div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📋 Log de Eventos do Windows</div>
+      <ul class="topic-list">
+        <li><strong>Event Viewer (Visualizador de Eventos):</strong> Ferramenta nativa do Windows para consultar logs. Acesso: <code>eventvwr.msc</code>.</li>
+        <li><strong>Logs do Sistema:</strong> Eventos do SO (drivers, serviços, hardware).</li>
+        <li><strong>Logs de Segurança:</strong> Tentativas de logon (sucesso/falha), acesso a objetos, alterações de política. <span class="hl">Essenciais para forense</span>.</li>
+        <li><strong>Logs de Aplicação:</strong> Eventos gerados por aplicativos instalados.</li>
+        <li><strong>Formato:</strong> Arquivos <code>.evtx</code> armazenados em <code>C:\Windows\System32\winevt\Logs\</code>.</li>
+      </ul>
+      <table class="info-table">
+        <thead><tr><th>Event ID</th><th>Descrição</th><th>Relevância Forense</th></tr></thead>
+        <tbody>
+          <tr><td><strong>4624</strong></td><td>Logon bem-sucedido</td><td>Identifica quem acessou e quando</td></tr>
+          <tr><td><strong>4625</strong></td><td>Falha de logon</td><td>Tentativas de <span class="hl-red">força bruta</span> / acesso não autorizado</td></tr>
+          <tr><td><strong>4648</strong></td><td>Logon com credenciais explícitas</td><td>Uso de credenciais de outro usuário (lateral movement)</td></tr>
+          <tr><td><strong>4688</strong></td><td>Novo processo criado</td><td>Execução de programas (malware, scripts)</td></tr>
+          <tr><td><strong>4720</strong></td><td>Conta de usuário criada</td><td>Criação de contas backdoor</td></tr>
+          <tr><td><strong>7045</strong></td><td>Novo serviço instalado</td><td>Persistência de malware</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-warning">
+        ⚠️ <strong>Logs podem ser apagados!</strong> O Event ID <strong>1102</strong> registra a limpeza do log de segurança — se presente, indica possível <span class="hl-red">tentativa de ocultação</span>.
+      </div>
+    </div>
+
+    <div class="example">
+      <div class="example-label">📌 Exemplo – Investigação Forense Completa</div>
+      <div class="example-text">
+        <strong>Cenário:</strong> Suspeita de acesso não autorizado a um computador da Câmara.<br>
+        1. <strong>Identificação:</strong> O CSIRT detecta múltiplas falhas de logon (Event ID 4625) seguidas de um logon bem-sucedido (4624) às 3h da manhã.<br>
+        2. <strong>Isolamento:</strong> O computador é desconectado da rede (cabo removido). Não é desligado para preservar a RAM.<br>
+        3. <strong>Coleta:</strong> Dump da memória RAM (processos, conexões) → Imagem forense do disco com write blocker → Hash SHA-256 calculado.<br>
+        4. <strong>Cadeia de Custódia:</strong> Formulário preenchido com data, hora, responsável, hash da imagem, lacre na mídia.<br>
+        5. <strong>Análise:</strong> File carving revela arquivo deletado "exfiltrar.ps1". Log de eventos mostra criação de conta (4720) e novo serviço (7045).<br>
+        6. <strong>Resultado:</strong> Evidências apresentadas com hashes íntegros, cadeia de custódia documentada.
+      </div>
+    </div>
+
+    <div class="quiz-block">
+      <div class="quiz-title">📝 Questões para Fixar</div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q1.</strong> Na forense computacional, o file carving é uma técnica que depende do sistema de arquivos (FAT, NTFS) para localizar e recuperar arquivos apagados.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-for-1')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-for-1')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-for-1"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> O file carving <strong>não depende</strong> do sistema de arquivos. Ele busca assinaturas (headers/footers) diretamente no disco bruto, independentemente da estrutura de metadados.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q2.</strong> A cadeia de custódia tem como objetivo garantir que a evidência digital não seja alterada desde a coleta até a apresentação em juízo, registrando todos os responsáveis e procedimentos realizados.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-for-2')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-for-2')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-for-2"><div class="quiz-answer correct">✅ <strong>CERTO.</strong> A cadeia de custódia garante autenticidade, integridade e rastreabilidade. Cada transferência de posse deve ser documentada, e o hash deve ser verificado em cada etapa.</div></div>
+      </div>
+      <div class="quiz-item">
+        <div class="quiz-question"><strong>Q3.</strong> De acordo com a ordem de volatilidade (RFC 3227), os dados armazenados em disco rígido devem ser coletados antes dos dados presentes na memória RAM.</div>
+        <div class="quiz-options">
+          <span class="quiz-opt" onclick="answerQuiz(this, false, 'fb-for-3')">✅ CERTO</span>
+          <span class="quiz-opt" onclick="answerQuiz(this, true, 'fb-for-3')">❌ ERRADO</span>
+        </div>
+        <div class="quiz-feedback" id="fb-for-3"><div class="quiz-answer correct">❌ <strong>ERRADO.</strong> A RAM é <strong>mais volátil</strong> que o disco. Deve-se coletar primeiro os dados mais voláteis: Registradores → Cache → <strong>RAM</strong> → Disco.</div></div>
+      </div>
+    </div>
+
+  </div></div>
+</div>
+
+<div class="footer">
+  Revisão TI e Forense – Policial Legislativo CD 2026 | 13 Temas · 4 Guias Consolidados | CEBRASPE 2024–2026
+</div>
+
+</div>
+
+<script>
+function toggle(h) { h.closest('.section').classList.toggle('open'); updateProgress(); }
+function expandAll() { document.querySelectorAll('.section').forEach(s => s.classList.add('open')); updateProgress(); }
+function collapseAll() { document.querySelectorAll('.section').forEach(s => s.classList.remove('open')); updateProgress(); }
+function goTo(i) {
+  const s = document.getElementById('s-' + i);
+  if (s) { s.classList.add('open'); s.scrollIntoView({ behavior: 'smooth', block: 'start' }); updateProgress(); }
+}
+function updateProgress() {
+  const all = document.querySelectorAll('.section').length;
+  const open = document.querySelectorAll('.section.open').length;
+  document.getElementById('progressFill').style.width = Math.round((open/all)*100) + '%';
+  document.getElementById('progressText').textContent = open + '/' + all;
+}
+document.addEventListener('keydown', e => {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  const k = parseInt(e.key);
+  if (k >= 1 && k <= 9) goTo(k - 1);
+  if (e.key === '0') goTo(9);
+  if (e.key === 'a' || e.key === 'A') expandAll();
+  if (e.key === 'r' || e.key === 'R') collapseAll();
+});
+updateProgress();
+
+function answerQuiz(btn, isCorrect, feedbackId) {
+  const item = btn.closest('.quiz-item');
+  const opts = item.querySelectorAll('.quiz-opt');
+  opts.forEach(o => { o.style.pointerEvents = 'none'; });
+  btn.classList.add(isCorrect ? 'selected-c' : 'selected-e');
+  const fb = document.getElementById(feedbackId);
+  if (fb) fb.classList.add('show');
+}
+</script>
+
+</body>
+</html>
