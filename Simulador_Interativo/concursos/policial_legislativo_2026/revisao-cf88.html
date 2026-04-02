@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão CF/88 – Policial Legislativo CD 2026</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0d1b2a 0%, #1b2838 100%);
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* ===== HEADER ===== */
+.header {
+  text-align: center;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #003366, #004488);
+  border-radius: 12px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '⚖️';
+  position: absolute;
+  font-size: 120px;
+  opacity: 0.06;
+  top: -10px;
+  right: -10px;
+}
+
+.header h1 {
+  font-size: 26px;
+  color: #fff;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.header .subtitle {
+  font-size: 14px;
+  color: #8bb8e8;
+  font-weight: 400;
+}
+
+.header .badge {
+  display: inline-block;
+  background: rgba(255,193,7,0.2);
+  color: #ffc107;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  margin-top: 10px;
+  border: 1px solid rgba(255,193,7,0.3);
+}
+
+/* ===== NAVIGATION ===== */
+.nav-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 25px;
+  padding: 15px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.nav-btn {
+  background: rgba(0,51,102,0.5);
+  color: #8bb8e8;
+  border: 1px solid rgba(139,184,232,0.2);
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.nav-btn:hover, .nav-btn.active {
+  background: #003366;
+  color: #fff;
+  border-color: #0066cc;
+  transform: translateY(-1px);
+}
+
+/* ===== SECTIONS ===== */
+.section {
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.section:hover {
+  border-color: rgba(0,102,204,0.3);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px;
+  cursor: pointer;
+  background: linear-gradient(135deg, rgba(0,51,102,0.4), rgba(0,51,102,0.2));
+  user-select: none;
+  transition: background 0.3s;
+}
+
+.section-header:hover {
+  background: linear-gradient(135deg, rgba(0,51,102,0.6), rgba(0,51,102,0.3));
+}
+
+.section-icon {
+  font-size: 28px;
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  flex: 1;
+}
+
+.section-toggle {
+  font-size: 18px;
+  color: #8bb8e8;
+  transition: transform 0.3s;
+  flex-shrink: 0;
+}
+
+.section.open .section-toggle {
+  transform: rotate(180deg);
+}
+
+.section-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.section.open .section-body {
+  max-height: 5000px;
+}
+
+.section-content {
+  padding: 20px;
+}
+
+/* ===== SUBSECTIONS ===== */
+.subsection {
+  margin-bottom: 20px;
+}
+
+.subsection-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #66b3ff;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(102,179,255,0.2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ===== CARDS ===== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.card {
+  background: rgba(0,51,102,0.25);
+  border: 1px solid rgba(102,179,255,0.15);
+  border-radius: 8px;
+  padding: 14px;
+  transition: all 0.3s;
+}
+
+.card:hover {
+  background: rgba(0,51,102,0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.card-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #ffc107;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.card-value {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* ===== MNEMONIC BOX ===== */
+.mnemonic {
+  background: linear-gradient(135deg, rgba(255,193,7,0.12), rgba(255,152,0,0.08));
+  border: 1px solid rgba(255,193,7,0.3);
+  border-left: 4px solid #ffc107;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 12px 0;
+}
+
+.mnemonic-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #ffc107;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.mnemonic-text {
+  font-size: 18px;
+  font-weight: 800;
+  color: #ffca28;
+  letter-spacing: 3px;
+  margin-bottom: 4px;
+}
+
+.mnemonic-desc {
+  font-size: 13px;
+  color: #ccc;
+  line-height: 1.5;
+}
+
+/* ===== ALERT BOX ===== */
+.alert {
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 12px 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.alert-danger {
+  background: rgba(220,53,69,0.12);
+  border: 1px solid rgba(220,53,69,0.3);
+  border-left: 4px solid #dc3545;
+  color: #f5a0a8;
+}
+
+.alert-info {
+  background: rgba(13,202,240,0.1);
+  border: 1px solid rgba(13,202,240,0.25);
+  border-left: 4px solid #0dcaf0;
+  color: #8ee5f5;
+}
+
+.alert-success {
+  background: rgba(25,135,84,0.12);
+  border: 1px solid rgba(25,135,84,0.3);
+  border-left: 4px solid #198754;
+  color: #75d4a7;
+}
+
+/* ===== LISTS ===== */
+.topic-list {
+  list-style: none;
+  margin: 10px 0;
+}
+
+.topic-list li {
+  padding: 10px 14px;
+  margin-bottom: 6px;
+  background: rgba(255,255,255,0.03);
+  border-radius: 6px;
+  border-left: 3px solid #0066cc;
+  font-size: 14px;
+  line-height: 1.6;
+  transition: all 0.2s;
+}
+
+.topic-list li:hover {
+  background: rgba(255,255,255,0.06);
+  border-left-color: #3399ff;
+}
+
+.topic-list li strong {
+  color: #66b3ff;
+}
+
+/* ===== HIGHLIGHT ===== */
+.hl { color: #ffc107; font-weight: 700; }
+.hl-blue { color: #66b3ff; font-weight: 700; }
+.hl-green { color: #75d4a7; font-weight: 700; }
+.hl-red { color: #f5a0a8; font-weight: 700; }
+
+/* ===== TABLE ===== */
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 12px 0;
+  font-size: 13px;
+}
+
+.info-table th {
+  background: rgba(0,51,102,0.5);
+  color: #8bb8e8;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  color: #ccc;
+  line-height: 1.5;
+}
+
+.info-table tr:hover td {
+  background: rgba(255,255,255,0.03);
+}
+
+/* ===== COMPETENCIAS DIAGRAM ===== */
+.comp-diagram {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.comp-box {
+  background: rgba(0,51,102,0.3);
+  border-radius: 8px;
+  padding: 14px;
+  border: 1px solid rgba(102,179,255,0.15);
+  text-align: center;
+}
+
+.comp-box-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #66b3ff;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.comp-box-content {
+  font-size: 12px;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* ===== BACK BUTTON ===== */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255,255,255,0.08);
+  color: #8bb8e8;
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 8px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s;
+  margin-bottom: 20px;
+}
+
+.back-btn:hover {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+}
+
+/* ===== PROGRESS BAR ===== */
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 13px;
+  color: #8bb8e8;
+}
+
+.progress-track {
+  flex: 1;
+  height: 8px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0066cc, #00cc66);
+  border-radius: 4px;
+  transition: width 0.5s;
+  width: 0%;
+}
+
+.progress-text {
+  font-weight: 700;
+  min-width: 40px;
+  text-align: right;
+}
+
+/* ===== EXPAND/COLLAPSE ALL ===== */
+.controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.ctrl-btn {
+  background: rgba(0,102,204,0.2);
+  color: #66b3ff;
+  border: 1px solid rgba(0,102,204,0.3);
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.ctrl-btn:hover {
+  background: rgba(0,102,204,0.4);
+  color: #fff;
+}
+
+/* ===== ART 22 ACCORDION ===== */
+.art-accordion {
+  background: rgba(0,51,102,0.2);
+  border: 1px solid rgba(102,179,255,0.1);
+  border-radius: 8px;
+  margin: 12px 0;
+  overflow: hidden;
+}
+
+.art-accordion-header {
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #8bb8e8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s;
+}
+
+.art-accordion-header:hover {
+  background: rgba(0,51,102,0.3);
+}
+
+.art-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.art-accordion.open .art-accordion-body {
+  max-height: 2000px;
+}
+
+.art-accordion-content {
+  padding: 0 16px 14px;
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.7;
+}
+
+.art-accordion-content p {
+  margin-bottom: 4px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+  text-align: center;
+  padding: 20px;
+  color: #555;
+  font-size: 12px;
+  margin-top: 30px;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  .container { padding: 12px; }
+  .header h1 { font-size: 20px; }
+  .section-header { padding: 14px 16px; }
+  .section-title { font-size: 15px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .comp-diagram { grid-template-columns: 1fr; }
+  .nav-btn { padding: 6px 10px; font-size: 11px; }
+  .mnemonic-text { font-size: 15px; letter-spacing: 2px; }
+}
+
+@media (max-width: 480px) {
+  .header { padding: 20px 14px; }
+  .header h1 { font-size: 17px; }
+  .section-content { padding: 14px; }
+  .controls { flex-direction: column; align-items: stretch; }
+  .ctrl-btn { text-align: center; }
+}
+
+@media print {
+  body { background: #fff; color: #000; }
+  .nav-bar, .controls, .back-btn, .progress-container { display: none; }
+  .section { break-inside: avoid; border: 1px solid #ccc; }
+  .section-body { max-height: none !important; }
+  .section-header { background: #f0f0f0; }
+  .section-title { color: #003366; }
+  .mnemonic { border-color: #ccc; background: #fffbe6; }
+  .mnemonic-text { color: #333; }
+  .card { border-color: #ccc; background: #f8f9fa; }
+  .topic-list li { border-left-color: #003366; background: #f8f9fa; }
+  .alert-danger { background: #fff5f5; border-color: #dc3545; color: #721c24; }
+  .alert-info { background: #f0f9ff; border-color: #0dcaf0; color: #055160; }
+  .alert-success { background: #f0fff4; border-color: #198754; color: #0f5132; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<a href="index.html" class="back-btn">← Voltar ao Início</a>
+
+<div class="header">
+  <h1>📜 Revisão – Constituição Federal de 1988</h1>
+  <div class="subtitle">Policial Legislativo – Câmara dos Deputados 2026</div>
+  <div class="badge">🎯 CEBRASPE 2015–2026 • Pontos de Maior Incidência</div>
+</div>
+
+<div class="progress-container">
+  <span>📖 Progresso</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-text" id="progressText">0/6</span>
+</div>
+
+<nav class="nav-bar" id="navBar">
+  <button class="nav-btn" onclick="scrollToSection(0)">1. CF/88 e Poder Constituinte</button>
+  <button class="nav-btn" onclick="scrollToSection(1)">2. Princípios Fundamentais</button>
+  <button class="nav-btn" onclick="scrollToSection(2)">3. Direitos e Garantias</button>
+  <button class="nav-btn" onclick="scrollToSection(3)">4. Organização do Estado</button>
+  <button class="nav-btn" onclick="scrollToSection(4)">5. Poder Legislativo</button>
+  <button class="nav-btn" onclick="scrollToSection(5)">6. TCU e Segurança Pública</button>
+</nav>
+
+<div class="controls">
+  <button class="ctrl-btn" onclick="expandAll()">📂 Expandir Tudo</button>
+  <button class="ctrl-btn" onclick="collapseAll()">📁 Recolher Tudo</button>
+</div>
+
+<!-- ===== SEÇÃO 1 ===== -->
+<div class="section open" id="section-0">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-icon">📜</span>
+    <span class="section-title">1. Constituição Federal de 1988 e Poder Constituinte</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+
+      <div class="subsection">
+        <div class="subsection-title">📋 Características da CF/88</div>
+        <div class="mnemonic">
+          <div class="mnemonic-label">🧠 Mnemônico</div>
+          <div class="mnemonic-text">PEDRA FORMAL</div>
+          <div class="mnemonic-desc">Promulgada, Escrita, Dogmática, Rígida, Analítica – Formal</div>
+        </div>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-label">Origem</div>
+            <div class="card-value"><strong class="hl-blue">Promulgada</strong> (Democrática)</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Forma</div>
+            <div class="card-value"><strong class="hl-blue">Escrita</strong> (Instrumental/Codificada)</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Extensão</div>
+            <div class="card-value"><strong class="hl-blue">Analítica</strong> (Prolixa/Doutrinária)</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Conteúdo</div>
+            <div class="card-value"><strong class="hl-blue">Formal</strong> (Tudo no texto tem status constitucional)</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Estabilidade</div>
+            <div class="card-value"><strong class="hl-blue">Rígida</strong> (processo solene). Parte da doutrina: <strong class="hl">Super-rígida</strong> (cláusulas pétreas)</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Ideologia</div>
+            <div class="card-value"><strong class="hl-blue">Eclética</strong> (Pluralista)</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-title">⚡ Poder Constituinte</div>
+        <table class="info-table">
+          <thead>
+            <tr><th>Tipo</th><th>Características</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong class="hl-blue">Originário</strong></td>
+              <td>Inicial, <strong class="hl">ilimitado juridicamente</strong>, autônomo e incondicionado. Rompe com a ordem anterior.</td>
+            </tr>
+            <tr>
+              <td><strong class="hl-blue">Derivado Reformador</strong></td>
+              <td>Altera a CF via <strong>Emendas (EC)</strong>. Sujeito a limites: <span class="hl">formais</span>, <span class="hl">circunstanciais</span> (intervenção, estado de sítio/defesa) e <span class="hl">materiais</span> (Cláusulas Pétreas).</td>
+            </tr>
+            <tr>
+              <td><strong class="hl-blue">Derivado Decorrente</strong></td>
+              <td>Poder dos <strong>Estados-membros</strong> de criar suas próprias Constituições Estaduais.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===== SEÇÃO 2 ===== -->
+<div class="section" id="section-1">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-icon">🏛️</span>
+    <span class="section-title">2. Princípios Fundamentais (Arts. 1º ao 4º)</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+
+      <div class="alert alert-danger">
+        ⚠️ <strong>Atenção:</strong> A banca ADORA trocar os conceitos desses artigos. Memorize os gatilhos!
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-title">🏗️ Fundamentos (Art. 1º)</div>
+        <div class="mnemonic">
+          <div class="mnemonic-label">🧠 Mnemônico</div>
+          <div class="mnemonic-text">SO – CI – DI – VA – PLU</div>
+          <div class="mnemonic-desc">
+            <strong>So</strong>berania · <strong>Ci</strong>dadania · <strong>Di</strong>gnidade da Pessoa Humana · <strong>Va</strong>lores sociais do trabalho/livre iniciativa · <strong>Plu</strong>ralismo político
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-title">🎯 Objetivos Fundamentais (Art. 3º)</div>
+        <div class="alert alert-info">
+          💡 <strong>Dica:</strong> Os objetivos começam sempre com <strong class="hl">VERBOS</strong>!
+        </div>
+        <ul class="topic-list">
+          <li><strong class="hl-green">Construir</strong> uma sociedade livre, justa e solidária</li>
+          <li><strong class="hl-green">Garantir</strong> o desenvolvimento nacional</li>
+          <li><strong class="hl-green">Erradicar</strong> a pobreza e a marginalização / <strong class="hl-green">Reduzir</strong> as desigualdades</li>
+          <li><strong class="hl-green">Promover</strong> o bem de todos, sem preconceitos</li>
+        </ul>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-title">🌍 Relações Internacionais (Art. 4º)</div>
+        <ul class="topic-list">
+          <li><strong>Prevalência</strong> dos Direitos Humanos</li>
+          <li><strong>Repúdio</strong> ao Terrorismo e ao Racismo</li>
+          <li><strong>Concessão</strong> de Asilo Político</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===== SEÇÃO 3 ===== -->
+<div class="section" id="section-2">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-icon">🛡️</span>
+    <span class="section-title">3. Direitos e Garantias Fundamentais (Art. 5º)</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+
+      <div class="subsection">
+        <div class="subsection-title">👮 Foco em Segurança e Direito Penal</div>
+        <ul class="topic-list">
+          <li><strong>Identificação:</strong> O preso tem direito à identificação dos responsáveis por sua <span class="hl">prisão</span> e seu <span class="hl">interrogatório</span>.</li>
+          <li>
+            <strong>Inviolabilidade Domiciliar:</strong> A casa é asilo inviolável. Entrada sem consentimento:
+            <br>• <strong class="hl-red">Qualquer hora:</strong> Flagrante delito, desastre ou socorro.
+            <br>• <strong class="hl-green">Durante o dia:</strong> Por determinação judicial.
+          </li>
+          <li><strong>Crimes Imprescritíveis:</strong> <span class="hl">Racismo</span> e <span class="hl">Ação de Grupos Armados</span>.</li>
+        </ul>
+
+        <div class="mnemonic">
+          <div class="mnemonic-label">🧠 Inafiançáveis e insuscetíveis de graça/anistia</div>
+          <div class="mnemonic-text">3TH</div>
+          <div class="mnemonic-desc"><strong>T</strong>ráfico · <strong>T</strong>ortura · <strong>T</strong>errorismo · <strong>H</strong>ediondos</div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-title">📑 Remédios Constitucionais</div>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-label">Habeas Corpus</div>
+            <div class="card-value"><strong class="hl-blue">Liberdade de locomoção</strong> (Gratuito)</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Habeas Data</div>
+            <div class="card-value">Informação relativa à <strong class="hl">pessoa do impetrante</strong> (Gratuito)</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Mandado de Segurança</div>
+            <div class="card-value"><strong class="hl-blue">Direito líquido e certo</strong> (não amparado por HC ou HD)</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Ação Popular</div>
+            <div class="card-value">Qualquer <strong class="hl">cidadão</strong> (pleno gozo dos direitos políticos) – anula ato lesivo ao patrimônio público</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===== SEÇÃO 4 ===== -->
+<div class="section" id="section-3">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-icon">🏢</span>
+    <span class="section-title">4. Organização do Estado e Administração Pública</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+
+      <div class="subsection">
+        <div class="subsection-title">📊 Repartição de Competências</div>
+
+        <div class="mnemonic">
+          <div class="mnemonic-label">🧠 Mnemônico – Repartição</div>
+          <div class="mnemonic-text">ADMEXCOM &nbsp; LEGPRICON</div>
+          <div class="mnemonic-desc">
+            <strong>ADM</strong>inistrativa: <strong>EX</strong>clusiva (União, indelegável) + <strong>COM</strong>um (U/E/DF/M)<br>
+            <strong>LEG</strong>islativa: <strong>PRI</strong>vativa (União, delegável por LC) + <strong>CON</strong>corrente (U/E/DF) – M(x)
+          </div>
+        </div>
+
+        <div class="comp-diagram">
+          <div class="comp-box">
+            <div class="comp-box-title" style="color:#f5a0a8">Exclusiva (ADM)</div>
+            <div class="comp-box-content">Só a <strong>União</strong><br><span class="hl-red">Indelegável</span></div>
+          </div>
+          <div class="comp-box">
+            <div class="comp-box-title" style="color:#75d4a7">Comum (ADM)</div>
+            <div class="comp-box-content"><strong>U + E + DF + M</strong><br>Todos juntos executando</div>
+          </div>
+          <div class="comp-box">
+            <div class="comp-box-title" style="color:#66b3ff">Privativa (LEG)</div>
+            <div class="comp-box-content">União, mas pode <strong>delegar</strong> por LC<br>Art. 22</div>
+          </div>
+          <div class="comp-box">
+            <div class="comp-box-title" style="color:#ffca28">Concorrente (LEG)</div>
+            <div class="comp-box-content"><strong>U + E + DF</strong> (sem Município!)<br>U: normas gerais / E: suplementar</div>
+          </div>
+        </div>
+
+        <div class="alert alert-info">
+          💡 <strong>Dicas para decorar:</strong><br>
+          • <strong>E</strong>xclusiva → <strong>E</strong>stá só com a União<br>
+          • <strong>P</strong>rivativa → <strong>P</strong>ode ser da União, mas ela pode dividir<br>
+          • <strong>C</strong>oncorrente → <strong>C</strong>omplementa-se, todos legislam<br>
+          • <strong>C</strong>omum → Todos juntos executando, <strong>como</strong> em políticas públicas
+        </div>
+
+        <div class="subsection">
+          <div class="subsection-title">💻 Informática e Tecnologia</div>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-label">Informá<span class="hl-red">TI</span>ca</div>
+              <div class="card-value">Priva<strong class="hl-red">TI</strong>va da <strong>União</strong></div>
+            </div>
+            <div class="card">
+              <div class="card-label"><span class="hl">TE</span>cnologia</div>
+              <div class="card-value">Concorren<strong class="hl">TE</strong></div>
+            </div>
+            <div class="card">
+              <div class="card-label">Acesso à tecnologia</div>
+              <div class="card-value"><strong class="hl-green">Comum</strong> – proporcionar meios de acesso</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="art-accordion" id="art22">
+          <div class="art-accordion-header" onclick="toggleArt(this)">
+            📖 Art. 22 – Competência Privativa da União (clique para expandir)
+            <span>▼</span>
+          </div>
+          <div class="art-accordion-body">
+            <div class="art-accordion-content">
+              <p>I – direito civil, comercial, penal, processual, eleitoral, agrário, marítimo, aeronáutico, espacial e do trabalho;</p>
+              <p>II – desapropriação;</p>
+              <p>III – requisições civis e militares, em caso de iminente perigo e em tempo de guerra;</p>
+              <p>IV – águas, energia, informática, telecomunicações e radiodifusão;</p>
+              <p>V – serviço postal;</p>
+              <p>VI – sistema monetário e de medidas, títulos e garantias dos metais;</p>
+              <p>VII – política de crédito, câmbio, seguros e transferência de valores;</p>
+              <p>VIII – comércio exterior e interestadual;</p>
+              <p>IX – diretrizes da política nacional de transportes;</p>
+              <p>X – regime dos portos, navegação lacustre, fluvial, marítima, aérea e aeroespacial;</p>
+              <p>XI – trânsito e transporte;</p>
+              <p>XII – jazidas, minas, outros recursos minerais e metalurgia;</p>
+              <p>XIII – nacionalidade, cidadania e naturalização;</p>
+              <p>XIV – populações indígenas;</p>
+              <p>XV – emigração e imigração, entrada, extradição e expulsão de estrangeiros;</p>
+              <p>XVI – organização do sistema nacional de emprego e condições para o exercício de profissões;</p>
+              <p>XVII – organização judiciária, do MP do DF e Territórios e da Defensoria Pública dos Territórios;</p>
+              <p>XVIII – sistema estatístico, sistema cartográfico e de geologia nacionais;</p>
+              <p>XIX – sistemas de poupança, captação e garantia da poupança popular;</p>
+              <p>XX – sistemas de consórcios e sorteios;</p>
+              <p>XXI – normas gerais de organização, efetivos, material bélico das PM e CBM;</p>
+              <p>XXII – competência da polícia federal e das polícias rodoviária e ferroviária federais;</p>
+              <p>XXIII – seguridade social;</p>
+              <p>XXIV – diretrizes e bases da educação nacional;</p>
+              <p>XXV – registros públicos;</p>
+              <p>XXVI – atividades nucleares de qualquer natureza;</p>
+              <p>XXVII – normas gerais de licitação e contratação;</p>
+              <p>XXVIII – defesa territorial, aeroespacial, marítima, civil e mobilização nacional;</p>
+              <p>XXIX – propaganda comercial;</p>
+              <p>XXX – proteção e tratamento de dados pessoais. (EC nº 115/2022)</p>
+              <p style="margin-top:10px"><strong>Parágrafo único.</strong> <span class="hl">Lei complementar</span> poderá autorizar os Estados a legislar sobre questões específicas.</p>
+            </div>
+          </div>
+        </div>
+
+        <ul class="topic-list" style="margin-top:12px">
+          <li><strong>Concorrente (Legislar):</strong> Tributário, Financeiro, Penitenciário, Urbanístico, Educação. (U: Normas Gerais / E: Suplementar).</li>
+          <li><strong>Exclusiva do DF:</strong> Organizar e manter as forças de segurança (PC, PM, PP, CBM) e o MPDFT é competência da <span class="hl">União</span>.</li>
+        </ul>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-title">👔 Servidores Públicos</div>
+        <ul class="topic-list">
+          <li><strong>Estabilidade:</strong> <span class="hl">3 anos</span> de efetivo exercício + avaliação de desempenho.</li>
+          <li><strong>Acumulação:</strong> Regra é a <span class="hl-red">proibição</span>. Exceção (se houver compatibilidade): 2 de professor; 1 prof + 1 técnico; 2 da saúde.</li>
+          <li>
+            <strong>Mandato Eletivo (Art. 38):</strong>
+            <br>• <strong>Federal/Estadual:</strong> afasta-se
+            <br>• <strong>Prefeito:</strong> afasta-se e opta pela remuneração
+            <br>• <strong>Vereador:</strong> se houver compatibilidade, <span class="hl-green">acumula as duas</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===== SEÇÃO 5 ===== -->
+<div class="section" id="section-4">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-icon">📋</span>
+    <span class="section-title">5. Poder Legislativo e Processo Legislativo</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+
+      <div class="subsection">
+        <div class="subsection-title">🏛️ Atribuições do Congresso Nacional</div>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-label">Art. 48</div>
+            <div class="card-value"><strong class="hl-blue">Dependem de sanção</strong> do Presidente<br><small>(ex: criação de cargos)</small></div>
+          </div>
+          <div class="card">
+            <div class="card-label">Art. 49 (Exclusiva)</div>
+            <div class="card-value"><strong class="hl-red">NÃO precisam de sanção</strong><br><small>(ex: sustar decretos, autorizar guerra)</small></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-title">⚖️ Processo Legislativo</div>
+        <table class="info-table">
+          <thead>
+            <tr><th>Espécie</th><th>Requisitos / Detalhes</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong class="hl-blue">Medida Provisória</strong></td>
+              <td>
+                • Relevância e Urgência<br>
+                • Vigência: <strong class="hl">60 dias</strong> (+60)<br>
+                • <span class="hl-red">Vedada</span> em matéria de Direito Penal e Processual Penal
+              </td>
+            </tr>
+            <tr>
+              <td><strong class="hl-blue">Lei Complementar</strong></td>
+              <td>Exige maioria <strong class="hl">absoluta</strong></td>
+            </tr>
+            <tr>
+              <td><strong class="hl-blue">Lei Ordinária</strong></td>
+              <td>Exige maioria <strong class="hl-green">simples</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- ===== SEÇÃO 6 ===== -->
+<div class="section" id="section-5">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-icon">🔍</span>
+    <span class="section-title">6. Fiscalização Contábil (TCU) e Segurança Pública</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body">
+    <div class="section-content">
+
+      <div class="subsection">
+        <div class="subsection-title">🏦 Tribunal de Contas da União (TCU)</div>
+        <table class="info-table">
+          <thead>
+            <tr><th>Situação</th><th>Competência</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Contas do Presidente</strong></td>
+              <td>TCU emite <strong class="hl">Parecer Prévio</strong> → quem julga é o <strong class="hl-blue">Congresso Nacional</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Contas de Gestores</strong></td>
+              <td>O TCU <strong class="hl-green">julga diretamente</strong></td>
+            </tr>
+            <tr>
+              <td><strong>Sustação</strong></td>
+              <td>
+                TCU pode sustar <strong>atos administrativos</strong><br>
+                Para sustar <strong class="hl-red">contratos</strong> → depende do <strong>Congresso Nacional</strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="subsection">
+        <div class="subsection-title">🚔 Segurança Pública (Art. 144)</div>
+        <div class="card-grid">
+          <div class="card">
+            <div class="card-label">Polícia Federal (PF)</div>
+            <div class="card-value">Polícia <strong class="hl-blue">Judiciária da União</strong> com <span class="hl">exclusividade</span>; repressão ao tráfico interestadual/internacional.</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Polícia Civil (PC)</div>
+            <div class="card-value">Polícia <strong class="hl-blue">Judiciária dos Estados</strong>; apura infrações penais (exceto militares).</div>
+          </div>
+          <div class="card">
+            <div class="card-label">Polícia Penal</div>
+            <div class="card-value">Segurança dos <strong>estabelecimentos penais</strong>.</div>
+          </div>
+        </div>
+
+        <div class="alert alert-danger" style="margin-top: 12px">
+          🚫 <strong>GREVE:</strong> Vedada a <span class="hl-red">TODOS</span> os policiais (civis e militares).
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  Revisão CF/88 – Policial Legislativo CD 2026 | Elaborado com base nas questões CEBRASPE (2015–2026)
+</div>
+
+</div>
+
+<script>
+// Toggle section
+function toggleSection(header) {
+  const section = header.closest('.section');
+  section.classList.toggle('open');
+  updateProgress();
+}
+
+// Toggle art accordion
+function toggleArt(header) {
+  const acc = header.closest('.art-accordion');
+  acc.classList.toggle('open');
+}
+
+// Expand all
+function expandAll() {
+  document.querySelectorAll('.section').forEach(s => s.classList.add('open'));
+  updateProgress();
+}
+
+// Collapse all
+function collapseAll() {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('open'));
+  updateProgress();
+}
+
+// Scroll to section
+function scrollToSection(index) {
+  const section = document.getElementById('section-' + index);
+  if (section) {
+    section.classList.add('open');
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    updateProgress();
+  }
+}
+
+// Update progress
+function updateProgress() {
+  const total = document.querySelectorAll('.section').length;
+  const opened = document.querySelectorAll('.section.open').length;
+  const pct = Math.round((opened / total) * 100);
+  document.getElementById('progressFill').style.width = pct + '%';
+  document.getElementById('progressText').textContent = opened + '/' + total;
+}
+
+// Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+  if (e.key >= '1' && e.key <= '6') {
+    scrollToSection(parseInt(e.key) - 1);
+  }
+  if (e.key === 'a' || e.key === 'A') expandAll();
+  if (e.key === 'r' || e.key === 'R') collapseAll();
+});
+
+// Initial progress
+updateProgress();
+</script>
+
+</body>
+</html>
