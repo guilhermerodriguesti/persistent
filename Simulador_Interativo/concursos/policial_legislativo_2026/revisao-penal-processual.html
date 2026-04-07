@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão Direito Penal e Processual Penal – Policial Legislativo CD 2026</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#f5f7fa;color:#1e293b;min-height:100vh}
+.container{max-width:960px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#6d28d9,#4c1d95);border-radius:12px;margin-bottom:25px;box-shadow:0 4px 15px rgba(109,40,217,0.25);position:relative;overflow:hidden}
+.header::before{content:'⚖️';position:absolute;font-size:120px;opacity:0.06;top:-10px;right:-10px}
+.header h1{font-size:26px;color:#fff;margin-bottom:8px}
+.header .subtitle{font-size:14px;color:#c4b5fd}
+.header .badge{display:inline-block;background:rgba(255,193,7,0.2);color:#ffc107;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-top:10px;border:1px solid rgba(255,193,7,0.3)}
+.nav-bar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:25px;padding:15px;background:#fff;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.nav-btn{background:#f5f3ff;color:#6d28d9;border:1px solid #ddd6fe;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600;transition:all 0.3s;white-space:nowrap}
+.nav-btn:hover,.nav-btn.active{background:#6d28d9;color:#fff;border-color:#6d28d9;transform:translateY(-1px)}
+.section{background:#fff;border-radius:12px;margin-bottom:20px;border:1px solid #e2e8f0;overflow:hidden;transition:all 0.3s;box-shadow:0 1px 4px rgba(0,0,0,0.05)}
+.section:hover{border-color:#c4b5fd;box-shadow:0 2px 8px rgba(109,40,217,0.1)}
+.section-header{display:flex;align-items:center;gap:12px;padding:18px 20px;cursor:pointer;background:linear-gradient(135deg,#f5f3ff,#ede9fe);user-select:none;transition:background 0.3s}
+.section-header:hover{background:linear-gradient(135deg,#ede9fe,#ddd6fe)}
+.section-icon{font-size:28px;flex-shrink:0}
+.section-title{font-size:17px;font-weight:700;color:#4c1d95;flex:1}
+.section-toggle{font-size:18px;color:#7c3aed;transition:transform 0.3s;flex-shrink:0}
+.section.open .section-toggle{transform:rotate(180deg)}
+.section-body{max-height:0;overflow:hidden;transition:max-height 0.4s ease}
+.section.open .section-body{max-height:15000px}
+.section-content{padding:20px}
+.subsection{margin-bottom:20px}
+.subsection-title{font-size:15px;font-weight:700;color:#6d28d9;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid #ede9fe;display:flex;align-items:center;gap:8px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:15px}
+.card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px;transition:all 0.3s}
+.card:hover{background:#f5f3ff;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.card-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#7c3aed;font-weight:700;margin-bottom:6px}
+.card-value{font-size:14px;line-height:1.6;color:#475569}
+.mnemonic{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fcd34d;border-left:4px solid #f59e0b;border-radius:8px;padding:14px 16px;margin:12px 0}
+.mnemonic-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#b45309;font-weight:700;margin-bottom:6px}
+.mnemonic-text{font-size:18px;font-weight:800;color:#92400e;letter-spacing:3px;margin-bottom:4px}
+.mnemonic-desc{font-size:13px;color:#78716c;line-height:1.5}
+.alert{border-radius:8px;padding:14px 16px;margin:12px 0;font-size:13px;line-height:1.6}
+.alert-danger{background:#fef2f2;border:1px solid #fecaca;border-left:4px solid #dc2626;color:#991b1b}
+.alert-info{background:#eff6ff;border:1px solid #bfdbfe;border-left:4px solid #2563eb;color:#1e40af}
+.alert-success{background:#f0fdf4;border:1px solid #bbf7d0;border-left:4px solid #16a34a;color:#166534}
+.alert-purple{background:#faf5ff;border:1px solid #e9d5ff;border-left:4px solid #7c3aed;color:#5b21b6}
+.topic-list{list-style:none;margin:10px 0}
+.topic-list li{padding:10px 14px;margin-bottom:6px;background:#f8fafc;border-radius:6px;border-left:3px solid #7c3aed;font-size:14px;line-height:1.6;transition:all 0.2s}
+.topic-list li:hover{background:#f5f3ff;border-left-color:#6d28d9}
+.topic-list li strong{color:#6d28d9}
+.hl{color:#b45309;font-weight:700}.hl-blue{color:#1d4ed8;font-weight:700}.hl-green{color:#16a34a;font-weight:700}.hl-red{color:#dc2626;font-weight:700}.hl-purple{color:#7c3aed;font-weight:700}
+.info-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px}
+.info-table th{background:#4c1d95;color:#fff;padding:10px 14px;text-align:left;font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.5px}
+.info-table td{padding:10px 14px;border-bottom:1px solid #e2e8f0;color:#475569;line-height:1.5}
+.info-table tr:hover td{background:#f5f3ff}
+.back-btn{display:inline-flex;align-items:center;gap:6px;background:#fff;color:#6d28d9;border:1px solid #e2e8f0;padding:8px 16px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:600;transition:all 0.3s;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.back-btn:hover{background:#f5f3ff;color:#4c1d95}
+.progress-container{display:flex;align-items:center;gap:12px;padding:12px 16px;background:#fff;border-radius:8px;margin-bottom:20px;font-size:13px;color:#4c1d95;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.progress-track{flex:1;height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#7c3aed,#16a34a);border-radius:4px;transition:width 0.5s;width:0%}
+.progress-text{font-weight:700;min-width:40px;text-align:right}
+.controls{display:flex;gap:10px;justify-content:center;margin-bottom:20px}
+.ctrl-btn{background:#f5f3ff;color:#6d28d9;border:1px solid #ddd6fe;padding:8px 18px;border-radius:8px;cursor:pointer;font-size:13px;font-weight:600;transition:all 0.3s}
+.ctrl-btn:hover{background:#6d28d9;color:#fff}
+.footer{text-align:center;padding:20px;color:#94a3b8;font-size:12px;margin-top:30px}
+@media(max-width:768px){.container{padding:12px}.header h1{font-size:20px}.section-header{padding:14px 16px}.section-title{font-size:15px}.card-grid{grid-template-columns:1fr}.nav-btn{padding:6px 10px;font-size:11px}.mnemonic-text{font-size:15px;letter-spacing:2px}}
+@media(max-width:480px){.header{padding:20px 14px}.header h1{font-size:17px}.section-content{padding:14px}.controls{flex-direction:column;align-items:stretch}.ctrl-btn{text-align:center}}
+@media print{.nav-bar,.controls,.back-btn,.progress-container{display:none}.section{break-inside:avoid}.section-body{max-height:none!important}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<a href="index.html" class="back-btn">← Voltar ao Início</a>
+
+<div class="header">
+  <h1>⚖️ Revisão – Direito Penal e Processual Penal</h1>
+  <div class="subtitle">Policial Legislativo – Câmara dos Deputados 2026</div>
+  <div class="badge">🎯 CEBRASPE 2024–2026 • 10 Seções · Edital Completo</div>
+</div>
+
+<div class="progress-container">
+  <span>📖 Progresso</span>
+  <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+  <span class="progress-text" id="progressText">0/10</span>
+</div>
+
+<nav class="nav-bar">
+  <button class="nav-btn" onclick="scrollToSection(0)">1. Princípios/Lei Penal</button>
+  <button class="nav-btn" onclick="scrollToSection(1)">2. Teoria do Crime</button>
+  <button class="nav-btn" onclick="scrollToSection(2)">3. Teoria do Tipo</button>
+  <button class="nav-btn" onclick="scrollToSection(3)">4. Ilicitude/Culpabilidade</button>
+  <button class="nav-btn" onclick="scrollToSection(4)">5. Concurso/Punibilidade</button>
+  <button class="nav-btn" onclick="scrollToSection(5)">6. Crimes em Espécie</button>
+  <button class="nav-btn" onclick="scrollToSection(6)">7. Processo/Inquérito</button>
+  <button class="nav-btn" onclick="scrollToSection(7)">8. Provas</button>
+  <button class="nav-btn" onclick="scrollToSection(8)">9. Prisão/Cautelares</button>
+  <button class="nav-btn" onclick="scrollToSection(9)">10. Legislação Especial</button>
+</nav>
+
+<div class="controls">
+  <button class="ctrl-btn" onclick="expandAll()">📂 Expandir Tudo</button>
+  <button class="ctrl-btn" onclick="collapseAll()">📁 Recolher Tudo</button>
+</div>
+
+<!-- ===== SEÇÃO 1 ===== -->
+<div class="section" id="section-0">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-icon">📜</span>
+    <span class="section-title">1. Direito Penal – Princípios e Lei Penal</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">📋 Conceito e Objeto do Direito Penal</div>
+      <div class="card-grid">
+        <div class="card"><div class="card-label">Conceito</div><div class="card-value">Ramo do Direito Público que define <strong class="hl-purple">infrações penais</strong> (crimes e contravenções) e comina <strong class="hl-purple">sanções</strong> (penas e medidas de segurança).</div></div>
+        <div class="card"><div class="card-label">Missão</div><div class="card-value">Proteger os <strong class="hl-purple">bens jurídicos</strong> mais relevantes (vida, liberdade, patrimônio, adm. pública). Princípio da <strong class="hl">fragmentariedade</strong>: última ratio.</div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⚡ Princípios Básicos do Direito Penal</div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Mnemônico</div>
+        <div class="mnemonic-text">LIPA FRUTO</div>
+        <div class="mnemonic-desc">Legalidade, Irretroatividade, Pessoalidade, Anterioridade – Fragmentariedade, Reserva legal, Ultima ratio, Taxatividade, Ofensividade</div>
+      </div>
+      <table class="info-table">
+        <thead><tr><th>Princípio</th><th>Descrição</th><th>Fundamento</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Legalidade</strong></td><td>Não há crime sem lei anterior que o defina, nem pena sem prévia cominação legal.</td><td>Art. 1º CP / Art. 5º, XXXIX CF</td></tr>
+          <tr><td><strong class="hl-purple">Anterioridade</strong></td><td>A lei penal deve ser anterior ao fato.</td><td>Art. 1º CP</td></tr>
+          <tr><td><strong class="hl-purple">Irretroatividade</strong></td><td>Lei penal <strong class="hl-red">não retroage</strong>, salvo para beneficiar o réu.</td><td>Art. 5º, XL CF</td></tr>
+          <tr><td><strong class="hl-purple">Intervenção Mínima</strong></td><td>Direito Penal = ultima ratio. Só atua quando outros ramos falham.</td><td>Doutrina</td></tr>
+          <tr><td><strong class="hl-purple">Fragmentariedade</strong></td><td>Só tutela os bens jurídicos mais relevantes contra as lesões mais graves.</td><td>Doutrina</td></tr>
+          <tr><td><strong class="hl-purple">Insignificância</strong></td><td>Exclui a tipicidade material. Requisitos (STF): <span class="hl">MARI</span> – Mínima ofensividade, Ausência de periculosidade, Reduzido grau de reprovabilidade, Inexpressividade da lesão.</td><td>STF</td></tr>
+          <tr><td><strong class="hl-purple">Pessoalidade</strong></td><td>A pena não pode passar da pessoa do condenado.</td><td>Art. 5º, XLV CF</td></tr>
+          <tr><td><strong class="hl-purple">Ofensividade</strong></td><td>Exige efetiva lesão ou perigo concreto ao bem jurídico.</td><td>Doutrina</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-danger">⚠️ <strong>PEGADINHA CEBRASPE:</strong> O princípio da insignificância <strong class="hl-red">não se aplica</strong> a: tráfico de drogas, moeda falsa, crimes com violência/grave ameaça, crimes contra a adm. pública (regra – exceção: descaminho até R$ 20 mil).</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📖 A Lei Penal – Características e Fontes</div>
+      <div class="card-grid">
+        <div class="card"><div class="card-label">Fonte Formal Imediata</div><div class="card-value"><strong class="hl-purple">Lei</strong> – única fonte que pode criar crimes e penas (exclusividade da lei em sentido estrito).</div></div>
+        <div class="card"><div class="card-label">Fontes Mediatas</div><div class="card-value">Costumes, princípios gerais, tratados. <strong class="hl-red">Costumes NÃO criam crimes</strong>, mas auxiliam na interpretação.</div></div>
+        <div class="card"><div class="card-label">Interpretação</div><div class="card-value"><strong>Analógica:</strong> dentro da norma (permitida). <strong>Analogia:</strong> fora da norma (<strong class="hl-red">proibida in malam partem</strong>, permitida in bonam partem).</div></div>
+        <div class="card"><div class="card-label">Taxatividade</div><div class="card-value">Tipo penal deve ser <strong class="hl-purple">claro e determinado</strong> (mandato de certeza). Proíbe tipos vagos.</div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🌍 Lei Penal no Tempo e no Espaço</div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Mnemônico</div>
+        <div class="mnemonic-text">LUTA</div>
+        <div class="mnemonic-desc">LUgar = Ubiquidade (art. 6º). Tempo = Atividade (art. 4º)</div>
+      </div>
+      <table class="info-table">
+        <thead><tr><th>Tema</th><th>Teoria</th><th>Art.</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Tempo do crime</strong></td><td><strong>Atividade</strong> – momento da ação/omissão</td><td>4º CP</td></tr>
+          <tr><td><strong class="hl-purple">Lugar do crime</strong></td><td><strong>Ubiquidade</strong> – ação/omissão OU resultado</td><td>6º CP</td></tr>
+          <tr><td><strong class="hl-purple">Territorialidade</strong></td><td>Lei brasileira no território nacional (temperada – admite exceções)</td><td>5º CP</td></tr>
+          <tr><td><strong class="hl-purple">Extraterritorialidade</strong></td><td>Incondicionada (vida do Presidente, patrimônio da União, genocídio) e Condicionada</td><td>7º CP</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-info">💡 Lei mais benéfica retroage (<em>lex mitior</em>). <em>Abolitio criminis</em> apaga efeitos penais (não civis). Lei temporária/excepcional possui <strong class="hl">ultratividade</strong>.</div>
+      <div class="alert alert-danger">⚠️ <strong>Contagem de prazos penais (art. 10 CP):</strong> Inclui-se o dia do começo. Calendário comum. Diferente do processo penal!</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🛡️ Imunidades e Concurso Aparente de Normas</div>
+      <ul class="topic-list">
+        <li><strong>Imunidade diplomática:</strong> Embaixadores e cônsules de carreira – Convenção de Viena.</li>
+        <li><strong>Imunidade parlamentar absoluta:</strong> Inviolabilidade por opiniões, palavras e votos (art. 53 CF). Exclui o crime.</li>
+        <li><strong>Imunidade parlamentar relativa:</strong> Foro por prerrogativa de função; prisão apenas em flagrante de crime inafiançável.</li>
+        <li><strong>Concurso aparente de normas – SECA:</strong> <strong class="hl">S</strong>ubsidiariedade, <strong class="hl">E</strong>specialidade, <strong class="hl">C</strong>onsunção (absorção), <strong class="hl">A</strong>lternatividade.</li>
+        <li><strong>Condições de punibilidade:</strong> Condições objetivas (ex.: sentença declaratória de falência) exigidas pela lei para que o fato seja punível.</li>
+      </ul>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== SEÇÃO 2 ===== -->
+<div class="section" id="section-1">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-icon">🔍</span>
+    <span class="section-title">2. Teoria Geral do Crime</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">📋 Conceito Analítico de Crime</div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Mnemônico</div>
+        <div class="mnemonic-text">FATO TÍPICO + ILÍCITO + CULPÁVEL</div>
+        <div class="mnemonic-desc">Teoria Tripartida (adotada pelo CP): crime = fato típico, antijurídico e culpável</div>
+      </div>
+      <table class="info-table">
+        <thead><tr><th>Conceito</th><th>Definição</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Material</strong></td><td>Ação/omissão que lesa ou expõe a perigo bem jurídico tutelado.</td></tr>
+          <tr><td><strong class="hl-purple">Formal</strong></td><td>Toda conduta que a lei define como infração penal.</td></tr>
+          <tr><td><strong class="hl-purple">Analítico (Tripartido)</strong></td><td>Fato típico + ilicitude + culpabilidade. Posição majoritária.</td></tr>
+          <tr><td><strong class="hl-purple">Bipartido</strong></td><td>Fato típico + ilicitude (culpabilidade = pressuposto da pena).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🧩 Elementos do Fato Típico</div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Mnemônico</div>
+        <div class="mnemonic-text">CONTE</div>
+        <div class="mnemonic-desc">COnduta, Nexo causal, Tipicidade, rEsultado</div>
+      </div>
+      <div class="card-grid">
+        <div class="card"><div class="card-label">Conduta</div><div class="card-value">Ação ou omissão humana, <strong class="hl-purple">voluntária e consciente</strong>. Exclui: caso fortuito, força maior, coação física irresistível, atos reflexos, sonambulismo.</div></div>
+        <div class="card"><div class="card-label">Resultado</div><div class="card-value"><strong>Naturalístico:</strong> modificação no mundo exterior. <strong>Jurídico:</strong> lesão ou perigo ao bem jurídico (todo crime exige).</div></div>
+        <div class="card"><div class="card-label">Nexo Causal</div><div class="card-value">Teoria da <strong class="hl-purple">equivalência dos antecedentes</strong> (conditio sine qua non – art. 13 CP). Limitada pela imputação objetiva.</div></div>
+        <div class="card"><div class="card-label">Tipicidade</div><div class="card-value"><strong>Formal:</strong> adequação ao tipo. <strong>Material:</strong> lesão significativa (insignificância exclui a tipicidade material).</div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">👤 Sujeitos e Bem Jurídico</div>
+      <table class="info-table">
+        <thead><tr><th>Elemento</th><th>Descrição</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Sujeito ativo</strong></td><td>Quem pratica a conduta. Regra: pessoa física. PJ = crimes ambientais (art. 225, §3º CF).</td></tr>
+          <tr><td><strong class="hl-purple">Sujeito passivo</strong></td><td>Titular do bem jurídico. Formal (Estado) e material (vítima direta).</td></tr>
+          <tr><td><strong class="hl-purple">Objeto material</strong></td><td>Pessoa ou coisa sobre a qual recai a conduta.</td></tr>
+          <tr><td><strong class="hl-purple">Objeto jurídico</strong></td><td>Bem jurídico tutelado (vida, patrimônio, honra etc.).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⏱️ Tempo e Lugar do Crime</div>
+      <div class="alert alert-purple">📝 <strong>Tempo:</strong> Teoria da Atividade (art. 4º) – considera-se praticado no momento da ação/omissão, <strong>ainda que outro seja o do resultado</strong>. Relevante para imputabilidade e lei aplicável.</div>
+      <div class="alert alert-info">💡 <strong>Lugar:</strong> Teoria da Ubiquidade (art. 6º) – onde ocorreu ação/omissão ou resultado. Relevante para conflitos de jurisdição internacionais.</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔗 Concurso de Crimes e Crime Continuado</div>
+      <table class="info-table">
+        <thead><tr><th>Tipo</th><th>Conceito</th><th>Sistema de Penas</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Material</strong> (art. 69)</td><td>2+ ações → 2+ crimes</td><td><strong>Cúmulo material</strong> – somam-se as penas</td></tr>
+          <tr><td><strong class="hl-purple">Formal próprio</strong> (art. 70)</td><td>1 ação → 2+ crimes (sem desígnios autônomos)</td><td><strong>Exasperação</strong> – mais grave + 1/6 a 1/2</td></tr>
+          <tr><td><strong class="hl-purple">Formal impróprio</strong></td><td>1 ação → 2+ crimes (com desígnios autônomos)</td><td><strong>Cúmulo material</strong></td></tr>
+          <tr><td><strong class="hl-purple">Continuado</strong> (art. 71)</td><td>Mesma espécie, condições semelhantes de tempo/lugar/modo</td><td><strong>Exasperação</strong> – mais grave + 1/6 a 2/3</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-danger">⚠️ <strong>PEGADINHA:</strong> Concurso formal impróprio (desígnios autônomos) = <strong class="hl-red">somam-se</strong> as penas como no concurso material!</div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== SEÇÃO 3 ===== -->
+<div class="section" id="section-2">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-icon">🎯</span>
+    <span class="section-title">3. Teoria do Tipo</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">🎯 Dolo e Culpa</div>
+      <table class="info-table">
+        <thead><tr><th>Elemento</th><th>Espécie</th><th>Detalhe</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Dolo direto</strong></td><td>O agente quer o resultado</td><td>Teoria da vontade</td></tr>
+          <tr><td><strong class="hl-purple">Dolo eventual</strong></td><td>O agente assume o risco</td><td>Teoria do assentimento</td></tr>
+          <tr><td><strong class="hl-purple">Culpa consciente</strong></td><td>Prevê o resultado, mas acredita poder evitá-lo</td><td>Diferença crucial na prova!</td></tr>
+          <tr><td><strong class="hl-purple">Culpa inconsciente</strong></td><td>Não prevê o resultado (previsível)</td><td>Modalidade mais comum</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-danger">⚠️ <strong>CEBRASPE ADORA:</strong> Dolo eventual ≠ Culpa consciente. Dolo eventual: "não me importo". Culpa consciente: "confio que não vai acontecer".</div>
+      <div class="alert alert-info">💡 Crime <strong>preterdoloso</strong>: dolo no antecedente + culpa no consequente. Ex.: lesão corporal seguida de morte (art. 129, §3º). <strong class="hl-red">Não admite tentativa!</strong></div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">❌ Erro de Tipo (art. 20 CP)</div>
+      <table class="info-table">
+        <thead><tr><th>Espécie</th><th>Efeito</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Essencial inevitável</strong></td><td>Exclui dolo + culpa = <strong class="hl-green">fato atípico</strong></td></tr>
+          <tr><td><strong class="hl-purple">Essencial evitável</strong></td><td>Exclui o dolo, responde por <strong>culpa</strong> (se houver previsão)</td></tr>
+          <tr><td><strong class="hl-purple">Acidental</strong></td><td><strong class="hl-red">Não exclui</strong> dolo/culpa. Espécies: sobre objeto, pessoa, execução (aberratio ictus), resultado diverso (aberratio criminis)</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-purple">📝 <strong>Erro sobre a pessoa (art. 20, §3º):</strong> Responde como se tivesse atingido a vítima pretendida (consideram-se as qualidades da vítima visada).</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📊 Classificação dos Crimes</div>
+      <div class="card-grid">
+        <div class="card"><div class="card-label">Comissivo / Omissivo</div><div class="card-value"><strong>Comissivo:</strong> ação positiva. <strong>Omissivo próprio:</strong> lei descreve a omissão (ex.: omissão de socorro). <strong>Omissivo impróprio:</strong> garantidor que não age (art. 13, §2º).</div></div>
+        <div class="card"><div class="card-label">Dano / Perigo</div><div class="card-value"><strong>Dano:</strong> exige lesão efetiva. <strong>Perigo concreto:</strong> exige prova. <strong>Perigo abstrato:</strong> presunção legal (ex.: porte de arma).</div></div>
+        <div class="card"><div class="card-label">Material / Formal / Mera Conduta</div><div class="card-value"><strong>Material:</strong> exige resultado naturalístico. <strong>Formal:</strong> resultado possível mas desnecessário. <strong>Mera conduta:</strong> sem resultado.</div></div>
+        <div class="card"><div class="card-label">Próprios / Comuns</div><div class="card-value"><strong>Próprios:</strong> exigem qualidade especial do sujeito (ex.: peculato). <strong>Comuns:</strong> qualquer pessoa.</div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🛤️ Iter Criminis, Tentativa e Desistência</div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Mnemônico – Iter Criminis</div>
+        <div class="mnemonic-text">COPE</div>
+        <div class="mnemonic-desc">Cogitação → Preparação → Execução → Consumação (punível a partir da execução!)</div>
+      </div>
+      <table class="info-table">
+        <thead><tr><th>Instituto</th><th>Requisitos / Efeitos</th><th>Art.</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Tentativa</strong></td><td>Início da execução + não consumação por circunstâncias alheias. Pena: <strong class="hl">-1/3 a 2/3</strong>.</td><td>14, II</td></tr>
+          <tr><td><strong class="hl-purple">Desistência voluntária</strong></td><td>Agente <strong>para</strong> a execução voluntariamente. Responde pelos atos já praticados.</td><td>15, 1ª parte</td></tr>
+          <tr><td><strong class="hl-purple">Arrependimento eficaz</strong></td><td>Termina a execução mas <strong>impede</strong> o resultado. Responde pelos atos praticados.</td><td>15, 2ª parte</td></tr>
+          <tr><td><strong class="hl-purple">Arrependimento posterior</strong></td><td>Reparação do dano ANTES do recebimento da denúncia, sem violência. <strong class="hl">-1/3 a 2/3</strong>.</td><td>16</td></tr>
+          <tr><td><strong class="hl-purple">Crime impossível</strong></td><td>Ineficácia absoluta do meio OU impropriedade absoluta do objeto = <strong class="hl-red">fato atípico</strong>.</td><td>17</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-danger">⚠️ <strong>NÃO admitem tentativa:</strong> crimes culposos, preterdolosos, contravenções penais, omissivos próprios, habituais, unissubsistentes, de atentado.</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⏰ Extinção da Punibilidade (art. 107 CP)</div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Mnemônico</div>
+        <div class="mnemonic-text">MADRID PP</div>
+        <div class="mnemonic-desc">Morte, Anistia/graça/indulto, Decadência, Renúncia/perdão, Irretroatividade (abolitio), Decurso (prescrição) – Perdão judicial, Perempção</div>
+      </div>
+      <ul class="topic-list">
+        <li><strong>Morte do agente:</strong> Extingue a punibilidade. Efeitos civis permanecem.</li>
+        <li><strong>Abolitio criminis:</strong> Lei nova descriminaliza. Apaga efeitos <strong>penais</strong> (não civis).</li>
+        <li><strong>Decadência:</strong> Perda do direito de representação/queixa. Prazo: <strong class="hl">6 meses</strong>.</li>
+        <li><strong>Perdão judicial:</strong> Juiz deixa de aplicar a pena. Não gera reincidência (Súm. 18 STJ).</li>
+        <li><strong>Perempção:</strong> Inércia do querelante na ação penal privada.</li>
+      </ul>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== SEÇÃO 4 ===== -->
+<div class="section" id="section-3">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-icon">🛡️</span>
+    <span class="section-title">4. Ilicitude e Culpabilidade</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">⚔️ Excludentes de Ilicitude (art. 23 CP)</div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Mnemônico</div>
+        <div class="mnemonic-text">LEEE</div>
+        <div class="mnemonic-desc">Legítima defesa, Estado de necessidade, Estrito cumprimento do dever legal, Exercício regular de direito</div>
+      </div>
+      <table class="info-table">
+        <thead><tr><th>Excludente</th><th>Requisitos</th><th>Observação</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Estado de necessidade</strong></td><td>Perigo atual e inevitável, não provocado, sacrifício de bem alheio</td><td>Quem tem dever legal de enfrentar o perigo não pode invocar (art. 24, §1º)</td></tr>
+          <tr><td><strong class="hl-purple">Legítima defesa</strong></td><td>Agressão injusta, atual ou iminente, meios necessários e moderados</td><td>Admite contra inimputável. Não se aplica contra estado de necessidade.</td></tr>
+          <tr><td><strong class="hl-purple">Estrito cumprimento do dever legal</strong></td><td>Agente público cumprindo determinação legal</td><td>Não protege <strong class="hl-red">excesso</strong></td></tr>
+          <tr><td><strong class="hl-purple">Exercício regular de direito</strong></td><td>Prática de ato autorizado por lei</td><td>Não protege <strong class="hl-red">excesso</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-danger">⚠️ <strong>Excesso:</strong> Em qualquer excludente, responde pelo excesso <strong>doloso ou culposo</strong> (art. 23, p. único). Legítima defesa recíproca é impossível (ambas as agressões seriam injustas).</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🧠 Culpabilidade</div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Mnemônico – Elementos</div>
+        <div class="mnemonic-text">I – P – E</div>
+        <div class="mnemonic-desc">Imputabilidade, Potencial consciência da ilicitude, Exigibilidade de conduta diversa</div>
+      </div>
+      <table class="info-table">
+        <thead><tr><th>Elemento</th><th>Excludente</th><th>Consequência</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Imputabilidade</strong></td><td>Menoridade (&lt;18), doença mental (art. 26), embriaguez completa fortuita</td><td>Isenta de pena. Menor: ECA.</td></tr>
+          <tr><td><strong class="hl-purple">Potencial consciência da ilicitude</strong></td><td>Erro de proibição inevitável (art. 21)</td><td>Inevitável: isenta. Evitável: reduz 1/6 a 1/3.</td></tr>
+          <tr><td><strong class="hl-purple">Exigibilidade de conduta diversa</strong></td><td>Coação moral irresistível, obediência hierárquica (ordem não manifestamente ilegal)</td><td>Responde apenas o coator/mandante.</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-info">💡 <strong>Erro de proibição ≠ Erro de tipo:</strong> Tipo = desconhece elemento do tipo (exclui <strong>dolo</strong>). Proibição = desconhece a ilicitude (exclui <strong>culpabilidade</strong>).</div>
+      <div class="alert alert-danger">⚠️ Embriaguez <strong class="hl-red">voluntária ou culposa NÃO exclui</strong> a imputabilidade (actio libera in causa). Só exclui a completa, fortuita ou por força maior.</div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== SEÇÃO 5 ===== -->
+<div class="section" id="section-4">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-icon">👥</span>
+    <span class="section-title">5. Concurso de Agentes e Punibilidade</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">👥 Concurso de Agentes (arts. 29-31 CP)</div>
+      <div class="card-grid">
+        <div class="card"><div class="card-label">Requisitos</div><div class="card-value">1) Pluralidade de agentes 2) Relevância causal 3) <strong class="hl-purple">Liame subjetivo</strong> 4) Identidade de infração</div></div>
+        <div class="card"><div class="card-label">Teoria Adotada</div><div class="card-value"><strong class="hl-purple">Monista</strong> (unitária): todos respondem pelo mesmo crime. Exceção: cooperação dolosamente distinta (art. 29, §2º).</div></div>
+      </div>
+      <table class="info-table">
+        <thead><tr><th>Figura</th><th>Definição</th><th>Pena</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Autor</strong></td><td>Executa o núcleo do tipo</td><td>Integral</td></tr>
+          <tr><td><strong class="hl-purple">Coautor</strong></td><td>Executa junto com outro</td><td>Integral</td></tr>
+          <tr><td><strong class="hl-purple">Partícipe</strong></td><td>Induz, instiga ou auxilia</td><td>Redução se menor importância (1/6 a 1/3)</td></tr>
+          <tr><td><strong class="hl-purple">Autor mediato</strong></td><td>Usa pessoa como instrumento (erro, coação, inimputável)</td><td>Integral</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-info">💡 <strong>Teoria do domínio do fato:</strong> Autor = quem detém o controle final. Admite autoria de escritório (organização criminosa).</div>
+      <div class="alert alert-danger">⚠️ <strong>Art. 30 CP:</strong> Elementares se comunicam (se conhecidas). Circunstâncias pessoais <strong class="hl-red">NÃO se comunicam</strong> (salvo se elementares).</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⏳ Prescrição (arts. 109-120 CP)</div>
+      <table class="info-table">
+        <thead><tr><th>Tipo</th><th>Base</th><th>Momento</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">PPP abstrata</strong></td><td>Pena máxima em abstrato</td><td>Antes do trânsito</td></tr>
+          <tr><td><strong class="hl-purple">PPP retroativa</strong></td><td>Pena aplicada</td><td>Entre marcos anteriores à sentença</td></tr>
+          <tr><td><strong class="hl-purple">PPP superveniente</strong></td><td>Pena aplicada</td><td>Da sentença ao trânsito para acusação</td></tr>
+          <tr><td><strong class="hl-purple">PPE (Executória)</strong></td><td>Pena aplicada</td><td>Após trânsito definitivo</td></tr>
+        </tbody>
+      </table>
+      <table class="info-table">
+        <thead><tr><th>Pena Máxima</th><th>Prescreve em</th></tr></thead>
+        <tbody>
+          <tr><td>&lt; 1 ano</td><td><strong>3 anos</strong></td></tr>
+          <tr><td>1 a 2 anos</td><td><strong>4 anos</strong></td></tr>
+          <tr><td>2 a 4 anos</td><td><strong>8 anos</strong></td></tr>
+          <tr><td>4 a 8 anos</td><td><strong>12 anos</strong></td></tr>
+          <tr><td>8 a 12 anos</td><td><strong>16 anos</strong></td></tr>
+          <tr><td>&gt; 12 anos</td><td><strong>20 anos</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-danger">⚠️ <strong>Redução pela metade:</strong> Menor de 21 na data do fato ou maior de 70 na sentença. <strong>Imprescritíveis:</strong> racismo e ação de grupos armados contra o Estado Democrático (art. 5º, XLII e XLIV CF).</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📋 Aplicação da Pena e Medidas de Segurança</div>
+      <ul class="topic-list">
+        <li><strong>Dosimetria (art. 68 – sistema trifásico):</strong> 1ª fase: pena-base (circunstâncias judiciais, art. 59). 2ª fase: atenuantes/agravantes. 3ª fase: causas de aumento/diminuição.</li>
+        <li><strong>Penas restritivas de direitos (arts. 43-48):</strong> Substituem a privativa de liberdade. Requisitos: crime sem violência, pena ≤ 4 anos, réu não reincidente em crime doloso.</li>
+        <li><strong>Medidas de segurança (arts. 96-99):</strong> Aplicáveis ao inimputável (absolvição imprópria). Espécies: internação ou tratamento ambulatorial. Prazo mínimo: 1-3 anos. STF: prazo máximo = 40 anos.</li>
+        <li><strong>Efeitos da condenação (arts. 91-92):</strong> Tornar certa a obrigação de indenizar, confisco de instrumentos/produto do crime, perda de cargo/função (se pena &gt; 4 anos ou crime com abuso).</li>
+      </ul>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== SEÇÃO 6 ===== -->
+<div class="section" id="section-5">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-icon">📋</span>
+    <span class="section-title">6. Crimes em Espécie (Parte Especial)</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">🔴 Crimes contra a Pessoa</div>
+      <table class="info-table">
+        <thead><tr><th>Crime</th><th>Art.</th><th>Pena / Observação</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Homicídio simples</strong></td><td>121</td><td>Reclusão 6-20 anos. Qualificadoras: motivo torpe, fútil, meio cruel, etc.</td></tr>
+          <tr><td><strong class="hl-purple">Feminicídio</strong></td><td>121, §2º-A</td><td>Qualificadora: razões do sexo feminino. <strong class="hl-red">Crime hediondo</strong>.</td></tr>
+          <tr><td><strong class="hl-purple">Lesão corporal</strong></td><td>129</td><td>Leve / Grave / Gravíssima / Seguida de morte (preterdolo).</td></tr>
+          <tr><td><strong class="hl-purple">Sequestro/Cárcere</strong></td><td>148</td><td>Crime permanente. Flagrante a qualquer momento.</td></tr>
+          <tr><td><strong class="hl-purple">Crimes contra honra</strong></td><td>138-140</td><td>Calúnia (fato criminoso falso), Difamação (fato desonroso), Injúria (qualidade negativa).</td></tr>
+        </tbody>
+      </table>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Mnemônico – Honra</div>
+        <div class="mnemonic-text">CADI</div>
+        <div class="mnemonic-desc">CAlúnia = crime falso, DIfamação = fato desonroso, Injúria = qualidade negativa. Só calúnia admite exceção da verdade como regra.</div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">💰 Crimes contra o Patrimônio</div>
+      <table class="info-table">
+        <thead><tr><th>Crime</th><th>Art.</th><th>Observações</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Furto</strong></td><td>155</td><td>Subtrair coisa alheia móvel. Qualificado: repouso noturno, destreza, fraude, abuso de confiança.</td></tr>
+          <tr><td><strong class="hl-purple">Roubo</strong></td><td>157</td><td>Furto + violência/grave ameaça. <strong class="hl-red">Latrocínio (§3º) = hediondo</strong>.</td></tr>
+          <tr><td><strong class="hl-purple">Estelionato</strong></td><td>171</td><td>Vantagem ilícita mediante fraude. Após Pacote Anticrime: ação <strong>condicionada</strong> a representação (regra).</td></tr>
+          <tr><td><strong class="hl-purple">Apropriação indébita</strong></td><td>168</td><td>Posse lícita → apropriação ilícita. Inversão do ânimo.</td></tr>
+          <tr><td><strong class="hl-purple">Receptação</strong></td><td>180</td><td>Adquirir coisa produto de crime. Qualificada: atividade comercial.</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-info">💡 <strong>Escusas absolutórias (art. 181):</strong> Isenção de pena em crimes patrimoniais sem violência contra cônjuge, ascendente, descendente.</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🏛️ Crimes contra a Administração Pública</div>
+      <table class="info-table">
+        <thead><tr><th>Crime</th><th>Art.</th><th>Conduta</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Peculato</strong></td><td>312</td><td>Apropriar-se de bem público. Modalidades: apropriação, desvio, furto, culposo.</td></tr>
+          <tr><td><strong class="hl-purple">Inserção de dados falsos</strong></td><td>313-A</td><td>Inserir/facilitar inserção de dados falsos em sistema de informações.</td></tr>
+          <tr><td><strong class="hl-purple">Concussão</strong></td><td>316</td><td><strong>EXIGIR</strong> vantagem indevida (crime formal).</td></tr>
+          <tr><td><strong class="hl-purple">Corrupção passiva</strong></td><td>317</td><td><strong>SOLICITAR/RECEBER/ACEITAR</strong> promessa de vantagem.</td></tr>
+          <tr><td><strong class="hl-purple">Corrupção ativa</strong></td><td>333</td><td><strong>OFERECER/PROMETER</strong> vantagem a funcionário público.</td></tr>
+          <tr><td><strong class="hl-purple">Prevaricação</strong></td><td>319</td><td>Retardar/deixar de praticar ato de ofício por interesse pessoal.</td></tr>
+          <tr><td><strong class="hl-purple">Condescendência criminosa</strong></td><td>320</td><td>Superior hierárquico que deixa de responsabilizar subordinado.</td></tr>
+          <tr><td><strong class="hl-purple">Advocacia administrativa</strong></td><td>321</td><td>Patrocinar interesse privado junto à adm. pública valendo-se do cargo.</td></tr>
+          <tr><td><strong class="hl-purple">Resistência</strong></td><td>329</td><td>Opor-se a ato legal mediante violência/ameaça.</td></tr>
+          <tr><td><strong class="hl-purple">Desacato</strong></td><td>331</td><td>Desrespeitar funcionário no exercício ou em razão da função.</td></tr>
+          <tr><td><strong class="hl-purple">Descaminho</strong></td><td>334</td><td>Iludir tributo na importação/exportação. Insignificância: até R$ 20 mil (STF/STJ).</td></tr>
+          <tr><td><strong class="hl-purple">Contrabando</strong></td><td>334-A</td><td>Importar/exportar mercadoria proibida. <strong class="hl-red">Não admite insignificância</strong>.</td></tr>
+          <tr><td><strong class="hl-purple">Facilitação de contrabando</strong></td><td>318</td><td>Funcionário que facilita a prática de contrabando/descaminho.</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-danger">⚠️ <strong>Concussão = EXIGIR</strong> (crime formal). <strong>Corrupção passiva = SOLICITAR</strong>. A diferença é o grau de coerção! Funcionário público para efeitos penais: conceito amplo (art. 327 CP).</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📄 Crimes contra a Fé Pública e Incolumidade</div>
+      <ul class="topic-list">
+        <li><strong>Moeda falsa (art. 289):</strong> Falsificar/fabricar/alterar moeda. Reclusão 3-12 anos. <strong class="hl-red">Não admite insignificância</strong>.</li>
+        <li><strong>Falsificação de doc. público (art. 297):</strong> Reclusão 2-6 anos. Equiparados: carteira de identidade, título eleitoral, passaporte.</li>
+        <li><strong>Falsificação de doc. particular (art. 298):</strong> Reclusão 1-5 anos. Equiparado: cartão de crédito/débito.</li>
+        <li><strong>Falsa identidade (art. 307):</strong> Atribuir-se identidade falsa para obter vantagem/causar dano.</li>
+        <li><strong>Falso testemunho (art. 342):</strong> Fazer afirmação falsa em processo. Retratação antes da sentença: extingue punibilidade.</li>
+        <li><strong>Uso de doc. falso (art. 304):</strong> Mesma pena da falsificação. <strong class="hl-red">Absorve</strong> o falso (consunção).</li>
+        <li><strong>Crimes de perigo comum (arts. 250-259):</strong> Incêndio, explosão, inundação contra a incolumidade pública.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🏴 Crimes contra o Estado Democrático de Direito</div>
+      <ul class="topic-list">
+        <li><strong>Abolição violenta (art. 359-L):</strong> Tentar abolir o Estado Democrático com violência. Reclusão 4-8 anos.</li>
+        <li><strong>Golpe de Estado (art. 359-M):</strong> Depor governo legítimo. Reclusão 4-12 anos.</li>
+        <li><strong>Interrupção eleitoral (art. 359-N):</strong> Impedir funcionamento de instituições eleitorais.</li>
+        <li><strong>Violência política (art. 359-P):</strong> Restringir direitos políticos com violência.</li>
+      </ul>
+      <div class="alert alert-purple">📝 Tipos incluídos pela <strong>Lei 14.197/2021</strong> que revogou a Lei de Segurança Nacional.</div>
+    </div>
+
+  </div></div>
+</div>
+<!-- ===== SEÇÃO 7 ===== -->
+<div class="section" id="section-6">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-icon">🔎</span>
+    <span class="section-title">7. Processo Penal – Princípios, Inquérito e Ação Penal</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">⚡ Princípios do Processo Penal</div>
+      <div class="card-grid">
+        <div class="card"><div class="card-label">Presunção de Inocência</div><div class="card-value">Ninguém será culpado até trânsito em julgado (art. 5º, LVII CF). Ônus da prova = <strong class="hl-purple">acusação</strong>. In dubio pro reo.</div></div>
+        <div class="card"><div class="card-label">Contraditório e Ampla Defesa</div><div class="card-value">Art. 5º, LV CF. Autodefesa + defesa técnica (advogado). Obrigatórias no <strong>processo</strong>, não no inquérito.</div></div>
+        <div class="card"><div class="card-label">Sistema Acusatório</div><div class="card-value">Separação: acusação (MP), defesa e julgamento. Juiz <strong class="hl-red">não pode</strong> determinar diligências de ofício na investigação (art. 3-A CPP).</div></div>
+        <div class="card"><div class="card-label">Juiz Natural</div><div class="card-value">Art. 5º, LIII CF. Veda tribunais de exceção (art. 5º, XXXVII). Juiz competente predeterminado por lei.</div></div>
+      </div>
+      <div class="alert alert-info">💡 <strong>Lei processual no tempo:</strong> Aplicação <strong class="hl-purple">imediata</strong> (tempus regit actum – art. 2º CPP). Sem retroatividade nem ultratividade. No espaço: territorialidade absoluta (art. 1º CPP).</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔍 Inquérito Policial (arts. 4-23 CPP)</div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Mnemônico – Características do IP</div>
+        <div class="mnemonic-text">DEITA IDOSO</div>
+        <div class="mnemonic-desc">Discricionário, Escrito, Inquisitivo, Temporário, Administrativo – Indisponível, Dispensável, Oficial, Sigiloso, Oficioso</div>
+      </div>
+      <table class="info-table">
+        <thead><tr><th>Característica</th><th>Significado</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Inquisitivo</strong></td><td>Sem contraditório e ampla defesa (não é processo judicial)</td></tr>
+          <tr><td><strong class="hl-purple">Dispensável</strong></td><td>MP pode denunciar sem IP se tiver elementos suficientes</td></tr>
+          <tr><td><strong class="hl-purple">Indisponível</strong></td><td>Delegado <strong class="hl-red">NÃO pode arquivar</strong> (só juiz, a requerimento do MP). Após Pacote Anticrime: arquivamento pelo MP, com revisão pela instância superior.</td></tr>
+          <tr><td><strong class="hl-purple">Sigiloso</strong></td><td>Não se estende ao advogado (Súmula Vinculante 14 STF)</td></tr>
+          <tr><td><strong class="hl-purple">Discricionário</strong></td><td>Delegado conduz as diligências como entender necessário</td></tr>
+        </tbody>
+      </table>
+      <table class="info-table">
+        <thead><tr><th>Situação</th><th>Prazo</th></tr></thead>
+        <tbody>
+          <tr><td>Preso (Justiça Estadual)</td><td><strong class="hl-red">10 dias</strong> (improrrogável)</td></tr>
+          <tr><td>Solto (Justiça Estadual)</td><td><strong>30 dias</strong> (prorrogável)</td></tr>
+          <tr><td>Preso (Justiça Federal)</td><td><strong>15 dias</strong> (prorrogável +15)</td></tr>
+          <tr><td>Preso (Lei de Drogas)</td><td><strong>30 dias</strong> (prorrogável +30)</td></tr>
+          <tr><td>Solto (Lei de Drogas)</td><td><strong>90 dias</strong> (prorrogável +90)</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-info">💡 <strong>Instauração:</strong> De ofício (portaria), requisição do MP/juiz, requerimento da vítima, notitia criminis, auto de prisão em flagrante. <strong>Indiciamento:</strong> Ato privativo do delegado.</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⚖️ Ação Penal (arts. 24-62 CPP)</div>
+      <table class="info-table">
+        <thead><tr><th>Tipo</th><th>Titular</th><th>Peça Inicial</th><th>Princípios</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Pública Incondicionada</strong></td><td>MP</td><td>Denúncia</td><td>Obrigatoriedade, indisponibilidade</td></tr>
+          <tr><td><strong class="hl-purple">Pública Condicionada</strong></td><td>MP (após representação)</td><td>Denúncia</td><td>+ depende de representação/requisição</td></tr>
+          <tr><td><strong class="hl-purple">Privada</strong></td><td>Ofendido</td><td>Queixa-crime</td><td>Oportunidade, disponibilidade, indivisibilidade</td></tr>
+          <tr><td><strong class="hl-purple">Priv. subsidiária da pública</strong></td><td>Ofendido (inércia MP)</td><td>Queixa-crime</td><td>Art. 5º, LIX CF</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-danger">⚠️ <strong>REGRA:</strong> Omissão da lei = <strong class="hl-red">pública incondicionada</strong>. Prazo denúncia: preso = 5 dias, solto = 15 dias. Queixa-crime: 6 meses. Representação: 6 meses.</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📋 TCO e Procedimentos</div>
+      <ul class="topic-list">
+        <li><strong>Termo Circunstanciado (TCO):</strong> Substitui o IP em infrações de menor potencial ofensivo (Lei 9.099/95). Lavrado pela autoridade policial.</li>
+        <li><strong>Procedimento comum ordinário:</strong> Pena máxima ≥ 4 anos. Oferecimento → citação → resposta → audiência de instrução → sentença.</li>
+        <li><strong>Procedimento sumário:</strong> Pena máxima &lt; 4 anos e ≥ 2 anos.</li>
+        <li><strong>Procedimento sumaríssimo:</strong> Infrações de menor potencial ofensivo (pena ≤ 2 anos). Juizado Especial Criminal.</li>
+        <li><strong>Crimes de responsabilidade de funcionários públicos (arts. 513-518 CPP):</strong> Notificação prévia do acusado antes do recebimento da denúncia (defesa preliminar).</li>
+      </ul>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== SEÇÃO 8 ===== -->
+<div class="section" id="section-7">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-icon">🔬</span>
+    <span class="section-title">8. Provas no Processo Penal</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">📋 Princípios e Sistemas de Avaliação</div>
+      <div class="card-grid">
+        <div class="card"><div class="card-label">Livre Convencimento Motivado</div><div class="card-value">Juiz avalia livremente, mas <strong class="hl-purple">fundamenta</strong> a decisão (art. 155 CPP). <strong class="hl-red">Não pode</strong> condenar exclusivamente com base em provas do inquérito.</div></div>
+        <div class="card"><div class="card-label">Ônus da Prova</div><div class="card-value"><strong>Acusação:</strong> autoria e materialidade. <strong>Defesa:</strong> excludentes. Dúvida = in dubio pro reo.</div></div>
+        <div class="card"><div class="card-label">Provas Ilícitas</div><div class="card-value">Violação constitucional/legal = <strong class="hl-red">inadmissíveis</strong> (art. 5º, LVI CF). Devem ser <strong>desentranhadas</strong> dos autos (art. 157 CPP).</div></div>
+        <div class="card"><div class="card-label">Frutos da Árvore Envenenada</div><div class="card-value">Prova derivada de ilícita = ilícita. Exceções: <strong class="hl-purple">fonte independente</strong> e <strong class="hl-purple">descoberta inevitável</strong>.</div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔎 Meios de Prova em Espécie</div>
+      <table class="info-table">
+        <thead><tr><th>Meio</th><th>Regras Principais</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Perícia</strong></td><td>Corpo de delito: direto (vestígios) ou indireto (testemunhal). <strong class="hl-red">Indispensável</strong> em crimes com vestígios (art. 158). Perito oficial ou 2 ad hoc.</td></tr>
+          <tr><td><strong class="hl-purple">Interrogatório</strong></td><td>Ato de defesa. Direito ao silêncio (art. 5º, LXIII CF). <strong>Último ato</strong> da instrução (art. 400 CPP). Defensor obrigatório.</td></tr>
+          <tr><td><strong class="hl-purple">Confissão</strong></td><td>Divisível e retratável (art. 200 CPP). Sem valor absoluto. Atenuante (art. 65, III, d, CP).</td></tr>
+          <tr><td><strong class="hl-purple">Testemunhas</strong></td><td>Compromisso de verdade. Exceções: parentes, menores de 14, doentes mentais (informantes). Número: ordinário = até 8; sumário = 5; sumaríssimo = 3.</td></tr>
+          <tr><td><strong class="hl-purple">Reconhecimento</strong></td><td>Pessoa/coisa (art. 226 CPP). Descrição prévia + entre semelhantes. STJ: descumprimento = nulidade.</td></tr>
+          <tr><td><strong class="hl-purple">Acareação</strong></td><td>Confronto entre depoentes com versões divergentes (art. 229 CPP).</td></tr>
+          <tr><td><strong class="hl-purple">Busca e apreensão</strong></td><td><strong>Domiciliar:</strong> mandado judicial + durante o dia. <strong>Pessoal:</strong> sem mandado (fundada suspeita).</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-danger">⚠️ <strong>PEGADINHA:</strong> Busca domiciliar exige mandado e deve ocorrer <strong class="hl-red">durante o dia</strong>. À noite: só consentimento do morador, flagrante, desastre ou socorro. Conceito de "dia" (STF): das 5h às 21h.</div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== SEÇÃO 9 ===== -->
+<div class="section" id="section-8">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-icon">🔒</span>
+    <span class="section-title">9. Prisão, Medidas Cautelares e Liberdade Provisória</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">🚨 Prisão em Flagrante (arts. 301-310 CPP)</div>
+      <table class="info-table">
+        <thead><tr><th>Espécie</th><th>Hipótese</th><th>Legal?</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Próprio</strong></td><td>Está cometendo ou acabou de cometer</td><td>✅</td></tr>
+          <tr><td><strong class="hl-purple">Impróprio (quase)</strong></td><td>Perseguido logo após</td><td>✅</td></tr>
+          <tr><td><strong class="hl-purple">Presumido (ficto)</strong></td><td>Encontrado logo depois com instrumentos/objetos</td><td>✅</td></tr>
+          <tr><td><strong class="hl-purple">Esperado</strong></td><td>Polícia aguarda sem induzir</td><td>✅</td></tr>
+          <tr><td><strong class="hl-purple">Preparado</strong></td><td>Agente induzido a cometer</td><td><strong class="hl-red">❌</strong> (Súm. 145 STF)</td></tr>
+          <tr><td><strong class="hl-purple">Forjado</strong></td><td>Crime inexistente, criado artificialmente</td><td><strong class="hl-red">❌</strong></td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-info">💡 <strong>Audiência de custódia:</strong> <strong class="hl">24 horas</strong> após prisão. Juiz analisa legalidade, necessidade e alternativas cautelares.</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⚖️ Prisão Preventiva (arts. 311-316 CPP)</div>
+      <div class="card-grid">
+        <div class="card"><div class="card-label">Fundamentos (art. 312)</div><div class="card-value">Garantia da <strong class="hl-purple">ordem pública/econômica</strong>, conveniência da instrução, aplicação da lei penal, descumprimento de cautelar.</div></div>
+        <div class="card"><div class="card-label">Cabimento</div><div class="card-value">Dolosos pena &gt; 4 anos, reincidente doloso, violência doméstica, descumprimento de cautelar. <strong class="hl-red">NÃO cabe</strong> em crime culposo.</div></div>
+        <div class="card"><div class="card-label">Revisão</div><div class="card-value">A cada <strong class="hl">90 dias</strong> (art. 316, p.ú. CPP – Pacote Anticrime). Sem prazo máximo em lei.</div></div>
+        <div class="card"><div class="card-label">Quem decreta</div><div class="card-value">Apenas o <strong class="hl-purple">juiz</strong>. Na investigação: requerimento do MP ou representação da autoridade policial. <strong class="hl-red">Juiz NÃO decreta de ofício</strong> (Pacote Anticrime).</div></div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⏱️ Prisão Temporária (Lei 7.960/1989)</div>
+      <table class="info-table">
+        <thead><tr><th>Aspecto</th><th>Regra</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Prazo</strong></td><td>5 dias (prorrogável +5). Hediondos: <strong class="hl">30 dias</strong> (prorrogável +30).</td></tr>
+          <tr><td><strong class="hl-purple">Cabimento</strong></td><td>Imprescindível para investigação + indícios de autoria. Crimes listados na lei (homicídio, sequestro, roubo, tráfico etc.).</td></tr>
+          <tr><td><strong class="hl-purple">Quem requer</strong></td><td>MP ou representação da autoridade policial. <strong class="hl-red">Juiz NÃO decreta de ofício</strong>.</td></tr>
+          <tr><td><strong class="hl-purple">Fase</strong></td><td>Somente na fase do <strong>inquérito policial</strong> (nunca durante o processo).</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔗 Medidas Cautelares e Liberdade Provisória</div>
+      <ul class="topic-list">
+        <li><strong>Medidas cautelares diversas (art. 319 CPP):</strong> Comparecimento periódico, proibição de contato/acesso, recolhimento domiciliar, fiança, monitoração eletrônica, suspensão de função pública.</li>
+        <li><strong>Liberdade provisória:</strong> Direito do preso quando prisão é desnecessária. Com ou sem fiança.</li>
+        <li><strong>Crimes inafiançáveis:</strong> Racismo, tortura, tráfico, terrorismo, hediondos, ação de grupos armados (art. 5º, XLII-XLIV CF). Inafiançável ≠ insuscetível de liberdade provisória!</li>
+        <li><strong>Prisão domiciliar (arts. 317-318 CPP):</strong> Substitui preventiva: maior de 80 anos, debilitado por doença grave, gestante, mulher com filho de até 12 anos (imprescindível aos cuidados).</li>
+      </ul>
+      <div class="alert alert-danger">⚠️ <strong>PEGADINHA:</strong> Crime inafiançável <strong class="hl-red">pode ter liberdade provisória</strong> (sem fiança). Inafiançável ≠ preso obrigatoriamente.</div>
+    </div>
+
+  </div></div>
+</div>
+
+<!-- ===== SEÇÃO 10 ===== -->
+<div class="section" id="section-9">
+  <div class="section-header" onclick="toggleSection(this)">
+    <span class="section-icon">📚</span>
+    <span class="section-title">10. Legislação Penal e Processual Penal Especial</span>
+    <span class="section-toggle">▼</span>
+  </div>
+  <div class="section-body"><div class="section-content">
+
+    <div class="subsection">
+      <div class="subsection-title">🔴 Lei de Abuso de Autoridade (Lei 13.869/2019)</div>
+      <div class="mnemonic">
+        <div class="mnemonic-label">🧠 Mnemônico – Elemento subjetivo</div>
+        <div class="mnemonic-text">DOLO ESPECÍFICO</div>
+        <div class="mnemonic-desc">Exige finalidade específica de prejudicar outrem ou beneficiar a si mesmo ou terceiro, ou mero capricho/satisfação pessoal</div>
+      </div>
+      <ul class="topic-list">
+        <li><strong>Ação penal:</strong> Pública <strong class="hl-purple">incondicionada</strong>. Admite ação penal privada subsidiária da pública.</li>
+        <li><strong>Penas restritivas de direitos:</strong> Prestação de serviços, suspensão do cargo (1-6 meses, com vencimentos), limitação de fim de semana.</li>
+        <li><strong>Efeito da condenação:</strong> Indenização do dano + perda do cargo (na <strong class="hl-red">reincidência</strong> em abuso).</li>
+        <li><strong>Independência de instâncias:</strong> Responsabilidade civil, penal e administrativa. Exceção: sentença penal que reconhece excludente faz coisa julgada no cível.</li>
+        <li><strong>Sujeito ativo:</strong> Agente público (inclusive transitório e sem remuneração) ou particular em colaboração.</li>
+        <li><strong>Não basta culpa!</strong> Sempre exige <strong class="hl-red">dolo específico</strong> (finalidade de prejudicar ou beneficiar).</li>
+      </ul>
+      <div class="alert alert-danger">⚠️ <strong>CEBRASPE (mais cobrada):</strong> Instaurar procedimento sem justa causa = abuso de autoridade. Divulgar gravação sem autorização de investigado = abuso. Pena máxima: 4 anos (não é menor potencial ofensivo em todos os tipos!).</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">💊 Lei de Drogas (Lei 11.343/2006)</div>
+      <table class="info-table">
+        <thead><tr><th>Conduta</th><th>Art.</th><th>Pena / Observação</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Uso pessoal</strong></td><td>28</td><td>Advertência, prestação de serviços, medida educativa. <strong class="hl-red">NÃO há pena de prisão</strong>. STF (2024): porte de até 40g de maconha = uso.</td></tr>
+          <tr><td><strong class="hl-purple">Tráfico</strong></td><td>33</td><td>Reclusão 5-15 anos. <strong class="hl-red">Crime equiparado a hediondo</strong>, inafiançável, insuscetível de graça/anistia/indulto.</td></tr>
+          <tr><td><strong class="hl-purple">Tráfico privilegiado</strong></td><td>33, §4º</td><td>Redução 1/6 a 2/3: primário, bons antecedentes, não integra organização. <strong class="hl-green">NÃO é hediondo</strong> (STF).</td></tr>
+          <tr><td><strong class="hl-purple">Associação para o tráfico</strong></td><td>35</td><td>2+ pessoas. Crime autônomo (não precisa traficar). Reclusão 3-10 anos.</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-info">💡 <strong>Prazos do IP:</strong> Preso = 30 dias (+30). Solto = 90 dias (+90). Destruição de drogas: juiz determina incineração, guardando amostra.</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🔫 Estatuto do Desarmamento (Lei 10.826/2003)</div>
+      <table class="info-table">
+        <thead><tr><th>Conduta</th><th>Art.</th><th>Observação</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Posse irregular</strong></td><td>12</td><td>Arma de fogo no interior da residência/trabalho. Detenção 1-3 anos.</td></tr>
+          <tr><td><strong class="hl-purple">Porte ilegal</strong></td><td>14</td><td>Arma de fogo fora da residência/trabalho. Reclusão 2-4 anos.</td></tr>
+          <tr><td><strong class="hl-purple">Disparo de arma</strong></td><td>15</td><td>Disparar em local habitado. Reclusão 2-4 anos.</td></tr>
+          <tr><td><strong class="hl-purple">Posse/porte de arma de uso restrito</strong></td><td>16</td><td>Reclusão 3-6 anos. <strong class="hl-red">Crime hediondo</strong> (se arma de fogo de uso restrito – Lei 13.497/2017).</td></tr>
+          <tr><td><strong class="hl-purple">Comércio ilegal</strong></td><td>17</td><td>Reclusão 6-12 anos. Crime hediondo.</td></tr>
+          <tr><td><strong class="hl-purple">Tráfico internacional</strong></td><td>18</td><td>Reclusão 8-16 anos. Crime hediondo.</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-danger">⚠️ Crimes dos arts. 16 (uso restrito), 17 e 18 são <strong class="hl-red">inafiançáveis e hediondos</strong>. Registro = SINARM (PF). Porte: concessão pela PF.</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">🕵️ Organização Criminosa (Lei 12.850/2013)</div>
+      <ul class="topic-list">
+        <li><strong>Conceito:</strong> Associação de <strong class="hl-purple">4 ou mais pessoas</strong>, estruturalmente ordenada, com divisão de tarefas, para obter vantagem de qualquer natureza mediante infrações penais com pena máxima &gt; 4 anos ou transnacionais.</li>
+        <li><strong>Meios de investigação:</strong> Colaboração premiada, captação ambiental, infiltração de agentes, ação controlada, interceptação telefônica, acesso a dados cadastrais e bancários.</li>
+        <li><strong>Colaboração premiada:</strong> Redução de pena até 2/3, substituição por restritiva de direitos, ou perdão judicial. Deve produzir resultados: identificação de membros, estrutura, localização de vítima etc.</li>
+        <li><strong>Infiltração de agentes:</strong> Autorização judicial (prazo de até 6 meses, renovável). Agente não responde pelos crimes necessários à investigação (proporcionalidade).</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">⚖️ Juizados Especiais Criminais (Lei 9.099/1995)</div>
+      <table class="info-table">
+        <thead><tr><th>Instituto</th><th>Descrição</th></tr></thead>
+        <tbody>
+          <tr><td><strong class="hl-purple">Menor potencial ofensivo</strong></td><td>Contravenções + crimes com pena máxima ≤ 2 anos (cumulada ou não com multa)</td></tr>
+          <tr><td><strong class="hl-purple">Composição civil (art. 74)</strong></td><td>Acordo entre vítima e autor. Ação privada/pública condicionada: renúncia ao direito de queixa/representação.</td></tr>
+          <tr><td><strong class="hl-purple">Transação penal (art. 76)</strong></td><td>MP propõe pena restritiva/multa. Requisitos: não ter sido beneficiado nos últimos 5 anos, não ter condenação anterior.</td></tr>
+          <tr><td><strong class="hl-purple">Suspensão condicional do processo (art. 89)</strong></td><td>Pena mínima ≤ 1 ano. Período de prova: 2-4 anos. Requisitos semelhantes ao sursis.</td></tr>
+        </tbody>
+      </table>
+      <div class="alert alert-info">💡 <strong>SURSIS processual (art. 89):</strong> Aplica-se a <strong>todos os crimes</strong> com pena mínima ≤ 1 ano (não apenas os de menor potencial ofensivo). Muito cobrado!</div>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📜 Outras Leis Especiais</div>
+      <ul class="topic-list">
+        <li><strong>Interceptação telefônica (Lei 9.296/1996):</strong> Autorização judicial + investigação criminal/processo + indícios razoáveis de autoria + impossibilidade por outros meios + crime punido com reclusão. Prazo: 15 dias (renovável). <strong class="hl-red">NÃO cabe em crimes punidos com detenção</strong>.</li>
+        <li><strong>Prisão temporária (Lei 7.960/1989):</strong> 5 dias (+5). Hediondos: 30 dias (+30). Somente no inquérito.</li>
+        <li><strong>Crimes de trânsito (CTB – Lei 9.503/1997):</strong> Homicídio culposo (art. 302), lesão corporal culposa (art. 303), embriaguez ao volante (art. 306), racha (art. 308). Qualificadoras: embriaguez, fuga do local.</li>
+        <li><strong>Contravenções penais (DL 3.688/1941):</strong> Pena = prisão simples ou multa. Ação penal sempre <strong>pública incondicionada</strong>. Não admite tentativa.</li>
+        <li><strong>Apresentação de documentos (Lei 5.553/1968):</strong> Documentos retidos devem ser devolvidos em 5 dias. Retenção indevida = crime.</li>
+        <li><strong>Execução Penal (LEP – Lei 7.210/1984):</strong> Regimes: fechado, semiaberto, aberto. Progressão: cumprimento de 16% (primário, não hediondo) a 70% (hediondo com resultado morte, reincidente específico). Remição: 3 dias de trabalho = 1 dia de pena; 12 horas de estudo = 1 dia.</li>
+        <li><strong>Crime cibernético (Decreto 11.491/2023):</strong> Promulga a Convenção de Budapeste. Cooperação internacional para combate a crimes praticados por meio de sistemas de computador.</li>
+      </ul>
+    </div>
+
+    <div class="subsection">
+      <div class="subsection-title">📌 Súmulas Relevantes (STF/STJ)</div>
+      <ul class="topic-list">
+        <li><strong>SV 14 (STF):</strong> Direito do defensor de acesso aos elementos do IP já documentados.</li>
+        <li><strong>Súm. 145 (STF):</strong> Não há crime quando a preparação do flagrante pela polícia torna impossível a consumação.</li>
+        <li><strong>Súm. 711 (STF):</strong> Crime continuado/permanente = aplica-se a lei mais nova, ainda que mais severa.</li>
+        <li><strong>Súm. 610 (STF):</strong> Latrocínio consumado = morte da vítima (ainda que o patrimônio não seja subtraído).</li>
+        <li><strong>Súm. 18 (STJ):</strong> Sentença de perdão judicial é declaratória da extinção da punibilidade, não gerando reincidência.</li>
+        <li><strong>Súm. 438 (STJ):</strong> Inadmissível a extinção da punibilidade pela prescrição retroativa com base na pena virtual.</li>
+        <li><strong>Súm. 444 (STJ):</strong> Vedado agravar a pena-base com IPs/ações em andamento.</li>
+      </ul>
+    </div>
+
+  </div></div>
+</div>
+
+</div>
+
+<div class="footer">📚 Revisão Direito Penal e Processual Penal • Policial Legislativo CD 2026 • Baseado em questões CEBRASPE</div>
+
+<script>
+function toggleSection(header){const s=header.closest('.section');s.classList.toggle('open');updateProgress()}
+function expandAll(){document.querySelectorAll('.section').forEach(s=>s.classList.add('open'));updateProgress()}
+function collapseAll(){document.querySelectorAll('.section').forEach(s=>s.classList.remove('open'));updateProgress()}
+function scrollToSection(i){const s=document.getElementById('section-'+i);if(s){s.classList.add('open');s.scrollIntoView({behavior:'smooth',block:'start'});updateProgress()}}
+function updateProgress(){const t=document.querySelectorAll('.section').length;const o=document.querySelectorAll('.section.open').length;document.getElementById('progressFill').style.width=Math.round((o/t)*100)+'%';document.getElementById('progressText').textContent=o+'/'+t}
+document.addEventListener('keydown',e=>{if(e.key>='1'&&e.key<='9')scrollToSection(parseInt(e.key)-1);if(e.key==='0')scrollToSection(9);if(e.key==='a'||e.key==='A')expandAll();if(e.key==='r'||e.key==='R')collapseAll()});
+updateProgress();
+</script>
+</body>
+</html>
