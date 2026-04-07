@@ -8,43 +8,39 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
-:root{--primary:#dc2626;--primary-dark:#b91c1c;--secondary:#10b981;--accent:#f59e0b;--background:#0f172a;--card-bg:rgba(30,41,59,0.7);--glass-border:rgba(255,255,255,0.1);--text-main:#f8fafc;--text-dim:#94a3b8}
+:root{--primary:#dc2626;--primary-dark:#b91c1c;--secondary:#059669;--accent:#d97706;--background:#f5f7fa;--card-bg:#ffffff;--card-border:#e2e8f0;--text-main:#1e293b;--text-dim:#64748b}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:radial-gradient(circle at top right,#1e1b4b,#0f172a);color:var(--text-main);font-family:'Inter',sans-serif;min-height:100vh;padding:20px}
+body{background:var(--background);color:var(--text-main);font-family:'Inter',sans-serif;min-height:100vh;padding:20px}
 h1,h2,h3{font-family:'Outfit',sans-serif}
 .container{max-width:1000px;margin:0 auto}
-.header{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:30px;border-radius:16px;margin-bottom:30px;box-shadow:0 8px 32px rgba(220,38,38,0.3)}
+.header{background:linear-gradient(135deg,var(--primary),var(--primary-dark));color:#fff;padding:30px;border-radius:16px;margin-bottom:30px;box-shadow:0 4px 15px rgba(220,38,38,0.2)}
 .header h1{font-size:2rem;margin-bottom:10px;display:flex;align-items:center;gap:15px}
 .header p{opacity:0.9;font-size:1rem}
-.back-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.1);color:#fff;padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:600;transition:all 0.3s;margin-bottom:20px;border:1px solid rgba(255,255,255,0.2)}
-.back-btn:hover{background:rgba(255,255,255,0.2);color:#fff;transform:translateX(-5px)}
-.nav-pills{background:var(--card-bg);backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:12px;padding:15px;margin-bottom:30px;display:flex;flex-wrap:wrap;gap:10px;justify-content:center}
-.nav-pills .nav-link{color:var(--text-dim);background:transparent;border:2px solid transparent;padding:10px 20px;border-radius:10px;font-weight:600;transition:all 0.3s;font-size:0.9rem}
-.nav-pills .nav-link:hover{color:var(--text-main);background:rgba(255,255,255,0.05)}
-.nav-pills .nav-link.active{background:var(--primary);color:#fff;border-color:var(--primary)}
-.schema-section{background:var(--card-bg);backdrop-filter:blur(20px);border:1px solid var(--glass-border);border-radius:16px;padding:30px;margin-bottom:30px;border-left:4px solid var(--primary)}
+.back-btn{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--primary);padding:10px 20px;border-radius:10px;text-decoration:none;font-weight:600;transition:all 0.3s;margin-bottom:20px;border:1px solid var(--card-border);box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.back-btn:hover{background:#fef2f2;color:var(--primary-dark);transform:translateX(-5px)}
+.schema-section{background:var(--card-bg);border:1px solid var(--card-border);border-radius:16px;padding:30px;margin-bottom:24px;border-left:4px solid var(--primary);box-shadow:0 1px 4px rgba(0,0,0,0.05)}
 .schema-section h3{color:var(--primary);margin-bottom:20px;font-size:1.5rem;display:flex;align-items:center;gap:10px}
 .schema-section h4{color:var(--secondary);margin:20px 0 15px;font-size:1.2rem}
-.schema-box{background:rgba(255,255,255,0.03);padding:20px;border-radius:12px;margin:15px 0;border:2px solid rgba(220,38,38,0.2)}
+.schema-box{background:#f8fafc;padding:20px;border-radius:12px;margin:15px 0;border:1px solid #e2e8f0}
 .schema-list{list-style:none;padding:0}
-.schema-list li{padding:10px 0;padding-left:30px;position:relative;line-height:1.6}
+.schema-list li{padding:10px 0;padding-left:30px;position:relative;line-height:1.6;color:#475569}
 .schema-list li:before{content:'▸';position:absolute;left:0;color:var(--primary);font-weight:700;font-size:1.2rem}
-.tip-box{background:linear-gradient(135deg,rgba(245,158,11,0.1),rgba(245,158,11,0.05));border-left:4px solid var(--accent);padding:20px;border-radius:12px;margin:15px 0}
+.schema-list li strong{color:var(--text-main)}
+.tip-box{background:#fffbeb;border-left:4px solid var(--accent);padding:20px;border-radius:12px;margin:15px 0;border:1px solid #fde68a}
 .tip-box strong{color:var(--accent);font-size:1.1rem}
-.comparison-table{width:100%;border-collapse:collapse;margin:15px 0;font-size:0.95rem;background:rgba(255,255,255,0.02);border-radius:12px;overflow:hidden}
+.tip-box a{color:var(--primary);text-decoration:underline}
+.comparison-table{width:100%;border-collapse:collapse;margin:15px 0;font-size:0.95rem;background:#fff;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0}
 .comparison-table th{background:var(--primary);color:#fff;padding:15px;text-align:left;font-weight:600}
-.comparison-table td{padding:12px 15px;border-bottom:1px solid rgba(255,255,255,0.1)}
+.comparison-table td{padding:12px 15px;border-bottom:1px solid #e2e8f0;color:#475569}
 .comparison-table tr:last-child td{border-bottom:none}
-.comparison-table tr:hover{background:rgba(255,255,255,0.05)}
-.mnemonic{background:linear-gradient(135deg,rgba(220,38,38,0.2),rgba(220,38,38,0.1));border-left:4px solid var(--primary);padding:20px;border-radius:12px;margin:15px 0;font-weight:600;color:var(--text-main);font-size:1.05rem}
+.comparison-table tr:hover td{background:#fef2f2}
+.mnemonic{background:#fef2f2;border-left:4px solid var(--primary);padding:20px;border-radius:12px;margin:15px 0;font-weight:600;color:var(--primary-dark);font-size:1.05rem;border:1px solid #fecaca}
 .action-buttons{display:flex;gap:15px;margin-top:40px;flex-wrap:wrap}
 .btn-primary{background:var(--primary);color:#fff;padding:15px 30px;border-radius:12px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:10px;transition:all 0.3s;border:none;font-size:1rem}
-.btn-primary:hover{background:var(--primary-dark);color:#fff;transform:translateY(-2px);box-shadow:0 8px 20px rgba(220,38,38,0.4)}
+.btn-primary:hover{background:var(--primary-dark);color:#fff;transform:translateY(-2px);box-shadow:0 8px 20px rgba(220,38,38,0.3)}
 @media(max-width:768px){
 .header h1{font-size:1.5rem}
 .schema-section{padding:20px}
-.nav-pills{flex-direction:column}
-.nav-pills .nav-link{width:100%}
 .action-buttons{flex-direction:column}
 .action-buttons a{width:100%;justify-content:center}
 }
@@ -59,18 +55,6 @@ h1,h2,h3{font-family:'Outfit',sans-serif}
 <p>Criminologia e Criminalística • Concurso Policial Legislativo 2026</p>
 </div>
 
-<ul class="nav nav-pills" id="schemaTabs" role="tablist">
-<li class="nav-item"><a class="nav-link active" data-bs-toggle="pill" href="#cadeia">Cadeia Custódia</a></li>
-<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#locais">Locais Crime</a></li>
-<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#balistica">Balística</a></li>
-<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#papiloscopia">Papiloscopia</a></li>
-<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#tanatologia">Tanatologia</a></li>
-<li class="nav-item"><a class="nav-link" data-bs-toggle="pill" href="#criminologia">Criminologia</a></li>
-</ul>
-
-<div class="tab-content">
-
-<div class="tab-pane fade show active" id="cadeia">
 <div class="schema-section">
 <h3>🔴 CADEIA DE CUSTÓDIA</h3>
 <div class="mnemonic">💡 MNEMÔNICO: "REI   FICA   TREPA   DESCARTA" - Coleta, Registro, Armazenamento, Descarte, Transporte</div>
@@ -90,9 +74,7 @@ h1,h2,h3{font-family:'Outfit',sans-serif}
 <div class="tip-box"><strong>⚠️ ATENÇÃO:</strong> <a href="https://www.planalto.gov.br/ccivil_03/decreto-lei/del3689.htm#:~:text=%C2%A7%201%C2%BA%20O%20in%C3%ADcio%20da%20cadeia%20de%20cust%C3%B3dia%20d%C3%A1%2Dse%20com%20a%20preserva%C3%A7%C3%A3o%20do%20local%20de%20crime%20ou%20com%20procedimentos%20policiais%20ou%20periciais%20nos%20quais%20seja%20detectada%20a%20exist%C3%AAncia%20de%20vest%C3%ADgio.%C2%A0" target="_blank">Art. 158-A</a>. § 1º O início da cadeia de custódia dá-se com a preservação do local de crime ou com procedimentos policiais ou periciais nos quais seja detectada a existência de vestígio. 
   <em>* Quebra da cadeia de custódia pode gerar nulidade relativa (não absoluta)!</em></div>
 </div>
-</div>
 
-<div class="tab-pane fade" id="locais">
 <div class="schema-section">
 <h3>🔵 LOCAIS DE CRIME</h3>
 <div class="schema-box">
@@ -113,9 +95,7 @@ h1,h2,h3{font-family:'Outfit',sans-serif}
 </div>
 <div class="mnemonic">💡 REGRA DE OURO: Isolar, preservar e documentar ANTES de qualquer manipulação!</div>
 </div>
-</div>
 
-<div class="tab-pane fade" id="balistica">
 <div class="schema-section">
 <h3>🟢 BALÍSTICA FORENSE</h3>
 <div class="schema-box">
@@ -138,9 +118,7 @@ h1,h2,h3{font-family:'Outfit',sans-serif}
 </div>
 <div class="tip-box"><strong>💡 DICA:</strong> Cada arma deixa marcas únicas (como impressão digital da arma).</div>
 </div>
-</div>
 
-<div class="tab-pane fade" id="papiloscopia">
 <div class="schema-section">
 <h3>🟣 PAPILOSCOPIA</h3>
 <div class="schema-box">
@@ -162,9 +140,7 @@ h1,h2,h3{font-family:'Outfit',sans-serif}
 </div>
 <div class="tip-box"><strong>⚠️ ATENÇÃO:</strong> Gêmeos idênticos têm impressões digitais DIFERENTES!</div>
 </div>
-</div>
 
-<div class="tab-pane fade" id="tanatologia">
 <div class="schema-section">
 <h3>🟢 TANATOLOGIA FORENSE</h3>
 <div class="schema-box">
@@ -180,9 +156,7 @@ h1,h2,h3{font-family:'Outfit',sans-serif}
 <div class="mnemonic">💡 Sequência: Esfriamento → Manchas → Rigidez → Putrefação</div>
 <div class="tip-box"><strong>💡 DICA:</strong> Moscas varejeiras são as primeiras a colonizar o cadáver (minutos/horas).</div>
 </div>
-</div>
 
-<div class="tab-pane fade" id="criminologia">
 <div class="schema-section">
 <h3>🟡 CRIMINOLOGIA</h3>
 <div class="schema-box">
@@ -203,9 +177,6 @@ h1,h2,h3{font-family:'Outfit',sans-serif}
 <li><strong>Labeling:</strong> Etiquetamento social</li>
 </ul>
 </div>
-</div>
-</div>
-
 </div>
 
 <div class="schema-section">
