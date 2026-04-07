@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Esquemas – Criminologia e Criminalística | Policial Legislativo CD 2026</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#f5f7fa;color:#1e293b;min-height:100vh}
+.container{max-width:960px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#dc2626,#b91c1c);border-radius:12px;margin-bottom:25px;box-shadow:0 4px 15px rgba(220,38,38,0.25);position:relative;overflow:hidden}
+.header::before{content:'🔍';position:absolute;font-size:120px;opacity:0.06;top:-10px;right:-10px}
+.header h1{font-size:26px;color:#fff;margin-bottom:8px}
+.header .subtitle{font-size:14px;color:#fca5a5}
+.header .badge{display:inline-block;background:rgba(255,193,7,0.2);color:#ffc107;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-top:10px;border:1px solid rgba(255,193,7,0.3)}
+.nav-bar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:25px;padding:15px;background:#fff;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.nav-btn{background:#fef2f2;color:#dc2626;border:1px solid #fecaca;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600;transition:all 0.3s;white-space:nowrap}
+.nav-btn:hover,.nav-btn.active{background:#dc2626;color:#fff;border-color:#dc2626;transform:translateY(-1px)}
+.section{background:#fff;border-radius:12px;margin-bottom:20px;border:1px solid #e2e8f0;overflow:hidden;transition:all 0.3s;box-shadow:0 1px 4px rgba(0,0,0,0.05)}
+.section:hover{border-color:#fca5a5;box-shadow:0 2px 8px rgba(220,38,38,0.1)}
+.section-header{display:flex;align-items:center;gap:12px;padding:18px 20px;cursor:pointer;background:linear-gradient(135deg,#fef2f2,#fee2e2);user-select:none;transition:background 0.3s}
+.section-header:hover{background:linear-gradient(135deg,#fee2e2,#fecaca)}
+.section-icon{font-size:28px;flex-shrink:0}
+.section-title{font-size:17px;font-weight:700;color:#991b1b;flex:1}
+.section-toggle{font-size:18px;color:#dc2626;transition:transform 0.3s;flex-shrink:0}
+.section.open .section-toggle{transform:rotate(180deg)}
+.section-body{max-height:0;overflow:hidden;transition:max-height 0.4s ease}
+.section.open .section-body{max-height:15000px}
+.section-content{padding:20px}
+.subsection{margin-bottom:20px}
+.subsection-title{font-size:15px;font-weight:700;color:#dc2626;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid #fee2e2;display:flex;align-items:center;gap:8px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:15px}
+.card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px;transition:all 0.3s}
+.card:hover{background:#fef2f2;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.card-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#dc2626;font-weight:700;margin-bottom:6px}
+.card-value{font-size:14px;line-height:1.6;color:#475569}
+.mnemonic{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fcd34d;border-left:4px solid #f59e0b;border-radius:8px;padding:14px 16px;margin:12px 0}
+.mnemonic-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#b45309;font-weight:700;margin-bottom:6px}
+.mnemonic-text{font-size:18px;font-weight:800;color:#92400e;letter-spacing:3px;margin-bottom:4px}
+.mnemonic-desc{font-size:13px;color:#78716c;line-height:1.5}
+.alert{border-radius:8px;padding:14px 16px;margin:12px 0;font-size:13px;line-height:1.6}
+.alert-danger{background:#fef2f2;border:1px solid #fecaca;border-left:4px solid #dc2626;color:#991b1b}
+.alert-info{background:#eff6ff;border:1px solid #bfdbfe;border-left:4px solid #2563eb;color:#1e40af}
+.alert-success{background:#f0fdf4;border:1px solid #bbf7d0;border-left:4px solid #16a34a;color:#166534}
+.topic-list{list-style:none;margin:10px 0}
+.topic-list li{padding:10px 14px;margin-bottom:6px;background:#f8fafc;border-radius:6px;border-left:3px solid #dc2626;font-size:14px;line-height:1.6;transition:all 0.2s}
+.topic-list li:hover{background:#fef2f2;border-left-color:#b91c1c}
+.topic-list li strong{color:#dc2626}
+.hl{color:#b45309;font-weight:700}.hl-blue{color:#1d4ed8;font-weight:700}.hl-green{color:#16a34a;font-weight:700}.hl-red{color:#dc2626;font-weight:700}.hl-purple{color:#7c3aed;font-weight:700}
+.info-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;background:#fff;border-radius:8px;overflow:hidden;border:1px solid #e2e8f0}
+.info-table th{background:#dc2626;color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:0.5px}
+.info-table td{padding:10px 14px;border-bottom:1px solid #f1f5f9;color:#475569}
+.info-table tr:last-child td{border-bottom:none}
+.info-table tr:hover td{background:#fef2f2}
+.controls{display:flex;gap:10px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}
+.ctrl-btn{background:#fff;border:1px solid #e2e8f0;padding:8px 16px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600;color:#64748b;transition:all 0.3s}
+.ctrl-btn:hover{background:#fef2f2;color:#dc2626;border-color:#fecaca}
+.back-link{display:inline-flex;align-items:center;gap:8px;color:#dc2626;text-decoration:none;font-weight:600;font-size:14px;margin-bottom:15px;padding:8px 16px;border-radius:8px;border:1px solid #fecaca;background:#fef2f2;transition:all 0.3s}
+.back-link:hover{background:#dc2626;color:#fff;transform:translateX(-3px)}
+.progress-bar{height:4px;background:#e2e8f0;border-radius:2px;margin-bottom:20px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#dc2626,#f59e0b);border-radius:2px;transition:width 0.5s;width:0%}
+.footer{text-align:center;padding:20px;color:#94a3b8;font-size:12px;margin-top:30px}
+.action-buttons{display:flex;gap:15px;margin-top:30px;flex-wrap:wrap;justify-content:center}
+.btn-action{padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s;font-size:14px;border:none;cursor:pointer}
+.btn-action:hover{transform:translateY(-2px);box-shadow:0 6px 15px rgba(0,0,0,0.15)}
+.btn-simulado{background:linear-gradient(135deg,#dc2626,#b91c1c);color:#fff}
+.btn-simulado:hover{color:#fff}
+@media(max-width:600px){.header h1{font-size:20px}.nav-btn{font-size:11px;padding:6px 10px}.card-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<a href="index.html" class="back-link"><span>←</span> Voltar</a>
+
+<div class="header">
+<h1>🔍 Esquemas – Criminologia e Criminalística</h1>
+<div class="subtitle">Policial Legislativo • Câmara dos Deputados 2026</div>
+<div class="badge">📋 7 SEÇÕES DO EDITAL • BASEADO EM QUESTÕES CEBRASPE</div>
+</div>
+
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="nav-bar">
+<button class="nav-btn" onclick="scrollToSection(0)">1. Criminologia</button>
+<button class="nav-btn" onclick="scrollToSection(1)">2. Criminalística</button>
+<button class="nav-btn" onclick="scrollToSection(2)">3. Perícia</button>
+<button class="nav-btn" onclick="scrollToSection(3)">4. Locais de Crime</button>
+<button class="nav-btn" onclick="scrollToSection(4)">5. Cadeia de Custódia</button>
+<button class="nav-btn" onclick="scrollToSection(5)">6. Rastreabilidade</button>
+<button class="nav-btn" onclick="scrollToSection(6)">7. Vestígios Forenses</button>
+</div>
+
+<div class="controls">
+<button class="ctrl-btn" onclick="expandAll()">📂 Expandir Tudo</button>
+<button class="ctrl-btn" onclick="collapseAll()">📁 Recolher Tudo</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SEÇÃO 1 – CRIMINOLOGIA                                    -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section open" id="s0">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">⚖️</div>
+<div class="section-title">1. Criminologia – Conceito, Métodos, Objetos, Funções e Modelos Teóricos</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+
+<!-- 1.1 Conceito -->
+<div class="subsection">
+<div class="subsection-title">📌 1.1 Conceito de Criminologia</div>
+<div class="card-grid">
+<div class="card">
+<div class="card-label">Definição</div>
+<div class="card-value">Ciência <span class="hl">empírica</span> e <span class="hl-blue">interdisciplinar</span> que estuda o <strong>delito</strong>, o <strong>delinquente</strong>, a <strong>vítima</strong> e o <strong>controle social</strong> do comportamento desviado.</div>
+</div>
+<div class="card">
+<div class="card-label">Natureza</div>
+<div class="card-value">Não é ciência normativa (como o Direito Penal). É ciência do <strong>"ser"</strong> (analisa a realidade), e não do <strong>"dever-ser"</strong>.</div>
+</div>
+</div>
+<div class="alert alert-danger">⚠️ <strong>Pegadinha CEBRASPE:</strong> A Criminologia NÃO se restringe ao delito e ao delinquente — a <strong>vítima</strong> e o <strong>controle social</strong> também são objetos de estudo (Q35 – DPDF 2022).</div>
+</div>
+
+<!-- 1.2 Métodos -->
+<div class="subsection">
+<div class="subsection-title">🔬 1.2 Métodos: Empirismo e Interdisciplinaridade</div>
+<div class="card-grid">
+<div class="card">
+<div class="card-label">Empirismo</div>
+<div class="card-value">Baseia-se na <span class="hl-green">observação</span> e na <span class="hl-green">experimentação</span> — não em especulações teóricas. O método empírico garante conhecimento mais <strong>confiável e seguro</strong> sobre o problema criminal.</div>
+</div>
+<div class="card">
+<div class="card-label">Interdisciplinaridade</div>
+<div class="card-value">Dialoga com Sociologia, Psicologia, Psiquiatria, Biologia, Antropologia, Direito Penal. É uma característica <strong>fundamental</strong> da Criminologia.</div>
+</div>
+</div>
+<div class="alert alert-info">💡 <strong>CEBRASPE 2022 (DPDF):</strong> "O método científico criminológico baseia-se na experimentação" → <span class="hl-green">CERTO</span>. "A criminologia tem como característica fundamental a interdisciplinaridade" → <span class="hl-green">CERTO</span>.</div>
+</div>
+
+<!-- 1.3 Objetos -->
+<div class="subsection">
+<div class="subsection-title">🎯 1.3 Objetos: Delito, Delinquente, Vítima, Controle Social</div>
+<div class="mnemonic">
+<div class="mnemonic-label">Mnemônico</div>
+<div class="mnemonic-text">D D V C</div>
+<div class="mnemonic-desc"><strong>D</strong>elito • <strong>D</strong>elinquente • <strong>V</strong>ítima • <strong>C</strong>ontrole Social — os 4 objetos da Criminologia moderna</div>
+</div>
+<table class="info-table">
+<tr><th>Objeto</th><th>O que estuda</th><th>Detalhe CEBRASPE</th></tr>
+<tr><td><strong>Delito</strong></td><td>Problema social e comunitário (não apenas ente jurídico)</td><td>Para a criminologia, deve ser encarado como problema <em>social</em></td></tr>
+<tr><td><strong>Delinquente</strong></td><td>Fatores individuais e sociais do comportamento criminoso</td><td>Não se analisa primordialmente como comportamento individual isolado</td></tr>
+<tr><td><strong>Vítima</strong></td><td>Vitimologia, vitimização primária, secundária e terciária</td><td>A vítima É objeto de estudo da criminologia</td></tr>
+<tr><td><strong>Controle Social</strong></td><td>Formal (Estado/polícia/justiça) e informal (família/escola/religião)</td><td>Controle <strong>coercitivo</strong> → monopólio do Estado</td></tr>
+</table>
+<div class="alert alert-danger">⚠️ <strong>Pegadinha:</strong> Na fase <strong>pré-científica</strong>, os objetos eram apenas <span class="hl-red">crime + criminoso</span> (2 objetos). Os 4 objetos são da fase <strong>moderna/científica</strong>.</div>
+
+<div class="subsection-title" style="margin-top:18px">👤 Vitimologia</div>
+<ul class="topic-list">
+<li><strong>Vitimização Primária:</strong> Dano direto causado pelo crime à vítima</li>
+<li><strong>Vitimização Secundária:</strong> Sofrimento causado pelas instâncias formais de controle (polícia, justiça) — <span class="hl-red">coisificação</span> da vítima na persecução criminal</li>
+<li><strong>Vitimização Terciária:</strong> Estigmatização social da vítima</li>
+<li><strong>Neutralização da vítima:</strong> Abandono da vítima na relação jurídico-processual penal</li>
+</ul>
+</div>
+
+<!-- 1.4 Funções -->
+<div class="subsection">
+<div class="subsection-title">⚙️ 1.4 Funções da Criminologia</div>
+<ul class="topic-list">
+<li><strong>Prevenir o crime</strong> e intervir com eficácia e de modo positivo em relação ao delinquente</li>
+<li><strong>Informar a Política Criminal:</strong> A Criminologia fornece dados empíricos para orientar a criação de leis e políticas públicas</li>
+<li><strong>Direito Penal sob o aspecto criminológico:</strong> O Direito Penal é a resposta normativa; a Criminologia é o diagnóstico empírico — ambos se complementam</li>
+</ul>
+<div class="alert alert-success">✅ <strong>CEBRASPE 2022:</strong> "Prevenir o crime e intervir com eficácia e de modo positivo em relação ao delinquente são algumas das funções da criminologia" → <span class="hl-green">CERTO</span>.</div>
+
+<div class="subsection-title" style="margin-top:18px">🏛️ 1.4.1 Criminologia e Política Criminal</div>
+<div class="card-grid">
+<div class="card">
+<div class="card-label">Criminalização Primária</div>
+<div class="card-value">Elaboração das leis penais pelo <strong>Poder Legislativo</strong> — define o que é crime.</div>
+</div>
+<div class="card">
+<div class="card-label">Criminalização Secundária</div>
+<div class="card-value">Aplicação concreta da lei penal por <strong>Polícia, MP, Judiciário</strong> — seleção de quem é perseguido.</div>
+</div>
+</div>
+<div class="alert alert-info">💡 <strong>CEBRASPE 2014 (CAM DEP):</strong> "O Poder Legislativo é considerado como uma agência de criminalização <strong>primária</strong>" → <span class="hl-green">CERTO</span>.</div>
+</div>
+
+<!-- 1.5 Modelos Teóricos -->
+<div class="subsection">
+<div class="subsection-title">📚 1.5 Modelos Teóricos da Criminologia</div>
+
+<div class="subsection-title" style="font-size:14px;color:#64748b">Escolas Criminológicas</div>
+<table class="info-table">
+<tr><th>Escola</th><th>Período / Expoente</th><th>Características</th><th>Delinquente</th></tr>
+<tr><td><strong>Clássica</strong></td><td>Séc. XVIII — Beccaria, Carrara</td><td>Livre-arbítrio, crime = ente jurídico, pena proporcional, método dedutivo, <span class="hl">contratualismo</span></td><td>Optou pelo mal podendo respeitar a lei</td></tr>
+<tr><td><strong>Positiva</strong></td><td>Séc. XIX — Lombroso, Ferri, Garofalo</td><td>Determinismo (bio/psico/social), periculosidade, método indutivo/empírico</td><td>Ser <em>determinado</em> por fatores, <strong>não</strong> ser "inferior" por "debilidade de vontade"</td></tr>
+<tr><td><strong>Escola de Chicago</strong></td><td>Séc. XX — Park, Burgess, Shaw</td><td>Ecologia criminal, desorganização social, zonas concêntricas</td><td>Produto do meio urbano desorganizado</td></tr>
+</table>
+
+<div class="alert alert-danger">⚠️ <strong>Inversão clássica CEBRASPE:</strong> Trocam características entre Clássica e Positiva! <br>
+• Clássica = livre-arbítrio, crime como ente jurídico, pena proporcional, legalidade<br>
+• Positiva = determinismo, periculosidade, tratamento (NÃO é livre-arbítrio!)</div>
+
+<div class="mnemonic">
+<div class="mnemonic-label">Contribuição da Escola Clássica ao Brasil</div>
+<div class="mnemonic-text">LEGALIDADE</div>
+<div class="mnemonic-desc">Princípio da <strong>legalidade</strong> é a grande contribuição da Escola Clássica ao ordenamento penal brasileiro (CEBRASPE DPETO 2022).</div>
+</div>
+
+<!-- 1.5.1 Teorias Sociológicas -->
+<div class="subsection-title" style="margin-top:18px">🏙️ 1.5.1 Teorias Sociológicas</div>
+<table class="info-table">
+<tr><th>Teoria</th><th>Expoente</th><th>Ideia Central</th></tr>
+<tr><td><strong>Anomia</strong></td><td>Durkheim / Merton</td><td>Crime = comportamento <span class="hl">normal</span>, ubíquo e propulsor da modernidade; sociedade sem normas efetivas</td></tr>
+<tr><td><strong>Associação Diferencial</strong></td><td>Sutherland</td><td>Comportamento criminoso é <strong>aprendido</strong> por interação social</td></tr>
+<tr><td><strong>Ecologia Criminal</strong></td><td>Escola de Chicago</td><td>Crime ligado a <strong>áreas naturais</strong> de desorganização social; fatores: mobilidade, explosão demográfica, enfraquecimento do controle social</td></tr>
+<tr><td><strong>Subcultura Delinquente</strong></td><td>Cohen</td><td>Grupos marginalizados criam normas próprias contrárias à cultura dominante</td></tr>
+<tr><td><strong>Labeling Approach</strong></td><td>Becker, Lemert</td><td>Crime = <span class="hl-red">subproduto do controle social</span>, etiquetamento; instrumento seletivo da sociedade</td></tr>
+<tr><td><strong>Criminologia Crítica</strong></td><td>Baratta (marxismo)</td><td>Responsabilidade pelo crime recai sobre a <strong>sociedade</strong>; infrator = vítima do determinismo social e econômico</td></tr>
+<tr><td><strong>Enraizamento Social</strong></td><td>Hirschi</td><td>Delito é inibido pelo processo de assunção de normas, <strong>apego</strong> e <strong>afeto</strong> a pessoas, e medo de dano irreparável às relações</td></tr>
+<tr><td><strong>Janelas Quebradas</strong></td><td>Wilson / Kelling</td><td>Desordem e degradação urbana geram mais criminalidade</td></tr>
+</table>
+
+<div class="alert alert-danger">⚠️ <strong>Pegadinha CEBRASPE:</strong> "Labeling approach enxerga o comportamento criminoso como motivado por razões <em>ontológicas ou intrínsecas</em>" → <span class="hl-red">ERRADO</span>. O labeling vê o crime como resultado do <strong>controle social seletivo</strong>, não de causas intrínsecas.</div>
+
+<!-- 1.5.2 a 1.5.5 Prevenção -->
+<div class="subsection-title" style="margin-top:18px">🛡️ 1.5.2-1.5.5 Prevenção da Infração Penal</div>
+<div class="mnemonic">
+<div class="mnemonic-label">Mnemônico – Níveis de Prevenção</div>
+<div class="mnemonic-text">1ª EDU · 2ª POL · 3ª RES</div>
+<div class="mnemonic-desc"><strong>Primária</strong> = Educação/políticas sociais (longo prazo) · <strong>Secundária</strong> = Policial/grupos de risco (médio prazo) · <strong>Terciária</strong> = Ressocialização do apenado</div>
+</div>
+<table class="info-table">
+<tr><th>Nível</th><th>Destinatário</th><th>Exemplos</th><th>Prazo</th></tr>
+<tr><td><strong>Primária</strong></td><td>Toda a sociedade</td><td>Educação, saúde, emprego, habitação, renda, combate à fome</td><td>Longo prazo</td></tr>
+<tr><td><strong>Secundária</strong></td><td>Grupos de risco / potenciais infratores e vítimas</td><td>Prevenção policial, programa educacional de resistência a drogas, rede de vizinhos, proteção de vulneráveis</td><td>Médio prazo</td></tr>
+<tr><td><strong>Terciária</strong></td><td>Apenados / egressos</td><td>Ressocialização, reinserção social, redução da reincidência</td><td>Curto prazo</td></tr>
+</table>
+<div class="alert alert-danger">⚠️ <strong>Trocas frequentes na CEBRASPE:</strong><br>
+• "Prevenção primária = ações concretas como sanção de novo tipo penal com efeitos imediatos" → <span class="hl-red">ERRADO</span> (primária é de longo prazo, não imediato)<br>
+• "Prevenção primária = ressocialização" → <span class="hl-red">ERRADO</span> (isso é terciária)<br>
+• "Prevenção terciária = políticas sociais efetivas" → <span class="hl-red">ERRADO</span> (terciária = ressocialização)</div>
+
+<!-- 1.5.6 Modelos de Reação -->
+<div class="subsection-title" style="margin-top:18px">⚡ 1.5.6 Modelos de Reação ao Crime</div>
+<table class="info-table">
+<tr><th>Modelo</th><th>Foco</th><th>Característica</th></tr>
+<tr><td><strong>Clássico / Dissuasório</strong></td><td>Pena como castigo</td><td>Criminoso racional que pondera malefícios do castigo; foco no rigor da pena</td></tr>
+<tr><td><strong>Ressocializador</strong></td><td>Tratamento do delinquente</td><td>Pena como oportunidade de reintegração social</td></tr>
+<tr><td><strong>Integrador / Restaurador</strong></td><td>Reparação e diálogo</td><td>Justiça restaurativa; impacto real do castigo no caso concreto; prevenir reincidência; adequa-se ao modelo <strong>integrador</strong></td></tr>
+</table>
+<div class="alert alert-info">💡 <strong>CEBRASPE 2022 (DPPA):</strong> "A justiça restaurativa se adequa ao modelo <strong>integrador</strong>" → <span class="hl-green">CERTO</span>.</div>
+
+</div>
+</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SEÇÃO 2 – CRIMINALÍSTICA                                  -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section" id="s1">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">🔬</div>
+<div class="section-title">2. Criminalística – Definição, Histórico e Doutrina</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+
+<div class="subsection">
+<div class="subsection-title">📌 2.1 Definição</div>
+<div class="card-grid">
+<div class="card">
+<div class="card-label">O que é</div>
+<div class="card-value">Procedimento investigatório que utiliza <span class="hl">métodos científicos</span> para analisar e interpretar <strong>evidências materiais</strong> relacionadas a infrações penais.</div>
+</div>
+<div class="card">
+<div class="card-label">Autonomia</div>
+<div class="card-value">É considerada <strong>disciplina autônoma</strong>. Não se restringe à narrativa estática dos vestígios — busca a dinâmica dos eventos.</div>
+</div>
+</div>
+<div class="alert alert-danger">⚠️ <strong>CEBRASPE (INMETRO 2010):</strong> "A moderna criminalística restringe-se à fria estática narrativa" → <span class="hl-red">ERRADO</span>. Não auxilia <em>exclusivamente</em> atividades policiais → <span class="hl-red">ERRADO</span>.</div>
+</div>
+
+<div class="subsection">
+<div class="subsection-title">📜 2.2 Histórico</div>
+<ul class="topic-list">
+<li><strong>Hans Gross (1893):</strong> Considerado o "pai da Criminalística" — publicou "Manual do Juiz de Instrução"</li>
+<li><strong>Edmond Locard:</strong> Princípio da troca (todo contato deixa vestígio)</li>
+<li><strong>Alphonse Bertillon:</strong> Antropometria criminal (antes da datiloscopia)</li>
+</ul>
+</div>
+
+<div class="subsection">
+<div class="subsection-title">📖 2.3 Doutrina – Princípios da Criminalística</div>
+<table class="info-table">
+<tr><th>Princípio</th><th>Descrição</th></tr>
+<tr><td><strong>Observação</strong></td><td>Exame metódico e atento do local e dos vestígios</td></tr>
+<tr><td><strong>Análise</strong></td><td>Método científico: coleta de dados → hipóteses → verificação. A perícia visa definir <em>como</em> o fato ocorreu</td></tr>
+<tr><td><strong>Interpretação</strong></td><td>Identificação genérica → específica → <strong>individual</strong>. Dois objetos podem ser indistinguíveis, mas nunca idênticos</td></tr>
+<tr><td><strong>Descrição</strong></td><td>Relato detalhado e técnico do que foi observado</td></tr>
+<tr><td><strong>Documentação</strong></td><td>Embasado na <span class="hl">cadeia de custódia</span>: todo caminho do vestígio deve ser documentado em cada passo</td></tr>
+<tr><td><strong>Universalidade</strong></td><td>Toda técnica deve ser testada e aprovada pela <strong>comunidade científica</strong> antes de ser aceita como meio de prova</td></tr>
+</table>
+</div>
+
+</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SEÇÃO 3 – PERÍCIA                                         -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section" id="s2">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">🧪</div>
+<div class="section-title">3. Perícia – Definição, Requisição, Prazos e Tipologias</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+
+<div class="subsection">
+<div class="subsection-title">📌 3.1 Definição e Conceitos</div>
+<div class="card-grid">
+<div class="card">
+<div class="card-label">Perícia</div>
+<div class="card-value">Exame procedido por pessoas com <strong>conhecimentos técnico-científicos</strong> para elucidar circunstâncias de fato punível.</div>
+</div>
+<div class="card">
+<div class="card-label">Corpo de Delito</div>
+<div class="card-value">Conjunto de <strong>vestígios materiais</strong> deixados pela infração. Provas técnicas/materiais = corpo de delito.</div>
+</div>
+<div class="card">
+<div class="card-label">Exame de Corpo de Delito</div>
+<div class="card-value">Exame pericial sobre os vestígios. Pode ser <span class="hl-blue">direto</span> (sobre o vestígio) ou <span class="hl-blue">indireto</span> (prova testemunhal).</div>
+</div>
+</div>
+
+<div class="alert alert-danger">⚠️ <strong>Regras fundamentais (arts. 158-184, CPP):</strong><br>
+• A <strong>confissão do acusado NÃO supre</strong> o exame de corpo de delito quando a infração deixar vestígios (art. 158)<br>
+• Desaparecidos os vestígios → corpo de delito <strong>indireto</strong> via prova testemunhal (art. 167)<br>
+• O juiz <strong>NÃO fica vinculado</strong> ao laudo pericial — sistema do livre convencimento motivado (art. 182)<br>
+• Laudo cadavérico assinado por peritos = prova <strong>pericial</strong> (não prova "real")</div>
+</div>
+
+<div class="subsection">
+<div class="subsection-title">📋 3.2 Requisição</div>
+<ul class="topic-list">
+<li><strong>Quem requisita:</strong> Autoridade policial ou judiciária</li>
+<li><strong>Perito oficial:</strong> 1 perito oficial com diploma de curso superior (regra atual)</li>
+<li><strong>Perito não oficial (ad hoc):</strong> Na falta do oficial, <span class="hl">2 pessoas idôneas</span> com diploma de curso superior, <strong>preferencialmente</strong> na área, nomeadas pelo juiz</li>
+<li><strong>Assistente técnico:</strong> Indicado e pago pela parte; acesso ao material probatório <strong>no ambiente do órgão oficial</strong> e na presença do perito oficial</li>
+<li><strong>Quesitos:</strong> Formulados pela autoridade e pelas partes <strong>até o ato da diligência</strong></li>
+</ul>
+<div class="alert alert-info">💡 <strong>O perito NÃO deve:</strong> entrar no mérito da causa, imputar culpa criminal, ou indicar autoria. Sua função é analisar fatos à luz do conhecimento científico.</div>
+</div>
+
+<div class="subsection">
+<div class="subsection-title">⏰ 3.3 Prazo para Elaboração</div>
+<div class="mnemonic">
+<div class="mnemonic-label">Prazo do Laudo</div>
+<div class="mnemonic-text">10 DIAS</div>
+<div class="mnemonic-desc">Prazo para elaboração do laudo pericial: <strong>10 dias</strong>, podendo ser prorrogado em casos excepcionais, a requerimento dos peritos. (NÃO é 5 dias!)</div>
+</div>
+<ul class="topic-list">
+<li><strong>Laudo Complementar:</strong> Em caso de omissões, obscuridades ou contradições; ou lesão corporal grave (incapacidade > 30 dias)</li>
+<li><strong>Divergência entre peritos:</strong> Cada um redige separadamente; a autoridade nomeia um terceiro; se divergir de ambos, novo exame por outros peritos</li>
+</ul>
+</div>
+
+<div class="subsection">
+<div class="subsection-title">📄 3.4 Tipologias Periciais</div>
+<table class="info-table">
+<tr><th>Tipo</th><th>O que examina</th><th>Detalhe</th></tr>
+<tr><td><strong>Documentoscópica</strong></td><td>Autenticidade de documentos</td><td>Falsificações, adulterações, papel, tintas, impressões</td></tr>
+<tr><td><strong>Grafotécnica</strong></td><td>Escrita e assinaturas</td><td>Comparação de padrões gráficos; usa documentos de autenticidade comprovada</td></tr>
+<tr><td><strong>Audiovisual</strong></td><td>Áudios e vídeos</td><td>Autenticidade, identificação de vozes, análise de imagens</td></tr>
+<tr><td><strong>Balística</strong></td><td>Armas, projéteis, estojos</td><td>Interna (dentro da arma), externa (trajetória), terminal (impacto)</td></tr>
+<tr><td><strong>Papiloscopia</strong></td><td>Impressões digitais/palmares</td><td>Datiloscopia, quiroscopia, podoscopia</td></tr>
+</table>
+<div class="alert alert-info">💡 <strong>Grafotécnica (CPP, art. 174):</strong> Para comparação de escritos, somente documentos de <strong>autenticidade comprovada</strong>. Se ausentes, a autoridade ordena que a pessoa escreva o que lhe for ditado.</div>
+</div>
+
+</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SEÇÃO 4 – LOCAIS DE CRIME                                 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section" id="s3">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">🏚️</div>
+<div class="section-title">4. Locais de Crime – Classificação, Isolamento e Levantamentos</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+
+<div class="subsection">
+<div class="subsection-title">📌 4.1 Conceituação e Classificação</div>
+<table class="info-table">
+<tr><th>Critério</th><th>Tipo</th><th>Descrição</th></tr>
+<tr><td rowspan="3"><strong>Quanto à natureza</strong></td><td>Imediato</td><td>Onde ocorreu o fato principal</td></tr>
+<tr><td>Mediato</td><td>Relacionado ao crime (rota de fuga, local de abandono de arma)</td></tr>
+<tr><td>Relacionado</td><td>Conexão indireta com o crime</td></tr>
+<tr><td rowspan="2"><strong>Quanto à preservação</strong></td><td>Idôneo</td><td>Preservado satisfatoriamente até a chegada do perito</td></tr>
+<tr><td>Inidôneo</td><td>Alterado, violado ou contaminado</td></tr>
+<tr><td rowspan="2"><strong>Quanto ao ambiente</strong></td><td>Interno</td><td>Ambiente fechado (residência, veículo)</td></tr>
+<tr><td>Externo</td><td>Ambiente aberto (via pública, campo)</td></tr>
+</table>
+<div class="alert alert-danger">⚠️ <strong>Pegadinha CEBRASPE (INMETRO 2010):</strong> "Quanto ao tipo, os locais são classificados em idôneos ou inidôneos" → <span class="hl-red">ERRADO</span>. Idôneo/inidôneo refere-se à <strong>preservação</strong>, não ao tipo. Tipo = imediato/mediato/relacionado.</div>
+<div class="alert alert-info">💡 Todo local de morte violenta (mesmo suicídio) deve ser tratado inicialmente como <strong>local de crime</strong> até prova em contrário.</div>
+</div>
+
+<div class="subsection">
+<div class="subsection-title">🔒 4.2 Isolamento e Preservação</div>
+<div class="mnemonic">
+<div class="mnemonic-label">Regra de Ouro</div>
+<div class="mnemonic-text">ISOLAR → PRESERVAR → DOCUMENTAR</div>
+<div class="mnemonic-desc">Sempre nesta ordem! ANTES de qualquer manipulação. Art. 169, CPP: a autoridade providenciará <strong>imediatamente</strong> para que não se altere o estado das coisas.</div>
+</div>
+<ul class="topic-list">
+<li><strong>Isolamento ideal:</strong> Espaço que abranja a área de localização do vestígio mais distante. <span class="hl-red">Nenhuma pessoa não autorizada</span> pode permanecer (nem familiar!)</li>
+<li><strong>Preservação:</strong> Manter intacto o local até a chegada dos peritos; evitar alteração ou destruição de vestígios</li>
+<li><strong>Local periciado ≠ local inidôneo:</strong> Após análise pelo perito, o local foi "preservado" (não "não preservado")</li>
+</ul>
+</div>
+
+<div class="subsection">
+<div class="subsection-title">📊 4.3 Finalidades dos Levantamentos</div>
+<div class="card-grid">
+<div class="card">
+<div class="card-label">Crime contra a pessoa</div>
+<div class="card-value">Determinar causa da morte, instrumento utilizado, dinâmica dos fatos, posição do corpo, marcas de violência, vestígios biológicos.</div>
+</div>
+<div class="card">
+<div class="card-label">Crime contra o patrimônio</div>
+<div class="card-value">Comprovar arrombamento/escalada, identificar instrumento, classificar o furto/roubo (qualificadora), avaliar danos.</div>
+</div>
+</div>
+<div class="alert alert-info">💡 <strong>Croqui:</strong> O perito inclui vias de acesso e medidas que fornecem a <strong>exata posição das evidências</strong> na cena do crime.</div>
+<div class="alert alert-info">💡 <strong>CPP, art. 169:</strong> Os peritos podem instruir seus laudos com <strong>fotografias, desenhos ou esquemas</strong> elucidativos.</div>
+</div>
+
+</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SEÇÃO 5 – CADEIA DE CUSTÓDIA                              -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section" id="s4">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">🔗</div>
+<div class="section-title">5. Cadeia de Custódia – Conceitos, Etapas, Fases Interna e Externa</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+
+<div class="subsection">
+<div class="subsection-title">📌 5.1-5.2 Conceitos e Etapas (Art. 158-A a 158-F, CPP)</div>
+<div class="card-grid">
+<div class="card">
+<div class="card-label">Definição</div>
+<div class="card-value">Conjunto de procedimentos para manter e documentar a <strong>história cronológica do vestígio</strong>, desde a sua identificação até o descarte.</div>
+</div>
+<div class="card">
+<div class="card-label">Início (§1º, Art. 158-A)</div>
+<div class="card-value">Com a <span class="hl-red">preservação do local de crime</span> ou com procedimentos policiais/periciais nos quais seja detectada a existência de vestígio.</div>
+</div>
+</div>
+
+<div class="mnemonic">
+<div class="mnemonic-label">Mnemônico – 10 Etapas</div>
+<div class="mnemonic-text">RE-I-FI-CO-A-TRAN-RE-PRO-AR-DES</div>
+<div class="mnemonic-desc"><strong>Re</strong>conhecimento → <strong>I</strong>solamento → <strong>Fi</strong>xação → <strong>Co</strong>leta → <strong>A</strong>condicionamento → <strong>Tran</strong>sporte → <strong>Re</strong>cebimento → <strong>Pro</strong>cessamento → <strong>Ar</strong>mazenamento → <strong>Des</strong>carte</div>
+</div>
+
+<table class="info-table">
+<tr><th>#</th><th>Etapa</th><th>Descrição</th></tr>
+<tr><td>1</td><td><strong>Reconhecimento</strong></td><td>Identificação do vestígio no local de crime</td></tr>
+<tr><td>2</td><td><strong>Isolamento</strong></td><td>Evitar que se altere o estado das coisas; delimitar o perímetro</td></tr>
+<tr><td>3</td><td><strong>Fixação</strong></td><td>Documentação: fotografia, filmagem, croqui, descrição escrita</td></tr>
+<tr><td>4</td><td><strong>Coleta</strong></td><td>Recolhimento cuidadoso dos vestígios</td></tr>
+<tr><td>5</td><td><strong>Acondicionamento</strong></td><td>Embalagem adequada à natureza do vestígio; recipiente novo, adequado, que não altere a composição</td></tr>
+<tr><td>6</td><td><strong>Transporte</strong></td><td>Envio ao local de custódia/laboratório</td></tr>
+<tr><td>7</td><td><strong>Recebimento</strong></td><td>Entrada formal no órgão responsável</td></tr>
+<tr><td>8</td><td><strong>Processamento</strong></td><td>Análise e exame pericial propriamente dito</td></tr>
+<tr><td>9</td><td><strong>Armazenamento</strong></td><td>Guarda segura após análise</td></tr>
+<tr><td>10</td><td><strong>Descarte</strong></td><td>Eliminação após autorização judicial ou administrativa</td></tr>
+</table>
+</div>
+
+<div class="subsection">
+<div class="subsection-title">🏠 5.3 Fase Interna</div>
+<ul class="topic-list">
+<li><strong>Abrange:</strong> Procedimentos <strong>internos do laboratório</strong>: recebimento, processamento/análise e descarte das amostras</li>
+<li>As evidências com maior probabilidade de oferecer bons resultados são encaminhadas ao laboratório para análise</li>
+</ul>
+</div>
+
+<div class="subsection">
+<div class="subsection-title">🌍 5.4 Fase Externa</div>
+<ul class="topic-list">
+<li><strong>Abrange:</strong> Tudo que ocorre <strong>fora do laboratório</strong>: reconhecimento, isolamento, fixação, coleta, acondicionamento, transporte</li>
+<li>Inicia no local do crime e termina com o recebimento no órgão pericial</li>
+</ul>
+</div>
+
+<div class="alert alert-danger">⚠️ <strong>Pontos críticos CEBRASPE:</strong><br>
+• Quebra da cadeia de custódia pode gerar <strong>nulidade relativa</strong> (NÃO absoluta) — STJ<br>
+• O princípio da <strong>fé pública NÃO dispensa</strong> a aplicação das regras de cadeia de custódia, mesmo que o vestígio seja entregue diretamente à autoridade (CEBRASPE MPE-CE 2025)<br>
+• A cadeia de custódia protege a <strong>fidelidade da prova material</strong>, evitando provas forjadas</div>
+
+</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SEÇÃO 6 – RASTREABILIDADE                                 -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section" id="s5">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">📡</div>
+<div class="section-title">6. Rastreabilidade</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+
+<div class="subsection">
+<div class="subsection-title">📌 Conceito e Importância</div>
+<div class="card-grid">
+<div class="card">
+<div class="card-label">Definição</div>
+<div class="card-value">Capacidade de <strong>acompanhar</strong> o vestígio em cada etapa da cadeia de custódia, garantindo que sua origem, movimentação e análise sejam <span class="hl">documentadas e verificáveis</span>.</div>
+</div>
+<div class="card">
+<div class="card-label">Finalidade</div>
+<div class="card-value">Assegurar a <strong>integridade</strong> e <strong>autenticidade</strong> da prova material; permitir que qualquer interessado possa verificar o trajeto do vestígio desde a coleta até o resultado final.</div>
+</div>
+</div>
+<ul class="topic-list">
+<li><strong>Registro documental:</strong> Cada transferência de custódia deve ser registrada com data, hora, responsável e condições do vestígio</li>
+<li><strong>Identificação:</strong> O objeto colhido deve ser identificado com <span class="hl">pormenores</span> a fim de que possa ser reconhecido em qualquer época</li>
+<li><strong>Relação com cadeia de custódia:</strong> A rastreabilidade é o mecanismo que garante que a cadeia de custódia não foi rompida — é a "prova da prova"</li>
+<li><strong>Sistemas informatizados:</strong> Uso crescente de códigos de barras, RFID e sistemas eletrônicos para rastrear evidências em órgãos periciais</li>
+</ul>
+<div class="alert alert-info">💡 O princípio da <strong>documentação</strong> da criminalística está diretamente ligado à rastreabilidade: todo caminho do vestígio deve ser documentado em cada passo, com documentos oficiais.</div>
+</div>
+
+</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- SEÇÃO 7 – VESTÍGIOS DE INTERESSE FORENSE                  -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section" id="s6">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">🔎</div>
+<div class="section-title">7. Vestígios de Interesse Forense – Conceitos e Processamento Pericial</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+
+<div class="subsection">
+<div class="subsection-title">📌 7.1 Vestígio, Evidência e Indício</div>
+<table class="info-table">
+<tr><th>Conceito</th><th>Definição</th><th>Detalhe CEBRASPE</th></tr>
+<tr><td><strong>Vestígio</strong></td><td>Qualquer sinal, marca ou objeto encontrado no local — <strong>antes</strong> da análise pericial</td><td>Vestígios encontrados no local NÃO são denominados evidências antes da análise</td></tr>
+<tr><td><strong>Evidência</strong></td><td>Vestígio que, após analisado pelo perito, mostra-se <strong>relacionado ao fato</strong></td><td>Só se torna evidência <strong>após análise pericial</strong></td></tr>
+<tr><td><strong>Indício</strong></td><td>Vestígio que, após exames laboratoriais e investigação, tem <span class="hl-red">inequívoca relação</span> com o fato e os envolvidos</td><td>Vestígio analisado + associado ao fato = indício. Indícios são provas <strong>indiretas</strong></td></tr>
+</table>
+<div class="alert alert-danger">⚠️ <strong>CEBRASPE (CBM-CE 2015):</strong> "Vestígios encontrados no local sinistrado serão denominados de evidências, mesmo que ainda não tenham sido analisados" → <span class="hl-red">ERRADO</span>. Vestígio só vira evidência <strong>após análise</strong>.</div>
+</div>
+
+<div class="subsection">
+<div class="subsection-title">🔍 7.2.1 Busca de Vestígios</div>
+<ul class="topic-list">
+<li><strong>Métodos de busca:</strong> Em espiral, em faixa, em grade, por zonas/quadrantes, por pontos</li>
+<li><strong>Diversidade e quantidade:</strong> Proporcionais à espécie do delito cometido; há vestígios comuns a todos os tipos de infração e vestígios específicos de cada fato delituoso</li>
+<li><strong>Instrumentos do crime:</strong> Também sujeitos a exame pericial (natureza e eficiência)</li>
+</ul>
+</div>
+
+<div class="subsection">
+<div class="subsection-title">📸 7.2.2 Documentação do Local (Fixação)</div>
+<ul class="topic-list">
+<li><strong>Fotografia:</strong> Panorâmica, de média distância e de detalhe (close-up)</li>
+<li><strong>Croqui/Desenho:</strong> Inclui vias de acesso e medidas com a exata posição das evidências</li>
+<li><strong>Filmagem:</strong> Registro contínuo do local</li>
+<li><strong>Descrição escrita:</strong> Relato detalhado no laudo pericial</li>
+</ul>
+</div>
+
+<div class="subsection">
+<div class="subsection-title">🧤 7.2.3 Coleta de Vestígios</div>
+<ul class="topic-list">
+<li><strong>Uso de EPIs:</strong> Luvas, máscaras, macacões para evitar contaminação</li>
+<li><strong>Sangue líquido:</strong> Recolhido com conta-gotas ou similar, colocado em tubo de ensaio ou frasco</li>
+<li><strong>Sangue seco:</strong> Crosta removida cuidadosamente, colocada em recipiente</li>
+<li><strong>Impressões papilares:</strong> Manuseio de documentos com espátulas especiais</li>
+<li><strong>Projétil:</strong> Perito pode encaminhar à autoridade sem mencionar calibre — correto proceder</li>
+<li><strong>O perito NÃO pode:</strong> Desprezar previamente material por "aparente desvinculação" subjetiva</li>
+</ul>
+<div class="alert alert-success">✅ <strong>Regra:</strong> "Ninguém é obrigado a submeter-se à realização da perícia ou a fornecer material para confronto" — princípio do <em>nemo tenetur se detegere</em>.</div>
+</div>
+
+<div class="subsection">
+<div class="subsection-title">📦 7.2.4 Acondicionamento e Transporte</div>
+<ul class="topic-list">
+<li><strong>Recipiente:</strong> Deve ser <span class="hl">novo</span> e <strong>adequado</strong> à espécie da prova; não pode modificar a composição da evidência</li>
+<li><strong>Embalagem individual:</strong> Cada evidência deve ser embalada <strong>individualmente</strong> (NÃO em conjunto)</li>
+<li><strong>Líquidos:</strong> Vidros são os recipientes mais adequados</li>
+<li><strong>Identificação:</strong> Objeto identificado com pormenores para reconhecimento em qualquer época, incluindo: tipo de ocorrência, local, descrição, nome do responsável pela coleta, data</li>
+<li><strong>Transporte:</strong> A forma influencia diretamente a conservação ou deterioração da prova</li>
+</ul>
+<div class="alert alert-danger">⚠️ <strong>Pegadinhas CEBRASPE:</strong><br>
+• "Não há necessidade de que o recipiente seja novo, bastando que seja limpo" → <span class="hl-red">ERRADO</span><br>
+• "As evidências sejam embaladas em conjunto" → <span class="hl-red">ERRADO</span> (sempre individualmente)<br>
+• "A forma de transporte não influencia a conservação da prova" → <span class="hl-red">ERRADO</span></div>
+</div>
+
+<div class="subsection">
+<div class="subsection-title">🏁 7.2.5 Liberação do Local</div>
+<ul class="topic-list">
+<li><strong>Quando:</strong> Após a conclusão dos trabalhos periciais e documentação completa</li>
+<li><strong>Quem autoriza:</strong> O perito responsável, após certificar-se de que todos os vestígios relevantes foram coletados e documentados</li>
+<li><strong>Registro:</strong> A liberação deve ser formalmente registrada como parte da cadeia de custódia</li>
+</ul>
+</div>
+
+</div></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- BOTÕES DE AÇÃO E RODAPÉ                                   -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="action-buttons">
+<a href="simulado-criminalistica-completo.html" class="btn-action btn-simulado">▶ Iniciar Simulado Completo</a>
+<a href="index.html" class="btn-action" style="background:#fff;color:#dc2626;border:2px solid #dc2626;">← Voltar para Simulados</a>
+</div>
+
+<div class="footer">Policial Legislativo – Câmara dos Deputados 2026 • Criminologia e Criminalística</div>
+
+</div>
+
+<script>
+function toggleSection(header){
+  header.parentElement.classList.toggle('open');
+  updateProgress();
+}
+function expandAll(){
+  document.querySelectorAll('.section').forEach(s=>s.classList.add('open'));
+  updateProgress();
+}
+function collapseAll(){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('open'));
+  updateProgress();
+}
+function scrollToSection(i){
+  const s=document.getElementById('s'+i);
+  if(s){s.classList.add('open');s.scrollIntoView({behavior:'smooth',block:'start'});updateProgress();}
+}
+function updateProgress(){
+  const all=document.querySelectorAll('.section');
+  const opened=[...all].filter(s=>s.classList.contains('open')).length;
+  document.getElementById('progressFill').style.width=(opened/all.length*100)+'%';
+}
+updateProgress();
+</script>
+</body>
+</html>
