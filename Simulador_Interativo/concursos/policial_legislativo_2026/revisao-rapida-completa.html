@@ -52,11 +52,11 @@ a{color:inherit;text-decoration:none}
 /* CONTENT CARDS */
 .block-body{display:none;padding:0 4px}
 .time-block.open .block-body{display:block}
-.flash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:12px}
-.flash{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:12px;transition:all 0.3s;border-left:3px solid}
+.flash-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
+.flash{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:12px;transition:all 0.3s;border-left:3px solid;word-wrap:break-word;overflow-wrap:break-word}
 .flash:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,0.3)}
-.flash-title{font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:4px}
-.flash-body{font-size:13px;line-height:1.5;color:#cbd5e1}
+.flash-title{font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:6px}
+.flash-body{font-size:13px;line-height:1.6;color:#cbd5e1}
 .flash-body strong{color:#f1f5f9}
 
 /* MNEMO */
@@ -99,7 +99,55 @@ a{color:inherit;text-decoration:none}
 .hl-g{color:#4ade80;font-weight:700}
 .hl-b{color:#60a5fa;font-weight:700}
 
-@media(max-width:600px){.header h1{font-size:18px}.flash-grid{grid-template-columns:1fr}.timer-display{font-size:24px}}
+/* ====== RESPONSIVE ====== */
+@media(max-width:768px){
+  .container{padding:14px}
+  .header{padding:20px 14px}
+  .header h1{font-size:20px}
+  .flash-grid{grid-template-columns:1fr;gap:8px}
+  .flash{padding:14px}
+  .flash-body{font-size:13px;line-height:1.7}
+  .timer-bar{flex-wrap:wrap;gap:10px;padding:12px}
+  .timer-display{font-size:28px;order:-1;width:100%;text-align:center}
+  .timer-btn{flex:1;min-width:0;text-align:center;padding:10px 8px}
+  .nav-bar{gap:6px;padding:10px}
+  .nav-btn{flex:1 1 auto;min-width:0;text-align:center;padding:8px 6px;font-size:11px}
+  .time-header{padding:12px 14px;gap:10px}
+  .time-title{font-size:15px}
+  .time-meta{font-size:10px}
+  .mn-text{font-size:14px;letter-spacing:1px;word-break:break-word}
+  .mn-desc{font-size:11px}
+  .mini-table{font-size:11px}
+  .mini-table th,.mini-table td{padding:6px 8px}
+  .full-link{width:100%;justify-content:center;padding:10px 16px}
+  .alrt{font-size:12px;padding:10px 12px}
+}
+@media(max-width:480px){
+  .container{padding:10px}
+  .header{padding:16px 12px;border-radius:12px}
+  .header h1{font-size:17px;line-height:1.3}
+  .header .sub{font-size:11px}
+  .hbadge{font-size:10px;padding:3px 8px}
+  .timer-display{font-size:24px}
+  .timer-btn{font-size:11px;padding:8px 6px}
+  .nav-bar{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:8px}
+  .nav-btn{padding:8px 4px;font-size:10px;white-space:normal;line-height:1.2;text-align:center}
+  .time-header{padding:10px 12px;border-radius:8px}
+  .time-icon{font-size:22px}
+  .time-title{font-size:14px}
+  .flash{padding:12px 10px}
+  .flash-title{font-size:10px;margin-bottom:5px}
+  .flash-body{font-size:12px;line-height:1.6}
+  .mn{padding:10px 12px}
+  .mn-text{font-size:13px;letter-spacing:0.5px;line-height:1.4;word-break:break-word}
+  .mn-desc{font-size:11px;line-height:1.4}
+  .gp-label{font-size:11px}
+}
+@media(max-width:360px){
+  .nav-bar{grid-template-columns:repeat(2,1fr)}
+  .header h1{font-size:15px}
+  .timer-display{font-size:22px}
+}
 </style>
 </head>
 <body>
