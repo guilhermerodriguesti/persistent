@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão Rápida Completa – Todas as Matérias | Policial Legislativo CD 2026</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh}
+.container{max-width:1000px;margin:0 auto;padding:20px}
+a{color:inherit;text-decoration:none}
+
+/* HEADER */
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#1e293b,#334155);border-radius:16px;margin-bottom:20px;border:1px solid #475569;position:relative;overflow:hidden}
+.header::before{content:'🚀';position:absolute;font-size:140px;opacity:0.04;top:-20px;right:-10px}
+.header h1{font-size:24px;color:#fff;margin-bottom:6px}
+.header .sub{font-size:13px;color:#94a3b8}
+.header .badge-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.hbadge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;border:1px solid}
+
+/* TIMER */
+.timer-bar{display:flex;align-items:center;justify-content:center;gap:15px;padding:14px;background:#1e293b;border-radius:12px;border:1px solid #334155;margin-bottom:20px}
+.timer-display{font-size:32px;font-weight:800;color:#f59e0b;font-variant-numeric:tabular-nums;letter-spacing:2px}
+.timer-btn{padding:8px 18px;border-radius:8px;border:none;cursor:pointer;font-weight:700;font-size:12px;transition:all 0.3s}
+.timer-btn:hover{transform:translateY(-1px)}
+.btn-start-timer{background:#22c55e;color:#fff}
+.btn-pause-timer{background:#f59e0b;color:#1e293b}
+.btn-reset-timer{background:#64748b;color:#fff}
+
+/* PROGRESS */
+.global-progress{margin-bottom:20px;padding:14px;background:#1e293b;border-radius:12px;border:1px solid #334155}
+.gp-label{font-size:12px;color:#94a3b8;margin-bottom:6px;display:flex;justify-content:space-between}
+.gp-bar{height:8px;background:#334155;border-radius:4px;overflow:hidden}
+.gp-fill{height:100%;border-radius:4px;transition:width 0.5s;background:linear-gradient(90deg,#22c55e,#f59e0b,#ef4444)}
+
+/* NAV */
+.nav-bar{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:20px;padding:12px;background:#1e293b;border-radius:12px;border:1px solid #334155}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid;transition:all 0.3s;white-space:nowrap}
+.nav-btn:hover{transform:translateY(-1px);filter:brightness(1.2)}
+
+/* TIMELINE BLOCK */
+.time-block{margin-bottom:24px}
+.time-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:10px 16px;border-radius:10px;cursor:pointer;user-select:none}
+.time-header:hover{filter:brightness(1.1)}
+.time-icon{font-size:26px}
+.time-info{flex:1}
+.time-title{font-size:17px;font-weight:800;color:#fff}
+.time-meta{font-size:11px;opacity:0.7;margin-top:2px}
+.time-check{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:all 0.3s}
+.time-check.done{border-color:#22c55e;background:#22c55e;color:#fff}
+
+/* CONTENT CARDS */
+.block-body{display:none;padding:0 4px}
+.time-block.open .block-body{display:block}
+.flash-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-bottom:12px}
+.flash{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:12px;transition:all 0.3s;border-left:3px solid}
+.flash:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,0.3)}
+.flash-title{font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:4px}
+.flash-body{font-size:13px;line-height:1.5;color:#cbd5e1}
+.flash-body strong{color:#f1f5f9}
+
+/* MNEMO */
+.mn{background:linear-gradient(135deg,rgba(245,158,11,0.1),rgba(245,158,11,0.05));border:1px solid rgba(245,158,11,0.3);border-left:3px solid #f59e0b;border-radius:8px;padding:10px 14px;margin:8px 0}
+.mn-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#f59e0b;font-weight:700}
+.mn-text{font-size:16px;font-weight:800;color:#fbbf24;letter-spacing:2px;margin:2px 0}
+.mn-desc{font-size:12px;color:#94a3b8;line-height:1.4}
+
+/* ALERT */
+.alrt{border-radius:8px;padding:10px 14px;margin:8px 0;font-size:12px;line-height:1.5}
+.alrt-red{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#fca5a5}
+.alrt-blue{background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);color:#93c5fd}
+.alrt-green{background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:#86efac}
+
+/* TABLE */
+.mini-table{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0;border-radius:8px;overflow:hidden}
+.mini-table th{background:rgba(255,255,255,0.08);color:#f1f5f9;padding:8px 10px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:0.5px}
+.mini-table td{padding:7px 10px;border-bottom:1px solid #334155;color:#cbd5e1}
+.mini-table tr:last-child td{border-bottom:none}
+.mini-table tr:hover td{background:rgba(255,255,255,0.03)}
+
+/* LINK */
+.full-link{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:12px;font-weight:700;border:1px solid;margin-top:8px;transition:all 0.3s}
+.full-link:hover{transform:translateY(-1px);filter:brightness(1.2)}
+
+/* FOOTER */
+.footer{text-align:center;padding:20px;color:#475569;font-size:11px;margin-top:30px}
+
+/* COLORS */
+.c-green{color:#22c55e}.bg-green{border-color:#22c55e30;background:#22c55e15}
+.c-purple{color:#a78bfa}.bg-purple{border-color:#a78bfa30;background:#a78bfa15}
+.c-red{color:#f87171}.bg-red{border-color:#f8717130;background:#f8717115}
+.c-blue{color:#60a5fa}.bg-blue{border-color:#60a5fa30;background:#60a5fa15}
+.c-amber{color:#fbbf24}.bg-amber{border-color:#fbbf2430;background:#fbbf2415}
+.c-teal{color:#2dd4bf}.bg-teal{border-color:#2dd4bf30;background:#2dd4bf15}
+.c-pink{color:#f472b6}.bg-pink{border-color:#f472b630;background:#f472b615}
+
+.hl{color:#fbbf24;font-weight:700}
+.hl-r{color:#f87171;font-weight:700}
+.hl-g{color:#4ade80;font-weight:700}
+.hl-b{color:#60a5fa;font-weight:700}
+
+@media(max-width:600px){.header h1{font-size:18px}.flash-grid{grid-template-columns:1fr}.timer-display{font-size:24px}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:#94a3b8;font-size:13px;font-weight:600;margin-bottom:12px;padding:6px 12px;border-radius:8px;border:1px solid #334155;background:#1e293b;transition:all 0.3s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">← Voltar</a>
+
+<div class="header">
+<h1>🚀 Revisão Rápida – Todas as Matérias em 1 Dia</h1>
+<div class="sub">Policial Legislativo • Câmara dos Deputados 2026 • Os pontos MAIS cobrados</div>
+<div class="badge-row">
+<span class="hbadge" style="background:#22c55e20;color:#22c55e;border-color:#22c55e50">📝 Português</span>
+<span class="hbadge" style="background:#60a5fa20;color:#60a5fa;border-color:#60a5fa50">📜 CF/88</span>
+<span class="hbadge" style="background:#a78bfa20;color:#a78bfa;border-color:#a78bfa50">⚖️ Administrativo</span>
+<span class="hbadge" style="background:#c084fc20;color:#c084fc;border-color:#c084fc50">🔒 Penal</span>
+<span class="hbadge" style="background:#f8717120;color:#f87171;border-color:#f8717150">🔍 Criminologia</span>
+<span class="hbadge" style="background:#fbbf2420;color:#fbbf24;border-color:#fbbf2450">🧠 RLM</span>
+<span class="hbadge" style="background:#2dd4bf20;color:#2dd4bf;border-color:#2dd4bf50">💻 TI</span>
+</div>
+</div>
+
+<!-- TIMER -->
+<div class="timer-bar">
+<button class="timer-btn btn-start-timer" onclick="startTimer()" id="btnStart">▶ Iniciar</button>
+<div class="timer-display" id="timerDisplay">00:00:00</div>
+<button class="timer-btn btn-pause-timer" onclick="pauseTimer()">⏸ Pausar</button>
+<button class="timer-btn btn-reset-timer" onclick="resetTimer()">↺ Zerar</button>
+</div>
+
+<!-- GLOBAL PROGRESS -->
+<div class="global-progress">
+<div class="gp-label"><span>Progresso do Dia</span><span id="gpText">0/7 matérias</span></div>
+<div class="gp-bar"><div class="gp-fill" id="gpFill" style="width:0%"></div></div>
+</div>
+
+<!-- NAV -->
+<div class="nav-bar">
+<button class="nav-btn c-green" style="border-color:#22c55e50;background:#22c55e15" onclick="goTo('b0')">08h Português</button>
+<button class="nav-btn c-blue" style="border-color:#60a5fa50;background:#60a5fa15" onclick="goTo('b1')">10h CF/88</button>
+<button class="nav-btn c-purple" style="border-color:#a78bfa50;background:#a78bfa15" onclick="goTo('b2')">11h30 Administ.</button>
+<button class="nav-btn c-pink" style="border-color:#c084fc50;background:#c084fc15" onclick="goTo('b3')">13h Penal</button>
+<button class="nav-btn c-red" style="border-color:#f8717150;background:#f8717115" onclick="goTo('b4')">15h Criminal.</button>
+<button class="nav-btn c-amber" style="border-color:#fbbf2450;background:#fbbf2415" onclick="goTo('b5')">16h RLM</button>
+<button class="nav-btn c-teal" style="border-color:#2dd4bf50;background:#2dd4bf15" onclick="goTo('b6')">17h TI</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- BLOCO 1 — PORTUGUÊS (08:00 – 09:30)                       -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="time-block open" id="b0">
+<div class="time-header" style="background:linear-gradient(135deg,#059669,#047857)" onclick="toggleBlock(this)">
+<div class="time-icon">📝</div>
+<div class="time-info"><div class="time-title">Língua Portuguesa</div><div class="time-meta">08:00 – 09:30 • 1h30 • 12 tópicos condensados</div></div>
+<div class="time-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+</div>
+<div class="block-body">
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#22c55e">
+<div class="flash-title c-green">Reescrita — 2 Pilares</div>
+<div class="flash-body">1) <strong>Preservar sentido</strong> — "pode"→"deve" = ERRADO<br>2) <strong>Gramática correta</strong> — mudou voz? cheque a preposição</div>
+</div>
+<div class="flash" style="border-left-color:#22c55e">
+<div class="flash-title c-green">Coesão Referencial</div>
+<div class="flash-body"><strong>Esse/Isso</strong> = anáfora (retoma). <strong>Este/Isto</strong> = catáfora (anuncia). <strong>Cujo</strong> = posse (nunca "cujo o"). <strong>Onde</strong> = só lugar físico.</div>
+</div>
+<div class="flash" style="border-left-color:#22c55e">
+<div class="flash-title c-green">Vírgula Adjetiva</div>
+<div class="flash-body"><strong>Com vírgula</strong> = explicativa (TODOS). <strong>Sem vírgula</strong> = restritiva (PARTE). Tirar vírgula muda o sentido!</div>
+</div>
+<div class="flash" style="border-left-color:#22c55e">
+<div class="flash-title c-green">Concordância Impessoal</div>
+<div class="flash-body"><strong>Haver/Fazer</strong> (existir/tempo) = sempre SINGULAR. "Pode haver" ✅ "Podem haver" ❌. <strong>Existir</strong> = concorda!</div>
+</div>
+</div>
+
+<div class="mn">
+<div class="mn-label">Conectivos — Gatilho</div>
+<div class="mn-text">CONQUANTO = EMBORA ✅ · PORQUANTO = PORQUE ✅</div>
+<div class="mn-desc">À medida que = proporção. Na medida em que = causa. NÃO são sinônimos!</div>
+</div>
+
+<div class="mn">
+<div class="mn-label">Colocação Pronominal — Ímãs</div>
+<div class="mn-text">NÃO · QUE · SE · SEMPRE → PRÓCLISE</div>
+<div class="mn-desc">Negativas, relativos, subordinativas e advérbios puxam pronome ANTES do verbo.</div>
+</div>
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#22c55e">
+<div class="flash-title c-green">VTD + SE vs VTI + SE</div>
+<div class="flash-body"><strong>VTD + SE</strong> = apassivadora (concorda). "Alugam-se casas".<br><strong>VTI + SE</strong> = indeterminação (singular). "Precisa-se de técnicos".</div>
+</div>
+<div class="flash" style="border-left-color:#22c55e">
+<div class="flash-title c-green">Regência — Top 3</div>
+<div class="flash-body"><strong>Implicar</strong> = VTD (sem "em"). <strong>Aspirar</strong> (desejar) = "ao". <strong>Visar</strong> (objetivar) = "à".</div>
+</div>
+<div class="flash" style="border-left-color:#22c55e">
+<div class="flash-title c-green">Tipologia</div>
+<div class="flash-body"><strong>Argumentativo</strong> = convencer (juízo de valor). <strong>Expositivo</strong> = informar (neutro). Texto híbrido → finalidade dominante.</div>
+</div>
+<div class="flash" style="border-left-color:#22c55e">
+<div class="flash-title c-green">Vocabulário Top</div>
+<div class="flash-body"><strong>Tácito</strong> = subentendido. <strong>Incólume</strong> = intacto. <strong>Inexorável</strong> = implacável. <strong>Corroborar</strong> = confirmar.</div>
+</div>
+</div>
+
+<a href="revisao-portugues.html" class="full-link c-green" style="border-color:#22c55e50;background:#22c55e15">📖 Revisão Completa de Português →</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- BLOCO 2 — CONSTITUIÇÃO FEDERAL (10:00 – 11:30)            -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="time-block" id="b1">
+<div class="time-header" style="background:linear-gradient(135deg,#003366,#004488)" onclick="toggleBlock(this)">
+<div class="time-icon">📜</div>
+<div class="time-info"><div class="time-title">Constituição Federal de 1988</div><div class="time-meta">10:00 – 11:30 • 1h30 • 6 tópicos condensados</div></div>
+<div class="time-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+</div>
+<div class="block-body">
+
+<div class="mn">
+<div class="mn-label">Fundamentos — Art. 1º</div>
+<div class="mn-text">SO · CI · DI · VA · PLU</div>
+<div class="mn-desc">Soberania, Cidadania, Dignidade, Valores sociais do trabalho, Pluralismo político</div>
+</div>
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title c-blue">Objetivos (Art. 3º)</div>
+<div class="flash-body">Começam com <strong>VERBOS</strong>: Construir, Garantir, Erradicar, Promover. Sempre ação — não é "princípio".</div>
+</div>
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title c-blue">Art. 5º — Preso</div>
+<div class="flash-body">Direito à <strong>identificação</strong> dos responsáveis pela prisão. <strong>Racismo</strong> = imprescritível + inafiançável. <strong>Ação de grupos armados</strong> = idem.</div>
+</div>
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title c-blue">Remédios Constitucionais</div>
+<div class="flash-body"><strong>HC</strong> = liberdade de locomoção. <strong>HD</strong> = acesso/retificação de dados. <strong>MS</strong> = direito líquido e certo. <strong>MI</strong> = norma faltante.</div>
+</div>
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title c-blue">Competências Legislativas</div>
+<div class="flash-body"><strong>Privativa União</strong> (Art. 22) → Lei Complementar pode delegar. <strong>Concorrente</strong> (Art. 24) → União = normas gerais. <strong>Exclusiva</strong> = indelegável.</div>
+</div>
+</div>
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title c-blue">Servidores — Estabilidade</div>
+<div class="flash-body"><strong>3 anos</strong> de efetivo exercício + avaliação. Acumulação: regra = <span class="hl-r">proibição</span>. Exceção: 2 prof / 1 prof + 1 técnico / 2 saúde.</div>
+</div>
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title c-blue">Segurança Pública (Art. 144)</div>
+<div class="flash-body"><strong>PF</strong> = federal + tráfico internacional. <strong>PRF</strong> = rodovias federais. <strong>Polícia Legislativa</strong> = proteção do Congresso e instalações.</div>
+</div>
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title c-blue">Processo Legislativo</div>
+<div class="flash-body"><strong>Emenda</strong>: 3/5 em 2 turnos. <strong>Lei Complementar</strong>: maioria absoluta. <strong>Lei Ordinária</strong>: maioria simples.</div>
+</div>
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title c-blue">TCU</div>
+<div class="flash-body"><strong>Sustação de atos</strong> = TCU. <strong>Sustação de contratos</strong> = Congresso (TCU solicita). Prazo para anular: <strong>5 anos</strong> (boa-fé).</div>
+</div>
+</div>
+
+<a href="revisao-cf88.html" class="full-link c-blue" style="border-color:#60a5fa50;background:#60a5fa15">📖 Revisão Completa da CF/88 →</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- BLOCO 3 — ADMINISTRATIVO (11:30 – 12:30)                  -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="time-block" id="b2">
+<div class="time-header" style="background:linear-gradient(135deg,#4c1d95,#6d28d9)" onclick="toggleBlock(this)">
+<div class="time-icon">⚖️</div>
+<div class="time-info"><div class="time-title">Direito Administrativo</div><div class="time-meta">11:30 – 12:30 • 1h • 12 tópicos condensados</div></div>
+<div class="time-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+</div>
+<div class="block-body">
+
+<div class="mn">
+<div class="mn-label">Princípios Explícitos — Art. 37</div>
+<div class="mn-text">L I M P E</div>
+<div class="mn-desc">Legalidade, Impessoalidade, Moralidade, Publicidade, Eficiência</div>
+</div>
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#a78bfa">
+<div class="flash-title c-purple">Organização Administrativa</div>
+<div class="flash-body"><strong>Descentralização</strong> = nova PJ (autarquia, fundação, EP, SEM). <strong>Desconcentração</strong> = interna (mesma PJ, cria órgãos). <strong>Autarquias</strong> = regime de direito público.</div>
+</div>
+<div class="flash" style="border-left-color:#a78bfa">
+<div class="flash-title c-purple">Ato Administrativo</div>
+<div class="flash-body"><strong>CO FI FO MO OB</strong> (Competência, Finalidade, Forma, Motivo, Objeto). Mérito = Motivo + Objeto. <strong>Anulação</strong> = ilegalidade. <strong>Revogação</strong> = conveniência.</div>
+</div>
+<div class="flash" style="border-left-color:#a78bfa">
+<div class="flash-title c-purple">Poderes Administrativos</div>
+<div class="flash-body"><strong>Hierárquico</strong> = avoca/delega. <strong>Disciplinar</strong> = punir servidores. <strong>Polícia</strong> = limitar liberdade (interesse público). <strong>Regulamentar</strong> = decretos.</div>
+</div>
+<div class="flash" style="border-left-color:#a78bfa">
+<div class="flash-title c-purple">Lei 8.112 — Prazos</div>
+<div class="flash-body"><strong>Posse</strong> = 30 dias. <strong>Exercício</strong> = 15 dias. <strong>Estágio probatório</strong> = 3 anos. <strong>Estabilidade</strong> = 3 anos.</div>
+</div>
+</div>
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#a78bfa">
+<div class="flash-title c-purple">Improbidade — Lei 8.429</div>
+<div class="flash-body"><strong>Enriquecimento ilícito</strong> = Dolo. <strong>Prejuízo ao erário</strong> = Dolo. <strong>Atos contra princípios</strong> = Dolo. Pós EC 2021: <span class="hl-r">NÃO mais culpa</span>.</div>
+</div>
+<div class="flash" style="border-left-color:#a78bfa">
+<div class="flash-title c-purple">LAI — Lei 12.527</div>
+<div class="flash-body"><strong>Regra</strong> = publicidade. <strong>Sigilo</strong> = exceção. Reservado = 5a. Secreto = 15a. <strong>Ultrassecreto</strong> = 25a. Informação pessoal = 100a.</div>
+</div>
+<div class="flash" style="border-left-color:#a78bfa">
+<div class="flash-title c-purple">LGPD — Lei 13.709</div>
+<div class="flash-body"><strong>10 bases legais</strong>: consentimento, obrigação legal, proteção da vida, interesse legítimo... <strong>Dados sensíveis</strong> = saúde, raça, religião, biometria.</div>
+</div>
+<div class="flash" style="border-left-color:#a78bfa">
+<div class="flash-title c-purple">Responsabilidade Civil</div>
+<div class="flash-body"><strong>Estado</strong> = objetiva (independe de dolo/culpa). <strong>Agente</strong> = subjetiva (precisa de dolo/culpa). Ação regressiva.</div>
+</div>
+</div>
+
+<a href="revisao-administrativo.html" class="full-link c-purple" style="border-color:#a78bfa50;background:#a78bfa15">📖 Revisão Completa de Administrativo →</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- BLOCO 4 — PENAL E PROCESSUAL (13:00 – 14:30)              -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="time-block" id="b3">
+<div class="time-header" style="background:linear-gradient(135deg,#6d28d9,#4c1d95)" onclick="toggleBlock(this)">
+<div class="time-icon">🔒</div>
+<div class="time-info"><div class="time-title">Direito Penal e Processual Penal</div><div class="time-meta">13:00 – 14:30 • 1h30 • 10 tópicos condensados</div></div>
+<div class="time-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+</div>
+<div class="block-body">
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#c084fc">
+<div class="flash-title c-pink">Princípios Penais</div>
+<div class="flash-body"><strong>Legalidade</strong> = lei anterior define crime e pena. <strong>Anterioridade</strong> = lei antes do fato. <strong>Retroatividade</strong> = só se beneficiar o réu.</div>
+</div>
+<div class="flash" style="border-left-color:#c084fc">
+<div class="flash-title c-pink">Teoria do Crime</div>
+<div class="flash-body"><strong>Fato Típico</strong> + <strong>Ilícito</strong> + <strong>Culpável</strong>. Fato típico: conduta + resultado + nexo + tipicidade. Dolo = vontade + consciência.</div>
+</div>
+<div class="flash" style="border-left-color:#c084fc">
+<div class="flash-title c-pink">Excludentes de Ilicitude</div>
+<div class="flash-body"><strong>Legítima defesa</strong> (agressão injusta, atual/iminente). <strong>Estado de necessidade</strong> (perigo atual). <strong>Exercício regular</strong>. <strong>Estrito cumprimento</strong>.</div>
+</div>
+<div class="flash" style="border-left-color:#c084fc">
+<div class="flash-title c-pink">Concurso de Agentes</div>
+<div class="flash-body"><strong>Coautoria</strong> = divisão de tarefas. <strong>Participação</strong> = instigação/auxílio. Acessoriedade limitada: fato típico + ilícito.</div>
+</div>
+</div>
+
+<div class="mn">
+<div class="mn-label">Crimes Especiais — Prazos que Caem</div>
+<div class="mn-text">FURTO 1-4 · ROUBO 4-10 · LATROCÍNIO 20-30</div>
+<div class="mn-desc">Furto = 1-4a (qualificado 2-8a). Roubo = 4-10a. Roubo com morte (latrocínio) = 20-30a. Extorsão mediante sequestro com morte = 24-30a.</div>
+</div>
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#c084fc">
+<div class="flash-title c-pink">Processo — Inquérito</div>
+<div class="flash-body"><strong>Inquisitorial</strong>, sigiloso, escrito. <strong>Dispensável</strong> (não obrigatório). Prazo: <strong>10 dias</strong> (preso) / <strong>30 dias</strong> (solto).</div>
+</div>
+<div class="flash" style="border-left-color:#c084fc">
+<div class="flash-title c-pink">Ação Penal</div>
+<div class="flash-body"><strong>Pública Incondicionada</strong> = MP titular (regra). <strong>Condicionada</strong> = depende de representação. <strong>Privada</strong> = vítima (queixa-crime).</div>
+</div>
+<div class="flash" style="border-left-color:#c084fc">
+<div class="flash-title c-pink">Prisões</div>
+<div class="flash-body"><strong>Flagrante</strong> → lavratura + remessa ao juiz em 24h. <strong>Preventiva</strong> = juiz de ofício NO CURSO da ação (nunca no inquérito). <strong>Temporária</strong> = 5 dias (prorrog. +5). Hediondos = 30 +30.</div>
+</div>
+<div class="flash" style="border-left-color:#c084fc">
+<div class="flash-title c-pink">Provas</div>
+<div class="flash-body"><strong>Ilícitas</strong> = inadmissíveis (teoria dos frutos da árvore envenenada). <strong>Ilegítimas</strong> = violam norma processual. <strong>Exame de corpo de delito</strong> = obrigatório se há vestígios.</div>
+</div>
+</div>
+
+<div class="alrt alrt-red">⚠️ <strong>Leis Especiais:</strong> Abuso de Autoridade = <strong>dolo específico</strong> (prejudicar/beneficiar). Drogas Art. 33 = 5-15a. Organização Criminosa = <strong>4+ pessoas</strong>. Desarmamento: porte ilegal = 2-4a.</div>
+
+<a href="revisao-penal-processual.html" class="full-link c-pink" style="border-color:#c084fc50;background:#c084fc15">📖 Revisão Completa Penal e Processual →</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- BLOCO 5 — CRIMINOLOGIA E CRIMINALÍSTICA (15:00 – 16:00)   -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="time-block" id="b4">
+<div class="time-header" style="background:linear-gradient(135deg,#dc2626,#b91c1c)" onclick="toggleBlock(this)">
+<div class="time-icon">🔍</div>
+<div class="time-info"><div class="time-title">Criminologia e Criminalística</div><div class="time-meta">15:00 – 16:00 • 1h • 7 tópicos condensados</div></div>
+<div class="time-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+</div>
+<div class="block-body">
+
+<div class="mn">
+<div class="mn-label">Objetos da Criminologia</div>
+<div class="mn-text">D D V C</div>
+<div class="mn-desc">Delito, Delinquente, Vítima, Controle Social</div>
+</div>
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#f87171">
+<div class="flash-title c-red">Escolas Criminológicas</div>
+<div class="flash-body"><strong>Clássica</strong> = livre arbítrio, pena-castigo. <strong>Positiva</strong> = determinismo (Lombroso = biológico). <strong>Labeling</strong> = crime = rótulo social.</div>
+</div>
+<div class="flash" style="border-left-color:#f87171">
+<div class="flash-title c-red">Prevenção — 3 Níveis</div>
+<div class="flash-body"><strong>1ª</strong> = Educação/políticas sociais (raiz). <strong>2ª</strong> = Polícia/vigilância (grupos de risco). <strong>3ª</strong> = Ressocialização (pós-crime).</div>
+</div>
+<div class="flash" style="border-left-color:#f87171">
+<div class="flash-title c-red">Criminalística — Princípio de Locard</div>
+<div class="flash-body">"Todo contato deixa vestígio." Princípios: <strong>Observação, Análise, Interpretação, Descrição</strong>.</div>
+</div>
+<div class="flash" style="border-left-color:#f87171">
+<div class="flash-title c-red">Cadeia de Custódia</div>
+<div class="flash-body">Art. 158-A CPP: <strong>Reconhecimento → Isolamento → Fixação → Coleta → Acondicionamento → Transporte → Recebimento → Processamento → Armazenamento → Descarte</strong>.</div>
+</div>
+</div>
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#f87171">
+<div class="flash-title c-red">Vestígios e Provas</div>
+<div class="flash-body"><strong>Vestígio</strong> = marca, sinal, objeto no local. <strong>Evidência</strong> = vestígio analisado pelo perito. <strong>Indício</strong> = circunstância que indica fato (Art. 239 CPP).</div>
+</div>
+<div class="flash" style="border-left-color:#f87171">
+<div class="flash-title c-red">Locais de Crime</div>
+<div class="flash-body"><strong>Imediato</strong> = onde ocorreu. <strong>Mediato</strong> = relacionado. <strong>Interno/Externo</strong>. Regra de ouro: <span class="hl">ISOLAR → PRESERVAR → DOCUMENTAR</span>.</div>
+</div>
+<div class="flash" style="border-left-color:#f87171">
+<div class="flash-title c-red">Perícia — Prazos</div>
+<div class="flash-body">Laudo pericial: <strong>10 dias</strong> (prorrogável). <strong>1 perito oficial</strong> com curso superior. Exame de corpo de delito <span class="hl-r">não pode ser substituído</span> por confissão.</div>
+</div>
+<div class="flash" style="border-left-color:#f87171">
+<div class="flash-title c-red">Vitimologia</div>
+<div class="flash-body"><strong>Vitimização primária</strong> = crime. <strong>Secundária</strong> = sistema judiciário. <strong>Terciária</strong> = sociedade estigmatiza. <strong>Cifra negra</strong> = crimes não registrados.</div>
+</div>
+</div>
+
+<a href="revisao-criminalistica.html" class="full-link c-red" style="border-color:#f8717150;background:#f8717115">📖 Revisão Completa Criminologia →</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- BLOCO 6 — RLM E ESTATÍSTICA (16:00 – 17:00)               -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="time-block" id="b5">
+<div class="time-header" style="background:linear-gradient(135deg,#7c3aed,#8b5cf6)" onclick="toggleBlock(this)">
+<div class="time-icon">🧠</div>
+<div class="time-info"><div class="time-title">RLM e Estatística</div><div class="time-meta">16:00 – 17:00 • 1h • 6 tópicos condensados</div></div>
+<div class="time-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+</div>
+<div class="block-body">
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#fbbf24">
+<div class="flash-title c-amber">Lógica — Tabela Verdade</div>
+<div class="flash-body"><strong>→ (condicional)</strong> = só F quando V→F. <strong>↔ (bicondicional)</strong> = V quando iguais. <strong>Negação de P→Q</strong> = P ∧ ¬Q.</div>
+</div>
+<div class="flash" style="border-left-color:#fbbf24">
+<div class="flash-title c-amber">Equivalências Lógicas</div>
+<div class="flash-body"><strong>P→Q ≡ ¬P∨Q ≡ ¬Q→¬P</strong> (contrapositiva). <strong>¬(P∧Q) ≡ ¬P∨¬Q</strong> (De Morgan). <strong>¬(P∨Q) ≡ ¬P∧¬Q</strong>.</div>
+</div>
+<div class="flash" style="border-left-color:#fbbf24">
+<div class="flash-title c-amber">Argumentação</div>
+<div class="flash-body"><strong>Válido</strong> = premissas V → conclusão V (forma). <strong>Modus Ponens</strong>: P→Q, P ∴ Q. <strong>Modus Tollens</strong>: P→Q, ¬Q ∴ ¬P.</div>
+</div>
+<div class="flash" style="border-left-color:#fbbf24">
+<div class="flash-title c-amber">Estatística — Medidas</div>
+<div class="flash-body"><strong>Média</strong> = Σx/n. <strong>Mediana</strong> = valor central. <strong>Moda</strong> = mais frequente. <strong>Variância</strong> = Σ(x-μ)²/n. <strong>DP</strong> = √variância.</div>
+</div>
+</div>
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#fbbf24">
+<div class="flash-title c-amber">Probabilidade</div>
+<div class="flash-body"><strong>P(A∪B)</strong> = P(A)+P(B)-P(A∩B). <strong>Independentes</strong>: P(A∩B) = P(A)×P(B). <strong>Condicional</strong>: P(A|B) = P(A∩B)/P(B).</div>
+</div>
+<div class="flash" style="border-left-color:#fbbf24">
+<div class="flash-title c-amber">Combinatória</div>
+<div class="flash-body"><strong>Permutação</strong> = n!. <strong>Arranjo</strong> = n!/(n-k)!. <strong>Combinação</strong> = n!/k!(n-k)!. Com repetição: n^k.</div>
+</div>
+<div class="flash" style="border-left-color:#fbbf24">
+<div class="flash-title c-amber">Sequências</div>
+<div class="flash-body"><strong>PA</strong>: an = a1 + (n-1)r. Soma = n(a1+an)/2. <strong>PG</strong>: an = a1·q^(n-1). Soma finita = a1(q^n - 1)/(q-1).</div>
+</div>
+<div class="flash" style="border-left-color:#fbbf24">
+<div class="flash-title c-amber">Gráficos — Pegadinhas</div>
+<div class="flash-body"><strong>Histograma</strong> ≠ Gráfico de barras (histograma = dados contínuos, barras coladas). Cuidado com <strong>escala truncada</strong> que exagera diferenças.</div>
+</div>
+</div>
+
+<a href="revisao-rlm-estatistica.html" class="full-link c-amber" style="border-color:#fbbf2450;background:#fbbf2415">📖 Revisão Completa RLM →</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- BLOCO 7 — TI E FORENSE (17:00 – 18:00)                    -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="time-block" id="b6">
+<div class="time-header" style="background:linear-gradient(135deg,#0f766e,#0d9488)" onclick="toggleBlock(this)">
+<div class="time-icon">💻</div>
+<div class="time-info"><div class="time-title">TI, Segurança e Forense</div><div class="time-meta">17:00 – 18:00 • 1h • 13 tópicos condensados</div></div>
+<div class="time-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+</div>
+<div class="block-body">
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#2dd4bf">
+<div class="flash-title c-teal">Cloud Computing</div>
+<div class="flash-body"><strong>IaaS</strong> = infraestrutura (VM, storage). <strong>PaaS</strong> = plataforma (dev sem gerenciar infra). <strong>SaaS</strong> = software pronto (Gmail, O365).</div>
+</div>
+<div class="flash" style="border-left-color:#2dd4bf">
+<div class="flash-title c-teal">CRISP-DM</div>
+<div class="flash-body">6 fases: <strong>Business Understanding → Data Understanding → Data Preparation → Modeling → Evaluation → Deployment</strong>.</div>
+</div>
+<div class="flash" style="border-left-color:#2dd4bf">
+<div class="flash-title c-teal">ETL vs ELT</div>
+<div class="flash-body"><strong>ETL</strong> = transforma antes de carregar (DW tradicional). <strong>ELT</strong> = carrega cru e transforma no destino (Data Lake / nuvem).</div>
+</div>
+<div class="flash" style="border-left-color:#2dd4bf">
+<div class="flash-title c-teal">SQL — Essencial</div>
+<div class="flash-body"><strong>DDL</strong> = CREATE/ALTER/DROP. <strong>DML</strong> = INSERT/UPDATE/DELETE. <strong>DQL</strong> = SELECT. <strong>ACID</strong> = Atomicidade, Consistência, Isolamento, Durabilidade.</div>
+</div>
+</div>
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#2dd4bf">
+<div class="flash-title c-teal">BI e Analytics</div>
+<div class="flash-body"><strong>OLTP</strong> = transacional (dia a dia). <strong>OLAP</strong> = analítico (cubo, drill-down). <strong>Data Warehouse</strong> = Fato + Dimensões (Star Schema).</div>
+</div>
+<div class="flash" style="border-left-color:#2dd4bf">
+<div class="flash-title c-teal">IA / Machine Learning</div>
+<div class="flash-body"><strong>Supervisionado</strong> = com rótulos (classificação, regressão). <strong>Não supervisionado</strong> = sem rótulos (clustering). <strong>Deep Learning</strong> = redes neurais profundas.</div>
+</div>
+<div class="flash" style="border-left-color:#2dd4bf">
+<div class="flash-title c-teal">Segurança — Pilares</div>
+<div class="flash-body"><strong>CID</strong> = Confidencialidade, Integridade, Disponibilidade. + Autenticidade + Não-repúdio. <strong>Criptografia simétrica</strong> = 1 chave. <strong>Assimétrica</strong> = par pub/priv.</div>
+</div>
+<div class="flash" style="border-left-color:#2dd4bf">
+<div class="flash-title c-teal">Malware</div>
+<div class="flash-body"><strong>Vírus</strong> = precisa de hospedeiro. <strong>Worm</strong> = autônomo (se replica). <strong>Trojan</strong> = disfarçado. <strong>Ransomware</strong> = criptografa e pede resgate.</div>
+</div>
+</div>
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#2dd4bf">
+<div class="flash-title c-teal">Redes — OSI/TCP-IP</div>
+<div class="flash-body"><strong>OSI 7 camadas</strong>: Física, Enlace, Rede, Transporte, Sessão, Apresentação, Aplicação. <strong>TCP</strong> = confiável. <strong>UDP</strong> = rápido, sem garantia.</div>
+</div>
+<div class="flash" style="border-left-color:#2dd4bf">
+<div class="flash-title c-teal">Firewall e Proxy</div>
+<div class="flash-body"><strong>Firewall</strong> = filtra pacotes (regras). <strong>IDS</strong> = detecta intrusão. <strong>IPS</strong> = previne intrusão. <strong>WAF</strong> = protege apps web. <strong>Proxy</strong> = intermediário.</div>
+</div>
+<div class="flash" style="border-left-color:#2dd4bf">
+<div class="flash-title c-teal">Forense Computacional</div>
+<div class="flash-body"><strong>Princípio</strong>: preservar integridade. <strong>Hash</strong> (MD5/SHA) para verificar. <strong>Imagem forense</strong> = cópia bit-a-bit. Nunca trabalhar no original!</div>
+</div>
+<div class="flash" style="border-left-color:#2dd4bf">
+<div class="flash-title c-teal">ITIL / COBIT / PMBOK</div>
+<div class="flash-body"><strong>ITIL</strong> = gestão de serviços de TI. <strong>COBIT</strong> = governança de TI. <strong>PMBOK</strong> = gerenciamento de projetos (10 áreas).</div>
+</div>
+</div>
+
+<a href="revisao-ti-forense.html" class="full-link c-teal" style="border-color:#2dd4bf50;background:#2dd4bf15">📖 Revisão Completa TI e Forense →</a>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+<div style="margin-bottom:8px;font-size:14px;color:#64748b">🎯 Dica: Marque cada matéria como concluída ao terminar para acompanhar seu progresso!</div>
+Policial Legislativo CD 2026 • Revisão Rápida Completa • 7 Matérias em 1 Dia
+</div>
+
+</div>
+
+<script>
+let timerInterval=null,seconds=0;
+function startTimer(){if(timerInterval)return;timerInterval=setInterval(()=>{seconds++;document.getElementById('timerDisplay').textContent=formatTime(seconds)},1000)}
+function pauseTimer(){clearInterval(timerInterval);timerInterval=null}
+function resetTimer(){pauseTimer();seconds=0;document.getElementById('timerDisplay').textContent='00:00:00'}
+function formatTime(s){const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=s%60;return[h,m,sec].map(v=>String(v).padStart(2,'0')).join(':')}
+function toggleBlock(h){h.parentElement.classList.toggle('open')}
+function markDone(el){el.classList.toggle('done');updateGP()}
+function updateGP(){const d=document.querySelectorAll('.time-check.done').length,t=document.querySelectorAll('.time-check').length;document.getElementById('gpFill').style.width=(d/t*100)+'%';document.getElementById('gpText').textContent=d+'/'+t+' matérias'}
+function goTo(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+</script>
+</body>
+</html>
