@@ -6,37 +6,37 @@
 <title>Revisão Rápida Completa – Todas as Matérias | Policial Legislativo CD 2026</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#f8fafc;color:#1e293b;min-height:100vh}
 .container{max-width:1000px;margin:0 auto;padding:20px}
 a{color:inherit;text-decoration:none}
 
 /* HEADER */
-.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#1e293b,#334155);border-radius:16px;margin-bottom:20px;border:1px solid #475569;position:relative;overflow:hidden}
-.header::before{content:'🚀';position:absolute;font-size:140px;opacity:0.04;top:-20px;right:-10px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#1e293b,#334155);border-radius:16px;margin-bottom:20px;border:none;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(30,41,59,0.3)}
+.header::before{content:'🚀';position:absolute;font-size:140px;opacity:0.06;top:-20px;right:-10px}
 .header h1{font-size:24px;color:#fff;margin-bottom:6px}
-.header .sub{font-size:13px;color:#94a3b8}
+.header .sub{font-size:13px;color:#cbd5e1}
 .header .badge-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
 .hbadge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;border:1px solid}
 
 /* TIMER */
-.timer-bar{display:flex;align-items:center;justify-content:center;gap:15px;padding:14px;background:#1e293b;border-radius:12px;border:1px solid #334155;margin-bottom:20px}
-.timer-display{font-size:32px;font-weight:800;color:#f59e0b;font-variant-numeric:tabular-nums;letter-spacing:2px}
+.timer-bar{display:flex;align-items:center;justify-content:center;gap:15px;padding:14px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;margin-bottom:20px;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.timer-display{font-size:32px;font-weight:800;color:#d97706;font-variant-numeric:tabular-nums;letter-spacing:2px}
 .timer-btn{padding:8px 18px;border-radius:8px;border:none;cursor:pointer;font-weight:700;font-size:12px;transition:all 0.3s}
 .timer-btn:hover{transform:translateY(-1px)}
-.btn-start-timer{background:#22c55e;color:#fff}
-.btn-pause-timer{background:#f59e0b;color:#1e293b}
-.btn-reset-timer{background:#64748b;color:#fff}
+.btn-start-timer{background:#16a34a;color:#fff}
+.btn-pause-timer{background:#d97706;color:#fff}
+.btn-reset-timer{background:#94a3b8;color:#fff}
 
 /* PROGRESS */
-.global-progress{margin-bottom:20px;padding:14px;background:#1e293b;border-radius:12px;border:1px solid #334155}
-.gp-label{font-size:12px;color:#94a3b8;margin-bottom:6px;display:flex;justify-content:space-between}
-.gp-bar{height:8px;background:#334155;border-radius:4px;overflow:hidden}
+.global-progress{margin-bottom:20px;padding:14px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.gp-label{font-size:12px;color:#64748b;margin-bottom:6px;display:flex;justify-content:space-between}
+.gp-bar{height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden}
 .gp-fill{height:100%;border-radius:4px;transition:width 0.5s;background:linear-gradient(90deg,#22c55e,#f59e0b,#ef4444)}
 
 /* NAV */
-.nav-bar{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:20px;padding:12px;background:#1e293b;border-radius:12px;border:1px solid #334155}
+.nav-bar{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:20px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
 .nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid;transition:all 0.3s;white-space:nowrap}
-.nav-btn:hover{transform:translateY(-1px);filter:brightness(1.2)}
+.nav-btn:hover{transform:translateY(-1px);filter:brightness(0.9)}
 
 /* TIMELINE BLOCK */
 .time-block{margin-bottom:24px}
@@ -44,7 +44,7 @@ a{color:inherit;text-decoration:none}
 .time-header:hover{filter:brightness(1.1)}
 .time-icon{font-size:26px}
 .time-info{flex:1}
-.time-title{font-size:17px;font-weight:800;color:#fff}
+.time-title{font-size:17px;font-weight:800;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.1)}
 .time-meta{font-size:11px;opacity:0.7;margin-top:2px}
 .time-check{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:all 0.3s}
 .time-check.done{border-color:#22c55e;background:#22c55e;color:#fff}
@@ -53,51 +53,51 @@ a{color:inherit;text-decoration:none}
 .block-body{display:none;padding:0 4px}
 .time-block.open .block-body{display:block}
 .flash-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
-.flash{background:#1e293b;border:1px solid #334155;border-radius:10px;padding:12px;transition:all 0.3s;border-left:3px solid;word-wrap:break-word;overflow-wrap:break-word}
-.flash:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,0.3)}
+.flash{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;transition:all 0.3s;border-left:3px solid;word-wrap:break-word;overflow-wrap:break-word;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.flash:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,0,0,0.08)}
 .flash-title{font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:6px}
-.flash-body{font-size:13px;line-height:1.6;color:#cbd5e1}
-.flash-body strong{color:#f1f5f9}
+.flash-body{font-size:13px;line-height:1.6;color:#475569}
+.flash-body strong{color:#1e293b}
 
 /* MNEMO */
-.mn{background:linear-gradient(135deg,rgba(245,158,11,0.1),rgba(245,158,11,0.05));border:1px solid rgba(245,158,11,0.3);border-left:3px solid #f59e0b;border-radius:8px;padding:10px 14px;margin:8px 0}
-.mn-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#f59e0b;font-weight:700}
-.mn-text{font-size:16px;font-weight:800;color:#fbbf24;letter-spacing:2px;margin:2px 0}
-.mn-desc{font-size:12px;color:#94a3b8;line-height:1.4}
+.mn{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fde68a;border-left:3px solid #d97706;border-radius:8px;padding:10px 14px;margin:8px 0}
+.mn-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#92400e;font-weight:700}
+.mn-text{font-size:16px;font-weight:800;color:#92400e;letter-spacing:2px;margin:2px 0}
+.mn-desc{font-size:12px;color:#78716c;line-height:1.4}
 
 /* ALERT */
 .alrt{border-radius:8px;padding:10px 14px;margin:8px 0;font-size:12px;line-height:1.5}
-.alrt-red{background:rgba(239,68,68,0.1);border:1px solid rgba(239,68,68,0.3);color:#fca5a5}
-.alrt-blue{background:rgba(59,130,246,0.1);border:1px solid rgba(59,130,246,0.3);color:#93c5fd}
-.alrt-green{background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:#86efac}
+.alrt-red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.alrt-blue{background:#eff6ff;border:1px solid #bfdbfe;color:#1e40af}
+.alrt-green{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534}
 
 /* TABLE */
-.mini-table{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0;border-radius:8px;overflow:hidden}
-.mini-table th{background:rgba(255,255,255,0.08);color:#f1f5f9;padding:8px 10px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:0.5px}
-.mini-table td{padding:7px 10px;border-bottom:1px solid #334155;color:#cbd5e1}
+.mini-table{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0;border-radius:8px;overflow:hidden;background:#fff;border:1px solid #e2e8f0}
+.mini-table th{background:#f1f5f9;color:#334155;padding:8px 10px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:0.5px}
+.mini-table td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#475569}
 .mini-table tr:last-child td{border-bottom:none}
-.mini-table tr:hover td{background:rgba(255,255,255,0.03)}
+.mini-table tr:hover td{background:#f8fafc}
 
 /* LINK */
 .full-link{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:12px;font-weight:700;border:1px solid;margin-top:8px;transition:all 0.3s}
-.full-link:hover{transform:translateY(-1px);filter:brightness(1.2)}
+.full-link:hover{transform:translateY(-1px);filter:brightness(0.9)}
 
 /* FOOTER */
-.footer{text-align:center;padding:20px;color:#475569;font-size:11px;margin-top:30px}
+.footer{text-align:center;padding:20px;color:#94a3b8;font-size:11px;margin-top:30px}
 
 /* COLORS */
-.c-green{color:#22c55e}.bg-green{border-color:#22c55e30;background:#22c55e15}
-.c-purple{color:#a78bfa}.bg-purple{border-color:#a78bfa30;background:#a78bfa15}
-.c-red{color:#f87171}.bg-red{border-color:#f8717130;background:#f8717115}
-.c-blue{color:#60a5fa}.bg-blue{border-color:#60a5fa30;background:#60a5fa15}
-.c-amber{color:#fbbf24}.bg-amber{border-color:#fbbf2430;background:#fbbf2415}
-.c-teal{color:#2dd4bf}.bg-teal{border-color:#2dd4bf30;background:#2dd4bf15}
-.c-pink{color:#f472b6}.bg-pink{border-color:#f472b630;background:#f472b615}
+.c-green{color:#16a34a}.bg-green{border-color:#bbf7d0;background:#f0fdf4}
+.c-purple{color:#7c3aed}.bg-purple{border-color:#ddd6fe;background:#f5f3ff}
+.c-red{color:#dc2626}.bg-red{border-color:#fecaca;background:#fef2f2}
+.c-blue{color:#2563eb}.bg-blue{border-color:#bfdbfe;background:#eff6ff}
+.c-amber{color:#d97706}.bg-amber{border-color:#fde68a;background:#fffbeb}
+.c-teal{color:#0d9488}.bg-teal{border-color:#99f6e4;background:#f0fdfa}
+.c-pink{color:#c026d3}.bg-pink{border-color:#f0abfc;background:#fdf4ff}
 
-.hl{color:#fbbf24;font-weight:700}
-.hl-r{color:#f87171;font-weight:700}
-.hl-g{color:#4ade80;font-weight:700}
-.hl-b{color:#60a5fa;font-weight:700}
+.hl{color:#d97706;font-weight:700}
+.hl-r{color:#dc2626;font-weight:700}
+.hl-g{color:#16a34a;font-weight:700}
+.hl-b{color:#2563eb;font-weight:700}
 
 /* ====== RESPONSIVE ====== */
 @media(max-width:768px){
@@ -153,19 +153,19 @@ a{color:inherit;text-decoration:none}
 <body>
 <div class="container">
 
-<a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:#94a3b8;font-size:13px;font-weight:600;margin-bottom:12px;padding:6px 12px;border-radius:8px;border:1px solid #334155;background:#1e293b;transition:all 0.3s" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#94a3b8'">← Voltar</a>
+<a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:#64748b;font-size:13px;font-weight:600;margin-bottom:12px;padding:6px 12px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;transition:all 0.3s;box-shadow:0 1px 2px rgba(0,0,0,0.05)" onmouseover="this.style.color='#1e293b'" onmouseout="this.style.color='#64748b'">← Voltar</a>
 
 <div class="header">
 <h1>🚀 Revisão Rápida – Todas as Matérias em 1 Dia</h1>
 <div class="sub">Policial Legislativo • Câmara dos Deputados 2026 • Os pontos MAIS cobrados</div>
 <div class="badge-row">
-<span class="hbadge" style="background:#22c55e20;color:#22c55e;border-color:#22c55e50">📝 Português</span>
-<span class="hbadge" style="background:#60a5fa20;color:#60a5fa;border-color:#60a5fa50">📜 CF/88</span>
-<span class="hbadge" style="background:#a78bfa20;color:#a78bfa;border-color:#a78bfa50">⚖️ Administrativo</span>
-<span class="hbadge" style="background:#c084fc20;color:#c084fc;border-color:#c084fc50">🔒 Penal</span>
-<span class="hbadge" style="background:#f8717120;color:#f87171;border-color:#f8717150">🔍 Criminologia</span>
-<span class="hbadge" style="background:#fbbf2420;color:#fbbf24;border-color:#fbbf2450">🧠 RLM</span>
-<span class="hbadge" style="background:#2dd4bf20;color:#2dd4bf;border-color:#2dd4bf50">💻 TI</span>
+<span class="hbadge" style="background:rgba(255,255,255,0.15);color:#e2e8f0;border-color:rgba(255,255,255,0.3)">📝 Português</span>
+<span class="hbadge" style="background:rgba(255,255,255,0.15);color:#e2e8f0;border-color:rgba(255,255,255,0.3)">📜 CF/88</span>
+<span class="hbadge" style="background:rgba(255,255,255,0.15);color:#e2e8f0;border-color:rgba(255,255,255,0.3)">⚖️ Administrativo</span>
+<span class="hbadge" style="background:rgba(255,255,255,0.15);color:#e2e8f0;border-color:rgba(255,255,255,0.3)">🔒 Penal</span>
+<span class="hbadge" style="background:rgba(255,255,255,0.15);color:#e2e8f0;border-color:rgba(255,255,255,0.3)">🔍 Criminologia</span>
+<span class="hbadge" style="background:rgba(255,255,255,0.15);color:#e2e8f0;border-color:rgba(255,255,255,0.3)">🧠 RLM</span>
+<span class="hbadge" style="background:rgba(255,255,255,0.15);color:#e2e8f0;border-color:rgba(255,255,255,0.3)">💻 TI</span>
 </div>
 </div>
 
@@ -185,13 +185,13 @@ a{color:inherit;text-decoration:none}
 
 <!-- NAV -->
 <div class="nav-bar">
-<button class="nav-btn c-green" style="border-color:#22c55e50;background:#22c55e15" onclick="goTo('b0')">08h Português</button>
-<button class="nav-btn c-blue" style="border-color:#60a5fa50;background:#60a5fa15" onclick="goTo('b1')">10h CF/88</button>
-<button class="nav-btn c-purple" style="border-color:#a78bfa50;background:#a78bfa15" onclick="goTo('b2')">11h30 Administ.</button>
-<button class="nav-btn c-pink" style="border-color:#c084fc50;background:#c084fc15" onclick="goTo('b3')">13h Penal</button>
-<button class="nav-btn c-red" style="border-color:#f8717150;background:#f8717115" onclick="goTo('b4')">15h Criminal.</button>
-<button class="nav-btn c-amber" style="border-color:#fbbf2450;background:#fbbf2415" onclick="goTo('b5')">16h RLM</button>
-<button class="nav-btn c-teal" style="border-color:#2dd4bf50;background:#2dd4bf15" onclick="goTo('b6')">17h TI</button>
+<button class="nav-btn c-green" style="border-color:#bbf7d0;background:#f0fdf4" onclick="goTo('b0')">08h Português</button>
+<button class="nav-btn c-blue" style="border-color:#bfdbfe;background:#eff6ff" onclick="goTo('b1')">10h CF/88</button>
+<button class="nav-btn c-purple" style="border-color:#ddd6fe;background:#f5f3ff" onclick="goTo('b2')">11h30 Administ.</button>
+<button class="nav-btn c-pink" style="border-color:#f0abfc;background:#fdf4ff" onclick="goTo('b3')">13h Penal</button>
+<button class="nav-btn c-red" style="border-color:#fecaca;background:#fef2f2" onclick="goTo('b4')">15h Criminal.</button>
+<button class="nav-btn c-amber" style="border-color:#fde68a;background:#fffbeb" onclick="goTo('b5')">16h RLM</button>
+<button class="nav-btn c-teal" style="border-color:#99f6e4;background:#f0fdfa" onclick="goTo('b6')">17h TI</button>
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════ -->
@@ -255,7 +255,7 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 
-<a href="revisao-portugues.html" class="full-link c-green" style="border-color:#22c55e50;background:#22c55e15">📖 Revisão Completa de Português →</a>
+<a href="revisao-portugues.html" class="full-link c-green" style="border-color:#bbf7d0;background:#f0fdf4">📖 Revisão Completa de Português →</a>
 </div>
 </div>
 
@@ -314,7 +314,7 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 
-<a href="revisao-cf88.html" class="full-link c-blue" style="border-color:#60a5fa50;background:#60a5fa15">📖 Revisão Completa da CF/88 →</a>
+<a href="revisao-cf88.html" class="full-link c-blue" style="border-color:#bfdbfe;background:#eff6ff">📖 Revisão Completa da CF/88 →</a>
 </div>
 </div>
 
@@ -373,7 +373,7 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 
-<a href="revisao-administrativo.html" class="full-link c-purple" style="border-color:#a78bfa50;background:#a78bfa15">📖 Revisão Completa de Administrativo →</a>
+<a href="revisao-administrativo.html" class="full-link c-purple" style="border-color:#ddd6fe;background:#f5f3ff">📖 Revisão Completa de Administrativo →</a>
 </div>
 </div>
 
@@ -434,7 +434,7 @@ a{color:inherit;text-decoration:none}
 
 <div class="alrt alrt-red">⚠️ <strong>Leis Especiais:</strong> Abuso de Autoridade = <strong>dolo específico</strong> (prejudicar/beneficiar). Drogas Art. 33 = 5-15a. Organização Criminosa = <strong>4+ pessoas</strong>. Desarmamento: porte ilegal = 2-4a.</div>
 
-<a href="revisao-penal-processual.html" class="full-link c-pink" style="border-color:#c084fc50;background:#c084fc15">📖 Revisão Completa Penal e Processual →</a>
+<a href="revisao-penal-processual.html" class="full-link c-pink" style="border-color:#f0abfc;background:#fdf4ff">📖 Revisão Completa Penal e Processual →</a>
 </div>
 </div>
 
@@ -493,7 +493,7 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 
-<a href="revisao-criminalistica.html" class="full-link c-red" style="border-color:#f8717150;background:#f8717115">📖 Revisão Completa Criminologia →</a>
+<a href="revisao-criminalistica.html" class="full-link c-red" style="border-color:#fecaca;background:#fef2f2">📖 Revisão Completa Criminologia →</a>
 </div>
 </div>
 
@@ -546,7 +546,7 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 
-<a href="revisao-rlm-estatistica.html" class="full-link c-amber" style="border-color:#fbbf2450;background:#fbbf2415">📖 Revisão Completa RLM →</a>
+<a href="revisao-rlm-estatistica.html" class="full-link c-amber" style="border-color:#fde68a;background:#fffbeb">📖 Revisão Completa RLM →</a>
 </div>
 </div>
 
@@ -618,13 +618,13 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 
-<a href="revisao-ti-forense.html" class="full-link c-teal" style="border-color:#2dd4bf50;background:#2dd4bf15">📖 Revisão Completa TI e Forense →</a>
+<a href="revisao-ti-forense.html" class="full-link c-teal" style="border-color:#99f6e4;background:#f0fdfa">📖 Revisão Completa TI e Forense →</a>
 </div>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-<div style="margin-bottom:8px;font-size:14px;color:#64748b">🎯 Dica: Marque cada matéria como concluída ao terminar para acompanhar seu progresso!</div>
+<div style="margin-bottom:8px;font-size:14px;color:#94a3b8">🎯 Dica: Marque cada matéria como concluída ao terminar para acompanhar seu progresso!</div>
 Policial Legislativo CD 2026 • Revisão Rápida Completa • 7 Matérias em 1 Dia
 </div>
 

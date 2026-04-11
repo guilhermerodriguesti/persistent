@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão Rápida – Direito Penal e Processual Penal | Policial Legislativo CD 2026</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#f8fafc;color:#1e293b;min-height:100vh}
+.container{max-width:1000px;margin:0 auto;padding:20px}
+a{color:inherit;text-decoration:none}
+
+/* HEADER */
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#4338ca,#6366f1);border-radius:16px;margin-bottom:20px;border:none;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(99,102,241,0.25)}
+.header::before{content:'🔒';position:absolute;font-size:140px;opacity:0.06;top:-20px;right:-10px}
+.header h1{font-size:24px;color:#fff;margin-bottom:6px}
+.header .sub{font-size:13px;color:#e0e7ff}
+.header .badge-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:12px}
+.hbadge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;border:1px solid}
+
+/* PROGRESS */
+.global-progress{margin-bottom:20px;padding:14px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.gp-label{font-size:12px;color:#64748b;margin-bottom:6px;display:flex;justify-content:space-between}
+.gp-bar{height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden}
+.gp-fill{height:100%;border-radius:4px;transition:width 0.5s;background:linear-gradient(90deg,#6366f1,#a78bfa)}
+
+/* NAV */
+.nav-bar{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:20px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #c7d2fe;color:#4338ca;background:#eef2ff;transition:all 0.3s;white-space:nowrap}
+.nav-btn:hover{transform:translateY(-1px);background:#4338ca;color:#fff}
+
+/* SECTION BLOCK */
+.section-block{margin-bottom:24px}
+.section-header{display:flex;align-items:center;gap:12px;margin-bottom:12px;padding:10px 16px;border-radius:10px;cursor:pointer;user-select:none;transition:filter 0.2s}
+.section-header:hover{filter:brightness(1.1)}
+.section-icon{font-size:26px}
+.section-info{flex:1}
+.section-title{font-size:17px;font-weight:800;color:#fff;text-shadow:0 1px 2px rgba(0,0,0,0.1)}
+.section-meta{font-size:11px;opacity:0.7;margin-top:2px}
+.section-check{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,0.4);display:flex;align-items:center;justify-content:center;font-size:16px;cursor:pointer;transition:all 0.3s}
+.section-check.done{border-color:#22c55e;background:#22c55e;color:#fff}
+
+/* CONTENT */
+.section-body{display:none;padding:0 4px}
+.section-block.open .section-body{display:block}
+.flash-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:12px}
+.flash{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:12px;transition:all 0.3s;border-left:3px solid;word-wrap:break-word;overflow-wrap:break-word;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.flash:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(99,102,241,0.12)}
+.flash-title{font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-bottom:6px;color:#4338ca}
+.flash-body{font-size:13px;line-height:1.6;color:#475569}
+.flash-body strong{color:#1e293b}
+
+/* MNEMO */
+.mn{background:linear-gradient(135deg,#eef2ff,#e0e7ff);border:1px solid #c7d2fe;border-left:3px solid #6366f1;border-radius:8px;padding:10px 14px;margin:8px 0}
+.mn-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#4338ca;font-weight:700}
+.mn-text{font-size:16px;font-weight:800;color:#4338ca;letter-spacing:2px;margin:2px 0}
+.mn-desc{font-size:12px;color:#64748b;line-height:1.4}
+
+/* ALERT */
+.alrt{border-radius:8px;padding:10px 14px;margin:8px 0;font-size:12px;line-height:1.5}
+.alrt-red{background:#fef2f2;border:1px solid #fecaca;color:#991b1b}
+.alrt-blue{background:#eef2ff;border:1px solid #c7d2fe;color:#3730a3}
+.alrt-green{background:#f0fdf4;border:1px solid #bbf7d0;color:#166534}
+.alrt-amber{background:#fffbeb;border:1px solid #fde68a;color:#92400e}
+
+/* TABLE */
+.mini-table{width:100%;border-collapse:collapse;font-size:12px;margin:8px 0;border-radius:8px;overflow:hidden;background:#fff;border:1px solid #e2e8f0}
+.mini-table th{background:#eef2ff;color:#3730a3;padding:8px 10px;text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:0.5px}
+.mini-table td{padding:7px 10px;border-bottom:1px solid #f1f5f9;color:#475569}
+.mini-table tr:last-child td{border-bottom:none}
+.mini-table tr:hover td{background:#f8fafc}
+
+/* SUB-TITLE DIVIDER */
+.sub-divider{font-size:13px;font-weight:700;color:#4338ca;text-transform:uppercase;letter-spacing:1px;margin:16px 0 8px;padding-bottom:6px;border-bottom:2px solid #e0e7ff}
+
+/* LINK */
+.full-link{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:8px;font-size:12px;font-weight:700;border:1px solid #c7d2fe;color:#4338ca;background:#eef2ff;margin-top:8px;transition:all 0.3s}
+.full-link:hover{transform:translateY(-1px);background:#4338ca;color:#fff}
+
+/* FOOTER */
+.footer{text-align:center;padding:20px;color:#94a3b8;font-size:11px;margin-top:30px}
+
+/* HIGHLIGHTS */
+.hl{color:#4338ca;font-weight:700}
+.hl-r{color:#dc2626;font-weight:700}
+.hl-g{color:#16a34a;font-weight:700}
+.hl-a{color:#d97706;font-weight:700}
+
+/* ====== RESPONSIVE ====== */
+@media(max-width:768px){
+  .container{padding:14px}
+  .header{padding:20px 14px}
+  .header h1{font-size:20px}
+  .flash-grid{grid-template-columns:1fr;gap:8px}
+  .flash{padding:14px}
+  .flash-body{font-size:13px;line-height:1.7}
+  .nav-bar{gap:6px;padding:10px}
+  .nav-btn{flex:1 1 auto;min-width:0;text-align:center;padding:8px 6px;font-size:11px}
+  .section-header{padding:12px 14px;gap:10px}
+  .section-title{font-size:15px}
+  .section-meta{font-size:10px}
+  .mn-text{font-size:14px;letter-spacing:1px;word-break:break-word}
+  .mn-desc{font-size:11px}
+  .mini-table{font-size:11px}
+  .mini-table th,.mini-table td{padding:6px 8px}
+  .full-link{width:100%;justify-content:center;padding:10px 16px}
+  .alrt{font-size:12px;padding:10px 12px}
+}
+@media(max-width:480px){
+  .container{padding:10px}
+  .header{padding:16px 12px;border-radius:12px}
+  .header h1{font-size:17px;line-height:1.3}
+  .header .sub{font-size:11px}
+  .hbadge{font-size:10px;padding:3px 8px}
+  .nav-bar{display:grid;grid-template-columns:repeat(2,1fr);gap:5px;padding:8px}
+  .nav-btn{padding:8px 4px;font-size:10px;white-space:normal;line-height:1.2;text-align:center}
+  .section-header{padding:10px 12px;border-radius:8px}
+  .section-icon{font-size:22px}
+  .section-title{font-size:14px}
+  .flash{padding:12px 10px}
+  .flash-title{font-size:10px;margin-bottom:5px}
+  .flash-body{font-size:12px;line-height:1.6}
+  .mn{padding:10px 12px}
+  .mn-text{font-size:13px;letter-spacing:0.5px;line-height:1.4;word-break:break-word}
+  .mn-desc{font-size:11px;line-height:1.4}
+  .gp-label{font-size:11px}
+}
+@media(max-width:360px){
+  .nav-bar{grid-template-columns:1fr}
+  .header h1{font-size:15px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:#64748b;font-size:13px;font-weight:600;margin-bottom:12px;padding:6px 12px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;transition:all 0.3s;box-shadow:0 1px 2px rgba(0,0,0,0.05)" onmouseover="this.style.color='#4338ca'" onmouseout="this.style.color='#64748b'">← Voltar</a>
+
+<div class="header">
+<h1>🔒 Revisão Rápida – Direito Penal e Processual Penal</h1>
+<div class="sub">Policial Legislativo • Câmara dos Deputados 2026 • Resumo objetivo para revisão final</div>
+<div class="badge-row">
+<span class="hbadge" style="background:rgba(255,255,255,0.15);color:#e0e7ff;border-color:rgba(255,255,255,0.3)">⚖️ Parte Geral</span>
+<span class="hbadge" style="background:rgba(255,255,255,0.15);color:#e0e7ff;border-color:rgba(255,255,255,0.3)">🔪 Parte Especial</span>
+<span class="hbadge" style="background:rgba(255,255,255,0.15);color:#e0e7ff;border-color:rgba(255,255,255,0.3)">📋 Processual</span>
+<span class="hbadge" style="background:rgba(255,255,255,0.15);color:#e0e7ff;border-color:rgba(255,255,255,0.3)">📜 Leis Especiais</span>
+</div>
+</div>
+
+<!-- PROGRESS -->
+<div class="global-progress">
+<div class="gp-label"><span>Progresso da Revisão</span><span id="gpText">0/4 blocos</span></div>
+<div class="gp-bar"><div class="gp-fill" id="gpFill" style="width:0%"></div></div>
+</div>
+
+<!-- NAV -->
+<div class="nav-bar">
+<button class="nav-btn" onclick="goTo('s0')">I. Parte Geral</button>
+<button class="nav-btn" onclick="goTo('s1')">II. Parte Especial</button>
+<button class="nav-btn" onclick="goTo('s2')">III. Processual Penal</button>
+<button class="nav-btn" onclick="goTo('s3')">IV. Leis Especiais</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- I. DIREITO PENAL – PARTE GERAL                             -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section-block open" id="s0">
+<div class="section-header" style="background:linear-gradient(135deg,#4338ca,#3730a3)" onclick="toggleBlock(this)">
+<div class="section-icon">⚖️</div>
+<div class="section-info"><div class="section-title">I. Direito Penal – Parte Geral</div><div class="section-meta">6 tópicos · Princípios, Lei Penal, Crime, Ilicitude, Concurso, Prescrição</div></div>
+<div class="section-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+</div>
+<div class="section-body">
+
+<!-- 1. Princípios -->
+<div class="sub-divider">1. Princípios Básicos</div>
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Legalidade e Anterioridade</div>
+<div class="flash-body"><strong>Não há crime</strong> sem lei anterior que o defina, nem pena sem prévia cominação legal. Norma penal = <strong>lei em sentido estrito</strong>. Vedada <span class="hl-r">analogia in malam partem</span> (criar tipos ou agravar penas).</div>
+</div>
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Insignificância (Bagatela)</div>
+<div class="flash-body">Causa supralegal de exclusão da <strong>tipicidade material</strong>. <span class="hl-r">Não se aplica</span>, em regra, a crimes contra a Adm. Pública ou furtos qualificados por escalada.</div>
+</div>
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Fragmentariedade e Lesividade</div>
+<div class="flash-body">Direito Penal só intervém em <strong>ofensas graves</strong> a bens jurídicos relevantes. Lesividade: proíbe criminalizar <strong>intenções ou pensamentos</strong> não exteriorizados.</div>
+</div>
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Culpabilidade</div>
+<div class="flash-body">Só se pode apenar por <strong>fato reprovável</strong>. Reprovabilidade = <strong>fundamento e medida</strong> da pena.</div>
+</div>
+</div>
+
+<!-- 2. Lei Penal no Tempo e Espaço -->
+<div class="sub-divider">2. Lei Penal no Tempo e no Espaço</div>
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Tempo do Crime</div>
+<div class="flash-body">CP adota a <strong class="hl">Teoria da Atividade</strong>: crime praticado no momento da <strong>ação ou omissão</strong> (não do resultado).</div>
+</div>
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Conflito de Leis no Tempo</div>
+<div class="flash-body">Lei posterior benéfica (<em>novatio legis in mellius</em>) <strong class="hl-g">retroage</strong> mesmo após trânsito em julgado. Lei mais grave aplica-se a crimes <strong>continuados/permanentes</strong> se vigente antes da cessação.</div>
+</div>
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Abolitio Criminis</div>
+<div class="flash-body">Fato deixa de ser crime → cessam efeitos <strong>penais</strong>. Mas <span class="hl-r">NÃO cessam</span> os efeitos <strong>cíveis</strong> da condenação.</div>
+</div>
+</div>
+
+<div class="alrt alrt-amber">⚠️ <strong>Pegadinha CEBRASPE:</strong> "Abolitio criminis extingue todos os efeitos da condenação" → <strong>ERRADO</strong>. Só os efeitos penais; os cíveis permanecem.</div>
+
+<!-- 3. Teoria do Crime -->
+<div class="sub-divider">3. Teoria do Crime</div>
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Conduta (Teoria Finalista)</div>
+<div class="flash-body">Conduta (comissiva ou omissiva) é projetada a um <strong>fim</strong>. <strong>Coação física absoluta</strong> → exclui a própria conduta e o fato típico.</div>
+</div>
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Crimes Omissivos</div>
+<div class="flash-body"><strong>Próprios</strong>: a omissão está no tipo (ex.: omissão de socorro).<br><strong>Impróprios</strong>: garantidor deve ter <strong>possibilidade física de agir</strong> para evitar o resultado.</div>
+</div>
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Iter Criminis</div>
+<div class="flash-body"><strong>Cogitação → Preparação → Execução → Consumação</strong>.<br>Punição da tentativa: execução interrompida por <strong>circunstâncias alheias</strong> à vontade do agente.</div>
+</div>
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Tentativa</div>
+<div class="flash-body"><span class="hl-r">Não admitida</span> em crimes <strong>culposos</strong> (salvo culpa imprópria) e <strong>habituais</strong>. Reduz a pena de <strong>1/3 a 2/3</strong>.</div>
+</div>
+</div>
+
+<div class="mn">
+<div class="mn-label">Iter Criminis — Memorize</div>
+<div class="mn-text">CO · PRE · EXE · CON</div>
+<div class="mn-desc">Cogitação, Preparação, Execução, Consumação. Só se pune a partir da Execução!</div>
+</div>
+
+<!-- 4. Ilicitude e Culpabilidade -->
+<div class="sub-divider">4. Ilicitude e Culpabilidade</div>
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Excludentes de Ilicitude</div>
+<div class="flash-body"><strong>Estado de necessidade</strong> · <strong>Legítima defesa</strong> · <strong>Estrito cumprimento de dever legal</strong> · <strong>Exercício regular de direito</strong>.</div>
+</div>
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Legítima Defesa</div>
+<div class="flash-body">Repulsa a agressão <strong>injusta, atual ou iminente</strong>, usando <strong>moderadamente</strong> os meios necessários. Protege direito próprio ou de outrem.</div>
+</div>
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Exclusão da Culpabilidade</div>
+<div class="flash-body"><strong>Coação moral irresistível</strong> e <strong>obediência hierárquica</strong> a ordem <span class="hl-r">não manifestamente ilegal</span> → isento de pena.</div>
+</div>
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Imputabilidade</div>
+<div class="flash-body"><strong>Menores de 18</strong> = inimputáveis (critério biológico). Embriaguez <strong>voluntária não exclui</strong> imputabilidade. Só exclui se por <strong>caso fortuito/força maior</strong> (total).</div>
+</div>
+</div>
+
+<div class="mn">
+<div class="mn-label">Excludentes de Ilicitude</div>
+<div class="mn-text">E · L · E · E</div>
+<div class="mn-desc">Estado de necessidade, Legítima defesa, Estrito cumprimento, Exercício regular</div>
+</div>
+
+<!-- 5. Concurso de Pessoas -->
+<div class="sub-divider">5. Concurso de Pessoas</div>
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Teoria Monista (Regra)</div>
+<div class="flash-body">Todos que concorrem para o crime incidem <strong>nas mesmas penas</strong>. CP adota a teoria monista temperada (dosimetria individual).</div>
+</div>
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Requisitos</div>
+<div class="flash-body"><strong>Pluralidade de agentes</strong> · Relevância causal · <strong>Liame subjetivo</strong> · Identidade de infração.</div>
+</div>
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Autor vs Partícipe</div>
+<div class="flash-body"><strong>Autor</strong> = executa o núcleo do tipo. <strong>Partícipe</strong> = presta auxílio ou instiga. Circunstâncias pessoais <strong>só se comunicam</strong> se forem <span class="hl">elementares</span> do crime.</div>
+</div>
+</div>
+
+<!-- 6. Punibilidade e Prescrição -->
+<div class="sub-divider">6. Punibilidade e Prescrição</div>
+
+<table class="mini-table">
+<thead><tr><th>Momento</th><th>Base de Cálculo</th><th>Observação</th></tr></thead>
+<tbody>
+<tr><td><strong>Antes do trânsito</strong></td><td>Pena máxima em abstrato</td><td>Prescr. da pretensão punitiva</td></tr>
+<tr><td><strong>Após trânsito</strong></td><td>Pena concreta aplicada</td><td>Prescr. da pretensão executória</td></tr>
+</tbody>
+</table>
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Redução pela Metade</div>
+<div class="flash-body">Agente era <strong>&lt; 21 anos</strong> ao tempo do crime OU <strong>&gt; 70 anos</strong> na data da sentença → prazo prescricional <strong>reduzido pela metade</strong>.</div>
+</div>
+<div class="flash" style="border-left-color:#818cf8">
+<div class="flash-title">Causas de Interrupção</div>
+<div class="flash-body"><strong>Recebimento</strong> da denúncia/queixa · Publicação da <strong>sentença/acórdão condenatório</strong> recorrível.</div>
+</div>
+</div>
+
+<a href="revisao-penal-processual.html" class="full-link">📖 Revisão Completa Penal e Processual →</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- II. DIREITO PENAL – PARTE ESPECIAL                         -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section-block" id="s1">
+<div class="section-header" style="background:linear-gradient(135deg,#7e22ce,#6b21a8)" onclick="toggleBlock(this)">
+<div class="section-icon">🔪</div>
+<div class="section-info"><div class="section-title">II. Direito Penal – Parte Especial</div><div class="section-meta">2 tópicos · Crimes contra Patrimônio e contra Adm. Pública</div></div>
+<div class="section-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+</div>
+<div class="section-body">
+
+<!-- Crimes contra o Patrimônio -->
+<div class="sub-divider">Crimes contra o Patrimônio</div>
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#c084fc">
+<div class="flash-title">Furto</div>
+<div class="flash-body">Consuma-se com a <strong>inversão da posse</strong>. <span class="hl-r">Prescindível</span> a posse mansa e pacífica (Teoria da Amotio).</div>
+</div>
+<div class="flash" style="border-left-color:#c084fc">
+<div class="flash-title">Roubo</div>
+<div class="flash-body">Subtração com <strong>violência ou grave ameaça</strong>. Uso de <strong>simulacro</strong> (arma falsa) <span class="hl-r">não configura</span> majorante de arma de fogo.</div>
+</div>
+<div class="flash" style="border-left-color:#c084fc">
+<div class="flash-title">Extorsão</div>
+<div class="flash-body">Consuma-se no momento do <strong>constrangimento</strong>, <span class="hl-r">independentemente</span> da obtenção da vantagem.</div>
+</div>
+<div class="flash" style="border-left-color:#c084fc">
+<div class="flash-title">Receptação</div>
+<div class="flash-body">Adquirir produto de crime. <strong>Qualificada</strong> (comerciante): pune-se mesmo que a atividade seja lícita.</div>
+</div>
+</div>
+
+<div class="mn">
+<div class="mn-label">Penas — Referência Rápida</div>
+<div class="mn-text">FURTO 1-4 · ROUBO 4-10 · LATROCÍNIO 20-30</div>
+<div class="mn-desc">Furto simples 1-4a. Furto qualificado 2-8a. Roubo 4-10a. Roubo + morte (latrocínio) 20-30a.</div>
+</div>
+
+<!-- Crimes contra a Administração Pública -->
+<div class="sub-divider">Crimes contra a Administração Pública</div>
+
+<table class="mini-table">
+<thead><tr><th>Crime</th><th>Conduta</th><th>Detalhe-Chave</th></tr></thead>
+<tbody>
+<tr><td><strong>Peculato</strong></td><td>Apropriação/desvio de bem público por servidor</td><td>Proveito pode ser material ou moral</td></tr>
+<tr><td><strong>Concussão</strong></td><td><strong>Exigir</strong> vantagem indevida em razão da função</td><td>Difere da corrupção passiva (solicitar/receber)</td></tr>
+<tr><td><strong>Prevaricação</strong></td><td>Retardar/deixar de praticar ato de ofício</td><td>Para satisfazer <strong>interesse ou sentimento pessoal</strong></td></tr>
+<tr><td><strong>Descaminho</strong></td><td>Ilusão de tributo</td><td><span class="hl-g">Admite</span> insignificância</td></tr>
+<tr><td><strong>Contrabando</strong></td><td>Mercadoria proibida</td><td><span class="hl-r">Não admite</span> insignificância (regra)</td></tr>
+</tbody>
+</table>
+
+<div class="alrt alrt-red">⚠️ <strong>Concussão vs Corrupção Passiva:</strong> Concussão = <strong>exigir</strong> (mais grave). Corrupção passiva = <strong>solicitar/receber/aceitar</strong>. Bancas adoram trocar os verbos!</div>
+
+<a href="revisao-penal-processual.html" class="full-link">📖 Revisão Completa Penal e Processual →</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- III. DIREITO PROCESSUAL PENAL                              -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section-block" id="s2">
+<div class="section-header" style="background:linear-gradient(135deg,#1d4ed8,#1e40af)" onclick="toggleBlock(this)">
+<div class="section-icon">📋</div>
+<div class="section-info"><div class="section-title">III. Direito Processual Penal</div><div class="section-meta">4 tópicos · Inquérito, Ação Penal, Provas, Prisões</div></div>
+<div class="section-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+</div>
+<div class="section-body">
+
+<!-- 1. Inquérito Policial -->
+<div class="sub-divider">1. Inquérito Policial (IP)</div>
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title">Natureza</div>
+<div class="flash-body">Procedimento <strong>administrativo</strong>, <strong>inquisitivo</strong>, sigiloso e escrito. Delegado <span class="hl-r">NÃO pode arquivar</span> (indisponibilidade).</div>
+</div>
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title">Dispensabilidade</div>
+<div class="flash-body">IP é <strong>dispensável</strong> se o titular da ação já possuir elementos suficientes para oferecer denúncia/queixa.</div>
+</div>
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title">Prazos do IP</div>
+<div class="flash-body"><strong>Preso</strong> = 10 dias · <strong>Solto</strong> = 30 dias. Denúncia anônima → exige <strong>diligências preliminares</strong> antes de instaurar.</div>
+</div>
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title">Discricionariedade</div>
+<div class="flash-body">Delegado tem discricionariedade para <strong>deferir ou indeferir</strong> pedidos de diligências formulados pelo indiciado/vítima.</div>
+</div>
+</div>
+
+<!-- 2. Ação Penal -->
+<div class="sub-divider">2. Ação Penal</div>
+
+<table class="mini-table">
+<thead><tr><th>Espécie</th><th>Titular</th><th>Observação</th></tr></thead>
+<tbody>
+<tr><td><strong>Públ. Incondicionada</strong></td><td>MP</td><td>Regra geral. Não depende de representação.</td></tr>
+<tr><td><strong>Públ. Condicionada</strong></td><td>MP</td><td>Exige <strong>representação</strong> da vítima. Retratação até o recebimento da denúncia.</td></tr>
+<tr><td><strong>Privada</strong></td><td>Vítima</td><td>Queixa-crime. Prazo decadencial de <strong>6 meses</strong>.</td></tr>
+<tr><td><strong>Priv. Subsidiária</strong></td><td>Vítima</td><td>Inércia do MP (perda do prazo para denúncia).</td></tr>
+</tbody>
+</table>
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title">ANPP</div>
+<div class="flash-body"><strong>Acordo de Não Persecução Penal</strong>: crimes sem violência/grave ameaça, pena mínima <strong>&lt; 4 anos</strong>, exige <strong>confissão formal</strong>.</div>
+</div>
+</div>
+
+<div class="alrt alrt-blue">💡 <strong>Retratação da representação:</strong> Só é possível <strong>até o recebimento</strong> da denúncia (não até o oferecimento!).</div>
+
+<!-- 3. Provas -->
+<div class="sub-divider">3. Provas</div>
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title">Exame de Corpo de Delito</div>
+<div class="flash-body"><strong>Indispensável</strong> nos crimes que deixam vestígios. <span class="hl-r">Não pode</span> ser suprido pela confissão do réu.</div>
+</div>
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title">Cadeia de Custódia</div>
+<div class="flash-body">Procedimentos para preservar <strong>integridade da prova</strong>. Inicia-se com a <strong>preservação do local</strong> ou detecção do vestígio.</div>
+</div>
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title">Busca e Apreensão Domiciliar</div>
+<div class="flash-body">Exige <strong>mandado judicial</strong>. Horário: durante o <strong>"dia" (5h às 21h)</strong>. Entrada forçada em <strong>flagrante</strong> = a qualquer hora. Celular → <strong>autorização judicial</strong> ou consentimento.</div>
+</div>
+</div>
+
+<!-- 4. Prisões -->
+<div class="sub-divider">4. Prisões e Medidas Cautelares</div>
+
+<table class="mini-table">
+<thead><tr><th>Prisão</th><th>Características</th><th>Prazo</th></tr></thead>
+<tbody>
+<tr><td><strong>Flagrante</strong></td><td>Qualquer pessoa pode prender (facultativo). Polícia deve prender (compulsório).</td><td>Audiência de custódia em 24h</td></tr>
+<tr><td><strong>Preventiva</strong></td><td><span class="hl-r">NÃO pode</span> ser decretada de ofício pelo juiz. Requer representação da polícia ou requerimento do MP.</td><td>Sem prazo fixo (revisão a cada 90 dias)</td></tr>
+<tr><td><strong>Temporária</strong></td><td>Apenas na <strong>fase de investigação</strong>. Crimes da Lei 7.960/89.</td><td>5 dias (+5). Hediondos: 30 (+30).</td></tr>
+</tbody>
+</table>
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#60a5fa">
+<div class="flash-title">Modalidades de Flagrante</div>
+<div class="flash-body"><strong>Próprio</strong> = cometendo ou acabou de cometer. <strong>Impróprio</strong> = perseguido logo após. <strong>Ficto/Presumido</strong> = encontrado logo depois com instrumentos/produto do crime.</div>
+</div>
+</div>
+
+<div class="alrt alrt-red">⚠️ <strong>Preventiva de ofício:</strong> Após o Pacote Anticrime (2019), o juiz <strong>NÃO</strong> pode mais decretar prisão preventiva de ofício em nenhuma fase (nem no inquérito, nem na ação).</div>
+
+<a href="revisao-penal-processual.html" class="full-link">📖 Revisão Completa Penal e Processual →</a>
+</div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════ -->
+<!-- IV. LEGISLAÇÃO PENAL ESPECIAL                              -->
+<!-- ═══════════════════════════════════════════════════════════ -->
+<div class="section-block" id="s3">
+<div class="section-header" style="background:linear-gradient(135deg,#c2410c,#9a3412)" onclick="toggleBlock(this)">
+<div class="section-icon">📜</div>
+<div class="section-info"><div class="section-title">IV. Legislação Penal Especial</div><div class="section-meta">4 leis · Abuso de Autoridade, Drogas, Desarmamento, ORCRIM</div></div>
+<div class="section-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+</div>
+<div class="section-body">
+
+<!-- Abuso de Autoridade -->
+<div class="sub-divider">Abuso de Autoridade (Lei 13.869/2019)</div>
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#fb923c">
+<div class="flash-title">Sujeitos</div>
+<div class="flash-body">Qualquer <strong>agente público</strong>, inclusive transitórios e <strong>sem remuneração</strong>.</div>
+</div>
+<div class="flash" style="border-left-color:#fb923c">
+<div class="flash-title">Elemento Subjetivo</div>
+<div class="flash-body"><strong>Dolo específico</strong>: finalidade de <strong>prejudicar outrem</strong> ou <strong>beneficiar a si/terceiro</strong>, ou por mero capricho/satisfação pessoal.</div>
+</div>
+<div class="flash" style="border-left-color:#fb923c">
+<div class="flash-title">Ação Penal</div>
+<div class="flash-body"><strong>Pública incondicionada</strong>. Admite <strong>ação privada subsidiária</strong> da pública.</div>
+</div>
+<div class="flash" style="border-left-color:#fb923c">
+<div class="flash-title">Efeitos da Condenação</div>
+<div class="flash-body">Perda do cargo e inabilitação <span class="hl-r">NÃO são automáticos</span>. Exigem <strong>reincidência específica</strong> e motivação na sentença.</div>
+</div>
+</div>
+
+<!-- Drogas -->
+<div class="sub-divider">Drogas (Lei 11.343/2006)</div>
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#fb923c">
+<div class="flash-title">Consumo Pessoal (Art. 28)</div>
+<div class="flash-body"><span class="hl-r">Não há pena privativa de liberdade</span>. Penas: <strong>advertência</strong>, prestação de serviços ou medida educativa.</div>
+</div>
+<div class="flash" style="border-left-color:#fb923c">
+<div class="flash-title">Tráfico (Art. 33)</div>
+<div class="flash-body">Equiparado a <strong>hediondo</strong>, <strong>inafiançável</strong>. Pena: 5-15 anos. Transnacionalidade aumenta a pena mesmo <strong>sem transposição de fronteira</strong> (se provada a destinação).</div>
+</div>
+</div>
+
+<!-- Desarmamento -->
+<div class="sub-divider">Desarmamento (Lei 10.826/2003)</div>
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#fb923c">
+<div class="flash-title">Omissão de Cautela</div>
+<div class="flash-body">Crime de <strong>perigo abstrato</strong>. Não exige dano efetivo, basta permitir que <strong>menor/incapaz</strong> se apodere da arma.</div>
+</div>
+<div class="flash" style="border-left-color:#fb923c">
+<div class="flash-title">Porte Ilegal</div>
+<div class="flash-body">Arma <strong>desmuniciada configura</strong> crime (perigo abstrato). <strong>Registro vencido</strong>: na posse = infração administrativa; no porte = <span class="hl-r">crime</span>.</div>
+</div>
+</div>
+
+<!-- ORCRIM -->
+<div class="sub-divider">Organização Criminosa (Lei 12.850/2013)</div>
+
+<table class="mini-table">
+<thead><tr><th>Elemento</th><th>Requisito</th></tr></thead>
+<tbody>
+<tr><td><strong>Nº de pessoas</strong></td><td><strong>4 ou mais</strong> pessoas</td></tr>
+<tr><td><strong>Estrutura</strong></td><td>Ordenada, com <strong>divisão de tarefas</strong></td></tr>
+<tr><td><strong>Objetivo</strong></td><td>Vantagem de qualquer natureza</td></tr>
+<tr><td><strong>Pena dos crimes</strong></td><td>Crimes com pena <strong>&gt; 4 anos</strong> ou <strong>transnacionais</strong></td></tr>
+</tbody>
+</table>
+
+<div class="flash-grid">
+<div class="flash" style="border-left-color:#fb923c">
+<div class="flash-title">Colaboração Premiada</div>
+<div class="flash-body">Deve ser feita com <strong>advogado</strong>. Permite: perdão judicial, redução de até 2/3 da pena, substituição por restritiva de direitos.</div>
+</div>
+<div class="flash" style="border-left-color:#fb923c">
+<div class="flash-title">Infiltração de Agentes</div>
+<div class="flash-body">Exige <strong>prévia autorização judicial</strong>. Prazo de até 6 meses (prorrogável). Relatório circunstanciado ao final.</div>
+</div>
+</div>
+
+<div class="alrt alrt-amber">⚠️ <strong>Associação criminosa (art. 288 CP) ≠ Organização criminosa (Lei 12.850):</strong> Associação = <strong>3+</strong> pessoas, tipo penal genérico. ORCRIM = <strong>4+</strong> pessoas, estrutura ordenada, divisão de tarefas.</div>
+
+<a href="revisao-penal-processual.html" class="full-link">📖 Revisão Completa Penal e Processual →</a>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+<div style="margin-bottom:8px;font-size:14px;color:#64748b">🎯 Marque cada bloco como concluído para acompanhar seu progresso!</div>
+Policial Legislativo CD 2026 • Revisão Rápida – Direito Penal e Processual Penal • 4 Blocos
+</div>
+
+</div>
+
+<script>
+function toggleBlock(h){h.parentElement.classList.toggle('open')}
+function markDone(el){el.classList.toggle('done');updateGP()}
+function updateGP(){const d=document.querySelectorAll('.section-check.done').length,t=document.querySelectorAll('.section-check').length;document.getElementById('gpFill').style.width=(d/t*100)+'%';document.getElementById('gpText').textContent=d+'/'+t+' blocos'}
+function goTo(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+document.addEventListener('keydown',e=>{
+  if(e.key>='1'&&e.key<='4')goTo('s'+(parseInt(e.key)-1));
+  if(e.key==='a'||e.key==='A')document.querySelectorAll('.section-block').forEach(s=>s.classList.add('open'));
+  if(e.key==='r'||e.key==='R')document.querySelectorAll('.section-block').forEach(s=>s.classList.remove('open'));
+});
+</script>
+</body>
+</html>
