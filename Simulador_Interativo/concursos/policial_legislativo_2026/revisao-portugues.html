@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão – Língua Portuguesa | Policial Legislativo CD 2026</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#f5f7fa;color:#1e293b;min-height:100vh}
+.container{max-width:960px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#059669,#047857);border-radius:12px;margin-bottom:25px;box-shadow:0 4px 15px rgba(5,150,105,0.25);position:relative;overflow:hidden}
+.header::before{content:'📝';position:absolute;font-size:120px;opacity:0.06;top:-10px;right:-10px}
+.header h1{font-size:26px;color:#fff;margin-bottom:8px}
+.header .subtitle{font-size:14px;color:#a7f3d0}
+.header .badge{display:inline-block;background:rgba(255,193,7,0.2);color:#ffc107;padding:4px 14px;border-radius:20px;font-size:12px;font-weight:600;margin-top:10px;border:1px solid rgba(255,193,7,0.3)}
+.nav-bar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:25px;padding:15px;background:#fff;border-radius:10px;border:1px solid #e2e8f0;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.nav-btn{background:#ecfdf5;color:#059669;border:1px solid #a7f3d0;padding:8px 14px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600;transition:all 0.3s;white-space:nowrap}
+.nav-btn:hover,.nav-btn.active{background:#059669;color:#fff;border-color:#059669;transform:translateY(-1px)}
+.section{background:#fff;border-radius:12px;margin-bottom:20px;border:1px solid #e2e8f0;overflow:hidden;transition:all 0.3s;box-shadow:0 1px 4px rgba(0,0,0,0.05)}
+.section:hover{border-color:#a7f3d0;box-shadow:0 2px 8px rgba(5,150,105,0.1)}
+.section-header{display:flex;align-items:center;gap:12px;padding:18px 20px;cursor:pointer;background:linear-gradient(135deg,#ecfdf5,#d1fae5);user-select:none;transition:background 0.3s}
+.section-header:hover{background:linear-gradient(135deg,#d1fae5,#a7f3d0)}
+.section-icon{font-size:28px;flex-shrink:0}
+.section-title{font-size:17px;font-weight:700;color:#065f46;flex:1}
+.section-toggle{font-size:18px;color:#059669;transition:transform 0.3s;flex-shrink:0}
+.section.open .section-toggle{transform:rotate(180deg)}
+.section-body{max-height:0;overflow:hidden;transition:max-height 0.4s ease}
+.section.open .section-body{max-height:30000px}
+.section-content{padding:20px}
+.subsection{margin-bottom:20px}
+.subsection-title{font-size:15px;font-weight:700;color:#059669;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid #d1fae5;display:flex;align-items:center;gap:8px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:15px}
+.card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:14px;transition:all 0.3s}
+.card:hover{background:#ecfdf5;transform:translateY(-2px);box-shadow:0 4px 12px rgba(0,0,0,0.08)}
+.card-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#059669;font-weight:700;margin-bottom:6px}
+.card-value{font-size:14px;line-height:1.6;color:#475569}
+.mnemonic{background:linear-gradient(135deg,#fffbeb,#fef3c7);border:1px solid #fcd34d;border-left:4px solid #f59e0b;border-radius:8px;padding:14px 16px;margin:12px 0}
+.mnemonic-label{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:#b45309;font-weight:700;margin-bottom:6px}
+.mnemonic-text{font-size:18px;font-weight:800;color:#92400e;letter-spacing:3px;margin-bottom:4px}
+.mnemonic-desc{font-size:13px;color:#78716c;line-height:1.5}
+.alert{border-radius:8px;padding:14px 16px;margin:12px 0;font-size:13px;line-height:1.6}
+.alert-danger{background:#fef2f2;border:1px solid #fecaca;border-left:4px solid #dc2626;color:#991b1b}
+.alert-info{background:#eff6ff;border:1px solid #bfdbfe;border-left:4px solid #2563eb;color:#1e40af}
+.alert-success{background:#f0fdf4;border:1px solid #bbf7d0;border-left:4px solid #16a34a;color:#166534}
+.topic-list{list-style:none;margin:10px 0}
+.topic-list li{padding:10px 14px;margin-bottom:6px;background:#f8fafc;border-radius:6px;border-left:3px solid #059669;font-size:14px;line-height:1.6;transition:all 0.2s}
+.topic-list li:hover{background:#ecfdf5;border-left-color:#047857}
+.topic-list li strong{color:#059669}
+.hl{color:#b45309;font-weight:700}.hl-blue{color:#1d4ed8;font-weight:700}.hl-green{color:#16a34a;font-weight:700}.hl-red{color:#dc2626;font-weight:700}.hl-purple{color:#7c3aed;font-weight:700}
+.info-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;background:#fff;border-radius:8px;overflow:hidden;border:1px solid #e2e8f0}
+.info-table th{background:#059669;color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:0.5px}
+.info-table td{padding:10px 14px;border-bottom:1px solid #f1f5f9;color:#475569}
+.info-table tr:last-child td{border-bottom:none}
+.info-table tr:hover td{background:#ecfdf5}
+.controls{display:flex;gap:10px;justify-content:center;margin-bottom:20px;flex-wrap:wrap}
+.ctrl-btn{background:#fff;border:1px solid #e2e8f0;padding:8px 16px;border-radius:8px;cursor:pointer;font-size:12px;font-weight:600;color:#64748b;transition:all 0.3s}
+.ctrl-btn:hover{background:#ecfdf5;color:#059669;border-color:#a7f3d0}
+.back-link{display:inline-flex;align-items:center;gap:8px;color:#059669;text-decoration:none;font-weight:600;font-size:14px;margin-bottom:15px;padding:8px 16px;border-radius:8px;border:1px solid #a7f3d0;background:#ecfdf5;transition:all 0.3s}
+.back-link:hover{background:#059669;color:#fff;transform:translateX(-3px)}
+.progress-bar{height:4px;background:#e2e8f0;border-radius:2px;margin-bottom:20px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,#059669,#f59e0b);border-radius:2px;transition:width 0.5s;width:0%}
+.footer{text-align:center;padding:20px;color:#94a3b8;font-size:12px;margin-top:30px}
+.action-buttons{display:flex;gap:15px;margin-top:30px;flex-wrap:wrap;justify-content:center}
+.btn-action{padding:12px 24px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s;font-size:14px;border:none;cursor:pointer}
+.btn-action:hover{transform:translateY(-2px);box-shadow:0 6px 15px rgba(0,0,0,0.15)}
+.btn-simulado{background:linear-gradient(135deg,#059669,#047857);color:#fff}
+.btn-simulado:hover{color:#fff}
+@media(max-width:600px){.header h1{font-size:20px}.nav-btn{font-size:11px;padding:6px 10px}.card-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="container">
+
+<a href="index.html" class="back-link"><span>←</span> Voltar</a>
+
+<div class="header">
+<h1>📝 Revisão – Língua Portuguesa</h1>
+<div class="subtitle">Policial Legislativo • Câmara dos Deputados 2026</div>
+<div class="badge">📋 12 SEÇÕES • PADRÕES CEBRASPE • 2000+ QUESTÕES ANALISADAS</div>
+</div>
+
+<div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+
+<div class="nav-bar">
+<button class="nav-btn" onclick="scrollToSection(0)">1. Interpretação</button>
+<button class="nav-btn" onclick="scrollToSection(1)">2. Coesão</button>
+<button class="nav-btn" onclick="scrollToSection(2)">3. Conectivos</button>
+<button class="nav-btn" onclick="scrollToSection(3)">4. Pontuação</button>
+<button class="nav-btn" onclick="scrollToSection(4)">5. Reescrita</button>
+<button class="nav-btn" onclick="scrollToSection(5)">6. Concordância</button>
+<button class="nav-btn" onclick="scrollToSection(6)">7. Crase</button>
+<button class="nav-btn" onclick="scrollToSection(7)">8. Colocação</button>
+<button class="nav-btn" onclick="scrollToSection(8)">9. Verbos</button>
+<button class="nav-btn" onclick="scrollToSection(9)">10. QUE / SE</button>
+<button class="nav-btn" onclick="scrollToSection(10)">11. Vocabulário</button>
+<button class="nav-btn" onclick="scrollToSection(11)">12. Tipologia</button>
+</div>
+
+<div class="controls">
+<button class="ctrl-btn" onclick="expandAll()">📂 Expandir Tudo</button>
+<button class="ctrl-btn" onclick="collapseAll()">📁 Recolher Tudo</button>
+</div>
+
+<!-- SEÇÃO 1 – INTERPRETAÇÃO -->
+<div class="section open" id="s0">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">📖</div>
+<div class="section-title">1. Interpretação e Compreensão de Texto</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+<div class="subsection">
+<div class="subsection-title">📌 Inferência vs. Literalidade</div>
+<div class="card-grid">
+<div class="card"><div class="card-label">"Segundo o texto"</div><div class="card-value">Busque informação <span class="hl-green">explícita</span> — escrita textualmente. Não extrapole.</div></div>
+<div class="card"><div class="card-label">"Depreende-se" / "Infere-se"</div><div class="card-value">Busque <span class="hl-blue">conclusão lógica</span> sustentada pelo texto, mesmo que não literal.</div></div>
+</div>
+</div>
+<div class="subsection">
+<div class="subsection-title">⚠️ Armadilhas Clássicas</div>
+<ul class="topic-list">
+<li><strong>Extrapolação:</strong> Texto diz "muitos" → questão diz "todos". Se o texto limita, a questão não pode generalizar.</li>
+<li><strong>Especificação de grupo:</strong> Trocar "10% das universitárias" por "10% das mulheres brasileiras" — erro de escopo.</li>
+<li><strong>Inversão causa/consequência:</strong> Texto: "A cresceu → B precisa crescer". Questão: "A e B cresceram juntos" → <span class="hl-red">ERRADO</span>.</li>
+<li><strong>Quantificadores:</strong> "Geralmente" ≠ "sempre". "Pode" ≠ "deve". "Talvez" ≠ "certamente".</li>
+</ul>
+<div class="mnemonic"><div class="mnemonic-label">Dica de Ouro</div><div class="mnemonic-text">NÃO EXTRAPOLE</div><div class="mnemonic-desc">Sublinhe o grupo de referência no texto e compare com a afirmação da questão.</div></div>
+</div>
+</div></div>
+</div>
+
+<!-- SEÇÃO 2 – COESÃO E COERÊNCIA -->
+<div class="section" id="s1">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">🔗</div>
+<div class="section-title">2. Coesão e Coerência</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+<div class="subsection">
+<div class="subsection-title">📌 Coesão Referencial</div>
+<table class="info-table">
+<tr><th>Mecanismo</th><th>Direção</th><th>Exemplo</th></tr>
+<tr><td><strong>Anáfora</strong></td><td>Retoma (← trás)</td><td>"O <strong>edital</strong> foi publicado. <strong>Ele</strong> é extenso."</td></tr>
+<tr><td><strong>Catáfora</strong></td><td>Antecipa (→ frente)</td><td>"Só desejo <strong>isto</strong>: a <strong>sua aprovação</strong>."</td></tr>
+</table>
+<ul class="topic-list">
+<li><strong>Esse/Isso:</strong> <span class="hl-blue">Anafóricos</span> — retomam o que já foi dito. "Isso" resume <strong>ideias inteiras</strong>.</li>
+<li><strong>Este/Isto:</strong> <span class="hl-purple">Catafóricos</span> — anunciam o que virá ou referem-se ao presente.</li>
+<li><strong>Cujo:</strong> Indica <span class="hl-red">posse</span>. Concorda com o que vem DEPOIS. <strong>"Cujo o" = ERRO FATAL.</strong></li>
+<li><strong>Onde:</strong> Só retoma <span class="hl-green">lugar físico</span>. Para "situação/época" → <strong>"em que"</strong>.</li>
+<li><strong>O qual / A qual:</strong> Desempata quando há dois substantivos — gênero indica o referente.</li>
+<li><strong>Lhe:</strong> Objeto indireto ou possessivo. A banca tenta dizer que retoma objeto direto → <span class="hl-red">ERRADO</span>.</li>
+</ul>
+<div class="alert alert-danger">⚠️ <strong>Pegadinha:</strong> A banca aponta um substantivo óbvio, mas o pronome retoma ideia complexa. Sempre substitua o pronome pelo referente indicado.</div>
+</div>
+<div class="subsection">
+<div class="subsection-title">📚 Coesão Lexical e Elipse</div>
+<ul class="topic-list">
+<li><strong>Sinônimos:</strong> "Mentira", "farsa", "embuste" — mantêm tema sem repetição.</li>
+<li><strong>Hiperônimos:</strong> Termos genéricos retomam específicos. "Esse <em>fenômeno</em>".</li>
+<li><strong>Nominalização:</strong> Verbo → substantivo. "O governo desmatou... Esse <em>desmatamento</em>..."</li>
+<li><strong>Elipse:</strong> "Eu estudo TI; ele, Direito." (vírgula substitui "estuda").</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="subsection-title">🧠 Coerência — 3 Princípios</div>
+<div class="card-grid">
+<div class="card"><div class="card-label">Não Contradição</div><div class="card-value">Não pode dizer "A" e depois "não A" sem justificativa.</div></div>
+<div class="card"><div class="card-label">Não Tautologia</div><div class="card-value">Não repetir ideia com palavras diferentes sem progredir.</div></div>
+<div class="card"><div class="card-label">Relevância</div><div class="card-value">Ideias com sequência lógica que leve a conclusão.</div></div>
+</div>
+</div>
+</div></div>
+</div>
+
+<!-- SEÇÃO 3 – CONECTIVOS -->
+<div class="section" id="s2">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">⚙️</div>
+<div class="section-title">3. Conectivos e Operadores Argumentativos</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+<div class="subsection">
+<div class="subsection-title">📌 Tabela Mestra de Substituições</div>
+<table class="info-table">
+<tr><th>Valor</th><th>Conectivos</th><th>Substitutos CEBRASPE</th></tr>
+<tr><td><strong>Concessão</strong></td><td>Embora, ainda que, mesmo que</td><td><span class="hl">Conquanto</span>, malgrado, posto que</td></tr>
+<tr><td><strong>Adversidade</strong></td><td>Mas, porém, contudo</td><td>No entanto, todavia, entretanto</td></tr>
+<tr><td><strong>Causa</strong></td><td>Porque, já que, visto que</td><td><span class="hl">Na medida em que</span>, porquanto</td></tr>
+<tr><td><strong>Proporção</strong></td><td>À medida que</td><td>À proporção que</td></tr>
+<tr><td><strong>Conformidade</strong></td><td>Conforme, segundo</td><td>Consoante, de acordo com</td></tr>
+<tr><td><strong>Conclusão</strong></td><td>Portanto, logo</td><td><span class="hl">Pois</span> (entre vírgulas), por conseguinte</td></tr>
+<tr><td><strong>Condição</strong></td><td>Se, caso</td><td>Contanto que, desde que (+ subjuntivo)</td></tr>
+<tr><td><strong>Finalidade</strong></td><td>A fim de, para que</td><td>Com o objetivo de, com vistas a</td></tr>
+</table>
+</div>
+<div class="subsection">
+<div class="subsection-title">⚠️ Armadilhas de Troca</div>
+<div class="mnemonic"><div class="mnemonic-label">Gatilho</div><div class="mnemonic-text">CONQUANTO = EMBORA ✅</div><div class="mnemonic-desc">Viu "Conquanto"? Mentalize "Embora". Viu "Porquanto"? Mentalize "Porque".</div></div>
+<ul class="topic-list">
+<li><strong>"Entretanto" vs. "Conquanto":</strong> <span class="hl-red">Erro clássico!</span> Entretanto = adversativa; Conquanto = <strong>concessiva</strong>.</li>
+<li><strong>"À medida que" vs. "Na medida em que":</strong> Proporção ≠ Causa. NÃO sinônimos!</li>
+<li><strong>"Mas" aditivo:</strong> "Não apenas X, <strong>mas</strong> também Y" = valor <span class="hl-blue">aditivo</span>.</li>
+<li><strong>"Pois" — posição importa:</strong> Antes do verbo = explicativo. Depois (entre vírgulas) = conclusivo.</li>
+<li><strong>"Embora" → "Apesar de":</strong> Aceito, MAS exige mudar o verbo: <em>Embora saiba</em> → <em>Apesar de saber</em>.</li>
+<li><strong>"Mas" nunca entre vírgulas;</strong> porém, contudo, todavia, entretanto podem vir.</li>
+</ul>
+</div>
+</div></div>
+</div>
+
+<!-- SEÇÃO 4 – PONTUAÇÃO -->
+<div class="section" id="s3">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">✏️</div>
+<div class="section-title">4. Pontuação — A Vírgula Cirúrgica</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+<div class="subsection">
+<div class="subsection-title">📌 Orações Adjetivas</div>
+<table class="info-table">
+<tr><th>Estrutura</th><th>Tipo</th><th>Sentido</th></tr>
+<tr><td><strong>Com vírgula</strong></td><td>Explicativa</td><td>Generaliza (TODOS). "Os deputados<strong>,</strong> que foram eleitos<strong>,</strong>..."</td></tr>
+<tr><td><strong>Sem vírgula</strong></td><td>Restritiva</td><td>Delimita (PARTE). "Os deputados que foram eleitos..."</td></tr>
+</table>
+<div class="alert alert-danger">⚠️ "Retirar vírgula mantém o sentido" → <span class="hl-red">FALSO</span>. Gramática pode continuar correta, mas sentido MUDA.</div>
+</div>
+<div class="subsection">
+<div class="subsection-title">📏 Adjuntos Adverbiais Deslocados</div>
+<ul class="topic-list">
+<li><strong>Curto (2-3 palavras):</strong> Vírgula <span class="hl-blue">facultativa</span>. "Hoje, estudei" ou "Hoje estudei".</li>
+<li><strong>Longo:</strong> Vírgula <span class="hl-red">obrigatória</span>. "Nas últimas décadas de grandes transformações<strong>,</strong>"</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="subsection-title">🔄 Sinais Intercambiáveis</div>
+<table class="info-table">
+<tr><th>Original</th><th>Substituição</th><th>Validade</th></tr>
+<tr><td><strong>Vírgula dupla</strong></td><td>Travessões / Parênteses</td><td><span class="hl-green">Geralmente correta</span></td></tr>
+<tr><td><strong>Dois-pontos</strong></td><td>Vírgula / Travessão</td><td>Depende do contexto</td></tr>
+<tr><td><strong>Ponto e vírgula</strong></td><td>Ponto Final</td><td><span class="hl-green">Correta</span> se orações independentes</td></tr>
+</table>
+</div>
+<div class="subsection">
+<div class="subsection-title">🚫 Proibições e Zeugma</div>
+<ul class="topic-list">
+<li><strong>NUNCA</strong> separar sujeito de predicado — mesmo com sujeitos longos!</li>
+<li><strong>NUNCA</strong> separar verbo de complemento.</li>
+<li><strong>Vírgula de Zeugma:</strong> Indica omissão de verbo. "Na França são 10%; no Brasil<strong>,</strong> [são] 20%".</li>
+</ul>
+</div>
+</div></div>
+</div>
+
+<!-- SEÇÃO 5 – REESCRITA -->
+<div class="section" id="s4">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">🔄</div>
+<div class="section-title">5. Reescrita de Frases e Paralelismo</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+<div class="subsection">
+<div class="subsection-title">📌 Dois Critérios Obrigatórios</div>
+<div class="card-grid">
+<div class="card"><div class="card-label">1. Preservação do Sentido</div><div class="card-value">Ideia central NÃO pode mudar. "Pode" → "deve", "talvez" → "certamente" = <span class="hl-red">ERRADO</span>.</div></div>
+<div class="card"><div class="card-label">2. Correção Gramatical</div><div class="card-value">Respeitar pontuação, concordância e <strong>regência</strong>. Mudou a voz? Verifique a preposição!</div></div>
+</div>
+<div class="mnemonic"><div class="mnemonic-label">Mantra da Aprovação</div><div class="mnemonic-text">GRAMÁTICA ELIMINA · SENTIDO ESCOLHE</div><div class="mnemonic-desc">Elimine opções que ferem a norma culta. Entre as que sobrarem, veja qual mantém a ideia original.</div></div>
+</div>
+<div class="subsection">
+<div class="subsection-title">🔀 Vozes Verbais na Reescrita</div>
+<table class="info-table">
+<tr><th>Voz</th><th>Estrutura</th><th>Exemplo</th></tr>
+<tr><td><strong>Ativa</strong></td><td>Sujeito + Verbo + Objeto</td><td>"O governo <strong>aprovou</strong> a lei."</td></tr>
+<tr><td><strong>Passiva Analítica</strong></td><td>ser + particípio</td><td>"A lei <strong>foi aprovada</strong> pelo governo."</td></tr>
+<tr><td><strong>Passiva Sintética</strong></td><td>VTD + se</td><td>"<strong>Aprovou-se</strong> a lei."</td></tr>
+</table>
+<div class="alert alert-info">💡 Ao trocar voz ativa → passiva, verifique se a <strong>preposição</strong> exigida pelo novo verbo foi respeitada (Regência).</div>
+</div>
+<div class="subsection">
+<div class="subsection-title">⚖️ Paralelismo Sintático</div>
+<ul class="topic-list">
+<li><strong>Regra:</strong> Se começou "Prep. + Artigo", siga até o fim: "No parlamento, <strong>na</strong> magistratura, <strong>na</strong> imprensa..."</li>
+<li><strong>"Visa à transparência... e <u>à</u> eficiência"</strong> — tirar o "à" quebra o paralelismo.</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="subsection-title">✅ Checklist para Resolver</div>
+<ul class="topic-list">
+<li><strong>1. Tempo verbal mudou?</strong> Passado → futuro = geralmente errado.</li>
+<li><strong>2. Sujeito continua o mesmo?</strong> Cuidado com inversão da ação.</li>
+<li><strong>3. Vírgula no lugar certo?</strong> Muitas alternativas mudam sentido pela pontuação.</li>
+<li><strong>4. Erro de concordância?</strong> Verbo singular + sujeito plural = armadilha.</li>
+</ul>
+</div>
+</div></div>
+</div>
+
+<!-- SEÇÃO 6 – CONCORDÂNCIA -->
+<div class="section" id="s5">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">📐</div>
+<div class="section-title">6. Concordância Verbal e Nominal</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+<div class="subsection">
+<div class="subsection-title">📌 Verbos Impessoais (Sempre Singular)</div>
+<table class="info-table">
+<tr><th>Verbo</th><th>Regra</th><th>Certo ✅</th><th>Errado ❌</th></tr>
+<tr><td><strong>Haver</strong> (existir)</td><td>Impessoal</td><td>Havia muitos candidatos</td><td><s>Haviam</s> muitos</td></tr>
+<tr><td><strong>Haver</strong> (tempo)</td><td>Impessoal</td><td>Há dez anos</td><td><s>Hão</s> dez anos</td></tr>
+<tr><td><strong>Fazer</strong> (tempo)</td><td>Impessoal</td><td>Faz dois anos</td><td><s>Fazem</s> dois anos</td></tr>
+<tr><td><strong>Existir</strong></td><td>PESSOAL — concorda!</td><td>Existem problemas</td><td><s>Existe</s> problemas</td></tr>
+</table>
+<div class="mnemonic"><div class="mnemonic-label">Armadilha Favorita</div><div class="mnemonic-text">PODE HAVER ✅ · PODEM HAVER ❌</div><div class="mnemonic-desc">"Haver" (existir) é impessoal. Em locução, contamina o auxiliar. "Pode haver" ou "Podem existir".</div></div>
+</div>
+<div class="subsection">
+<div class="subsection-title">📊 Concordância Partitiva e Sujeito Composto</div>
+<ul class="topic-list">
+<li><strong>"20% dos universitários estão/está"?</strong> → CEBRASPE aceita <span class="hl-green">ambos</span>.</li>
+<li><strong>"A maioria de":</strong> Singular OU plural — ambas corretas.</li>
+<li><strong>Sujeito composto antes do verbo:</strong> Plural obrigatório. "O edital e a prova <strong>chegaram</strong>".</li>
+<li><strong>Sujeito composto depois do verbo:</strong> Pode concordar com mais próximo OU plural.</li>
+<li><strong>Sujeito oracional:</strong> Verbo no <span class="hl">SINGULAR</span>. "<strong>Estabelecer</strong> fronteiras <strong>é</strong>..."</li>
+</ul>
+<div class="alert alert-danger">⚠️ <strong>Concordância por atração:</strong> "A malha de gasodutos <strong>serve</strong>" — a banca sugere "servem" para concordar com "gasodutos" → <span class="hl-red">ERRADO</span>. Núcleo = "malha".</div>
+</div>
+<div class="subsection">
+<div class="subsection-title">📝 Concordância Nominal</div>
+<ul class="topic-list">
+<li><strong>"É proibido":</strong> Sem artigo = invariável. Com artigo = concorda ("É proibid<strong>a</strong> <strong>a</strong> entrada").</li>
+<li><strong>Anexo, Incluso, Obrigado:</strong> Concordam com o substantivo. "As fotos seguem <strong>anexas</strong>."</li>
+<li><strong>Meio/Bastante:</strong> Advérbio = invariável. Adjetivo = varia.</li>
+</ul>
+</div>
+</div></div>
+</div>
+
+<!-- SEÇÃO 7 – REGÊNCIA E CRASE -->
+<div class="section" id="s6">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">📎</div>
+<div class="section-title">7. Regência Verbal e Crase</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+<div class="subsection">
+<div class="subsection-title">📌 Regência — Verbos Especiais</div>
+<table class="info-table">
+<tr><th>Verbo</th><th>Transitividade</th><th>Detalhe</th></tr>
+<tr><td><strong>Implicar</strong> (causar)</td><td>VTD — sem "em"</td><td>"Implica <strong>aumento</strong>" (NÃO "implica em")</td></tr>
+<tr><td><strong>Resultar</strong></td><td>VTI — exige "em"</td><td>"Resulta <strong>em</strong> problemas"</td></tr>
+<tr><td><strong>Aspirar</strong> (desejar)</td><td>VTI — exige "a"</td><td>"Aspira <strong>ao</strong> cargo"</td></tr>
+<tr><td><strong>Visar</strong> (objetivar)</td><td>VTI — exige "a"</td><td>"Visa <strong>à</strong> melhoria"</td></tr>
+<tr><td><strong>Assistir</strong> (ver)</td><td>VTI — exige "a"</td><td>"Assistiu <strong>ao</strong> jogo"</td></tr>
+<tr><td><strong>Lembrar/Esquecer</strong></td><td>Pronominal = "de"</td><td>"Lembrou-se <strong>de</strong>" ou "Lembrou <strong>o fato</strong>"</td></tr>
+<tr><td><strong>Ir/Chegar</strong></td><td>Exige "a"</td><td>"Chegou <strong>a</strong> casa" (NÃO "em")</td></tr>
+</table>
+</div>
+<div class="subsection">
+<div class="subsection-title">🔥 Crase</div>
+<div class="card-grid">
+<div class="card" style="border-left:3px solid #16a34a"><div class="card-label" style="color:#16a34a">✅ Obrigatória</div><div class="card-value">Locuções adverbiais femininas: <strong>à mão, à frente, à noite, à vista</strong>.</div></div>
+<div class="card" style="border-left:3px solid #f59e0b"><div class="card-label" style="color:#f59e0b">⚡ Facultativa</div><div class="card-value">Após "até". Antes de <strong>possessivos femininos</strong> e <strong>nomes próprios femininos</strong>.</div></div>
+<div class="card" style="border-left:3px solid #dc2626"><div class="card-label" style="color:#dc2626">❌ Proibida</div><div class="card-value">Antes de <strong>verbos, masculinos, pronomes pessoais, palavras repetidas</strong> ("ponta a ponta").</div></div>
+</div>
+</div>
+<div class="subsection">
+<div class="subsection-title">📊 Substituições Rápidas</div>
+<table class="info-table">
+<tr><th>Original</th><th>Substituto</th><th>Atenção</th></tr>
+<tr><td><strong>A fim de</strong></td><td>Com o objetivo de</td><td>Finalidade. "Afim" (junto) = semelhança.</td></tr>
+<tr><td><strong>Na medida em que</strong></td><td>Porque / Visto que</td><td>Causa. NÃO confundir com "à medida que".</td></tr>
+<tr><td><strong>Onde</strong></td><td>Em que</td><td>Só para lugares físicos.</td></tr>
+<tr><td><strong>Haver (tempo)</strong></td><td>Faz</td><td>"Há dois anos" = "Faz dois anos".</td></tr>
+</table>
+</div>
+</div></div>
+</div>
+
+<!-- SEÇÃO 8 – COLOCAÇÃO PRONOMINAL -->
+<div class="section" id="s7">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">🧲</div>
+<div class="section-title">8. Colocação Pronominal</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+<div class="subsection">
+<div class="subsection-title">📌 Próclise — Palavras Atrativas</div>
+<div class="mnemonic"><div class="mnemonic-label">Ímãs de Próclise</div><div class="mnemonic-text">NÃO · QUE · SE · SEMPRE</div><div class="mnemonic-desc"><strong>Negativas</strong> (não, nunca, jamais) · <strong>Relativos</strong> (que, quem, cujo) · <strong>Subordinativas</strong> (embora, caso, quando) · <strong>Advérbios</strong> (hoje, sempre, talvez)</div></div>
+<ul class="topic-list">
+<li><strong>Negativas:</strong> "<strong>Não</strong> se esqueça" — "não" puxa o pronome antes.</li>
+<li><strong>Relativos:</strong> "O livro <strong>que</strong> me deu" — "que" atrai.</li>
+<li><strong>Subordinativas:</strong> "<strong>Embora</strong> o visse..."</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="subsection-title">📋 Ênclise e Mesóclise</div>
+<ul class="topic-list">
+<li><strong>Ênclise:</strong> Regra geral sem atrativas. Início de frase: "<strong>Dê-me</strong>" ✅ (não "Me dê" ❌).</li>
+<li><strong>Mesóclise:</strong> Só Futuro do Presente/Pretérito sem atrativa: "<strong>Dar-lhe-ei</strong>" / "<strong>Dir-se-ia</strong>".</li>
+<li><strong>Locução verbal:</strong> Pronome pode ir ao meio ou fim. "Vinha oferecer-me" = "Me vinha oferecer".</li>
+</ul>
+<div class="alert alert-success">✅ <strong>Regra de Ouro:</strong> Se a banca colocou "Não" ou "Que" antes do verbo, o pronome <strong>TEM</strong> que ir antes (Próclise). "Não <strong>nos</strong> entregou" ✅ (não "não entregou-nos" ❌).</div>
+</div>
+</div></div>
+</div>
+
+<!-- SEÇÃO 9 – VERBOS -->
+<div class="section" id="s8">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">⏱️</div>
+<div class="section-title">9. Verbos, Tempos e Correlação Temporal</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+<div class="subsection">
+<div class="subsection-title">📌 Tempos Verbais — Mapa</div>
+<table class="info-table">
+<tr><th>Tempo</th><th>Uso</th><th>Exemplo</th></tr>
+<tr><td><strong>Pret. Mais-que-perfeito (-ra)</strong></td><td>Ação anterior a outra já passada</td><td>"Recorrera" = "Tinha recorrido"</td></tr>
+<tr><td><strong>Futuro do Pretérito (-ria)</strong></td><td>Possibilidade, hipótese, polidez</td><td>"Seria possível..." / "Eu gostaria..."</td></tr>
+<tr><td><strong>Presente Histórico</strong></td><td>Presente narrando fatos passados</td><td>Pode trocar por Pret. Perfeito: geralmente aceito</td></tr>
+<tr><td><strong>Subjuntivo</strong></td><td>Hipótese, desejo, subordinação</td><td>"Se estudasse..." / "Embora saiba..."</td></tr>
+</table>
+</div>
+<div class="subsection">
+<div class="subsection-title">🔗 Correlação Verbal</div>
+<div class="card-grid">
+<div class="card"><div class="card-label">Fut. Subjuntivo + Fut. Presente</div><div class="card-value">"Se você <strong>estudar</strong>, <strong>passará</strong>."</div></div>
+<div class="card"><div class="card-label">Pret. Imp. Subj. + Fut. Pretérito</div><div class="card-value">"Se você <strong>estudasse</strong>, <strong>passaria</strong>."</div></div>
+</div>
+</div>
+<div class="subsection">
+<div class="subsection-title">🔄 Locuções e Equivalências</div>
+<table class="info-table">
+<tr><th>Forma</th><th>Equivalente</th><th>Detalhe</th></tr>
+<tr><td>"Chegara"</td><td>"Tinha/Havia chegado"</td><td>Mais-que-perfeito simples = composto</td></tr>
+<tr><td>"Irá utilizar"</td><td>"Utilizará"</td><td>Locução futura = futuro simples</td></tr>
+<tr><td>"Tem incentivado"</td><td>"Vem incentivando"</td><td>Continuidade — ambos aceitos</td></tr>
+</table>
+<div class="alert alert-danger">⚠️ "Eram capturados" (habitual) ≠ "Foram capturados" (pontual). A troca ALTERA o sentido!</div>
+</div>
+<div class="subsection">
+<div class="subsection-title">📋 Acento Diferencial em Verbos</div>
+<table class="info-table">
+<tr><th>Singular</th><th>Plural</th></tr>
+<tr><td>Ele <strong>tem</strong></td><td>Eles <strong>têm</strong></td></tr>
+<tr><td>Ele <strong>vem</strong></td><td>Eles <strong>vêm</strong></td></tr>
+<tr><td>Ele <strong>mantém</strong></td><td>Eles <strong>mantêm</strong></td></tr>
+</table>
+</div>
+</div></div>
+</div>
+
+<!-- SEÇÃO 10 – QUE E SE -->
+<div class="section" id="s9">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">🔍</div>
+<div class="section-title">10. Emprego do "QUE" e do "SE"</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+<div class="subsection">
+<div class="subsection-title">📌 O Vocábulo "QUE"</div>
+<table class="info-table">
+<tr><th>Função</th><th>Teste</th><th>Exemplo</th></tr>
+<tr><td><strong>Pronome Relativo</strong></td><td>Substituir por "o qual". Retoma substantivo. Oração adjetiva.</td><td>"O livro <strong>que</strong> li" = "o qual li"</td></tr>
+<tr><td><strong>Conj. Integrante</strong></td><td>Substituir oração por <strong>"ISSO"</strong>. Oração substantiva.</td><td>"Quero <strong>que</strong> passe" = "Quero ISSO"</td></tr>
+</table>
+</div>
+<div class="subsection">
+<div class="subsection-title">🔀 A Partícula "SE"</div>
+<table class="info-table">
+<tr><th>Função</th><th>Regra</th><th>Exemplo</th></tr>
+<tr><td><strong>Part. Apassivadora</strong></td><td>VTD + SE → concorda com sujeito</td><td>"<strong>Alugam-se</strong> casas" (= Casas são alugadas)</td></tr>
+<tr><td><strong>Índice Indeterm.</strong></td><td>VTI/VI + SE → sempre singular</td><td>"<strong>Precisa-se</strong> de técnicos" (nunca "precisam-se")</td></tr>
+<tr><td><strong>Verbo Pronominal</strong></td><td>"Se" faz parte do verbo</td><td>"Queixou-se" / "Lembrou-se"</td></tr>
+</table>
+<div class="mnemonic"><div class="mnemonic-label">Teste Rápido</div><div class="mnemonic-text">VTD + SE = CONCORDA · VTI + SE = SINGULAR</div><div class="mnemonic-desc">Pode virar "ser + particípio"? → Apassivadora (concorda). Tem preposição? → Indeterminação (singular).</div></div>
+<div class="alert alert-info">💡 <strong>"Trata-se de":</strong> "Tratar" é VTI. "Se" = índice de indeterminação. O termo após "de" é objeto indireto, NÃO sujeito.</div>
+</div>
+<div class="subsection">
+<div class="subsection-title">📚 Orações Subordinadas</div>
+<ul class="topic-list">
+<li><strong>Subjetiva:</strong> "É necessário <strong>que</strong>..." → oração = <strong>sujeito</strong>.</li>
+<li><strong>Objetiva Direta:</strong> "Mostrou <strong>que</strong>..." → oração = <strong>complemento</strong>.</li>
+<li><strong>Reduzida:</strong> Sem conjunção. "Havendo divergência" = "Quando há divergência".</li>
+</ul>
+</div>
+</div></div>
+</div>
+
+<!-- SEÇÃO 11 – VOCABULÁRIO -->
+<div class="section" id="s10">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">📚</div>
+<div class="section-title">11. Significação de Palavras e Vocabulário</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+<div class="subsection">
+<div class="subsection-title">📌 Sinônimos Contextuais</div>
+<table class="info-table">
+<tr><th>Palavra</th><th>Sugestão da Banca</th><th>Veredito</th></tr>
+<tr><td><strong>Incólume</strong></td><td>Inalterado / Intacto</td><td><span class="hl-green">CERTO</span></td></tr>
+<tr><td><strong>Tácito</strong></td><td>Inexpressivo</td><td><span class="hl-red">ERRADO</span> — Tácito = subentendido</td></tr>
+<tr><td><strong>Relevante</strong></td><td>Notório</td><td><span class="hl-red">ERRADO</span> — Relevante = importante ≠ famoso</td></tr>
+<tr><td><strong>Prenúncio</strong></td><td>Sinal</td><td><span class="hl-green">CERTO</span></td></tr>
+<tr><td><strong>Disparidade</strong></td><td>Assimetria</td><td><span class="hl-green">CERTO</span></td></tr>
+<tr><td><strong>Passam por</strong></td><td>Perpassam</td><td><span class="hl-red">ERRADO</span> — vivenciar ≠ atravessar</td></tr>
+</table>
+</div>
+<div class="subsection">
+<div class="subsection-title">📖 Vocabulário Carimbado</div>
+<div class="card-grid">
+<div class="card"><div class="card-label">Incólume</div><div class="card-value">Intacto, ileso, inalterado</div></div>
+<div class="card"><div class="card-label">Tácito</div><div class="card-value">Implícito, subentendido (oposto de "Expresso")</div></div>
+<div class="card"><div class="card-label">Inexorável</div><div class="card-value">Implacável, que não cede</div></div>
+<div class="card"><div class="card-label">Subjacente</div><div class="card-value">Que está por baixo, implícito</div></div>
+<div class="card"><div class="card-label">Preconizar</div><div class="card-value">Aconselhar, recomendar</div></div>
+<div class="card"><div class="card-label">Corroborar</div><div class="card-value">Confirmar, ratificar</div></div>
+<div class="card"><div class="card-label">Paliativo</div><div class="card-value">Remédio temporário</div></div>
+<div class="card"><div class="card-label">Vernáculo</div><div class="card-value">Língua própria de um povo</div></div>
+</div>
+</div>
+<div class="subsection">
+<div class="subsection-title">🎭 Denotação vs. Conotação</div>
+<ul class="topic-list">
+<li><strong>Denotação:</strong> Sentido literal. "O <em>embrião</em> se desenvolveu" (biologia).</li>
+<li><strong>Conotação:</strong> Sentido figurado. "O <em>embrião</em> de uma ideia" (abstrato).</li>
+<li><strong>Dica:</strong> Se a palavra NÃO está no "habitat natural", é <span class="hl">conotativo</span>.</li>
+</ul>
+<div class="alert alert-info">💡 Não conhece a palavra? Olhe o <strong>radical</strong>. "Irrompe" → <em>Romp-</em> (romper). "Inalterado" → <em>In-</em> + <em>Alterar</em> = "não alterado".</div>
+</div>
+<div class="subsection">
+<div class="subsection-title">📝 Os "Porquês" e Ortografia</div>
+<table class="info-table">
+<tr><th>Forma</th><th>Uso</th><th>Exemplo</th></tr>
+<tr><td><strong>Por que</strong></td><td>Início de perguntas / "pelo qual"</td><td>"Não há por que assustar-se"</td></tr>
+<tr><td><strong>Porque</strong></td><td>Causa/explicação</td><td>"Bloqueou porque não cumpriu"</td></tr>
+<tr><td><strong>Por quê</strong></td><td>Final de frase</td><td>"Não sei por quê"</td></tr>
+<tr><td><strong>Porquê</strong></td><td>Substantivo (= motivo)</td><td>"Os porquês da decisão"</td></tr>
+</table>
+<table class="info-table" style="margin-top:8px">
+<tr><th>Expressão</th><th>Significado</th></tr>
+<tr><td><strong>Aonde</strong></td><td>Verbo de movimento. "Aonde vai?"</td></tr>
+<tr><td><strong>Onde</strong></td><td>Lugar fixo. "Onde mora?"</td></tr>
+<tr><td><strong>Senão</strong></td><td>"Caso contrário"</td></tr>
+<tr><td><strong>Se não</strong></td><td>Condição negativa</td></tr>
+<tr><td><strong>Há</strong> (tempo)</td><td>Tempo decorrido (passado)</td></tr>
+<tr><td><strong>A</strong> (tempo)</td><td>Tempo futuro ou distância</td></tr>
+</table>
+</div>
+</div></div>
+</div>
+
+<!-- SEÇÃO 12 – TIPOLOGIA -->
+<div class="section" id="s11">
+<div class="section-header" onclick="toggleSection(this)">
+<div class="section-icon">📄</div>
+<div class="section-title">12. Tipologia, Gêneros e Acentuação</div>
+<div class="section-toggle">▼</div>
+</div>
+<div class="section-body"><div class="section-content">
+<div class="subsection">
+<div class="subsection-title">📌 Argumentativo vs. Expositivo</div>
+<table class="info-table">
+<tr><th>Aspecto</th><th>Argumentativo</th><th>Expositivo</th></tr>
+<tr><td><strong>Objetivo</strong></td><td>Convencer / Persuadir</td><td>Informar / Explicar</td></tr>
+<tr><td><strong>Conteúdo</strong></td><td>Opiniões + Justificativas</td><td>Fatos + Dados</td></tr>
+<tr><td><strong>Autor</strong></td><td>Juízos de valor</td><td>Neutro, impessoal</td></tr>
+<tr><td><strong>Palavras</strong></td><td>"criticar", "defender", "refutar"</td><td>"apresentar", "relatar", "instruir"</td></tr>
+</table>
+<div class="alert alert-info">💡 Textos híbridos: começam expositivos (dados) e terminam argumentativos (opinião). Finalidade dominante = <strong>argumentativa</strong>.</div>
+</div>
+<div class="subsection">
+<div class="subsection-title">📚 Gêneros Específicos</div>
+<div class="card-grid">
+<div class="card"><div class="card-label">Crônica</div><div class="card-value">Cotidiano + subjetividade + tom literário.</div></div>
+<div class="card"><div class="card-label">Parábola</div><div class="card-value">Narrativa alegórica + lição de moral.</div></div>
+<div class="card"><div class="card-label">Artigo de Opinião</div><div class="card-value">Tese + argumentos + conectivos.</div></div>
+<div class="card"><div class="card-label">Injuntivo</div><div class="card-value">Ordens/instruções (lei, manual).</div></div>
+</div>
+</div>
+<div class="subsection">
+<div class="subsection-title">🔤 Acentuação Gráfica</div>
+<ul class="topic-list">
+<li><strong>Proparoxítonas:</strong> TODAS acentuadas — porto seguro.</li>
+<li><strong>Paroxítonas em ditongo:</strong> "Memória", "edifício" — acentuadas.</li>
+<li><strong>Acento diferencial:</strong> "Pôr" (verbo) vs. "por" (prep.) — <span class="hl-red">obrigatório</span>.</li>
+<li><strong>Hiato:</strong> "Caíram", "extraídos" — regra do "i" tônico.</li>
+</ul>
+</div>
+<div class="subsection">
+<div class="subsection-title">🔧 Formação de Palavras</div>
+<ul class="topic-list">
+<li><strong>Parassíntese:</strong> Prefixo + radical + sufixo simultâneos. Não confundir com derivação separada.</li>
+<li><strong>Conversão:</strong> Mudança de classe sem mudar forma. "O correr" (verbo → substantivo).</li>
+</ul>
+</div>
+</div></div>
+</div>
+
+<!-- BOTÕES E RODAPÉ -->
+<div class="action-buttons">
+<a href="simulado-portugues-completo.html" class="btn-action btn-simulado">▶ Iniciar Simulado Completo</a>
+<a href="index.html" class="btn-action" style="background:#fff;color:#059669;border:2px solid #059669;">← Voltar para Simulados</a>
+</div>
+
+<div class="footer">Policial Legislativo CD 2026 • Revisão de Língua Portuguesa • Compilado de 2000+ questões CEBRASPE</div>
+
+</div>
+<script>
+function toggleSection(h){h.parentElement.classList.toggle('open');updateProgress()}
+function expandAll(){document.querySelectorAll('.section').forEach(s=>s.classList.add('open'));updateProgress()}
+function collapseAll(){document.querySelectorAll('.section').forEach(s=>s.classList.remove('open'));updateProgress()}
+function scrollToSection(i){const s=document.getElementById('s'+i);if(s){s.classList.add('open');s.scrollIntoView({behavior:'smooth',block:'start'});updateProgress()}}
+function updateProgress(){const a=document.querySelectorAll('.section'),o=[...a].filter(s=>s.classList.contains('open')).length;document.getElementById('progressFill').style.width=(o/a.length*100)+'%'}
+updateProgress();
+</script>
+</body>
+</html>
