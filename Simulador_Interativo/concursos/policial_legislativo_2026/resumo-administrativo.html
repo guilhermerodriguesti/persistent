@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resumo por Assunto – Direito Administrativo | Policial Legislativo CD 2026</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:#f8fafc;color:#1e293b;min-height:100vh}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+a{color:inherit;text-decoration:none}
+
+/* HEADER */
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#7c3aed,#6d28d9);border-radius:16px;margin-bottom:20px;border:none;position:relative;overflow:hidden;box-shadow:0 4px 20px rgba(109,40,217,0.25)}
+.header::before{content:'⚖️';position:absolute;font-size:140px;opacity:0.06;top:-20px;right:-10px}
+.header h1{font-size:22px;color:#fff;margin-bottom:6px}
+.header .sub{font-size:13px;color:#e9d5ff}
+.header .stats-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.hstat{display:inline-flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:700;background:rgba(255,255,255,0.15);color:#f5f3ff;border:1px solid rgba(255,255,255,0.2)}
+.hstat span{font-size:16px;font-weight:800}
+
+/* GLOBAL STATS */
+.kpi-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:20px}
+.kpi{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:16px;text-align:center;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.kpi-val{font-size:28px;font-weight:800;color:#7c3aed}
+.kpi-label{font-size:11px;color:#64748b;text-transform:uppercase;letter-spacing:0.5px;margin-top:4px}
+
+/* PROGRESS */
+.global-progress{margin-bottom:20px;padding:14px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.gp-label{font-size:12px;color:#64748b;margin-bottom:6px;display:flex;justify-content:space-between}
+.gp-bar{height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden}
+.gp-fill{height:100%;border-radius:4px;transition:width 0.5s;background:linear-gradient(90deg,#7c3aed,#a78bfa)}
+
+/* NAV */
+.nav-bar{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-bottom:20px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #ddd6fe;color:#6d28d9;background:#f5f3ff;transition:all 0.3s;white-space:nowrap}
+.nav-btn:hover{transform:translateY(-1px);background:#6d28d9;color:#fff}
+
+/* FILTER */
+.filter-bar{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap;align-items:center}
+.filter-bar input{flex:1;min-width:200px;padding:10px 14px;border-radius:8px;border:1px solid #e2e8f0;font-size:13px;background:#fff;color:#1e293b;outline:none;transition:border 0.3s}
+.filter-bar input:focus{border-color:#7c3aed}
+.filter-bar select{padding:10px 14px;border-radius:8px;border:1px solid #e2e8f0;font-size:12px;background:#fff;color:#1e293b;cursor:pointer}
+
+/* SECTION */
+.section-block{margin-bottom:20px;border-radius:12px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.04)}
+.section-header{display:flex;align-items:center;gap:12px;padding:14px 18px;cursor:pointer;user-select:none;transition:background 0.2s}
+.section-header:hover{background:#faf5ff}
+.section-icon{font-size:24px}
+.section-info{flex:1}
+.section-title{font-size:15px;font-weight:800;color:#1e293b}
+.section-meta{font-size:11px;color:#64748b;margin-top:2px}
+.section-badge{display:inline-flex;align-items:center;gap:4px;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700}
+.badge-q{background:#f5f3ff;color:#7c3aed;border:1px solid #ddd6fe}
+.badge-c{background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0}
+.badge-e{background:#fef2f2;color:#dc2626;border:1px solid #fecaca}
+.section-check{width:28px;height:28px;border-radius:50%;border:2px solid #d4d4d8;display:flex;align-items:center;justify-content:center;font-size:14px;cursor:pointer;transition:all 0.3s;color:#d4d4d8;flex-shrink:0}
+.section-check.done{border-color:#22c55e;background:#22c55e;color:#fff}
+.section-chevron{font-size:14px;color:#94a3b8;transition:transform 0.3s;flex-shrink:0}
+.section-block.open .section-chevron{transform:rotate(90deg)}
+
+/* BODY */
+.section-body{display:none;padding:0 18px 16px;border-top:1px solid #f1f5f9}
+.section-block.open .section-body{display:block}
+
+/* TOPIC ROW */
+.topic-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid #f8fafc}
+.topic-row:last-child{border-bottom:none}
+.topic-name{flex:1;font-size:13px;color:#334155;line-height:1.4}
+.topic-bars{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.bar-wrap{width:100px;height:8px;background:#e2e8f0;border-radius:4px;overflow:hidden;display:flex}
+.bar-c{height:100%;background:#22c55e;border-radius:4px 0 0 4px}
+.bar-e{height:100%;background:#ef4444}
+.topic-nums{display:flex;gap:8px;font-size:11px;font-weight:600;flex-shrink:0;min-width:100px;justify-content:flex-end}
+.num-c{color:#16a34a}
+.num-e{color:#dc2626}
+.num-t{color:#64748b}
+.pct-errado{font-size:10px;font-weight:700;padding:2px 6px;border-radius:10px;flex-shrink:0;min-width:38px;text-align:center}
+.pct-high{background:#fef2f2;color:#dc2626}
+.pct-mid{background:#fffbeb;color:#d97706}
+.pct-low{background:#f0fdf4;color:#16a34a}
+
+/* DIFFICULTY TAG */
+.diff-tag{font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px;text-transform:uppercase;letter-spacing:0.5px}
+.diff-hard{background:#fef2f2;color:#dc2626;border:1px solid #fecaca}
+.diff-medium{background:#fffbeb;color:#d97706;border:1px solid #fde68a}
+.diff-easy{background:#f0fdf4;color:#16a34a;border:1px solid #bbf7d0}
+
+/* FOOTER */
+.footer{text-align:center;padding:20px;color:#94a3b8;font-size:11px;margin-top:30px}
+
+/* ====== RESPONSIVE ====== */
+@media(max-width:768px){
+  .container{padding:14px}
+  .header{padding:20px 14px}
+  .header h1{font-size:18px}
+  .kpi-row{grid-template-columns:repeat(2,1fr);gap:8px}
+  .kpi-val{font-size:22px}
+  .nav-bar{gap:5px;padding:10px}
+  .nav-btn{flex:1 1 auto;min-width:0;text-align:center;padding:8px 6px;font-size:10px}
+  .section-header{padding:12px 14px;gap:8px}
+  .section-title{font-size:14px}
+  .topic-row{flex-wrap:wrap;gap:6px}
+  .bar-wrap{width:80px}
+  .topic-nums{min-width:auto}
+}
+@media(max-width:480px){
+  .container{padding:10px}
+  .header{padding:16px 12px;border-radius:12px}
+  .header h1{font-size:16px}
+  .hstat{font-size:11px;padding:4px 10px}
+  .kpi-row{grid-template-columns:repeat(2,1fr)}
+  .kpi{padding:12px}
+  .kpi-val{font-size:20px}
+  .nav-bar{display:grid;grid-template-columns:repeat(2,1fr);gap:5px;padding:8px}
+  .nav-btn{padding:8px 4px;font-size:10px;white-space:normal;line-height:1.2}
+  .section-header{padding:10px 12px;border-radius:8px}
+  .section-body{padding:0 12px 12px}
+  .topic-row{padding:8px 0}
+  .topic-name{font-size:12px}
+  .bar-wrap{width:60px}
+  .filter-bar input{min-width:100%}
+}
+@media(max-width:360px){
+  .nav-bar{grid-template-columns:1fr}
+  .header h1{font-size:14px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<a href="index.html" style="display:inline-flex;align-items:center;gap:6px;color:#64748b;font-size:13px;font-weight:600;margin-bottom:12px;padding:6px 12px;border-radius:8px;border:1px solid #e2e8f0;background:#fff;transition:all 0.3s;box-shadow:0 1px 2px rgba(0,0,0,0.05)" onmouseover="this.style.color='#7c3aed'" onmouseout="this.style.color='#64748b'">← Voltar</a>
+
+<div class="header">
+<h1>📊 Resumo por Assunto – Direito Administrativo</h1>
+<div class="sub">Análise de 1.188 questões CEBRASPE • Distribuição e taxa de erro por tópico</div>
+<div class="stats-row">
+<div class="hstat">📝 <span>1.188</span> Questões</div>
+<div class="hstat">✅ <span>683</span> Certo</div>
+<div class="hstat">❌ <span>737</span> Errado</div>
+<div class="hstat">📁 <span>12</span> Blocos</div>
+</div>
+</div>
+
+<!-- KPIs -->
+<div class="kpi-row">
+<div class="kpi"><div class="kpi-val">445</div><div class="kpi-label">Licitações e Contratos</div></div>
+<div class="kpi"><div class="kpi-val">131</div><div class="kpi-label">Agentes / Lei 8.112</div></div>
+<div class="kpi"><div class="kpi-val">85</div><div class="kpi-label">Lei de Acesso (LAI)</div></div>
+<div class="kpi"><div class="kpi-val">82</div><div class="kpi-label">Improbidade</div></div>
+</div>
+
+<!-- PROGRESS -->
+<div class="global-progress">
+<div class="gp-label"><span>Blocos Revisados</span><span id="gpText">0/12</span></div>
+<div class="gp-bar"><div class="gp-fill" id="gpFill" style="width:0%"></div></div>
+</div>
+
+<!-- FILTER -->
+<div class="filter-bar">
+<input type="text" id="searchInput" placeholder="🔍 Buscar assunto..." oninput="filterTopics()">
+<select id="sortSelect" onchange="sortSections()">
+<option value="qty">Ordenar: Qtd questões ↓</option>
+<option value="err">Ordenar: Taxa de erro ↓</option>
+<option value="alpha">Ordenar: Alfabética</option>
+</select>
+</div>
+
+<!-- NAV -->
+<div class="nav-bar">
+<button class="nav-btn" onclick="goTo('s0')">Licitações (445)</button>
+<button class="nav-btn" onclick="goTo('s1')">Agentes (131)</button>
+<button class="nav-btn" onclick="goTo('s2')">LAI (85)</button>
+<button class="nav-btn" onclick="goTo('s3')">Improbidade (82)</button>
+<button class="nav-btn" onclick="goTo('s4')">Processo Adm. (82)</button>
+<button class="nav-btn" onclick="goTo('s5')">Organização (72)</button>
+<button class="nav-btn" onclick="goTo('s6')">Poderes (54)</button>
+<button class="nav-btn" onclick="goTo('s7')">Responsab. (53)</button>
+<button class="nav-btn" onclick="goTo('s8')">Controle (51)</button>
+<button class="nav-btn" onclick="goTo('s9')">Atos Adm. (47)</button>
+<button class="nav-btn" onclick="goTo('s10')">Princípios (46)</button>
+<button class="nav-btn" onclick="goTo('s11')">Bens (19)</button>
+</div>
+
+<!-- ═══════ S0 — LICITAÇÕES E CONTRATOS (445q) ═══════ -->
+<div class="section-block" id="s0" data-total="445">
+<div class="section-header" onclick="toggleBlock(this)">
+<div class="section-icon">📋</div>
+<div class="section-info">
+<div class="section-title">Licitações e Contratos Administrativos</div>
+<div class="section-meta">Lei 14.133/2021, Lei 13.303/2016, IN 5/2017, Decretos • 445 questões</div>
+</div>
+<span class="section-badge badge-q">445q</span>
+<span class="section-badge badge-e">57% erro</span>
+<div class="section-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+<div class="section-chevron">▶</div>
+</div>
+<div class="section-body">
+<div class="topic-row" data-name="Âmbito de Aplicação, Definições e Agentes Públicos" data-total="32" data-err="56"><div class="topic-name">Do Âmbito de Aplicação, Definições e Agentes Públicos <small>(arts. 1º-10)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:44%"></div><div class="bar-e" style="width:56%"></div></div></div><div class="topic-nums"><span class="num-t">32</span><span class="num-c">14C</span><span class="num-e">18E</span></div><span class="pct-errado pct-mid">56%</span></div>
+<div class="topic-row" data-name="Contratação Direta, Inexigibilidade e Dispensa" data-total="30" data-err="73"><div class="topic-name">Contratação Direta, Inexigibilidade e Dispensa <small>(arts. 72-75)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:27%"></div><div class="bar-e" style="width:73%"></div></div></div><div class="topic-nums"><span class="num-t">30</span><span class="num-c">8C</span><span class="num-e">22E</span></div><span class="pct-errado pct-high">73%</span></div>
+<div class="topic-row" data-name="Execução dos Contratos" data-total="27" data-err="52"><div class="topic-name">Execução dos Contratos <small>(arts. 115-123)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:48%"></div><div class="bar-e" style="width:52%"></div></div></div><div class="topic-nums"><span class="num-t">27</span><span class="num-c">13C</span><span class="num-e">14E</span></div><span class="pct-errado pct-mid">52%</span></div>
+<div class="topic-row" data-name="Modalidades de Licitação" data-total="25" data-err="48"><div class="topic-name">Modalidades de Licitação <small>(arts. 28-32)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:52%"></div><div class="bar-e" style="width:48%"></div></div></div><div class="topic-nums"><span class="num-t">25</span><span class="num-c">13C</span><span class="num-e">12E</span></div><span class="pct-errado pct-mid">48%</span></div>
+<div class="topic-row" data-name="Instrução do Processo Licitatório" data-total="23" data-err="57"><div class="topic-name">Instrução do Processo Licitatório <small>(arts. 18-27)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:43%"></div><div class="bar-e" style="width:57%"></div></div></div><div class="topic-nums"><span class="num-t">23</span><span class="num-c">10C</span><span class="num-e">13E</span></div><span class="pct-errado pct-mid">57%</span></div>
+<div class="topic-row" data-name="Conceitos e Formalização dos Contratos" data-total="20" data-err="40"><div class="topic-name">Conceitos e Formalização dos Contratos <small>(arts. 89-95)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:60%"></div><div class="bar-e" style="width:40%"></div></div></div><div class="topic-nums"><span class="num-t">20</span><span class="num-c">12C</span><span class="num-e">8E</span></div><span class="pct-errado pct-low">40%</span></div>
+<div class="topic-row" data-name="Alteração dos Contratos e Preços" data-total="19" data-err="42"><div class="topic-name">Alteração dos Contratos e Preços <small>(arts. 124-136)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:58%"></div><div class="bar-e" style="width:42%"></div></div></div><div class="topic-nums"><span class="num-t">19</span><span class="num-c">11C</span><span class="num-e">8E</span></div><span class="pct-errado pct-low">42%</span></div>
+<div class="topic-row" data-name="Objetivos, Fases e Formalidades" data-total="18" data-err="50"><div class="topic-name">Objetivos, Fases e Formalidades <small>(arts. 11-17)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:50%"></div><div class="bar-e" style="width:50%"></div></div></div><div class="topic-nums"><span class="num-t">18</span><span class="num-c">9C</span><span class="num-e">9E</span></div><span class="pct-errado pct-mid">50%</span></div>
+<div class="topic-row" data-name="Disposições Setoriais, Compras, Serviços" data-total="17" data-err="41"><div class="topic-name">Disposições Setoriais, Compras, Serviços <small>(arts. 40-52)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:59%"></div><div class="bar-e" style="width:41%"></div></div></div><div class="topic-nums"><span class="num-t">17</span><span class="num-c">10C</span><span class="num-e">7E</span></div><span class="pct-errado pct-low">41%</span></div>
+<div class="topic-row" data-name="Instrumentos Auxiliares" data-total="14" data-err="57"><div class="topic-name">Instrumentos Auxiliares <small>(arts. 78-88)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:43%"></div><div class="bar-e" style="width:57%"></div></div></div><div class="topic-nums"><span class="num-t">14</span><span class="num-c">6C</span><span class="num-e">8E</span></div><span class="pct-errado pct-mid">57%</span></div>
+<div class="topic-row" data-name="Infrações e Sanções Administrativas" data-total="14" data-err="57"><div class="topic-name">Infrações e Sanções Administrativas <small>(arts. 155-163)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:43%"></div><div class="bar-e" style="width:57%"></div></div></div><div class="topic-nums"><span class="num-t">14</span><span class="num-c">6C</span><span class="num-e">8E</span></div><span class="pct-errado pct-mid">57%</span></div>
+<div class="topic-row" data-name="IN 5/2017 – Contratação de Serviços" data-total="13" data-err="46"><div class="topic-name">IN 5/2017 – Contratação de Serviços (Execução Indireta)</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:54%"></div><div class="bar-e" style="width:46%"></div></div></div><div class="topic-nums"><span class="num-t">13</span><span class="num-c">7C</span><span class="num-e">6E</span></div><span class="pct-errado pct-mid">46%</span></div>
+<div class="topic-row" data-name="Lei 13.303 – Estatuto EP e SEM" data-total="13" data-err="23"><div class="topic-name">Lei 13.303/2016 – Estatuto Jurídico EP e SEM <small>(arts. 1-27)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:77%"></div><div class="bar-e" style="width:23%"></div></div></div><div class="topic-nums"><span class="num-t">13</span><span class="num-c">10C</span><span class="num-e">3E</span></div><span class="pct-errado pct-low">23%</span></div>
+<div class="topic-row" data-name="Julgamento, Habilitação e Encerramento" data-total="12" data-err="58"><div class="topic-name">Julgamento, Habilitação e Encerramento <small>(arts. 55-71)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:42%"></div><div class="bar-e" style="width:58%"></div></div></div><div class="topic-nums"><span class="num-t">12</span><span class="num-c">5C</span><span class="num-e">7E</span></div><span class="pct-errado pct-mid">58%</span></div>
+<div class="topic-row" data-name="Princípios da Licitação" data-total="10" data-err="30"><div class="topic-name">Princípios <small>(art. 5º)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:70%"></div><div class="bar-e" style="width:30%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">7C</span><span class="num-e">3E</span></div><span class="pct-errado pct-low">30%</span></div>
+<div class="topic-row" data-name="Critérios de Julgamento" data-total="10" data-err="70"><div class="topic-name">Critérios de Julgamento <small>(arts. 33-39)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:30%"></div><div class="bar-e" style="width:70%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">3C</span><span class="num-e">7E</span></div><span class="pct-errado pct-high">70%</span></div>
+<div class="topic-row" data-name="Alienações" data-total="10" data-err="70"><div class="topic-name">Alienações <small>(arts. 76-77)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:30%"></div><div class="bar-e" style="width:70%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">3C</span><span class="num-e">7E</span></div><span class="pct-errado pct-high">70%</span></div>
+<div class="topic-row" data-name="Garantias" data-total="10" data-err="70"><div class="topic-name">Garantias <small>(arts. 96-102)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:30%"></div><div class="bar-e" style="width:70%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">3C</span><span class="num-e">7E</span></div><span class="pct-errado pct-high">70%</span></div>
+<div class="topic-row" data-name="Duração dos Contratos" data-total="10" data-err="10"><div class="topic-name">Duração dos Contratos <small>(arts. 105-114)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:90%"></div><div class="bar-e" style="width:10%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">9C</span><span class="num-e">1E</span></div><span class="pct-errado pct-low">10%</span></div>
+<div class="topic-row" data-name="Recebimento do Objeto" data-total="10" data-err="60"><div class="topic-name">Recebimento do Objeto <small>(art. 140)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:40%"></div><div class="bar-e" style="width:60%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">4C</span><span class="num-e">6E</span></div><span class="pct-errado pct-mid">60%</span></div>
+<div class="topic-row" data-name="Impugnações e Recursos" data-total="10" data-err="60"><div class="topic-name">Impugnações, Pedidos de Esclarecimento e Recursos <small>(arts. 164-168)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:40%"></div><div class="bar-e" style="width:60%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">4C</span><span class="num-e">6E</span></div><span class="pct-errado pct-mid">60%</span></div>
+<div class="topic-row" data-name="Controle das Contratações" data-total="10" data-err="70"><div class="topic-name">Controle das Contratações <small>(arts. 169-173)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:30%"></div><div class="bar-e" style="width:70%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">3C</span><span class="num-e">7E</span></div><span class="pct-errado pct-high">70%</span></div>
+<div class="topic-row" data-name="Tópicos Mesclados 14.133" data-total="10" data-err="50"><div class="topic-name">Tópicos Mesclados da Lei 14.133</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:50%"></div><div class="bar-e" style="width:50%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">5C</span><span class="num-e">5E</span></div><span class="pct-errado pct-mid">50%</span></div>
+<div class="topic-row" data-name="Disposições Transitórias" data-total="9" data-err="56"><div class="topic-name">Disposições Transitórias e Finais <small>(arts. 181-194)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:44%"></div><div class="bar-e" style="width:56%"></div></div></div><div class="topic-nums"><span class="num-t">9</span><span class="num-c">4C</span><span class="num-e">5E</span></div><span class="pct-errado pct-mid">56%</span></div>
+<div class="topic-row" data-name="Pagamentos" data-total="9" data-err="78"><div class="topic-name">Pagamentos <small>(arts. 141-146)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:22%"></div><div class="bar-e" style="width:78%"></div></div></div><div class="topic-nums"><span class="num-t">9</span><span class="num-c">2C</span><span class="num-e">7E</span></div><span class="pct-errado pct-high">78%</span></div>
+<div class="topic-row" data-name="Decreto 10.947 – Plano de Contratações" data-total="9" data-err="78"><div class="topic-name">Decreto 10.947/2022 – Plano de Contratações Anual</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:22%"></div><div class="bar-e" style="width:78%"></div></div></div><div class="topic-nums"><span class="num-t">9</span><span class="num-c">2C</span><span class="num-e">7E</span></div><span class="pct-errado pct-high">78%</span></div>
+<div class="topic-row" data-name="Pesquisa de Preços" data-total="7" data-err="43"><div class="topic-name">Pesquisa de Preços e Cotação Eletrônica</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:57%"></div><div class="bar-e" style="width:43%"></div></div></div><div class="topic-nums"><span class="num-t">7</span><span class="num-c">4C</span><span class="num-e">3E</span></div><span class="pct-errado pct-low">43%</span></div>
+<div class="topic-row" data-name="Extinção dos Contratos" data-total="7" data-err="43"><div class="topic-name">Hipóteses de Extinção dos Contratos <small>(arts. 137-139)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:57%"></div><div class="bar-e" style="width:43%"></div></div></div><div class="topic-nums"><span class="num-t">7</span><span class="num-c">4C</span><span class="num-e">3E</span></div><span class="pct-errado pct-low">43%</span></div>
+<div class="topic-row" data-name="Nulidade dos Contratos" data-total="6" data-err="17"><div class="topic-name">Nulidade dos Contratos <small>(arts. 147-150)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:83%"></div><div class="bar-e" style="width:17%"></div></div></div><div class="topic-nums"><span class="num-t">6</span><span class="num-c">5C</span><span class="num-e">1E</span></div><span class="pct-errado pct-low">17%</span></div>
+<div class="topic-row" data-name="Decreto 9.507 – Execução Indireta" data-total="6" data-err="67"><div class="topic-name">Decreto 9.507/2018 – Execução Indireta de Serviços</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:33%"></div><div class="bar-e" style="width:67%"></div></div></div><div class="topic-nums"><span class="num-t">6</span><span class="num-c">2C</span><span class="num-e">4E</span></div><span class="pct-errado pct-high">67%</span></div>
+<div class="topic-row" data-name="Divulgação do Edital" data-total="5" data-err="40"><div class="topic-name">Divulgação do Edital <small>(arts. 53-54)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:60%"></div><div class="bar-e" style="width:40%"></div></div></div><div class="topic-nums"><span class="num-t">5</span><span class="num-c">3C</span><span class="num-e">2E</span></div><span class="pct-errado pct-low">40%</span></div>
+<div class="topic-row" data-name="Meios Alternativos de Controvérsias" data-total="5" data-err="60"><div class="topic-name">Meios Alternativos de Resolução de Controvérsias <small>(arts. 151-154)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:40%"></div><div class="bar-e" style="width:60%"></div></div></div><div class="topic-nums"><span class="num-t">5</span><span class="num-c">2C</span><span class="num-e">3E</span></div><span class="pct-errado pct-mid">60%</span></div>
+<div class="topic-row" data-name="Decreto 8.945 – Regulamenta Lei 13.303" data-total="5" data-err="80"><div class="topic-name">Decreto 8.945/2016 – Regulamenta Lei 13.303</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:20%"></div><div class="bar-e" style="width:80%"></div></div></div><div class="topic-nums"><span class="num-t">5</span><span class="num-c">1C</span><span class="num-e">4E</span></div><span class="pct-errado pct-high">80%</span></div>
+<div class="topic-row" data-name="PNCP" data-total="4" data-err="25"><div class="topic-name">Portal Nacional de Contratações Públicas – PNCP <small>(arts. 174-176)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:75%"></div><div class="bar-e" style="width:25%"></div></div></div><div class="topic-nums"><span class="num-t">4</span><span class="num-c">3C</span><span class="num-e">1E</span></div><span class="pct-errado pct-low">25%</span></div>
+</div>
+</div>
+
+<!-- ═══════ S1 — AGENTES PÚBLICOS E LEI 8.112 (131q) ═══════ -->
+<div class="section-block" id="s1" data-total="131">
+<div class="section-header" onclick="toggleBlock(this)">
+<div class="section-icon">👤</div>
+<div class="section-info">
+<div class="section-title">Agentes Públicos e Lei 8.112/1990</div>
+<div class="section-meta">Regime jurídico, cargos, regime disciplinar, benefícios • 131 questões</div>
+</div>
+<span class="section-badge badge-q">131q</span>
+<span class="section-badge badge-e">56% erro</span>
+<div class="section-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+<div class="section-chevron">▶</div>
+</div>
+<div class="section-body">
+<div class="topic-row" data-name="Regime Disciplinar" data-total="21" data-err="67"><div class="topic-name">Regime Disciplinar <small>(arts. 116-142)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:33%"></div><div class="bar-e" style="width:67%"></div></div></div><div class="topic-nums"><span class="num-t">21</span><span class="num-c">7C</span><span class="num-e">14E</span></div><span class="pct-errado pct-high">67%</span></div>
+<div class="topic-row" data-name="Formas de Provimento" data-total="12" data-err="50"><div class="topic-name">Formas de Provimento <small>(arts. 5-32)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:50%"></div><div class="bar-e" style="width:50%"></div></div></div><div class="topic-nums"><span class="num-t">12</span><span class="num-c">6C</span><span class="num-e">6E</span></div><span class="pct-errado pct-mid">50%</span></div>
+<div class="topic-row" data-name="Licenças, Afastamentos e Concessões" data-total="10" data-err="30"><div class="topic-name">Licenças, Afastamentos e Concessões <small>(arts. 81-99)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:70%"></div><div class="bar-e" style="width:30%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">7C</span><span class="num-e">3E</span></div><span class="pct-errado pct-low">30%</span></div>
+<div class="topic-row" data-name="Estabilidade e Estágio Probatório" data-total="10" data-err="50"><div class="topic-name">Estabilidade e Estágio Probatório</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:50%"></div><div class="bar-e" style="width:50%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">5C</span><span class="num-e">5E</span></div><span class="pct-errado pct-mid">50%</span></div>
+<div class="topic-row" data-name="Funções, Cargos e Empregos" data-total="10" data-err="40"><div class="topic-name">Funções, Cargos e Empregos Públicos</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:60%"></div><div class="bar-e" style="width:40%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">6C</span><span class="num-e">4E</span></div><span class="pct-errado pct-low">40%</span></div>
+<div class="topic-row" data-name="Remuneração" data-total="9" data-err="56"><div class="topic-name">Remuneração (Subsídio, Teto, Equiparação, Irredutibilidade)</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:44%"></div><div class="bar-e" style="width:56%"></div></div></div><div class="topic-nums"><span class="num-t">9</span><span class="num-c">4C</span><span class="num-e">5E</span></div><span class="pct-errado pct-mid">56%</span></div>
+<div class="topic-row" data-name="Processo Administrativo Disciplinar" data-total="7" data-err="57"><div class="topic-name">Processo Administrativo Disciplinar <small>(arts. 143-182)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:43%"></div><div class="bar-e" style="width:57%"></div></div></div><div class="topic-nums"><span class="num-t">7</span><span class="num-c">3C</span><span class="num-e">4E</span></div><span class="pct-errado pct-mid">57%</span></div>
+<div class="topic-row" data-name="Seguridade Social do Servidor" data-total="7" data-err="43"><div class="topic-name">Seguridade Social do Servidor <small>(arts. 183-230)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:57%"></div><div class="bar-e" style="width:43%"></div></div></div><div class="topic-nums"><span class="num-t">7</span><span class="num-c">4C</span><span class="num-e">3E</span></div><span class="pct-errado pct-low">43%</span></div>
+<div class="topic-row" data-name="Acumulação de Cargos" data-total="6" data-err="50"><div class="topic-name">Acumulação de Cargos e Empregos Públicos</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:50%"></div><div class="bar-e" style="width:50%"></div></div></div><div class="topic-nums"><span class="num-t">6</span><span class="num-c">3C</span><span class="num-e">3E</span></div><span class="pct-errado pct-mid">50%</span></div>
+<div class="topic-row" data-name="Vencimento e Remuneração" data-total="5" data-err="80"><div class="topic-name">Vencimento e Remuneração <small>(arts. 40-48)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:20%"></div><div class="bar-e" style="width:80%"></div></div></div><div class="topic-nums"><span class="num-t">5</span><span class="num-c">1C</span><span class="num-e">4E</span></div><span class="pct-errado pct-high">80%</span></div>
+<div class="topic-row" data-name="Remoção, Redistribuição, Substituição" data-total="4" data-err="50"><div class="topic-name">Remoção, Redistribuição e Substituição <small>(arts. 36-39)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:50%"></div><div class="bar-e" style="width:50%"></div></div></div><div class="topic-nums"><span class="num-t">4</span><span class="num-c">2C</span><span class="num-e">2E</span></div><span class="pct-errado pct-mid">50%</span></div>
+<div class="topic-row" data-name="Acessibilidade aos Cargos" data-total="4" data-err="75"><div class="topic-name">Acessibilidade aos Cargos e Empregos Públicos</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:25%"></div><div class="bar-e" style="width:75%"></div></div></div><div class="topic-nums"><span class="num-t">4</span><span class="num-c">1C</span><span class="num-e">3E</span></div><span class="pct-errado pct-high">75%</span></div>
+<div class="topic-row" data-name="Regime Previdenciário" data-total="4" data-err="50"><div class="topic-name">Regime Previdenciário (Aposentadoria, Pensão, RPPS)</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:50%"></div><div class="bar-e" style="width:50%"></div></div></div><div class="topic-nums"><span class="num-t">4</span><span class="num-c">2C</span><span class="num-e">2E</span></div><span class="pct-errado pct-mid">50%</span></div>
+</div>
+</div>
+
+<!-- ═══════ S2 — LAI (85q) ═══════ -->
+<div class="section-block" id="s2" data-total="85">
+<div class="section-header" onclick="toggleBlock(this)">
+<div class="section-icon">🔓</div>
+<div class="section-info"><div class="section-title">Lei de Acesso à Informação (LAI)</div><div class="section-meta">Lei 12.527/2011, Decreto 7.724/2012 • 85 questões</div></div>
+<span class="section-badge badge-q">85q</span>
+<span class="section-badge badge-e">59% erro</span>
+<div class="section-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+<div class="section-chevron">▶</div>
+</div>
+<div class="section-body">
+<div class="topic-row" data-name="Restrições de Acesso à Informação" data-total="17" data-err="76"><div class="topic-name">Restrições de Acesso à Informação <small>(arts. 21-31)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:24%"></div><div class="bar-e" style="width:76%"></div></div></div><div class="topic-nums"><span class="num-t">17</span><span class="num-c">4C</span><span class="num-e">13E</span></div><span class="pct-errado pct-high">76%</span></div>
+<div class="topic-row" data-name="Procedimento de Acesso" data-total="15" data-err="67"><div class="topic-name">Procedimento de Acesso à Informação <small>(arts. 10-20)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:33%"></div><div class="bar-e" style="width:67%"></div></div></div><div class="topic-nums"><span class="num-t">15</span><span class="num-c">5C</span><span class="num-e">10E</span></div><span class="pct-errado pct-high">67%</span></div>
+<div class="topic-row" data-name="Disposições Gerais LAI" data-total="15" data-err="67"><div class="topic-name">Disposições Gerais <small>(arts. 1-5)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:33%"></div><div class="bar-e" style="width:67%"></div></div></div><div class="topic-nums"><span class="num-t">15</span><span class="num-c">5C</span><span class="num-e">10E</span></div><span class="pct-errado pct-high">67%</span></div>
+<div class="topic-row" data-name="Acesso a Informações e Divulgação" data-total="14" data-err="29"><div class="topic-name">Acesso a Informações e Divulgação <small>(arts. 6-9)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:71%"></div><div class="bar-e" style="width:29%"></div></div></div><div class="topic-nums"><span class="num-t">14</span><span class="num-c">10C</span><span class="num-e">4E</span></div><span class="pct-errado pct-low">29%</span></div>
+<div class="topic-row" data-name="Tópicos Mesclados LAI" data-total="10" data-err="70"><div class="topic-name">Tópicos Mesclados da LAI</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:30%"></div><div class="bar-e" style="width:70%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">3C</span><span class="num-e">7E</span></div><span class="pct-errado pct-high">70%</span></div>
+<div class="topic-row" data-name="Decreto 7.724" data-total="6" data-err="33"><div class="topic-name">Decreto 7.724/2012 – Regulamenta a LAI</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:67%"></div><div class="bar-e" style="width:33%"></div></div></div><div class="topic-nums"><span class="num-t">6</span><span class="num-c">4C</span><span class="num-e">2E</span></div><span class="pct-errado pct-low">33%</span></div>
+<div class="topic-row" data-name="Responsabilidades LAI" data-total="5" data-err="40"><div class="topic-name">Responsabilidades <small>(arts. 32-34)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:60%"></div><div class="bar-e" style="width:40%"></div></div></div><div class="topic-nums"><span class="num-t">5</span><span class="num-c">3C</span><span class="num-e">2E</span></div><span class="pct-errado pct-low">40%</span></div>
+<div class="topic-row" data-name="Disposições Finais LAI" data-total="3" data-err="33"><div class="topic-name">Disposições Finais e Transitórias <small>(arts. 35-47)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:67%"></div><div class="bar-e" style="width:33%"></div></div></div><div class="topic-nums"><span class="num-t">3</span><span class="num-c">2C</span><span class="num-e">1E</span></div><span class="pct-errado pct-low">33%</span></div>
+</div>
+</div>
+
+<!-- ═══════ S3 — IMPROBIDADE (82q) ═══════ -->
+<div class="section-block" id="s3" data-total="82">
+<div class="section-header" onclick="toggleBlock(this)">
+<div class="section-icon">🚫</div>
+<div class="section-info"><div class="section-title">Improbidade Administrativa</div><div class="section-meta">Lei 8.429/1992 • 82 questões</div></div>
+<span class="section-badge badge-q">82q</span>
+<span class="section-badge badge-e">57% erro</span>
+<div class="section-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+<div class="section-chevron">▶</div>
+</div>
+<div class="section-body">
+<div class="topic-row" data-name="Disposições Gerais Improbidade" data-total="30" data-err="47"><div class="topic-name">Disposições Gerais <small>(arts. 1-8-A)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:53%"></div><div class="bar-e" style="width:47%"></div></div></div><div class="topic-nums"><span class="num-t">30</span><span class="num-c">16C</span><span class="num-e">14E</span></div><span class="pct-errado pct-mid">47%</span></div>
+<div class="topic-row" data-name="Atos de Improbidade" data-total="27" data-err="63"><div class="topic-name">Atos de Improbidade <small>(arts. 9-11)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:37%"></div><div class="bar-e" style="width:63%"></div></div></div><div class="topic-nums"><span class="num-t">27</span><span class="num-c">10C</span><span class="num-e">17E</span></div><span class="pct-errado pct-high">63%</span></div>
+<div class="topic-row" data-name="Procedimento e Processo Judicial" data-total="10" data-err="80"><div class="topic-name">Procedimento Administrativo e Processo Judicial <small>(arts. 14-18-A)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:20%"></div><div class="bar-e" style="width:80%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">2C</span><span class="num-e">8E</span></div><span class="pct-errado pct-high">80%</span></div>
+<div class="topic-row" data-name="Penas Improbidade" data-total="6" data-err="83"><div class="topic-name">Penas <small>(art. 12)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:17%"></div><div class="bar-e" style="width:83%"></div></div></div><div class="topic-nums"><span class="num-t">6</span><span class="num-c">1C</span><span class="num-e">5E</span></div><span class="pct-errado pct-high">83%</span></div>
+<div class="topic-row" data-name="Declaração de Bens" data-total="4" data-err="0"><div class="topic-name">Declaração de Bens <small>(art. 13)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:100%"></div><div class="bar-e" style="width:0%"></div></div></div><div class="topic-nums"><span class="num-t">4</span><span class="num-c">4C</span><span class="num-e">0E</span></div><span class="pct-errado pct-low">0%</span></div>
+<div class="topic-row" data-name="Prescrição Improbidade" data-total="2" data-err="100"><div class="topic-name">Prescrição <small>(arts. 23-23-C)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:0%"></div><div class="bar-e" style="width:100%"></div></div></div><div class="topic-nums"><span class="num-t">2</span><span class="num-c">0C</span><span class="num-e">2E</span></div><span class="pct-errado pct-high">100%</span></div>
+</div>
+</div>
+
+<!-- ═══════ S4 — PROCESSO ADMINISTRATIVO (82q) ═══════ -->
+<div class="section-block" id="s4" data-total="82">
+<div class="section-header" onclick="toggleBlock(this)">
+<div class="section-icon">📑</div>
+<div class="section-info"><div class="section-title">Processo Administrativo Federal</div><div class="section-meta">Lei 9.784/1999 • 82 questões</div></div>
+<span class="section-badge badge-q">82q</span>
+<span class="section-badge badge-e">42% erro</span>
+<div class="section-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+<div class="section-chevron">▶</div>
+</div>
+<div class="section-body">
+<div class="topic-row" data-name="Trâmite do Processo" data-total="13" data-err="38"><div class="topic-name">Trâmite do Processo <small>(arts. 5-10 e 29-50)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:62%"></div><div class="bar-e" style="width:38%"></div></div></div><div class="topic-nums"><span class="num-t">13</span><span class="num-c">8C</span><span class="num-e">5E</span></div><span class="pct-errado pct-low">38%</span></div>
+<div class="topic-row" data-name="Competência" data-total="11" data-err="64"><div class="topic-name">Competência <small>(arts. 11-17)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:36%"></div><div class="bar-e" style="width:64%"></div></div></div><div class="topic-nums"><span class="num-t">11</span><span class="num-c">4C</span><span class="num-e">7E</span></div><span class="pct-errado pct-high">64%</span></div>
+<div class="topic-row" data-name="Disposições Gerais 9.784" data-total="10" data-err="30"><div class="topic-name">Disposições Gerais, Direitos e Deveres <small>(arts. 1-4)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:70%"></div><div class="bar-e" style="width:30%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">7C</span><span class="num-e">3E</span></div><span class="pct-errado pct-low">30%</span></div>
+<div class="topic-row" data-name="Impedimentos e Suspeição" data-total="10" data-err="60"><div class="topic-name">Impedimentos e Suspeição <small>(arts. 18-21)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:40%"></div><div class="bar-e" style="width:60%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">4C</span><span class="num-e">6E</span></div><span class="pct-errado pct-mid">60%</span></div>
+<div class="topic-row" data-name="Anulação, Revogação, Convalidação" data-total="10" data-err="30"><div class="topic-name">Anulação, Revogação e Convalidação <small>(arts. 53-55)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:70%"></div><div class="bar-e" style="width:30%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">7C</span><span class="num-e">3E</span></div><span class="pct-errado pct-low">30%</span></div>
+<div class="topic-row" data-name="Recurso Administrativo e Revisão" data-total="10" data-err="30"><div class="topic-name">Recurso Administrativo e Revisão <small>(arts. 56-65)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:70%"></div><div class="bar-e" style="width:30%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">7C</span><span class="num-e">3E</span></div><span class="pct-errado pct-low">30%</span></div>
+<div class="topic-row" data-name="Forma, Tempo e Lugar dos Atos" data-total="7" data-err="71"><div class="topic-name">Forma, Tempo e Lugar dos Atos <small>(arts. 22-25)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:29%"></div><div class="bar-e" style="width:71%"></div></div></div><div class="topic-nums"><span class="num-t">7</span><span class="num-c">2C</span><span class="num-e">5E</span></div><span class="pct-errado pct-high">71%</span></div>
+<div class="topic-row" data-name="Disposições Finais 9.784" data-total="4" data-err="0"><div class="topic-name">Disposições Finais <small>(arts. 69-70)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:100%"></div><div class="bar-e" style="width:0%"></div></div></div><div class="topic-nums"><span class="num-t">4</span><span class="num-c">4C</span><span class="num-e">0E</span></div><span class="pct-errado pct-low">0%</span></div>
+<div class="topic-row" data-name="Comunicação dos Atos" data-total="3" data-err="33"><div class="topic-name">Comunicação dos Atos <small>(arts. 26-28)</small></div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:67%"></div><div class="bar-e" style="width:33%"></div></div></div><div class="topic-nums"><span class="num-t">3</span><span class="num-c">2C</span><span class="num-e">1E</span></div><span class="pct-errado pct-low">33%</span></div>
+</div>
+</div>
+
+<!-- ═══════ S5 — ORGANIZAÇÃO ADMINISTRATIVA (72q) ═══════ -->
+<div class="section-block" id="s5" data-total="72">
+<div class="section-header" onclick="toggleBlock(this)">
+<div class="section-icon">🏛️</div>
+<div class="section-info"><div class="section-title">Organização Administrativa</div><div class="section-meta">Administração Direta/Indireta, Órgãos, Descentralização • 72 questões</div></div>
+<span class="section-badge badge-q">72q</span>
+<span class="section-badge badge-e">47% erro</span>
+<div class="section-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+<div class="section-chevron">▶</div>
+</div>
+<div class="section-body">
+<div class="topic-row" data-name="Administração Indireta" data-total="30" data-err="53"><div class="topic-name">Administração Indireta (Autarquias, EP, SEM, Fundações)</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:43%"></div><div class="bar-e" style="width:53%"></div></div></div><div class="topic-nums"><span class="num-t">30</span><span class="num-c">13C</span><span class="num-e">16E</span></div><span class="pct-errado pct-mid">53%</span></div>
+<div class="topic-row" data-name="Desconcentração e Descentralização" data-total="15" data-err="53"><div class="topic-name">Desconcentração e Descentralização</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:47%"></div><div class="bar-e" style="width:53%"></div></div></div><div class="topic-nums"><span class="num-t">15</span><span class="num-c">7C</span><span class="num-e">8E</span></div><span class="pct-errado pct-mid">53%</span></div>
+<div class="topic-row" data-name="Administração Direta" data-total="10" data-err="40"><div class="topic-name">Administração Direta (Órgãos Públicos)</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:60%"></div><div class="bar-e" style="width:40%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">6C</span><span class="num-e">4E</span></div><span class="pct-errado pct-low">40%</span></div>
+<div class="topic-row" data-name="Classificação dos Agentes Públicos" data-total="10" data-err="40"><div class="topic-name">Classificação dos Agentes Públicos</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:60%"></div><div class="bar-e" style="width:40%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">6C</span><span class="num-e">4E</span></div><span class="pct-errado pct-low">40%</span></div>
+<div class="topic-row" data-name="Deveres da Administração" data-total="5" data-err="20"><div class="topic-name">Deveres da Administração</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:80%"></div><div class="bar-e" style="width:20%"></div></div></div><div class="topic-nums"><span class="num-t">5</span><span class="num-c">4C</span><span class="num-e">1E</span></div><span class="pct-errado pct-low">20%</span></div>
+</div>
+</div>
+
+<!-- ═══════ S6 — PODERES (54q) ═══════ -->
+<div class="section-block" id="s6" data-total="54">
+<div class="section-header" onclick="toggleBlock(this)">
+<div class="section-icon">⚡</div>
+<div class="section-info"><div class="section-title">Poderes da Administração</div><div class="section-meta">Hierárquico, Disciplinar, Regulamentar, Polícia, Abuso • 54 questões</div></div>
+<span class="section-badge badge-q">54q</span>
+<span class="section-badge badge-e">33% erro</span>
+<div class="section-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+<div class="section-chevron">▶</div>
+</div>
+<div class="section-body">
+<div class="topic-row" data-name="Poder de Polícia" data-total="12" data-err="25"><div class="topic-name">Poder de Polícia</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:75%"></div><div class="bar-e" style="width:25%"></div></div></div><div class="topic-nums"><span class="num-t">12</span><span class="num-c">9C</span><span class="num-e">3E</span></div><span class="pct-errado pct-low">25%</span></div>
+<div class="topic-row" data-name="Poder Hierárquico" data-total="10" data-err="40"><div class="topic-name">Poder Hierárquico</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:60%"></div><div class="bar-e" style="width:40%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">6C</span><span class="num-e">4E</span></div><span class="pct-errado pct-low">40%</span></div>
+<div class="topic-row" data-name="Abuso de Poder" data-total="10" data-err="40"><div class="topic-name">Abuso de Poder: Excesso e Desvio de Finalidade</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:60%"></div><div class="bar-e" style="width:40%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">6C</span><span class="num-e">4E</span></div><span class="pct-errado pct-low">40%</span></div>
+<div class="topic-row" data-name="Poder Regulamentar" data-total="9" data-err="33"><div class="topic-name">Poder Regulamentar</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:67%"></div><div class="bar-e" style="width:33%"></div></div></div><div class="topic-nums"><span class="num-t">9</span><span class="num-c">6C</span><span class="num-e">3E</span></div><span class="pct-errado pct-low">33%</span></div>
+<div class="topic-row" data-name="Poder Disciplinar" data-total="8" data-err="38"><div class="topic-name">Poder Disciplinar</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:62%"></div><div class="bar-e" style="width:38%"></div></div></div><div class="topic-nums"><span class="num-t">8</span><span class="num-c">5C</span><span class="num-e">3E</span></div><span class="pct-errado pct-low">38%</span></div>
+</div>
+</div>
+
+<!-- ═══════ S7 — RESPONSABILIDADE CIVIL (53q) ═══════ -->
+<div class="section-block" id="s7" data-total="53">
+<div class="section-header" onclick="toggleBlock(this)">
+<div class="section-icon">💰</div>
+<div class="section-info"><div class="section-title">Responsabilidade Civil do Estado</div><div class="section-meta">Objetiva, Omissiva, Excludentes, Regresso • 53 questões</div></div>
+<span class="section-badge badge-q">53q</span>
+<span class="section-badge badge-e">57% erro</span>
+<div class="section-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+<div class="section-chevron">▶</div>
+</div>
+<div class="section-body">
+<div class="topic-row" data-name="Conceitos e Teorias" data-total="11" data-err="45"><div class="topic-name">Conceitos Iniciais e Teorias da Responsabilidade</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:55%"></div><div class="bar-e" style="width:45%"></div></div></div><div class="topic-nums"><span class="num-t">11</span><span class="num-c">6C</span><span class="num-e">5E</span></div><span class="pct-errado pct-mid">45%</span></div>
+<div class="topic-row" data-name="Excludentes e Atenuantes" data-total="10" data-err="30"><div class="topic-name">Excludentes e Atenuantes de Responsabilidade</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:70%"></div><div class="bar-e" style="width:30%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">7C</span><span class="num-e">3E</span></div><span class="pct-errado pct-low">30%</span></div>
+<div class="topic-row" data-name="Atos Omissivos" data-total="9" data-err="56"><div class="topic-name">Responsabilidade Civil por Atos Omissivos</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:44%"></div><div class="bar-e" style="width:56%"></div></div></div><div class="topic-nums"><span class="num-t">9</span><span class="num-c">4C</span><span class="num-e">5E</span></div><span class="pct-errado pct-mid">56%</span></div>
+<div class="topic-row" data-name="Responsabilidade dos Agentes e Regresso" data-total="6" data-err="83"><div class="topic-name">Responsabilidade dos Agentes e Direito de Regresso</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:17%"></div><div class="bar-e" style="width:83%"></div></div></div><div class="topic-nums"><span class="num-t">6</span><span class="num-c">1C</span><span class="num-e">5E</span></div><span class="pct-errado pct-high">83%</span></div>
+<div class="topic-row" data-name="Empresas Estatais e Prestadoras" data-total="5" data-err="80"><div class="topic-name">Responsabilidade Objetiva – Estatais e Prestadoras</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:20%"></div><div class="bar-e" style="width:80%"></div></div></div><div class="topic-nums"><span class="num-t">5</span><span class="num-c">1C</span><span class="num-e">4E</span></div><span class="pct-errado pct-high">80%</span></div>
+<div class="topic-row" data-name="Atos Legislativos e Judiciais" data-total="4" data-err="75"><div class="topic-name">Responsabilidade por Atos Legislativos e Judiciais</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:25%"></div><div class="bar-e" style="width:75%"></div></div></div><div class="topic-nums"><span class="num-t">4</span><span class="num-c">1C</span><span class="num-e">3E</span></div><span class="pct-errado pct-high">75%</span></div>
+</div>
+</div>
+
+<!-- ═══════ S8 — CONTROLE (51q) ═══════ -->
+<div class="section-block" id="s8" data-total="51">
+<div class="section-header" onclick="toggleBlock(this)">
+<div class="section-icon">🔍</div>
+<div class="section-info"><div class="section-title">Controle da Administração Pública</div><div class="section-meta">Administrativo, Jurisdicional, Parlamentar, Tribunais de Contas • 51 questões</div></div>
+<span class="section-badge badge-q">51q</span>
+<span class="section-badge badge-e">47% erro</span>
+<div class="section-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+<div class="section-chevron">▶</div>
+</div>
+<div class="section-body">
+<div class="topic-row" data-name="Controle Jurisdicional" data-total="14" data-err="43"><div class="topic-name">Controle Jurisdicional</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:57%"></div><div class="bar-e" style="width:43%"></div></div></div><div class="topic-nums"><span class="num-t">14</span><span class="num-c">8C</span><span class="num-e">6E</span></div><span class="pct-errado pct-mid">43%</span></div>
+<div class="topic-row" data-name="Controle Administrativo" data-total="14" data-err="57"><div class="topic-name">Controle Administrativo</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:43%"></div><div class="bar-e" style="width:57%"></div></div></div><div class="topic-nums"><span class="num-t">14</span><span class="num-c">6C</span><span class="num-e">8E</span></div><span class="pct-errado pct-mid">57%</span></div>
+<div class="topic-row" data-name="Parlamentar Indireto – Tribunais de Contas" data-total="13" data-err="38"><div class="topic-name">Parlamentar Indireto (Tribunais de Contas)</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:62%"></div><div class="bar-e" style="width:38%"></div></div></div><div class="topic-nums"><span class="num-t">13</span><span class="num-c">8C</span><span class="num-e">5E</span></div><span class="pct-errado pct-low">38%</span></div>
+<div class="topic-row" data-name="Parlamentar Direto – Controle Político" data-total="10" data-err="50"><div class="topic-name">Parlamentar Direto (Controle Político)</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:50%"></div><div class="bar-e" style="width:50%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">5C</span><span class="num-e">5E</span></div><span class="pct-errado pct-mid">50%</span></div>
+</div>
+</div>
+
+<!-- ═══════ S9 — ATOS ADMINISTRATIVOS (47q) ═══════ -->
+<div class="section-block" id="s9" data-total="47">
+<div class="section-header" onclick="toggleBlock(this)">
+<div class="section-icon">📝</div>
+<div class="section-info"><div class="section-title">Atos Administrativos</div><div class="section-meta">Atributos, Elementos, Desfazimento, Convalidação • 47 questões</div></div>
+<span class="section-badge badge-q">47q</span>
+<span class="section-badge badge-e">57% erro</span>
+<div class="section-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+<div class="section-chevron">▶</div>
+</div>
+<div class="section-body">
+<div class="topic-row" data-name="Desfazimento" data-total="16" data-err="62"><div class="topic-name">Desfazimento (Anulação, Revogação, Cassação, Caducidade)</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:38%"></div><div class="bar-e" style="width:62%"></div></div></div><div class="topic-nums"><span class="num-t">16</span><span class="num-c">6C</span><span class="num-e">10E</span></div><span class="pct-errado pct-high">62%</span></div>
+<div class="topic-row" data-name="Atributos dos Atos" data-total="10" data-err="60"><div class="topic-name">Atributos ou Características dos Atos Administrativos</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:40%"></div><div class="bar-e" style="width:60%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">4C</span><span class="num-e">6E</span></div><span class="pct-errado pct-mid">60%</span></div>
+<div class="topic-row" data-name="Convalidação e Conversão" data-total="10" data-err="40"><div class="topic-name">Convalidação e Conversão dos Atos Administrativos</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:60%"></div><div class="bar-e" style="width:40%"></div></div></div><div class="topic-nums"><span class="num-t">10</span><span class="num-c">6C</span><span class="num-e">4E</span></div><span class="pct-errado pct-low">40%</span></div>
+<div class="topic-row" data-name="Elementos e Requisitos" data-total="6" data-err="50"><div class="topic-name">Elementos, Requisitos e Pressupostos</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:50%"></div><div class="bar-e" style="width:50%"></div></div></div><div class="topic-nums"><span class="num-t">6</span><span class="num-c">3C</span><span class="num-e">3E</span></div><span class="pct-errado pct-mid">50%</span></div>
+<div class="topic-row" data-name="Conceito de Atos" data-total="4" data-err="100"><div class="topic-name">Conceito de Atos Administrativos</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:0%"></div><div class="bar-e" style="width:100%"></div></div></div><div class="topic-nums"><span class="num-t">4</span><span class="num-c">0C</span><span class="num-e">4E</span></div><span class="pct-errado pct-high">100%</span></div>
+</div>
+</div>
+
+<!-- ═══════ S10 — PRINCÍPIOS (46q) ═══════ -->
+<div class="section-block" id="s10" data-total="46">
+<div class="section-header" onclick="toggleBlock(this)">
+<div class="section-icon">⚖️</div>
+<div class="section-info"><div class="section-title">Princípios da Administração Pública</div><div class="section-meta">Expressos, Implícitos, Regime Jurídico Administrativo • 46 questões</div></div>
+<span class="section-badge badge-q">46q</span>
+<span class="section-badge badge-e">41% erro</span>
+<div class="section-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+<div class="section-chevron">▶</div>
+</div>
+<div class="section-body">
+<div class="topic-row" data-name="Conceitos, Princípios, Abrangência" data-total="16" data-err="50"><div class="topic-name">Controle da Administração: Conceitos, Princípios, Abrangência</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:50%"></div><div class="bar-e" style="width:50%"></div></div></div><div class="topic-nums"><span class="num-t">16</span><span class="num-c">8C</span><span class="num-e">8E</span></div><span class="pct-errado pct-mid">50%</span></div>
+<div class="topic-row" data-name="Princípios Expressos" data-total="14" data-err="21"><div class="topic-name">Princípios Expressos, Explícitos ou Constitucionais</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:79%"></div><div class="bar-e" style="width:21%"></div></div></div><div class="topic-nums"><span class="num-t">14</span><span class="num-c">11C</span><span class="num-e">3E</span></div><span class="pct-errado pct-low">21%</span></div>
+<div class="topic-row" data-name="Princípios Implícitos" data-total="11" data-err="64"><div class="topic-name">Princípios Implícitos, Reconhecidos e Infraconstitucionais</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:36%"></div><div class="bar-e" style="width:64%"></div></div></div><div class="topic-nums"><span class="num-t">11</span><span class="num-c">4C</span><span class="num-e">7E</span></div><span class="pct-errado pct-high">64%</span></div>
+<div class="topic-row" data-name="Regime Jurídico Administrativo" data-total="5" data-err="20"><div class="topic-name">Regime Jurídico da Administração e Regime Jurídico Administrativo</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:80%"></div><div class="bar-e" style="width:20%"></div></div></div><div class="topic-nums"><span class="num-t">5</span><span class="num-c">4C</span><span class="num-e">1E</span></div><span class="pct-errado pct-low">20%</span></div>
+</div>
+</div>
+
+<!-- ═══════ S11 — BENS PÚBLICOS (19q) ═══════ -->
+<div class="section-block" id="s11" data-total="19">
+<div class="section-header" onclick="toggleBlock(this)">
+<div class="section-icon">🏗️</div>
+<div class="section-info"><div class="section-title">Bens Públicos</div><div class="section-meta">Classificação, Características, Utilização, Requisição • 19 questões</div></div>
+<span class="section-badge badge-q">19q</span>
+<span class="section-badge badge-e">47% erro</span>
+<div class="section-check" onclick="event.stopPropagation();markDone(this)">✓</div>
+<div class="section-chevron">▶</div>
+</div>
+<div class="section-body">
+<div class="topic-row" data-name="Formas de Utilização" data-total="5" data-err="40"><div class="topic-name">Formas de Utilização de Bens Públicos</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:60%"></div><div class="bar-e" style="width:40%"></div></div></div><div class="topic-nums"><span class="num-t">5</span><span class="num-c">3C</span><span class="num-e">2E</span></div><span class="pct-errado pct-low">40%</span></div>
+<div class="topic-row" data-name="Requisição da Propriedade Privada" data-total="5" data-err="40"><div class="topic-name">Requisição da Propriedade Privada</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:60%"></div><div class="bar-e" style="width:40%"></div></div></div><div class="topic-nums"><span class="num-t">5</span><span class="num-c">3C</span><span class="num-e">2E</span></div><span class="pct-errado pct-low">40%</span></div>
+<div class="topic-row" data-name="Características dos Bens" data-total="4" data-err="50"><div class="topic-name">Características dos Bens Públicos</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:50%"></div><div class="bar-e" style="width:50%"></div></div></div><div class="topic-nums"><span class="num-t">4</span><span class="num-c">2C</span><span class="num-e">2E</span></div><span class="pct-errado pct-mid">50%</span></div>
+<div class="topic-row" data-name="Bens em Espécie" data-total="2" data-err="100"><div class="topic-name">Bens Públicos em Espécie (Domínio Terrestre, Hídrico, Aéreo)</div><div class="topic-bars"><div class="bar-wrap"><div class="bar-c" style="width:0%"></div><div class="bar-e" style="width:100%"></div></div></div><div class="topic-nums"><span class="num-t">2</span><span class="num-c">0C</span><span class="num-e">2E</span></div><span class="pct-errado pct-high">100%</span></div>
+</div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+<div style="margin-bottom:8px;font-size:14px;color:#94a3b8">📊 Análise de 1.188 questões CEBRASPE • Foque nos tópicos com maior taxa de erro!</div>
+Policial Legislativo CD 2026 • Resumo por Assunto – Direito Administrativo • 12 Blocos
+</div>
+
+</div>
+
+<script>
+function toggleBlock(h){h.closest('.section-block').classList.toggle('open')}
+function markDone(el){el.classList.toggle('done');updateGP()}
+function updateGP(){const d=document.querySelectorAll('.section-check.done').length,t=document.querySelectorAll('.section-check').length;document.getElementById('gpFill').style.width=(d/t*100)+'%';document.getElementById('gpText').textContent=d+'/'+t}
+function goTo(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+
+function filterTopics(){
+  const q=document.getElementById('searchInput').value.toLowerCase();
+  document.querySelectorAll('.topic-row').forEach(r=>{
+    const name=r.getAttribute('data-name').toLowerCase();
+    r.style.display=name.includes(q)?'':'none';
+  });
+  if(q.length>0){document.querySelectorAll('.section-block').forEach(s=>s.classList.add('open'))}
+}
+
+function sortSections(){
+  const mode=document.getElementById('sortSelect').value;
+  document.querySelectorAll('.section-body').forEach(body=>{
+    const rows=[...body.querySelectorAll('.topic-row')];
+    rows.sort((a,b)=>{
+      if(mode==='err')return parseInt(b.dataset.err)-parseInt(a.dataset.err);
+      if(mode==='alpha')return a.dataset.name.localeCompare(b.dataset.name);
+      return parseInt(b.dataset.total)-parseInt(a.dataset.total);
+    });
+    rows.forEach(r=>body.appendChild(r));
+  });
+}
+
+document.addEventListener('keydown',e=>{
+  if(e.target.tagName==='INPUT')return;
+  if(e.key==='a'||e.key==='A')document.querySelectorAll('.section-block').forEach(s=>s.classList.add('open'));
+  if(e.key==='r'||e.key==='R')document.querySelectorAll('.section-block').forEach(s=>s.classList.remove('open'));
+  if(e.key==='/'){{e.preventDefault();document.getElementById('searchInput').focus()}}
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resumo Estruturado – Direito Administrativo</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#581c87,#7c3aed);border-radius:16px;margin-bottom:20px;box-shadow:0 8px 32px rgba(124,58,237,0.3)}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:13px;color:#c4b5fd;margin-bottom:12px}
+.stats-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hstat{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(255,255,255,0.1);color:#ede9fe;border:1px solid rgba(255,255,255,0.15)}
+.hstat b{font-size:15px;color:#fff}
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:16px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #ddd6fe;color:#6d28d9;background:#f5f3ff;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:#7c3aed;color:#fff;border-color:#7c3aed}
+.search-box{margin-bottom:16px;display:flex;gap:8px}
+.search-box input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-size:13px;outline:none}
+.search-box input:focus{border-color:#7c3aed}
+.ebtn{padding:8px 16px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#6d28d9;cursor:pointer;font-size:11px;font-weight:700}
+.ebtn:hover{background:#7c3aed;color:#fff;border-color:#7c3aed}
+.macro{margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.mh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.mh:hover{background:#f5f3ff}
+.mi{font-size:26px;flex-shrink:0}
+.minfo{flex:1}
+.mt{font-size:17px;font-weight:800;color:#1e293b}
+.mm{font-size:11px;color:#64748b;margin-top:2px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#f5f3ff;color:#7c3aed;border:1px solid #ddd6fe}
+.chv{font-size:14px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.macro.open .chv{transform:rotate(90deg)}
+.mb{display:none;padding:0 18px 18px;border-top:1px solid #f1f5f9}
+.macro.open .mb{display:block}
+.tp{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc}
+.th{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;transition:background .2s}
+.th:hover{background:#f5f3ff}
+.tt{flex:1;font-size:13px;font-weight:700;color:#1e293b}
+.tc{font-size:10px;color:#64748b;font-weight:600;padding:2px 8px;background:#f1f5f9;border-radius:10px;border:1px solid #e2e8f0}
+.tv{font-size:11px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.tp.open .tv{transform:rotate(90deg)}
+.tb{display:none;padding:0 14px 14px;border-top:1px solid #f1f5f9}
+.tp.open .tb{display:block}
+.kp h4{font-size:12px;font-weight:700;color:#7c3aed;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.kp h4::before{content:'💡'}
+ul.k{list-style:none;padding:0}
+ul.k li{padding:6px 10px 6px 20px;font-size:12px;color:#334155;margin-bottom:3px;border-radius:6px;background:#f1f5f9;position:relative;line-height:1.5}
+ul.k li::before{content:'▸';position:absolute;left:8px;color:#7c3aed;font-weight:700}
+ul.k li b{color:#1e293b}
+.trap{margin-top:10px;padding:10px 14px;background:#fef2f2;border:1px solid #fecaca;border-radius:8px}
+.trap h4{font-size:12px;font-weight:700;color:#dc2626;margin-bottom:6px}
+.trap h4::before{content:'⚠️ '}
+ul.t{list-style:none;padding:0}
+ul.t li{padding:4px 10px 4px 20px;font-size:11px;color:#991b1b;margin-bottom:2px;position:relative;line-height:1.4}
+ul.t li::before{content:'✗';position:absolute;left:6px;color:#dc2626;font-weight:700}
+ul.t li b{color:#7f1d1d}
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#7c3aed;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(124,58,237,.4);z-index:100}
+.back-btn:hover{background:#6d28d9}
+.scroll-top{position:fixed;bottom:64px;right:20px;width:40px;height:40px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#1e293b;font-size:16px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{background:#7c3aed;color:#fff;border-color:#7c3aed}
+@media(max-width:768px){.container{padding:10px}.header h1{font-size:18px}.mt{font-size:15px}.nav-btn{padding:5px 8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>📚 Resumo Estruturado – Direito Administrativo</h1>
+<div class="sub">Policial Legislativo CD 2026 • 1.188 questões CEBRASPE analisadas</div>
+<div class="stats-row">
+<div class="hstat">📝 <b>1.188</b> questões</div>
+<div class="hstat">📂 <b>12</b> macro-temas</div>
+<div class="hstat">📑 <b>80+</b> assuntos</div>
+<div class="hstat">⚖️ <b>Lei 14.133</b> mais cobrada</div>
+</div>
+</div>
+
+<div class="nav-bar" id="navBar">
+<div class="nav-btn" onclick="scrollToSection('licitacoes')">📋 Licitações (445)</div>
+<div class="nav-btn" onclick="scrollToSection('agentes')">👤 Agentes (131)</div>
+<div class="nav-btn" onclick="scrollToSection('lai')">🔍 LAI (85)</div>
+<div class="nav-btn" onclick="scrollToSection('improbidade')">🚫 Improbidade (82)</div>
+<div class="nav-btn" onclick="scrollToSection('processo')">📄 Processo (82)</div>
+<div class="nav-btn" onclick="scrollToSection('organizacao')">🏛️ Organização (72)</div>
+<div class="nav-btn" onclick="scrollToSection('atos')">📝 Atos (67)</div>
+<div class="nav-btn" onclick="scrollToSection('poderes')">⚡ Poderes (54)</div>
+<div class="nav-btn" onclick="scrollToSection('responsabilidade')">🔄 Responsab. (53)</div>
+<div class="nav-btn" onclick="scrollToSection('controle')">🔎 Controle (51)</div>
+<div class="nav-btn" onclick="scrollToSection('principios')">⭐ Princípios (46)</div>
+<div class="nav-btn" onclick="scrollToSection('bens')">🏗️ Bens (19)</div>
+</div>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Buscar tema, artigo, palavra-chave..." oninput="filterContent()">
+<button class="ebtn" onclick="toggleAll(true)">▼ Expandir</button>
+<button class="ebtn" onclick="toggleAll(false)">▲ Recolher</button>
+</div>
+
+<!-- ==================== LICITAÇÕES ==================== -->
+<div class="macro" id="licitacoes">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📋</div>
+<div class="minfo"><div class="mt">LICITAÇÕES E CONTRATOS – Lei 14.133/2021</div><div class="mm">37,5% do total • Tema mais cobrado • 30+ subtópicos</div></div>
+<span class="badge">445q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Contratação Direta: Dispensa e Inexigibilidade (arts. 72-75)</div><span class="tc">30q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Dispensa ≠ Inexigibilidade:</b> Dispensa = competição possível mas dispensada por lei; Inexigibilidade = competição inviável (rol exemplificativo)</li>
+<li><b>Inexigibilidade (art. 74):</b> Objeto singular + profissional de notória especialização; vedada subcontratação; serviços de <b>natureza intelectual</b></li>
+<li><b>Dispensa por valor (art. 75, I-II):</b> Obras até R$ 100.000; Bens/serviços até R$ 50.000; valores atualizados por decreto</li>
+<li><b>Credenciamento:</b> Forma de contratação direta por inexigibilidade quando vários prestadores atendem requisitos</li>
+<li><b>Processo:</b> Exige justificativa, razão da escolha do fornecedor, justificativa do preço e documento de aprovação</li>
+<li><b>Publicação no PNCP:</b> Obrigatória mesmo em contratação direta para eficácia do contrato</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Inexigibilidade <b>NÃO tem rol taxativo</b> — hipóteses do art. 74 são exemplificativas</li>
+<li><b>Preferência de marca:</b> Vedada como regra; admitida excepcionalmente com justificativa técnica</li>
+<li>Notória especialização exige <b>natureza intelectual</b> — não basta ser empresa conhecida</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Sanções Administrativas (arts. 155-163)</div><span class="tc">30q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>4 espécies:</b> Advertência, Multa, Impedimento de licitar e contratar (até 3 anos), Declaração de inidoneidade (3 a 6 anos)</li>
+<li><b>NÃO existe mais "suspensão temporária"</b> — substituída pelas sanções acima</li>
+<li><b>Multa:</b> Única que pode ser cumulada com as demais sanções</li>
+<li><b>Declaração de inidoneidade:</b> Competência da autoridade máxima; abrange todos os entes federativos</li>
+<li><b>Reabilitação:</b> Exige cumprimento da sanção + ressarcimento + compromisso de correção</li>
+<li><b>Desconsideração da PJ:</b> Admitida quando usada com abuso para frustrar sanção</li>
+<li><b>Dosimetria:</b> Natureza/gravidade da infração, peculiaridades, agravantes/atenuantes</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li><b>Multa</b> é a ÚNICA sanção cumulável com as demais</li>
+<li><b>Impedimento</b> ≠ <b>Inidoneidade</b> — diferentes hipóteses e prazos</li>
+<li>Sanções abrangem <b>todos os órgãos</b> da administração pública</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Modalidades de Licitação (arts. 28-32)</div><span class="tc">24q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>5 modalidades:</b> Concorrência, Pregão, Concurso, Leilão, Diálogo Competitivo</li>
+<li><b>NÃO existem mais:</b> Convite e Tomada de Preços (extintas pela 14.133)</li>
+<li><b>Pregão:</b> Obrigatório para bens e serviços comuns; <b>vedado</b> para serviços especiais de engenharia e obras</li>
+<li><b>Diálogo Competitivo:</b> Inovação tecnológica/técnica; soluções de mercado insuficientes</li>
+<li><b>Concurso:</b> Trabalho técnico, científico ou artístico; prêmio ou remuneração</li>
+<li><b>Leilão:</b> Alienação de bens móveis/imóveis; maior lance (≥ avaliação)</li>
+<li><b>Concorrência:</b> Modalidade residual; obras, serviços especiais</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li><b>SRP não é modalidade</b> — é procedimento auxiliar</li>
+<li>Pregão <b>NÃO se aplica</b> a obras e serviços especiais de engenharia</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Alterações Contratuais (arts. 124-136)</div><span class="tc">21q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Unilateral (art. 124, I):</b> Qualitativa (projeto) ou quantitativa (valor) — limite <b>25%</b> (regra) e <b>50%</b> para reforma</li>
+<li><b>Consensual (art. 124, II):</b> Regime de execução, pagamento, equilíbrio econômico-financeiro</li>
+<li><b>Reajuste:</b> Índice de correção previamente definido; periodicidade mínima de 1 ano</li>
+<li><b>Repactuação:</b> Exclusiva para serviços contínuos com mão de obra; planilha de custos</li>
+<li><b>Reequilíbrio:</b> Fato imprevisível ou previsível de consequências incalculáveis; a qualquer tempo</li>
+<li><b>Vedação:</b> Proibido transfigurar o objeto originalmente contratado</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li><b>Reajuste ≠ Repactuação ≠ Reequilíbrio</b> — troca de conceitos é frequente</li>
+<li>Limite de <b>50%</b> apenas para reforma de edifícios (não obras em geral)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">ETP, Termos de Referência e Definições (arts. 6º, 18)</div><span class="tc">20q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>ETP:</b> 1ª etapa do planejamento; demonstra necessidade, viabilidade e melhor solução</li>
+<li><b>Termo de Referência:</b> Condições para contratação de bens/serviços; especificações, quantidades, critérios</li>
+<li><b>Projeto Básico:</b> Obras e serviços de engenharia; nível de precisão adequado</li>
+<li><b>Serviço comum:</b> Especificações usuais de mercado (admite pregão); <b>Especial:</b> alta heterogeneidade (concorrência)</li>
+<li><b>Obra x Serviço de engenharia:</b> Obra = construção, reforma, ampliação; Serviço = acessório</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Fase Preparatória e Agentes de Licitação (arts. 7-10, 18-20)</div><span class="tc">20q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Agente de contratação:</b> Servidor efetivo ou empregado dos quadros permanentes; conduz o processo</li>
+<li><b>Comissão de contratação:</b> Mín. 3 membros; obrigatória em diálogo competitivo e serviços técnicos</li>
+<li><b>Segregação de funções:</b> Quem planeja não julga (salvo exceções legais)</li>
+<li><b>Assessoria jurídica:</b> Parecer sobre legalidade ao final da fase preparatória</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Formalização, SRP, Habilitação, Garantias</div><span class="tc">60q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Contrato:</b> Forma escrita obrigatória (admite eletrônica); preposto aceito pela administração</li>
+<li><b>SRP:</b> NÃO é modalidade; usa pregão/concorrência; admin NÃO obrigada a contratar; ata até 1 ano (prorrogável até 2)</li>
+<li><b>Habilitação:</b> Jurídica, fiscal/trabalhista, econômico-financeira, técnica; MEI/ME/EPP com prazo para regularizar</li>
+<li><b>Garantia:</b> Facultativa ao edital; modalidade escolhida pelo <b>contratado</b>; até 5% (regra), 10% (complexidade), 30% (grandes obras + seguro)</li>
+<li><b>Critérios de julgamento:</b> Menor preço, Maior desconto, Melhor técnica, Técnica e preço, Maior lance, Maior retorno econômico</li>
+<li><b>Duração:</b> Serviços contínuos até 10 anos; TI estruturante até 15 anos; prazo indeterminado em casos específicos</li>
+<li><b>Recebimento:</b> Provisório (fiscal, verificação inicial) → Definitivo (servidor/comissão, verificação completa)</li>
+<li><b>PNCP:</b> Publicação = condição de eficácia do contrato e aditamentos</li>
+<li><b>Extinção:</b> Unilateral (motivada), consensual ou judicial</li>
+<li><b>Meios alternativos:</b> Arbitragem, mediação, conciliação e comitê — admitidos inclusive por aditamento</li>
+<li><b>Lei 8.666 revogada em 30/12/2023:</b> Contratos anteriores seguem lei de origem</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Ata do SRP <b>NÃO obriga</b> a administração a contratar</li>
+<li>Garantia é <b>facultativa</b>; modalidade escolhida pelo <b>contratado</b>, não pela admin</li>
+<li>Técnica e preço <b>NÃO é compulsório</b> para TIC especiais</li>
+<li>Recebimento provisório <b>NÃO implica aceitação</b></li>
+</ul></div></div></div>
+
+</div></div>
+
+<!-- ==================== AGENTES ==================== -->
+<div class="macro" id="agentes">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">👤</div>
+<div class="minfo"><div class="mt">AGENTES PÚBLICOS – Lei 8.112/1990 e CF/88</div><div class="mm">11% do total • 2º tema • 20+ subtópicos</div></div>
+<span class="badge">131q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Regime Disciplinar (arts. 116-142)</div><span class="tc">21q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Penalidades:</b> Advertência, Suspensão (até 90 dias), Demissão, Cassação de aposentadoria, Destituição de cargo em comissão</li>
+<li><b>Prescrição:</b> 5 anos (demissão/cassação), 2 anos (suspensão), 180 dias (advertência)</li>
+<li><b>Cancelamento:</b> Advertência → 3 anos; Suspensão → 5 anos sem nova infração</li>
+<li><b>Absolvição criminal:</b> Afasta responsabilidade administrativa <b>somente se negar fato ou autoria</b></li>
+<li><b>Inassiduidade habitual:</b> 60 faltas em 12 meses → demissão; Abandono: 30 dias consecutivos</li>
+<li><b>Nepotismo:</b> Vedado sob chefia imediata de cônjuge/parente em cargo de confiança</li>
+<li><b>Ordens ilegais:</b> Servidor deve recusar ordens <b>manifestamente ilegais</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Absolvição criminal <b>NÃO afasta automaticamente</b> a responsabilidade adm.</li>
+<li>Prescrição da advertência = <b>180 dias</b> (não 2 anos)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Formas de Provimento (arts. 5º-32)</div><span class="tc">12q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>7 formas:</b> Nomeação, Promoção, Readaptação, Reversão, Aproveitamento, Reintegração, Recondução</li>
+<li><b>Posse:</b> 30 dias da publicação; procuração específica OK; inspeção médica <b>obrigatória</b></li>
+<li><b>Posse só em nomeação</b> — demais provimentos NÃO exigem posse</li>
+<li><b>Readaptação:</b> Cargo compatível com limitação; mesmo sem vaga, exerce como excedente</li>
+<li><b>Reintegração:</b> Retorno por anulação da demissão; <b>Recondução:</b> retorno ao cargo anterior</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Readaptação é para <b>limitação parcial</b> — incapaz total = aposentadoria</li>
+<li>Inspeção médica <b>NÃO</b> é "a critério da administração" — é obrigatória</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Licenças, Afastamentos e Concessões (arts. 81-99)</div><span class="tc">10q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Doença em pessoa da família:</b> Até 60 dias remunerados + até 90 sem remuneração (12 meses)</li>
+<li><b>Capacitação:</b> Após 5 anos de exercício; condicionada ao <b>interesse da administração</b></li>
+<li><b>Vedação:</b> Atividade remunerada durante licença por doença</li>
+<li><b>Licença-paternidade:</b> 5 dias (CF)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Estabilidade, Estágio Probatório, Cargos e Funções</div><span class="tc">20q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Estabilidade:</b> 3 anos de efetivo exercício; apenas nomeados por concurso para cargos efetivos</li>
+<li><b>Perda do cargo estável:</b> Sentença transitada, PAD, avaliação periódica, excesso de despesa (art. 169 CF)</li>
+<li><b>Disponibilidade:</b> Remuneração <b>proporcional</b> (NÃO integral)</li>
+<li><b>Funções de confiança:</b> Exclusivamente por efetivos; direção, chefia, assessoramento</li>
+<li><b>Cargos em comissão:</b> Livre nomeação/exoneração; percentual mínimo por servidores de carreira</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Disponibilidade = remuneração <b>proporcional</b> (não integral)</li>
+<li>Funções de confiança = <b>direção, chefia e assessoramento APENAS</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Remuneração, PAD, Acumulação, Previdência e Outros</div><span class="tc">68q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Subsídio:</b> Parcela única; vedado acréscimo de gratificações/adicionais</li>
+<li><b>Teto remuneratório (art. 37, XI):</b> Aplica-se inclusive com acumulação</li>
+<li><b>Indenizações:</b> Ajuda de custo, diárias, transporte, auxílio-moradia — NÃO incorporam</li>
+<li><b>PAD — Afastamento preventivo:</b> Até 60 dias sem prejuízo da remuneração</li>
+<li><b>PAD — Rito sumário:</b> Para acumulação ilegal e abandono/inassiduidade</li>
+<li><b>Acumulação vedada, exceto:</b> 2 saúde; 1 saúde + 1 técnico; 2 professor; 1 professor + 1 técnico — com <b>compatibilidade de horários</b></li>
+<li><b>Proibição abrange</b> EP, SEM, subsidiárias e fundações</li>
+<li><b>Mandato eletivo:</b> Prefeito = afasta-se (opta remuneração); Vereador = acumula se compatível</li>
+<li><b>Redistribuição:</b> Deslocamento do CARGO; <b>Remoção:</b> deslocamento do SERVIDOR</li>
+</ul></div></div></div>
+
+</div></div>
+
+<!-- ==================== LAI ==================== -->
+<div class="macro" id="lai">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔍</div>
+<div class="minfo"><div class="mt">LEI DE ACESSO À INFORMAÇÃO – Lei 12.527/2011</div><div class="mm">7,2% do total • Muito cobrada na CD</div></div>
+<span class="badge">85q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Restrições de Acesso / Classificação (arts. 21-31)</div><span class="tc">17q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>3 graus:</b> Ultrassecreto (25 anos), Secreto (15 anos), Reservado (5 anos)</li>
+<li><b>NÃO existe grau "confidencial"</b></li>
+<li><b>Prazos NÃO renováveis</b> — exceto ultrassecreto (1 renovação)</li>
+<li><b>Informações pessoais:</b> Restrição máxima de 100 anos (intimidade, honra, imagem)</li>
+<li><b>Violações de direitos humanos:</b> NÃO podem ser classificadas como sigilosas</li>
+<li><b>Informação parcialmente sigilosa:</b> Parte não sigilosa DEVE ser fornecida</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li><b>NÃO existe "confidencial"</b> — são apenas 3 graus</li>
+<li>Restrição pessoal de 100 anos <b>NÃO é absoluta</b> — admite exceções</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Procedimento de Acesso (arts. 10-20)</div><span class="tc">15q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Qualquer pessoa</b> pode requerer; por <b>qualquer meio legítimo</b></li>
+<li><b>NÃO precisa de motivação</b> para o pedido</li>
+<li><b>Prazo:</b> 20 dias (prorrogável +10 com justificativa)</li>
+<li><b>Gratuidade:</b> Busca gratuita; cobrança só para <b>reprodução</b> (custos de material)</li>
+<li><b>Recurso:</b> 10 dias para recurso à autoridade superior em caso de indeferimento</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Pedido <b>NÃO precisa ser motivado</b></li>
+<li>Prazo = <b>20 dias</b> (não 30)</li>
+<li>Busca é <b>gratuita</b> — cobra-se apenas reprodução</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Disposições Gerais e Conceitos (arts. 1º-5º)</div><span class="tc">15q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Publicidade = regra; Sigilo = exceção</b></li>
+<li><b>Abrangência:</b> Todos os poderes, todos os entes, MP, TC, Defensoria, SEM, EP</li>
+<li><b>Entidades privadas:</b> Que recebam recursos públicos — sujeitas à LAI nessa parte</li>
+<li><b>Definições:</b> Integridade = não modificada; Autenticidade = fonte legítima; Disponibilidade = acessível; Primariedade = fonte mais próxima</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li><b>Integridade ≠ Autenticidade</b> — CEBRASPE troca sistematicamente</li>
+<li>LAI <b>NÃO se aplica apenas ao Executivo</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Transparência Ativa/Passiva, Responsabilidades e Decreto 7.724</div><span class="tc">38q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Ativa:</b> Divulgação proativa via internet, independente de pedido</li>
+<li><b>Passiva:</b> Atendimento a pedidos via SIC (Serviço de Informação ao Cidadão)</li>
+<li><b>SIC:</b> Unidade física; atende, orienta E tramita pedidos</li>
+<li><b>Documentos preparatórios:</b> Acesso APÓS edição do ato decisório</li>
+<li><b>Comissão Mista de Reavaliação:</b> Revê ultrassecreto e secreto (NÃO reservado)</li>
+<li><b>Responsabilidades:</b> Militares também se sujeitam; inidoneidade para entidades privadas</li>
+</ul></div></div></div>
+
+</div></div>
+
+<!-- ==================== IMPROBIDADE ==================== -->
+<div class="macro" id="improbidade">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🚫</div>
+<div class="minfo"><div class="mt">IMPROBIDADE ADMINISTRATIVA – Lei 8.429/1992</div><div class="mm">6,9% do total • Reforma pela Lei 14.230/2021</div></div>
+<span class="badge">82q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Disposições Gerais – Elemento Subjetivo e Sujeitos (arts. 1º-8ºA)</div><span class="tc">30q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>SOMENTE DOLO</b> configura improbidade (Lei 14.230/2021); culpa NÃO configura mais</li>
+<li><b>Dolo:</b> Vontade livre e consciente — <b>voluntariedade não basta</b></li>
+<li><b>Terceiro:</b> Pode ser responsabilizado se induzir/concorrer <b>dolosamente</b></li>
+<li><b>Herdeiro:</b> Repara <b>até o limite da herança/patrimônio transferido</b></li>
+<li><b>Agentes políticos:</b> SIM se submetem à lei de improbidade</li>
+<li><b>Entidades privadas</b> com subvenção pública estão sujeitas</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li><b>Culpa NÃO configura</b> improbidade — nem culpa grave ou erro grosseiro</li>
+<li>Herdeiro repara <b>até o limite da herança</b> (não integralmente)</li>
+<li><b>Voluntariedade ≠ Dolo</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Atos de Improbidade – Tipos (arts. 9º-11)</div><span class="tc">27q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Art. 9º — Enriquecimento ilícito:</b> Vantagem patrimonial indevida, propina, uso de bens públicos</li>
+<li><b>Art. 10 — Lesão ao erário:</b> Facilitar aquisição por preço superior, doar sem formalidades</li>
+<li><b>Art. 11 — Contra princípios:</b> Negar publicidade, revelar sigilo, frustrar concorrência em licitação</li>
+<li><b>Lesividade relevante:</b> Exigida para art. 11 — condutas de pouca repercussão NÃO configuram</li>
+<li><b>Ressarcimento:</b> Só em atos dolosos com <b>efetiva lesão</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Propina = <b>enriquecimento (art. 9º)</b>, NÃO lesão ao erário</li>
+<li>Negar publicidade = <b>contra princípios (art. 11)</b>, NÃO lesão ao erário</li>
+<li>Dispensa indevida COM dano = lesão; SEM dano = contra princípios</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Procedimento, Penas, Prescrição e ANPC</div><span class="tc">25q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Sanções:</b> Perda da função, suspensão de direitos políticos, multa, proibição de contratar, ressarcimento</li>
+<li><b>Execução:</b> Somente após <b>trânsito em julgado</b></li>
+<li><b>Perda da função:</b> Atinge apenas o vínculo específico (NÃO todos)</li>
+<li><b>ANPC:</b> MP pode celebrar Acordo de Não Persecução Civil</li>
+<li><b>Indisponibilidade de bens:</b> Urgência pode ser presumida</li>
+<li><b>Prescrição:</b> 8 anos do fato; admite intercorrente</li>
+<li><b>Declaração de bens:</b> Obrigatória para posse E exercício</li>
+<li><b>Legitimidade ativa:</b> Exclusiva do MP (Lei 14.230/2021)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Perda da função <b>NÃO atinge todos os vínculos</b></li>
+<li>Sanções executadas após <b>trânsito em julgado</b> (não mera decisão)</li>
+<li>Legitimidade agora é <b>exclusiva do MP</b> (não mais da PJ lesada)</li>
+</ul></div></div></div>
+
+</div></div>
+
+<!-- ==================== PROCESSO ADMINISTRATIVO ==================== -->
+<div class="macro" id="processo">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📄</div>
+<div class="minfo"><div class="mt">PROCESSO ADMINISTRATIVO – Lei 9.784/1999</div><div class="mm">6,9% do total • Princípios e prazos muito cobrados</div></div>
+<span class="badge">82q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Trâmite do Processo (arts. 5º-10, 29-50)</div><span class="tc">15q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Legitimados:</b> Pessoas físicas ou jurídicas que tenham direitos/interesses afetados</li>
+<li><b>Instrução:</b> Pode incluir diligências, audiências públicas, consultas públicas, perícias</li>
+<li><b>Ônus da prova:</b> Da administração, quando impõe obrigação ao administrado</li>
+<li><b>Decisão:</b> 30 dias (prorrogável por + 30 com justificativa)</li>
+<li><b>Motivação:</b> Obrigatória; fatos e fundamentos jurídicos devem ser explicitados</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Competência, Delegação e Avocação (arts. 11-17)</div><span class="tc">12q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Competência:</b> Irrenunciável; exercida pelos órgãos a que foi atribuída</li>
+<li><b>Delegação:</b> Permitida, salvo: atos normativos, competência exclusiva, decisão de recurso</li>
+<li><b>Avocação:</b> Excepcional e temporária; motivos relevantes devidamente justificados</li>
+<li><b>Publicação:</b> Ato de delegação e revogação devem ser publicados</li>
+<li><b>Responsabilidade:</b> Recai sobre o <b>delegado</b> (que praticou o ato), não sobre o delegante</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li><b>NÃO pode delegar:</b> atos normativos, competência exclusiva, decisão de recurso</li>
+<li>Responsabilidade = do <b>delegado</b> (não delegante)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Disposições Gerais, Direitos e Deveres (arts. 1º-4º)</div><span class="tc">10q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Princípios:</b> Legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público, eficiência</li>
+<li><b>Direitos do administrado:</b> Ser tratado com respeito; ter ciência da tramitação; obter decisão motivada</li>
+<li><b>Deveres:</b> Expor fatos conforme verdade; proceder com lealdade; não agir de modo temerário</li>
+<li><b>Abrangência:</b> Administração direta e indireta da União (estados/municípios = subsidiária)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Impedimento, Suspeição, Anulação, Revogação, Recurso e Outros</div><span class="tc">45q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Impedimento (art. 18):</b> Interesse direto/indireto; cônjuge/parente até 3º grau; litígio judicial/administrativo — deve ser arguido</li>
+<li><b>Suspeição (art. 20):</b> Amizade íntima ou inimizade notória — pode ser arguida</li>
+<li><b>Anulação:</b> Atos ilegais; prazo decadencial de <b>5 anos</b> (salvo má-fé)</li>
+<li><b>Revogação:</b> Por conveniência/oportunidade; respeita direitos adquiridos; efeitos ex nunc</li>
+<li><b>Convalidação:</b> Defeitos sanáveis + não lesão ao interesse público + não prejuízo a terceiros</li>
+<li><b>Recurso:</b> 10 dias para interpor; 30 dias para decidir; NÃO exige caução</li>
+<li><b>Recurso hierárquico:</b> Até 3 instâncias, salvo disposição legal diversa</li>
+<li><b>Efeito suspensivo:</b> NÃO automático; somente quando houver receio de prejuízo irreparável</li>
+<li><b>Revisão:</b> A qualquer tempo; a pedido ou de ofício; <b>NÃO pode agravar a sanção</b> (reformatio in pejus)</li>
+<li><b>Prazos:</b> Dias corridos (não úteis); intimação antecipada de 3 dias úteis para atos processuais</li>
+<li><b>Forma:</b> Atos sem forma determinada quando a lei não exigir (informalismo)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Prazo decadencial de <b>5 anos</b> para anulação (não prescrição)</li>
+<li>Recurso <b>NÃO exige caução/depósito</b></li>
+<li>Revisão <b>NÃO pode agravar</b> a sanção</li>
+<li>Efeito suspensivo <b>NÃO é automático</b></li>
+</ul></div></div></div>
+
+</div></div>
+
+<!-- ==================== ORGANIZAÇÃO ==================== -->
+<div class="macro" id="organizacao">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏛️</div>
+<div class="minfo"><div class="mt">ORGANIZAÇÃO ADMINISTRATIVA</div><div class="mm">6,1% do total • Admin Direta e Indireta</div></div>
+<span class="badge">72q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Administração Indireta (Autarquias, EP, SEM, Fundações)</div><span class="tc">19q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Autarquia:</b> Criada por <b>lei específica</b>; PJ de direito público; autonomia administrativa e financeira</li>
+<li><b>Fundação pública:</b> <b>Lei autoriza</b> criação + <b>LC define áreas de atuação</b></li>
+<li><b>Empresa Pública:</b> Capital <b>100% público</b>; <b>qualquer forma</b> societária</li>
+<li><b>SEM:</b> Capital misto (maioria pública); <b>obrigatoriamente S.A.</b></li>
+<li><b>EP e SEM:</b> PJ de direito privado; podem explorar atividade econômica OU prestar serviço público</li>
+<li><b>EP pode ser controladora de SEM</b>, mas o contrário NÃO</li>
+<li><b>Criação de subsidiárias:</b> Exige autorização legislativa</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Autarquia é <b>criada por lei</b>; Fundação, EP e SEM = <b>autorizadas por lei</b></li>
+<li>SEM <b>SOMENTE S.A.</b>; EP aceita qualquer forma</li>
+<li>Fundação pública pode ser de direito <b>público ou privado</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Descentralização e Desconcentração</div><span class="tc">15q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Descentralização:</b> Transferência de atividade para <b>outra pessoa jurídica</b> (nova ou existente)</li>
+<li><b>Desconcentração:</b> Distribuição interna dentro da <b>mesma pessoa jurídica</b></li>
+<li><b>Desconcentração</b> pode ocorrer tanto na admin direta quanto na indireta</li>
+<li><b>DPF (Departamento de Polícia Federal):</b> Exemplo de desconcentração (sem PJ própria)</li>
+<li><b>Descentralização por colaboração:</b> Concessão/permissão a particulares</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Desconcentração <b>NÃO ocorre apenas</b> na admin direta — ocorre na indireta também</li>
+<li>Descentralização <b>NÃO se confunde</b> com descentralização política (federalismo)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Admin Direta, Classificação de Agentes, Outros</div><span class="tc">38q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Admin Direta:</b> Órgãos sem PJ própria; <b>todos os poderes</b> (não só Executivo)</li>
+<li><b>Órgãos públicos:</b> NÃO têm personalidade jurídica própria (quem tem é o ente)</li>
+<li><b>Tutela/supervisão ministerial:</b> NÃO é subordinação hierárquica — é controle finalístico</li>
+<li><b>Agentes honoríficos:</b> Jurados, mesários — sem vínculo profissional ou remuneração</li>
+<li><b>Agentes políticos:</b> Ministros, secretários — vínculo NÃO é permanente</li>
+<li><b>Agentes putativos:</b> Atos presumidos legítimos (princípio da aparência)</li>
+<li><b>Conselhos profissionais:</b> Submetem-se à fiscalização dos TCs</li>
+</ul></div></div></div>
+
+</div></div>
+
+<!-- ==================== ATOS ADMINISTRATIVOS ==================== -->
+<div class="macro" id="atos">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📝</div>
+<div class="minfo"><div class="mt">ATOS ADMINISTRATIVOS</div><div class="mm">5,6% do total • Anulação/Revogação muito cobrada</div></div>
+<span class="badge">67q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Desfazimento: Anulação, Revogação, Cassação, Caducidade</div><span class="tc">16q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Anulação:</b> Ilegalidade; efeitos <b>ex tunc</b>; admin E Judiciário podem anular</li>
+<li><b>Revogação:</b> Conveniência/oportunidade; efeitos <b>ex nunc</b>; SOMENTE admin; respeita direitos adquiridos</li>
+<li><b>Cassação:</b> Descumprimento de condições pelo beneficiário</li>
+<li><b>Caducidade:</b> Norma superveniente torna o ato inadmissível</li>
+<li><b>Contraposição:</b> Ato posterior contrário ao anterior (ex: exoneração vs nomeação)</li>
+<li><b>Anulação independe de juízo de conveniência</b> — é ato vinculado à legalidade</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Anulação = efeitos <b>ex tunc</b> (retroage); Revogação = <b>ex nunc</b> (não retroage)</li>
+<li>Revogação <b>NÃO pode atingir</b> direitos adquiridos</li>
+<li>Judiciário <b>NÃO pode revogar</b> atos administrativos de outro poder</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Atributos dos Atos Administrativos</div><span class="tc">10q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Presunção de legitimidade/veracidade:</b> Relativa (juris tantum) — admite prova em contrário</li>
+<li><b>Imperatividade:</b> Imposição unilateral de obrigações — NÃO se aplica a todos os atos</li>
+<li><b>Autoexecutoriedade:</b> Execução direta sem autorização judicial (não universal)</li>
+<li><b>Tipicidade:</b> Cada ato deve corresponder a um tipo legal previsto</li>
+<li><b>Presunção de veracidade:</b> Fatos; <b>Presunção de legitimidade:</b> conformidade com a lei</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Presunção é <b>relativa</b> (NÃO absoluta)</li>
+<li><b>Autoexecutoriedade</b> NÃO permite execução material de cobrança pecuniária</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Convalidação, Conversão e Teoria dos Motivos Determinantes</div><span class="tc">20q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Convalidação:</b> Vícios de <b>competência e forma</b> — sanáveis; NÃO se aplica a atos nulos</li>
+<li><b>Decadência administrativa:</b> Espécie de convalidação involuntária (5 anos)</li>
+<li><b>Convalidação pelo administrado:</b> Quando manifestação de vontade não foi observada</li>
+<li><b>Teoria dos motivos determinantes:</b> Admin fica vinculada aos motivos <b>declarados</b>, ainda que ato não precisasse de motivação</li>
+<li><b>Exoneração ad nutum:</b> Não precisa de motivação; MAS se motivada, vincula-se</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Convalidação <b>NÃO se aplica a vícios de finalidade, motivo ou objeto</b></li>
+<li>Se a motivação for falsa, ato ad nutum motivado <b>é nulo</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Espécies, Classificação, Elementos e Conceito</div><span class="tc">21q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>5 elementos:</b> Competência, Finalidade, Forma, Motivo, Objeto (CO-FI-FO-MO-OB)</li>
+<li><b>Atos vinculados:</b> Todos os elementos definidos em lei; sem margem de escolha</li>
+<li><b>Atos discricionários:</b> Motivo e/ou objeto com margem; <b>NÃO são livres</b></li>
+<li><b>Atos de gestão:</b> Sem prerrogativas públicas; igualdade com particulares</li>
+<li><b>Atos ordinatórios:</b> Organização interna; <b>NÃO são exercício de poder regulamentar</b></li>
+<li><b>Ato perfeito:</b> Completou ciclo de formação; <b>NÃO necessariamente válido</b></li>
+<li><b>Atos administrativos NÃO são exclusivos</b> do Executivo — Legislativo e Judiciário também praticam</li>
+</ul></div></div></div>
+
+</div></div>
+
+<!-- ==================== PODERES ==================== -->
+<div class="macro" id="poderes">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">⚡</div>
+<div class="minfo"><div class="mt">PODERES DA ADMINISTRAÇÃO</div><div class="mm">4,5% do total • Poder de Polícia é o mais cobrado</div></div>
+<span class="badge">54q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Poder de Polícia</div><span class="tc">12q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Conceito:</b> Limitar exercício de direitos individuais em benefício do interesse público</li>
+<li><b>Ciclo:</b> Ordem → Consentimento → Fiscalização → Sanção</li>
+<li><b>Delegação:</b> Admitida para PJ de direito público; STF admite para PJ de direito privado integrante da admin indireta (fiscalização e consentimento)</li>
+<li><b>Manifestação:</b> Atos normativos (genéricos) E atos concretos (individuais)</li>
+<li><b>Pode restringir E tutelar direitos</b> (não só restringir)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Ciclo tem <b>4 etapas</b> (não 5) — CEBRASPE inventa "apuração" como etapa</li>
+<li>Delegação para PJ de dir. privado é <b>constitucional</b> (STF)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Poder Hierárquico</div><span class="tc">10q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Prerrogativas:</b> Editar normas, controlar órgãos inferiores, anular atos ilegais, revogar atos inconvenientes, delegar e avocar</li>
+<li><b>Avocação:</b> Excepcional; justificativa obrigatória</li>
+<li><b>NÃO há hierarquia</b> entre admin direta e entidades da indireta — é <b>vinculação</b></li>
+<li><b>Agências reguladoras:</b> NÃO admitem recurso hierárquico ao ministério supervisor</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Tutela ministerial <b>NÃO é hierarquia</b></li>
+<li>Recurso ao ministério contra agência reguladora <b>NÃO é cabível</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Abuso de Poder, Disciplinar, Regulamentar e Outros</div><span class="tc">32q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Excesso de poder:</b> Agente atua fora dos limites de sua competência</li>
+<li><b>Desvio de finalidade:</b> Agente usa competência para fim diverso do legal</li>
+<li><b>Abuso por omissão:</b> Também configura abuso de poder</li>
+<li><b>Poder Disciplinar:</b> Apurar infrações e aplicar sanções a servidores E particulares com vínculo especial</li>
+<li><b>Disciplinar ≠ Hierárquico:</b> Disciplinar = punição; Hierárquico = organização/controle</li>
+<li><b>Poder Regulamentar:</b> Não apenas decretos — inclui resoluções, portarias, instruções normativas</li>
+<li><b>Regulamento NÃO inova</b> no ordenamento — apenas complementa a lei</li>
+<li><b>Poderes são irrenunciáveis</b> — vinculam o agente público</li>
+<li><b>Poder vinculado e discricionário:</b> Discricionariedade NÃO é poder autônomo</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Excesso = <b>fora da competência</b>; Desvio = <b>finalidade diversa</b> — CEBRASPE troca</li>
+<li>Regulamentar <b>NÃO se formaliza apenas por decretos</b></li>
+<li>Disciplinar <b>alcança particulares</b> com vínculo (não só servidores)</li>
+</ul></div></div></div>
+
+</div></div>
+
+<!-- ==================== RESPONSABILIDADE ==================== -->
+<div class="macro" id="responsabilidade">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔄</div>
+<div class="minfo"><div class="mt">RESPONSABILIDADE CIVIL DO ESTADO</div><div class="mm">4,5% do total • Teorias e excludentes</div></div>
+<span class="badge">53q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Conceitos e Teorias da Responsabilidade</div><span class="tc">11q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Regra geral:</b> Responsabilidade <b>objetiva</b> (risco administrativo) para atos comissivos</li>
+<li><b>Teoria do risco administrativo:</b> Admite excludentes (diferente do risco integral)</li>
+<li><b>Risco integral:</b> NÃO admite excludentes — aplica-se a: dano nuclear, ato terrorista a bordo de aeronave, dano ambiental</li>
+<li><b>Ação de reparação:</b> Contra o Estado (ou PJ privada prestadora de serviço público)</li>
+<li><b>Ato lícito + dano anormal e específico:</b> Gera dever de indenizar (princípio da igualdade dos ônus)</li>
+<li><b>Nexo causal:</b> Teoria do dano direto e imediato (adotada no Brasil)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Regra = <b>risco administrativo</b> (NÃO risco integral)</li>
+<li>Risco integral <b>NÃO é a regra geral</b> — apenas em hipóteses específicas</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Excludentes, Atenuantes e Omissão</div><span class="tc">19q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Excludentes:</b> Culpa exclusiva da vítima, caso fortuito, força maior</li>
+<li><b>Culpa concorrente:</b> <b>Atenua</b> (NÃO exclui) a responsabilidade — proporcional à participação</li>
+<li><b>Omissão:</b> Responsabilidade <b>subjetiva</b> (regra) — exige culpa/negligência</li>
+<li><b>Omissão + pessoa sob custódia:</b> STF admite responsabilidade <b>objetiva</b></li>
+<li><b>Dever jurídico de agir:</b> Necessário para responsabilizar por omissão</li>
+<li><b>Evento da natureza + omissão:</b> Estado pode ser responsabilizado se omisso em prevenir</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Culpa concorrente <b>NÃO exclui</b> — apenas atenua</li>
+<li>Omissão = <b>subjetiva como regra</b> (não objetiva)</li>
+<li>Caso fortuito e força maior: origem <b>NÃO</b> decorre de ato do poder público</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Regresso, Prestadoras de Serviço, Atos Legislativos/Judiciais</div><span class="tc">23q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Regresso:</b> Estado pode regressar contra agente <b>somente com dolo ou culpa</b></li>
+<li><b>Terceiro lesado:</b> Ação contra o Estado OU diretamente contra o agente (dupla garantia — STF)</li>
+<li><b>Prestadoras de serviço público:</b> Respondem <b>objetivamente</b> (PJ de direito privado também)</li>
+<li><b>Exploradoras de atividade econômica:</b> NÃO respondem objetivamente (regime privado)</li>
+<li><b>Atos judiciais:</b> Erro judiciário gera responsabilidade; trânsito em julgado NÃO impede</li>
+<li><b>Atos legislativos:</b> Lei inconstitucional gera responsabilidade do Estado</li>
+<li><b>Dano nuclear:</b> Responsabilidade objetiva integral (independe de culpa)</li>
+<li><b>Reparação administrativa:</b> NÃO precisa necessariamente ser judicial</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Regresso exige <b>dolo ou culpa</b> — não basta nexo causal</li>
+<li>Concessionária responde <b>objetivamente</b> perante terceiros (não apenas usuários)</li>
+<li>Exploradoras de atividade econômica <b>NÃO</b> respondem pelo art. 37, §6º</li>
+</ul></div></div></div>
+
+</div></div>
+
+<!-- ==================== CONTROLE ==================== -->
+<div class="macro" id="controle">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔎</div>
+<div class="minfo"><div class="mt">CONTROLE DA ADMINISTRAÇÃO PÚBLICA</div><div class="mm">4,3% do total • Jurisdicional, Administrativo e Parlamentar</div></div>
+<span class="badge">51q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Controle Jurisdicional</div><span class="tc">14q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Sistema:</b> Jurisdição una (inglês) — NÃO há dualidade de jurisdição (francês) no Brasil</li>
+<li><b>Judiciário:</b> Analisa legalidade, proporcionalidade e razoabilidade; <b>NÃO analisa mérito administrativo</b></li>
+<li><b>Atos discricionários:</b> Passíveis de controle judicial quanto à legalidade</li>
+<li><b>Mandado de segurança:</b> Instrumento para controle judicial de atos administrativos</li>
+<li><b>Decisão definitiva:</b> Somente o Judiciário profere (coisa julgada material)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Brasil adota sistema <b>inglês</b> (NÃO francês)</li>
+<li>Controle judicial <b>NÃO revoga</b> atos — apenas anula</li>
+<li>Atos discricionários <b>SÃO controláveis</b> pelo Judiciário (legalidade)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Controle Administrativo e Autotutela</div><span class="tc">14q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Autotutela:</b> Admin pode anular (ilegalidade) e revogar (inconveniência) seus próprios atos</li>
+<li><b>Controle interno:</b> Cada Poder mantém o seu; prévio, concomitante e subsequente</li>
+<li><b>De ofício ou por provocação:</b> Inclui análise de legalidade E mérito</li>
+<li><b>Prefeito pode anular E revogar</b> atos que pratica</li>
+<li><b>Povo pode utilizar</b> o controle administrativo para revisar atuação</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Parlamentar: TC, Direto e Indireto</div><span class="tc">23q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>TC:</b> Auxilia o Legislativo; <b>NÃO anula contratos</b> — determina que o órgão tome providências</li>
+<li><b>Decisões do TCU</b> com imputação de débito/multa = título executivo</li>
+<li><b>Auditorias e inspeções:</b> TC verifica legalidade e economicidade</li>
+<li><b>Parlamentar direto:</b> CN, CPIs, sustação de atos normativos do Executivo</li>
+<li><b>Pedido de informação:</b> Mecanismo do controle parlamentar</li>
+<li><b>Legislativo:</b> Controle político + controle financeiro (receita, despesa, gestão)</li>
+<li><b>Controle legislativo:</b> Pode ter natureza de controle prévio</li>
+<li><b>Apreciação/votação do orçamento:</b> Controle <b>prévio</b> (não concomitante)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>TC <b>NÃO anula contratos</b> diretamente</li>
+<li>Controle parlamentar <b>NÃO se limita ao político</b> — inclui financeiro</li>
+<li>Apreciação do orçamento = controle <b>prévio</b> (não concomitante)</li>
+</ul></div></div></div>
+
+</div></div>
+
+<!-- ==================== PRINCÍPIOS ==================== -->
+<div class="macro" id="principios">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">⭐</div>
+<div class="minfo"><div class="mt">PRINCÍPIOS DA ADMINISTRAÇÃO PÚBLICA</div><div class="mm">3,9% do total • LIMPE + Implícitos + Regime Jurídico</div></div>
+<span class="badge">46q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Controle: Conceitos, Princípios, Classificações</div><span class="tc">16q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Controle concomitante:</b> Durante a execução; correção de rumos antes da finalização</li>
+<li><b>Controle de mérito:</b> Conveniência e oportunidade; exercido pelo próprio poder (NÃO pelo externo como regra)</li>
+<li><b>Controle interno:</b> NÃO é exercido por tribunais de contas (estes são externos)</li>
+<li><b>Legalidade:</b> Prévia, concomitante e subsequente</li>
+<li><b>Fundamentos do controle interno:</b> NÃO são competência exclusiva do Executivo</li>
+<li><b>Controle abrange</b> inclusive o Poder Judiciário</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Princípios Expressos (LIMPE) – art. 37, CF</div><span class="tc">14q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>LIMPE:</b> Legalidade, Impessoalidade, Moralidade, Publicidade, Eficiência</li>
+<li><b>Impessoalidade:</b> Publicidade sem promoção pessoal; caráter educativo, informativo ou de orientação social</li>
+<li><b>Publicidade:</b> NÃO impede existência de informações sigilosas (LAI)</li>
+<li><b>Eficiência:</b> Duplo aspecto — modo de atuação do agente + organização/funcionamento da admin</li>
+<li><b>Moralidade:</b> Base da vedação ao nepotismo (Súmula Vinculante 13)</li>
+<li><b>Avaliação de políticas públicas:</b> Expressão do princípio da eficiência</li>
+<li><b>Publicação ≠ Publicidade:</b> Publicação dos atos é insuficiente para concretizar o princípio</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Publicidade <b>NÃO impede sigilo</b> — são compatíveis</li>
+<li>Publicação dos atos é <b>insuficiente</b> para concretizar a publicidade</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Princípios Implícitos e Regime Jurídico Administrativo</div><span class="tc">16q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Autotutela:</b> Corrigir atos (anular/revogar) — prerrogativa, não faculdade</li>
+<li><b>Razoabilidade e Proporcionalidade:</b> Princípios implícitos; limites aceitáveis</li>
+<li><b>Motivação:</b> Implícito na CF; explícito na Lei 9.784; fundamentos de fato e de direito</li>
+<li><b>Segurança jurídica:</b> Vedação de nova interpretação retroativa</li>
+<li><b>Supremacia do interesse público:</b> NÃO é princípio expresso na CF — é implícito</li>
+<li><b>Interesse público ≠ interesse do Estado:</b> Interesse público NÃO se opõe necessariamente ao privado</li>
+<li><b>Regime jurídico administrativo:</b> Prerrogativas + Restrições (supremacia + indisponibilidade)</li>
+<li><b>Indisponibilidade:</b> Admin NÃO tem livre disposição dos bens/interesses públicos</li>
+<li><b>Princípios NÃO são exaustivos</b> no art. 37 CF — existem implícitos e infraconstitucionais</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Motivação é <b>implícito na CF</b> (NÃO expresso)</li>
+<li>Supremacia do interesse público <b>NÃO é expresso na CF</b></li>
+<li>Interesse público <b>NÃO se opõe necessariamente</b> ao privado</li>
+<li>Autotutela permite <b>anular por ilegalidade E revogar</b> por inconveniência</li>
+</ul></div></div></div>
+
+</div></div>
+
+<!-- ==================== BENS ==================== -->
+<div class="macro" id="bens">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏗️</div>
+<div class="minfo"><div class="mt">BENS PÚBLICOS</div><div class="mm">1,6% do total • Uso, requisição e características</div></div>
+<span class="badge">19q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Formas de Utilização de Bens Públicos</div><span class="tc">5q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Autorização:</b> Ato unilateral, discricionário e precário; NÃO exige licitação</li>
+<li><b>Permissão:</b> Discricionária e precária; pode exigir licitação em alguns casos</li>
+<li><b>Concessão de uso:</b> Contrato; prazo determinado; NÃO transfere propriedade</li>
+<li><b>Permissão e autorização:</b> Ambas discricionárias e precárias para uso privativo</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Requisição da Propriedade Privada</div><span class="tc">5q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Requisição:</b> Perigo público iminente; temporário; indenização ulterior (se houver dano)</li>
+<li><b>Sem perigo iminente:</b> Requisição NÃO é legítima</li>
+<li><b>Compulsoriedade:</b> Irrecusável pelo particular</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><div class="tt">Características e Classificação</div><span class="tc">9q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4><ul class="k">
+<li><b>Inalienabilidade:</b> Bens de uso comum e uso especial (enquanto mantiverem qualificação)</li>
+<li><b>Bens dominicais:</b> Alienáveis (com condições legais)</li>
+<li><b>Imprescritibilidade:</b> NÃO admitem usucapião (mesmo com posse de boa-fé contínua)</li>
+<li><b>Impenhorabilidade:</b> NÃO podem ser penhorados ou hipotecados</li>
+<li><b>Terras devolutas:</b> Regra = estados (NÃO municípios); exceção = União (defesa, vias federais)</li>
+<li><b>Águas subterrâneas:</b> Pertencem aos estados (não à União)</li>
+<li><b>Bens de autarquias:</b> NÃO são invariavelmente de natureza pública (podem ser dominicais)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>Bens públicos <b>NÃO admitem usucapião</b> em nenhuma hipótese</li>
+<li>Oneração (penhora/hipoteca) de bens públicos <b>NÃO é permitida</b></li>
+<li>Terras devolutas = <b>estados</b> (não municípios)</li>
+</ul></div></div></div>
+
+</div></div>
+
+</div>
+
+<button class="back-btn" onclick="history.back()">← Voltar</button>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲</div>
+
+<script>
+function toggleMacro(el){el.closest('.macro').classList.toggle('open')}
+function toggleTopic(el){el.closest('.tp').classList.toggle('open')}
+function scrollToSection(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+function toggleAll(open){document.querySelectorAll('.macro,.tp').forEach(e=>{open?e.classList.add('open'):e.classList.remove('open')})}
+function filterContent(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.tp').forEach(tp=>{const txt=tp.textContent.toLowerCase();tp.style.display=txt.includes(q)?'':'none';if(txt.includes(q)&&q.length>2){tp.classList.add('open');tp.closest('.macro').classList.add('open')}})}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)})
+</script>
+</body>
+</html>
