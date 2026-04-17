@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resumo Estruturado – Informática: Segurança da Informação, LAI e LGPD</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#0f766e,#14b8a6);border-radius:16px;margin-bottom:20px;box-shadow:0 8px 32px rgba(20,184,166,0.3)}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:13px;color:#ccfbf1;margin-bottom:12px}
+.stats-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hstat{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(255,255,255,0.1);color:#ccfbf1;border:1px solid rgba(255,255,255,0.15)}
+.hstat b{font-size:15px;color:#fff}
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:16px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #99f6e4;color:#0f766e;background:#f0fdfa;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:#0f766e;color:#fff;border-color:#0f766e}
+.search-box{margin-bottom:16px;display:flex;gap:8px}
+.search-box input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-size:13px;outline:none}
+.search-box input:focus{border-color:#14b8a6}
+.ebtn{padding:8px 16px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#0f766e;cursor:pointer;font-size:11px;font-weight:700}
+.ebtn:hover{background:#0f766e;color:#fff;border-color:#0f766e}
+.macro{margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.mh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.mh:hover{background:#f0fdfa}
+.mi{font-size:26px;flex-shrink:0}
+.minfo{flex:1}.mt{font-size:17px;font-weight:800;color:#1e293b}
+.mm{font-size:11px;color:#64748b;margin-top:2px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#f0fdfa;color:#0f766e;border:1px solid #99f6e4}
+.chv{font-size:14px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.macro.open .chv{transform:rotate(90deg)}
+.mb{display:none;padding:0 18px 18px;border-top:1px solid #f1f5f9}
+.macro.open .mb{display:block}
+.tp{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc}
+.th{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;transition:background .2s}
+.th:hover{background:#f0fdfa}
+.tt{flex:1;font-size:13px;font-weight:700;color:#1e293b}
+.tc{font-size:10px;color:#64748b;font-weight:600;padding:2px 8px;background:#f1f5f9;border-radius:10px;border:1px solid #e2e8f0}
+.tv{font-size:11px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.tp.open .tv{transform:rotate(90deg)}
+.tb{display:none;padding:0 14px 14px;border-top:1px solid #f1f5f9}
+.tp.open .tb{display:block}
+.kp h4{font-size:12px;font-weight:700;color:#0f766e;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.kp h4::before{content:'💡'}
+ul.k{list-style:none;padding:0}
+ul.k li{padding:6px 10px 6px 20px;font-size:12px;color:#334155;margin-bottom:3px;border-radius:6px;background:#f1f5f9;position:relative;line-height:1.5}
+ul.k li::before{content:'▸';position:absolute;left:8px;color:#0f766e;font-weight:700}
+ul.k li b{color:#1e293b}
+.trap{margin-top:10px;padding:10px 14px;background:#f0fdfa;border:1px solid #99f6e4;border-radius:8px}
+.trap h4{font-size:12px;font-weight:700;color:#0f766e;margin-bottom:6px}
+.trap h4::before{content:'⚠️ '}
+ul.t{list-style:none;padding:0}
+ul.t li{padding:4px 10px 4px 20px;font-size:11px;color:#134e4a;margin-bottom:2px;position:relative;line-height:1.4}
+ul.t li::before{content:'✗';position:absolute;left:6px;color:#dc2626;font-weight:700}
+ul.t li b{color:#064e3b}
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#0f766e;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(15,118,110,.4);z-index:100}
+.back-btn:hover{background:#0d9488}
+.scroll-top{position:fixed;bottom:64px;right:20px;width:40px;height:40px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#1e293b;font-size:16px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{background:#0f766e;color:#fff;border-color:#0f766e}
+@media(max-width:768px){.container{padding:10px}.header h1{font-size:18px}.mt{font-size:15px}.nav-btn{padding:5px 8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🔐 Resumo Estruturado – Informática: Seg. Informação, LAI e LGPD</h1>
+<div class="sub">Policial Legislativo CD 2026 • 901 questões CEBRASPE analisadas</div>
+<div class="stats-row">
+<div class="hstat">📝 <b>901</b> questões</div>
+<div class="hstat">📂 <b>15</b> macro-temas</div>
+<div class="hstat">📑 <b>55+</b> subtópicos</div>
+<div class="hstat">🔒 <b>Seg. Informação</b> mais cobrado</div>
+</div>
+</div>
+<div class="nav-bar" id="navBar">
+<span class="nav-btn" onclick="scrollToSection('m1')">Conceitos SI</span>
+<span class="nav-btn" onclick="scrollToSection('m2')">Criptografia</span>
+<span class="nav-btn" onclick="scrollToSection('m3')">Algoritmos Cripto</span>
+<span class="nav-btn" onclick="scrollToSection('m4')">Firewall/Proxy</span>
+<span class="nav-btn" onclick="scrollToSection('m5')">IDS/IPS</span>
+<span class="nav-btn" onclick="scrollToSection('m6')">LAI Disposições</span>
+<span class="nav-btn" onclick="scrollToSection('m7')">LAI Acesso/Divulg.</span>
+<span class="nav-btn" onclick="scrollToSection('m8')">LAI Procedimento</span>
+<span class="nav-btn" onclick="scrollToSection('m9')">LAI Sigilo/Classif.</span>
+<span class="nav-btn" onclick="scrollToSection('m10')">LAI Resp./Mescl.</span>
+<span class="nav-btn" onclick="scrollToSection('m11')">LGPD Fundamentos</span>
+<span class="nav-btn" onclick="scrollToSection('m12')">LGPD Tratamento</span>
+<span class="nav-btn" onclick="scrollToSection('m13')">LGPD Agentes/Gov.</span>
+<span class="nav-btn" onclick="scrollToSection('m14')">Ataques Ciber.</span>
+<span class="nav-btn" onclick="scrollToSection('m15')">Inteligência</span>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Buscar assunto, palavra-chave ou artigo..." onkeyup="filterContent()">
+<button class="ebtn" onclick="toggleAll(true)">▼ Abrir Tudo</button>
+<button class="ebtn" onclick="toggleAll(false)">▲ Fechar Tudo</button>
+</div>
+
+<!-- M1: CONCEITOS E PRINCÍPIOS -->
+<div class="macro" id="m1">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">🛡️</span>
+<div class="minfo"><div class="mt">Conceitos, Princípios e Atributos da Segurança da Informação</div><div class="mm">97 questões • Tema MAIS cobrado • CID, políticas, normas ISO 27001/27002</div></div>
+<span class="badge">97 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Tríade CID – Confidencialidade, Integridade, Disponibilidade</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Confidencialidade</b>: informação acessível apenas a autorizados. Ferramentas: criptografia, controle de acesso</li>
+<li><b>Integridade</b>: informação não alterada sem autorização. Ferramentas: hash, assinatura digital</li>
+<li><b>Disponibilidade</b>: informação acessível quando necessário. Ferramentas: redundância, backup</li>
+<li><b>Autenticidade</b>: garantia da identidade. Não faz parte da tríade CID, mas é atributo essencial</li>
+<li><b>Não repúdio (Irretratabilidade)</b>: impossibilidade de negar autoria. Garantido por assinatura digital</li>
+<li>Confidencialidade NÃO exige tipo específico de cifra – pode ser simétrica ou assimétrica</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que confidencialidade exige cifra assimétrica – pode usar <b>simétrica</b> também</li>
+<li>ERRADO confundir integridade com confidencialidade</li>
+<li>ERRADO dizer que autenticidade é sinônimo de confidencialidade</li>
+<li>ERRADO dizer que disponibilidade significa ausência total de restrições</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Políticas de Segurança e Gestão de Riscos</span><span class="tc">30+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Política de segurança: aprovada pela <b>alta direção</b>, comunicada a todos</li>
+<li>Classificação da informação: responsabilidade do <b>proprietário</b>, não do custodiante</li>
+<li>Gestão de riscos: identificação, análise e tratamento. Risco residual é <b>aceito</b></li>
+<li>Plano de continuidade de negócios (PCN): garante operação em caso de desastre</li>
+<li>Controle de acesso: princípio do <b>menor privilégio</b></li>
+<li>Segurança envolve <b>pessoas, processos e tecnologia</b> – não só TI</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que política é elaborada apenas pelo setor de TI</li>
+<li>ERRADO dizer que classificação é feita pelo custodiante – é pelo <b>proprietário</b></li>
+<li>ERRADO dizer que objetivo é eliminar todo risco – é <b>reduzir a nível aceitável</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Normas ISO 27001/27002 e Gestão de Incidentes</span><span class="tc">15+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>ISO 27001</b>: requisitos para SGSI. Ciclo PDCA</li>
+<li><b>ISO 27002</b>: código de práticas/controles. Complementar à 27001</li>
+<li>Gestão de incidentes: preparação, identificação, contenção, erradicação, recuperação, lições aprendidas</li>
+<li>Comunicação tempestiva a CSIRT, gestores, ANPD (quando dados pessoais)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO confundir ISO 27001 (requisitos) com ISO 27002 (boas práticas)</li>
+<li>ERRADO dizer que ISO 27001 define controles obrigatórios – define <b>requisitos</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M2: CRIPTOGRAFIA CONCEITOS -->
+<div class="macro" id="m2">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">🔑</span>
+<div class="minfo"><div class="mt">Criptografia – Conceitos de Chaves e Simetria</div><div class="mm">51 questões • Simétrica vs. assimétrica, chave pública/privada</div></div>
+<span class="badge">51 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Criptografia Simétrica</span><span class="tc">25+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Simétrica</b>: UMA MESMA chave para cifrar e decifrar (chave secreta)</li>
+<li>Exemplos: <b>AES, DES, 3DES, RC4, IDEA, Blowfish, Twofish</b></li>
+<li>Mais <b>rápida</b> que assimétrica, ideal para grandes volumes</li>
+<li>Problema: <b>distribuição segura da chave</b></li>
+<li>NÃO provê autenticidade nem não repúdio por si só</li>
+<li>Tipos: <b>cifras de bloco</b> (AES, DES) e <b>cifras de fluxo</b> (RC4, ChaCha20)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que simétrica usa chave pública e privada – isso é <b>assimétrica</b></li>
+<li>ERRADO dizer que simétrica garante não repúdio – <b>não garante</b></li>
+<li>ERRADO dizer que tamanho da chave é irrelevante para segurança</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Criptografia Assimétrica</span><span class="tc">25+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Assimétrica</b>: DUAS chaves – <b>pública</b> (cifrar) e <b>privada</b> (decifrar)</li>
+<li>Exemplos: <b>RSA, ElGamal, Diffie-Hellman, ECC</b></li>
+<li>Garante <b>autenticidade e não repúdio</b> (assinatura digital)</li>
+<li>Para <b>confidencialidade</b>: cifra com pública do destinatário</li>
+<li>Para <b>assinatura</b>: cifra com privada do remetente</li>
+<li>Diffie-Hellman: vulnerável a <b>man-in-the-middle</b> (não autentica)</li>
+<li>RSA: Totiente de Euler, dois primos grandes</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que assimétrica usa UMA única chave</li>
+<li>ERRADO chamar chave pública/privada de "simétrica"</li>
+<li>ERRADO dizer que RSA tem chave privada de tamanho fixo</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M3: ALGORITMOS -->
+<div class="macro" id="m3">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">🧮</span>
+<div class="minfo"><div class="mt">Algoritmos de Criptografia</div><div class="mm">50 questões • AES, RSA, DES, SHA, MD5, Twofish, RC4, antiforense</div></div>
+<span class="badge">50 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">AES (Advanced Encryption Standard)</span><span class="tc">20+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>AES (Rijndael)</b>: simétrico, cifra de bloco, bloco fixo <b>128 bits</b></li>
+<li>Chaves: <b>128, 192 ou 256 bits</b></li>
+<li>Usa <b>rede de substituição-permutação</b> (NÃO Feistel)</li>
+<li>Eficiente em <b>software E hardware</b></li>
+<li>AES-256 considerado <b>resistente a ataques quânticos</b></li>
+<li>ECB <b>NÃO oculta padrões</b> – não recomendado</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que AES usa Feistel – usa <b>substituição-permutação</b></li>
+<li>ERRADO dizer que AES é eficiente apenas em software</li>
+<li>ERRADO dizer que bloco AES é variável – é <b>fixo em 128 bits</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">RSA, DES, Twofish, RC4 e Outros</span><span class="tc">15+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>RSA</b>: assimétrico, Totiente de Euler, dois primos grandes com grande diferença</li>
+<li><b>DES</b>: simétrico, bloco 64 bits, chave 56 bits – <b>inseguro</b> hoje. Usa Feistel</li>
+<li><b>Twofish</b>: simétrico, bloco 128 bits, chave até 256 bits, 16 rodadas Feistel</li>
+<li><b>RC4</b>: cifra de fluxo simétrica. <b>NÃO recomendado</b> com certificados digitais</li>
+<li>RSA pode proteger troca de chave simétrica (uso híbrido: RSA + AES)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que RC4 é recomendado com certificados digitais</li>
+<li>ERRADO dizer que DES é seguro atualmente – chave de 56 bits <b>insuficiente</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Hash (SHA, MD5) e Técnicas Antiforenses</span><span class="tc">15+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Função hash</b>: saída fixa, entrada variável, <b>unidirecional</b></li>
+<li><b>SHA-3</b>: estrutura de <b>absorção/compressão (esponja/Keccak)</b>, NÃO permutação linear</li>
+<li><b>MD5</b>: 128 bits – inseguro (colisões). <b>SHA-256</b>: 256 bits – seguro</li>
+<li>Hash NÃO é criptografia reversível</li>
+<li><b>Rubberhose</b>: negação plausível via criptografia</li>
+<li>Esteganografia JPEG <b>NÃO é detectável com 100% de precisão</b></li>
+<li>Apagamento seguro insuficiente em <b>SSDs</b> (wear-leveling)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que SHA-3 usa permutação linear – usa <b>esponja</b></li>
+<li>ERRADO dizer que esteganografia JPEG é 100% detectável</li>
+<li>ERRADO dizer que TrueCrypt implementa algoritmos pós-quânticos</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M4: FIREWALL -->
+<div class="macro" id="m4">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">🧱</span>
+<div class="minfo"><div class="mt">Firewall, Roteadores, Proxy e DMZ</div><div class="mm">40 questões • WAF, filtros de pacotes, stateful, proxy reverso, DMZ</div></div>
+<span class="badge">40 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Tipos de Firewall</span><span class="tc">25+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Filtro de pacotes</b>: analisa cabeçalhos (IP, porta) – camada 3/4. Não examina conteúdo</li>
+<li><b>Stateful</b>: mantém tabela de estados de conexões</li>
+<li><b>Firewall de aplicação (proxy)</b>: camada 7, analisa conteúdo</li>
+<li><b>WAF</b>: protege apps web contra XSS, SQL injection, CSRF</li>
+<li>WAF por assinatura: padrões de tráfego malicioso. WAF por anomalia: desvios da normalidade</li>
+<li><b>Proxy reverso</b>: protege servidores, distribui carga</li>
+<li>Firewall <b>NÃO substitui</b> antivírus nem IDS/IPS</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que firewall substitui IDS – são <b>complementares</b></li>
+<li>ERRADO dizer que filtro de pacotes analisa conteúdo da aplicação</li>
+<li>ERRADO dizer que WAF por anomalia não gera falsos positivos – <b>pode sim</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">DMZ e VPN</span><span class="tc">15+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>DMZ</b>: sub-rede entre rede interna e externa para servidores públicos</li>
+<li>Protocolos VPN: <b>IPSec, SSL/TLS, L2TP, OpenVPN</b></li>
+<li>Segmentação de rede reduz superfície de ataque</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que DMZ é rede desprotegida</li>
+<li>ERRADO dizer que servidores internos devem ficar na DMZ</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M5: IDS/IPS -->
+<div class="macro" id="m5">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">🔍</span>
+<div class="minfo"><div class="mt">IDS, IPS e Honeypots</div><div class="mm">30 questões • NIDS, HIDS, assinatura/anomalia, prevenção</div></div>
+<span class="badge">30 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">IDS – Detecção de Intrusão</span><span class="tc">18+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>IDS</b>: detecta e <b>alerta</b> – NÃO bloqueia automaticamente</li>
+<li><b>NIDS</b>: baseado em rede. <b>HIDS</b>: baseado em host</li>
+<li>Detecção por <b>assinatura</b>: padrões conhecidos. Por <b>anomalia</b>: desvios</li>
+<li>NÃO identifica ataques em <b>pacotes criptografados</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que IDS <b>bloqueia</b> ataques – quem bloqueia é <b>IPS</b></li>
+<li>ERRADO dizer que IDS é dispositivo físico que restringe acesso – isso é <b>firewall</b></li>
+<li>ERRADO dizer que IDS é exploit para alterar execução</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">IPS – Prevenção de Intrusão</span><span class="tc">12+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>IPS</b>: detecta E <b>bloqueia/previne</b> ataques automaticamente</li>
+<li>Software que apenas alerta sem bloquear é IDS, <b>não IPS</b></li>
+<li>IPS NÃO é suficiente como SIEM para análise completa</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que IPS apenas alerta – <b>bloqueia ativamente</b></li>
+<li>ERRADO dizer que firewall avisa IDS – é o <b>IDS que avisa o firewall</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M6: LAI DISPOSIÇÕES GERAIS -->
+<div class="macro" id="m6">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">📋</span>
+<div class="minfo"><div class="mt">LAI – Disposições Gerais (arts. 1º a 5º, Lei 12.527/2011)</div><div class="mm">60 questões • Abrangência, definições, diretrizes</div></div>
+<span class="badge">60 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Abrangência e Destinatários</span><span class="tc">30+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Aplica-se a <b>todos os Poderes</b> e <b>todos os entes</b> (União, Estados, DF, Municípios)</li>
+<li>Abrange: administração direta/indireta, autarquias, fundações, empresas públicas, SEM, TC e MP</li>
+<li>Entidades privadas <b>sem fins lucrativos</b> que recebam recursos públicos também se submetem</li>
+<li>Qualquer pessoa que detenha informações em vínculo com poder público está sujeita</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que LAI se aplica apenas à administração direta do Executivo</li>
+<li>ERRADO dizer que MP e Judiciário possuem legislação própria e não se subordinam à LAI</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Diretrizes Fundamentais</span><span class="tc">30+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Publicidade é regra</b>; sigilo é <b>exceção</b></li>
+<li>Deve garantir: disponibilidade, autenticidade, integridade + restrição de acesso à info sigilosa</li>
+<li>Informação sobre <b>violação de direitos humanos NÃO pode sofrer restrição</b></li>
+<li>LAI garante <b>acesso primário</b> (dados íntegros, autênticos e atualizados)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que informações sobre violação de direitos humanos podem ser sigilosas</li>
+<li>ERRADO dizer que publicidade é exceção e sigilo é regra</li>
+<li>ERRADO dizer que ultrassecretas nunca podem ser divulgadas – podem <b>após prazo</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M7: LAI ACESSO E DIVULGAÇÃO -->
+<div class="macro" id="m7">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">📢</span>
+<div class="minfo"><div class="mt">LAI – Acesso a Informações e Divulgação (arts. 6º a 9º)</div><div class="mm">56 questões • Transparência ativa/passiva, Internet, SIC</div></div>
+<span class="badge">56 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Transparência Ativa e Passiva</span><span class="tc">30+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Transparência ativa</b>: publicação proativa na Internet, <b>independente de requerimento</b></li>
+<li><b>Transparência passiva</b>: atendimento a pedidos de informação</li>
+<li>Dever de divulgar de ofício informações de interesse geral</li>
+<li>Municípios com até <b>10.000 hab.</b>: dispensados de divulgação obrigatória na Internet</li>
+<li>Pareceres jurídicos: acesso com a edição do <b>ato decisório</b> (não do parecer)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que transparência ativa é atendimento a pedidos – isso é <b>passiva</b></li>
+<li>ERRADO dizer que todos os municípios devem divulgar na Internet</li>
+<li>ERRADO dizer que vencimentos de servidores são dados sensíveis vedados</li>
+<li>ERRADO dizer que acesso a parecer é com edição do parecer – é com o <b>ato decisório</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Gestão Transparente e Dever de Informação</span><span class="tc">20+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Cabe aos órgãos: gestão transparente com amplo acesso e divulgação</li>
+<li>Info em formato eletrônico: pode informar <b>por escrito</b> local e forma de consulta</li>
+<li>Execução orçamentária: acesso <b>não restrito</b> a órgãos de controle</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que acompanhamento orçamentário é restrito a órgãos de controle</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M8: LAI PROCEDIMENTO -->
+<div class="macro" id="m8">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">📝</span>
+<div class="minfo"><div class="mt">LAI – Procedimento de Acesso à Informação (arts. 10 a 20)</div><div class="mm">60 questões • Pedido, prazos, recursos, CGU, gratuidade</div></div>
+<span class="badge">60 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Requisitos do Pedido</span><span class="tc">25+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Qualquer interessado</b> pode pedir – identificação + especificação da informação</li>
+<li><b>Proibido</b> exigir motivos da solicitação</li>
+<li>Pedido anônimo <b>NÃO é aceito</b>. Jovem de <b>15 anos</b> pode solicitar sem representação</li>
+<li>Pedido por <b>qualquer meio legítimo</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que pedido deve conter <b>motivos</b> – motivos são <b>proibidos de exigir</b></li>
+<li>ERRADO dizer que pedido anônimo é válido</li>
+<li>ERRADO dizer que menor precisa de representação dos pais</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Prazos e Custos</span><span class="tc">20+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Acesso imediato; se impossível: <b>20 dias</b> + prorrogação de <b>10 dias</b></li>
+<li>Serviço de busca: <b>gratuito</b>. Reprodução: pode cobrar custos</li>
+<li>Pessoas sem condições financeiras: <b>isentas</b> dos custos</li>
+<li>Documento cuja manipulação prejudique integridade: oferecer <b>cópia certificada</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que acesso em 5 dias úteis – é <b>20 dias corridos</b></li>
+<li>ERRADO dizer que prazo é improrrogável – prorrogação de <b>10 dias</b></li>
+<li>ERRADO dizer que pedido será negado se documento frágil – oferece-se <b>cópia</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Recurso contra Negativa</span><span class="tc">15+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Recurso em <b>10 dias</b> da ciência da negativa</li>
+<li>1ª instância: <b>autoridade hierarquicamente superior</b> (5 dias para manifestar)</li>
+<li>2ª instância (federal): autoridade máxima do órgão</li>
+<li>3ª instância: <b>CGU</b>. Acima: <b>CMRI</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que recurso é à mesma autoridade para reconsideração</li>
+<li>ERRADO dizer que CGU é máxima instância – <b>CMRI está acima</b></li>
+<li>ERRADO dizer que prazo é 5 dias para recurso – é <b>10 dias</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M9: LAI SIGILO -->
+<div class="macro" id="m9">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">🔒</span>
+<div class="minfo"><div class="mt">LAI – Restrições de Acesso e Classificação (arts. 21 a 31)</div><div class="mm">61 questões • Graus de sigilo, prazos, autoridades, info pessoais</div></div>
+<span class="badge">61 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Graus de Sigilo e Prazos</span><span class="tc">25+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Ultrassecreta</b>: até <b>25 anos</b>. <b>Secreta</b>: até <b>15 anos</b>. <b>Reservada</b>: até <b>5 anos</b></li>
+<li>Classificação por <b>decisão escrita</b> – NÃO prescinde de formalização</li>
+<li>Violação de direitos humanos: <b>NUNCA classificáveis</b></li>
+<li>Após prazo: informação torna-se <b>automaticamente pública</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que ultrassecretas nunca são divulgadas – podem <b>após 25 anos</b></li>
+<li>ERRADO dizer que classificação prescinde de decisão formal</li>
+<li>ERRADO confundir "informação sigilosa" com "informação pessoal"</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Informações Pessoais e Competência</span><span class="tc">30+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Info pessoais: acesso restrito por até <b>100 anos</b>, sem classificação de sigilo</li>
+<li>Acesso sem consentimento: prevenção médica, pesquisa (anonimizada), decisão judicial, direitos humanos, interesse público</li>
+<li>Fatos históricos de grande relevância: restrição de privacidade <b>NÃO se aplica</b></li>
+<li>Poder público responde <b>diretamente</b> por uso indevido de info pessoais</li>
+<li><b>Ultrassecreta</b>: Presidente, Vice, Ministros, Comandantes FA. <b>NÃO delegável</b></li>
+<li><b>Secreta</b>: + titulares de autarquias, fundações, EP, SEM</li>
+<li><b>Reservada</b>: + funções de direção/comando (DAS 101.5+)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que info pessoais precisam de classificação de sigilo – restrição é <b>automática</b></li>
+<li>ERRADO dizer que poder público responde subsidiariamente – responde <b>diretamente</b></li>
+<li>ERRADO dizer que classificação de ultrassecreta pode ser delegada</li>
+<li>ERRADO dizer que desclassificação abole todas as restrições – info pessoal permanece restrita</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M10: LAI RESPONSABILIDADES -->
+<div class="macro" id="m10">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">⚖️</span>
+<div class="minfo"><div class="mt">LAI – Responsabilidades e Tópicos Mesclados</div><div class="mm">43 questões • Condutas ilícitas, sanções, inidoneidade, CMRI</div></div>
+<span class="badge">43 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Condutas Ilícitas e Sanções (arts. 32 a 34)</span><span class="tc">15+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Ilícitos: recusar informação, retardar, destruir documentos, impor sigilo para proveito pessoal</li>
+<li>Aplica-se a <b>agentes públicos E militares</b></li>
+<li><b>Declaração de inidoneidade</b>: sanção para PJ de direito privado com vínculo ao poder público</li>
+<li>Competência: <b>autoridade máxima</b> do órgão. Defesa: <b>10 dias</b></li>
+<li>Reabilitação: somente após <b>ressarcir</b> prejuízos</li>
+<li>Destruir docs sobre violação de direitos humanos: <b>conduta ilícita</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que sanções NÃO se aplicam a militares – <b>se aplicam</b></li>
+<li>ERRADO dizer que prazo de defesa é 15 dias – é <b>10 dias</b></li>
+<li>ERRADO dizer que recusa autorizada pela chefia é lícita</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">CMRI e Disposições Finais</span><span class="tc">10+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>CMRI</b>: revê classificação de <b>ultrassecretas e secretas</b> (não reservadas)</li>
+<li>Órgãos devem apresentar <b>relatórios periódicos</b> sobre cumprimento da LAI</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que CMRI revê informações reservadas</li>
+<li>ERRADO dizer que não há recurso contra decisão da CGU – há recurso à <b>CMRI</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M11: LGPD FUNDAMENTOS -->
+<div class="macro" id="m11">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">🛡️</span>
+<div class="minfo"><div class="mt">LGPD – Disposições Preliminares e Fundamentos (Lei 13.709/2018)</div><div class="mm">60 questões • Definições, princípios, dado pessoal vs. sensível</div></div>
+<span class="badge">60 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Definições e Conceitos</span><span class="tc">30+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Dado pessoal</b>: informação de pessoa natural <b>identificada ou identificável</b></li>
+<li><b>Dado sensível</b>: raça, religião, política, sindicato, saúde, sexualidade, biometria, genética</li>
+<li><b>Anonimização</b>: dado perde possibilidade de associação a indivíduo</li>
+<li><b>Pseudonimização</b>: perde associação exceto por info adicional mantida separadamente</li>
+<li><b>Titular</b>: pessoa natural (NÃO jurídica). <b>Controlador</b>: decide sobre tratamento</li>
+<li><b>Operador</b>: trata em nome do controlador. <b>Encarregado (DPO)</b>: canal de comunicação</li>
+<li><b>Agentes de tratamento</b>: controlador + operador (NÃO inclui encarregado)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO confundir anonimização com pseudonimização</li>
+<li>ERRADO dizer que titular pode ser PJ – apenas <b>pessoa natural</b></li>
+<li>ERRADO dizer que encarregado é agente de tratamento</li>
+<li>ERRADO dizer que encarregado toma decisões – quem decide é <b>controlador</b></li>
+<li>ERRADO dizer que operador segue instruções da ANPD – segue do <b>controlador</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Princípios e Aplicabilidade</span><span class="tc">25+ Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Princípios: finalidade, adequação, necessidade, livre acesso, qualidade, transparência, segurança, prevenção, não discriminação, responsabilização</li>
+<li>Aplica-se a operação no <b>território nacional</b>, independente do país de sede</li>
+<li><b>NÃO se aplica</b>: fins artísticos, jornalísticos, acadêmicos, segurança pública/Estado, defesa, investigação penal</li>
+<li>Aplica-se à <b>administração pública</b>. EP e SEM em concorrência: tratamento de PJ privada</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que LGPD não se aplica ao poder público – <b>se aplica</b></li>
+<li>ERRADO dizer que LGPD protege dados em atividades jornalísticas</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M12: LGPD TRATAMENTO -->
+<div class="macro" id="m12">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">📊</span>
+<div class="minfo"><div class="mt">LGPD – Tratamento de Dados, Sensíveis e Crianças</div><div class="mm">78 questões • Bases legais, consentimento, dados sensíveis, crianças</div></div>
+<span class="badge">78 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Bases Legais para Tratamento (art. 7º)</span><span class="tc">43 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>10 bases legais</b>: consentimento, obrigação legal, políticas públicas, pesquisa, contrato, exercício de direitos, proteção da vida, tutela de saúde, legítimo interesse, proteção do crédito</li>
+<li><b>Consentimento NÃO é sempre obrigatório</b></li>
+<li>Consentimento: <b>livre, informado, inequívoco</b>. Se escrito: <b>cláusula destacada</b></li>
+<li>Autorizações genéricas são <b>nulas</b>. Pode revogar <b>a qualquer momento</b></li>
+<li>Dados públicos pelo titular: dispensam consentimento</li>
+<li>Ônus da prova do consentimento: <b>controlador</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que consentimento é <b>sempre obrigatório</b></li>
+<li>ERRADO dizer que consentimento deve ser <b>necessariamente escrito</b></li>
+<li>ERRADO dizer que consentimento não pode ser revogado</li>
+<li>ERRADO dizer que ônus da prova é do operador – é do <b>controlador</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Dados Sensíveis (arts. 11 a 13)</span><span class="tc">28 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Consentimento <b>específico e em destaque</b></li>
+<li><b>Sem consentimento</b>: obrigação legal, políticas públicas, pesquisa (anonimização quando possível), exercício de direitos, proteção da vida, tutela de saúde</li>
+<li>Pesquisa: anonimização <b>"sempre que possível"</b> (não obrigatória)</li>
+<li>Proteção da vida: dispensa consentimento mas <b>NÃO pode repassar a terceiros</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que dados sensíveis <b>nunca</b> podem ser tratados sem consentimento</li>
+<li>ERRADO dizer que anonimização é <b>obrigatória</b> em pesquisa</li>
+<li>ERRADO dizer que obrigação regulatória exige consentimento prévio</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Dados de Crianças e Adolescentes (art. 14)</span><span class="tc">7 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Tratamento no <b>melhor interesse</b> da criança/adolescente</li>
+<li>Consentimento: <b>um dos pais</b> ou responsável legal (NÃO ambos)</li>
+<li>Sem consentimento: apenas para <b>contatar pais</b> ou <b>proteção da criança</b></li>
+<li>Dados sem consentimento: utilizados <b>uma única vez</b>, sem armazenamento</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que precisa consentimento de <b>ambos</b> os pais – basta <b>um</b></li>
+<li>ERRADO dizer que tratamento de dados de crianças é <b>vedado</b></li>
+<li>ERRADO dizer que dados coletados para proteção podem ser repassados a terceiros</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M13: LGPD AGENTES E GOVERNANÇA -->
+<div class="macro" id="m13">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">👥</span>
+<div class="minfo"><div class="mt">LGPD – Agentes, Encarregado, Direitos, Governança e Poder Público</div><div class="mm">62 questões • Controlador/operador, encarregado, direitos do titular, boas práticas</div></div>
+<span class="badge">62 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Encarregado pelo Tratamento (DPO)</span><span class="tc">11 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Designado pelo <b>controlador</b> (não pela ANPD)</li>
+<li>Funções: aceitar reclamações de titulares, receber comunicações da ANPD, orientar funcionários</li>
+<li>Identidade e contato devem ser <b>divulgados publicamente</b> (NÃO em sigilo)</li>
+<li>Encarregado NÃO é quem toma decisões sobre tratamento – é o <b>controlador</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que contato do encarregado deve ser mantido em sigilo – deve ser <b>público</b></li>
+<li>ERRADO dizer que ANPD indica o encarregado – quem indica é o <b>controlador</b></li>
+<li>ERRADO dizer que encarregado toma decisões sobre finalidade do tratamento</li>
+<li>ERRADO confundir encarregado com operador</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Controlador, Operador e RIPD</span><span class="tc">9 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Controlador</b>: decide sobre tratamento. <b>Operador</b>: executa conforme instruções do controlador</li>
+<li><b>RIPD (Relatório de Impacto)</b>: contém tipos de dados coletados, medidas de mitigação</li>
+<li>RIPD deve ser precedido quando base legal é <b>legítimo interesse</b></li>
+<li>RIPD NÃO é elaborado pelo encarregado, mas pelo <b>controlador</b></li>
+<li>Operador segue instruções do <b>controlador</b> (não da ANPD)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que controlador segue instruções do operador – é o <b>contrário</b></li>
+<li>ERRADO dizer que RIPD é elaborado pelo encarregado</li>
+<li>ERRADO dizer que titular pode ser PJ de direito público</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Direitos do Titular (arts. 17 a 22)</span><span class="tc">12 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Direito a: confirmação de tratamento, acesso, correção, anonimização, bloqueio, eliminação, portabilidade</li>
+<li>Direito a solicitar <b>exclusão</b> dos dados (se não houver obrigação legal de manutenção)</li>
+<li>Dados podem ser fornecidos por <b>meio eletrônico ou impresso</b>, a critério do titular</li>
+<li>Direito a <b>revisão de decisões automatizadas</b> (perfil de consumo, crédito)</li>
+<li>Titular pode obter anonimização <b>a qualquer momento</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que dado pessoal NÃO pode sofrer suspensão temporária</li>
+<li>ERRADO dizer que acesso depende de autorização da ANPD – é direito direto do <b>titular</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Poder Público e Transferência Internacional</span><span class="tc">20 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Dados no poder público: formato <b>interoperável e estruturado</b> para uso compartilhado</li>
+<li>Poder público pode transferir dados a entidades privadas com <b>contrato/convênio</b>, comunicando à ANPD</li>
+<li>Transferência internacional: permitida a países com <b>legislação equivalente</b></li>
+<li>Serviços notariais: sujeitos ao <b>mesmo regime</b> de órgãos públicos</li>
+<li>EP e SEM em concorrência: tratamento de <b>PJ privada</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que transferência internacional de dados é vedada</li>
+<li>ERRADO dizer que poder público não pode transferir dados a privados – <b>pode com contrato</b></li>
+<li>ERRADO dizer que serviços notariais têm regime diverso de órgãos públicos</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Boas Práticas, Governança, Segurança e Responsabilidade</span><span class="tc">14 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Controlador pode implementar programa de governança com <b>planos de resposta a incidentes</b></li>
+<li>Regras de boas práticas: formuladas por <b>controladores e operadores</b></li>
+<li>Incidente de segurança: <b>controlador</b> comunica à ANPD</li>
+<li>Garantia de segurança mesmo <b>após término do tratamento</b></li>
+<li>Responsabilidade solidária (controlador e operador) – operador NÃO responde subsidiariamente</li>
+<li>Agente de tratamento NÃO é responsabilizado se não houve violação à LGPD</li>
+<li>Dados pessoais eliminados após término, mas conservação autorizada para pesquisa (com anonimização)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que operador responde <b>subsidiariamente</b> – é <b>solidariamente</b></li>
+<li>ERRADO dizer que dados devem ser eliminados sem exceção – conservação para <b>pesquisa</b> é autorizada</li>
+<li>ERRADO dizer que retenção obrigatória de 5 anos após tratamento</li>
+<li>ERRADO dizer que inversão automática do ônus da prova é prevista na LGPD</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M14: ATAQUES CIBERNÉTICOS -->
+<div class="macro" id="m14">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">💀</span>
+<div class="minfo"><div class="mt">Ameaças, Ataques e Malware</div><div class="mm">86 questões • DoS/DDoS, phishing, SQL injection, XSS, spoofing, ransomware</div></div>
+<span class="badge">86 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">DoS e DDoS</span><span class="tc">15 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>DoS</b>: indisponibiliza recurso de um ponto. <b>DDoS</b>: múltiplos pontos (botnets)</li>
+<li><b>PDoS</b>: explora vulnerabilidades para substituir firmware por imagem corrompida</li>
+<li>DDoS NÃO modifica mensagens – objetivo é <b>indisponibilizar</b></li>
+<li>Ataques de inundação HTTP: camada <b>7 do OSI</b></li>
+<li>SYN flood: explora handshake TCP</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que DDoS modifica mensagens para acesso não autorizado</li>
+<li>ERRADO confundir DoS com phishing</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Engenharia Social e Phishing</span><span class="tc">15 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Phishing</b>: isca para obter dados pessoais via links/emails falsos</li>
+<li><b>Spear phishing</b>: ataque direcionado a pessoa/grupo específico</li>
+<li><b>Engenharia social</b>: manipulação psicológica para obter informações</li>
+<li>Vishing (por voz), smishing (por SMS)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO confundir phishing com pharming (DNS poisoning)</li>
+<li>ERRADO dizer que phishing é exclusivamente por email</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Malware: Vírus, Worms, Trojans, Ransomware</span><span class="tc">15 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Ransomware</b>: criptografa dados e exige resgate. <b>NÃO é apenas bloqueio de acesso</b></li>
+<li><b>Leakware/doxware</b>: ameaça <b>divulgar</b> dados (não destruir)</li>
+<li>Detecção heurística: analisa comportamento/estrutura mesmo sem assinatura conhecida</li>
+<li><b>CVSS</b>: sistema de pontuação de gravidade de vulnerabilidades</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que ransomware é técnica de coleta de dados por email – isso é <b>phishing</b></li>
+<li>ERRADO dizer que ransomware apenas bloqueia acesso sem criptografar</li>
+<li>ERRADO dizer que leakware ameaça destruir – ameaça <b>divulgar</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">SQL Injection, XSS, CSRF</span><span class="tc">15 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>SQL injection</b>: insere comandos SQL via parâmetros de entrada da aplicação</li>
+<li>Causa: <b>falta de sanitização</b> de parâmetros (separação dados/comandos)</li>
+<li><b>XSS</b>: injeta scripts maliciosos em páginas web</li>
+<li>XSS refletido: carga na solicitação, refletida na resposta. XSS armazenado: gravado no servidor</li>
+<li><b>CSRF</b>: induz navegador autenticado a realizar ações sem conhecimento do usuário</li>
+<li>Proteção contra SQL injection <b>NÃO é suficiente</b> para impedir XSS/CSRF</li>
+<li>Session hijacking: roubar cookie de sessão para assumir controle</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO confundir SQL injection com XSS – SQL injection envia comandos ao BD, XSS injeta <b>scripts no navegador</b></li>
+<li>ERRADO dizer que proteção contra SQL injection protege contra XSS/CSRF</li>
+<li>ERRADO descrever XSS armazenado como "clicar link malicioso" – isso é <b>refletido</b></li>
+<li>ERRADO dizer que SQL injection é inserção de script no lado do cliente</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Spoofing, MitM e Ameaças de Rede</span><span class="tc">24 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Spoofing</b>: falsificação de identidade (IP, DNS, email). Autenticar máquina externa como interna</li>
+<li><b>DNS spoofing/poisoning</b>: manipula registros DNS para direcionar a destino falso. Consequências: roubo de dados, malware</li>
+<li><b>IP spoofing</b>: altera cabeçalho IP para parecer outra origem</li>
+<li><b>MitM/AiTM</b>: intercepta tráfego e redireciona a sítio espião (HTTP em vez de HTTPS)</li>
+<li><b>Ettercap</b>: ferramenta para MitM via envenenamento ARP</li>
+<li><b>Wardriving</b>: mapear redes sem fio (identificar inseguras)</li>
+<li><b>Eavesdropping</b>: escuta clandestina. Prevenção: criptografia ponta a ponta</li>
+<li><b>Exfiltração</b>: extração de dados sem percepção do titular</li>
+<li>SYN scan: varredura TCP <b>sem conexão completa</b> (half-open)</li>
+<li>Ataques passivos: obtêm dados. Ataques ativos: modificam/criam dados</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que spoofing é verificação de fluxo/mapeamento – isso é <b>sniffing/scanning</b></li>
+<li>ERRADO dizer que spoofing é apenas na camada de aplicação – ocorre em <b>enlace e rede também</b></li>
+<li>ERRADO confundir access point spoofing com wardriving</li>
+<li>ERRADO dizer que fingerprint identifica IP – fingerprint identifica <b>SO/serviço</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M15: INTELIGÊNCIA -->
+<div class="macro" id="m15">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">🕵️</span>
+<div class="minfo"><div class="mt">Atividade de Inteligência e Inteligência Cibernética</div><div class="mm">35 questões • OSINT, contrainteligência, PNI, deep web, segurança orgânica</div></div>
+<span class="badge">35 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Conceitos, Funções e Classificação</span><span class="tc">23 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Duas linhas fundamentais: <b>inteligência e contrainteligência</b></li>
+<li><b>Inteligência</b>: produção de conhecimento para assessorar decisões</li>
+<li><b>Contrainteligência</b>: prevenir, detectar, obstruir e neutralizar inteligência adversa</li>
+<li><b>OSINT</b>: inteligência de fontes abertas (Internet, redes sociais)</li>
+<li>HUMINT (humana), SIGINT (sinais), IMINT (imagens), MASINT (medidas)</li>
+<li>Princípio da <b>necessidade de conhecer</b>: acesso apenas quando necessário</li>
+<li><b>Vigilância</b>: técnica básica ofensiva e defensiva. <b>Disfarce</b> ≠ despistamento</li>
+<li>Missão da inteligência: <b>assessorar</b> (pode dar cobertura, mas assessoria é o foco)</li>
+<li><b>Nível tático</b> (assessoria à investigação), não estratégico</li>
+<li><b>Segurança orgânica</b>: proteger instalações e patrimônio</li>
+<li><b>Contraespionagem</b>: detectar/neutralizar obtenção de dados sigilosos</li>
+<li>Plano de contingência: procedimentos para situações que possam acontecer</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO confundir inteligência com contrainteligência – definições são <b>invertidas</b> na pegadinha</li>
+<li>ERRADO dizer que dados disponíveis e não protegidos = ação de <b>busca</b> – é ação de <b>coleta</b></li>
+<li>ERRADO dizer que disfarce é despistamento de vigilância – disfarce é <b>mudança de aparência</b></li>
+<li>ERRADO dizer que assessorar investigação é nível <b>estratégico</b> – é <b>tático</b></li>
+<li>ERRADO dizer que operações de inteligência visam "ampla coleta" – é <b>busca e coleta direcionada</b></li>
+<li>ERRADO dizer que atividades de inteligência correspondem a ações <b>pontuais</b> – são <b>permanentes</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Inteligência Cibernética e PNI</span><span class="tc">12 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>TOR</b>: acesso a sítios na deep web (não indexados)</li>
+<li>Big data: registro e análise de eventos de segurança para identificar anomalias</li>
+<li>Recrutamento online por grupos terroristas: considerado <b>terrorismo cibernético</b></li>
+<li>OSINT: rápida, econômica e compartilhável. NÃO é menos confiável que inteligência tradicional</li>
+<li><b>PNI</b>: expansão da capacidade no espaço cibernético é diretriz</li>
+<li>Instrumentos da PNI: atos normativos e recursos financeiros</li>
+<li><b>Sabotagem</b>: efeito físico, material ou psicológico</li>
+<li>Integração da inteligência brasileira: com <b>América do Sul</b> (não OEA especificamente)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que OSINT é menos confiável que inteligência tradicional</li>
+<li>ERRADO dizer que hacktivismo = terrorismo cibernético – são <b>conceitos distintos</b></li>
+<li>ERRADO dizer que integração é especialmente com OEA – é com <b>América do Sul</b></li>
+<li>ERRADO dizer que espaços de segurança cibernética são eminentemente intergovernamentais</li>
+</ul></div></div></div>
+</div></div>
+</div>
+<button class="back-btn" onclick="history.back()">← Voltar</button>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<script>
+function toggleMacro(el){el.closest('.macro').classList.toggle('open')}
+function toggleTopic(el){el.closest('.tp').classList.toggle('open')}
+function scrollToSection(id){var el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+function toggleAll(open){document.querySelectorAll('.macro,.tp').forEach(function(e){open?e.classList.add('open'):e.classList.remove('open')})}
+function filterContent(){var q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.tp').forEach(function(tp){var txt=tp.textContent.toLowerCase();tp.style.display=txt.includes(q)?'':'none';if(txt.includes(q)&&q.length>2){tp.classList.add('open');tp.closest('.macro').classList.add('open')}})}
+window.addEventListener('scroll',function(){document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)})
+</script>
+</body>
+</html>

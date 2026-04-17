@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resumo Estruturado – Língua Inglesa</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#1e40af,#3b82f6);border-radius:16px;margin-bottom:20px;box-shadow:0 8px 32px rgba(30,64,175,0.3)}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:13px;color:#bfdbfe;margin-bottom:12px}
+.stats-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hstat{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(255,255,255,0.1);color:#bfdbfe;border:1px solid rgba(255,255,255,0.15)}
+.hstat b{font-size:15px;color:#fff}
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:16px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #93c5fd;color:#1e40af;background:#eff6ff;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:#1e40af;color:#fff;border-color:#1e40af}
+.search-box{margin-bottom:16px;display:flex;gap:8px}
+.search-box input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-size:13px;outline:none}
+.search-box input:focus{border-color:#3b82f6}
+.ebtn{padding:8px 16px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e40af;cursor:pointer;font-size:11px;font-weight:700}
+.ebtn:hover{background:#1e40af;color:#fff;border-color:#1e40af}
+.macro{margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.mh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.mh:hover{background:#eff6ff}
+.mi{font-size:26px;flex-shrink:0}
+.minfo{flex:1}.mt{font-size:17px;font-weight:800;color:#1e293b}
+.mm{font-size:11px;color:#64748b;margin-top:2px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#eff6ff;color:#1e40af;border:1px solid #93c5fd}
+.chv{font-size:14px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.macro.open .chv{transform:rotate(90deg)}
+.mb{display:none;padding:0 18px 18px;border-top:1px solid #f1f5f9}
+.macro.open .mb{display:block}
+.tp{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc}
+.th{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;transition:background .2s}
+.th:hover{background:#eff6ff}
+.tt{flex:1;font-size:13px;font-weight:700;color:#1e293b}
+.tc{font-size:10px;color:#64748b;font-weight:600;padding:2px 8px;background:#f1f5f9;border-radius:10px;border:1px solid #e2e8f0}
+.tv{font-size:11px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.tp.open .tv{transform:rotate(90deg)}
+.tb{display:none;padding:0 14px 14px;border-top:1px solid #f1f5f9}
+.tp.open .tb{display:block}
+.kp h4{font-size:12px;font-weight:700;color:#1e40af;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.kp h4::before{content:'💡'}
+ul.k{list-style:none;padding:0}
+ul.k li{padding:6px 10px 6px 20px;font-size:12px;color:#334155;margin-bottom:3px;border-radius:6px;background:#f1f5f9;position:relative;line-height:1.5}
+ul.k li::before{content:'▸';position:absolute;left:8px;color:#1e40af;font-weight:700}
+ul.k li b{color:#1e293b}
+.trap{margin-top:10px;padding:10px 14px;background:#eff6ff;border:1px solid #93c5fd;border-radius:8px}
+.trap h4{font-size:12px;font-weight:700;color:#1e40af;margin-bottom:6px}
+.trap h4::before{content:'⚠️ '}
+ul.t{list-style:none;padding:0}
+ul.t li{padding:4px 10px 4px 20px;font-size:11px;color:#1e3a5f;margin-bottom:2px;position:relative;line-height:1.4}
+ul.t li::before{content:'✗';position:absolute;left:6px;color:#dc2626;font-weight:700}
+ul.t li b{color:#1e293b}
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#1e40af;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(30,64,175,.4);z-index:100}
+.back-btn:hover{background:#2563eb}
+.scroll-top{position:fixed;bottom:64px;right:20px;width:40px;height:40px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#1e293b;font-size:16px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{background:#1e40af;color:#fff;border-color:#1e40af}
+@media(max-width:768px){.container{padding:10px}.header h1{font-size:18px}.mt{font-size:15px}.nav-btn{padding:5px 8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🇬🇧 Resumo Estruturado – Língua Inglesa</h1>
+<div class="sub">Policial Legislativo CD 2026 • 436 questões CEBRASPE analisadas</div>
+<div class="stats-row">
+<div class="hstat">📝 <b>436</b> questões</div>
+<div class="hstat">📂 <b>10</b> macro-temas</div>
+<div class="hstat">📑 <b>28</b> assuntos</div>
+<div class="hstat">📖 <b>Understanding</b> mais cobrado</div>
+</div>
+</div>
+<div class="nav-bar" id="navBar">
+<span class="nav-btn" onclick="scrollToSection('m1')">Interpretação</span>
+<span class="nav-btn" onclick="scrollToSection('m2')">Reescrita/Substituição</span>
+<span class="nav-btn" onclick="scrollToSection('m3')">Sinônimos/Vocabulário</span>
+<span class="nav-btn" onclick="scrollToSection('m4')">Referenciação</span>
+<span class="nav-btn" onclick="scrollToSection('m5')">Tradução</span>
+<span class="nav-btn" onclick="scrollToSection('m6')">Verbos</span>
+<span class="nav-btn" onclick="scrollToSection('m7')">Conjunções/Conectivos</span>
+<span class="nav-btn" onclick="scrollToSection('m8')">Adjetivos/Advérbios</span>
+<span class="nav-btn" onclick="scrollToSection('m9')">Pronomes/Classes</span>
+<span class="nav-btn" onclick="scrollToSection('m10')">Tipologia/Diversos</span>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Search topic, keyword or rule..." onkeyup="filterContent()">
+<button class="ebtn" onclick="toggleAll(true)">▼ Abrir Tudo</button>
+<button class="ebtn" onclick="toggleAll(false)">▲ Fechar Tudo</button>
+</div>
+
+<!-- MACRO 1 -->
+<div class="macro" id="m1">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📖</div>
+<div class="minfo"><div class="mt">1. Text Interpretation (Understanding)</div><div class="mm">Compreensão textual, inferência, ideia central, argumentação • 100 questões</div></div>
+<span class="badge">100 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Compreensão Explícita vs Inferência</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>"According to the text"</b> = informação <b>explícita</b> no texto; <b>"It can be inferred"</b> = dedução lógica</li>
+<li>CEBRASPE parafraseia trechos do texto — se a paráfrase mantém o sentido original = <b>Certo</b></li>
+<li>Questão diz "the text states X" → verificar se X está <b>literalmente</b> no texto ou se é extrapolação</li>
+<li>Item que <b>generaliza</b> ("all", "every", "always") quando o texto usa "some", "most", "often" = <b>Errado</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"aviation" no texto, item diz "<b>healthcare</b>" — troca de exemplo específico = <b>ERRADO</b></li>
+<li>"Only recently have scientists begun..." — texto diz "has been around for quite some time" = <b>ERRADO</b></li>
+<li>Item inverte <b>causa e consequência</b> do texto original</li>
+<li>Item acrescenta informação <b>não mencionada</b> (extrapolação)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Ideia Central e Propósito</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Main idea = <b>tese principal</b> do texto, geralmente no 1º ou último parágrafo</li>
+<li>Purpose = o que o autor pretende: <b>inform, persuade, criticize, describe, narrate</b></li>
+<li>Diferença entre <b>topic</b> (assunto geral) e <b>main idea</b> (posição sobre o assunto)</li>
+<li>Supporting details = argumentos/exemplos que sustentam a ideia central (não são a ideia central)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Trocar ideia <b>central</b> por ideia <b>secundária</b> (detalhe de apoio)</li>
+<li>Atribuir ao autor uma opinião que ele apenas <b>citou</b> de terceiros</li>
+<li>Item que descreve um <b>exemplo</b> como se fosse a tese principal do texto</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Detalhes Específicos e Armadilhas Textuais</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>CEBRASPE troca <b>uma palavra-chave</b> do texto para tornar o item errado</li>
+<li>"treated with antibiotics <b>because</b> he caught an infection" — texto diz "in case of" (prevenção) ≠ "because" (causa) → <b>ERRADO</b></li>
+<li>Atenção a <b>quantificadores</b>: "all" vs "most", "never" vs "seldom", "only" vs "mainly"</li>
+<li>Atenção a <b>tempos verbais</b>: "has built" (perfeito=já construiu) vs "is building" (progressivo=está construindo)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"in case of infection" (prevenção) ≠ "because he caught an infection" (fato ocorrido)</li>
+<li>Texto diz "at least three distinct spheres" — verificar se o texto realmente menciona três</li>
+<li>Trocar "similar to aviation" por "similar to <b>healthcare</b>" — troca sutil de referência</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 2 -->
+<div class="macro" id="m2">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔄</div>
+<div class="minfo"><div class="mt">2. Substituição de Palavras e Reescrita (Rephrasing)</div><div class="mm">Equivalência semântica, substituição de conectivos e expressões • 90 questões</div></div>
+<span class="badge">90 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Substituição de Conectivos e Advérbios</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>"thus"</b> = therefore, consequently, hence (resultado/conclusão) ≠ "hitherto" (até agora)</li>
+<li><b>"however"</b> = nevertheless, nonetheless, yet (contraste)</li>
+<li><b>"moreover"</b> = furthermore, besides, in addition (adição)</li>
+<li><b>"although/though"</b> = even though, despite the fact that (concessão)</li>
+<li><b>"therefore"</b> = consequently, as a result, hence (conclusão)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"thus" ≠ "<b>hitherto</b>" — "hitherto" = até agora (tempo), "thus" = portanto (conclusão)</li>
+<li>"however" ≠ "<b>therefore</b>" — oposição ≠ conclusão</li>
+<li>"yet" como adversativo ≠ "yet" como indicador de tempo</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Substituição de Vocabulário e Expressões</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>"trash" = "garbage" = "rubbish" (lixo) ✓</li>
+<li>"cram" = "force" (enfiar/forçar em espaço apertado) ✓</li>
+<li>"gives the game away" = "reveals the real truth" ✓</li>
+<li>"definite" = "clear" (em certo contexto) ✓</li>
+<li>"survey" = "study" = "research" (quando referem ao mesmo levantamento) ✓</li>
+<li>Verificar sempre: a substituição mantém <b>sentido</b> + <b>correção gramatical</b> + <b>coerência</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"imperfect" ≠ "<b>flawless</b>" — são <b>antônimos</b>, não sinônimos</li>
+<li>"few" (contável) ≠ "<b>little</b>" (incontável) — troca altera a correção gramatical</li>
+<li>"provide insights into" ≠ "give an overview of" — significados diferentes</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Substituição de Modais e Verbos</span><span class="tc">Atenção</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>"should"</b> (conselho/obrigação moral) ≠ <b>"shall"</b> (obrigação formal/futuro)</li>
+<li><b>"might"</b> (possibilidade remota) ≠ <b>"can"</b> (capacidade/possibilidade geral)</li>
+<li><b>"could"</b> = possibilidade passada ou condicional</li>
+<li><b>"must"</b> = obrigação forte ou dedução lógica</li>
+<li>Trocar modal pode alterar o <b>grau de certeza</b> ou <b>obrigação</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"should" → "shall" — <b>ERRADO</b>, têm usos e graus de obrigação diferentes</li>
+<li>"might" → "can" — <b>ERRADO</b>, "might" indica possibilidade mais remota</li>
+<li>"Studies <b>have shown</b>" — omitir "have" muda para simple past: <b>ERRADO</b> (muda o tempo verbal)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 3 -->
+<div class="macro" id="m3">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">💬</div>
+<div class="minfo"><div class="mt">3. Significado de Palavras e Expressões (Vocabulary)</div><div class="mm">Sinônimos, antônimos, significação contextual, denotação/conotação • 84 questões</div></div>
+<span class="badge">84 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Sinônimos e Significação Contextual</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>"even-handed" = <b>impartial</b> ✓ | "singled out" = <b>selected</b> ✓ | "hasten" = <b>hurry</b> ✓</li>
+<li>"leveraging" = <b>taking advantage of</b> ✓ | "uncrewed" = <b>unmanned</b> ✓</li>
+<li>"stand up to scrutiny" = "bear up to examination" (significados equivalentes) ✓</li>
+<li>O sentido depende do <b>contexto</b>: "reports" pode ser "subordinados diretos" (não relatórios escritos)</li>
+<li>"reverse-engineered" usado figurativamente (não sobre produto industrial) = variação do sentido convencional ✓</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Mostly" ≠ "<b>Particularly</b>" — "mostly" = em grande parte; "particularly" = especificamente</li>
+<li>"prompted" ≠ "<b>restrained</b>" — "prompted" = provocou/estimulou; "restrained" = conteve</li>
+<li>"reports" no contexto de gestão = <b>subordinados</b>, não "relatórios escritos"</li>
+<li>"key challenge" não é linguagem técnica especializada — é expressão <b>comum</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Falsos Cognatos (False Cognates)</span><span class="tc">Decorar</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>"actually"</b> = na verdade (≠ atualmente = currently)</li>
+<li><b>"pretend"</b> = fingir (≠ pretender = intend)</li>
+<li><b>"eventually"</b> = finalmente (≠ eventualmente = occasionally)</li>
+<li><b>"fabric"</b> = tecido (≠ fábrica = factory)</li>
+<li><b>"sensible"</b> = sensato (≠ sensível = sensitive)</li>
+<li><b>"realize"</b> = perceber (≠ realizar = accomplish/carry out)</li>
+<li><b>"attend"</b> = comparecer (≠ atender = assist/answer)</li>
+<li><b>"comprehensive"</b> = abrangente (≠ compreensivo = understanding)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Traduzir "actually" como "atualmente" — <b>ERRADO</b> (= "na verdade")</li>
+<li>Traduzir "eventually" como "eventualmente" — <b>ERRADO</b> (= "finalmente")</li>
+<li>Traduzir "pretend" como "pretender" — <b>ERRADO</b> (= "fingir")</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Phrasal Verbs e Expressões Idiomáticas</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>"single out"</b> = selecionar, escolher | <b>"give away"</b> = revelar, entregar</li>
+<li><b>"turn up"</b> = aparecer | <b>"work out"</b> = resolver, calcular</li>
+<li><b>"come up with"</b> = inventar, criar | <b>"find out"</b> = descobrir</li>
+<li><b>"carry out"</b> = realizar, executar | <b>"set up"</b> = estabelecer, configurar</li>
+<li><b>"bring about"</b> = causar | <b>"look into"</b> = investigar</li>
+<li>O significado do phrasal verb depende do <b>contexto</b> e da <b>preposição/partícula</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Traduzir phrasal verb palavra por palavra — o sentido é <b>idiomático</b>, não literal</li>
+<li>"gives the game away" = revela a verdade (não "dá o jogo")</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 4 -->
+<div class="macro" id="m4">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔗</div>
+<div class="minfo"><div class="mt">4. Referenciação, Anáfora e Catáfora</div><div class="mm">Pronomes, referentes, retomada textual • 30 questões</div></div>
+<span class="badge">30 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Pronomes e Referentes</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Identificar <b>exatamente</b> a que termo o pronome se refere no texto</li>
+<li><b>"it"</b>, <b>"they"</b>, <b>"this"</b>, <b>"these"</b> — retomam termo anterior (anáfora)</li>
+<li><b>"itself"</b> = reflexivo — "the process <b>itself</b>" = o próprio processo</li>
+<li><b>"themselves"</b> deve concordar com o sujeito correto</li>
+<li>"war" em contexto específico (WWII) ≠ "any war" → referência <b>definida</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"itself" referindo-se a "plastic" quando refere-se a "the <b>process</b>" — referente <b>errado</b></li>
+<li>"they" referindo-se a "physicists" (não "assumptions") — verificar <b>concordância</b> e <b>sentido</b></li>
+<li>"themselves" referindo-se a "philosophers" quando refere-se a "<b>rights</b>" — CEBRASPE troca referente</li>
+<li>"They are blunting cognition" — "They" = ferramentas/smartphones (não "9 out of 10 people")</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Demonstrativos e Referência Contextual</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>"this"</b> geralmente refere-se à ideia/frase <b>anterior</b> (anáfora)</li>
+<li><b>"this"</b> em "But this is merely an extension" — pode referir-se à <b>premissa geral</b>, não ao exemplo específico</li>
+<li><b>"they're gone"</b> — identificar se "they" são os que <b>ficaram</b> ou os que <b>saíram</b></li>
+<li>Em textos acadêmicos, pronomes podem retomar <b>conceitos abstratos</b>, não apenas substantivos concretos</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"this" referindo-se ao exemplo do panda quando refere-se à <b>premissa teórica</b></li>
+<li>"they're gone" referindo-se aos que <b>saíram</b> quando são os que <b>ainda permanecem</b> (70+ anos)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 5 -->
+<div class="macro" id="m5">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🌐</div>
+<div class="minfo"><div class="mt">5. Tradução (Translation)</div><div class="mm">Tradução EN→PT e PT→EN, equivalências e armadilhas • 17 questões</div></div>
+<span class="badge">17 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Tradução Inglês → Português</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Verificar se a tradução mantém <b>fidelidade ao sentido</b> original</li>
+<li>"variously usurped, overlooked, abandoned, or suppressed" → "de maneiras diferentes, usurpado, negligenciado, abandonado ou eliminado" ✓</li>
+<li>"prolonged droughts can contribute to desertification" → "secas prolongadas podem contribuir para a desertificação" ✓</li>
+<li>Atenção a <b>tempos verbais</b>: "created major breakthroughs" (simple past) ≠ "levou a um progresso" (diferente estrutura)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Tradução que <b>altera a estrutura sintática</b> tornando-a incorreta ou mudando o sentido</li>
+<li>"mostly by empirical means" (modifica "advances") — tradução que liga "empirical" a outra coisa</li>
+<li>Trocar "scientific disciplines" por "áreas acadêmicas" pode ser aceitável, mas verificar contexto</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Tradução Português → Inglês</span><span class="tc">Atenção</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Verificar <b>correção gramatical</b> da versão em inglês</li>
+<li>"conscious" é adjetivo → "have conscious <b>of</b>" é <b>ERRADO</b> (correto: "be aware of" ou "have consciousness of")</li>
+<li>"economical" (econômico/barato) ≠ "economic" (relativo à economia) — falsos cognatos em PT→EN</li>
+<li>"near future" ≠ "in the future" — grau de proximidade temporal</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"have <b>conscious</b> of" — <b>ERRADO</b> (conscious = adjetivo, não substantivo)</li>
+<li>"<b>economical</b> activities" — <b>ERRADO</b> (correto: "economic activities")</li>
+<li>"In <b>its</b> research" quando deveria ser "In <b>the/their</b> research"</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 6 -->
+<div class="macro" id="m6">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">⚙️</div>
+<div class="minfo"><div class="mt">6. Verbos (Verbs)</div><div class="mm">Tempos verbais, modais, voz passiva, forma condicional • 22 questões</div></div>
+<span class="badge">22 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Tempos Verbais (Tenses)</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Simple Present</b>: fatos, rotinas, verdades ("He works", "Water boils at 100°C")</li>
+<li><b>Present Continuous</b>: ação em progresso agora ("She is studying")</li>
+<li><b>Simple Past</b>: ação concluída no passado ("He arrived yesterday")</li>
+<li><b>Present Perfect</b>: ação passada com relevância presente ("I have finished" = terminei e está pronto agora)</li>
+<li><b>Past Perfect</b>: ação anterior a outra no passado ("He had left when she arrived")</li>
+<li><b>Future</b>: will (decisão/previsão), going to (plano/evidência)</li>
+<li>"When you're shopping" = present continuous com valor de <b>subjuntivo</b> em PT ✓</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Confundir <b>present perfect</b> ("have shown") com <b>simple past</b> ("showed") — significados diferentes</li>
+<li>Omitir "have" de "have shown" transforma em simple past → <b>muda o sentido</b></li>
+<li>"has been around" (present perfect) = existe <b>há algum tempo</b> (não "começou recentemente")</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Modal Verbs</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Can</b>: capacidade, possibilidade, permissão informal</li>
+<li><b>Could</b>: possibilidade, capacidade passada, pedido educado</li>
+<li><b>May</b>: possibilidade, permissão formal</li>
+<li><b>Might</b>: possibilidade remota (menor que may)</li>
+<li><b>Must</b>: obrigação forte, dedução lógica ("He must be tired")</li>
+<li><b>Should</b>: conselho, recomendação, expectativa</li>
+<li><b>Shall</b>: futuro formal, obrigação em documentos legais</li>
+<li>"should be avoided, as it <b>may</b> lead to..." → 2 modais na mesma frase ✓</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"should" ≠ "shall" — graus de <b>obrigação</b> diferentes</li>
+<li>"might" ≠ "may/can" — <b>grau de possibilidade</b> diferente</li>
+<li>Identificar corretamente o <b>número de modais</b> em uma frase</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Voz Passiva e Forma Condicional</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Passive</b>: subject + be + past participle: "The report <b>was written</b> by the team"</li>
+<li><b>Get-passive</b>: "He got fired" (mais informal que "He was fired")</li>
+<li><b>Zero conditional</b>: If + present, present (fatos gerais)</li>
+<li><b>1st conditional</b>: If + present, will + base (possibilidade real)</li>
+<li><b>2nd conditional</b>: If + past, would + base (hipotético)</li>
+<li><b>3rd conditional</b>: If + past perfect, would have + past participle (passado irreal)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Confundir <b>voz passiva</b> com <b>voz ativa</b> na análise sintática</li>
+<li>Misturar elementos de condicionais diferentes (ex: "If I would..." é <b>ERRADO</b>)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 7 -->
+<div class="macro" id="m7">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔀</div>
+<div class="minfo"><div class="mt">7. Conjunções e Conectivos (Linking Words)</div><div class="mm">Conectores de contraste, adição, causa, concessão • 11 questões</div></div>
+<span class="badge">11 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Conectivos de Contraste e Concessão</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>However</b> / Nevertheless / Nonetheless / Yet / Still = contraste/concessão</li>
+<li><b>Although / Though / Even though</b> = conjunções subordinativas de concessão (introduzem oração)</li>
+<li><b>Despite / In spite of</b> + noun/gerund = concessão (não introduzem oração)</li>
+<li><b>But</b> = coordenação adversativa simples</li>
+<li>"However" = "Nevertheless" ✓ (ambos = "no entanto")</li>
+<li>"though" no final da frase = <b>advérbio concessivo</b> (not conjunction)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"However" ≠ "<b>Therefore</b>" — contraste ≠ conclusão</li>
+<li>"Yet" pode ser advérbio temporal ("still") ou adversativo ("however") — depende do contexto</li>
+<li>"though" no final de frase = concessivo: "they struggle, at times, <b>though</b>" ✓</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Conectivos de Adição, Causa e Resultado</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Adição</b>: Moreover, Furthermore, Besides, In addition, Also, Additionally</li>
+<li><b>Causa</b>: Because, Since, As, Due to, Owing to</li>
+<li><b>Resultado</b>: Therefore, Consequently, As a result, Hence, Thus, So</li>
+<li><b>Condição</b>: If, Unless, Provided that, As long as</li>
+<li>"Furthermore" = "Besides that" ✓ (adição)</li>
+<li>"However" pode introduzir ideia de que <b>os dados são insuficientes</b> — verificar relação lógica</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Trocar conectivo de <b>adição</b> por conectivo de <b>contraste</b> (ou vice-versa)</li>
+<li>"since" pode ser <b>causal</b> ("because") ou <b>temporal</b> ("from then") — contexto define</li>
+<li>"as" pode ser <b>causal</b>, <b>temporal</b> ou <b>comparativo</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 8 -->
+<div class="macro" id="m8">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏷️</div>
+<div class="minfo"><div class="mt">8. Adjetivos e Advérbios (Adjectives & Adverbs)</div><div class="mm">Classificação, ordem dos adjetivos, comparativos, superlatives, advérbios • 24 questões</div></div>
+<span class="badge">24 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Adjetivos: Classificação e Ordem</span><span class="tc">Atenção</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Ordem OSASCOMP</b>: Opinion → Size → Age → Shape → Color → Origin → Material → Purpose</li>
+<li>"beautiful Asian primaeval guttural native" — a ordem correta importa</li>
+<li>Adjetivos formados de verbos: "terrifying" (from "terrify") = <b>adjetivo</b> com sentido ativo (-ing = causa)</li>
+<li>"rogue" = perigoso/nocivo (em contexto de IA) ✓</li>
+<li>"beautiful" e "lucky" = mesma classe (adjetivos) ✓</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Ordem errada de adjetivos pré-nominais — <b>OSASCOMP</b> é a regra</li>
+<li>"beautiful Asian guttural primaeval native" → ordem <b>incorreta</b></li>
+<li>Confundir adjetivos <b>-ed</b> (sentimento causado: "interested") com <b>-ing</b> (causa: "interesting")</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Comparativos e Superlativos</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Short adjectives</b>: -er / -est (taller, tallest)</li>
+<li><b>Long adjectives</b>: more / most (more important, most important)</li>
+<li><b>Irregular</b>: good → better → best; bad → worse → worst; far → farther/further</li>
+<li>"less" + adj = comparativo de inferioridade; "the least" = superlativo de inferioridade</li>
+<li>"as...as" = comparação de igualdade ("as tall <b>as</b>")</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"more better" / "most fastest" — dupla marcação = <b>ERRADO</b></li>
+<li>Confundir "farther" (distância física) com "further" (adicional/abstrato)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Advérbios (Adverbs)</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Advérbios modificam <b>verbos, adjetivos ou outros advérbios</b> (não substantivos)</li>
+<li>"virtually" = <b>nearly</b>, praticamente ✓ | "woefully" = tristemente | "transiently" = transitoriamente</li>
+<li>"impulsively" e "easily" = advérbios ✓; "disability" = <b>substantivo</b> (não advérbio) ✗</li>
+<li>"However" como advérbio = contraste (não indicador de tempo)</li>
+<li>Posição do advérbio pode alterar o <b>escopo</b> do que é modificado</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"disability" classificado como advérbio — <b>ERRADO</b>, é substantivo (sufixo -ity)</li>
+<li>"Yet" como indicador de <b>tempo</b> — ERRADO quando usado como "however" (contraste)</li>
+<li>"to build the constituencies" = finalidade, <b>não advérbio</b> que modifica "connected"</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 9 -->
+<div class="macro" id="m9">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">👤</div>
+<div class="minfo"><div class="mt">9. Pronomes, Substantivos e Outras Classes</div><div class="mm">Pronouns, nouns, prepositions, genitive case, word formation • 26 questões</div></div>
+<span class="badge">26 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Pronomes (Pronouns)</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Subject pronouns</b>: I, you, he, she, it, we, they</li>
+<li><b>Object pronouns</b>: me, you, him, her, it, us, them</li>
+<li><b>Possessive adj</b>: my, your, his, her, its, our, their</li>
+<li><b>Possessive pronouns</b>: mine, yours, his, hers, ours, theirs</li>
+<li><b>Reflexive</b>: myself, yourself, himself, herself, itself, ourselves, themselves</li>
+<li><b>Relative</b>: who, whom, which, that, whose, where</li>
+<li>"its" (possessivo) ≠ "it's" (= it is)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Confundir <b>"its"</b> (possessivo sem apóstrofo) com <b>"it's"</b> (contração de "it is")</li>
+<li>Identificar incorretamente o <b>referente</b> de "they", "it", "this"</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Substantivos, Quantificadores e Caso Genitivo</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Countable</b>: few, a few, many, several, a number of</li>
+<li><b>Uncountable</b>: little, a little, much, an amount of</li>
+<li>"few" (countable) ≠ "little" (uncountable) — não são intercambiáveis</li>
+<li><b>Genitivo ('s)</b>: posse — "the student's book" = o livro do aluno</li>
+<li>"children's" = genitivo de plural irregular</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"few" → "little" — <b>ERRADO</b> se o substantivo é contável ("few places" ≠ "little places")</li>
+<li>Confundir <b>genitivo possessivo</b> ('s) com <b>contração de is</b> ('s)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Preposições e Formação de Palavras</span><span class="tc">Atenção</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Preposições de tempo</b>: in (meses/anos), on (dias/datas), at (horas/momentos)</li>
+<li><b>Preposições de lugar</b>: in (dentro), on (superfície), at (ponto específico)</li>
+<li><b>Prefixes</b>: un-, dis-, re-, pre-, mis-, over-, under-</li>
+<li><b>Suffixes</b>: -tion, -ment, -ness, -ity (nouns); -ful, -less, -ous, -ive (adj); -ly (adv)</li>
+<li>"disability" = dis- + able + -ity → <b>substantivo</b> (não advérbio)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Confundir classe da palavra pelo <b>sufixo</b>: -ly = advérbio, -ity = substantivo, -ful = adjetivo</li>
+<li>Preposição errada altera o sentido: "interested <b>in</b>" ≠ "interested <b>on</b>"</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 10 -->
+<div class="macro" id="m10">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📋</div>
+<div class="minfo"><div class="mt">10. Tipologia Textual, Sintaxe e Tópicos Diversos</div><div class="mm">Gêneros textuais, análise sintática, pontuação, figuras de linguagem, discurso • 32 questões</div></div>
+<span class="badge">32 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Tipologia e Gênero Textual</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Expository</b>: explica/informa (artigos científicos, reportagens)</li>
+<li><b>Argumentative/Persuasive</b>: defende um ponto de vista</li>
+<li><b>Narrative</b>: conta uma história (fábulas, contos, notícias)</li>
+<li><b>Descriptive</b>: descreve características de algo/alguém</li>
+<li><b>Instructive</b>: dá instruções (manuais, receitas, tutoriais)</li>
+<li>CEBRASPE pede para identificar o <b>tipo predominante</b> e o <b>propósito</b> do texto</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Classificar texto <b>expositivo</b> como <b>argumentativo</b> (ou vice-versa)</li>
+<li>Texto pode ter <b>mais de um tipo</b> — a banca pergunta o <b>predominante</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Análise Sintática e Pontuação</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Subject + Verb + Object</b>: ordem básica do inglês (SVO)</li>
+<li><b>Relative clauses</b>: defining (sem vírgula) vs non-defining (com vírgula)</li>
+<li><b>Comma</b>: separa orações adverbiais antepostas, itens de lista, appositive phrases</li>
+<li><b>Semicolon (;)</b>: separa orações independentes relacionadas</li>
+<li><b>Colon (:)</b>: introduz explicação, lista ou elaboração</li>
+<li><b>Dash (—)</b>: ênfase ou explicação parentética</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Confundir <b>defining relative clause</b> (essencial, sem vírgula) com <b>non-defining</b> (com vírgula)</li>
+<li>Vírgula antes de "which" = non-defining → informação adicional, pode ser removida</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Figuras de Linguagem e Discurso</span><span class="tc">Atenção</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Metaphor</b>: comparação implícita ("Time is money")</li>
+<li><b>Simile</b>: comparação explícita com "like/as" ("as fast as lightning")</li>
+<li><b>Irony</b>: dizer o oposto do que se quer expressar</li>
+<li><b>Hyperbole</b>: exagero intencional ("I've told you a million times")</li>
+<li><b>Direct speech</b>: reproduz fala exata ("She said, 'I am tired'")</li>
+<li><b>Reported speech</b>: relata indiretamente ("She said <b>she was</b> tired") — backshift de tempos</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Confundir <b>metaphor</b> com <b>simile</b> (simile usa like/as)</li>
+<li>Na conversão para <b>reported speech</b>: "am" → was, "will" → would, "can" → could</li>
+<li>Não aplicar <b>backshift</b> quando necessário na reported speech</li>
+</ul></div></div></div>
+</div></div>
+
+</div>
+
+<button class="back-btn" onclick="location.href='index.html'">← Voltar</button>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+function toggleMacro(el){el.closest('.macro').classList.toggle('open')}
+function toggleTp(el){el.closest('.tp').classList.toggle('open')}
+function toggleAll(open){document.querySelectorAll('.macro').forEach(m=>{open?m.classList.add('open'):m.classList.remove('open')});document.querySelectorAll('.tp').forEach(t=>{open?t.classList.add('open'):t.classList.remove('open')})}
+function scrollToSection(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+function filterContent(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.macro').forEach(m=>{const t=m.textContent.toLowerCase();if(q===''||t.includes(q)){m.style.display='';if(q!==''){m.classList.add('open');m.querySelectorAll('.tp').forEach(tp=>tp.classList.add('open'))}}else{m.style.display='none'}})}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)})
+</script>
+</body>
+</html>

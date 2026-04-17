@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resumo Estruturado – Direito Penal e Processual Penal</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#7f1d1d,#dc2626);border-radius:16px;margin-bottom:20px;box-shadow:0 8px 32px rgba(220,38,38,0.3)}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:13px;color:#fecaca;margin-bottom:12px}
+.stats-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hstat{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(255,255,255,0.1);color:#fee2e2;border:1px solid rgba(255,255,255,0.15)}
+.hstat b{font-size:15px;color:#fff}
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:16px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #fecaca;color:#dc2626;background:#fef2f2;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:#dc2626;color:#fff;border-color:#dc2626}
+.search-box{margin-bottom:16px;display:flex;gap:8px}
+.search-box input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-size:13px;outline:none}
+.search-box input:focus{border-color:#dc2626}
+.ebtn{padding:8px 16px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#dc2626;cursor:pointer;font-size:11px;font-weight:700}
+.ebtn:hover{background:#dc2626;color:#fff;border-color:#dc2626}
+.macro{margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.mh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.mh:hover{background:#fef2f2}
+.mi{font-size:26px;flex-shrink:0}
+.minfo{flex:1}.mt{font-size:17px;font-weight:800;color:#1e293b}
+.mm{font-size:11px;color:#64748b;margin-top:2px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#fef2f2;color:#dc2626;border:1px solid #fecaca}
+.chv{font-size:14px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.macro.open .chv{transform:rotate(90deg)}
+.mb{display:none;padding:0 18px 18px;border-top:1px solid #f1f5f9}
+.macro.open .mb{display:block}
+.tp{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc}
+.th{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;transition:background .2s}
+.th:hover{background:#fef2f2}
+.tt{flex:1;font-size:13px;font-weight:700;color:#1e293b}
+.tc{font-size:10px;color:#64748b;font-weight:600;padding:2px 8px;background:#f1f5f9;border-radius:10px;border:1px solid #e2e8f0}
+.tv{font-size:11px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.tp.open .tv{transform:rotate(90deg)}
+.tb{display:none;padding:0 14px 14px;border-top:1px solid #f1f5f9}
+.tp.open .tb{display:block}
+.kp h4{font-size:12px;font-weight:700;color:#dc2626;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.kp h4::before{content:'💡'}
+ul.k{list-style:none;padding:0}
+ul.k li{padding:6px 10px 6px 20px;font-size:12px;color:#334155;margin-bottom:3px;border-radius:6px;background:#f1f5f9;position:relative;line-height:1.5}
+ul.k li::before{content:'▸';position:absolute;left:8px;color:#dc2626;font-weight:700}
+ul.k li b{color:#1e293b}
+.trap{margin-top:10px;padding:10px 14px;background:#fef2f2;border:1px solid #fecaca;border-radius:8px}
+.trap h4{font-size:12px;font-weight:700;color:#dc2626;margin-bottom:6px}
+.trap h4::before{content:'⚠️ '}
+ul.t{list-style:none;padding:0}
+ul.t li{padding:4px 10px 4px 20px;font-size:11px;color:#991b1b;margin-bottom:2px;position:relative;line-height:1.4}
+ul.t li::before{content:'✗';position:absolute;left:6px;color:#dc2626;font-weight:700}
+ul.t li b{color:#7f1d1d}
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#dc2626;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(220,38,38,.4);z-index:100}
+.back-btn:hover{background:#b91c1c}
+.scroll-top{position:fixed;bottom:64px;right:20px;width:40px;height:40px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#1e293b;font-size:16px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{background:#dc2626;color:#fff;border-color:#dc2626}
+@media(max-width:768px){.container{padding:10px}.header h1{font-size:18px}.mt{font-size:15px}.nav-btn{padding:5px 8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>⚖️ Resumo Estruturado – Direito Penal e Processual Penal</h1>
+<div class="sub">Policial Legislativo CD 2026 • 1.376 questões CEBRASPE analisadas</div>
+<div class="stats-row">
+<div class="hstat">📝 <b>1.376</b> questões</div>
+<div class="hstat">📂 <b>15</b> macro-temas</div>
+<div class="hstat">📑 <b>120+</b> assuntos</div>
+<div class="hstat">⚖️ <b>Abuso de Autoridade</b> mais cobrado</div>
+</div>
+</div>
+<div class="nav-bar" id="navBar">
+<span class="nav-btn" onclick="scrollToSection('m1')">Abuso de Autoridade</span>
+<span class="nav-btn" onclick="scrollToSection('m2')">Inquérito Policial</span>
+<span class="nav-btn" onclick="scrollToSection('m3')">Ação Penal</span>
+<span class="nav-btn" onclick="scrollToSection('m4')">Provas</span>
+<span class="nav-btn" onclick="scrollToSection('m5')">Prisão em Flagrante</span>
+<span class="nav-btn" onclick="scrollToSection('m6')">Estatuto Desarmamento</span>
+<span class="nav-btn" onclick="scrollToSection('m7')">Crime Organizado</span>
+<span class="nav-btn" onclick="scrollToSection('m8')">Lei de Drogas</span>
+<span class="nav-btn" onclick="scrollToSection('m9')">Crimes Patrimônio</span>
+<span class="nav-btn" onclick="scrollToSection('m10')">Crimes Adm. Pública</span>
+<span class="nav-btn" onclick="scrollToSection('m11')">Teoria do Crime</span>
+<span class="nav-btn" onclick="scrollToSection('m12')">Aplicação Lei Penal</span>
+<span class="nav-btn" onclick="scrollToSection('m13')">Penas e Prescrição</span>
+<span class="nav-btn" onclick="scrollToSection('m14')">Prisão Preventiva</span>
+<span class="nav-btn" onclick="scrollToSection('m15')">Legislação Especial</span>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Buscar assunto, palavra-chave ou artigo..." onkeyup="filterContent()">
+<button class="ebtn" onclick="toggleAll(true)">▼ Abrir Tudo</button>
+<button class="ebtn" onclick="toggleAll(false)">▲ Fechar Tudo</button>
+</div>
+
+<!-- M1: ABUSO DE AUTORIDADE -->
+<div class="macro" id="m1">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">🚨</span>
+<div class="minfo"><div class="mt">Lei de Abuso de Autoridade (Lei 13.869/2019)</div><div class="mm">47 questões • Tema mais cobrado • Sujeitos, penas, efeitos, condutas típicas</div></div>
+<span class="badge">47 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Sujeitos Ativos e Elemento Subjetivo</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Sujeito ativo amplo</b>: qualquer agente público, servidor ou não, com ou sem remuneração, inclusive transitoriamente</li>
+<li>Membros do Poder Judiciário, MP, Tribunais de Contas, integrantes de empresas públicas e SEM podem ser sujeitos ativos</li>
+<li><b>Elemento subjetivo especial obrigatório</b>: finalidade de prejudicar outrem, beneficiar a si mesmo ou a terceiro, OU por mero capricho ou satisfação pessoal</li>
+<li>Não se exige que o agente esteja no exercício das funções – basta a condição de agente público</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que apenas servidores públicos podem cometer – <b>particulares exercendo função pública também</b></li>
+<li>ERRADO dizer que membros do Judiciário ou Tribunais de Contas estão excluídos</li>
+<li>ERRADO dizer que integrantes de economia mista não estão sujeitos à tipificação</li>
+<li>ERRADO dizer que é exigido estar no exercício das funções para caracterizar o crime</li>
+<li>ERRADO dizer que é atípica a conduta praticada por mero capricho (capricho ou satisfação pessoal <b>configuram</b> o crime)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Ação Penal e Procedibilidade</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Ação penal pública incondicionada</b> – não depende de representação</li>
+<li>Admite <b>ação penal privada subsidiária da pública</b> se MP perder prazo para denúncia</li>
+<li>A representação NÃO é condição de procedibilidade</li>
+<li>Autoridade policial pode instaurar inquérito de ofício</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que a representação é condição de procedibilidade para sanções penais</li>
+<li>ERRADO dizer que os crimes não podem ser imputados a membros do CNMP (podem sim)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Penas e Substituição</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Penas: <b>detenção</b> (1 a 4 anos) e multa – NÃO é reclusão</li>
+<li><b>Admite substituição</b> de pena privativa de liberdade por restritiva de direitos</li>
+<li>Restritivas: prestação de serviços à comunidade, suspensão do exercício do cargo (<b>1 a 6 meses</b>, com perda dos vencimentos)</li>
+<li>Aplicação das penas penais <b>independe</b> das sanções civis e administrativas</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que é vedada substituição por restritiva de direitos</li>
+<li>ERRADO dizer que penas se circunscrevem a "reclusão e multa" (é detenção)</li>
+<li>ERRADO dizer que suspensão é de 1 a 12 meses (é <b>1 a 6</b>)</li>
+<li>ERRADO dizer que aplicação das penas penais requer imposição de sanções administrativas</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Efeitos da Condenação</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Efeitos: <b>obrigação de indenizar</b> o dano (juiz fixa valor mínimo na sentença, a requerimento do ofendido)</li>
+<li><b>Perda do cargo</b> e <b>inabilitação</b> (1 a 5 anos): NÃO automáticos – condicionados à <b>reincidência</b> em crime da mesma natureza</li>
+<li>Devem ser <b>expressa e fundamentadamente declarados na sentença</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que perda do cargo é efeito automático da condenação</li>
+<li>ERRADO dizer que afastamento ocorre a partir do recebimento da denúncia</li>
+<li>ERRADO dizer que basta uma condenação para perda do cargo (precisa de <b>reincidência</b>)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Condutas Típicas e Independência de Instâncias</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Instaurar persecução penal/administrativa sem justa causa</b> é crime de abuso de autoridade</li>
+<li><b>Antecipar atribuição de culpa</b> antes de concluídas as apurações (inclusive via rede social) é crime – punido com detenção</li>
+<li>Cumprimento de mandado de busca domiciliar: permitido entre <b>5h e 21h</b> (definição legal de "dia")</li>
+<li>Submeter preso a interrogatório no repouso noturno <b>NÃO é crime</b> se: flagrante delito ou consentimento assistido</li>
+<li>Responsabilidades civil e administrativa são <b>independentes</b> da criminal</li>
+<li>Sentença penal que reconhece excludente de ilicitude <b>faz coisa julgada</b> no cível e administrativo</li>
+<li>Negar acesso aos autos de investigação ao interessado é crime</li>
+<li>Devassamento de correspondência para instaurar procedimento fiscal é crime</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que persecução administrativa sem justa causa é competência de juizado especial (pena máx &gt; 2 anos)</li>
+<li>ERRADO dizer que sentença absolutória por excludente NÃO faz coisa julgada no cível</li>
+<li>ERRADO dizer que cumprimento de busca fora do "expediente forense" configura abuso (critério é 5h–21h)</li>
+<li>ERRADO dizer que divulgação de culpa antecipada é mera infração administrativa</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M2: INQUÉRITO POLICIAL -->
+<div class="macro" id="m2">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">🔍</span>
+<div class="minfo"><div class="mt">Inquérito Policial</div><div class="mm">40 questões • Natureza, prazos, características, diligências, arquivamento</div></div>
+<span class="badge">40 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Natureza e Características</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Procedimento administrativo</b>, inquisitivo, sigiloso, escrito e dispensável</li>
+<li><b>Não há contraditório nem ampla defesa</b> no inquérito policial</li>
+<li><b>Indisponível</b>: delegado NÃO pode arquivar o inquérito – somente a pedido do MP com homologação judicial</li>
+<li>Delegado tem <b>discricionariedade</b> para realizar diligências que entender necessárias</li>
+<li>Indiciados e ofendido podem requerer diligências – realizadas ou não a <b>juízo da autoridade policial</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que o inquérito admite ampla defesa e contraditório</li>
+<li>ERRADO dizer que o delegado pode arquivar o inquérito (mesmo com autorização do MP)</li>
+<li>ERRADO dizer que divulgação de detalhes da investigação à mídia é permitida</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Instauração e Formas de Início</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Ação pública incondicionada: de ofício, requisição MP/juiz, requerimento do ofendido, notícia de qualquer pessoa</li>
+<li>Ação pública condicionada: depende de <b>representação do ofendido</b> – autoridade NÃO age de ofício</li>
+<li>Ação privada: delegado age <b>somente mediante requerimento</b> de quem tem titularidade</li>
+<li><b>Denúncia anônima</b>: exige diligências preliminares antes de instaurar o inquérito</li>
+<li>Inquérito pode ser <b>dispensado</b> se já houver elementos suficientes para denúncia</li>
+<li>Requerimento do ofendido pode iniciar inquérito mesmo em ação pública incondicionada</li>
+<li>Instauração por relatório do COAF é válida (não exige notitia criminis formal)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que inquérito em ação incondicionada é <b>sempre</b> iniciado de ofício</li>
+<li>ERRADO dizer que autoridade "deverá" instaurar inquérito sempre que houver comunicação (precisa verificar procedência)</li>
+<li>ERRADO dizer que em ação condicionada o delegado pode agir de ofício</li>
+<li>ERRADO dizer que inquérito é iniciado por "queixa" da vítima (queixa é peça da ação privada)</li>
+<li>ERRADO dizer que representação é exigida apenas para ação penal e não para inquérito</li>
+<li>ERRADO dizer que instauração com base em relatório do COAF é nula</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Prazos, Conclusão e Arquivamento</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Preso: <b>10 dias</b> (da execução da prisão); Solto: <b>30 dias</b> (prorrogável pelo juiz)</li>
+<li>Inquérito pode prosseguir e concluir <b>sem oitiva do investigado</b> que se recusa a depor</li>
+<li><b>Indiciamento</b>: ato fundamentado do delegado com análise técnico-jurídica (não é mero despacho simples)</li>
+<li>Termo de oitiva: assinado por <b>duas testemunhas</b> que ouviram a leitura</li>
+<li>Ação pública: autos ao juízo → MP; Ação privada: autos ao juízo competente (aguarda ofendido)</li>
+<li>Arquivamento por atipicidade faz coisa julgada <b>material</b> (não permite reabertura)</li>
+<li>Pedido de retorno do inquérito pelo MP para novas diligências NÃO autoriza ação privada subsidiária</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que delegado pode sugerir formalmente o arquivamento</li>
+<li>ERRADO dizer que indiciamento é exclusivamente despacho fundamentado</li>
+<li>ERRADO dizer que MP pode avocar a presidência do inquérito policial</li>
+<li>ERRADO dizer que autos de ação privada são entregues ao ofendido "mediante traslado" obrigatoriamente</li>
+<li>ERRADO dizer que arquivamento por atipicidade faz apenas coisa julgada formal (permite reabertura)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Poderes Especiais de Investigação</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Delegado pode requisitar <b>dados cadastrais</b> diretamente (sem autorização judicial) em: sequestro, extorsão mediante sequestro e tráfico de pessoas</li>
+<li>Perícia em celular apreendido sem consentimento: <b>condicionada a autorização judicial</b></li>
+<li>Investigado NÃO pode ser obrigado a desbloquear celular (direito à não autoincriminação)</li>
+<li>Controle judicial das diligências é possível mesmo sem indiciamento formal</li>
+<li>Condução coercitiva de testemunha é possível tanto no inquérito quanto em investigação do MP</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M3: AÇÃO PENAL -->
+<div class="macro" id="m3">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">⚖️</span>
+<div class="minfo"><div class="mt">Ação Penal e Acordo de Não Persecução</div><div class="mm">40 questões • Espécies, ANPP, representação, perdão, perempção</div></div>
+<span class="badge">40 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Espécies de Ação Penal</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Pública incondicionada</b>: MP titular exclusivo; denúncia independe de vontade do ofendido</li>
+<li><b>Pública condicionada</b>: depende de representação do ofendido ou requisição do Ministro da Justiça</li>
+<li><b>Privada</b>: titularidade do ofendido via queixa-crime; sujeita à decadência, renúncia, perdão e perempção</li>
+<li><b>Privada subsidiária da pública</b>: cabe quando MP perde prazo para denúncia – NÃO cabe quando MP arquiva</li>
+<li>Retratação da representação: possível até o <b>oferecimento</b> da denúncia (NÃO até o recebimento)</li>
+<li>Representação é condição de procedibilidade que <b>dispensa formalidade</b> – basta intenção de autorizar persecução</li>
+<li>Óbito do ofendido: direito de representação <b>passa aos sucessores</b> (não se extingue)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que retratação é possível até o "recebimento" da denúncia</li>
+<li>ERRADO dizer que privada subsidiária cabe quando MP arquiva o inquérito</li>
+<li>ERRADO dizer que privada subsidiária tem natureza infraconstitucional (é <b>constitucional</b>, art. 5º, LIX, CF)</li>
+<li>ERRADO dizer que ofensor em ação condicionada é processado por queixa-crime (é por denúncia)</li>
+<li>ERRADO dizer que MP pode desistir da ação penal pública (princípio da indisponibilidade)</li>
+<li>ERRADO dizer que óbito do ofendido extingue o direito de representação</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Ação Privada: Perdão, Renúncia e Perempção</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Indivisibilidade</b>: renúncia e perdão concedidos a um se estendem a todos os querelados</li>
+<li>Perdão NÃO extingue punibilidade de quem o <b>recusar</b></li>
+<li>Perempção: ocorre se <b>querelante</b> (não representante) não comparece sem motivo a ato processual</li>
+<li>Curador especial pode exercer queixa para menor de 18 sem representante legal</li>
+<li>Prazo decadencial de <b>6 meses</b> para privada subsidiária, contados do esgotamento do prazo do MP</li>
+<li>Juiz reconhece extinção da punibilidade <b>de ofício</b> em qualquer fase</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que perempção ocorre quando o "representante" não comparece (é o <b>querelante</b>)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Acordo de Não Persecução Penal (ANPP)</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Requisitos: <b>confissão formal e circunstanciada</b>, sem violência/grave ameaça, pena mínima <b>inferior a 4 anos</b></li>
+<li>Proposto pelo MP; homologação judicial exige <b>oitiva do investigado com defensor</b></li>
+<li>Cumprido integralmente → <b>extinção da punibilidade</b></li>
+<li>Celebração e cumprimento <b>constam</b> da certidão de antecedentes (para verificação de novo ANPP)</li>
+<li>Vedado nos 5 anos anteriores: outro ANPP <b>ou transação penal</b></li>
+<li>Confissão do ANPP <b>NÃO pode ser usada como prova contra corréu</b></li>
+<li>Juiz <b>NÃO pode impor</b> ao MP a obrigação de ofertar o ANPP</li>
+<li>Prestação de serviço: período = pena mínima cominada <b>diminuída de 1/3 a 2/3</b> (NÃO igual à pena mínima)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que ANPP não constará da certidão "para quaisquer fins"</li>
+<li>ERRADO dizer que vedação de 5 anos se aplica apenas a outro ANPP (inclui transação penal)</li>
+<li>ERRADO dizer que juiz pode obrigar MP a ofertar o acordo</li>
+<li>ERRADO dizer que prestação de serviço corresponde à pena mínima integral</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M4: PROVAS -->
+<div class="macro" id="m4">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">📋</span>
+<div class="minfo"><div class="mt">Teoria Geral da Prova e Perícias</div><div class="mm">62 questões • Provas ilícitas, corpo de delito, cadeia de custódia, testemunhas</div></div>
+<span class="badge">62 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Provas Ilícitas e Derivadas</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Provas ilícitas são <b>inadmissíveis</b> e devem ser <b>desentranhadas</b> do processo</li>
+<li><b>Provas derivadas das ilícitas</b> também inadmissíveis (teoria dos frutos da árvore envenenada – <b>prevista no CPP</b>, art. 157, §1º)</li>
+<li><b>Exceções</b>: fonte independente e descoberta inevitável</li>
+<li>Provas ilícitas podem ser admitidas excepcionalmente <b>se beneficiarem o réu</b> (pro reo)</li>
+<li>Interceptação telefônica sem autorização judicial é <b>sempre ilícita</b>, mesmo confirmada por provas lícitas</li>
+<li>Gravação feita por um interlocutor sem conhecimento do outro <b>é lícita</b></li>
+<li>Relaxamento de prisão ilegal implica ilicitude das provas derivadas do flagrante</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que provas derivadas de ilícitas são "sempre" nulas (há exceções: fonte independente)</li>
+<li>ERRADO dizer que teoria dos frutos da árvore envenenada NÃO é legalmente prevista no Brasil</li>
+<li>ERRADO dizer que interceptação sem autorização é válida se confirmada depois</li>
+<li>ERRADO dizer que inversão do ônus da prova contra réu é admitida no processo penal</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Sistemas de Valoração e Ônus da Prova</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Sistema do <b>livre convencimento motivado</b> (persuasão racional): valora livremente, mas <b>deve motivar</b></li>
+<li>Depoimento de policial <b>NÃO tem fé pública</b> nem valor superior – NÃO é prova tarifada</li>
+<li>Juiz pode de ofício determinar diligências para dirimir dúvida (art. 156, II, CPP)</li>
+<li>Fatos incontroversos no processo penal <b>NÃO dispensam prova</b></li>
+<li>Revelia NÃO gera confissão ficta nem presunção de veracidade</li>
+<li>Indícios servem para cautelares mas <b>não sustentam condenação isoladamente</b></li>
+<li>Juiz NÃO pode se basear <b>exclusivamente</b> em elementos do inquérito (salvo cautelares, antecipadas e irrepetíveis)</li>
+<li>Condenação baseada em inquérito <b>complementado</b> por provas judiciais é válida</li>
+<li>Colaboração premiada precisa de <b>corroboração</b> por outros elementos</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que o CPP elenca taxativamente os meios de prova (admite provas atípicas)</li>
+<li>ERRADO dizer que juiz NÃO pode determinar diligências de ofício</li>
+<li>ERRADO dizer que ônus da prova cabe integralmente à acusação incluindo fatos alegados pela defesa</li>
+<li>ERRADO dizer que juiz não pode fundamentar decisão em qualquer elemento do inquérito</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Corpo de Delito, Cadeia de Custódia e Perícias</span><span class="tc">35 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Exame de corpo de delito é <b>indispensável</b> em crimes que deixam vestígios – NÃO suprido pela confissão</li>
+<li>Pode ser direto ou indireto; indireto quando vestígios desapareceram</li>
+<li>Perito oficial: <b>1 perito</b>; na falta, 2 pessoas idôneas com diploma de curso superior</li>
+<li><b>Cadeia de custódia</b> (arts. 158-A a 158-F): rastreabilidade dos vestígios desde coleta até descarte</li>
+<li>Provas não repetíveis colhidas na fase investigativa NÃO dependem, em regra, de autorização judicial</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que confissão supre o exame de corpo de delito</li>
+<li>ERRADO dizer que são necessários 2 peritos oficiais</li>
+</ul></div></div></div>
+</div></div>
+<!-- M5: PRISÃO EM FLAGRANTE -->
+<div class="macro" id="m5">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">🔒</span>
+<div class="minfo"><div class="mt">Prisão em Flagrante</div><div class="mm">35 questões • Espécies, flagrante preparado/esperado, audiência de custódia</div></div>
+<span class="badge">35 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Espécies de Flagrante e Lavratura do APF</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Próprio</b>: está cometendo ou acaba de cometer; <b>Impróprio</b>: perseguido logo após; <b>Presumido/ficto</b>: encontrado com instrumentos</li>
+<li>Qualquer pessoa <b>pode</b> prender; autoridade policial <b>deve</b> prender</li>
+<li><b>Flagrante preparado</b> = NULO (crime impossível – policial provoca)</li>
+<li><b>Flagrante esperado</b> = VÁLIDO (polícia aguarda sem provocar)</li>
+<li>Entrada forçada no domicílio é <b>lícita em flagrante</b>, inclusive à noite</li>
+<li>Ordem no APF: condutor → testemunhas → interrogatório do preso (condutor ANTES)</li>
+<li>Delegado NÃO pode deixar de lavrar o APF se há flagrância</li>
+<li>Flagrante sem atualidade (meses depois) é <b>ilegal</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que flagrante preparado é válido</li>
+<li>ERRADO dizer que condutor é ouvido após testemunhas e interrogatório</li>
+<li>ERRADO dizer que prisão em flagrante substitui representação em ação condicionada</li>
+<li>ERRADO dizer que delegado pode recusar lavrar APF quando constata ausência de atualidade</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Audiência de Custódia e Conversão</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Preso apresentado ao juiz em <b>até 24 horas</b></li>
+<li>Juiz pode: relaxar (se ilegal), converter em preventiva, conceder liberdade provisória, ou medidas cautelares</li>
+<li>Conversão em preventiva exige <b>fundamentação concreta</b> – gravidade abstrata NÃO justifica</li>
+<li>Citação por edital do acusado que não comparece: suspende processo e prazo prescricional; NÃO permite produção antecipada de provas (não viola ampla defesa)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M6: ESTATUTO DO DESARMAMENTO -->
+<div class="macro" id="m6">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">🔫</span>
+<div class="minfo"><div class="mt">Estatuto do Desarmamento (Lei 10.826/2003)</div><div class="mm">36 questões • Posse, porte, crimes, registro, arma restrita/proibida</div></div>
+<span class="badge">36 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Crimes e Penas</span><span class="tc">27 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Posse irregular</b> (art. 12): arma em residência/trabalho sem registro – detenção 1 a 3 anos</li>
+<li><b>Omissão de cautela</b> (art. 13): NÃO exige resultado (perigo abstrato) – detenção 1 a 2 anos</li>
+<li><b>Porte ilegal</b> (art. 14): uso permitido sem autorização – reclusão 2 a 4 anos</li>
+<li><b>Disparo</b> (art. 15): em lugar habitado – reclusão 2 a 4 anos</li>
+<li><b>Posse/porte de uso restrito</b> (art. 16): reclusão 3 a 6 anos – <b>inafiançável</b></li>
+<li><b>Comércio ilegal</b> (art. 17): reclusão 6 a 12 anos</li>
+<li><b>Tráfico internacional</b> (art. 18): reclusão 8 a 16 anos</li>
+<li>Importar arma sem autorização = crime; aumento de <b>metade</b> se uso proibido/restrito</li>
+<li>Registro NÃO autoriza transporte em via pública – necessário porte ou guia</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que omissão de cautela exige resultado efetivo (dano)</li>
+<li>ERRADO dizer que registro autoriza transporte da arma em via pública</li>
+<li>ERRADO dizer que porte de arma de uso restrito é afiançável</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Porte Funcional e Registro</span><span class="tc">9 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Porte funcional: Forças Armadas, policiais, agentes penitenciários, guardas municipais (conforme população)</li>
+<li>Porte ≠ posse: restrições de local e horário podem se aplicar conforme regulamento</li>
+<li>Registro: autoriza manter arma em residência/local de trabalho; NÃO autoriza circular com ela</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M7: CRIME ORGANIZADO -->
+<div class="macro" id="m7">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">🕵️</span>
+<div class="minfo"><div class="mt">Crime Organizado (Lei 12.850/2013)</div><div class="mm">22 questões • Conceito, colaboração premiada, agente infiltrado, ação controlada</div></div>
+<span class="badge">22 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Conceito e Meios de Obtenção de Prova</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Organização criminosa</b>: <b>4 ou mais pessoas</b>, estruturalmente ordenada, divisão de tarefas, pena máxima <b>&gt; 4 anos</b></li>
+<li>Meios: colaboração premiada, captação ambiental, ação controlada, agente infiltrado, interceptação</li>
+<li><b>Ação controlada</b>: retardar intervenção policial – <b>comunicação prévia ao juiz</b> (NÃO autorização)</li>
+<li><b>Agente infiltrado</b>: autorização judicial prévia, prazo até 6 meses (prorrogável)</li>
+<li>Infiltração virtual: autorização judicial, prazo até 6 meses</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que organização exige 3 ou mais pessoas (são <b>4 ou mais</b>)</li>
+<li>ERRADO dizer que ação controlada exige autorização judicial (é <b>comunicação prévia</b>)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Colaboração Premiada</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Benefícios: <b>perdão judicial</b>, redução até 2/3, substituição por restritiva de direitos</li>
+<li>Deve ser <b>corroborada por outros elementos</b> – não basta isoladamente</li>
+<li>Juiz NÃO participa das negociações – apenas homologa (legalidade e voluntariedade)</li>
+<li>Pode ser feita a qualquer tempo, inclusive após condenação</li>
+<li>Sigilo sobre o acordo até o recebimento da denúncia</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M8: LEI DE DROGAS -->
+<div class="macro" id="m8">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">💊</span>
+<div class="minfo"><div class="mt">Lei de Drogas (Lei 11.343/2006)</div><div class="mm">39 questões • Tráfico, uso, SISNAD, procedimento penal</div></div>
+<span class="badge">39 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Tráfico e Condutas Equiparadas</span><span class="tc">15 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Tráfico</b> (art. 33): reclusão 5 a 15 anos – <b>equiparado a hediondo</b></li>
+<li>Condutas múltiplas: importar, exportar, fabricar, vender, fornecer, transportar, guardar, prescrever etc.</li>
+<li><b>Tráfico privilegiado</b> (§4º): réu primário + bons antecedentes + não dedicado a atividades criminosas → redução 1/6 a 2/3. <b>NÃO é hediondo</b> (STF)</li>
+<li>Majorantes: transnacionalidade, proximidade de escolas, envolvimento de menor, violência</li>
+<li>Informante do tráfico (art. 37): colaborar como informante – reclusão 2 a 6 anos</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que tráfico privilegiado é crime hediondo</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Uso Pessoal e SISNAD</span><span class="tc">10 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Uso pessoal (art. 28): <b>NÃO tem pena privativa de liberdade</b> – advertência, prestação de serviço, medida educativa</li>
+<li>STF (2024): porte de maconha para uso pessoal é ilícito administrativo (até 40g ou 6 plantas)</li>
+<li>SISNAD: prevenção, atenção, reinserção social e repressão ao tráfico</li>
+<li>Plantio para consumo pessoal: mesmas penas do art. 28 (não é tráfico)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Procedimento Penal e Prazos</span><span class="tc">11 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Inquérito: <b>30 dias</b> (preso) / <b>90 dias</b> (solto) – prorrogáveis em dobro</li>
+<li>Laudo provisório de constatação é suficiente para APF e denúncia</li>
+<li>Destruição das drogas: guardada amostra para contraprova</li>
+<li>Liberdade provisória: vedada para traficantes em flagrante (regra), mas STF admite exceções</li>
+</ul></div></div></div>
+</div></div>
+<!-- M9: CRIMES CONTRA O PATRIMÔNIO -->
+<div class="macro" id="m9">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">💰</span>
+<div class="minfo"><div class="mt">Crimes contra o Patrimônio</div><div class="mm">54 questões • Furto, roubo, latrocínio, extorsão, estelionato</div></div>
+<span class="badge">54 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Furto (arts. 155-156)</span><span class="tc">19 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Furto privilegiado</b>: réu primário + coisa de pequeno valor → substituição/detenção</li>
+<li>Qualificadoras: destruição/rompimento de obstáculo, abuso de confiança, escalada, destreza, chave falsa, fraude eletrônica, concurso</li>
+<li>Quebrar vidro do veículo para subtrair <b>o próprio veículo</b> NÃO é qualificadora (obstáculo protege a coisa, não é parte dela)</li>
+<li>Abuso de confiança exige relação <b>preexistente e relevante</b></li>
+<li>Imunidade penal absoluta (art. 181): cônjuge, ascendente, descendente – NÃO se aplica a vítima com 60+ anos</li>
+<li>Furto qualificado-privilegiado: admitido (Súmula 511/STJ)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que quebrar vidro do carro para furtar o veículo = furto qualificado por rompimento</li>
+<li>ERRADO dizer que quem compra coisa furtada responde como partícipe do furto (é receptação)</li>
+<li>ERRADO dizer que furto entre irmãs dispensa representação quando vítima tem 60+ anos (é ação incondicionada)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Roubo e Latrocínio (arts. 157)</span><span class="tc">19 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Roubo próprio</b>: violência/ameaça ANTES; <b>impróprio</b>: DEPOIS da subtração</li>
+<li><b>Latrocínio</b> (§3º): subtração + morte = consuma-se com a <b>morte</b>, mesmo sem levar o bem (Súmula 610/STF)</li>
+<li>Arma de uso restrito/proibido: pena em <b>dobro</b></li>
+<li>Concurso de pessoas incide mesmo com <b>inimputável</b> (menor)</li>
+<li><b>Extorsão</b> (art. 158): crime formal – consuma-se com constrangimento. <b>Admite tentativa</b></li>
+<li>Roubo impróprio: <b>admite tentativa</b></li>
+<li>NÃO há latrocínio quando vítima reage e mata um dos comparsas</li>
+<li>Concausa preexistente (doença cardíaca) NÃO afasta latrocínio</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que latrocínio exige obtenção efetiva do bem</li>
+<li>ERRADO dizer que extorsão NÃO admite tentativa</li>
+<li>ERRADO dizer que roubo próprio se consuma só quando sai da esfera de vigilância</li>
+<li>ERRADO dizer que inimputabilidade de coautor exclui majorante de concurso</li>
+<li>ERRADO confundir extorsão mediante sequestro com roubo com restrição de liberdade</li>
+<li>ERRADO dizer que servidor que exige dinheiro sob ameaça comete extorsão (é <b>concussão</b>)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Estelionato e Apropriação Indébita</span><span class="tc">16 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Estelionato</b> (art. 171): vantagem ilícita mediante fraude – ação <b>condicionada à representação</b> (regra geral)</li>
+<li>Exceções (incondicionada): vítima é Adm. Pública, menor, incapaz ou idoso</li>
+<li>Sequestro-relâmpago com exigência de dinheiro = extorsão (não estelionato)</li>
+<li>Apropriação indébita (art. 168): agente já tinha posse lícita da coisa</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M10: CRIMES CONTRA ADM. PÚBLICA -->
+<div class="macro" id="m10">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">🏛️</span>
+<div class="minfo"><div class="mt">Crimes contra a Administração Pública</div><div class="mm">70 questões • Peculato, corrupção, concussão, licitações, falsidades</div></div>
+<span class="badge">70 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Funcionário Público (art. 327) e Peculato</span><span class="tc">25 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Conceito <b>amplo</b>: cargo, emprego ou função pública, ainda que transitoriamente ou sem remuneração</li>
+<li>Equiparados (§1º): entidade paraestatal, empresa prestadora de serviço contratada para atividade típica</li>
+<li>Aumento 1/3: ocupantes de comissão, direção ou assessoramento</li>
+<li><b>Peculato-apropriação</b>: apropriar-se de bem que tem posse; <b>Peculato-desvio</b>: desviar</li>
+<li><b>Peculato-furto</b> (§1º): subtrair valendo-se da facilidade do cargo</li>
+<li><b>Peculato culposo</b> (§2º): reparação antes da sentença = <b>extinção da punibilidade</b>; depois = redução de metade</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Corrupção, Concussão e Prevaricação</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Corrupção passiva</b> (art. 317): funcionário <b>solicita ou recebe</b> vantagem indevida</li>
+<li><b>Corrupção ativa</b> (art. 333): particular <b>oferece ou promete</b> – crimes <b>independentes</b></li>
+<li><b>Concussão</b> (art. 316): funcionário <b>exige</b> vantagem – diferença é o verbo "exigir"</li>
+<li>Todos são crimes <b>formais</b>: consumam-se com solicitar/oferecer/exigir</li>
+<li>Prevaricação (art. 319): retardar ou deixar de praticar ato por interesse pessoal</li>
+<li>Corrupção passiva privilegiada: ceder a pedido/influência de outrem</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO confundir corrupção passiva com concussão (solicitar ≠ exigir)</li>
+<li>ERRADO dizer que corrupção ativa e passiva são interdependentes</li>
+<li>ERRADO dizer que servidor que exige dinheiro sob ameaça comete extorsão (é concussão)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Falsidades e Crimes em Licitações</span><span class="tc">23 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Falsidade ideológica</b> (art. 299): inserir/omitir declaração falsa em documento</li>
+<li><b>Uso de documento falso</b> (art. 304): pena igual à do falsificador – NÃO concorre com falsificação (consunção)</li>
+<li>Crimes em licitações (arts. 337-E a 337-P): incorporados ao CP pela Lei 14.133</li>
+<li>Crimes contra finanças públicas (arts. 359-A a 359-H): ordenação de despesa não autorizada etc.</li>
+<li>Denunciação caluniosa (art. 339): imputar falsamente crime a alguém sabendo-o inocente</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M11: TEORIA DO CRIME -->
+<div class="macro" id="m11">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">🧠</span>
+<div class="minfo"><div class="mt">Teoria do Crime</div><div class="mm">80+ questões • Dolo/culpa, concurso de pessoas, tentativa, excludentes, imputabilidade, homicídio</div></div>
+<span class="badge">80+ Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Concurso de Pessoas (arts. 29-31)</span><span class="tc">26 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Teoria monista</b>: todos respondem pelo mesmo crime, na medida de sua culpabilidade</li>
+<li>Participação de menor importância: pena reduzida de 1/6 a 1/3</li>
+<li>Circunstâncias pessoais NÃO se comunicam, salvo se <b>elementares</b> do crime</li>
+<li>Concurso com inimputável: <b>possível</b> (teoria da acessoriedade limitada)</li>
+<li>Desistência de participante: só isenta se <b>impedir a execução ou o resultado</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que inimputabilidade de um exclui concurso de pessoas</li>
+<li>ERRADO dizer que circunstâncias pessoais sempre se comunicam</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Dolo, Culpa e Preterdolo</span><span class="tc">12 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Dolo direto</b>: quer o resultado; <b>Dolo eventual</b>: assume o risco</li>
+<li><b>Culpa</b>: imprudência, negligência, imperícia – crime culposo só quando <b>previsto em lei</b></li>
+<li><b>Preterdolo</b>: dolo no antecedente + culpa no consequente (ex: lesão → morte)</li>
+<li>Erro de tipo essencial invencível: exclui dolo e culpa; vencível: pune a título de culpa se previsto</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Tentativa, Desistência e Arrependimento</span><span class="tc">9 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Tentativa</b>: início de execução + não consumação por circunstâncias alheias → redução de 1/3 a 2/3</li>
+<li>NÃO admitem tentativa: culposos, contravenções, omissivos próprios, habituais, unissubsistentes</li>
+<li><b>Desistência voluntária</b>: desiste por vontade → responde só pelos atos já praticados</li>
+<li><b>Arrependimento eficaz</b>: após execução, impede resultado → mesma consequência</li>
+<li><b>Arrependimento posterior</b> (art. 16): reparação do dano antes do recebimento da denúncia → redução 1/3 a 2/3</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Excludentes de Ilicitude</span><span class="tc">14 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Legítima defesa</b>: agressão injusta, atual ou iminente, meios necessários e moderados</li>
+<li><b>Estado de necessidade</b>: perigo atual não provocado pelo agente</li>
+<li>Estrito cumprimento do dever legal e exercício regular de direito</li>
+<li>Legítima defesa contra agressão futura ou passada: <b>NÃO admitida</b></li>
+<li>Excesso (doloso ou culposo) é <b>punível</b></li>
+<li>Exigibilidade de conduta diversa: ausência exclui culpabilidade (coação moral irresistível, obediência hierárquica)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Imputabilidade Penal (arts. 26-28)</span><span class="tc">21 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Menores de 18: <b>penalmente inimputáveis</b> (critério biológico)</li>
+<li>Doença mental que elimina inteiramente capacidade: inimputável → medida de segurança</li>
+<li>Semi-imputável: redução de 1/3 a 2/3 ou substituição por medida de segurança</li>
+<li>Embriaguez voluntária/culposa: <b>NÃO exclui</b> imputabilidade (actio libera in causa)</li>
+<li>Embriaguez fortuita completa: <b>exclui</b></li>
+<li>Emoção e paixão <b>NÃO excluem</b> imputabilidade</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que menor NÃO responde por nada (responde por ato infracional – é penalmente inimputável)</li>
+<li>ERRADO dizer que embriaguez voluntária exclui imputabilidade</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Homicídio (art. 121) e Crimes contra a Pessoa</span><span class="tc">19 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Simples: reclusão 6 a 20 anos</li>
+<li>Qualificado: motivo torpe, fútil, meio cruel, traição, <b>feminicídio</b> – 12 a 30 anos (hediondo)</li>
+<li>Privilegiado: relevante valor moral/social ou domínio de violenta emoção → redução 1/6 a 1/3</li>
+<li>Culposo: detenção 1 a 3 anos; majorado 1/3 se inobservância de regra técnica</li>
+<li>Crimes contra liberdade pessoal (arts. 146-149-A): constrangimento ilegal, ameaça, sequestro/cárcere privado, tráfico de pessoas</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M12: APLICAÇÃO DA LEI PENAL -->
+<div class="macro" id="m12">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">📖</span>
+<div class="minfo"><div class="mt">Aplicação da Lei Penal</div><div class="mm">50+ questões • Lei no tempo, territorialidade, extraterritorialidade, princípios</div></div>
+<span class="badge">50+ Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Lei Penal no Tempo (arts. 1º e 2º)</span><span class="tc">17 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Irretroatividade</b> da lei mais gravosa; <b>Retroatividade</b> da mais benéfica (novatio legis in mellius)</li>
+<li>Lei mais benéfica retroage mesmo após <b>trânsito em julgado</b></li>
+<li><b>Abolitio criminis</b>: cessa efeitos <b>penais</b> (NÃO os civis)</li>
+<li>NÃO é abolitio se conduta é apenas deslocada para outro tipo (continuidade típico-normativa)</li>
+<li><b>Ultratividade</b>: lei revogada mais favorável continua aplicável aos fatos sob sua vigência</li>
+<li>Para abolitio, não basta revogação formal – o conteúdo normativo não pode estar preservado em outro dispositivo</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que lei benéfica NÃO retroage após trânsito em julgado</li>
+<li>ERRADO dizer que abolitio criminis extingue efeitos civis</li>
+<li>ERRADO dizer que revogação formal com deslocamento configura abolitio</li>
+<li>ERRADO dizer que trânsito em julgado impede aplicação de lei posterior favorável</li>
+<li>ERRADO dizer que abolitio criminis extingue efeitos extrapenais da condenação</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Tempo e Lugar do Crime (arts. 4º e 6º)</span><span class="tc">16 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Tempo: teoria da atividade</b> – momento da ação/omissão, independente do resultado</li>
+<li><b>Lugar: teoria da ubiquidade</b> – onde ocorreu ação/omissão OU onde se produziu/deveria se produzir o resultado</li>
+<li>Crimes permanentes e continuados: lei mais grave aplica-se se vigente <b>antes da cessação</b> (Súm. 711/STF)</li>
+<li>Omissivos: considera-se o momento da omissão (último momento que poderia ter agido)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que CP adota teoria da atividade para o lugar (é ubiquidade)</li>
+<li>ERRADO dizer que crime permanente aplica lei mais benéfica se lei grave entrou em vigor durante a permanência</li>
+<li>ERRADO dizer que resultado prolonga-se no tempo "atraindo lei vigente ao término" (é a ação/omissão que conta)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Territorialidade e Extraterritorialidade</span><span class="tc">17 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Territorialidade temperada</b> (art. 5º): lei brasileira aplica-se no território nacional, salvo tratados</li>
+<li>Território por extensão: embarcações/aeronaves públicas brasileiras onde estiverem; privadas quando em espaço aéreo/mar territorial brasileiro</li>
+<li><b>Extraterritorialidade incondicionada</b> (art. 7º, I): crimes contra a vida/liberdade do Presidente, contra o patrimônio da União, genocídio</li>
+<li>Extraterritorialidade condicionada (art. 7º, II): tratados, praticado por brasileiro, praticado em aeronave/embarcação brasileira privada</li>
+<li>Pena cumprida no estrangeiro: <b>atenua</b> a pena (se diversa) ou <b>computa</b> (se idêntica)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Princípios do Direito Penal</span><span class="tc">21 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Legalidade/anterioridade</b> (art. 1º): não há crime sem lei anterior que o defina; NÃO há pena sem prévia cominação</li>
+<li><b>Princípio da insignificância</b>: atipicidade material – exclui a tipicidade, não a ilicitude</li>
+<li><b>Intervenção mínima</b>: direito penal como ultima ratio</li>
+<li><b>Vedação de retroatividade maléfica</b>: alcança inclusive regimes de execução (STF)</li>
+<li>Analogia: permitida in bonam partem (favorável); vedada in malam partem</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que vedação de retroatividade não alcança regimes de execução</li>
+</ul></div></div></div>
+</div></div>
+<!-- M13: PENAS E PRESCRIÇÃO -->
+<div class="macro" id="m13">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">⏳</span>
+<div class="minfo"><div class="mt">Penas, Dosimetria e Prescrição</div><div class="mm">45 questões • Espécies de pena, dosimetria, prescrição, concurso de crimes</div></div>
+<span class="badge">45 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Prescrição (arts. 109-118)</span><span class="tc">18 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Prescrição da pretensão punitiva</b>: calculada pela pena máxima em abstrato (antes da condenação)</li>
+<li><b>Prescrição retroativa</b>: após condenação, calcula-se pela pena em concreto, retroagindo aos marcos interruptivos</li>
+<li><b>Prescrição executória</b>: após trânsito em julgado para ambas as partes, pela pena aplicada</li>
+<li>Causas interruptivas: recebimento da denúncia, publicação de sentença condenatória recorrível, início de cumprimento</li>
+<li>Causas suspensivas: suspensão do processo (art. 366), parlamentar</li>
+<li>Reincidência: aumenta prazo da prescrição executória em <b>1/3</b></li>
+<li>Menores de 21 (data do fato) e maiores de 70 (data da sentença): prazo reduzido pela <b>metade</b></li>
+<li>Crimes imprescritíveis: racismo e ação de grupos armados contra o Estado</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que prescrição retroativa é calculada pela pena máxima em abstrato</li>
+<li>ERRADO dizer que a redução pela metade para maiores de 70 se calcula pela data do fato (é da sentença)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Espécies de Pena e Dosimetria</span><span class="tc">15 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Penas: privativas de liberdade (reclusão/detenção), restritivas de direitos e multa</li>
+<li>Dosimetria trifásica: 1ª) pena-base (circunstâncias judiciais); 2ª) agravantes/atenuantes; 3ª) causas de aumento/diminuição</li>
+<li>Na 1ª e 2ª fases, pena NÃO pode ultrapassar os limites legais</li>
+<li>Na 3ª fase, pode ultrapassar os limites</li>
+<li>Atenuante de confissão espontânea e agravante de reincidência: se simultâneas, podem se compensar (STJ)</li>
+<li>Confissão qualificada (com tese defensiva): NÃO gera atenuante (entendimento majoritário)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Concurso de Crimes (arts. 69-71)</span><span class="tc">12 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Material</b> (art. 69): duas ou mais ações → dois ou mais crimes – cúmulo material (somam-se penas)</li>
+<li><b>Formal</b> (art. 70): uma ação → dois ou mais crimes – exasperação (pena mais grave + 1/6 a metade)</li>
+<li><b>Continuado</b> (art. 71): mesma espécie de crime, mesmas condições → aumento 1/6 a 2/3</li>
+<li>Concurso formal impróprio/imperfeito (desígnios autônomos): aplica-se cúmulo material</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M14: PRISÃO PREVENTIVA E CAUTELARES -->
+<div class="macro" id="m14">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">⛓️</span>
+<div class="minfo"><div class="mt">Prisão Preventiva e Medidas Cautelares</div><div class="mm">30 questões • Requisitos, hipóteses, medidas diversas, liberdade provisória</div></div>
+<span class="badge">30 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Prisão Preventiva (arts. 311-316)</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Requisitos: <b>prova da materialidade + indícios de autoria</b></li>
+<li>Fundamentos (alternativos): garantia da ordem pública/econômica, conveniência da instrução, assegurar aplicação da lei penal</li>
+<li>Hipóteses: crimes dolosos com pena máxima <b>&gt; 4 anos</b>; reincidente em crime doloso; violência doméstica; descumprimento de cautelar</li>
+<li>Juiz <b>NÃO pode decretar de ofício</b> (Pacote Anticrime) – precisa de requerimento do MP, querelante ou assistente, ou representação da autoridade policial</li>
+<li>Apresentação espontânea NÃO impede decretação da preventiva</li>
+<li>Deve ser <b>fundamentada concretamente</b> – vedada fundamentação genérica ou abstrata</li>
+<li>Revisão periódica: a cada <b>90 dias</b>, juiz deve verificar necessidade de manutenção</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que juiz pode decretar preventiva de ofício</li>
+<li>ERRADO dizer que apresentação espontânea impede a preventiva</li>
+<li>ERRADO dizer que gravidade abstrata do delito justifica preventiva</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Medidas Cautelares Diversas da Prisão (art. 319)</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Comparecimento periódico ao juízo, proibição de acesso a lugares, recolhimento domiciliar noturno, monitoração eletrônica etc.</li>
+<li>Descumprimento injustificado: pode levar à decretação da preventiva</li>
+<li>Prisão preventiva é a <b>ultima ratio</b> das cautelares – aplica-se quando insuficientes as demais</li>
+<li>Fiança: arbitrada pela autoridade policial (crimes com pena até 4 anos) ou pelo juiz</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M15: LEGISLAÇÃO ESPECIAL -->
+<div class="macro" id="m15">
+<div class="mh" onclick="toggleMacro(this)">
+<span class="mi">📜</span>
+<div class="minfo"><div class="mt">Legislação Penal Especial Complementar</div><div class="mm">50+ questões • Tortura, crimes hediondos, juizados especiais, interceptação, Maria da Penha</div></div>
+<span class="badge">50+ Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Crimes Hediondos (Lei 8.072/1990)</span><span class="tc">12 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Rol taxativo: homicídio qualificado, latrocínio, extorsão qualificada pela morte, estupro, epidemia com resultado morte, genocídio, posse/porte de arma restrita etc.</li>
+<li><b>Insuscetíveis</b> de anistia, graça e indulto</li>
+<li><b>Inafiançáveis</b></li>
+<li>Equiparados a hediondos: tortura, tráfico e terrorismo</li>
+<li>Progressão de regime: 40% (primário) / 60% (reincidente)</li>
+<li>Tráfico privilegiado <b>NÃO é hediondo</b> (STF)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Lei de Tortura (Lei 9.455/1997)</span><span class="tc">8 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Constranger alguém com emprego de violência/grave ameaça, causando-lhe sofrimento físico ou mental para: obter informação/confissão, provocar ação/omissão criminosa, ou por discriminação</li>
+<li>Tortura por omissão: quem se omite quando <b>deveria evitar ou apurar</b></li>
+<li>Pena: reclusão 2 a 8 anos (tipo básico)</li>
+<li>Efeito da condenação: <b>perda do cargo</b> e <b>interdição para exercício</b> pelo dobro da pena – efeito <b>automático</b></li>
+<li>Equiparada a hediondo: inafiançável, insuscetível de graça/anistia</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4><ul class="t">
+<li>ERRADO dizer que perda do cargo na tortura NÃO é automática (é automática, diferente do abuso de autoridade)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Interceptação Telefônica (Lei 9.296/1996)</span><span class="tc">10 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Exige <b>autorização judicial prévia</b> – ordem fundamentada do juiz</li>
+<li>Prazo: <b>15 dias</b>, renovável por igual período (quantas vezes necessário)</li>
+<li>Só cabível em investigação criminal e instrução processual penal</li>
+<li>Não se aplica a crimes punidos com <b>detenção</b> apenas (exige reclusão)</li>
+<li>Gravação ambiental por um dos interlocutores: NÃO é interceptação (é lícita)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Juizados Especiais Criminais (Lei 9.099/1995)</span><span class="tc">8 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Infrações de menor potencial ofensivo: pena máxima não superior a <b>2 anos</b></li>
+<li><b>Transação penal</b>: proposta pelo MP – não implica reincidência nem consta como antecedente (salvo para nova transação em 5 anos)</li>
+<li>Composição civil dos danos: acordo entre vítima e autor – homologado → renúncia ao direito de queixa/representação</li>
+<li>Suspensão condicional do processo (art. 89): crimes com pena mínima ≤ 1 ano; período de prova de 2 a 4 anos</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTopic(this)"><span class="tt">Lei Maria da Penha (Lei 11.340/2006)</span><span class="tc">12 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Violência doméstica e familiar contra a mulher: física, psicológica, sexual, patrimonial, moral</li>
+<li><b>NÃO se aplica</b> Lei 9.099 (juizados especiais) aos crimes com violência doméstica</li>
+<li>Medidas protetivas de urgência: podem ser concedidas <b>de ofício</b> ou a requerimento</li>
+<li>Descumprimento de medida protetiva: <b>crime</b> (art. 24-A, pena detenção 3 meses a 2 anos)</li>
+<li>Retratação da representação: só perante o juiz, em audiência especialmente designada</li>
+<li>Lesão corporal leve: ação pública <b>incondicionada</b> (Súmula 542/STJ)</li>
+</ul></div></div></div>
+</div></div>
+
+</div>
+<button class="back-btn" onclick="location.href='index.html'">← Voltar</button>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+<script>
+function toggleMacro(el){el.closest('.macro').classList.toggle('open')}
+function toggleTopic(el){el.closest('.tp').classList.toggle('open')}
+function scrollToSection(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+function toggleAll(open){document.querySelectorAll('.macro,.tp').forEach(e=>{open?e.classList.add('open'):e.classList.remove('open')})}
+function filterContent(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.tp').forEach(tp=>{const txt=tp.textContent.toLowerCase();tp.style.display=txt.includes(q)?'':'none';if(txt.includes(q)&&q.length>2){tp.classList.add('open');tp.closest('.macro').classList.add('open')}})}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)})
+</script>
+</body>
+</html>

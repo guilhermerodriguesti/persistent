@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resumo Estruturado – Direitos Humanos</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#581c87,#a855f7);border-radius:16px;margin-bottom:20px;box-shadow:0 8px 32px rgba(88,28,135,0.3)}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:13px;color:#e9d5ff;margin-bottom:12px}
+.stats-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hstat{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(255,255,255,0.1);color:#e9d5ff;border:1px solid rgba(255,255,255,0.15)}
+.hstat b{font-size:15px;color:#fff}
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:16px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #d8b4fe;color:#7c3aed;background:#faf5ff;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:#a855f7;color:#fff;border-color:#a855f7}
+.search-box{margin-bottom:16px;display:flex;gap:8px}
+.search-box input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-size:13px;outline:none}
+.search-box input:focus{border-color:#a855f7}
+.ebtn{padding:8px 16px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#7c3aed;cursor:pointer;font-size:11px;font-weight:700}
+.ebtn:hover{background:#a855f7;color:#fff;border-color:#a855f7}
+.macro{margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.mh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.mh:hover{background:#faf5ff}
+.mi{font-size:26px;flex-shrink:0}
+.minfo{flex:1}.mt{font-size:17px;font-weight:800;color:#1e293b}
+.mm{font-size:11px;color:#64748b;margin-top:2px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#faf5ff;color:#7c3aed;border:1px solid #d8b4fe}
+.chv{font-size:14px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.macro.open .chv{transform:rotate(90deg)}
+.mb{display:none;padding:0 18px 18px;border-top:1px solid #f1f5f9}
+.macro.open .mb{display:block}
+.tp{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc}
+.th{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;transition:background .2s}
+.th:hover{background:#faf5ff}
+.tt{flex:1;font-size:13px;font-weight:700;color:#1e293b}
+.tc{font-size:10px;color:#64748b;font-weight:600;padding:2px 8px;background:#f1f5f9;border-radius:10px;border:1px solid #e2e8f0}
+.tv{font-size:11px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.tp.open .tv{transform:rotate(90deg)}
+.tb{display:none;padding:0 14px 14px;border-top:1px solid #f1f5f9}
+.tp.open .tb{display:block}
+.kp h4{font-size:12px;font-weight:700;color:#7c3aed;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.kp h4::before{content:'💡'}
+ul.k{list-style:none;padding:0}
+ul.k li{padding:6px 10px 6px 20px;font-size:12px;color:#334155;margin-bottom:3px;border-radius:6px;background:#f1f5f9;position:relative;line-height:1.5}
+ul.k li::before{content:'▸';position:absolute;left:8px;color:#7c3aed;font-weight:700}
+ul.k li b{color:#1e293b}
+.trap{margin-top:10px;padding:10px 14px;background:#faf5ff;border:1px solid #d8b4fe;border-radius:8px}
+.trap h4{font-size:12px;font-weight:700;color:#7c3aed;margin-bottom:6px}
+.trap h4::before{content:'⚠️ '}
+ul.t{list-style:none;padding:0}
+ul.t li{padding:4px 10px 4px 20px;font-size:11px;color:#581c87;margin-bottom:2px;position:relative;line-height:1.4}
+ul.t li::before{content:'✗';position:absolute;left:6px;color:#dc2626;font-weight:700}
+ul.t li b{color:#1e293b}
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#a855f7;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(168,85,247,.4);z-index:100}
+.back-btn:hover{background:#7c3aed}
+.scroll-top{position:fixed;bottom:64px;right:20px;width:40px;height:40px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#1e293b;font-size:16px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{background:#a855f7;color:#fff;border-color:#a855f7}
+@media(max-width:768px){.container{padding:10px}.header h1{font-size:18px}.mt{font-size:15px}.nav-btn{padding:5px 8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>⚖️ Resumo Estruturado – Direitos Humanos</h1>
+<div class="sub">Policial Legislativo CD 2026 • 482 questões CEBRASPE analisadas</div>
+<div class="stats-row">
+<div class="hstat">📝 <b>482</b> questões</div>
+<div class="hstat">📂 <b>10</b> macro-temas</div>
+<div class="hstat">📑 <b>8</b> assuntos</div>
+<div class="hstat">📖 <b>DUDH</b> mais cobrada</div>
+</div>
+</div>
+<div class="nav-bar" id="navBar">
+<span class="nav-btn" onclick="scrollToSection('m1')">DUDH</span>
+<span class="nav-btn" onclick="scrollToSection('m2')">Histórico/Gerações</span>
+<span class="nav-btn" onclick="scrollToSection('m3')">DH na CF/88</span>
+<span class="nav-btn" onclick="scrollToSection('m4')">Sistema Interamericano</span>
+<span class="nav-btn" onclick="scrollToSection('m5')">CADH – Direitos</span>
+<span class="nav-btn" onclick="scrollToSection('m6')">CADH – Meios Proteção</span>
+<span class="nav-btn" onclick="scrollToSection('m7')">Fontes e Princípios</span>
+<span class="nav-btn" onclick="scrollToSection('m8')">Incorporação/Hierarquia</span>
+<span class="nav-btn" onclick="scrollToSection('m9')">Casos Emblemáticos</span>
+<span class="nav-btn" onclick="scrollToSection('m10')">Temas Especiais</span>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Buscar tópico, artigo ou regra..." onkeyup="filterContent()">
+<button class="ebtn" onclick="toggleAll(true)">▼ Abrir Tudo</button>
+<button class="ebtn" onclick="toggleAll(false)">▲ Fechar Tudo</button>
+</div>
+
+<!-- MACRO 1 -->
+<div class="macro" id="m1">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🌐</div>
+<div class="minfo"><div class="mt">1. Declaração Universal dos Direitos Humanos (DUDH)</div><div class="mm">Artigos, direitos civis/políticos/sociais, limitações, deveres • 123 questões</div></div>
+<span class="badge">123 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Natureza Jurídica, Contexto e Estrutura da DUDH</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Adotada em 10/12/1948</b> pela Assembleia Geral da ONU (Resolução 217-A III). Não é tratado, é <b>resolução</b> — originalmente <b>não vinculante</b>, mas hoje considerada norma costumeira internacional (jus cogens)</li>
+<li><b>30 artigos</b>: arts. 1-2 (princípios gerais); arts. 3-21 (direitos civis e políticos); arts. 22-27 (direitos econômicos, sociais e culturais); arts. 28-30 (deveres e limitações)</li>
+<li>Contexto: pós-Segunda Guerra Mundial, reação às atrocidades do nazismo. Reconhecimento da <b>igualdade essencial</b> de todos os seres humanos</li>
+<li>Contempla direitos de <b>1ª, 2ª e 3ª gerações</b> (não apenas primeira)</li>
+<li>A DUDH <b>inspirou</b> os dois Pactos de 1966 (PIDCP e PIDESC) — juntos formam a <b>Carta Internacional de Direitos Humanos</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"DUDH contempla apenas direitos de 1ª geração" — <b>ERRADO</b>, inclui 1ª, 2ª e 3ª</li>
+<li>"DUDH é tratado internacional vinculante" — <b>ERRADO</b>, é resolução da AG/ONU (hoje norma costumeira)</li>
+<li>"Declaração dos Direitos do Homem e do Cidadão (1789) é igual à DUDH" — <b>ERRADO</b>, são documentos distintos</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Direitos Civis e Políticos na DUDH (Arts. 1-21)</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Art. 1º</b>: todos nascem livres e iguais em dignidade e direitos, dotados de razão e consciência</li>
+<li><b>Art. 4º</b>: ninguém será mantido em escravidão ou servidão; proíbe escravidão <b>e tráfico de escravos</b> em todas as formas</li>
+<li><b>Art. 5º</b>: proibição de tortura, tratamento cruel, desumano ou degradante</li>
+<li><b>Art. 9º</b>: ninguém será arbitrariamente preso, detido ou exilado</li>
+<li><b>Art. 14</b>: direito de asilo em caso de perseguição. <b>Exceção</b>: não se aplica quando perseguição motivada por crimes de direito comum ou atos contrários aos propósitos da ONU</li>
+<li><b>Art. 15</b>: direito a nacionalidade; ninguém será privado arbitrariamente de sua nacionalidade</li>
+<li><b>Art. 19</b>: liberdade de opinião e expressão — inclui <b>procurar, receber e difundir</b> informações sem fronteiras</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"DUDH rechaça escravidão mas é silente quanto ao tráfico" — <b>ERRADO</b>, art. 4º proíbe ambos</li>
+<li>"Direito de asilo é garantido em quaisquer condições" — <b>ERRADO</b>, há exceção para crimes comuns e atos contra a ONU</li>
+<li>"Liberdade de expressão na DUDH não inclui difundir informações" — <b>ERRADO</b>, inclui procurar, receber E difundir</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Direitos Sociais, Deveres e Limitações (Arts. 22-30)</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Art. 22</b>: segurança social e direitos econômicos/sociais/culturais indispensáveis à dignidade</li>
+<li><b>Art. 23</b>: direito ao trabalho, livre escolha de emprego, proteção contra desemprego, remuneração justa, direito a sindicalizar-se</li>
+<li><b>Art. 26</b>: direito à educação; instrução elementar será <b>gratuita e obrigatória</b></li>
+<li><b>Art. 29</b>: todo ser humano tem <b>deveres</b> para com a comunidade; limitações aos direitos <b>apenas por lei</b> e com finalidade de satisfazer exigências da moral, ordem pública e bem-estar</li>
+<li><b>Art. 30</b>: nenhuma disposição pode ser interpretada para suprimir direitos e liberdades enunciados</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"DUDH não prevê deveres" — <b>ERRADO</b>, art. 29 prevê deveres para com a comunidade</li>
+<li>"Direitos da DUDH são ilimitados" — <b>ERRADO</b>, art. 29 prevê limitações por lei</li>
+<li>"Ensino elementar não é obrigatório" — <b>ERRADO</b>, art. 26 impõe gratuidade e obrigatoriedade</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 2 -->
+<div class="macro" id="m2">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📜</div>
+<div class="minfo"><div class="mt">2. Conceitos, Histórico e Gerações dos DH</div><div class="mm">Evolução, documentos históricos, dimensões/gerações, teorias • 86 questões</div></div>
+<span class="badge">86 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Evolução Histórica dos Direitos Humanos</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Antecedentes</b>: Cilindro de Ciro (539 a.C.); filosofia grega (estoicismo = igualdade); fundamentos intelectuais da igualdade <b>antes de Cristo</b></li>
+<li><b>Magna Carta</b> (1215): limitação do poder real — marco para due process of law</li>
+<li><b>Petition of Rights</b> (1628): limitação ao poder tributário do rei — <b>não</b> tratava de direitos sociais</li>
+<li><b>Bill of Rights</b> (1689): consolidou supremacia do Parlamento sobre a Coroa</li>
+<li><b>Declaração de Virgínia</b> (1776) e <b>Declaração Francesa</b> (1789): marcos da positivação de direitos individuais</li>
+<li>Positivação de DH <b>não começou</b> pós-WWII — já havia documentos nos séculos XVII-XVIII</li>
+<li><b>Internacionalização</b>: pós-WWII com criação da ONU (1945) e DUDH (1948)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Primeira positivação de DH foi pós-Segunda Guerra" — <b>ERRADO</b>, havia positivação desde séc. XVIII</li>
+<li>"Petition of Rights avançou direitos sociais" — <b>ERRADO</b>, limitou poder tributário do rei (direitos civis)</li>
+<li>"Fundamentos intelectuais da igualdade são pós-medievais" — <b>ERRADO</b>, já existiam antes de Cristo</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Gerações/Dimensões dos Direitos Humanos</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>1ª geração</b> (liberdade): direitos civis e políticos; abstenção estatal; séc. XVIII-XIX; Iluminismo/Liberalismo</li>
+<li><b>2ª geração</b> (igualdade): direitos econômicos, sociais e culturais (DESC); prestação estatal; séc. XX</li>
+<li><b>3ª geração</b> (fraternidade/solidariedade): direitos difusos/coletivos — paz, meio ambiente, desenvolvimento, autodeterminação dos povos</li>
+<li><b>4ª geração</b> (Bobbio/Bonavides): globalização, democracia, informação, pluralismo</li>
+<li><b>5ª geração</b> (Bonavides): direito à paz como autônomo</li>
+<li>Gerações são <b>cumulativas</b> (não substitutivas) — por isso muitos preferem o termo <b>dimensões</b></li>
+<li>STF: 1ª geração = indivíduo; 2ª = grupos sociais; 3ª = formações sociais (solidariedade)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Direitos sociais são de 3ª geração" — <b>ERRADO</b>, são de <b>2ª geração</b></li>
+<li>"1ª geração = solidariedade e formações sociais" — <b>ERRADO</b>, isso é 3ª geração</li>
+<li>"Gerações substituem umas às outras" — <b>ERRADO</b>, são cumulativas</li>
+<li>"Teoria moralista = direitos positivados na norma" — <b>ERRADO</b>, moralista = fundamento moral/ético (positivista = norma)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 3 -->
+<div class="macro" id="m3">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🇧🇷</div>
+<div class="minfo"><div class="mt">3. Direitos Humanos na Constituição Federal</div><div class="mm">Arts. 1º-5º, DH como princípio das relações internacionais, rol exemplificativo • 69 questões</div></div>
+<span class="badge">69 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">DH como Fundamento e Princípio Constitucional</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Dignidade da pessoa humana</b> (art. 1º, III): fundamento da República — vetor interpretativo de todo o ordenamento</li>
+<li><b>Prevalência dos direitos humanos</b> (art. 4º, II): princípio das relações internacionais do Brasil</li>
+<li><b>Art. 5º, §2º</b>: rol de direitos e garantias é <b>exemplificativo</b> (não taxativo) — não exclui outros decorrentes de tratados internacionais, regime e princípios constitucionais</li>
+<li><b>Art. 5º, §3º</b> (EC 45/2004): tratados de DH aprovados por <b>3/5 em 2 turnos</b> = equivalentes a <b>emenda constitucional</b></li>
+<li>Direitos individuais estendidos a estrangeiros no Brasil (não residentes inclusive) — princípio da universalidade</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Rol do art. 5º é taxativo" — <b>ERRADO</b>, §2º diz expressamente que é exemplificativo</li>
+<li>"Somente têm estatura de DF aqueles expressamente no texto" — <b>ERRADO</b></li>
+<li>"Estrangeiros não residentes não têm direitos individuais" — <b>ERRADO</b>, a CF protege brasileiros e estrangeiros no Brasil</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">DH na CF: Proteções Específicas e Vedações</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Racismo</b> (art. 5º, XLII): crime <b>inafiançável e imprescritível</b></li>
+<li><b>Tortura</b> (art. 5º, XLIII): crime inafiançável e <b>insuscetível de graça ou anistia</b> (não é imprescritível)</li>
+<li><b>Sigilo de correspondência</b>: inviolável; cartas não podem ser abertas por órgãos de segurança</li>
+<li><b>Incidente de Deslocamento de Competência</b> (IDC): PGR pode suscitar perante o <b>STJ</b> para transferir à Justiça Federal processos com grave violação de DH</li>
+<li><b>Revisão Periódica Universal (RPU)</b>: mecanismo do Conselho de DH da ONU; Brasil recebeu recomendações em múltiplas áreas</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Racismo é crime prescritível" — <b>ERRADO</b>, é imprescritível</li>
+<li>"Tortura é crime imprescritível" — <b>ERRADO</b>, tortura é inafiançável e insuscetível de graça, mas <b>prescreve</b></li>
+<li>"IDC é suscitado perante o STF" — <b>ERRADO</b>, é perante o STJ</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 4 -->
+<div class="macro" id="m4">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🌎</div>
+<div class="minfo"><div class="mt">4. Sistema Interamericano de Direitos Humanos</div><div class="mm">OEA, Comissão, Corte, CADH (Pacto de São José), competências • 62 questões</div></div>
+<span class="badge">62 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Estrutura: Comissão e Corte Interamericana</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>CADH / Pacto de São José da Costa Rica</b> (1969): principal instrumento do sistema. Promulgada no Brasil pelo Dec. 678/1992</li>
+<li><b>Dois órgãos</b>: Comissão Interamericana (Washington) e Corte Interamericana (San José, Costa Rica)</li>
+<li><b>Comissão</b> (7 membros): recebe petições individuais (qualquer pessoa/ONG), promove DH, emite relatórios, recomendações e <b>medidas cautelares</b></li>
+<li><b>Corte</b> (7 juízes): competência <b>contenciosa</b> (julgar casos) e <b>consultiva</b> (interpretar tratados). Jurisdição obrigatória apenas para Estados que a reconheceram</li>
+<li>Brasil reconheceu a <b>jurisdição contenciosa</b> da Corte em 1998</li>
+<li><b>Legitimados para submeter caso à Corte</b>: apenas <b>Estados-partes e a Comissão</b> (indivíduos NÃO podem acionar a Corte diretamente)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Indivíduos podem submeter casos diretamente à Corte" — <b>ERRADO</b>, só Estados e Comissão</li>
+<li>"Qualquer ONG pode denunciar diretamente à Corte" — <b>ERRADO</b>, ONGs peticionam à Comissão</li>
+<li>"Corte tem atividades meramente administrativas" — <b>ERRADO</b>, exerce atividade jurisdicional</li>
+<li>"Comissão não pode adotar medidas cautelares" — <b>ERRADO</b>, pode sim</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Competência Consultiva e Contenciosa da Corte</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Consultiva</b>: Estados e órgãos da OEA podem consultar sobre interpretação da CADH <b>ou outros tratados de DH</b> aplicáveis aos Estados americanos</li>
+<li><b>Contenciosa</b>: julga Estados por violação à CADH; sentenças são <b>definitivas e inapeláveis</b></li>
+<li>Juiz <b>nacional</b> de Estado-parte em controvérsia: <b>conserva</b> o direito de conhecer o processo</li>
+<li>A Corte exerce <b>controle de convencionalidade</b> (inclusive preventivo)</li>
+<li>Ao ratificar a CADH, Brasil vinculou <b>todos os Poderes</b> — não pode invocar direito interno para justificar descumprimento</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Consultiva da Corte se limita à interpretação da CADH" — <b>ERRADO</b>, pode ser sobre <b>qualquer tratado de DH</b> aplicável</li>
+<li>"Corte não exerce controle preventivo de convencionalidade" — <b>ERRADO</b></li>
+<li>"Juiz nacional do Estado em litígio deve se abster" — <b>ERRADO</b>, conserva o direito</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 5 -->
+<div class="macro" id="m5">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📋</div>
+<div class="minfo"><div class="mt">5. CADH – Deveres dos Estados e Direitos Protegidos</div><div class="mm">Arts. 1-32, direitos civis, pena de morte, liberdades, devido processo • 56 questões</div></div>
+<span class="badge">56 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Deveres dos Estados e Direitos Civis (Arts. 1-25)</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Art. 1º</b>: Estados se comprometem a <b>respeitar</b> e <b>garantir</b> os direitos da CADH, sem discriminação</li>
+<li><b>Art. 2º</b>: obrigação de adotar medidas legislativas/de outra natureza para tornar efetivos os direitos</li>
+<li><b>Art. 4º (vida)</b>: proteção desde a <b>concepção</b>; pena de morte: <b>não pode ser restabelecida</b> onde foi abolida, nem aplicada a menores de 18 anos, maiores de 70, ou gestantes</li>
+<li><b>Art. 5º</b>: integridade pessoal; proibição de tortura; penas não se estendem a familiares</li>
+<li><b>Art. 7º (liberdade pessoal)</b>: proibição de prisão por dívidas, exceto <b>devedor de alimentos</b></li>
+<li><b>Art. 8º (garantias judiciais)</b>: devido processo legal, presunção de inocência, direito de ser ouvido por juiz imparcial</li>
+<li><b>Art. 13 (expressão)</b>: liberdade de pensamento e expressão; <b>vedada censura prévia</b> (exceção: espetáculos públicos para proteção de menores)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Pena de morte pode ser estendida a novos delitos" — <b>ERRADO</b>, não pode ser ampliada nem restabelecida</li>
+<li>"CADH permite prisão por dívida civil em geral" — <b>ERRADO</b>, somente devedor de alimentos</li>
+<li>"Censura prévia é permitida na CADH" — <b>ERRADO</b>, vedada (salvo menores em espetáculos)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Suspensão de Garantias, Deveres e Interpretação (Arts. 27-32)</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Art. 27 (suspensão)</b>: em caso de guerra, perigo público ou emergência — mas <b>nunca</b> pode suspender: direito à vida, integridade pessoal, proibição de escravidão, princípio de legalidade penal, liberdade religiosa, direitos da família, nome, criança, nacionalidade, direitos políticos, garantias judiciais indispensáveis</li>
+<li><b>Art. 29 (norma de interpretação)</b>: nenhuma disposição da CADH pode ser interpretada para suprimir direitos reconhecidos internamente ou por outros tratados; aplica-se o princípio <b>pro persona</b></li>
+<li><b>Art. 32 (deveres)</b>: toda pessoa tem deveres para com a família, a comunidade e a humanidade</li>
+<li>CADH não pode ser interpretada para <b>excluir</b> direitos decorrentes da forma democrática de governo</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Em emergência, pode-se suspender direito à vida" — <b>ERRADO</b>, direito à vida é inderrogável</li>
+<li>"CADH pode excluir direitos da forma democrática" — <b>ERRADO</b>, art. 29 veda</li>
+<li>"Princípio pro persona = norma mais restritiva" — <b>ERRADO</b>, aplica-se a norma <b>mais favorável</b> à pessoa</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 6 -->
+<div class="macro" id="m6">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">⚖️</div>
+<div class="minfo"><div class="mt">6. CADH – Meios de Proteção (Arts. 33-73)</div><div class="mm">Petições, admissibilidade, esgotamento de recursos, medidas provisórias • 28 questões</div></div>
+<span class="badge">28 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Sistema de Petições e Admissibilidade</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Petição individual</b> (art. 44): qualquer pessoa, grupo ou ONG legalmente reconhecida em <b>pelo menos 1</b> Estado-membro pode peticionar à Comissão</li>
+<li><b>Petição interestatal</b> (art. 45): Estado contra Estado — requer declaração de aceitação</li>
+<li><b>Requisitos de admissibilidade</b> (art. 46): esgotamento dos recursos internos; prazo de 6 meses a partir da notificação da decisão interna; matéria não pendente em outro processo internacional</li>
+<li><b>Exceções ao esgotamento</b>: inexistência de due process of law; impedimento de acesso aos recursos; <b>demora injustificada</b> na decisão dos recursos</li>
+<li><b>Esgotamento dos recursos internos</b>: exceção preliminar que deve ser arguida na <b>fase de admissibilidade</b> perante a Comissão</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Demora injustificada não dispensa esgotamento" — <b>ERRADO</b>, é exceção expressa</li>
+<li>"ONG deve ser reconhecida por todos os Estados" — <b>ERRADO</b>, basta 1 Estado-membro</li>
+<li>"Esgotamento pode ser arguido após admissibilidade" — <b>ERRADO</b>, deve ser na fase de admissibilidade</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Funcionamento da Corte e Medidas</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Composição</b>: 7 juízes nacionais de Estados-membros da OEA; mandato de 6 anos (1 reeleição)</li>
+<li><b>Quórum</b>: 5 juízes para deliberar</li>
+<li><b>Sentença</b>: definitiva e inapelável; parte que discordar pode pedir <b>interpretação</b> (não revisão)</li>
+<li><b>Medidas provisórias</b>: Corte pode adotar em casos de extrema gravidade e urgência</li>
+<li><b>Reparações</b> (art. 63): indenização compensatória; garantia de gozo do direito; publicação da sentença como satisfação</li>
+<li>A Comissão fixa o <b>próprio regulamento</b>, estabelecendo procedimento para processar petições</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Sentença da Corte admite recurso de apelação" — <b>ERRADO</b>, é definitiva e inapelável</li>
+<li>"Publicação da sentença não constitui reparação" — <b>ERRADO</b>, é medida de satisfação (reparação imaterial)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 7 -->
+<div class="macro" id="m7">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📚</div>
+<div class="minfo"><div class="mt">7. Fontes, Classificação e Princípios dos DH</div><div class="mm">Universalidade, indivisibilidade, vedação ao retrocesso, pro persona • 30 questões</div></div>
+<span class="badge">30 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Princípios Fundamentais dos DH</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Universalidade</b>: DH pertencem a todos, independentemente de nacionalidade, etnia, religião</li>
+<li><b>Indivisibilidade e interdependência</b>: não há hierarquia entre DH; civis, políticos e sociais são complementares</li>
+<li><b>Inalienabilidade</b>: não podem ser vendidos, cedidos ou transferidos</li>
+<li><b>Irrenunciabilidade</b>: não podem ser renunciados, nem em calamidades públicas</li>
+<li><b>Imprescritibilidade</b>: não prescrevem pelo não uso</li>
+<li><b>Relatividade</b>: DH <b>não são absolutos</b>, podem sofrer limitações na colisão com outros direitos</li>
+<li><b>Vedação ao retrocesso</b> (efeito cliquet): proibição de retroceder em matéria de DH; limita inclusive a denúncia de tratados</li>
+<li><b>Pro persona / pro homine</b>: aplica-se sempre a norma mais favorável ao ser humano</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"DH são absolutos" — <b>ERRADO</b>, são relativos (podem ser limitados)</li>
+<li>"DH podem ser renunciados em calamidades" — <b>ERRADO</b>, são irrenunciáveis</li>
+<li>"Vedação ao retrocesso não limita denúncia de tratados" — <b>ERRADO</b>, limita sim</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Fontes e Classificação dos DH</span><span class="tc">Complementar</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Fontes formais</b>: tratados internacionais, costume internacional, princípios gerais de direito, jurisprudência, doutrina, jus cogens</li>
+<li><b>Classificação por finalidade</b>: direitos de <b>defesa</b> (abstenção do Estado) e direitos a <b>prestações</b> (ação estatal)</li>
+<li><b>Universalismo vs relativismo cultural</b>: universalismo = DH valem para todos igualmente; relativismo = devem considerar contextos culturais</li>
+<li><b>Universalismo de chegada</b> (Herrera Flores): concepção discursiva, cruzamento de particularismos e universalismo</li>
+<li><b>Princípios de Ruggie</b> (ONU): proteger, respeitar e reparar — aplicam-se a empresas e DH; não são vinculantes (soft law)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Regras de Ruggie são vinculantes" — <b>ERRADO</b>, são princípios orientadores (soft law)</li>
+<li>"Regras de Ruggie aplicam-se só a empresas estatais" — <b>ERRADO</b>, todas as empresas</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 8 -->
+<div class="macro" id="m8">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔗</div>
+<div class="minfo"><div class="mt">8. Incorporação dos Tratados de DH e Posição Hierárquica</div><div class="mm">Status normativo, dupla hierarquia, controle de convencionalidade • 16 questões</div></div>
+<span class="badge">16 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Hierarquia dos Tratados de DH no Direito Brasileiro</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Tese da dupla hierarquia</b> (STF, RE 466.343): tratados de DH aprovados pelo rito do §3º art. 5º = <b>emenda constitucional</b>; aprovados pelo rito comum = <b>supralegal</b> (acima das leis, abaixo da CF)</li>
+<li><b>Exemplo de emenda</b>: Convenção sobre Direitos das Pessoas com Deficiência (Dec. 6.949/2009) — internalizada com status de EC</li>
+<li>Tratados de DH <b>não</b> têm automaticamente status de EC — depende do rito qualificado do §3º</li>
+<li>Tratados de DH <b>não</b> são aprovados com status de lei complementar (o rito é específico)</li>
+<li><b>Controle de convencionalidade</b>: leis internas devem ser compatíveis com tratados de DH ratificados</li>
+<li>Brasil pode <b>aderir</b> a tratados existentes mesmo sem ter participado da negociação</li>
+<li><b>Denúncia</b> de tratado de DH: é tecnicamente possível, mas limitada pelo princípio da vedação ao retrocesso</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Todos os tratados de DH têm status de EC" — <b>ERRADO</b>, só os aprovados pelo rito do §3º</li>
+<li>"Tratados aprovados por maioria simples são supraconstitucionais" — <b>ERRADO</b>, são <b>supralegais</b> (abaixo da CF)</li>
+<li>"Tratados de DH = status de lei complementar" — <b>ERRADO</b></li>
+<li>"Denúncia de tratado de DH é inadmitida no Brasil" — <b>ERRADO</b>, é possível (embora limitada)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 9 -->
+<div class="macro" id="m9">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔎</div>
+<div class="minfo"><div class="mt">9. Casos Emblemáticos da Corte Interamericana</div><div class="mm">Gomes Lund, Escher, Villagrán Morales, casos brasileiros • Transversal</div></div>
+<span class="badge">Transversal</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Caso Gomes Lund (Guerrilha do Araguaia)</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Sentença de 24/11/2010</b>: Brasil condenado por desaparecimentos forçados durante a Guerrilha do Araguaia</li>
+<li>Lei de Anistia (Lei 6.683/79): disposições que impedem investigação de violações de DH são <b>incompatíveis</b> com a CADH</li>
+<li>Brasil é responsável pela <b>falta de investigação</b> e pela <b>impunidade</b> dos responsáveis</li>
+<li>Investigação deve ser na <b>jurisdição ordinária</b> (não na justiça militar)</li>
+<li>Prescrição penal também é incompatível quando impede punição de graves violações de DH</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Lei de Anistia é compatível com a CADH" — <b>ERRADO</b></li>
+<li>"Investigação deve ser pela justiça militar" — <b>ERRADO</b>, jurisdição ordinária</li>
+<li>"Brasil condenado apenas pela falta de investigação" — <b>ERRADO</b>, também pela impunidade</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Outros Casos: Escher, Villagrán Morales, Dorothy Stang</span><span class="tc">Complementar</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Caso Escher (2009)</b>: interceptação telefônica ilegal de integrantes do MST; comunicação telefônica é protegida pelo direito à privacidade da CADH; lei brasileira de interceptação é compatível <b>in abstracto</b>, mas foi violada no caso concreto</li>
+<li><b>Caso Villagrán Morales (Meninos de Rua)</b>: Guatemala condenada; conceito de <b>"projeto de vida"</b> = consubstancial ao direito à existência; "dano ao projeto de vida" incluído nas reparações do art. 63.1</li>
+<li>Crianças: OC-17 → Estados devem <b>favorecer</b> (não impor) permanência do menor no núcleo familiar; distinção por menoridade <b>não é</b> discriminatória</li>
+<li><b>Caso Dorothy Stang (IDC 1/PA)</b>: pedido de deslocamento <b>indeferido</b> pelo STJ — não se demonstrou incapacidade da justiça estadual</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"IDC 1/PA foi deferido" — <b>ERRADO</b>, foi indeferido</li>
+<li>"Lei de interceptação brasileira é incompatível in abstracto" — <b>ERRADO</b>, é compatível in abstracto</li>
+<li>"Estados devem impor permanência do menor na família" — <b>ERRADO</b>, devem favorecer, não impor</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 10 -->
+<div class="macro" id="m10">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🌟</div>
+<div class="minfo"><div class="mt">10. Temas Especiais e Transversais</div><div class="mm">Imigrantes, pessoas com deficiência, DH e empresas, Agenda 2030 • Complementar</div></div>
+<span class="badge">Complementar</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Direitos de Grupos Vulneráveis</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Imigrantes sem documentação (OC-18)</b>: condição migratória irregular <b>não justifica</b> tratamento diferenciado em matéria trabalhista; princípio da igualdade se aplica</li>
+<li><b>Pessoas com deficiência</b>: Convenção Internacional (Dec. 6.949/2009) = status de EC; Estatuto da PcD (Lei 13.146/2015)</li>
+<li><b>Crianças e adolescentes</b>: proteção especial; interesse superior da criança; vedação de juízos de exceção</li>
+<li><b>Ações afirmativas</b> (cotas raciais, etc.): compatíveis com DH e CF — visam concretizar igualdade material</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Imigrante irregular pode ter tratamento trabalhista diferenciado" — <b>ERRADO</b>, princípio da igualdade</li>
+<li>"Convenção PcD tem status de lei ordinária" — <b>ERRADO</b>, equivale a EC</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Agenda 2030 e Tendências Contemporâneas</span><span class="tc">Complementar</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Agenda 2030 da ONU</b>: 17 Objetivos de Desenvolvimento Sustentável (ODS); adotada em 2015; abrange erradicação da pobreza, educação, igualdade de gênero, meio ambiente, paz e justiça</li>
+<li><b>DH e empresas</b>: Princípios de Ruggie (2011) = proteger, respeitar, reparar; não vinculantes; aplicam-se a todas as empresas</li>
+<li><b>Conferência de Viena (1993)</b>: reafirmou universalidade, indivisibilidade e interdependência dos DH; criou o Alto Comissariado da ONU para DH</li>
+<li><b>Conferência de Teerã (1968)</b>: primeira conferência mundial de DH; proclamação de Teerã</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Conferência de Viena criou a DUDH" — <b>ERRADO</b>, DUDH é de 1948; Viena é de 1993</li>
+<li>"Agenda 2030 tem 15 ODS" — <b>ERRADO</b>, são 17 ODS</li>
+</ul></div></div></div>
+</div></div>
+
+</div>
+
+<button class="back-btn" onclick="location.href='index.html'">← Voltar</button>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+function toggleMacro(el){el.closest('.macro').classList.toggle('open')}
+function toggleTp(el){el.closest('.tp').classList.toggle('open')}
+function toggleAll(open){document.querySelectorAll('.macro').forEach(m=>{open?m.classList.add('open'):m.classList.remove('open')});document.querySelectorAll('.tp').forEach(t=>{open?t.classList.add('open'):t.classList.remove('open')})}
+function scrollToSection(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+function filterContent(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.macro').forEach(m=>{const t=m.textContent.toLowerCase();if(q===''||t.includes(q)){m.style.display='';if(q!==''){m.classList.add('open');m.querySelectorAll('.tp').forEach(tp=>tp.classList.add('open'))}}else{m.style.display='none'}})}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)})
+</script>
+</body>
+</html>

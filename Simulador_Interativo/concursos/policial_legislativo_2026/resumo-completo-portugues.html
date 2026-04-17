@@ -1,0 +1,1057 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resumo Estruturado – Língua Portuguesa</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#047857,#10b981);border-radius:16px;margin-bottom:20px;box-shadow:0 8px 32px rgba(5,150,105,0.3)}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:13px;color:#d1fae5;margin-bottom:12px}
+.stats-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hstat{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(255,255,255,0.1);color:#d1fae5;border:1px solid rgba(255,255,255,0.15)}
+.hstat b{font-size:15px;color:#fff}
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:16px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #6ee7b7;color:#047857;background:#ecfdf5;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:#047857;color:#fff;border-color:#047857}
+.search-box{margin-bottom:16px;display:flex;gap:8px}
+.search-box input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-size:13px;outline:none}
+.search-box input:focus{border-color:#10b981}
+.ebtn{padding:8px 16px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#047857;cursor:pointer;font-size:11px;font-weight:700}
+.ebtn:hover{background:#047857;color:#fff;border-color:#047857}
+.macro{margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.mh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.mh:hover{background:#ecfdf5}
+.mi{font-size:26px;flex-shrink:0}
+.minfo{flex:1}.mt{font-size:17px;font-weight:800;color:#1e293b}
+.mm{font-size:11px;color:#64748b;margin-top:2px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#ecfdf5;color:#047857;border:1px solid #6ee7b7}
+.chv{font-size:14px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.macro.open .chv{transform:rotate(90deg)}
+.mb{display:none;padding:0 18px 18px;border-top:1px solid #f1f5f9}
+.macro.open .mb{display:block}
+.tp{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc}
+.th{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;transition:background .2s}
+.th:hover{background:#ecfdf5}
+.tt{flex:1;font-size:13px;font-weight:700;color:#1e293b}
+.tc{font-size:10px;color:#64748b;font-weight:600;padding:2px 8px;background:#f1f5f9;border-radius:10px;border:1px solid #e2e8f0}
+.tv{font-size:11px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.tp.open .tv{transform:rotate(90deg)}
+.tb{display:none;padding:0 14px 14px;border-top:1px solid #f1f5f9}
+.tp.open .tb{display:block}
+.kp h4{font-size:12px;font-weight:700;color:#047857;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.kp h4::before{content:'💡'}
+ul.k{list-style:none;padding:0}
+ul.k li{padding:6px 10px 6px 20px;font-size:12px;color:#334155;margin-bottom:3px;border-radius:6px;background:#f1f5f9;position:relative;line-height:1.5}
+ul.k li::before{content:'▸';position:absolute;left:8px;color:#047857;font-weight:700}
+ul.k li b{color:#1e293b}
+.trap{margin-top:10px;padding:10px 14px;background:#ecfdf5;border:1px solid #6ee7b7;border-radius:8px}
+.trap h4{font-size:12px;font-weight:700;color:#047857;margin-bottom:6px}
+.trap h4::before{content:'⚠️ '}
+ul.t{list-style:none;padding:0}
+ul.t li{padding:4px 10px 4px 20px;font-size:11px;color:#065f46;margin-bottom:2px;position:relative;line-height:1.4}
+ul.t li::before{content:'✗';position:absolute;left:6px;color:#dc2626;font-weight:700}
+ul.t li b{color:#064e3b}
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#047857;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(5,150,105,.4);z-index:100}
+.back-btn:hover{background:#059669}
+.scroll-top{position:fixed;bottom:64px;right:20px;width:40px;height:40px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#1e293b;font-size:16px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{background:#047857;color:#fff;border-color:#047857}
+@media(max-width:768px){.container{padding:10px}.header h1{font-size:18px}.mt{font-size:15px}.nav-btn{padding:5px 8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>📝 Resumo Estruturado – Língua Portuguesa</h1>
+<div class="sub">Policial Legislativo CD 2026 • 945 questões CEBRASPE analisadas</div>
+<div class="stats-row">
+<div class="hstat">📝 <b>945</b> questões</div>
+<div class="hstat">📂 <b>15</b> macro-temas</div>
+<div class="hstat">📑 <b>55+</b> assuntos</div>
+<div class="hstat">📖 <b>Interpretação</b> mais cobrado</div>
+</div>
+</div>
+<div class="nav-bar" id="navBar">
+<span class="nav-btn" onclick="scrollToSection('m1')">Interpretação</span>
+<span class="nav-btn" onclick="scrollToSection('m2')">Reescrita</span>
+<span class="nav-btn" onclick="scrollToSection('m3')">Coerência/Coesão</span>
+<span class="nav-btn" onclick="scrollToSection('m4')">Conjunções</span>
+<span class="nav-btn" onclick="scrollToSection('m5')">Concordância</span>
+<span class="nav-btn" onclick="scrollToSection('m6')">Tipologia</span>
+<span class="nav-btn" onclick="scrollToSection('m7')">Crase</span>
+<span class="nav-btn" onclick="scrollToSection('m8')">Semântica/Figuras</span>
+<span class="nav-btn" onclick="scrollToSection('m9')">Coloc. Pronominal/SE</span>
+<span class="nav-btn" onclick="scrollToSection('m10')">Verbos</span>
+<span class="nav-btn" onclick="scrollToSection('m11')">Sujeito/Termos</span>
+<span class="nav-btn" onclick="scrollToSection('m12')">Orações/Período</span>
+<span class="nav-btn" onclick="scrollToSection('m13')">Regência</span>
+<span class="nav-btn" onclick="scrollToSection('m14')">Classes Palavras</span>
+<span class="nav-btn" onclick="scrollToSection('m15')">Ortografia/Diversos</span>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Buscar assunto, palavra-chave ou regra..." onkeyup="filterContent()">
+<button class="ebtn" onclick="toggleAll(true)">▼ Abrir Tudo</button>
+<button class="ebtn" onclick="toggleAll(false)">▲ Fechar Tudo</button>
+</div>
+
+<!-- MACRO 1 -->
+<div class="macro" id="m1">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📖</div>
+<div class="minfo"><div class="mt">1. Interpretação e Compreensão de Textos</div><div class="mm">Inferência, ideia central, argumentação, pressupostos • 100 questões</div></div>
+<span class="badge">100 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Compreensão vs Interpretação</span><span class="tc">Conceito</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Compreensão</b> = captar o que está <b>explícito</b> no texto; Interpretação = ir além do texto, deduzir o <b>implícito</b></li>
+<li>CEBRASPE usa "Depreende-se", "Infere-se", "É possível concluir" para cobrar <b>interpretação</b></li>
+<li>Usa "De acordo com o texto", "Segundo o texto", "Conforme o autor" para cobrar <b>compreensão</b></li>
+<li>A banca costuma parafrasear trechos; se a paráfrase mantém o sentido = <b>Certo</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Trocar "o autor <b>afirma</b>" por "o autor <b>infere</b>" — são operações distintas</li>
+<li>Itens que <b>extrapolam</b> o texto (acrescentam informação que não está lá)</li>
+<li><b>Generalizar</b> o que o texto restringe ("todo" quando o texto diz "alguns")</li>
+<li><b>Restringir</b> o que o texto generaliza ("apenas X" quando o texto inclui Y e Z)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Ideia Central e Propósito do Texto</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Ideia central = <b>tese principal</b> defendida ou apresentada pelo autor</li>
+<li>Propósito/objetivo = o que o autor <b>pretende</b> com o texto (informar, persuadir, criticar)</li>
+<li>Não confundir <b>tema</b> (assunto geral) com <b>tese</b> (posicionamento sobre o tema)</li>
+<li>Texto pode ter <b>argumentos secundários</b> que apoiam a tese, mas não são a ideia central</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Trocar a ideia <b>central</b> por uma ideia <b>secundária</b> do texto</li>
+<li>Atribuir ao texto um objetivo que <b>não corresponde</b> à intenção do autor</li>
+<li>Item que descreve um <b>exemplo</b> do texto como se fosse a tese principal</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Inferência, Pressupostos e Subentendidos</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Pressuposto</b> = informação implícita que decorre logicamente do enunciado (marcada por verbos como "continuar", "deixar de", advérbios como "ainda", "já")</li>
+<li><b>Subentendido</b> = informação que depende do contexto/intenção, mais vaga</li>
+<li><b>Inferência válida</b> = conclusão lógica extraída das informações do texto</li>
+<li>Para o CEBRASPE: se o item diz "Infere-se que..." e a informação está <b>explícita</b>, pode ser <b>errado</b> (não é inferência, é compreensão)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Apresentar como inferência algo que <b>extrapola</b> completamente o texto</li>
+<li>Confundir <b>opinião do autor</b> com informação objetiva do texto</li>
+<li>Texto diz "a maioria" e o item afirma "todos" — <b>generalização indevida</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Argumentação e Estratégias Discursivas</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Argumentos por <b>autoridade</b> (citação de especialistas), <b>exemplificação</b>, <b>dados estatísticos</b>, <b>analogia</b>, <b>causa-consequência</b></li>
+<li><b>Contra-argumento</b> = o autor apresenta uma ideia oposta para depois refutá-la</li>
+<li>Operadores argumentativos: "Porém", "Contudo" (oposição); "Ademais" (adição); "Portanto" (conclusão)</li>
+<li>Texto pode apresentar <b>ponto de vista de terceiros</b> sem necessariamente concordar</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Atribuir ao <b>autor</b> uma opinião que ele apenas <b>citou</b> de outra pessoa</li>
+<li>Dizer que o autor "<b>concorda</b>" com algo que ele apenas mencionou para discutir</li>
+<li>Confundir <b>fato</b> (dado objetivo) com <b>opinião</b> (juízo de valor)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 2 -->
+<div class="macro" id="m2">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔄</div>
+<div class="minfo"><div class="mt">2. Reescrita de Frases e Substituição</div><div class="mm">Equivalência semântica, substituição de conectivos e expressões • 96 questões</div></div>
+<span class="badge">96 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Substituição de Conectivos</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>"Mas" (adversativa coord.) ≠ "Embora" (concessiva subord.) — <b>classes diferentes</b>, reescrita altera estrutura</li>
+<li>"Porém" = "Contudo" = "Todavia" = "Entretanto" = "No entanto" — adversativas intercambiáveis</li>
+<li>"Embora" = "Conquanto" = "Ainda que" = "Mesmo que" — concessivas intercambiáveis</li>
+<li>"Portanto" = "Logo" = "Por conseguinte" = "Assim" — conclusivas intercambiáveis</li>
+<li>"Pois" (antes do verbo = explicativa; depois do verbo = conclusiva)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Dizer que "mas" pode ser substituído por "<b>embora</b>" mantendo correção — <b>ERRADO</b> (muda coordenação → subordinação)</li>
+<li>Trocar adversativa por concessiva <b>sem ajustar</b> a estrutura do período</li>
+<li>Substituir "pois" conclusivo por "pois" <b>explicativo</b> — sentidos diferentes</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Substituição de Expressões e Vocabulário</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>"relativas às" = "acerca das" ✓ — mantém sentido e correção</li>
+<li>"sintomático" = "revelador" ✓ — sinônimos no contexto</li>
+<li>"em busca do desenvolvimento" = "visando ao desenvolvimento" ✓ — "visar a" = VTI</li>
+<li>"Nessa chave" = "Sob esse ângulo" ✓ — expressões equivalentes de referência</li>
+<li>Substituição deve manter <b>correção gramatical</b> + <b>sentido original</b> + <b>coerência</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Substituição que mantém correção mas <b>altera o sentido</b> — item <b>ERRADO</b></li>
+<li>"apocalípticas" ≠ "irremediáveis" — <b>não</b> são sinônimos</li>
+<li>Trocar voz passiva analítica por sintética pode alterar <b>sentido</b> (foco do agente)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Reescrita com Alteração de Tempos Verbais</span><span class="tc">Atenção</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>"foi" (pretérito perfeito) → "era" (pretérito imperfeito): em contextos descritivos, pode manter correção ✓</li>
+<li>Perfeito = ação concluída; Imperfeito = ação habitual/duradoura — a troca <b>pode</b> ser viável em certos contextos</li>
+<li>Voz passiva analítica (ser + particípio) → sintética (VTD + se): verificar se o sentido se mantém</li>
+<li>"foi aplicada na" → "aplicou-se à": pode manter correção mas alterar sentidos (foco diferente)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Trocar perfeito por imperfeito em contexto de <b>ação pontual</b> altera sentido</li>
+<li>Reescrita que muda a <b>estrutura sintática</b> (coordenação → subordinação) sem aviso</li>
+<li>Item diz "e, sobretudo, a aproximação" → "que aproximaram" — troca <b>substantivo por oração</b>, altera sujeito</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Reescrita com Pronomes Relativos</span><span class="tc">Importante</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>"que ainda" ≠ "do qual ainda" — preposição "de" exigida pelo verbo da oração subordinada</li>
+<li>Pronome relativo deve concordar com o <b>antecedente</b> e respeitar a <b>regência</b> do verbo que o segue</li>
+<li>"em que" = "no qual/na qual"; "de que" = "do qual/da qual"; "a que" = "ao qual/à qual"</li>
+<li>Verificar sempre se a troca altera a <b>função sintática</b> do pronome na oração</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Substituir "que" por "do qual" quando o verbo não pede preposição "de" — <b>ERRADO</b></li>
+<li>"Onde" só pode ser usado para <b>lugar físico</b>; substituir por "em que" é mais seguro</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 3 -->
+<div class="macro" id="m3">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔗</div>
+<div class="minfo"><div class="mt">3. Coerência, Coesão e Referenciação</div><div class="mm">Anáfora, catáfora, pronomes, conectores, referenciação textual • 95 questões</div></div>
+<span class="badge">95 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Anáfora e Catáfora</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Anáfora</b> = retomada de termo anterior (ex: "disso", "esse", "o qual")</li>
+<li><b>Catáfora</b> = antecipação de termo posterior (ex: "É isto: ...")</li>
+<li>Pronomes demonstrativos: "este/isto" = catáfora ou próximo; "esse/isso" = anáfora ou distante; "aquele/aquilo" = mais distante</li>
+<li>"disso" em "a partir disso" — identificar <b>exatamente</b> o referente no texto</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Indicar referente <b>errado</b> para pronome anafórico (ex: "disso" retoma X quando retoma Y)</li>
+<li>Confundir "este" (catáfora) com "esse" (anáfora) em questões de referenciação</li>
+<li>Pronome possessivo "sua" com <b>antecedente ambíguo</b> — CEBRASPE pede o referente correto</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Pronomes Relativos como Coesão</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>"Que", "o qual", "cujo", "onde", "quem" — conectam orações e retomam antecedentes</li>
+<li>"Cujo" = indica <b>posse</b> e concorda com o termo <b>posterior</b> (não anterior)</li>
+<li>"Cuja" atua como elemento de coesão que tanto <b>refere ao antecedente</b> quanto <b>conecta orações</b></li>
+<li>"Por meio das quais" — o relativo retoma o antecedente mais próximo que faz sentido semântico</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Apontar como antecedente do relativo um termo que <b>não faz sentido</b> no contexto</li>
+<li>"Cujo" nunca vem seguido de <b>artigo</b> — "cujo o" é <b>ERRADO</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Conectores como Mecanismos de Coesão</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>"Com efeito" = reforço/confirmação da ideia anterior ✓</li>
+<li>"Nesse sentido" = na mesma direção argumentativa</li>
+<li>"Contudo", "Porém" = oposição/contraste</li>
+<li>"Portanto", "Assim" = conclusão/consequência</li>
+<li>"tanto...como" = adição (conjunção correlativa aditiva)</li>
+<li>"ao passo que" = contraste entre ideias simultâneas</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Dizer que "Com efeito" indica <b>oposição</b> quando na verdade indica <b>confirmação</b></li>
+<li>Confundir "tanto...como" (adição) com "tanto...quanto" (comparação)</li>
+<li>"geralmente" denota <b>frequência</b>, não <b>totalidade</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Coerência Textual</span><span class="tc">Atenção</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Coerência = relação lógica entre as ideias; ausência de <b>contradição</b></li>
+<li>Coesão = mecanismos linguísticos que conectam as partes do texto</li>
+<li>Um texto pode ter coesão sem coerência (frases bem conectadas mas sem sentido lógico)</li>
+<li>Verificar se a reescrita mantém a <b>relação lógica</b> entre as orações</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Item afirma que substituição mantém coerência, mas <b>inverte</b> a relação causa-consequência</li>
+<li>Reescrita que mantém correção gramatical mas <b>quebra</b> a progressão temática</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 4 -->
+<div class="macro" id="m4">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔀</div>
+<div class="minfo"><div class="mt">4. Conjunções e Conectivos</div><div class="mm">Adversativas, concessivas, causais, conclusivas, correlativas • 62 questões</div></div>
+<span class="badge">62 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Conjunções Adversativas</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Coordenativas: <b>mas, porém, contudo, todavia, entretanto, no entanto</b></li>
+<li>Estabelecem <b>oposição/contraste</b> entre ideias no mesmo nível sintático</li>
+<li>"Porém" e similares podem aparecer <b>deslocadas</b> na oração (entre vírgulas)</li>
+<li>Diferente de concessivas: adversativa = coordenação; concessiva = subordinação</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Trocar "mas" por "embora" — são de <b>classes diferentes</b> (coord. vs subord.)</li>
+<li>Dizer que "entretanto" é conjunção <b>concessiva</b> — é <b>adversativa</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Conjunções Concessivas</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Subordinativas: <b>embora, conquanto, ainda que, mesmo que, se bem que, posto que, por mais que</b></li>
+<li>Indicam que um fato <b>contrário</b> não impede a realização de outro</li>
+<li>"Embora" = "Conquanto" = "Ainda que" — intercambiáveis ✓</li>
+<li>Exigem verbo no <b>subjuntivo</b>: "Embora ele <b>seja</b>..." (não "embora ele é")</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Substituir "embora" por "mas" sem ajustar estrutura — <b>ERRADO</b></li>
+<li>"Conquanto" é <b>concessiva</b> (não causal) — substituível por "embora" ✓</li>
+<li>Usar indicativo com "embora" — <b>ERRADO</b> (exige subjuntivo)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Causais, Explicativas e Conclusivas</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Causais</b> (subord.): porque, visto que, já que, uma vez que, como, porquanto</li>
+<li><b>Explicativas</b> (coord.): pois (antes do verbo), porque, que, porquanto</li>
+<li><b>Conclusivas</b> (coord.): portanto, logo, pois (após o verbo), por conseguinte, assim, então</li>
+<li>"Pois" antes do verbo = <b>explicativa/causal</b>; "pois" após verbo = <b>conclusiva</b></li>
+<li>Causal: motivo + fato; Explicativa: fato + justificativa para afirmar</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Pois" posposto ao verbo com valor <b>conclusivo</b> — CEBRASPE cobra se o candidato identifica</li>
+<li>Confundir <b>causa</b> com <b>explicação</b> — a diferença é sutil mas existe</li>
+<li>"Portanto" introduz <b>conclusão</b>, não <b>causa</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Conjunções Correlativas e Outras</span><span class="tc">Atenção</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Aditivas correlativas</b>: "tanto...como", "não só...mas também", "não apenas...como"</li>
+<li><b>Proporcionais</b>: "à medida que", "à proporção que", "quanto mais...mais"</li>
+<li><b>Temporais</b>: "quando", "enquanto", "assim que", "logo que", "desde que"</li>
+<li><b>Condicionais</b>: "se", "caso", "desde que" (+ subjuntivo), "contanto que"</li>
+<li>"ao passo que" = <b>contraste</b> entre situações simultâneas (proporcional/adversativa)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"tanto...como" é <b>aditiva</b>, não comparativa — liga ideias por adição</li>
+<li>"à medida que" (proporção) ≠ "na medida em que" (causa)</li>
+<li>"Desde que" pode ser <b>temporal</b> ou <b>condicional</b> — depende do contexto</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 5 -->
+<div class="macro" id="m5">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">✅</div>
+<div class="minfo"><div class="mt">5. Concordância Verbal e Nominal</div><div class="mm">Sujeito composto, coletivos, haver/existir, voz passiva • 58 questões</div></div>
+<span class="badge">58 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Verbos Impessoais: Haver e Fazer</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>"Haver" no sentido de <b>existir</b> = impessoal, fica sempre no <b>singular</b>: "Há problemas" ✓</li>
+<li>"Fazer" indicando <b>tempo decorrido</b> = impessoal: "Faz dois anos" ✓ (nunca "Fazem")</li>
+<li>"Existir" <b>não</b> é impessoal: "Existem problemas" ✓ (concorda com o sujeito)</li>
+<li>"Há" ≠ "existe" quando o complemento é plural — "há diferentes abordagens" ✓ mas "existe diferentes" <b>ERRADO</b> (deveria ser "existem")</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Podem haver" — <b>ERRADO</b>! O auxiliar herda a impessoalidade: "Pode haver" ✓</li>
+<li>Substituir "há" por "existe" com sujeito plural — <b>ERRADO</b> (deveria ser "existem")</li>
+<li>"Fazem 10 anos" — <b>ERRADO</b> (impessoal: "Faz 10 anos")</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Sujeito Composto e Coletivo</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Sujeito composto <b>antes</b> do verbo → verbo no <b>plural</b>: "João e Maria saíram"</li>
+<li>Sujeito composto <b>após</b> o verbo → plural ou concorda com o mais próximo (facultativo)</li>
+<li>"A maioria de + plural" → verbo no singular ou plural (ambos aceitos): "A maioria dos alunos <b>saiu/saíram</b>"</li>
+<li>"Boa parte de", "grande parte de", "a maior parte de" → mesma regra</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Item que diz que o verbo <b>deve</b> ir ao plural com "a maioria de" — é <b>facultativo</b></li>
+<li>"Boa parte das pessoas <b>enfrenta/enfrentam</b>" — ambas as formas são corretas ✓</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Concordância com Pronome SE</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>VTD + SE (pronome apassivador) = verbo concorda com o <b>sujeito paciente</b>: "Vendem-se casas"</li>
+<li>VTI/VI + SE (índice de indeterminação) = verbo no <b>singular</b>: "Precisa-se de funcionários"</li>
+<li>Se o verbo é VTD e o sujeito paciente é plural → <b>verbo no plural</b></li>
+<li>Se o verbo é VTI → <b>verbo sempre no singular</b> com "se"</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Aluga-se apartamentos" — <b>ERRADO</b> (VTD + PA: "Alugam-se apartamentos")</li>
+<li>"Necessitam-se de voluntários" — <b>ERRADO</b> (VTI + IIS: "Necessita-se de voluntários")</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Concordância Nominal</span><span class="tc">Atenção</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Adjetivo posposto a dois ou mais substantivos: pode concordar com o <b>mais próximo</b> ou com <b>todos</b></li>
+<li>Adjetivo anteposto: concorda com o <b>mais próximo</b></li>
+<li>"É necessário paciência" (sem artigo → invariável) vs "É necessária a paciência" (com artigo → variável)</li>
+<li>"Meio" = advérbio (invariável): "Ela está <b>meio</b> cansada" ✓; "meia" = numeral</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Bastantes problemas" — "bastante" como adjetivo é <b>variável</b> ✓</li>
+<li>"É proibido entrada" (sem artigo) vs "É proibida a entrada" (com artigo)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 6 -->
+<div class="macro" id="m6">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📄</div>
+<div class="minfo"><div class="mt">6. Tipologia Textual e Gêneros</div><div class="mm">Dissertação, narração, descrição, injunção, gêneros textuais • 51 questões</div></div>
+<span class="badge">51 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Tipos Textuais: Dissertação, Narração, Descrição</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Dissertativo-expositivo</b> = apresenta informações, explica conceitos, sem tomar posição</li>
+<li><b>Dissertativo-argumentativo</b> = defende uma tese com argumentos e estratégias persuasivas</li>
+<li><b>Narrativo</b> = relata fatos em sequência temporal (narrador, personagens, tempo, espaço, conflito)</li>
+<li><b>Descritivo</b> = caracteriza seres, objetos ou ambientes (adjetivação, detalhamento)</li>
+<li><b>Injuntivo</b> = orienta, instrui, ordena (receitas, manuais, leis)</li>
+<li>Um texto pode combinar <b>mais de um tipo</b> (predominância é o critério)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Classificar texto dissertativo-<b>expositivo</b> como argumentativo (e vice-versa)</li>
+<li>Dizer que texto predominantemente argumentativo é narrativo por conter um <b>exemplo</b> narrado</li>
+<li>Confundir tipo textual (estrutura) com <b>gênero textual</b> (forma social)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Gêneros Textuais</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Editorial</b> = opinião do veículo (sem autoria individual), dissertativo-argumentativo</li>
+<li><b>Artigo de opinião</b> = autor identificado defende posição sobre tema atual</li>
+<li><b>Crônica</b> = texto leve, fatos cotidianos, tom reflexivo/humorístico (pode ser narrativo ou dissertativo)</li>
+<li><b>Reportagem</b> = aprofundamento jornalístico, dados, entrevistas (expositivo)</li>
+<li><b>Notícia</b> = relato objetivo de fato recente (expositivo/narrativo)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Confundir <b>artigo de opinião</b> (subjetivo) com <b>reportagem</b> (objetiva)</li>
+<li>Classificar texto acadêmico como <b>crônica</b> ou vice-versa</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Sequências Textuais Predominantes</span><span class="tc">Atenção</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Sequência argumentativa: tese → argumentos → conclusão</li>
+<li>Sequência expositiva: apresentação → desenvolvimento → síntese</li>
+<li>Sequência narrativa: situação inicial → complicação → clímax → desfecho</li>
+<li>CEBRASPE costuma perguntar qual sequência é <b>predominante</b> no texto</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Texto com trechos narrativos é classificado como narrativo — o critério é a <b>predominância</b></li>
+<li>Presença de dados estatísticos não torna o texto <b>exclusivamente</b> expositivo</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 7 -->
+<div class="macro" id="m7">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">À</div>
+<div class="minfo"><div class="mt">7. Crase</div><div class="mm">Regras gerais, casos obrigatórios, facultativos, proibidos • 48 questões</div></div>
+<span class="badge">48 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Regra Geral da Crase</span><span class="tc">Fundamental</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Crase = fusão da <b>preposição "a"</b> (exigida pelo verbo/nome) + <b>artigo definido feminino "a"</b></li>
+<li>Teste 1: substituir por termo masculino — se aparecer "ao", há crase: "Fui à escola" → "Fui ao colégio"</li>
+<li>Teste 2: substituir verbo por outro que peça "de" ou "em" — se aparecer "da"/"na", há crase</li>
+<li>"àquele(a)(s)" = preposição "a" + demonstrativo "aquele" — sempre com crase</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"em referência <b>a</b>" + substantivo feminino <b>indefinido</b> = <b>sem crase</b> (não há artigo definido)</li>
+<li>Preposição "a" sem artigo (ex: antes de pronome indefinido) = sem crase</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Casos Obrigatórios</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Locuções femininas</b>: à medida que, à vista, à toa, à noite, à direita, à esquerda, às vezes, às pressas</li>
+<li><b>Horas determinadas</b>: "às 8h", "à meia-noite"</li>
+<li><b>Antes de "qual/quais"</b> (quando o antecedente é feminino e o verbo pede "a"): "à qual se tem acesso"</li>
+<li><b>àquele(a)(s), àquilo</b>: sempre com acento grave</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"às fronteiras" — artigo obrigatório com substantivo plural feminino determinado, crase <b>não é facultativa</b></li>
+<li>Supressão do acento em "à qual" quando verbo exige preposição "a" — <b>ERRADO</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Casos Proibidos</span><span class="tc">Decorar</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Antes de verbos</b>: "Começou a chover" (sem crase)</li>
+<li><b>Antes de palavras masculinas</b>: "Andou a cavalo" (exceções: "à moda de")</li>
+<li><b>Antes de pronomes</b> (em geral): "a ela", "a esta", "a cada", "a cuja", "a quem"</li>
+<li><b>Antes de artigo indefinido</b>: "Fui a uma festa"</li>
+<li><b>Entre palavras repetidas</b>: "cara a cara", "dia a dia", "gota a gota"</li>
+<li><b>Antes de plural sem artigo</b>: "Refiro-me a pessoas" (sem crase; "às pessoas" com crase)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"em referência a uma pessoa" — sem crase (artigo indefinido) ✓</li>
+<li>Crase antes de pronome de tratamento: "a Vossa Senhoria" — <b>sem crase</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Casos Facultativos</span><span class="tc">Atenção</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Antes de <b>nomes próprios femininos</b>: "Refiro-me a/à Maria"</li>
+<li>Antes de <b>pronomes possessivos femininos</b>: "Fui a/à sua casa"</li>
+<li>Depois de <b>"até"</b>: "Fui até a/à porta"</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Dizer que crase é <b>facultativa</b> em caso obrigatório (ex: "às fronteiras") — <b>ERRADO</b></li>
+<li>Dizer que crase é <b>obrigatória</b> antes de possessivo feminino — é <b>facultativa</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 8 -->
+<div class="macro" id="m8">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">💬</div>
+<div class="minfo"><div class="mt">8. Semântica, Vocabulário e Figuras de Linguagem</div><div class="mm">Sinônimos, significação, denotação/conotação, figuras, polissemia • 94 questões</div></div>
+<span class="badge">94 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Sinônimos e Antônimos</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Sinônimos são palavras com sentido <b>aproximado</b> (não necessariamente idêntico)</li>
+<li>O contexto determina se a substituição mantém ou não o sentido: "sintomático" = "revelador" no contexto ✓</li>
+<li>Antônimos = sentidos <b>opostos</b>: claro/escuro, público/privado</li>
+<li>Sempre verificar se a substituição altera a <b>regência</b> ou a <b>concordância</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Palavras <b>parecidas</b> mas com sentidos diferentes: "apocalípticas" ≠ "irremediáveis"</li>
+<li>Sinônimo em um contexto pode não ser sinônimo <b>em outro</b></li>
+<li>Substituição correta semanticamente mas que altera a <b>regência</b> do verbo</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Significação Contextual de Vocábulos</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>O sentido da palavra depende do <b>contexto</b> em que é empregada</li>
+<li>"Inestimáveis" = de valor tão grande que não se pode estimar (não = sem valor)</li>
+<li>"Sintomático" = que revela, que é indício de algo</li>
+<li>"Equipolentes" = que têm igual poder, equivalentes em força</li>
+<li>CEBRASPE pede para identificar o sentido <b>no texto</b>, não o sentido dicionarizado</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Atribuir ao vocábulo o sentido <b>literal</b> quando o texto usa sentido <b>figurado</b></li>
+<li>Palavra polissêmica usada em sentido específico — item cobra sentido <b>diferente</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Denotação e Conotação</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Denotação</b> = sentido literal, objetivo, dicionarizado</li>
+<li><b>Conotação</b> = sentido figurado, subjetivo, criativo</li>
+<li>Textos literários tendem à conotação; textos técnicos/científicos tendem à denotação</li>
+<li>"Rio gigante no céu" (referindo-se a correntes de umidade) = uso <b>conotativo</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Afirmar que expressão figurada está em sentido <b>denotativo</b></li>
+<li>Afirmar que uso técnico de termo é <b>conotativo</b> quando é denotativo</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Figuras de Linguagem</span><span class="tc">Importante</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Metáfora</b> = comparação implícita: "A vida é uma viagem"</li>
+<li><b>Metonímia</b> = substituição por contiguidade: "Leu Machado" (= obra de Machado)</li>
+<li><b>Ironia</b> = dizer o contrário do que se pensa: "Que belo serviço!" (para algo mal feito)</li>
+<li><b>Hipérbole</b> = exagero intencional: "Morri de rir"</li>
+<li><b>Antítese</b> = oposição de ideias: "O amor é fogo e gelo"</li>
+<li><b>Eufemismo</b> = suavização: "Passou desta para melhor" (= morreu)</li>
+<li><b>Prosopopeia/Personificação</b> = atribuir qualidades humanas a seres inanimados</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Confundir <b>metáfora</b> (comparação implícita) com <b>comparação</b> (usa "como", "tal qual")</li>
+<li>Confundir <b>metonímia</b> (contiguidade) com <b>metáfora</b> (semelhança)</li>
+<li>Confundir <b>antítese</b> (oposição) com <b>paradoxo</b> (contradição aparente)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 9 -->
+<div class="macro" id="m9">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔤</div>
+<div class="minfo"><div class="mt">9. Colocação Pronominal e Partícula "Se"</div><div class="mm">Próclise, ênclise, mesóclise, funções do SE • 46 questões</div></div>
+<span class="badge">46 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Próclise, Ênclise e Mesóclise</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Próclise</b> (antes do verbo): obrigatória com palavras negativas, advérbios, pronomes relativos, conjunções subordinativas, pronomes indefinidos, "que" exclamativo/interrogativo</li>
+<li><b>Ênclise</b> (depois do verbo): início de frase, verbo no imperativo afirmativo, verbo no gerúndio (sem "em"), infinitivo não precedido de atrator</li>
+<li><b>Mesóclise</b> (meio do verbo): futuro do presente ou futuro do pretérito em início de frase: "Dir-lhe-ei"</li>
+<li>No Brasil, a <b>próclise</b> é mais natural na fala; na norma culta escrita, seguir as regras</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"O direito <b>se constitui</b>" → colocação enclítica "constitui-se" <b>também é correta</b> (artigo definido não é atrator obrigatório)</li>
+<li>"Não <b>se</b> pode" ✓ vs "Não pode-<b>se</b>" ✗ — negação obriga próclise</li>
+<li>Início de frase com pronome oblíquo átono — <b>ERRADO</b> na norma culta: "Me disseram" ✗</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Colocação em Locuções Verbais</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Sem atrator: pronome pode vir <b>após o auxiliar</b> (ênclise ao auxiliar) ou <b>antes/após o principal</b></li>
+<li>"Vinha oferecer-me" = "me vinha oferecer" = "vinha-me oferecer" — todos corretos ✓</li>
+<li>Com atrator (negação, advérbio, etc.): pronome antes do auxiliar ou entre auxiliar e principal</li>
+<li>"O aborrecimento <b>dá-nos</b>" = "O aborrecimento <b>nos dá</b>" — ambos corretos ✓</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Afirmar que <b>apenas uma</b> posição é correta em locução verbal — geralmente há mais de uma opção</li>
+<li>Com verbo principal no particípio: pronome <b>não</b> pode vir após o particípio</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Funções da Partícula "Se"</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Pronome apassivador</b> (PA): VTD + se → sujeito paciente: "Vendem-se casas"</li>
+<li><b>Índice de indeterminação do sujeito</b> (IIS): VTI/VI/VL + se → sujeito indeterminado: "Precisa-se de..."</li>
+<li><b>Pronome reflexivo</b>: "Ele se feriu" (a si mesmo)</li>
+<li><b>Parte integrante do verbo</b> (PIV): "Trata-se de", "Queixa-se de" — o "se" não tem função autônoma</li>
+<li><b>Conjunção condicional</b>: "Se chover, não irei" (= caso)</li>
+<li><b>Conjunção integrante</b>: "Não sei se ele virá" (introduz oração substantiva)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Trata-se de" → "se" é <b>parte integrante do verbo</b>, não pronome apassivador</li>
+<li>"se" em "quando <b>se</b> depara" = <b>IIS</b> (sujeito indeterminado) ✓</li>
+<li>"trabalhos que vão <b>se</b> beneficiar" (pronome reflexivo) ≠ "avaliar <b>se</b> o impacto" (conjunção integrante) — funções <b>diferentes</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 10 -->
+<div class="macro" id="m10">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">⏱️</div>
+<div class="minfo"><div class="mt">10. Verbos: Tempos, Modos e Conjugação</div><div class="mm">Indicativo, subjuntivo, imperativo, correlação verbal • 42 questões</div></div>
+<span class="badge">42 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Tempos do Indicativo</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Presente</b>: fato atual, habitual ou verdade universal</li>
+<li><b>Pretérito Perfeito</b>: ação concluída no passado: "Ele saiu"</li>
+<li><b>Pretérito Imperfeito</b>: ação contínua/habitual no passado: "Ele saía todos os dias"</li>
+<li><b>Pretérito Mais-que-perfeito</b>: ação anterior a outra no passado: "Ele já saíra quando cheguei"</li>
+<li><b>Futuro do Presente</b>: certeza/previsão: "Farei o trabalho"</li>
+<li><b>Futuro do Pretérito</b>: hipótese, condição, polidez: "Faria se pudesse"</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Troca de perfeito por imperfeito: pode ser viável em contextos <b>descritivos</b>, mas não em ações <b>pontuais</b></li>
+<li>"seria sintomático" (futuro do pretérito) ≠ "foi sintomático" (perfeito) — hipótese vs fato</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Tempos do Subjuntivo</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Presente</b>: desejo, dúvida, possibilidade: "Espero que ele <b>venha</b>"</li>
+<li><b>Pretérito Imperfeito</b>: hipótese no passado/condição: "Se ele <b>viesse</b>, seria melhor"</li>
+<li><b>Futuro</b>: eventualidade futura: "Quando ele <b>vier</b>, conversaremos"</li>
+<li>Conjunções que exigem subjuntivo: embora, caso, se, quando (futuro), para que, antes que</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Embora ele <b>é</b>" — <b>ERRADO</b> (exige subjuntivo: "embora ele <b>seja</b>")</li>
+<li>"Se eu <b>ver</b>" — <b>ERRADO</b> (futuro do subjuntivo: "Se eu <b>vir</b>")</li>
+<li>"Quando eu <b>ver</b>" — <b>ERRADO</b> ("Quando eu <b>vir</b>")</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Correlação Verbal</span><span class="tc">Atenção</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Correlação = <b>coerência temporal</b> entre verbos do período</li>
+<li>Se + pretérito imperfeito do subjuntivo → futuro do pretérito: "Se eu <b>pudesse</b>, <b>faria</b>"</li>
+<li>Se + futuro do subjuntivo → futuro do presente: "Se eu <b>puder</b>, <b>farei</b>"</li>
+<li>Quando + futuro do subjuntivo → futuro/presente do indicativo</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Se eu pudesse, <b>fazia</b>" — aceito na fala, mas na norma culta o correto é "<b>faria</b>"</li>
+<li>Quebrar a correlação misturando tempos incompatíveis</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 11 -->
+<div class="macro" id="m11">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏗️</div>
+<div class="minfo"><div class="mt">11. Sujeito e Termos da Oração</div><div class="mm">Sujeito, adjunto adnominal/adverbial, complementos, aposto • 53 questões</div></div>
+<span class="badge">53 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Tipos de Sujeito</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Simples</b>: um núcleo → "O aluno estudou"</li>
+<li><b>Composto</b>: dois ou mais núcleos → "O aluno e o professor conversaram"</li>
+<li><b>Oculto/Desinencial</b>: identificado pela desinência verbal → "[Eu] Estudei bastante"</li>
+<li><b>Indeterminado</b>: 3ª pessoa do plural sem referente ("Disseram que...") ou VTI/VI + SE ("Precisa-se de...")</li>
+<li><b>Inexistente</b> (oração sem sujeito): verbos impessoais (haver=existir, fazer=tempo, fenômenos naturais)</li>
+<li><b>Oracional</b>: uma oração inteira funciona como sujeito → "É importante <b>que você estude</b>"</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Confundir sujeito <b>indeterminado</b> com sujeito <b>inexistente</b></li>
+<li>"Há problemas" → oração <b>sem sujeito</b> (haver impessoal), "problemas" é OD</li>
+<li>Sujeito <b>posposto</b> ao verbo: "Chegaram os documentos" — sujeito é "os documentos"</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Adjunto Adnominal vs Complemento Nominal</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Adjunto adnominal</b>: modifica substantivo, tem valor <b>ativo/agente</b>: "a decisão <b>do juiz</b>" (o juiz decide)</li>
+<li><b>Complemento nominal</b>: completa substantivo abstrato, adjetivo ou advérbio, tem valor <b>passivo/paciente</b>: "a invasão <b>do território</b>" (o território é invadido)</li>
+<li>Teste: se o termo é agente da ação expressa pelo substantivo → <b>adjunto adnominal</b></li>
+<li>Se o termo é paciente/alvo → <b>complemento nominal</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"A construção <b>do engenheiro</b>" (agente = adjunto) vs "A construção <b>do prédio</b>" (paciente = complemento)</li>
+<li>Confundir adjunto adnominal com <b>adjunto adverbial</b> (este modifica verbo, não substantivo)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Termos Acessórios e Integrantes</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Adjunto adverbial</b>: modifica verbo, adjetivo ou advérbio (circunstância: tempo, lugar, modo, causa)</li>
+<li><b>Aposto</b>: explica/esclarece termo anterior, geralmente entre vírgulas: "Brasília, <b>capital do Brasil</b>, é moderna"</li>
+<li><b>Vocativo</b>: chamamento, isolado por vírgula: "<b>Senhor</b>, venha aqui"</li>
+<li><b>Objeto direto</b>: complementa VTD sem preposição; <b>Objeto indireto</b>: complementa VTI com preposição</li>
+<li><b>Agente da passiva</b>: quem pratica a ação na voz passiva: "O livro foi lido <b>pelo aluno</b>"</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Confundir <b>aposto explicativo</b> (entre vírgulas) com <b>adjunto adnominal</b></li>
+<li>"Objeto direto preposicionado" ("Amo <b>a</b> Deus") — parece OI mas é OD com preposição</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 12 -->
+<div class="macro" id="m12">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">⛓️</div>
+<div class="minfo"><div class="mt">12. Orações e Período Composto</div><div class="mm">Subordinadas, coordenadas, vocábulo QUE, pronomes relativos, reduzidas • 74 questões</div></div>
+<span class="badge">74 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Orações Subordinadas Substantivas</span><span class="tc">Importante</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Introduzidas por <b>conjunção integrante</b> "que" ou "se"</li>
+<li><b>Subjetiva</b>: funciona como sujeito → "É importante <b>que você estude</b>"</li>
+<li><b>Objetiva direta</b>: funciona como OD → "Ele disse <b>que viria</b>"</li>
+<li><b>Objetiva indireta</b>: funciona como OI → "Insistiu em <b>que saíssemos</b>"</li>
+<li><b>Completiva nominal</b>: funciona como CN → "Tenho certeza de <b>que virá</b>"</li>
+<li><b>Predicativa</b>: funciona como predicativo → "A verdade é <b>que ninguém veio</b>"</li>
+<li><b>Apositiva</b>: funciona como aposto → "Só quero uma coisa: <b>que me respeitem</b>"</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Confundir <b>conjunção integrante "que"</b> (introduz substantiva) com <b>pronome relativo "que"</b> (introduz adjetiva)</li>
+<li>"Que" conjunção integrante = substituível por "isso"; pronome relativo = substituível por "o qual"</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Orações Subordinadas Adjetivas</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Introduzidas por <b>pronome relativo</b> (que, o qual, cujo, onde, quem)</li>
+<li><b>Restritiva</b>: restringe/especifica o antecedente — <b>sem vírgula</b>: "Alunos que estudam passam"</li>
+<li><b>Explicativa</b>: acrescenta informação acessória — <b>com vírgula</b>: "O sol, que é uma estrela, brilha"</li>
+<li>A <b>vírgula</b> é o principal indicador: com vírgula = explicativa; sem = restritiva</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Inserir vírgula antes de restritiva <b>altera o sentido</b> (passa a explicativa)</li>
+<li>Retirar vírgula de explicativa <b>restringe</b> o sentido indevidamente</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Orações Subordinadas Adverbiais</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Causal</b>: porque, visto que, já que, como (anteposta)</li>
+<li><b>Concessiva</b>: embora, conquanto, ainda que, mesmo que</li>
+<li><b>Temporal</b>: quando, enquanto, assim que, logo que, desde que</li>
+<li><b>Condicional</b>: se, caso, desde que (+ subjuntivo), contanto que</li>
+<li><b>Final</b>: para que, a fim de que</li>
+<li><b>Consecutiva</b>: (tão/tanto/tal) que</li>
+<li><b>Comparativa</b>: como, assim como, mais/menos (do) que</li>
+<li><b>Proporcional</b>: à medida que, à proporção que, quanto mais...mais</li>
+<li><b>Conformativa</b>: conforme, segundo, consoante, como</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Classificar oração <b>causal</b> como <b>concessiva</b> (ou vice-versa)</li>
+<li>"como" pode ser <b>causal</b> (anteposta), <b>conformativa</b> ou <b>comparativa</b> — depende do contexto</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Vocábulo "Que" e Orações Coordenadas/Reduzidas</span><span class="tc">Atenção</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>"Que" pode ser: <b>pronome relativo</b>, <b>conjunção integrante</b>, <b>conjunção causal/consecutiva</b>, <b>partícula expletiva</b>, <b>pronome indefinido</b></li>
+<li><b>Pronome relativo</b>: retoma antecedente, substituível por "o qual/a qual"</li>
+<li><b>Conjunção integrante</b>: introduz oração substantiva, substituível por "isso"</li>
+<li><b>Partícula expletiva</b> (de realce): pode ser retirada sem prejuízo: "É ele <b>que</b> sabe"</li>
+<li><b>Orações coordenadas</b>: aditivas (e), adversativas (mas), alternativas (ou), conclusivas (logo), explicativas (pois)</li>
+<li><b>Orações reduzidas</b>: de infinitivo, gerúndio ou particípio (sem conjunção)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Classificar "que" <b>relativo</b> como <b>integrante</b> ou vice-versa</li>
+<li>"Que" em "mais...do <b>que</b>" = parte de conjunção <b>comparativa</b>, não pronome relativo</li>
+<li>Oração reduzida de gerúndio com valor <b>causal</b> vs <b>temporal</b> — depende do contexto</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 13 -->
+<div class="macro" id="m13">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🎯</div>
+<div class="minfo"><div class="mt">13. Regência Verbal e Nominal</div><div class="mm">Regência de verbos frequentes, mudança de sentido, casos especiais • 23 questões</div></div>
+<span class="badge">23 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Regência de Verbos Mais Cobrados</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Implicar</b> (= acarretar): VTD → "Implicar o decréscimo" (sem "em")</li>
+<li><b>Visar</b> (= objetivar): VTI → "Visar <b>ao</b> desenvolvimento"; (= mirar): VTD</li>
+<li><b>Preferir</b>: "Prefiro X <b>a</b> Y" (nunca "do que")</li>
+<li><b>Obedecer/Desobedecer</b>: VTI → "Obedecer <b>ao</b> regulamento"</li>
+<li><b>Assistir</b> (= ver): VTI → "Assistir <b>ao</b> jogo"; (= ajudar): VTD → "Assistir o paciente"</li>
+<li><b>Aspirar</b> (= desejar): VTI → "Aspirar <b>a</b> um cargo"; (= respirar): VTD</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Implicar <b>em</b> problemas" — <b>ERRADO</b> na norma culta (VTD: "Implicar problemas")</li>
+<li>"Preferir X <b>do que</b> Y" — <b>ERRADO</b> ("Preferir X <b>a</b> Y")</li>
+<li>Trocar regência altera o <b>sentido</b>: "assistir ao jogo" (ver) ≠ "assistir o jogo" (ajudar)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Regência Nominal</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Nomes que pedem preposição: "capacidade <b>de</b>", "apto <b>a/para</b>", "compatível <b>com</b>", "alheio <b>a</b>"</li>
+<li>"Acesso <b>a</b>": "à qual se tem acesso" (preposição "a" + artigo "a" = crase)</li>
+<li>"Relativa <b>a</b>", "referente <b>a</b>", "inerente <b>a</b>"</li>
+<li>A preposição do nome regente determina o uso ou não de <b>crase</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Trocar preposição do nome regente: "capacidade <b>para</b>" vs "capacidade <b>de</b>" — verificar aceitação</li>
+<li>Omitir preposição exigida pelo nome: "necessidade <b>de</b> mudança" (obrigatória)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 14 -->
+<div class="macro" id="m14">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏷️</div>
+<div class="minfo"><div class="mt">14. Classes de Palavras</div><div class="mm">Advérbios, pronomes, preposições, substantivos, adjetivos, formação • 34 questões</div></div>
+<span class="badge">34 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Advérbios</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Classificação: tempo, lugar, modo, intensidade, negação, afirmação, dúvida</li>
+<li>Advérbios são <b>invariáveis</b> (não flexionam em gênero/número)</li>
+<li>"Geralmente" = advérbio de <b>frequência</b> (não de totalidade)</li>
+<li>"Ainda" = advérbio de <b>tempo/continuidade</b> (marca pressuposto)</li>
+<li>Posição do advérbio pode alterar o <b>escopo</b>: "Só eu sei" ≠ "Eu só sei"</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"geralmente" denota <b>frequência</b>, não <b>totalidade</b> — item que diz "totalidade" é <b>ERRADO</b></li>
+<li>Confundir advérbio de <b>modo</b> com advérbio de <b>intensidade</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Pronomes (Pessoais, Demonstrativos, Indefinidos)</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Pessoais retos</b>: eu, tu, ele, nós, vós, eles (função de sujeito)</li>
+<li><b>Pessoais oblíquos átonos</b>: me, te, se, o, a, lhe, nos, vos (função de complemento)</li>
+<li><b>Oblíquos tônicos</b>: mim, ti, si, ele, nós (após preposição): "Para <b>mim</b>, é difícil"</li>
+<li><b>Demonstrativos</b>: este/esse/aquele — referenciação textual e espacial</li>
+<li><b>Indefinidos</b>: algum, nenhum, todo, cada, qualquer, certo — determinação vaga</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Para <b>eu</b> fazer" (sujeito de infinitivo) vs "Para <b>mim</b>" (sem verbo depois)</li>
+<li>"Entre <b>eu</b> e ele" — <b>ERRADO</b> ("Entre <b>mim</b> e ele" — após preposição = oblíquo tônico)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Preposições e Formação de Palavras</span><span class="tc">Atenção</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Preposições essenciais</b>: a, ante, após, até, com, contra, de, desde, em, entre, para, per, por, sem, sob, sobre</li>
+<li>Preposição + artigo = contração: de + o = do, em + a = na, a + a = à (crase)</li>
+<li><b>Derivação</b>: prefixal (infeliz), sufixal (felicidade), parassintética (anoitecer, envelhecer)</li>
+<li><b>Composição</b>: justaposição (guarda-chuva) e aglutinação (planalto)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Confundir <b>derivação parassintética</b> (prefixo + sufixo simultâneos) com <b>derivação prefixal e sufixal</b></li>
+<li>"Anoitecer" = parassintética (a- + noite + -ecer, não existe *anoite nem *noitecer)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 15 -->
+<div class="macro" id="m15">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📋</div>
+<div class="minfo"><div class="mt">15. Ortografia, Acentuação e Tópicos Diversos</div><div class="mm">Acentuação, hífen, pontuação, paralelismo, comunicação, vícios • 68 questões</div></div>
+<span class="badge">68 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Acentuação Gráfica</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Proparoxítonas</b>: todas acentuadas (lâmpada, técnico, público)</li>
+<li><b>Paroxítonas</b>: acentuadas quando terminam em: l, n, r, x, ps, ã(s), ão(s), i(s), us, um, uns, ditongo</li>
+<li><b>Oxítonas</b>: acentuadas quando terminam em: a(s), e(s), o(s), em, ens</li>
+<li><b>Hiatos</b>: "i" e "u" tônicos formam sílaba sozinhos: saída, saúde (exceção: seguidos de "nh")</li>
+<li>Novo acordo: não se acentuam mais: ideia, estreia, jiboia, assembleia (ditongos abertos em paroxítonas)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Ideia" <b>não</b> tem mais acento (ditongo aberto em paroxítona perdeu acento no novo acordo)</li>
+<li>"Herói" mantém acento (ditongo aberto em <b>oxítona</b> continua acentuado)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Uso do Hífen</span><span class="tc">Decorar</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Com hífen</b>: prefixo termina com mesma vogal que inicia o 2º elemento: micro-ondas, anti-inflamatório</li>
+<li><b>Sem hífen</b>: prefixo termina com vogal diferente: autoescola, infraestrutura, antiaéreo</li>
+<li><b>Com hífen</b>: prefixo termina em vogal + 2º elemento começa com "h": anti-higiênico, sobre-humano</li>
+<li><b>Exceções</b>: sub + r/b: sub-região, sub-base; co + h: coabitar (sem hífen); re + e: reescrever (sem hífen)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Auto-escola" — <b>ERRADO</b> pelo novo acordo (vogais diferentes: "autoescola")</li>
+<li>"Micro-ondas" (vogais iguais: o-o) vs "microempresa" (vogais diferentes: o-e)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Elementos da Comunicação e Funções da Linguagem</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Elementos: emissor, receptor, mensagem, código, canal, contexto/referente</li>
+<li><b>Referencial</b> (informativa): foco no referente — textos jornalísticos, científicos</li>
+<li><b>Emotiva/Expressiva</b>: foco no emissor — opinião, 1ª pessoa, interjeições</li>
+<li><b>Conativa/Apelativa</b>: foco no receptor — imperativos, propagandas</li>
+<li><b>Metalinguística</b>: foco no código — dicionários, gramáticas</li>
+<li><b>Fática</b>: foco no canal — "Alô?", "Entendeu?"</li>
+<li><b>Poética</b>: foco na mensagem — forma, ritmo, figuras de linguagem</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Confundir função <b>referencial</b> (objetiva) com <b>emotiva</b> (subjetiva)</li>
+<li>Texto pode ter <b>mais de uma</b> função — a banca pergunta a <b>predominante</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Paralelismo, Vícios e Variação Linguística</span><span class="tc">Atenção</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Paralelismo sintático</b>: termos coordenados devem ter estrutura equivalente: "Gosto de ler e <b>de</b> escrever"</li>
+<li><b>Paralelismo semântico</b>: ideias coordenadas devem pertencer ao mesmo campo de sentido</li>
+<li><b>Ambiguidade</b>: frase com duplo sentido involuntário — vício de linguagem</li>
+<li><b>Pleonasmo vicioso</b>: redundância desnecessária ("subir para cima")</li>
+<li><b>Pleonasmo literário</b>: recurso expressivo intencional ("a mim me parece")</li>
+<li><b>Variações linguísticas</b>: diatópica (regional), diastrática (social), diafásica (situacional), diacrônica (histórica)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Quebra de <b>paralelismo</b> em enumerações — CEBRASPE cobra estrutura equivalente</li>
+<li>Confundir pleonasmo <b>vicioso</b> (erro) com pleonasmo <b>literário</b> (recurso)</li>
+<li>Confundir registro <b>formal</b> com <b>informal</b> em questões de adequação linguística</li>
+</ul></div></div></div>
+</div></div>
+
+</div>
+
+<button class="back-btn" onclick="location.href='index.html'">← Voltar</button>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+function toggleMacro(el){el.closest('.macro').classList.toggle('open')}
+function toggleTp(el){el.closest('.tp').classList.toggle('open')}
+function toggleAll(open){document.querySelectorAll('.macro').forEach(m=>{open?m.classList.add('open'):m.classList.remove('open')});document.querySelectorAll('.tp').forEach(t=>{open?t.classList.add('open'):t.classList.remove('open')})}
+function scrollToSection(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+function filterContent(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.macro').forEach(m=>{const t=m.textContent.toLowerCase();if(q===''||t.includes(q)){m.style.display='';if(q!==''){m.classList.add('open');m.querySelectorAll('.tp').forEach(tp=>tp.classList.add('open'))}}else{m.style.display='none'}})}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)})
+</script>
+</body>
+</html>

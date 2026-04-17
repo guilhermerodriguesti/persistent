@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resumo Estruturado – Direito Constitucional</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#7c2d12,#ea580c);border-radius:16px;margin-bottom:20px;box-shadow:0 8px 32px rgba(124,45,18,0.3)}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:13px;color:#fed7aa;margin-bottom:12px}
+.stats-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hstat{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(255,255,255,0.1);color:#fed7aa;border:1px solid rgba(255,255,255,0.15)}
+.hstat b{font-size:15px;color:#fff}
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:16px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #fdba74;color:#9a3412;background:#fff7ed;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:#ea580c;color:#fff;border-color:#ea580c}
+.search-box{margin-bottom:16px;display:flex;gap:8px}
+.search-box input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-size:13px;outline:none}
+.search-box input:focus{border-color:#ea580c}
+.ebtn{padding:8px 16px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#9a3412;cursor:pointer;font-size:11px;font-weight:700}
+.ebtn:hover{background:#ea580c;color:#fff;border-color:#ea580c}
+.macro{margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.mh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.mh:hover{background:#fff7ed}
+.mi{font-size:26px;flex-shrink:0}
+.minfo{flex:1}.mt{font-size:17px;font-weight:800;color:#1e293b}
+.mm{font-size:11px;color:#64748b;margin-top:2px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#fff7ed;color:#9a3412;border:1px solid #fdba74}
+.chv{font-size:14px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.macro.open .chv{transform:rotate(90deg)}
+.mb{display:none;padding:0 18px 18px;border-top:1px solid #f1f5f9}
+.macro.open .mb{display:block}
+.tp{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc}
+.th{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;transition:background .2s}
+.th:hover{background:#fff7ed}
+.tt{flex:1;font-size:13px;font-weight:700;color:#1e293b}
+.tc{font-size:10px;color:#64748b;font-weight:600;padding:2px 8px;background:#f1f5f9;border-radius:10px;border:1px solid #e2e8f0}
+.tv{font-size:11px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.tp.open .tv{transform:rotate(90deg)}
+.tb{display:none;padding:0 14px 14px;border-top:1px solid #f1f5f9}
+.tp.open .tb{display:block}
+.kp h4{font-size:12px;font-weight:700;color:#9a3412;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.kp h4::before{content:'💡'}
+ul.k{list-style:none;padding:0}
+ul.k li{padding:6px 10px 6px 20px;font-size:12px;color:#334155;margin-bottom:3px;border-radius:6px;background:#f1f5f9;position:relative;line-height:1.5}
+ul.k li::before{content:'▸';position:absolute;left:8px;color:#9a3412;font-weight:700}
+ul.k li b{color:#1e293b}
+.trap{margin-top:10px;padding:10px 14px;background:#fff7ed;border:1px solid #fdba74;border-radius:8px}
+.trap h4{font-size:12px;font-weight:700;color:#9a3412;margin-bottom:6px}
+.trap h4::before{content:'⚠️ '}
+ul.t{list-style:none;padding:0}
+ul.t li{padding:4px 10px 4px 20px;font-size:11px;color:#78350f;margin-bottom:2px;position:relative;line-height:1.4}
+ul.t li::before{content:'✗';position:absolute;left:6px;color:#dc2626;font-weight:700}
+ul.t li b{color:#1e293b}
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#ea580c;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(234,88,12,.4);z-index:100}
+.back-btn:hover{background:#c2410c}
+.scroll-top{position:fixed;bottom:64px;right:20px;width:40px;height:40px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#1e293b;font-size:16px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{background:#ea580c;color:#fff;border-color:#ea580c}
+@media(max-width:768px){.container{padding:10px}.header h1{font-size:18px}.mt{font-size:15px}.nav-btn{padding:5px 8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>⚖️ Resumo Estruturado – Direito Constitucional</h1>
+<div class="sub">Policial Legislativo CD 2026 • 1.348 questões CEBRASPE/FGV analisadas</div>
+<div class="stats-row">
+<div class="hstat">📝 <b>1.348</b> questões</div>
+<div class="hstat">📂 <b>15</b> macro-temas</div>
+<div class="hstat">📑 <b>50+</b> assuntos</div>
+<div class="hstat">📖 <b>Art. 5º</b> mais cobrado</div>
+</div>
+</div>
+<div class="nav-bar" id="navBar">
+<span class="nav-btn" onclick="scrollToSection('m1')">Art. 5º</span>
+<span class="nav-btn" onclick="scrollToSection('m2')">Princípios/Teoria</span>
+<span class="nav-btn" onclick="scrollToSection('m3')">Competências</span>
+<span class="nav-btn" onclick="scrollToSection('m4')">Admin. Pública</span>
+<span class="nav-btn" onclick="scrollToSection('m5')">Servidores</span>
+<span class="nav-btn" onclick="scrollToSection('m6')">Direitos Sociais/Políticos</span>
+<span class="nav-btn" onclick="scrollToSection('m7')">Nacionalidade</span>
+<span class="nav-btn" onclick="scrollToSection('m8')">Poder Legislativo</span>
+<span class="nav-btn" onclick="scrollToSection('m9')">Processo Legislativo</span>
+<span class="nav-btn" onclick="scrollToSection('m10')">Fiscalização/TCU</span>
+<span class="nav-btn" onclick="scrollToSection('m11')">Seg. Pública</span>
+<span class="nav-btn" onclick="scrollToSection('m12')">Remédios</span>
+<span class="nav-btn" onclick="scrollToSection('m13')">Intervenção/Defesa</span>
+<span class="nav-btn" onclick="scrollToSection('m14')">Org. Estado</span>
+<span class="nav-btn" onclick="scrollToSection('m15')">RICD</span>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Buscar tópico, artigo ou regra..." onkeyup="filterContent()">
+<button class="ebtn" onclick="toggleAll(true)">▼ Abrir Tudo</button>
+<button class="ebtn" onclick="toggleAll(false)">▲ Fechar Tudo</button>
+</div>
+
+<!-- MACRO 1 -->
+<div class="macro" id="m1">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🛡️</div>
+<div class="minfo"><div class="mt">1. Direitos e Deveres Individuais e Coletivos (Art. 5º)</div><div class="mm">Liberdades, garantias, inviolabilidades, remédios do art. 5º • 187 questões</div></div>
+<span class="badge">187 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Liberdades Fundamentais (Expressão, Pensamento, Religião, Associação)</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Livre manifestação do pensamento</b>, vedado o anonimato (art. 5º, IV)</li>
+<li><b>Liberdade religiosa</b>: é direito fundamental E humano; vincula Estado <b>e particulares</b> (eficácia horizontal)</li>
+<li><b>Liberdade de associação</b>: plena para fins lícitos, vedada a de caráter paramilitar (XVII); só dissolução por decisão judicial <b>transitada em julgado</b></li>
+<li><b>Liberdade de reunião</b>: pacífica, sem armas, em locais abertos ao público, independe de autorização (apenas aviso prévio)</li>
+<li>Art. 5º, §1º: normas definidoras de direitos e garantias fundamentais têm <b>aplicação imediata</b></li>
+<li>Art. 5º, §2º: direitos do art. 5º <b>não excluem</b> outros decorrentes de tratados internacionais</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Liberdade religiosa vincula <b>apenas o Estado</b>" — <b>ERRADO</b>, vincula também particulares</li>
+<li>"Direito à liberdade religiosa é humano, mas não fundamental" — <b>ERRADO</b>, é ambos</li>
+<li>"Direito ao esquecimento" limita liberdade de informação — STF (2021): <b>ERRADO</b>, não há direito ao esquecimento no Brasil</li>
+<li>Reunião que depende de "autorização" — <b>ERRADO</b>, é apenas aviso prévio</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Inviolabilidades (Casa, Comunicações, Dados)</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Casa é asilo inviolável</b>: entrada sem consentimento apenas por ordem judicial <b>durante o dia</b>, ou a qualquer hora em caso de flagrante, desastre ou prestar socorro</li>
+<li><b>Sigilo de correspondência e comunicações</b>: inviolável, salvo por ordem judicial para <b>interceptação telefônica</b> (Lei 9.296/96), apenas para investigação criminal ou instrução penal</li>
+<li><b>CPI pode</b> quebrar sigilo bancário, fiscal e de dados telefônicos. <b>NÃO pode</b> interceptar comunicações telefônicas (reserva de jurisdição)</li>
+<li>Intimidade, vida privada, honra e imagem — invioláveis (art. 5º, X)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>CPI "pode determinar interceptação telefônica" — <b>ERRADO</b>, apenas juiz</li>
+<li>"Entrada em domicílio com mandado judicial <b>a qualquer hora</b>" — <b>ERRADO</b>, só durante o dia</li>
+<li>Confundir <b>dados telefônicos</b> (registros, CPI pode) com <b>interceptação</b> (escuta, só juiz)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Garantias Processuais e Penais</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Devido processo legal</b> (LIV), <b>contraditório e ampla defesa</b> (LV), <b>juiz natural</b> (LIII)</li>
+<li><b>Presunção de inocência</b>: até o trânsito em julgado (LVII)</li>
+<li><b>Provas ilícitas</b>: inadmissíveis no processo (LVI)</li>
+<li><b>Vedações penais</b>: não haverá pena de morte (salvo guerra declarada), perpétua, trabalho forçado, banimento, cruéis</li>
+<li><b>Lei penal não retroage</b>, salvo para beneficiar o réu (XL)</li>
+<li><b>Prisão civil</b>: só devedor de alimentos; <b>não</b> mais o depositário infiel (STF, Súmula Vinculante 25)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Pena de morte é absolutamente proibida" — <b>ERRADO</b>, há exceção: guerra declarada</li>
+<li>"Prisão civil do depositário infiel é permitida" — <b>ERRADO</b> (SV 25)</li>
+<li>"Presunção de inocência até condenação em 2ª instância" — <b>ERRADO</b>, é até trânsito em julgado</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 2 -->
+<div class="macro" id="m2">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📜</div>
+<div class="minfo"><div class="mt">2. Princípios Fundamentais e Teoria da Constituição</div><div class="mm">Arts. 1º-4º, classificação, poder constituinte, histórico • 120 questões</div></div>
+<span class="badge">120 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Princípios Fundamentais (Arts. 1º a 4º)</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Fundamentos</b> (art. 1º) — SO-CI-DI-VA-PLU: <b>So</b>berania, <b>Ci</b>dadania, <b>Di</b>gnidade pessoa humana, <b>Va</b>lores sociais do trabalho/livre iniciativa, <b>Plu</b>ralismo político</li>
+<li><b>Separação de poderes</b>: Legislativo, Executivo e Judiciário — independentes e harmônicos (art. 2º)</li>
+<li><b>Objetivos</b> (art. 3º) — CON-GA-ER-PRO: Construir sociedade livre/justa/solidária; Garantir desenvolvimento; Erradicar pobreza/desigualdades; Promover bem de todos sem preconceitos</li>
+<li><b>Princípios relações internacionais</b> (art. 4º): independência nacional, prevalência dos direitos humanos, autodeterminação dos povos, não intervenção, igualdade entre Estados, defesa da paz, solução pacífica, repúdio ao terrorismo/racismo, cooperação entre os povos, concessão de asilo político</li>
+<li>Parágrafo único do art. 4º: integração econômica/social/cultural da <b>América Latina</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Trocar <b>fundamento</b> por <b>objetivo</b> (ex: "erradicar pobreza" é objetivo, não fundamento)</li>
+<li>"Valorização do trabalho" como <b>objetivo</b> — <b>ERRADO</b>, é fundamento (art. 1º, IV)</li>
+<li>Integração com "todos os povos" — <b>ERRADO</b>, CF fala especificamente em América Latina</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Classificação da CF/88 e Teoria Constitucional</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>CF/88: <b>promulgada</b> (democrática), <b>escrita</b>, <b>rígida</b> (alguns dizem super-rígida pelas cláusulas pétreas), <b>analítica</b>, <b>dogmática</b>, <b>formal</b>, <b>codificada</b></li>
+<li><b>Supremacia da Constituição</b>: todas as normas devem ser compatíveis com a CF</li>
+<li><b>Normas de eficácia plena</b>: aplicação imediata e direta | <b>Contida</b>: plena mas pode ser restringida | <b>Limitada</b>: depende de regulamentação</li>
+<li><b>Poder Constituinte Originário</b>: inicial, ilimitado, incondicionado, autônomo</li>
+<li><b>Poder Constituinte Derivado</b>: reformador (emendas), revisor (art. 3º ADCT), decorrente (estados)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"CF/88 é outorgada" — <b>ERRADO</b>, foi promulgada (Assembleia Constituinte)</li>
+<li>"Eficácia contida precisa de regulamentação" — <b>ERRADO</b>, ela é autoaplicável (pode ser restringida)</li>
+<li>"Poder Originário é limitado pelo direito natural" — CEBRASPE já considerou <b>ERRADO</b> (é ilimitado juridicamente)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Características dos Direitos Fundamentais</span><span class="tc">45 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Universalidade</b>: destinados a todos os seres humanos | <b>Inalienabilidade</b>: não podem ser cedidos/vendidos</li>
+<li><b>Irrenunciabilidade</b>: não se renuncia | <b>Imprescritibilidade</b>: não prescrevem pelo não uso</li>
+<li><b>Relatividade</b>: nenhum direito fundamental é <b>absoluto</b> — podem colidir entre si</li>
+<li><b>Eficácia horizontal</b>: aplicam-se também nas relações <b>entre particulares</b></li>
+<li><b>Gerações/dimensões</b>: 1ª = liberdade; 2ª = igualdade/sociais; 3ª = fraternidade/coletivos; 4ª = globalização; 5ª = paz</li>
+<li>Direitos fundamentais ≠ garantias fundamentais: direitos = prerrogativas; garantias = instrumentos de proteção</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Direitos fundamentais são absolutos" — <b>ERRADO</b>, são relativos/limitáveis</li>
+<li>"Direitos fundamentais se aplicam apenas contra o Estado" — <b>ERRADO</b> (eficácia horizontal)</li>
+<li>Confundir <b>gerações</b>: direitos sociais são 2ª geração (não 1ª)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 3 -->
+<div class="macro" id="m3">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏛️</div>
+<div class="minfo"><div class="mt">3. Competências da União, Estados e Municípios</div><div class="mm">Arts. 20-24, competências exclusivas, privativas, comuns, concorrentes • 101 questões</div></div>
+<span class="badge">101 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Competência Exclusiva e Privativa da União</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Exclusiva</b> (art. 21) = administrativa, <b>indelegável</b> (manter relações exteriores, declarar guerra, emitir moeda...)</li>
+<li><b>Privativa</b> (art. 22) = legislativa, <b>delegável</b> por lei complementar a estados (direito civil, penal, trabalho, trânsito, águas...)</li>
+<li>Art. 22, parágrafo único: LC pode autorizar estados a legislar sobre questões <b>específicas</b></li>
+<li><b>Trânsito e transporte</b> = competência privativa da União (art. 22, XI) — NÃO é concorrente</li>
+<li><b>Águas</b> = competência privativa da União (art. 22, IV) — NÃO é concorrente</li>
+<li><b>Seguridade social</b> = privativa da União; <b>Previdência social</b> = concorrente (art. 24, XII)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Trânsito é competência <b>concorrente</b>" — <b>ERRADO</b>, é privativa da União</li>
+<li>"Legislar sobre águas é competência <b>concorrente</b>" — <b>ERRADO</b>, é privativa da União</li>
+<li>"Competência exclusiva pode ser delegada" — <b>ERRADO</b>, exclusiva é indelegável</li>
+<li>Confundir seguridade social (privativa) com previdência social (concorrente)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Competência Comum e Concorrente</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Comum</b> (art. 23) = administrativa, todos os entes (U+E+DF+M): saúde, educação, meio ambiente, patrimônio...</li>
+<li><b>Concorrente</b> (art. 24) = legislativa, U+E+DF (<b>sem Municípios</b>): direito tributário, financeiro, penitenciário, urbanístico, previdência, educação, meio ambiente...</li>
+<li>Na concorrente: <b>União</b> = normas gerais; <b>Estados</b> = normas suplementares</li>
+<li>Inexistindo lei federal, estados exercem competência legislativa <b>plena</b>; sobrevindo lei federal, a estadual fica <b>suspensa</b> (não revogada) no que contrariar</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Municípios participam da competência <b>concorrente</b>" — <b>ERRADO</b>, art. 24 não inclui municípios</li>
+<li>"Lei federal superveniente <b>revoga</b> lei estadual" — <b>ERRADO</b>, a lei estadual fica <b>suspensa</b></li>
+<li>Confundir competência <b>comum</b> (administrativa) com <b>concorrente</b> (legislativa)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Bens da União (Art. 20)</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Terrenos de marinha</b> (art. 20, VII): são bens da União — <b>sempre públicos</b></li>
+<li>Terras devolutas indispensáveis à defesa: <b>União</b>; demais: <b>Estados</b></li>
+<li>Mar territorial, plataforma continental, recursos naturais do subsolo, ilhas oceânicas: União</li>
+<li>Lagos, rios e correntes em mais de um estado ou fronteira: União</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Terrenos de marinha podem ser <b>públicos ou privados</b>" — <b>ERRADO</b>, são exclusivamente públicos</li>
+<li>"Todas as terras devolutas são da União" — <b>ERRADO</b>, só as indispensáveis à defesa</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 4 -->
+<div class="macro" id="m4">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏢</div>
+<div class="minfo"><div class="mt">4. Administração Pública (Arts. 37-38)</div><div class="mm">Princípios, concurso, acumulação, licitação, responsabilidade, teto • 82 questões</div></div>
+<span class="badge">82 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Princípios e Regras Gerais (Art. 37)</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>LIMPE</b>: Legalidade, Impessoalidade, Moralidade, Publicidade, Eficiência (art. 37, caput)</li>
+<li><b>Concurso público</b>: investidura em cargo/emprego depende de aprovação em concurso, ressalvadas nomeações para cargos em comissão (II)</li>
+<li><b>Funções de confiança e cargos em comissão</b>: destinam-se <b>apenas</b> a direção, chefia e assessoramento (V)</li>
+<li><b>Acumulação remunerada</b>: vedada, exceto se houver compatibilidade de horários (XVI): dois cargos de professor; professor + técnico/científico; dois cargos na saúde</li>
+<li><b>Teto remuneratório</b> (XI): subsídio dos Ministros do STF</li>
+<li><b>Publicidade</b>: atos de governo devem ser publicados; propaganda pessoal do administrador é vedada (§1º)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Cargos em comissão destinam-se a qualquer atribuição" — <b>ERRADO</b>, só direção, chefia e assessoramento</li>
+<li>"Critérios de antiguidade definem padrões de vencimento" — <b>ERRADO</b>, CF não exige antiguidade</li>
+<li>"Contratação temporária exige concurso" — <b>ERRADO</b>, art. 37, IX dispensa concurso</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Responsabilidade Civil do Estado e Servidor em Mandato</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>PJ de direito público e privado prestadoras de serviço público: <b>responsabilidade objetiva</b> (§6º)</li>
+<li>Direito de <b>regresso</b> contra o agente nos casos de dolo ou culpa</li>
+<li><b>Servidor + mandato eletivo</b> (art. 38): se vice-prefeito, havendo compatibilidade = acumula remunerações do cargo e do mandato; se incompatível = <b>opta</b> por uma remuneração</li>
+<li>Prefeito: afasta-se do cargo efetivo; vereador: se compatível, acumula; se não, opta</li>
+<li>Proibido efeito <b>repique</b> (cascata) — vantagens sobre vantagens, inclusive para aposentadoria</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Vice-prefeito com compatibilidade perceberá as <b>vantagens de ambos</b>" — <b>ERRADO</b>, "vantagens" é diferente de "remunerações"; ele opta e pode acumular subsídio</li>
+<li>"Servidor celetista não segue normas constitucionais" — <b>ERRADO</b>, princípios do art. 37 vinculam todos</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 5 -->
+<div class="macro" id="m5">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">👔</div>
+<div class="minfo"><div class="mt">5. Servidores Públicos (Arts. 39-41)</div><div class="mm">Estabilidade, aposentadoria, previdência complementar, EC 103/2019 • 50 questões</div></div>
+<span class="badge">50 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Estabilidade e Regime Jurídico</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Estabilidade</b>: após 3 anos de efetivo exercício + avaliação especial de desempenho (art. 41)</li>
+<li>Servidor estável <b>pode perder cargo</b>: sentença judicial transitada; PAD; avaliação periódica de desempenho; excesso de despesa (art. 169)</li>
+<li><b>Vantagens temporárias</b> ou vinculadas a cargo em comissão: NÃO incorporam ao efetivo</li>
+<li><b>Remuneração</b> por subsídio: parcela única, vedados acréscimos (membros de Poder, MPs, DPs, policiais, etc.)</li>
+<li><b>Direito de greve</b>: exercido nos termos de lei específica (art. 37, VII) — STF mandou aplicar Lei 7.783/89 por analogia</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Estabilidade após <b>2 anos</b>" — <b>ERRADO</b>, são 3 anos (EC 19/98)</li>
+<li>"Servidor estável não pode ser demitido" — <b>ERRADO</b>, há 4 hipóteses de perda do cargo</li>
+<li>"Vantagens de cargo em comissão incorporam ao efetivo" — <b>ERRADO</b>, CF proíbe expressamente</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Aposentadoria e Previdência (EC 103/2019)</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>RPPS</b>: caráter contributivo e solidário, observando equilíbrio financeiro e atuarial</li>
+<li><b>Aposentadoria por incapacidade permanente</b>: proventos proporcionais, salvo se decorrente de acidente em serviço/doença profissional (integrais)</li>
+<li><b>Idade mínima</b> (EC 103): 65 anos (H) / 62 anos (M) + 25 anos contribuição + 10 anos serviço público + 5 anos no cargo</li>
+<li><b>Previdência complementar</b>: lei de iniciativa do <b>Poder Executivo</b> (não do Legislativo); somente na modalidade <b>contribuição definida</b></li>
+<li>Cargo em comissão, temporário, mandato eletivo, emprego público: sujeitos ao <b>RGPS</b> (não RPPS)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Previdência complementar por lei do <b>Legislativo</b>" — <b>ERRADO</b>, iniciativa do Executivo</li>
+<li>"Aposentadoria por incapacidade = proventos integrais" — <b>ERRADO</b>, regra é proporcional</li>
+<li>"Plano de benefícios na modalidade <b>benefício definido</b>" — <b>ERRADO</b>, só contribuição definida</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 6 -->
+<div class="macro" id="m6">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">✊</div>
+<div class="minfo"><div class="mt">6. Direitos Sociais, Políticos e Eleitorais</div><div class="mm">Arts. 6º-11, 14-16, direitos trabalhadores, voto, elegibilidade, partidos • 107 questões</div></div>
+<span class="badge">107 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Direitos Sociais e dos Trabalhadores (Arts. 6º-11)</span><span class="tc">32 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Art. 6º</b>: educação, saúde, alimentação, trabalho, moradia, transporte, lazer, segurança, previdência, proteção à maternidade/infância, assistência aos desamparados</li>
+<li><b>Salário mínimo</b> (art. 7º, IV): fixado em lei, nacionalmente unificado, vedada vinculação para qualquer fim</li>
+<li><b>FGTS</b>, 13º salário, férias + 1/3, licença-maternidade 120 dias, licença-paternidade</li>
+<li><b>Direitos coletivos</b>: liberdade sindical (art. 8º), direito de greve (art. 9º), participação em colegiados (art. 11)</li>
+<li><b>Unicidade sindical</b>: vedada criação de mais de uma organização sindical por categoria na mesma base territorial (mín. município)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Salário mínimo pode servir de indexador" — <b>ERRADO</b>, vedada vinculação para qualquer fim</li>
+<li>"Pode haver dois sindicatos da mesma categoria no mesmo município" — <b>ERRADO</b>, unicidade sindical</li>
+<li>"Licença-maternidade de 180 dias na CF" — <b>ERRADO</b>, CF garante 120 dias (180 é opção do empregador)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Direitos Políticos: Voto, Elegibilidade e Inelegibilidades</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Voto obrigatório</b>: maiores de 18 anos | <b>Facultativo</b>: 16-18 anos, maiores de 70, analfabetos</li>
+<li><b>Alistamento</b>: vedado para estrangeiros e conscritos (serviço militar obrigatório)</li>
+<li><b>Condições de elegibilidade</b> (art. 14, §3º): nacionalidade brasileira, pleno exercício dos direitos políticos, alistamento eleitoral, domicílio eleitoral, filiação partidária, idade mínima</li>
+<li><b>Idades mínimas</b>: 35 (Presidente/Vice/Senador), 30 (Governador/Vice), 21 (Deputado/Prefeito), 18 (Vereador)</li>
+<li><b>Inelegibilidade</b>: inalistáveis e analfabetos são <b>absolutamente inelegíveis</b></li>
+<li><b>Reeleição</b>: chefes do Executivo — <b>1 reeleição</b> para período subsequente (§5º)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Analfabeto pode votar e ser eleito" — <b>ERRADO</b>, voto é facultativo, mas é absolutamente <b>inelegível</b></li>
+<li>"Conscritos podem votar" — <b>ERRADO</b>, são inalistáveis durante serviço militar obrigatório</li>
+<li>Trocar <b>idade mínima</b>: Senador = 35, Deputado Federal = 21, Vereador = 18</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Perda e Suspensão dos Direitos Políticos / Partidos</span><span class="tc">33 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Vedada cassação</b> de direitos políticos. Somente: <b>perda</b> ou <b>suspensão</b> (art. 15)</li>
+<li><b>Perda</b>: cancelamento da naturalização por sentença transitada em julgado; recusa de cumprir obrigação a todos imposta ou prestação alternativa</li>
+<li><b>Suspensão</b>: incapacidade civil absoluta; condenação criminal transitada em julgado (enquanto durarem efeitos); improbidade administrativa</li>
+<li><b>Partidos políticos</b> (art. 17): livres para criação/fusão; vedado recebimento de recursos financeiros de entidade/governo <b>estrangeiros</b>; personalidade jurídica na forma da <b>lei civil</b></li>
+<li>Partidos têm autonomia para estrutura interna, organização e funcionamento</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Cassação dos direitos políticos" — <b>ERRADO</b>, CF veda expressamente a cassação</li>
+<li>"Cancelamento de naturalização = <b>suspensão</b>" — <b>ERRADO</b>, é hipótese de <b>perda</b></li>
+<li>"Condenação criminal = perda definitiva" — <b>ERRADO</b>, é <b>suspensão</b> (cessa com o cumprimento)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 7 -->
+<div class="macro" id="m7">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🌍</div>
+<div class="minfo"><div class="mt">7. Nacionalidade</div><div class="mm">Brasileiros natos e naturalizados, distinções, perda, extradição • 48 questões</div></div>
+<span class="badge">48 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Espécies de Nacionalidade (Art. 12)</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Natos</b> (art. 12, I): a) nascidos no Brasil (jus soli), mesmo de pais estrangeiros (desde que não a serviço de seu país); b) nascidos no exterior, de pai/mãe brasileiros a serviço do Brasil (jus sanguinis + critério funcional); c) nascidos no exterior, de pai/mãe brasileiros, registrados em repartição competente OU que venham residir no Brasil e optem pela nacionalidade</li>
+<li><b>Naturalizados</b> (art. 12, II): a) originários de países lusófonos com 1 ano de residência ininterrupta e idoneidade moral; b) estrangeiros residentes há mais de 15 anos ininterruptos sem condenação penal</li>
+<li><b>Equiparação de portugueses</b> (§1º): com residência permanente, se houver reciprocidade — não são naturalizados</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Filho de estrangeiros a serviço de seu país nascido no Brasil é brasileiro" — <b>ERRADO</b>, exceção ao jus soli</li>
+<li>"Naturalização ordinária exige 15 anos" — <b>ERRADO</b>, 15 anos é a extraordinária; ordinária segue a lei</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Distinções entre Natos e Naturalizados / Cargos Privativos</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Cargos privativos de nato</b> (art. 12, §3º): Presidente/Vice da República; Presidente da Câmara; Presidente do Senado; Ministro do STF; carreira diplomática; oficial das Forças Armadas; Ministro de Estado da Defesa</li>
+<li>Mnemônico: <b>MP3.COM</b> — Ministro STF, Presidente República/Câmara/Senado, Carreira diplomática, Oficial FA, Ministro Defesa</li>
+<li>A CF só permite distinção por ela mesma ou na forma que ela autorizar — lei ordinária <b>não pode</b> criar distinção</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Lei pode criar outros cargos privativos de nato" — <b>ERRADO</b>, rol é taxativo na CF</li>
+<li>"Governador deve ser nato" — <b>ERRADO</b>, não está na lista do §3º</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Perda da Nacionalidade e Extradição</span><span class="tc">Recorrente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Perda</b> (art. 12, §4º): cancelamento da naturalização por sentença (apenas naturalizado); aquisição de outra nacionalidade (nato ou naturalizado), salvo exceções</li>
+<li><b>EC 131/2023</b>: renúncia da nacionalidade <b>não impede</b> a reaquisição da nacionalidade originária</li>
+<li><b>Exceções</b> à perda por aquisição de outra: reconhecimento de nacionalidade originária pela lei estrangeira; imposição de naturalização para permanência/exercício de direitos</li>
+<li><b>Extradição</b>: brasileiro <b>nato</b> = nunca será extraditado; <b>naturalizado</b> = pode, por crime comum praticado antes da naturalização ou comprovado envolvimento com tráfico ilícito de entorpecentes</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Renúncia da nacionalidade impede reaquisição" — <b>ERRADO</b> (EC 131/2023)</li>
+<li>"Perda da nacionalidade por naturalização voluntária" (sem exceções) — <b>ERRADO</b>, há exceções</li>
+<li>"Cancelamento de naturalização = perda de direitos políticos" — CEBRASPE: <b>ERRADO</b>, a consequência direta é a perda da nacionalidade</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 8 -->
+<div class="macro" id="m8">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏛️</div>
+<div class="minfo"><div class="mt">8. Poder Legislativo (Estrutura e Funcionamento)</div><div class="mm">CN, Câmara, Senado, deputados, senadores, comissões, CPI • 102 questões</div></div>
+<span class="badge">102 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Congresso Nacional, Câmara e Senado</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>CN</b> = Câmara + Senado (bicameralismo federativo). Legislatura = 4 anos</li>
+<li><b>Câmara</b>: representantes do povo, sistema proporcional, mín. 8 e máx. 70 por estado, total 513</li>
+<li><b>Senado</b>: representantes dos estados/DF, sistema majoritário, 3 por estado/DF = 81, mandato 8 anos, renovação 1/3 e 2/3 alternadamente</li>
+<li><b>Atribuições exclusivas do CN</b> (art. 49): autorizar referendo e plebiscito; aprovar estado de defesa/sítio; sustar atos do Executivo que exorbitem poder regulamentar</li>
+<li><b>Atribuições do Senado</b> (art. 52): processar e julgar Presidente por crime de responsabilidade; aprovar indicações (STF, PGR, etc.); autorizar operações financeiras</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Câmara tem representação igualitária por estado" — <b>ERRADO</b>, é proporcional (8-70)</li>
+<li>"Senador tem mandato de 4 anos" — <b>ERRADO</b>, é 8 anos</li>
+<li>Confundir competência do CN (art. 48/49) com a do Senado (art. 52) ou Câmara (art. 51)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Deputados e Senadores: Imunidades e Incompatibilidades</span><span class="tc">Atenção</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Imunidade material</b> (art. 53): invioláveis por opiniões, palavras e votos — civil <b>e</b> penalmente</li>
+<li><b>Imunidade formal</b>: desde a expedição do diploma, só podem ser presos em flagrante de crime inafiançável; processo penal: STF/partido podem pedir sustação</li>
+<li><b>Incompatibilidades</b> (art. 54): desde a expedição do diploma → não podem firmar/manter contrato com PJ de direito público; desde a posse → não podem ser proprietários de empresas com privilégio, ocupar cargo público demissível ad nutum (salvo Ministro)</li>
+<li><b>Perda do mandato</b> (art. 55): infringir incompatibilidades; faltar a 1/3 das sessões ordinárias; perder/suspender direitos políticos; decreto da Justiça Eleitoral; condenação criminal transitada em julgado</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Imunidade material protege apenas na esfera penal" — <b>ERRADO</b>, civil e penal</li>
+<li>"Parlamentar pode ser preso em flagrante de qualquer crime" — <b>ERRADO</b>, só inafiançável</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Comissões Parlamentares de Inquérito (CPI)</span><span class="tc">27 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Criação</b>: requerimento de 1/3 dos membros; fato determinado; prazo certo</li>
+<li><b>Poderes de investigação</b> próprios das autoridades judiciais: ouvir testemunhas, requisitar documentos, quebrar sigilo bancário/fiscal/dados</li>
+<li><b>CPI NÃO PODE</b>: determinar interceptação telefônica; decretar prisão (salvo flagrante); determinar busca domiciliar; anular atos do Executivo; decretar indisponibilidade de bens — <b>reserva de jurisdição</b></li>
+<li>Conclusões encaminhadas ao <b>MP</b> para responsabilização civil ou criminal</li>
+<li><b>CPMI</b>: 1/3 da Câmara (171) + 1/3 do Senado (27)</li>
+<li>CPIs municipais têm poderes de investigação, mas <b>não</b> podem determinar condução coercitiva para interrogatório</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"CPI pode determinar interceptação telefônica" — <b>ERRADO</b>, reserva de jurisdição</li>
+<li>"CPI pode exercer poderes fora dos limites do Judiciário" — <b>ERRADO</b>, tem mesmos poderes, não mais</li>
+<li>"CPI municipal pode conduzir coercitivamente investigados" — <b>ERRADO</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 9 -->
+<div class="macro" id="m9">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📋</div>
+<div class="minfo"><div class="mt">9. Processo Legislativo</div><div class="mm">Emendas, LO, LC, MP, lei delegada, fases, iniciativa • 57 questões</div></div>
+<span class="badge">57 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Emenda à Constituição (Art. 60)</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Iniciativa</b>: 1/3 da Câmara ou Senado; Presidente da República; mais da metade das Assembleias Legislativas (maioria relativa de cada)</li>
+<li><b>Aprovação</b>: 3/5 dos membros de cada Casa, em <b>dois turnos</b></li>
+<li><b>Promulgação</b>: pelas Mesas da Câmara e do Senado (não pelo Presidente)</li>
+<li><b>Cláusulas pétreas</b> (§4º): forma federativa; voto direto/secreto/universal/periódico; separação de poderes; direitos e garantias individuais</li>
+<li><b>Limites circunstanciais</b>: CF não pode ser emendada na vigência de intervenção federal, estado de defesa ou estado de sítio</li>
+<li>PEC rejeitada/prejudicada <b>não</b> pode ser reapresentada na mesma sessão legislativa</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Presidente promulga emendas" — <b>ERRADO</b>, as Mesas da Câmara e Senado promulgam</li>
+<li>"Emenda pode abolir cláusula pétrea" — <b>ERRADO</b>, não será objeto de deliberação PEC tendente a abolir</li>
+<li>"PEC rejeitada pode ser reapresentada na mesma sessão" — <b>ERRADO</b></li>
+<li>Povo não tem iniciativa de PEC (diferente de projeto de lei)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Medidas Provisórias</span><span class="tc">11 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Pressupostos</b>: relevância <b>e</b> urgência (cumulativos)</li>
+<li><b>Prazo</b>: 60 dias + prorrogação por mais 60 (não conta o recesso)</li>
+<li>Se não convertida em 60+60 dias: <b>perde eficácia desde a edição</b> (ex tunc)</li>
+<li><b>Vedações</b>: nacionalidade/cidadania/direitos políticos/partidos; direito penal/processual penal; organização do Judiciário/MP; planos plurianuais/diretrizes orçamentárias; matéria reservada a LC; matéria já disciplinada em PL aprovado pelo CN pendente de sanção/veto</li>
+<li>MP rejeitada: não pode ser reeditada na <b>mesma sessão legislativa</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"MP pode tratar de direito penal" — <b>ERRADO</b>, vedação expressa</li>
+<li>"MP tem prazo de 120 dias" — <b>ERRADO</b>, é 60+60 (prorrogável uma vez)</li>
+<li>"MP rejeitada pode ser reeditada imediatamente" — <b>ERRADO</b>, só na sessão seguinte</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Fases do Processo Legislativo e Leis</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Espécies normativas</b> (art. 59): emendas, LC, LO, leis delegadas, MP, decretos legislativos, resoluções</li>
+<li><b>LC vs LO</b>: LC exige <b>maioria absoluta</b>; LO exige <b>maioria simples</b> (relativa)</li>
+<li><b>Iniciativa privativa</b> do Presidente: leis sobre FA, criação de cargos no Executivo, organização administrativa, aumento de remuneração de servidores</li>
+<li><b>Sanção</b>: concordância do Presidente (expressa ou tácita — 15 dias úteis sem manifestação)</li>
+<li><b>Veto</b>: total ou parcial (incide sobre artigo, parágrafo, inciso ou alínea inteiros — não pode vetar palavras isoladas); pode ser derrubado por <b>maioria absoluta</b> do CN em sessão conjunta</li>
+<li>PL rejeitado: só pode ser reapresentado na mesma sessão mediante proposta da <b>maioria absoluta</b> de qualquer Casa</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"LC exige maioria simples" — <b>ERRADO</b>, exige maioria absoluta</li>
+<li>"Veto parcial pode incidir sobre palavras" — <b>ERRADO</b>, apenas artigo/parágrafo/inciso/alínea inteiros</li>
+<li>"Sanção tácita em 15 dias corridos" — <b>ERRADO</b>, são 15 dias <b>úteis</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 10 -->
+<div class="macro" id="m10">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔍</div>
+<div class="minfo"><div class="mt">10. Fiscalização Contábil e Tribunal de Contas</div><div class="mm">Arts. 70-75, TCU, controle externo/interno, competências • 61 questões</div></div>
+<span class="badge">61 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Controle Externo e TCU (Arts. 70-73)</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Controle externo</b>: exercido pelo CN com auxílio do TCU (art. 71)</li>
+<li><b>TCU</b>: 9 Ministros (6 indicados pelo CN, 3 pelo Presidente), idade 35-75 anos, reputação ilibada, notórios conhecimentos</li>
+<li><b>Competências TCU</b>: julgar contas dos administradores; apreciar (não julgar) contas do Presidente (quem julga é o CN); fiscalizar recursos repassados; aplicar sanções; sustar atos administrativos</li>
+<li>TCU pode <b>sustar ato administrativo</b>; para sustar <b>contrato</b>, o ato é do CN (se CN não deliberar em 90 dias, TCU decide)</li>
+<li><b>Qualquer cidadão, partido ou associação</b> é legitimado para denunciar irregularidades ao TCU (art. 74, §2º)</li>
+<li>TCU tem <b>Súmula Vinculante 347</b> (STF): pode apreciar constitucionalidade de leis/atos no caso concreto</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"TCU <b>julga</b> as contas do Presidente" — <b>ERRADO</b>, TCU aprecia, CN julga</li>
+<li>"TCU pode sustar <b>contratos</b> diretamente" — <b>ERRADO</b>, sustar contrato é ato do CN (exceto omissão de 90 dias)</li>
+<li>"Apenas partidos podem denunciar ao TCU" — <b>ERRADO</b>, qualquer cidadão pode</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Controle Interno e TCEs/TCMs</span><span class="tc">23 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Controle interno</b> (art. 74): cada Poder manterá sistema integrado de controle interno</li>
+<li>Responsáveis pelo controle que tomem ciência de irregularidade devem comunicar ao <b>TCU</b>, sob pena de responsabilidade solidária</li>
+<li><b>TC Estaduais/Municipais</b> (art. 75): aplicam-se as mesmas regras do TCU, no que couber</li>
+<li><b>Vedação</b>: CF proíbe criação de Tribunais/Conselhos/órgãos de contas municipais (art. 31, §4º) — os que existiam antes da CF/88 foram mantidos (SP e RJ)</li>
+<li>TCE tem competência para julgar contas de <b>prefeitos</b> (parecer prévio), mas a Câmara Municipal julga</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Municípios podem criar Tribunais de Contas" — <b>ERRADO</b>, CF vedou a criação</li>
+<li>"Controle interno dispensa comunicação ao TCU" — <b>ERRADO</b>, irregularidade deve ser comunicada sob pena de responsabilidade solidária</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 11 -->
+<div class="macro" id="m11">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🚔</div>
+<div class="minfo"><div class="mt">11. Segurança Pública (Art. 144)</div><div class="mm">Órgãos, competências, PF, PRF, polícias civis e militares, guardas municipais • 48 questões</div></div>
+<span class="badge">48 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Órgãos e Competências (Art. 144)</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Segurança pública: <b>dever do Estado, direito e responsabilidade de todos</b> (art. 144, caput)</li>
+<li><b>Órgãos</b>: Polícia Federal; Polícia Rodoviária Federal; Polícia Ferroviária Federal; Polícias Civis; Polícias Militares e Corpos de Bombeiros Militares; Polícias Penais</li>
+<li><b>PF</b> (§1º): apurar infrações penais contra a ordem política/social ou em detrimento de bens/serviços da União; prevenir/reprimir tráfico de entorpecentes; exercer funções de <b>polícia marítima, aeroportuária e de fronteiras</b>; exercer com exclusividade funções de <b>polícia judiciária da União</b></li>
+<li><b>PRF</b> (§2º): patrulhamento ostensivo das <b>rodovias federais</b></li>
+<li><b>Polícias Civis</b> (§4º): funções de polícia judiciária e apuração de infrações penais, <b>exceto as militares</b></li>
+<li><b>PM</b> (§5º): polícia ostensiva e preservação da ordem pública</li>
+<li><b>Guardas Municipais</b> (§8º): proteção de bens, serviços e instalações dos <b>Municípios</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"PF exerce polícia judiciária dos estados" — <b>ERRADO</b>, é da União (exclusivamente)</li>
+<li>"PRF patrulha rodovias estaduais" — <b>ERRADO</b>, apenas federais</li>
+<li>"Polícia Civil apura infrações militares" — <b>ERRADO</b>, exceto as militares</li>
+<li>"Guarda municipal faz policiamento ostensivo" — <b>ERRADO</b>, protege bens/serviços/instalações municipais</li>
+<li>"Segurança pública é dever apenas do Estado" — <b>ERRADO</b>, é também responsabilidade de todos</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Forças Armadas e Disposições Gerais</span><span class="tc">Complementar</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Forças Armadas</b> (art. 142): Marinha, Exército, Aeronáutica — sob autoridade suprema do Presidente</li>
+<li>Destinação: defesa da Pátria, garantia dos poderes constitucionais, lei e ordem</li>
+<li>Militar do estado: PM e Bombeiro subordinam-se aos <b>Governadores</b></li>
+<li>Ao militar é vedada: sindicalização, greve, filiação partidária (enquanto em serviço ativo)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Militares podem se sindicalizar" — <b>ERRADO</b>, vedação expressa</li>
+<li>"PM subordina-se ao Presidente" — <b>ERRADO</b>, subordina-se ao Governador</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 12 -->
+<div class="macro" id="m12">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">⚡</div>
+<div class="minfo"><div class="mt">12. Remédios Constitucionais</div><div class="mm">HC, HD, MS, MI, ação popular • 54 questões</div></div>
+<span class="badge">54 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Habeas Corpus e Habeas Data</span><span class="tc">14 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>HC</b> (art. 5º, LXVIII): protege <b>liberdade de locomoção</b> contra ilegalidade ou abuso de poder; preventivo (salvo-conduto) ou repressivo (alvará de soltura)</li>
+<li>HC: <b>gratuito</b>; pode ser impetrado por qualquer pessoa (inclusive estrangeiro); não precisa de advogado</li>
+<li><b>HD</b> (art. 5º, LXXII): assegurar <b>conhecimento</b> de informações pessoais em registros públicos OU <b>retificação</b> de dados</li>
+<li>HD: caráter <b>personalíssimo</b> (só o próprio titular ou herdeiros); necessário esgotamento administrativo prévio (SV 2)</li>
+<li>HD <b>não se presta</b> para obter informações de terceiros nem informações gerais (isso é LAI)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"HC protege qualquer direito fundamental" — <b>ERRADO</b>, apenas liberdade de locomoção</li>
+<li>"HD serve para obter informação de interesse público" — <b>ERRADO</b>, é só para dados <b>pessoais</b></li>
+<li>"HD não exige pedido administrativo prévio" — <b>ERRADO</b>, SV 2 exige</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Mandado de Segurança (Individual e Coletivo)</span><span class="tc">16 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>MS individual</b> (art. 5º, LXIX): protege <b>direito líquido e certo</b> não amparado por HC ou HD, contra ato de autoridade pública ou agente de PJ no exercício de atribuições públicas</li>
+<li><b>MS coletivo</b> (LXX): legitimados — partido político com representação no CN; organização sindical/entidade de classe/associação (constituída há pelo menos 1 ano)</li>
+<li><b>Prazo decadencial</b>: 120 dias a contar da ciência do ato</li>
+<li>MS contra atos de <b>gestão comercial</b> de empresa pública/sociedade de economia mista: <b>NÃO cabe</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"MS protege direito líquido e certo em atos de gestão comercial" — <b>ERRADO</b></li>
+<li>"MS serve para proteger direito já amparado por HD" — <b>ERRADO</b>, é residual</li>
+<li>"MS para obter informação em banco de dados" — <b>ERRADO</b>, isso é HD</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Mandado de Injunção e Ação Popular</span><span class="tc">20 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>MI</b> (art. 5º, LXXI): quando a <b>falta</b> de norma regulamentadora torne inviável o exercício de direitos/liberdades constitucionais e prerrogativas de nacionalidade, soberania e cidadania</li>
+<li>MI: ação de cunho <b>constitutivo</b> (não condenatório); incabível pena pecuniária pela omissão legislativa</li>
+<li>MI é incabível quando a controvérsia é sobre a <b>efetividade</b> de lei <b>já existente</b></li>
+<li>MI coletivo: legitimados incluem Defensoria Pública, partidos com representação no CN, entidades sindicais/de classe</li>
+<li><b>Ação popular</b> (art. 5º, LXXIII): qualquer <b>cidadão</b> (eleitor) pode propor para anular ato lesivo ao patrimônio público, moralidade administrativa, meio ambiente, patrimônio histórico-cultural</li>
+<li>Ação popular: <b>gratuita</b> salvo comprovada má-fé; autor = cidadão (não PJ)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"MI cabe quando existe lei regulamentadora" — <b>ERRADO</b>, pressupõe <b>ausência</b> de norma</li>
+<li>"MI contra norma que torna inviável exercício" — <b>ERRADO</b>, é contra a <b>falta</b> de norma (omissão)</li>
+<li>"Pessoa jurídica pode propor ação popular" — <b>ERRADO</b>, apenas cidadão</li>
+<li>"MI é ação condenatória" — <b>ERRADO</b>, é constitutiva</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 13 -->
+<div class="macro" id="m13">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🚨</div>
+<div class="minfo"><div class="mt">13. Intervenção, Estado de Defesa e Estado de Sítio</div><div class="mm">Arts. 34-36, 136-141, pressupostos, limites, garantias suspensas • 46 questões</div></div>
+<span class="badge">46 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Intervenção Federal e Estadual</span><span class="tc">25 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Regra</b>: União não intervirá nos estados/DF, nem estados nos municípios (autonomia federativa)</li>
+<li><b>Hipóteses de intervenção federal</b> (art. 34): manter integridade nacional; repelir invasão estrangeira; pôr termo a grave comprometimento da ordem pública; garantir livre exercício dos Poderes; reorganizar finanças; prover execução de lei federal/ordem judicial; assegurar princípios constitucionais sensíveis</li>
+<li><b>Princípios sensíveis</b> (VII): forma republicana, sistema representativo, regime democrático, direitos da pessoa humana, autonomia municipal, prestação de contas</li>
+<li>Intervenção decretada pelo <b>Presidente</b> (federal) ou <b>Governador</b> (estadual), com decreto especificando amplitude, prazo e condições</li>
+<li>CN/Assembleia apreciam o decreto em <b>24 horas</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Intervenção federal independe de aprovação do CN" — <b>ERRADO</b>, depende (salvo art. 34, VI e VII com requisição judicial)</li>
+<li>"Intervenção suspende autonomia permanentemente" — <b>ERRADO</b>, é temporária</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Estado de Defesa e Estado de Sítio</span><span class="tc">21 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Estado de defesa</b> (art. 136): decretado pelo Presidente, ouvidos Conselho da República e Conselho de Defesa Nacional; <b>CN aprecia em 10 dias</b>; prazo de <b>30 dias</b> (prorrogável 1x)</li>
+<li>Pode restringir: reunião, sigilo de correspondência e comunicação, ocupação temporária de bens</li>
+<li><b>Estado de sítio</b> (art. 137): solicitação do Presidente ao CN (autorização <b>prévia</b> por maioria absoluta); Conselho da República e Conselho de Defesa ouvidos</li>
+<li>Hipóteses de sítio: comoção grave ou ineficácia do estado de defesa (prazo <b>30 dias</b>, prorrogável); declaração de guerra ou resposta a agressão armada estrangeira (sem prazo fixo)</li>
+<li>No sítio por comoção: pode restringir requisição de bens, sigilo das comunicações, liberdade de imprensa, reunião, busca em domicílio, intervenção em empresas; <b>NÃO</b> suspende inviolabilidade da vida, integridade física, vedação à tortura</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Estado de defesa exige autorização prévia do CN" — <b>ERRADO</b>, é comunicação posterior (10 dias)</li>
+<li>"Estado de sítio é comunicado ao CN depois" — <b>ERRADO</b>, exige autorização <b>prévia</b></li>
+<li>Confundir prazos: defesa = 30+30; sítio por comoção = 30 (prorrogável); sítio por guerra = sem prazo fixo</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 14 -->
+<div class="macro" id="m14">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🗺️</div>
+<div class="minfo"><div class="mt">14. Organização Político-Administrativa</div><div class="mm">Arts. 18-19, 25-33, estados, municípios, DF, territórios • 91 questões</div></div>
+<span class="badge">91 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Disposições Gerais e Estados (Arts. 18-19, 25-28)</span><span class="tc">Frequente</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Entes federativos</b>: União, Estados, DF e Municípios — todos <b>autônomos</b> (não soberanos)</li>
+<li><b>Vedações</b> (art. 19): estabelecer cultos religiosos; recusar fé a documentos públicos; criar distinções entre brasileiros ou preferências entre si</li>
+<li><b>Estados</b>: regem-se por Constituições Estaduais (poder constituinte derivado decorrente); Assembleia Legislativa unicameral; Governador eleito por maioria absoluta (se +200mil eleitores)</li>
+<li><b>Criação de estados/territórios</b>: plebiscito + LC do CN</li>
+<li>Criação/fusão/desmembramento de <b>municípios</b>: lei estadual + estudo de viabilidade + plebiscito + período determinado por LC federal</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Entes são soberanos" — <b>ERRADO</b>, são autônomos; soberana é a República Federativa</li>
+<li>"Criação de município por lei federal" — <b>ERRADO</b>, é por lei estadual</li>
+<li>"Estado pode ter religião oficial" — <b>ERRADO</b>, art. 19, I veda</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Municípios e DF (Arts. 29-33)</span><span class="tc">42 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Municípios</b>: regem-se por Lei Orgânica (aprovada por 2/3 da Câmara Municipal, em 2 turnos, com 30 dias entre eles)</li>
+<li><b>Número de vereadores</b>: proporcional à população (mín. 9, máx. 55)</li>
+<li><b>Subsídio de vereadores</b>: fixado pela Câmara Municipal, máx. 75% do subsídio de deputado estadual</li>
+<li><b>DF</b> (art. 32): governa-se por Lei Orgânica; vedada divisão em municípios; acumula competências estaduais e municipais; Câmara Legislativa + Governador</li>
+<li>DF: Polícia Civil, PM e Corpo de Bombeiros organizados e mantidos pela <b>União</b> (art. 21, XIV)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"DF pode ser dividido em municípios" — <b>ERRADO</b>, vedação expressa</li>
+<li>"DF mantém sua própria Polícia Civil" — <b>ERRADO</b>, é organizada e mantida pela União</li>
+<li>"Lei Orgânica do Município = votação por maioria simples" — <b>ERRADO</b>, 2/3 em 2 turnos</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- MACRO 15 -->
+<div class="macro" id="m15">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📘</div>
+<div class="minfo"><div class="mt">15. Regimento Interno da Câmara dos Deputados (RICD)</div><div class="mm">Comissões, Mesa, sessões, processo legislativo interno, atos • 150 questões</div></div>
+<span class="badge">150 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Comissões (Arts. 22-64 RICD)</span><span class="tc">67 Q – Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Tipos</b>: Permanentes, Temporárias (especiais, de inquérito, externas)</li>
+<li>Número de membros das Comissões Permanentes: fixado no início da legislatura e <b>mantido durante toda a legislatura</b></li>
+<li>Deputado titular: pode integrar como titular <b>apenas 1</b> Comissão Permanente (exceto membros da Mesa)</li>
+<li><b>Poder terminativo</b>: comissão pode aprovar projeto sem ir a Plenário, salvo recurso de 1/10 dos membros da Casa (5 sessões para recorrer)</li>
+<li>Parecer que invade competência de outra comissão: parte excedente é considerada <b>não escrita</b> (mediante reclamação)</li>
+<li>Questão de ordem em comissão: decidida pelo <b>Presidente da Comissão</b>, com recurso para o <b>Presidente da Câmara</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Deputado pode ser titular de 2 Comissões Permanentes" — <b>ERRADO</b>, apenas 1</li>
+<li>"Recurso contra parecer = 1/3 dos membros" — <b>ERRADO</b>, é 1/10</li>
+<li>"Questão de ordem na comissão → recurso para a Mesa" — <b>ERRADO</b>, recurso para o Presidente da Câmara</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Mesa, Líderes e Disposições Gerais (RICD)</span><span class="tc">48 Q</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Mesa</b>: Presidente, 1º e 2º Vice-Presidentes, 4 Secretários e 4 Suplentes; mandato de 2 anos (= metade da legislatura)</li>
+<li><b>Colégio de Líderes</b>: constituído pelos Líderes da Maioria, Minoria, partidos e blocos; deliberam por consenso ou voto ponderado</li>
+<li><b>Líder</b>: indicado pela bancada ao Presidente da Câmara; pode usar a palavra a qualquer tempo</li>
+<li><b>Sessões</b>: ordinárias, extraordinárias, solenes; quórum para abertura = pelo menos 1/10 dos membros (início dos trabalhos)</li>
+<li>Comissão para cumprir <b>missão autorizada</b> (externa com ônus): sujeita à <b>deliberação do Plenário</b></li>
+<li>Participação de bancada em comissões especiais: critério de proporcionalidade analisado na perspectiva das <b>comissões temporárias em geral</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Mesa tem mandato de 4 anos" — <b>ERRADO</b>, é 2 anos</li>
+<li>"Comissão externa com ônus depende de despacho do Presidente" — <b>ERRADO</b>, deliberação do Plenário</li>
+<li>"Rodízio de comissões especiais = perspectiva individual" — <b>ERRADO</b>, perspectiva das temporárias em geral</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Administração e Economia Interna</span><span class="tc">Complementar</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Secretaria-Geral da Mesa</b>: assessoramento à Mesa e às atividades legislativas</li>
+<li><b>Diretoria-Geral</b>: administração da Câmara</li>
+<li><b>Procuradoria Parlamentar</b>: defende a Casa, seus órgãos e membros perante o Judiciário/MP</li>
+<li><b>Ouvidoria Parlamentar</b>: recebe e examina queixas do cidadão contra a administração pública</li>
+<li>Atos da Mesa: instruem o funcionamento administrativo da Casa</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Confundir <b>Secretaria-Geral da Mesa</b> (assessoramento legislativo) com <b>Diretoria-Geral</b> (administração)</li>
+<li>"Ouvidoria defende a Casa judicialmente" — <b>ERRADO</b>, isso é a Procuradoria Parlamentar</li>
+</ul></div></div></div>
+</div></div>
+
+</div>
+
+<button class="back-btn" onclick="location.href='index.html'">← Voltar</button>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+function toggleMacro(el){el.closest('.macro').classList.toggle('open')}
+function toggleTp(el){el.closest('.tp').classList.toggle('open')}
+function toggleAll(open){document.querySelectorAll('.macro').forEach(m=>{open?m.classList.add('open'):m.classList.remove('open')});document.querySelectorAll('.tp').forEach(t=>{open?t.classList.add('open'):t.classList.remove('open')})}
+function scrollToSection(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+function filterContent(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.macro').forEach(m=>{const t=m.textContent.toLowerCase();if(q===''||t.includes(q)){m.style.display='';if(q!==''){m.classList.add('open');m.querySelectorAll('.tp').forEach(tp=>tp.classList.add('open'))}}else{m.style.display='none'}})}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)})
+</script>
+</body>
+</html>
