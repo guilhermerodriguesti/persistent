@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reta Final – Resumos Estruturados | Policial Legislativo 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root{--bg:#0f172a;--card:rgba(30,41,59,.7);--glass:rgba(255,255,255,.1);--text:#f8fafc;--dim:#94a3b8;--accent:#f59e0b}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:radial-gradient(circle at top right,#1e1b4b,#0f172a);color:var(--text);font-family:'Inter',sans-serif;min-height:100vh}
+h1,h2,h3{font-family:'Outfit',sans-serif}
+.bg-shape{position:fixed;z-index:-1;filter:blur(120px);border-radius:50%;opacity:.25}
+.s1{width:600px;height:600px;background:linear-gradient(135deg,#f59e0b,#ef4444);top:-200px;right:-200px}
+.s2{width:500px;height:500px;background:linear-gradient(135deg,#6366f1,#a855f7);bottom:-150px;left:-150px}
+.container{max-width:1200px;margin:0 auto;padding:30px 20px}
+.breadcrumb-custom{margin-bottom:24px}
+.breadcrumb-custom a{color:var(--dim);text-decoration:none;transition:color .3s}
+.breadcrumb-custom a:hover{color:var(--accent)}
+.breadcrumb-custom .active{color:var(--text)}
+
+/* Hero */
+.hero{text-align:center;padding:48px 24px;background:var(--card);backdrop-filter:blur(20px);border:1px solid var(--glass);border-radius:24px;margin-bottom:40px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#f59e0b,#ef4444,#a855f7,#6366f1,#10b981)}
+.hero-icon{width:100px;height:100px;background:rgba(245,158,11,.15);border-radius:24px;display:inline-flex;align-items:center;justify-content:center;font-size:3rem;color:var(--accent);margin-bottom:20px}
+.hero h1{font-size:2.6rem;font-weight:800;margin-bottom:8px;background:linear-gradient(135deg,#fff,#94a3b8);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero .sub{color:var(--dim);font-size:1.1rem;margin-bottom:20px}
+.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.stat{padding:8px 18px;border-radius:20px;font-size:.85rem;font-weight:700;background:rgba(255,255,255,.06);color:var(--dim);border:1px solid var(--glass)}
+.stat b{color:#fff;font-size:1.1rem}
+
+/* Progress bar */
+.progress-section{background:var(--card);backdrop-filter:blur(20px);border:1px solid var(--glass);border-radius:16px;padding:24px;margin-bottom:32px}
+.progress-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.progress-header h3{font-size:1rem;font-weight:700}
+.progress-header span{font-size:.85rem;color:var(--accent);font-weight:700}
+.progress-bar-outer{height:12px;background:rgba(255,255,255,.06);border-radius:20px;overflow:hidden}
+.progress-bar-inner{height:100%;border-radius:20px;background:linear-gradient(90deg,#f59e0b,#ef4444,#a855f7);transition:width .6s;width:0%}
+.progress-tip{margin-top:10px;font-size:.8rem;color:var(--dim)}
+
+/* Category sections */
+.category{margin-bottom:36px}
+.cat-header{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.cat-icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#fff;flex-shrink:0}
+.cat-header h2{font-size:1.3rem;font-weight:700;flex:1}
+.cat-badge{padding:4px 12px;border-radius:20px;font-size:.75rem;font-weight:700;color:var(--dim);background:rgba(255,255,255,.06);border:1px solid var(--glass)}
+
+/* Cards */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:16px}
+.rcard{background:var(--card);backdrop-filter:blur(20px);border:1px solid var(--glass);border-radius:18px;padding:24px;transition:all .35s;position:relative;overflow:hidden;cursor:pointer;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+.rcard::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;transform:scaleX(0);transition:transform .35s}
+.rcard:hover{transform:translateY(-6px);border-color:rgba(245,158,11,.4);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.rcard:hover::before{transform:scaleX(1)}
+.rcard-top{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.rcard-icon{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;transition:all .3s}
+.rcard:hover .rcard-icon{transform:rotate(-8deg) scale(1.1)}
+.rcard-info{flex:1}
+.rcard-title{font-size:1.05rem;font-weight:700;margin-bottom:2px}
+.rcard-sub{font-size:.78rem;color:var(--dim)}
+.rcard-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.rtag{padding:3px 10px;border-radius:8px;font-size:.72rem;font-weight:600}
+.rcard-desc{font-size:.82rem;color:var(--dim);line-height:1.5;margin-bottom:16px;flex:1}
+.rcard-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:11px 20px;border-radius:12px;font-weight:700;font-size:.85rem;color:#fff;text-decoration:none;transition:all .3s;width:100%}
+.rcard-btn:hover{transform:scale(1.02);color:#fff}
+.rcard-check{position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;border:2px solid var(--glass);display:flex;align-items:center;justify-content:center;font-size:.7rem;color:transparent;transition:all .3s;cursor:pointer;background:transparent}
+.rcard-check.done{background:#10b981;border-color:#10b981;color:#fff}
+
+/* Footer */
+.footer-tip{text-align:center;margin-top:40px;padding:20px;color:var(--dim);font-size:.85rem}
+
+/* Back */
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 20px;background:var(--accent);color:#1e293b;border:none;border-radius:12px;font-size:.85rem;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(245,158,11,.4);z-index:100;text-decoration:none;transition:all .3s}
+.back-btn:hover{background:#d97706;color:#1e293b;transform:scale(1.05)}
+
+@media(max-width:768px){
+.hero h1{font-size:1.8rem}
+.card-grid{grid-template-columns:1fr}
+.stats{gap:6px}
+.stat{padding:6px 12px;font-size:.75rem}
+}
+</style>
+</head>
+<body>
+<div class="bg-shape s1"></div>
+<div class="bg-shape s2"></div>
+
+<div class="container">
+<nav class="breadcrumb-custom">
+<a href="index.html"><i class="fas fa-home"></i> Início</a>
+<span class="mx-2" style="color:var(--dim)">/</span>
+<span class="active">Reta Final – Resumos Estruturados</span>
+</nav>
+
+<div class="hero">
+<div class="hero-icon">🏁</div>
+<h1>Reta Final</h1>
+<div class="sub">Todos os Resumos Estruturados em um só lugar • Policial Legislativo CD 2026</div>
+<div class="stats">
+<div class="stat">📚 <b>7</b> matérias</div>
+<div class="stat">📝 <b>6.680+</b> questões analisadas</div>
+<div class="stat">📂 <b>92</b> macro-temas</div>
+<div class="stat">⚡ <b>300+</b> pegadinhas mapeadas</div>
+</div>
+</div>
+
+<!-- Progress tracker -->
+<div class="progress-section">
+<div class="progress-header">
+<h3><i class="fas fa-chart-line" style="color:var(--accent);margin-right:8px"></i>Progresso da Revisão</h3>
+<span id="progressText">0 de 7 concluídos</span>
+</div>
+<div class="progress-bar-outer">
+<div class="progress-bar-inner" id="progressBar"></div>
+</div>
+<div class="progress-tip">💡 Clique no <i class="fas fa-circle" style="font-size:.6rem"></i> no canto dos cards para marcar como revisado. Progresso salvo automaticamente.</div>
+</div>
+
+<!-- Conhecimentos Gerais -->
+<div class="category">
+<div class="cat-header">
+<div class="cat-icon" style="background:linear-gradient(135deg,#6366f1,#4f46e5)"><i class="fas fa-book"></i></div>
+<h2>Conhecimentos Gerais</h2>
+<span class="cat-badge">4 resumos • 3.917 questões</span>
+</div>
+<div class="card-grid">
+
+<!-- Português -->
+<div class="rcard" data-id="portugues">
+<div class="rcard-check" onclick="event.stopPropagation();toggleCheck(this)" data-key="portugues"></div>
+<div class="rcard-top">
+<div class="rcard-icon" style="background:rgba(5,150,105,.2);color:#10b981"><i class="fas fa-spell-check"></i></div>
+<div class="rcard-info">
+<div class="rcard-title">Língua Portuguesa</div>
+<div class="rcard-sub">945 questões • 15 macro-temas • 50+ subtópicos</div>
+</div>
+</div>
+<div class="rcard-tags">
+<span class="rtag" style="background:rgba(5,150,105,.15);color:#10b981">Interpretação</span>
+<span class="rtag" style="background:rgba(5,150,105,.15);color:#10b981">Reescrita</span>
+<span class="rtag" style="background:rgba(5,150,105,.15);color:#10b981">Coesão</span>
+<span class="rtag" style="background:rgba(5,150,105,.15);color:#10b981">Concordância</span>
+<span class="rtag" style="background:rgba(5,150,105,.15);color:#10b981">Crase</span>
+</div>
+<div class="rcard-desc">Interpretação, reescrita, coesão, conjunções, concordância, tipologia, crase, semântica, colocação pronominal, verbos, sujeito, orações, regência, classes e ortografia.</div>
+<a href="resumo-completo-portugues.html" class="rcard-btn" style="background:linear-gradient(135deg,#047857,#10b981)" onclick="event.stopPropagation()">Abrir Resumo <i class="fas fa-arrow-right"></i></a>
+<style>.rcard[data-id="portugues"]::before{background:linear-gradient(90deg,#047857,#10b981)}</style>
+</div>
+
+<!-- Inglês -->
+<div class="rcard" data-id="ingles">
+<div class="rcard-check" onclick="event.stopPropagation();toggleCheck(this)" data-key="ingles"></div>
+<div class="rcard-top">
+<div class="rcard-icon" style="background:rgba(30,64,175,.2);color:#3b82f6"><i class="fas fa-globe"></i></div>
+<div class="rcard-info">
+<div class="rcard-title">Língua Inglesa</div>
+<div class="rcard-sub">436 questões • 10 macro-temas • 28 subtópicos</div>
+</div>
+</div>
+<div class="rcard-tags">
+<span class="rtag" style="background:rgba(30,64,175,.15);color:#3b82f6">Understanding</span>
+<span class="rtag" style="background:rgba(30,64,175,.15);color:#3b82f6">Vocabulary</span>
+<span class="rtag" style="background:rgba(30,64,175,.15);color:#3b82f6">Rephrasing</span>
+<span class="rtag" style="background:rgba(30,64,175,.15);color:#3b82f6">Verbs</span>
+</div>
+<div class="rcard-desc">Text interpretation, substituição/reescrita, vocabulário, referenciação, tradução, verbos, conjunções, adjetivos/advérbios, pronomes e tipologia.</div>
+<a href="resumo-completo-ingles.html" class="rcard-btn" style="background:linear-gradient(135deg,#1e40af,#3b82f6)" onclick="event.stopPropagation()">Abrir Resumo <i class="fas fa-arrow-right"></i></a>
+<style>.rcard[data-id="ingles"]::before{background:linear-gradient(90deg,#1e40af,#3b82f6)}</style>
+</div>
+
+<!-- Constitucional -->
+<div class="rcard" data-id="constitucional">
+<div class="rcard-check" onclick="event.stopPropagation();toggleCheck(this)" data-key="constitucional"></div>
+<div class="rcard-top">
+<div class="rcard-icon" style="background:rgba(234,88,12,.2);color:#ea580c"><i class="fas fa-balance-scale"></i></div>
+<div class="rcard-info">
+<div class="rcard-title">Direito Constitucional + RICD</div>
+<div class="rcard-sub">1.348 questões • 15 macro-temas • 35+ subtópicos</div>
+</div>
+</div>
+<div class="rcard-tags">
+<span class="rtag" style="background:rgba(234,88,12,.15);color:#ea580c">Art. 5º</span>
+<span class="rtag" style="background:rgba(234,88,12,.15);color:#ea580c">Competências</span>
+<span class="rtag" style="background:rgba(234,88,12,.15);color:#ea580c">Admin. Pública</span>
+<span class="rtag" style="background:rgba(234,88,12,.15);color:#ea580c">RICD</span>
+</div>
+<div class="rcard-desc">Art. 5º, princípios, competências, administração pública, servidores, direitos sociais/políticos, nacionalidade, Poder Legislativo, processo legislativo, TCU, segurança e RICD.</div>
+<a href="resumo-completo-constitucional.html" class="rcard-btn" style="background:linear-gradient(135deg,#7c2d12,#ea580c)" onclick="event.stopPropagation()">Abrir Resumo <i class="fas fa-arrow-right"></i></a>
+<style>.rcard[data-id="constitucional"]::before{background:linear-gradient(90deg,#7c2d12,#ea580c)}</style>
+</div>
+
+<!-- Informática -->
+<div class="rcard" data-id="informatica">
+<div class="rcard-check" onclick="event.stopPropagation();toggleCheck(this)" data-key="informatica"></div>
+<div class="rcard-top">
+<div class="rcard-icon" style="background:rgba(15,118,110,.2);color:#14b8a6"><i class="fas fa-lock"></i></div>
+<div class="rcard-info">
+<div class="rcard-title">Seg. Informação, LAI e LGPD</div>
+<div class="rcard-sub">901 questões • 15 macro-temas • 40 subtópicos</div>
+</div>
+</div>
+<div class="rcard-tags">
+<span class="rtag" style="background:rgba(15,118,110,.15);color:#14b8a6">Criptografia</span>
+<span class="rtag" style="background:rgba(15,118,110,.15);color:#14b8a6">Firewall</span>
+<span class="rtag" style="background:rgba(15,118,110,.15);color:#14b8a6">LAI</span>
+<span class="rtag" style="background:rgba(15,118,110,.15);color:#14b8a6">LGPD</span>
+</div>
+<div class="rcard-desc">Conceitos SI, criptografia, firewall/proxy, IDS/IPS, LAI (acesso, sigilo, procedimento), LGPD (tratamento, agentes), ataques cibernéticos e inteligência.</div>
+<a href="resumo-completo-informatica.html" class="rcard-btn" style="background:linear-gradient(135deg,#0f766e,#14b8a6)" onclick="event.stopPropagation()">Abrir Resumo <i class="fas fa-arrow-right"></i></a>
+<style>.rcard[data-id="informatica"]::before{background:linear-gradient(90deg,#0f766e,#14b8a6)}</style>
+</div>
+
+</div>
+</div>
+
+<!-- Conhecimentos Específicos -->
+<div class="category">
+<div class="cat-header">
+<div class="cat-icon" style="background:linear-gradient(135deg,#ef4444,#dc2626)"><i class="fas fa-crosshairs"></i></div>
+<h2>Conhecimentos Específicos</h2>
+<span class="cat-badge">3 resumos • 2.858 questões</span>
+</div>
+<div class="card-grid">
+
+<!-- Direito Penal -->
+<div class="rcard" data-id="penal">
+<div class="rcard-check" onclick="event.stopPropagation();toggleCheck(this)" data-key="penal"></div>
+<div class="rcard-top">
+<div class="rcard-icon" style="background:rgba(220,38,38,.2);color:#dc2626"><i class="fas fa-gavel"></i></div>
+<div class="rcard-info">
+<div class="rcard-title">Direito Penal e Processual Penal</div>
+<div class="rcard-sub">1.376 questões • 15 macro-temas • 40+ subtópicos</div>
+</div>
+</div>
+<div class="rcard-tags">
+<span class="rtag" style="background:rgba(220,38,38,.15);color:#dc2626">Abuso Autorid.</span>
+<span class="rtag" style="background:rgba(220,38,38,.15);color:#dc2626">Inquérito</span>
+<span class="rtag" style="background:rgba(220,38,38,.15);color:#dc2626">Provas</span>
+<span class="rtag" style="background:rgba(220,38,38,.15);color:#dc2626">Drogas</span>
+<span class="rtag" style="background:rgba(220,38,38,.15);color:#dc2626">Armas</span>
+</div>
+<div class="rcard-desc">Abuso de autoridade, inquérito policial, provas, flagrante, prisão preventiva/temporária, drogas, armas, ORCRIM, interceptação, crimes funcionais e mais.</div>
+<a href="resumo-completo-penal.html" class="rcard-btn" style="background:linear-gradient(135deg,#7f1d1d,#dc2626)" onclick="event.stopPropagation()">Abrir Resumo <i class="fas fa-arrow-right"></i></a>
+<style>.rcard[data-id="penal"]::before{background:linear-gradient(90deg,#7f1d1d,#dc2626)}</style>
+</div>
+
+<!-- Direito Administrativo -->
+<div class="rcard" data-id="administrativo">
+<div class="rcard-check" onclick="event.stopPropagation();toggleCheck(this)" data-key="administrativo"></div>
+<div class="rcard-top">
+<div class="rcard-icon" style="background:rgba(88,28,135,.2);color:#a855f7"><i class="fas fa-book-open"></i></div>
+<div class="rcard-info">
+<div class="rcard-title">Direito Administrativo</div>
+<div class="rcard-sub">1.000 questões • 12 macro-temas • 35+ subtópicos</div>
+</div>
+</div>
+<div class="rcard-tags">
+<span class="rtag" style="background:rgba(88,28,135,.15);color:#a855f7">Org. Adm.</span>
+<span class="rtag" style="background:rgba(88,28,135,.15);color:#a855f7">Atos</span>
+<span class="rtag" style="background:rgba(88,28,135,.15);color:#a855f7">Poderes</span>
+<span class="rtag" style="background:rgba(88,28,135,.15);color:#a855f7">8.112</span>
+<span class="rtag" style="background:rgba(88,28,135,.15);color:#a855f7">Improbidade</span>
+</div>
+<div class="rcard-desc">Organização administrativa, atos administrativos, poderes, licitação, contratos, Lei 8.112, improbidade, responsabilidade civil, controle e bens públicos.</div>
+<a href="resumo-completo-administrativo.html" class="rcard-btn" style="background:linear-gradient(135deg,#581c87,#7c3aed)" onclick="event.stopPropagation()">Abrir Resumo <i class="fas fa-arrow-right"></i></a>
+<style>.rcard[data-id="administrativo"]::before{background:linear-gradient(90deg,#581c87,#7c3aed)}</style>
+</div>
+
+<!-- Direitos Humanos -->
+<div class="rcard" data-id="dh">
+<div class="rcard-check" onclick="event.stopPropagation();toggleCheck(this)" data-key="dh"></div>
+<div class="rcard-top">
+<div class="rcard-icon" style="background:rgba(168,85,247,.2);color:#a855f7"><i class="fas fa-hands-helping"></i></div>
+<div class="rcard-info">
+<div class="rcard-title">Direitos Humanos</div>
+<div class="rcard-sub">482 questões • 10 macro-temas • 20 subtópicos</div>
+</div>
+</div>
+<div class="rcard-tags">
+<span class="rtag" style="background:rgba(168,85,247,.15);color:#a855f7">DUDH</span>
+<span class="rtag" style="background:rgba(168,85,247,.15);color:#a855f7">Gerações</span>
+<span class="rtag" style="background:rgba(168,85,247,.15);color:#a855f7">CADH</span>
+<span class="rtag" style="background:rgba(168,85,247,.15);color:#a855f7">Sist. Interam.</span>
+</div>
+<div class="rcard-desc">DUDH, conceitos/histórico/gerações, DH na CF/88, sistema interamericano, CADH (direitos e meios de proteção), fontes/princípios, incorporação e casos emblemáticos.</div>
+<a href="resumo-completo-dh.html" class="rcard-btn" style="background:linear-gradient(135deg,#581c87,#a855f7)" onclick="event.stopPropagation()">Abrir Resumo <i class="fas fa-arrow-right"></i></a>
+<style>.rcard[data-id="dh"]::before{background:linear-gradient(90deg,#581c87,#a855f7)}</style>
+</div>
+
+</div>
+</div>
+
+<div class="footer-tip">
+<i class="fas fa-lightbulb" style="color:var(--accent)"></i> Dica: Revise primeiro as matérias com maior peso na prova. Marque as concluídas para acompanhar seu progresso.
+</div>
+</div>
+
+<a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Voltar</a>
+
+<script>
+const STORAGE_KEY='reta-final-progress';
+
+function loadProgress(){
+    try{return JSON.parse(localStorage.getItem(STORAGE_KEY))||{}}catch(e){return{}}
+}
+function saveProgress(data){
+    localStorage.setItem(STORAGE_KEY,JSON.stringify(data));
+}
+
+function toggleCheck(el){
+    el.classList.toggle('done');
+    const key=el.dataset.key;
+    const prog=loadProgress();
+    if(el.classList.contains('done')){
+        prog[key]=true;
+        el.innerHTML='<i class="fas fa-check"></i>';
+    }else{
+        delete prog[key];
+        el.innerHTML='';
+    }
+    saveProgress(prog);
+    updateProgress();
+}
+
+function updateProgress(){
+    const prog=loadProgress();
+    const done=Object.keys(prog).length;
+    const total=document.querySelectorAll('.rcard-check').length;
+    const pct=total?Math.round((done/total)*100):0;
+    document.getElementById('progressBar').style.width=pct+'%';
+    document.getElementById('progressText').textContent=done+' de '+total+' concluídos ('+pct+'%)';
+}
+
+function initChecks(){
+    const prog=loadProgress();
+    document.querySelectorAll('.rcard-check').forEach(el=>{
+        if(prog[el.dataset.key]){
+            el.classList.add('done');
+            el.innerHTML='<i class="fas fa-check"></i>';
+        }
+    });
+    updateProgress();
+}
+
+// Make entire card clickable (except check and btn)
+document.querySelectorAll('.rcard').forEach(card=>{
+    card.addEventListener('click',function(e){
+        if(e.target.closest('.rcard-check')||e.target.closest('.rcard-btn'))return;
+        const btn=card.querySelector('.rcard-btn');
+        if(btn)window.location.href=btn.href;
+    });
+});
+
+initChecks();
+</script>
+</body>
+</html>
