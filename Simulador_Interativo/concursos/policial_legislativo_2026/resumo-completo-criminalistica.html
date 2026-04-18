@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resumo Estruturado – Criminologia e Noções de Criminalística</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#7f1d1d,#dc2626);border-radius:16px;margin-bottom:20px;box-shadow:0 8px 32px rgba(127,29,29,0.3)}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:13px;color:#fecaca;margin-bottom:12px}
+.stats-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hstat{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(255,255,255,0.1);color:#fecaca;border:1px solid rgba(255,255,255,0.15)}
+.hstat b{font-size:15px;color:#fff}
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:16px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #fca5a5;color:#dc2626;background:#fef2f2;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:#dc2626;color:#fff;border-color:#dc2626}
+.search-box{margin-bottom:16px;display:flex;gap:8px}
+.search-box input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-size:13px;outline:none}
+.search-box input:focus{border-color:#dc2626}
+.ebtn{padding:8px 16px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#dc2626;cursor:pointer;font-size:11px;font-weight:700}
+.ebtn:hover{background:#dc2626;color:#fff;border-color:#dc2626}
+.macro{margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.mh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.mh:hover{background:#fef2f2}
+.mi{font-size:26px;flex-shrink:0}
+.minfo{flex:1}.mt{font-size:17px;font-weight:800;color:#1e293b}
+.mm{font-size:11px;color:#64748b;margin-top:2px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#fef2f2;color:#dc2626;border:1px solid #fca5a5}
+.chv{font-size:14px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.macro.open .chv{transform:rotate(90deg)}
+.mb{display:none;padding:0 18px 18px;border-top:1px solid #f1f5f9}
+.macro.open .mb{display:block}
+.tp{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc}
+.th{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;transition:background .2s}
+.th:hover{background:#fef2f2}
+.tt{flex:1;font-size:13px;font-weight:700;color:#1e293b}
+.tc{font-size:10px;color:#64748b;font-weight:600;padding:2px 8px;background:#f1f5f9;border-radius:10px;border:1px solid #e2e8f0}
+.tv{font-size:11px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.tp.open .tv{transform:rotate(90deg)}
+.tb{display:none;padding:0 14px 14px;border-top:1px solid #f1f5f9}
+.tp.open .tb{display:block}
+.kp h4{font-size:12px;font-weight:700;color:#dc2626;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.kp h4::before{content:'💡'}
+ul.k{list-style:none;padding:0}
+ul.k li{padding:6px 10px 6px 20px;font-size:12px;color:#334155;margin-bottom:3px;border-radius:6px;background:#f1f5f9;position:relative;line-height:1.5}
+ul.k li::before{content:'▸';position:absolute;left:8px;color:#dc2626;font-weight:700}
+ul.k li b{color:#1e293b}
+.trap{margin-top:10px;padding:10px 14px;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px}
+.trap h4{font-size:12px;font-weight:700;color:#dc2626;margin-bottom:6px}
+.trap h4::before{content:'⚠️ '}
+ul.t{list-style:none;padding:0}
+ul.t li{padding:4px 10px 4px 20px;font-size:11px;color:#7f1d1d;margin-bottom:2px;position:relative;line-height:1.4}
+ul.t li::before{content:'✗';position:absolute;left:6px;color:#dc2626;font-weight:700}
+ul.t li b{color:#1e293b}
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#dc2626;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(220,38,38,.4);z-index:100}
+.back-btn:hover{background:#7f1d1d}
+.scroll-top{position:fixed;bottom:64px;right:20px;width:40px;height:40px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#1e293b;font-size:16px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{background:#dc2626;color:#fff;border-color:#dc2626}
+@media(max-width:768px){.container{padding:10px}.header h1{font-size:18px}.mt{font-size:15px}.nav-btn{padding:5px 8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🔬 Resumo Estruturado – Criminologia e Noções de Criminalística</h1>
+<div class="sub">Policial Legislativo CD 2026 • 613 questões CEBRASPE analisadas</div>
+<div class="stats-row">
+<div class="hstat">📝 <b>613</b> questões</div>
+<div class="hstat">📂 <b>15</b> macro-temas</div>
+<div class="hstat">📑 <b>30+</b> subtópicos</div>
+<div class="hstat">📖 <b>Corpo de Delito</b> mais cobrado</div>
+</div>
+</div>
+<div class="nav-bar" id="navBar">
+<span class="nav-btn" onclick="scrollToSection('m1')">Corpo de Delito</span>
+<span class="nav-btn" onclick="scrollToSection('m2')">Cadeia Custódia</span>
+<span class="nav-btn" onclick="scrollToSection('m3')">Perícias/Peritos</span>
+<span class="nav-btn" onclick="scrollToSection('m4')">Vestígios</span>
+<span class="nav-btn" onclick="scrollToSection('m5')">Locais Crime</span>
+<span class="nav-btn" onclick="scrollToSection('m6')">Balística</span>
+<span class="nav-btn" onclick="scrollToSection('m7')">Microvestígios</span>
+<span class="nav-btn" onclick="scrollToSection('m8')">Documentoscopia</span>
+<span class="nav-btn" onclick="scrollToSection('m9')">Foto Forense</span>
+<span class="nav-btn" onclick="scrollToSection('m10')">Aspectos Gerais</span>
+<span class="nav-btn" onclick="scrollToSection('m11')">Escolas</span>
+<span class="nav-btn" onclick="scrollToSection('m12')">T. Consensuais</span>
+<span class="nav-btn" onclick="scrollToSection('m13')">T. Conflituais</span>
+<span class="nav-btn" onclick="scrollToSection('m14')">Prevenção</span>
+<span class="nav-btn" onclick="scrollToSection('m15')">Vitimologia</span>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Buscar tópico, artigo ou regra..." onkeyup="filterContent()">
+<button class="ebtn" onclick="toggleAll(true)">▼ Abrir Tudo</button>
+<button class="ebtn" onclick="toggleAll(false)">▲ Fechar Tudo</button>
+</div>
+
+<!-- M1 – CORPO DE DELITO -->
+<div class="macro" id="m1">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔍</div>
+<div class="minfo"><div class="mt">1. Exame de Corpo de Delito (Arts. 158-184 CPP)</div><div class="mm">Obrigatoriedade, direto/indireto, prova testemunhal, autópsia, perito ad hoc • 183 questões</div></div>
+<span class="badge">183 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Obrigatoriedade e Indispensabilidade</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Infração que <b>deixa vestígios</b> → exame de corpo de delito <b>indispensável</b>, direto ou indireto (art. 158)</li>
+<li><b>Confissão NÃO supre</b> a falta do exame de corpo de delito</li>
+<li>Pode ser realizado em <b>qualquer dia e hora</b> (art. 161)</li>
+<li>Nulidade por falta do exame = <b>relativa</b> (não absoluta)</li>
+<li>Juiz <b>não está vinculado</b> ao laudo (livre convencimento motivado)</li>
+<li>Juiz <b>não pode negar</b> exame de corpo de delito (pode negar outras perícias)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Confissão supre corpo de delito" — <b>ERRADO</b>, art. 158 veda</li>
+<li>"Exame só durante o dia" — <b>ERRADO</b>, qualquer dia e hora</li>
+<li>"Nulidade absoluta" — <b>ERRADO</b>, é relativa</li>
+<li>"Juiz não pode rejeitar laudo do perito" — <b>ERRADO</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Direto vs. Indireto e Prova Testemunhal Supletiva</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Direto</b>: perito examina vestígios materiais. <b>Indireto</b>: analisa documentos, fotos, prontuários</li>
+<li><b>Desaparecidos os vestígios</b>: prova testemunhal <b>pode suprir</b> (art. 167)</li>
+<li>Violência sexual contra criança/adolescente: exame <b>NÃO pode ser dispensado</b></li>
+<li>Lesão corporal: exame complementar (30 dias) pode ser suprido por prova testemunhal</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Prova testemunhal é inidônea para suprir corpo de delito" — <b>ERRADO</b>, pode quando vestígios desapareceram</li>
+<li>"Corpo de delito dispensável em violência sexual contra criança" — <b>ERRADO</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Perito Oficial e Perito Ad Hoc</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Perícia: <b>1 perito oficial</b> com diploma de curso superior (art. 159)</li>
+<li>Falta de perito oficial: <b>2 pessoas idôneas</b>, diploma superior <b>preferencialmente</b> na área (§1º)</li>
+<li><b>Assistente técnico</b>: admitido pelo <b>juiz</b>, atua <b>após</b> conclusão dos exames (não pelo MP, não durante)</li>
+<li><b>Autópsia</b>: em regra após <b>6 horas</b> do óbito, salvo fundamentação dos peritos</li>
+<li>Mulher em violência doméstica: <b>prioridade</b> no exame de corpo de delito</li>
+<li>Denúncia <b>não depende</b> de laudo prévio (materialidade pode ser comprovada na instrução)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Falta de perito: 1 pessoa idônea" — <b>ERRADO</b>, são 2</li>
+<li>"Perito ad hoc precisa diploma na área específica" — <b>ERRADO</b>, preferencialmente</li>
+<li>"Assistente técnico admitido pelo MP e atua durante exames" — <b>ERRADO</b></li>
+<li>"Laudo deve ser assinado por 2 peritos" — <b>ERRADO</b>, 1 perito oficial basta</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M2 – CADEIA DE CUSTÓDIA -->
+<div class="macro" id="m2">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔗</div>
+<div class="minfo"><div class="mt">2. Cadeia de Custódia (Lei 13.964/2019)</div><div class="mm">Etapas, início, central de custódia, descarte, quebra • arts. 158-A a 158-F CPP</div></div>
+<span class="badge">~60 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Conceito e Início</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Definição</b>: procedimentos para manter/documentar a <b>história cronológica</b> do vestígio</li>
+<li><b>Início</b>: com a <b>preservação do local</b> ou procedimentos policiais/periciais em que se detecte vestígio</li>
+<li>NÃO inicia com a coleta, nem com o transporte ao instituto</li>
+<li>Agente público que reconhecer vestígio = <b>responsável</b> pela preservação</li>
+<li>NÃO se encerra com o exame pericial — segue até o descarte</li>
+<li>Aplica-se a <b>todos os vestígios</b> (não apenas de locais de crime)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Inicia com a coleta" — <b>ERRADO</b>, inicia com a preservação</li>
+<li>"Encerra-se com o exame pericial" — <b>ERRADO</b></li>
+<li>"Refere-se só a vestígios de locais de crime" — <b>ERRADO</b></li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Etapas da Cadeia de Custódia</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>10 etapas</b>: Reconhecimento → Isolamento → <b>Fixação</b> → Coleta → <b>Acondicionamento</b> → Transporte → Recebimento → Processamento → Armazenamento → Descarte</li>
+<li><b>Fixação</b> = descrição detalhada do vestígio e sua posição (NÃO é embalar)</li>
+<li><b>Acondicionamento</b> = embalar cada vestígio individualizado conforme características</li>
+<li><b>Reconhecimento</b> é a 1ª etapa (não isolamento)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Fixação = embalar vestígio" — <b>ERRADO</b>, isso é acondicionamento</li>
+<li>"Isolamento é a 1ª etapa" — <b>ERRADO</b>, reconhecimento vem antes</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Descarte, Lacre e Quebra</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Descarte NÃO exige necessariamente</b> autorização judicial</li>
+<li>Todas as pessoas com acesso ao vestígio devem ser <b>identificadas</b> (data e hora registradas)</li>
+<li>Remoção de vestígios antes da liberação pelo perito = <b>fraude processual</b> (art. 347 CP)</li>
+<li>Quebra da cadeia <b>NÃO = nulidade absoluta automática</b></li>
+<li><b>Fé pública NÃO dispensa</b> regras de cadeia de custódia</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Descarte sempre exige autorização judicial" — <b>ERRADO</b></li>
+<li>"Quebra = nulidade absoluta" — <b>ERRADO</b></li>
+<li>"Fé pública dispensa cadeia de custódia" — <b>ERRADO</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M3 – PERÍCIAS E PERITOS -->
+<div class="macro" id="m3">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">👨‍🔬</div>
+<div class="minfo"><div class="mt">3. Perícias e Peritos</div><div class="mm">Tipos de perícia, necropsia, identificação, deveres, documentos periciais • 76 questões</div></div>
+<span class="badge">76 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Tipos de Perícia e Identificação</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Necropsia</b>: estudo do tempo da morte, identificação e causa da morte</li>
+<li><b>Perícia contraditória</b>: relatórios individualizados sem consenso entre peritos</li>
+<li><b>Visum et repertum</b>: essência pericial = <b>clareza, fidelidade e totalidade</b></li>
+<li>Perito age após <b>notificação da autoridade policial</b> (não autorização judicial)</li>
+<li>Divergência: nomeia-se <b>terceiro perito</b> (não diretor da repartição)</li>
+<li>Identificação: <b>papiloscópico → antropológico → genético (DNA)</b></li>
+<li>Documentos: <b>Laudo</b> = perito; <b>Parecer</b> = assistente técnico; <b>Auto</b> = ditado a termo</li>
+<li>Objetos pessoais (chaves, docs) <b>NÃO bastam</b> para identificar cadáver</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Perito age após autorização judicial" — <b>ERRADO</b></li>
+<li>"Parecer é do perito" — <b>ERRADO</b>, é do assistente técnico</li>
+<li>"Chaves que abrem fechaduras confirmam identidade" — <b>ERRADO</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M4 – VESTÍGIOS -->
+<div class="macro" id="m4">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔎</div>
+<div class="minfo"><div class="mt">4. Provas, Vestígios e Indícios</div><div class="mm">Classificação, impressões digitais, reprodução simulada, princípios • 35 questões</div></div>
+<span class="badge">35 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Classificação dos Vestígios</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Perceptível</b>: visível a olho nu. <b>Latente</b>: invisível, requer técnicas especiais (ex.: digitais)</li>
+<li><b>Plástico/modelado</b>: impresso em material maleável. <b>Perene</b>: persiste no tempo</li>
+<li>Impressões digitais latentes <b>NÃO são perenes</b> (são transitórios)</li>
+<li>Carta forjada de suicídio = vestígio <b>contra-indiciário</b> (não "proposital")</li>
+<li>Cadáveres, lesões e vestígios devem ser <b>sempre fotografados</b> na posição encontrada</li>
+<li><b>Reprodução simulada</b>: peritos devem conhecer autos antes; não precisa de autorização judicial</li>
+<li>Remoção de vestígio antes da liberação = <b>fraude processual</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Digitais latentes são perenes" — <b>ERRADO</b></li>
+<li>"Reprodução simulada precisa de autorização judicial" — <b>ERRADO</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M5 – LOCAIS DE CRIME -->
+<div class="macro" id="m5">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏚️</div>
+<div class="minfo"><div class="mt">5. Locais de Crime</div><div class="mm">Isolamento, preservação, classificação, métodos de busca • 43 questões</div></div>
+<span class="badge">43 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Isolamento, Métodos de Busca e Princípios</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Isolamento pode se estender <b>além</b> do ambiente imediato (vizinhança e vias sempre relevantes)</li>
+<li><b>Idôneo</b> = preservado; <b>Inidôneo</b> = violado; <b>Interno/Externo/Relacionado</b></li>
+<li>Primeiro policial: <b>preservar e isolar</b> (não coletar)</li>
+<li>Métodos: <b>espiral, varredura, quadrante, ponto a ponto</b></li>
+<li><b>Locard</b>: "todo contato deixa marca" = princípio da troca/observação</li>
+<li><b>Princípio da documentação</b>: anotações, fotos, medições → cadeia de custódia</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Vizinhança irrelevante se vestígios se restringem à residência" — <b>ERRADO</b></li>
+<li>"Primeiro policial deve coletar vestígios" — <b>ERRADO</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M6 – BALÍSTICA -->
+<div class="macro" id="m6">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔫</div>
+<div class="minfo"><div class="mt">6. Balística Forense</div><div class="mm">Interna/externa/terminal, armas, munição, projéteis, calibres • 50 questões</div></div>
+<span class="badge">50 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Conceitos e Munição</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Balística interna</b> (dentro da arma) → <b>externa</b> (trajetória) → <b>terminal</b> (efeitos no alvo)</li>
+<li>Armas <b>raiadas</b>: produzem estrias nos projéteis (identificação). <b>Espingardas</b>: alma <b>lisa</b></li>
+<li>Espingardas usam <b>projéteis múltiplos</b> (cone de dispersão). Raiadas usam projétil único</li>
+<li>Cartucho: <b>projétil + estojo + pólvora + espoleta</b> (+ bucha em espingardas)</li>
+<li><b>Soft point</b>: ponta chumbo mole = maior deformação. <b>FMJ</b>: encamisado total</li>
+<li>CBC <b>não usa mais</b> fulminato de mercúrio/clorato de potássio</li>
+<li>Fundamento de tiro mais importante: <b>acionamento do gatilho</b> (não posição)</li>
+<li>Pontaria: cano aponta <b>acima</b> do alvo (compensação do fabricante)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Espingardas têm alma raiada" — <b>ERRADO</b>, alma lisa</li>
+<li>"CBC usa fulminato de mercúrio" — <b>ERRADO</b></li>
+<li>"Fundamento mais importante = posição de tiro" — <b>ERRADO</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M7 – MICROVESTÍGIOS -->
+<div class="macro" id="m7">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🧬</div>
+<div class="minfo"><div class="mt">7. Microvestígios e Vestígios Biológicos</div><div class="mm">DNA, sangue, fibras, MEV, PCR, genética forense • 33 questões</div></div>
+<span class="badge">33 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Vestígios Biológicos e Genética Forense</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Sangue líquido: recolher com conta-gotas + <b>soro fisiológico</b></li>
+<li>Sangue na roupa íntima <b>não prova</b> violência sexual. Coleta vaginal: <b>sempre necessária</b></li>
+<li>Vísceras para histopatológico: <b>formol</b>. Alcoolemia: fluoreto de sódio</li>
+<li><b>PCR</b>: rápida, pouco DNA, aceita degradado. <b>RFLP</b>: lenta, mais DNA, radioativo</li>
+<li><b>MEV</b>: ideal para resíduos de disparo (Pb, Ba, Sb), fraturas, fibras</li>
+<li><b>MEV</b> mais recomendada que MO para resíduos de disparo de arma de fogo</li>
+<li>Microcomparação balística: microscopia de comparação (estrias laterais)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Sangue na roupa = prova violência sexual" — <b>ERRADO</b></li>
+<li>"RFLP mais rápida que PCR" — <b>ERRADO</b></li>
+<li>"Formol para alcoolemia" — <b>ERRADO</b>, formol para vísceras</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M8 – DOCUMENTOSCOPIA -->
+<div class="macro" id="m8">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📄</div>
+<div class="minfo"><div class="mt">8. Documentoscopia Forense</div><div class="mm">Grafoscopia, leis do grafismo, falsificações, alterações documentais • 13 questões</div></div>
+<span class="badge">13 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Grafoscopia e Falsificações</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li>Períodos: <b>empirismo romântico → empírico científico → sinceridade técnico-científica</b></li>
+<li><b>Peça questionada</b> = documento suspeito. <b>Peça-padrão</b> = amostra autêntica</li>
+<li>Gesto gráfico: influência <b>direta</b> do cérebro. Leis da escrita: <b>independentes</b> dos alfabetos</li>
+<li>Escrita difícil → letras de formato <b>mais simples</b> (não complexo)</li>
+<li><b>Amputação</b> = subtração. <b>Lavagem</b> = subtração (químico). <b>Emenda</b> = adição</li>
+<li><b>Imitação exercitada</b>: treino até reproduzir sem sinais de lentidão</li>
+<li><b>Decalque</b>: reprodução mecânica — NÃO traz características do autor</li>
+<li><b>Falsificação sem imitação</b>: registra características do <b>falsificador</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Gesto gráfico sob influência indireta do cérebro" — <b>ERRADO</b></li>
+<li>"Lavagem é alteração aditiva" — <b>ERRADO</b>, é subtração</li>
+<li>"Decalque traz características do autor" — <b>ERRADO</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M9 – FOTOGRAFIA FORENSE -->
+<div class="macro" id="m9">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📷</div>
+<div class="minfo"><div class="mt">9. Fotografia Forense</div><div class="mm">Exposição, abertura, ISO, megapixels, sincronização de flash • 15 questões</div></div>
+<span class="badge">15 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Conceitos Técnicos</span><span class="tc">Moderada</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>1 megapixel</b> = 1.000.000 pixels. Câmera 5184×3456 = <b>18 MP</b></li>
+<li>Triângulo: <b>abertura (f/) × velocidade × ISO</b></li>
+<li>Subexposta → mais luz: abrir diafragma (menor f/) ou aumentar tempo</li>
+<li>Sincronismo flash SLR: tipicamente <b>1/250s</b></li>
+<li>Fotografias periciais: na <b>posição em que vestígios forem encontrados</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"1 megapixel = 1.000 pixels" — <b>ERRADO</b>, é 1.000.000</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M10 – ASPECTOS GERAIS -->
+<div class="macro" id="m10">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🧪</div>
+<div class="minfo"><div class="mt">10. Criminalística – Aspectos Gerais e Engenharia Forense</div><div class="mm">Definição, postulados, engenharia forense, perícia audiovisual • 22 questões</div></div>
+<span class="badge">22 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Definição, Postulados e Engenharia Forense</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Criminalística</b>: aplicação de observação e conhecimento científico para descobrir e interpretar indícios de um delito</li>
+<li>Postulados: "dois objetos indistinguíveis, nunca idênticos"; "independe do tempo"; "conclusões dependem dos meios"</li>
+<li>Marcas de frenagem <b>ABS</b>: menos evidentes, sem estriações contínuas</li>
+<li>Pneumáticos em direção divergente: marcas <b>curvilíneas e hachuradas</b></li>
+<li>Comparação facial por câmera <b>não garante</b> sucesso mesmo com foto recente</li>
+<li><b>Huffman</b>: codificação sem perdas. <b>PCM</b>: método síncrono (não assíncrono)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Criminalística = medicina legal" — <b>ERRADO</b></li>
+<li>"PCM é assíncrono" — <b>ERRADO</b></li>
+<li>"Comparação facial sempre exitosa com foto recente" — <b>ERRADO</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M11 – ESCOLAS CRIMINOLÓGICAS -->
+<div class="macro" id="m11">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📚</div>
+<div class="minfo"><div class="mt">11. Evolução Histórica e Escolas Criminológicas</div><div class="mm">Clássica, Positiva, Terza Scuola, Técnico-Jurídica, Moderna Alemã • 19 questões</div></div>
+<span class="badge">19 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Escola Clássica vs. Positiva</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Clássica</b> (Beccaria, Carrara): método dedutivo; crime = ente jurídico; <b>livre-arbítrio</b>; pena = retribuição proporcional</li>
+<li><b>Positiva</b> (Lombroso, Ferri, Garofalo): método empírico; crime = ente natural; <b>determinismo</b>; pena = defesa social</li>
+<li>Lombroso: criminoso nato. Ferri: fatores sociológicos. Garofalo: anomalia moral</li>
+<li>Clássica <b>NÃO</b> usa métodos empíricos. Positiva <b>NÃO</b> defende pena retributiva</li>
+<li>Teorias sociológicas <b>NÃO marcam o fim</b> da pesquisa etiológica</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Clássica baseia-se em métodos empíricos" — <b>ERRADO</b></li>
+<li>"Positiva consagra pena retributiva e livre-arbítrio" — <b>ERRADO</b></li>
+<li>"Positivismo = indivíduo racional e livre" — <b>ERRADO</b>, isso é Clássica</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Terza Scuola, Técnico-Jurídica e Moderna Alemã</span><span class="tc">Moderada</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Terza Scuola (Eclética)</b>: superou Clássica × Positiva; manteve imputabilidade; introduziu <b>medidas de segurança</b> para inimputáveis</li>
+<li><b>Técnico-Jurídica</b> (Rocco): autonomia do Direito Penal; objeto = norma penal positiva</li>
+<li><b>Moderna Alemã</b> (von Liszt): criminologia como ciência autônoma; pena preventiva</li>
+<li>Criminologia estuda: <b>crime, criminoso, vítima e controle social</b> (4 objetos); método <b>empírico e interdisciplinar</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Técnico-Jurídica fundada por Lombroso" — <b>ERRADO</b>, Rocco</li>
+<li>"Terza Scuola rejeita imputabilidade" — <b>ERRADO</b></li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M12 – TEORIAS CONSENSUAIS -->
+<div class="macro" id="m12">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏙️</div>
+<div class="minfo"><div class="mt">12. Teorias Consensuais (Ecologia, Anomia, Associação Diferencial)</div><div class="mm">Escola de Chicago, Merton, Sutherland, janelas quebradas, subcultura delinquente • 23 questões</div></div>
+<span class="badge">23 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Escola de Chicago e Janelas Quebradas</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Escola de Chicago</b> (Park, Burgess): 1ª teoria sociológica — crime = desorganização da grande cidade</li>
+<li>Fatores: debilidade do controle social informal, alta mobilidade, explosão demográfica, crise de valores</li>
+<li>É teoria do <b>consenso</b> (não de conflito)</li>
+<li><b>Janelas Quebradas</b> (Wilson, Kelling): tolerância a pequenas desordens → aumento da criminalidade → reprimir pequenas infrações</li>
+<li><b>Subcultura delinquente</b> (Cohen): teoria do <b>consenso</b></li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Escola de Chicago é teoria do conflito" — <b>ERRADO</b>, é consenso</li>
+<li>"Subcultura delinquente é conflito" — <b>ERRADO</b>, é consenso</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Anomia (Merton) e Associação Diferencial (Sutherland)</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Anomia (Merton)</b>: tensão entre <b>metas culturais</b> e <b>meios legítimos</b>; crime quando meios são inacessíveis</li>
+<li>Durkheim: anomia = ausência de normas. Merton: aprofundou com estrutura de oportunidades</li>
+<li><b>Associação Diferencial (Sutherland)</b>: crime é <b>aprendido</b> pela interação — NÃO basta viver em meio criminógeno</li>
+<li>Sutherland explicou <b>crimes de colarinho branco</b> (white-collar crimes)</li>
+<li><b>Condicionamento operante</b> (Skinner): conduta = produto de estímulos contínuos e experiências passadas</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Anomia = crime aprendido pelo contato" — <b>ERRADO</b>, isso é associação diferencial</li>
+<li>"Associação diferencial: basta viver em meio criminógeno" — <b>ERRADO</b></li>
+<li>"Colarinho branco explicado pela anomia" — <b>ERRADO</b>, Sutherland</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M13 – TEORIAS CONFLITUAIS -->
+<div class="macro" id="m13">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏷️</div>
+<div class="minfo"><div class="mt">13. Teorias Conflituais (Etiquetamento, Crítica/Radical)</div><div class="mm">Labelling approach, reação social, criminalização, marxismo, teoria agnóstica • 19 questões</div></div>
+<span class="badge">19 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Labelling Approach e Criminologia Crítica</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Labelling</b> (Becker, Lemert): delinquente = <b>construção social</b>; foco na <b>reação social</b></li>
+<li>Desvio primário → estigmatização → <b>desvio secundário</b></li>
+<li>Crime <b>carece de consistência material</b> — definido pela lei e reação social (seletivo, arbitrário)</li>
+<li><b>Criminalização primária</b>: Poder Legislativo. <b>Secundária</b>: sistema de justiça (polícia, MP, Judiciário)</li>
+<li>Estereótipo = <b>critério seletivo</b> da criminalização</li>
+<li><b>Criminologia Crítica/Radical</b> (marxismo): crime = produto de fatores socioeconômicos; responsabilidade recai sobre a <b>sociedade</b></li>
+<li><b>Teoria agnóstica</b>: única função efetiva da pena = <b>neutralização</b> do condenado</li>
+<li><b>Tolerância Zero</b>: Estado não negligencia fatos, por mais insignificantes (não confundir com Lei e Ordem)</li>
+<li>Labelling <b>NÃO</b> se relaciona com psicopatias/medidas de segurança</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Labelling se relaciona com psicopatias" — <b>ERRADO</b></li>
+<li>"Labelling é teoria do consenso" — <b>ERRADO</b>, é do conflito</li>
+<li>"Labelling = pesquisa etiológica" — <b>ERRADO</b>, foco na reação social</li>
+<li>"Poder Legislativo = criminalização secundária" — <b>ERRADO</b>, é primária</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M14 – PREVENÇÃO -->
+<div class="macro" id="m14">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🛡️</div>
+<div class="minfo"><div class="mt">14. Prevenção da Criminalidade</div><div class="mm">Prevenção primária/secundária/terciária, funções da pena, políticas criminais • 29 questões</div></div>
+<span class="badge">29 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Prevenção Primária, Secundária e Terciária</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Primária</b>: atua na <b>raiz/causa</b> — políticas sociais de longo prazo (educação, saúde, trabalho, saneamento, iluminação). Mais eficaz, difusa</li>
+<li><b>Secundária</b>: atua sobre <b>grupos de risco/potenciais infratores</b> — policiamento ostensivo, alteração de espaços urbanos, iluminação, câmeras. Médio prazo</li>
+<li><b>Terciária</b>: atua sobre o <b>condenado/recluso</b> — reabilitação, ressocialização, evitar reincidência. Curto prazo</li>
+<li>Superlotação carcerária prejudica a prevenção <b>terciária</b> (ressocialização)</li>
+<li>Alteração de espaços físicos/urbanos = prevenção <b>secundária</b> (situacional)</li>
+<li>Medidas indiretas: atacam <b>causas</b> do crime (cessada a causa, cessam efeitos)</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Primária = ressocialização do apenado" — <b>ERRADO</b>, isso é terciária</li>
+<li>"Terciária = políticas sociais de longo prazo" — <b>ERRADO</b>, isso é primária</li>
+<li>"Superlotação prejudica prevenção primária" — <b>ERRADO</b>, prejudica terciária</li>
+<li>CEBRASPE <b>inverte</b> as definições constantemente — decorar: Primária=causa, Secundária=risco, Terciária=recluso</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Funções da Pena e Movimentos de Política Criminal</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Teoria absoluta (retributiva)</b>: pena = castigo proporcional ao mal causado</li>
+<li><b>Preventiva geral negativa</b>: intimidação da sociedade. <b>Geral positiva</b>: reforço de valores e confiança na norma</li>
+<li><b>Preventiva especial negativa</b>: neutralização. <b>Especial positiva</b>: ressocialização</li>
+<li><b>Teoria correcionalista</b>: pena visa corrigir (NÃO se esgota na retribuição)</li>
+<li>Prevenção geral negativa é <b>criticada</b> por confundir direito com poder punitivo</li>
+<li><b>Lei e Ordem</b>: agravamento de penas. <b>Tolerância Zero</b>: reprimir pequenas infrações</li>
+<li>Nova Defesa Social ≠ endurecimento (busca humanização). Despenalização ≠ endurecimento</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Teoria correcionalista = pena retributiva" — <b>ERRADO</b>, visa corrigir</li>
+<li>"Geral positiva = intimidação" — <b>ERRADO</b>, é geral negativa; positiva = reforço normativo</li>
+<li>"Especial = intimidação dos potenciais infratores" — <b>ERRADO</b>, isso é geral; especial = indivíduo</li>
+<li>"Tolerância Zero, Nova Defesa Social e Despenalização = endurecimento" — <b>ERRADO</b>, só Tolerância Zero</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- M15 – VITIMOLOGIA, CONTROLE, REAÇÃO -->
+<div class="macro" id="m15">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">👥</div>
+<div class="minfo"><div class="mt">15. Vitimologia, Controle da Criminalidade e Reação ao Delito</div><div class="mm">Classificação da vítima, controle formal/informal, modelos de reação • 25 questões</div></div>
+<span class="badge">25 Q</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Vitimologia</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Vitimologia</b>: estudo científico da vítima — papel no crime, relação com o autor, repercussões</li>
+<li><b>Mendelsohn</b>: "dupla penal" — classificação da vítima por grau de culpabilidade</li>
+<li>Vítima completamente <b>inocente</b> → ideal. Vítima <b>provocadora</b> → contribuiu para o crime</li>
+<li><b>Vitimização primária</b>: dano direto do crime. <b>Secundária</b>: sofrimento causado pelo sistema (polícia, justiça). <b>Terciária</b>: estigmatização social</li>
+<li><b>Cifra negra</b>: crimes que NÃO chegam ao sistema oficial (subnotificação)</li>
+<li><b>Cifra dourada</b>: crimes de colarinho branco não punidos</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Vitimização secundária = dano direto do crime" — <b>ERRADO</b>, é primária; secundária = sistema</li>
+<li>"Cifra negra = crimes de colarinho branco" — <b>ERRADO</b>, isso é cifra dourada</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Controle Social e Reação ao Delito</span><span class="tc">Moderada</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Pontos-Chave</h4>
+<ul class="k">
+<li><b>Controle formal</b>: instituições estatais (polícia, MP, Judiciário, sistema penitenciário)</li>
+<li><b>Controle informal</b>: família, escola, religião, comunidade, mídia</li>
+<li><b>Modelo clássico</b>: pena retributiva, proporcionalidade. <b>Ressocializador</b>: reintegração do condenado</li>
+<li><b>Modelo restaurador</b> (justiça restaurativa): foco na <b>reparação do dano</b> e na relação vítima-ofensor; diálogo; não punitivo</li>
+<li>Hirschi (<b>enraizamento social</b>): delito = comportamento natural inibido pelo apego, normas sociais e medo de dano às relações</li>
+</ul></div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>"Justiça restaurativa é punitiva" — <b>ERRADO</b>, foco na reparação</li>
+<li>"Controle informal = polícia e Judiciário" — <b>ERRADO</b>, isso é formal</li>
+</ul></div></div></div>
+</div></div>
+
+</div>
+
+<button class="back-btn" onclick="location.href='reta-final.html'">← Voltar</button>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+function toggleMacro(el){el.closest('.macro').classList.toggle('open')}
+function toggleTp(el){el.closest('.tp').classList.toggle('open')}
+function toggleAll(open){document.querySelectorAll('.macro').forEach(m=>{open?m.classList.add('open'):m.classList.remove('open')});document.querySelectorAll('.tp').forEach(t=>{open?t.classList.add('open'):t.classList.remove('open')})}
+function scrollToSection(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+function filterContent(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.macro').forEach(m=>{const t=m.textContent.toLowerCase();if(q===''||t.includes(q)){m.style.display='';if(q!==''){m.classList.add('open');m.querySelectorAll('.tp').forEach(tp=>tp.classList.add('open'))}}else{m.style.display='none'}})}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)})
+</script>
+</body>
+</html>

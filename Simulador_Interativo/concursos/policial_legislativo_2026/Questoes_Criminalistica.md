@@ -1,7893 +1,2639 @@
 
 
-Atividade de Inteligência para CAM DEP - 2026
+Criminologia e Noções de Criminalística para CAM DEP - 2026
 #
 Ordenação: Por Relevância (Somente Assuntos)
-## questao 3240860
-CEBRASPE (CESPE) - GAAPC (PC DF)/PC DF/Bibliotecário/2025
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 3259071
+CEBRASPE (CESPE) - TJ TRF6/TRF 6/Administrativa/Agente da Policia Judicial/2025
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 1) 
-No que se refere à segurança da informação, julgue o item a seguir.
+No que se refere à cadeia de custódia, julgue o item a seguir.
 
  
-Conforme o princípio da disponibilidade, as informações devem estar disponíveis 24 horas por dia, todos os dias da semana.
+O início da cadeia de custódia dá-se com a preservação do local de crime ou com procedimentos policiais ou periciais nos quais seja detectada a existência de vestígio, devendo o agente público que reconhecer um elemento como de potencial interesse para a produção da prova pericial ficar responsável por sua preservação.
 
 Certo
 Errado
-Gabarito: Errado
-## questao 3240862
-CEBRASPE (CESPE) - GAAPC (PC DF)/PC DF/Bibliotecário/2025
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+Gabarito: Certo
+## questao 3349050
+CEBRASPE (CESPE) - TJ TRT10/TRT 10/Administrativa/Agente da Policia Judicial/2025
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 2) 
-No que se refere à segurança da informação, julgue o item a seguir.
+No que concerne às provas em geral, ao exame de corpo de delito e às perícias no âmbito do processo criminal, julgue o item seguinte.
 
- 
-A integridade relaciona-se com a veracidade da informação durante todo o seu ciclo de vida.
+
+A prova testemunhal, em razão de sua subjetividade, é inidônea para suprir o exame de corpo de delito, quando desaparecidos os vestígios do crime.
 
 Certo
 Errado
-Gabarito: Certo
-## questao 3250679
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Análise de Dados/2025
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+Gabarito: Errado
+## questao 3349052
+CEBRASPE (CESPE) - TJ TRT10/TRT 10/Administrativa/Agente da Policia Judicial/2025
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 3) 
-Julgue o item a seguir, a respeito da segurança da informação e dos vários tipos de ataques e suas características.
+No que concerne às provas em geral, ao exame de corpo de delito e às perícias no âmbito do processo criminal, julgue o item seguinte.
 
  
-A integridade é um princípio de segurança da informação que garante que um dado ou uma informação tenham sido alterados sem o registro da ação correspondente, mesmo sob necessidade de auditoria.
+Na falta de perito oficial, o exame de corpo de delito pode ser realizado por pessoa idônea designada pelo competente juízo e que tenha curso superior na área específica que será objeto de avaliação do exame pericial.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 3250685
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Análise de Dados/2025
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 3349055
+CEBRASPE (CESPE) - TJ TRT10/TRT 10/Administrativa/Agente da Policia Judicial/2025
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 4) 
-Julgue o item a seguir, a respeito da segurança da informação e dos vários tipos de ataques e suas características.
+No que concerne às provas em geral, ao exame de corpo de delito e às perícias no âmbito do processo criminal, julgue o item seguinte.
 
  
-Em segurança da informação, a disponibilidade é um princípio que garante, aos usuários, a capacidade de acessar sistemas e(ou) informações quando necessário, mesmo que o sistema ou a infraestrutura esteja sob pressão.
+No exame para o reconhecimento de um escrito por comparação de letra, é permitido ao perito utilizar manuscritos ou documentos particulares, desde que estes sejam reconhecidos pela pessoa a quem se atribua o escrito.
 
 Certo
 Errado
 Gabarito: Certo
-## questao 3292139
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Infraestrutura e Cibersegurança/2025
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 3349058
+CEBRASPE (CESPE) - TJ TRT10/TRT 10/Administrativa/Agente da Policia Judicial/2025
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 5) 
-Julgue o próximo item, no que se refere à segurança da  informação e às políticas de segurança.
+No que concerne às provas em geral, ao exame de corpo de delito e às perícias no âmbito do processo criminal, julgue o item seguinte.
 
  
-Conforme o princípio da confidencialidade, deve haver meios de proteger as informações proprietárias, bem como a privacidade de informações pessoais.
+Em se tratando de crime de violência sexual que deixe vestígios praticado contra criança ou adolescente, o exame de corpo de delito direto ou indireto pode ser dispensado, a fim de evitar a revitimização.
 
 Certo
 Errado
-Gabarito: Certo
-## questao 3292141
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Infraestrutura e Cibersegurança/2025
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+Gabarito: Errado
+## questao 3378544
+CEBRASPE (CESPE) - Tec Min (MPE CE)/MPE CE/2025
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 6) 
-Julgue o próximo item, no que se refere à segurança da  informação e às políticas de segurança.
+Em um bloquinho de carnaval, Heitor agrediu Carlos, mediante o uso de um canivete, depois de ter se sentido provocado com um empurrão. O ferimento, embora tenha causado significativo sangramento no momento da agressão, foi um corte superficial no braço esquerdo e se curou em menos de 30 dias, de modo que Carlos decidiu não se dirigir à delegacia para a realização de exame de corpo de delito nem noticiar, naquele momento, à polícia o fato. Depois de três meses do ocorrido, Heitor o ameaçou de nova agressão, o que motivou Carlos a finalmente ir à delegacia representar contra seu algoz, tendo ele relatado tanto a ameaça quanto a lesão corporal que havia sofrido no bloquinho de carnaval. Intimado a comparecer à delegacia na semana seguinte, Heitor confessou ter lesionado Carlos, mas negou a ameaça. Diante da confissão, o delegado de polícia prendeu Heitor em flagrante delito pelo crime de lesão corporal leve e apreendeu seu aparelho celular, sem ter obtido consentimento para acesso ao conteúdo do dispositivo.
+
+
+Com referência ao caso hipotético apresentado, julgue o item a seguir, relativo a aspectos do processo penal.
 
  
-A integridade dos dados é indiferente à alteração de dados durante o trânsito.
+A confissão de Heitor em depoimento formal em sede policial não desobriga a realização de exame de corpo de delito para comprovação da lesão corporal, caso esta tenha deixado vestígios.
 
 Certo
 Errado
-Gabarito: Errado
-## questao 3345914
-CEBRASPE (CESPE) - AJ TRT10/TRT 10/Apoio Especializado/Tecnologia da Informação/2025
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+Gabarito: Certo
+## questao 3378559
+CEBRASPE (CESPE) - Tec Min (MPE CE)/MPE CE/2025
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 7) 
-Julgue o item a seguir, a respeito de atributos da informação, gestão de riscos em segurança da informação, gestão de segurança da informação, controles de segurança cibernética e privacidade.
+Em um bloquinho de carnaval, Heitor agrediu Carlos, mediante o uso de um canivete, depois de ter se sentido provocado com um empurrão. O ferimento, embora tenha causado significativo sangramento no momento da agressão, foi um corte superficial no braço esquerdo e se curou em menos de 30 dias, de modo que Carlos decidiu não se dirigir à delegacia para a realização de exame de corpo de delito nem noticiar, naquele momento, à polícia o fato. Depois de três meses do ocorrido, Heitor o ameaçou de nova agressão, o que motivou Carlos a finalmente ir à delegacia representar contra seu algoz, tendo ele relatado tanto a ameaça quanto a lesão corporal que havia sofrido no bloquinho de carnaval. Intimado a comparecer à delegacia na semana seguinte, Heitor confessou ter lesionado Carlos, mas negou a ameaça. Diante da confissão, o delegado de polícia prendeu Heitor em flagrante delito pelo crime de lesão corporal leve e apreendeu seu aparelho celular, sem ter obtido consentimento para acesso ao conteúdo do dispositivo.
+
+
+Com referência ao caso hipotético apresentado, julgue o item a seguir, relativo a aspectos do processo penal.
 
  
-O não repúdio pressupõe que os dados sejam acessíveis e alteráveis por qualquer pessoa autorizada.
+Caso Heitor, quando de sua prisão, tivesse entregado o canivete diretamente à autoridade policial, o princípio da fé pública dispensaria a aplicação das regras relativas à cadeia de custódia da prova em relação ao objeto apreendido.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 3446083
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Análise de Sistemas/2025
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 3451023
+CEBRASPE (CESPE) - TJ (STM)/STM/Agente da Polícia Judicial/2025
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 8) 
-O XYZ Digital, sistema nacional de agendamento de serviços públicos, acessado via desktop e dispositivos móveis, que exige autenticação de cidadãos para solicitação de documentos e consultas, passou por auditoria de segurança após tentativas de acesso indevido e um incidente de autenticação indevida. Após o incidente, constatou-se a utilização de single sign-on (SSO – autenticação única), tendo sido providenciadas a autenticação forte com multifator (MFA) e a implementação de OpenID Connect.
+No que se refere à prova penal e ao que dispõe a legislação adjetiva, julgue o item seguinte.
 
  
-A partir do caso hipotético precedente, julgue o item subsequente.
-
- 
-A alteração das informações de usuário por atacantes durante o processo de autenticação no XYZ Digital representa uma violação do princípio de confidencialidade.
+O juiz ou a autoridade policial poderá negar perícia requerida pelo autor do delito, mesmo em se tratando de exame de corpo de delito, quando a perícia não for necessária ao esclarecimento da verdade.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 3446915
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Suporte em Tecnologia da Informação/2025
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 3451026
+CEBRASPE (CESPE) - TJ (STM)/STM/Agente da Polícia Judicial/2025
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 9) 
-Julgue o próximo item, a respeito de princípios de segurança da informação e de criptografia.
+No que se refere à prova penal e ao que dispõe a legislação adjetiva, julgue o item seguinte.
 
  
-A confidencialidade tem como princípio o uso de técnica criptográfica que garanta que o conteúdo da informação não seja compreensível para quem não esteja autorizado a acessá-la.
+À mulher em situação de violência doméstica e familiar é legalmente conferida prioridade na realização do exame de corpo de delito.
 
 Certo
 Errado
 Gabarito: Certo
-## questao 3446918
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Suporte em Tecnologia da Informação/2025
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 3546954
+CEBRASPE (CESPE) - PCF/PF/Área 1/2025
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 10) 
-Julgue o próximo item, a respeito de princípios de segurança da informação e de criptografia.
+Durante investigação de crime de homicídio cometido dentro de uma residência, a autoridade policial realizou uma busca e apreensão no local, com o consentimento válido do morador, preservou os vestígios encontrados e providenciou seu encaminhamento ao instituto de criminalística. Após a elaboração do laudo pericial, a defesa do investigado requereu acesso ao material analisado, com o objetivo de produzir parecer técnico por meio de assistente técnico.
 
- 
-Segundo o princípio da integridade, uma informação deve sempre estar disponível no momento em que se necessite dela.
+
+Em relação à situação hipotética precedente, julgue o item que se segue.
+
+
+A requisição formulada pela defesa do investigado poderá ser atendida, desde que possível a conservação do material probatório, mas sua análise por assistente técnico deverá ocorrer no ambiente do órgão oficial e perante perito oficial.
 
 Certo
 Errado
-Gabarito: Errado
-## questao 3641678
-CEBRASPE (CESPE) - AFT (SEFAZ SE)/SEFAZ SE/Tecnologia da Informação/2025
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+Gabarito: Certo
+## questao 3546959
+CEBRASPE (CESPE) - PCF/PF/Área 1/2025
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 11) 
-Aplicados em conjunto com políticas de classificação da informação e normas como a ABNT NBR ISO/IEC 27001:2023, os princípios da confidencialidade, da integridade e da disponibilidade dos dados são fundamentais no contexto da segurança da informação. Uma aplicação desses três princípios no ambiente corporativo consiste em
+Durante investigação de crime de homicídio cometido dentro de uma residência, a autoridade policial realizou uma busca e apreensão no local, com o consentimento válido do morador, preservou os vestígios encontrados e providenciou seu encaminhamento ao instituto de criminalística. Após a elaboração do laudo pericial, a defesa do investigado requereu acesso ao material analisado, com o objetivo de produzir parecer técnico por meio de assistente técnico.
 
-a) configurar um firewall para bloquear todos os acessos externos, ainda que isso interfira na continuidade dos negócios.
-b) garantir que todos os dados sejam acessíveis a qualquer funcionário da instituição, independentemente de sua função.
-c) priorizar a disponibilidade dos dados por meio de backups frequentes, mesmo que isso implique custos elevados e menor foco em controles de integridade.
-d) utilizar criptografia para proteger dados confidenciais e garantir que apenas usuários autorizados possam acessá-los.
 
-e) implementar um sistema de controle de acesso baseado em funções, para restringir o acesso a informações sensíveis.
-Gabarito: Anulada
-## questao 2783778
-CEBRASPE (CESPE) - Ass (CAU BR)/CAU BR/Tecnologia da Informação/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+Em relação à situação hipotética precedente, julgue o item que se segue.
+
+ 
+A cadeia de custódia do crime iniciou-se com o transporte dos vestígios ao instituto de criminalística, momento em que se registra formalmente sua entrada no sistema pericial.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 3547076
+CEBRASPE (CESPE) - PCF/PF/Área 1/2025
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 12) 
-Com relação às características intrínsecas ao princípio da integridade, julgue o item a seguir.
+A respeito das disposições constantes do Código de Processo Penal acerca das provas, dos peritos e das perícias, julgue o item a seguir.
 
- 
-Para ser considerado íntegro, determinado conjunto de dados não pode ser alterado sem a devida autorização.
+
+As perícias serão realizadas por perito oficial, portador de diploma de curso superior e, na sua falta, por duas pessoas idôneas, que deverão portar diploma de curso superior na área específica do exame e prestar o compromisso de bem e fielmente desempenhar o encargo.
 
 Certo
 Errado
-Gabarito: Certo
-## questao 2783781
-CEBRASPE (CESPE) - Ass (CAU BR)/CAU BR/Tecnologia da Informação/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+Gabarito: Errado
+## questao 3552330
+CEBRASPE (CESPE) - PCF/PF/Área 21/2025
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 13) 
-Acerca da gestão de riscos, julgue o item a seguir.
+Com base na Lei n.º 13.964/2019, julgue o item subsequente, a respeito das etapas da cadeia de custódia.
 
 
-Em segurança da informação, uma vulnerabilidade é entendida como uma fraqueza — de um ativo ou de controle de segurança — que pode ser explorada por uma ou mais ameaças.
+A etapa de fixação compreende o processo de embalar cada vestígio coletado de maneira individualizada, de acordo com suas características físicas, químicas e biológicas.
 
 Certo
 Errado
-Gabarito: Certo
-## questao 2796993
-CEBRASPE (CESPE) - APGIPI (INPI)/INPI/Gestão da Tecnologia da Informação/Segurança da Informação/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+Gabarito: Errado
+## questao 3552331
+CEBRASPE (CESPE) - PCF/PF/Área 21/2025
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 14) 
-Acerca da segurança da informação, julgue o item que se segue.
+Com base na Lei n.º 13.964/2019, julgue o item subsequente, a respeito das etapas da cadeia de custódia.
 
-
-A ocorrência, em uma empresa, da perda de comunicação com um sistema importante, seja pela queda de um servidor, seja pela aplicação crítica de negócio configura exemplo de perda de integridade.
+ 
+O isolamento e a proteção da área onde estão os vestígios deve ser a primeira etapa a ser realizada na cadeia de custódia.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 2796994
-CEBRASPE (CESPE) - APGIPI (INPI)/INPI/Gestão da Tecnologia da Informação/Segurança da Informação/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 2995396
+CEBRASPE (CESPE) - AJ CNJ/CNJ/Judiciária/2024
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 15) 
-Acerca da segurança da informação, julgue o item que se segue.
+A respeito dos atos de comunicação processual, de nulidades, de provas e do princípio do livre convencimento motivado, julgue o item a seguir, de acordo com o CPP.
 
  
-A confidencialidade da informação garante que, em uma comunicação, a origem e o destino sejam realmente aquilo que alegam ser.
+Ao fundamentar a sentença penal, o juiz não pode rejeitar as conclusões do perito criminal no laudo de exame de corpo de delito, por este consistir em prova técnica.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 2839998
-CEBRASPE (CESPE) - Ana (APEX)/ApexBrasil/Operações e Segurança de Tecnologia da Informação e Comunicação/Segurança da Informação/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 2338608
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 16) 
-Em gestão de segurança da informação, tudo aquilo que pode comprometer a integridade, a confidencialidade e a disponibilidade das informações de uma empresa é denominado
+Acerca da prova no processo penal, julgue o item subsequente.
 
-a)  risco.
-b) controle.
-c) ameaça.
-d) vulnerabilidade.
-Gabarito: C
-## questao 2841671
-CEBRASPE (CESPE) - Ana Min (MPE TO)/MPE TO/Especializado/Administração de Banco de Dados/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+ 
+A obrigatoriedade da realização do exame pericial por perito oficial restringe-se ao exame direto da prova material.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2338611
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 17) 
-Com pertinência a gestão de segurança da informação, julgue o item subsecutivo.
+No que se refere à coleta de vestígios, segundo os princípios e os procedimentos estabelecidos para garantir a autenticidade e a história cronológica da prova, julgue o seguinte item.
 
- 
-Vulnerabilidades são falhas que permitem o surgimento de deficiências na segurança geral do computador ou da rede, e podem ser criadas devido a configurações incorretas no computador ou na segurança.
+
+A cadeia de custódia inicia-se após a etapa de preservação do local do crime, com a efetiva coleta dos vestígios relacionados ao delito.
 
 Certo
 Errado
-Gabarito: Certo
-## questao 2841686
-CEBRASPE (CESPE) - Ana Min (MPE TO)/MPE TO/Especializado/Administração de Banco de Dados/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+Gabarito: Errado
+## questao 2338613
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 18) 
-Quanto aos procedimentos de segurança e gerenciamento de redes de computadores, julgue o item seguinte.
+No que se refere à coleta de vestígios, segundo os princípios e os procedimentos estabelecidos para garantir a autenticidade e a história cronológica da prova, julgue o seguinte item.
 
  
-Na segurança de redes de computadores, além da preservação da confidencialidade, da integridade e da disponibilidade, deve-se incluir também o não repúdio, que trata do rastreamento do histórico dos fatos de um evento assim como a identificação dos envolvidos.
+Com a realização de exame pericial no vestígio coletado no local de crime, encerra-se a cadeia de custódia e, por isso, é cabível o seu imediato descarte em face da natureza irrepetível do exame.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 2841689
-CEBRASPE (CESPE) - Ana Min (MPE TO)/MPE TO/Especializado/Administração de Banco de Dados/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 2338614
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 19) 
-No que se refere a vulnerabilidades e ataques a sistemas computacionais e criptografia, julgue o próximo item.
+No que se refere à coleta de vestígios, segundo os princípios e os procedimentos estabelecidos para garantir a autenticidade e a história cronológica da prova, julgue o seguinte item.
 
-
-Bug é o ataque de negação de serviço realizado de forma distribuída e coordenada.
+ 
+A etapa da cadeia de custódia denominada de fixação compreende a descrição detalhada do vestígio tal qual esse se encontra no local de crime ou no corpo de delito e a sua posição na área de exames.
 
 Certo
 Errado
-Gabarito: Errado
-## questao 2848209
-CEBRASPE (CESPE) - Tec Min (MPE TO)/MPE TO/Especializado/Técnico em Telecomunicações/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+Gabarito: Certo
+## questao 2338615
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 20) 
-Acerca da segurança da informação, julgue o seguinte item.
+No que se refere à coleta de vestígios, segundo os princípios e os procedimentos estabelecidos para garantir a autenticidade e a história cronológica da prova, julgue o seguinte item.
 
  
-Uma rede de comunicação atende ao requisito de disponibilidade quando é capaz de garantir que os dados trafegados só sejam acessíveis pelas partes autorizadas, seja para impressão, exibição ou outras formas de divulgação, que incluem a simples revelação da existência de um objeto qualquer.
+Os vestígios em local de crime deverão, obrigatoriamente, ser coletados por perito oficial, que os encaminhará para a central de custódia.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 2876498
-CEBRASPE (CESPE) - APO (MPO)/MPO/Tecnologia da Informação/Governança e Gestão de Projetos de TI/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 2338621
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 21) 
-A respeito da segurança da informação, julgue o item a seguir.
+Considere-se que uma equipe policial tenha comparecido a uma ocorrência de furto de residência por meio do rompimento de uma das portas com um pé de cabra, que foi abandonado no local e devidamente apreendido, e que, em entrevista ao proprietário da residência, tenha constatado a subtração de um veículo automotor, algumas joias de família e vários equipamentos de informática. Além disso, fora encontrado um bilhete manuscrito por um dos autores com ameaças à família, caso essa acionasse a polícia.
 
- 
-É correto afirmar que há violação de autenticidade no caso de o conteúdo de um arquivo considerado de conteúdo crítico, com requisito de negócio para que seja mantido imutável, ser alterado de forma indevida.
+
+Levando-se em conta a situação hipotética em análise, com base nas disposições referentes ao exame de corpo de delito e às outras perícias previstas no Código de Processo Penal, julgue o item seguinte.
+
+
+A avaliação econômica dos bens subtraídos somente será possível com a sua posterior apreensão na fase de investigação policial.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 2876702
-CEBRASPE (CESPE) - ERVS (ANVISA)/ANVISA/Tecnologia da Informação/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 2338622
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 22) 
-Considerando ameaças e ataques à segurança da informação, bem como mecanismos de segurança da informação, julgue o próximo item.
+Considere-se que uma equipe policial tenha comparecido a uma ocorrência de furto de residência por meio do rompimento de uma das portas com um pé de cabra, que foi abandonado no local e devidamente apreendido, e que, em entrevista ao proprietário da residência, tenha constatado a subtração de um veículo automotor, algumas joias de família e vários equipamentos de informática. Além disso, fora encontrado um bilhete manuscrito por um dos autores com ameaças à família, caso essa acionasse a polícia.
 
 
-Entre os serviços previstos pela arquitetura OSI de segurança para avaliação da segurança de uma organização, o serviço de não repúdio é aquele que confirma se é verdadeira a identidade de uma ou mais entidades conectadas a outra(s) entidade(s).
+Levando-se em conta a situação hipotética em análise, com base nas disposições referentes ao exame de corpo de delito e às outras perícias previstas no Código de Processo Penal, julgue o item seguinte.
+
+ 
+Se os suspeitos forem conhecidos, o exame para o reconhecimento dos escritos no bilhete encontrado poderá ser realizado por meio de comparação com quaisquer outros escritos sobre cuja autenticidade não houver dúvida ou se já tiverem sido judicialmente reconhecidos como de próprio punho dos prováveis autores do delito.
 
 Certo
 Errado
-Gabarito: Errado
-## questao 2876908
-CEBRASPE (CESPE) - APO (MPO)/MPO/Tecnologia da Informação/Gestão de Infraestrutura de TI/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+Gabarito: Certo
+## questao 2338624
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 23) 
-A respeito de métodos e protocolos de autenticação, hardening de sistemas e criptografia de dados, julgue o item subsecutivo.
+Considere-se que uma equipe policial tenha comparecido a uma ocorrência de furto de residência por meio do rompimento de uma das portas com um pé de cabra, que foi abandonado no local e devidamente apreendido, e que, em entrevista ao proprietário da residência, tenha constatado a subtração de um veículo automotor, algumas joias de família e vários equipamentos de informática. Além disso, fora encontrado um bilhete manuscrito por um dos autores com ameaças à família, caso essa acionasse a polícia.
+
+
+Levando-se em conta a situação hipotética em análise, com base nas disposições referentes ao exame de corpo de delito e às outras perícias previstas no Código de Processo Penal, julgue o item seguinte.
 
  
-A autenticação, processo cujo objetivo é garantir a legitimidade do usuário, em geral, baseia-se em comprovar a autenticidade do usuário a partir de algo que somente o usuário sabe, algo que somente o usuário tem e algo que somente o usuário é.
+O rompimento do obstáculo caracteriza corpo de delito para fins de exame pericial, que é indispensável, salvo se houverem desaparecido os vestígios.
 
 Certo
 Errado
 Gabarito: Certo
-## questao 2940435
-CEBRASPE (CESPE) - Tecno (LNA)/LNA/Desenvolvimento e Arquitetura de Software/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 2338625
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 24) 
-O método de autenticação por login único conhecido como SSO (single sign-on) é frequentemente empregado para administrar a autenticação em intranets ou extranets corporativas, portais de estudantes, serviços de nuvem pública, entre outros contextos nos quais os usuários necessitam alternar entre múltiplos aplicativos para desempenhar suas atividades. O método de autenticação em apreço
+Considere-se que uma equipe policial tenha comparecido a uma ocorrência de furto de residência por meio do rompimento de uma das portas com um pé de cabra, que foi abandonado no local e devidamente apreendido, e que, em entrevista ao proprietário da residência, tenha constatado a subtração de um veículo automotor, algumas joias de família e vários equipamentos de informática. Além disso, fora encontrado um bilhete manuscrito por um dos autores com ameaças à família, caso essa acionasse a polícia.
 
-a)  não permite o uso de login social como forma de autenticação.
-b) aumenta o número de senhas de que o usuário precisa se lembrar.
-c) não possibilita que o usuário acesse os recursos e(ou) serviços que utilizam esse método como forma de autenticação em caso de indisponibilidade do serviço.
-d) não possibilita a utilização concomitante com métodos de autenticação de diversos fatores.
 
-e) aumenta a complexidade de gerenciamento, provisionamento e remoção/inativação de usuários.
-Gabarito: C
-## questao 2940670
-CEBRASPE (CESPE) - Tecno (LNA)/LNA/Infraestrutura de Redes/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+Levando-se em conta a situação hipotética em análise, com base nas disposições referentes ao exame de corpo de delito e às outras perícias previstas no Código de Processo Penal, julgue o item seguinte.
+
+ 
+É indispensável o exame pericial para verificar a natureza e a eficiência do instrumento utilizado para o rompimento da porta da residência.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2338680
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 25) 
-Assinale a opção em que é apresenta a característica de uma VPN que está associada à garantia de que a mensagem não poderá ser interpretada por origens não autorizadas.
+Acerca das disposições relativas à competência e à prova no direito processual penal, julgue o próximo item.
 
-a)  autenticação da mensagem
-b) não repúdio do emissor
-c) integridade dos dados
-d) confidencialidade dos dados
 
-e)  conhecimento do destinatário
-Gabarito: D
-## questao 2940675
-CEBRASPE (CESPE) - Tecno (LNA)/LNA/Infraestrutura de Redes/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+Quando a infração deixar vestígios, a falta de exame de corpo de delito não pode ser suprida pela confissão do réu.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2341736
+CEBRASPE (CESPE) - Aux Per (POLC AL)/POLC AL/2023
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 26) 
-Conforme o documento que detalha os princípios da segurança da informação em relação ao acesso lógico, o responsável pelo gerenciamento das autorizações de acesso é o
+Em face das inovações legislativas relativas à cadeia de custódia da prova no Código Processual Penal brasileiro, julgue o item a seguir.
 
-a)  gestor de processo.
-b) gestor da informação.
-c) usuário.
-d) gestor do usuário.
 
-e)  custodiante do recurso.
-Gabarito: B
-## questao 2981676
-CEBRASPE (CESPE) - ASist (Pref Cach Itapemirim)/Pref Cach Itapemirim/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+A cadeia de custódia inicia-se com a preservação do local de crime ou com os procedimentos policiais ou periciais nos quais seja detectada a existência de vestígio.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2341737
+CEBRASPE (CESPE) - Aux Per (POLC AL)/POLC AL/2023
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 27) 
-Acerca de conceitos e princípios relacionados com confidencialidade e integridade, julgue o item que se segue.
+Em face das inovações legislativas relativas à cadeia de custódia da prova no Código Processual Penal brasileiro, julgue o item a seguir.
 
-
- A confidencialidade visa manter a privacidade das informações pessoais e garantir que elas sejam visíveis e acessíveis apenas aos indivíduos autorizados.
+ 
+A cadeia de custódia diz respeito somente aos vestígios coletados em locais de crime, não se estendendo àqueles referentes aos vestígios provenientes dos exames periciais extrínsecos e intrínsecos.
 
 Certo
 Errado
-Gabarito: Certo
-## questao 2981678
-CEBRASPE (CESPE) - ASist (Pref Cach Itapemirim)/Pref Cach Itapemirim/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+Gabarito: Errado
+## questao 2404693
+CEBRASPE (CESPE) - TJ (TJ CE)/TJ CE/Judiciária/2023
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 28) 
-Acerca de conceitos e princípios relacionados com confidencialidade e integridade, julgue o item que se segue.
+Em relação à cadeia de custódia, assinale a opção correta.
 
- 
-O princípio da integridade visa garantir que os dados sejam precisos e confiáveis e que não tenham sido modificados incorretamente, seja de forma acidental ou maliciosa.
+a) É do órgão estatal, e não do agente público, a responsabilidade pela preservação de elemento de potencial interesse para a produção da prova pericial, ainda que o próprio agente o tenha reconhecido como tal.
+b) Descarte é o procedimento referente à liberação do vestígio e depende, em qualquer caso, de autorização judicial específica.
+c) A coleta dos vestígios deverá ser realizada obrigatoriamente por perito oficial, que dará o encaminhamento necessário para a central de custódia, ainda que necessária a realização de exames complementares.
+d) É permitida a entrada em locais isolados, bem como a remoção de vestígios de locais de crime, antes de sua liberação pelo perito responsável.
 
-Certo
-Errado
-Gabarito: Certo
-## questao 2993407
-CEBRASPE (CESPE) - AJ CNJ/CNJ/Apoio Especializado/Análise de Sistemas/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-29) 
-Acerca de segurança da informação, julgue o item a seguir.
-
-
-Um dos objetivos da integridade é permitir que o destinatário de uma mensagem ou informação seja capaz de verificar que os dados não foram modificados indevidamente.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2993409
-CEBRASPE (CESPE) - AJ CNJ/CNJ/Apoio Especializado/Análise de Sistemas/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-30) 
-Acerca de segurança da informação, julgue o item a seguir.
-
- 
-Autenticidade é um princípio que visa garantir que o autor não negue ter criado e assinado determinada informação, a qual pode estar materializada em uma mensagem ou em um documento.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2997215
-CEBRASPE (CESPE) - TJ CNJ/CNJ/Apoio Especializado/Programação de Sistemas/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-31) 
-Julgue o próximo item, relativo  a segurança da informação e gestão da segurança da informação.
-
- 
-A realização de verificações de autenticidade e de integridade de informações sensíveis armazenadas ou transmitidas é viabilizada por meio de controles criptográficos, como, por exemplo, assinaturas digitais e códigos de autenticação de mensagens.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3008442
-CEBRASPE (CESPE) - AGP (SEPLAG CE)/SEPLAG CE/Tecnologia da Informação/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-32) 
-Considerando o envio de um arquivo de um remetente para um receptor, julgue o item a seguir, com base nos princípios de segurança da informação.
-
-
-Caso o conteúdo do arquivo enviado seja visualizado não só pelo receptor, mas também por outro usuário que, sem as permissões necessárias, o acesse a partir de computador diferente do computador do receptor, isso implicará violação ao princípio da disponibilidade.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3008446
-CEBRASPE (CESPE) - AGP (SEPLAG CE)/SEPLAG CE/Tecnologia da Informação/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-33) 
-Considerando o envio de um arquivo de um remetente para um receptor, julgue o item a seguir, com base nos princípios de segurança da informação.
-
- 
-Se o conteúdo do arquivo enviado for alterado indevidamente antes de sua chegada ao receptor, a integridade do arquivo terá sido violada.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3077595
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Segurança da Informação/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-34) 
-Acerca de conceitos relativos à segurança da informação, julgue o item a seguir.
-
- 
-A validação de entrada de dados, quando eles são inseridos na base de dados por fontes e usuários desconhecidos, é uma prática que atende ao conceito de integridade.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3077685
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Segurança da Informação/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-35) 
-A respeito de técnicas de proteção de aplicações web, julgue o item subsequente.
-
- 
-O armazenamento de credenciais em texto puro no banco de dados é uma prática segura, desde que o acesso ao banco de dados seja bem controlado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3077742
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Segurança da Informação/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-36) 
-Julgue o próximo item, relativos a continuidade do negócio e resposta a incidentes de segurança da informação.
-
- 
-Três elementos devem ser considerados em um plano de recuperação de desastres de um sistema de TI: a prevenção, a detecção e a recuperação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3077743
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Segurança da Informação/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-37) 
-Julgue o próximo item, relativos a continuidade do negócio e resposta a incidentes de segurança da informação.
-
- 
-O plano de recuperação de desastres é um conjunto de procedimentos documentados que visa recuperar dados e serviços de tecnologia da informação após a ocorrência de um incidente de segurança.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3082605
-CEBRASPE (CESPE) - Ana Sist (CAGEPA)/CAGEPA/Sistemas de TI/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-38) 
-Segundo a norma ISO/IEC 27000:2018, o conceito de integridade é violado quando
-
-a)  o administrador da rede dá permissão para todos os usuários da intranet acessarem uma informação sigilosa.
-b)  um empregado não cumpre o procedimento operacional previsto no manual da empresa.
-c)  um usuário modifica a formatação e corrige a concordância verbal do texto original.
-d)  um usuário tenta acessar um sistema na intranet que está fora do ar e envia uma mensagem ofensiva para o administrador do sistema.
-
-e)  um usuário envia uma mensagem se passando por outra pessoa.
-Gabarito: C
-## questao 3191054
-CEBRASPE (CESPE) - AJ STJ/STJ/Apoio Especializado/Suporte em Tecnologia da Informação/2024
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-39) 
-Julgue o item seguinte, relativos à gestão de riscos e políticas de segurança da informação.
-
- 
-Na segurança da informação, a autenticidade é conceituada como a propriedade pela qual se assegura que a informação não foi modificada ou destruída de maneira não autorizada ou acidental.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2338865
-CEBRASPE (CESPE) - Per Crim (POLC AL)/POLC AL/Análise de Sistemas, Ciências da Computação, Informática. Processamento de Dados ou Sistemas da Informação/2023
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-40) 
-Acerca de segurança da informação e com base nas normas da ABNT aplicáveis à temática, julgue o próximo item.
-
-
-A confidencialidade trata da proteção de dados contra ataques passivos e envolve mecanismos de controle de acesso e criptografia.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2424310
-CEBRASPE (CESPE) - Tec (CNMP)/CNMP/Apoio Técnico Administrativo/Segurança Institucional/2023
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-41) 
-No que se refere a noções de segurança da informação, julgue o item a seguir.
-
- 
-São princípios da segurança da informação, entre outros, a confidencialidade, a integridade e a disponibilidade.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2450390
-CEBRASPE (CESPE) - Ana Reg (AGER MT)/AGER MT/Ciências da Computação e Sistemas de Informação/2023
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-42) 
-Funções de hash são muito utilizadas para verificação da propriedade básica da segurança da informação denominada
-
-a) disponibilidade.
-b) confidencialidade.
-c) não-repúdio.
-d) integridade.
-
-e) perímetro.
-Gabarito: D
-## questao 2535936
-CEBRASPE (CESPE) - Ana (SERPRO)/SERPRO/Tecnologia/2023
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-43) 
-Com base na NBR ISO/IEC 27000, julgue o próximo item, a respeito das definições para confiabilidade e integridade.
-
-
-A integridade é uma propriedade que visa aplicar conhecimentos e habilidades para garantir a assinatura digital.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2535937
-CEBRASPE (CESPE) - Ana (SERPRO)/SERPRO/Tecnologia/2023
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-44) 
-Com base na NBR ISO/IEC 27000, julgue o próximo item, a respeito das definições para confiabilidade e integridade.
-
-
-A confidencialidade é uma propriedade segundo a qual as informações não podem ser disponibilizadas a indivíduos, entidades ou processos que não estejam previamente autorizados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2637488
-CEBRASPE (CESPE) - Ana Proc (DATAPREV)/DATAPREV/2023
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-45) 
-Acerca de vulnerabilidades e ataques a sistemas computacionais, julgue o item a seguir.
-
- 
-A violação do princípio de privilégio mínimo está relacionada a um recurso que deveria estar protegido, mas está disponível para qualquer pessoa.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2642002
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança Cibernética/2023
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-46) 
-Acerca de criptografia, julgue o item subsequente.
-
- 
-Em uma conexão criptografada, o princípio da disponibilidade é, de fato, atingido.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2642041
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança Cibernética/2023
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-47) 
-De acordo com o que dispõem os conceitos de segurança da informação, julgue o item a seguir.
-
- 
-Em função de sua codificação mais robusta, os firmwares de IoT são mais sofisticados que os sistemas operacionais executados em computadores e smartphones, o que os torna imunes a falhas consequentes das vulnerabilidades conhecidas.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1908415
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Tecnologia/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-48) 
-Julgue o próximo item, com relação à segurança da informação.
-
-
-A autenticidade de uma informação é garantida por meio de sua fonte, enquanto a confiabilidade é avaliada em relação ao seu conteúdo.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1916967
-CEBRASPE (CESPE) - TDP (DPE RO)/DPE RO/Técnico em Informática/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-49) 
-Se um vírus de computador adquirido por meio de phishing redireciona o navegador do usuário a sítios bancários falsificados e captura os dados de acesso às contas, então, em relação aos dados de acesso do usuário capturados, a propriedade da segurança da informação violada é a
-
-a)  irretratabilidade.
-b)  integridade.
-c)  confidencialidade.
-d)  disponibilidade.
-
-e)  autenticidade.
-Gabarito: C
-## questao 1942661
-CEBRASPE (CESPE) - AFT (SEFAZ SE)/SEFAZ SE/Geral/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-50) 
-Na disciplina de criptografia, a proteção das informações trafegadas está relacionada ao conceito de
-
-a) autenticação.
-b) confidencialidade dos dados.
-c) integridade dos dados.
-d) irretratabilidade.
-
-e) controle de acesso.
-Gabarito: B
-## questao 1972755
-CEBRASPE (CESPE) - Esp GT (TELEBRAS)/TELEBRAS/Analista de Tecnologia da Informação/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-51) 
-Acerca de aspectos diversos pertinentes a objetos de avaliação associados à análise de sistemas, julgue o item que se segue.
-
- 
-Conforme os conceitos de compartilhamento, segurança e integridade de sistemas operacionais, a segurança da integridade dos dados em um sistema operacional significa que usuários não autorizados não devem poder modificar nenhum dado sem a permissão do proprietário.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1980614
-CEBRASPE (CESPE) - Esp GT (TELEBRAS)/TELEBRAS/Engenheiro Redes/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-52) 
-Com relação a criptografia e segurança de servidores e sistemas operacionais, julgue o item subsequente.
-
- 
-Irretratabilidade é o mecanismo de segurança que prova que a mensagem foi enviada pela origem especificada e que foi recebida pelo destino especificado.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2216453
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Desenvolvimento de Sistemas/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-53) 
-Considerando que uma empresa tenha disponibilizado um website na Internet com as informações cadastrais de clientes e as de pagamentos com cartão de crédito de produtos vendidos, julgue o item a seguir, com base nos conceitos de confiabilidade, integridade e disponibilidade, bem como nos mecanismos de segurança da informação.
-
-
-Nessa situação hipotética, disponibilidade refere-se a pessoa não autorizada conseguir visualizar os dados dos clientes, o que configura violação de integridade.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2216454
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Desenvolvimento de Sistemas/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-54) 
-Considerando que uma empresa tenha disponibilizado um website na Internet com as informações cadastrais de clientes e as de pagamentos com cartão de crédito de produtos vendidos, julgue o item a seguir, com base nos conceitos de confiabilidade, integridade e disponibilidade, bem como nos mecanismos de segurança da informação.
-
-
-Considerando-se que os dados informados pelos clientes tenham sido validados, que a veracidade dos dados tenha sido confirmada e que a compra seja permitida somente após o processo de validação dos dados, é correto afirmar que esse processo de validação possui o atributo de irretratabilidade.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2216455
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Desenvolvimento de Sistemas/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-55) 
-Considerando que uma empresa tenha disponibilizado um website na Internet com as informações cadastrais de clientes e as de pagamentos com cartão de crédito de produtos vendidos, julgue o item a seguir, com base nos conceitos de confiabilidade, integridade e disponibilidade, bem como nos mecanismos de segurança da informação.
-
-
-Caso um funcionário da empresa altere maliciosamente os dados informados pelos clientes e armazenados pela organização, essa alteração necessariamente caracteriza uma violação da disponibilidade.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2216457
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Desenvolvimento de Sistemas/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-56) 
-Considerando que uma empresa tenha disponibilizado um website na Internet com as informações cadastrais de clientes e as de pagamentos com cartão de crédito de produtos vendidos, julgue o item a seguir, com base nos conceitos de confiabilidade, integridade e disponibilidade, bem como nos mecanismos de segurança da informação.
-
-
-Suponha-se que, antes de ser concluída a compra online por meio de cartão de crédito, haja uma série de verificações dos dados do cliente para que o pagamento possa ser efetivado. Nesse caso, é correto afirmar que esses processos possuem atributos de validação de autenticidade.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2216645
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Quality Assurance (QA) e Analistas de Teste/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-57) 
-Acerca de confiabilidade, integridade e disponibilidade em segurança da informação, julgue o item subsequente.
-
-
-O acesso à informação com base na necessidade de saber e o gerenciamento de acesso lógico estão diretamente ligados à confiabilidade.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2216646
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Quality Assurance (QA) e Analistas de Teste/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-58) 
-Acerca de confiabilidade, integridade e disponibilidade em segurança da informação, julgue o item subsequente.
-
-
-Um gestor que, por acidente, apague um arquivo de inicialização de um serviço web ou insira valores incorretos em uma aplicação de cobrança de um cliente comprometerá a integridade.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2216706
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Quality Assurance (QA) e Analistas de Teste/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-59) 
-Acerca de confiabilidade, integridade e disponibilidade em segurança da informação, julgue o item subsequente.
-
-
-Habilitar logs de sistema e de controle de acesso, criptografia de dados de um disco e sistemas de antivírus atualizados são medidas que garantem a integridade.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2216708
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Quality Assurance (QA) e Analistas de Teste/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-60) 
-Acerca de confiabilidade, integridade e disponibilidade em segurança da informação, julgue o item subsequente.
-
-
-Ataque de DoS, política de backup não implementada e falha nos discos violam a disponibilidade.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2216709
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Quality Assurance (QA) e Analistas de Teste/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-61) 
-Acerca de confiabilidade, integridade e disponibilidade em segurança da informação, julgue o item subsequente.
-
-
-Oportunidade, continuidade e robustez são características da confiabilidade.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2216721
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Quality Assurance (QA) e Analistas de Teste/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-62) 
-A respeito de ameaça, vulnerabilidade e impacto em segurança da informação, julgue o item que se segue.
-
- 
-Vulnerabilidade é o grau de suscetibilidade de um objeto a uma ameaça.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2216909
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Suporte à Infraestrutura de Tecnologia da Informação/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-63) 
-Com relação à segurança em redes de computadores, julgue o item subsequente.
-
- 
-Em segurança da informação, o conceito de disponibilidade refere-se à preservação da integridade dos dados disponibilizados aos usuários, a fim de evitar alterações indevidas.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2218192
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Suporte à Infraestrutura de Tecnologia da Informação/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-64) 
-Julgue o item a seguir, a respeito de otimização de desempenho em servidores e de política de backup.
-
-
-Um componente é redundante quando fornece criptografia e segurança adequadas ao banco de dados de back-end ou quando armazena o sistema operacional por meio do armazenamento dos dados.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2218224
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Suporte a Plataforma Mainframe/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-65) 
-Com relação à segurança da informação, julgue o item seguinte.
-
-
-A integridade da informação, um dos pilares da segurança da informação, visa garantir que a informação esteja disponível a seus usuários, aos quais é conferido o acesso.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2265654
-CEBRASPE (CESPE) - ET (BNB)/BNB/Analista de Sistemas/Infraestrutura e Segurança da Informação/2022
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-66) 
-Acerca dos códigos maliciosos, dos ataques cibernéticos e da norma ABNT ISO/IEC 27701, julgue o próximo item.
-
- 
-Por natureza, enquanto um ataque Eavesdropping exitoso afeta principalmente a confidencialidade de dados ou comunicações, um ataque DDoS bem-sucedido afeta a disponibilidade de sistemas ou serviços.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1708411
-CEBRASPE (CESPE) - TJ (PGDF)/PG DF/Tecnologia e Informação/2021
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-67) 
-Na segurança da informação, um protocolo utilizado para a autenticação de um usuário remoto é o de biometria dinâmica. Acerca dos procedimentos nesse protocolo, julgue o item a seguir.
-
-
-Nesse protocolo, o sistema oferece como desafio uma sequência aleatória de números, caracteres ou palavras, além de um número aleatório.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1708412
-CEBRASPE (CESPE) - TJ (PGDF)/PG DF/Tecnologia e Informação/2021
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-68) 
-Na segurança da informação, um protocolo utilizado para a autenticação de um usuário remoto é o de biometria dinâmica. Acerca dos procedimentos nesse protocolo, julgue o item a seguir.
-
- 
-
-Nesse protocolo, o usuário humano cliente deve falar, digitar ou escrever a sequência para gerar um sinal biométrico que será comparado com o gabarito armazenado no servidor.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1708413
-CEBRASPE (CESPE) - TJ (PGDF)/PG DF/Tecnologia e Informação/2021
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-69) 
-Na segurança da informação, um protocolo utilizado para a autenticação de um usuário remoto é o de biometria dinâmica. Acerca dos procedimentos nesse protocolo, julgue o item a seguir.
-
- 
-
-Uma das condições para a autenticação é que o sinal biométrico apresente correspondência exata entre o sinal biométrico recebido pelo sistema e o gabarito armazenado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1739683
-CEBRASPE (CESPE) - Tec Ban I (BANESE)/BANESE/2021
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-70) 
-A respeito da política de confidencialidade, de rotinas de backup e de recuperação de arquivos, julgue o item que se segue.
-
-
-Confidencialidade, integridade e disponibilidade são princípios básicos de segurança da informação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1739686
-CEBRASPE (CESPE) - Tec Ban I (BANESE)/BANESE/2021
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-71) 
-A respeito da política de confidencialidade, de rotinas de backup e de recuperação de arquivos, julgue o item que se segue.
-
- 
-Uma modificação não autorizada de dados, deliberada ou acidental, fere o princípio da integridade dos dados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1739694
-CEBRASPE (CESPE) - Tec Ban I (BANESE)/BANESE/2021
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-72) 
-Com relação a noções de vírus, valor da informação, procedimentos de backup e aplicativos de segurança, julgue o item a seguir.
-
- 
-O valor da informação é uma função do contexto da organização, da finalidade de utilização, do processo decisório e dos resultados das decisões.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1857382
-CEBRASPE (CESPE) - AJ (TJ RJ)/TJ RJ/Tecnologia da Informação/Analista de Segurança da Informação/2021
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-73) 
-Como política de pessoal, é natural que haja um processo adequado a ser executado no momento em que o funcionário deixa a organização, para garantir que todos os direitos deste sejam revogados e os ativos sob sua custódia sejam devolvidos. Esse processo visa à garantia de
-
- 
-I autenticidade;
-
- 
-II confidencialidade;
-
- 
-III disponibilidade.
-
- 
-Considerando os conceitos de segurança da informação, assinale a opção correta.
-
-a) Apenas o item I está certo.
-b) Apenas o item II está certo.
-c) Apenas os itens I e III estão certos.
-d) Apenas os itens II e III estão certos.
-
-e)  Todos os itens estão certos.
-Gabarito: B
-## questao 1857410
-CEBRASPE (CESPE) - AJ (TJ RJ)/TJ RJ/Tecnologia da Informação/Analista de Segurança da Informação/2021
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-74) 
-Texto 13A2-I
-
- 
-No dia 2/11/1988, a história da Internet e a segurança informática mudaram radicalmente. Um software malicioso, liberado nesse dia, às 18 horas, parou a Internet e causou um dos maiores prejuízos por malware visto até hoje, aproveitando-se das vulnerabilidades de milhões de computadores e paralisando os sistemas. A atividade normal dos equipamentos afetados foi interrompida e as conexões ficaram obstruídas durante vários dias, à medida que o primeiro malware para plataformas múltiplas se propagava pela Internet. O malware utilizou-se de falhas nas conexões TCP e SMTP para infectar os sistemas e propagar-se automaticamente pelas redes, gerando lentidão na rede e nos computadores devido ao alto consumo de recursos. Por mais que muitos já conhecessem as falhas dos sistemas UNIX, o alcance do ataque pegou todos de surpresa.
-
- 
-Internet: <www.welivesecurity.com.br> (com adaptações).
-
- 
-O software malicioso utilizado no ataque mencionado no texto 13A2-I foi um
-
-a)  worm, que explorou as vulnerabilidades existentes no UNIX para propagar-se automaticamente, levando ao alto consumo de recursos computacionais.
-b) vírus, que se espalhou rapidamente na rede, infectando outros computadores devido à existência de vulnerabilidades presentes nos sistemas UNIX, levando ao alto consumo de recursos.
-c) bot, que permitiu a comunicação entre hackers e computadores infectados, recebendo instruções remotas para elevar o consumo dos recursos.
-d) rootkit, que alterou as bibliotecas presentes nos sistemas UNIX para propagar-se automaticamente de forma ofuscada e receber comando para aumentar o consumo de recursos.
-
-e)  backdoor, que disponibilizou acesso à rede, passando despercebido pelos controles de segurança existentes, permitindo execução de outros códigos maliciosos.
-Gabarito: A
-## questao 1857414
-CEBRASPE (CESPE) - AJ (TJ RJ)/TJ RJ/Tecnologia da Informação/Analista de Segurança da Informação/2021
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-75) 
-São exemplos de autenticação por
-
-a)  tokens: chaves de sessão de aplicações web e senhas pessoais.
-b) geolocalização: nome de dispositivos, endereços IPs públicos e geolocalização.
-c) biométrica: reconhecimento de íris, voz, cor do cabelo, digital, maneira de andar e maneira de escrever.
-d) tokens: senha descartável com base em eventos (HOTP) e senha de uso único com base em tempo (TOTP).
-
-e)  biométrica: reconhecimento de peso, altura, circunferência abdominal e tamanho das mãos.
-Gabarito: D
-## questao 1120342
-CEBRASPE (CESPE) - AJ (TJ PA)/TJ PA/Análise de Sistema/Suporte/2020
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-76) 
-Texto 4A04-I
-
-
-Um hacker  invadiu o sistema computacional de determinada instituição e acessou indevidamente informações pessoais dos colaboradores e servidores. Durante a ação, foram alterados os registros de logs  do sistema operacional e das aplicações, a fim de dificultar o trabalho de auditoria. Após o ocorrido, identificaram-se as seguintes ações do hacker.
-
-
-I  Exploração, a partir da Internet, de uma vulnerabilidade da página de notícias do portal da instituição localizada no servidor web, o que permitiu o acesso não autorizado à rede interna.
-
-
-II  Utilização de um script  para alteração dos registros dos logs, com a troca dos endereços IP reais por fictícios.
-
-
-III  Quebra das credenciais administrativas do servidor de banco de dados dos sistemas internos, a partir do servidor web  e utilização da técnica de ataques de dicionário.
-
-
-IV  Acesso de forma não autorizada ao servidor de banco de dados dos sistemas internos, para efetuar a extração das informações pessoais de colaboradores e servidores.
-
-
-A equipe incumbida de analisar o caso concluiu que o risco era conhecido e considerado alto, já tendo sido comunicado à alta gestão da instituição; a vulnerabilidade explorada e sua correção eram conhecidas havia mais de seis meses, bem como a inexistência de dependências e da troca de dados entre os servidores de web  e banco de dados; o incidente poderia ter sido evitado com o uso eficaz dos controles de segurança da informação.
-
- 
-
-Considerando-se as boas práticas de segurança da informação, é correto afirmar que, na situação descrita no texto 4A04-I, foram comprometidos a
-
-a)  disponibilidade, pelo acesso indevido às informações pessoais, e a integridade, pela alteração dos registros.
-b)  disponibilidade, pela alteração dos registros, e a integridade, pelo acesso indevido às informações pessoais.
-c)  confidencialidade, pelo acesso indevido às informações pessoais, e a integridade, pela alteração dos registros.
-d)  confidencialidade, pela alteração dos registros, e a integridade, pelo acesso indevido às informações pessoais.
-e)  confidencialidade, pela alteração dos registros, e a disponibilidade, pelo acesso indevido às informações pessoais.
-Gabarito: C
-## questao 1122447
-CEBRASPE (CESPE) - AuxJ (TJ PA)/TJ PA/Programador de Computador/2020
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-77) 
-Um departamento de uma organização mantém o seu próprio ambiente de dados, com unidades de rede não acessíveis a outros setores da empresa.
-
-
-Nesse caso, o princípio crítico de segurança aplicado é o da
-
-a)  ação preventiva.
-b)  autenticidade.
-c)  confiabilidade.
-d)  confidencialidade.
-e)  disponibilidade.
-Gabarito: D
-## questao 1122453
-CEBRASPE (CESPE) - AuxJ (TJ PA)/TJ PA/Programador de Computador/2020
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-78) 
-Assinale a opção que indica um serviço de segurança diretamente favorecido com a escolha de um mecanismo de segurança baseado na notarização.
-
-a)  assinatura digital
-b)  confidencialidade
-c)  controle de acesso
-d)  disponibilidade
-e)  responsabilização
+e) Todas as pessoas que tiverem acesso ao vestígio armazenado deverão ser identificadas, e também deverão ser registradas a data e a hora do acesso.
 Gabarito: E
-## questao 1143688
-CEBRASPE (CESPE) - AFRE (SEFAZ AL)/SEFAZ AL/2020
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-79) 
-Julgue o próximo item, relativo a segurança da informação.
+## questao 2503597
+CEBRASPE (CESPE) - Del Pol (PC AL)/PC AL/2023
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+29) 
+Em relação ao processo penal brasileiro, julgue o item seguinte.
 
  
-Identificação e autenticação são requisitos de segurança da informação que consistem em identificar usuários do sistema e verificar as suas identidades, como pré-requisito para permitir o acesso desses usuários ao sistema.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1390261
-CEBRASPE (CESPE) - ProTI (ME)/ME/Atividades Técnicas de Complexidade Gerencial, de Tecnologia da Informação e de Engenharia Sênior/Ciência de Dados/2020
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-80) 
-A respeito de dados, informação, conhecimento e inteligência, julgue o próximo item.
-
- 
-
-Integridade é a característica que garante o acesso à informação somente para quem estiver autorizado.
+A quebra na cadeia de custódia da prova resulta, necessariamente, em nulidade absoluta, tornando inadmissível a prova produzida.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 776034
-CEBRASPE (CESPE) - AFRE (SEFAZ RS)/SEFAZ RS/2019
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-81) 
-Para o estabelecimento de padrões de segurança, um dos princípios críticos é a necessidade de se verificar a legitimidade de uma comunicação, de uma transação ou de um acesso a algum serviço. Esse princípio refere-se à
+## questao 2503662
+CEBRASPE (CESPE) - Del Pol (PC AL)/PC AL/2023
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+30) 
+Acerca da atuação profissional no exame de corpo de delito, julgue o item subsequente, à luz do disposto no Código de Processo Penal.
 
-a) confidencialidade.
-b) autenticidade.
-c) integridade.
-d)  conformidade.
-e) disponibilidade.
+
+O assistente técnico atuará a partir de sua admissão pelo membro do Ministério Público e durante a realização dos exames.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2503663
+CEBRASPE (CESPE) - Del Pol (PC AL)/PC AL/2023
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+31) 
+Em relação aos tipos de documentos utilizados na perícia bem como aos métodos de identificação policial ou judiciária, julgue o item que se segue.
+
+
+Denomina-se parecer o relatório redigido por um dos peritos logo após o exame de corpo de delito.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2012935
+CEBRASPE (CESPE) - Del Pol (PC PB)/PC PB/2022
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+32) 
+Em relação à prova criminal, é correto afirmar que,
+
+a) na falta de perito oficial, o exame será realizado por duas pessoas idôneas, com formação superior preferencialmente na área técnica relacionada à perícia.
+b) a confissão formal do acusado pode suprir a ausência do exame de corpo de delito nos crimes que deixam vestígios.
+c) na sentença, o juiz não pode desconsiderar integralmente as conclusões de laudo pericial elaborado por perito oficial.
+d) o exame deve ser realizado por dois peritos oficiais sob pena de nulidade, sendo admitida a elaboração do laudo por aquele que participou da diligência de apreensão.
+
+e) para a comprovação da materialidade do crime de violação de direito autoral, é necessária a perícia de todo o produto apreendido para verificar a exata extensão do dano.
+Gabarito: A
+## questao 2013045
+CEBRASPE (CESPE) - Esc Pol (PC PB)/PC PB/2022
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+33) 
+Considerando as inovações constantes na Lei n.º 13.964/2019, assinale a opção correta em relação à cadeia de custódia.
+
+a) O descarte do vestígio não exige necessariamente autorização judicial.
+b) Se o perito oficial constatar a necessidade de exames complementares no vestígio, deve realizá-los imediatamente, remetendo-o à central de custódia apenas posteriormente.
+c) A preservação do vestígio de uma infração penal é de responsabilidade do perito oficial chamado ao local do crime.
+d) O início da cadeia de custódia ocorre com o recolhimento do vestígio do crime.
+
+e)  Após coletado e examinado o vestígio, este deverá armazenado, não se podendo romper o lacre, sob pena de invalidá-lo como meio de prova.
+Gabarito: A
+## questao 2013047
+CEBRASPE (CESPE) - Esc Pol (PC PB)/PC PB/2022
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+34) 
+Assinale a opção correta em relação à disciplina legal do exame de corpo de delito.
+
+a) O laudo de exame de corpo de delito deve ser firmado por, pelo menos, dois peritos.
+b) A realização do exame de corpo de delito está condicionada à existência de perito oficial no local.
+c) Em regra, a autópsia no corpo de vítima de homicídio somente pode ser feita após seis horas do óbito, a menos que os peritos julguem possível, de forma fundamentada, a antecipação do exame.
+d) Nas infrações que deixam vestígios, a prova testemunhal não pode suprir o exame de corpo de delito a fim de atestar a materialidade delitiva.
+
+e) O exame de corpo de delito classifica-se como direto na hipótese em que os peritos examinam fotos e laudos médicos produzidos por médicos que tenham atendido a vítima de violência em um pronto-socorro.
+Gabarito: C
+## questao 2013859
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+35) 
+O conjunto de todos os procedimentos utilizados para manter e documentar a história cronológica de material coletado em locais ou em vítimas de crimes denomina-se
+
+a) central de custódia.
+b) vestígio.
+c) exame de corpo de delito.
+d) cadeia de custódia.
+
+e)  perícia criminal.
+Gabarito: D
+## questao 2013860
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+36) 
+De acordo com o ordenamento processual penal brasileiro, quando a infração deixa vestígios,
+
+a) é indispensável o exame de corpo de delito, direto ou indireto, não podendo supri-lo a confissão do acusado.
+b) o exame de corpo de delito direto poderá ser substituído pela confissão do acusado.
+c) esses devem ser coletados, preferencialmente, pelo primeiro agente policial que tiver acesso à cena do crime.
+d) faculta-se à autoridade policial responsável pela investigação determinar a necessidade ou não de perícia.
+
+e) o exame de corpo de delito é exigido somente em casos em que os demais elementos probatórios não bastem para determinar a materialidade e a autoria do crime.
+Gabarito: A
+## questao 2013892
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+37) 
+O exame de corpo de delito será realizado
+
+a)  obrigatoriamente por um perito oficial.
+b) por perito oficial, em conjunto com os assistentes técnicos das partes.
+c) obrigatoriamente por dois peritos ou mais, sejam eles oficiais ou não.
+d) preferencialmente por dois peritos oficiais, que podem ser substituídos pelos assistentes técnicos das partes em situações extraordinárias.
+
+e) por perito oficial, podendo ser realizado por duas pessoas idôneas portadoras de diploma de cursos superior, preferencialmente na área específica, dentre as que tiverem habilitação técnica relacionada com a natureza do exame.
+Gabarito: E
+## questao 2013897
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+38) 
+A descrição detalhada do vestígio conforme se encontra no local de crime ou no corpo de delito e a sua posição na área de exames, que pode ser ilustrada por fotografias, filmagens ou croqui, sendo indispensável a sua descrição no laudo pericial produzido pelo perito responsável pelo atendimento, equivale à etapa de
+
+a) reconhecimento.
+b) fixação.
+c) coleta.
+d) recebimento.
+
+e) acondicionamento
 Gabarito: B
-## questao 776035
-CEBRASPE (CESPE) - AFRE (SEFAZ RS)/SEFAZ RS/2019
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-82) 
-Julgue os itens a seguir, acerca de segurança da informação.
+## questao 2015236
+CEBRASPE (CESPE) - Tec Per (PC PB)/PC PB/Área Geral/2022
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+39) 
+A respeito do que dispõe o Código de Processo Penal sobre prova, dar-se-á prioridade à realização do exame de corpo de delito quando se tratar de crime
+
+a)  praticado por criança.
+b) hediondo.
+c) praticado por mulher.
+d) praticado por réu preso preventivamente.
+
+e)  que envolva violência contra pessoa com deficiência.
+Gabarito: E
+## questao 2064927
+CEBRASPE (CESPE) - PJM (Pires do Rio)/Pref Pires do Rio/2022
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+40) 
+Com base nas disposições do Código de Processo Penal (CPP) acerca de provas, julgue o seguinte item.
+
+ 
+Se a infração penal deixar vestígios, a confissão do acusado torna dispensável a confecção de exame de corpo de delito.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2116732
+CEBRASPE (CESPE) - Per Cri (POLITEC RO)/POLITEC RO/Ciências Contábeis, Ciências Econômicas ou Administração/2022
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+41) 
+A etapa do rastreamento de vestígio na cadeia de custódia que se refere à descrição detalhada do vestígio, no laudo pericial, conforme ele se encontre no local de crime ou no corpo de delito, e à sua posição na área de exames, ilustrada por fotografias, filmagens ou croqui, é denominada
+
+a)  fixação.
+b) reconhecimento.
+c) coleta.
+d) acondicionamento.
+
+e)  processamento.
+Gabarito: A
+## questao 2119099
+CEBRASPE (CESPE) - Prom Jus (MPE SE)/MPE SE/2022
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+42) 
+No que se refere à prova criminal, assinale a opção correta.
+
+a)  A coleta dos vestígios será realizada necessariamente por perito oficial, que dará o encaminhamento para a central de custódia.
+b)  Em caso de lesões corporais, se o exame pericial tiver sido incompleto, a complementação será feita preferencialmente pelo depoimento da vítima ou por meio de prova testemunhal.
+c)  Na falta de perito oficial, o exame será realizado por assistente técnico indicado pela parte, desde que este possua formação técnica específica na área do exame.
+d)  Isolamento é uma das etapas da cadeia de custódia e consiste no ato de distinguir um elemento como de potencial interesse para a produção da prova pericial.
+
+e)  O juiz não deve ficar adstrito ao laudo pericial, podendo inclusive rejeitá-lo, no todo ou em parte, por vigorar o princípio do livre convencimento motivado.
+Gabarito: E
+## questao 2169566
+CEBRASPE (CESPE) - Dati Pol (PC RO)/PC RO/2022
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+43) 
+Em relação à perícia, assinale a opção correta.
+
+a) Ao fundamentar o seu convencimento na sentença condenatória, o magistrado pode aceitar ou rejeitar o laudo pericial, no todo ou em parte.
+b) Configura crime de desobediência a remoção de vestígios dos locais de ocorrência de fato criminoso antes de estes serem liberados pelo perito.
+c) Desaparecidos os vestígios do crime e não sendo possível a realização da perícia, a prova testemunhal não pode supri-la.
+d) Na cadeia de custódia, a etapa de fixação corresponde ao ato de distinguir um elemento de interesse para a produção da prova pericial.
+
+e) Na falta de perito oficial, o exame será realizado por um assistente técnico contratado pela parte, desde que portador de diploma de curso superior.
+Gabarito: A
+## questao 2169569
+CEBRASPE (CESPE) - Dati Pol (PC RO)/PC RO/2022
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+44) 
+Considere-se que um perito criminal faça afirmação falsa em depoimento judicial no intuito de obter vantagem prometida por terceiros. Nessa situação hipotética,
+
+a) a prova produzida pelo perito é ilícita e deve ser desentranhada do processo.
+b) o perito responderá pelo crime de fraude processual.
+c) caso o perito se retrate antes da sentença, a pena que lhe tenha sido imposta poderá ser reduzida.
+d) o terceiro que ofereceu a vantagem ao perito responderá pelo crime de falso testemunho ou falsa perícia.
+
+e) agrava a pena imposta ao perito o recebimento da vantagem, seja esta pecuniária ou não.
+Gabarito: A
+## questao 1624844
+CEBRASPE (CESPE) - DPF/PF/2021
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+45) 
+Quanto à prova criminal, julgue o item que se seguem.
+
+ 
+
+A confissão do acusado não dispensa a realização do exame de corpo de delito nos casos de crimes não transeuntes.
+
+ 
+
+ 
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1624848
+CEBRASPE (CESPE) - DPF/PF/2021
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+46) 
+Quanto à prova criminal, julgue o item que se seguem.
+
+ 
+
+Na ausência de um perito oficial, a perícia pode ser feita por duas pessoas idôneas portadoras de curso superior, preferencialmente com habilitação técnica relacionada à natureza do exame.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1625131
+CEBRASPE (CESPE) - APF/PF/2021
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+47) 
+Com relação ao direito penal e ao direito processual penal, julgue o item que se seguem.
+
+ 
+
+Armazenamento consiste no procedimento de embalar, de forma individualizada, cada vestígio coletado, de acordo com suas características físicas, químicas e biológicas, para análise posterior.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1554687
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+48) 
+Acerca dos meios de provas, suas espécies, classificação e valoração, julgue o item a seguir.
+
+ 
+
+Laudo pericial produzido por apenas um perito ad hoc, quando a lei exige a participação de dois peritos na elaboração da prova técnica, deve ser desentranhado dos autos, porque constitui prova ilícita, constitucionalmente vedada.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 590837
+CEBRASPE (CESPE) - Odon Leg (PC MA)/PC MA/2018
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+49) 
+É facultada ao Ministério Público, ao assistente de acusação, ao ofendido, ao querelante e ao acusado a indicação de um assistente técnico de perícia, que poderá atuar a partir da admissão pelo(a.)
+
+a)  autoridade policial e antes de concluída a perícia.
+b) direção de criminalística e após a conclusão da perícia.
+c) promotor de justiça e após a conclusão da perícia.
+d) autoridade judicial e após a conclusão da perícia.
+e) perito oficial e antes de concluída a perícia.
+Gabarito: D
+## questao 590840
+CEBRASPE (CESPE) - Odon Leg (PC MA)/PC MA/2018
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+50) 
+A conferência do material probatório que servir de base à perícia é permitida às partes, durante o curso do processo judicial, somente mediante a presença de
+
+a)  membro do Ministério Público.
+b)  oficial de justiça.
+c)  autoridade judicial.
+d)  perito oficial.
+e) agente de polícia.
+Gabarito: D
+## questao 590847
+CEBRASPE (CESPE) - Odon Leg (PC MA)/PC MA/2018
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+51) 
+Um homem de trinta e cinco anos de idade foi baleado em um estabelecimento comercial e não resistiu aos ferimentos provocados pelos projéteis da arma de fogo. A equipe de perícia chegou ao local quarenta minutos após o crime.
 
 
-I São exemplos de ameaças as contas sem senhas ou configurações erradas em serviços DNS, FTP e SMTP.
-II Não repúdio indica que o remetente de uma mensagem não deve ser capaz de negar que enviou a mensagem.
-III Vulnerabilidade é a fragilidade de um ativo ou de um grupo de ativos que pode ser explorada.
-IV Pessoas não são consideradas ativos de segurança da informação.
+Nessa situação hipotética, conforme o Código de Processo Penal, o momento adequado para realização da autópsia será
 
+a) duas horas após o óbito, antes da evidenciação de sinais de morte.
+b)  pelo menos seis horas após o óbito, salvo se houver a constatação de sinais de morte.
+c)  a partir de doze horas após o óbito, se constatada mais de uma evidência de sinais de morte.
+d) apenas vinte e quatro horas após o óbito, desde que constatadas todas as evidências de sinais de morte.
+e)  imediatamente após o óbito, evitando-se a supressão de evidências.
+Gabarito: B
+## questao 591038
+CEBRASPE (CESPE) - Per Crim (PC MA)/PC MA/2018
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+52) 
+Assinale a opção correta acerca das responsabilidades do perito oficial e das exigências técnicas e procedimentais inerentes ao exercício desse cargo.
+
+a)  Os peritos oficiais, em cada laudo elaborado, terão de consignar o compromisso de bem e desempenhar fielmente o encargo.
+b) O laudo pericial, nos termos da legislação processual penal, deverá ser elaborado no prazo máximo de trinta dias, prorrogável por igual período.
+c) A intimação de peritos para oitiva em juízo deverá ser feita com antecedência mínima de dez dias em relação à data do procedimento judicial.
+d) No âmbito da investigação policial, o perito oficial deve se subordinar técnica e funcionalmente à autoridade policial que presidir o inquérito policial.
+e)  A elaboração de laudo pericial por profissional sem a devida habilitação legal tornará nula a prova somente se ficar demonstrada a ocorrência de prejuízo à parte interessada.
+Gabarito: C
+## questao 625270
+CEBRASPE (CESPE) - AJ STJ/STJ/Judiciária/"Sem Especialidade"/2018
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+53) 
+Acerca da competência, das questões e dos processos incidentes e das provas, julgue o item a seguir.
+
+ 
+
+Sendo possível a realização de exame para investigar crimes que deixam vestígios, não proceder a esse exame é motivo de nulidade do processo, ainda que provas documentais e testemunhais confirmem a autoria e a materialidade do crime.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 625670
+CEBRASPE (CESPE) - TJ STJ/STJ/Administrativa/2018
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+54) 
+Acerca do ônus da prova, julgue o próximo item.
+
+
+A exigência de realização do exame de corpo de delito no caso de infrações que deixem vestígios pode ser dispensada na hipótese de confissão do acusado.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 646243
+CEBRASPE (CESPE) - Adv (EBSERH)/EBSERH/2018
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+55) 
+Quanto ao inquérito policial, à ação penal, às regras de fixação de competência e às disposições processuais penais relacionadas aos meios de prova, julgue o item a seguir.
+
+ 
+
+Para provar a materialidade do crime de homicídio, é indispensável o laudo de exame cadavérico, que não poderá ser suprido pela confissão do acusado.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 655914
+CEBRASPE (CESPE) - JE TJCE/TJ CE/2018
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+56) 
+Em relação aos direitos das partes diante da determinação da prova pericial, julgue os itens a seguir.
+
+ 
+
+I. O juiz não poderá negar pedido de realização de perícia requerido oportunamente pela defesa do réu.
+
+ 
+
+II. A perícia do DNA de suspeito coletado de utensílios usados ou descartados por ele é ilícita se não tiver havido o assentimento dele.
+
+ 
+
+III. Em até dez dias do início da perícia, as partes podem apresentar quesitos a ser respondidos pelos peritos.
+
+ 
+
+IV. As partes têm direito de requerer nova perícia ou a sua complementação, desde que o façam dentro do prazo marcado pelo juiz.
+
+ 
 
 Estão certos apenas os itens
 
-a)  I e III.
-b)  I e IV.
-c)  II e III.
+a)  I e II.
+
+b)  I e III.
+
+c)  III e IV.
+
 d)  I, II e IV.
+
 e)  II, III e IV.
 Gabarito: C
-## questao 1044643
-CEBRASPE (CESPE) - AssJ (TJ AM)/TJ AM/Programador/2019
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 684241
+CEBRASPE (CESPE) - DPF/PF/2018
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+57) 
+Acerca da prova no processo penal, julgue o item a seguir.
+
+
+Na falta de perito oficial para realizar perícia demandada em determinado IP, é suficiente que a autoridade policial nomeie, para tal fim, uma pessoa idônea com nível superior completo, preferencialmente na área técnica relacionada com a natureza do exame.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 684353
+CEBRASPE (CESPE) - PCF/PF/Área 1/2018
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+58) 
+A fim de garantir o sustento de sua família, Pedro adquiriu 500 CDs e DVDs piratas para posteriormente revendê-los. Certo dia, enquanto expunha os produtos para venda em determinada praça pública de uma cidade brasileira, Pedro foi surpreendido por policiais, que apreenderam a mercadoria e o conduziram coercitivamente até a delegacia.
+
+
+Com referência a essa situação hipotética, julgue o item subsequente.
+
+ 
+
+Para a comprovação da materialidade do crime praticado por Pedro, são indispensáveis a perícia por amostragem, para comprovação da falsidade do produto, e a inquirição das supostas vítimas — no caso, os produtores das mídias originais.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 685717
+CEBRASPE (CESPE) - PCF/PF/Área 12/2018
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+59) 
+Julgue o item de acordo com os preceitos éticos e legais a serem seguidos pelo perito na área da medicina.
+
+ 
+
+Segundo o Código de Processo Penal, o exame cadavérico, em casos de morte violenta, é obrigatório e deverá ser realizado preferencialmente por perito oficial, sendo obrigatória, nesses casos, a inspeção tanto externa quanto interna do corpo, o que será detalhado e, se possível, ilustrado, no respectivo laudo pericial.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 694215
+CEBRASPE (CESPE) - Ana Min (MPE PI)/MPE PI/Processual/2018
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+60) 
+Durante uma festa, após desentendimentos entre Carlos e Miro, este proferiu xingamentos racistas contra aquele, o que levou Carlos a empurrar seu agressor, que caiu em uma mesa de vidro. Com o forte impacto, a mesa se despedaçou completamente e seus cacos causaram cortes profundos por todo o corpo de Miro. Os convidados ligaram para a polícia e para o corpo de bombeiros: Carlos foi preso em flagrante e Miro foi encaminhado ao hospital, onde ficou internado por cinco dias, com risco de morte; passou por procedimentos cirúrgicos e, posteriormente, teve de ficar afastado de sua atividade laboral por trinta e dois dias. O Ministério Público denunciou Carlos por lesão corporal de natureza grave.
+
+ 
+
+Nessa situação hipotética, mesmo que Carlos confesse o crime, esse ato não suprirá a necessidade do laudo pericial para comprovar a materialidade do crime e a gravidade das lesões sofridas por Miro.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 512261
+CEBRASPE (CESPE) - AJ (TRE BA)/TRE BA/Administrativa/"Sem Especialidade"/2017
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+61) 
+Com relação às provas no processo penal, julgue os seguintes itens.
+
+ 
+
+I O exame de corpo delito, imprescindível nos casos em que as infrações penais deixam vestígios, pode ser suprido pela confissão do acusado.
+
+ 
+
+II Desaparecidos os vestígios da infração penal, a prova testemunhal poderá suprir a falta do exame de corpo delito.
+
+ 
+
+III Do ofendido não será colhido o compromisso de dizer a verdade sobre o que souber, não podendo ele ser responsabilizado pelo crime de falso testemunho.
+
+ 
+
+IV Reputar-se-á verdadeira a acusação formulada contra o acusado que permanecer em silêncio em seu interrogatório judicial.
+
+ 
+
+Estão certos apenas os itens
+
+a)  I e II.
+
+b)  I e III.
+
+c)  I e IV.
+
+d)  II e III.
+
+e)  III e IV.
+Gabarito: D
+## questao 360347
+CEBRASPE (CESPE) - JE TJAM/TJ AM/2016
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+62) 
+Carla fez um seguro de vida que previa o pagamento de vultosa indenização a seu marido, José, caso ela viesse a falecer.
+
+ 
+
+O contrato previa que o beneficiário não teria direito à indenização se causasse a morte da segurada. Alguns meses depois, Carla foi encontrada morta, tendo o perito oficial que assinou o laudo cadavérico concluído que a causa provável fora envenenamento. Em que pese o delegado não ter indiciado José, o MP concluiu que havia indícios de autoria, razão pela qual ele foi denunciado por homicídio doloso. O juiz recebeu a denúncia e determinou a citação do réu. José negou a autoria do delito, tendo solicitado a admissão de assistente técnico e apresentado defesa em que requereu sua absolvição sumária. O parecer do assistente técnico foi no sentido de que a morte de Carla tivera causas naturais.
+
+ 
+
+Acerca dessa situação hipotética, assinale a opção correta.
+
+
+a)  Caso o juiz absolva José por estar provado não ser ele autor do fato, essa decisão não impedirá que os genitores de Carla ingressem com ação civil indenizatória e obtenham o reconhecimento de sua responsabilidade civil.
+
+b)  O MP não poderia ter oferecido denúncia sem que o delegado tivesse indiciado José e procedido à sua oitiva na fase extrajudicial, razão pela qual o juiz deveria ter remetido os autos à delegacia para a referida providência.
+
+c)  O juiz poderá fundamentar uma sentença absolutória acatando o parecer elaborado pelo assistente técnico contratado por José, rejeitando as conclusões do perito oficial.
+
+d)  O laudo de exame cadavérico de Carla é nulo porque a legislação processual penal determina que ele seja elaborado e assinado por dois peritos oficiais.
+
+e)  A seguradora poderá intervir no processo criminal como assistente da acusação no intuito de demonstrar que José foi o autor do crime.
+Gabarito: C
+## questao 364338
+CEBRASPE (CESPE) - Esc Pol (PC PE)/PC PE/2016
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+63) 
+Com relação ao exame de corpo de delito, assinale a opção correta.
+
+a) O exame de corpo de delito poderá ser suprido indiretamente pela confissão do acusado se os vestígios já tiverem desaparecido.
+b) Não tendo a infração deixado vestígios, será realizado o exame de corpo de delito de modo indireto.
+c) Tratando-se de lesões corporais, a falta de exame complementar poderá ser suprida pela prova testemunhal.
+d) Depende de mandado judicial a realização de exame de corpo de delito durante o período noturno.
+e) Requerido, pelas partes, o exame de corpo de delito, o juiz poderá negar a sua realização, se entender que é desnecessário ao esclarecimento da verdade.
+Gabarito: C
+## questao 421125
+CEBRASPE (CESPE) - Esc Pol (PC GO)/PC GO/2016
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+64) 
+Quanto à prova pericial, assinale a opção correta.
+
+a) A confissão do acusado suprirá a ausência de laudo pericial para atestar o rompimento de obstáculo nos casos de furto mediante arrombamento, prevalecendo em tais situações a qualificadora do delito.
+b) O exame de corpo de delito somente poderá realizar-se durante o dia, de modo a não suscitar qualquer tipo de dúvida, sendo vedada a sua realização durante a noite.
+c) Prevê a legislação processual penal a obrigatória participação da defesa na produção da prova pericial na fase investigatória, antes do encerramento do IP e da elaboração do laudo pericial.
+d) Os exames de corpo de delito serão realizados por um perito oficial e, na falta deste, admite a lei que duas pessoas idôneas, portadoras de diploma de curso superior e dotadas de habilidade técnica relacionada com a natureza do exame, sejam nomeadas para tal atividade.
+e) Em razão da especificidade da prova pericial, o seu resultado vincula o juízo; por isso, a sentença não poderá ser contrária à conclusão do laudo pericial.
+Gabarito: D
+## questao 287707
+CEBRASPE (CESPE) - JE TJPB/TJ PB/2015
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+65) 
+Assinale a opção correta a respeito de provas no CPP.
+
+a) Em caso de divergência entre os peritos, a controvérsia será resolvida internamente pelo diretor da repartição de lotação dos peritos, que elaborará laudo a fim de apresentar uma versão consensual.
+b) No processo penal, a prova do estado de casado deve obedecer às restrições referentes ao estado de pessoas previstas no ordenamento civil.
+c) Em respeito ao princípio acusatório, é vedado ao magistrado ordenar de ofício a produção antecipada de provas.
+d) Por ser uma peça técnica, o laudo pericial deve ser aceito pelo juiz, sendo-lhe vedado inclusive rejeitá-lo em parte.
+e) O assistente técnico atuará no exame de corpo de delito juntamente com o perito oficial.
+Gabarito: B
+## questao 243338
+CEBRASPE (CESPE) - APF/PF/2014
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+66) 
+No que se refere ao exame de corpo de delito, julgue o item seguinte.
+
+
+A autoridade providenciará que, em dia e hora previamente marcados, seja realizada a diligência de exumação para exame cadavérico, devendo-se lavrar auto circunstanciado da sua realização.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 243340
+CEBRASPE (CESPE) - APF/PF/2014
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+67) 
+No que se refere ao exame de corpo de delito, julgue o item seguinte.
+
+ 
+
+A confissão do acusado suprirá o exame de corpo de delito, quando a infração deixar vestígios, mas não for possível fazê-lo de modo direto.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 256273
+CEBRASPE (CESPE) - TL (CAM DEP)/CAM DEP/Policial Legislativo Federal/2014
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+68) 
+Durante uma passeata na Esplanada dos Ministérios, um manifestante, logo após ter sido alertado por um agente da polícia legislativa de que deveria se afastar do local, arremessou pedras em direção ao Congresso Nacional, o que resultou na quebra de vidraças da Câmara dos Deputados. O manifestante foi preso em flagrante e, na delegacia, confessou a prática do delito.
+
+
+Com base na situação hipotética acima, julgue o item seguinte, relativo à prova, à prisão preventiva e aos crimes previstos na parte especial do Código Penal.
+
+
+Dada a confissão do manifestante perante a autoridade policial, a realização da prova pericial torna-se prescindível.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 256279
+CEBRASPE (CESPE) - TL (CAM DEP)/CAM DEP/Policial Legislativo Federal/2014
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+69) 
+No que se refere ao inquérito policial e à prova criminal, julgue o item subsequente.
+
+ 
+
+É possível que, na falta de perito oficial, a prova pericial seja realizada por duas pessoas idôneas, portadoras de diploma de curso superior, preferencialmente na área objeto do exame, nomeadas pelo juiz da causa.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 256280
+CEBRASPE (CESPE) - TL (CAM DEP)/CAM DEP/Policial Legislativo Federal/2014
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+70) 
+No que se refere ao inquérito policial e à prova criminal, julgue o item subsequente.
+
+ 
+
+Admitido, pelo juiz, o assistente técnico, que poderá ser indicado e pago pela parte, terá este acesso ao material probatório, no ambiente do órgão oficial e na presença do perito oficial.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 256281
+CEBRASPE (CESPE) - TL (CAM DEP)/CAM DEP/Policial Legislativo Federal/2014
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+71) 
+No que se refere ao inquérito policial e à prova criminal, julgue o item subsequente.
+
+ 
+
+O juiz não ficará vinculado às conclusões dos peritos exaradas no laudo técnico, podendo rejeitá-las completamente.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 110036
+CEBRASPE (CESPE) - Ana MPU/MPU/Direito/2013
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+72) 
+A respeito dos institutos do processo penal brasileiro, julgue o item subsecutivo.
+
+Na falta de perito oficial como, por exemplo, o médico legista, o exame de corpo de delito será realizado por duas pessoas idôneas, portadoras de diploma de curso superior preferencialmente em área específica e relacionada com a natureza do exame.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 113873
+CEBRASPE (CESPE) - Deleg (PC BA)/PC BA/2013
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+73) 
+Com relação às provas criminais, julgue o item que se segue.
+
+É indispensável o exame pericial, direto ou indireto, nos casos em que a infração penal deixe vestígios, não podendo supri-lo a confissão do acusado, facultada ao MP, ao assistente de acusação, ao ofendido, ao querelante e ao acusado a indicação de assistente técnico para atuar na etapa processual após sua admissão pelo juiz e a conclusão dos exames e elaboração do laudo pelos peritos oficiais.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 113979
+CEBRASPE (CESPE) - Escr (PC BA)/PC BA/2013
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+74) 
+Após denúncia anônima, João foi preso em flagrante pelo crime de moeda falsa no momento em que fazia uso de notas de cem reais falsificadas. Ele confessou a autoria da falsificação, confirmada após a perícia.
+
+Com base nessa situação hipotética e nos conhecimentos específicos relativos ao direito processual penal, julgue o item subsecutivo.
+
+João poderá indicar assistente técnico para elaborar parecer, no qual poderá ser apresentada conclusão diferente da apresentada pela perícia oficial. Nesse caso, o juiz é livre para fundamentar sua decisão com base na perícia oficial ou na particular.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 124423
+CEBRASPE (CESPE) - PCF/PF/Área 18/2013
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+75) 
+A respeito da prova no processo penal, julgue os item subsequente.
+
+O exame caligráfico ou grafotécnico visa certificar, por meio de comparação, que a letra inserida em determinado escrito pertence à pessoa investigada. Esse exame pode ser utilizado como parâmetro para as perícias de escritos envolvendo datilografia ou impressão por computador.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 156736
+CEBRASPE (CESPE) - Esc Pol (PC DF)/PC DF/2013
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+76) 
+Julgue o item seguinte, a respeito do inquérito policial (IP) e das provas.
+
+ 
+
+Considere a seguinte situação hipotética.
+
+
+Instaurado o IP por crime de ação penal pública, a autoridade policial determinou a realização de perícia, da qual foi lavrado laudo pericial firmado por dois peritos não oficiais, ambos bacharéis, que prestaram compromisso de bem e fielmente proceder à perícia na arma de fogo apreendida em poder do acusado. Nessa situação hipotética, houve flagrante nulidade, pois a presença de perito oficial é requisito indispensável para a realização da perícia.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 157088
+CEBRASPE (CESPE) - Ag Pol (PC DF)/PC DF/2013
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+77) 
+Acerca da prova criminal, julgue o item subsequente.
+
+ 
+
+O juiz pode condenar o acusado com base na prova pericial, porque, a despeito de ser elaborada durante o inquérito policial, ela é prova técnica e sujeita ao contraditório das partes.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 195414
+CEBRASPE (CESPE) - NeR (TJ ES)/TJ ES/Remoção/2013
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+78) 
+No que se refere a provas e questões e processos incidentes, assinale a opção correta.
+
+a) O exame de corpo de delito, assim como as citações e as intimações, só pode ser realizado durante o dia.
+b) A hipoteca legal sobre os imóveis do réu somente poderá ser requerida após a audiência de instrução e se restarem confirmadas, nessa audiência, a materialidade e a autoria.
+c) Para formar sua convicção, o juiz pode apreciar livremente a prova produzida em contraditório judicial, mas não pode embasar-se nos elementos informativos colhidos durante a investigação policial.
+d) Arguida, por escrito, a falsidade do documento constante dos autos, o juiz deverá mandar autuar em apartado a impugnação e, em seguida, ouvir a parte contrária, que deverá oferecer resposta em até quarenta e oito horas, não podendo o magistrado proceder à verificação da falsidade de ofício, sob pena de suspeição.
+e) O exame de corpo de delito e outras perícias devem ser realizados por perito oficial, portador de diploma de curso superior, devendo, na falta de perito oficial, ser realizados por duas pessoas idôneas, portadoras de diploma de curso superior, preferencialmente na área específica, entre as que tiverem habilitação técnica vinculada à natureza do exame.
+Gabarito: E
+## questao 230063
+CEBRASPE (CESPE) - Ana MPU/MPU/Perito/Antropologia/2013
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+79) 
+Com base no Código de Processo Penal (CPP) e no Código de Processo Civil (CPC), julgue o próximo item, referente a perícia e meios de prova.
+
+
+De acordo com o CPP, na falta de perito oficial para realizar as perícias, o exame poderá ser realizado por uma pessoa idônea, portadora de diploma de curso superior, preferencialmente em área relacionada com a natureza do exame.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 818499
+CEBRASPE (CESPE) - Per ML (POLC AL)/POLC AL/2013
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+80) 
+Uma mulher foi vítima de crime de ação penal pública condicionada à representação, contudo, somente seis meses após a ocorrência do crime, conseguiu identificar o autor do fato, ao vê-lo andando na rua, ocasião em que se dirigiu imediatamente à delegacia para comunicar  fato e solicitar à autoridade policial a tomada de providências.
+
+
+Com base na situação hipotética acima, julgue o item a seguir.
+
+ 
+
+Em face do lapso de tempo transcorrido e do desaparecimento dos vestígios do crime, a confissão do réu poderá suprir a ausência da prova pericial.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 818505
+CEBRASPE (CESPE) - Per ML (POLC AL)/POLC AL/2013
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+81) 
+No que diz respeito ao processo penal brasileiro, julgue o item a seguir.
+
+ 
+
+O parecer feito por assistente técnico apresenta valor probatório equivalente ao da perícia realizada por perito oficial, não havendo hierarquia entre as provas, podendo, ademais, o juiz penal ignorar as conclusões dos laudos periciais em face do livre convencimento motivado.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 61914
+CEBRASPE (CESPE) - PPF/PF/2012
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+82) 
+Com base no direito processual penal, julgue o item que se segue.
+
+De acordo com inovações na legislação específica, a perícia deverá ser realizada por apenas um perito oficial, portador de diploma de curso superior; contudo, caso não haja, na localidade, perito oficial, o exame poderá ser realizado por duas pessoas idôneas, portadoras de diploma de curso superior, preferencialmente na área específica. Nessa última hipótese, serão facultadas a participação das partes, com a formulação de quesitos, e a indicação de assistente técnico, que poderá apresentar pareceres, durante a investigação policial, em prazo máximo a ser fixado pela autoridade policial.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 67813
+CEBRASPE (CESPE) - Of Inv Pol (PC CE)/PC CE/2012
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 83) 
-No que tange à segurança da informação, julgue o seguinte item.
+Julgue o próximo item, relativo à prova no processo penal.
 
- 
-
-Os princípios fundamentais da segurança da informação incluem confidencialidade, integridade e disponibilidade. Os níveis de segurança para executar esses princípios em cada organização são os mesmos, considerando-se os objetivos e requisitos de negócio e de segurança.
+O exame pericial deverá ser realizado por dois peritos oficiais, conforme recente reforma do Código de Processo Penal (CPP).
 
 Certo
 Errado
 Gabarito: Errado
-## questao 1044645
-CEBRASPE (CESPE) - AssJ (TJ AM)/TJ AM/Programador/2019
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 180912
+CEBRASPE (CESPE) - AJ (TJ RR)/TJ RR/Análise de Processos/2012
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 84) 
-No que tange à segurança da informação, julgue o seguinte item.
+Ricardo, de dezoito anos de idade, convidou seu irmão Flávio, de dezesseis anos de idade, para ir a uma casa noturna. Já no interior desse estabelecimento, Ricardo subtraiu de uma mulher — enquanto Flávio perguntava-lhe as horas, distraindo-a — sua bolsa pessoal, com dinheiro e documentos, que estava em cima de uma mesa atrás da vítima. Ao tentarem sair do estabelecimento comercial, foram abordados pelo segurança da casa noturna, que apreendeu a bolsa da vítima, que estava na posse de Ricardo, e deteve os irmãos até a chegada de policiais militares acionados por outros empregados da casa noturna. Os policiais militares que abordaram Ricardo e Flávio encontraram, em poder de Flávio, uma arma de fogo municiada com um cartucho não deflagrado. A arma de fogo era legalmente registrada em nome de um policial militar que, cinco meses antes, registrou ocorrência policial por crime de furto em sua residência. No curso da instrução criminal, foi realizado exame médico-legal para verificar a integridade mental de Ricardo, por meio do qual se constatou que o acusado tinha inteira capacidade de entender o caráter ilícito do fato. Foi verificado que Flávio não havia cometido anteriormente nenhum ato infracional análogo à prática de crime.
 
- 
 
-Os princípios fundamentais da segurança da informação formam o triângulo CIA (confidentiality, integrity, availability), ao qual o hexagrama parkeriano adiciona três atributos: posse ou controle, autenticidade e utilidade.
+Com relação ao caso hipotético relatado acima, julgue o item, à luz do Código de Processo Penal.
+
+
+O laudo do exame médico-legal para verificar a integridade mental em Ricardo deverá ser expedido por perito oficial, portador de diploma de curso superior.
 
 Certo
 Errado
 Gabarito: Certo
-## questao 1044646
-CEBRASPE (CESPE) - AssJ (TJ AM)/TJ AM/Programador/2019
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 610701
+CEBRASPE (CESPE) - Med PLeg (PEFOCE)/PEFOCE/Sem Especialidade Definida/2012
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 85) 
-Julgue o item a seguir, referentes a criptografia e protocolos criptográficos.
+Acerca da prova criminal, julgue o item seguinte.
 
  
 
-O objetivo da criptografia é transformar informações de forma que se tornem incompreensíveis para pessoas não autorizadas, garantindo-se, assim, a confidencialidade das informações.
+Na falta do perito oficial, poderão ser nomeadas pelo juiz duas pessoas idôneas, portadoras de diploma de curso superior, que prestarão compromisso e realizarão a perícia, sendo identificadas como assistentes técnicos que, por estarem equiparados aos peritos oficiais, farão que o juiz fique adstrito ao laudo por eles elaborado.
 
 Certo
 Errado
-Gabarito: Certo
-## questao 1044647
-CEBRASPE (CESPE) - AssJ (TJ AM)/TJ AM/Programador/2019
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+Gabarito: Errado
+## questao 692405
+CEBRASPE (CESPE) - Del Pol (PC AL)/PC AL/2012
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 86) 
-Julgue o item a seguir, referentes a criptografia e protocolos criptográficos.
+Acerca da ação penal e do inquérito policial, julgue o item subsequente.
 
  
 
-Em criptografia, denomina-se integridade a propriedade que garante que apenas o destinatário seja capaz de extrair o conteúdo da mensagem criptografada.
+No curso do inquérito policial, as partes poderão indicar assistentes técnicos para a produção e elaboração da prova pericial, podendo apresentar quesitos aos peritos oficiais e elaborar laudo em sentido diverso.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 576892
-CEBRASPE (CESPE) - AMCI (CGM J Pessoa)/Pref João Pessoa/Tecnologia da Informação/Desenvolvimento de Sistemas/2018
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 695286
+CEBRASPE (CESPE) - Esc Pol (PC AL)/PC AL/2012
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 87) 
-Acerca de integridade, disponibilidade e confidencialidade em segurança da informação, julgue o item a seguir.
+Em relação à prova, julgue o item.
 
+ 
 
-A disponibilidade pressupõe que uma informação deva estar disponível a qualquer pessoa de direito, sempre que necessário.
+O exame de corpo de delito, direto ou indireto, é indispensável no caso de a infração deixar vestígios, não podendo supri-lo a confissão do acusado.
 
 Certo
 Errado
 Gabarito: Certo
-## questao 576895
-CEBRASPE (CESPE) - AMCI (CGM J Pessoa)/Pref João Pessoa/Tecnologia da Informação/Desenvolvimento de Sistemas/2018
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 847159
+CEBRASPE (CESPE) - Aux Per ML (PC ES)/PC ES/2011
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 88) 
-Acerca de integridade, disponibilidade e confidencialidade em segurança da informação, julgue o item a seguir.
+Ainda acerca do processo penal, julgue o item.
 
  
 
-A integridade, propriedade da segurança da informação, garante que uma informação ou um dado não seja alterado por pessoa ou processo não autorizado.
+Nos crimes materiais, é indispensável o exame de corpo de delito, direto ou indireto, não podendo supri-lo a confissão do acusado.
 
 Certo
 Errado
 Gabarito: Certo
-## questao 595447
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Análise de Sistemas/2018
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 847160
+CEBRASPE (CESPE) - Aux Per ML (PC ES)/PC ES/2011
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 89) 
-Acerca de segurança da informação, julgue o item a seguir.
+Ainda acerca do processo penal, julgue o item.
 
-
-Segundo a propriedade de disponibilidade, qualquer usuário legítimo terá acesso irrestrito a qualquer tipo de informação disponível no sistema.
+ 
+O exame de corpo de delito deve ser realizado por perito oficial, portador de diploma de curso superior e, caso não exista perito oficial na localidade, a autoridade policial poderá determinar a realização do exame por duas pessoas idôneas, portadoras de diploma de curso superior, preferencialmente na área específica, entre as que tiverem habilitação técnica relacionada com a natureza do exame.
 
 Certo
 Errado
-Gabarito: Errado
-## questao 595448
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Análise de Sistemas/2018
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+Gabarito: Certo
+## questao 1348293
+CEBRASPE (CESPE) - AJ 02 (TJ ES)/TJ ES/Apoio Especializado/Direito/2011
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 90) 
-Acerca de segurança da informação, julgue o item a seguir.
+Julgue o próximo item, relativo ao processo penal.
 
- 
 
-A confidencialidade é uma propriedade da segurança da informação que está ligada ao uso de criptografia.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 595449
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Análise de Sistemas/2018
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-91) 
-Acerca de segurança da informação, julgue o item a seguir.
-
- 
-
-A integridade tem por finalidade permitir que um usuário autorizado tenha condições de alterar, de maneira legítima, dado ou informação no sistema.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 615980
-CEBRASPE (CESPE) - Of Int (ABIN)/ABIN/Qualquer Área de Formação/Área 4/2018
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-92) 
-Acerca de indicadores de comprometimento (IOC), julgue o próximo item.
-
- 
-
-Características técnicas que definem ameaças cibernéticas, metodologias de ataques e artefatos consequentes de intrusões são exemplos de informações compartilhadas como indicadores de comprometimento pelo framework OpenIOC.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 619305
-CEBRASPE (CESPE) - Of Tec Int (ABIN)/ABIN/Área 8/2018
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-93) 
-Acerca de criptografia e segurança em computadores, julgue o próximo item.
-
- 
-Um dos objetivos da segurança em computadores é a manutenção da privacidade, que garante que as ações de uma entidade sejam associadas exclusivamente a ela.
+O exame de corpo de delito bem como outras perícias devem ser realizados por dois peritos oficiais, portadores de diploma de curso superior; na falta desses peritos, o exame deverá ser realizado por duas pessoas idôneas, portadoras de diploma de curso superior, preferencialmente em área específica.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 731723
-CEBRASPE (CESPE) - ATRE (SEFAZ RS)/SEFAZ RS/2018
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 1350383
+CEBRASPE (CESPE) - AJ 02 (TJ ES)/TJ ES/Judiciária/Direito/2011
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+91) 
+Julgue o próximo item, relativo ao processo penal.
+
+ 
+
+O exame de corpo de delito bem como outras perícias devem ser realizados por dois peritos oficiais, portadores de diploma de curso superior; na falta desses peritos, o exame deverá ser realizado por duas pessoas idôneas, portadoras de diploma de curso superior, preferencialmente em área específica.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2746580
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+92) 
+Assinale a opção correta acerca das disposições do Código de Processo Penal (CPP) relacionadas à prova pericial.
+
+a) O CPP estabelece que, quando a infração deixar vestígios, a confissão do réu pode suprir o exame do corpo de delito indireto.
+b) O corpo de delito é uma das espécies de prova pericial que constata a materialidade do crime investigado.
+c) Caso seja impossível fazer a avaliação direta dos materiais destruídos, deteriorados ou que constituam produto do crime, o perito deve fazê-la por meio dos elementos existentes nos autos e dos que resultarem de diligências.
+d) O exame de corpo de delito e outras perícias serão realizados por perito não oficial, desde que portador de diploma de curso superior.
+
+e) A prova testemunhal é insuficiente para suprir a falta do exame de corpo de delito, mesmo tendo desaparecido os vestígios do crime.
+Gabarito: C
+## questao 2746581
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+93) 
+Assinale a opção correta a respeito das disposições do CPP quanto à prova pericial.
+
+a) O CPP autoriza apenas as autoridades a formularem quesitos, e não as partes.
+b) O exame de corpo de delito deverá ser feito em dias úteis, não se podendo realizá-lo em domingos e feriados.
+c) O exame de corpo de delito obedece à regra da ampla liberdade na produção da prova no processo criminal.
+d) O exame do corpo de delito é realizado tanto de forma direta como de forma indireta.
+
+e) Serão sujeitos a exame os instrumentos empregados para a prática da infração, a fim de se lhes verificar a sua natureza, e não a sua eficiência.
+Gabarito: D
+## questao 2746583
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 94) 
-A respeito de segurança da informação, julgue os itens a seguir.
+Assinale a opção correta acerca das disposições do CPP com relação à prova pericial.
+
+a) Havendo dúvida sobre a identidade de cadáver exumado, proceder-se-á ao reconhecimento pelo instituto de identificação e estatística ou repartição congênere, mas não pela inquirição de testemunhas.
+b) Para o efeito de exame do local onde houver sido praticada a infração, a autoridade providenciará imediatamente para que não se altere o estado das coisas até a chegada dos peritos, que poderão instruir seus laudos com fotografias, desenhos ou esquemas elucidativos.
+c) Se houver divergência entre os peritos, serão consignadas no auto do exame as declarações e respostas de um e de outro, ou cada um redigirá separadamente o seu laudo, e a autoridade nomeará um terceiro; se este divergir de ambos, a autoridade não poderá mandar proceder a novo exame por outros peritos, devendo acatar o terceiro laudo.
+d) O juiz ou a autoridade policial negará a perícia requerida pelas partes quando não for necessária ao esclarecimento da verdade, ainda que se trate de requerimento para realização de exame de corpo de delito.
+
+e) No caso de inobservância de formalidades, ou no caso de omissões, obscuridades ou contradições, a autoridade policial mandará suprir a formalidade, complementar ou esclarecer o laudo.
+Gabarito: B
+## questao 2746592
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+95) 
+Acerca das disposições do CPP quanto ao exame para o reconhecimento de escritos, assinale a opção correta.
+
+a) A pessoa a quem se atribua o escrito obrigatoriamente será intimada para o ato de reconhecimento.
+b) Na comparação dos escritos, só poderão ser usados documentos que já foram judicialmente reconhecidos como redigidos pela própria pessoa.
+c) Para a comparação da escrita somente serão utilizados documentos de autenticidade comprovada.
+d) A autoridade, quando necessário, requisita os documentos que existem nos arquivos ou estabelecimentos públicos para exame, ou realiza a diligência nesses locais, se daí não puderem ser retirados.
+
+e) Quando não houver escritos para a comparação ou forem insuficientes os exibidos, a autoridade ordena que a pessoa escreva o que lhe for ditado. Se estiver ausente a pessoa, o reconhecimento de escrito ficará impossibilitado, pois referida diligência não poderá ser feita por meio de carta precatória.
+Gabarito: D
+## questao 265075
+CEBRASPE (CESPE) - Ag Pol (RN)/PC RN/2009
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+96) 
+Acerca das perícias, julgue os itens a seguir, tendo como base o CPP e a CF.
 
 
-I Autenticidade se refere às ações tomadas para assegurar que informações confidenciais e críticas não sejam roubadas do sistema.
+I Quando não houver perito oficial para realizar perícia, duas pessoas idôneas, portadoras de diploma de curso superior preferencialmente na área específica relacionada à natureza do exame, poderão fazê-la.
 
 
-II A gestão de segurança da informação deve garantir a disponibilidade da informação.
+II As partes podem indicar assistente técnico, que atuará a partir de sua admissão pelo juiz e após a conclusão dos exames e elaboração do laudo pelos peritos oficiais, tendo acesso ao material probatório no ambiente do órgão oficial.
 
 
-III A confidencialidade garante a identidade de quem envia a informação.
+III No crime de homicídio, como a infração deixa vestígios, é necessário o exame de corpo de delito, podendo suprilo a prova testemunhal ou a confissão do acusado.
 
 
-IV De acordo com o conceito de integridade, os dados devem ser mantidos intactos, sem alteração, conforme foram criados e fornecidos.
+IV Na perícia grafotécnica, a pessoa a quem se atribua o escrito será intimada a comparecer e a autoridade mandará que escreva as palavras ditadas, sob pena de se não o fizer incorrer no crime de desobediência.
+
+
+V O juiz fica adstrito ao laudo elaborado pelos peritos oficiais, não podendo rejeitar as conclusões apontadas.
 
 
 Estão certos apenas os itens
 
-a) I e II.
-b) I e III.
-c) II e IV.
-d) I, III e IV.
-e) II, III e IV.
-Gabarito: C
-## questao 731724
-CEBRASPE (CESPE) - ATRE (SEFAZ RS)/SEFAZ RS/2018
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-95) 
-O custo para a proteção da informação em uma empresa está associado a itens tangíveis como
-
-a)  compra de firewall e proxy especializados para a rede.
-b)  tecnologias, materiais e pessoas.
-c) introdução de melhores práticas do mercado, como COBIT.
-d) treinamento em criptografia e banco de dados.
-e)  treinamento de frameworks de governança de TI, como COBIT e ITIL.
-Gabarito: B
-## questao 731726
-CEBRASPE (CESPE) - ATRE (SEFAZ RS)/SEFAZ RS/2018
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
-96) 
-Um sistema de segurança de intervenção preemptiva é caracterizado por
-
-a) operar antes de um ataque.
-b)  atrasar ameaças.
-c)  agir no momento exato de um ataque.
-d) levantar informações para prevenção de ameaças.
-e)  recuperar o sistema para um estado aceitável após um ataque
+a)  I e II.
+b)  I e III.
+c)  II e IV.
+d)  III e V.
+e)  IV e V.
 Gabarito: A
-## questao 737076
-CEBRASPE (CESPE) - AFA (SEFAZ RS)/SEFAZ RS/2018
-TI - Segurança da Informação - Conceitos, Princípios e Atributos da Segurança da Informação
+## questao 532668
+CEBRASPE (CESPE) - Del Pol (PC PB)/PC PB/2009
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 97) 
-A superexposição em redes sociais virtuais, com a publicação indiscriminada de informações e imagens pessoais do usuário, seus dados profissionais, seus hábitos, sua localização, seu patrimônio e seus relacionamentos, aumenta significativamente o risco de
+Em relação a provas, assinale a opção correta.
 
-a)  bloqueio das senhas de acesso a programas instalados.
-b) exploração de vulnerabilidades dos programas instalados.
-c) criação de perfis falsos em redes sociais.
-d) invasão de privacidade.
-e) ataques de ransomware.
-Gabarito: D
-## questao 3238127
-CEBRASPE (CESPE) - AAAPC (PC DF)/PC DF/Agente Administrativo/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-98) 
-No que se refere à preservação, à conservação e ao acesso a documentos de arquivo, julgue o item a seguir.
-
- 
-De acordo com a legislação em vigor, os documentos públicos podem ser classificados, quanto ao grau de sigilo, em reservados, confidenciais, secretos ou ultrassecretos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3315010
-CEBRASPE (CESPE) - AA (ANM)/ANM/Direito/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-99) 
-De acordo com a Lei de Acesso à Informação e a Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o próximo item.
-
- 
-As informações em poder da ANM, observado o seu teor e em razão de sua imprescindibilidade à segurança da sociedade ou do Estado, podem ser classificadas como ultrassecretas, secretas ou reservadas, e os prazos máximos de restrição de acesso a elas, conforme essa classificação, vigoram a partir da data de sua produção, de acordo com aLei de Acesso à Informação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3318339
-CEBRASPE (CESPE) - ERM (ANM)/ANM/Comunicação/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-100) 
-Julgue o item a seguir, considerando as formas de transparência pública e o disposto na Lei de Acesso à Informação e na Lei Geral de Proteção de Dados Pessoais (LGPD).
-
- 
-A classificação de uma informação como ultrassecreta dispensa a identificação da autoridade que a classificou.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3318344
-CEBRASPE (CESPE) - ERM (ANM)/ANM/Comunicação/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-101) 
-Julgue o item a seguir, considerando as formas de transparência pública e o disposto na Lei de Acesso à Informação e na Lei Geral de Proteção de Dados Pessoais (LGPD).
-
- 
-O prazo máximo de restrição de acesso às informações classificadas como secretas é de 5 anos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3321893
-CEBRASPE (CESPE) - ERM (ANM)/ANM/Engenharia de Minas/Correcional/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-102) 
-Julgue o item a seguir, a respeito do acesso à informação pública, regulado pela Lei n.º 12.527/2011 (Lei de Acesso à Informação – LAI).
-
-
-A informação que seja imprescindível à segurança da sociedade ou do Estado, e que esteja em poder da ANM, poderá receber, de seu diretor-geral, a classificação de sigilo no grau de secreto.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3321895
-CEBRASPE (CESPE) - ERM (ANM)/ANM/Engenharia de Minas/Correcional/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-103) 
-Julgue o item a seguir, a respeito do acesso à informação pública, regulado pela Lei n.º 12.527/2011 (Lei de Acesso à Informação – LAI).
-
- 
-As hipóteses de sigilo quanto ao acesso à informação, previstas na Lei de Acesso à Informação, podem ser ampliadas por outras leis específicas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3344811
-CEBRASPE (CESPE) - AA (ICMBio)/ICMBio/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-104) 
-No que se refere ao ICMBio, às parcerias reguladas pela Lei n.º 13.019/2014, ao acesso a informações e ao tratamento de dados pessoais, julgue o item seguinte.
-
- 
-Informações sobre condutas violadoras dos direitos humanos praticadas por agentes públicos ou a mando de autoridades públicas poderão ser objeto de restrição de acesso, com vistas à proteção do direito fundamental à intimidade da vítima.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3422095
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão da Informação/Avaliação de Impactos/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-105) 
-Acerca de segurança da informação e de sistemas de informação, julgue o item a seguir.
-
- 
-De acordo com a Lei n.º 12.527/2011, as informações classificadas como sigilosas somente podem ser divulgadas após 10 anos de sua classificação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3422383
-CEBRASPE (CESPE) - Tec (EMBRAPA)/EMBRAPA/Gestão da Informação/Tecnologia da Informação/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-106) 
-Julgue o item a seguir, com base na Lei Geral de Proteção de Dados Pessoais (LGPD), na Lei de Acesso à Informação e no Marco Civil da Internet.
-
- 
-A Lei de Acesso à Informação estabelece que o consentimento para acesso a informações pessoais relativas à intimidade e à honra não será exigido quando essas informações forem necessárias à proteção do interesse público e geral preponderante.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3437643
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão da Informação/Engenharia de Infraestrutura e Tecnologia da Informação/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-107) 
-Julgue o item a seguir, considerando a Lei de Acesso à Informação, o Marco Civil da Internet e os demais instrumentos normativos que regulam a publicidade e a segurança de redes de comunicação no Brasil.
-
- 
-A Lei n.º 12.527/2011 permite a divulgação de qualquer informação pública, sem exceções, enquanto os Decretos n.º 7.724/2012 e n.º 7.845/2012 apenas regulamentam a forma de acesso.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3441738
-CEBRASPE (CESPE) - AJ (STM)/STM/Administrativa/"Sem Especialidade"/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-108) 
-À luz do disposto na Lei Geral de Proteção de Dados Pessoais (LGPD) e na Lei de Acesso à Informação, julgue o item que se seguem.
-
- 
-A classificação da informação em determinado grau de sigilo deve pautar-se pelo interesse público da informação e pela utilização do critério mais restritivo possível, considerados aspectos como, por exemplo, a gravidade do risco à sociedade.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3441741
-CEBRASPE (CESPE) - AJ (STM)/STM/Administrativa/"Sem Especialidade"/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-109) 
-À luz do disposto na Lei Geral de Proteção de Dados Pessoais (LGPD) e na Lei de Acesso à Informação, julgue o item que se seguem.
-
- 
-Considerado o risco para a sociedade e para a segurança nacional, informações sobre violação dos direitos humanos praticada por agentes públicos ou a mando de autoridades públicas deverão, em regra, ser objeto de restrição de acesso.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3447987
-CEBRASPE (CESPE) - AJ (STM)/STM/Judiciária/"Sem Especialidade"/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-110) 
-No que se refere à desapropriação, à proteção de dados e ao acesso à informação, julgue o item subsecutivo.
-
- 
-Se houver necessidade de restringir o acesso a informação em poder dos órgãos e entidades públicas, observado o seu teor e em razão de sua imprescindibilidade à segurança da sociedade ou do Estado, ela deverá ser classificada como ultrassecreta, secreta, confidencial ou reservada.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3454194
-CEBRASPE (CESPE) - Ana Tec (SUSEP)/SUSEP/Contabilidade Pública/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-111) 
-Considerando as disposições da Lei de Acesso à Informação (LAI) e suas alterações, julgue o próximo item.
-
- 
-Tem caráter absoluto e permanente a restrição de acesso a informações pessoais relativas à intimidade, vida privada, honra e imagem, sendo vetada a possibilidade da divulgação dessas informações em qualquer circunstância.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3478590
-CEBRASPE (CESPE) - Ag SN (CAESB)/CAESB/Assistente Administrativo/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-112) 
-Conforme a Lei n.º 12.527/2011 (Lei de acesso à informação), o prazo máximo de restrição de acesso para informações consideradas ultrassecretas é de
-
-a) 30 anos.
-b) 25 anos.
-c) 20 anos.
-d) 15 anos.
-
-e) 10 anos.
+a) Não sendo possível o exame de corpo de delito por haverem desaparecido os vestígios, a prova testemunhal pode suprir-lhe a falta. Em caso, todavia, de exame complementar, a prova testemunhal não supre a falta do exame, devendo o crime, se for o caso, ser desclassificado.
+b) Com relação ao exame de corpo de delito, serão facultadas ao MP, ao assistente de acusação, ao ofendido, ao querelante e ao acusado a formulação de quesitos e a indicação de assistente técnico.
+c)  No exame por precatória, a nomeação dos peritos é feita no juízo deprecante, qualquer que seja a natureza da ação penal.
+d) Se houver divergência entre os peritos, são consignadas, no auto do exame, as declarações e respostas de um e de outro, sendo redigido um único laudo. O juiz decide acerca das conclusões de um ou de outro, não podendo, todavia, nomear um terceiro perito, por falta de amparo legal.
+e) No caso de inobservância de formalidades, ou no caso de omissões, obscuridades ou contradições, a autoridade judiciária deve mandar desentranhar o laudo, o qual será considerado prova ilícita.
 Gabarito: B
-## questao 3495046
-CEBRASPE (CESPE) - Adm (FUB)/FUB/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-113) 
-De acordo com a Lei Geral de Proteção de Dados Pessoais — LGPD (Lei n.º 13.709/2018) e a Lei de Acesso à Informação (Lei n.º 12.527/2011), julgue o item a seguir.
+## questao 532723
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/2009
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+98) 
+Entre os quesitos apresentados nas opções abaixo, o quesito que não deve ser formulado em um laudo de exame de corpo de delito é
 
- 
-Tem caráter exaustivo o rol da Lei de Acesso à Informação que trata das hipóteses de sigilo e de segredo de justiça das informações públicas.
+a) houve intenção de matar?
+b) há ofensa à integridade corporal ou à saúde?
+c) qual o instrumento ou o meio que produziu a morte?
+d)  houve perigo de vida?
+e) a morte foi produzida por meio de veneno, fogo, explosivo, asfixia ou tortura, ou outro meio insidioso ou cruel?
+Gabarito: A
+## questao 532724
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/2009
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+99) 
+Acerca de laudo pericial, assinale a opção incorreta.
 
-Certo
-Errado
-Gabarito: Errado
-## questao 3495851
-CEBRASPE (CESPE) - Aud (FUB)/FUB/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-114) 
-Julgue o item a seguir, que diz respeito a coleta, tratamento, armazenamento, integração e recuperação de dados, bem como a segurança da informação.
-
- 
-De acordo com a lei que regula o acesso a informações, são consideradas imprescindíveis à segurança da sociedade e, portanto, passíveis de classificação as informações cuja divulgação ou cujo acesso irrestrito possa colocar em risco a segurança de instituições ou de altas autoridades nacionais ou estrangeiras e seus familiares
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3495852
-CEBRASPE (CESPE) - Aud (FUB)/FUB/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-115) 
-Julgue o item a seguir, que diz respeito a coleta, tratamento, armazenamento, integração e recuperação de dados, bem como a segurança da informação.
-
- 
-Segundo a lei que regula o acesso a informações, o tratamento da informação sigilosa visa identificar ou deixar identificáveis as informações relacionadas à pessoa natural.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3499484
-CEBRASPE (CESPE) - Assist (FUB)/FUB/Administração/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-116) 
-Conforme a Lei Geral de Proteção de Dados Pessoais – LGPD (Lei n.º 13.709/2018) e o Decreto n.º 7.724/2012, que regulamenta a Lei de Acesso à Informação, julgue o item a seguir.
-
- 
-O acesso a uma informação classificada como secreta no ano de 2025 será permitido a partir do ano de 2030.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3514402
-CEBRASPE (CESPE) - Ass AF (CAU MG)/CAU MG/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-117) 
-No que se refere a preservação digital, acesso à informação e proteção de dados pessoais, julgue o item seguinte.
-
- 
-De acordo com a Lei de Acesso à Informação, o período de restrição de acesso a documentos confidenciais é de cinco anos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3597428
-CEBRASPE (CESPE) - AJ (TJ PA)/TJ PA/Administração/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-118) 
-No que concerne à responsabilidade civil da administração pública e à Lei de Acesso à Informação, julgue o item subsequente.
-
- 
-Segundo a Lei de Acesso à Informação, o sigilo pode ser imposto de forma genérica sobre os dados administrativos considerados sensíveis, cabendo ao órgão público classificar de forma ampla e abstrata os documentos como restritos por conveniência.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3606569
-CEBRASPE (CESPE) - OFA (TJ PA)/TJ PA/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-119) 
-De acordo com a Lei de Acesso à Informação (LAI), com a Lei Geral de Proteção de Dados (LGPD) e com a Lei de Introdução às Normas do Direito Brasileiro (LINDB), julgue o item que se segue.
-
-
-A existência de informação sigilosa de caráter parcial no âmbito de determinada manifestação produzida por órgão público obsta o acesso a todo o documento, uma vez que o sigilo deve prevalecer, para fins de divulgação da informação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3685067
-CEBRASPE (CESPE) - AECE (TCE MS)/TCE MS/Tecnologia da Informação/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-120) 
-Conforme a Lei de Acesso à Informação (Lei n.º 12.527/2011), é concedido acesso irrestrito às informações quando os dados forem relativos a
-
-a) inteligência, investigação ou fiscalização em andamento.
-b) segurança, vida e saúde da população.
-c) violações de direitos humanos cometidas por agentes públicos.
-d) relações internacionais e negociações diplomáticas.
-
-e) estabilidade econômica, financeira ou monetária.
+a) Laudo pericial é a conclusão a que chegam os peritos, exposta na forma escrita, devidamente fundamentada, constando todas as observações pertinentes ao que foi verificado e contendo as respostas aos quesitos.
+b) Entre os elementos do laudo do exame de corpo de delito estão o preâmbulo e o histórico.
+c) Permite-se aos peritos optar por descrições sucintas e resumidas ao retratarem uma inspeção, e as partes não podem questionar o conteúdo do laudo, solicitando ao juiz que determine aos peritos a sua complementação.
+d)  A discussão é a parte do laudo em que se realiza a análise minuciosa dos dados encontrados, esclarecendo hipóteses e divergências, trajeto de instrumentos, entre outros, muitas vezes com auxílio de citações bibliográficas. É nesse momento que se deve esclarecer dúvidas a respeito dos termos técnicos e das siglas utilizadas no laudo.
+e) Não devem ser deixados quesitos sem resposta, mesmo que o resultado seja indeterminado ou sem elementos para configurar a resposta.
 Gabarito: C
-## questao 2775812
-CEBRASPE (CESPE) - Ana CT I (CNPq)/CNPq/Desenvolvimento e Arquitetura de Software/2024
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-121) 
-Julgue o item a seguir, considerando a Lei n.º 12.527/2011 (Lei de Acesso à Informação), o Decreto n.º 7.845, o Decreto n.º 7.724, e suas alterações.
+## questao 532767
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/2009
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+100) 
+Acerca do exame de corpo de delito, assinale a opção correta.
 
- 
-A Lei n.º 12.527/2011 reconhece a obrigatoriedade de consentimento para divulgação de informações pessoais quando estas forem necessárias à prevenção e diagnóstico médico, quando o interessado estiver física ou legalmente incapaz, com a finalidade única e exclusiva de tratamento médico.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2841719
-CEBRASPE (CESPE) - Ana Min (MPE TO)/MPE TO/Especializado/Administração de Banco de Dados/2024
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-122) 
-Com fulcro na Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item subsecutivo.
-
- 
-A informação em poder dos órgãos e entidades públicas, observado o seu teor e em razão de sua imprescindibilidade à segurança da sociedade ou do Estado, pode ser classificada como secreta ou reservada, com prazo máximo de restrição de acesso por 10 anos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2855332
-CEBRASPE (CESPE) - ERSTT (ANTT)/ANTT/Direito/2024
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-123) 
-Conforme o disposto na Lei n.º 12.527/2011 (Lei de Acesso à Informação — LAI), julgue o item a seguir.
-
-
-São consideradas imprescindíveis à segurança da sociedade ou do Estado e, portanto, passíveis de serem classificadas em ultrassecretas, secretas e reservadas as informações cuja divulgação ou cujo acesso irrestrito possam prejudicar ou causar risco a projetos de pesquisa e desenvolvimento científico ou tecnológico, assim como a sistemas, bens, instalações ou áreas de interesse estratégico nacional.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2875357
-CEBRASPE (CESPE) - Ana CT (CAPES)/CAPES/Geral/2024
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-124) 
-Com base na Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item a seguir.
-
- 
-É proibido negar acesso à informação necessária à tutela judicial ou administrativa de direitos fundamentais.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3075032
-CEBRASPE (CESPE) - Ana Adm (TCE AC)/TCE AC/Administração/2024
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-125) 
-Com base no disposto na Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item a seguir.
-
- 
-No âmbito da administração pública federal, a classificação de sigilo de informações no grau ultrassecreto é competência exclusiva do Presidente da República.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3172731
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Arquivologia/2024
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-126) 
-Com base na Lei de Acesso à Informação, julgue o item que se seguem.
-
- 
-Os prazos máximos de restrição de acesso a informações ultrassecretas, secretas ou reservadas começam a vigorar na data de sua classificação pela autoridade competente.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3173503
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Microinformática e Infraestrutura de TI/2024
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-127) 
-Julgue o item seguinte de acordo com o disposto na Lei n.º 12.527/2011 (Lei de Acesso à Informação).
-
- 
-O teor e o grau de imprescindibilidade da informação à segurança da sociedade ou do Estado são critérios a serem considerados na classificação do grau de sigilo de uma informação conforme estabelece a referida lei.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3173505
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Microinformática e Infraestrutura de TI/2024
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-128) 
-Julgue o item seguinte de acordo com o disposto na Lei n.º 12.527/2011 (Lei de Acesso à Informação).
-
- 
-O prazo máximo de restrição de acesso às informações classificadas em qualquer dos graus de sigilo previstos na lei pode ser renovado quantas vezes forem necessárias, desde que o órgão público o justifique.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3173507
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Microinformática e Infraestrutura de TI/2024
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-129) 
-Julgue o item seguinte de acordo com o disposto na Lei n.º 12.527/2011 (Lei de Acesso à Informação).
-
- 
-Nos termos da referida lei, classificam-se como supersecretas as informações cujo tempo máximo de sigilo é de vinte anos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2368920
-CEBRASPE (CESPE) - Prom Jus (MPE SC)/MPE SC/2023
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-130) 
-No que diz respeito à Lei de Acesso à Informação — Lei n.º 12.527/2011, julgue o item subsequente.
-
- 
-A proteção da informação relativa à vida privada da pessoa constitui óbice legítimo à apuração de irregularidades, porque se protege, nesse caso, o bem jurídico de maior relevância.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2424309
-CEBRASPE (CESPE) - Tec (CNMP)/CNMP/Apoio Técnico Administrativo/Segurança Institucional/2023
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-131) 
-No que se refere a noções de segurança da informação, julgue o item a seguir.
-
-
-Para determinar o grau de sigilo da informação, é necessário que sejam observados o interesse público da informação e a utilização do critério menos restritivo possível.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2451065
-CEBRASPE (CESPE) - Tec Adm (AGER MT)/AGER MT/2023
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-132) 
-Assinale a opção correta a respeito do sigilo de informações e documentos públicos.
-
-a) A informação sigilosa poderá ser classificada como ultrassecreta, secreta, reservada e restrita.
-b) Em regra, os documentos públicos devem ser providos de sigilo, haja vista o caráter sensível e oficial das informações que contêm.
-c) O sigilo não alcança os processos de investigação e fiscalização em andamento que sejam relacionados à repressão de infrações.
-d) É vedada a publicação, em sítio eletrônico na Internet, do rol de documentos classificados como sigilosos, devido a sua confidencialidade.
-e) Quem tiver acesso à informação sigilosa, seja servidor público, seja particular, terá a obrigação de resguardar-lhe o sigilo.
+a)  A formulação de quesitos é ato privativo da autoridade judicial.
+b)  O exame de corpo de delito deverá ser feito apenas durante o horário diurno.
+c) A confissão do réu pode suprir o exame do corpo de delito.
+d)  Segundo o CPP, o exame de corpo de delito deverá ser realizado por três peritos oficiais.
+e) Quando inexiste possibilidade de os peritos terem acesso, ainda que indireto, ao objeto a ser analisado, pode-se suprir o exame de corpo de delito por testemunhas.
 Gabarito: E
-## questao 2535910
-CEBRASPE (CESPE) - Ana (SERPRO)/SERPRO/Tecnologia/2023
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+## questao 532768
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/2009
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+101) 
+Ainda com relação a corpo de delito e ao exame de corpo de delito, assinale a opção correta.
+
+a) O exame de corpo de delito é a materialidade do crime, isto é, a prova de sua existência.
+b) O exame de corpo de delito é uma prova imposta por lei (prova tarifada.), de forma que não obedece à regra da ampla liberdade na produção da prova no processo criminal.
+c)  Vestígios imateriais são os que são passíveis de registro pelos sentidos humanos.
+d) Os peritos devem analisar o rastro deixado pelo crime pessoalmente, daí inadmite-se o exame de corpo de delito indireto.
+e) Quando o perito vê o cadáver, analisa-o e atesta ao juiz a existência de morte e como esta se deu, comprova-se a materialidade de maneira indireta.
+Gabarito: B
+## questao 532770
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/2009
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+102) 
+A respeito da prova pericial, assinale a opção correta.
+
+a) Se for inviável a colheita das impressões dactiloscópicas e a análise da arcada dentária para identificação de um cadáver exumado, por estar em adiantado estado de decomposição, não são suficientes para sua identificação simples declarações de parentes e amigos.
+b) Se a morte for nitidamente violenta, de maneira que não suscite qualquer tipo de dúvida (como nos casos de separação da cabeça do resto do corpo), e haja necessidade da abertura do corpo, não é possível que a autópsia seja feita antes das seis horas após o óbito.
+c) Quando há morte violenta, basta o simples exame externo do cadáver, se não existe infração penal para apurar, ou quando as lesões externas permitem precisar a causa da morte e não há necessidade de exame interno para a verificação de alguma circunstância relevante.
+d) No caso de lesões corporais, se o primeiro exame pericial tiver sido incompleto, deverá ser feito exame complementar. No exame complementar, os peritos devem elaborar novo auto de corpo de delito, desprezando o anterior.
+e) Segundo o CPP, nas perícias de laboratório, os peritos guardarão material suficiente para a eventualidade de nova perícia. A cautela de guardar o material examinado possui prazo certo estabelecido em lei, que é de 1 ano.
+Gabarito: C
+## questao 532772
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/2009
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+103) 
+Com relação à prova pericial, assinale a opção incorreta.
+
+a)  Esquema é a figura desenhada representativa do corpo humano, em que os peritos podem fazer os sinais necessários e indicar os orifícios de entrada e saída dos projéteis, bem como outras particularidades de interesse para a análise do fato criminoso.
+b) Desenho é o traçado representativo de formas sobre determinada superfície, com finalidade científica e técnica, auxiliando as partes e o juiz, que não são especialistas, a compreender, por exemplo, a trajetória de um projétil ou a forma e a intensidade de um golpe dado.
+c) No caso de incêndio, os peritos verificarão a causa e o lugar em que começou, o perigo que dele resultou para a vida ou para o patrimônio alheio, a extensão do dano e o seu valor e as demais circunstâncias que interessarem à elucidação do fato.
+d) Segundo o CPP, os instrumentos empregados para a prática da infração serão sujeitos a exame, a fim de se lhes verificar a natureza e a eficiência. Nesse contexto, eficiência significa estabelecer a espécie e a qualidade.
+e)  O exame grafotécnico (ou caligráfico) busca certificar e admitir como certo, por comparação, que a letra inserida em determinado escrito pertence à pessoa investigada.
+Gabarito: D
+## questao 532799
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/2009
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+104) 
+Em relação aos exames periciais, assinale a opção correta.
+
+a) Nos casos de morte violenta, bastará o simples exame externo do cadáver, ainda que haja infração penal a apurar.
+b)  Quando encontrados em posição diversa, os cadáveres deverão ser colocados em posição horizontal para serem fotografados.
+c) Em regra, a autópsia será feita pelo menos seis horas depois do óbito.
+d)  É vedado aos peritos instruir os laudos com fotografias que contenham imagens de forte mutilação corporal.
+e) Após a conclusão das perícias de laboratório, os peritos deverão descartar imediatamente o material periciado.
+Gabarito: C
+## questao 532800
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Odonto Legal/2009
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+105) 
+A respeito do exame para o reconhecimento de escritos, por comparação de letra, assinale a opção correta.
+
+a) É vedada a requisição de documentos que existirem em arquivos ou estabelecimentos públicos.
+b) Para a comparação, poderão servir quaisquer documentos que o suposto subscritor reconhecer ou já tiverem sido judicialmente reconhecidos como de seu punho, ou sobre cuja autenticidade não houver dúvida.
+c) A pessoa a quem se atribua o escrito será intimada para o ato, ficando obrigada a fornecer grafias de seu próprio punho para comparação.
+d) Para a comparação, só serão considerados os escritos fornecidos pelo indiciado a partir de palavras ditadas pela autoridade policial.
+e)  Em caso de recusa do indiciado em fornecer os padrões para comparação, presumir-se-ão como seus os escritos examinados.
+Gabarito: B
+## questao 533192
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Odonto Legal/2009
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+106) 
+Assinale a opção correta acerca das regras do Código de Processo Penal que tratam da perícia.
+
+a) Se houver divergência entre os peritos, deverão ser consignadas no auto do exame as declarações e as respostas de um e de outro; ou então cada um deverá redigir separadamente o seu laudo e a autoridade deverá nomear um terceiro perito. Se este perito divergir de ambos, a autoridade poderá mandar proceder a novo exame por outros peritos.
+b) Ainda que o perito não atenda, sem justificativa plausível, a intimação para prestar esclarecimentos em juízo, a autoridade judicial não poderá determinar a condução coercitiva dele, uma vez que não há hierarquia entre eles.
+c) Analfabetos e pessoas com menos de 21 anos de idade podem atuar como peritos apenas para a apuração de delitos de menor potencial ofensivo.
+d)  Peritos não se sujeitam às regras de suspeição aplicáveis às autoridades judiciais.
+e) Por realizarem trabalhos menos complexos, os intérpretes não podem ser equiparados aos peritos.
+Gabarito: A
+## questao 533324
+CEBRASPE (CESPE) - Moto Pol (PC PB)/PC PB/2009
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+107) 
+As perícias deverão ser feitas
+
+a) por um perito oficial, mas devem ser homologadas por um segundo perito.
+b) por dois peritos oficiais obrigatoriamente.
+c) por pelo menos duas pessoas idôneas, portadoras de diploma de curso superior, no caso de não haver peritos oficiais.
+d) por um perito oficial, desde que este preste o compromisso de bem e fielmente desempenhar o encargo.
+e)  por apenas uma pessoa idônea, se não houver peritos oficiais.
+Gabarito: C
+## questao 533325
+CEBRASPE (CESPE) - Moto Pol (PC PB)/PC PB/2009
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+108) 
+Em relação às perícias, assinale a opção correta.
+
+a) Não se admite a indicação de assistentes técnicos pelas partes.
+b)  Somente pode ser utilizado para fundamentar a sentença o laudo elaborado por perito indicado pelo juiz.
+c) O ofendido não pode formular quesitos para serem apresentados aos peritos oficiais.
+d)  As partes poderão indicar mais de um assistente técnico.
+e) É admitida a indicação de assistente técnico apenas quando se tratar de perícia complexa, que abranja mais de uma área de conhecimento especializado.
+Gabarito: D
+## questao 533327
+CEBRASPE (CESPE) - Moto Pol (PC PB)/PC PB/2009
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+109) 
+No tocante à análise dos laudos periciais, assinale a opção correta.
+
+a) É adotado no processo penal brasileiro o sistema liberatório, tendo o magistrado a possibilidade de aceitar ou rejeitar o laudo, não havendo necessidade de fundamentar sua decisão.
+b) O juiz pode rejeitar o laudo pericial, desde que fundamente sua decisão.
+c) O juiz não pode rejeitar o laudo pericial.
+d) O juiz pode rejeitar o laudo pericial apenas se este for carente de motivação.
+e) O juiz pode rejeitar o laudo apenas se tiver conhecimento técnico necessário para avaliar as conclusões a que chegaram os peritos.
+Gabarito: B
+## questao 1321419
+CEBRASPE (CESPE) - Ag Pol (PC ES)/PC ES/2009
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+110) 
+Acerca da prova no processo penal brasileiro, julgue o item que se segue.
+
+ 
+
+Caso uma indivíduo tenha sido gravemente ferido por disparo acidental de arma de fogo, resultando-lhe sérios danos à integridade física com lesões de natureza grave, nessa situação e considerando que a infração penal, conforme descrita, deixa vestígios materiais, será indispensável o exame pericial, direto ou indireto, sob pena de nulidade.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1321420
+CEBRASPE (CESPE) - Ag Pol (PC ES)/PC ES/2009
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+111) 
+Acerca da prova no processo penal brasileiro, julgue o item que se segue.
+
+ 
+
+O exame de corpo de delito e outras perícias, conforme entendimento jurisprudencial dominante, serão realizados por dois peritos oficiais que prestarão compromisso de bem e fielmente desempenhar o encargo, sendo nulo o exame realizado por só um perito.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 23574
+CEBRASPE (CESPE) - AJ (STF)/STF/Judiciária/"Sem Especialidade"/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+112) 
+Com base na parte geral do direito penal, julgue o item abaixo.
+
+Considere a seguinte situação hipotética.
+ 
+
+Durante processo movido contra Vitor por tentativa de homicídio, o MP requereu a instauração de incidente de insanidade mental, pedido que foi deferido pelo juiz. No laudo final, foi atestada a sanidade mental de Vitor à época dos fatos. Anteriormente à juntada do laudo aos autos, entretanto, a defesa comprovou que Vítor havia sido interditado, o que acarretou, inclusive, sua aposentadoria no serviço público.
+
+Nessa situação, Vitor será considerado plenamente imputável, pois a existência de laudo específico de sanidade mental sobrepõe-se à interdição.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 23587
+CEBRASPE (CESPE) - AJ (STF)/STF/Judiciária/"Sem Especialidade"/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+113) 
+Com base no CPP, julgue o item a seguir, relativo a provas.
+
+ 
+
+Quando a infração deixar vestígios, será indispensável o exame de corpo de delito, direto ou indireto. Não sendo possível sua realização em decorrência de os vestígios terem desaparecido, a prova testemunhal ou a confissão poderão suprir-lhe a falta.
+
+ 
+
+ 
+
+Certo
+Errado
+Gabarito: Errado
+## questao 23588
+CEBRASPE (CESPE) - AJ (STF)/STF/Judiciária/"Sem Especialidade"/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+114) 
+Com base no CPP, julgue o item a seguir, relativo a provas.
+ 
+
+Em caso de lesões corporais, se o primeiro exame pericial tiver sido incompleto, proceder-se-á a exame complementar por determinação da autoridade policial ou judiciária, de ofício, ou a requerimento do MP, ou do ofendido ou do acusado, ou de seu defensor. A falta desse exame poderá ser suprida pela prova testemunhal.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1322138
+CEBRASPE (CESPE) - DPC (PC TO)/PC TO/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+115) 
+Acerca da prova no processo penal, julgue o próximo item.
+
+
+Considere que em determinada ação penal foi realizada perícia de natureza contábil, nos moldes determinados pela legislação pertinente, o que resultou na elaboração do competente laudo de exame pericial. Na fase decisória, o juiz discordou das conclusões dos peritos e, de forma fundamentada, descartou o laudo pericial ao exarar a sentença. Nessa situação, a sentença é nula, pois o exame pericial vincula o juiz da causa.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1322141
+CEBRASPE (CESPE) - DPC (PC TO)/PC TO/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+116) 
+Acerca da prova no processo penal, julgue o próximo item.
+
+ 
+
+Considere a seguinte situação hipotética.
+
+ 
+
+João, imputável, agrediu fisicamente Francisco, produzindo-lhe lesões corporais leves. Transcorridos alguns dias após a agressão, Francisco compareceu à repartição policial, onde noticiou o crime. Encaminhado para exame pericial, ficou constatado que não mais existiam lesões.
+
+
+Nessa situação, por terem desaparecido os vestígios, a materialidade do delito poderá ser demonstrada por meio de prova testemunhal.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1322144
+CEBRASPE (CESPE) - DPC (PC TO)/PC TO/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+117) 
+Acerca da prova no processo penal, julgue o próximo item.
+
+ 
+
+Não se faz distinção entre corpo de delito e exame de corpo de delito, pois ambos representam o próprio crime em sua materialidade.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1322147
+CEBRASPE (CESPE) - DPC (PC TO)/PC TO/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+118) 
+Acerca da prova no processo penal, julgue o próximo item.
+
+ 
+
+Por determinação legal, o exame necroscópico ou cadavérico deve ser realizado pelo menos seis horas após o óbito. Todavia, tal obrigatoriedade é dispensada se houver evidência da morte, como ausência de movimentos respiratórios, desaparecimento do pulso ou enregelamento do corpo.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1322257
+CEBRASPE (CESPE) - Per Of (PC TO)/PC TO/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+119) 
+José foi preso em flagrante pela polícia militar do Tocantins nas proximidades do Tribunal de Justiça, após ter atropelado um soldado que ali controlava o trânsito. O soldado faleceu no local em razão do acidente. Na delegacia de polícia, houve a comunicação à autoridade judiciária local, e o delegado, por desconfiar de que José estivesse embriagado, encaminhou-o ao instituto médico legal. Quando o perito se preparava para realizar o exame toxicológico, o advogado contratado pela família de José adentrou abruptamente a sala de exames e disse que não se poderia dar continuidade ao procedimento porque isso implicaria uma produção de prova contra seu cliente. Em face dessa intervenção, José recusou submeter-se ao exame.
+
+
+Com base na situação hipotética apresentada acima, julgue o item a seguir.
+
+
+A recusa de José em realizar o exame pericial poderá ser afastada se, em correta decisão de um dos juízes criminais de Palmas, for ordenada a realização da perícia.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1322398
+CEBRASPE (CESPE) - Per Of (PC TO)/PC TO/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+120) 
+José foi preso em flagrante pela polícia militar do Tocantins nas proximidades do Tribunal de Justiça, após ter atropelado um soldado que ali controlava o trânsito. O soldado faleceu no local em razão do acidente. Na delegacia de polícia, houve a comunicação à autoridade judiciária local, e o delegado, por desconfiar de que José estivesse embriagado, encaminhou-o ao instituto médico legal. Quando o perito se preparava para realizar o exame toxicológico, o advogado contratado pela família de José adentrou abruptamente a sala de exames e disse que não se poderia dar continuidade ao procedimento porque isso implicaria uma produção de prova contra seu cliente. Em face dessa intervenção, José recusou submeter-se ao exame.
+
+
+Com base na situação hipotética apresentada acima, julgue o item a seguir.
+
+ 
+
+A recusa em realizar a perícia para verificação do nível de álcool no organismo gera a presunção de que José estava realmente embriagado.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1322400
+CEBRASPE (CESPE) - Per Of (PC TO)/PC TO/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+121) 
+José foi preso em flagrante pela polícia militar do Tocantins nas proximidades do Tribunal de Justiça, após ter atropelado um soldado que ali controlava o trânsito. O soldado faleceu no local em razão do acidente. Na delegacia de polícia, houve a comunicação à autoridade judiciária local, e o delegado, por desconfiar de que José estivesse embriagado, encaminhou-o ao instituto médico legal. Quando o perito se preparava para realizar o exame toxicológico, o advogado contratado pela família de José adentrou abruptamente a sala de exames e disse que não se poderia dar continuidade ao procedimento porque isso implicaria uma produção de prova contra seu cliente. Em face dessa intervenção, José recusou submeter-se ao exame.
+
+
+Com base na situação hipotética apresentada acima, julgue o item a seguir.
+
+ 
+
+Caso a perícia fosse realizada sem a concordância de José, ela poderia ser convalidada durante o processo criminal.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1322431
+CEBRASPE (CESPE) - Per Of (PC TO)/PC TO/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+122) 
+Acerca do processo penal, julgue o item a seguir.
+
+ 
+
+O exame de corpo de delito direto pode ser suprido, quando desaparecidos os vestígios materiais da infração penal, por outros elementos de caráter probatório, notadamente os de natureza testemunhal ou documental.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1322480
+CEBRASPE (CESPE) - Per Of (PC TO)/PC TO/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+123) 
+Pedro, penalmente imputável, comprou uma carteira de habilitação falsa e passou a dirigir seu veículo automotor sem qualquer problema. Em determinado dia, após uma desavença havida em um bar, Pedro, aproveitando-se que dois de seus desafetos estavam atravessando a via pela qual trafegava, empreendeu alta velocidade no veículo e, intencionalmente, atropelou os dois pedestres. Uma das vítimas faleceu no próprio local em decorrência das lesões experimentadas; a outra permaneceu internada, com perigo de morte, por 40 dias.
+
+
+Acerca da situação hipotética acima apresentada, julgue o item que se segue.
+
+ 
+
+Em relação às eventuais perícias a serem realizadas em decorrência do delito, é correto afirmar que o exame necroscópico ou cadavérico deverá ser feito pelo menos 6 horas depois do óbito, salvo se os peritos, pela evidência dos sinais da morte, julgarem que possa ser feita antes do prazo, o que deverá ser declarado no respectivo laudo.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1322481
+CEBRASPE (CESPE) - Per Of (PC TO)/PC TO/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+124) 
+Pedro, penalmente imputável, comprou uma carteira de habilitação falsa e passou a dirigir seu veículo automotor sem qualquer problema. Em determinado dia, após uma desavença havida em um bar, Pedro, aproveitando-se que dois de seus desafetos estavam atravessando a via pela qual trafegava, empreendeu alta velocidade no veículo e, intencionalmente, atropelou os dois pedestres. Uma das vítimas faleceu no próprio local em decorrência das lesões experimentadas; a outra permaneceu internada, com perigo de morte, por 40 dias.
+
+
+Acerca da situação hipotética acima apresentada, julgue o item que se segue.
+
+ 
+
+Será sujeito a exame pericial o veículo empregado para a prática da infração, visto que, na sistemática adotada pelo Código de Processo Penal, além do exame de corpo de delito, é também exigido o exame dos instrumentos do crime.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1322485
+CEBRASPE (CESPE) - Per Of (PC TO)/PC TO/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+125) 
+Julgue o item a seguir, referente a aspectos periciais criminais e médico- legais.
+
+ 
+
+É atribuição do perito descrever minuciosamente, nos laudos periciais, o que encontrar, bem como responder aos quesitos formulados pelas autoridades. É defeso à parte aceitar ou negar a indicação do perito oficial, caso seja de seu interesse, no entanto não poderá indicar o perito para a realização da perícia.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1405723
+CEBRASPE (CESPE) - Ag Tec (MPE AM)/MPE AM/Jurídico/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+126) 
+Acerca da prova no processo penal, julgue o item a seguir.
+
+ 
+
+O laudo cadavérico assinado por dois peritos oficiais é espécie de prova real.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1620203
+CEBRASPE (CESPE) - Per (PC AC)/PC AC/Análise de Sistemas/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+127) 
+Acerca da prova no direito processual penal, julgue o item que se segue.
+
+ 
+
+Antes da realização de cada perícia, os peritos oficiais têm de prestar o compromisso de bem e fielmente desempenhar o encargo.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1620204
+CEBRASPE (CESPE) - Per (PC AC)/PC AC/Análise de Sistemas/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+128) 
+Acerca da prova no direito processual penal, julgue o item que se segue.
+
+ 
+
+Nos casos de morte violenta, quando não houver infração penal que apurar, ou quando as lesões externas permitirem precisar a causa da morte e não houver necessidade de exame interno para a verificação de alguma circunstância relevante, bastará o simples exame externo do cadáver.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1621910
+CEBRASPE (CESPE) - Esc Pol (PC AC)/PC AC/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+129) 
+Acerca das provas no processo penal, julgue o seguinte item.
+
+
+Em caso de morte violenta, não se admite o simples exame externo do cadáver.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1621911
+CEBRASPE (CESPE) - Esc Pol (PC AC)/PC AC/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+130) 
+Acerca das provas no processo penal, julgue o seguinte item.
+
+ 
+Não sendo possível o exame de corpo de delito, por haverem desaparecido os vestígios, a prova testemunhal poderá suprir essa falta.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2477616
+CEBRASPE (CESPE) - Sec OAB SP/OAB/2008
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+131) 
+Assinale a opção correta acerca do exame de corpo de delito e das perícias em geral, segundo o CPP.
+
+a)  Se a perícia requerida pelas partes não for necessária ao esclarecimento da verdade, o juiz ou a autoridade policial negará a perícia, exceto na hipótese de exame de corpo de delito.
+b)  Se não for possível o exame de corpo de delito por haverem desaparecido os vestígios, a prova testemunhal não poderá suprir-lhe a falta.
+c)  O juiz ficará adstrito ao laudo.
+d)  Se a infração deixar vestígios, a confissão do acusado poderá suprir o exame de corpo de delito, direto ou indireto.
+Gabarito: A
+## questao 364586
+CEBRASPE (CESPE) - Of BM (CBM DF)/CBM DF/Complementar/Direito/2007
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+132) 
+Com relação a provas, competência, processos dos crimes de responsabilidade dos funcionários públicos e habeas corpus, julgue o item que se segue.
+
+
+No sistema de valoração do laudo pericial, a legislação brasileira adota o sistema vinculatório, em que o juiz fica adstrito à conclusão do laudo, ou seja, é obrigado a aceitá-lo.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1647397
+CEBRASPE (CESPE) - Per Crim (CPCRC)/CPCRC/Administração/2007
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 133) 
-Julgue o item subsequente, considerando a legislação acerca de acesso e segurança da informação e privacidade e proteção de dados pessoais.
+Acerca do exame de corpo de delito e das perícias em geral, assinale a opção correta.
 
-
-De acordo com a Lei n.º 12.527/2011 (Lei de Acesso à Informação), no âmbito da administração pública federal, a classificação do sigilo de informações no grau de ultrassecreto é competência exclusiva do presidente da República.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2604190
-CEBRASPE (CESPE) - Ana TI (FUB)/FUB/2023
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+a) Se houver divergência entre os peritos, serão consignadas no auto do exame as declarações e respostas de um e de outro, ou cada um redigirá separadamente o seu laudo, e a autoridade nomeará um terceiro perito; se este divergir de ambos, a autoridade poderá mandar proceder a novo exame por outros peritos.
+b) Os instrumentos empregados para a prática da infração não estarão sujeitos a exame pericial.
+c) A autópsia deve ser feita pelo menos 12 horas depois do óbito, salvo se os peritos, pela evidência dos sinais de morte, julgarem que possa ser feita antes deste prazo, o que declararão no auto.
+d) Nos casos de morte violenta, não basta o simples exame externo do cadáver, ainda que não haja infração penal a apurar, ou que as lesões externas permitam precisar a causa da morte e não houver necessidade de exame interno para a verificação de alguma circunstância relevante.
+Gabarito: A
+## questao 131305
+CEBRASPE (CESPE) - DP DF/DP DF/2006
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 134) 
-Com base no disposto na Lei de Acesso à Informação (Lei n.º 12.527/2011), julgue o item a seguir.
+De acordo com o direito processual penal e com o Código de Processo Penal (CPP), julgue o item que se segue.
 
  
-No âmbito da administração pública federal, os comandantes da Aeronáutica, do Exército e da Marinha podem classificar como ultrassecretas as informações.
+
+O exame de corpo de delito será realizado apenas em pessoas vivas ou mortas, não sendo os animais objeto dessa espécie de exame.
 
 Certo
 Errado
-Gabarito: Certo
-## questao 2715208
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Auditoria/2023
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+Gabarito: Errado
+## questao 180195
+CEBRASPE (CESPE) - Tec Jud (TJ RR)/TJ RR/Oficial Contador Distribuidor Partidor/2006
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 135) 
-Com base na Lei Federal n.º 12.527/2011 (Lei de Acesso à Informação), julgue os itens seguintes acerca dos tipos declassificação de informação e dos períodos de restrições de acesso.
+No que tange à prova no processo penal, assinale a opção correta.
 
-
-Informações classificadas como confidenciais possuem restrição de acesso de, no máximo, três anos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2715209
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Auditoria/2023
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+a) O laudo preliminar de constatação de existência de substância entorpecente pode ser realizado por um único perito, pois se trata de condição de procedibilidade, necessária apenas para efeito de lavratura do auto de prisão em flagrante e do oferecimento da denúncia.
+b) A falta de perícia em local de acidente de trânsito acarreta nulidade absoluta do processo, pois a lei processual penal determina a indispensabilidade do exame pericial nas infrações que deixarem vestígios.
+c) A prova pericial, por sua natureza eminentemente técnica, vincula a decisão judicial à conclusão do exame pericial.
+d) Somente a autoridade judiciária pode determinar a perícia, mesmo na fase investigatória, pois vige, na produção da prova pericial, o princípio do contraditório.
+Gabarito: A
+## questao 447230
+CEBRASPE (CESPE) - Per (PC AC)/PC AC/Médico Legista/2006
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 136) 
-Com base na Lei Federal n.º 12.527/2011 (Lei de Acesso à Informação), julgue os itens seguintes acerca dos tipos de classificação de informação e dos períodos de restrições de acesso.
+No que se refere à prova em processo penal, assinale a opção correta.
 
- 
-Informações classificadas como reservadas possuem restrição de acesso de, no máximo, cinco anos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1895223
-CEBRASPE (CESPE) - Tec Amb (IBAMA)/IBAMA/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+a) A prova da existência de um crime é feita por presunção diante das evidências e das demais provas produzidas no curso do inquérito policial.
+b) O exame de corpo de delito constitui prova indireta.
+c) Diante dos sinais de certeza da morte, basta o exame externo do cadáver para a conclusão do laudo de exame cadavérico.
+d) O juiz não fica adstrito ao laudo pericial emitido, podendo aceitá-lo ou rejeitá-lo, no todo ou em parte.
+Gabarito: D
+## questao 840859
+CEBRASPE (CESPE) - Del Pol (PC ES)/PC ES/2006
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 137) 
-A respeito do acesso a informação, da proteção de dados e do acesso público aos dados e às informações existentes nos órgãos e nas entidades integrantes do Sistema Nacional do Meio Ambiente, julgue os item que se segue.
+Julgue o item subseqüente acerca dos atos propedêuticos médico-legais.
 
  
 
-Informação que possa colocar em risco a segurança do presidente da República deverá ser classificada como reservada e ficar sob sigilo, o qual não poderá ultrapassar o término do seu mandato em exercício ou do último mandato, em caso de reeleição.
+Ao realizar perícia criminal, o assistente técnico, caso não concorde com o perito relator, deve apresentar laudo pericial em separado, expondo discriminadamente os motivos da divergência.
 
 Certo
 Errado
-Gabarito: Certo
-## questao 1911730
-CEBRASPE (CESPE) - ADP (DPE RO)/DPE RO/Administração/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+Gabarito: Errado
+## questao 841798
+CEBRASPE (CESPE) - Med Leg (PC ES)/PC ES/2006
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 138) 
-De acordo com a Lei de acesso à informação, a autoridade que possui competência para classificar uma informação como “secreta” em uma empresa pública é o
+Perícia médica é qualquer ato propedêutico ou exame com a finalidade de contribuir com as autoridades administrativas, policiais ou judiciárias, na formação de juízos a que são obrigados. Julgue o seguinte item, relacionado à perícia médico-legal e aos peritos.
 
-a)  secretário.
-b)  diretor.
-c)  chefe nível DAS 101.5.
-d)  titular.
+ 
+A indicação de médico-legista para atuar como assistente técnico no direito penal deve ser realizada pelas partes, no prazo de cinco dias. No direito cível, a indicação deve ocorrer no prazo de dez dias.
 
-e)  assessor superior.
-Gabarito: D
-## questao 1911796
-CEBRASPE (CESPE) - ADP (DPE RO)/DPE RO/Administração/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+Certo
+Errado
+Gabarito: Errado
+## questao 158133
+CEBRASPE (CESPE) - DP SE/DPE SE/2005
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 139) 
-Segundo a Lei de Acesso à Informação (Lei n.º 12.527/2011), a informação em poder dos órgãos e das entidades públicas, observado o seu teor e em razão de sua imprescindibilidade à segurança da sociedade ou do Estado, poderá ser classificada em
+Julgue o próximo item, relativo a atos processuais, prova, prisão e liberdade provisória.
 
-a)  sigilosa, com acesso restrito pelo prazo de até 100 anos; ou reservada, com acesso restrito pelo prazo de até 10 anos.
-b) ultrassecreta, com acesso restrito pelo prazo de até 100 anos; secreta, com acesso restrito pelo prazo de até 50 anos; ou reservada, com acesso restrito pelo prazo de até 10 anos.
-c) ultrassecreta, com acesso restrito pelo prazo de até 50 anos; secreta, com acesso restrito pelo prazo de até 20 anos; ou reservada, com acesso restrito pelo prazo de até 10 anos.
-d) ultrassecreta, com acesso restrito pelo prazo de até 25 anos; secreta, com acesso restrito pelo prazo de até 15 anos; ou reservada, com acesso restrito pelo prazo de até 5 anos.
+ 
 
-e)  sigilosa, com acesso restrito pelo prazo de até 15 anos; ou reservada, com acesso restrito pelo prazo de até 10 anos.
-Gabarito: D
-## questao 1937335
-CEBRASPE (CESPE) - AFCE (TCE-SC)/TCE SC/Administração/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+O artigo do Código de Processo Penal (CPP) que estabelece que a confissão não supre o exame de corpo de delito guarda nítida ligação com o sistema de prova tarifada ou da certeza moral do legislador.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1342688
+CEBRASPE (CESPE) - AJ (TJ BA)/TJ BA/Judiciária/Escrivão/2005
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 140) 
-Com base na Lei de Acesso à Informação (Lei n.º 12.527/2011) e na Lei da Transparência (Lei Complementar n.º 131/2009), julgue o item que se segue.
+Julgue o item subseqüente.
 
  
-Informações em poder dos órgãos públicos podem ser classificadas como ultrassecretas, caso em que seu acesso poderá ser restrito por, no máximo, quinze anos.
 
- 
+Nos crimes que deixam vestígios, é indispensável o exame de corpo de delito, direto ou indireto, o qual poderá ser feito em qualquer dia e hora.
+
 Certo
 Errado
-Gabarito: Errado
-## questao 1968430
-CEBRASPE (CESPE) - AAAJ (DP DF)/DP DF/Administração/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+Gabarito: Certo
+## questao 34525
+CEBRASPE (CESPE) - PPF/PF/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 141) 
-Julgue o próximo item, com base no disposto na Lei de Acesso à Informação (Lei n.º 12.527/2011) e na Lei da Transparência (Lei Complementar n.º 131/2009).
+Julgue o item a seguir, acerca dos crimes de responsabilidade dos funcionários públicos.
 
- 
-As informações classificadas como reservadas e ultrassecretas ficam indisponíveis para acesso pelos cidadãos pelos prazos de 5 anos e 15 anos, respectivamente, contados a partir da data de suas produções.
+O juiz responsável por ação de crime cometido por funcionário público ficará vinculado ao laudo pericial, não podendo rejeitá-lo.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 1968727
-CEBRASPE (CESPE) - AAAJ (DP DF)/DP DF/Arquivologia/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+## questao 34793
+CEBRASPE (CESPE) - PCF/PF/Área 1/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 142) 
-De acordo com a Constituição Federal de 1988, o acesso à informação é um direito do cidadão e dever do Estado. A Lei n.º 8.159/1991 (Lei dos Arquivos) ratificou esse entendimento e, posteriormente, a Lei n.º 12.527/2011 (Lei de Acesso à Informação) regulamentou essa questão. No Distrito Federal, a regulamentação desta lei foi feita por meio da Lei distrital n.º 4.990/2012. Considerando a legislação arquivística, julgue o item que se segue, relativo a políticas de acesso aos documentos de arquivo.
+No item que se segue, é apresentada uma situação hipotética, seguida de uma assertiva a ser julgada.
 
  
-Documento com acesso restrito por conter informação pessoal somente poderá ser eliminado depois de decorridos cem anos da sua produção.
+
+No curso de determinado processo penal, o juiz da causa verificou que um laudo pericial não havia observado uma formalidade definida em lei e, por isso, determinou o suprimento da formalidade.
+
+Nessa situação, a determinação é ilícita porque, como são absolutamente nulos os laudos periciais que não cumprem todas as formalidades legais, o juiz deveria ter nomeado outros peritos para realizarem novo exame pericial.
+
+ 
+
+ 
 
 Certo
 Errado
 Gabarito: Errado
-## questao 1970904
-CEBRASPE (CESPE) - AAAJ (DP DF)/DP DF/Informática Desenvolvimento de Sistemas/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+## questao 36422
+CEBRASPE (CESPE) - PCF/PF/Área 12/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 143) 
-À luz da Lei nº 12.527/2011 — Lei de Acesso à Informação, julgue o item subsequente.
+Com base nas recomendações do ordenamento jurídico criminal, relativas à regulamentação das práticas periciais, julgue o item a seguir.
 
 
-É vedada pela Lei de Acesso à Informação a restrição de acesso a documentos que versem sobre condutas relacionadas à violação dos direitos humanos praticada por agentes públicos ou a mando de autoridades públicas.
+O exame de corpo de delito necroscópico só poderá ser feito seis horas após o óbito.
+
+ 
 
 Certo
 Errado
-Gabarito: Certo
-## questao 1972205
-CEBRASPE (CESPE) - Esp GT (TELEBRAS)/TELEBRAS/Advogado/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+Gabarito: Errado
+## questao 36423
+CEBRASPE (CESPE) - PCF/PF/Área 12/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 144) 
-Acerca do acesso à informação nos órgãos públicos, julgue o item que se segue.
+Com base nas recomendações do ordenamento jurídico criminal, relativas à regulamentação das práticas periciais, julgue o item a seguir.
 
 
-As informações em poder de órgãos e entidades públicas, em razão da sua imprescindibilidade à segurança da sociedade ou do Estado, poderão ser classificadas em ultrassecreta, secreta ou reservada, sendo os respectivos prazos máximos de restrição de acesso à informação 25 anos, 15 anos e 5 anos.
+Quando intimada pela autoridade policial para se submeter a exame de corpo de delito, a vítima poderá se recusar.
 
 Certo
 Errado
 Gabarito: Certo
-## questao 1981940
-CEBRASPE (CESPE) - Tec GT (TELEBRAS)/TELEBRAS/Assistente Administrativo/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+## questao 36425
+CEBRASPE (CESPE) - PCF/PF/Área 12/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 145) 
-Acerca do acesso à informação nos órgãos públicos, julgue o item que se segue.
+Com base nas recomendações do ordenamento jurídico criminal, relativas à regulamentação das práticas periciais, julgue o item a seguir.
 
  
-Em razão da soberania estatal, as informações acerca de condutas que impliquem violação de direitos humanos praticada por agentes públicos podem ser objeto de restrição de acesso.
+
+ 
+
+O exame de corpo de delito é dispensável desde que haja confissão extrajudicial do réu, confirmada pelo depoimento da vítima e de testemunhas.
+
+ 
 
 Certo
 Errado
 Gabarito: Errado
-## questao 2007313
-CEBRASPE (CESPE) - TCE (TCE RJ)/TCE RJ/Técnico/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+## questao 37721
+CEBRASPE (CESPE) - EPF/PF/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 146) 
-Pedro requereu informações acerca de uma contratação direta promovida, com amparo em cláusula de inexigibilidade de licitação, por uma empresa pública estadual, a qual, entretanto, negou-lhe acesso a tais informações, sob o fundamento de que não estaria subordinada ao regime da Lei n.º 12.527/2011 (Lei de Acesso à Informação) e de que as informações solicitadas se referiam a dados pessoais de terceiros, cujo acesso era restrito, salvo se houvesse o consentimento expresso de tais terceiros. Inconformado, Pedro protocolou pedido de reconsideração perante a autoridade que lhe havia negado o acesso à informação, alegando que o referido consentimento não deve ser exigido quando as informações forem necessárias à proteção do interesse público preponderante.
+Acerca do direito processual penal, julgue o seguinte item.
 
  
-A partir dessa situação hipotética, julgue o item seguinte.
 
- 
-Na situação apresentada, a empresa pública errou ao não ter dado a Pedro o acesso à informação, porquanto o alegado consentimento de terceiros não é exigido quando o dado for imprescindível à proteção do interesse público preponderante.
+Havendo divergência entre os peritos de um laudo pericial, deverão eles chegar a uma conclusão antes de apresentar o laudo, pois não se admite mais de uma resposta para um único quesito.
 
 Certo
 Errado
-Gabarito: Certo
-## questao 2150993
-CEBRASPE (CESPE) - Aud Est (SECONT ES)/SECONT ES/Administração/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+Gabarito: Errado
+## questao 51676
+CEBRASPE (CESPE) - APF/PF/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 147) 
-Julgue o próximo item, com base no que dispõe a Lei de Acesso à Informação.
-
+A respeito do direito processual penal brasileiro, julgue o item a seguir.
  
-É obrigatória a formalização de decisão acerca da classificação de informações como sigilosas, devendo nela constar o assunto, a fundamentação da classificação, o prazo de sigilo e a indicação da autoridade classificadora.
+
+Para apurar se a lesão corporal foi de natureza grave, a falta de exame de corpo de delito complementar não poderá ser suprida por prova testemunhal.
 
 Certo
 Errado
-Gabarito: Certo
-## questao 2150997
-CEBRASPE (CESPE) - Aud Est (SECONT ES)/SECONT ES/Administração/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+Gabarito: Errado
+## questao 51784
+CEBRASPE (CESPE) - EPF/PF/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 148) 
-Julgue o próximo item, com base no que dispõe a Lei de Acesso à Informação.
-
+No que se refere à produção de provas, julgue o item abaixo.
  
-Uma informação produzida no ano de 2005 e classificada como secreta poderá ser disponibilizada em 2022.
+
+Quando a infração penal deixa vestígios, é indispensável a realização do exame de corpo de delito. O exame, contudo, poderá ser suprido pela prova testemunhal na hipótese de desaparecimento dos vestígios.
 
 Certo
 Errado
 Gabarito: Certo
-## questao 2213194
-CEBRASPE (CESPE) - Aud Con Sub (TCE PB)/TCE PB/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+## questao 60773
+CEBRASPE (CESPE) - Proc (AGU)/AGU/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 149) 
-Julgue o item que se seguem, a respeito de temas contemporâneos da gestão pública brasileira.
-
+Considerando os dispositivos da lei processual penal, julgue o item a seguir.
  
-Admite-se negativa de acesso a documentos que contenham informações que envolvam direitos fundamentais do cidadão.
+
+Desaparecidos os vestígios da infração penal, o juiz considerará suprida a falta do exame de corpo de delito pela confissão do acusado ou prova testemunhal.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 2216607
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Gestão de Tecnologia da Informação/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+## questao 111193
+CEBRASPE (CESPE) - AJ TRT10/TRT 10/Judiciária/Oficial de Justiça Avaliador Federal/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 150) 
-De acordo com a Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item a seguir.
+A respeito do direito processual penal, julgue o seguinte item.
 
+Não sendo possível o exame de corpo de delito, por haverem desaparecido os vestígios, a prova testemunhal poderá suprir-lhe a falta.
 
-Para os efeitos da lei mencionada, considera-se informação sigilosa aquela submetida permanentemente à restrição de acesso público em razão de sua imprescindibilidade para a segurança da sociedade e do Estado.
+Certo
+Errado
+Gabarito: Certo
+## questao 476191
+CEBRASPE (CESPE) - TJ STJ/STJ/Administrativa/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+151) 
+Quando a infração penal deixar vestígios, será indispensável o exame de corpo de delito, direto ou indireto, não podendo supri-lo a confissão do acusado. Com relação a esse assunto, julgue o item subseqüente.
+
+Os exames de corpo de delito devem ser realizados exclusivamente por dois peritos oficiais.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 2266612
-CEBRASPE (CESPE) - AJ TRT8/TRT 8/Apoio Especializado/Arquivologia/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-151) 
-A política de acesso aos documentos de arquivo foi fortemente impactada com a promulgação da Lei n.º 12.527, conhecida como Lei de Acesso à Informação, que tem como princípio a garantia constitucional de acesso à informação. Entretanto, estabeleceu algumas restrições. Assinale a opção referente ao prazo máximo de restrição de acesso à informação e, portanto, aos documentos de arquivo no Brasil a partir dos graus de sigilo.
-
-a) 5 anos
-b) 15 anos
-c) 25 anos
-d) 35 anos
-
-e) 45 anos
-Gabarito: C
-## questao 2273599
-CEBRASPE (CESPE) - Cont (Maringá)/Pref Maringá/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+## questao 476192
+CEBRASPE (CESPE) - TJ STJ/STJ/Administrativa/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 152) 
-Conforme a Lei n.º 12.527/2011, desconsideradas eventuais hipóteses de delegação, a classificação do sigilo de informações no âmbito da administração pública federal é de competência, no grau ultrassecreto, do
+Quando a infração penal deixar vestígios, será indispensável o exame de corpo de delito, direto ou indireto, não podendo supri-lo a confissão do acusado. Com relação a esse assunto, julgue o item subseqüente.
 
-a) dirigente de sociedade de economia mista de capital majoritariamente público.
-b) diretor de agência reguladora.
-c) chefe de missão consular permanente no exterior.
-d) diretor-geral da Polícia Federal.
+ 
 
-e) oficial de inteligência da Agência Brasileira de Inteligência (ABIN).
-Gabarito: C
-## questao 2273611
-CEBRASPE (CESPE) - Cont (Maringá)/Pref Maringá/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
+Desaparecidos os vestígios da infração penal, a prova testemunhal poderá suprir o exame de corpo de delito direto.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 728336
+CEBRASPE (CESPE) - JE TJMT/TJ MT/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
 153) 
-Considerando as disposições da Lei de Acesso à Informação, julgue os itens a seguir.
+Em determinado processo, apresentadas as alegações finais pelas partes, os autos foram conclusos ao juiz, para proferimento de sentença. Nessa ocasião, o juiz teve dúvidas acerca da autoria do delito de contrafação, devido ao fato de não ter sido realizado exame grafoscópico.
+
+
+Considerando a situação hipotética apresentada e sabendo que a prova da autoria cabe ao Ministério Público, assinal e a opção correta.
+
+a) Em face da paridade de tratamento entre as partes, o juiz deve proferir sentença absolutória, obedecendo o princípio in dubio pro reo.
+b) Em razão do princípio da auto-responsabilidade das partes, o ó rgão acusador deve suportar as conseqüências de sua negligência, devendo ser proferida sentença absolutória.
+c) O juiz pode determinar a realização do exame faltante e, caso este seja conclusivo no sentido de ser do réu o punho realizador da contrafação, deverá aplicar, obrigatoriamente, o princípio do contraditório e proferir sentença condenatória.
+d) Pode o magistrado proferir sentença condenatória com base em laudo que tenha sido apresentado a juízo cível, em ação indenizatória proposta contra o estado da Federação, devido ao princípio da aquisição ou da comunhão.
+Gabarito: C
+## questao 2618590
+CEBRASPE (CESPE) - AJ (TJ AP)/TJ AP/Judiciária e Administrativa/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+154) 
+Com relação à prova, julgue o item a seguir.
 
  
-I A atribuição, pelo comandante da Marinha, de classificação da informação no grau de sigilo ultrassecreto depende da ratificação do ministro da defesa.
+As perícias devem ser realizadas por dois peritos, sendo causa de nulidade absoluta o exame feito por um só expert.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2618591
+CEBRASPE (CESPE) - AJ (TJ AP)/TJ AP/Judiciária e Administrativa/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+155) 
+Com relação à prova, julgue o item a seguir.
 
  
-II O acesso a informações pessoais necessárias à defesa de direitos humanos independe do consentimento expresso do titular.
+Em caso de acidente de tráfego e sobrevindo a morte da vítima, é dispensável o exame interno do cadáver quando as lesões externas permitirem uma conclusão acerca da causa da morte.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2626779
+CEBRASPE (CESPE) - AJ (TJ AP)/TJ AP/Judiciária/Oficial de Justiça Avaliador/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+156) 
+A prova é geradora da convicção do juiz, para que se pronuncie acerca de determinado fato, declarando a existência da responsabilidade criminal e impondo, conforme o caso, a sanção penal. Quanto à prova, julgue o item subseqüente.
 
  
-III A decisão que formaliza a classificação de informação em qualquer grau de sigilo dispensa a identificação do assunto sobre o qual versa a informação.
+É nulo o laudo pericial contendo divergências entre os peritos.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2628909
+CEBRASPE (CESPE) - Aux.Jud. (TJ AP)/TJ AP/Administrativa e Judiciária/2004
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+157) 
+No referente a provas, julgue o item que se segue.
+
+ 
+O exame de corpo de delito é indispensável para a apuração de todos os tipos de crimes.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 875263
+CEBRASPE (CESPE) - Ag Trans (DETRAN DF)/DETRAN DF/2003
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+158) 
+Acerca da prova no processo penal, julgue o item que se segue.
+
+ 
+
+Desaparecidos os vestígios de um crime, será possível a formação do corpo de delito indireto mediante prova testemunhal.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 875265
+CEBRASPE (CESPE) - Ag Trans (DETRAN DF)/DETRAN DF/2003
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+159) 
+Acerca da prova no processo penal, julgue o item que se segue.
+
+ 
+
+Considere a seguinte situação hipotética.
+
+
+Um indivíduo arrombou a porta de uma residência e subtraiu do seu interior, em proveito próprio, um aparelho de televisão, roupas, bebidas e a importância de R$ 1 mil.
+
+
+Nessa situação, será necessária a prova pericial para classificar o crime de furto como qualificado, pela destruição e pelo rompimento de obstáculo à subtração da coisa.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 956076
+CEBRASPE (CESPE) - Per Pap (PC RR)/PC RR/2003
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+160) 
+Considerando a situação hipotética em que um indivíduo — Flávio — tenha sido preso em flagrante delito, após ter danificado, mediante pauladas, viatura policial, julgue o item subsequente.
+
+ 
+
+No caso apresentado, será dispensável o exame de corpo delito, bastando a confissão de Flávio para comprovar os fatos.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1343225
+CEBRASPE (CESPE) - AJ (TJ BA)/TJ BA/Judiciária/Secretário/2003
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+161) 
+No que se refere a nulidades e recursos em geral, julgue o item que se segue.
+
+ 
+Em hipótese de furto em um supermercado mediante o arrombamento de cadeados fixos à porta de entrada, dispensado o exame de corpo de delito no local para comprovar a autoria, será suficiente a confissão do acusado, por se tratar de prova plena da sua culpabilidade.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 49934
+CEBRASPE (CESPE) - DPF/PF/2002
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+162) 
+A respeito da prova no processo penal, julgue o item a seguir.
+
+Considere a seguinte situação hipotética.
+
+Um indivíduo adentrou em uma agência da CAIXA e, mediante ameaça exercida com o emprego de uma metralhadora, subtraiu do caixa a importância de R$ 10.000,00 em espécie. Ao sair da agência, ele foi preso em flagrante, tendo a arma de fogo sido extraviada no caminho para a delegacia.
+
+Nessa situação, em face da não-apreensão da arma e da não-realização de perícia nela, não será cabível o reconhecimento da causa de aumento do crime de roubo (roubo qualificado com o emprego de arma).
+
+Certo
+Errado
+Gabarito: Errado
+## questao 49936
+CEBRASPE (CESPE) - DPF/PF/2002
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+163) 
+A respeito da prova no processo penal, julgue o item a seguir.
+
+Considere a seguinte situação hipotética.
+
+Marta foi indiciada em inquérito policial instaurado para apurar o crime de estelionato, na modalidade de fraude no pagamento por meio de cheque. A autoridade policial, visando submeter a cártula a exame grafotécnico, notificou Marta para comparecer à delegacia a fim de fornecer padrões gráficos do próprio punho.
+
+Nessa situação, como o objetivo do exame pericial é proporcionar a comparação entre o escrito comprovadamente feito pelo punho da indiciada e aquele cuja autoria está sendo pesquisada e que constitui o corpo de delito, a autoridade policial não poderá compelir Marta a comparecer à delegacia e a lançar as assinaturas.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 59417
+CEBRASPE (CESPE) - Adv (AGU)/AGU/2002
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+164) 
+A respeito dos procedimentos dos juizados especiais criminais e do tribunal do júri, julgue o item a seguir.
+
+Considere a seguinte situação hipotética.
+
+A autoridade policial encaminhou ao juizado especial criminal um termo circunstanciado referente a um crime de lesão corporal simples, acompanhado com cópia do prontuário do hospital e do relatório médico. Terminada a audiência preliminar, não tendo ocorrido transação, por não ser aceita pelo infrator a proposta de aplicação imediata de pena, o Ministério Público verificou que com a representação da vítima não estava o laudo de exame de corpo de delito.
+
+Nessa situação, cons iderando a imprescindibilidade do laudo para comprovar a materialidade da infração penal, o órgão do Ministério Público não poderá ofertar a denúncia.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 549953
+CEBRASPE (CESPE) - AJ (TJ AC)/TJ AC/Judiciária/Direito /2002
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+165) 
+No item seguinte, é apresentada uma situação hipotética, seguida de uma assertiva a ser julgada.
+
+ 
+Um indivíduo teve, contra si, ofertada denúncia por crime que deixa vestígio sem que fosse elaborado exame de corpo de delito direto ou indireto e sem que houvesse justificativa para essa falha. Nessa situação, a peça acusatória não deve ser recebida.
+
+   
+Certo
+Errado
+Gabarito: Errado
+## questao 488540
+CEBRASPE (CESPE) - TJ (TJ PE)/TJ PE/Oficial de Justiça/2001
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+166) 
+Julgue os itens a seguir, referentes à prova no processo penal.
+
+
+I   Tratando-se de crime material, o exame de corpo de delito deve ser sempre direto.
+
+
+II   Desaparecidos os vestígios do crime, o exame de corpo de delito pode ser suprido pela prova testemunhal.
+
+
+III   Determinada a realização de exame pericial pelo juiz, as partes poderão, até o momento da diligência, formular quesitos.
+
+
+IV   É obrigatório o exame complementar para classificar a lesão corporal de que resulte incapacidade para as ocupações habituais por mais de trinta dias. Nesse caso, o exame não poderá ser suprido pela prova testemunhal.
+
+
+Estão certos apenas os itens
+
+a) I e II. 
+b) I e IV.
+
+c) II e III.
+
+d) II e IV.
+
+e) III e IV.
+Gabarito: C
+## questao 49209
+CEBRASPE (CESPE) - PPF/PF/2000
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+167) 
+Ao passar nas adjacências de uma boate, João, agindo com vontade de matar, derramou gasolina e ateou fogo nas vestes de um rapaz que dormia alcoolizado na sarjeta e que, em decorrência das queimaduras sofridas, veio a falecer, ficando com o rosto completamente desfigurado. João foi preso em flagrante, tendo a autoridade policial lavrado o auto e comunicado tal fato ao juiz dois dias após. A vítima não portava documento de identidade e não foi reconhecida por parentes ou amigos, o que levou a autoridade policial a solicitar a perícia do Instituto de Criminalística para tentar identificá-la. Para acompanhar a perícia, o advogado de João indicou dois assistentes técnicos. Ao ser apresentado o laudo datiloscópico, a autoridade policial constatou que havia divergência entre os pareceres e as conclusões dos expertos oficiais que o subscreveram. Ficou comprovado, posteriormente, que o parecer de um dos peritos oficiais estava eivado de falsidade, tendo este deliberadamente afirmado inverdades acerca de dados objetivos colhidos, com a intenção de favorecer o indiciado. Antes da conclusão do inquérito, o perito cujo parecer estava eivado de falsidade retratou-se e declarou a verdade.
+
+Com relação a essa situação hipotética e à legislação pertinente, julgue o item que se segue.
+
+Para a realização da perícia datiloscópica, a autoridade policial poderia receber a indicação dos assistentes técnicos da defesa, mas teria de dar ciência ao Ministério Público, na qualidade de titular da ação penal.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 53697
+CEBRASPE (CESPE) - EPF/PF/1999
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+168) 
+O exame de corpo de delito
+
+pode ser realizado em qualquer dia e a qualquer hora.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 53698
+CEBRASPE (CESPE) - EPF/PF/1999
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+169) 
+O exame de corpo de delito
+
+será indispensável quando a infração deixar vestígios, mesmo havendo confissão do acusado.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 53699
+CEBRASPE (CESPE) - EPF/PF/1999
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+170) 
+O exame de corpo de delito
+
+inviabilizado pelo desaparecimento dos vestígios pode ser suprido pela prova testemunhal.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 53700
+CEBRASPE (CESPE) - EPF/PF/1999
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+171) 
+O exame de corpo de delito
+
+pode ser realizado, excepcionalmente, por peritos não-oficiais.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 53701
+CEBRASPE (CESPE) - EPF/PF/1999
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+172) 
+O exame de corpo de delito
+
+deve ser seguido da confecção do respectivo laudo, ao qual o juiz fica vinculado.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 53716
+CEBRASPE (CESPE) - EPF/PF/1999
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+173) 
+Julgue o item abaixo.
+ 
+
+Ressalvado o caso de exame de corpo de delito, o juiz ou a autoridade policial poderá indeferir o requerimento de produção de prova pericial formulado pelo réu ou pelo indiciado.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 54332
+CEBRASPE (CESPE) - APF/PF/1997
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+174) 
+Amador e Profissional foram indiciados em inquérito policial, em razão de representação formulada por Ciumenta, por crime de estupro. Segundo Ciumenta, os indiciados a constrangeram mediante grave ameaça com uma faca, a com eles manter relação sexual. Os autos do inquérito policial foram remetidos ao Ministério Público. Em face da situação apresentada, julgue o item a seguir.
+
+Embora já relatado o inquérito policial, o representante do Ministério Público poderá determinar a realização de exame pericial na faca que teria sido utilizada pelos indiciados para constranger a vítima à conjunção carnal.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 54353
+CEBRASPE (CESPE) - APF/PF/1997
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+175) 
+A respeito de perícias em geral, julgue o item abaixo.
+ 
+
+Tanto os peritos não-oficiais quanto os oficiais deverão prestar compromisso de bem e fielmente desempenhar o encargo, sob pena de nulidade do laudo.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 54354
+CEBRASPE (CESPE) - APF/PF/1997
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+176) 
+A respeito de perícias em geral, julgue o item abaixo.
+ 
+
+Não se fará necessária a realização de autópsia quando, em caso de incêndio, o corpo da vítima estiver totalmente carbonizado e não houver sinais de ocorrência de infração penal a apurar.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 54355
+CEBRASPE (CESPE) - APF/PF/1997
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+177) 
+A respeito de perícias em geral, julgue o item abaixo.
+
+O exame de corpo de delito deverá ser realizado entre as seis e as dezoito horas.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 54356
+CEBRASPE (CESPE) - APF/PF/1997
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+178) 
+A respeito de perícias em geral, julgue o item abaixo.
+
+Não havendo peritos oficiais, o exame poderá ser realizado por pessoas idôneas, desde que portadoras de instrução secundária.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 54357
+CEBRASPE (CESPE) - APF/PF/1997
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+179) 
+A respeito de perícias em geral, julgue o item abaixo.
+
+Na hipótese de não haver sido encontrado 0 objeto furtado será impossível a avaliação econômica para fins de prova.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 54629
+CEBRASPE (CESPE) - PPF/PF/1997
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+180) 
+Relativamente às perícias em geral, julgue o item seguinte.
+
+A confissão do réu pode suprir a ausência do laudo pericial.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 54631
+CEBRASPE (CESPE) - PPF/PF/1997
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+181) 
+Relativamente às perícias em geral, julgue o item seguinte.
+
+Sendo os peritos profissionais especializados, não pode o juiz recusar as conclusões da perícia.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 54632
+CEBRASPE (CESPE) - PPF/PF/1997
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+182) 
+Relativamente às perícias em geral, julgue o item seguinte.
+
+A falta de exame complementar poderá ser suprida pela prova testemunhal.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 54843
+CEBRASPE (CESPE) - PCF/PF/Área 1/1997
+Direito Processual Penal - Do Exame de Corpo de Delito, da Cadeia de Custódia e das Perícias em Geral (arts. 158 a 184 do CPP)
+183) 
+Em relação aos conceitos periciais, julgue o item abaixo.
+ 
+
+Os quesitos da lide podem ser elaborados por qualquer uma das partes integrantes do processo e encaminhados ao magistrado somente por meio de petição.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 3429029
+CEBRASPE (CESPE) - Del Pol (PC CE)/PC CE/2025
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+184) 
+Em medicina legal e nas ciências forenses, o exame de corpo de delito
+
+a)  é de competência privativa do perito oficial em qualquer foro — penal, cível ou administrativo.
+b)  deve ser feito em dia e local previamente determinados.
+c)  tem como objetivo a análise de qualquer objeto encontrado no local de um crime.
+d)  tem como objetivo a análise do conjunto de vestígios materiais resultantes de um crime.
+
+e)  é o exame necessariamente realizado no corpo da vítima de um crime.
+Gabarito: D
+## questao 2338635
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+185) 
+No que se refere ao papel da perícia na elucidação de delitos, julgue o item subsequente.
+
+
+O perito nomeado em questão criminal pela autoridade será obrigado a aceitar o encargo, não sendo possível escusa.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2338636
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+186) 
+No que se refere ao papel da perícia na elucidação de delitos, julgue o item subsequente.
+
+ 
+A perícia realizada no corpo de delito está relacionada ao exame dos objetos e não inclui a perícia no indivíduo morto ou vivo.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2338637
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+187) 
+No que se refere ao papel da perícia na elucidação de delitos, julgue o item subsequente.
+
+ 
+A realização, por médico-legista, de exame de prontuário médico de uma vítima de abuso sexual constitui exame de corpo de delito indireto.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2341751
+CEBRASPE (CESPE) - Aux Per (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+188) 
+Acerca dos peritos e das perícias médico-legais, julgue o item a seguir.
+
+
+Por terem autonomia técnico-científica assegurada por lei, os peritos não podem ser responsabilizados civil ou penalmente.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2341753
+CEBRASPE (CESPE) - Aux Per (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+189) 
+Acerca dos peritos e das perícias médico-legais, julgue o item a seguir.
+
+ 
+As perícias podem ser conceituadas como um conjunto de procedimentos, de caráter técnico e médico, realizados em indivíduos vivos, cadáveres, esqueletos, animais e objetos, cuja finalidade é o esclarecimento de um fato de interesse da justiça.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2012961
+CEBRASPE (CESPE) - Del Pol (PC PB)/PC PB/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+190) 
+No que se refere à prova pericial no curso do processo judicial, é permitido às partes
+
+ 
+I requerer a oitiva dos peritos para esclarecerem a prova ou para responderem a quesitos.
+
+ 
+II demandar esclarecimentos dos peritos desde que os quesitos ou questões sejam encaminhados com antecedência mínima de 15 dias.
+
+ 
+III arguir o impedimento legal do perito.
 
  
 Assinale a opção correta.
 
-a) Apenas o item II está certo.
+a) Apenas o item I está certo.
 b) Apenas o item III está certo.
 c) Apenas os itens I e II estão certos.
 d) Apenas os itens I e III estão certos.
 
 e) Todos os itens estão certos.
-Gabarito: C
-## questao 2612960
-CEBRASPE (CESPE) - ATCI (MCom)/MCom/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-154) 
-Julgue o item a seguir, de acordo com a Lei de Acesso à Informação (Lei n.º 12.527/2011).
-
- 
-O prazo máximo de restrição de acesso às informações classificadas como ultrassecretas é de 25 anos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1628534
-CEBRASPE (CESPE) - Ana (SERPRO)/SERPRO/Ciência de Dados/2021
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-155) 
-Acerca de privacidade e proteção de dados pessoais, julgue o item a seguir.
-
- 
-Informações classificadas como ultrassecretas deverão ficar com acesso restrito por vinte e cinco anos, contados a partir de sua produção.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1704883
-CEBRASPE (CESPE) - AJ (PGDF)/PG DF/Arquivologia/2021
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-156) 
-A respeito das políticas de acesso aos documentos de arquivo previstas na Constituição Federal de 1988 e de sua regulamentação no Distrito Federal, julgue o item a seguir.
-
- 
-Documentos cujas informações sejam classificadas em grau reservado terão seu prazo de desclassificação contado a partir do ato de classificação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1718291
-CEBRASPE (CESPE) - AFRE (SEFAZ CE)/SEFAZ CE/2021
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-157) 
-No que se refere à ética bem como ao disposto na Lei de Acesso à Informação, julgue o item a seguir.
-
- 
-O acesso público a informação reservada, após consumado o evento que definiu tal classificação, dependerá de decisão fundamentada da autoridade competente.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1816238
-CEBRASPE (CESPE) - Tec Adm (COREN CE)/COREN CE/2021
-Direito Administrativo (Doutrina e Leis Federais) - Das Restrições de Acesso à Informação (arts. 21 a 31 da Lei nº 12.527/2011)
-158) 
-Os órgãos da administração direta integrantes dos três poderes e entidades da administração indireta submetem-se à Lei n.º 12.527/2011, relativa ao acesso à informação. A regulamentação do direito de acesso à informação prevista na referida lei compreende o acesso irrestrito a
-
-a) informação contida em registros ou documentos produzidos por órgãos do Poder Executivo e informações que afetem investigação em andamento.
-b) informação que comporte risco elevado à estabilidade econômica do país e informação referente à administração do patrimônio público.
-c) informação que ofereça risco à saúde da população e informação relativa a licitações e contratos.
-d) informação referente ao resultado de auditorias e prestações de contas e informação relativa à utilização de recursos públicos.
 Gabarito: D
-## questao 3238367
-CEBRASPE (CESPE) - GAAPC (PC DF)/PC DF/Analista de Informática/Banco de Dados/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-159) 
-Julgue o item a seguir, relativo à certificação digital, à gestão de riscos e ao disposto na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais − LGPD).
-
- 
-Uma empresa de e-commerce no Brasil que coleta endereços de IP dos usuários deve justificar o tratamento de dados pessoais com base na LGPD, mediante o consentimento do titular ou para atender ao legítimo interesse do controlador, sendo assegurados ao titular o acesso e a eliminação dos dados tratados, salvo exceções legais.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3250603
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Análise de Dados/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-160) 
-Julgue o item a seguir, com base no disposto na Lei Geral de Proteção de Dados Pessoais (LGPD).
-
- 
-Quando houver tratamento para fins exclusivos de segurança pública ou defesa nacional, a Autoridade Nacional de Proteção de Dados (ANPD) deve ser comunicada previamente pois a ela compete zelar pela proteção dos dados pessoais.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3250613
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Análise de Dados/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-161) 
-Julgue o item a seguir, relativo ao tratamento de dados pessoais no poder público, conforme orientação da ANPD.
-
- 
-Segundo o princípio da necessidade, o tratamento de dados deve ser limitado ao mínimo necessário para a realização de suas finalidades, logo deve abranger apenas os dados pertinentes, proporcionais e não excessivos em relação às suas finalidades.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3258580
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Tecnologia da Informação/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-162) 
-Julgue o item a seguir, relacionado a disposições da Lei Geral de Proteção de Dados (LGPD), a serviços públicos digitais e a inteligência artificial.
-
- 
-O tratamento integral de dados pessoais de banco de dados para fins exclusivos de segurança pública poderá ser realizado por pessoa de direito privado cujo capital seja integralmente constituído pelo poder público.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3258620
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Judiciária/Sem Especialidade/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-163) 
-A respeito do acesso à informação e do tratamento de dados pessoais, julgue o item a seguir.
-
- 
-A Lei Geral de Proteção de Dados Pessoais (LGPD) não se aplica ao tratamento de dados pessoais realizado para fins exclusivos de atividades de investigação e repressão de infrações penais.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3259935
-CEBRASPE (CESPE) - TJ TRF6/TRF 6/Apoio Especializado/Desenvolvimento de Sistemas de Informação/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-164) 
-Acerca de gestão de riscos e continuidade de negócio, julgue o item a seguir, com base na NBR ISO 27005:2019 e na Lei Geral de Proteção de Dados (LGPD).
-
- 
-Conforme a LGPD, o dado pessoal relativo a origem racial ou étnica, bem como a convicção religiosa e opinião política, é classificado como dado pessoal anonimizado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3259939
-CEBRASPE (CESPE) - TJ TRF6/TRF 6/Apoio Especializado/Desenvolvimento de Sistemas de Informação/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-165) 
-Acerca de gestão de riscos e continuidade de negócio, julgue o item a seguir, com base na NBR ISO 27005:2019 e na Lei Geral de Proteção de Dados (LGPD).
-
- 
-A LGPD disciplina a proteção de dados pessoais com fundamento na autodeterminação informativa e na liberdade de expressão, informação, comunicação e opinião.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3269693
-CEBRASPE (CESPE) - Ana Tec II (SEBRAE)/SEBRAE/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-166) 
-Conforme a política referente à proteção de dados e privacidade do sistema SEBRAE, a compatibilidade do tratamento com as finalidades informadas ao titular, de acordo com o contexto do tratamento, atende ao princípio da Lei Geral de Proteção de Dados Pessoais (LGPD) denominado 
-
-a) transparência.
-b) necessidade.
-c) finalidade.
-d) adequação.
-Gabarito: D
-## questao 3269889
-CEBRASPE (CESPE) - Ana Tec I (SEBRAE)/SEBRAE/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-167) 
-Assinale a opção em que é citado o princípio previsto na Lei Geral de Proteção de Dados Pessoais (LGPD) ao qual o SEBRAE deve atender ao realizar o enriquecimento e a atualização dos dados pessoais de seus clientes.
-
-a) segurança
-b) prevenção
-c) qualidade dos dados
-d) transparência
-Gabarito: C
-## questao 3289663
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Administração e Planejamento/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-168) 
-Julgue o item a seguir, considerando a legislação vigente acerca da transparência na gestão de pessoas, diversidade e proteção de dados pessoais.
-
- 
-A Lei Geral de Proteção de Dados Pessoais prevê como fundamentos da disciplina da proteção de dados pessoais a livre iniciativa, a livre concorrência e a defesa do consumidor.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3289928
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Comercial, Marketing e Comunicação Social/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-169) 
-Considerando o disposto na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD), julgue o item que se segue.
-
- 
-Aquele que realiza o tratamento de dados pessoais em nome do operador é denominado controlador.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3290513
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Jurídica/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-170) 
-Julgue o item seguinte, que versam sobre direito digital.
-
- 
-As atividades de tratamento de dados pessoais deverão observar o princípio da finalidade, segundo o qual o tratamento se limita ao mínimo necessário para a realização de suas finalidades.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3291883
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Sistemas e Governança de Tecnologia da Informação/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-171) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD), julgue o item que se segue.
-
- 
-O consentimento do titular dos dados pessoais pode ser obtido de forma implícita e inferido a partir de ações indiretas do titular, como a navegação em um site ou o uso de um serviço.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3312907
-CEBRASPE (CESPE) - AA (ANM)/ANM/Administração/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-172) 
-De acordo com a Lei de Acesso à Informação e a Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o próximo item.
-
-
-O tratamento de dados pessoais realizado para fins exclusivos de segurança pública, defesa nacional, segurança do Estado ou atividades de investigação e repressão de infrações penais se submete às disposições da LGPD, pois as normas gerais nela contidas são de interesse nacional e devem ser observadas pela União, pelos estados, pelo Distrito Federal e pelos municípios.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3318060
-CEBRASPE (CESPE) - ERM (ANM)/ANM/Comunicação/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-173) 
-Tendo como referência as regras estabelecidas no Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal (Decreto n.º 1.171/1994), na Lei de Acesso à Informação (Lei n.º 12.527/2011) e na Lei Geral de Proteção de Dados Pessoais — LGPD (Lei n.º 13.709/2018), julgue o item que se segue.
-
- 
-A proteção de dados assegurada pela LGPD abrange apenas as operações de tratamento de dados pessoais realizadas entre particular e o poder público.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3323954
-CEBRASPE (CESPE) - ERM (ANM)/ANM/Tecnologia da Informação/Ciência de Dados/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-174) 
-Com base na Lei nº 13.709/2018 (LGPD), julgue o próximo item.
-
- 
-Pessoa natural ou jurídica que realiza o tratamento de dados pessoais em nome do operador é denominada de controlador.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3342840
-CEBRASPE (CESPE) - AJ TRT10/TRT 10/Apoio Especializado/Arquivologia/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-175) 
-No que diz respeito ao regramento de acesso à informação no âmbito do Poder Judiciário e à proteção de dados pessoais, julgue o item subsequente.
-
-
-A Lei Geral de Proteção de Dados Pessoais (LGPD) também se aplica a dados pessoais provenientes de fora do território nacional, mesmo que não sejam objeto de compartilhamento com agentes de tratamento brasileiros.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3342843
-CEBRASPE (CESPE) - AJ TRT10/TRT 10/Apoio Especializado/Arquivologia/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-176) 
-No que diz respeito ao regramento de acesso à informação no âmbito do Poder Judiciário e à proteção de dados pessoais, julgue o item subsequente.
-
- 
-São fundamentos da disciplina da proteção de dados pessoais a livre iniciativa, a livre concorrência e a defesa do consumidor.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3344813
-CEBRASPE (CESPE) - AA (ICMBio)/ICMBio/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-177) 
-No que se refere ao ICMBio, às parcerias reguladas pela Lei n.º 13.019/2014, ao acesso a informações e ao tratamento de dados pessoais, julgue o item seguinte.
-
- 
-Não se aplica a Lei Geral de Proteção de Dados Pessoais (LGPD) ao tratamento de dados pessoais para fins exclusivamente jornalísticos e artísticos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3345032
-CEBRASPE (CESPE) - AAmb (ICMBio)/ICMBio/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-178) 
-Julgue o item a seguir, de acordo com as disposições da Lei de Criação do ICMBio, da Lei de Acesso a Informações, da Lei Geral de Proteção de Dados Pessoais (LGPD), do Decreto n.º 7.724/2012 e da Instrução Normativa n.º 4/GABIN/ICMBio, de 15/2/2024.
-
- 
-A finalidade, adequação, respeito à ética e aos direitos humanos e à segurança são os princípios que deverão ser observados nas atividades de tratamento de dados pessoais.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3361351
-CEBRASPE (CESPE) - AAmb (IBAMA)/IBAMA/Proteção, Conservação, Licenciamento, Monitoramento e Qualidade Ambiental/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-179) 
-Julgue o item subsequente, com base no disposto na Lei de Acesso à Informação (LAI) e na Lei Geral de Proteção de Dados (LGPD).
-
-
-A implementação de um sistema de reconhecimento facial por um órgão público municipal para fins de segurança em espaços públicos estará em conformidade com as referidas normas legais se esse órgão publicar, em seu sítio eletrônico,um relatório detalhado de impacto à proteção de dados pessoais (RIPD), informar os critérios de identificação facial utilizados e garantir o direito de acesso dos cidadãos às suas próprias imagens armazenadas no sistema.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3366860
-CEBRASPE (CESPE) - Ana C&T (AEB)/AEB/Qualquer Área de Formação/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-180) 
-Conforme a Lei Geral de Proteção de Dados Pessoais, nas atividades de tratamento de dados pessoais deve-se observar o princípio da 
-
-a)  prevenção, que é a adoção de medidas para prevenir a ocorrência de danos em virtude do tratamento de dados pessoais.
-b)  transparência, que se traduz na compatibilidade do tratamento com as finalidades informadas ao titular, de acordo com o contexto do tratamento.
-c)  adequação, consubstanciado na realização do tratamento para propósitos legítimos, específicos, explícitos e informados ao titular.
-d)  segurança, que consiste na impossibilidade de realização do tratamento para fins discriminatórios ilícitos ou abusivos.
-
-e)  finalidade, que garante, aos titulares, consulta facilitada e gratuita sobre a forma e a duração do tratamento.
-Gabarito: A
-## questao 3407868
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão de Pessoas/Saúde Ocupacional/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-181) 
-Considerando as disposições da Lei Geral de Proteção de Dados Pessoais e a legislação relacionada aos direitos sociais, julgue o item a seguir.
-
- 
-São considerados dados pessoais sensíveis a origem racial ou étnica, a convicção religiosa e o endereço residencial, não podendo eles compor algoritmos de IA.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3422380
-CEBRASPE (CESPE) - Tec (EMBRAPA)/EMBRAPA/Gestão da Informação/Tecnologia da Informação/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-182) 
-Julgue o item a seguir, com base na Lei Geral de Proteção de Dados Pessoais (LGPD), na Lei de Acesso à Informação e no Marco Civil da Internet.
-
- 
-De acordo com a LGPD, CPF e data de nascimento são dados pessoais sensíveis.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3425203
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão da Informação/Gestão da Informação Bibliográfica/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-183) 
-Julgue o item a seguir, com base na legislação referente a acesso a informação, proteção de dados e governo aberto.
-
- 
-A Lei Geral de Proteção de Dados aplica-se ao tratamento de dados pessoais realizado por pessoa natural para fins exclusivamente particulares e não econômicos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3437461
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão da Informação/Gestão da Informação Arquivística/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-184) 
-À luz do disposto na Lei de Acesso à Informação e na Lei Geral de Proteção de Dados Pessoais, julgue o item a seguir.
-
- 
-Um dos fundamentos da proteção de dados pessoais é a autodeterminação informativa.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3439004
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Direito e Auditoria/Assessoria Jurídica - Advogado/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-185) 
-De acordo com a Lei Geral de Proteção de Dados Pessoais (Lei n.º 13.709/2018), julgue o item a seguir.
-
- 
-Os princípios da discriminação, da finalidade e do sigilo de dados devem nortear as atividades de tratamento de dados pessoais.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3439005
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Direito e Auditoria/Assessoria Jurídica - Advogado/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-186) 
-De acordo com a Lei Geral de Proteção de Dados Pessoais (Lei n.º 13.709/2018), julgue o item a seguir.
-
- 
-Considera-se encarregado a pessoa natural ou jurídica, de direito público ou privado, que realiza o tratamento de dados pessoais em nome do controlador.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3441739
-CEBRASPE (CESPE) - AJ (STM)/STM/Administrativa/"Sem Especialidade"/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-187) 
-À luz do disposto na Lei Geral de Proteção de Dados Pessoais (LGPD) e na Lei de Acesso à Informação, julgue o item que se seguem.
-
- 
-Não se aplicam as regras da LGPD ao tratamento de dados pessoais para fins exclusivamente jornalísticos, a exemplo de reportagem para a TV Justiça.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3441740
-CEBRASPE (CESPE) - AJ (STM)/STM/Administrativa/"Sem Especialidade"/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-188) 
-À luz do disposto na Lei Geral de Proteção de Dados Pessoais (LGPD) e na Lei de Acesso à Informação, julgue o item que se seguem.
-
- 
-Dados referentes à saúde ou à vida sexual são considerados dados anonimizados.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3444439
-CEBRASPE (CESPE) - Pesq (EMBRAPA)/EMBRAPA/Ciências Exatas e da Terra/Rastreabilidade e Certificação Digital/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-189) 
-Com base na Lei Geral de Proteção de Dados (LGPD), julgue o item a seguir.
-
- 
-A LGPD estabelece dez princípios fundamentais que devem ser observados no tratamento de dados pessoais; entre eles estão a finalidade, a necessidade, o livre acesso e a segurança.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3446048
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Análise de Sistemas/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-190) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD), julgue o próximo item.
-
- 
-A LGPD estabelece princípios fundamentais para o tratamento de dados pessoais, de forma a garantir direitos como privacidade, autodeterminação informativa e segurança de dados pessoais, e aplica-se a qualquer operação de tratamento realizada por pessoa física ou jurídica, independentemente do meio utilizado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3447984
-CEBRASPE (CESPE) - AJ (STM)/STM/Judiciária/"Sem Especialidade"/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
+## questao 2013862
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
 191) 
-No que se refere à desapropriação, à proteção de dados e ao acesso à informação, julgue o item subsecutivo.
+Peritos devem descrever minuciosamente o que examinarem e responder aos quesitos formulados, elaborando o laudo pericial no prazo de
 
- 
-É necessário o consentimento da pessoa titular dos dados para o tratamento de dados pessoais para qualquer fim jornalístico.
+a) 15 dias, no máximo.
+b) 5 dias, prorrogáveis por igual período.
+c) 30 dias, prorrogáveis por igual período.
+d) 10 dias, no máximo, prorrogáveis em casos especiais.
 
-Certo
-Errado
-Gabarito: Errado
-## questao 3448023
-CEBRASPE (CESPE) - AJ (STM)/STM/Judiciária/"Sem Especialidade"/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
+e) 30 dias, no máximo.
+Gabarito: D
+## questao 2013866
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
 192) 
-Acerca da responsabilidade civil, das preferências e privilégios creditórios e da proteção de dados pessoais, julgue o item seguinte.
+O Setor de Criminalística da Polícia Civil foi acionado com o intuito de enviar equipe de perícia a local onde havia ocorrido homicídio e no qual havia drogas de abuso, cocaína, maconha e metanetamina. A perícia a ser realizada classifica-se, quanto a seu modo, em
 
- 
-Investigação criminal relacionada à segurança pública não se sujeita à aplicação da Lei Geral de Proteção de Dados.
+a) depoimento oral.
+b) perícia deducendi.
+c) perícia percipiendi.
+d) parecer.
 
-Certo
-Errado
-Gabarito: Certo
-## questao 3454215
-CEBRASPE (CESPE) - Ana Tec (SUSEP)/SUSEP/Contabilidade Pública/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-193) 
-Com base nas disposições da Geral de Proteção de Dados Pessoais e suas alterações, julgue o item seguinte.
-
- 
-Considera-se dado pessoal toda informação relacionada a pessoa natural identificada ou identificável.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3473398
-CEBRASPE (CESPE) - Ana SN (CAESB)/CAESB/Analista de Sistemas/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-194) 
-A Lei Geral de Proteção de Dados Pessoais (LGPD)
-
- 
-I tem como fundamento a liberdade de expressão, de informação, de comunicação e de opinião.
-
-II aplica-se ao tratamento de dados pessoais realizado para fins exclusivos de defesa nacional.
-
-III aplica-se ao tratamento de dados pessoais coletados fora do território nacional.
-
-IV tem como fundamento o desenvolvimento econômico e tecnológico e a inovação.
-
- 
-Estão certos apenas os itens
-
-a) I e II.
-b) I e IV.
-c) II e III.
-d) I, III e IV.
-
-e) II, III e IV.
-Gabarito: B
-## questao 3492648
-CEBRASPE (CESPE) - Adm (PF)/PF/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-195) 
-Em relação a acesso à informação, proteção de dados e processo administrativo federal, julgue o item que se seguem.
-
- 
-Com base na Lei Geral de Proteção de Dados, considera-se relatório de impacto à proteção de dados pessoais a documentação do controlador que contém a descrição dos processos de tratamento de dados pessoais que podem gerar riscos às liberdades civis e aos direitos fundamentais, bem como medidas, salvaguardas e mecanismos de mitigação de riscos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3514426
-CEBRASPE (CESPE) - Ass FA (CAU MG)/CAU MG/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-196) 
-No que se refere a preservação digital, acesso à informação e proteção de dados pessoais, julgue o item seguinte.
-
- 
-A Lei Geral de Proteção de Dados Pessoais está restrita a informações contidas em documentos físicos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3599181
-CEBRASPE (CESPE) - AJ (TJ PA)/TJ PA/Comunicação Social/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-197) 
-Julgue o item que se segue, relativo à Lei de Acesso à Informação e à Lei Geral de Proteção de Dados Pessoais.
-
- 
-A Lei Geral de Proteção de Dados Pessoais dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, no âmbito da União, dos estados, do Distrito Federal e dos municípios brasileiros.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3684835
-CEBRASPE (CESPE) - Proc (PGE ES)/PGE ES/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-198) 
-A Lei Geral de Proteção de Dados Pessoais (LGPD) dispõe sobre o tratamento de dados pessoais, inclusive nos meios digitais, por pessoa natural ou por pessoa jurídica de direito público ou privado, com o objetivo de proteger
-
-a)  o respeito à privacidade e à inviolabilidade da intimidade, da honra e da imagem.
-b) a segurança pública, a defesa nacional, a segurança do Estado ou atividades realizadas por pessoa natural para fins estritamente particulares e não econômicos.
-c) os direitos fundamentais de liberdade e de privacidade e o livre desenvolvimento da personalidade da pessoa natural.
-d) a autodeterminação informativa, o desenvolvimento econômico e tecnológico e a inovação.
-
-e)  os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais.
+e) relatório.
 Gabarito: C
-## questao 3684958
-CEBRASPE (CESPE) - AECE (TCE MS)/TCE MS/Tecnologia da Informação/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-199) 
-Com base na Lei Geral de Proteção de Dados Pessoais (Lei n.º 13.709/2018), a disciplina da proteção de dados pessoais tem como fundamentos
+## questao 2014212
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Médico Legal/Área Geral/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+193) 
+Julgue os itens a seguir, acerca do exame pericial.
 
  
-I o desenvolvimento econômico e tecnológico e a inovação.
+I A perícia médica direta se dá quando está presente o objeto da perícia.
 
  
-II a proteção da autodeterminação informativa.
+II A perícia médica indireta ocorre quando é baseada em informações trazidas ao perito, seja pelos documentos dos autos, por pesquisa de campo ou por novos documentos.
 
  
-III a inviolabilidade da intimidade, da honra e da imagem.
+III Em sentido amplo, perícia médica é todo e qualquer ato propedêutico ou exame feito por médico com a finalidade de colaborar com as autoridades administrativas, policiais ou judiciárias na formação de juízo a que estão obrigadas.
 
  
-IV a liberdade de expressão, de informação, de comunicação e de opinião.
+IV De acordo com o código de processo penal, quando a infração deixar vestígios, será dispensável o exame de corpo de delito, sendo suficiente a confissão do acusado.
 
  
 Assinale a opção correta.
 
-a) Apenas os itens I, II e III estão certos.
-b) Apenas os itens I, II e IV estão certos.
-c) Apenas os itens I, III e IV estão certos.
-d) Apenas os itens II, III e IV estão certos.
+a) Apenas o item I está certo.
+b) Apenas II e III estão certos.
+c) Apenas I, II, III estão certos.
+d) Apenas II, III e IV estão certos.
 
 e) Todos os itens estão certos.
-Gabarito: E
-## questao 3698678
-CEBRASPE (CESPE) - Ana Sau (Pref Boa Vista)/Pref Boa Vista/Enfermeiro/Intensivista Pediátrico/2025
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-200) 
-Considerado o conjunto de leis e normas que se associam ao prontuário do paciente e a suas informações pessoais associadas à saúde, assinale a opção correta.
-
-a) É vedada, em qualquer hipótese, a comunicação ou o uso compartilhado, entre controladores, de dados pessoais sensíveis referentes à saúde com o objetivo de obter vantagem econômica.
-b) O acesso de terceiros a informações pessoais relativas à intimidade e à vida pessoal do paciente dispensam consentimento se necessárias a um diagnóstico médico e para uso exclusivo no tratamento médico, ao passo que o acesso a informações pessoais relativas à honra e à imagem do paciente só pode ser obtido mediante seu expresso consentimento.
-c) A revelação sem justa causa de segredo contido em prontuário do paciente por enfermeiro que a ele tem acesso por sua profissão, em ato que possa produzir dano a outrem, é uma contravenção penal de ação incondicionada prevista na Lei das Contravenções Penais.
-d) Existem diversos tipos de dados pessoais, sendo alguns deles classificados como sensíveis, a exemplo de dados pessoais relacionados à saúde, à vida sexual, bem como genéticos ou biomédicos.
-
-e) Ainda que o prontuário seja um documento do paciente, se este era partícipe de pesquisa e sofreu evento adverso grave, é vedada a divulgação de detalhes relativos à sua participação na pesquisa em questão, mesmo que tal divulgação seja feita pelo paciente, por seus representantes legais ou por seus sucessores.
-Gabarito: D
-
-
-
-Atividade de Inteligência para CAM DEP - 2026
-#
-Ordenação: Por Relevância (Somente Assuntos)
-## questao 2855250
-CEBRASPE (CESPE) - ERSTT (ANTT)/ANTT/Direito/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-201) 
-Julgue o item a seguir com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD).
+Gabarito: C
+## questao 2015326
+CEBRASPE (CESPE) - Tec Per (PC PB)/PC PB/Área Geral/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+194) 
+Julgue os itens subsecutivos acerca da prioridade na realização do exame de corpo de delito, em crimes que envolvam
 
  
-O desenvolvimento econômico e tecnológico, a inovação, a autodeterminação informativa e o respeito à privacidade são fundamentos da disciplina da proteção de dados pessoais.
+I violência doméstica e familiar contra a mulher.
 
-Certo
-Errado
-Gabarito: Certo
-## questao 2876014
-CEBRASPE (CESPE) - APO (MPO)/MPO/Geral/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-202) 
-Com base na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item seguinte.
+II violência contra a criança, o adolescente e a pessoa idosa.
 
- 
-A anonimização consiste no processo de transformação de um dado para que não seja possível associá-lo, direta ou indiretamente, a um indivíduo.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2876221
-CEBRASPE (CESPE) - ERVS (ANVISA)/ANVISA/Engenharia/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-203) 
-Julgue o próximo item, relativo ao princípio da transparência e prestação de contas (accountability), à Lei n.º 12.527/2011 (Lei de Acesso à Informação – LAI) e à Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD).
-
-
-Considere que a ANVISA, por meio de contrato com a empresa holandesa Y, tenha produzido uma série de estudos afetos ao remédio A. Considere, ainda, que, no âmbito desse contrato, tenham sido coletados inúmeros dados pessoais sensíveis de pessoas que participaram dos referidos estudos. Considere, por fim, que todos esses dados estejam localizados na Holanda. Nessa situação, considerando que a operação de tratamento dos dados tenha sido realizada na sede da ANVISA, em Brasília, é correto afirmar que os dados pessoais em questão estão abrangidos pela LGPD.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2877571
-CEBRASPE (CESPE) - APO (MPO)/MPO/Tecnologia da Informação/Gestão da Segurança da Informação Orçamentária/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-204) 
-Considerando a legislação e as normatizações aplicadas à segurança e à privacidade da informação na administração pública federal, julgue o item a seguir.
-
- 
-Conforme a definição de dado pessoal sensível estabelecida na Lei Geral de Proteção de Dados Pessoais (LGPD), no conjunto de dados de uma pessoa natural constituído por nome, religião, CPF, nacionalidade, RG, cidade onde mora e estilo musical preferido, são considerados dados sensíveis apenas os relativos à religião e à nacionalidade.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2924459
-CEBRASPE (CESPE) - ARE (SEFAZ AC)/SEFAZ AC/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-205) 
-A Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados) se aplica à operação de tratamento de dados pessoais
-
-a) realizada por pessoa natural para fins exclusivamente particulares e não econômicos.
-b) realizada por pessoa jurídica de direito público ou privado, ou ainda por pessoa natural.
-c) provenientes de fora do território nacional e que não sejam objeto de comunicação.
-d) realizada por pessoa natural para fins exclusivos de segurança pública.
-
-e) realizada por pessoa natural no território nacional apenas por meio digital.
-Gabarito: B
-## questao 2924779
-CEBRASPE (CESPE) - Cont (SEFAZ AC)/SEFAZ AC/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-206) 
-Segundo a Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais), o dado relativo a titular que não possa ser identificado, considerando a utilização de meios técnicos razoáveis e disponíveis na ocasião de seu tratamento, é definido como dado
-
-a) do controlador.
-b) anonimizado.
-c) pessoal sensível.
-d) secreto.
-
-e) pessoal.
-Gabarito: B
-## questao 2935181
-CEBRASPE (CESPE) - Ap Adm (CM Maceió)/CM Maceió/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-207) 
-Julgue o item a seguir com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD) e na Lei n.º 14.129/2021, que dispõe sobre o governo digital.
-
- 
-Dados pessoais acerca de convicção religiosa ou opinião política têm proteção absoluta na LGPD e seu tratamento somente poderá ocorrer mediante consentimento expresso do respectivo titular, para finalidade específica.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2981690
-CEBRASPE (CESPE) - ASist (Pref Cach Itapemirim)/Pref Cach Itapemirim/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-208) 
-À luz da Lei Geral de Proteção de Dados (LGPD), que define dado pessoal e dado pessoal sensível, julgue o item que se segue.
-
-
-Dado pessoal sobre origem racial ou étnica, para a LGPD, é considerado como dado pessoal sensível.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2995986
-CEBRASPE (CESPE) - TJ CNJ/CNJ/Administrativa/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-209) 
-No que diz respeito à ética no serviço público, à proteção de dados pessoais e ao acesso à informação, julgue o item a seguir.
-
- 
-É legalmente possível que o tratamento de dados pessoais seja utilizado para a realização de estudos por órgãos de pesquisa.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3008068
-CEBRASPE (CESPE) - AGP (SEPLAG CE)/SEPLAG CE/Gestão de Desenvolvimento de Pessoas/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-210) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD) e no entendimento jurisprudencial do Supremo Tribunal Federal (STF), julgue o item a seguir.
-
-
-Segundo a jurisprudência do STF, o compartilhamento de dados pessoais entre órgãos e entidades da administração pública deve se limitar ao mínimo necessário para o atendimento da finalidade informada.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3008069
-CEBRASPE (CESPE) - AGP (SEPLAG CE)/SEPLAG CE/Gestão de Desenvolvimento de Pessoas/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-211) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD) e no entendimento jurisprudencial do Supremo Tribunal Federal (STF), julgue o item a seguir.
-
- 
-A LGPD aplica-se a qualquer operação de tratamento de dados pessoais realizada no território nacional, independentemente do país onde aqueles dados estejam localizados, contemplando, inclusive, as situações de uso para fins exclusivos de segurança pública, segurança do Estado e defesa nacional.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3008353
-CEBRASPE (CESPE) - AGP (SEPLAG CE)/SEPLAG CE/Tecnologia da Informação/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-212) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD), julgue o item a seguir.
-
- 
-Segundo a LGPD, o tratamento de dados pessoais deve observar, entre outros, o princípio da finalidade, segundo o qual deve ser atestada a compatibilidade do tratamento com as finalidades informadas ao titular, de acordo com o contexto do tratamento.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3008356
-CEBRASPE (CESPE) - AGP (SEPLAG CE)/SEPLAG CE/Tecnologia da Informação/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-213) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD), julgue o item a seguir.
-
- 
-É obrigatório que os controladores nomeiem um encarregado pelo tratamento de dados pessoais, que atuará como canal de comunicação entre o controlador, os titulares dos dados e a Autoridade Nacional de Proteção de Dados (ANPD).
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3075579
-CEBRASPE (CESPE) - Ana Adm (TCE AC)/TCE AC/Direito/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-214) 
-No que tange ao processo administrativo, às licitações e contratos administrativos, à Lei de Acesso à Informação e à Lei Geral de Proteção de Dados Pessoais, julgue o item seguinte.
-
- 
-Dada a autodeterminação informativa, um dos princípios fundamentais do regime legal de proteção de dados no Brasil, os titulares de dados devem ter a capacidade de decidir quais informações suas serão usadas e de que forma o serão.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3148410
-CEBRASPE (CESPE) - AnDR (CODEVASF)/CODEVASF/Tecnologia da Informação/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-215) 
-No que diz respeito à Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados – LGPD) e à Lei n.º 12.527/2011 (Lei de Acesso à Informação – LAI), julgue o item seguinte.
-
- 
-A LGPD não se aplica à proteção de dados de pessoa jurídicas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3148417
-CEBRASPE (CESPE) - AnDR (CODEVASF)/CODEVASF/Tecnologia da Informação/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-216) 
-No que diz respeito à Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados – LGPD) e à Lei n.º 12.527/2011 (Lei de Acesso à Informação – LAI), julgue o item seguinte.
-
- 
-A LGPD aplica-se ao tratamento dos dados pessoais de brasileiros natos, mesmo que esses dados tenham sido coletados em países estrangeiros.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3163984
-CEBRASPE (CESPE) - Ana Tec II (SEBRAE)/SEBRAE/Cerimonial e Eventos/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-217) 
-À luz da Lei Geral de Proteção de Dados Pessoais (Lei n.º 13.709/2018), assinale a opção correta.
-
-a) O tratamento de dados pessoais não poderá ocorrer à revelia do consentimento do titular dos dados.
-b) É vedado o tratamento de dados pessoais como condição para o fornecimento de produto ou de serviço ou para o exercício de direito.
-c) As atividades de tratamento de dados pessoais devem observar o princípio da finalidade, segundo o qual há a necessidade de o tratamento ser compatível com a finalidade informada ao titular.
-d) O SEBRAE e as microempresas e empresas de pequeno porte que com ele se relacionam não são titulares de dados pessoais sensíveis.
-Gabarito: D
-## questao 3202697
-CEBRASPE (CESPE) - AJ TSE/TSE/Apoio Especializado/Arquivologia/2024
-Direito Digital - Disposições Preliminares (arts. 1º a 6º da Lei nº 13.709/2018 - LGPD)
-218) 
-No que concerne a políticas públicas de arquivo e legislação arquivística, julgue o item que se segue.
-
- 
-A Lei Geral de Proteção de Dados não se aplica aos dados pessoais de pessoas falecidas que constem de documentos de arquivo.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3284223
-CEBRASPE (CESPE) - PMF (INSS)/INSS/2025
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-219) 
-Com base no disposto na Lei de Acesso à Informação, julgue o item a seguir.
-
- 
-Define-se integridade como a garantia de que a informação foi produzida, expedida, recebida ou modificada por uma fonte legítima e identificável.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3321896
-CEBRASPE (CESPE) - ERM (ANM)/ANM/Engenharia de Minas/Correcional/2025
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-220) 
-Julgue o item a seguir, a respeito do acesso à informação pública, regulado pela Lei n.º 12.527/2011 (Lei de Acesso à Informação – LAI).
-
- 
-A autenticidade é a qualidade da informação não modificada, inclusive quanto à origem, ao trânsito e ao destino.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3422381
-CEBRASPE (CESPE) - Tec (EMBRAPA)/EMBRAPA/Gestão da Informação/Tecnologia da Informação/2025
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-221) 
-Julgue o item a seguir, com base na Lei Geral de Proteção de Dados Pessoais (LGPD), na Lei de Acesso à Informação e no Marco Civil da Internet.
-
- 
-Conforme a definição expressa na Lei de Acesso à Informação, uma informação atende a critérios de disponibilidade quando pode ser conhecida e utilizada por indivíduos autorizados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3425091
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão da Informação/Gestão da Informação Bibliográfica/2025
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-222) 
-Acerca de segurança da informação, sistemas de informação e serviços de TI, julgue o item a seguir.
-
- 
-A Lei n.º 12.527/2011, também conhecida como Lei de Acesso à Informação, é aplicável ao Poder Executivo federal, mas não aos demais poderes e às esferas do governo.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3425199
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão da Informação/Gestão da Informação Bibliográfica/2025
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-223) 
-Julgue o item a seguir, com base na legislação referente a acesso a informação, proteção de dados e governo aberto.
-
- 
-Para a garantia do direito fundamental de acesso à informação, a publicidade é considerada preceito geral e o sigilo, exceção.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3446138
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Comunicação Social/2025
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-224) 
-Julgue o item que se seguem, a respeito da Lei de Acesso à Informação (LAI).
-
- 
-Por tratar de informações de órgãos fundamentais na estrutura do Estado brasileiro, a LAI estabelece o acesso à informação como exceção, sendo o sigilo a regra.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3446139
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Comunicação Social/2025
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-225) 
-Julgue o item que se seguem, a respeito da Lei de Acesso à Informação (LAI).
-
- 
-A LAI trata dos procedimentos a serem observados pela União, estados, Distrito Federal e municípios, para garantir o acesso a informações previsto na Constituição Federal de 1988.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3501112
-CEBRASPE (CESPE) - Tec (FUB)/FUB/Laboratório/Análise Clínica/2025
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-226) 
-Julgue o item a seguir, a partir das disposições do Estatuto e Regimento Geral da Universidade de Brasília e das Leis n.º 11.091/2005, n.º 13.709/2018 e n.º 12.527/2011.
-
- 
-A Lei de Acesso à Informação é inaplicável aos dados do Poder Judiciário e do Ministério Público.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3597309
-CEBRASPE (CESPE) - AJ (TJ PA)/TJ PA/Administração/2025
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-227) 
-Acerca da evolução da administração, julgue o item que se segue.
-
- 
-O acesso à informação, regulado pela Lei n.º 12.527/2011, aplica-se somente à administração pública direta dos Poderes Executivo e Legislativo.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3599183
-CEBRASPE (CESPE) - AJ (TJ PA)/TJ PA/Comunicação Social/2025
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-228) 
-Julgue o item que se segue, relativo à Lei de Acesso à Informação e à Lei Geral de Proteção de Dados Pessoais.
-
- 
-No Brasil, a Constituição Federal de 1988, segundo a qual todos têm direito de receber dos órgãos públicos informações de interesse particular ou coletivo, é o principal marco para a promulgação da Lei de Acesso à Informação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2778944
-CEBRASPE (CESPE) - Aud Est (CGE RJ)/CGE RJ/2024
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-229) 
-Com base na legislação relativa ao acesso à informação, julgue o item a seguir.
-
-
-A Política de Dados Abertos do Poder Executivo Federal será regida, entre outros princípios e diretrizes, pela observância da publicidade das bases de dados como preceito geral e do sigilo como exceção.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2778961
-CEBRASPE (CESPE) - Aud Est (CGE RJ)/CGE RJ/2024
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-230) 
-Acerca da responsabilidade atribuída às autoridades, da transparência orçamentária e dos relatórios de transparência, julgue o item que se segue.
-
- 
-As autoridades têm a responsabilidade de garantir o acesso à informação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2789203
-CEBRASPE (CESPE) - Ana Amb (MMA)/MMA/"Sem Área de Concentração"/2024
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-231) 
-Considerando o direito administrativo brasileiro, julgue o item a seguir.
-
- 
-Conforme a Lei n.º 12.527/2011, documento é a unidade de registro de informações, qualquer que seja o suporte ou formato.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2796922
-CEBRASPE (CESPE) - APGIPI (INPI)/INPI/Gestão da Tecnologia da Informação/Desenvolvimento e Manutençao de Sistemas/2024
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-232) 
-Considerando a legislação acerca de privacidade e proteção de dados, julgue o item a seguir.
-
- 
-As entidades privadas sem fins lucrativos que tenham recebido recursos públicos para a realização de ações de interesse público estão subordinadas, no que couber, à Lei n.º 12.527/2011 (Lei de Acesso à Informação).
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2796924
-CEBRASPE (CESPE) - APGIPI (INPI)/INPI/Gestão da Tecnologia da Informação/Desenvolvimento e Manutençao de Sistemas/2024
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-233) 
-Considerando a legislação acerca de privacidade e proteção de dados, julgue o item a seguir.
-
- 
-Para efeitos da Lei de Acesso à Informação (Lei n.º 12.527/2011), documento é considerado como a unidade física de registro de informações, utilizada para materializar conhecimento.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2838978
-CEBRASPE (CESPE) - Ana (APEX)/ApexBrasil/Aquisições e Jurídico/2024
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-234) 
-Entre as diretrizes a serem observadas na execução dos procedimentos previstos na Lei n.º 12.527/2011 (Lei de Acesso à Informação – LAI), que visa assegurar o direito fundamental de acesso à informação, estão
-
- 
-I a observância da publicidade como preceito geral e do sigilo como exceção;
-
- 
-II a divulgação de informações de interesse público, independentemente de solicitações;
-
- 
-III a utilização de meios de comunicação viabilizados pela tecnologia da informação.
+III violência contra a pessoa com deficiência.
 
  
 Assinale a opção correta.
 
-a)  Apenas os itens I e II estão certos.
-b) Apenas os itens I e III estão certos.
-c) Apenas os itens II e III estão certos.
-d) Todos os itens estão certos.
-Gabarito: D
-## questao 2841722
-CEBRASPE (CESPE) - Ana Min (MPE TO)/MPE TO/Especializado/Administração de Banco de Dados/2024
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-235) 
-Com fulcro na Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item subsecutivo.
-
- 
-Os procedimentos dessa lei destinam-se a assegurar o direito fundamental de acesso à informação com a observância da publicidade como preceito geral e do sigilo como exceção.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2854428
-CEBRASPE (CESPE) - ERSTT (ANTT)/ANTT/"Sem Área"/2024
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-236) 
-Com base no previsto na Lei n.º 12.527/2011, Lei de Acesso à Informação (LAI), e na Lei n.º 13.709/2018, Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o próximo item.
-
- 
-Para efeitos da LAI, considera-se primariedade a qualidade da informação não modificada, inclusive quanto à origem, trânsito e destino.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2877567
-CEBRASPE (CESPE) - APO (MPO)/MPO/Tecnologia da Informação/Gestão da Segurança da Informação Orçamentária/2024
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-237) 
-Considerando a legislação e as normatizações aplicadas à segurança e à privacidade da informação na administração pública federal, julgue o item a seguir.
-
- 
-Os órgãos públicos integrantes do Poder Judiciário devem seguir a diretriz de divulgação de informações de interesse público, independentemente de solicitações, para assegurar o direito fundamental de acesso à informação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2924826
-CEBRASPE (CESPE) - EFE (SEFAZ AC)/SEFAZ AC/2024
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-238) 
-Uma das diretrizes dispostas na Lei n.º 12.527/2011 (Lei de Acesso à Informação) é
-
-a) a garantia da quebra irrestrita do sigilo das informações públicas.
-b) o fomento ao desenvolvimento da cultura de confidencialidade na administração pública.
-c) a divulgação de informações de interesse público, independentemente de solicitações.
-d) a observância do sigilo como preceito geral e da publicidade como exceção.
-
-e) o aplacamento do controle social da administração pública
-Gabarito: C
-## questao 3075019
-CEBRASPE (CESPE) - Ana Adm (TCE AC)/TCE AC/Administração/2024
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-239) 
-Acerca do governo eletrônico — ou governo digital —, da transparência da administração pública, do controle social e cidadania, e da accountability, julgue o item subsequente.
-
- 
-Transparência ativa é definida em lei como a disponibilização de dados pela administração pública, independentemente da existência de solicitações.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3075035
-CEBRASPE (CESPE) - Ana Adm (TCE AC)/TCE AC/Administração/2024
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-240) 
-Com base no disposto na Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item a seguir.
-
- 
-As sociedades de economia mista controladas indiretamente pela União não são regidas pela Lei de Acesso à Informação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3075037
-CEBRASPE (CESPE) - Ana Adm (TCE AC)/TCE AC/Administração/2024
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-241) 
-Com base no disposto na Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item a seguir.
-
- 
-Integridade é a qualidade da informação derivada de sua reconhecida completude.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3075583
-CEBRASPE (CESPE) - Ana Adm (TCE AC)/TCE AC/Direito/2024
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-242) 
-No que tange ao processo administrativo, às licitações e contratos administrativos, à Lei de Acesso à Informação e à Lei Geral de Proteção de Dados Pessoais, julgue o item seguinte.
-
- 
-O direito de acesso à informação surgiu no ordenamento jurídico brasileiro com a edição da Lei n.º 12.527/2011.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3101794
-CEBRASPE (CESPE) - ERSPT (ANATEL)/ANATEL/Contabilidade (Ciências Contábeis)/2024
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-243) 
-Acerca da concessão de serviços públicos, do processo administrativo no âmbito da Lei n.º 9.784/1999, do controle judicial da administração pública e do que estabelece a Lei de Acesso à Informação (LAI), julgue o item subsequente, considerando, no que couber, o entendimento do STF.
-
- 
-A LAI aplica-se às empresas privadas contratadas pela administração pública, pois são recebedoras de recursos públicos; entretanto, em relação a elas, a publicidade ficará limitada à parcela dos recursos recebidos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3148414
-CEBRASPE (CESPE) - AnDR (CODEVASF)/CODEVASF/Tecnologia da Informação/2024
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-244) 
-No que diz respeito à Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados – LGPD) e à Lei n.º 12.527/2011 (Lei de Acesso à Informação – LAI), julgue o item seguinte.
-
- 
-A LAI determina a publicidade das informações da administração pública como preceito geral, sendo o sigilo possível, mas como exceção.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2368921
-CEBRASPE (CESPE) - Prom Jus (MPE SC)/MPE SC/2023
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-245) 
-No que diz respeito à Lei de Acesso à Informação — Lei n.º 12.527/2011, julgue o item subsequente.
-
- 
-Segundo entendimento do STF, as entidades privadas com fins lucrativos devem dar transparência e publicidade aos recursos recebidos por meio de subvenções, isenções tributárias e, indiretamente, perdão de dívidas.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2396130
-CEBRASPE (CESPE) - AJ 02 (TJ ES)/TJ ES/Apoio Especializado/Arquivologia/2023
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-246) 
-Em relação às políticas de acesso aos documentos de arquivo, julgue o item subsequente.
-
-
-A garantia do direito de acesso à informação é dever do Estado.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2421504
-CEBRASPE (CESPE) - Ana (CNMP)/CNMP/Apoio Jurídico/Direito/2023
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-247) 
-Caio, cidadão brasileiro, protocolou requerimento administrativo em uma autarquia federal, a fim de obter acesso a determinada informação de cunho pessoal. João, servidor público dessa autarquia, por ter amizade íntima com o requerente, atuou como seu intermediário junto à repartição pública.
-
-
-Em relação a essa situação hipotética e aspectos de direito administrativo a ela relacionados, julgue o item que se segue.
-
- 
-As disposições da Lei de Acesso à Informação não se aplicam às autarquias, uma vez que elas integram a administração pública indireta.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2423473
-CEBRASPE (CESPE) - Ana (CNMP)/CNMP/Tecnologia da Informação e Comunicação/Desenvolvimento de Sistemas/2023
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-248) 
-De acordo com a Lei de Acesso à Informação, julgue o item que se segue.
-
-
-Uma informação é definida como sigilosa quando possui restrição permanente e perdurável quanto ao acesso público em razão de sua imprescindibilidade para a segurança do cidadão.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2450084
-CEBRASPE (CESPE) - Ana Reg (AGER MT)/AGER MT/Administração/2023
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-249) 
-Para assegurar a transparência das informações prestadas pela administração pública, é necessário observar qualidades que garantam uma informação transparente quanto a sua origem, trânsito e destino, sendo que essas qualidades são atributos de
-
-a) disponibilidade.
-b) integridade.
-c) autenticidade.
-d) primariedade.
-
-e) tratamento da informação.
-Gabarito: B
-## questao 2535913
-CEBRASPE (CESPE) - Ana (SERPRO)/SERPRO/Tecnologia/2023
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-250) 
-Julgue o item subsequente, considerando a legislação acerca de acesso e segurança da informação e privacidade e proteção de dados pessoais.
-
-
-As autarquias e as fundações públicas estão subordinadas ao regime da Lei n.º 12.527/2011 (Lei de Acesso à Informação).
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2604189
-CEBRASPE (CESPE) - Ana TI (FUB)/FUB/2023
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-251) 
-Com base no disposto na Lei de Acesso à Informação (Lei n.º 12.527/2011), julgue o item a seguir.
-
-
-Para fins de efeito da lei em questão, é informação qualquer dado, mesmo que não processado, que pode ser utilizado para a geração de conhecimento, independentemente do meio ou formato.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2639445
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Estratégia e Governança/2023
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-252) 
-Com base no que dispõe a Lei n.º 12.527/2011 — Lei de Acesso à Informação —, julgue o item a seguir.
-
- 
-Considera-se informação pessoal toda informação que permita a identificação do sujeito individual.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2643122
-CEBRASPE (CESPE) - Aux ET (DATAPREV)/DATAPREV/2023
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-253) 
-Com base no que estabelece a legislação relacionada à segurança da informação e à proteção de dados, julgue o item a seguir.
-
- 
-Estão plenamente isentas da aplicação das disposições da Lei n.º 12.527/2011 (Lei de Acesso à Informação) as entidades privadas sem fins lucrativos que recebam recursos públicos mediante termo de parceria, convênios ou subvenções sociais, para a realização de ações de interesse público.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1937686
-CEBRASPE (CESPE) - AFCE (TCE-SC)/TCE SC/Tecnologia da Informação/2022
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-254) 
-No que diz respeito a big data e à L ei n . º 12.527/2011 e suas alterações (Lei de Acesso à Informação), julgue o item seguinte.
-
- 
-A Lei de Acesso à Informação não se aplica às entidades privadas sem fins lucrativos, independentemente de elas receberem ou não recursos públicos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1937690
-CEBRASPE (CESPE) - AFCE (TCE-SC)/TCE SC/Tecnologia da Informação/2022
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-255) 
-No que diz respeito a big data e à Lei n . º 12.527/2011 e suas alterações (Lei de Acesso à Informação), julgue o item seguinte.
-
- 
-Considera-se integridade, para efeito da Lei de Acesso à Informação, a qualidade da informação não modificada, inclusive quanto à origem, trânsito e destino.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1942646
-CEBRASPE (CESPE) - AFT (SEFAZ SE)/SEFAZ SE/Geral/2022
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-256) 
-Estão subordinados ao regime da Lei n.º 12.527/2011 (Lei de Acesso à Informação) os órgãos públicos integrantes
-
-a) da administração direta, apenas.
-b) da administração pública direta e indireta, além das entidades privadas sem fins lucrativos quanto à parcela dos recursos públicos recebidos para a realização de ações de interesse público.
-c) dos Poderes Executivo, Judiciário e Legislativo, excetuados os tribunais de contas e o Ministério Público.
-d) da administração indireta, e dos Poderes Executivo e Legislativo, do Ministério Público, excetuados os tribunais de contas e o Poder Judiciário.
-
-e) da administração indireta, apenas.
-Gabarito: B
-## questao 1970906
-CEBRASPE (CESPE) - AAAJ (DP DF)/DP DF/Informática Desenvolvimento de Sistemas/2022
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-257) 
-À luz da Lei nº 12.527/2011 — Lei de Acesso à Informação, julgue o item subsequente.
-
- 
-Sociedades de economia mista e entidades controladas direta ou indiretamente pela União, pelos estados, pelo Distrito Federal e pelos municípios subordinam-se à Lei de Acesso à Informação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1972209
-CEBRASPE (CESPE) - Esp GT (TELEBRAS)/TELEBRAS/Advogado/2022
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-258) 
-Acerca do acesso à informação nos órgãos públicos, julgue o item que se segue.
-
-
-De acordo com a Lei n.º 12.527/2011, primariedade é considerada a qualidade da informação não modificada, inclusive quanto à origem, ao trânsito e ao destino.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2007306
-CEBRASPE (CESPE) - TCE (TCE RJ)/TCE RJ/Técnico/2022
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-259) 
-Pedro requereu informações acerca de uma contratação direta promovida, com amparo em cláusula de inexigibilidade de licitação, por uma empresa pública estadual, a qual, entretanto, negou-lhe acesso a tais informações, sob o fundamento de que não estaria subordinada ao regime da Lei n.º 12.527/2011 (Lei de Acesso à Informação) e de que as informações solicitadas se referiam a dados pessoais de terceiros, cujo acesso era restrito, salvo se houvesse o consentimento expresso de tais terceiros. Inconformado, Pedro protocolou pedido de reconsideração perante a autoridade que lhe havia negado o acesso à informação, alegando que o referido consentimento não deve ser exigido quando as informações forem necessárias à proteção do interesse público preponderante.
-
- 
-A partir dessa situação hipotética, julgue o item seguinte.
-
- 
-Empresa pública estadual não se submete aos ditames da Lei de Acesso à Informação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2012057
-CEBRASPE (CESPE) - ACE (TCE RJ)/TCE RJ/Organizacional/Tecnologia da Informação/2022
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-260) 
-No que diz respeito ao TCE/RJ, julgue o item que se segue.
-
- 
-O TCE/RJ é órgão público sem personalidade jurídica, mas se subordina à Lei de Acesso à Informação (Lei n.º 12.527/2011).
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2032480
-CEBRASPE (CESPE) - Prod Cult (FUB)/FUB/2022
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-261) 
-Em relação à comunicação pública, julgue o item a seguir.
-
- 
-A Lei de Acesso à Informação pode ser considerada norma que favorece os interesses dos cidadãos, estando associada à categoria de comunicação pública relativa a dados públicos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2150989
-CEBRASPE (CESPE) - Aud Est (SECONT ES)/SECONT ES/Administração/2022
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-262) 
-Julgue o próximo item, com base no que dispõe a Lei de Acesso à Informação.
-
- 
-A entidade privada sem fins lucrativos que receba recursos públicos por meio de contrato de gestão deverá dar publicidade da destinação de todos os recursos que nela tramitarem.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2150991
-CEBRASPE (CESPE) - Aud Est (SECONT ES)/SECONT ES/Administração/2022
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-263) 
-Julgue o próximo item, com base no que dispõe a Lei de Acesso à Informação.
-
- 
-Entre as diretrizes da Lei de Acesso à Informação, destaca-se a de que a obrigatoriedade da divulgação de informações de interesse público está vinculada à solicitação formal pelos cidadãos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2273596
-CEBRASPE (CESPE) - Cont (Maringá)/Pref Maringá/2022
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-264) 
-Entre as diretrizes a serem observadas na execução dos procedimentos previstos na Lei n.º 12.527/2011 (Lei de Acesso à Informação) inclui-se
-
-a) a observância do sigilo como preceito geral e da publicidade como exceção.
-b) a divulgação de informações de interesse público, somente quando solicitadas.
-c) a utilização de meios de comunicação viabilizados pela tecnologia da informação.
-d) o desenvolvimento do controle interno da administração pública.
-
-e) o desenvolvimento da cultura de sigilo na administração pública.
-Gabarito: C
-## questao 2273597
-CEBRASPE (CESPE) - Cont (Maringá)/Pref Maringá/2022
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-265) 
-Consoante as disposições da Lei n.º 12.527/2011, a qualidade da informação coletada na fonte, com o máximo de detalhamento possível, sem modificações, denomina-se
-
-a) autenticidade.
-b) pessoalidade.
-c) primariedade.
-d) integridade.
-
-e) disponibilidade.
-Gabarito: C
-## questao 1503602
-CEBRASPE (CESPE) - AnDR (CODEVASF)/CODEVASF/Administração/2021
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-266) 
-Acerca de governo eletrônico, transparência da administração pública, accountability, gestão por resultados e gestão de redes organizacionais, julgue o item seguinte.
-
- 
-
-Na segunda década deste século, observou-se menor interação entre o governo e a sociedade, motivo pelo qual foi instituída a Lei de Acesso à Informação (LAI) e estabelecida a Política de Dados Abertos nesse período.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1503632
-CEBRASPE (CESPE) - AnDR (CODEVASF)/CODEVASF/Administração/2021
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-267) 
-Julgue o próximo item, à luz do disposto na Lei n.º 12.527/2011 (Lei de acesso à informação) e na Lei Complementar n.º 131/2009 (Lei da Transparência).
-
- 
-
-A informação obtida em local distinto da sua fonte original, sem os devidos detalhamentos e com modificações, apresenta problemas relacionados a sua primariedade, conforme a Lei n.º 12.527/2011.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1704601
-CEBRASPE (CESPE) - AJ (PGDF)/PG DF/Administração/2021
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-268) 
-A respeito da Lei de Acesso à Informação e da Lei da Transparência, julgue o item seguinte.
-
-
-O fato de a informação ser coletada na fonte, com o máximo de detalhamento possível, é suficiente para que essa informação seja considerada íntegra.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1704836
-CEBRASPE (CESPE) - AJ (PGDF)/PG DF/Arquivologia/2021
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-269) 
-Acerca das políticas públicas de arquivo e da legislação arquivística, julgue o item a seguir.
-
- 
-Os serviços de informações ao cidadão devem assegurar, conforme dispõe a legislação em vigor, o acesso às informações públicas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1752546
-CEBRASPE (CESPE) - Prom Jus (MPE SC)/MPE SC/2021
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-270) 
-Julgue o item a seguir, de acordo com a Lei de Acesso à Informação e a Lei dos Direitos dos Usuários dos Serviços Públicos.
-
- 
-As regras previstas na Lei de Acesso à Informação são aplicáveis a todos os órgãos e entidades da administração direta e indireta dos três Poderes da União e das três esferas de governo, podendo, inclusive, alcançar as entidades privadas sem fins lucrativos que recebam recursos públicos diretamente do orçamento ou mediante subvenções sociais.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1783916
-CEBRASPE (CESPE) - AUD (TC DF)/TC DF/Conselheiro-Substituto/2021
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-271) 
-Um cidadão solicitou diretamente ao Tribunal de Contas do Distrito Federal (TCDF) relatório completo de auditoria em órgão da administração pública do Governo do Distrito Federal (GDF) responsável por infrações de trânsito.
-
-
-A partir dessa situação hipotética, julgue o item a seguir, considerando as disposições da Lei Federal n.º 12.527/2011 e da Lei Distrital n.º 4.990/2012, com relação ao acesso à informação.
-
- 
-A apresentação das informações por parte do TCDF é facultativa nessa situação, uma vez que o pedido de informação deveria ter sido primeiramente dirigido ao órgão de trânsito, como condição de procedibilidade do pedido.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1813360
-CEBRASPE (CESPE) - ATM (Pref Aracaju)/Pref Aracaju/Abrangência Geral/2021
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-272) 
-Para efeito do disposto na Lei n.º 12.527/2011, a autenticidade é a qualidade da informação
-
-a) coletada na fonte, com o máximo de detalhamento possível, sem modificações.
-b) produzida, expedida, recebida ou modificada por determinado indivíduo, equipamento ou sistema.
-c) conhecida e utilizada por indivíduos, equipamentos ou sistemas autorizados.
-d) não modificada, inclusive quanto à origem, trânsito e destino.
-e) utilizada para a produção e a transmissão de conhecimento, contidos em qualquer meio, suporte ou formato.
-Gabarito: B
-## questao 1816115
-CEBRASPE (CESPE) - Enf Fisc (COREN CE)/COREN CE/2021
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-273) 
-Segundo a Lei n.º 12.527/2011, o direito fundamental de acesso à informação deve ser exercido em conformidade com os princípios básicos da administração pública e com determinadas diretrizes, entre as quais se inclui
-
-a) a observância do sigilo como preceito geral e da publicidade como exceção.
-b) o sigilo de informações de interesse público, que serão fornecidas somente mediante solicitação dos interessados.
-c) o fomento ao desenvolvimento da cultura de transparência na administração pública.
-d) a aplicação da citada lei somente aos órgãos da administração pública direta.
-Gabarito: C
-## questao 1873131
-CEBRASPE (CESPE) - Tec Leg (ALECE)/ALECE/2021
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-274) 
-Segundo a Lei Federal n.º 12.527/2011 (Lei de Acesso à Informação), a Administração Pública deve, em relação às informações imprescindíveis à segurança da sociedade e do Estado,
-
-a) submetê-las temporariamente à restrição de acesso público.
-b) protegê-las, garantindo sua divulgação, publicidade, disponibilidade e autenticidade.
-c) submetê-las à restrição permanente de acesso público.
-d) divulgá-las amplamente pelos meios tecnológicos disponíveis.
-
-e)  publicá-las em jornal de grande circulação e no respectivo diário oficial.
-Gabarito: A
-## questao 1190369
-CEBRASPE (CESPE) - Ana Min (MPE CE)/MPE CE/Administração/2020
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-275) 
-Considerando as disposições da Lei federal n.º 12.527/2011 (Lei de Acesso à Informação) e da Lei Complementar n.º 131/2009 (Lei da Transparência), julgue o item.
-
-
-Conforme a Lei de Acesso à Informação, informação pessoal é aquela mantida temporariamente sob sigilo, por motivo de segurança da sociedade e do Estado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 908335
-CEBRASPE (CESPE) - Ana GRS (SLU DF)/SLU DF/Modernização da Gestão das Atividades de Resíduos Sólidos/2019
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-276) 
-Julgue o item subsecutivo, tendo como referência as disposições da Lei de Acesso à Informação (Lei n.º 12.527/2011).
-
-
-As autarquias estaduais não se submetem ao regime da Lei de Acesso à Informação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1037531
-CEBRASPE (CESPE) - ACE (TCE-RO)/TCE RO/Administração/2019
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-277) 
-De acordo com a Lei n.º 12.527/2011 (Lei de Acesso à Informação), considera-se informação
-
-a)  os registros administrativos de qualquer ente dos três Poderes com potencial de informar o processo de políticas públicas, independentemente de seu meio, suporte ou formato.
-b) os dados, processados ou não, que podem ser utilizados para produção e transmissão de conhecimento, contidos em qualquer meio, suporte ou formato.
-c)  a unidade de registro de informações, qualquer que seja o suporte ou o formato.
-d)  as estatísticas de acesso a sítios oficiais do governo que fazem parte da estratégia de governo eletrônico.
-e) os diálogos registrados por qualquer meio de comunicação e viabilizados por qualquer tipo de tecnologia da informação.
-Gabarito: B
-## questao 737045
-CEBRASPE (CESPE) - AFA (SEFAZ RS)/SEFAZ RS/2018
-Direito Administrativo (Doutrina e Leis Federais) - Disposições Gerais (arts. 1º a 5º da Lei nº 12.527/2011)
-278) 
-A Lei de Acesso à Informação considera como qualidade da informação não modificada
-
-a) o tratamento da informação.
-b) a integridade.
-c) a autenticidade.
-d)  a disponibilidade.
-e)  o documento.
-Gabarito: B
-## questao 3249791
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Administrativa/Sem Especialidade/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-279) 
-Com base na Lei de Acesso à Informação (Lei n.º 12.527/2011) e na Lei Geral de Proteção de Dados Pessoais — LGPD (Lei n.º 13.709/2018), julgue o item a seguir.
-
- 
-Qualquer interessado poderá apresentar pedido de acesso à informação aos órgãos públicos da administração direta de quaisquer dos Poderes, desde que se identifique, especifique a informação requerida e, caso demandado, apresente os motivos determinantes da solicitação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3249792
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Administrativa/Sem Especialidade/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-280) 
-Com base na Lei de Acesso à Informação (Lei n.º 12.527/2011) e na Lei Geral de Proteção de Dados Pessoais — LGPD (Lei n.º 13.709/2018), julgue o item a seguir.
-
- 
-No caso de indeferimento do pedido de acesso a informação, o interessado poderá apresentar recurso, que deverá ser dirigido à autoridade responsável pela negativa, contudo, se esta não implementar o juízo de reconsideração, ela deverá encaminhar o recurso para a autoridade hierarquicamente superior.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3251726
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Arquivologia/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-281) 
-A partir do disposto na Lei n.º 12.527/2011 e no Decreto n.º 7.724/2012, julgue o item a seguir.
-
- 
-É garantido a qualquer pessoa o direito de acessar informações públicas, independentemente de apresentar justificativa para o pedido.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3284186
-CEBRASPE (CESPE) - PMF (INSS)/INSS/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-282) 
-Com base nas Leis n.º 12.527/2011 e n.º 12.813/2013, que dispõem, respectivamente, sobre o acesso à informação e o conflito de interesses, julgue o próximo item.
-
-Os pedidos de acesso à informação protocolados perante os órgãos públicos devem ser motivados, assim como as recusas que venham a ser formalizadas em face desses pedidos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3312908
-CEBRASPE (CESPE) - AA (ANM)/ANM/Administração/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-283) 
-De acordo com a Lei de Acesso à Informação e a Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o próximo item.
-
- 
-Segundo a Lei de Acesso à Informação, para o acesso a informações de interesse público, o meio de identificação do requerente não pode conter exigências que inviabilizem a solicitação, bem como são vedadas quaisquer exigências relativas aos motivos determinantes do pedido de acesso à informação apresentado.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3318337
-CEBRASPE (CESPE) - ERM (ANM)/ANM/Comunicação/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-284) 
-Julgue o item a seguir, considerando as formas de transparência pública e o disposto na Lei de Acesso à Informação e na Lei Geral de Proteção de Dados Pessoais (LGPD).
-
- 
-É garantida ao requerente a gratuidade do serviço de busca e fornecimento de informação, sendo proibida cobrança a qualquer título de ressarcimento de custos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3321898
-CEBRASPE (CESPE) - ERM (ANM)/ANM/Engenharia de Minas/Correcional/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-285) 
-Julgue o item a seguir, a respeito do acesso à informação pública, regulado pela Lei n.º 12.527/2011 (Lei de Acesso à Informação – LAI).
-
- 
-O pedido de acesso a informações de interesse público aos órgãos e entidades pode ser feito por qualquer meio legítimo, de forma anônima e sem necessidade de expressar os motivos determinantes dessa solicitação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3342048
-CEBRASPE (CESPE) - AJ TRT10/TRT 10/Administrativa/Contabilidade/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-286) 
-A respeito do processo administrativo federal, consoante a Lei n.º 9.784/1999, ao controle da administração pública, à responsabilidade civil do Estado, ao acesso à informação e ao previsto no Decreto n.º 9.830/2019, julgue o item a seguir.
-
- 
-São expressamente vedadas pela Lei de Acesso à Informação quaisquer exigências referentes aos motivos determinantes da solicitação de informações de interesse público.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3361119
-CEBRASPE (CESPE) - AA (IBAMA)/IBAMA/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-287) 
-Julgue o item seguinte, com base na Lei de Acesso à Informação e na Lei Geral de Proteção de Dados Pessoais (LGPD).
-
-
-Qualquer interessado poderá requerer acesso a informações aos órgãos públicos, por qualquer meio legítimo, desde que mediante identificação pessoal e especificação da informação requerida e dos motivos do pedido.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2778952
-CEBRASPE (CESPE) - Aud Est (CGE RJ)/CGE RJ/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-288) 
-Acerca do sigilo, dos prazos de resposta e do formato de divulgação relativo a documentos públicos, julgue o item seguinte.
-
- 
-Os prazos da Lei de Acesso à Informação são contados a partir do dia útil seguinte ao da notificação oficial, e a divulgação de informações de interesse público ocorre unicamente por meio impresso.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2789207
-CEBRASPE (CESPE) - Ana Amb (MMA)/MMA/"Sem Área de Concentração"/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-289) 
-Considerando o direito administrativo brasileiro, julgue o item a seguir.
-
- 
-É vedada a cobrança de qualquer valor quando do fornecimento de informações previstas pela Lei n.º 12.527/2011 a cidadão interessado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2841717
-CEBRASPE (CESPE) - Ana Min (MPE TO)/MPE TO/Especializado/Administração de Banco de Dados/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-290) 
-Com fulcro na Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item subsecutivo.
-
-
-O órgão ou a entidade pode cobrar exclusivamente o valor necessário ao ressarcimento dos custos quando o serviço de fornecimento da informação exigir reprodução de documentos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2855333
-CEBRASPE (CESPE) - ERSTT (ANTT)/ANTT/Direito/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-291) 
-Conforme o disposto na Lei n.º 12.527/2011 (Lei de Acesso à Informação — LAI), julgue o item a seguir.
-
- 
-Qualquer interessado pode, por qualquer meio legítimo, apresentar pedido de acesso a informações à ANTT, devendo o pedido conter a identificação do requerente e a especificação da informação requerida, sendo vedadas quaisquer exigências relativas aos motivos determinantes da solicitação de informações de interesse público.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2877668
-CEBRASPE (CESPE) - Ana CT (CAPES)/CAPES/Informática/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-292) 
-Julgue o item seguinte, a respeito das Leis n.º 12.527/2011 (Lei de Acesso à Informação – LAI), n.º 12.737/2012 (Lei de Delitos Informáticos), n.º 12.965/2014 (Marco Civil da Internet), n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD) e do Decreto n.º 7.845/2012.
-
- 
-De acordo com a LAI, são requisitos indispensáveis para o acesso às informações de interesse público a identificação do requerente, a descrição dos motivos determinantes da solicitação e a especificação da informação requerida.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2890659
-CEBRASPE (CESPE) - Ana MP (MPE GO)/MPE GO/Analista Ambiental/Engenharia Agronômica/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-293) 
-Com base na Lei de Acesso à Informação (Lei n.º 12.527/2011) e na Lei Geral de Proteção de Dados Pessoais — LGPD (Lei n.º 13.709/2018), julgue o item que se segue.
-
-
-Consoante a Lei de Acesso à Informação, apenas pessoas físicas podem formular pedidos de acesso à informação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2983358
-CEBRASPE (CESPE) - Aud Fis (Pref Cach Itapemirim)/Pref Cach Itapemirim/Posturas/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-294) 
-Julgue o item subsequente, que tratam de consórcios públicos, conselhos, elaboração de projetos, Lei de Acesso à Informação e Lei da Transparência.
-
-
-De acordo com a Lei de Acesso à Informação, as informações que se encontrarem disponíveis ao público em formato impresso deverão ser fornecidas diretamente pelo órgão ou entidade pública, obrigatoriamente.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2995984
-CEBRASPE (CESPE) - TJ CNJ/CNJ/Administrativa/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-295) 
-No que diz respeito à ética no serviço público, à proteção de dados pessoais e ao acesso à informação, julgue o item a seguir.
-
- 
-É vedada a negativa de acesso à informação sob o argumento de o pedido ter sido formulado de forma genérica.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3078715
-CEBRASPE (CESPE) - ACE (TCE AC)/TCE AC/Administração/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-296) 
-Considerando a Lei de Acesso à Informação (LAI) e a Lei da Transparência, julgue o item a seguir.
-
- 
-Para fins de transparência, as informações relativas a receitas públicas da União devem ser liberadas ao cidadão em até seis meses contados do recebimento do pedido.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3078717
-CEBRASPE (CESPE) - ACE (TCE AC)/TCE AC/Administração/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-297) 
-Considerando a Lei de Acesso à Informação (LAI) e a Lei da Transparência, julgue o item a seguir.
-
- 
-Caso haja risco à integridade do documento original da informação solicitada com base na LAI, o atendimento ao pedido de acesso pode ser feito mediante o oferecimento de consulta a cópia, desde que assegurada sua correspondência ao documento original.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3078721
-CEBRASPE (CESPE) - ACE (TCE AC)/TCE AC/Administração/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-298) 
-Considerando a Lei de Acesso à Informação (LAI) e a Lei da Transparência, julgue o item a seguir.
-
- 
-Ao receber um pedido de informação com base na LAI, o órgão público deverá responder à solicitação em até trinta dias.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3104398
-CEBRASPE (CESPE) - ERSPT (ANATEL)/ANATEL/Geral/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-299) 
-Julgue o próximo item, relativo a inclusão digital e conectividade significativa, comportamento do consumidor digital e transparência da administração pública.
-
-
-De acordo com a Lei de Acesso à Informação, não sendo possível conceder o acesso imediato a uma informação solicitada, o órgão que receber o pedido terá um prazo não superior a 20 dias para atender à solicitação, podendo o referido prazo ser prorrogado por mais 10 dias mediante justificativa expressa.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3173509
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Microinformática e Infraestrutura de TI/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-300) 
-Julgue o item seguinte de acordo com o disposto na Lei n.º 12.527/2011 (Lei de Acesso à Informação).
-
- 
-É permitido que um órgão público cobre taxa de consulta nos casos de pedidos de acesso a informação realizados em formato digital.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3202736
-CEBRASPE (CESPE) - AJ TSE/TSE/Apoio Especializado/Arquivologia/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-301) 
-Considerando que políticas de acesso aos documentos de arquivo devem ser formuladas de modo a respeitar normas que regulamentam o acesso a dados e informações, julgue o item seguinte, com base na Lei de Acesso à Informação e na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados).
-
- 
-Em seu pedido de solicitação de acesso a informação de interesse público, o interessado deverá relacionar os motivos determinantes de sua solicitação.
-
- 
-Certo
-Errado
-Gabarito: Errado
-## questao 3202737
-CEBRASPE (CESPE) - AJ TSE/TSE/Apoio Especializado/Arquivologia/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-302) 
-Considerando que políticas de acesso aos documentos de arquivo devem ser formuladas de modo a respeitar normas que regulamentam o acesso a dados e informações, julgue o item seguinte, com base na Lei de Acesso à Informação e na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados).
-
- 
-Quando a informação estiver contida em documento cuja manipulação possa prejudicar sua integridade, deve-se oferecer a consulta de cópia, após certificação da conformidade desta com o original.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3202738
-CEBRASPE (CESPE) - AJ TSE/TSE/Apoio Especializado/Arquivologia/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-303) 
-Considerando que políticas de acesso aos documentos de arquivo devem ser formuladas de modo a respeitar normas que regulamentam o acesso a dados e informações, julgue o item seguinte, com base na Lei de Acesso à Informação e na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados).
-
- 
-O serviço de busca e fornecimento de informação é gratuito, sendo vedado aos órgãos ou entidades consultados cobrar dos solicitantes valores relativos aos custos dos serviços e dos materiais utilizados para a reprodução de documentos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2396133
-CEBRASPE (CESPE) - AJ 02 (TJ ES)/TJ ES/Apoio Especializado/Arquivologia/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-304) 
-Em relação às políticas de acesso aos documentos de arquivo, julgue o item subsequente.
-
- 
-O serviço de busca e de fornecimento de informação é sempre gratuito, ainda que demande a reprodução de documentos pelo órgão consultado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2421513
-CEBRASPE (CESPE) - Ana (CNMP)/CNMP/Apoio Jurídico/Direito/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-305) 
-No que se refere às disposições da Lei de Acesso à Informação, ao processo administrativo, à improbidade administrativa, ao ato administrativo e aos direitos e deveres do servidor, julgue o próximo item.
-
-
-O pedido de informações a um órgão público deverá conter os motivos da solicitação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2421618
-CEBRASPE (CESPE) - Ana (CNMP)/CNMP/Apoio Técnico Especializado/Arquivologia/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-306) 
-Considerando as políticas de acesso aos documentos de arquivo, julgue o seguinte item.
-
- 
-Se o acesso à informação contida em documento for negado, o solicitante deverá ser informado sobre o teor da decisão de negativa de acesso.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2637336
-CEBRASPE (CESPE) - Ana Proc (DATAPREV)/DATAPREV/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-307) 
-Considerando o disposto na legislação referente à segurança da informação e à proteção de dados, julgue o item a seguir.
-
- 
-Apesar de, nos termos da Lei de Acesso à Informação, o serviço de busca e fornecimento de informação ser gratuito, o órgão ou a entidade consultada poderá cobrar do solicitante o valor necessário ao ressarcimento de custos quando esse serviço demandar a reprodução de documentos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2637622
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Advocacia/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-308) 
-A respeito do Sistema de Controle Interno do Poder Executivo Federal — Decreto n.º 3.591/2000 —, do regime diferenciado de contratações públicas (RDC) — Lei n.º 12.462/2011 — e das disposições da Lei de Acesso à Informação — Lei n.º 12.527/2011 —, julgue o item a seguir.
-
- 
-Caso um requerimento de acesso a informação seja indeferido, a decisão será passível de recurso, a ser dirigido à autoridade hierarquicamente superior ao agente que indeferiu o pedido, de acordo com a Lei de Acesso à Informação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2639446
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Estratégia e Governança/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-309) 
-Com base no que dispõe a Lei n.º 12.527/2011 — Lei de Acesso à Informação —, julgue o item a seguir.
-
- 
-Caso algum órgão negue acesso a uma informação não classificada como sigilosa, garante-se ao cidadão o direito de recorrer à Controladoria-Geral da União.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2639447
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Estratégia e Governança/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-310) 
-Com base no que dispõe a Lei n.º 12.527/2011 — Lei de Acesso à Informação —, julgue o item a seguir.
-
- 
-Após receber um pedido de acesso à informação, o órgão deve impreterivelmente conceder ao solicitante acesso imediato à informação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2639448
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Estratégia e Governança/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-311) 
-Com base no que dispõe a Lei n.º 12.527/2011 — Lei de Acesso à Informação —, julgue o item a seguir.
-
- 
-As solicitações de acesso à informação podem ser protocoladas anonimamente pelos cidadãos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2642217
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança da Informação e Proteção de Dados/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-312) 
-Com relação à Lei de Acesso à Informação, à Lei de Delitos Informáticos, ao Marco Civil da Internet e à Lei Geral de Proteção de Dados Pessoais, julgue o item a seguir.
-
- 
-No âmbito da Lei de Acesso à Informação, a Controladoria-Geral da União é a máxima instância recursal administrativa para os casos em que for negado o acesso à informação não classificada como sigilosa.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2716742
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Sistemas de TI/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-313) 
-Julgue o item que se segue, relativo à NBR ISO/IEC n.º 38500:2015 e à Lei n.º 12.527/2011 (Lei de Acesso à Informação).
-
- 
-De acordo com Lei de Acesso à Informação, desde que atendidas as exigências relativas aos motivos determinantes da solicitação de informações de interesse público, qualquer interessado poderá apresentar pedido de acesso a informações aos órgãos e entidades do poder público.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2726985
-CEBRASPE (CESPE) - OF CHAN (MRE)/MRE/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-314) 
-Considere que determinado cidadão tenha tido acesso negado à informação solicitada a um órgão público. Diante da primeira negativa de acesso à informação pelo aludido órgão, o requerente pode recorrer no prazo de
-
-a)  10 dias a contar da sua ciência, com recurso à CGU, que tem 10 dias para se manifestar.
-b)  5 dias a contar da sua ciência, com recurso à autoridade hierarquicamente superior ao servidor responsável pela elaboração da resposta inicial, que tem 5 dias para se manifestar.
-c)  10 dias a contar da sua ciência, com recurso à autoridade máxima do órgão, que tem 10 dias para se manifestar.
-d)  15 dias a contar da sua ciência, com recurso à autoridade hierarquicamente superior ao servidor responsável pela elaboração da resposta inicial, que tem 5 dias para se manifestar.
-
-e)  10 dias a contar da sua ciência, com recurso à autoridade hierarquicamente superior ao servidor responsável pela elaboração da resposta inicial, que tem 5 dias para se manifestar.
-Gabarito: E
-## questao 1895221
-CEBRASPE (CESPE) - Tec Amb (IBAMA)/IBAMA/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-315) 
-A respeito do acesso a informação, da proteção de dados e do acesso público aos dados e às informações existentes nos órgãos e nas entidades integrantes do Sistema Nacional do Meio Ambiente, julgue os item que se segue.
-
- 
-
-Caso esteja impossibilitado de conceder acesso imediato à informação solicitada por um interessado, o órgão poderá fornecê-la em prazo compatível com o trabalho necessário para tanto.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1897301
-CEBRASPE (CESPE) - AAmb (IBAMA)/IBAMA/Licenciamento Ambiental/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-316) 
-No que se refere à tecnologia da informação, julgue o próximo item.
-
- 
-Segundo a Lei n.º 12.527/2011, pedido de acesso a informações de órgãos e entidades públicos deve ser acompanhado do motivo que levou à solicitação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1970417
-CEBRASPE (CESPE) - AAAJ (DP DF)/DP DF/Economia/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-317) 
-Em relação à Lei de Acesso à Informação (LAI) — Lei n.º 12.527/2011, julgue o item a seguir.
-
- 
-A LAI garante acesso apenas aos documentos dos órgãos públicos que estão armazenados em meio digital, os quais não podem ser acessados ou manipulados fisicamente.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1972213
-CEBRASPE (CESPE) - Esp GT (TELEBRAS)/TELEBRAS/Advogado/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-318) 
-Acerca do acesso à informação nos órgãos públicos, julgue o item que se segue.
-
-
-Não sendo possível ao órgão ou à entidade pública conceder acesso imediato à informação, ele(a) deverá, no prazo improrrogável de vinte dias, caso consiga a informação, comunicar a data, o local e o modo para se realizar a consulta.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2157904
-CEBRASPE (CESPE) - ACP (MP TCE-SC)/TCE SC/Administração, Contabilidade, Economia ou Engenharia/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-319) 
-Julgue o próximo item, relativo à fiscalização de contratos de tecnologia da informação.
-
- 
-Segundo determina a Lei n.º 12.527/2011, cabe aos órgãos do poder público assegurar a gestão transparente da informação, sendo de dez dias o prazo máximo para a entrega da informação ao interessado, contado a partir da data da requisição. No caso de indeferimento de acesso à informação, poderá o interessado interpor recurso contra a decisão no prazo de cinco dias a contar da sua ciência.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2216605
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Gestão de Tecnologia da Informação/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-320) 
-De acordo com a Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item a seguir.
-
-
-No caso de indeferimento de acesso a informações ou às razões da negativa do acesso, o interessado poderá interpor recurso contra a decisão no prazo de dez dias, a contar da sua ciência.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2216609
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Gestão de Tecnologia da Informação/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-321) 
-De acordo com a Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item a seguir.
-
-
-Qualquer interessado poderá apresentar pedido de acesso a informações, por qualquer meio legítimo, a sociedades de economia mista, por exemplo, devendo o pedido conter a identificação do requerente e a especificação da informação requerida.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2273598
-CEBRASPE (CESPE) - Cont (Maringá)/Pref Maringá/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-322) 
-Com base na Lei n.º 12.527/2011, assinale a opção correta no que concerne ao procedimento relativo ao pedido de acesso à informação.
-
-a) O pedido de acesso será negado quando a informação estiver contida em documento cuja manipulação possa prejudicar sua integridade.
-b) É válido o pedido anônimo de acesso à informação, desde que seja especificada a informação requerida.
-c) O órgão ou entidade deverá oferecer meios para que o próprio requerente possa pesquisar a informação de que necessitar.
-d) O serviço de busca e fornecimento de informação é gratuito, não sendo cabível qualquer cobrança relativa ao ressarcimento dos custos dos serviços e dos materiais utilizados.
-
-e) São proibidas exigências relativas aos motivos determinantes da solicitação de informações de interesse público.
-Gabarito: E
-## questao 2273604
-CEBRASPE (CESPE) - Cont (Maringá)/Pref Maringá/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-323) 
-Considerando as disposições da Lei n.º 12.527/2011 acerca do indeferimento de acesso a informações, assinale a opção correta.
-
-a) O recurso contra o indeferimento de acesso a informações deverá ser dirigido à autoridade que proferiu a decisão, a qual, não reconsiderando seu posicionamento, encaminhará o recurso à autoridade hierarquicamente superior.
-b) O requerente tem direito de obter o inteiro teor de decisão de negativa de acesso, via certidão ou cópia.
-c) No âmbito da administração pública federal, o recurso contra a negativa de acesso à informação deve ser encaminhado, originalmente, à Controladoria-Geral da União.
-d) O acesso à informação com vistas à tutela judicial de direitos fundamentais somente poderá ser negado se a informação for classificada como ultrassecreta.
-
-e) Não há previsão de recurso contra decisão da Controladoria- Geral da União que negue pedido de acesso à informação.
-Gabarito: B
-## questao 1503628
-CEBRASPE (CESPE) - AnDR (CODEVASF)/CODEVASF/Administração/2021
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-324) 
-Julgue o próximo item, à luz do disposto na Lei n.º 12.527/2011 (Lei de acesso à informação) e na Lei Complementar n.º 131/2009 (Lei da Transparência).
-
-
-Considerando-se que determinada informação se encontre disponível para o acesso, o órgão público poderá concedê-lo em qualquer prazo, desde que não seja superior a 20 dias, conforme a Lei n.º 12.527/2011.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1505941
-CEBRASPE (CESPE) - AnDR (CODEVASF)/CODEVASF/Tecnologia da Informação/2021
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-325) 
-Julgue o próximo item, conforme as Leis n.º 13.303/2016 e n.º 12.527/2011.
-
- 
-
-Qualquer interessado poderá apresentar, aos órgãos específicos, pedido de acesso a informações de interesse público, desde que cumpra as exigências relativas aos motivos determinantes da solicitação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1536642
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Auditoria/2021
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-326) 
-A respeito de serviços públicos, improbidade administrativa, acesso a informação, e licitações e contratos, julgue o item:
-
- 
-Jovem de quinze anos de idade que apresente ao TCDF pedido de acesso a informação independerá de representação dos seus pais ou responsáveis para que seja atendido.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1628512
-CEBRASPE (CESPE) - Ana (SERPRO)/SERPRO/Ciência de Dados/2021
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-327) 
-De acordo com a Lei n.º 12.527/2011 — Lei de Acesso à Informação (LAI) —, julgue o item a seguir.
-
- 
-
-A formulação de pedido de acesso à informação é direito exclusivo de órgãos de defesa do consumidor ou de empresas ou órgãos de comunicação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1628517
-CEBRASPE (CESPE) - Ana (SERPRO)/SERPRO/Ciência de Dados/2021
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-328) 
-De acordo com a Lei n.º 12.527/2011 — Lei de Acesso à Informação (LAI) —, julgue o item a seguir.
-
- 
-
-O acesso às informações solicitadas deverá ser concedido em até cinco dias úteis, a contar da data do pedido, prazo que, a interesse do órgão ou da entidade pública, poderá ser prorrogado por mais dois dias úteis.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1704602
-CEBRASPE (CESPE) - AJ (PGDF)/PG DF/Administração/2021
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-329) 
-A respeito da Lei de Acesso à Informação e da Lei da Transparência, julgue o item seguinte.
-
- 
-
-A administração pública pode recusar determinado pedido de informações protocolado sem a identificação do requerente.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1704837
-CEBRASPE (CESPE) - AJ (PGDF)/PG DF/Arquivologia/2021
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-330) 
-Acerca das políticas públicas de arquivo e da legislação arquivística, julgue o item a seguir.
-
- 
-
-O pedido de acesso à informação deverá ser feito por email.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1704838
-CEBRASPE (CESPE) - AJ (PGDF)/PG DF/Arquivologia/2021
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-331) 
-Acerca das políticas públicas de arquivo e da legislação arquivística, julgue o item a seguir.
-
- 
-
-Caso o acesso à informação envolva a reprodução de documentos, os custos devem ser ressarcidos pelo cidadão à União.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1718287
-CEBRASPE (CESPE) - AFRE (SEFAZ CE)/SEFAZ CE/2021
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-332) 
-No que se refere à ética bem como ao disposto na Lei de Acesso à Informação, julgue o item a seguir.
-
-
-Estando a informação solicitada disponível ao público em formato eletrônico, o órgão público poderá apenas informar, por escrito, ao solicitante o lugar e a forma pela qual ela poderá ser consultada.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1783912
-CEBRASPE (CESPE) - AUD (TC DF)/TC DF/Conselheiro-Substituto/2021
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-333) 
-Um cidadão solicitou diretamente ao Tribunal de Contas do Distrito Federal (TCDF) relatório completo de auditoria em órgão da administração pública do Governo do Distrito Federal (GDF) responsável por infrações de trânsito.
-
-
-A partir dessa situação hipotética, julgue o item a seguir, considerando as disposições da Lei Federal n.º 12.527/2011 e da Lei Distrital n.º 4.990/2012, com relação ao acesso à informação.
-
- 
-Por ter sido dirigido a órgão do GDF, esse pedido de informação deve conter, obrigatoriamente, motivação e comprovação de residência no Distrito Federal, sob pena de indeferimento.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 908337
-CEBRASPE (CESPE) - Ana GRS (SLU DF)/SLU DF/Modernização da Gestão das Atividades de Resíduos Sólidos/2019
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-334) 
-Julgue o item subsecutivo, tendo como referência as disposições da Lei de Acesso à Informação (Lei n.º 12.527/2011).
-
- 
-
-No caso de indeferimento de pedido de acesso a informação, é facultado ao interessado interpor recurso, que deverá ser dirigido à mesma autoridade que proferiu a decisão. Caso a referida autoridade não reconsidere sua decisão no prazo de cinco dias, o pedido deverá ser encaminhado a autoridade superior.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1040788
-CEBRASPE (CESPE) - AJ (TJ AM)/TJ AM/Arquivologia/2019
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-335) 
-A Lei de Acesso à Informação dispõe sobre os procedimentos a serem observados pela União, pelos estados, pelo Distrito Federal e pelos municípios, com o fim de garantir o acesso a informações previsto na Constituição Federal de 1988.
-
- 
-
-A partir dessa informação, julgue o item que se segue, a respeito da regulamentação do acesso à informação, dentro das políticas de acesso aos documentos de arquivo no TJ/AM.
-
- 
-
-O pedido de informações encaminhado eletronicamente deverá conter os motivos determinantes para a solicitação da informação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 694417
-CEBRASPE (CESPE) - Aux Inst (IPHAN)/IPHAN/Área 1/2018
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-336) 
-Com base no disposto na legislação administrativa, julgue o item a seguir.
-
- 
-O cidadão que faz um pedido de informação de interesse público precisa especificar, no pedido, o motivo da sua solicitação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 724890
-CEBRASPE (CESPE) - ACE (TCE-MG)/TCE MG/Administração/2018
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-337) 
-José solicitou informações relativas à gestão de determinado órgão do Poder Executivo federal. Apesar de ele ter atendido às normas de identificação estabelecidas pelo órgão em questão, foi-lhe negado o acesso às informações requeridas. Em razão dessa recusa, José apresentou recurso à autoridade hierarquicamente superior àquela que exarou a primeira decisão, mas novamente seu acesso foi negado.
-
- 
-Nessa situação hipotética, de acordo com a Lei de Acesso à Informação, para tentar ter acesso às informações requeridas, José poderá recorrer
-
-a)  à Advocacia-Geral da União (AGU).
-b)  à Defensoria Pública da União (DPU).
-c)  ao Congresso Nacional.
-d)  à Controladoria-Geral da União (CGU).
-e)  ao Tribunal de Contas da União (TCU).
-Gabarito: D
-## questao 731713
-CEBRASPE (CESPE) - ATRE (SEFAZ RS)/SEFAZ RS/2018
-Direito Administrativo (Doutrina e Leis Federais) - Do Procedimento de Acesso à Informação (arts. 10 a 20 da Lei nº 12.527/2011)
-338) 
-Com relação ao cumprimento da Lei de Acesso à Informação no Brasil, segundo levantamento da Transparência Brasil, há casos em que é impossível até mesmo enviar o pedido de informação. Entidades vinculadas à ONG fizeram 212 pedidos para órgãos federais, estaduais e municipais, dos três Poderes, e apenas 25% deles foram atendidos ou parcialmente atendidos. Em 56% dos casos, não houve resposta e, em 19% deles, os pedidos foram negados.
-
-
-Marina Estarque. Brasil não pune servidores públicos
-
-que descumprem lei de acesso à informação. Internet: <https://knightcenter.utexas.edu> (com adaptações).
-
-
-A respeito dos procedimentos e das restrições de acesso à informação, assinale a opção correta à luz da Lei n.º 12.527/2011.
-
-a) O órgão ou entidade requerido poderá oferecer meios para que o próprio requerente possa pesquisar a informação de que necessitar, sem prejuízo da segurança e da proteção das informações e do cumprimento da legislação aplicável.
-b)  O serviço de busca e fornecimento da informação será sempre cobrado do requerente em valor suficiente para o ressarcimento do custo dos serviços e dos materiais utilizados.
-c)  No caso de acesso a informações de interesse público, a identificação do requerente é essencial e pode conter exigências que inviabilizem a solicitação, caso não sejam atendidas.
-d) O pedido de acesso à informação de interesse público deverá acompanhar a motivação determinante da solicitação.
-e)  Informações que versem sobre violação dos direitos humanos praticada a mando de autoridades públicas poderão ser objeto de restrição de acesso.
-Gabarito: A
-## questao 3258622
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Judiciária/Sem Especialidade/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-339) 
-A respeito do acesso à informação e do tratamento de dados pessoais, julgue o item a seguir.
-
- 
-O direito de acesso a pareceres jurídicos utilizados como fundamento de tomadas de decisão e de atos administrativos será assegurado com a edição do respectivo parecer.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3271568
-CEBRASPE (CESPE) - Proc Mun (Aracaju)/Pref Aracaju/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-340) 
-Julgue o item que se segue, relativos a controle e transparência da administração pública.
-
-O direito de acesso aos pareceres jurídicos que fundamentam determinada portaria normativa será garantido a partir da edição do respectivo ato decisório.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3318057
-CEBRASPE (CESPE) - ERM (ANM)/ANM/Comunicação/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-341) 
-Tendo como referência as regras estabelecidas no Código de Ética Profissional do Servidor Público Civil do Poder Executivo Federal (Decreto n.º 1.171/1994), na Lei de Acesso à Informação (Lei n.º 12.527/2011) e na Lei Geral de Proteção de Dados Pessoais — LGPD (Lei n.º 13.709/2018), julgue o item que se segue.
-
- 
-A Lei de Acesso à Informação assegura, expressamente, o direito de obter informações sobre administração do patrimônio público e utilização de recursos públicos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3321897
-CEBRASPE (CESPE) - ERM (ANM)/ANM/Engenharia de Minas/Correcional/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-342) 
-Julgue o item a seguir, a respeito do acesso à informação pública, regulado pela Lei n.º 12.527/2011 (Lei de Acesso à Informação – LAI).
-
- 
-A fim de promover a transparência ativa, a ANM deve divulgar, independentemente de requerimento, a informação pública de interesse coletivo ou geral por ela produzida ou custodiada, disponibilizando-a obrigatoriamente em seu sítio oficial da Internet, o qual deverá possibilitar o acesso automatizado por sistemas externos em formatos abertos, estruturados e legíveis por máquina.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3348055
-CEBRASPE (CESPE) - TJ TRT10/TRT 10/Administrativa/"Sem Especialidade"/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-343) 
-No que diz respeito ao acesso à informação, à proteção de dados e à responsabilidade civil do Estado, julgue o item que se segue.
-
- 
-A Lei de Acesso à Informação assegura o direito de obtenção, por qualquer interessado, ressalvadas as exceções, de informação relativa aos resultados de inspeções, auditorias, prestações e tomadas de contas realizadas pelos órgãos de controle interno e externo.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3372033
-CEBRASPE (CESPE) - Ana Min (MPE CE)/MPE CE/Administração/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-344) 
-À luz da Lei n.º 12.527/2011 (Lei de Acesso à Informação) e da Lei Complementar n.º 131/2009 (Lei da Transparência), julgue o item seguinte.
-
- 
-Cabe aos órgãos e às entidades do poder público assegurar informações relativas aos resultados de seus programas, projetos e ações.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3437462
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão da Informação/Gestão da Informação Arquivística/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-345) 
-À luz do disposto na Lei de Acesso à Informação e na Lei Geral de Proteção de Dados Pessoais, julgue o item a seguir.
-
- 
-A legislação em vigor permite ao cidadão obter informação contida em registros ou documentos, produzidos ou acumulados por órgãos da administração pública, recolhidos ou não a arquivos públicos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3437463
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão da Informação/Gestão da Informação Arquivística/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-346) 
-À luz do disposto na Lei de Acesso à Informação e na Lei Geral de Proteção de Dados Pessoais, julgue o item a seguir.
-
- 
-É vedado o acesso a informação parcialmente sigilosa.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3454192
-CEBRASPE (CESPE) - Ana Tec (SUSEP)/SUSEP/Contabilidade Pública/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-347) 
-Considerando as disposições da Lei de Acesso à Informação (LAI) e suas alterações, julgue o próximo item.
-
-
-Os documentos preparatórios utilizados como fundamento de tomada de decisão administrativa são considerados, durante a fase de instrução do processo, informações de acesso restrito.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3599179
-CEBRASPE (CESPE) - AJ (TJ PA)/TJ PA/Comunicação Social/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-348) 
-Julgue o item que se segue, relativo à Lei de Acesso à Informação e à Lei Geral de Proteção de Dados Pessoais.
-
-
-Entre as diretrizes que regem os procedimentos previstos na Lei de Acesso à Informação constam a divulgação de informações de interesse público e o fomento ao desenvolvimento da cultura de transparência na administração pública.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3685065
-CEBRASPE (CESPE) - AECE (TCE MS)/TCE MS/Tecnologia da Informação/2025
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-349) 
-De acordo com a Lei de Acesso à Informação (Lei n.º 12.527/2011), um cidadão tem o direito de obter informações
-
- 
-I contidas em registros ou documentos, produzidos ou acumulados por seus órgãos ou entidades.
-
- 
-II relativas às atividades exercidas pelos órgãos e entidades, inclusive as relativas à sua política, organização e serviços.
-
- 
-III relativas aos resultados de inspeções, auditorias, prestações e tomadas de contas realizadas pelos órgãos de controle interno e externo.
-
- 
-Assinale a opção correta.
-
-a) Apenas o item II está certo.
+a) Apenas o item I está certo.
 b) Apenas os itens I e II estão certos.
 c) Apenas os itens I e III estão certos.
 d) Apenas os itens II e III estão certos.
 
 e) Todos os itens estão certos.
 Gabarito: E
-## questao 2778946
-CEBRASPE (CESPE) - Aud Est (CGE RJ)/CGE RJ/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-350) 
-Com base na legislação relativa ao acesso à informação, julgue o item a seguir.
-
- 
-A Política de Transparência e Acesso à Informação da Administração Pública Federal compreende, entre outras ações, a transparência ativa exclusivamente para promover pesquisas, estudos, inovações e geração de negócios.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2789204
-CEBRASPE (CESPE) - Ana Amb (MMA)/MMA/"Sem Área de Concentração"/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-351) 
-Considerando o direito administrativo brasileiro, julgue o item a seguir.
-
- 
-A Lei n.º 12.527/2011 resguarda o direito de acesso a informações de qualquer resultado de inspeções e auditorias realizadas por órgão de controle interno no Ministério do Meio Ambiente.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2796923
-CEBRASPE (CESPE) - APGIPI (INPI)/INPI/Gestão da Tecnologia da Informação/Desenvolvimento e Manutençao de Sistemas/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-352) 
-Considerando a legislação acerca de privacidade e proteção de dados, julgue o item a seguir.
-
- 
-O acesso às informações de interesse público exige a necessária solicitação do interessado, que deve ser dirigida ao gestor máximo do órgão detentor dessa informação.
-
-   
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2875356
-CEBRASPE (CESPE) - Ana CT (CAPES)/CAPES/Geral/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-353) 
-Com base na Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item a seguir.
-
-
-O acesso à informação compreende, entre outros, o direito de obter informação sobre atividades exercidas pelos órgãos e pelas entidades públicas, exceto as relativas à sua política, à sua organização e a seus serviços.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2876219
-CEBRASPE (CESPE) - ERVS (ANVISA)/ANVISA/Engenharia/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-354) 
-Julgue o próximo item, relativo ao princípio da transparência e prestação de contas (accountability), à Lei n.º 12.527/2011 (Lei de Acesso à Informação – LAI) e à Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD).
-
-
-Suponha que a ANVISA, em razão de sua missão, tenha produzido e guardado documentos sobre o assunto X, os quais não foram recolhidos aos arquivos públicos. Suponha, ainda, que as informações contidas nesses documentos houvessem sido produzidas por pessoa física, que mantinha vínculo com a ANVISA, tendo esse vínculo cessado em 22/12/2023. Suponha, por fim, que, no dia 1.º/3/2024, Paulo tenha solicitado à ANVISA acesso a informações acerca do assunto X. Nessa situação, ainda que as informações contidas nos documentos sejam públicas e não sigilosas, a ANVISA pode negar o pedido feito por Paulo, com base na Lei n.º 12.527/2011, uma vez que as informações não foram recolhidas aos arquivos públicos e que já não existia, quando da solicitação de Paulo, vínculo entre a ANVISA e a pessoa física que havia produzido as informações.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3075040
-CEBRASPE (CESPE) - Ana Adm (TCE AC)/TCE AC/Administração/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-355) 
-Com base no disposto na Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item a seguir.
-
- 
-No caso de negativa de acesso à informação, o requerente tem o direito de obter, por certidão ou cópia, o inteiro teor de tal decisão.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3078718
-CEBRASPE (CESPE) - ACE (TCE AC)/TCE AC/Administração/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-356) 
-Considerando a Lei de Acesso à Informação (LAI) e a Lei da Transparência, julgue o item a seguir.
-
- 
-De acordo com o disposto na Lei da Transparência, o acesso a informações sobre despesas públicas é assegurado tanto a pessoas físicas quanto a jurídicas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3104399
-CEBRASPE (CESPE) - ERSPT (ANATEL)/ANATEL/Geral/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-357) 
-Julgue o próximo item, relativo a inclusão digital e conectividade significativa, comportamento do consumidor digital e transparência da administração pública.
-
- 
-Os órgãos e entidades públicas devem utilizar todos os meios e instrumentos legítimos para o cumprimento da Lei de Acesso à Informação, a qual estabelece a obrigatoriedade da divulgação, pela Internet, para todos os municípios do país, de todas as informações de interesse coletivo por eles produzidas ou custodiadas.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3148408
-CEBRASPE (CESPE) - AnDR (CODEVASF)/CODEVASF/Tecnologia da Informação/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-358) 
-No que diz respeito à Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados – LGPD) e à Lei n.º 12.527/2011 (Lei de Acesso à Informação – LAI), julgue o item seguinte.
-
-
-Os sítios responsáveis pelo tratamento das informações objeto da LAI deverão permitir a gravação de relatórios em planilhas eletrônicas, de forma a facilitar a análise das informações.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3202218
-CEBRASPE (CESPE) - AJ TSE/TSE/Administrativa/"Sem Especialidade"/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-359) 
-No que concerne ao Estado federal brasileiro, à administração pública e à organização dos Poderes e do Ministério Público, julgue o item subsequente.
-
- 
-A não imposição de sigilo aos atos e documentos do poder público e a possibilidade de deferir pedidos de acesso a informações administrativas bastam para atender ao princípio da publicidade, conforme a atual concepção dessa norma constitucional.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3202739
-CEBRASPE (CESPE) - AJ TSE/TSE/Apoio Especializado/Arquivologia/2024
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-360) 
-Considerando que políticas de acesso aos documentos de arquivo devem ser formuladas de modo a respeitar normas que regulamentam o acesso a dados e informações, julgue o item seguinte, com base na Lei de Acesso à Informação e na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados).
-
- 
-O cidadão poderá solicitar acesso à informação que verse sobre os resultados de inspeções, auditorias e prestação de contas realizadas pelos órgãos de controle interno e externos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2368923
-CEBRASPE (CESPE) - Prom Jus (MPE SC)/MPE SC/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-361) 
-No que diz respeito à Lei de Acesso à Informação — Lei n.º 12.527/2011, julgue o item subsequente.
-
- 
-A criação de um órgão autônomo competente para a garantia do direito de acesso à informação constitui uma inovação da Lei de Acesso à Informação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2396096
-CEBRASPE (CESPE) - AJ 02 (TJ ES)/TJ ES/Apoio Especializado/Arquivologia/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-362) 
-Com base na legislação arquivística, julgue o seguinte item.
-
-
-O acesso à informação compreende, por exemplo, o direito de obter informação produzida ou custodiada por pessoa física ou entidade privada decorrente de qualquer vínculo com seus órgãos ou suas entidades, mesmo que esse vínculo já tenha cessado.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2396132
-CEBRASPE (CESPE) - AJ 02 (TJ ES)/TJ ES/Apoio Especializado/Arquivologia/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-363) 
-Em relação às políticas de acesso aos documentos de arquivo, julgue o item subsequente.
-
- 
-É imprescindível que o cidadão interessado preencha requerimento para solicitar informações de interesse coletivo custodiadas pelos órgãos públicos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2421587
-CEBRASPE (CESPE) - Ana (CNMP)/CNMP/Apoio Técnico Especializado/Arquivologia/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-364) 
-Julgue o seguinte item, relativo às políticas públicas de arquivo e à legislação arquivística. Nesse sentido, considere que as siglas CONARQ e SINAR, sempre que empregadas, se referem, respectivamente, ao Conselho Nacional de Arquivos e ao Sistema Nacional de Arquivos.
-
- 
-Os brasileiros têm direito de obter informações relativas à administração do patrimônio público, à utilização de recursos públicos e a licitações e contratos administrativos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2421615
-CEBRASPE (CESPE) - Ana (CNMP)/CNMP/Apoio Técnico Especializado/Arquivologia/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-365) 
-Considerando as políticas de acesso aos documentos de arquivo, julgue o seguinte item.
-
- 
-O acesso do cidadão à informação de documento classificado como parcialmente sigiloso é proibido, ainda que o interessado tenha solicitado acesso a dados que componham parte não sigilosa.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2639444
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Estratégia e Governança/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-366) 
-Com base no que dispõe a Lei n.º 12.527/2011 — Lei de Acesso à Informação —, julgue o item a seguir.
-
- 
-É garantido o acesso à informação sobre a administração de recursos públicos, restringindo-se esse acesso a dados sobre contratos administrativos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2690025
-CEBRASPE (CESPE) - AACE (TC DF)/TC DF/2023
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-367) 
-Com relação à Lei do Processo Administrativo — Lei n.º 9.784/1999 — e à Lei de Acesso à Informação — Lei n.º 12.527/2011 —, julgue o item subsequente.
-
-
-No sistema da Lei de Acesso à Informação, a noção de transparência ativa significa que o poder público deve buscar ao máximo atender aos requerimentos de cidadãs e cidadãos, sem cobrar emolumentos nem formular exigências despropositadas.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1937332
-CEBRASPE (CESPE) - AFCE (TCE-SC)/TCE SC/Administração/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-368) 
-Com base na Lei de Acesso à Informação (Lei n.º 12.527/2011) e na Lei da Transparência (Lei Complementar n.º 131/2009), julgue o item que se segue.
-
- 
-O acesso à informação de que trata a Lei de Acesso à Informação não se aplica a informações contidas em documentos recolhidos a arquivos públicos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1968431
-CEBRASPE (CESPE) - AAAJ (DP DF)/DP DF/Administração/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-369) 
-Julgue o próximo item, com base no disposto na Lei de Acesso à Informação (Lei n.º 12.527/2011) e na Lei da Transparência (Lei Complementar n.º 131/2009).
-
- 
-Gerir a informação de maneira transparente, englobando-se o seu amplo acesso e a sua proteção, de forma a garantir disponibilidade, autenticidade, integridade e eventual restrição de acesso, são incumbências dos órgãos e das entidades do poder público.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1970416
-CEBRASPE (CESPE) - AAAJ (DP DF)/DP DF/Economia/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-370) 
-Em relação à Lei de Acesso à Informação (LAI) — Lei n.º 12.527/2011, julgue o item a seguir.
-
-
-A LAI permite o acesso a informação produzida por pessoa física ou entidade privada que tenha ou teve vínculo com o órgão público responsável pela informação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1981941
-CEBRASPE (CESPE) - Tec GT (TELEBRAS)/TELEBRAS/Assistente Administrativo/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-371) 
-Acerca do acesso à informação nos órgãos públicos, julgue o item que se segue.
-
- 
-O caráter confidencial, ainda que parcial, de certa informação sigilosa impede o acesso a qualquer parte do seu conteúdo, haja vista o princípio da ampla proteção das informações secretas.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2015294
+## questao 2015331
 CEBRASPE (CESPE) - Tec Per (PC PB)/PC PB/Área Geral/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-372) 
-O acesso à informação inclui o direito de se obter
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+195) 
+Com relação aos peritos, julgue os próximos itens.
 
-a) orientações sobre o local onde a informação desejada pode ser encontrada.
-b) informações produzidas por entidade privada decorrentes de qualquer vínculo com seus órgãos apenas enquanto esse vínculo estiver ativo.
-c) informações primárias ou secundárias, íntegras, autênticas e atualizadas.
-d) informações pertinentes à administração do patrimônio público, exceto as relativas a contratos administrativos.
-
-e) informações sobre atividades exercidas por órgãos e entidades, salvo aquelas relativas à política institucional.
-Gabarito: A
-## questao 2150995
-CEBRASPE (CESPE) - Aud Est (SECONT ES)/SECONT ES/Administração/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-373) 
-Julgue o próximo item, com base no que dispõe a Lei de Acesso à Informação.
-
- 
-Ao tomar conhecimento de extravio de informações requeridas de órgão público, o solicitante poderá requerer à autoridade competente a abertura de sindicância para apurar o desaparecimento da documentação, tendo o responsável pela guarda da informação extraviada prazo de 15 dias para justificar o fato.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2216608
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Gestão de Tecnologia da Informação/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-374) 
-De acordo com a Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item a seguir.
-
-
-O acesso à informação compreende, entre outros, o direito de obter informação pertinente à administração do patrimônio público, à utilização de recursos públicos e a licitações e contratos administrativos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2216610
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Gestão de Tecnologia da Informação/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-375) 
-De acordo com a Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item a seguir.
-
-
-O acesso à informação compreende, entre outros, o direito de obter informações referentes a quaisquer projetos de pesquisa e de desenvolvimento científico ou tecnológico, sem exceção.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2273613
-CEBRASPE (CESPE) - Cont (Maringá)/Pref Maringá/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-376) 
-À luz do disposto na Lei de Acesso à Informação, assinale a opção correta.
-
-a) O acesso à informação compreende o direito de obter dados e registros produzidos por órgãos ou entidades públicas, desde que tais dados e registros não tenham sido recolhidos a arquivos públicos.
-b) As informações concernentes a procedimentos licitatórios somente serão divulgadas pelos órgãos públicos mediante requerimento da parte interessada.
-c) Não será concedido o acesso à informação parcialmente sigilosa, dada a impossibilidade de emissão de certidão ou extrato ocultando a parte sob sigilo.
-d) Não será possível o acesso à informação custodiada por entidade privada decorrente de vínculo com órgão público que já tenha cessado.
-
-e) Os órgãos públicos devem disponibilizar, independentemente de requerimento, as informações relativas a repasses e transferências de recursos financeiros.
-Gabarito: E
-## questao 2612966
-CEBRASPE (CESPE) - ATCI (MCom)/MCom/2022
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-377) 
-Julgue o item a seguir, de acordo com a Lei de Acesso à Informação (Lei n.º 12.527/2011).
-
- 
-A Lei de Acesso à Informação assegura, em qualquer fase do ato administrativo, o total acesso a documentos e informações nele contidos, para serem utilizados para a tomada de decisão.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1510101
-CEBRASPE (CESPE) - ACE (TCE RJ)/TCE RJ/Controle Externo/Tecnologia da Informação/2021
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-378) 
-Com base na Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item a seguir.
-
- 
-
-O direito de acesso a informação estende-se à informação custodiada a pessoa física ou entidade privada em razão de seu vínculo com órgão público, mesmo que esse vínculo já tenha cessado.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1682499
-CEBRASPE (CESPE) - Ana Min (MPE AP)/MPE AP/Tecnologia da Informação/2021
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-379) 
-De acordo com a Lei de Acesso à Informação (Lei n.º 12.527/2011), o acesso à informação compreende o direito de obter informação
-
-a) a respeito de atividades exercidas pelos órgãos, com exceção das relativas à sua política e organização.
-b) relativa à implementação de resultados de programas, desde que não se trate de metas ou indicadores propostos pelos órgãos públicos, por serem considerados estratégicos.
-c) custodiada por entidade privada em decorrência de qualquer vínculo com órgãos públicos, mesmo que esse vínculo já tenha cessado.
-d) acerca de resultados de auditorias e tomadas de contas exclusivamente relativos a até dois exercícios anteriores, a contar da data do pedido de acesso.
-
-e) produzida no âmbito de quaisquer projetos de pesquisa e desenvolvimento científicos.
-Gabarito: C
-## questao 1718285
-CEBRASPE (CESPE) - AFRE (SEFAZ CE)/SEFAZ CE/2021
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-380) 
-Com base no disposto na Lei de Acesso à Informação e na Lei da Transparência, julgue o item seguinte.
-
-
-A Lei de Acesso à Informação garante o direito de obter informações produzidas em órgãos públicos, desde que os registros ou documentos ainda não tenham sido arquivados.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1752543
-CEBRASPE (CESPE) - Prom Jus (MPE SC)/MPE SC/2021
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-381) 
-Julgue o item a seguir, de acordo com a Lei de Acesso à Informação e a Lei dos Direitos dos Usuários dos Serviços Públicos.
-
- 
-A Lei de Acesso à Informação prevê duas formas de acesso à informação: ativa e passiva. Exemplo de informação ativa é o dever dos municípios de promover, independentemente de requerimentos e de seu porte, a divulgação de informações de interesse coletivo ou geral por eles produzidas ou custodiadas em sítios oficiais da Internet.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1439005
-CEBRASPE (CESPE) - ATCI NS (ME)/ME/Perfil Profissional 1/Arquivologia/2020
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-382) 
-De acordo com as disposições da Lei n.º 12.527/2011 (LAI), julgue o item a seguir.
-
- 
-
-A LAI garante o direito do interessado de obter orientação sobre os procedimentos para a consecução de acesso, bem como sobre o local onde poderá ser encontrada ou obtida a informação almejada, mesmo estando tal informação protegida com informação parcialmente sigilosa, assegurado o acesso à parte não sigilosa por meio de certidão, extrato ou cópia com ocultação da parte sob sigilo.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1439006
-CEBRASPE (CESPE) - ATCI NS (ME)/ME/Perfil Profissional 1/Arquivologia/2020
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-383) 
-De acordo com as disposições da Lei n.º 12.527/2011 (LAI), julgue o item a seguir.
-
- 
-
-As fundações públicas, como o Conselho Nacional de Desenvolvimento Científico e Tecnológico (CNPq), devem disponibilizar, de maneira sistemática, todas as suas informações, salvo aquelas referentes a projetos de pesquisa e desenvolvimento científicos ou tecnológicos cuja divulgação possa ameaçar a segurança do Estado.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 904303
-CEBRASPE (CESPE) - Ana GRS (SLU DF)/SLU DF/Administração/2019
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-384) 
-Com base na Lei da Transparência — Lei Complementar n.º 131/2009 — e na Lei de Acesso à Informação — Lei n.º 12.527/2011 —, julgue o item seguinte.
-
-
-A Lei de Acesso à Informação determina aos órgãos e às entidades do poder público que assegurem a gestão transparente da informação, observados normas e procedimentos específicos aplicáveis.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 908336
-CEBRASPE (CESPE) - Ana GRS (SLU DF)/SLU DF/Modernização da Gestão das Atividades de Resíduos Sólidos/2019
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-385) 
-Julgue o item subsecutivo, tendo como referência as disposições da Lei de Acesso à Informação (Lei n.º 12.527/2011).
-
- 
-
-No âmbito de suas competências, os órgãos públicos são obrigados a divulgar, independentemente de requerimento, informações de interesse coletivo ou geral por eles produzidas no respectivo sítio oficial da rede mundial de computadores.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 576567
-CEBRASPE (CESPE) - AMCI (CGM J Pessoa)/Pref João Pessoa/Auditoria, Fiscalização, Ouvidoria e Transparência/Geral/2018
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-386) 
-Com base nos dispositivos da Lei de Acesso à Informação — Lei Federal n.º 12.527/2011 —, julgue o item a seguir.
-
-
-É vedado o acesso a informações referentes a projetos de pesquisa e desenvolvimento científicos ou tecnológicos cujo sigilo seja imprescindível à segurança da sociedade e do Estado.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 577074
-CEBRASPE (CESPE) - TMCI (CGM J Pessoa)/Pref João Pessoa/2018
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-387) 
-De acordo com a Lei de Acesso à Informação — Lei Federal n.º 12.527/2011 —, julgue o seguinte item.
-
-
-O acesso à informação compreende, entre outros, o direito à obtenção de informações relativas ao acompanhamento e aos resultados de programas executados por órgãos e entidades públicas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 577075
-CEBRASPE (CESPE) - TMCI (CGM J Pessoa)/Pref João Pessoa/2018
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-388) 
-De acordo com a Lei de Acesso à Informação — Lei Federal n.º 12.527/2011 —, julgue o seguinte item.
-
- 
-O acesso à informação compreenderá o direito à informação acerca do resultado de prestações e tomadas de contas realizadas pelos órgãos de controle interno e externo, salvo as prestações de contas relativas a exercícios anteriores.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 595331
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Análise de Sistemas/2018
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-389) 
-Acerca do acesso à informação e da licitação administrativa, julgue o item que se segue.
-
- 
-A Lei de Acesso à Informação obriga que toda a administração pública direta e indireta e também os órgãos do Poder Judiciário promovam, independentemente de requerimento, a divulgação, em local de fácil acesso no âmbito de suas competências, de informações de interesse coletivo ou geral por eles produzidas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 620131
-CEBRASPE (CESPE) - Of Tec Int (ABIN)/ABIN/Área 10/2018
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-390) 
-Com base na legislação que trata do acesso a documentos, julgue o item seguinte.
-
- 
-O acesso à informação compreende, entre outros, o direito de obter informação primária, íntegra, autêntica e atualizada.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 731714
-CEBRASPE (CESPE) - ATRE (SEFAZ RS)/SEFAZ RS/2018
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-391) 
-De acordo com a Lei de Acesso à Informação, é dever dos órgãos e das entidades públicas divulgar em local de fácil acesso informações de interesse coletivo ou geral. A divulgação dessas informações
-
-a) abrangerá os procedimentos licitatórios, bem como todos os contratos celebrados.
-b) poderá ser feita exclusivamente por meio de mídia impressa, caso o ente público entenda ser este o meio de mais fácil acesso aos interessados.
-c) será dever do ente público com relação às informações por ele produzidas, dispensada a publicação de dados custodiados.
-
-d) incluirá registros das despesas do ente público, resguardada a privacidade dos agentes públicos quanto a informações pecuniárias.
-e) dependerá de requerimento específico direcionado à autoridade competente.
-Gabarito: A
-## questao 737064
-CEBRASPE (CESPE) - AFA (SEFAZ RS)/SEFAZ RS/2018
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-392) 
-A Lei de Acesso à Informação obriga todos os municípios com até dez mil habitantes a divulgar
-
-a) sua estrutura organizacional e suas competências.
-b) seus programas, seus projetos e suas ações.
-c)  a remuneração e subsídios recebidos pelos ocupantes de cargo público.
-d)  as licitações realizadas e as em andamento.
-e)  informações relativas à execução orçamentária e financeira.
-Gabarito: E
-## questao 460312
-CEBRASPE (CESPE) - APPGE (SEE DF)/SEE DF/Apoio Administrativo/2017
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-393) 
-Com base na Lei n.º 12.527/2011 — Lei de Acesso à Informação —, julgue o próximo item.
-
- 
-Os órgãos e as entidades públicas devem assegurar a concessão de acesso a partes ostensivas de documentos sigilosos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 534241
-CEBRASPE (CESPE) - AUCE (TCE-PE)/TCE PE/Auditoria de Contas Públicas/2017
-Direito Administrativo (Doutrina e Leis Federais) - Do Acesso a Informações e da sua Divulgação (arts. 6º a 9º da Lei nº 12.527/2011)
-394) 
-Acerca do orçamento participativo, da transparência na administração pública, da gestão por resultados e do neocorporativismo, julgue o item.
-
- 
-Entre os dados de despesas efetuadas por órgãos e entidades da administração pública federal disponibilizados no Portal da Transparência do Poder Executivo Federal não se incluem aqueles relativos aos repasses de recursos federais para os estados, o Distrito Federal e os municípios.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3259930
-CEBRASPE (CESPE) - TJ TRF6/TRF 6/Apoio Especializado/Desenvolvimento de Sistemas de Informação/2025
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-395) 
-Acerca de prevenção e combate a ataques a redes de computadores, criptografia e certificação digital, julgue o item a seguir.
-
- 
-Os sistemas de criptografia assimétrica utilizam uma chave compartilhada entre o emissor e o receptor dos dados, sendo indicados para ambientes de baixo nível de segurança.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3259931
-CEBRASPE (CESPE) - TJ TRF6/TRF 6/Apoio Especializado/Desenvolvimento de Sistemas de Informação/2025
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-396) 
-Acerca de prevenção e combate a ataques a redes de computadores, criptografia e certificação digital, julgue o item a seguir.
-
- 
-Em sistemas de criptografia, uma chave pública é gerada a partir da chave privada do seu emissor e, após isso, pode ser distribuída livremente.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3345929
-CEBRASPE (CESPE) - AJ TRT10/TRT 10/Apoio Especializado/Tecnologia da Informação/2025
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-397) 
-Julgue o item subsecutivo, a respeito de técnicas e ferramentas de análise de segurança das aplicações, criptografia e infraestrutura de chaves públicas.
-
- 
-A combinação de criptografia simétrica, para cifragem eficiente de dados, e de criptografia assimétrica, para troca segura de chaves, juntamente com assinaturas digitais e funções de hash para garantir a integridade e autenticidade das informações, é uma prática comum em protocolos criptográficos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3367121
-CEBRASPE (CESPE) - Tecno (AEB)/AEB/Tecnologia da Informação/2025
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-398) 
-Assinale a opção em que está apresentado corretamente o tipo de cifra de chave simétrica no qual os dígitos de texto simples são combinados com um fluxo de dígitos cifrados pseudoaleatórios. 
-
-a)  cifra de fluxo
-b)  one time pad
-c)  chave pública
-d)  curva elíptica 
-
-e)  digestor de mensagem
-Gabarito: A
-## questao 3373836
-CEBRASPE (CESPE) - Ana Min (MPE CE)/MPE CE/Ciências da Computação/2025
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-399) 
-Acerca de segurança da informação, segurança de datacenter, segurança de dispositivos e disponibilidade, julgue o item a seguir.
-
- 
-Um ataque de dicionário é comumente empregado contra criptografias que utilizam chaves longas e complexas.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3425106
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão da Informação/Gestão da Informação Bibliográfica/2025
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-400) 
-Acerca de segurança da informação, sistemas de informação e serviços de TI, julgue o item a seguir.
-
- 
-O uso de criptografia simétrica é sempre preferível ao uso de criptografia assimétrica, pois oferece maior segurança e desempenho.
-
-Certo
-Errado
-Gabarito: Errado
-
-
-
-Atividade de Inteligência para CAM DEP - 2026
-#
-Ordenação: Por Relevância (Somente Assuntos)
-## questao 3444475
-CEBRASPE (CESPE) - Pesq (EMBRAPA)/EMBRAPA/Ciências Exatas e da Terra/Rastreabilidade e Certificação Digital/2025
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-401) 
-Julgue o item a seguir, relativo ao uso de criptografia e suas características.
-
- 
-Em criptografia simétrica, uma das características mais importantes é o tamanho variável de um bloco de bites. Além disso, a chave secreta sempre é mudada a cada mensagem enviada em um sistema de comunicação cifrado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3444477
-CEBRASPE (CESPE) - Pesq (EMBRAPA)/EMBRAPA/Ciências Exatas e da Terra/Rastreabilidade e Certificação Digital/2025
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-402) 
-Julgue o item a seguir, relativo ao uso de criptografia e suas características.
-
- 
-Em criptografia assimétrica, para garantir confidencialidade, a chave pública do destinatário deve ser utilizada para cifrar uma mensagem.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3446067
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Análise de Sistemas/2025
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-403) 
-Certa empresa brasileira de médio porte, que desenvolve soluções de software para o setor financeiro e armazena informações sensíveis de clientes, como dados bancários, documentos pessoais e credenciais de acesso, iniciou um processo de adequação à norma ISO/IEC 27001:2022, implementando um sistema de gestão da segurança da informação (SGSI). A equipe de segurança da empresa criou políticas para garantir confidencialidade, integridade, disponibilidade e autenticidade das informações e adotou criptografia assimétrica, controle de acesso baseado em função, eo NIST Cybersecurity Framework para resposta a incidentes. Foram identificadas vulnerabilidades de injeção SQL e a empresa sofreu um ataque DDoS que afetou a disponibilidade do sistema.
-
- 
-Com base na situação precedente, julgue o item a seguir.
-
- 
-O uso de criptografia assimétrica pela empresa em apreço permite que um sistema envie dados criptografados por meio da chave privada e os decifre com a mesma chave.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3446838
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Suporte em Tecnologia da Informação/2025
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-404) 
-Julgue o próximo item, a respeito de princípios de segurança da informação e de criptografia.
-
- 
-Uma cifra de fluxo é um tipo de criptografia simétrica por meio da qual o texto simples pode ser criptografado bit a bit ou byte a byte.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3446842
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Suporte em Tecnologia da Informação/2025
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-405) 
-Julgue o próximo item, a respeito de princípios de segurança da informação e de criptografia.
-
- 
-Por padrão, em criptografia assimétrica, a chave pública é utilizada para cifrar uma mensagem sempre que se deseja preservar a integridade da informação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3597801
-CEBRASPE (CESPE) - AJ (TJ PA)/TJ PA/Análise de Sistemas/2025
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-406) 
-A respeito de criptografia, do clean code e das técnicas de refactoring, julgue o item seguinte.
-
-
-Considere que um tribunal necessite transmitir dados de processos sensíveis para outras varas remotas, mas esteja enfrentando restrições de largura de banda e requisitos de baixa latência. Considere, ainda, que, a fim de proteger os dados, a equipe pretenda usar criptografia simétrica de fluxo, sem impactar o desempenho da transmissão. Nessa situação, para máxima segurança, será necessário gerar uma nova chave simétrica para cada pacote de dados, que deverá ser enviada junto com o pacote criptografado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2777438
-CEBRASPE (CESPE) - Ana CT I (CNPq)/CNPq/Infraestrutura de Tecnologia da Informação/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-407) 
-Julgue o próximo item, relativo a criptografia, assinatura digital, sistemas operacionais e LDAP.
-
- 
-Nos sistemas criptográficos, o princípio da substituição, que se constitui em um dos modos como o texto claro  processado, caracteriza-se por fazer que os elementos do texto claro sejam reorganizados.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2780362
-CEBRASPE (CESPE) - Ana (CAU BR)/CAU BR/Infraestrutura de Tecnologia da Informação/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-408) 
-Julgue o item a seguir, a respeito de segurança, criptografia e automação.
-
-
-A criptografia de chave assimétrica utiliza duas chaves, privada e pública; ambas podem ser usadas para cifrar uma mensagem.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2781087
-CEBRASPE (CESPE) - Ana (CAU BR)/CAU BR/Infraestrutura de Tecnologia da Informação/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-409) 
-Julgue o item subsequente, relativo a sistemas criptográficos simétricos.
-
-
-A segurança em sistemas criptográficos simétricos independe do tamanho da chave.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2781089
-CEBRASPE (CESPE) - Ana (CAU BR)/CAU BR/Infraestrutura de Tecnologia da Informação/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-410) 
-Julgue o item subsequente, relativo a sistemas criptográficos simétricos.
-
- 
-Os sistemas criptográficos simétricos também são chamados de sistema de segredo compartilhado, seja entre duas ou mais partes, visto que o segredo compartilhado pode ser utilizado para manter uma informação confidencial entre as partes na comunicação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2789885
-CEBRASPE (CESPE) - Prof NU Jr (ITAIPU)/ITAIPU/Analista de Suporte/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-411) 
-Com base nos conceitos de técnicas de criptografia, julgue os itens a seguir.
-
- 
-I A criptografia simétrica usa somente uma chave tanto para encriptar quanto para decriptar uma mensagem.
-
- 
-II A criptografia de chave pública, também conhecida como criptografia assimétrica, é aquela em que duas chaves diferentes são usadas no processo, uma para encriptar e outra para decriptar.
-
- 
-III A técnica hashing envolve uma chave única; ela define um tamanho e valor fixos independentemente de mudanças na mensagem.
-
- 
-Assinale a opção correta.
-
-a) Apenas o item II está certo.
-b) Apenas o item III está certo.
-c) Apenas os itens I e II estão certos.
-d) Apenas os itens I e III estão certos.
-
-e) Todos os itens estão certos.
-Gabarito: C
-## questao 2796977
-CEBRASPE (CESPE) - APGIPI (INPI)/INPI/Gestão da Tecnologia da Informação/Segurança da Informação/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-412) 
-A respeito de criptografia, julgue o item seguinte.
-
-
-Um dos exemplos de criptografia assimétrica é a de chave pública, baseada em funções matemáticas e não em funções de substituição e permutação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2796978
-CEBRASPE (CESPE) - APGIPI (INPI)/INPI/Gestão da Tecnologia da Informação/Segurança da Informação/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-413) 
-A respeito de criptografia, julgue o item seguinte.
-
- 
-A autenticidade de sistemas criptográficos garante que o conteúdo de uma mensagem não foi alterado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2796979
-CEBRASPE (CESPE) - APGIPI (INPI)/INPI/Gestão da Tecnologia da Informação/Segurança da Informação/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-414) 
-A respeito de criptografia, julgue o item seguinte.
-
- 
-Na criptografia simétrica, é possível obter o texto aberto a partir do texto cifrado quando se conhece qual é o algoritmo de encriptação, sem necessidade de se conhecer a chave secreta.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2799208
-CEBRASPE (CESPE) - Tecno Jr (CTI)/CTI/Inovação e Gestão de Infraestrutura de P&D/Desenvolvimento Tecnológico voltado à Infraestrutura de Tecnologia da Informação e Comunicação/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-415) 
-Julgue o próximo item, a respeito da gestão de segurança da informação.
-
- 
-As organizações devem, obrigatoriamente, implementar recursos criptográficos para proteger dados pessoais em todos os sistemas.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2841766
-CEBRASPE (CESPE) - Ana Min (MPE TO)/MPE TO/Especializado/Administração de Infraestrutura de Tecnologia da Informação/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-416) 
-Julgue o próximo item, a respeito de ataques, malwares, criptografia e certificação digital.
-
- 
-Na criptografia simétrica, o texto cifrado resultante depende diretamente da chave secreta e do texto inteligível, usados como entrada para o algoritmo de criptografia.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2847642
-CEBRASPE (CESPE) - Tec Min (MPE TO)/MPE TO/Especializado/Fotografia/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-417) 
-Com relação a procedimentos de segurança, julgue o item seguinte.
-
-
-Ainda que muito eficiente, o uso de criptografia é insuficiente para garantir a segurança das informações em determinado computador.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2848043
-CEBRASPE (CESPE) - Tec Min (MPE TO)/MPE TO/Especializado/Técnico em informática/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-418) 
-Julgue o item subsequente, relativo a conceitos, serviços e tecnologias relacionados a Internet e correio eletrônico, a spyware e criptografia.
-
-
-O uso de criptografia end-to-end busca garantir que somente o emissor e o receptor da mensagem consigam acessar o seu conteúdo.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3076916
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Infraestrutura de TI/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-419) 
-Acerca de criptografia simétrica e de certificados digitais, julgue o seguinte item.
-
- 
-A chave utilizada em conjunto com um algoritmo criptográfico simétrico representa um segredo compartilhado entre duas ou mais partes.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3076919
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Infraestrutura de TI/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-420) 
-Acerca de criptografia simétrica e de certificados digitais, julgue o seguinte item.
-
- 
-Normalmente, a chave privada está incluída em um certificado digital, assim, o destinatário de uma mensagem assinada digitalmente é capaz de fazer a verificação de assinatura.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3076923
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Infraestrutura de TI/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-421) 
-Acerca de criptografia simétrica e de certificados digitais, julgue o seguinte item.
-
- 
-A criptografia simétrica pode usar cifras de fluxo ou cifras de bloco, dependendo da implementação do algoritmo e de suas características internas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3077598
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Segurança da Informação/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-422) 
-Acerca de conceitos relativos à segurança da informação, julgue o item a seguir.
-
- 
-A criptografia ajuda a determinar se os dados obtidos são provenientes de uma fonte confiável e não foram alterados durante a transmissão, obedecendo, assim, ao princípio da confidencialidade.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3077620
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Segurança da Informação/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-423) 
-Em relação a ameaças e vulnerabilidades em aplicações, julgue o item subsequente.
-
- 
-São exemplos de armazenamento criptográfico inseguro: imprudência no armazenamento de chaves e utilização de um hash para proteção de senhas sem o salt.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3077697
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Segurança da Informação/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-424) 
-Acerca de criptografia e proteção de dados, julgue o item a seguir.
-
- 
-Independentemente do tamanho de dados armazenados, a técnica criptográfica mais eficiente e rápida é a de chave pública.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3077702
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Segurança da Informação/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-425) 
-Acerca de criptografia e proteção de dados, julgue o item a seguir.
-
- 
-Em criptografia de curva elíptica, para ser considerada uma curva elíptica, a equação  y2=x3+ax+b
-  deve ser satisfeita.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3077706
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Segurança da Informação/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-426) 
-Acerca de criptografia e proteção de dados, julgue o item a seguir.
-
- 
-A criptografia de curva elíptica é um tipo de sistema criptográfico simétrico embasado na estrutura algébrica de curvas elípticas sobre campos infinitos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3081653
-CEBRASPE (CESPE) - TCE (TCE AC)/TCE AC/Técnico em Informática/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-427) 
-Julgue o próximo item, a respeito de criptografia, proteção de dados, sistemas criptográficos simétricos e assimétricos e principais protocolos.
-
- 
-Os sistemas criptográficos assimétricos utilizam um par de chaves, uma pública e uma privada, para criptografar e descriptografar dados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3081654
-CEBRASPE (CESPE) - TCE (TCE AC)/TCE AC/Técnico em Informática/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-428) 
-Julgue o próximo item, a respeito de criptografia, proteção de dados, sistemas criptográficos simétricos e assimétricos e principais protocolos.
-
- 
-RSA e ECC são os principais protocolos utilizados na criptografia simétrica.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3081655
-CEBRASPE (CESPE) - TCE (TCE AC)/TCE AC/Técnico em Informática/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-429) 
-Julgue o próximo item, a respeito de criptografia, proteção de dados, sistemas criptográficos simétricos e assimétricos e principais protocolos.
-
- 
-A criptografia é uma técnica utilizada para proteger dados tanto em trânsito quanto em repouso, garantindo a confidencialidade e a integridade das informações contra acessos não autorizados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3081656
-CEBRASPE (CESPE) - TCE (TCE AC)/TCE AC/Técnico em Informática/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-430) 
-Julgue o item que se segue, relativo a assinatura e certificação digital.
-
- 
-O protocolo de certificação digital é um conjunto de regras e procedimentos que garantem a emissão, validação e revogação de certificados digitais, assegurando a autenticidade e a integridade das transações eletrônicas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3172753
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Arquivologia/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-431) 
-A criptografia é o método de codificação de dados segundo algoritmo específico e chave secreta.
-
- 
-A respeito desse tema, julgue o próximo item.
-
- 
-A utilização da criptografia de chave assimétrica possibilita o uso de certificação digital ou assinatura digital.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3172754
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Arquivologia/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-432) 
-A criptografia é o método de codificação de dados segundo algoritmo específico e chave secreta.
-
- 
-A respeito desse tema, julgue o próximo item.
-
- 
-Os objetivos básicos da criptografia são a confidencialidade, o sigilo, a autenticação, a integridade, o não repúdio e o anonimato.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3172768
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Arquivologia/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-433) 
-Tendo como referência a Infraestrutura de Chaves Públicas Brasileira (ICP/Brasil), julgue o item subsecutivo.
-
- 
-O par de chaves criptográficas será gerado pela autoridade certificadora, que deterá o controle, o uso e o conhecimento exclusivo da chave privada de assinatura do titular.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3186854
-CEBRASPE (CESPE) - AJ STJ/STJ/Apoio Especializado/Análise de Sistemas de Informação/2024
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-434) 
-Acerca de criptografia, de clean code, de refactoring e de JUnit, julgue o item seguinte.
-
- 
-A criptografia de curvas elípticas é um método de criptografia de chave pública que se baseia na matemática de curvas elípticas para garantir a confidencialidade e a integridade de dados, além de ser resistente ao problema do logaritmo discreto de curva elíptica.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2271482
-CEBRASPE (CESPE) - APO (SEPLAN RR)/SEPLAN RR/Tecnologia da Informação/2023
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-435) 
-No que diz respeito aos conceitos de criptografia, à assinatura digital, aos conceitos utilizados em sistemas operacionais e às noções de DevOps, julgue o item seguinte.
-
-
-No ECB (electronic codebook), um dos modos de operação usados com a cifra de bloco simétrica, cada bloco de texto claro é criptografado usando-se a mesma chave.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2576095
-CEBRASPE (CESPE) - Ana Sist (EMPREL)/EMPREL/2023
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-436) 
-Se uma mensagem de texto encriptada for enviada de um usuário A para um usuário B pela Internet, utilizando um sistema criptográfico assimétrico, então, para que B visualize corretamente o conteúdo da mensagem recebida de A, ele precisará usar a sua chave
-
-a)  de sessão.
-b)  primária.
-c)  pré-compartilhada.
-d)  pública.
-
-e)  privada.
-Gabarito: E
-## questao 2589500
-CEBRASPE (CESPE) - AFM (Pref Fortaleza)/Pref Fortaleza/Ciência da Computação, Informática, Processamento de Dados/2023
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-437) 
-Acerca de criptografia simétrica e assimétrica, julgue o item subsequente.
-
-
-A chave pública é gerada a fim de que o usuário possa divulgar o seu texto, antes de ele ser lido, para os leitores da mensagem.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2604202
-CEBRASPE (CESPE) - Ana TI (FUB)/FUB/2023
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-438) 
-A respeito de segurança de redes de computadores, julgue o item subsecutivo.
-
- 
-Se um arquivo tiver sido criptografado com o algoritmo AES (Advanced Encryption Standard) para garantir a confidencialidade na transmissão, o transmissor e o receptor deverão ter a mesma chave para, respectivamente, codificar e decodificar o arquivo.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2642000
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança Cibernética/2023
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-439) 
-Acerca de criptografia, julgue o item a seguir.
-
- 
-Utilizando algoritmo de chave pública, a criptografia pode implementar o princípio da autenticidade e o da irretratabilidade ou não repúdio.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2642007
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança Cibernética/2023
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-440) 
-Acerca de criptografia, julgue o item subsequente.
-
- 
-Em algoritmo de criptografia simétrica, a mensagem cifrada com chave pública pode somente ser decifrada pela sua chave privada correspondente.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2642277
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança da Informação e Proteção de Dados/2023
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-441) 
-Considerando conceitos e padrões criptográficos, conceitos de blockchain e detecção, resposta, tratamento e recuperação de incidentes cibernéticos, julgue o item a seguir.
-
- 
-A criptografia de chave pública e privada é um método no qual são utilizadas duas chaves, uma para cifrar e outra para decifrar a mensagem.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2642278
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança da Informação e Proteção de Dados/2023
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-442) 
-Considerando conceitos e padrões criptográficos, conceitos de blockchain e detecção, resposta, tratamento e recuperação de incidentes cibernéticos, julgue o item a seguir.
-
- 
-A criptografia que utiliza as duas chaves (pública e privada) é também conhecida como criptografia simétrica.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2642338
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Sustentação Tecnológica/2023
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-443) 
-Julgue o item a seguir, relativo a sistemas de proteção de dados.
-
- 
-A aplicação das técnicas de criptografia de arquivos durante a transmissão de dados no ambiente cibernético não é parte integrante das políticas de sistemas de proteção de dados.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2716732
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Sistemas de TI/2023
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-444) 
-Julgue o item subsecutivo, a respeito de assinatura e certificação digital.
-
-
-Recomenda-se que o algoritmo simétrico RC4 seja utilizado com certificados digitais devido a sua resistência contra ataques a chaves não randômicas.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 576894
-CEBRASPE (CESPE) - AMCI (CGM J Pessoa)/Pref João Pessoa/Tecnologia da Informação/Desenvolvimento de Sistemas/2018
-TI - Segurança da Informação - Conceitos de Criptografia (Chaves, Simetria, etc.)
-445) 
-Acerca de integridade, disponibilidade e confidencialidade em segurança da informação, julgue o item a seguir.
-
- 
-A confidencialidade determina que uma informação seja criptografada com cifra assimétrica.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3238350
-CEBRASPE (CESPE) - GAAPC (PC DF)/PC DF/Analista de Informática/Banco de Dados/2025
-TI - Segurança da Informação - Algoritmos de Criptografia
-446) 
-No que se refere a segurança de aplicativos web, prevenção e combate a ataques a redes de computadores e sistemas criptográficos, julgue o item a seguir.
-
- 
-Em um sistema de comunicação em rede, a criptografia assimétrica, como o RSA, pode ser usada para proteger o processo de troca de uma chave secreta entre duas partes; após o compartilhamento seguro dessa chave, um algoritmo de criptografia simétrica, como o AES, pode ser utilizado para proteger a transmissão de grandes volumes de dados, devido à sua maior eficiência em comparação aos algoritmos assimétricos para esse tipo de tarefa.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3251233
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Análise de Sistemas de Informação/2025
-TI - Segurança da Informação - Algoritmos de Criptografia
-447) 
-Acerca dos algoritmos de criptografia, julgue o item a seguir.
-
- 
-O algoritmo SHA-3 opera internamente utilizando uma sequência de operações de permutação linear e adições modulares simples, em vez de qualquer forma de absorção e compressão.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3255383
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Governança e Gestão de Tecnologia da Informação/2025
-TI - Segurança da Informação - Algoritmos de Criptografia
-448) 
-No que concerne aos principais algoritmos e protocolos criptográficos, bem como à segurança de redes sem fio, julgue o item a seguir.
-
- 
-Atualmente, o algoritmo AES com chave de 256 bits é considerado resistente a ataques de criptografia quântica.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3259926
-CEBRASPE (CESPE) - TJ TRF6/TRF 6/Apoio Especializado/Desenvolvimento de Sistemas de Informação/2025
-TI - Segurança da Informação - Algoritmos de Criptografia
-449) 
-Acerca de prevenção e combate a ataques a redes de computadores, criptografia e certificação digital, julgue o item a seguir.
-
- 
-Diferentemente de outros algoritmos de criptografia simétrica, o protocolo AES exige o constante compartilhamento de chaves entre todas as partes envolvidas em uma comunicação, o que limita seu desempenho em sistemas distribuídos e o torna impraticável em cenários de alta escala.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3259929
-CEBRASPE (CESPE) - TJ TRF6/TRF 6/Apoio Especializado/Desenvolvimento de Sistemas de Informação/2025
-TI - Segurança da Informação - Algoritmos de Criptografia
-450) 
-Acerca de prevenção e combate a ataques a redes de computadores, criptografia e certificação digital, julgue o item a seguir.
-
- 
-Nos algoritmos de criptografia DES e IDEA, a chave utilizada para cifrar dados é a mesma utilizada para decifrá-los, e deve ser conhecida pelo remetente e pelo destinatário da informação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3259932
-CEBRASPE (CESPE) - TJ TRF6/TRF 6/Apoio Especializado/Desenvolvimento de Sistemas de Informação/2025
-TI - Segurança da Informação - Algoritmos de Criptografia
-451) 
-Acerca de prevenção e combate a ataques a redes de computadores, criptografia e certificação digital, julgue o item a seguir.
-
- 
-Quando uma chave privada é exposta indevidamente, ela pode ser revogada, mas os dados criptografados anteriormente continuam acessíveis e certificados para os detentores da chave pública equivalente.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3340449
-CEBRASPE (CESPE) - Ana Desen (BDMG)/BDMG/Infraestrutura e Segurança Cibernética/2025
-TI - Segurança da Informação - Algoritmos de Criptografia
-452) 
-No que se refere às caraterísticas e técnicas de criptografia simétrica e assimétrica, julgue o item que se segue.
-
-
-De maneira geral, chaves de algoritmos simétricos devem seguir uma propriedade de aleatoriedade com um vetor deinicialização que é conhecido pelo destino da comunicação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3340451
-CEBRASPE (CESPE) - Ana Desen (BDMG)/BDMG/Infraestrutura e Segurança Cibernética/2025
-TI - Segurança da Informação - Algoritmos de Criptografia
-453) 
-No que se refere às caraterísticas e técnicas de criptografia simétrica e assimétrica, julgue o item que se segue.
-
- 
-Na criptografia assimétrica, o algoritmo RSA utiliza chave privada de tamanho fixo, limitado a 1.024 bits, e chave pública de tamanho variado (2.048 bits ou maior) em função do certificado digital
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3400360
-CEBRASPE (CESPE) - AFRE RJ/SEFAZ RJ/2025
-TI - Segurança da Informação - Algoritmos de Criptografia
-454) 
-Acerca das técnicas antiforenses, assinale a opção correta.
-
-a)  A esteganografia em imagens JPEG é detectável com 100% de precisão com o uso de assinaturas estatísticas, ainda que sejam utilizados algoritmos avançados, como o F5.
-b)  O TrueCrypt, apesar de descontinuado, ainda é considerado seguro para a criptografia de discos devido à implementação de algoritmos pós-quânticos, que resistem a ataques de computadores quânticos.
-c)  O sistema de arquivos Rubberhose foi projetado para fornecer negação plausível por meio de criptografia, o que permite a existência — não provada sem a chave — de múltiplos volumes ocultos.
-d)  O apagamento seguro é suficiente para impedir a recuperação de dados em SSD modernos, pois ignora o wear-leveling.
-
-e)  A criptografia homomórfica é técnica antiforense eficaz para evitar a detecção de conteúdo durante análises dinâmicas, visto que permite operações com dados criptografados sem descriptografá-los.
-Gabarito: C
-## questao 3430520
-CEBRASPE (CESPE) - Sup Ped (UNIVESP)/UNIVESP/Engenharia de Computação e Áreas Afins/2025
-TI - Segurança da Informação - Algoritmos de Criptografia
-455) 
-Assinale a opção em que é corretamente apresentado um algoritmo de criptografia que utiliza cifra de fluxo.
-
-a) CHACHA20
-b) 3DES
-c) RSA
-d) AES
-
-e) SHA256
-Gabarito: A
-## questao 3499266
-CEBRASPE (CESPE) - Tecno (FUB)/FUB/Sistemas de Telecomunicações/2025
-TI - Segurança da Informação - Algoritmos de Criptografia
-456) 
-Julgue o item a seguir, a respeito de criptografia, firewall, modelos de referência OSI e TCP e topologia e arquitetura.
-
- 
-No padrão de criptografia avançada (AES), a criptografia simétrica do tipo cifras de bloco codificam dados em blocos de tamanho fixo.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3548516
-CEBRASPE (CESPE) - PCF/PF/Área 3/2025
-TI - Segurança da Informação - Algoritmos de Criptografia
-457) 
-Julgue o próximo item, a respeito do algoritmo Twofish e da técnica MITM (man-in-the-middle).
-
-
-Considerando-se que a figura a seguir descreve um acordo de chave Diffie-Hellman, é correto afirmar que, nesse cenário, o protocolo de acordo de chave é vulnerável ao ataque MITM porque não autentica os participantes, vulnerabilidade que pode ser superada com a utilização de assinaturas digitais e certificados de chave pública.
-
-
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3548520
-CEBRASPE (CESPE) - PCF/PF/Área 3/2025
-TI - Segurança da Informação - Algoritmos de Criptografia
-458) 
-Julgue o próximo item, a respeito do algoritmo Twofish e da técnica MITM (man-in-the-middle).
-
- 
-Twofish é uma cifra simétrica com um tamanho de bloco de 128 bits e uma chave de até 256 bits que, semelhante aos algoritmos AES e DES, depende da estrutura de Feistel — especificamente 16 rodadas na rede Feistel (16-round Feistel network).
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2780363
-CEBRASPE (CESPE) - Ana (CAU BR)/CAU BR/Infraestrutura de Tecnologia da Informação/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-459) 
-Julgue o item a seguir, a respeito de segurança, criptografia e automação.
-
- 
-O algoritmo RSA utiliza a função matemática Totiente de Euler para gerar chaves criptográficas assimétricas públicas e privadas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2789887
-CEBRASPE (CESPE) - Prof NU Jr (ITAIPU)/ITAIPU/Analista de Suporte/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-460) 
-O primeiro algoritmo de criptografia assimétrica disponibilizado ao público e utilizado amplamente para a transmissão segura de dados foi o
-
-a) DES.
-b) 3DES.
-c) AES.
-d) RC4.
-
-e) RSA.
-Gabarito: E
-## questao 2797334
-CEBRASPE (CESPE) - Ana (FINEP)/FINEP/Tecnologia da Informação/Infraestrutura/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-461) 
-O algoritmo AES (advanced encryption standard) aceita chaves criptográficas e blocos de dados no tamanho de
-
-a) 64 bits.
-b) 100 bits.
-c) 128 bits.
-d) 132 bits.
-
-e) 164 bits.
-Gabarito: C
-## questao 2839989
-CEBRASPE (CESPE) - Ana (APEX)/ApexBrasil/Operações e Segurança de Tecnologia da Informação e Comunicação/Segurança da Informação/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-462) 
-No algoritmo AES, um bloco tem tamanho
-
-a)  fixo de 192 bits e uma chave pode ter 168 bits.
-b) variável de até 256 bits e uma chave pode ter 256 bits.
-c) fixo de 128 bits e uma chave pode ter 128 bits.
-d) variável de até 168 bits e uma chave pode ter 168 bits.
-Gabarito: C
-## questao 2841692
-CEBRASPE (CESPE) - Ana Min (MPE TO)/MPE TO/Especializado/Administração de Banco de Dados/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-463) 
-No que se refere a vulnerabilidades e ataques a sistemas computacionais e criptografia, julgue o próximo item.
-
- 
-Projetado para velocidade, simplicidade e segurança, o algoritmo MD (message digest) produz um valor de hash de 128 bites para um tamanho arbitrário da mensagem inserida.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2841952
-CEBRASPE (CESPE) - Ana Min (MPE TO)/MPE TO/Especializado/Administração de Infraestrutura de Tecnologia da Informação/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-464) 
-Julgue o próximo item, a respeito de ataques, malwares, criptografia e certificação digital.
-
- 
-São partes fundamentais para o funcionamento do algoritmo criptográfico RC4: o algoritmo de agendamento de chaves e o algoritmo de geração pseudoaleatória.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2841955
-CEBRASPE (CESPE) - Ana Min (MPE TO)/MPE TO/Especializado/Administração de Infraestrutura de Tecnologia da Informação/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-465) 
-Julgue o próximo item, a respeito de ataques, malwares, criptografia e certificação digital.
-
- 
-Na primeira etapa do processo de geração de chaves do algoritmo criptográfico RSA, é necessário obter dois números primos grandes, que tenham uma grande diferença entre si e que, após encontrados, serão mantidos em segredo.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2848210
-CEBRASPE (CESPE) - Tec Min (MPE TO)/MPE TO/Especializado/Técnico em Telecomunicações/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-466) 
-Acerca da segurança da informação, julgue o seguinte item.
-
- 
-Técnicas de encriptação simétrica têm por objetivo prover uma rede de comunicação do requisito de confiabilidade na transmissão de dados. O algoritmo denominado AES (advanced encryption standard) é um exemplo de técnica de encriptação simétrica.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2877524
-CEBRASPE (CESPE) - APO (MPO)/MPO/Tecnologia da Informação/Gestão da Segurança da Informação Orçamentária/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-467) 
-Considerando as características de algoritmos de criptografia simétricos e assimétricos, julgue o item a seguir.
-
- 
-Em criptografia assimétrica, o tamanho da chave é irrelevante para a segurança do sistema que a utiliza.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2877526
-CEBRASPE (CESPE) - APO (MPO)/MPO/Tecnologia da Informação/Gestão da Segurança da Informação Orçamentária/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-468) 
-Considerando as características de algoritmos de criptografia simétricos e assimétricos, julgue o item a seguir.
-
- 
-O método ECB (electronic codebook) oculta padrões de dados em textos idênticos, sendo recomendado para uso em protocolos criptográficos considerados seguros.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2877723
-CEBRASPE (CESPE) - Ana CT (CAPES)/CAPES/Informática/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-469) 
-Acerca de criptografia, julgue o item que se segue.
-
- 
-A criptografia assimétrica utiliza uma única chave para criptografar e descriptografar.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2981681
-CEBRASPE (CESPE) - ASist (Pref Cach Itapemirim)/Pref Cach Itapemirim/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-470) 
-Julgue o item que se segue, sobre criptografia simétrica.
-
-
-O tamanho da chave é uma característica irrelevante para um sistema criptográfico simétrico.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2981683
-CEBRASPE (CESPE) - ASist (Pref Cach Itapemirim)/Pref Cach Itapemirim/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-471) 
-Julgue o item que se segue, sobre criptografia simétrica.
-
- 
-Em uma operação criptográfica simétrica baseada em cifras de bloco, os blocos são de tamanho fixo.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2993441
-CEBRASPE (CESPE) - AJ CNJ/CNJ/Apoio Especializado/Análise de Sistemas/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-472) 
-Acerca dos algoritmos simétricos e assimétricos utilizados em dados em repouso, julgue o item subsecutivo.
-
-
-SHA3 é um algoritmo de verificação de integridade simétrico, portanto sua saída é uma boa chave criptográfica para algoritmos simétricos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3048652
-CEBRASPE (CESPE) - ACE (TCE PR)/TCE PR/Informática/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-473) 
-Acerca da estrutura do padrão AES de criptografia, é correto afirmar que
-
-a) quatro estágios são usados na estrutura AES, sendo três de permutação e um de substituição.
-b) a estrutura do AES pode ser considerada uma estrutura clássica de Feistel, pela forma como processa os blocos de dados.
-c) cada quarta parte do bloco de dados, na estrutura do AES, é usada alternadamente para modificar as outras três partes.
-d) a chave fornecida como entrada para o AES é expandida em uma matriz de 16 bytes que serve como chave para cada rodada.
-
-e) o AES processa todo o bloco de dados como uma matriz única durante cada rodada, usando substituições e permutações.
-Gabarito: E
-## questao 3076846
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Gestão de Dados/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-474) 
-Acerca de assinatura e certificação digital, julgue o item que se segue.
-
- 
-O algoritmo SHA512 é inseguro porque o ataque de repetição (replay attack) permite a colisão dos primeiros 64 bits de saída.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3077690
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Segurança da Informação/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-475) 
-Acerca de criptografia e proteção de dados, julgue o item a seguir.
-
- 
-Determinados algoritmos de hash podem sofrer colisões que impedem a correta verificação de integridade.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3082621
-CEBRASPE (CESPE) - Ana Sist (CAGEPA)/CAGEPA/Sistemas de TI/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-476) 
-O algoritmo simétrico conhecido por seu nome original Rijndael, no qual a mesma chave é usada para criptografar e descriptografar os dados, é do tipo
-
-a)  AES (Advanced Encryption Standard).
-b) MD5.
-c) SHA-256.
-d) PGP (Pretty Good Privacy).
-
-e) RSA (Rivest-Shamir-Adleman).
-Gabarito: A
-## questao 3104244
-CEBRASPE (CESPE) - ERSPT (ANATEL)/ANATEL/Engenharia/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-477) 
-Acerca de algoritmos simétricos e assimétricos em criptografia, julgue o item a seguir.
-
-
-O algoritmo AES usa o princípio conhecido como rede de substituição-permutação, o que o faz ser eficiente em software, mas não em hardware.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3104247
-CEBRASPE (CESPE) - ERSPT (ANATEL)/ANATEL/Engenharia/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-478) 
-Acerca de algoritmos simétricos e assimétricos em criptografia, julgue o item a seguir.
-
- 
-Consoante o que o algoritmo RSA preconiza, n é usado como valor para chave pública, tal que n = p ∙ q, em que p e q representam números primos grandes.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3148313
-CEBRASPE (CESPE) - AnDR (CODEVASF)/CODEVASF/Tecnologia da Informação/2024
-TI - Segurança da Informação - Algoritmos de Criptografia
-479) 
-Acerca de criptografia, julgue o item a seguir.
-
- 
-O RSA é um algoritmo simétrico baseado no princípio da fatoração de grandes números primos, o que torna a chave privada fácil de ser deduzida com poder computacional doméstico de um PC a partir da chave pública.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2338860
-CEBRASPE (CESPE) - Per Crim (POLC AL)/POLC AL/Análise de Sistemas, Ciências da Computação, Informática. Processamento de Dados ou Sistemas da Informação/2023
-TI - Segurança da Informação - Algoritmos de Criptografia
-480) 
-Julgue o item a seguir, a respeito de criptografia.
-
- 
-Na cifração utilizando-se algoritmos simétricos de bloco, uma cifra de bloco processa o texto de entrada (às claras) como entrada em blocos de tamanho fixo e produz um bloco de texto cifrado usando como referência o tamanho da chave empregada, variando o tamanho de cada bloco.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2593703
-CEBRASPE (CESPE) - Ana (MPE RO)/MPE RO/Programador/2023
-TI - Segurança da Informação - Algoritmos de Criptografia
-481) 
-A premissa que, utilizada no algoritmo RSA, torna difícil descobrir a relação entre os números que geram as chaves em criptografia assimétrica é a
-
-a)  potenciação.
-b) adição.
-c) razão quadrática.
-d) fatoração.
-
-e)  subtração.
-Gabarito: D
-## questao 2637491
-CEBRASPE (CESPE) - Ana Proc (DATAPREV)/DATAPREV/2023
-TI - Segurança da Informação - Algoritmos de Criptografia
-482) 
-Julgue o item a seguir, a respeito do algoritmo AES.
-
- 
-O AES, devido as suas características, é considerado eficiente tanto em software quanto em hardware.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2637492
-CEBRASPE (CESPE) - Ana Proc (DATAPREV)/DATAPREV/2023
-TI - Segurança da Informação - Algoritmos de Criptografia
-483) 
-Julgue o item a seguir, a respeito do algoritmo AES.
-
- 
-O AES, por ser considerado um algoritmo de cifra de fluxo, é resistente a ataques de força bruta.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2642004
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança Cibernética/2023
-TI - Segurança da Informação - Algoritmos de Criptografia
-484) 
-Acerca de criptografia, julgue o item subsequente.
-
- 
-Blowfish é uma cifra simétrica de blocos que utiliza chave com tamanho variável de 32 bits a 448 bits e que foi criada como alternativa gratuita e rápida aos algoritmos criptográficos existentes.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2642006
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança Cibernética/2023
-TI - Segurança da Informação - Algoritmos de Criptografia
-485) 
-Acerca de criptografia, julgue o item subsequente.
-
- 
-AES é um método de criptografia de cifra em bloco, de tamanho de 64 bits, considerado inseguro para muitas aplicações.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1980599
-CEBRASPE (CESPE) - Esp GT (TELEBRAS)/TELEBRAS/Engenheiro Redes/2022
-TI - Segurança da Informação - Algoritmos de Criptografia
-486) 
-No que concerne a fundamentos de IPSEC, julgue o próximo item.
-
- 
-O 3DES e o AES podem ser utilizados como algoritmos de autenticação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2013520
-CEBRASPE (CESPE) - ACE (TCE RJ)/TCE RJ/Organizacional/Tecnologia da Informação/2022
-TI - Segurança da Informação - Algoritmos de Criptografia
-487) 
-Julgue o item seguinte, a respeito dos algoritmos RSA e AES, da esteganografia, da função hash e da segurança em banco de dados.
-
- 
-Pelo fato de os algoritmos RSA usarem o conceito de fatoração de números primos, eles não são vulneráveis a ataques.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2014141
-CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Tecnologia da Informação/2022
-TI - Segurança da Informação - Algoritmos de Criptografia
-488) 
-Entre as abordagens possíveis para atacar o algoritmo criptográfico RSA, aquela caracterizada por explorar as propriedades do próprio RSA é denominada ataque
-
-a) de textos cifrados escolhidos.
-b) matemático.
-c) de temporização.
-d) de força bruta.
-
-e)  de falhas de hardware.
-Gabarito: A
-## questao 2117233
-CEBRASPE (CESPE) - Per Cri (POLITEC RO)/POLITEC RO/Tecnologia da Informação/2022
-TI - Segurança da Informação - Algoritmos de Criptografia
-489) 
-Assinale a opção correspondente ao algoritmo que trabalha com 64 bits de dados a cada vez e que, para cada iteração, um bloco de 48 bits da chave de 56 bits entra no bloco de encriptação.
-
-a) DESX2
-b) AES
-c) Camellia
-d) RSA
-
-e) DES
-Gabarito: E
-## questao 2216222
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Analista de Segurança da Tecnologia da Informação/2022
-TI - Segurança da Informação - Algoritmos de Criptografia
-490) 
-Considerando conceitos e aplicações da criptografia, julgue o item a seguir.
-
- 
-Algoritmos de chaves assimétricas dispensam a necessidade de um canal seguro para o compartilhamento de chaves.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2218133
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Suporte à Infraestrutura de Tecnologia da Informação/2022
-TI - Segurança da Informação - Algoritmos de Criptografia
-491) 
-Acerca de criptografia, julgue o item que se segue.
-
-
-O RSA é um algoritmo de criptografia assimétrica que utiliza chaves com 1.024 bits.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2218136
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Suporte à Infraestrutura de Tecnologia da Informação/2022
-TI - Segurança da Informação - Algoritmos de Criptografia
-492) 
-Acerca de criptografia, julgue o item que se segue.
-
-
-O DES é um algoritmo de chave pública.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1510110
-CEBRASPE (CESPE) - ACE (TCE RJ)/TCE RJ/Controle Externo/Tecnologia da Informação/2021
-TI - Segurança da Informação - Algoritmos de Criptografia
-493) 
-A respeito de segurança em redes de computadores e criptografia, julgue o item seguinte.
-
- 
-O algoritmo criptográfico RC4, cifra de fluxo com tamanho de chave variável, é utilizado nos padrões SSL/TLS (secure socket layer / transport layer security) definidos para a comunicação entre programas navegadores e servidores web.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1704807
-CEBRASPE (CESPE) - AJ (PGDF)/PG DF/Analista de Sistemas/Suporte e Infraestrutura/2021
-TI - Segurança da Informação - Algoritmos de Criptografia
-494) 
-Quanto a criptografia e certificação digital, julgue o item que se segue.
-
-
-O protocolo RSA faz uso de chaves públicas e privadas, que são distintas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1708421
-CEBRASPE (CESPE) - TJ (PGDF)/PG DF/Tecnologia e Informação/2021
-TI - Segurança da Informação - Algoritmos de Criptografia
-495) 
-Julgue o item subsequente, relativo aos princípios de um sistema de criptografia com base em chave pública e privada na segurança de sistemas.
-
- 
-Considerando-se os algoritmos de criptografia tradicionais (RSA, por exemplo), tem-se a garantia que é impossível determinar a chave privada a partir do conhecimento da chave pública.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3249789
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Administrativa/Sem Especialidade/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-496) 
-Com base na Lei de Acesso à Informação (Lei n.º 12.527/2011) e na Lei Geral de Proteção de Dados Pessoais — LGPD (Lei n.º 13.709/2018), julgue o item a seguir.
-
- 
-O tratamento de dados pessoais só poderá ser realizado nas hipóteses taxativas previstas na LGPD, que incluem, por exemplo, a situação em que tal tratamento de dados visa ao exercício regular de direitos em processo judicial, administrativo ou arbitral.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3250600
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Análise de Dados/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-497) 
-Julgue o item a seguir, com base no disposto na Lei Geral de Proteção de Dados Pessoais (LGPD).
-
- 
-O titular tem direito ao acesso facilitado às informações sobre o tratamento de seus dados, que deverão ser disponibilizadas de forma clara e adequada, excetuando-se, por questões de segurança, a identificação do controlador.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3250607
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Análise de Dados/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-498) 
-Julgue o item a seguir, com base no disposto na Lei Geral de Proteção de Dados Pessoais (LGPD).
-
- 
-Considere que determinado tribunal de justiça seja controlador dos dados de certo titular e tenha deste obtido consentimento para o tratamento de seus dados pessoais. Nessa situação, caso haja necessidade de o referido tribunal compartilhar os dados do referido titular com o CNJ de forma absoluta, não será necessário novo consentimento do titular.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3250610
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Análise de Dados/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-499) 
-Julgue o item a seguir, com base no disposto na Lei Geral de Proteção de Dados Pessoais (LGPD).
-
- 
-O tratamento de dados pessoais deve ser realizado mediante o consentimento do titular, ficando dispensada tal exigência para os dados tornados manifestamente públicos pelo titular.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3250617
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Análise de Dados/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-500) 
-Julgue o item a seguir, relativo ao tratamento de dados pessoais no poder público, conforme orientação da ANPD.
-
- 
-Quando o tratamento de dados pessoais for necessário para o cumprimento de obrigações e atribuições legais, caso em que o cidadão não possui condições efetivas de se manifestar livremente sobre o uso de seus dados pessoais, o consentimento do titular não constitui a base legal mais apropriada para o tratamento de dados pessoais pelo poder público.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3250621
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Análise de Dados/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-501) 
-Julgue o item a seguir, relativo ao tratamento de dados pessoais no poder público, conforme orientação da ANPD.
-
- 
-Na hipótese de o tratamento de dados pessoais pelo poder público ser realizado para o cumprimento de obrigação legal ou regulatória pelo controlador, a obrigação legal decorre de uma norma de conduta, isto é, uma regra que disciplina um comportamento, em geral estabelecendo um fato ou uma hipótese legal, com uma possível consequência jurídica em caso de descumprimento.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3259937
-CEBRASPE (CESPE) - TJ TRF6/TRF 6/Apoio Especializado/Desenvolvimento de Sistemas de Informação/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-502) 
-Acerca de gestão de riscos e continuidade de negócio, julgue o item a seguir, com base na NBR ISO 27005:2019 e na Lei Geral de Proteção de Dados (LGPD).
-
- 
-De acordo com a LGPD, o consentimento para tratamento de dados pessoais pode ser revogado a qualquer momento mediante manifestação expressa do titular, por procedimento gratuito e facilitado, ratificados os tratamentos realizados sob amparo do consentimento anteriormente manifestado enquanto não houver requerimento de eliminação dos dados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3269695
-CEBRASPE (CESPE) - Ana Tec II (SEBRAE)/SEBRAE/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-503) 
-Acerca do tratamento de dados pessoais, julgue os itens a seguir, conforme a política relativa à proteção de dados e privacidade do sistema SEBRAE. 
-
- 
-I Embora tenha direito de acesso aos dados pessoais, o titular não tem direito à correção de dados pessoais desatualizados.
-
- 
-II No tratamento de dados pessoais, devem ser definidas as responsabilidades dos agentes envolvidos (controladores e operadores). 
-
- 
-III Os dados pessoais que necessitam ser tratados com base no legítimo interesse devem ser submetidos à análise do encarregado pelo tratamento de dados pessoais do SEBRAE. 
-
- 
-Assinale a opção correta. 
-
-a) Apenas os itens I e II estão certos.
-b) Apenas os itens I e III estão certos.
-c) Apenas os itens II e III estão certos.
-d) Todos os itens estão certos.
-Gabarito: C
-## questao 3269699
-CEBRASPE (CESPE) - Ana Tec II (SEBRAE)/SEBRAE/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-504) 
-De acordo com a política referente à proteção de dados e privacidade do sistema SEBRAE, caso haja necessidade de realizar o tratamento de dado pessoal para finalidade diversa da informada no momento da coleta, é necessário verificar 
-
- 
-I a ligação entre a finalidade para a qual os dados pessoais foram coletados e a finalidade do novo tratamento. 
-
- 
-II se o dado pessoal coletado está sendo compartilhado com terceiros. I
-
- 
-III se há dados pessoais sensíveis envolvidos. 
-
- 
-IV as consequências do novo tratamento para o titular dos dados pessoais.
-
- 
-Assinale a opção correta. 
-
-a) Apenas os itens I e II estão certos.
-b) Apenas os itens I, III e IV estão certos.
-c) Apenas os itens II, III e IV estão certos.
-d) Todos os itens estão certos.
-Gabarito: D
-## questao 3271705
-CEBRASPE (CESPE) - Proc Mun (Aracaju)/Pref Aracaju/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-505) 
-Julgue o item seguinte, referentes a servidões, responsabilidade civil, posse, parcelamento do solo urbano e proteção de dados pessoais.
-
-É vedado ao gestor de banco de dados realizar, com a finalidade de proteção do crédito, tratamento de dados pessoais não sensíveis e abrir cadastro com informações de adimplemento sem o prévio consentimento do cadastrado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3289662
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Administração e Planejamento/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-506) 
-Julgue o item a seguir, considerando a legislação vigente acerca da transparência na gestão de pessoas, diversidade e proteção de dados pessoais.
-
- 
-A Lei Geral de Proteção de Dados Pessoais garante o amplo tratamento de dados pessoais para fins de pesquisa e gestão.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3289757
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Governança, Auditoria, Controle e Conformidade/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-507) 
-De acordo com a Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD), julgue o item seguinte.
-
-
-O consentimento do titular é sempre obrigatório para qualquer tipo de tratamento de dados pessoais, independentemente da finalidade ou da base legal utilizada.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3290512
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Jurídica/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-508) 
-Julgue o item seguinte, que versam sobre direito digital.
-
- 
-Caso seja inequívoco, o consentimento pelo titular para a realização do tratamento de seus dados pessoais não requer, necessariamente, formalização por escrito, mas sua revogação deve ser realizada mediante manifestação expressa do titular.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3296335
-CEBRASPE (CESPE) - Arq (InoversaSul)/InoversaSul/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-509) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD), julgue o item a seguir.
-
- 
-O consentimento do titular dos dados pessoais, quando fornecido por escrito, deverá constar de cláusula destacada das demais cláusulas contratuais.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3345905
-CEBRASPE (CESPE) - AJ TRT10/TRT 10/Apoio Especializado/Tecnologia da Informação/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-510) 
-Considerando a Lei Geral de Proteção de Dados Pessoais (LGPD) e o Marco Civil da Internet (Lei n.º 12.965/2014), julgue o seguinte item.
-
-
-Os princípios da transparência e da finalidade, expressos tanto na LGPD quanto no Marco Civil da Internet, visam assegurar que o tratamento de dados pessoais de usuários seja feito de forma clara, específica e adequada ao propósito declarado.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3407741
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão de Pessoas/Saúde Ocupacional/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-511) 
-Com relação ao disposto na Lei Geral de Proteção de Dados Pessoais, julgue o item a seguir.
-
- 
-Admite-se o tratamento de dados pessoais para a realização de estudos por órgão de pesquisa, devendo ser garantida, sempre que possível, a anonimização desses dados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3429635
-CEBRASPE (CESPE) - Sup Ped (UNIVESP)/UNIVESP/Administração e Áreas Afins/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-512) 
-Considere que determinada pessoa jurídica de direito privado pertencente a país estrangeiro, que não possui embaixada ou representação diplomática no Brasil, pretenda realizar uma operação de tratamento de dados pessoais. Considere, ainda, que esta pessoa jurídica não possua nenhum capital constituído pelo poder público brasileiro. Nessa situação, a LGPD deve ser aplicada caso
-
- 
-I a operação de tratamento em questão seja realizada dentro do território nacional.
-
- 
-II o referido tratamento abranja dados pessoais e seja realizado para fins exclusivamente artísticos.
-
- 
-III a operação trate de dados pessoais com fins exclusivos de segurança do Estado.
-
- 
-Assinale a opção correta.
-
- 
-a)  Apenas o item I está certo.
-b)  Apenas o item II está certo.
-c)  Apenas os itens I e III estão certos.
-d)  Apenas os itens II e III estão certos.
-
-e)  Todos os itens estão certos.
-Gabarito: A
-## questao 3438635
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão de Pessoas/Folha de Pagamento/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-513) 
-À luz do disposto na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item a seguir.
-
- 
-Os dados pessoais do empregado, como nome, CPF, data de admissão, afastamento do empregado por acidente de trabalho, incluindo-se informações médicas, podem ser tratados pela empresa sem o consentimento do titular, uma vez que são necessários para a execução do contrato de trabalho.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3441930
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão Estratégica/Articulação Político-Institucional Nacional/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-514) 
-Em relação à gestão da informação, à gestão de crise e de reputação e à gestão de riscos no ambiente político institucional, julgue o item a seguir.
-
- 
-Na gestão da informação em relações institucionais, as empresas, sejam públicas ou privadas, podem fazer qualquer uso dos dados pessoais de seus stakeholders, visto que a Lei Geral de Proteção de Dados Pessoais não se aplica ao tratamento de dados pessoais desse grupo.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3444440
-CEBRASPE (CESPE) - Pesq (EMBRAPA)/EMBRAPA/Ciências Exatas e da Terra/Rastreabilidade e Certificação Digital/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-515) 
-Com base na Lei Geral de Proteção de Dados (LGPD), julgue o item a seguir.
-
- 
-O tratamento de dados pessoais no agronegócio pode ser realizado sem o consentimento explícito do titular quando isso for necessário para o cumprimento de obrigações legais ou regulatórias impostas ao controlador, desde que observados os princípios da finalidade, adequação e necessidade estabelecidos pela LGPD.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3444441
-CEBRASPE (CESPE) - Pesq (EMBRAPA)/EMBRAPA/Ciências Exatas e da Terra/Rastreabilidade e Certificação Digital/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-516) 
-Com base na Lei Geral de Proteção de Dados (LGPD), julgue o item a seguir.
-
- 
-Uma empresa do agronegócio que trate dados pessoais de clientes, empregados e fornecedores poderá utilizá-los para estudos de impacto socioeconômico e para a melhoria da rastreabilidade de seus produtos sem necessidade de informar os titulares sobre tal uso ou estabelecer uma base legal específica, desde que o tratamento dos dados seja realizado exclusivamente para fins internos e não envolva o compartilhamento com terceiros.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3447101
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Suporte em Tecnologia da Informação/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-517) 
-Julgue o item a seguir, com base na Lei Geral de Proteção de Dados Pessoais (Lei n.º 13.709/2018).
-
- 
-O controlador de dados pode compartilhar dados pessoais com terceiros sem a necessidade de consentimento do titular, desde que o compartilhamento seja realizado para fins comerciais e não envolva dados sensíveis.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3495049
-CEBRASPE (CESPE) - Adm (FUB)/FUB/2025
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-518) 
-De acordo com a Lei Geral de Proteção de Dados Pessoais — LGPD (Lei n.º 13.709/2018) e a Lei de Acesso à Informação (Lei n.º 12.527/2011), julgue o item a seguir.
-
- 
-A revogação do consentimento do titular para o tratamento de seus dados pessoais pode ocorrer a qualquer momento, mediante manifestação expressa dele.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2781585
-CEBRASPE (CESPE) - Ana (CAU BR)/CAU BR/Sistema de Informação/2024
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-519) 
-Com base na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o próximo item.
-
- 
-Uma das exigências para que haja o tratamento de dados pessoais é o consentimento pelo titular dos dados, exceto no caso de os dados serem tornados manifestamente públicos pelo seu titular.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2789150
-CEBRASPE (CESPE) - Prof NU Jr (ITAIPU)/ITAIPU/Administrador/2024
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-520) 
-O avanço tecnológico tem refletido na legislação brasileira, de modo que, ao mesmo tempo que assegura o acesso à informação, protege dados pessoais. Nesse sentido, assinale a opção correta.
-
-a) A Lei Geral de Proteção de Dados somente protege dados de empresas e organizações.
-b) Ao requisitar informações de interesse público, é necessário que o cidadão apresente justificativa para o acesso à informação solicitada.
-c) Qualquer pessoa pode solicitar a qualquer empresa pública ou privada informações sobre o compartilhamento de seus dados pessoais.
-d) Conforme estabelece a Lei de Acesso à Informação, empresas e órgãos públicos devem fornecer toda e qualquer informação solicitada pelos cidadãos.
-
-e) A Lei Geral de Proteção de Dados protege dados pessoais utilizados em atividades jornalísticas.
-Gabarito: C
-## questao 2796927
-CEBRASPE (CESPE) - APGIPI (INPI)/INPI/Gestão da Tecnologia da Informação/Desenvolvimento e Manutençao de Sistemas/2024
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-521) 
-Considerando a legislação acerca de privacidade e proteção de dados, julgue o item a seguir.
-
- 
-É permitido o tratamento de dados pessoais durante estudos realizados por órgãos de pesquisas, sendo obrigatória a anonimização desses dados.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2799223
-CEBRASPE (CESPE) - Tecno Jr (CTI)/CTI/Inovação e Gestão de Infraestrutura de P&D/Desenvolvimento Tecnológico voltado à Infraestrutura de Tecnologia da Informação e Comunicação/2024
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-522) 
-Com base na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item subsequente.
-
- 
-O titular dos dados pessoais que serão objeto de tratamento deverá manifestar seu consentimento de forma livre, informada e inequívoca, devendo este ser feito por escrito ou por outro meio que demonstre a manifestação de vontade do titular.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2839978
-CEBRASPE (CESPE) - Ana (APEX)/ApexBrasil/Operações e Segurança de Tecnologia da Informação e Comunicação/Segurança da Informação/2024
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-523) 
-De acordo com a Lei Geral de Proteção de Dados (LGPD), o tratamento de dados pessoais poderá ser realizado
-
-a)  para o cumprimento de obrigação legal ou regulatória pelo controlador.
-b) para elaboração de estudos por órgão de pesquisa, hipótese em que não se garantirá a anonimização dos dados pessoais.
-c) mediante o mero conhecimento do titular.
-d) para tutela de saúde, exclusivamente, em procedimento realizado por autoridade sanitária.
-Gabarito: A
-## questao 2891756
-CEBRASPE (CESPE) - Ana MP (MPE GO)/MPE GO/Analista em Informática/2024
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-524) 
-Com base na Lei de Acesso à Informação (Lei n.º 12.527/2011) e na Lei Geral de Proteção de Dados Pessoais — LGPD (Lei n.º 13.709/2018), julgue o item que se segue.
-
-
-Para os fins da LGPD, o consentimento do titular dos dados para o tratamento destes não será válido se for equívoco.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3008352
-CEBRASPE (CESPE) - AGP (SEPLAG CE)/SEPLAG CE/Tecnologia da Informação/2024
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-525) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD), julgue o item a seguir.
-
-
-É desnecessário o consentimento do titular dos dados caso o tratamento destes seja necessário para atender a interesse legítimo do controlador, salvo no caso de prevalecerem direitos e liberdades fundamentais do titular que exijam a proteção de seus dados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2486078
-CEBRASPE (CESPE) - NeR (TJ SC)/TJ SC/Provimento/2023
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-526) 
-Ao realizar compra em uma loja de móveis, Ana Luíza forneceu dados pessoais como nome completo, telefone e endereço de e-mail para efetuar o cadastro. À época, foi avisada que aquelas informações serviriam para compor o mailing da empresa com promoções da loja. Meses depois, ao verificar que diversos empreendimentos do grupo econômico daquela empresa de móveis entravam em contato com ela para anunciar ofertas, Ana Luíza solicitou à empresa da qual era cliente a revogação do consentimento para a utilização de seus dados pessoais.
-
- 
-Nessa situação hipotética, de acordo com o disposto na Lei Geral de Proteção de Dados Pessoais, a empresa da qual Ana Luíza era cliente
-
-a) agiu conforme a legislação, visto que o consentimento para a utilização de dados pessoais também serve para o compartilhamento desses dados com outros controladores de um mesmo grupo econômico.
-b) agiu dentro dos limites da legislação, visto que o comércio insere-se entre as hipóteses de dispensa da exigência de consentimento específico, razão pela qual o compartilhamento de dados pessoais dentro de um mesmo grupo econômico é permitido.
-c) não agiu legalmente, porque seria necessário obter consentimento específico da cliente para compartilhar dados pessoais com outros controladores, ainda que do mesmo grupo econômico.
-d) agiu conforme os ditames legais, visto que os dados fornecidos por Ana Luíza não são considerados sensíveis.
-
-e) não agiu dentro dos limites da legislação, porque é vedado o compartilhamento de dados pessoais entre controladores de um mesmo grupo econômico mesmo que haja consentimento específico da cliente para esse fim.
-Gabarito: C
-## questao 2637741
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Advocacia/2023
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-527) 
-Julgue o item a seguir, à luz do que dispõe a Lei Geral de Proteção de Dados Pessoais (LGPD).
-
- 
-O consentimento do titular não autoriza, por si só, o tratamento de dados pessoais.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2642020
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança Cibernética/2023
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-528) 
-Com base na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item a seguir.
-
- 
-O consentimento do titular para a realização da coleta de dados pessoais dispensa nova manifestação dele para o compartilhamento desses dados pelo controlador, por exemplo.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2643132
-CEBRASPE (CESPE) - Aux ET (DATAPREV)/DATAPREV/2023
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-529) 
-Com base no que estabelece a legislação relacionada à segurança da informação e à proteção de dados, julgue o item a seguir.
-
- 
-Segundo dispõe a Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais), o tratamento de dados pessoais somente poderá ser realizado nas seguintes hipóteses: mediante o fornecimento de consentimento pelo titular; e para o cumprimento de obrigação legal ou regulatória pelo controlador.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2705013
-CEBRASPE (CESPE) - Esp FEPPE (FNDE)/FNDE/2023
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-530) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD) e suas atualizações, na Lei n.º 12.527/2011 (Lei de Acesso à Informação) e na Lei n.º 14.129/2021, julgue o item subsecutivo.
-
- 
-Se um consumidor expressamente consentir que uma empresa privada faça tratamento de seus dados pessoais e, posteriormente, solicitar a eliminação desses dados, a referida empresa estará desobrigada de eliminar esses dados, em qualquer hipótese, tendo em vista o consentimento inicial.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1917469
-CEBRASPE (CESPE) - TAmb (ICMBio)/ICMBio/2022
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-531) 
-À luz da Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o próximo item.
-
-
-O tratamento de dados pessoais somente poderá ser realizado mediante o fornecimento de consentimento por seu titular, mesmo que este os tenha tornado manifestamente públicos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1937748
-CEBRASPE (CESPE) - AFCE (TCE-SC)/TCE SC/Tecnologia da Informação/2022
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-532) 
-Julgue o próximo item, relativos à Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados atualizada).
-
- 
-Em caso de cumprimento de obrigação regulatória pelo controlador, permite-se o tratamento de dados pessoais.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1939580
-CEBRASPE (CESPE) - Del Pol (PC RJ)/PC RJ/2022
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-533) 
-Com relação ao tratamento de dados pessoais de que trata a Lei n.º 13.709/2018, Lei Geral de Proteção de Dados, assinale a opção correta.
-
-a) O tratamento de dados pessoais poderá ser realizado mediante o fornecimento de consentimento pelo titular de forma verbal, desde que demonstre a manifestação de livre vontade e na presença de três testemunhas maiores e capazes.
-b) O tratamento de dados pessoais de crianças deverá ser realizado com o consentimento específico e em destaque dado por ambos os pais.
-c) O consentimento do tratamento de dados pelo titular deverá ter uma finalidade determinada, e as autorizações poderão ser genéricas quando formalizadas por meio de contrato.
-d) O tratamento de dados pessoais não poderá ser condição para o fornecimento de produto ou de serviço ou exercício de um direito.
-
-e) O consentimento do tratamento de dados poderá ser revogado mediante manifestação expressa do titular, ratificados os tratamentos já realizados sob amparo de consentimento anteriormente manifestado enquanto não houver requerimento de eliminação dos dados pessoais tratados.
-Gabarito: E
-## questao 2163851
-CEBRASPE (CESPE) - Ana (APEX)/ApexBrasil/Comunicação/2022
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-534) 
-Considerando que o tratamento de dados pessoais somente poderá ser realizado mediante o fornecimento de consentimento pelo titular, assinale a opção correta.
-
-a)  O consentimento poderá ser fornecido por escrito, desde que conste de cláusula destacada das demais cláusulas contratuais.
-b)  O consentimento, uma vez dado, não poderá ser revogado.
-c)  O ônus da prova de que o consentimento foi obtido em conformidade com a lei cabe ao operador do dado.
-d)  O consentimento poderá referir-se a finalidades determinadas ou indeterminadas.
-Gabarito: A
-## questao 2216616
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Gestão de Tecnologia da Informação/2022
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-535) 
-Tendo como referência o disposto na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD), julgue o seguinte item.
-
-
-O tratamento de dados pessoais somente poderá ser realizado mediante o fornecimento de consentimento, necessariamente por escrito, pelo titular dos dados.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1628499
-CEBRASPE (CESPE) - Ana (SERPRO)/SERPRO/Ciência de Dados/2021
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-536) 
-Com base na Lei n.º 13.709/2018 — Lei Geral de Proteção de Dados Pessoais (LGPD) —, julgue o item a seguir.
-
- 
-O tratamento de dados pessoais poderá ser realizado a pedido do próprio titular dos dados quando for necessário para a execução de contrato do qual ele seja parte.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1628540
-CEBRASPE (CESPE) - Ana (SERPRO)/SERPRO/Ciência de Dados/2021
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-537) 
-Acerca de privacidade e proteção de dados pessoais, julgue o item a seguir.
-
- 
-O tratamento de dados pessoais previsto na LGPD poderá ser feito quando necessário para o atendimento dos interesses legítimos do controlador, exceto nas situações em que prevalecerem direitos e liberdades fundamentais do titular que exijam a proteção dos dados pessoais.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1119714
-CEBRASPE (CESPE) - AJ (TJ PA)/TJ PA/Análise de Sistema/Desenvolvimento/2020
-Direito Digital - Dos Requisitos para o Tratamento de Dados Pessoais (arts. 7º a 10 da Lei nº 13.709/2018 - LGPD)
-538) 
-A Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais) prevê a realização do tratamento de dados pessoais, mediante o consentimento do titular dos dados, para o cumprimento de obrigação legal ou regulatória e para a realização de estudos ou execução de contratos a pedido do titular.
-
- 
-
-As hipóteses em questão são exemplos de
-
-a)  princípios das atividades de tratamento de dados pessoais.
-b)  requisitos para o tratamento de dados pessoais sensíveis.
-c)  tratamento de dados pessoais de crianças e adolescentes.
-d)  direitos do titular dos dados.
-e)  requisitos para o tratamento de dados pessoais.
-Gabarito: E
-## questao 3255369
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Governança e Gestão de Tecnologia da Informação/2025
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-539) 
-Considerando o uso de um WAF (web application firewall) diante de uma aplicação web comum, julgue o item a seguir.
-
- 
-Um WAF por assinatura de ataque detecta padrões que podem indicar tráfego malicioso, identificando tipos de solicitação, respostas anômalas do servidor e endereços IP maliciosos conhecidos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3255371
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Governança e Gestão de Tecnologia da Informação/2025
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-540) 
-Considerando o uso de um WAF (web application firewall) diante de uma aplicação web comum, julgue o item a seguir.
-
- 
-Um WAF baseado em nuvem precisa ser implementado por meio de proxy direto e suporta apenas um site.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3340457
-CEBRASPE (CESPE) - Ana Desen (BDMG)/BDMG/Infraestrutura e Segurança Cibernética/2025
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-541) 
-Julgue o item subsequente, relativo a ataques em aplicações web e ao firewall pfSense.
-
-
-O pfSense não suporta interface gráfica, por isso todos os comandos são feitos por interface de linha de comando, por meio de um shell.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3340462
-CEBRASPE (CESPE) - Ana Desen (BDMG)/BDMG/Infraestrutura e Segurança Cibernética/2025
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-542) 
-Julgue o item subsequente, relativo a ataques em aplicações web e ao firewall pfSense.
-
- 
-O pfSense baseia-se no sistema operacional FreeBSD, com kernel customizado para fazer funções de firewall de rede e roteamento.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3367067
-CEBRASPE (CESPE) - Tecno (AEB)/AEB/Tecnologia da Informação/2025
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-543) 
-O firewall do tipo bridge, também conhecido como 
-
-a)  NAT firewall, é capaz de inspecionar, filtrar e mover pacotes de rede entre interfaces.
-b)  firewall transparente, é capaz de inspecionar, filtrar e mover quadros de rede entre interfaces.
-c)  IP firewall, é capaz de inspecionar, filtrar e mover pacotes de rede entre interfaces.
-d)  firewall de transporte, é capaz de inspecionar, filtrar e mover pacotes de rede entre interfaces. 
-
-e)  firewall de aplicação, é capaz de inspecionar, filtrar e mover dados da aplicação.
-Gabarito: B
-## questao 3400362
-CEBRASPE (CESPE) - AFRE RJ/SEFAZ RJ/2025
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-544) 
-O WAF (web application firewalls)
-
-a)  elimina a necessidade de desenvolvimento de código seguro nas aplicações web.
-b)  protege as aplicações web contra todos os tipos de ataques cibernéticos conhecidos.
-c)  funciona exclusivamente no nível de rede (camada 3 do modelo OSI) para proteger aplicações web.
-d)  substitui outras práticas de segurança, como o uso de SSL/TLS e a implementação de políticas de segurança de rede.
-
-e)  pode ser implementado em modo de detecção (passivo) ou em modo de prevenção (ativo).
-Gabarito: E
-## questao 3425019
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão da Informação/Gestão da Informação Bibliográfica/2025
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-545) 
-Julgue o item a seguir, relativo a implementação e monitoramento de segurança em firewall, IDS, IPS e configuração e administração de redes de computadores.
-
- 
-Um firewall configurado com o critério de filtragem baseado em regras independentes para cada pacote faz distinção do tráfego HTTP usado para navegação web e o tráfego HTTP usado para compartilhamento de arquivos peer-to-peer.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3455527
-CEBRASPE (CESPE) - Ana Tec (SUSEP)/SUSEP/Tecnologia da Informação e Ciência de Dados/2025
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-546) 
-Julgue o item a seguir, relativo à NBR ISO/IEC 27005, a gestão de identidades de acesso, privacidade por padrão, ataques e soluções para segurança da informação e autenticação em múltiplos fatores.
-
- 
-Por concepção, firewalls perimetrais convencionais são suficientes para bloquear ataques DDoS baseados em amplificação DNS, desempenhando autonomamente o conjunto de funções necessárias à mitigação desse tipo de ataque em redes distribuídas, de forma equivalente às soluções especializadas.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3641682
-CEBRASPE (CESPE) - AFT (SEFAZ SE)/SEFAZ SE/Tecnologia da Informação/2025
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-547) 
-No contexto da segurança de redes de computadores, a prevenção contra ataques cibernéticos e malwares exige o uso de ferramentas como firewalls e sistemas de monitoramento de tráfego. Assinale a opção em que é apresentada uma abordagem integrada que possibilita tanto a proteção de redes contra ataques quanto a análise do tráfego de dados.
-
-a) configuração de uma VPN para garantir a confidencialidade dos dados em trânsito
-b) utilização de antivírus para detecção de malwares e realização de análises periódicas de tráfego para identificação de vulnerabilidades em redes corporativas
-c) adoção de políticas de segurança que priorizem a proteção contra ataques cibernéticos como DDoS
-d) configuração de um firewall para bloquear acessos externos e utilização de um sistema de detecção de intrusão (IDS) para monitorar atividades suspeitas
-
-e) implementação de um sistema de monitoramento de tráfego que analise pacotes de dados e identifique padrões de ataques cibernéticos como phishing e ransomware
-Gabarito: E
-## questao 2781234
-CEBRASPE (CESPE) - Ana (CAU BR)/CAU BR/Infraestrutura de Tecnologia da Informação/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-548) 
-No que se refere ao funcionamento de proxy em organizações, julgue o item a seguir.
-
-
-Filtros em proxies podem ser configurados para impedir o acesso a determinados sítios ou serviços da web que violam uma política da organização.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2781237
-CEBRASPE (CESPE) - Ana (CAU BR)/CAU BR/Infraestrutura de Tecnologia da Informação/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-549) 
-No que se refere ao funcionamento de proxy em organizações, julgue o item a seguir.
-
- 
-Proxies transparentes servem como um canal entre os clientes e a Internet; por característica, são incapazes de interceptar as conexões realizadas, já que são transparentes para os usuários.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2783914
-CEBRASPE (CESPE) - Ass (CAU BR)/CAU BR/Tecnologia da Informação/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-550) 
-Julgue o item que se segue, relativo à segurança de rede de computadores e spywares.
-
- 
-O firewall de borda é o único mecanismo de proteção de rede apto a impedir ataques de spyware.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2799203
-CEBRASPE (CESPE) - Tecno Jr (CTI)/CTI/Inovação e Gestão de Infraestrutura de P&D/Desenvolvimento Tecnológico voltado à Infraestrutura de Tecnologia da Informação e Comunicação/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-551) 
-Julgue o próximo item, a respeito da gestão de segurança da informação.
-
- 
-O uso de firewalls é uma opção secundária para a proteção de redes de dados que lidam com informações sensíveis, ou seja, não é requisito essencial para essa finalidade, pois existem tecnologias de segurança mais adequadas.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2847648
-CEBRASPE (CESPE) - Tec Min (MPE TO)/MPE TO/Especializado/Fotografia/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-552) 
-Julgue o item a seguir, referente a vírus, worms, pragas virtuais e aplicativos de segurança.
-
- 
-Um firewall é um software que controla o fluxo que entra e sai de uma rede de computadores, bloqueando aqueles que representam ameaças aos recursos disponibilizados naquela rede.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2847845
-CEBRASPE (CESPE) - Tec Min (MPE TO)/MPE TO/Especializado/Técnico em informática/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-553) 
-A respeito de Red Hat Enterprise Linux e Oracle Linux 9, julgue o item a seguir.
-
- 
-Cada zona de firewall, nas políticas, é associada a um conjunto específico de regras que determinam o tráfego permitido de forma unidirecional e com monitoramento de estado, sendo o retorno do tráfego permitido implicitamente devido à filtragem com monitoramento de estado pelo firewalld.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2876660
-CEBRASPE (CESPE) - ERVS (ANVISA)/ANVISA/Tecnologia da Informação/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-554) 
-Considerando um firewall com função de filtragem de pacotes entre uma rede local e a Internet, julgue o item a seguir.
-
-
-Para filtrar pacotes entre uma rede local e a Internet, o firewall, por padrão, faz NAT (network address translation).
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2876662
-CEBRASPE (CESPE) - ERVS (ANVISA)/ANVISA/Tecnologia da Informação/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-555) 
-Considerando um firewall com função de filtragem de pacotes entre uma rede local e a Internet, julgue o item a seguir.
-
-
-Esse tipo de firewall trabalha na camada de enlace, impedindo os quadros de passarem de uma interface física para outra.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2877531
-CEBRASPE (CESPE) - APO (MPO)/MPO/Tecnologia da Informação/Gestão da Segurança da Informação Orçamentária/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-556) 
-Acerca de firewalls, julgue o item que se segue.
-
- 
-Uma diferença fundamental entre firewalls com e sem estado reside no fato de que os primeiros rastreiam o estado entre os pacotes, enquanto os segundos não são capazes de fazê-lo.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2877532
-CEBRASPE (CESPE) - APO (MPO)/MPO/Tecnologia da Informação/Gestão da Segurança da Informação Orçamentária/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-557) 
-Acerca de firewalls, julgue o item que se segue.
-
- 
-Nos tipos de ataques de rede em que seja necessário entender o contexto da conexão, deve-se empregar um firewall sem estado, que tem a capacidade para tanto.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2877536
-CEBRASPE (CESPE) - APO (MPO)/MPO/Tecnologia da Informação/Gestão da Segurança da Informação Orçamentária/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-558) 
-No que se refere a ferramentas e técnicas de segurança de sistemas web, julgue o item subsecutivo.
-
- 
-WAF (web application firewall) é uma ferramenta capaz de abrir os pacotes na camada de transporte da pilha TCP/IP.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2877715
-CEBRASPE (CESPE) - Ana CT (CAPES)/CAPES/Informática/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-559) 
-Com relação a dispositivos de segurança, julgue o item subsequente.
-
- 
-Considere uma aplicação executada em um host A que responde por requisições a partir de um host B, que, por sua vez, funciona como intermediário entre o usuário final e o host A e executa a aplicação. Nessa hipótese, o host intermediário atua como um proxy.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2993452
-CEBRASPE (CESPE) - AJ CNJ/CNJ/Apoio Especializado/Análise de Sistemas/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-560) 
-Considerando que uma rede local tenha um firewall configurado para permitir determinados tipos de tráfego de entrada e de saída, julgue o item a seguir.
-
- 
-Para se evitar tunelamento de tráfego nessa rede, é suficiente bloquear no firewall a porta 80, do HTTP, e a 443, do HTTPS.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3076830
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Gestão de Dados/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-561) 
-A respeito das características de um ataque de negação de serviço distribuído, julgue o próximo item.
-
- 
-Um firewall de borda é considerado como o elemento capaz de fazer a mitigação de ataques DDoS de maneira eficiente, já que o tráfego da camada de aplicação tem que ser bloqueado na entrada da rede.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3082773
-CEBRASPE (CESPE) - Ana Sist (CAGEPA)/CAGEPA/Suporte de TI/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-562) 
-Em redes de computadores, um firewall
-
-a)  impede o acesso de usuário a sítios mediante o uso de códigos maliciosos.
-b)  inspeciona todo e qualquer pacote que entra ou sai da rede.
-c)  desempenha a função de proteção contra malware.
-d)  impede ataques originados e destinados à rede interna.
-
-e)  identifica fraude de endereço IP (falsificação de IP).
-Gabarito: B
-## questao 3148319
-CEBRASPE (CESPE) - AnDR (CODEVASF)/CODEVASF/Tecnologia da Informação/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-563) 
-A respeito de mecanismos de proteções, julgue o item seguinte.
-
- 
-Proxies são capazes de filtrar conteúdo para proteger usuários de uma rede, porém são incapazes de oferecer anonimato, pois é necessário enviar os dados de endereçamento IP da origem das requisições.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3148321
-CEBRASPE (CESPE) - AnDR (CODEVASF)/CODEVASF/Tecnologia da Informação/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-564) 
-A respeito de mecanismos de proteções, julgue o item seguinte.
-
- 
-Firewalls de aplicação são capazes de inspecionar e filtrar tráfegos como um ataque de SQL Injection.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3173492
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Microinformática e Infraestrutura de TI/2024
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-565) 
-Julgue o item a seguir, em relação a dispositivos de segurança e a softwares maliciosos.
-
- 
-Os firewalls de rede fazem a filtragem de pacotes na rede e realizam um tipo de ação de acordo com as regras implementadas; em situações normais, trabalham nas camadas 3 e 4 da pilha TCP/IP.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2593704
-CEBRASPE (CESPE) - Ana (MPE RO)/MPE RO/Programador/2023
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-566) 
-O firewall capaz de rastrear conexões ativas, como fluxos de protocolo de controle de transmissão, é do tipo
-
-a)  statefull.
-b) stateless.
-c) web aplication.
-d) DNS.
-
-e)  de camada física.
-Gabarito: A
-## questao 2642029
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança Cibernética/2023
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-567) 
-Acerca de metodologia de operações de segurança, julgue o item a seguir.
-
- 
-As tecnologias de firewall incluem filtros de pacotes, filtros de pacotes dinâmicos, servidores proxy e NAT.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2642030
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança Cibernética/2023
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-568) 
-Acerca de metodologia de operações de segurança, julgue o item a seguir.
-
- 
-Um proxy pode atuar no nível de aplicação, em que haverá um proxy diferente para cada aplicação, ou ainda no nível de transporte, em que haverá um proxy genérico para conexões TCP e UDP.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2216294
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Analista de Segurança da Tecnologia da Informação/2022
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-569) 
-Em relação aos equipamentos de redes, julgue o item que se segue.
-
- 
-O firewall cria um perímetro de segurança entre a rede interna e a ZDM, atuando com mecanismo para manter os bons bits e descartar os maus bits.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2216302
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Analista de Segurança da Tecnologia da Informação/2022
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-570) 
-No que se refere aos equipamentos de redes e a sistemas de segurança, julgue o próximo item.
-
-
-No firewall, o processamento que examina e distingue o tráfego usado para a navegação web do tráfego usado para compartilhamento de arquivos peer-to-peer é chamado de gateways em nível de aplicação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2216461
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Desenvolvimento de Sistemas/2022
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-571) 
-Com base nos mecanismos de segurança da informação, julgue o item que se segue.
-
-
-A função de validar endereçamento IP e portas para depois permitir, ou não, o acesso a outros computadores caracteriza um firewall de rede ou filtro de pacotes na camada de rede.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2216463
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Desenvolvimento de Sistemas/2022
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-572) 
-Com base nos mecanismos de segurança da informação, julgue o item que se segue.
-
-
-Ao serem instalados em computadores da rede que são acessados como destino final, os firewalls de rede restringem acessos com regras de filtragem baseadas em protocolo e endereço IP de origem.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2216464
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Desenvolvimento de Sistemas/2022
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-573) 
-Com base nos mecanismos de segurança da informação, julgue o item que se segue.
-
-
-Um acesso que envie dados maliciosos para o website, com a intenção de gerar impactos na exposição de dados, sempre será identificado pelo firewall de rede.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2216905
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Suporte à Infraestrutura de Tecnologia da Informação/2022
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-574) 
-Com relação à segurança em redes de computadores, julgue o item subsequente.
-
-
-O firewall é um equipamento de hardware ou software que identifica anomalias no tráfego e aciona o IDS (Intrusion Detection System) para bloquear o tráfego na rede.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2218117
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Suporte à Infraestrutura de Tecnologia da Informação/2022
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-575) 
-Acerca dos tipos de ataques a redes de computadores, julgue o item subsecutivo.
-
-
-O uso de firewall UTM (unified threat management) é uma das principais soluções para evitar ataques de flood e de vírus.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2218190
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Suporte à Infraestrutura de Tecnologia da Informação/2022
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-576) 
-Julgue o item a seguir, a respeito de otimização de desempenho em servidores e de política de backup.
-
-
-Um servidor proxy armazena conteúdo da Web recuperado ou acessado recentemente e, dentro de uma organização, pode ser usado para o compartilhamento desse conteúdo entre todos os clientes na rede.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2613406
-CEBRASPE (CESPE) - ATCG (MCom)/MCom/Tecnologia da Informação e de Engenharia Senior/2022
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-577) 
-Com relação a sistemas operacionais e redes de computadores, julgue o item a seguir.
-
- 
-Um firewall do tipo filtro de pacotes tem como objetivo permitir ou negar a entrada de um conjunto de informações em uma rede de computadores, considerando o IP e(ou) a porta de origem.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2613460
-CEBRASPE (CESPE) - ATCG (MCom)/MCom/Tecnologia da Informação e de Engenharia Senior/2022
-TI - Segurança da Informação - Firewall, Roteadores, Proxy e DMZ
-578) 
-Julgue o item a seguir, referentes a mecanismos de autenticação, segurança de aplicativos web e segurança de redes de computadores.
-
- 
-Denomina-se three-pronged firewall a utilização de um firewall com três pontos de rede: um para a rede privada, outro para a rede pública, e outro para a DMZ.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3340445
-CEBRASPE (CESPE) - Ana Desen (BDMG)/BDMG/Infraestrutura e Segurança Cibernética/2025
-TI - Segurança da Informação - IDS, IPS e Honeypots
-579) 
-Considerando os conceitos de IDS (intrusion detection systems) e IPS (intrusion prevention systems), julgue o item a seguir.
-
-
-Caso um IPS com capacidade de operar inline detecte ataques, esse sistema adotará medidas adicionais para bloqueá-los em tempo real.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3340448
-CEBRASPE (CESPE) - Ana Desen (BDMG)/BDMG/Infraestrutura e Segurança Cibernética/2025
-TI - Segurança da Informação - IDS, IPS e Honeypots
-580) 
-Considerando os conceitos de IDS (intrusion detection systems) e IPS (intrusion prevention systems), julgue o item a seguir.
-
- 
-IDS podem ser definidos como um tipo de ferramenta de software ou appliance capaz de detectar eventos com base em assinatura e em características que os tornam suspeitos na rede sob análise.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3367116
-CEBRASPE (CESPE) - Tecno (AEB)/AEB/Tecnologia da Informação/2025
-TI - Segurança da Informação - IDS, IPS e Honeypots
-581) 
-Assinale a opção que corresponde a dois sistemas detectores de intrusão que são de código aberto e que estão disponíveis na Internet. 
-
-a)  SNORT e SURICATA
-b)  SNORT e PFSENSE
-c)  SURICATA e PFSENSE
-d)  SURICATA e IPTABLES 
-
-e)  SNORT e IPTABLES
-Gabarito: A
-## questao 3425016
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão da Informação/Gestão da Informação Bibliográfica/2025
-TI - Segurança da Informação - IDS, IPS e Honeypots
-582) 
-Julgue o item a seguir, relativo a implementação e monitoramento de segurança em firewall, IDS, IPS e configuração e administração de redes de computadores.
-
- 
-Um IPS (intrusion prevention system) visa detectar e interromper um ataque, devendo esse sistema ficar no caminho em direção ao alvo e tomar decisões de aceitar ou descartar o tráfego em tempo real.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3446794
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Suporte em Tecnologia da Informação/2025
-TI - Segurança da Informação - IDS, IPS e Honeypots
-583) 
-No que se refere aos protocolos DHCP e IMAP, aos sistemas de segurança IPS, aos modelos de nuvem, ao ambiente Linux e ao Microsoft Windows Server, julgue o item a seguir.
-
- 
-Um IPS atua como um filtro de pacotes que inspeciona todo e qualquer pacote que entra e que sai na rede, sendo o critério de filtragem determinado por regras, ou por tabelas que listam as origens e os destinos aceitáveis.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2777432
-CEBRASPE (CESPE) - Ana CT I (CNPq)/CNPq/Infraestrutura de Tecnologia da Informação/2024
-TI - Segurança da Informação - IDS, IPS e Honeypots
-584) 
-Acerca de redes de comunicação cabeadas, de padrões IEEE 802.11, de routing e switching, de IDS, IPS e NAT, julgue o item subsequente.
-
- 
-Um IPS é projetado para perceber ameaças e informar imediatamente ao administrador da rede acerca da atividade maliciosa descoberta, enquanto um IDS bloqueia automaticamente a atividade maliciosa detectada, reconfigurando outros ativos de segurança e encerrando conexões suspeitas.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2797354
-CEBRASPE (CESPE) - Ana (FINEP)/FINEP/Tecnologia da Informação/Infraestrutura/2024
-TI - Segurança da Informação - IDS, IPS e Honeypots
-585) 
-Acerca de sistemas de detecção de intrusão (IDS, na sigla em inglês) que funcionam em rede, assinale a opção correta.
-
-a) Tecnicamente, há poucas diferenças entre um IDS passivo e um IDS ativo.
-b) A posição de um IDS na rede não interfere na sua capacidade de detecção de eventos maliciosos.
-c) Um IDS executa análises sobre os dados coletados dos usuários, mas é incapaz de fazer análise, em tempo real, de fluxo de rede para buscar evidências que comprovem uma ação maliciosa.
-d) Um IDS que se baseia em anomalia monitora as ações que ocorrem em uma rede sem a necessidade de aprender o comportamento padrão da rede.
-
-e) Um IDS que se baseia em assinaturas pode identificar o tráfego malicioso de alguns tipos de malware, desde que esteja assim configurado e a assinatura esteja na base do IDS.
-Gabarito: E
-## questao 2841765
-CEBRASPE (CESPE) - Ana Min (MPE TO)/MPE TO/Especializado/Administração de Infraestrutura de Tecnologia da Informação/2024
-TI - Segurança da Informação - IDS, IPS e Honeypots
-586) 
-Julgue o próximo item, a respeito de ataques, malwares, criptografia e certificação digital.
-
- 
-Um sistema IDS baseado em assinatura usa aprendizado de máquina para criar um modelo definido de atividade confiável e comparar comportamentos considerados suspeitos com o modelo de confiança, reduzindo significativamente a ocorrência de falsos positivos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2877714
-CEBRASPE (CESPE) - Ana CT (CAPES)/CAPES/Informática/2024
-TI - Segurança da Informação - IDS, IPS e Honeypots
-587) 
-Com relação a dispositivos de segurança, julgue o item subsequente.
-
- 
-Um sistema IDS (intrusion detect system) detecta e modifica dados nos pacotes de rede para prevenir ataques.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2892158
-CEBRASPE (CESPE) - Ana MP (MPE GO)/MPE GO/Analista em Informática/2024
-TI - Segurança da Informação - IDS, IPS e Honeypots
-588) 
-Julgue o item subsequente referente a conceitos de segurança da informação, segurança de redes sem fio e gestão de riscos em tecnologia da informação.
-
- 
-Entre os componentes de um IDS (intrusion detection system), o sensor é responsável por analisar as informações coletadas e compará-las com um padrão conhecido, para determinar se um evento é normal ou malicioso
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3076881
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Infraestrutura de TI/2024
-TI - Segurança da Informação - IDS, IPS e Honeypots
-589) 
-Acerca de redes sem fio dos padrões 802.11, WEP, WPA e WPA2, conceitos relativos a routing e switching e IDS, julgue o item subsequente.
-
- 
-O IDS faz análise das atividades de uma rede, com o objetivo de descobrir atividades inapropriadas e alertar os administradores, tendo como vantagens o sistema failover e a filtragem de pacotes.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3148281
-CEBRASPE (CESPE) - AnDR (CODEVASF)/CODEVASF/Tecnologia da Informação/2024
-TI - Segurança da Informação - IDS, IPS e Honeypots
-590) 
-Julgue o seguinte item, que tratam de proteção contra softwares maliciosos e de sistemas de detecção de intrusão.
-
-
-O IDS (Intrusion Detection System) é disponibilizado sob a forma de um software instalado em um endpoint, de um hardware dedicado conectado à rede ou mesmo como uma solução de serviço em nuvem; independentemente da forma de disponibilização, o sistema vai usar, pelo menos, um dos principais métodos de detecção a ameaças: detecção baseada em assinatura ou baseada em anomalias.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3166691
-CEBRASPE (CESPE) - Ana Tec II (SEBRAE)/SEBRAE/Infraestrutura e Sistemas Operacionais/2024
-TI - Segurança da Informação - IDS, IPS e Honeypots
-591) 
-O tipo de IDS/IPS que monitora o tráfego do segmento de rede no qual está inserido, com sua interface de rede atuando em modo promíscuo, capturando e analisando os cabeçalhos e conteúdo dos pacotes, os quais são comparados com padrões ou assinaturas estabelecidas é o sistema de
-
-a) prevenção de intrusão baseado em rede (NIPS).
-b) detecção de intrusão baseado em host (HIDS).
-c) prevenção de intrusão baseado em host (HIPS).
-d) detecção de intrusão baseado em rede (NIDS).
-Gabarito: D
-## questao 2591923
-CEBRASPE (CESPE) - Ana (MPE RO)/MPE RO/Suporte Computacional/2023
-TI - Segurança da Informação - IDS, IPS e Honeypots
-592) 
-O IDS (intrusion detection system) que utiliza um banco de dados em que são armazenados os ataques já conhecidos é do tipo
-
-a)  anomalia.
-b)  assinatura.
-c)  de rede.
-d)  base64.
-
-e)  de host.
-Gabarito: B
-## questao 2642010
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança Cibernética/2023
-TI - Segurança da Informação - IDS, IPS e Honeypots
-593) 
-A respeito de proteção contra softwares maliciosos, sistemas de detecção de intrusão, segurança de servidores e sistemas operacionais, certificação digital, assinatura digital e gestão de riscos, julgue o item a seguir.
-
- 
-Os sistemas de detecção de intrusão (IDS, na sigla em inglês) fazem análise de atividades de uma rede, verificando o conteúdo das camadas superiores TCP/IP em busca de tentativas de ataque.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2642023
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança Cibernética/2023
-TI - Segurança da Informação - IDS, IPS e Honeypots
-594) 
-Com relação aos conceitos de segurança cibernética, julgue o item a seguir.
-
- 
-O objetivo do IDS (intrusion detection system) é detectar atitudes suspeitas, impróprias, incorretas ou anômalas. No entanto, ataques realizados por meio de portas legítimas do firewall não podem ser detectados por este sistema.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2642024
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança Cibernética/2023
-TI - Segurança da Informação - IDS, IPS e Honeypots
-595) 
-Com relação aos conceitos de segurança cibernética, julgue o item a seguir.
-
- 
-Ao contrário do IDS (intrusion detection system), que é um sistema passivo e que apenas analisa o tráfego, gerando alarmes, o IPS (intrusion prevention system) não faz só a detecção do acesso indevido, mas o bloqueio desse tráfego também.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2642032
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança Cibernética/2023
-TI - Segurança da Informação - IDS, IPS e Honeypots
-596) 
-Acerca de metodologia de operações de segurança, julgue o item a seguir.
-
- 
-O IPS se diferencia do IDS pelo fato de apenas realizar um monitoramento ativo dos eventos, sem, contudo, interferir neles.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1970962
-CEBRASPE (CESPE) - AAAJ (DP DF)/DP DF/Informática Redes/2022
-TI - Segurança da Informação - IDS, IPS e Honeypots
-597) 
-Acerca de segurança da informação, julgue o item seguinte.
-
- 
-Um IDS (intrusion detection system), quando disponibilizado para oferecer detecção somente no servidor da rede onde ele está instalado, é denominado NIDS (network intrusion detection system).
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1972747
-CEBRASPE (CESPE) - Esp GT (TELEBRAS)/TELEBRAS/Analista de Tecnologia da Informação/2022
-TI - Segurança da Informação - IDS, IPS e Honeypots
-598) 
-Com relação aos sistemas de detecção de intrusão – intrusion detection system (IDS) e de prevenção a intrusão – intrusion prevention system (IPS), julgue o item a seguir.
-
- 
-Em uma organização, será considerado como um sistema de prevenção de intrusão baseado em hospedeiro um aplicativo que, instalado em uma das máquinas da infraestrutura de rede, capture pacotes nessa rede, compare esses pacotes com uma base de assinaturas (padrões de ataques específicos), gere eventos que possam ser ações ou alertas e envie esses eventos para o próprio administrador.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1972748
-CEBRASPE (CESPE) - Esp GT (TELEBRAS)/TELEBRAS/Analista de Tecnologia da Informação/2022
-TI - Segurança da Informação - IDS, IPS e Honeypots
-599) 
-Com relação aos sistemas de detecção de intrusão – intrusion detection system (IDS) e de prevenção a intrusão – intrusion prevention system (IPS), julgue o item a seguir.
-
- 
-Capaz de analisar qual a parcela de risco de uma intrusão e bloqueá-la antes que ela ocorra, um IPS permite criar regras com o objetivo de monitorar aumentos anormais de tráfego de rede; além dessa funcionalidade, ele ainda pode alertar o responsável pela segurança, caso ocorram tais anomalias.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1990959
-CEBRASPE (CESPE) - Ana (PGE RJ)/PGE RJ/Sistemas e Métodos/2022
-TI - Segurança da Informação - IDS, IPS e Honeypots
-600) 
-Julgue o próximo item, relativo à segurança da informação.
-
- 
-Situação hipotética: Em determinada organização, há necessidade de instalação de ferramenta que permita realizar gerência de eventos de modo a permitir a análise de comportamento do usuário e insights de fluxo de rede, tais como eventos em tempo real provenientes de logs, por  exemplo, de dispositivos de segurança e da infraestrutura de rede. Assertiva: Para atender esses requisitos, é suficiente instalar um IPS (Intrusion Prevention System).
-
-Certo
-Errado
-Gabarito: Errado
-
-
-
-Atividade de Inteligência para CAM DEP - 2026
-#
-Ordenação: Por Relevância (Somente Assuntos)
-## questao 2036008
-CEBRASPE (CESPE) - Tec (FUB)/FUB/Tecnologia da Informação/2022
-TI - Segurança da Informação - IDS, IPS e Honeypots
-601) 
-No que se refere a conceitos de malware e detectores de intrusão, julgue o item seguinte.
-
- 
-Um sistema de detecção de invasão consiste na exploração de um bug do computador, introduzindo código em um programa vulnerável para alterar o curso de execução.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2117195
-CEBRASPE (CESPE) - Per Cri (POLITEC RO)/POLITEC RO/Tecnologia da Informação/2022
-TI - Segurança da Informação - IDS, IPS e Honeypots
-602) 
-O sistema de detecção de intrusão (IDS-Intrusion Detection System)
-
-a)  utiliza sensores de presença, sistemas integrados de câmeras e alarme para a detecção de qualquer tentativa de acesso por pessoa não autorizada.
-b) é um sistema específico de segurança da informação instalado e executado dentro do firewall da empresa.
-c) estabelece a primeira barreira com redes externas e, quando bem implementado, substitui as funções do firewall.
-d) apresenta como tipos primários os baseados em pessoas, processos e equipamentos.
-
-e)  tem como funções coletar, analisar e armazenar informações do tráfego de rede, bem como responder às atividades suspeitas.
-Gabarito: E
-## questao 2216903
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Suporte à Infraestrutura de Tecnologia da Informação/2022
-TI - Segurança da Informação - IDS, IPS e Honeypots
-603) 
-Com relação à segurança em redes de computadores, julgue o item subsequente.
-
-
-O IDS (Intrusion Detection System) é um dispositivo físico que, instalado antes do servidor, restringe o acesso entre as redes para prevenir uma invasão.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2216907
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Suporte à Infraestrutura de Tecnologia da Informação/2022
-TI - Segurança da Informação - IDS, IPS e Honeypots
-604) 
-Com relação à segurança em redes de computadores, julgue o item subsequente.
-
- 
-Entre as finalidades do IPS (Intrusion Prevention System) inclui-se a proteção do protocolo de redes a partir da identificação de anomalias.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1628743
-CEBRASPE (CESPE) - Ana (APEX)/ApexBrasil/Operações e Segurança de Tecnologia da Informação e Comunicação/"Sem Especialidade"/2021
-TI - Segurança da Informação - IDS, IPS e Honeypots
-605) 
-Em um ambiente, foi ativado um sistema para a detecção de intrusão, o qual recebe dados de uma VLAN (virtual lan) em uma porta espelhada de um switch e efetua análises ao confrontar assinaturas de ataques conhecidos.
-
- 
-
-Nessa situação hipotética, o sistema de detecção de intrusão é do modelo
-
-a) híbrido.
-b) open source.
-c) NIDS (network intrusion detect system).
-d) HIDS (host intrusion detect system).
-Gabarito: C
-## questao 1704804
-CEBRASPE (CESPE) - AJ (PGDF)/PG DF/Analista de Sistemas/Suporte e Infraestrutura/2021
-TI - Segurança da Informação - IDS, IPS e Honeypots
-606) 
-A respeito de sistemas de detecção de intrusão e proteção contra softwares maliciosos, julgue o item subsequente.
-
-
-A instalação de um software capaz de identificar e alertar uma intrusão em uma estação de trabalho é considerada uma solução de prevenção a intrusão, mesmo que esse software não consiga efetivamente impedir ou bloquear a ação maliciosa.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1708415
-CEBRASPE (CESPE) - TJ (PGDF)/PG DF/Tecnologia e Informação/2021
-TI - Segurança da Informação - IDS, IPS e Honeypots
-607) 
-Julgue o próximo item, com relação aos firewalls e aos sistemas de detecção de intrusos (IDS, em inglês) na segurança de sistemas.
-
- 
-
-Um firewall pode ser configurado para avisar o IDS de potenciais ataques e para que o sistema dê uma rápida resposta e bloqueie os pacotes de fonte suspeita.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1871934
-CEBRASPE (CESPE) - Ana Leg (ALECE)/ALECE/Informática/2021
-TI - Segurança da Informação - IDS, IPS e Honeypots
-608) 
-O sistema de detecção de intrusão (IDS)
-
-a) é um software que cria regras, restringe o tráfego de pacotes, melhora a velocidade e investiga eventos suspeitos na rede.
-b) é um sistema que está cada vez mais fácil de instalar e utilizar, independentemente da velocidade e complexidades dos ambientes, uma vez que possibilita o aumento na segurança das transmissões de dados.
-c) identifica ataques, mesmo em pacotes de rede em que os dados tenham sido criptografados com SSL (Secure Socket Layer) ou IPSec.
-d) monitora padrões de comportamento de ataques conhecidos que não coincidam com o padrão e atividades do tráfego normal.
-
-e) não monitora atributos de arquivo, tais como permissões, propriedade e datas de alteração.
-Gabarito: D
-## questao 3318340
-CEBRASPE (CESPE) - ERM (ANM)/ANM/Comunicação/2025
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-609) 
-Julgue o item a seguir, considerando as formas de transparência pública e o disposto na Lei de Acesso à Informação e na Lei Geral de Proteção de Dados Pessoais (LGPD).
-
- 
-A forma de transparência passiva ocorre por meio do atendimento aos pedidos de informação feitos diretamente a órgãos e entidades públicas, ao passo que a forma ativa ocorre por meio da publicação proativa, na Internet, de informações de interesse coletivo ou geral, produzidas ou custodiadas por esses órgãos e entidades.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3342826
-CEBRASPE (CESPE) - AJ TRT10/TRT 10/Apoio Especializado/Arquivologia/2025
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-610) 
-No que se refere à transformação digital e ao governo eletrônico, julgue o item a seguir.
-
-
-Os portais de transparência governamental são obrigatórios para todos os entes federativos, conforme determina a Lei de Acesso à Informação, e devem divulgar, por exemplo, dados financeiros sobre contratos e convênios celebrados pelo governo, sendo atualmente vedada a divulgação de informações sobre vencimentos pagos aos servidores públicos, por serem dados pessoais sensíveis.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3342846
-CEBRASPE (CESPE) - AJ TRT10/TRT 10/Apoio Especializado/Arquivologia/2025
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-611) 
-No que diz respeito ao regramento de acesso à informação no âmbito do Poder Judiciário e à proteção de dados pessoais, julgue o item subsequente.
-
- 
-No âmbito da regulamentação da Lei de Acesso à Informação pelo Poder Judiciário, feito por Resolução do CNJ, a informação sigilosa é aquela submetida indefinidamente à restrição de acesso público em razão de sua imprescindibilidade para a segurança da sociedade e do Estado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3343371
-CEBRASPE (CESPE) - AJ TRT10/TRT 10/Apoio Especializado/Comunicação Social/2025
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-612) 
-Acerca da comunicação nas organizações desenvolvida pela assessoria de comunicação, julgue o item que se segue.
-
- 
-É facultado às assessorias de comunicação dos órgãos públicos brasileiros observar os ditames da Lei de Acesso à Informação, que entrou em vigor no ano de 2011.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3372030
-CEBRASPE (CESPE) - Ana Min (MPE CE)/MPE CE/Administração/2025
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-613) 
-À luz da Lei n.º 12.527/2011 (Lei de Acesso à Informação) e da Lei Complementar n.º 131/2009 (Lei da Transparência), julgue o item seguinte.
-
-
-O acesso ao pleno conhecimento e acompanhamento das informações pormenorizadas sobre a execução orçamentária e financeira da gestão fiscal é restrito aos órgãos de controle do Estado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3437485
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão da Informação/Gestão da Informação Arquivística/2025
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-614) 
-Julgue o item a seguir, referente às técnicas de gestão de documentos.
-
- 
-Com o advento da Lei de Acesso a Informação, as instituições públicas passaram a ser obrigadas a implementar política de acesso a informação com base na transparência ativa, ou seja, no atendimento imediato a uma solicitação de acesso a documentos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3446140
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Comunicação Social/2025
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-615) 
-Julgue o item que se seguem, a respeito da Lei de Acesso à Informação (LAI).
-
- 
-A transparência ativa da LAI pressupõe a disponibilidade pública de dados e informações pela Internet.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3492632
-CEBRASPE (CESPE) - Adm (PF)/PF/2025
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-616) 
-Em relação a acesso à informação, proteção de dados e processo administrativo federal, julgue o item que se seguem.
-
- 
-O princípio da transparência do setor público veda que um pedido de acesso à informação de órgão público relativa a projeto de pesquisa e desenvolvimento científico ou tecnológico seja negado, ressalvados os projetos de caráter militar.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3597373
-CEBRASPE (CESPE) - AJ (TJ PA)/TJ PA/Administração/2025
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-617) 
-Julgue o item seguinte, acerca de processos participativos de gestão pública e transparência da administração pública, bem como do sistema integrado de administração de serviços gerais (SIASG).
-
- 
-A transparência da gestão pública requer a publicação de informações simples e compreensíveis a serem disponibilizadas ao cidadão, de ofício ou a pedido dele, e, sem a devida transparência, sua participação no controle social fica prejudicada.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2794782
-CEBRASPE (CESPE) - Proc (PGE RN)/PGE RN/2024
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-618) 
-Considerando a Lei estadual n.º 10.579/2019, que trata da vedação ao nepotismo, e a Lei n.º 12.527/2011 — Lei de Acesso à Informação (LAI) —, assinale a opção correta.
-
-a)  A União, o Distrito Federal e todos os estados e municípios devem divulgar na Internet informações de interesse coletivo ou geral que eles produzam ou custodiem.
-b)  A vedação da nomeação de cônjuges, companheiros e parentes na administração pública do estado do Rio Grande do Norte abrange os servidores titulares de cargo efetivo provido em razão de concurso público.
-c)  A LAI aplica-se inteiramente às informações resultantes de tratados internacionais que devam ser aplicados no Brasil.
-d)  Embora a LAI preveja diversos casos de restrição de acesso a determinadas informações, não podem sofrer tal restrição as informações e os documentos que tratem de condutas violadoras de direitos humanos perpetradas por agentes públicos.
-
-e)  As informações consideradas imprescindíveis à segurança da sociedade ou do Estado e classificadas como ultrassecretas não podem ser divulgadas em tempo algum.
-Gabarito: D
-## questao 3046913
-CEBRASPE (CESPE) - ACE (TCE PR)/TCE PR/Administrativa/2024
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-619) 
-Acerca das ações de transparência pública realizadas por órgãos e entidades jurisdicionados, assinale a opção correta.
-
-a) O esforço para o cumprimento do arcabouço legal referente ao acesso às informações públicas contribui para a transparência dos jurisdicionados, mas não para o controle da conduta de agentes públicos.
-b) O estabelecimento de modelos de gestão da estratégia que consideram aspectos como ampla divulgação colabora com os aspectos de transparência pública, mas não tem apresentado resultados promissores quanto à melhora do relacionamento com os usuários dos serviços públicos prestados.
-c) A reformulação de sítios eletrônicos para ampliar a acessibilidade às informações públicas auxilia na transparência, mas não no controle social, que deve ser fortalecido a partir de políticas públicas.
-d) Embora propicie menos transparência e controle, o crescente uso do pregão eletrônico tem reduzido o tempo dispensado aos processos de compras públicas e intensificado o relacionamento entre comprador e fornecedor.
-
-e)  Mesmo com a prática de dados abertos, os jurisdicionados devem situar a transparência pública dentro de limites de exposição que não sejam conflitantes com a salvaguarda legal de informações.
-Gabarito: E
-## questao 3082291
-CEBRASPE (CESPE) - Adm (CAGEPA)/CAGEPA/2024
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-620) 
-A Lei n.º 12.527/2011, que regula o acesso às informações, em conformidade com os princípios básicos da administração pública, estabelece
-
-a)  que é dever da imprensa controlar o acesso e a divulgação de informações sigilosas.
-b) que o pedido de informação não precisa conter a identificação do requerente.
-c) que a observância da publicidade é um preceito geral e do sigilo é uma exceção.
-d) que não exista informação sigilosa no âmbito do Estado brasileiro.
-
-e)  que, por interesse do Estado, nenhuma informação pessoal deve ser protegida.
-Gabarito: C
-## questao 2508273
-CEBRASPE (CESPE) - Prom Jus (MPE BA)/MPE BA/2023
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-621) 
-No que se refere à Lei de Acesso à Informação, julgue os itens seguintes.
-
- 
-I Aplicam-se os dispositivos dessa lei aos órgãos públicos integrantes da administração direta do Poder Executivo, não havendo previsão legal expressa em relação ao MP.
-
- 
-II O acesso às informações pessoais relativas à vida privada poderá ser autorizado por terceiros, independentemente de consentimento da pessoa a que elas se referirem, quando forem necessárias à defesa de direitos humanos.
-
- 
-III No caso de indeferimento de acesso à informação, poderá o interessado interpor recurso contra a decisão, devendo este ser dirigido à autoridade hierarquicamente superior à que exarou a decisão impugnada.
-
- 
-Assinale a opção correta.
-
-a) Apenas o item I está certo.
-b) Apenas o item III está certo.
-c) Apenas os itens I e II estão certos.
-d) Apenas os itens II e III estão certos.
-
-e) Todos os itens estão certos.
-Gabarito: D
-## questao 2716743
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Sistemas de TI/2023
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-622) 
-Julgue o item que se segue, relativo à NBR ISO/IEC n.º 38500:2015 e à Lei n.º 12.527/2011 (Lei de Acesso à Informação).
-
- 
-De acordo com a Lei n.º 12.527/2011, cabe à União, aos estados e ao Distrito Federal a proteção da informação sigilosa e da informação pessoal, observadas a sua disponibilidade, autenticidade e integridade, prescindindo-se, neste caso, da restrição de acesso.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2727013
-CEBRASPE (CESPE) - OF CHAN (MRE)/MRE/2023
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-623) 
-Com base na Lei n.º 12.527/2011 (Lei de Acesso à Informação), assinale a opção correta.
-
-a)  O prazo máximo de restrição de acesso à informação classificada como ultrassecreta é de vinte e cinco anos, a partir da data de sua produção.
-b)  Em que pese o dever do Estado de controlar o acesso e a divulgação de informações sigilosas produzidas por seus órgãos, o acesso à informação classificada como sigilosa dispensa aquele que a obteve da obrigação de resguardar o sigilo.
-c)  Qualquer interessado pode apresentar pedido de acesso a informações aos órgãos e às entidades públicas, desde que atenda à exigência de explicar os motivos determinantes da solicitação de informações de interesse público.
-d)  A classificação da informação em qualquer grau de sigilo prescinde de decisão que a formalize, desde que seja realizada por autoridade competente, vedada a subdelegação de responsabilidade da classificação.
-
-e)  Diferentemente dos órgãos integrantes da administração direta dos Poderes Executivo e Legislativo, o Poder Judiciário e as cortes de contas não se subordinam ao regime da Lei de Acesso à Informação, por possuírem legislação própria definida pelo seu órgão máximo.
-Gabarito: A
-## questao 2013118
-CEBRASPE (CESPE) - Esc Pol (PC PB)/PC PB/2022
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-624) 
-Acerca do acesso à informação, assinale a opção correta.
-
-a) As informações classificadas como ultrassecretas e secretas não serão reavaliadas.
-b) No caso de indeferimento de acesso a informações, não caberá recurso contra a decisão.
-c) Quando a informação solicitada estiver em documento cuja manipulação possa prejudicar sua integridade, deverá ser oferecida a consulta de cópia, com certificação de que esta confere com o original.
-d) Qualquer interessado poderá apresentar pedido de acesso a informações sem a necessidade de identificação do requerente.
-
-e) Os órgãos e entidades públicas devem promover, após preenchimento de requerimentos, a divulgação de informações de interesse coletivo ou geral.
-Gabarito: C
-## questao 2266981
-CEBRASPE (CESPE) - AJ TRT8/TRT 8/Apoio Especializado/Engenharia Civil/2022
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-625) 
-Acerca da Lei de Acesso à Informação (Lei n.º 12.527/2011), assinale a opção correta.
-
-a) O Ministério Público apenas divulga informações de interesse coletivo por ele produzidas mediante requerimento formal de qualquer cidadão.
-b) Todos os municípios brasileiros são obrigados a divulgar, na Internet, sua estrutura organizacional, endereços e telefones de unidades, além de horários de atendimento ao público.
-c) A realização de audiências ou consultas públicas são formas de assegurar o acesso a informações, conforme determina a Constituição Federal brasileira.
-d) Documentos que versem sobre condutas praticadas por agentes públicos que impliquem violação dos direitos humanos podem ser objeto de restrição de acesso.
-
-e) O prazo de concessão do acesso a qualquer informação solicitada por um cidadão é de 20 dias, podendo ser prorrogado por mais 10 dias.
-Gabarito: C
-## questao 2273600
-CEBRASPE (CESPE) - Cont (Maringá)/Pref Maringá/2022
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-626) 
-À luz da Lei n.º 12.527/2011, assinale a opção correta a respeito do tratamento a ser dado às informações pessoais.
-
-a) As informações pessoais relativas à intimidade terão seu acesso restrito, desde que recebam alguma classificação de sigilo.
-b) Não é possível o acesso a informações pessoais por terceiro sem o consentimento expresso do titular, mesmo em caso de utilização para tratamento médico.
-c) Os órgãos e entidades públicas respondem subsidiariamente pelos danos causados em decorrência da utilização indevida de informações pessoais.
-d) A restrição de acesso à informação relativa à vida privada não poderá ser invocada nas ações voltadas para a recuperação de fatos históricos de grande relevância.
-
-e) A pessoa física que detiver informação de caráter pessoal, em decorrência de vínculo com o poder público, e não observar o dever de preservar o acesso restrito estará sujeita à penalidade de suspensão dos direitos políticos.
-Gabarito: D
-## questao 2273615
-CEBRASPE (CESPE) - Cont (Maringá)/Pref Maringá/2022
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-627) 
-Considerando as disposições previstas na Lei de Acesso à Informação, julgue os seguintes itens.
-
  
-I São passíveis de classificação, quanto ao grau de sigilo, as informações cuja divulgação possa oferecer elevado risco à estabilidade monetária do Brasil.
+I A nomeação do perito será feita mediante intervenção das partes.
 
  
-II Entende-se por informação sigilosa aquela relacionada à pessoa natural identificada ou identificável.
+II O perito nomeado pela autoridade competente que não fornecer o laudo, no prazo estabelecido, fica sujeito a multa.
 
  
-III O servidor público que agir com má-fé na análise das solicitações de acesso à informação estará sujeito à pena de advertência.
+III O perito nomeado que, sem justificativa comprovada, não comparecer para realizar a perícia poderá ser conduzido coercitivamente por determinação da autoridade competente.
 
  
 Assinale a opção correta.
@@ -7898,3413 +2644,5892 @@ c) Apenas os itens I e III estão certos.
 d) Apenas os itens II e III estão certos.
 
 e) Todos os itens estão certos.
-Gabarito: A
-## questao 1628526
-CEBRASPE (CESPE) - Ana (SERPRO)/SERPRO/Ciência de Dados/2021
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-628) 
-Acerca de privacidade e proteção de dados pessoais, julgue o item a seguir.
+Gabarito: D
+## questao 2015348
+CEBRASPE (CESPE) - Tec Per (PC PB)/PC PB/Área Geral/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+196) 
+Para melhor entender as causas de um acidente de trânsito, é necessária a correta análise do local do acidente e do corpo da vítima, que é feita pelo exame conjunto denominado
 
- 
-É indispensável o consentimento do titular ao uso dos seus dados pessoais em pesquisas estatísticas que necessitem de tais informações, mesmo que as pesquisas sejam de evidente interesse público ou geral.
+a) fotogrametria.
+b) necropsia.
+c) perinecroscopia.
+d) papiloscopia.
 
-Certo
-Errado
-Gabarito: Errado
-## questao 1704880
-CEBRASPE (CESPE) - AJ (PGDF)/PG DF/Arquivologia/2021
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-629) 
-A respeito das políticas de acesso aos documentos de arquivo previstas na Constituição Federal de 1988 e de sua regulamentação no Distrito Federal, julgue o item a seguir.
-
- 
-
-A desclassificação de um documento é efetuada por ato formal ou por decurso de prazo e abole todas as restrições de acesso às informações constantes em tal documento.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1783908
-CEBRASPE (CESPE) - AUD (TC DF)/TC DF/Conselheiro-Substituto/2021
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-630) 
-Um cidadão solicitou diretamente ao Tribunal de Contas do Distrito Federal (TCDF) relatório completo de auditoria em órgão da administração pública do Governo do Distrito Federal (GDF) responsável por infrações de trânsito.
-
-
-A partir dessa situação hipotética, julgue o item a seguir, considerando as disposições da Lei Federal n.º 12.527/2011 e da Lei Distrital n.º 4.990/2012, com relação ao acesso à informação.
-
- 
-Informações que se refiram à intimidade ou à vida privada, como placas de carros, fotos de infrações e dados veiculares, poderão ser negadas a esse cidadão, de forma fundamentada.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1816241
-CEBRASPE (CESPE) - Tec Adm (COREN CE)/COREN CE/2021
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-631) 
-De acordo com os termos previstos na Lei n.º 8.429/1992 e na Lei n.º 12.527/2011, os valores éticos relacionados ao princípio da publicidade são devidamente observados na hipótese em que o agente público
-
-a)  revelar fato que estava sob sigilo, de que tenha tomado ciência em decorrência de suas atribuições funcionais.
-b) negar a publicidade de atos oficiais e do acesso à informação necessária à tutela administrativa.
-c) proteger a informação sigilosa, considerando os aspectos que envolvam sua autenticidade, disponibilidade, integridade e restrição de acesso.
-d) revelar, antes da divulgação oficial, conteúdo de medida política capaz de interferir no preço de bem ou serviço.
+e) infografia.
 Gabarito: C
-## questao 1871372
-CEBRASPE (CESPE) - Ana Leg (ALECE)/ALECE/Consultoria Técnica Legislativa/2021
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-632) 
-Considerando o disposto na Lei de Acesso à Informação, julgue os seguintes itens.
+## questao 2015357
+CEBRASPE (CESPE) - Tec Per (PC PB)/PC PB/Área Geral/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+197) 
+Com relação à atuação do perito, assinale a opção correta.
+
+a) Os peritos, nos crimes em que houver destruição de obstáculos para a subtração da coisa, deverão descrever os vestígios e indicar com que instrumento, por que meios e em que época se pressupõe que o fato tenha sido praticado.
+b) A ação pericial sobre o local do crime não se sobreporá ao direito constitucional de ir e vir dos cidadãos.
+c) O perito verificará a existência de vestígios, se houver corpo, procederá à coleta desses e, em seguida, aferirá a presença de sinais vitais.
+d) É dispensada a atuação pericial em caso de morte cujos indícios sugerem suicídio, por não se tratar de crime tipificado no ordenamento jurídico pátrio.
+
+e) A coleta de vestígios será realizada obrigatoriamente pelo perito criminal oficial.
+Gabarito: A
+## questao 2015358
+CEBRASPE (CESPE) - Tec Per (PC PB)/PC PB/Área Geral/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+198) 
+No curso de um negócio jurídico, uma das partes desconfiou da adulteração fraudulenta, a posteriori, de documento manuscrito que beneficiava desproporcionalmente a outra parte e decidiu contestar, em juízo, a autenticidade do documento. Por sua vez, o juízo determinou a realização de exame pericial para o reconhecimento de escritos por comparação de letra.
 
  
-I É dever dos órgãos e das entidades públicas de qualquer dos poderes promover, independentemente de requerimento, a divulgação, no âmbito de suas competências e em local de fácil acesso, de informações de interesse geral por eles produzidas, sendo obrigatória a divulgação na Internet.
+Considerando-se o caso hipotético, julgue os itens subsequentes quanto às possíveis ações a serem efetivadas.
 
  
-II As informações pessoais relativas a intimidade, vida privada, honra e imagem poderão ser acessadas, independentemente de consentimento da pessoa a que elas se referirem, quando forem necessárias à proteção do interesse público.
+I. A perícia só poderá ser realizada com a presença do autor do documento original, pois a comparação será feita, necessariamente, com um texto que ele redigirá no momento do exame.
 
  
-III No caso de indeferimento de acesso a informações, o interessado poderá interpor recurso contra a decisão no prazo de dez dias úteis, devendo o recurso ser dirigido à autoridade que proferiu a decisão para realizar o juízo de reconsideração.
+II A pessoa que redigiu o manuscrito original será intimada para participar do exame.
+
+ 
+III A diligência para a produção do texto manuscrito para a comparação com o documento supostamente fraudado poderá ser feita por carta precatória.
 
  
 Assinale a opção correta.
 
-a) Apenas o item II está certo.
-b) Apenas o item III está certo.
-c) Apenas os itens I e II estão certos.
+a) Apenas o item I está certo.
+b) Apenas os itens I e II estão certos.
+c) Apenas os itens I e III estão certos.
+d) Apenas os itens II e III estão certos.
+
+e) Todos os itens estão certos.
+Gabarito: D
+## questao 2116775
+CEBRASPE (CESPE) - Per Cri (POLITEC RO)/POLITEC RO/Ciências Contábeis, Ciências Econômicas ou Administração/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+199) 
+Entre outras, as etapas da fase externa da cadeia de custódia incluem a
+
+a) preservação do local de crime, a busca, o reconhecimento, a fixação e o registro da cadeia de custódia do vestígio.
+b) preservação do local de crime, o reconhecimento, a conferência, a guarda e(ou) distribuição e a análise pericial do vestígio.
+c) recepção, a conferência, a coleta, o acondicionamento e o registro do vestígio.
+d) preservação do local de crime, a busca, o reconhecimento, a fixação e a coleta do vestígio.
+
+e)  recepção, a conferência, a classificação, a guarda e(ou) distribuição e a análise pericial do vestígio.
+Gabarito: D
+## questao 2119712
+CEBRASPE (CESPE) - Ag Crim (POLITEC RO)/POLITEC RO/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+200) 
+O trabalho pericial exige conhecimento e habilidade do profissional tanto no local do crime quanto posteriormente, na elaboração do laudo. De acordo com a legislação pertinente, havendo disponibilidade de perito(s) oficial(is), o laudo pericial deve ser elaborado por, no mínimo,
+
+a) um perito oficial.
+b) cinco peritos oficiais.
+c) dois peritos oficiais.
+d) três peritos oficiais.
+
+e) quatro peritos oficiais.
+Gabarito: A
+
+
+
+Criminologia e Noções de Criminalística para CAM DEP - 2026
+#
+Ordenação: Por Relevância (Somente Assuntos)
+## questao 2169922
+CEBRASPE (CESPE) - Med Leg (PC RO)/PC RO/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+201) 
+Acerca de documentos médico-legais, perícias e peritos, assinale a opção correta.
+
+a) Em regra, os exames de corpo de delito devem ser feitos por um perito oficial.
+b) Relatório médico-legal é o documento pelo qual o perito externa as conclusões às quais chegou após perícia e estudo do caso; em sendo ditado a um escrivão, que o redige, chamase laudo médico-legal.
+c) A participação dos peritos médico-legais em processo ou inquérito policial dá-se exclusivamente por meio de laudos, ofícios, etc., ou seja, por documentos escritos; não há previsão processual de oitiva de peritos.
+d) Relatório médico-legal é a redação minuciosa de todas as operações de uma perícia médica, sendo, em regra, composto das seguintes partes: preâmbulo, quesitos, histórico, discussão, conclusão e resposta aos quesitos.
+
+e) O médico assistente técnico é designado pelos advogados das partes e deve acompanhar os atos periciais desde a fase de inquérito policial até a fase processual.
+Gabarito: A
+## questao 2169924
+CEBRASPE (CESPE) - Med Leg (PC RO)/PC RO/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+202) 
+Com relação a corpo de delito, assinale a opção correta.
+
+a) Nos crimes que deixam vestígios, segundo as normas jurídicas vigentes, é indispensável o exame de corpo de delito direto ou indireto, não podendo supri-lo a confissão do acusado.
+b) O juiz estará adstrito ao laudo do perito, não podendo rejeitá-lo no todo ou em parte, conforme normas administrativas.
+c) Havendo confissão do acusado, não há necessidade de exame de corpo de delito, uma vez que restará provada a culpa ou dolo deste.
+d) A custódia dos vestígios encontrados em um cadáver vítima de morte violenta caberá à autoridade policial e aos peritos criminais que comparecerem à cena do crime, não havendo necessidade de essas normas atingirem os auxiliares de necropsia, uma vez que estes apenas devem transportar o cadáver, não havendo atos periciais aí envolvidos.
+
+e) A perícia de documentos não poderá complementar o exame direto dos vestígios no corpo, uma vez que não há essa previsão legal.
+Gabarito: A
+## questao 2169925
+CEBRASPE (CESPE) - Med Leg (PC RO)/PC RO/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+203) 
+Considerando a custódia dos vestígios para o exame de corpo de delito de uma vítima de agressão física que tenha sido internada em um hospital e morrido após vários dias internada, assinale a opção correta.
+
+a)  Os projéteis de arma de fogo encontrados durante cirurgia devem ser retirados cuidadosamente, pegos entre pinças e custodiados em frasco com tampa rosqueada, o que garantirá a sua devida preservação para entrega aos peritos criminais.
+b) O agente público que perceber que determinado vestígio seja de potencial interesse para sua investigação será um dos responsáveis pela preservação do vestígio.
+c) Não há necessidade de preocupação por parte dos servidores da saúde, posto que a custódia dos vestígios é feita exclusivamente pelos agentes da segurança pública.
+d) Em caso de suspeitas de estupros, os médicos dos hospitais não devem preocupar-se com preservação de materiais para perícias futuras, uma vez que sua obrigação é somente a de preservar a vida, nada tendo a ver com a área criminal.
+
+e)  Não há necessidade de uso de lacre nas embalagens que contêm vestígios na fase hospitalar, uma vez que isso será feito tão logo os vestígios forem entregues aos peritos oficiais de natureza criminal.
+Gabarito: B
+## questao 2169930
+CEBRASPE (CESPE) - Med Leg (PC RO)/PC RO/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+204) 
+Em relação a corpo de delito, perícia e peritos em medicina legal, assinale a opção correta.
+
+a) Em medicina legal, são sinônimos os termos corpo de delito e exame de corpo de delito, sendo um empregado pelo outro indistintamente.
+b) Os vestígios criminais podem apresentar caráter passageiro (delicta factis transeuntis), como os que resultam de lesão corporal gravíssima.
+c) Os assistentes técnicos não se sujeitam às causas de impedimento e suspeição.
+d) O exame de corpo delito deixa de ser necessário em face de eventual confissão do acusado de um crime.
+
+e)  Quando não for possível a participação de peritos oficiais, o exame de corpo delito não poderá ser realizado por peritos ad hoc, mesmo que estes prestem compromisso com a justiça.
+Gabarito: C
+## questao 2169931
+CEBRASPE (CESPE) - Med Leg (PC RO)/PC RO/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+205) 
+Durante uma perícia, o perito deverá estar atento à legislação pertinente para evitar nulidade de provas. Acerca dessa temática e de assuntos ela relacionados, assinale a opção correta.
+
+a) O corpo de delito restringe-se a todos os vestígios encontrados no corpo de um indivíduo.
+b) Do laudo da perícia deverão constar apenas os aspectos técnicos, não se admitindo subjetividade na análise.
+c) O laudo médico-legal resultante da perícia, em regra, deve ser sigiloso.
+d) A perícia sobre outra já realizada (pericia deducendi) tem por objeto fatos pretéritos com relação aos quais possa existir discordância das partes ou do julgador.
+
+e) O juiz poderá não acatar um laudo no todo ou em parte, assim como poderá dispensar a análise do corpo de delito quando a infração deixar vestígios.
+Gabarito: D
+## questao 2170707
+CEBRASPE (CESPE) - Tec Necro (PC RO)/PC RO/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+206) 
+Acerca dos peritos, que, no desempenho de suas atividades, devem observar uma série de regras de conduta relativas a determinados deveres, assinale a opção correta.
+
+a) O dever de informar é prescindível para o consentimento e para a legitimidade do ato pericial.
+b) Para o pleno e ideal exercício da atividade pericial, exige-se apenas uma habilitação legal, sendo dispensável o aprimoramento continuado.
+c) Consideram-se atitudes atentatórias ao dever de abstenção de abusos aquelas que violam a proteção da dignidade humana, da tutela da honra, da imagem e da vida privada, inclusive quando se expõe desnecessariamente o examinado a certos procedimentos, invade-se sua privacidade e aviltam-se a imagem e a honra alheias.
+d) Para cumprimento do dever de informação, exige-se que o consentimento seja livre e esclarecido, sendo este dispensável em caso de examinado menor de idade ou incapaz.
+
+e) A legitimidade e a licitude da avaliação pericial, que deverão ser isentas de omissão que venha a ser caracterizada por inércia, passividade ou descaso, estão intimamente ligadas ao dever de atualização profissional.
+Gabarito: C
+## questao 2182336
+CEBRASPE (CESPE) - Del Pol (PC ES)/PC ES/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+207) 
+No que diz respeito ao corpo de delito e à perícia em medicina legal, assinale a opção correta.
+
+a)  Quando o suspeito confessar o crime, será desnecessário o exame de corpo de delito, seja direto, seja indireto.
+b) Os vestígios de crimes que ensejam a necessidade de exame de corpo de delito devem ser analisados conforme sua ordem de entrada no sistema, configurando crime qualquer alteração nessa ordem.
+c) O juiz não poderá determinar a produção de prova técnica simplificada em substituição à perícia, mesmo que o ponto controvertido seja de menor complexidade.
+d) O juiz tem a obrigação de determinar a emissão de laudo pericial quando for necessário conhecimento científico ou técnico para provar um fato.
+
+e)  O juiz deverá indeferir uma perícia quando a prova do fato não depender de conhecimento especial de técnico.
+Gabarito: E
+## questao 2206702
+CEBRASPE (CESPE) - Ag Pol (PC RO)/PC RO/2022
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+208) 
+A perícia médico-legal que tem por finalidade o estudo do tempo da morte, a identificação do cadáver e a determinação da causa médica da morte é denominada
+
+a) biópsia.
+b) datiloscopia.
+c) cremação.
+d) exumação.
+
+e) necropsia.
+Gabarito: E
+## questao 1554743
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+209) 
+Julgue o próximo item, acerca da aplicação pericial.
+
+
+Situação hipotética: No bolso da vestimenta de um cadáver não identificado e parcialmente carbonizado, foram encontrados documentos e sete chaves — uma delas era de um veículo e as demais eram chaves de portas residenciais.
+ 
+
+Assertiva: Esses objetos são suficientes para que a identificação do cadáver seja confirmada, desde que as chaves abram as fechaduras.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1554746
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+210) 
+Julgue o próximo item, acerca da aplicação pericial.
+
+ 
+Caso um membro superior humano seja encontrado com sinais iniciais de putrefação, para a identificação, bastará o resultado positivo de um dos seguintes métodos, a serem aplicados sequencialmente: papiloscópico, antropológico e genético.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 589516
+CEBRASPE (CESPE) - Del Pol (PC MA)/PC MA/2018
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+211) 
+Texto 
+
+ 
+
+Em determinada cidade interiorana, por volta das dezesseis horas de um dia ensolarado, o corpo de uma mulher jovem foi encontrado por populares, em área descoberta de um terreno baldio. O delegado de plantão foi comunicado do fato e, ao dirigir-se ao local, a autoridade policial verificou que o corpo se encontrava em decúbito dorsal e despido. A perícia de local, tendo realizado exame perinecroscópico, verificou que o corpo apresentava temperatura de 27 ºC, além de rigidez completa de tronco e membros. Constataram-se escoriações na face, fraturas dos elementos dentários anteriores, manchas roxas na região cervical anterior e duas lesões profundas na região torácica anterior, abaixo da mama esquerda, medindo a maior delas 4 cm × 1 cm. Havia tênue mancha de tonalidade avermelhada na face posterior do corpo, que só não se evidenciava nas partes que estavam em contato com o solo. Nas adjacências das lesões torácicas e no solo próximo ao corpo, havia pequena quantidade de sangue coagulado. No mesmo terreno onde estava o corpo, foi encontrada uma faca de gume liso único. A lâmina, que estava suja de sangue, tinha formato triangular e media 20 cm de comprimento e 4 cm de largura em sua base. Exames laboratoriais realizados posteriormente atestaram que o sangue presente na faca pertencia à vítima. Após a lavagem do corpo, foi possível detectar lesões torácicas, de acordo com as imagens mostradas na figura a seguir.
+
+ 
+
+
+
+ 
+
+Considerando a situação hipotética apresentada no texto e a figura que a ele se segue, assinale a opção correta.
+
+a)  Se não houvesse um perito médico-legista oficial na localidade, mas houvesse um médico e um dentista lotados no posto de saúde local, o delegado de polícia poderia nomeá-los para que eles realizassem o exame de corpo de delito.
+
+b)  O exame de corpo de delito deverá ser iniciado somente no período diurno.
+
+c)  Será necessário aguardar ao menos seis horas após a localização do cadáver para se proceder à autópsia.
+
+d)  O exame interno do cadáver poderá ser dispensado, uma vez que as lesões externas são suficientes para se estabelecer com precisão a causa da morte.
+
+e)  Após realizar o exame cadavérico, o perito médico-legista deverá redigir o parecer médico-legal, no qual deverá descrever minuciosamente o que observou e responder aos quesitos formulados.
+Gabarito: A
+## questao 590725
+CEBRASPE (CESPE) - Med Leg (PC MA)/PC MA/2018
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+212) 
+Na perícia médico-legal, a perícia contraditória é definida como
+
+a) procedimento que gera relatórios individualizados que não chegam a um ponto de vista comum.
+b) exame pericial realizado por um só perito.
+c)  exame realizado sobre vestígios materiais.
+d)  conjunto de procedimentos médicos e técnicos que tem como finalidade o esclarecimento de um fato de interesse da justiça.
+e) declaração tomada a termo em audiência de instrução e julgamento sobre fatos obscuros ou conflitantes.
+Gabarito: A
+## questao 590776
+CEBRASPE (CESPE) - Med Leg (PC MA)/PC MA/2018
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+213) 
+Nas perícias cíveis, quando a prova do fato depender de conhecimento técnico e científico, o juiz será assistido por perito. Após a ciência de sua nomeação, caso não apresente escusa, o perito deverá
+
+a) comprovar regularidade com órgão fiscalizador da profissão em quinze dias.
+b)  apresentar seu laudo em vinte dias.
+c)  confirmar, em três dias úteis, a aceitação do encargo pericial.
+d) apresentar, em cinco dias, proposta de honorários.
+e) oferecer quesitos, caso deseje, em dez dias.
+Gabarito: D
+## questao 590831
+CEBRASPE (CESPE) - Odon Leg (PC MA)/PC MA/2018
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+214) 
+A respeito da perícia pré-processual, julgue os seguintes itens.
+
+
+I Trata-se de perícia praticada fora do âmbito do Estado, sem formalidades processuais ou judiciais.
+II Nessa perícia, vigora o sistema inquisitivo com os mesmos princípios informadores do processo penal.
+III Essa perícia pode produzir efeitos jurídicos mesmo quando ainda não há litígio entre as partes.
+IV Essa perícia pode servir de instrução à petição inicial, antes de esta ser protocolada nos tribunais de justiça para a discussão em juízo.
+
+
+Estão certos apenas os itens
+
+a)  I e II.
+b)  II e III.
+c)  II e IV.
+d) I, II e III.
+e) I, III e IV.
+Gabarito: E
+## questao 590833
+CEBRASPE (CESPE) - Odon Leg (PC MA)/PC MA/2018
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+215) 
+O exercício de perícia oficial é considerado de alta relevância para o esclarecimento de crimes, devendo o preceito constitucional da legalidade ser observado em todas as etapas desse exercício. Dessa maneira, para proceder à coleta de dados em uma cena de crime, um perito oficial deve atuar
+
+a) após notificação do Ministério Público.
+b)  sob supervisão do Ministério Público.
+c) após autorização judicial.
+d) após notificação da autoridade policial.
+e)  sob supervisão da autoridade policial.
+Gabarito: D
+## questao 590834
+CEBRASPE (CESPE) - Odon Leg (PC MA)/PC MA/2018
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+216) 
+A prova pericial, após coleta e análise pelos peritos criminais, materializa-se por meio de laudo circunstanciado, que deve ser encaminhado à autoridade policial. Recebido o laudo, essa autoridade deverá analisá-lo e
+
+a) submetê-lo à análise do Ministério Público, ao qual caberá decidir a respeito da sua pertinência.
+b) submetê-lo ao Ministério Público, para, em conjunto, decidir a respeito da sua pertinência.
+c) submetê-lo ao Ministério Público e, posteriormente, à autoridade judicial, que decidirá a respeito de sua pertinência.
+d) dar ciência ao Ministério Público e à autoridade judicial, para que estes decidam de acordo com o resultado da perícia.
+e)  decidir a respeito da sua pertinência.
+Gabarito: C
+## questao 590835
+CEBRASPE (CESPE) - Odon Leg (PC MA)/PC MA/2018
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+217) 
+Após um trabalho de perícia criminal, foi constatado pela autoridade requisitante que houve evidente divergência entre doisperitos quanto à análise das evidências.
+
+
+Nessa situação hipotética,
+
+a) a autoridade judiciária deverá nomear uma comissão que ficará responsável por selecionar o laudo com as evidências mais consistentes.
+b)  deverá prevalecer o laudo do perito mais experiente, isto é, aquele que tiver mais anos de atuação na área.
+c) a autoridade judicial poderá considerar as frações de cada laudo que julgar mais pertinentes.
+d) terá de ser nomeado um terceiro perito para nova análise.
+e) a autoridade judiciária deverá selecionar, conforme sua convicção, o laudo que será juntado aos autos.
+Gabarito: D
+## questao 442455
+CEBRASPE (CESPE) - Del Pol (PC GO)/PC GO/2017
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+218) 
+No que se refere às perícias e aos laudos médicos em medicina legal, assinale a opção correta.
+
+a) As perícias podem consistir em exames da vítima, do indiciado, de testemunhas ou de jurado.
+b) A perícia em antropologia forense permite estabelecer a identidade de criminosos e de vítimas, por meio de exames de DNA, sem, no entanto, determinar a data e a circunstância da morte.
+c) A opção pela perícia antropológica deve ser conduta de rotina nos casos em que a família da vítima manifestar suspeita de morte por envenenamento.
+d) As perícias médico-legais são restritas aos processos penais e civis.
+e) Laudo médico-legal consiste em narração ditada a um escrivão durante o exame.
+Gabarito: A
+## questao 364058
+CEBRASPE (CESPE) - Del Pol (PC PE)/PC PE/2016
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+219) 
+Com relação aos conhecimentos sobre corpo de delito, perito e perícia em medicina legal e aos documentos médico-legais, assinale a opção correta.
+
+a) Perícia é o exame determinado por autoridade policial ou judiciária com a finalidade de elucidar fato, estado ou situação no interesse da investigação e da justiça.
+b) O atestado médico equipara-se ao laudo pericial, para serventia nos autos de inquéritos e processos judiciais, devendo ambos ser emitidos por perito oficial.
+c) Perito oficial é todo indivíduo com expertise técnica na área de sua competência incumbido de realizar o exame.
+d) É inválido o laudo pericial que não foi assinado por dois peritos oficiais.
+e) Define-se corpo de delito como o conjunto de vestígios comprobatórios da prática de um crime evidenciado no corpo de uma pessoa.
+Gabarito: A
+## questao 368327
+CEBRASPE (CESPE) - Ag ML (PCie PE)/PCie PE/2016
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+220) 
+Acerca de aspectos diversos relacionados à atividade de auxiliares de médico-legista, assinale a opção correta.
+
+
+a)  O melhor método para o armazenamento e conservação de sangue para futura realização de exame de alcoolemia é a adição de formol na concentração de 8% à amostra.
+
+b)  Só existe indicação para o cadáver ser submetido a exame radiográfico se houver lesões consequentes a ferimentos por projéteis de arma de fogo.
+
+c)  A periculosidade associada à atividade radiográfica desenvolvida nos institutos de medicina legal é extremamente baixa comparativamente às graves ameaças causadas por outros tipos de perigos nesses ambientes, tais como secreções cadavéricas e outros fluidos biológicos, como conteúdo intestinal, sangue e materiais putrefeitos.
+
+d)  No exame de uma mulher vítima de relação sexual não consentida, o sexo do auxiliar de legista é irrelevante.
+
+e)  A divulgação de fotografias realizadas nos institutos de medicina legal em redes sociais e na Internet, contendo imagens de cadáveres ou pessoas vivas examinadas, constitui grave violação do segredo médico e do segredo de justiça.
+Gabarito: E
+## questao 368395
+CEBRASPE (CESPE) - Per Papilo (PCie PE)/PCie PE/2016
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+221) 
+Acerca da perícia médico-legal, assinale a opção correta.
+
+
+a)  O material sobressalente analisado na perícia inicial de laboratório deverá ser descartado após a conclusão desta.
+
+b)  O exame de corpo de delito poderá ser feito em qualquer dia e a qualquer hora.
+
+c)  O exame de corpo de delito é privativo do perito oficial.
+
+d)  Preferencialmente, a autópsia deverá ser feita imediatamente após o óbito.
+
+e)  Obrigatoriamente, a autópsia tem de incluir os exames externo e interno do cadáver.
+Gabarito: B
+## questao 368396
+CEBRASPE (CESPE) - Per Papilo (PCie PE)/PCie PE/2016
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+222) 
+A respeito da perícia médico-legal, assinale a opção correta.
+
+
+a)  É inadmissível a atuação de mais de um perito oficial e de um assistente técnico por perícia.
+
+b)  No processo judicial que demande a realização de perícia médico-legal, a decisão do juiz deverá ser tomada com base no laudo dessa perícia.
+
+c)  O juiz é a única autoridade competente para negar a realização de perícia em qualquer circunstância.
+
+d)  Quando o primeiro exame pericial for incompleto para a avaliação das lesões corporais, a decisão de realização de exame complementar será privativa do juiz.
+
+e)  Em caso de lesões corporais, se o primeiro exame pericial tiver sido incompleto, a falta de exame complementar poderá ser suprida pela prova testemunhal.
+Gabarito: E
+## questao 388100
+CEBRASPE (CESPE) - Aud CE (TCE-PA)/TCE PA/Administrativa/Odontologia/2016
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+223) 
+Com relação às atividades de auditoria e perícia odontológica, julgue o item a seguir.
+
+
+Somente o profissional concursado está autorizado a atuar na esfera criminal, sendo-lhe garantida a autonomia técnica, científica e funcional para realizar laudos periciais oficiais, quando requisitado.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1620267
+CEBRASPE (CESPE) - PT (CBM CE)/CBM CE/2015
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+224) 
+Julgue o item seguinte, relativo ao isolamento, preservação e levantamento de dados em local de crime e sinistro.
+
+ 
+Cabe ao perito inferir e discorrer sobre a dinâmica dos eventos com base nos vestígios encontrados no local examinado, de forma que, ao ser apresentado o laudo, a materialidade e a qualificação dos envolvidos sejam apontadas, bem como a infração penal.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 113847
+CEBRASPE (CESPE) - Deleg (PC BA)/PC BA/2013
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+225) 
+A autoridade policial deve promover as diligências para o devido esclarecimento dos fatos lesivos a algum direito. Essa averiguação deve ser baseada em procedimentos de demonstração, os quais dependem da natureza dos fatos. Com relação a esse assunto, julgue o item a seguir.
+
+Os técnicos especializados encarregados de realizar o exame dos vestígios materiais relacionados ao fato jurídico são denominados peritos; caso sejam remunerados pelo Estado, serão denominados peritos oficiais.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 113949
+CEBRASPE (CESPE) - Inv (PC BA)/PC BA/2013
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+226) 
+Acerca da perícia médico-legal, dos documentos legais relacionados a essa perícia e da imputabilidade penal, julgue o item a seguir.
+
+Denomina-se perito o técnico especializado na realização de exames em vestígios materiais relacionados à ocorrência de fato delituoso; no caso de exame a ser realizado em pessoas, o perito indicado é o médico-legista.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 131550
+CEBRASPE (CESPE) - PCF/PF/Área 12/2013
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+227) 
+A medicina legal é o campo da ciência médica que faz a interface entre a medicina e o direito, razão por que é necessária a observância de protocolos rígidos tanto na realização de perícias quanto na confecção dos respectivos laudos, pois estes são utilizados nas áreas penal, cível, trabalhista, administrativa e securitária, e informalidades poderiam levar o laudo à perda de confiabilidade e serventia. Com relação a esse assunto, julgue o item que se segue.
+
+
+Não se pode alegar suspeição do perito por vínculo com a parte, no caso de este ser assistente técnico.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 131553
+CEBRASPE (CESPE) - PCF/PF/Área 12/2013
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+228) 
+A medicina legal é o campo da ciência médica que faz a interface entre a medicina e o direito, razão por que é necessária a observância de protocolos rígidos tanto na realização de perícias quanto na confecção dos respectivos laudos, pois estes são utilizados nas áreas penal, cível, trabalhista, administrativa e securitária, e informalidades poderiam levar o laudo à perda de confiabilidade e serventia. Com relação a esse assunto, julgue o item que se segue.
+
+ 
+
+A designação direta do perito pela autoridade que dirige o inquérito ou preside o processo na área criminal não fere a autonomia pericial e, portanto, não quebra o protocolo legal.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 611843
+CEBRASPE (CESPE) - Per Crim (PEFOCE)/PEFOCE/Engenharia Civil/2012
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+229) 
+Julgue o próximo item, relativo à perícia e elaboração de relatórios técnicos, pareceres e laudos periciais.
+
+ 
+A classificação e a avaliação das provas periciais quanto ao sujeito podem ser diretas ou indiretas.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 695305
+CEBRASPE (CESPE) - Esc Pol (PC AL)/PC AL/2012
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+230) 
+No que se refere à perícia médico-legal, julgue o item subsequente.
+
+ 
+
+A verificação da presença de hímen íntegro e complacente em jovem vítima de suposto abuso sexual, é suficiente para que o perito médico-legista conclua que não houve conjunção carnal.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 695307
+CEBRASPE (CESPE) - Esc Pol (PC AL)/PC AL/2012
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+231) 
+No que se refere à perícia médico-legal, julgue o item subsequente.
+
+ 
+
+A perícia médico-legal, cujo objetivo é produzir provas para esclarecer fatos perante a justiça, consiste em um conjunto de procedimentos médicos e técnicos que dá origem ao laudo médico-legal, documento sigiloso nas ações penais.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 845976
+CEBRASPE (CESPE) - Med Leg (PC ES)/PC ES/2011
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+232) 
+Julgue o item seguinte, acerca dos peritos e dos documentos médico-legais.
+
+
+Caso se sinta pressionado para realizar de modo inadequado o exame, o perito deve negar-se a fazê-lo e, por sua recusa, não poderá sofrer sanções administrativas.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 845980
+CEBRASPE (CESPE) - Med Leg (PC ES)/PC ES/2011
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+233) 
+Julgue o item seguinte, acerca dos peritos e dos documentos médico-legais.
+
+ 
+
+Em razão de ter de trabalhar em segredo, o perito não deve ser perturbado pela mídia nem por autoridades que não estejam exercendo atividade de extrema relevância no local de realização da perícia.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 846056
+CEBRASPE (CESPE) - Med Leg (PC ES)/PC ES/2011
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+234) 
+Sabendo que a medicina legal, área bastante abrangente, compreende a relação entre a aplicação dos conhecimentos médicos e as matérias jurídicas, nos seus diversos campos — criminal, cível, trabalhista e administrativo —, com objetivo de instruir os inquéritos e processos e elucidar questões, julgue o item a seguir, relativo à medicina legal, à perícia e aos peritos.
+
+ 
+
+Os peritos não oficiais e os assistentes técnicos diferem na sua concepção em relação aos peritos oficiais, visto que os peritos não oficiais (ad hoc), peritos do juízo, só podem atuar na ausência do perito oficial e depois de firmar o compromisso de bem e desempenhar, fielmente, o encargo perante a autoridade solicitante da perícia; e os assistentes técnicos, peritos da parte, só podem atuar após a sua admissão pelo juiz. Já o perito oficial prescinde de firmar o compromisso, que é inerente à sua titulação, e sua atuação precede a do assistente técnico.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1565492
+CEBRASPE (CESPE) - Med (MS)/MS/Psiquiatra/2010
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+235) 
+Julgue o item subsequente acerca da atividade pericial do psiquiatra forense.
+
+ 
+Em atividade pericial, o psiquiatra forense coloca-se sob agenciamento duplo, pois deve lealdade tanto ao periciando quanto à instituição na qual trabalha.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1565495
+CEBRASPE (CESPE) - Med (MS)/MS/Psiquiatra/2010
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+236) 
+Julgue o item subsequente acerca da atividade pericial do psiquiatra forense.
+
+ 
+Na atividade pericial, é exigida do psiquiatra forense a mesma neutralidade do juiz, já que ele está submetido às mesmas causas legais de impedimento e suspeição.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2746617
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+237) 
+O perito criminal deve ter liberdade de convicção para formalizar as suas conclusões técnico-científicas em torno da análise do(s) fato(s), objeto(s) da(s) perícia(s), sem contundo infringir os preceitos de ordem moral e legal. Essa afirmação refere-se ao
+
+a) pacto pericial.
+b) ato de posicionamento do perito criminal.
+c) acordo profissional.
+d) manual de perícia laboratorial.
+
+e) código de ética do perito criminal.
+Gabarito: E
+## questao 264882
+CEBRASPE (CESPE) - Esc Pol (RN)/PC RN/2009
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+238) 
+Acerca de criminalística, assinale a opção correta.
+
+a)  A necrópsia será feita, pelo menos, seis horas depois do óbito, e o perito não pode realizá-la antes desse prazo.
+b)  Em crimes que deixem vestígios materiais, deve haver sempre exame de corpo de delito e os peritos devem, pessoalmente, analisar o rastro deixado.
+c)  O exame de corpo de delito é uma das espécies de prova pericial constatatória da materialidade do crime investigado.
+d)  No exame para o reconhecimento de escritos, por comparação de letra, quando não houver escritos para a comparação ou forem insuficientes os exibidos, a autoridade mandará que a pessoa escreva o que lhe for ditado. Se estiver ausente a pessoa, mesmo que em lugar certo, esta última diligência não pode ser feita por precatória.
+e)  Na prova direta, exige-se um raciocínio, com formulação de hipóteses, exclusões e aceitações, para a conclusão final.
+Gabarito: C
+## questao 264896
+CEBRASPE (CESPE) - Del Pol (PC RN)/PC RN/2009
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+239) 
+Em relação à perícia médico-legal, podem ocorrer várias circunstâncias no decorrer do processo. Acerca dessas circunstâncias, assinale a opção incorreta.
+
+a)  O perito que confessar ter agido de má-fé antes da conclusão do processo não será punido por isso.
+b)  Tendo o perito confessado ter agido de má-fé, sua conduta será considerada dolosa e, portanto, ele será punido.
+c)  A perícia é considerada falsa quando distorce a verdade.
+d)  A simples diferença de diagnósticos entre laudos médicos não permite concluir pela falsidade da perícia.
+e)  A falsa perícia é considerada crime em qualquer juízo.
+Gabarito: B
+## questao 264938
+CEBRASPE (CESPE) - Ag Pol (RN)/PC RN/2009
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+240) 
+Em relação às necropsias, assinale a opção incorreta.
+
+a)  Toda necropsia deverá ser realizada após decorridas seis horas do óbito.
+b)  As docimasias são realizadas principalmente nos casos de infanticídio.
+c)  No cadáver, a retirada de sangue da veia femoral é a mais indicada para pesquisa de ingestão de álcool.
+d)  A lei que dispõe sobre a utilização de tecidos e órgãos para fins de transplantes exclui óvulos e esperma.
+e)  Na ausência de médicos, a declaração de óbito poderá ser feita por duas pessoas idôneas.
+Gabarito: A
+## questao 264940
+CEBRASPE (CESPE) - Esc Pol (RN)/PC RN/2009
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+241) 
+Considerando as perícias médico-legais, assinale a opção correta.
+
+a)  O corpo de delito só se refere a exame do corpo humano.
+b)  As necropsias não poderão ser realizadas à noite.
+c)  Os laudos poderão ser assinados por um perito apenas.
+d)  O laudo pericial deve ser entregue no prazo de dez dias, prorrogáveis.
+e)  Autópsia é diferente de necropsia.
+Gabarito: D
+## questao 533173
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Odonto Legal/2009
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+242) 
+Com relação à perícia no foro cível, assinale a opção correta.
+
+a) O assistente técnico receberá seus honorários da parte que o juiz indicar.
+b) O assistente técnico deve ser indicado em 10 dias a contar da citação.
+c) O perito pode ouvir testemunhas enquanto que o assistente técnico não tem esta prerrogativa.
+d) O juiz não pode indeferir quesitos das partes, pelo princípio da ampla defesa.
+e) O juiz não está adstrito ao laudo pericial e poderá solicitar nova perícia.
+Gabarito: E
+## questao 533326
+CEBRASPE (CESPE) - Moto Pol (PC PB)/PC PB/2009
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+243) 
+O exame de corpo de delito direto é feito a partir da análise
+
+a) dos depoimentos prestados pelas testemunhas em juízo.
+b) dos elementos físicos ou materiais do crime.
+c) de documentos que possibilitem um conhecimento técnico por dedução.
+d)  de fichas clínicas do hospital que atendeu a vítima.
+e) dos depoimentos prestados pela vítima.
+Gabarito: B
+## questao 533368
+CEBRASPE (CESPE) - Necro (PC PB)/PC PB/2009
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+244) 
+O exame de corpo de delito consiste na perícia realizada sobre vestígios materiais deixados por um delito. Acerca de perito, perícias e documentos médico-legais, assinale a opção correta.
+
+a) Ao se confeccionar o laudo pericial, a resposta aos quesitos é parte fundamental, sendo nulo o laudo que não contenha esse item.
+b) As perícias a céu aberto devem ser realizadas somente à luz do dia, pois a luz artificial pode adulterar os resultados.
+c) O exame de marcas de digitais é considerado exame de corpo de delito por via indireta.
+d) O perito equivale à testemunha, devendo ser intimado a comparecer ao juízo, caso seja necessária a obtenção de prova.
+e) O exame de corpo de delito indireto é realizado em material que não seja a própria vítima ou em instrumento que não esteja diretamente relacionado à cena do crime.
+Gabarito: E
+## questao 876472
+CEBRASPE (CESPE) - EAT (DETRAN DF)/DETRAN DF/Médico Psiquiátrico/2009
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+245) 
+Para que exame pericial seja levado a bom termo, é imprescindível que o médico examinador tenha claros os conceitos que envolvem a perícia. A respeito desse assunto, julgue o item subsequente.
+
+
+A perícia médica psiquiátrica é o conjunto de procedimentos técnicos que têm como finalidade o esclarecimento de um fato de interesse da justiça, ou seja, não é um meio de prova.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1322369
+CEBRASPE (CESPE) - Med Leg (PC TO)/PC TO/2008
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+246) 
+Uma mulher foi encaminhada ao IML para realização de exame para verificação de conjunção carnal e de atentado violento ao pudor. Havia histórico de violência sexual durante a espera de ônibus em ponto mal iluminado e pouco frequentado. Ela fora arrastada a um matagal adjacente ao ponto, por dois homens que estavam de carro e pararam próximo ao local. A vítima era casada e mantivera relação sexual completa com o marido momentos antes de sair de casa naquele dia.
+
+
+Julgue o item subsequente com relação à ocorrência relatada acima.
+
+ 
+
+No quesito oficial que indaga se houve conjunção carnal, no laudo realizado pelo legista, a resposta nesse caso deverá ser “sem elementos”. Isso decorre do fato de a periciada ser casada e já possuir ruptura himenal antiga.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1322494
+CEBRASPE (CESPE) - Per Of (PC TO)/PC TO/2008
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+247) 
+Um perito criminal foi designado para perícia em residência. No leito da suíte observou cadáver de senhor de 45 anos de idade, em decúbito dorsal, coberto por lençol. Foram constatadas ausência de sangramento e presença de secreção hialina em travesseiro, sob a cabeça, com escorrimento bocal. Na lixeira, ao lado da pia do banheiro, foi encontrada cartela de medicamento do tipo blister sem nenhum comprimido. Não havia desarrumação de objetos no imóvel e não foi observado rompimento de obstáculos na casa. Ao ser argüida, a empregada afirmou ter sido a primeira a constatar o óbito, e revelou que, ao chegar, a porta da casa estava trancada e a do quarto estava aberta. O morto era separado da esposa e morava sozinho.
+
+
+Julgue o item subsequente, considerando o caso hipotético acima relatado.
+
+ 
+
+Não é necessária a realização do laudo pericial nesse caso, uma vez que não há crime a apurar, devendo o perito apenas estabelecer a causa jurídica da morte.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1649542
+CEBRASPE (CESPE) - Per ML (CPCRC)/CPCRC/Medicina/2007
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+248) 
+Texto para a questão.
+
+ 
+Corpo de delito é o conjunto de vestígios materiais deixados pela prática da infração penal. Perícia é o exame, procedido por pessoas que detêm conhecimentos técnicos, científicos, artísticos ou práticos acerca dos assuntos relacionados ao evento, que visa elucidar as circunstâncias, os objetos ou as condições pessoais inerentes ao fato punível, a fim de comproválos. Exame de corpo de delito é o exame pericial sobre os vestígios deixados pela prática da infração.
+
+ 
+Em relação ao texto acima, assinale a opção incorreta.
+
+a) Doutrinariamente, os laudos periciais decorrentes das perícia nos corpos de delito devem ser compostos das seguintes partes: I) preâmbulo: solicitante, nome e qualificação dos peritos, objeto da perícia e identificação do periciado; II) histórico: informações que chegaram ao conhecimento do perito, constantes nos ofícios de solicitação ou relatados; III) descrição: exposição, narração do que foi observado no exame; IV) discussão: análise crítica e fundamentada do que foi observado; e V) conclusão: síntese do ocorrido. Além disso, deve-se responder sinteticamente aos quesitos, preferencialmente utilizando-se os termos: sim, não ou sem elementos.
+b) O perito não deve entrar no mérito da causa, imputando ao réu, ou a qualquer pessoa, a culpa criminal. Sua função é analisar os fatos à luz de seu conhecimento científico, respondendo aos quesitos (perguntas) formulados.
+c) O prazo para elaboração da perícia é de cinco dias, prorrogável em casos excepcionais, a requerimento dos peritos.
+d) Havendo divergência entre dois peritos, cada um deverá responder separadamente os quesitos, cabendo à autoridade requisitante nomear um terceiro perito para o desempate, se achar necessário. Se o terceiro perito divergir dos outros dois peritos, a autoridade poderá mandar proceder novo exame por outros peritos.
+Gabarito: C
+## questao 1649544
+CEBRASPE (CESPE) - Per ML (CPCRC)/CPCRC/Medicina/2007
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+249) 
+Texto para a questão.
+
+ 
+Corpo de delito é o conjunto de vestígios materiais deixados pela prática da infração penal. Perícia é o exame, procedido por pessoas que detêm conhecimentos técnicos, científicos, artísticos ou práticos acerca dos assuntos relacionados ao evento, que visa elucidar as circunstâncias, os objetos ou as condições pessoais inerentes ao fato punível, a fim de comproválos. Exame de corpo de delito é o exame pericial sobre os vestígios deixados pela prática da infração.
+
+ 
+Tendo ainda o texto como referência, assinale a opção incorreta acerca de corpo de delito, perícia e exame de corpo de delito.
+
+a) Quesitos são perguntas objetivas a serem respondidas pelos peritos. A autoridade (requisitante do exame) e as partes poderão formular quesitos até o ato da diligência. Na fase policial, o indiciado não tem direito à elaboração dos quesitos.
+b) Será elaborado laudo complementar em duas situações: no caso de inobservância de formalidades, quando houver omissões, obscuridades ou contradições; e, na hipótese de lesão corporal de natureza grave, quando a vítima estiver incapacitada para as ocupações habituais por mais de 30 dias.
+c) O juiz de direito deve se ater à conclusão pericial. Quando contrariar uma prova técnica como a pericial, sempre deverá fundamentar suas decisões.
+d) A figura do assistente técnico do perito não está prevista na perícia criminal, sendo restrita às perícias da área cível.
+Gabarito: C
+## questao 1649568
+CEBRASPE (CESPE) - Per ML (CPCRC)/CPCRC/Medicina/2007
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+250) 
+Quanto à realização do exame pericial, assinale a opção correta.
+
+a) Ninguém é obrigado a submeter-se à realização da perícia ou a fornecer material para confronto, sob o fundamento de que ninguém é obrigado a fazer prova contra si.
+b) O perito não deve dar motivos para discutirem seu laudo ou envolver-se em polêmica, e, portanto, desagradar às autoridades de sua região. Logo, deve evitar assinalar em seus laudos as lesões observadas durante os exames cautelares, especialmente quando o examinado tiver sido preso ou houver passado por quartéis e delegacias.
+c) O perito deve ser fiel à entidade à qual pertence e colaborar na elucidação dos crimes. Em regime excepcional, o perito pode, no exercício de seu mister, deixar de assinalar no laudo o que viu, pois, algumas vezes, o acusado pode ser lesionado na elucidação criminal ao recusar-se a fornecer informações esclarecedoras. Nesse caso, o sigilo deve prevalecer.
+d) Quando o periciando não se dispuser a colaborar ou a realizar o exame, o perito deve usar de sua experiência e realizar o exame de maneira sutil, discreta, subjetiva, sem constrangê-lo.
+Gabarito: A
+## questao 447250
+CEBRASPE (CESPE) - Per (PC AC)/PC AC/Médico Legista/2006
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+251) 
+Em relação ao corpo de delito, assinale a opção correta.
+
+a) O exame não pode ser feito a qualquer hora e em qualquer lugar, mas pode ser feito por via direta ou indireta.
+b) Na autópsia, o corpo de um cadáver é examinado internamente e na necropsia o exame é realizado externamente apenas.
+c) Exames histopatológicos, radiográficos, químicos toxicológicos e bromatológicos são exames obrigatórios de corpo de delito.
+d) Sempre deve ser feito o exame interno do corpo do cadáver em caso de morte violenta.
+Gabarito: D
+## questao 447251
+CEBRASPE (CESPE) - Per (PC AC)/PC AC/Médico Legista/2006
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+252) 
+Em relação à prova laboratorial, assinale a opção correta.
+
+a) É necessária a guarda de material para eventual realização de nova perícia.
+b) Não cabe apresentação de fotografias, esquemas ou desenhos nos laudos que analisam as provas de perícia laboratorial.
+c) No teste para uso de substância entorpecente, a utilização de uma metodologia de análise de triagem e outra confirmatória deve ficar a critério do laboratorista.
+
+d) Na coleta de material de cadáver para exame laboratorial, a cadeia de custódia de vestígios deve ser assegurada quando possível.
+Gabarito: A
+## questao 840853
+CEBRASPE (CESPE) - Del Pol (PC ES)/PC ES/2006
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+253) 
+A perícia médica é atividade profissional bem disciplinada e com nuanças peculiares a cada modalidade: criminal, civil, trabalhista, previdenciária, administrativa, não comportando improvisões.
+
+ 
+Hermes Rodrigues de Alcântara. Perícia médica judicial. Rio de Janeiro: Editora Guanabara Dois, 1982.
+
+ 
+Julgue o item a seguir, relacionado à perícia médico-legal e aos peritos.
+
+ 
+O perito não deve criar nem crer, ao contrário, deve inserir no laudo os fatos e atos examinados e estudados, rechaçar fatos fundados em simples suposições ou probabilidade, ou seja, deve apresentar suas conclusões com objetividade e manter sempre isenção e imparcialidade diante dos fatos.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 841802
+CEBRASPE (CESPE) - Med Leg (PC ES)/PC ES/2006
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+254) 
+Perícia médica é qualquer ato propedêutico ou exame com a finalidade de contribuir com as autoridades administrativas, policiais ou judiciárias, na formação de juízos a que são obrigados. Julgue o seguinte item, relacionado à perícia médico-legal e aos peritos.
+
+ 
+
+A falsa perícia é tipificada como crime pelo Código Penal e prevista, no Código de Ética Médica, como infração ética. A falsa perícia constitui- se na afirmação contra a verdade, a negação da verdade e o silêncio sobre a verdade.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 841804
+CEBRASPE (CESPE) - Med Leg (PC ES)/PC ES/2006
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+255) 
+Perícia médica é qualquer ato propedêutico ou exame com a finalidade de contribuir com as autoridades administrativas, policiais ou judiciárias, na formação de juízos a que são obrigados. Julgue o seguinte item, relacionado à perícia médico-legal e aos peritos.
+
+ 
+
+A prerrogativa dos peritos oficiais médicos-legistas de possuem fé pública tornam impróprios os questionamentos acerca dos conteúdo dos laudos periciais por eles elaborados.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 852811
+CEBRASPE (CESPE) - Aux Per ML (PC ES)/PC ES/2006
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+256) 
+A medicina legal colabora com a investigação policial em qualquer fase do inquérito, contribuindo, assim, com a justiça para a elucidação de crimes. Julgue o item a seguir, relacionado às perícias médico-legais.
+
+ 
+
+Perito oficial médico legista é qualquer médico que realiza uma necropsia ou um exame pericial no vivo.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 852822
+CEBRASPE (CESPE) - Aux Per ML (PC ES)/PC ES/2006
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+257) 
+A medicina legal colabora com a investigação policial em qualquer fase do inquérito, contribuindo, assim, com a justiça para a elucidação de crimes. Julgue o item a seguir, relacionado às perícias médico-legais.
+
+ 
+
+Perícia médica é o exame realizado por médicos com a finalidade de contribuir com as autoridades administrativas, policiais ou judiciárias, na formação de juízos a que são obrigados.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 36388
+CEBRASPE (CESPE) - PCF/PF/Área 12/2004
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+258) 
+Uma mulher de 27 anos de idade foi conduzida por uma amiga ao plantão policial e apresentou queixa de ter sido estuprada há poucas horas por um colega de trabalho, quando estava embriagada, ao término de uma festa da empresa onde trabalham. No exame pericial, apresentava confusão mental, hálito etílico e hímen complacente. Não foram encontradas lesões traumáticas no corpo.
+
+
+Julgue o item seguinte, com base na situação hipotética anteriormente apresentada.
+
+No caso, está tipificado o crime de estupro com o emprego de violência presumida.
+
+ 
+Certo
+Errado
+Gabarito: Errado
+## questao 76690
+CEBRASPE (CESPE) - DP AL/DPE AL/2003
+Criminalística e Medicina Legal - Perícias e Peritos (Criminalística)
+259) 
+Na cena de um crime, peritos criminais encontraram o corpo de um jovem, com tatuagens e exibindo escoriações recentes na face, ferida contusa no supercílio direito e ferida de entrada de projétil de arma de fogo na região frontal direita, com as seguintes características: diâmetro menor que o do projétil, arredondada, com orla de escoriação, halo de enxugo e aréola equimótica.
+
+Com base na situação hipotética acima, julgue o item a seguir.
+
+Na situação em apreço, os peritos deverão concluir o laudo em dez dias. Entretanto, caso não seja possível cumprir esse prazo, eles poderão requerer, à autoridade solicitante do exame, a prorrogação do mesmo, de acordo com a lei.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 3550552
+CEBRASPE (CESPE) - PCF/PF/Área 16/2025
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+260) 
+Acerca dos exames em balística forense, julgue o item que se segue.
+
+ 
+Considere que, a critério do setor central de balística de determinada unidade da Federação, uma arma de fogo tenha sido encaminhada para exame de comparação microbalística em outra unidade. Nessa situação hipotética, se for exigida a coleta de impressões papilares ou de material biológico para exame laboratorial, a arma de fogo em questão deverá, necessariamente, ser mantida municiada ou carregada, com as cautelas necessárias.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 3550554
+CEBRASPE (CESPE) - PCF/PF/Área 16/2025
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+261) 
+Acerca dos exames em balística forense, julgue o item que se segue.
+
+ 
+Em um confronto balístico, pode ser feito o procedimento de coleta dos padrões balísticos em um tanque com água ou com outro líquido adequado para parar os projéteis.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 3550562
+CEBRASPE (CESPE) - PCF/PF/Área 16/2025
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+262) 
+Acerca dos exames em balística forense, julgue o item que se segue.
+
+ 
+O ramo ascendente de uma trajetória é sempre mais curvo e menos extenso do que o descendente.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 3550565
+CEBRASPE (CESPE) - PCF/PF/Área 16/2025
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+263) 
+Julgue o próximo item, relativo ao Sistema Nacional de Análise Balística (SINAB).
+
+
+Somente peritos criminais e técnicos ou auxiliares devidamente treinados para trabalhar no laboratório de balística forense poderão operar os equipamentos que permitem acesso aos registros do SINAB.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 3550568
+CEBRASPE (CESPE) - PCF/PF/Área 16/2025
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+264) 
+Julgue o próximo item, relativo ao Sistema Nacional de Análise Balística (SINAB).
+
+ 
+Segundo o manual de procedimentos do SINAB, uma das categorias de itens para inserção no Banco Nacional de Perfis Balísticos é o projétil padrão ou estojo padrão de arma de fogo com adulteração de número de série ou de regime de tiro.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 3550569
+CEBRASPE (CESPE) - PCF/PF/Área 16/2025
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+265) 
+Julgue o próximo item, relativo ao Sistema Nacional de Análise Balística (SINAB).
+
+ 
+O Banco Nacional de Perfis Balísticos tem como objetivo subsidiar ações destinadas a apurações criminais federais, estaduais, distritais e municipais por meio de cadastramento de dados e registros balísticos de elementos de munição deflagrados por armas de fogo relacionadas a crime.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2013949
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+266) 
+As armas de fogo podem ser classificadas como
+
+a) de tiro unitário ou de repetição quanto à mobilidade e ao uso.
+b) lisas ou rugosas quanto à alma do cano.
+c) de antecarga ou de recarga quanto ao sistema de carregamento.
+d) por mechas, atrito, percussão ou elétrica quanto ao sistema de inflamação.
+
+e) fixas, móveis, semiportáteis ou portáteis quanto ao sistema de funcionamento.
+Gabarito: D
+## questao 2013950
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+267) 
+Assinale opção correta com relação ao conceito e à classificação de cartuchos de munição de armas de fogo.
+
+a) O projétil, componente externo e de maior dimensão nos cartuchos, possui forma bastante variada, assim como o material usado em sua confecção.
+b) A pólvora contida nas cápsulas de espoletamento é constituída de fulminato de mercúrio, de clorato de potássio ou de ambos.
+c) Usualmente, os cartuchos que possuem espoleta são denominados fogo central.
+d) Os estojos são geralmente cilíndricos e compostos por base, corpo cilíndrico e ogiva.
+
+e)  Mistura iniciadora é um combustível sólido, granular, com diversos formatos de grãos, que pode inflamar com grande rapidez.
+Gabarito: C
+## questao 2013952
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+268) 
+Quando se produz interrupção de tiros com danos de qualquer natureza, materiais e(ou) pessoais, o tiro pode ser caracterizado como
+
+a) incidente de tiro.
+b) disparo acidental.
+c) tiro acidental.
+d) tiro voluntário.
+
+e)  acidente de tiro.
+Gabarito: E
+## questao 2013953
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+269) 
+Os exames que podem ser realizados em armas de fogo e em sua munição são numerosos. Dependendo do caso concreto, vários poderão servir para esclarecimento de circunstâncias relativas a determinado fato, comprovação de como ocorreram e quem foi o autor. Nesse sentido, assinale a opção correta acerca de exames balísticos.
+
+a) Quando estojos de revólveres são encontrados no local do crime, o exame microscópico da marca do extrator e do ejetor é bastante relevante.
+b) As duas características mais individualizadoras de uma arma de fogo são o calibre e o número de série.
+c) Por meio do exame microscópico do projétil, é possível identificar a arma que o expeliu, bem como estabelecer correlação entre dois eventos em que a mesma arma foi usada, mesmo que seja em dias diferentes.
+d) O exame de eficiência de arma de fogo é realizado somente para constatar se houve alterações em suas características originais, em especial quanto à marca e ao número de série.
+
+e) Não é possível, por meio de exame em buchas utilizadas em cartuchos destinados ao uso em espingardas, identificar o calibre do cartucho ao qual pertenciam.
+Gabarito: C
+## questao 1554390
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+270) 
+Uma pessoa foi atingida por um projétil de 7,62 mm × 51 mm, disparado por fuzil, que transpassou das costas para o peito, percorrendo uma trajetória de mais de 200 metros, entre a saída do cano e o alvo.
+
+ 
+A respeito dessa situação hipotética e de aspectos a ela relacionados, julgue o item a seguir.
+
+ 
+Pela classificação das armas de fogo, a arma empregada nessa situação é portátil e longa, e a estimativa de tiro é de um disparo distante.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1554394
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+271) 
+Uma pessoa foi atingida por um projétil de 7,62 mm × 51 mm, disparado por fuzil, que transpassou das costas para o peito, percorrendo uma trajetória de mais de 200 metros, entre a saída do cano e o alvo.
+
+ 
+A respeito dessa situação hipotética e de aspectos a ela relacionados, julgue o item a seguir.
+
+ 
+O estudo da trajetória do projétil especificado na situação em tela, desde o momento em que saiu do cano da arma até o repouso final, bem como a determinação de parâmetros como velocidade, alcance útil e velocidade inicial, são atribuições da balística terminal.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1554397
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+272) 
+Uma pessoa foi atingida por um projétil de 7,62 mm × 51 mm, disparado por fuzil, que transpassou das costas para o peito, percorrendo uma trajetória de mais de 200 metros, entre a saída do cano e o alvo.
+
+ 
+A respeito dessa situação hipotética e de aspectos a ela relacionados, julgue o item a seguir.
+
+ 
+Se o raiamento, que é uma sequência de sulcos em formato helicoidal localizado no interior do cano de algumas armas de fogo, imprimir ao projétil uma rotação em sentido horário, do ponto de vista do atirador, seu giro será dextrogiro, ou seja, para a direita.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 258097
+CEBRASPE (CESPE) - Tec MPU/MPU/Polícia Institucional/2015
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+273) 
+Julgue o próximo item, referente a armamento, tiro, conhecimentos de defesa pessoal e segurança de dignitários.
+
+ 
+
+Geralmente, o carregamento de armas é realizado por antecarga — sistema em que as armas são carregadas pela parte da frente da culatra.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1370782
+CEBRASPE (CESPE) - Sold (PM CE)/PM CE/2012
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+274) 
+A respeito das normas de segurança e da utilização de armamento letal na atividade policial, julgue o item seguinte.
+
+ 
+
+Uma pistola de calibre .40 e um revólver de calibre .38, quanto ao tipo, ao emprego e ao sistema de carregamento, são igualmente classificados como armas portáteis, individuais e de retrocarga.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 416294
+CEBRASPE (CESPE) - TJ (TRE BA)/TRE BA/Administrativa/Agente da Policia Judicial/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+275) 
+Acerca de armamento e tiro, julgue o item subsequente.
+
+ 
+Os revólveres são classificados como armas de repetição.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 416295
+CEBRASPE (CESPE) - TJ (TRE BA)/TRE BA/Administrativa/Agente da Policia Judicial/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+276) 
+Acerca de armamento e tiro, julgue o item subsequente.
+
+ 
+Tanto nas armas automáticas como nas semiautomáticas, a ação de disparo é automática.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 455229
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+277) 
+A respeito da história e da classificação das armas de fogo, julgue o item a seguir.
+
+ 
+As armas de arremesso simples são aquelas em que a própria arma é lançada, diferentemente das armas de arremesso complexo, que arremessam projéteis.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 455230
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+278) 
+A respeito da história e da classificação das armas de fogo, julgue o item a seguir.
+
+ 
+Arma portátil pode ser transportada por um só homem, seja ela longa ou curta. Já as armas de porte são aquelas que podem ser transportadas em coldre.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 455231
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+279) 
+A respeito da história e da classificação das armas de fogo, julgue o item a seguir.
+
+ 
+Nas armas semiautomáticas, o disparo e o acionamento do gatilho não são automáticos.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 455232
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+280) 
+A respeito da história e da classificação das armas de fogo, julgue o item a seguir.
+
+ 
+A utilização de luneta telescópica classifica a arma de fogo, quanto ao aparelho de pontaria, como de mira aberta.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 455233
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+281) 
+Com relação às armas policiais, julgue o próximo item.
+
+ 
+
+A pistola Taurus PT 24/7 PRO foi projetada para ser empregada diuturnamente na atividade da rotina policial.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 455234
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+282) 
+Com relação às armas policiais, julgue o próximo item.
+
+ 
+
+O revólver é a arma curta de repetição menos eficiente.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 455235
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+283) 
+Com relação às armas policiais, julgue o próximo item.
+
+ 
+
+Tanto a carabina Taurus-FAMAE CT 40 quanto a submetralhadora Taurus MT 40 funcionam com os ferrolhos abertos.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 455236
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+284) 
+Com relação às armas policiais, julgue o próximo item.
+
+ 
+A espingarda de calibre 12 e modelo Boito BSA-5T-84 possui a coronha retrátil e a alma do cano raiada.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 455242
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+285) 
+No que se refere aos princípios e aos fundamentos do tiro policial, julgue o item subsequente.
+
+ 
+
+Entre os fundamentos de tiro, o mais importante é a posição de tiro.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 455755
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+286) 
+Acerca de balística, julgue o item.
+
+ 
+A balística forense é a parte do conhecimento criminalístico que estuda as armas de fogo, a munição, os fenômenos e os efeitos próprios dos disparos dessas armas, naquilo que forem úteis ao esclarecimento e à prova de questões de fato, no interesse da justiça, tanto penal como civil.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 455760
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+287) 
+Acerca de balística, julgue o item.
+
+ 
+Quando o atirador faz pontaria com a arma, a direção do cano aponta para um ponto um pouco acima do local onde se situa o alvo, sendo essa compensação calculada pelo fabricante ao construir o aparelho de pontaria da arma.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 455761
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+288) 
+Acerca da munição, julgue o item que se segue.
+
+ 
+A munição das armas de fogo consta de cartuchos que incluem os seguintes elementos essenciais: o projétil, o estojo, a carga de pólvora, a espoleta e, nas espingardas, a bucha.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 455762
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+289) 
+Acerca da munição, julgue o item que se segue.
+
+ 
+
+A mistura iniciadora (carga de inflamação) contida nas cápsulas de espoletamento usada, atualmente, pela Companhia Brasileira de Cartuchos (CBC) é constituída de fulminato de mercúrio, de clorato de potássio ou de ambos.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 455763
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+290) 
+Acerca da munição, julgue o item que se segue.
+
+ 
+São denominados de soft point os projéteis fabricados com a ponta formada por liga de chumbo mais mole, o que aumenta a sua deformabilidade.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 455765
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+291) 
+Acerca da munição, julgue o item que se segue.
+
+ 
+As armas raiadas usam cartuchos com projéteis múltiplos.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 455766
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+292) 
+Acerca da munição, julgue o item que se segue.
+
+ 
+As espingardas usam preferencialmente cartuchos com projéteis múltiplos, visto que estes costumam formar um cone de dispersão à medida que se afastam da boca da arma. O uso desses projéteis, em comparação com o uso de projétil único, facilita o alcance de alvos móveis. 
+
+Certo
+Errado
+Gabarito: Certo
+## questao 455767
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+293) 
+Acerca da munição, julgue o item que se segue.
+
+ 
+
+O poder de parada (stopping power) independe da forma do projétil.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 455768
+CEBRASPE (CESPE) - Of (PM DF)/PM DF/Especialista/Manutenção em Armamento Leve/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+294) 
+Acerca da munição, julgue o item que se segue.
+
+ 
+
+O poder de parada é a capacidade que o projétil tem, durante o impacto, de incapacitar, instantaneamente, uma pessoa ou um animal, impedindo que continue a fazer o que estava fazendo no momento do impacto.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2746599
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+295) 
+Assinale a opção correta acerca da pólvora utilizada nas munições.
+
+a) A pólvora propelente de base simples é uma das espécies de pólvora negra.
+b) A pólvora negra é bastante usada nos cartuchos modernos.
+c) As pólvoras químicas são assim chamadas dada a pequena quantidade de fumaça gerada na sua queima quando comparada às pólvoras negras.
+d) A pólvora propelente de base dupla é uma das espécies de pólvora negra.
+
+e) As pólvoras químicas são também denominadas pólvoras com fumaça.
+Gabarito: C
+## questao 2746611
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+296) 
+Na balística forense, o uso de técnicas microscópicas e de microcomparação são muito comuns. A esse respeito, assinale a opção correta.
+
+a)  O exame por microcomparação realizado nos projéteis é o menos indicado, visto que o estojo e o cano da arma deixam evidências próprias que se confundem, dificultando a análise de comparação.
+b) As estrias ou microestrias convergentes presentes no projétil padrão e no projétil questionado são observadas mesmo quando o projétil questionado tenha sofrido alguma danificação, desde que partes intactas desse projétil estejam hábeis para confronto balístico.
+c) As microestruturas observadas em dois projéteis expelidos pela mesma arma, em dias diferentes, são sempre iguais.
+d) A comparação microscópica de projéteis é realizada por meio da identificação dos elementos característicos e próprios do raiamento de cada arma. Armas que não contenham raias nos seus canos não deixam marcas em seus projéteis, o que torna a identificação inviável.
+
+e) O exame microcomparativo dos estojos é de pouca valia, pois armas diferentes produzem marcas diferentes nos estojos, não permitindo, assim, identificação e correlação entre arma e estojo.
+Gabarito: B
+## questao 532725
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/2009
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+297) 
+Com relação às armas de fogo, assinale a opção incorreta.
+
+a) Cabe ao governo federal, por meio do Ministério do Exército, estabelecer as normas para o uso das armas de fogo em todo o território nacional.
+b) Essencialmente, as armas de fogo são constituídas da culatra, dos dispositivos de disparos e extração e do cano, que possui uma extremidade ligada aos dispositivos anteriores, chamada de “boca de carga”, e outra extremidade livre, chamada “boca de fogo”.
+c) Há dois sistemas de medida para referir o calibre de uma arma. Um deles é o europeu, que se vale de uma escala em milímetros, e o outro é o anglo-americano, que se vale de frações de polegada, em centésimos ou em milésimos.
+d) Quanto à alma do cano, podem ter a face interna do cano lisa ou provida de raias.
+e) O diâmetro da boca das armas de fogo, quando medido entre dois cheios opostos, é chamado de calibre nominal.
+Gabarito: E
+## questao 532727
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Odonto Legal/2009
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+298) 
+Em uma arma de fogo, a raiação do cano serve para gerar movimento de rotação ao projétil, tornando seu deslocamento, através das camadas do ar, mais regular e estável. Quando o projétil roda da esquerda para a direita em torno de seu eixo longitudinal, as raias são chamadas de
+
+a)  soft nose.
+b) soft point.
+c)  sinistrógiras.
+d) destrógiras.
+e) hollow point.
+Gabarito: D
+## questao 532729
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Odonto Legal/2009
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+299) 
+Considerando a classificação das armas de fogo, é exemplo de arma curta
+
+a) espingarda.
+b)  carabina.
+c)  fuzil.
+d) mosquetão.
+e)  pistola de repetição.
+Gabarito: E
+## questao 532735
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/2009
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+300) 
+O cartucho da munição do revólver não contém
+
+a) projétil.
+b) bucha.
+c) estojo.
+d) carga de pólvora.
+e) espoleta.
+Gabarito: B
+## questao 532754
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/2009
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+301) 
+Acerca da identificação das armas de fogo pelos estojos, assinale a opção correta.
+
+a) Da mesma forma que se identifica a arma pelo projétil, é possível identificar a arma pelo estojo. Nesse caso, este pode ser encontrado no local do crime, notadamente em se tratando de armas semiautomáticas, que o expelem após a detonação.
+b) Para identificar as armas de fogo são relevantes o formato, a profundidade ou a posição da deformação na base do estojo, provocados pelo percussor.
+c)  O perito efetua disparos experimentais nos recipientes com água ou algodão, sendo fundamental o projétil a ser utilizado: a munição deve ser semelhante à que se tenha usado anteriormente no crime.
+d) A mesma arma necessariamente deixa depressões iguais nos estojos.
+e) A quantidade e a qualidade da pólvora não têm relevância para a identificação das armas de fogo pelos estojos.
+Gabarito: A
+## questao 67523
+CEBRASPE (CESPE) - TJ TST/TST/Administrativa/Agente da Policia Judicial/2008
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+302) 
+Em relação às técnicas operacionais e às técnicas de armamento e tiro, julgue o item que se segue.
+
+Quanto à alma do cano de uma arma de fogo, é correto afirmar que armas de alma raiada são aquelas que apresentam o cano, em seu interior, raiado em sulcos  helicoidais dispostos no eixo longitudinal, destinados a forçar o projétil a um movimento de rotação.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 67524
+CEBRASPE (CESPE) - TJ TST/TST/Administrativa/Agente da Policia Judicial/2008
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+303) 
+Em relação às técnicas operacionais e às técnicas de armamento e tiro, julgue o item que se segue.
+
+O revólver é uma arma de fogo individual, de repetição, de antecarga, com alma raiada e que possui, em regra, sistema de funcionamento de ação simples.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 67525
+CEBRASPE (CESPE) - TJ TST/TST/Administrativa/Agente da Policia Judicial/2008
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+304) 
+Em relação às técnicas operacionais e às técnicas de armamento e tiro, julgue o item que se segue.
+
+Quanto à conservação de uma arma de fogo, aconselha-se o uso abundante de óleo lubrificante em seu cano e demais mecanismos, visando, assim, imprimir maior velocidade ao projétil no momento do disparo.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2354717
+CEBRASPE (CESPE) - TJ TSE/TSE/Administrativa/Agente da Policia Judicial/2007
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+305) 
+Acerca de armamento e tiro, assinale a opção correta.
+
+a) O acionamento do cão da arma de fogo deve ser realizado de forma lenta e progressiva até ocorrer o disparo.
+b) O tiro de ação simples é o mais empregado e é realizado com uma pressão contínua, mas firme, aplicada no gatilho até que o disparo seja executado.
+c) A respiração pode influenciar na precisão do tiro. Para realizar um controle da respiração, deve-se suspender a respiração por segundos depois do disparo, para assim transferir maior estabilidade à arma.
+d) Quanto ao tipo, o revólver calibre 38 é classificado como arma de porte.
+Gabarito: D
+## questao 2354719
+CEBRASPE (CESPE) - TJ TSE/TSE/Administrativa/Agente da Policia Judicial/2007
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+306) 
+Quanto à identificação de possíveis problemas no revólver calibre 38, assinale a opção correta.
+
+a) Quando o revólver não desengatilha, o dente posterior superior pode estar quebrado.
+b) Um dos motivos de o tambor não girar é porque o mergulhador está com a ponta quebrada.
+c) Um corpo estranho no alojamento do cartucho é uma das causas que impede a arma de extrair.
+d) Quando a mola do cão quebra, a arma não abre.
+Gabarito: C
+## questao 852825
+CEBRASPE (CESPE) - Aux Per ML (PC ES)/PC ES/2006
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+307) 
+As atribuições do auxiliar de perícia médico-legal incluem atividades de coleta de material biológico para exames, dissecação de cadáveres e peças anatômicas humanas, acompanhamento de exames no vivo e no morto, auxílio na realização de exames radiográficos, trabalho fotográfico, auxílio nas atividades laboratoriais e administrativas, entre outras.
+
+ 
+
+Julgue o item que se segue, relacionado às funções de auxiliares de perícias médico-legais.
+
+ 
+
+Em relação aos projéteis de arma de fogo retirados dos cadáveres, não existe necessidade de guarda ou encaminhamento para análise balística, caso o médico legista realize detalhada descrição do objeto.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 76693
+CEBRASPE (CESPE) - DP AL/DPE AL/2003
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+308) 
+Na cena de um crime, peritos criminais encontraram o corpo de um jovem, com tatuagens e exibindo escoriações recentes na face, ferida contusa no supercílio direito e ferida de entrada de projétil de arma de fogo na região frontal direita, com as seguintes características: diâmetro menor que o do projétil, arredondada, com orla de escoriação, halo de enxugo e aréola equimótica.
+
+Com base na situação hipotética acima, julgue o item a seguir.
+
+Agirá em conformidade com as normas pertinentes o perito que, na situação em apreço, após retirar o projétil durante a realização da necropsia, encaminhá-lo à autoridade policial sem mencionar o calibre do mesmo.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 959618
+CEBRASPE (CESPE) - Odon-Leg (PC RR)/PC RR/2003
+Criminalística e Medicina Legal - Balística Forense (Externa, Interna e Armas de Fogo)
+309) 
+Um exame constatou em um periciando lesão na bochecha direita, causada por disparo de arma, com as seguintes características: orifício elíptico de 9 mm no eixo maior e 5 mm no menor, com halo de escoriação, de enxugo e de equimose, sem nenhuma outra peculiaridade. O periciando apresentava ainda fratura coronário-radicular cominutiva dos dentes 34 e 35, ferida na língua e fratura da prótese total superior que ele utilizava.
+
+
+Tendo como base as informações apresentadas acima, julgue o item a seguir.
+
+ 
+
+De posse do projétil utilizado no disparo, pode ser possível identificar o tipo e o calibre da arma que efetuou o disparo. Em algumas circunstâncias semelhantes, pode-se identificar precisamente a arma que efetuou o disparo.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 3546971
+CEBRASPE (CESPE) - PCF/PF/Área 1/2025
+Criminalística e Medicina Legal - Locais de Crime
+310) 
+A atuação pericial exige o domínio de conhecimentos e práticas como a documentação fotográfica do local, a análise dosvestígios, a preservação do cenário e o processamento de provas materiais. Acerca desse assunto, julgue o item subsequente.
+
+ 
+O isolamento e a preservação do local do crime são etapas prescindíveis nos casos em que haja confirmação de que o fato criminoso ocorreu há mais de 48 horas da chegada do perito criminal ao local.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 3550247
+CEBRASPE (CESPE) - PCF/PF/Área 12/2025
+Criminalística e Medicina Legal - Locais de Crime
+311) 
+Desde o encontro do cadáver até o término da necropsia, diversas etapas são estipuladas para que o exame do cadáver seja determinante para a investigação de um crime. Acerca do exame perinecroscópico e da necropsia médico-legal, julgue o item seguinte.
+
+ 
+O exame de local de crime ou perinecroscopia tem início não com o isolamento da área a ser examinada, mas com a chegada do perito ao local.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 3552332
+CEBRASPE (CESPE) - PCF/PF/Área 21/2025
+Criminalística e Medicina Legal - Locais de Crime
+312) 
+Em relação ao processamento de locais de crime com remanescentes humanos em condições especiais, julgue o item a seguir.
+
+
+O primeiro profissional de segurança pública que chegar ao local do crime deverá atentar para os comentários da população local, observar possíveis suspeitos e catalogar testemunhas.
+
+Certo
+Errado
+Gabarito: Anulada
+## questao 3552333
+CEBRASPE (CESPE) - PCF/PF/Área 21/2025
+Criminalística e Medicina Legal - Locais de Crime
+313) 
+Em relação ao processamento de locais de crime com remanescentes humanos em condições especiais, julgue o item a seguir.
+
+ 
+Ao chegar ao local do crime, o perito deve inicialmente anotar a data e o horário de chegada ao local, bem como deve realizar a referência de geolocalização e a verificação das condições de segurança e dos equipamentos de proteção individual recomendados.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 3552336
+CEBRASPE (CESPE) - PCF/PF/Área 21/2025
+Criminalística e Medicina Legal - Locais de Crime
+314) 
+Em relação ao processamento de locais de crime com remanescentes humanos em condições especiais, julgue o item a seguir.
+
+ 
+No exame realizado em local de crime com remanescentes humanos, o padrão de busca em linha cruzada inicia-se no centro do local do crime, expandindo-se para fora dele por meio de linhas perpendiculares.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2338616
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Locais de Crime
+315) 
+Considere-se que uma equipe policial foi a primeira a chegar a um local de homicídio onde o cadáver e os demais vestígios ainda se encontravam, situado em via pública, próximo a uma área de imenso matagal.
+
+
+A partir dessa situação hipotética e considerando aspectos suscitados pelo tema, julgue o próximo item.
+
+
+Para o deslocamento de saída do local do crime, deverá a equipe policial adotar o trajeto inverso e em sentido contrário ao de entrada
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2338617
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Locais de Crime
+316) 
+Considere-se que uma equipe policial foi a primeira a chegar a um local de homicídio onde o cadáver e os demais vestígios ainda se encontravam, situado em via pública, próximo a uma área de imenso matagal.
+
+
+A partir dessa situação hipotética e considerando aspectos suscitados pelo tema, julgue o próximo item.
+
+ 
+A área onde se encontra o cadáver e os principais vestígios é denominada de local imediato.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2338618
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Locais de Crime
+317) 
+Considere-se que uma equipe policial foi a primeira a chegar a um local de homicídio onde o cadáver e os demais vestígios ainda se encontravam, situado em via pública, próximo a uma área de imenso matagal.
+
+
+A partir dessa situação hipotética e considerando aspectos suscitados pelo tema, julgue o próximo item.
+
+ 
+O deslocamento da equipe policial visando aproximar-se do cadáver será considerado correto se, preferencialmente, ocorrer em linha reta até ele.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2338619
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Locais de Crime
+318) 
+Considere-se que uma equipe policial foi a primeira a chegar a um local de homicídio onde o cadáver e os demais vestígios ainda se encontravam, situado em via pública, próximo a uma área de imenso matagal.
+
+
+A partir dessa situação hipotética e considerando aspectos suscitados pelo tema, julgue o próximo item.
+
+ 
+Após a demarcação e o isolamento do local, a equipe policial deverá permanecer no interior do perímetro demarcado como local imediato, para preservá-lo, até a chegada dos peritos.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2338620
+CEBRASPE (CESPE) - Papis (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Locais de Crime
+319) 
+Considere-se que uma equipe policial foi a primeira a chegar a um local de homicídio onde o cadáver e os demais vestígios ainda se encontravam, situado em via pública, próximo a uma área de imenso matagal.
+
+
+A partir dessa situação hipotética e considerando aspectos suscitados pelo tema, julgue o próximo item.
+
+ 
+Se forem localizados vestígios relacionados ao delito em área diversa, sem ligação geográfica direta com o local do homicídio, caberá à equipe policial a sua coleta, o acondicionamento do material e a entrega aos peritos assim que eles chegarem à cena do crime.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2341720
+CEBRASPE (CESPE) - Aux Per (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Locais de Crime
+320) 
+Em relação a postulados, princípios e áreas de atuação da criminalística, julgue o item seguinte.
+
+
+Em um local de crime, a equipe pericial deve ter em conta que, de regra, toda ação resulta em vestígios ou marcas de prova, conforme o princípio da observação.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2013863
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Locais de Crime
+321) 
+Considerando as peculiaridades do local de crime, assinale a opção correta.
+
+a) O primeiro policial que chegar ao local do crime deve isolar a área, que, após delimitada, só pode ser acessada por outros agentes da polícia ou por familiares da vítima, se for o caso.
+b) Todo elemento encontrado no local do crime consiste em um vestígio, que pode estar ou não relacionado ao evento periciado.
+c) O primeiro policial a chegar à cena do crime deve decidir, ao tomar as providencias de isolamento e preservação, sobre os elementos que poderão ser desconsiderados como vestígio dentro da área de ocorrência do delito.
+d) A expressão local de crime limita-se ao perímetro que circunda o lugar de ocorrência do delito.
+
+e) De acordo com a classificação dos locais do crime, o local relacionado corresponde à área adjacente próxima de onde ocorreu o fato criminoso (local imediato) e na qual possivelmente há vestígios.
+Gabarito: B
+## questao 2013921
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Locais de Crime
+322) 
+De acordo com o conceito e a classificação de local de crime, assinale a opção correta.
+
+a) Local de crime consiste no lugar onde o crime foi consumado.
+b) Um local de homicídio em via pública onde se observa a presença de transeuntes é presumivelmente idôneo.
+c) Quanto à situação, os locais de crime são classificados em preservados, violados e desfeitos.
+d) Quanto à natureza do fato, os locais de crime são classificados com base no tipo penal que lhe deu origem.
+
+e) A residência onde ocorreu um homicídio e o veículo utilizado pelo autor para fuga após cometimento desse crime são considerados, respectivamente, área imediata interna e área mediata externa.
+Gabarito: D
+## questao 2013923
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Locais de Crime
+323) 
+Com relação aos procedimentos de documentação do local de crime, assinale a opção correta.
+
+a)  Em regra, o levantamento fotográfico completo e minucioso do local dispensa a elaboração de croqui.
+b) A descrição do local deve partir do geral para o particular, em áreas externas, e do detalhe para a visão de conjunto, em áreas internas.
+c) A fixação do vestígio conforme se encontra no local é parte indispensável no laudo pericial e constitui etapa da cadeia de custódia.
+d) Os peritos devem fotografar o cadáver logo após a retirada das vestes, antes de se realizar o exame perinecroscópico.
+
+e) Os croquis são representações esquemáticas do local do crime, que apresentam estimativas das dimensões e localização dos vestígios no espaço; os registros precisos e detalhados dos vestígios, quando necessários, são apresentados em plantas auxiliares.
+Gabarito: C
+## questao 2013924
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Locais de Crime
+324) 
+As unidades de perícia bem equipadas e com profissionais capacitados e procedimentos padronizados são fundamentais para a produção da prova técnica e, consequentemente, para a qualificação da investigação criminal.
+
+ 
+Secretaria Nacional de Segurança Pública do Ministério da Justiça — SENASP. Procedimento Operacional Padrão: perícia criminal. Brasília: Ministério da Justiça, 2013 (com adaptações).
+
+ 
+Considerando o previsto nessa afirmativa, assinale a opção correta, acerca dos procedimentos de levantamento de local de crime.
+
+a) Ao chegar a um local de crime, a equipe pericial deve evitar receber quaisquer informações dos fatos, de modo a garantir a imparcialidade e a objetividade dos exames periciais.
+b) Objetos que não forem coletados pelos peritos criminais serão devolvidos no local aos respectivos donos, a critério da equipe pericial.
+c) As armas de fogo devem ser acondicionadas e encaminhadas para exames posteriores exatamente como foram encontradas no local de crime.
+d) Atualmente, o padrão de busca de vestígios padronizado para os locais de crime, indistintamente, é o de espiral, em que o foco inicial é o vestígio principal e, em seguida, a região periférica.
+
+e) Todo material biológico no local de crime deve ser considerado potencialmente infectante, tanto é assim que a coleta de vestígios dessa natureza será feita sempre com uso de luvas novas e descartáveis, que serão trocadas antes da manipulação de um novo vestígio.
+Gabarito: E
+## questao 2015353
+CEBRASPE (CESPE) - Tec Per (PC PB)/PC PB/Área Geral/2022
+Criminalística e Medicina Legal - Locais de Crime
+325) 
+
+
+ 
+
+Ao fazer um desenho esquemático da cena de um crime, o perito responsável identificou a localização dos vestígios segundo a classificação do local de crime. A esse respeito, assinale a opção que contém a correta identificação das letras A, B, C e D.
+
+
+a)  A – local relacionado; B – local mediato; C – local imediato; D  – local adjacente
+b) A – local imediato; B – local mediato; C – local relacionado; D – local adjacente
+c) A – corpo; B – local mediato; C – local relacionado; D – local imediato
+d) A – local imediato; B – local relacionado; C – local mediato; D – local adjacente
+
+e) A – corpo; B – local imediato; C – local mediato; D – local relacionado
+Gabarito: E
+## questao 2116781
+CEBRASPE (CESPE) - Per Cri (POLITEC RO)/POLITEC RO/Ciências Contábeis, Ciências Econômicas ou Administração/2022
+Criminalística e Medicina Legal - Locais de Crime
+326) 
+Uma equipe pericial foi encaminhada para local de homicídio perpetrado mediante o uso de arma de fogo, em via pública de determinada comunidade. O local abrangido pelo cadáver e os principais vestígios foram devidamente preservados; todavia, no decorrer do exame pericial, um popular encontrou estojos balísticos do mesmo calibre utilizado no crime, em área próxima, mas sem qualquer ligação geográfica com o local do delito. Nessa situação hipotética, considerando a conceituação e a divisão doutrinária de local de crime, o perito deverá
+
+a) recolher os estojos citados após o levantamento pericial, porquanto eles foram encontrados em local denominado imediato.
+b) recolher os estojos em questão após o levantamento pericial, visto que eles foram encontrados em local denominado mediato.
+c) desprezar os referidos estojos, porque eles constituem vestígios ilusórios sem nenhuma relação com o delito.
+d) desprezar os referidos estojos, porque eles não estão relacionados geograficamente com o local do crime.
+
+e) recolher os citados estojos após o levantamento pericial, porquanto eles foram encontrados em local denominado relacionado.
+Gabarito: E
+## questao 2119711
+CEBRASPE (CESPE) - Ag Crim (POLITEC RO)/POLITEC RO/2022
+Criminalística e Medicina Legal - Locais de Crime
+327) 
+Tendo como referência a perícia em local de ocorrência de crime, assinale a opção correta.
+
+a)  Corpo de delito é o conjunto de vestígios que, a despeito de não estarem interligados entre si, são denunciadores da infração.
+b) O termo corpo de delito refere-se especificamente aos vestígios encontrados em objetos inanimados presentes na cena de crime.
+c) Denominam-se delicta factis transeuntes os vestígios de caráter permanente.
+d) Na tipificação de infrações que deixem vestígios, o exame de corpo delito pode ser facultativo.
+
+e) Nas situações em que houver apenas o delito, ou seja, em que não houver corpo nem vestígios, os peritos poderão realizar exame de corpo de delito indireto.
+Gabarito: E
+## questao 2119713
+CEBRASPE (CESPE) - Ag Crim (POLITEC RO)/POLITEC RO/2022
+Criminalística e Medicina Legal - Locais de Crime
+328) 
+Após comparecer à cena de um crime, analisar o local e coletar vestígios, o perito deverá elaborar o laudo pericial pertinente, que deverá ser entregue no prazo máximo de
+
+a)  cinco dias, podendo esse prazo ser prorrogado, em casos excepcionais, a requerimento da autoridade policial.
+b) cinco dias, podendo esse prazo ser prorrogado por mais cinco dias, em casos excepcionais, a requerimento do próprio perito.
+c) cinco dias, podendo esse prazo ser prorrogado por mais cinco dias, em casos excepcionais, a requerimento da autoridade policial.
+d) quinze dias, podendo este prazo ser prorrogado por mais dez dias, em casos excepcionais, a requerimento dos peritos.
+
+e) dez dias, podendo esse prazo ser prorrogado, em casos excepcionais, a requerimento do próprio perito.
+Gabarito: E
+## questao 2119714
+CEBRASPE (CESPE) - Ag Crim (POLITEC RO)/POLITEC RO/2022
+Criminalística e Medicina Legal - Locais de Crime
+329) 
+Assinale a opção correta acerca de aspectos pertinentes à análise do local de crime.
+
+a) Se apenas policiais militares chegarem primeiro ao local de crime de morte e, para a segurança da equipe policial, retirarem armas de perto dos indivíduos mortos, o local dos referidos crimes poderá ser considerado idôneo desde que o fato seja posteriormente relatado formalmente por eles à perícia.
+b) Exame de local de crime é uma das modalidades de exame de corpo de delito.
+c) Se ocorrer um crime no quintal da casa da vítima, o local do crime deve ser classificado como aberto ainda que o referido quintal seja cercado por muro.
+d) As denominadas áreas mediatas externas abrangem todas as vias de acesso ao ambiente onde tiver ocorrido um fato delituoso, tais como corredores, ambientes ao redor de um cômodo, jardins e demais áreas vizinhas, bem como a portaria e as áreas comuns de um prédio de apartamentos.
+
+e)  Se, após a ocorrência de crime de homicídio, apenas os familiares da vítima tiverem acessado o local, na tentativa de salvá-la mediante a realização de manobras de ressuscitação cardiopulmonar, a perícia deverá considerar esse local como não violado.
+Gabarito: B
+## questao 2119715
+CEBRASPE (CESPE) - Ag Crim (POLITEC RO)/POLITEC RO/2022
+Criminalística e Medicina Legal - Locais de Crime
+330) 
+Considerando que a qualidade da perícia está associada à preservação do local onde tenha ocorrido o delito, assinale a opção correta.
+
+a) Se um homicídio ocorrer em um local, e o corpo for transportado para outro local distante, a perícia terá de classificar, no laudo, o local como não relacionado.
+b) Levantamento de local de crime consiste no conjunto dos exames realizados diretamente e indiretamente no local da constatação do fato.
+c) Entre as etapas da metodologia de levantamento de local de crime, incluem-se os procedimentos preliminares, os quais envolvem ações adotadas pela equipe pericial quando da chegada ao local do fato.
+d) Na elaboração do laudo pericial de um caso de homicídio, o perito criminal deve usar apenas as informações que obtiver no local do crime, evitando acessar a necropsia para evitar ser induzido a adotar opinião diversa da que obteve no local.
+
+e) A etapa de elaboração do croqui corresponde ao levantamento descritivo do local, que envolve a descrição de todos os dados colhidos, os resultados dos procedimentos e atividades adotados, bem como todas as demais informações que poderão ser úteis para a elaboração da peça técnica, o laudo pericial.
+Gabarito: C
+## questao 2119717
+CEBRASPE (CESPE) - Ag Crim (POLITEC RO)/POLITEC RO/2022
+Criminalística e Medicina Legal - Locais de Crime
+331) 
+Tendo em vista que, durante a avaliação do local de crime, o perito deve agir com cautela e precisão, de modo a observar, coletar e identificar os vestígios encontrados, assinale a opção correta.
+
+a) Do ponto de vista do referencial de produção, uma ponta de cigarro que já se encontrasse no local onde um corpo tenha sido posteriormente encontrado constituiria um vestígio forjado.
+b) Com relação ao referencial de produção, vestígios ilusórios são aqueles produzidos por interesse do criminoso, muitas vezes na tentativa de desviar as conclusões que se poderiam extrair do local.
+c) Com relação ao referencial de produção, são verdadeiros, em princípio, todos os vestígios encontrados em uma cena de crime, até que se prove o contrário.
+d) Um dos principais vestígios encontrados em locais de crime contra a pessoa e contra o patrimônio são impressões digitais, que são consideradas patentes quando invisíveis.
+
+e) Vestígios ilusórios são os que têm relação com o referencial de produção.
+Gabarito: C
+## questao 2119720
+CEBRASPE (CESPE) - Ag Crim (POLITEC RO)/POLITEC RO/2022
+Criminalística e Medicina Legal - Locais de Crime
+332) 
+Acerca do exame do local de acidente de trânsito, que compreende desde o atendimento no local da ocorrência até a expedição do laudo pericial, assinale a opção correta.
+
+a) Na terceira fase do processo de levantamento do local de acidente de trânsito, deve ser realizado o exame perinecroscópico sempre que houver vítima em óbito no local.
+b) Na primeira fase do levantamento do local de acidente de trânsito, são colhidos os dados preliminares, deixando-se para a última fase a elaboração de um croqui manual do local, à qual deve seguir-se o registro de informações gerais sobre o acidente.
+c) O método de amarração por coordenadas cartesianas é realizado a partir de dois pontos fixos escolhidos no local do evento, que servem de ligação aos pontos que se deseja representar do sítio do acidente.
+d) A terceira fase do levantamento do local de acidente de trânsito tem como base o fator humano, ou seja, nos dados dos condutores e proprietários, excetuada a oitiva de testemunhas.
+
+e) A segunda fase do levantamento do local de acidente de trânsito tem como objeto os veículos, as forças envolvidas sobre os veículos e os danos decorrentes do acidente de tráfego.
+Gabarito: E
+## questao 1554689
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Locais de Crime
+333) 
+Com relação à investigação em local de crime, julgue o item que se segue.
+
+ 
+Vestígio coletado em local de crime será qualificado como uma evidência após a competente análise pericial e a constatação de sua relação com o fato delituoso.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1554691
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Locais de Crime
+334) 
+Com relação à investigação em local de crime, julgue o item que se segue.
+
+ 
+A individualização da vítima e o registro formal do fato integram a investigação preliminar, que compreende todas as diligências levadas a efeito após o descobrimento do delito, estendendo-se até a liberação do local.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1554692
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Locais de Crime
+335) 
+Com relação à investigação em local de crime, julgue o item que se segue.
+
+ 
+A forma de execução de um homicídio pode ser definida a partir da observação da posição do cadáver no local do crime, dos vestígios biológicos e de eventuais elementos balísticos arrecadados.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1554694
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Locais de Crime
+336) 
+Com relação à investigação em local de crime, julgue o item que se segue.
+
+ 
+O relatório de investigação de um local de crime, destinado a instruir e orientar a investigação de seguimento, baseia-se exclusivamente no relato técnico e nas impressões captadas pelos peritos responsáveis pelo exame do local.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1554695
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Locais de Crime
+337) 
+Com relação à investigação em local de crime, julgue o item que se segue.
+
+ 
+A recognição visuográfica integra a fase da investigação de segmento e deve ser realizada por policial encarregado da investigação posterior às primeiras diligências, mediante a colação de todas as informações obtidas no local do crime.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1554697
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Locais de Crime
+338) 
+Com relação à investigação em local de crime, julgue o item que se segue.
+
+ 
+Apenas os locais de crime considerados mediatos e imediatos são suscetíveis de exame pericial, sendo dispensável o exame quando se tratar de local sem ligação geográfica com o evento delituoso.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1554731
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Locais de Crime
+339) 
+Maria, de vinte e seis anos de idade, saiu da faculdade onde estudava por volta das 23 h e, sozinha, dirigiu-se a pé rumo a sua residência. No trajeto, foi abordada por trás, tomou um golpe  “mata leão” de seu algoz, que exalava forte hálito etílico, e, em seguida, foi arrastada para um matagal ermo. A vítima tentou se libertar, arranhando os braços do autor. Ao chegar ao matagal, ainda se mantendo por trás da vítima, o autor mandou que ela cobrisse o rosto com o próprio vestido. Ele abaixou a calcinha dela e manteve, com violência, coito anal e vaginal, até ejacular. Após a violência, o criminoso determinou que a vítima se mantivesse deitada, com o rosto voltado para o chão, e que contasse até cem, quando, então, poderia sair correndo. A vítima cumpriu a ordem e, após a contagem, levantou-se. Verificou a presença de uma garrafa de cachaça quase vazia no local e percebeu que sangrava e que sua região genital, coxas e calcinha estavam molhadas de esperma. Ela avistou de longe uma casa e correu até lá, pedindo ajuda. Na residência, a moradora prestou-lhe socorro, permitindo que Maria tomasse banho, e lhe emprestou roupas limpas para vestir. Em seguida, Maria dirigiu-se à delegacia de polícia, levando consigo,
+em um saco plástico, a garrafa de cachaça encontrada no local e as suas vestes sujas.
+
+ 
+
+A partir dessa situação hipotética, julgue o item a seguir.
+
+ 
+
+A análise da garrafa de cachaça e de seu conteúdo é irrelevante, porque não proporcionará subsídio para as investigações, uma vez que a vítima, ao tê-la levado para a delegacia, não preservou o local do crime.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1554739
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Locais de Crime
+340) 
+Acerca dos objetivos da investigação pericial em locais de crime contra a vida, julgue o próximo item.
+
+ 
+O levantamento de evidências que contribuam com a investigação possibilita o estabelecimento da dinâmica dos acontecimentos.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1554741
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Locais de Crime
+341) 
+Acerca da investigação pericial, julgue o item seguinte.
+
+ 
+Nos casos de perícia de local de crime contra pessoa, o acionamento do órgão pericial deverá ser solicitado via central de radiocomunicação da segurança do centro integrado de operações em segurança pública (CIOSP), com posterior envio da requisição formal ao órgão pericial.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 591037
+CEBRASPE (CESPE) - Per Crim (PC MA)/PC MA/2018
+Criminalística e Medicina Legal - Locais de Crime
+342) 
+Com relação a local de crime e a exame pericial, assinale a opção correta.
+
+a) O exame pericial de local destina-se, precipuamente, a determinar a causa da morte da vítima.
+b)  A vítima de homicídio, em regra, deve ser individualizada ainda no local do crime e antes do exame pericial.
+c)  Local relacionado abrange o corpo de delito, seu entorno e espaços que contenham vestígios materiais do crime.
+d) O local do crime é dividido, para efeitos de preservação, apenas em local imediato e em local relacionado.
+e) Em casos de morte violenta, o exame perinecroscópico deve ser realizado pelo perito criminal ainda no local do crime.
+Gabarito: E
+## questao 1620262
+CEBRASPE (CESPE) - PT (CBM CE)/CBM CE/2015
+Criminalística e Medicina Legal - Locais de Crime
+343) 
+Julgue o item seguinte, relativo ao isolamento, preservação e levantamento de dados em local de crime e sinistro.
+
+ 
+Após ser assumido por um perito e ter passado por uma análise técnica, o local onde ocorreu uma prática de infração penal e que apresenta vestígios desta se classifica, quanto à  preservação, como local não preservado.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1620264
+CEBRASPE (CESPE) - PT (CBM CE)/CBM CE/2015
+Criminalística e Medicina Legal - Locais de Crime
+344) 
+Julgue o item seguinte, relativo ao isolamento, preservação e levantamento de dados em local de crime e sinistro.
+
+ 
+No local onde ocorreu um crime, o isolamento ideal prevê um espaço que abranja a área de localização do vestígio mais distante na cena desse delito, possibilitando a permanência de apenas um familiar que acompanhe as investigações.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1620268
+CEBRASPE (CESPE) - PT (CBM CE)/CBM CE/2015
+Criminalística e Medicina Legal - Locais de Crime
+345) 
+Julgue o item seguinte, relativo ao isolamento, preservação e levantamento de dados em local de crime e sinistro.
+
+ 
+No croqui do local do crime, o perito inclui as vias de acesso e as medidas que fornecem a exata posição das evidências encontradas na cena do crime.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1620270
+CEBRASPE (CESPE) - PT (CBM CE)/CBM CE/2015
+Criminalística e Medicina Legal - Locais de Crime
+346) 
+Julgue o item seguinte, relativo ao isolamento, preservação e levantamento de dados em local de crime e sinistro.
+
+ 
+Deve-se isolar a área a ser periciada para que se preserve o local do crime e não haja alteração ou destruição de vestígios.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2746586
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Locais de Crime
+347) 
+Assinale a opção correta acerca dos locais de crime.
+
+a) O local onde tenha ocorrido um suicídio, por não se tratar de crime, não será, desde o início da atuação policial, tratado como local de crime.
+b) Com relação ao tipo, os locais de crime são classificados em idôneos ou inidôneos.
+c) Quanto à natureza do fato, os locais de crime são classificados em imediato, mediato e relacionado.
+d) O local satisfatoriamente isolado até a chegada do perito é denominado local interno.
+
+e)  No exame do local, o perito deve proceder à constatação material do evento e ao exame dos meios empregados para a perpetração do crime, além de coletar as provas que permitirão a interpretação das evidências materiais, a fim de determinar os meios e os modos pelos quais o evento ocorreu, bem como a possibilidade de apontar o autor do delito.
+Gabarito: E
+## questao 532731
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Odonto Legal/2009
+Criminalística e Medicina Legal - Locais de Crime
+348) 
+A respeito da classificação dos locais de crime, assinale a opção correta.
+
+a) O local onde ocorreu um suicídio não será tratado como local de crime, pois suicídio não é crime.
+b) Local inidôneo ou violado é aquele que foi alterado integralmente antes de se efetuar o levantamento pericial. Se a alteração se deu de forma parcial, o local do crime será considerado idôneo.
+c) Os locais de crime são classificados, quanto à situação, em preservados e não preservados.
+d) Locais relacionados são aqueles que apresentam pontos de contato, já que se referem a uma mesma ocorrência ilícita. Por exemplo, o crime de homicídio foi praticado em um local, mas o cadáver foi deixado em outro.
+e) O ambiente imediato constitui as adjacências, os arredores do local onde ocorreu o fato.
+Gabarito: D
+## questao 532733
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Odonto Legal/2009
+Criminalística e Medicina Legal - Locais de Crime
+349) 
+Com relação ao levantamento do local do crime e ao seu isolamento, assinale a opção incorreta.
+
+a)  Para o efeito de exame do local onde foi praticada a infração, a autoridade providenciará imediatamente para que não se altere o estado das coisas até a chegada dos peritos, que poderão instruir seus laudos com fotografias, desenhos ou esquemas elucidativos.
+b) O Código Penal (CP) comina pena a quem altera, sem licença da autoridade competente, o aspecto de local especialmente protegido por lei.
+c) No exame do local, a perícia visa à constatação material do evento, ao exame dos meios empregados para a perpetração do crime, à coleta das provas que permitem a interpretação das evidências materiais, para que determine os meios e os modos pelos quais o evento ocorreu bem como aponte o autor do delito.
+d) Assim que tiver conhecimento da prática da infração penal, a autoridade policial deve apreender os objetos que têm relação com o fato, após liberados pelos peritos criminais.
+e) Croqui é um esboço do desenho do local do crime feito com escala e rigor técnico.
+Gabarito: E
+## questao 1371140
+CEBRASPE (CESPE) - Sold (PM CE)/PM CE/2008
+Criminalística e Medicina Legal - Locais de Crime
+350) 
+Quanto ao uso de algema ou à atuação policial na preservação do local do crime, julgue o item a seguir.
+
+ 
+
+Quando estiver preservando o local onde tenha ocorrido um crime, para realização da perícia, o policial militar deve relatar aos peritos qual é o seu ponto de vista sobre a situação.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 445912
+CEBRASPE (CESPE) - Cab (PM DF)/PM DF/2003
+Criminalística e Medicina Legal - Locais de Crime
+351) 
+Com relação aos conhecimentos básicos indispensáveis ao exercício profissional do policial-militar (PM), julgue o item que se segue.
+
+ 
+Nos locais de crime externos, os vestígios devem ser recolhidos, no caso de intempéries, a fim de preservá-los.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 446591
+CEBRASPE (CESPE) - Sarg (PM DF)/PM DF/2003
+Criminalística e Medicina Legal - Locais de Crime
+352) 
+Astrogildo, deputado distrital, durante uma discussão, efetuou seis disparos de arma de fogo em Manoel, em frente a um bar localizado em um município do estado de Goiás. Carlos, policial-militar, ao chegar ao local para atender à ocorrência, observou Manoel caído em decúbito dorsal com sangue jorrando da artéria femoral e viu que três disparos o atingiram no coração. Como só restava a Manoel pouquíssimo tempo de vida, Carlos resolveu sair em perseguição a Astrogildo após este ter largado a arma do crime próximo a Adilson, seu assessor parlamentar. Sem lograr êxito, Carlos retornou ao local do crime, onde verificou que a arma havia sumido, identificou o morto, retirando seus documentos, que estavam no bolso da sua calça, arrolou como testemunhas André, de 30 anos de idade, e Marcos, de 16 anos de idade, que presenciaram o fato, e adotou todos os demais procedimentos que lhe competiam.
+
+ 
+
+Com base nessa situação hipotética, julgue o item que se segue.
+ 
+
+O local onde ocorreu o crime é classificado como interno.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 3546963
+CEBRASPE (CESPE) - PCF/PF/Área 1/2025
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+353) 
+Considerando que um dos fundamentos mais relevantes da criminalística é o estudo dos vestígios, julgue o item a seguir.
+
+ 
+De acordo com o princípio de Locard, não há crime sem vestígio e, com a aplicação das técnicas adequadas, os vestígios do crime podem ser localizados.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 3549420
+CEBRASPE (CESPE) - PCF/PF/Área 12/2025
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+354) 
+Julgue o item a seguir, acerca da cadeia de custódia.
+
+
+Apenas vestígios biológicos estão sujeitos à cadeia de custódia, já que são os únicos cuja contaminação pode comprometer a investigação.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 3550178
+CEBRASPE (CESPE) - PCF/PF/Área 12/2025
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+355) 
+Julgue o item a seguir, acerca da cadeia de custódia.
+
+ 
+A legislação brasileira determina que a central de custódia de vestígios esteja sob a gestão da direção dos institutos médico-legais.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 3550179
+CEBRASPE (CESPE) - PCF/PF/Área 12/2025
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+356) 
+Julgue o item a seguir, acerca da cadeia de custódia.
+
+ 
+A coleta de vestígios no local do crime deve ser realizada preferencialmente por perito oficial, que deverá dar o encaminhamento necessário para a central de custódia.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 3550180
+CEBRASPE (CESPE) - PCF/PF/Área 12/2025
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+357) 
+Julgue o item a seguir, acerca da cadeia de custódia.
+
+ 
+A cadeia de custódia é obrigatória desde o momento do reconhecimento da prova até seu descarte final, sendo a preservação da prova responsabilidade exclusiva dos agentes públicos do sistema de segurança.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2341721
+CEBRASPE (CESPE) - Aux Per (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+358) 
+Em relação a postulados, princípios e áreas de atuação da criminalística, julgue o item seguinte.
+
+ 
+A atuação da criminalística compreende o exame de vestígios materiais do crime e do respectivo local, bem como dos vestígios intrínsecos, inerentes à pessoa.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2341723
+CEBRASPE (CESPE) - Aux Per (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+359) 
+Em relação a postulados, princípios e áreas de atuação da criminalística, julgue o item seguinte.
+
+ 
+O procedimento de anotações, fotografias, medições e observância dos demais protocolos que descrevem e retratam oficialmente a cena de um crime e os vestígios nela coletados dá origem à cadeia de custódia da prova material, conforme o princípio da documentação.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2341727
+CEBRASPE (CESPE) - Aux Per (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+360) 
+Em relação a postulados, princípios e áreas de atuação da criminalística, julgue o item seguinte.
+
+ 
+Para fins de perícia, a identificação de um vestígio relacionado ao crime deve enquadrar dois graus de identificação do objeto: a identificação genérica e a específica.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2341730
+CEBRASPE (CESPE) - Aux Per (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+361) 
+O autor de um homicídio colocou no local uma carta forjada de suicídio, visando dissimular a natureza do crime, que foi perpetrado com uma arma de fogo. Ainda com o intuito de dissimular o local do crime, o agente deixou as impressões digitais da vítima na arma, abandonando-a próxima ao cadáver, onde foi coletado um projetil cujo ferimento deu causa à morte.
+
+
+Com base nessa situação, julgue o item a seguir, relativo aos vestígios coletados na cena do crime.
+
+
+A carta, após a análise e a conclusão sobre a sua real finalidade, será classificada como um vestígio material proposital.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2341731
+CEBRASPE (CESPE) - Aux Per (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+362) 
+O autor de um homicídio colocou no local uma carta forjada de suicídio, visando dissimular a natureza do crime, que foi perpetrado com uma arma de fogo. Ainda com o intuito de dissimular o local do crime, o agente deixou as impressões digitais da vítima na arma, abandonando-a próxima ao cadáver, onde foi coletado um projetil cujo ferimento deu causa à morte.
+
+
+Com base nessa situação, julgue o item a seguir, relativo aos vestígios coletados na cena do crime.
+
+ 
+A arma de fogo deixada próxima ao corpo da vítima é classificada como um vestígio perceptível.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2341733
+CEBRASPE (CESPE) - Aux Per (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+363) 
+O autor de um homicídio colocou no local uma carta forjada de suicídio, visando dissimular a natureza do crime, que foi perpetrado com uma arma de fogo. Ainda com o intuito de dissimular o local do crime, o agente deixou as impressões digitais da vítima na arma, abandonando-a próxima ao cadáver, onde foi coletado um projetil cujo ferimento deu causa à morte.
+
+
+Com base nessa situação, julgue o item a seguir, relativo aos vestígios coletados na cena do crime.
+
+ 
+As impressões digitais da vítima coletadas na arma de fogo, desde que se reclame a utilização de equipamentos especiais para a sua observação, são classificadas como vestígios perenes.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2012960
+CEBRASPE (CESPE) - Del Pol (PC PB)/PC PB/2022
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+364) 
+Acerca dos vestígios, indícios e de outros elementos encontrados nos locais de crime, julgue os itens seguintes.
+
+ 
+
+I. A nulidade por falta do exame de corpo de delito nos crimes que deixam vestígios é absoluta.
+
+ 
+II. No caso de haver o crime deixado vestígio, a queixa ou a denúncia não será recebida se não for instruída com o exame pericial dos objetos que constituam o corpo de delito.
+
+ 
+III. Os cadáveres, as lesões externas e os vestígios deixados no local do crime serão sempre fotografados na posição em que forem encontrados.
+
+ 
+Assinale a opção correta.
+
+
+a) Apenas o item I está certo.
+b) Apenas o item II está certo.
+c) Apenas os itens I e III estão certos.
+d) Apenas os itens II e III estão certos.
+
+e) Todos os itens estão certos.
+Gabarito: D
+## questao 2013909
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+365) 
+Uma equipe pericial foi acionada para realizar exame de local de crime contra o patrimônio envolvendo violência e grave ameaça em uma residência. Posteriormente, a perícia foi também acionada para realizar exame em um veículo localizado que fora objeto de roubo na mesma ocorrência policial. Considerando a situação hipotética apresentada, assinale a opção correta, acerca de postulados e princípios da doutrina criminalística.
+
+a) A presença de manchas de sangue, armas, marcas de disparo de arma de fogo, projéteis e estojos deflagrados no interior da residência são vestígios característicos de emprego de violência durante a ação delituosa.
+b) Se, no exame de local, os vestígios se restringirem às dependências da residência, a descrição da vizinhança e das vias de acesso é irrelevante para a perícia criminal.
+c) O perito poderá estender o isolamento do local para além da residência, desde que a medida não comprometa o trânsito de veículos e pessoas nas imediações.
+d) No exame de veículo não importa, nesse caso, registrar o estado do bem patrimonial, visando sua avaliação econômica.
+
+e) Para o exame do veículo, pela natureza da ação delituosa, espera-se constatar sinais de arrombamento nas portas ou violação nos dispositivos de ignição do motor.
+Gabarito: A
+## questao 2013922
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+366) 
+Peritos da Polícia Civil realizaram a reprodução simulada do crime que terminou com a morte de Fabiano, de 25 anos de idade, após briga durante a madrugada de sábado em uma boate em João Pessoa-PB. O indiciado por ter cometido o crime afirmou que agiu em legítima defesa depois de ter sido agredido pela vítima. No entanto, testemunhas informaram que a vítima havia sido covardemente agredida até cair desacordada e falecer no local. Considerando essa situação hipotética, assinale a opção correta, acerca de reprodução simulada.
+
+a) O procedimento realizado pela polícia visa convencer o Ministério Público acerca das circunstâncias e da autoria do delito.
+b) No caso em tela, a encenação do delito foi realizada pelo indiciado e pelas testemunhas concomitantemente no local, visando reproduzir com a maior fidedignidade possível as circunstâncias do fato.
+c) É de suma importância que os peritos criminais conheçam os autos antes da realização da reprodução simulada.
+d) Deduz-se da situação narrada que a autoridade policial foi previamente autorizada pelo juiz para realizar a reprodução simulada do crime.
+
+e) Infere-se que a reprodução simulada foi realizada no local similar ao do crime e necessariamente em horário com boa luminosidade, visando facilitar a visualização das encenações.
+Gabarito: C
+## questao 2013960
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+367) 
+Na cena de crime, peritos criminais buscam vestígios de impressões digitais que possam ser utilizados na determinação de autoria do delito, bem como para compreender a dinâmica dos fatos. Impressões digitais geralmente invisíveis ou parcialmente visíveis, encontradas em casas furtadas, podem ser classificadas como
+
+a) latentes.
+b) evidentes.
+c) padrões.
+d) plásticas.
+
+e) modeladas.
+Gabarito: A
+## questao 2015328
+CEBRASPE (CESPE) - Tec Per (PC PB)/PC PB/Área Geral/2022
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+368) 
+A remoção de vestígios do local de crime antes da liberação pelo perito responsável é tipificada como
+
+a)  fraude processual.
+b) falsa perícia.
+c) exercício arbitrário das próprias razões.
+d) subtração ou inutilização de documento.
+
+e)  omissão grave de dado.
+Gabarito: A
+## questao 2015356
+CEBRASPE (CESPE) - Tec Per (PC PB)/PC PB/Área Geral/2022
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+369) 
+No procedimento operacional padrão da perícia criminal, quanto ao local do crime e aos vestígios de interesse forense, compete ao perito, preliminarmente, escolher o método a ser utilizado na busca de vestígios. Julgue os itens a seguir, a respeito das técnicas clássicas de detecção de vestígios.
+
+ 
+I Busca em espiral: necessita de uma quantidade significativa de pessoas. Tem maior velocidade de processamento porque potencializa a varredura de uma área, a ser analisada por profissionais que se deslocam de forma simultânea e que interrompem, momentaneamente, o deslocamento quando um vestígio é identificado.
+
+ 
+II Busca por quadrante: é utilizada quando a área apresenta divisões espaciais bem definidas, a exemplo de uma residência. Divide-se a área e analisa-se cada uma individualmente.
+
+ 
+III Busca em linha: é aplicada em áreas pequenas, quando a busca se inicia pela parte periférica até se chegar ao centro.
+
+ 
+Assinale a opção correta.
+
+a) Apenas o item I está certo.
+b) Apenas o item II está certo.
+c) Apenas o item III está certo.
 d) Apenas os itens I e III estão certos.
 
 e) Todos os itens estão certos.
-Gabarito: C
-## questao 464175
-CEBRASPE (CESPE) - GPPGE (SEE DF)/SEE DF/Arquivologia/2017
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-633) 
-Acerca das políticas de acesso aos documentos de arquivo, pautadas pela Lei de Acesso à Informação, julgue o item subsecutivo.
-
- 
-Todos têm direito à informação, desde que ela não esteja classificada em um dos graus de sigilo: ultrassecreto, secreto e reservado.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 394873
-CEBRASPE (CESPE) - ACE (TCE PR)/TCE PR/Administrativa/2016
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-634) 
-Considerando a Lei n.º 12.527/2011 — Lei de Acesso à Informação (LAI) —, assinale a opção correta.
-
-a) Devido ao seu caráter confidencial, informações a respeito de violações de direitos humanos praticadas por agentes do Estado são mantidas sob sigilo pelo período mínimo de quinze anos.
-b) A busca e o fornecimento da informação devem ser gratuitos, com exceção de documentos que tenham custos de produção.Nesses casos, os custos devem ser pagos pelo requerente, que poderá ser isento se, comprovadamente, não tiver condições financeiras para arcar com os custos de obtenção da informação.
-c) Após a correta petição, o órgão ou entidade que recebeu o pedido tem até trinta dias para apresentar resposta por escrito, conforme a instrução do peticionário.
-d) Apenas as entidades da administração direta estão obrigados a fornecer informações solicitadas por pessoas nascidas no Brasil, desde que o pedido seja feito por meio legítimo e traga discriminada a identificação de quem apresentou o pedido e a especificação da informação que foi pedida.
-e) Não há previsão de recursos nos casos de respostas negativas de acesso à informação ou nos casos em que o órgão peticionado se recuse a responder o porquê de o acesso à informação ter sido negado.
 Gabarito: B
-## questao 394874
-CEBRASPE (CESPE) - ACE (TCE PR)/TCE PR/Administrativa/2016
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-635) 
-No que se refere à classificação da informação, conforme estabelecido na LAI, assinale a opção correta.
+## questao 2116769
+CEBRASPE (CESPE) - Per Cri (POLITEC RO)/POLITEC RO/Ciências Contábeis, Ciências Econômicas ou Administração/2022
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+370) 
+No exame pericial em local de crime, em uma breve análise do perito responsável, todos os tipos de objetos, marcas ou sinais sensíveis que possam ter relação com o fato investigado devem ser considerados
 
-a) Conforme o valor estratégico da informação, o prazo de sigilo, após seu término, poderá ser renovado por mais dez anos.
-b) Devido à dificuldade operacional, não é possível acessar dados relativos a metas e indicadores de resultados de projetos, programas e políticas públicas financiadas com recursos estatais.
-c) Informações cuja disseminação coloque em risco a defesa e a soberania nacional, além da integridade do território brasileiro, são passíveis de classificação como sigilosas.
-d) Em razão de seu valor estratégico, as informações sigilosas são classificadas como secretas, limitadas ou reguladas.
-e) Para os municípios, o menor prazo de restrição de acesso à informação é de oito anos; para os estados e a União, esse prazo é de dezesseis anos.
+a) corpos de delito.
+b) evidências.
+c) vestígios.
+d) provas indiciárias.
+
+e) indícios.
 Gabarito: C
-## questao 394875
-CEBRASPE (CESPE) - ACE (TCE PR)/TCE PR/Administrativa/2016
-Direito Administrativo (Doutrina e Leis Federais) - Tópicos Mesclados da Lei nº 12.527/2011
-636) 
-A respeito de responsabilidades dos agentes públicos, conforme disposto na LAI, assinale a opção correta.
+## questao 2119716
+CEBRASPE (CESPE) - Ag Crim (POLITEC RO)/POLITEC RO/2022
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+371) 
+Acerca da terminologia adotada na atividade pericial, assinale a opção correta.
 
-a) É permitido ao agente público usar de suas prerrogativas para destruir documentos referentes a violações de direitos humanos por parte de agentes do Estado.
-b) É lícito que o agente público se negue a fornecer, de forma deliberada, informações que impliquem prejuízo financeiro para o ente estatal onde a informação se localiza.
-c) Caracteriza conduta ilícita por parte do agente público se recusar a fornecer a informação requisitada, ou demorar para atender ao pedido de acesso à informação ou, ainda, fornecer aos cidadãos informações incompletas, imprecisas ou incorretas.
-d) Informações pessoais relativas à intimidade, vida privada, honra e imagem não podem ser divulgadas pelo agente público, independentemente de consentimento expresso da pessoa a que elas se referirem.
-e) Caracteriza conduta ilícita por parte do agente público controlar o acesso a informações sigilosas e pessoais de terceiros.
+a) Utilizado no meio jurídico, o termo evidência significa cada uma das informações (periciais ou não) relacionadas com o crime.
+b) Um projétil expelido por cano de alma raiada é exemplo de vestígio não determinante.
+c) Conforme Anuschat, vestígio é toda matéria, corpo, objeto constatado e(ou) recolhido em um local de crime que tenha ou possa ter ligação com o crime ou com o criminoso e que sirva para a elucidação do crime e a determinação da autoria.
+d) Indício é o vestígio que, após as devidas análises, revela-se, técnica e cientificamente, relacionado exclusivamente com o fato.
+
+e) Uma marca de frenagem constitui exemplo de vestígio determinante.
 Gabarito: C
-## questao 3249790
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Administrativa/Sem Especialidade/2025
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-637) 
-Com base na Lei de Acesso à Informação (Lei n.º 12.527/2011) e na Lei Geral de Proteção de Dados Pessoais — LGPD (Lei n.º 13.709/2018), julgue o item a seguir.
-
- 
-Para fins da LGPD, os dados anonimizados são considerados, em regra, dados pessoais.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3284305
-CEBRASPE (CESPE) - PMF (INSS)/INSS/2025
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-638) 
-A respeito da Lei n.º 13.709/2018, que dispõe sobre o tratamento de dados pessoais, julgue o item a seguir.
-
-É possível o tratamento dos dados sensíveis quando o titular, ou seu responsável legal, consenti-lo, de forma clara e destacada, para propósitos específicos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3284306
-CEBRASPE (CESPE) - PMF (INSS)/INSS/2025
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-639) 
-A respeito da Lei n.º 13.709/2018, que dispõe sobre o tratamento de dados pessoais, julgue o item a seguir.
-
-O tratamento dos dados sensíveis poderá ocorrer, inclusive, visando à proteção da vida ou da incolumidade física do titular ou de terceiro.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3296336
-CEBRASPE (CESPE) - Arq (InoversaSul)/InoversaSul/2025
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-640) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD), julgue o item a seguir.
-
- 
-É permitido realizar o tratamento de dados pessoais sensíveis sem o consentimento do seu titular caso o tratamento seja indispensável para a proteção da vida ou da incolumidade física do titular ou de terceiro.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3346188
-CEBRASPE (CESPE) - AJ TRT10/TRT 10/Judiciária/"Sem Especialidade"/2025
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-641) 
-Com base no Estatuto da Pessoa com Deficiência, na Lei de Introdução às Normas do Direito Brasileiro (LINDB) e na Lei Geral de Proteção de Dados (LGPD), julgue o item a seguir.
-
-
-Quando for indispensável para o exercício regular de direitos, inclusive em contrato e em processo judicial e administrativo, o tratamento de dados pessoais sensíveis pode ser realizado sem o consentimento do titular dos dados pessoais.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3361124
-CEBRASPE (CESPE) - AA (IBAMA)/IBAMA/2025
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-642) 
-Julgue o item seguinte, com base na Lei de Acesso à Informação e na Lei Geral de Proteção de Dados Pessoais (LGPD).
-
- 
-É permitido o tratamento de dados pessoais sensíveis, inclusive sem o consentimento do titular, nas hipóteses em que for indispensável para a proteção do crédito.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3406228
-CEBRASPE (CESPE) - Tec (EMBRAPA)/EMBRAPA/Laboratório e Campos Experimentais/Manejo Animal/2025
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-643) 
-Conforme a disciplina da Lei Geral de Proteção de Dados, julgue o item a seguir.
-
- 
-Um dado pessoal sobre convicção religiosa ou opinião política é considerado um dado sensível, cujo tratamento somente pode ocorrer quando o titular ou seu responsável legal consentir, de forma específica e destacada.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3411297
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Ciências Sociais Aplicadas/Ciências Sociais Aplicadas a Agropecuária/2025
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-644) 
-Com base no disposto no Estatuto da Embrapa e na Lei Geral de Proteção de Dados (LGPD), julgue o item a seguir.
-
- 
-A realização de estudos por órgão de pesquisa deve assegurar, em qualquer hipótese, a anonimização dos dados pessoais.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3454213
-CEBRASPE (CESPE) - Ana Tec (SUSEP)/SUSEP/Contabilidade Pública/2025
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-645) 
-Com base nas disposições da Geral de Proteção de Dados Pessoais e suas alterações, julgue o item seguinte.
-
-
-Para o tratamento de dados pessoais sensíveis é prevista a mesma amplitude de bases legais aplicáveis aos dados pessoais comuns.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3455528
-CEBRASPE (CESPE) - Ana Tec (SUSEP)/SUSEP/Tecnologia da Informação e Ciência de Dados/2025
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-646) 
-Julgue o item subsequente, relativo a CIS controls, assinatura e certificação digital, segurança em nuvens e ao que dispõe a Lei Geral de Proteção de Dados Pessoais (LGPD).
-
-
-De acordo com a LGPD, o tratamento de dados pessoais sensíveis pode ser realizado sem o consentimento do titular, quando o tratamento for necessário para o cumprimento de obrigação legal ou regulatória pelo controlador.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3499488
-CEBRASPE (CESPE) - Assist (FUB)/FUB/Administração/2025
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-647) 
-Conforme a Lei Geral de Proteção de Dados Pessoais – LGPD (Lei n.º 13.709/2018) e o Decreto n.º 7.724/2012, que regulamenta a Lei de Acesso à Informação, julgue o item a seguir.
-
- 
-O tratamento de dados pessoais sensíveis para fins de cumprimento de obrigação legal pelo controlador, se for indispensável, pode ocorrer sem o fornecimento do consentimento do respectivo titular.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3501230
-CEBRASPE (CESPE) - Tec (FUB)/FUB/Laboratório/Análise Clínica/2025
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-648) 
-Julgue o item a seguir, a partir das disposições do Estatuto e Regimento Geral da Universidade de Brasília e das Leis n.º 11.091/2005, n.º 13.709/2018 e n.º 12.527/2011.
-
- 
-Sendo indispensável para a proteção da vida ou da incolumidade física do titular, o tratamento de dados pessoais sensíveis pode ocorrer sem o prévio consentimento do titular.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3502084
-CEBRASPE (CESPE) - Ag Adm (PF)/PF/2025
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-649) 
-Julgue o próximo item, referentes ao tratamento de dados pessoais, de acordo com a Lei Geral de Proteção de Dados Pessoais (LGPD), e ao processo administrativo federal, consoante a Lei n.º 9.784/1999.
-
- 
-A LGPD veda o tratamento de dados pessoais sensíveis, podendo tal tratamento ocorrer na hipótese exclusiva de o titular ou seu responsável legal consenti-lo, de forma específica e destacada, para finalidades específicas.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2775818
-CEBRASPE (CESPE) - Ana CT I (CNPq)/CNPq/Desenvolvimento e Arquitetura de Software/2024
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-650) 
-Acerca da Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados), julgue o item subsecutivo.
-
- 
-Os dados que forem anonimizados serão considerados dados pessoais para os fins da Lei Geral de Proteção de Dados independente se a anonimização possa ser revertida ou não.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2781586
-CEBRASPE (CESPE) - Ana (CAU BR)/CAU BR/Sistema de Informação/2024
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-651) 
-Com base na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o próximo item.
-
- 
-Nos casos em que for indispensável a proteção da vida ou da incolumidade física do titular, desobriga-se o fornecimento de consentimento de acesso a dados sensíveis desse titular.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2841698
-CEBRASPE (CESPE) - Ana Min (MPE TO)/MPE TO/Especializado/Administração de Banco de Dados/2024
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-652) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais), julgue o item subsequente.
-
-
-O tratamento de dados pessoais sensíveis somente poderá ocorrer quando o titular consentir, de forma específica e destacada, para finalidades específicas.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2854423
-CEBRASPE (CESPE) - ERSTT (ANTT)/ANTT/"Sem Área"/2024
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-653) 
-Com base no previsto na Lei n.º 12.527/2011, Lei de Acesso à Informação (LAI), e na Lei n.º 13.709/2018, Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o próximo item.
-
-
-Conforme a LGPD, o tratamento de dados pessoais sensíveis poderá ocorrer sem fornecimento de consentimento do titular, nas hipóteses em que for indispensável para a garantia da prevenção à fraude e à segurança do titular, nos processos de identificação e autenticação de cadastro em sistemas eletrônicos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2877669
-CEBRASPE (CESPE) - Ana CT (CAPES)/CAPES/Informática/2024
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-654) 
-Julgue o item seguinte, a respeito das Leis n.º 12.527/2011 (Lei de Acesso à Informação – LAI), n.º 12.737/2012 (Lei de Delitos Informáticos), n.º 12.965/2014 (Marco Civil da Internet), n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD) e do Decreto n.º 7.845/2012.
-
- 
-De acordo com a LGPD, o tratamento de dados pessoais sensíveis, quando for indispensável para o cumprimento de obrigação legal pelo controlador, poderá ocorrer sem o consentimento do titular ou responsável legal pelos dados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3008360
-CEBRASPE (CESPE) - AGP (SEPLAG CE)/SEPLAG CE/Tecnologia da Informação/2024
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-655) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD), julgue o item a seguir.
-
- 
-O tratamento de dados sensíveis pode ocorrer sem o consentimento do titular quando for indispensável para o cumprimento de obrigação legal ou regulatória do controlador.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3008363
-CEBRASPE (CESPE) - AGP (SEPLAG CE)/SEPLAG CE/Tecnologia da Informação/2024
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-656) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD), julgue o item a seguir.
-
- 
-Na realização de estudos em saúde pública, todos os envolvidos poderão ter acesso a bases de dados pessoais, podendo estes ser tratados por entidades públicas, privadas, civis e militares em qualquer esfera.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3041614
-CEBRASPE (CESPE) - Ana (BACEN)/BACEN/Economia e Finanças/2024
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-657) 
-Com base no disposto no Código de Ética Profissional do servidor público civil do Poder Executivo federal e na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item a seguir.
-
-
-Nos termos da LGPD, dados pessoais sensíveis, como os relativos à saúde e à vida sexual do titular, podem ser tratados para fins sanitários.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3102227
-CEBRASPE (CESPE) - ERSPT (ANATEL)/ANATEL/Ciência de Dados/2024
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-658) 
-No que se refere à governança de dados, julgue o próximo item.
-
-
-De acordo com a LGPD, dados pessoais relacionados a convicção religiosa são considerados sensíveis e só podem ser tratados com o consentimento específico e destacado do titular ou de seu representante legal.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2421674
-CEBRASPE (CESPE) - Ana (CNMP)/CNMP/Apoio Técnico Especializado/Arquivologia/2023
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-659) 
-No tocante aos dados pessoais sensíveis e ao seu tratamento, julgue o item seguinte com base na Lei Geral de Proteção de Dados (LGPD) — Lei n.º 13.709/2018.
-
-
-Na hipótese de cumprimento de obrigação legal ou regulatória pelo controlador, o tratamento de dados pessoais sensíveis pode ocorrer independentemente de consentimento legal do seu titular.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2452814
-CEBRASPE (CESPE) - PFN (PGFN)/PGFN/2023
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-660) 
-Determinada cidade do interior do estado do Rio Grande do Sul é mundialmente conhecida como a cidade dos gêmeos. Um órgão oficial realizou uma pesquisa para apurar a razão pela qual os nascimentos gemelares ocorrem em maior proporção naquela localidade. Na pesquisa, a população local respondeu a diversos questionamentos, inclusive referentes a raça e orientação sexual. Em relação a essa situação hipotética, assinale a opção correta segundo a Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados — LGPD).
-
-a) O órgão poderá realizar o tratamento dos dados fornecidos na pesquisa, desde que o respectivo titular forneça termo de consentimento por escrito, uma vez que estão em pauta dados pessoais sensíveis.
-b) O órgão não poderá realizar o tratamento de dados pessoais sensíveis, mas apenas o tratamento de dados pessoais, nos termos da LGPD.
-c) O órgão poderá realizar o tratamento de dados pessoais sensíveis, independentemente do consentimento do titular, garantida, sempre que possível, a sua anonimização.
-d) A pesquisa não envolve dados pessoais sensíveis, mas apenas dados pessoais, razão pela qual não há que se falar em impossibilidade de tratamento dos dados coletados.
-
-e) O órgão poderá realizar o tratamento de dados pessoais sensíveis, sendo obrigatória a anonimização dos titulares dos dados.
-Gabarito: C
-## questao 2642255
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança da Informação e Proteção de Dados/2023
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-661) 
-Com base no disposto na Lei Geral de Proteção de Dados (LGPD), julgue o seguinte item.
-
- 
-Anonimização é o tratamento por meio do qual um dado perde a possibilidade de associação, direta ou indireta, a um indivíduo, senão pelo uso de informação adicional mantida separadamente pelo controlador em ambiente controlado e seguro.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1936858
-CEBRASPE (CESPE) - PPNS (PETROBRAS)/PETROBRAS/Análise de Sistemas/Processos de Negócio/2022
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-662) 
-Julgue o item subsequente, com base na Lei Geral de Proteção de Dados (Lei n.º 13.709/2018).
-
- 
-Ainda que seja para cumprimento de obrigação regulatória pelo controlador do dado, o titular deve consentir previamente a sua utilização.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2216613
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Gestão de Tecnologia da Informação/2022
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-663) 
-Tendo como referência o disposto na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD), julgue o seguinte item.
-
-
-Em nenhuma circunstância o tratamento de dados pessoais sensíveis poderá ocorrer sem o consentimento do titular dos dados.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1628746
-CEBRASPE (CESPE) - Ana (APEX)/ApexBrasil/Operações e Segurança de Tecnologia da Informação e Comunicação/"Sem Especialidade"/2021
-Direito Digital - Do Tratamento de Dados Pessoais Sensíveis (arts. 11 a 13 da Lei nº 13.709/2018 - LGPD)
-664) 
-No seu processo de cadastramento de usuários, um site na Web obteve dados pessoais sensíveis de um usuário.
-
- 
-Nessa situação hipotética, de acordo com a Lei n.º 13.709/2018, o tratamento dos referidos dados pelo site poderá ser feito sem o consentimento do titular se
-
-a) for indispensável para a proteção da vida.
-b) houver demanda para a realização de estudos por órgão de pesquisa reconhecido pelo governo federal, sendo desnecessária, nesse caso, a anonimização dos dados.
-c) for necessário para promover exclusivamente ações de marketing.
-d) houver a necessidade de disponibilizar os dados para uma empresa parceira.
-Gabarito: A
-## questao 3259005
-CEBRASPE (CESPE) - TJ TRF6/TRF 6/Administrativa/Agente da Policia Judicial/2025
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-665) 
-Julgue o item a seguir, relativo a noções de segurança da informação e de serviço de inteligência.
-
- 
-A coleta de informações e de dados publicados em mídias sociais permite, por exemplo, a análise de sentimentos e de padrões de publicações, bem como a avaliação de temas divulgados em massa, extremamente relevantes quando a autoridade sob proteção é figura pública e amplamente conhecida.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3259008
-CEBRASPE (CESPE) - TJ TRF6/TRF 6/Administrativa/Agente da Policia Judicial/2025
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-666) 
-Julgue o item a seguir, relativo a noções de segurança da informação e de serviço de inteligência.
-
- 
-Considere que determinado cidadão, sem qualquer vínculo com agências de inteligência, tendo como alvo a vida de determinada autoridade pública e, mediante o emprego de técnicas amadoras e sem especialização, inicie atividade ilícita com vistas à obtenção de acesso a dados sensíveis e coleta de informações referentes à referida autoridade. Nessa situação hipotética, cabe à equipe de contrainteligência responsável pela segurança do dignitário adotar procedimentos destinados a neutralizar as ações adversas.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3259009
-CEBRASPE (CESPE) - TJ TRF6/TRF 6/Administrativa/Agente da Policia Judicial/2025
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-667) 
-Julgue o item a seguir, relativo a noções de segurança da informação e de serviço de inteligência.
-
- 
-A atividade de inteligência está diretamente associada à análise de riscos, porquanto objetiva a produção de conhecimentos com vistas à redução de vulnerabilidades e à neutralização de ameaças.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3259034
-CEBRASPE (CESPE) - TJ TRF6/TRF 6/Administrativa/Agente da Policia Judicial/2025
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-668) 
-Acerca do sistema de inteligência, julgue o item a seguir.
-
- 
-Na busca de fontes abertas, um dos maiores desafios é a verificação da autenticidade e precisão das informações coletadas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3186685
-CEBRASPE (CESPE) - AJ STJ/STJ/Administrativa/Inspetor da Policia Judicial/2024
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-669) 
-A respeito dos serviços de inteligência e do controle de acesso a tribunais, julgue os itens a seguir.
-
- 
-As atividades de inteligência correspondem às ações especializadas e pontuais que visem identificar, avaliar e acompanhar ameaças reais ou potenciais aos ativos das instituições, orientadas para a produção e a salvaguarda de conhecimentos necessários ao processo decisório no âmbito da segurança institucional.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1554676
-CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-670) 
-Julgue o item a seguir, relativo a inteligência policial.
-
- 
-A atividade de inteligência voltada a obter dados que estejam disponíveis, mas não protegidos, denomina-se ação de busca.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1554677
-CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-671) 
-Julgue o item a seguir, relativo a inteligência policial.
-
- 
-Disfarce consiste no procedimento adotado de forma dissimulada com o objetivo de despistar uma vigilância.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1554678
-CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-672) 
-Julgue o item a seguir, relativo a inteligência policial.
-
- 
-A vigilância é uma técnica básica para os agentes que atuam na inteligência, pois ela ocorre tanto no aspecto ofensivo quanto no defensivo.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1554681
-CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-673) 
-Julgue o item a seguir, relativo a inteligência policial.
-
- 
-A missão da inteligência é assessorar, mas ela pode participar de prisão dando cobertura.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1554682
-CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-674) 
-Julgue o item a seguir, relativo a inteligência policial.
-
- 
-Quando assessora investigação policial, a inteligência está atuando em nível estratégico, pois visa contribuir para uma futura decisão.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 616626
-CEBRASPE (CESPE) - Of Tec Int (ABIN)/ABIN/Área 3/2018
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-675) 
-Acerca dos modelos de gestão de pessoas e da gestão de pessoas por competências, julgue o item seguinte.
-
- 
-
-Avaliar as ameaças, internas e externas, à ordem constitucional constitui competência corporativa de uma agência de inteligência, por estar relacionada com os processos críticos da instituição.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 620715
-CEBRASPE (CESPE) - Ag Int (ABIN)/ABIN/2018
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-676) 
-Julgue o item que se segue, relativo à Estratégia Nacional de Inteligência.
-
- 
-A atividade de inteligência no Brasil deve buscar a integração com os demais países do mundo, mas, em especial, com os da Organização dos Estados Americanos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 620718
-CEBRASPE (CESPE) - Ag Int (ABIN)/ABIN/2018
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-677) 
-Julgue o item que se segue, relativo à Estratégia Nacional de Inteligência.
-
- 
-
-A produção e a difusão de conhecimentos sobre fatos que tenham potencial influência sobre a salvaguarda da sociedade são atividades do ramo da contrainteligência.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 620719
-CEBRASPE (CESPE) - Ag Int (ABIN)/ABIN/2018
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-678) 
-Julgue o item que se segue, relativo à Estratégia Nacional de Inteligência.
-
- 
-
-O parlamento controla a legitimidade e a eficácia da atividade de inteligência e é considerado o mais poderoso órgão de controle desse tipo de atividade. Ele deve procurar influir permanentemente para atingir as mudanças desejadas, sendo-lhe, entretanto, vedado emanar recomendações, pois isso feriria a independência dos poderes da República.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 513729
-CEBRASPE (CESPE) - TJ (TRE BA)/TRE BA/Administrativa/Agente da Policia Judicial/2017
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-679) 
-A atividade de inteligência é o exercício de ações especializadas para obtenção e análise de dados, produção de conhecimentos e proteção de conhecimentos para o país. Assinale a opção que corresponde às duas linhas fundamentais de atuação da atividade de inteligência.
-
-
-a)  inteligência e sabotagem
-
-b)  chantagem e espionagem
-
-c)  contrainteligência e chantagem
-
-d)  inteligência e contrainteligência
-
-e)  espionagem e sabotagem
-Gabarito: D
-## questao 513731
-CEBRASPE (CESPE) - TJ (TRE BA)/TRE BA/Administrativa/Agente da Policia Judicial/2017
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-680) 
-A coleta de informações é atividade primordial no serviço de inteligência, integrando o processo de produção de conhecimento. O tipo de informações coletadas de fontes abertas, como Internet e redes sociais, é denominado
-
-
-a)  OSINT.
-
-b)  MASINT.
-
-c)  HUMINT.
-
-d)  SIGINT.
-
-e)  IMINT.
-Gabarito: A
-## questao 513733
-CEBRASPE (CESPE) - TJ (TRE BA)/TRE BA/Administrativa/Agente da Policia Judicial/2017
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-681) 
-No que diz respeito à linguagem de inteligência, o agente de inteligência, profissional credenciado e qualificado, que se aproxima de determinado conhecimento apenas quando necessário e para atender demanda profissional, independentemente de grau hierárquico, respeita o princípio do(a)
-
-
-a)  oportunidade.
-
-b)  segurança do agente.
-
-c)  segurança da fonte.
-
-d)  necessidade de conhecer.
-
-e)  sigilo profissional.
-Gabarito: D
-## questao 1576936
-CEBRASPE (CESPE) - PRF/PRF/2016
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-682) 
-A respeito da atividade de inteligência, julgue o item que se segue.
-
-
-Plano de contingência é o documento no qual se visa planejar ações e procedimentos adequados a determinadas situações que possam acontecer dentro de uma instituição.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1576937
-CEBRASPE (CESPE) - PRF/PRF/2016
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-683) 
-A respeito da atividade de inteligência, julgue o item que se segue.
-
- 
-Inteligência é a atividade que tem como objetivo prevenir, detectar, obstruir e neutralizar a inteligência adversa ou ações de qualquer natureza que constituam ameaça à salvaguarda de dados, de informações, do conhecimento de interesse e da segurança ou do patrimônio da instituição.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1576939
-CEBRASPE (CESPE) - PRF/PRF/2016
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-684) 
-A respeito da atividade de inteligência, julgue o item que se segue.
-
- 
-No âmbito da atividade de inteligência, contraespionagem é o conjunto de medidas cujo objetivo é detectar ou neutralizar ações adversas que busquem conhecer e(ou) obter dados sigilosos de uma instituição.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1576943
-CEBRASPE (CESPE) - PRF/PRF/2016
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-685) 
-A respeito da atividade de inteligência, julgue o item que se segue.
-
- 
-Após ser classificado e ter seu nível de segurança estabelecido, o documento inicia seu ciclo de vida, durante o qual devem ser garantidas medidas cautelares de segurança.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1576946
-CEBRASPE (CESPE) - PRF/PRF/2016
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-686) 
-A respeito da atividade de inteligência, julgue o item que se segue.
-
- 
-Denomina-se operações de inteligência o conjunto de ações realizadas por meio de técnicas especificamente destinadas à ampla coleta de dados que contribuam para ações coordenadas futuras.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1576948
-CEBRASPE (CESPE) - PRF/PRF/2016
-Segurança Pública e Legislação Policial - Inteligência - Conceitos, Funções e Classificação
-687) 
-A respeito da atividade de inteligência, julgue o item que se segue.
-
- 
-Para inutilizar ações adversas e proteger as instalações de uma instituição, assegurando-se, assim, seu patrimônio, deve-se adotar a segurança orgânica.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3322755
-CEBRASPE (CESPE) - ERM (ANM)/ANM/Qualquer Área de Formação/Fiscalização e Distribuição de Receitas/2025
-Direito Digital - Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD)
-688) 
-Julgue o item a seguir, relativos a atos e poderes administrativos, à organização da administração pública, ao provimento de cargos públicos conforme a Lei n.º 8.112/1990 e à proteção de dados pessoais.
-
-
-A Lei Geral de Proteção de Dados Pessoais (LGPD) assegura às empresas públicas e às sociedades de economia mista que atuam em regime de concorrência o mesmo tratamento dispensado às pessoas jurídicas de direito privado particulares.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3348101
-CEBRASPE (CESPE) - TJ TRT10/TRT 10/Administrativa/"Sem Especialidade"/2025
-Direito Digital - Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD)
-689) 
-No que diz respeito ao acesso à informação, à proteção de dados e à responsabilidade civil do Estado, julgue o item que se segue.
-
- 
-O tratamento de dados pelos serviços notariais e de registro exercidos em caráter privado, por delegação do poder público, sujeita-se a regime legal diverso daquele aplicável aos órgãos públicos integrantes da administração direta e indireta.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3403487
-CEBRASPE (CESPE) - Pesq (EMBRAPA)/EMBRAPA/Ciências Exatas e da Terra/Engenharia de Processos Químicos/2025
-Direito Digital - Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD)
-690) 
-Julgue o item a seguir de acordo com a Lei Geral de Proteção de Dados Pessoais (LGPD).
-
- 
-É permitido ao poder público transferir a entidades privadas dados pessoais constantes de bases de dados a que tenha acesso quando essa transferência tiver respaldo em contratos ou convênios, o que se deve comunicar à autoridade nacional.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3406229
-CEBRASPE (CESPE) - Tec (EMBRAPA)/EMBRAPA/Laboratório e Campos Experimentais/Manejo Animal/2025
-Direito Digital - Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD)
-691) 
-Conforme a disciplina da Lei Geral de Proteção de Dados, julgue o item a seguir.
-
- 
-É vedado à Embrapa, em qualquer circunstância, na condição de empresa pública que presta serviço público, transferir a entidades privadas dados pessoais constantes de bases de dados a que tenha acesso.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3567306
-CEBRASPE (CESPE) - ERSTA (ANTAQ)/ANTAQ/Curso de Formação/2025
-Direito Digital - Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD)
-692) 
-Acerca da proteção de dados pessoais, julgue o item a seguir.
-
- 
-Segundo as boas práticas adotadas na ANTAQ, documentos públicos contendo dados pessoais devem ser anonimizados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2775817
-CEBRASPE (CESPE) - Ana CT I (CNPq)/CNPq/Desenvolvimento e Arquitetura de Software/2024
-Direito Digital - Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD)
-693) 
-Acerca da Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados), julgue o item subsecutivo.
-
- 
-A Lei Geral de Proteção de Dados aborda o tratamento de dados pessoais e se aplica também à administração pública.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2854426
-CEBRASPE (CESPE) - ERSTT (ANTT)/ANTT/"Sem Área"/2024
-Direito Digital - Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD)
-694) 
-Com base no previsto na Lei n.º 12.527/2011, Lei de Acesso à Informação (LAI), e na Lei n.º 13.709/2018, Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o próximo item.
-
- 
-Cabe aos órgãos e às entidades do poder público, conforme as normas e os procedimentos específicos aplicáveis, assegurar a gestão transparente e a proteção da informação, propiciando amplo acesso a ela e sua divulgação e garantindo sua disponibilidade, autenticidade e integridade.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2875359
-CEBRASPE (CESPE) - Ana CT (CAPES)/CAPES/Geral/2024
-Direito Digital - Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD)
-695) 
-Julgue o item subsecutivo de acordo com a Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD).
-
- 
-O poder público pode coletar e tratar dados pessoais manifestadamente tornados públicos pelo seu titular, sem necessidade do consentimento deste, nos casos em que houver persecução do interesse público.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2993403
-CEBRASPE (CESPE) - AJ CNJ/CNJ/Apoio Especializado/Análise de Sistemas/2024
-Direito Digital - Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD)
-696) 
-Com base na Lei Geral de Proteção de Dados Pessoais (LGPD) e no Marco Civil da Internet, julgue o item a seguir.
-
- 
-Conforme a LGPD, no âmbito do tratamento de dados pessoais pelo poder público, consideradas a execução de políticas públicas e a prestação de serviços públicos, os dados deverão ser mantidos em formato interoperável e estruturado para uso compartilhado.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3172743
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Arquivologia/2024
-Direito Digital - Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD)
-697) 
-Considerando o que dispõe a Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item a seguir.
-
- 
-O uso compartilhado de dados pessoais de pessoa jurídica de direito público a pessoa de direito privado deve ser informado ao encarregado pelo tratamento de dados pessoais e dependerá de consentimento do titular dos dados.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3202735
-CEBRASPE (CESPE) - AJ TSE/TSE/Apoio Especializado/Arquivologia/2024
-Direito Digital - Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD)
-698) 
-Considerando que políticas de acesso aos documentos de arquivo devem ser formuladas de modo a respeitar normas que regulamentam o acesso a dados e informações, julgue o item seguinte, com base na Lei de Acesso à Informação e na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados).
-
-
-A Autoridade Nacional de Proteção de Dados (ANPD) poderá solicitar, a qualquer momento, aos órgãos e às entidades do poder público, a realização de operações para acesso a dados pessoais, bem como a informações específicas sobre o âmbito e a natureza dos dados.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3202741
-CEBRASPE (CESPE) - AJ TSE/TSE/Apoio Especializado/Arquivologia/2024
-Direito Digital - Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD)
-699) 
-Considerando que políticas de acesso aos documentos de arquivo devem ser formuladas de modo a respeitar normas que regulamentam o acesso a dados e informações, julgue o item seguinte, com base na Lei de Acesso à Informação e na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados).
-
- 
-Os dados deverão ser mantidos em formato interoperável e estruturado para o uso compartilhado, com vistas à execução de políticas públicas, bem como à disseminação e ao acesso de informações pelo público em geral.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2637740
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Advocacia/2023
-Direito Digital - Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD)
-700) 
-Julgue o item a seguir, à luz do que dispõe a Lei Geral de Proteção de Dados Pessoais (LGPD).
-
- 
-O tratamento de dados pessoais pelas pessoas jurídicas de direito público independe da finalidade pública do tratamento.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1972217
-CEBRASPE (CESPE) - Esp GT (TELEBRAS)/TELEBRAS/Advogado/2022
-Direito Digital - Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD)
-701) 
-Considerando as disposições da Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item que se segue.
-
- 
-Em regra, a comunicação ou o uso compartilhado de dados pessoais de pessoa jurídica de direito público a pessoa de direito privado será informado à autoridade nacional e dependerá de consentimento do titular.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1981942
-CEBRASPE (CESPE) - Tec GT (TELEBRAS)/TELEBRAS/Assistente Administrativo/2022
-Direito Digital - Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD)
-702) 
-Com base na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item que se segue.
-
- 
-Em respeito aos princípios de proteção de dados pessoais, o uso compartilhado de dados pessoais pelo poder público deve atender a finalidades específicas de execução de políticas públicas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1739690
-CEBRASPE (CESPE) - Tec Ban I (BANESE)/BANESE/2021
-Direito Digital - Das Regras para Tratamento de Dados Pessoais (arts. 23 a 30 da Lei nº 13.709/2018 - LGPD)
-703) 
-Acerca do sigilo bancário, da proteção de dados pessoais e marco civil da Internet, julgue o item a seguir.
-
- 
-É vedado ao poder público transferir a entidades privadas dados pessoais constantes na base de dados a que ele tenha acesso, inclusive na hipótese de visar exclusivamente a prevenção de fraudes e irregularidades.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3422352
-CEBRASPE (CESPE) - Tec (EMBRAPA)/EMBRAPA/Gestão da Informação/Tecnologia da Informação/2025
-TI - Segurança da Informação - Engenharia Social e Phishing
-704) 
-No que se refere a phishing, julgue o item a seguir.
-
- 
-Denomina-se engenharia social o conjunto de técnicas de convencimento utilizadas por um atacante para tentar convencer uma pessoa a executar ação que possa levar ao comprometimento de dados, informações e(ou) do computador da vítima.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2981692
-CEBRASPE (CESPE) - ASist (Pref Cach Itapemirim)/Pref Cach Itapemirim/2024
-TI - Segurança da Informação - Engenharia Social e Phishing
-705) 
-Sobre ataques do tipo phishing, julgue o item a seguir.
-
-
-O phishing pode ser caracterizado como um tipo de ataque de engenharia social que é realizado apenas por telefone.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3077656
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Segurança da Informação/2024
-TI - Segurança da Informação - Engenharia Social e Phishing
-706) 
-Uma grande empresa que recentemente migrou suas operações para um ambiente de nuvem está preocupada com a integridade, confidencialidade e disponibilidade dos seus dados, especialmente devido a incidentes recentes de segurança que ocorreram em outras organizações do mesmo setor de negócios. Essa empresa utiliza serviços de IaaS (Infrastructure as a Service) e está sob constante ameaça de ataques como modificação de dados, espionagem na rede, phishing, DDoS, ransomware, entre outros. Com isso, a área de segurança digital solicitou uma análise detalhada das possíveis vulnerabilidades e das medidas necessárias para mitigá-las.
-
- 
-A partir da situação hipotética precedente, julgue o seguinte item, em relação à segurança da informação.
-
- 
-Phishing é um ataque que compromete apenas a confidencialidade das informações.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3077675
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Segurança da Informação/2024
-TI - Segurança da Informação - Engenharia Social e Phishing
-707) 
-Um usuário recebeu um email, aparentemente vindo do departamento de TI da sua empresa, no qual lhe era solicitada a validação urgente de suas credenciais em um link incluído na mensagem, sob pena de um possível bloqueio das credenciais caso a solicitação não fosse atendida. Sem desconfiar da mensagem, o usuário clicou no link e preencheu um formulário com seu nome de usuário e senha. Posteriormente, descobriu-se que as informações prestadas pelo usuário foram usadas por terceiro para acessar dados confidenciais e realizar atividades não autorizadas, em um ataque de phishing.
-
- 
-Considerando essa situação hipotética, julgue o item seguinte.
-
- 
-A melhor contramedida contra o phishing seria usar algoritmos de criptografia mais robustos nas comunicações de email efetuadas na empresa.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3148286
-CEBRASPE (CESPE) - AnDR (CODEVASF)/CODEVASF/Tecnologia da Informação/2024
-TI - Segurança da Informação - Engenharia Social e Phishing
-708) 
-No que se refere à segurança da informação, julgue o item subsecutivo.
-
-
-Nos golpes cibernéticos promovidos com base em engenharia social, em geral, os invasores têm como objetivos a interrupção ou corrupção de dados para causar danos ou incômodos e obtenção de algum valor, tal como dinheiro ou acesso a informações ou a dados pessoais ou sigilosos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3191068
-CEBRASPE (CESPE) - AJ STJ/STJ/Apoio Especializado/Suporte em Tecnologia da Informação/2024
-TI - Segurança da Informação - Engenharia Social e Phishing
-709) 
-Julgue o item seguinte, relativos a ameaças, ataques e protocolos de segurança de email.
-
- 
-O spear phishing tem como alvo um grupo específico ou tipo de indivíduo, como os administradores de sistema de uma empresa; já o whaling é um tipo de phishing ainda mais direcionado e geralmente tem como alvo um CEO ou CFO de um setor ou negócio específico.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2575746
-CEBRASPE (CESPE) - AIS (EMPREL)/EMPREL/Banco de Dados/2023
-TI - Segurança da Informação - Engenharia Social e Phishing
-710) 
-Assinale a opção que indica um ataque em que um golpista visa obter dados pessoais e financeiros de um usuário pela utilização combinada de meios técnicos e engenharia social.
-
-a)  DDoS (distributed denial of service)
-b)  brute force
-c)  eavesdropping
-d)  phishing
-
-e)  port scanning
-Gabarito: D
-## questao 2576102
-CEBRASPE (CESPE) - Ana Sist (EMPREL)/EMPREL/2023
-TI - Segurança da Informação - Engenharia Social e Phishing
-711) 
-João recebeu uma ligação telefônica de um suposto funcionário de um banco onde ele tem conta-corrente. Esse funcionário informou que o motivo da referida ligação era a confirmação de uma transferência bancária de alto valor que o cliente em questão teria realizado. Após João negar a autoria da transferência, a qual não havia feito, o suposto funcionário pediu que ele digitasse, no teclado do telefone, os seus dados pessoais, como CPF, agência, conta e senha, para que o sistema do banco processasse o cancelamento da transferência. Preocupado, João atendeu ao pedido do suposto funcionário do banco. A referida transferência bancária nunca ocorreu.
-
- 
-Nessa situação hipotética, João foi vítima de um ataque baseado em
-
-a)  engenharia social.
-b)  exploração de vulnerabilidade.
-c)  força bruta.
-d)  negação de serviço.
-
-e)  código malicioso.
-Gabarito: A
-## questao 2642282
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança da Informação e Proteção de Dados/2023
-TI - Segurança da Informação - Engenharia Social e Phishing
-712) 
-Considerando conceitos e padrões criptográficos, conceitos de blockchain e detecção, resposta, tratamento e recuperação de incidentes cibernéticos, julgue o item a seguir.
-
- 
-Denomina-se phishing a ação de o agente do ataque colocar-se entre a comunicação de dois usuários válidos, interceptar as mensagens enviadas, passando-se por uma das partes, e poder alterá-las ou bloqueá-las.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1937733
-CEBRASPE (CESPE) - AFCE (TCE-SC)/TCE SC/Tecnologia da Informação/2022
-TI - Segurança da Informação - Engenharia Social e Phishing
-713) 
-Julgue o item subsequente, a respeito de políticas para o uso de dispositivo móvel.
-
- 
-A ameaça em segurança dos dispositivos móveis da empresa denominada ataques de engenharia social é caracterizada pelo mau uso dos recursos de rede, dispositivo ou identidade, como, por exemplo, ataques de negação de serviço.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1980645
-CEBRASPE (CESPE) - Esp GT (TELEBRAS)/TELEBRAS/Engenheiro Redes/2022
-TI - Segurança da Informação - Engenharia Social e Phishing
-714) 
-A respeito de ataques em redes e aplicações corporativas, julgue o próximo item.
-
- 
-Uma das técnicas para phishing é a clonagem de sítios de instituições financeiras, com o objetivo de obter as credenciais de acesso do usuário.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2165801
-CEBRASPE (CESPE) - Ana (APEX)/ApexBrasil/Operações e Segurança de Tecnologia da Informação e Comunicação/Segurança da Informação/2022
-TI - Segurança da Informação - Engenharia Social e Phishing
-715) 
-Um invasor pode ser uma pessoa que, mesmo sem conhecimento técnico, busca roubar informações, geralmente seguindo um processo. Nos ataques de engenharia social, o invasor segue, sucessivamente, as etapas de
-
-a)  pesquisa, seleção do alvo, relacionamento e exploração.
-b)  representação, conversação, relacionamento e exploração.
-c)  pesquisa, seleção do alvo, construção do aplicativo e relacionamento.
-d)  representação, seleção do alvo, construção do aplicativo e exploração.
-Gabarito: A
-## questao 2218122
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Suporte à Infraestrutura de Tecnologia da Informação/2022
-TI - Segurança da Informação - Engenharia Social e Phishing
-716) 
-Com relação aos tipos de malwares, julgue o item que se segue.
-
-
-O phishing é uma técnica explorada por um invasor que tenta obter o endereço IP do usuário para enviar uma quantidade volumosa de requisições e aumentar o consumo da banda.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1510107
-CEBRASPE (CESPE) - ACE (TCE RJ)/TCE RJ/Controle Externo/Tecnologia da Informação/2021
-TI - Segurança da Informação - Engenharia Social e Phishing
-717) 
-A respeito de segurança em redes de computadores e criptografia, julgue o item seguinte.
-
-
-Os ataques de phishing caracterizam-se pelo envio de mensagens eletrônicas que despertam a atenção de usuários por meio da sugestão de vantagens ou ameaças de prejuízos e também por induzirem os usuários a fornecer dados pessoais e(ou) financeiros.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1120244
-CEBRASPE (CESPE) - AJ (TJ PA)/TJ PA/Análise de Sistema/Suporte/2020
-TI - Segurança da Informação - Engenharia Social e Phishing
-718) 
-Assinale a opção que indica o tipo de ataque mais comumente utilizado como precursor para viabilizar ataques de ransomware  contra estações de trabalho de usuários.
-
-a)  DDoS (distributed denial of service)
-b)  procedimento de defacement
-c)  ataque de phishing
-d)  keylogger
-e)  vírus
-Gabarito: C
-## questao 3258566
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Tecnologia da Informação/2025
-TI - Segurança da Informação - Malware (Vírus, Worms, Trojans, etc.)
-719) 
-Julgue o item a seguir, referente a códigos maliciosos e aplicativos para segurança.
-
- 
-Denomina-se screenlogger o código malicioso projetado para monitorar o uso de teclados virtuais, capturar as regiões de tela acionadas por esses teclados e enviar as informações coletadas para terceiros.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3429728
-CEBRASPE (CESPE) - Sup Ped (UNIVESP)/UNIVESP/Computação e Áreas Afins/2025
-TI - Segurança da Informação - Malware (Vírus, Worms, Trojans, etc.)
-720) 
-Assinale a opção que apresenta corretamente o tipo de código malicioso capaz de se propagar automaticamente, explorando vulnerabilidades existentes em programas instalados em computadores, e que dispõe de mecanismos de comunicação com o invasor que permitem que ele seja controlado remotamente.
-
-a)  vírus de script
-b)  trojan
-c)  bot
-d)  worm
-
-e)  spyware
-Gabarito: C
-## questao 3446960
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Suporte em Tecnologia da Informação/2025
-TI - Segurança da Informação - Malware (Vírus, Worms, Trojans, etc.)
-721) 
-Em relação a ataques de malwares e a frameworks de segurança da informação, julgue o item subsequente.
-
- 
-Rootkit é um tipo de malware que permite que um atacante mantenha controle remoto sobre o sistema infectado, salvo se ele for reiniciado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2841763
-CEBRASPE (CESPE) - Ana Min (MPE TO)/MPE TO/Especializado/Administração de Infraestrutura de Tecnologia da Informação/2024
-TI - Segurança da Informação - Malware (Vírus, Worms, Trojans, etc.)
-722) 
-Julgue o próximo item, a respeito de ataques, malwares, criptografia e certificação digital.
-
- 
-O vírus de computador e o worm estão entre os principais tipos de malware capazes de infectar outras máquinas por meio da execução ou anexação em outros artefatos digitais, ou envio de cópias de si mesmo pelas redes de computadores.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2847646
-CEBRASPE (CESPE) - Tec Min (MPE TO)/MPE TO/Especializado/Fotografia/2024
-TI - Segurança da Informação - Malware (Vírus, Worms, Trojans, etc.)
-723) 
-Julgue o item a seguir, referente a vírus, worms, pragas virtuais e aplicativos de segurança.
-
- 
-Hijacker é um tipo de malware que invade o computador e criptografa os dados de forma que o usuário perde o acesso aos próprios dados.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2847647
-CEBRASPE (CESPE) - Tec Min (MPE TO)/MPE TO/Especializado/Fotografia/2024
-TI - Segurança da Informação - Malware (Vírus, Worms, Trojans, etc.)
-724) 
-Julgue o item a seguir, referente a vírus, worms, pragas virtuais e aplicativos de segurança.
-
- 
-Um tipo muito comum de malware são os chamados worms, programas com capacidade de se replicar, enviando cópias do próprio worm de um computador para outro computador e explorando pontos de vulnerabilidade dos sistemas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2848044
-CEBRASPE (CESPE) - Tec Min (MPE TO)/MPE TO/Especializado/Técnico em informática/2024
-TI - Segurança da Informação - Malware (Vírus, Worms, Trojans, etc.)
-725) 
-Julgue o item subsequente, relativo a conceitos, serviços e tecnologias relacionados a Internet e correio eletrônico, a spyware e criptografia.
-
- 
-Softwares de adware são exemplos de spyware e são utilizados para coletar informações sobre hábitos e interesses do usuário.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2877716
-CEBRASPE (CESPE) - Ana CT (CAPES)/CAPES/Informática/2024
-TI - Segurança da Informação - Malware (Vírus, Worms, Trojans, etc.)
-726) 
-No que concerne aos tipos de ataque, julgue o seguinte item.
-
-
-O cavalo de troia (trojan) é um programa que monitora as atividades de um usuário e as envia para outra pessoa, deforma maliciosa, sem o conhecimento deste.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3048692
-CEBRASPE (CESPE) - ACE (TCE PR)/TCE PR/Informática/2024
-TI - Segurança da Informação - Malware (Vírus, Worms, Trojans, etc.)
-727) 
-Assinale a opção que indica o tipo de malware que opera tipicamente subvertendo o fluxo de execução do sistema, sendo capaz de ocultar-se e substituir as chamadas do sistema que manipulam arquivos, processos, memória, controles de acesso e comunicações de rede por código malicioso.
-
-
-a) worm
-b) vírus
-c) rootkit
-d) cavalo de Troia
-
-e) spyware
-Gabarito: C
-## questao 3076902
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Infraestrutura de TI/2024
-TI - Segurança da Informação - Malware (Vírus, Worms, Trojans, etc.)
-728) 
-Em relação a NAT e VPN, bem como a ataques dos tipos flood e keylogger, julgue o item a seguir.
-
- 
-Keylogger é um programa capaz de capturar e armazenar o que é digitado no teclado pelo usuário, sendo sua ativação condicionada a uma ação prévia do usuário.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3081554
-CEBRASPE (CESPE) - TCE (TCE AC)/TCE AC/Técnico em Informática/2024
-TI - Segurança da Informação - Malware (Vírus, Worms, Trojans, etc.)
-729) 
-Julgue o próximo item, em relação a malwares e spywares.
-
- 
-O cookie de rastreamento é um tipo de spyware que monitora as atividades de um usuário em um computador e as envia ao invasor.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3081556
-CEBRASPE (CESPE) - TCE (TCE AC)/TCE AC/Técnico em Informática/2024
-TI - Segurança da Informação - Malware (Vírus, Worms, Trojans, etc.)
-730) 
-Julgue o próximo item, em relação a malwares e spywares.
-
- 
-Malware é um termo genérico para qualquer tipo de software malicioso projetado para prejudicar ou mesmo explorar quaisquer dispositivos, serviços ou rede de computadores.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3148282
-CEBRASPE (CESPE) - AnDR (CODEVASF)/CODEVASF/Tecnologia da Informação/2024
-TI - Segurança da Informação - Malware (Vírus, Worms, Trojans, etc.)
-731) 
-Julgue o seguinte item, que tratam de proteção contra softwares maliciosos e de sistemas de detecção de intrusão.
-
- 
-No ciclo de operação dos malwares, existe uma etapa conhecida como exfiltração, muito usada em ransomwares; nessa etapa, o malware envia os dados ou fornece ao agente malicioso uma forma de monetizar a situação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3173490
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Microinformática e Infraestrutura de TI/2024
-TI - Segurança da Informação - Malware (Vírus, Worms, Trojans, etc.)
-732) 
-Julgue o item a seguir, em relação a dispositivos de segurança e a softwares maliciosos.
-
- 
-Rootkits conseguem ocultar a existência de malware em sistemas operacionais, sendo capazes de interceptar e modificar chamadas de programas normais ao sistema operacional.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3191070
-CEBRASPE (CESPE) - AJ STJ/STJ/Apoio Especializado/Suporte em Tecnologia da Informação/2024
-TI - Segurança da Informação - Malware (Vírus, Worms, Trojans, etc.)
-733) 
-Acerca de ataques de malware, julgue o próximo item.
-
- 
-Ataques do tipo APT (advanced persistent threats) usam uma abordagem ampla e são projetados sem um alvo específico, sendo iniciados para causar danos à rede da organização-alvo, com o objetivo de se obter entrada e saída rápidas.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3259923
-CEBRASPE (CESPE) - TJ TRF6/TRF 6/Apoio Especializado/Desenvolvimento de Sistemas de Informação/2025
-TI - Segurança da Informação - Negação de Serviço (DoS)
-734) 
-Acerca de prevenção e combate a ataques a redes de computadores, criptografia e certificação digital, julgue o item a seguir.
-
- 
-Enquanto método de prevenção contra ataques DDoS em redes corporativas, a redução da superfície de ataque concentra-se em restringir o número de portas abertas no firewall, sem a necessidade de outros controles adicionais ou de monitoramento contínuo, sendo uma abordagem eficaz para evitar sobrecarga de tráfego malicioso.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3367109
-CEBRASPE (CESPE) - Tecno (AEB)/AEB/Tecnologia da Informação/2025
-TI - Segurança da Informação - Negação de Serviço (DoS)
-735) 
-Assinale a opção que corresponde a um ataque que se caracteriza pela inundação de um recurso de rede para torná-lo lento ou inacessível para usuários legítimos. 
-
-a)  phishing
-b)  negação de serviço
-c)  ransoware
-d)  XSS 
-
-e)  SQL injection
+## questao 2169984
+CEBRASPE (CESPE) - Med Leg (PC RO)/PC RO/2022
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+372) 
+A confissão, para ser válida, deve ser pessoal, realizada por pessoa capaz e de forma expressa, livre e espontânea. Nesse sentido, a confissão será válida e prevalecerá
+
+a) quando realizada por pessoa capaz, em fase judicial, ainda que incompatível com as demais provas produzidas.
+b) quando realizada por pessoa portadora de transtorno misto ansioso- depressivo, em fase judicial.
+c) quando realizada por pessoa capaz, em fase de interrogatório policial, submetida a interrogatório com técnicas coercitivas psíquicas.
+d) quando realizada por pessoa portadora de transtorno depressivo recorrente leve, em fase de inquérito policial, submetida ao método do terceiro grau durante o interrogatório.
+
+e) quando realizada por pessoa portadora de demência, em fase judicial, ainda que incompatível com as demais provas produzidas.
 Gabarito: B
-## questao 2841762
-CEBRASPE (CESPE) - Ana Min (MPE TO)/MPE TO/Especializado/Administração de Infraestrutura de Tecnologia da Informação/2024
-TI - Segurança da Informação - Negação de Serviço (DoS)
-736) 
-Julgue o próximo item, a respeito de ataques, malwares, criptografia e certificação digital.
+## questao 2169986
+CEBRASPE (CESPE) - Med Leg (PC RO)/PC RO/2022
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+373) 
+Considerando que o testemunho, sob o ponto de vista psicológico, se forma por meio de um processo de quatro fases, assinale a opção correta.
 
+a)  A primeira fase é a da sensação, mais fisiológica que física, e representa o estágio com menor número de erros.
+b) A quarta fase é a da exteriorização, que se cristaliza com o processo testemunhal em si, através da narração de um fato em arguido no depoimento.
+c) A segunda fase é a da fixação, que se dá através dos sentidos (visão, audição, olfato, paladar e tato) e pode ter caráter ilusório.
+d) A segunda fase é a da percepção, que ocorre quando a impressão se projeta no cérebro, no campo da consciência, e quando as imagens passam a ser recordadas por meio de lembranças.
 
-Apesar de afetarem a disponibilidade operacional de sistemas conectados à rede de computadores, os ataques DoS têm como principal objetivo a coleta de informações sensíveis dos alvos, sistematicamente expostas em razão da inoperância das configurações de segurança e dos sistemas vinculados de proteção por sobrecarga.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2848211
-CEBRASPE (CESPE) - Tec Min (MPE TO)/MPE TO/Especializado/Técnico em Telecomunicações/2024
-TI - Segurança da Informação - Negação de Serviço (DoS)
-737) 
-Acerca da segurança da informação, julgue o seguinte item.
-
- 
-A negação de serviço pode ser classificada como ataque do tipo ativo e consiste em impedir ou inibir o uso normal ou o gerenciamento adequado dos recursos de comunicação de uma rede. Um ataque em que se suprimem mensagens direcionadas ao serviço de auditoria de segurança da rede é um exemplo de ataque de negação de serviço.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2876497
-CEBRASPE (CESPE) - APO (MPO)/MPO/Tecnologia da Informação/Governança e Gestão de Projetos de TI/2024
-TI - Segurança da Informação - Negação de Serviço (DoS)
-738) 
-A respeito da segurança da informação, julgue o item a seguir.
-
- 
-Um ataque de negação de serviço capaz de parar um serviço de tecnologia da informação impacta na autenticidade dos dados.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2877535
-CEBRASPE (CESPE) - APO (MPO)/MPO/Tecnologia da Informação/Gestão da Segurança da Informação Orçamentária/2024
-TI - Segurança da Informação - Negação de Serviço (DoS)
-739) 
-No que se refere a ferramentas e técnicas de segurança de sistemas web, julgue o item subsecutivo.
-
- 
-Um ataque de inundamento de conexões (syn flood) tem por princípio que a aplicação web responda aos pedidos de conexão, cujos estados são mantidos na camada de aplicação
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2877717
-CEBRASPE (CESPE) - Ana CT (CAPES)/CAPES/Informática/2024
-TI - Segurança da Informação - Negação de Serviço (DoS)
-740) 
-No que concerne aos tipos de ataque, julgue o seguinte item.
-
- 
-Considere que um usuário, ao enviar um email para outro usuário, teve suas informações interceptadas por um computador que conseguiu capturar os dados em seu tráfego de rede. Nessa situação, o ataque descrito é denominado flood.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3048695
-CEBRASPE (CESPE) - ACE (TCE PR)/TCE PR/Informática/2024
-TI - Segurança da Informação - Negação de Serviço (DoS)
-741) 
-O ataque contra a camada MAC das redes 802.11 em que o atacante envia uma grande quantidade de quadros de gerenciamento com origem forjada na tentativa de esgotar a memória e o processamento do access point é denominado ataque DoS por
-
-a) inundação de autenticação ou associação.
-b) inundação de desautenticação.
-c) autenticação inválida.
-d) problema de CSMA/CA.
-
-e) reserva do meio.
-Gabarito: A
-## questao 3076837
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Gestão de Dados/2024
-TI - Segurança da Informação - Negação de Serviço (DoS)
-742) 
-A respeito das características de um ataque de negação de serviço distribuído, julgue o próximo item.
-
- 
-Em um ataque que envolve a amplificação de dados, o atacante gera uma mensagem para um elemento falho na rede e este, por sua vez, gera uma resposta que aumenta o volume de dados direcionados à vítima.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3077646
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Segurança da Informação/2024
-TI - Segurança da Informação - Negação de Serviço (DoS)
-743) 
-Um servidor web de uma empresa de e-commerce foi alvo de um ataque DDoS. Durante o ataque, o servidor começou a apresentar lentidão extrema, tornando-se incapaz de atender às requisições legítimas dos clientes. A equipe de segurança detectou um tráfego anormal proveniente de diversos endereços IP, todos de dispositivos comprometidos em diferentes partes do mundo, que inundavam o servidor com solicitações massivas e simultâneas, visando interromper ou degradar significativamente a disponibilidade do serviço de e-commerce.
-
- 
-Tendo como referência a situação hipotética precedente, julgue o item a seguir.
-
- 
-A principal consequência de um ataque DDoS é a perda de integralidade dos dados armazenados no servidor atacado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3077647
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Segurança da Informação/2024
-TI - Segurança da Informação - Negação de Serviço (DoS)
-744) 
-Um servidor web de uma empresa de e-commerce foi alvo de um ataque DDoS. Durante o ataque, o servidor começou a apresentar lentidão extrema, tornando-se incapaz de atender às requisições legítimas dos clientes. A equipe de segurança detectou um tráfego anormal proveniente de diversos endereços IP, todos de dispositivos comprometidos em diferentes partes do mundo, que inundavam o servidor com solicitações massivas e simultâneas, visando interromper ou degradar significativamente a disponibilidade do serviço de e-commerce.
-
- 
-Tendo como referência a situação hipotética precedente, julgue o item a seguir.
-
- 
-Infere-se da situação que o ataque DDoS afeta a disponibilidade do serviço web da empresa de e-commerce.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3081650
-CEBRASPE (CESPE) - TCE (TCE AC)/TCE AC/Técnico em Informática/2024
-TI - Segurança da Informação - Negação de Serviço (DoS)
-745) 
-A respeito de prevenção e combate a ataques a redes de computadores, julgue o item subsecutivo.
-
- 
-Os ataques de DoS e DDoS utilizam apenas um único computador para sobrecarregar um servidor de rede, tornando-o indisponível, sendo necessário apenas um software antivírus para prevenir e combater esses ataques.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3173483
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Microinformática e Infraestrutura de TI/2024
-TI - Segurança da Informação - Negação de Serviço (DoS)
-746) 
-Considerando os tipos de ataques comuns a redes de computadores e sistemas, julgue o item a seguir.
-
- 
-Em um ataque DDoS, que é normalmente volumétrico e torna os sistemas indisponíveis para usuários legítimos, pode haver vários IPs de origem e um ou múltiplos endereços IPs de destino na rede do alvo.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3191038
-CEBRASPE (CESPE) - AJ STJ/STJ/Apoio Especializado/Suporte em Tecnologia da Informação/2024
-TI - Segurança da Informação - Negação de Serviço (DoS)
-747) 
-A respeito de VPN, anti-DDoS, Nagios e Active Directory, julgue o item subsequente.
-
- 
-Inundação SYN é um tipo de ataque distribuído de negação de serviço (DDoS) em que um grande número de solicitações HTTP inunda o servidor, resultando na interrupção do serviço.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3191063
-CEBRASPE (CESPE) - AJ STJ/STJ/Apoio Especializado/Suporte em Tecnologia da Informação/2024
-TI - Segurança da Informação - Negação de Serviço (DoS)
-748) 
-No que se refere a ataques em redes de computadores e redes wireless, julgue o item subsecutivo.
-
- 
-O ataque DoS se caracteriza por utilizar uma única fonte de conexões, enquanto um ataque DDoS utiliza várias fontes de tráfego de ataque, muitas vezes na forma de uma botnet.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3238346
-CEBRASPE (CESPE) - GAAPC (PC DF)/PC DF/Analista de Informática/Banco de Dados/2025
-TI - Segurança da Informação - Ataques a Aplicações Web (XSS, CSRF, SQL Injection etc.)
-749) 
-Acerca da gestão de segurança da informação, de métodos de autenticação e de ameaças e vulnerabilidades em aplicações, julgue o item a seguir.
-
- 
-Um ataque do tipo cross-site request forgery tem como alvo funcionalidades que causem mudanças de estado no servidor de uma aplicação autenticada, como, por exemplo, alteração do endereço de e-mail ou da senha da vítima, ou realização de compras em nome da vítima.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3250681
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Análise de Dados/2025
-TI - Segurança da Informação - Ataques a Aplicações Web (XSS, CSRF, SQL Injection etc.)
-750) 
-Julgue o item a seguir, a respeito da segurança da informação e dos vários tipos de ataques e suas características.
-
- 
-A principal maneira de se fazer a injeção SQL é a inserção de código no arquivo executável da aplicação, o qual será concatenado com comandos SQL e executado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3255366
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Governança e Gestão de Tecnologia da Informação/2025
-TI - Segurança da Informação - Ataques a Aplicações Web (XSS, CSRF, SQL Injection etc.)
-751) 
-Acerca de ameaças e vulnerabilidades em aplicações, julgue o item a seguir.
-
- 
-Uma das consequências de um ataque de CSRF (cross-site request forgery) bem-sucedido é que o atacante consegue levar o usuário vítima a executar uma ação involuntariamente, podendo causar prejuízos variados, conforme a aplicação explorada.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3259920
-CEBRASPE (CESPE) - TJ TRF6/TRF 6/Apoio Especializado/Desenvolvimento de Sistemas de Informação/2025
-TI - Segurança da Informação - Ataques a Aplicações Web (XSS, CSRF, SQL Injection etc.)
-752) 
-A respeito de gestão de segurança da informação, protocolos de autenticação, ameaças e vulnerabilidades em aplicações e segurança de aplicativos web, julgue o item a seguir, considerando, no que couber, as disposições das normas técnicas NBR ISO/IEC 27001:2022 e NBR ISO/IEC 27002:2022.
-
- 
-Um ataque LDAP injection bem-sucedido pode resultar na execução de comandos arbitrários, como a concessão de permissões para consultas não autorizadas e a modificação de conteúdo dentro da árvore LDAP.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3292151
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Infraestrutura e Cibersegurança/2025
-TI - Segurança da Informação - Ataques a Aplicações Web (XSS, CSRF, SQL Injection etc.)
-753) 
-Em relação à análise de vulnerabilidades, julgue o item a seguir.
-
- 
-Cross-site scripting é um tipo clássico de CVE (Common Vulnerabilities and Exposures) que permite a neutralização de entradas com parâmetros inadequados para um sistema Web.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3340461
-CEBRASPE (CESPE) - Ana Desen (BDMG)/BDMG/Infraestrutura e Segurança Cibernética/2025
-TI - Segurança da Informação - Ataques a Aplicações Web (XSS, CSRF, SQL Injection etc.)
-754) 
-Julgue o item subsequente, relativo a ataques em aplicações web e ao firewall pfSense.
-
- 
-SSRF (server-side request forgery) é um tipo de falha que ocorre sempre que aplicativos web buscam recursos remotos sem validar a URL fornecida pelo usuário.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3340463
-CEBRASPE (CESPE) - Ana Desen (BDMG)/BDMG/Infraestrutura e Segurança Cibernética/2025
-TI - Segurança da Informação - Ataques a Aplicações Web (XSS, CSRF, SQL Injection etc.)
-755) 
-Julgue o item subsequente, relativo a ataques em aplicações web e ao firewall pfSense.
-
- 
-XSS (cross-site scripting) é um tipo de ataque classificado como run time execution, em que binários maliciosos são injetados em campos de aplicação web.
-
- 
-Certo
-Errado
-Gabarito: Errado
-## questao 3340471
-CEBRASPE (CESPE) - Ana Desen (BDMG)/BDMG/Infraestrutura e Segurança Cibernética/2025
-TI - Segurança da Informação - Ataques a Aplicações Web (XSS, CSRF, SQL Injection etc.)
-756) 
-Julgue o próximo item, a respeito de segurança e auditoria de bancos de dados.
-
- 
-Injeção de SQL consiste na inserção, por usuário malicioso, de código escrito em linguagem de script no lado do cliente, em vez da inserção de comentário válido, o que faz que o navegador execute esse script, que, por sua vez, poderá realizar ações que comprometam a segurança das informações do usuário ou do sistema.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3345987
-CEBRASPE (CESPE) - AJ TRT10/TRT 10/Apoio Especializado/Tecnologia da Informação/2025
-TI - Segurança da Informação - Ataques a Aplicações Web (XSS, CSRF, SQL Injection etc.)
-757) 
-Julgue o próximo item, relativo a ameaças e ataques de email e a aplicações web em redes de computadores e redes wireless.
-
- 
-A técnica de SQL injection permite que um atacante insira ou manipule consultas SQL em uma aplicação vulnerável, de maneira a provocar a execução de comandos maliciosos no banco de dados, ao passo que o XSS (cross-site scripting)  explora vulnerabilidades para injetar scripts maliciosos em páginas web visualizadas por outros usuários.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3373832
-CEBRASPE (CESPE) - Ana Min (MPE CE)/MPE CE/Ciências da Computação/2025
-TI - Segurança da Informação - Ataques a Aplicações Web (XSS, CSRF, SQL Injection etc.)
-758) 
-Acerca de segurança da informação, segurança de datacenter, segurança de dispositivos e disponibilidade, julgue o item a seguir.
-
-
-A proteção contra ataques de SQL injection é suficiente para impedir a exploração de vulnerabilidades XSS e CSRF em aplicações web.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3400376
-CEBRASPE (CESPE) - AFRE RJ/SEFAZ RJ/2025
-TI - Segurança da Informação - Ataques a Aplicações Web (XSS, CSRF, SQL Injection etc.)
-759) 
-Um sistema de consulta a registros de rede, disponível em uma intranet corporativa, recebe parâmetros de entrada a partir de requisições HTTP e utiliza-os na composição de comandos de consulta ao seu repositório de dados. Durante um teste de vulnerabilidades relacionadas a ataques contra aplicações, a seguinte entrada foi fornecida por um programa testador no parâmetro de consulta de endereço IP da aplicação:
-
- 
-10.0.0.1'; DELETE FROM registros; --
-
- 
-Após o envio da requisição, um comportamento indesejado ocorreu e verificou-se que o artifício poderia ser objetivamente usado em um ataque real. Em relação à situação hipotética apresentada, assinale a opção correta.
-
-a) O ataque foi viabilizado por uma falha do sistema operacional relacionada ao controle de permissões de arquivos temporários, o que permitiu a execução arbitrária de comandos de manipulação de dados pelo usuário remoto.
-b) A vulnerabilidade decorre do uso de interpolação textual sem mecanismos de separação lógica entre dados e comandos, o que permite a injeção de código no interpretador de consultas.
-c) O ataque caracteriza uma parametrização adicional indevida, viabilizada pela ausência de isolamento entre a camada de rede e o sistema operacional.
-d) O uso do método HTTP para envio de dados é incorreto, o que impede o tratamento seguro de entradas potencialmente maliciosas.
-
-e) A entrada fornecida manipula a lógica booleana da cláusula de filtragem, o que resulta em uma condição sempre falsa e instrui incorretamente o sistema sobre como manusear os dados.
+e) A terceira fase é a da percepção, que ocorre quando um pequeno número de dados passa para a consciência através dos sentidos, não havendo ainda a projeção das lembranças no cérebro.
 Gabarito: B
-## questao 3446086
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Análise de Sistemas/2025
-TI - Segurança da Informação - Ataques a Aplicações Web (XSS, CSRF, SQL Injection etc.)
-760) 
-Julgue o seguinte item, relativos a CSRF (cross-site request forgery), testes de invasão e segurança de aplicativos web.
+## questao 2170015
+CEBRASPE (CESPE) - Med Leg (PC RO)/PC RO/2022
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+374) 
+No exercício diário da função do perito médico-legista, o conhecimento de criminologia auxilia na interpretação das evidências encontradas no corpo e em sua integração com as informações obtidas pela criminalística no local do crime. Acerca desse tema e de assuntos correlacionados, assinale a opção correta.
 
- 
-Aplicações web que não implementam corretamente mecanismos de controle de sessão, como expiração de tokens e invalidação de sessões inativas, tornam-se vulneráveis a sequestro de sessão (session hijacking), mesmo que utilizem HTTPS.
+a) A prova é indireta quando afirma outro fato para que, por raciocínio indutivo, chegue-se ao fato desejado por meio da formulação de hipóteses, rejeitando-se umas e aceitando-se outras até chegar a uma conclusão.
+b) A relação entre o fato conhecido e o desconhecido pode ser causal, quando o fato conhecido é a causa do fato desconhecido.
+c) O local é classificado como contaminado quando duas áreas se associam ou se completam na configuração do delito.
+d) A relação entre o fato conhecido e o desconhecido pode ser de identidade, quando o fato desconhecido é um atributo próprio do conhecido, não permitindo identificá-lo.
 
-Certo
-Errado
-Gabarito: Certo
-## questao 3446089
-CEBRASPE (CESPE) - AJ (STM)/STM/Apoio Especializado/Análise de Sistemas/2025
-TI - Segurança da Informação - Ataques a Aplicações Web (XSS, CSRF, SQL Injection etc.)
-761) 
-Julgue o seguinte item, relativos a CSRF (cross-site request forgery), testes de invasão e segurança de aplicativos web.
-
- 
-Em um ataque CSRF, o navegador de um usuário autenticado pode ser induzido a realizar ações maliciosas no sistema do usuário sem o conhecimento deste.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3081615
-CEBRASPE (CESPE) - TCE (TCE AC)/TCE AC/Técnico em Informática/2024
-TI - Segurança da Informação - Ataques a Aplicações Web (XSS, CSRF, SQL Injection etc.)
-762) 
-No que se refere à segurança da informação, julgue o item subsecutivo.
-
- 
-No cross-site scripting refletido (não persistente), a carga útil do invasor deve fazer parte da solicitação enviada ao servidor da Web. Em seguida, é refletida de volta, de maneira que a resposta HTTP inclua a carga útil da solicitação HTTP. Os invasores usam técnicas de engenharia social para induzir a vítima a fazer uma solicitação ao servidor. A carga útil XSS refletida é, então, executada no navegador do usuário.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3173482
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Microinformática e Infraestrutura de TI/2024
-TI - Segurança da Informação - Ataques a Aplicações Web (XSS, CSRF, SQL Injection etc.)
-763) 
-Considerando os tipos de ataques comuns a redes de computadores e sistemas, julgue o item a seguir.
-
- 
-Um ataque do tipo SQL injection requer a existência de uma falha na aplicação relacionada com a sanitização de parâmetros, de modo que um hacker possa enviar comandos SQL para o banco de dados por meio da aplicação exposta.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3324043
-CEBRASPE (CESPE) - ERM (ANM)/ANM/Tecnologia da Informação/Ciência de Dados/2025
-TI - Segurança da Informação - Questões Mescladas de Ameaças aos Sistemas Computacionais
-764) 
-Julgue o próximo item, a respeito de ataques de negação de serviço, controles CIS, gerenciamento de incidentes de segurança da informação e gestão de riscos e continuidade de negócio.
-
- 
-Um dos métodos usados em ataques PDoS consiste em explorar vulnerabilidades de um sistema ou dispositivo para substituir seu software básico por uma imagem corrompida de firmware, inviabilizando, assim, o funcionamento do dispositivo ou do sistema inteiro.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3345980
-CEBRASPE (CESPE) - AJ TRT10/TRT 10/Apoio Especializado/Tecnologia da Informação/2025
-TI - Segurança da Informação - Questões Mescladas de Ameaças aos Sistemas Computacionais
-765) 
-Julgue o próximo item, relativo a ameaças e ataques de email e a aplicações web em redes de computadores e redes wireless.
-
-
-Os ataques DoS e DDoS visam indisponibilizar recursos, enquanto técnicas de sniffing e spoofing interceptam e manipulam dados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2796980
-CEBRASPE (CESPE) - APGIPI (INPI)/INPI/Gestão da Tecnologia da Informação/Segurança da Informação/2024
-TI - Segurança da Informação - Questões Mescladas de Ameaças aos Sistemas Computacionais
-766) 
-Julgue o próximo item, com relação a vulnerabilidades e ataques.
-
-
-Os ataques passivos costumam obter dados que estão sendo transmitidos, enquanto os ataques ativos buscam modificar ou criar um dado.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2981686
-CEBRASPE (CESPE) - ASist (Pref Cach Itapemirim)/Pref Cach Itapemirim/2024
-TI - Segurança da Informação - Questões Mescladas de Ameaças aos Sistemas Computacionais
-767) 
-Julgue o próximo item, relativo a vulnerabilidades em aplicações web e suas características.
-
-
-Um dos tipos de ataques que permite o sequestro de sessão em uma aplicação envolve roubar o cookie de sessão do usuário, localizar o ID da sessão dentro do cookie e usar essas informações para assumir o controle da sessão.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2981687
-CEBRASPE (CESPE) - ASist (Pref Cach Itapemirim)/Pref Cach Itapemirim/2024
-TI - Segurança da Informação - Questões Mescladas de Ameaças aos Sistemas Computacionais
-768) 
-Julgue o próximo item, relativo a vulnerabilidades em aplicações web e suas características.
-
- 
-Um ataque do tipo injeção SQL é caracterizado por permitir a passagem de parâmetros SQL via entrada de dados da aplicação e executar tais parâmetros no banco de dados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2997230
-CEBRASPE (CESPE) - TJ CNJ/CNJ/Apoio Especializado/Programação de Sistemas/2024
-TI - Segurança da Informação - Questões Mescladas de Ameaças aos Sistemas Computacionais
-769) 
-No que se refere a autenticação multifator, OAuth 2.0, cross-site scripting, DNS spoofing e port scanning, julgue o item a seguir.
-
- 
-Em um ataque cross-site scripting armazenado, quando um usuário é induzido a clicar um link malicioso, o código injetado é enviado para o site vulnerável, o que reflete o ataque de volta ao navegador do usuário; o navegador, então, executa o código, porque interpreta que ele veio de um servidor confiável.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3077649
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Segurança da Informação/2024
-TI - Segurança da Informação - Questões Mescladas de Ameaças aos Sistemas Computacionais
-770) 
-Um servidor web de uma empresa de e-commerce foi alvo de um ataque DDoS. Durante o ataque, o servidor começou a apresentar lentidão extrema, tornando-se incapaz de atender às requisições legítimas dos clientes. A equipe de segurança detectou um tráfego anormal proveniente de diversos endereços IP, todos de dispositivos comprometidos em diferentes partes do mundo, que inundavam o servidor com solicitações massivas e simultâneas, visando interromper ou degradar significativamente a disponibilidade do serviço de e-commerce.
-
- 
-Tendo como referência a situação hipotética precedente, julgue o item a seguir.
-
- 
-A técnica utilizada no ataque descrito envolve a modificação de mensagens para causar um efeito de acesso não autorizado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3104252
-CEBRASPE (CESPE) - ERSPT (ANATEL)/ANATEL/Engenharia/2024
-TI - Segurança da Informação - Questões Mescladas de Ameaças aos Sistemas Computacionais
-771) 
-Julgue o item seguinte, em relação a ataques cibernéticos e a ataques a rede definida por software (SDN).
-
- 
-O ataque de DNS cache snooping é um tipo de ataque em que o servidor DNS precisa ser configurado para resolver nomes recursivamente para terceiros e que os registros de cache estejam apagados.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3191072
-CEBRASPE (CESPE) - AJ STJ/STJ/Apoio Especializado/Suporte em Tecnologia da Informação/2024
-TI - Segurança da Informação - Questões Mescladas de Ameaças aos Sistemas Computacionais
-772) 
-Acerca de ataques de malware, julgue o próximo item.
-
- 
-Leakware/doxware é um tipo de ransomware em que se ameaça destruir os dados se o resgate não for pago, havendo casos em que se destroem os dados mesmo tendo sido efetivado o pagamento do resgate.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2591919
-CEBRASPE (CESPE) - Ana (MPE RO)/MPE RO/Suporte Computacional/2023
-TI - Segurança da Informação - Questões Mescladas de Ameaças aos Sistemas Computacionais
-773) 
-O item que fornece uma maneira de capturar as principais características de uma vulnerabilidade e produzir uma pontuação numérica que reflete sua gravidade é o
-
-a)  CVSS (common vulnerability scoring system).
-b) XSS (cross site script).
-c) SQLi (SQL injection).
-d) NVD (national vulnerability database).
-
-e)  BO (buffer overflow)
+e) O local é classificado como referido quando os indicios são preservados desde a ocorrência dos fatos até o completo registro.
 Gabarito: A
-## questao 2642025
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança Cibernética/2023
-TI - Segurança da Informação - Questões Mescladas de Ameaças aos Sistemas Computacionais
-774) 
-Com relação aos conceitos de segurança cibernética, julgue o item a seguir.
-
- 
-A técnica BAS (breach attack simulation) é utilizada para proteger sistemas de TI contra ameaças de segurança, com acesso a meios centralizados de consultas e compartilhamento de informações sobre ameaças.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2716726
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Sistemas de TI/2023
-TI - Segurança da Informação - Questões Mescladas de Ameaças aos Sistemas Computacionais
-775) 
-Julgue o item subsequente, relativo às características de vulnerabilidades em aplicações.
-
- 
-O ataque de injeção LDAP é restrito ao sistema Active Directory da Microsoft; o sistema OpenLDAP possui filtros nativos contra injeção de código malicioso.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2216248
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Analista de Segurança da Tecnologia da Informação/2022
-TI - Segurança da Informação - Questões Mescladas de Ameaças aos Sistemas Computacionais
-776) 
-No que se refere aos ataques cibernéticos, julgue o item seguinte.
+## questao 590855
+CEBRASPE (CESPE) - Odon Leg (PC MA)/PC MA/2018
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+375) 
+Com relação à cadeia de custódia de vestígios, julgue os seguintes itens.
 
 
-O ransomware é um tipo de malware que, em vez de bloquear o acesso aos dados da vítima, criptografa seus arquivos de forma a evitar o acesso a eles ou mesmo sua recuperação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2218127
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Suporte à Infraestrutura de Tecnologia da Informação/2022
-TI - Segurança da Informação - Questões Mescladas de Ameaças aos Sistemas Computacionais
-777) 
-Com relação aos tipos de malwares, julgue o item que se segue.
+I Cadeia de custódia é a sucessão de eventos seguros, confiáveis e rastreáveis que determina o caminho percorrido pelo vestígio, desde sua coleta até sua destinação final.
 
 
-Ransomware é uma técnica utilizada para coletar dados de usuários por meio de mensagens de email, geralmente na forma de spam.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3255373
-CEBRASPE (CESPE) - AJ TRF6/TRF 6/Apoio Especializado/Governança e Gestão de Tecnologia da Informação/2025
-TI - Segurança da Informação - Ameaças Técnicas Relacionadas a Redes e Criptografia
-778) 
-A respeito de port scanning, julgue o item a seguir.
-
- 
-A varredura de porta TCP com a técnica de SYN scan não abre uma conexão TCP completa.
-
-   
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3552883
-CEBRASPE (CESPE) - EPF/PF/2025
-TI - Segurança da Informação - Ameaças Técnicas Relacionadas a Redes e Criptografia
-779) 
-Em relação a ameaças digitais e técnicas de segurança, julgue o item a seguir.
-
- 
-Detecção heurística é uma técnica de análise do comportamento e da estrutura do código para a identificação de características típicas de vírus, ainda que a assinatura específica não seja conhecida.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2783915
-CEBRASPE (CESPE) - Ass (CAU BR)/CAU BR/Tecnologia da Informação/2024
-TI - Segurança da Informação - Ameaças Técnicas Relacionadas a Redes e Criptografia
-780) 
-Julgue o item que se segue, relativo à segurança de rede de computadores e spywares.
-
- 
-Em ataque do tipo MiTM (man-in-the-middle) ou AiTM (adversary-in-the-middle), o invasor intercepta o tráfego da vítima e força um redirecionamento ao sítio espião, que usa o HTTP em vez do HTTPS.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2876706
-CEBRASPE (CESPE) - ERVS (ANVISA)/ANVISA/Tecnologia da Informação/2024
-TI - Segurança da Informação - Ameaças Técnicas Relacionadas a Redes e Criptografia
-781) 
-Considerando ameaças e ataques à segurança da informação, bem como mecanismos de segurança da informação, julgue o próximo item.
+II A cadeia de custódia não deve tomar tempo dos peritos, visto que sua importância para a persecução penal vem diminuindo ao longo dos anos.
 
 
-Exfiltração consiste no ato criminoso de extração de dados sem que o titular de direito desses ativos assim o perceba.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2892163
-CEBRASPE (CESPE) - Ana MP (MPE GO)/MPE GO/Analista em Informática/2024
-TI - Segurança da Informação - Ameaças Técnicas Relacionadas a Redes e Criptografia
-782) 
-Julgue o item subsequente referente a conceitos de segurança da informação, segurança de redes sem fio e gestão de riscos em tecnologia da informação.
-
- 
-A prática conhecida como wardriving consiste em procurar e mapear redes sem fio, podendo as informações obtidas ser usadas para a identificação de redes inseguras ou vulneráveis, assim como das que estão disponíveis para uso público.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3048654
-CEBRASPE (CESPE) - ACE (TCE PR)/TCE PR/Informática/2024
-TI - Segurança da Informação - Ameaças Técnicas Relacionadas a Redes e Criptografia
-783) 
-O tipo de ataque contra o algoritmo RSA que explora propriedades características e seleciona blocos de dados que, quando processados com o uso da chave privada do alvo, produzem informações necessárias para a criptoanálise é conhecido como ataque
-
-a) de textos cifrados escolhidos (chosen ciphertext attack).
-b) baseado em falhas de hardware (hardware fault-based attack).
-c) de força bruta (brute force attack).
-d) matemático (mathematical attack).
-
-e) de temporização (timing attack).
-Gabarito: A
-## questao 3081651
-CEBRASPE (CESPE) - TCE (TCE AC)/TCE AC/Técnico em Informática/2024
-TI - Segurança da Informação - Ameaças Técnicas Relacionadas a Redes e Criptografia
-784) 
-A respeito de prevenção e combate a ataques a redes de computadores, julgue o item subsecutivo.
-
- 
-Uma forma de se prevenir o ataque cibernético do tipo eavesdropping é utilizar criptografia de ponta a ponta tanto em redes de computadores quanto em sistemas de comunicação sem fio.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3104248
-CEBRASPE (CESPE) - ERSPT (ANATEL)/ANATEL/Engenharia/2024
-TI - Segurança da Informação - Ameaças Técnicas Relacionadas a Redes e Criptografia
-785) 
-Julgue o item seguinte, em relação a ataques cibernéticos e a ataques a rede definida por software (SDN).
+III O cuidado com os vestígios, desde sua origem até sua destinação final, é um dos elementos garantidores das informações deles extraídas.
 
 
-O ataque de desvio de tráfego em SDN caracteriza-se por comprometer um elemento da rede no plano de dados, para redirecionar os fluxos de tráfego, o que permite a realização de escuta clandestina.
+IV O principal objetivo da cadeia de custódia é garantir a segurança e a idoneidade do vestígio.
 
-Certo
-Errado
-Gabarito: Certo
-## questao 3104250
-CEBRASPE (CESPE) - ERSPT (ANATEL)/ANATEL/Engenharia/2024
-TI - Segurança da Informação - Ameaças Técnicas Relacionadas a Redes e Criptografia
-786) 
-Julgue o item seguinte, em relação a ataques cibernéticos e a ataques a rede definida por software (SDN).
 
- 
-Ataques de inundação HTTP são um tipo de ataque DDoS da camada 7 no modelo de referência OSI.
+Estão certos apenas os itens
 
-Certo
-Errado
-Gabarito: Certo
-## questao 3104251
-CEBRASPE (CESPE) - ERSPT (ANATEL)/ANATEL/Engenharia/2024
-TI - Segurança da Informação - Ameaças Técnicas Relacionadas a Redes e Criptografia
-787) 
-Julgue o item seguinte, em relação a ataques cibernéticos e a ataques a rede definida por software (SDN).
-
- 
-O ataque de manipulação de rede em SDN caracteriza-se por um ataque crítico no plano de dados, caso em que um invasor produz dados de rede falsos e inicia outros ataques no plano de aplicação.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1916059
-CEBRASPE (CESPE) - ADP (DPE RO)/DPE RO/Redes e Comunicação de Dados/2022
-TI - Segurança da Informação - Ameaças Técnicas Relacionadas a Redes e Criptografia
-788) 
-O ataque cibernético cujo efeito ocorre quando a resolução de nomes de domínios legítimos retorna endereços de sítios falsificados para enganar os usuários e capturar dados pessoais sensíveis é do tipo
-
-a)  phishing.
-b)  DNS poisoning.
-c)  DoS.
-d)  cross site scripting.
-
-e)  SYN flood.
-Gabarito: B
-## questao 1857398
-CEBRASPE (CESPE) - AJ (TJ RJ)/TJ RJ/Tecnologia da Informação/Analista de Segurança da Informação/2021
-TI - Segurança da Informação - Ameaças Técnicas Relacionadas a Redes e Criptografia
-789) 
-O Ettercap é uma ferramenta de segurança de rede livre e de código aberto, que funciona colocando a interface de rede em modo promíscuo com o ARP (Address Resolution Protocol), envenenando esse protocolo nas máquinas de destino. Essa ferramenta é utilizada para análise de protocolo de rede e auditoria de segurança, e possui a funcionalidade de um ataque de rede conhecido como
-
-a)  DoS.
-b) DDoS.
-c) HTTP flood.
-d) man-in-the-middle.
-
-e)  DNS spoofing.
+a)  I e II.
+b)  I e III.
+c)  II e IV.
+d)  I, III e IV.
+e)  II, III e IV.
 Gabarito: D
-## questao 1393701
-CEBRASPE (CESPE) - ProTI (ME)/ME/Atividades Técnicas de Complexidade Gerencial, de Tecnologia da Informação e de Engenharia Sênior/Segurança da Informação e Proteção de Dados/2020
-TI - Segurança da Informação - Ameaças Técnicas Relacionadas a Redes e Criptografia
-790) 
-Acerca de técnicas de ataque e tipos de vulnerabilidades, julgue o item a seguir.
+## questao 590863
+CEBRASPE (CESPE) - Odon Leg (PC MA)/PC MA/2018
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+376) 
+Fazem parte dos procedimentos relacionados à cadeia de custódia de vestígios
+
+a) mistura, inspeção, identificação e incineração de vestígios.
+b)  coleta, acondicionamento, identificação e destinação de vestígios.
+c) coleta, inspeção e destruição de vestígios.
+d)  inspeção, acondicionamento, mistura e destinação de vestígios.
+e) acondicionamento, identificação e destruição de vestígios.
+Gabarito: B
+## questao 590994
+CEBRASPE (CESPE) - Odon Leg (PC MA)/PC MA/2018
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+377) 
+Assinale a opção que apresenta exemplo de quebra na cadeia de custódia.
+
+a) Utilização de equipamento de proteção individual por parte do perito, durante os exames.
+b) Acondicionamento em embalagens diversas, adequadas às diferentes naturezas dos vestígios.
+c) Registro do trâmite do vestígio, incluindo a entrega e o recebimento.
+d) Manuseio sem luvas de vestígio contendo material biológico.
+e)  Identificação de vestígio a ser encaminhado para exame.
+Gabarito: D
+## questao 590996
+CEBRASPE (CESPE) - Odon Leg (PC MA)/PC MA/2018
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+378) 
+Em um tribunal de justiça, ficou evidenciada a inobservância, por parte dos peritos, dos procedimentos referentes à cadeia de custódia dos vestígios de uma infração penal.
+
+
+Nessa situação hipotética, durante o julgamento, pode-se
+
+a)  suspender o direito do réu de responder em liberdade.
+b)  afastar as possíveis provas que poderiam elucidar a infração penal.
+c)  anular o julgamento e enviar os autos a juízo de outra instância.
+d)  substituir os membros do júri.
+e)  suspender o julgamento até que sejam punidos os peritos envolvidos.
+Gabarito: B
+## questao 1620266
+CEBRASPE (CESPE) - PT (CBM CE)/CBM CE/2015
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+379) 
+Julgue o item seguinte, relativo ao isolamento, preservação e levantamento de dados em local de crime e sinistro.
 
  
-Fingerprint é a fase do footprint que tem por objetivo a identificação do endereço IP do host alvo.
+A cadeia de custódia interna é aquela que trata dos procedimentos internos no laboratório e do descarte das amostras coletadas durante a perícia. Normalmente as evidências que tenham maior probabilidade de oferecer bons resultados são encaminhadas ao laboratório para análise.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1620269
+CEBRASPE (CESPE) - PT (CBM CE)/CBM CE/2015
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+380) 
+Julgue o item seguinte, relativo ao isolamento, preservação e levantamento de dados em local de crime e sinistro.
+
+ 
+Com base no conceito de evidência, os vestígios encontrados no local sinistrado, serão denominados de evidências, mesmo que ainda não tenham sido analisados pelo perito de incêndio e explosão.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 1393776
-CEBRASPE (CESPE) - ProTI (ME)/ME/Atividades Técnicas de Complexidade Gerencial, de Tecnologia da Informação e de Engenharia Sênior/Segurança da Informação e Proteção de Dados/2020
-TI - Segurança da Informação - Ameaças Técnicas Relacionadas a Redes e Criptografia
-791) 
-A respeito da proteção de servidores DNS contra ataques na Internet, julgue o item a seguir.
+## questao 692430
+CEBRASPE (CESPE) - Del Pol (PC AL)/PC AL/2012
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+381) 
+Em relação à perícia médico-legal, julgue o item que se segue.
 
  
-Quando um atacante envia informações de resource record falsificadas para um resolvedor DNS, ocorre o envenenamento do cache DNS.
+
+O exame dos vestígios não desvanecentes, visando à inserção probatória nos inquéritos e processos penais, deve ser feito após a autoridade policial tomar conhecimento da prática da infração penal. Nessa ocasião, a autoridade se vale do Código de Processo Penal, e, se for o caso, deve determinar o exame de corpo de delito ou quaisquer outras perícias. Portanto, as provas periciais são inseridas nos autos através dos laudos.
 
 Certo
 Errado
 Gabarito: Certo
-## questao 3291882
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Sistemas e Governança de Tecnologia da Informação/2025
-Direito Digital - Dos Direitos do Titular (arts. 17 a 22 da Lei nº 13.709/2018 - LGPD)
-792) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD), julgue o item que se segue.
+## questao 2746582
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+382) 
+Com relação à prova pericial, assinale a opção correta.
 
+a) Nos casos de morte violenta, bastará o simples exame externo do cadáver, quando não houver infração penal que apurar, ou quando as lesões externas permitirem precisar a causa da morte e não houver necessidade de exame interno para a verificação de alguma circunstância relevante.
+b) Nas perícias de laboratório, uma vez elaborado o laudo, as partes não poderão mais questionar a conclusão obtida pelos expertos, por meio de uma segunda verificação.
+c) Em caso de lesões corporais, se o primeiro exame pericial tiver sido incompleto, proceder-se-á a exame complementar, por determinação da autoridade policial ou do juiz, mas não por requerimento do acusado.
+d) No caso de incêndio, os peritos verificarão apenas a causa e o lugar em que houver começado, o perigo que dele tiver resultado para a vida ou para o patrimônio alheio e a extensão do dano.
 
-Aos titulares dos dados é garantido o direito de solicitar a exclusão de seus dados pessoais, a qualquer momento, das bases de dados de empresas ou organizações, desde que não haja obrigação legal para a sua manutenção.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3296337
-CEBRASPE (CESPE) - Arq (InoversaSul)/InoversaSul/2025
-Direito Digital - Dos Direitos do Titular (arts. 17 a 22 da Lei nº 13.709/2018 - LGPD)
-793) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD), julgue o item a seguir.
-
- 
-Informações e dados pessoais poderão ser fornecidos, a critério do respectivo titular, por meio eletrônico ou sob forma impressa.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3437473
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão da Informação/Gestão da Informação Arquivística/2025
-Direito Digital - Dos Direitos do Titular (arts. 17 a 22 da Lei nº 13.709/2018 - LGPD)
-794) 
-No que diz respeito às políticas, processos e diretrizes para a governança de dados, julgue o item a seguir.
-
- 
-Conforme previsto na Lei Geral de Proteção de Dados Pessoais e segundo regulamentação do Conselho Nacional de Arquivos, o titular dos dados poderá requerer a correção destes em documentos já recolhidos aos arquivos públicos.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3441742
-CEBRASPE (CESPE) - AJ (STM)/STM/Administrativa/"Sem Especialidade"/2025
-Direito Digital - Dos Direitos do Titular (arts. 17 a 22 da Lei nº 13.709/2018 - LGPD)
-795) 
-À luz do disposto na Lei Geral de Proteção de Dados Pessoais (LGPD) e na Lei de Acesso à Informação, julgue o item que se seguem.
-
- 
-A utilização de dados pessoais, pelo titular, para o exercício regular de um direito dele não pode ser feita em seu prejuízo.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3455689
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Administração de Banco de Dados/2025
-Direito Digital - Dos Direitos do Titular (arts. 17 a 22 da Lei nº 13.709/2018 - LGPD)
-796) 
-Assinale a opção correta de acordo com o que dispõe a Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais).
-
-a) O titular dos dados pessoais tem direito de solicitar a revisão de decisões que, tomadas unicamente com base em tratamento automatizado de dados pessoais, tenham por finalidade a definição do seu perfil de consumo e de crédito.
-b) São agentes de tratamento de dados pessoais o controlador e o operador, sendo este responsabilizado de forma subsidiária pelos danos causados ao titular dos dados pessoais em razão do exercício de sua atividade.
-c) É permitido o tratamento de dados pessoais quando necessário para o atendimento aos interesses legítimos do controlador ou de terceiro, não sendo autorizado, entretanto, o tratamento de dados pessoais para fins de proteção do crédito.
-d) Compete ao operador fornecer, sempre que solicitadas, informações claras e adequadas a respeito dos critérios e procedimentos utilizados para a decisão automatizada sobre tratamento de dados pessoais.
-
-e) Quando houver interesse público no tratamento de dados pessoais, é facultado ao poder público compartilhar com entidades privadas dados pessoais constantes de bases de dados a que tenha acesso.
+e) O juiz não ficará adstrito ao laudo, porém não pode aceitá-lo ou rejeitá-lo em parte.
 Gabarito: A
-## questao 2775816
-CEBRASPE (CESPE) - Ana CT I (CNPq)/CNPq/Desenvolvimento e Arquitetura de Software/2024
-Direito Digital - Dos Direitos do Titular (arts. 17 a 22 da Lei nº 13.709/2018 - LGPD)
-797) 
-Acerca da Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados), julgue o item subsecutivo.
+## questao 2746585
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+383) 
+Assinale a opção correta a respeito da prova material e dos vestígios.
+
+a) Todo e qualquer fato conhecido e provado, sinal ou marca que, por sua relação necessária ou possível com outro fato, que se desconhece, prova ou leva a presumir a existência deste último denomina-se vestígio.
+b) O indício prova necessariamente a autoria material de um fato delituoso.
+c) Indício é o juízo, a opinião pessoal, a convicção ou a suspeita que se forma da existência real de um fato, ou circunstância, desconhecidos, em face de outros fatos ou circunstâncias conhecidos, que, por sua natureza, estejam relacionados ao fato desconhecido.
+d) Se um vestígio, após devidamente analisado, interpretado e associado com os minuciosos exames laboratoriais e dados da investigação policial do fato, enquadrando-se em toda a sua moldura, tiver estabelecida sua inequívoca relação com o fato delituoso e com as pessoas com este relacionadas, aí ele terá se transformado em indício.
+
+e) Os indícios são provas diretas e as presunções, indiretas.
+Gabarito: D
+## questao 2746591
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+384) 
+Assinale a opção correta acerca da prova material e dos vestígios.
+
+a) Os trabalhos da polícia no local do crime recebem o nome de reprodução simulada dos fatos, que pode ser conceituada como a transposição para o inquérito do resultado dos exames técnicos realizados no local do delito, determinando a materialidade e apontando a autoria.
+b) As provas técnicas, ou materiais, constituem o que se denomina corpo de delito, isto é, o conjunto de elementos sensíveis do fato criminoso.
+c) Vestígios imateriais são aqueles passíveis de registro pelos sentidos humanos.
+d) A prova material não tem existência real, não podendo ser tocada, olhada, medida, pesada.
+
+e)  A partir dos exames a que são submetidas as manchas de sangue, pode-se esclarecer se é realmente sangue; se a mancha é de sangue humano ou de animal; se humano, qual o grupo sanguíneo e qual o fator RH, mas não se pode determinar qual a identidade genotípica.
+Gabarito: B
+## questao 264890
+CEBRASPE (CESPE) - Esc Pol (RN)/PC RN/2009
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+385) 
+Em um bar, Gustavo, com intenção de matar e munido de uma faca, entrou em luta corporal com Adriano. Durante a luta, três copos e duas garrafas foram quebrados, uma cadeira foi danificada, uma parede foi suja de sangue, a faca ensanguentada caiu em cima de uma mesa e, por fim, a vítima caiu morta no chão.
 
 
-Segundo a Lei n.º 13.709/2018, o titular dos dados pessoais tem assegurado o direto de obter informações a respeito do tratamento dos seus dados.
+Tendo como referência a situação hipotética acima, é correto afirmar que o corpo de delito é constituído
 
+a)  apenas pelo corpo da vítima.
+b)  apenas pelos três copos e pelas duas garrafas quebradas.
+c)  apenas pela faca ensanguentada.
+d)  apenas pelo sangue na parede e pelo cadáver da vítima.
+e)  pelos três copos e pelas duas garrafas quebradas, pela cadeira danificada, pelo sangue na parede, pela faca ensanguentada e pelo cadáver da vítima.
+Gabarito: E
+## questao 532773
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/2009
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+386) 
+A respeito da criminalística, assinale a opção correta.
+
+a) A criminalística não se enquadra como disciplina autônoma, pois não possui leis, métodos e princípios próprios.
+b) Se, em um exame de local onde se praticou alguma infração penal, a investigação policial necessite de esclarecimento seguro e objetivo acerca da natureza do instrumento responsável pela provocação de uma marca de impacto presente em determinado móvel, ela recorre aos conhecimentos físico-químicos englobados pela criminalística, que analisa fisicamente as características da marca questionada, bem como a reação química dos elementos restantes e agregados à marca.
+c) Os peritos criminalísticos não podem se valer de subsídios técnicos-científicos fornecidos por outras ciências, utilizando os próprios métodos inerentes a essas ciências.
+d) A moderna criminalística restringe-se à fria estática narrativa, sem vida, da forma como se apresentam os vestígios, isto é, ao simples visum et repertum.
+e) O objeto da criminalística restringe-se aos vestígios suspeitos encontrados no local do fato.
+Gabarito: B
+## questao 36387
+CEBRASPE (CESPE) - PCF/PF/Área 12/2004
+Criminalística e Medicina Legal - Provas, Vestígios e Indícios
+387) 
+Uma mulher de 27 anos de idade foi conduzida por uma amiga ao plantão policial e apresentou queixa de ter sido estuprada há poucas horas por um colega de trabalho, quando estava embriagada, ao término de uma festa da empresa onde trabalham. No exame pericial, apresentava confusão mental, hálito etílico e hímen complacente. Não foram encontradas lesões traumáticas no corpo.
+
+
+Julgue o item seguinte, com base na situação hipotética anteriormente apresentada.
+
+Conforme determina a lei penal, a prova material é determinante do diagnóstico de estupro.
+
+ 
 Certo
 Errado
 Gabarito: Certo
-## questao 2781583
-CEBRASPE (CESPE) - Ana (CAU BR)/CAU BR/Sistema de Informação/2024
-Direito Digital - Dos Direitos do Titular (arts. 17 a 22 da Lei nº 13.709/2018 - LGPD)
-798) 
-Com base na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o próximo item.
+## questao 3546962
+CEBRASPE (CESPE) - PCF/PF/Área 1/2025
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+388) 
+Considerando que um dos fundamentos mais relevantes da criminalística é o estudo dos vestígios, julgue o item a seguir.
 
- 
-O titular dos dados pessoais tem direito a obter do controlador, em relação aos dados do titular por ele tratados, a anonimização, o bloqueio ou a eliminação de dados desnecessários em desconformidade com o disposto na LGPD.
 
-Certo
-Errado
-Gabarito: Certo
-## questao 2981691
-CEBRASPE (CESPE) - ASist (Pref Cach Itapemirim)/Pref Cach Itapemirim/2024
-Direito Digital - Dos Direitos do Titular (arts. 17 a 22 da Lei nº 13.709/2018 - LGPD)
-799) 
-À luz da Lei Geral de Proteção de Dados (LGPD), que define dado pessoal e dado pessoal sensível, julgue o item que se segue.
-
- 
-Conforme a LGPD, o dado pessoal não pode sofrer suspensão temporária de qualquer operação de tratamento.
+Os vestígios morfológicos incluem restos de fluidos corporais, como sangue e sêmen, encontrados na cena do crime.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 3172741
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Arquivologia/2024
-Direito Digital - Dos Direitos do Titular (arts. 17 a 22 da Lei nº 13.709/2018 - LGPD)
-800) 
-Considerando o que dispõe a Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item a seguir.
+## questao 3550882
+CEBRASPE (CESPE) - PCF/PF/Área 19/2025
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+389) 
+
+Em investigações forenses, vestígios biológicos coletados sob as unhas de vítimas podem ser cruciais para esclarecer casos de agressão física ou sexual. Um estudo recente avaliou a transferência e persistência de DNA masculino sob as unhas de mulheres em simulações controladas de arranhões. As amostras subungueais foram coletadas em diferentes momentos após o contato, sem limpeza prévia das unhas. Os resultados indicaram que o DNA do homem arranhado foi detectado até 6 horas após o evento, com uma diminuição significativa após as 3 primeiras horas. Além disso, entre 6 e 24 horas após o arranhão, foram detectados perfis genéticos masculinos estranhos aos participantes, o que sugere possível contaminação de fundo ou transferência posterior. Esses achados reforçam a importância de se considerarem o tempo de coleta e a possibilidade de DNA de fundo na interpretação de evidências subungueais, especialmente ao se avaliar o tipo de atividade envolvida.
+
+
+Damour, Géraldine et al. Tracking male DNA transfer and survival under female victim fingernails: insights from a 24 h scratch simulation. Forensic Science International: Genetics, v. 78, 2025 (com adaptações).
 
  
-O acesso a dados pessoais tratados pelo controlador, caso solicitado por seu titular, será providenciado, mediante requisição do titular devidamente justificada, em formato simplificado ou por meio de declaração clara e completa, desde que autorizado pela autoridade nacional de proteção de dados.
+Considerando o texto precedente como referência inicial, julgue o item subsequente, relativo à genética forense.
+
+
+A baixa persistência de DNA subungueais após 6 horas decorre da rápida degradação do DNA fora do corpo.
 
 Certo
 Errado
 Gabarito: Errado
+## questao 3550883
+CEBRASPE (CESPE) - PCF/PF/Área 19/2025
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+390) 
+
+Em investigações forenses, vestígios biológicos coletados sob as unhas de vítimas podem ser cruciais para esclarecer casos de agressão física ou sexual. Um estudo recente avaliou a transferência e persistência de DNA masculino sob as unhas de mulheres em simulações controladas de arranhões. As amostras subungueais foram coletadas em diferentes momentos após o contato, sem limpeza prévia das unhas. Os resultados indicaram que o DNA do homem arranhado foi detectado até 6 horas após o evento, com uma diminuição significativa após as 3 primeiras horas. Além disso, entre 6 e 24 horas após o arranhão, foram detectados perfis genéticos masculinos estranhos aos participantes, o que sugere possível contaminação de fundo ou transferência posterior. Esses achados reforçam a importância de se considerarem o tempo de coleta e a possibilidade de DNA de fundo na interpretação de evidências subungueais, especialmente ao se avaliar o tipo de atividade envolvida.
+
+
+Damour, Géraldine et al. Tracking male DNA transfer and survival under female victim fingernails: insights from a 24 h scratch simulation. Forensic Science International: Genetics, v. 78, 2025 (com adaptações).
+
+ 
+Considerando o texto precedente como referência inicial, julgue o item subsequente, relativo à genética forense.
+
+ 
+A análise de lâminas com as amostras subungueais coletadas logo após um arranhão em um braço de um agressor revela, à observação em microscopia óptica, conjuntos de células alongadas e fusiformes, sendo parte delas uninucleadas e binucleadas, típicas de tecido epitelial cutâneo.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 3550931
+CEBRASPE (CESPE) - PCF/PF/Área 19/2025
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+391) 
+Em relação à coleta de vestígio biológico em local de crime e à cadeia de custódia de vestígios biológicos, julgue o item que se segue.
+
+
+Antes de serem descartados, os vestígios de material biológico devem ser mantidos armazenados em condições adequadas pelo prazo de 10 anos, conforme legislação vigente; e seu descarte deve ser feito em lixo apropriado, com a utilização de equipamentos de proteção individual específicos.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 3550933
+CEBRASPE (CESPE) - PCF/PF/Área 19/2025
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+392) 
+Em relação à coleta de vestígio biológico em local de crime e à cadeia de custódia de vestígios biológicos, julgue o item que se segue.
+
+ 
+Se, durante a inspeção de uma faca descartada em um arbusto localizado nas redondezas de determinado local de crime, forem encontradas impressões digitais obscurecidas por uma mancha de sangue, então, nesse caso, deve-se dar preferência ao exame papiloscópico em detrimento do exame de DNA, pois as impressões papiloscópicas serão do autor do crime e o sangue, da vítima.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 3550934
+CEBRASPE (CESPE) - PCF/PF/Área 19/2025
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+393) 
+Em relação à coleta de vestígio biológico em local de crime e à cadeia de custódia de vestígios biológicos, julgue o item que se segue.
+
+ 
+Durante o processamento de vestígios biológicos em um laboratório de DNA, deve ser evitado o fluxo de materiais e pessoas das áreas destinadas à amplificação e à genotipagem para as áreas onde são realizadas atividades prévias à amplificação.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 3552334
+CEBRASPE (CESPE) - PCF/PF/Área 21/2025
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+394) 
+Em relação ao processamento de locais de crime com remanescentes humanos em condições especiais, julgue o item a seguir.
+
+ 
+Nos casos com vítimas carbonizadas, é importante coletar material derretido no local, como plásticos e vidros, pois assim é possível pesquisar o ponto de fusão dos materiais e estimar a temperatura do incêndio e seus efeitos.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 3552335
+CEBRASPE (CESPE) - PCF/PF/Área 21/2025
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+395) 
+Em relação ao processamento de locais de crime com remanescentes humanos em condições especiais, julgue o item a seguir.
+
+ 
+Em uma cena de crime com dois corpos desmembrados e com presença de material liquefeito, este poderá ser coletado com swabs estéreis e, caso não possa ser levado imediatamente ao laboratório, deverá ser refrigerado e encaminhado em caixa térmica.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2169820
+CEBRASPE (CESPE) - Del Pol (PC RO)/PC RO/2022
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+396) 
+Maria Antônia compareceu à Delegacia da Mulher de Ariquemes, para relatar a série de agressões que vinha sofrendo por parte do seu marido, Marcos. Em seu depoimento, Maria disse não ter consentido com a prática de conjunção carnal, porém, mesmo assim foi violentada e obrigada a realizar o ato. Com base nessas informações, bem como no que diz respeito aos aspectos médico-legais dos crimes contra a liberdade sexual, é correto afirmar que
+
+a) caso não sejam encontrados sinais externos de violência por ocasião do exame de corpo de delito, tais como equimoses, não será possível a responsabilização de Marcos por sua conduta.
+b) o exame pericial não poderá ser realizado caso Maria Antônia esteja grávida.
+c) não se pode confirmar o ato violento quando a mulher possui hímen complacente, também conhecido como imperfurado.
+d) a pesquisa de fosfatase ácida de origem prostática poderá ser requisitada pela delegada de polícia responsável pelas investigações.
+
+e) a ausência de ejaculação descaracteriza o crime de estupro, pois inviabiliza o encontro de material genético apto para indicar a autoria do crime.
+Gabarito: D
+## questao 2169935
+CEBRASPE (CESPE) - Med Leg (PC RO)/PC RO/2022
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+397) 
+No que se refere às técnicas utilizadas para a caracterização e identificação de uma amostra biológica, assinale a opção correta.
+
+a) A técnica de Teichmann (método da albuminorreação/reação biológica de soro precipitação), assim como a microscopia, auxilia na determinação do tamanho e da forma das células sanguíneas, sendo considerada a técnica mais fidedigna para a determinação da anucleação das hemácias.
+b) Para a identificação da espécie de sangue em local de crime, recomenda-se a utilização do luminol, substância que não apresenta reação cruzada com outras matérias, como o detergente, por exemplo.
+c) Para se estabelecer a diferenciação entre uma ossada humana e uma de animal irracional, pode-se utilizar uma avaliação microscópica dos canais de Havers, que, nos humanos, além de serem mais numerosos — cerca de 40 por mm2 —, são circulares e mais estreitos.
+d) Denomina-se identidade o conjunto de propriedades comuns a todas as pessoas, caracterizando-as como parte de um grupo ou espécie.
+
+e) São considerados postulados da identificação de amostra biológica: perenidade, unicidade, praticabilidade, imutabilidade e classificabilidade.
+Gabarito: E
+## questao 1554729
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+398) 
+Maria, de vinte e seis anos de idade, saiu da faculdade onde estudava por volta das 23 h e, sozinha, dirigiu-se a pé rumo a sua residência. No trajeto, foi abordada por trás, tomou um golpe  “mata leão” de seu algoz, que exalava forte hálito etílico, e, em seguida, foi arrastada para um matagal ermo. A vítima tentou se libertar, arranhando os braços do autor. Ao chegar ao matagal, ainda se mantendo por trás da vítima, o autor mandou que ela cobrisse o rosto com o próprio vestido. Ele abaixou a calcinha dela e manteve, com violência, coito anal e vaginal, até ejacular. Após a violência, o criminoso determinou que a vítima se mantivesse deitada, com o rosto voltado para o chão, e que contasse até cem, quando, então, poderia sair correndo. A vítima cumpriu a ordem e, após a contagem, levantou-se. Verificou a presença de uma garrafa de cachaça quase vazia no local e percebeu que sangrava e que sua região genital, coxas e calcinha estavam molhadas de esperma. Ela avistou de longe uma casa e correu até lá, pedindo ajuda. Na residência, a moradora prestou-lhe socorro, permitindo que Maria tomasse banho, e lhe emprestou roupas limpas para vestir. Em seguida, Maria dirigiu-se à delegacia de polícia, levando consigo,
+em um saco plástico, a garrafa de cachaça encontrada no local e as suas vestes sujas.
+
+ 
+A partir dessa situação hipotética, julgue o item a seguir.
+
+ 
+As roupas que a vítima usava no momento do crime devem ser descartadas, porque não servirão mais à pesquisa de material genético devido ao fato de Maria tê-las tirado e colocado em um saco plástico, o que compromete a exatidão dos exames periciais.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1554735
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+399) 
+Maria, de vinte e seis anos de idade, saiu da faculdade onde estudava por volta das 23 h e, sozinha, dirigiu-se a pé rumo a sua residência. No trajeto, foi abordada por trás, tomou um golpe  “mata leão” de seu algoz, que exalava forte hálito etílico, e, em seguida, foi arrastada para um matagal ermo. A vítima tentou se libertar, arranhando os braços do autor. Ao chegar ao matagal, ainda se mantendo por trás da vítima, o autor mandou que ela cobrisse o rosto com o próprio vestido. Ele abaixou a calcinha dela e manteve, com violência, coito anal e vaginal, até ejacular. Após a violência, o criminoso determinou que a vítima se mantivesse deitada, com o rosto voltado para o chão, e que contasse até cem, quando, então, poderia sair correndo. A vítima cumpriu a ordem e, após a contagem, levantou-se. Verificou a presença de uma garrafa de cachaça quase vazia no local e percebeu que sangrava e que sua região genital, coxas e calcinha estavam molhadas de esperma. Ela avistou de longe uma casa e correu até lá, pedindo ajuda. Na residência, a moradora prestou-lhe socorro, permitindo que Maria tomasse banho, e lhe emprestou roupas limpas para vestir. Em seguida, Maria dirigiu-se à delegacia de polícia, levando consigo,
+em um saco plástico, a garrafa de cachaça encontrada no local e as suas vestes sujas.
+
+ 
+A partir dessa situação hipotética, julgue o item a seguir.
+
+ 
+Como a vítima tomou banho, a autoridade policial deverá encaminhá-la apenas para exame de corpo de delito — lesões corporais.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 590762
+CEBRASPE (CESPE) - Med Leg (PC MA)/PC MA/2018
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+400) 
+Acerca de exames laboratoriais de líquidos orgânicos e manchas na complementação de perícias realizadas em pessoas, cadáveres e objetos, e que podem ser fundamentais para o esclarecimento de muitos crimes, assinale a opção correta.
+
+a)  O teste de beta-HCG, quando positivo, é específico de gravidez e, portanto, não é utilizado em outras situações.
+b) O FTA-ABS (fluorescent treponemal antibody absorption test) é um teste de quimioluminescência para confirmar o diagnóstico de sífilis mediante o uso de anticorpos específicos contra a bactéria Treponema pallidum.
+c) Os métodos da fosfatase ácida prostática, em altos teores, e do antígeno prostático específico (PSA.) não possuem aplicabilidade em sexologia forense, pois seus resultados não são informativos.
+d) A reação entre o luminol e o peróxido de hidrogênio é de quimioluminescência.
+e) Devido ao seu alto grau de especificidade, a reação de Florence é o exame comumente utilizado para a identificação de esperma.
+Gabarito: D
 
 
 
-Atividade de Inteligência para CAM DEP - 2026
+Criminologia e Noções de Criminalística para CAM DEP - 2026
 #
 Ordenação: Por Relevância (Somente Assuntos)
-## questao 2637629
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Advocacia/2023
-Direito Digital - Dos Direitos do Titular (arts. 17 a 22 da Lei nº 13.709/2018 - LGPD)
-801) 
-No que concerne à Lei Geral de Proteção de Dados (LGPD) e às diretrizes da Secretaria de Coordenação e Governança das Empresas Estatais (SEST), julgue o item a seguir.
+## questao 368283
+CEBRASPE (CESPE) - Per Crim (PCie PE)/PCie PE/Ciências Biológicas e Biomedicina/2016
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+401) 
+A escolha do tipo de amostra biológica a ser coletada depende da conservação da amostra, sendo os dentes e ossos os materiais que se preservam por mais tempo, mesmo quando submetidos a diferentes fatores de degradação. A propósito desse assunto, assinale a opção correta.
 
- 
-De acordo com a LGPD, o titular de dados pessoais pode exigir do controlador a eliminação de dados desnecessários ou excessivos para determinado tratamento.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2642245
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Segurança da Informação e Proteção de Dados/2023
-Direito Digital - Dos Direitos do Titular (arts. 17 a 22 da Lei nº 13.709/2018 - LGPD)
-802) 
-Com base no disposto na Lei Geral de Proteção de Dados (LGPD), julgue o seguinte item.
-
- 
-O titular dos dados pessoais tem direito a obter do controlador, em relação aos dados do titular por ele tratados, anonimização a qualquer momento e mediante requisição.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1977971
-CEBRASPE (CESPE) - Esp GT (TELEBRAS)/TELEBRAS/Analista Superior/Comercial/2022
-Direito Digital - Dos Direitos do Titular (arts. 17 a 22 da Lei nº 13.709/2018 - LGPD)
-803) 
-Considerando o disposto na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item que se segue.
-
- 
-Anonimização dos dados pessoais é um direito do titular dos dados, que pode, ainda, requerer o bloqueio ou a eliminação de dados desnecessários, excessivos ou tratados em desconformidade com o disposto na legislação de regência.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3284220
-CEBRASPE (CESPE) - PMF (INSS)/INSS/2025
-Direito Administrativo (Doutrina e Leis Federais) - Das Responsabilidades (arts. 32 a 34 da Lei nº 12.527/2011)
-804) 
-Com base no disposto na Lei de Acesso à Informação, julgue o item a seguir.
-
- 
-A aplicação da sanção de inidoneidade é de competência exclusiva da autoridade máxima do órgão público, sendo garantido ao interessado o direito de defesa em até 15 dias após a abertura de vista ao processo.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2838979
-CEBRASPE (CESPE) - Ana (APEX)/ApexBrasil/Aquisições e Jurídico/2024
-Direito Administrativo (Doutrina e Leis Federais) - Das Responsabilidades (arts. 32 a 34 da Lei nº 12.527/2011)
-805) 
-Julgue os itens seguintes, a respeito da sanção de declaração de inidoneidade prevista na LAI.
-
- 
-I A aplicação da sanção de declaração de inidoneidade para licitar ou contratar com a administração pública é de competência exclusiva da autoridade máxima do órgão ou entidade pública.
-
- 
-II No processo de apuração de responsabilidade para aplicação de sanção, é facultada a defesa do interessado no prazo de 10 dias contados da abertura de vista do processo.
-
- 
-III A reabilitação em face da declaração de inidoneidade será autorizada somente quando o interessado ressarcir o órgão ou a entidade dos prejuízos causados.
-
- 
-Assinale a opção correta.
-
-a)  Apenas os itens I e II estão certos.
-b) Apenas os itens I e III estão certos.
-c) Apenas os itens II e III estão certos.
-d) Todos os itens estão certos.
-Gabarito: D
-## questao 2992723
-CEBRASPE (CESPE) - AJ CNJ/CNJ/Administrativa/Pedagogia/2024
-Direito Administrativo (Doutrina e Leis Federais) - Das Responsabilidades (arts. 32 a 34 da Lei nº 12.527/2011)
-806) 
-A respeito da ética no serviço público, do acesso à informação e da proteção de dados pessoais, julgue o item seguinte.
-
- 
-A declaração de inidoneidade é sanção aplicável a entidade privada que, detendo informações em virtude de vínculo de qualquer natureza com o poder público, pratique conduta ilícita prevista na legislação relativa ao acesso à informação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3075041
-CEBRASPE (CESPE) - Ana Adm (TCE AC)/TCE AC/Administração/2024
-Direito Administrativo (Doutrina e Leis Federais) - Das Responsabilidades (arts. 32 a 34 da Lei nº 12.527/2011)
-807) 
-Com base no disposto na Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item a seguir.
-
- 
-Constitui conduta ilícita de agente militar destruir documentos sobre possíveis violações de direitos humanos praticadas por agentes do Estado.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2368922
-CEBRASPE (CESPE) - Prom Jus (MPE SC)/MPE SC/2023
-Direito Administrativo (Doutrina e Leis Federais) - Das Responsabilidades (arts. 32 a 34 da Lei nº 12.527/2011)
-808) 
-No que diz respeito à Lei de Acesso à Informação — Lei n.º 12.527/2011, julgue o item subsequente.
-
- 
-As sanções previstas na Lei de Acesso à Informação aplicam-se ao servidor público militar.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2535912
-CEBRASPE (CESPE) - Ana (SERPRO)/SERPRO/Tecnologia/2023
-Direito Administrativo (Doutrina e Leis Federais) - Das Responsabilidades (arts. 32 a 34 da Lei nº 12.527/2011)
-809) 
-Julgue o item subsequente, considerando a legislação acerca de acesso e segurança da informação e privacidade e proteção de dados pessoais.
-
-
-Impor sigilo à informação para obter proveito pessoal ou de terceiro constitui, segundo a Lei n.º 12.527/2011 (Lei de Acesso à Informação), conduta ilícita que enseja responsabilidade do agente público que a praticar, exceto se ele for militar.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1937338
-CEBRASPE (CESPE) - AFCE (TCE-SC)/TCE SC/Administração/2022
-Direito Administrativo (Doutrina e Leis Federais) - Das Responsabilidades (arts. 32 a 34 da Lei nº 12.527/2011)
-810) 
-Com base na Lei de Acesso à Informação (Lei n.º 12.527/2011) e na Lei da Transparência (Lei Complementar n.º 131/2009), julgue o item que se segue.
-
- 
-Impor sigilo a uma informação para obter proveito pessoal ou para terceiro é uma conduta ilícita para agentes públicos e, também, para militares.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1628521
-CEBRASPE (CESPE) - Ana (SERPRO)/SERPRO/Ciência de Dados/2021
-Direito Administrativo (Doutrina e Leis Federais) - Das Responsabilidades (arts. 32 a 34 da Lei nº 12.527/2011)
-811) 
-De acordo com a Lei n.º 12.527/2011 — Lei de Acesso à Informação (LAI) —, julgue o item a seguir.
-
- 
-
-É considerada conduta ilícita e passível de responsabilização a recusa, por agente público ou militar, de fornecimento das informações solicitadas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1628531
-CEBRASPE (CESPE) - Ana (SERPRO)/SERPRO/Ciência de Dados/2021
-Direito Administrativo (Doutrina e Leis Federais) - Das Responsabilidades (arts. 32 a 34 da Lei nº 12.527/2011)
-812) 
-Acerca de privacidade e proteção de dados pessoais, julgue o item a seguir.
-
- 
-
-Pessoa física que violar a LAI ao usar informações às quais ela teve acesso em razão de vínculo com o poder público poderá ser penalizada com declaração de inidoneidade para licitar ou contratar com a administração pública.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 908339
-CEBRASPE (CESPE) - Ana GRS (SLU DF)/SLU DF/Modernização da Gestão das Atividades de Resíduos Sólidos/2019
-Direito Administrativo (Doutrina e Leis Federais) - Das Responsabilidades (arts. 32 a 34 da Lei nº 12.527/2011)
-813) 
-Julgue o item subsecutivo, tendo como referência as disposições da Lei de Acesso à Informação (Lei n.º 12.527/2011).
-
- 
-
-O poder público responde diretamente pelos danos causados em decorrência da divulgação não autorizada ou utilização indevida de informações sigilosas ou informações pessoais, assegurado o direito de regresso contra o servidor responsável nos casos de dolo ou culpa.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 534247
-CEBRASPE (CESPE) - AUCE (TCE-PE)/TCE PE/Auditoria de Contas Públicas/2017
-Direito Administrativo (Doutrina e Leis Federais) - Das Responsabilidades (arts. 32 a 34 da Lei nº 12.527/2011)
-814) 
-De acordo com dispositivos da Lei n.º 12.527/2011 (Lei de Acesso à Informação), julgue o item seguinte.
-
-
-É prerrogativa do agente público a recusa em fornecer informação regularmente requerida nos termos da referida lei, desde que esteja autorizado pela chefia imediata.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 359160
-CEBRASPE (CESPE) - AFCE (TCE-SC)/TCE SC/Administração/2016
-Direito Administrativo (Doutrina e Leis Federais) - Das Responsabilidades (arts. 32 a 34 da Lei nº 12.527/2011)
-815) 
-De acordo com a Lei de Responsabilidade Fiscal e com a Lei de Acesso à Informação, julgue o seguinte item.
-
-
-Pessoa jurídica de direito privado que detenha informações em virtude de vínculo com o poder público e deixe de cumprir as determinações da Lei de Acesso à Informação poderá ser declarada inidônea para licitar ou contratar com a administração pública.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3289758
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Governança, Auditoria, Controle e Conformidade/2025
-Direito Digital - Do Encarregado pelo Tratamento de Dados Pessoais (art. 41 da Lei nº 13.709/2018 - LGPD)
-816) 
-De acordo com a Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD), julgue o item seguinte.
-
- 
-O controlador deve designar um encarregado pelo tratamento de dados pessoais, que será responsável por atuar como canal de comunicação entre o controlador, os titulares dos dados pessoais e a Autoridade Nacional de Proteção de Dados (ANPD).
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3290516
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Jurídica/2025
-Direito Digital - Do Encarregado pelo Tratamento de Dados Pessoais (art. 41 da Lei nº 13.709/2018 - LGPD)
-817) 
-Julgue o item seguinte, que versam sobre direito digital.
-
- 
-A identidade e as informações do contato do encarregado pelo tratamento de dados pessoais devem ser, como regra geral, mantidas em sigilo pelo controlador, mas poderão ser divulgadas, em caráter reservado, se houver pedido formal do interessado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3422382
-CEBRASPE (CESPE) - Tec (EMBRAPA)/EMBRAPA/Gestão da Informação/Tecnologia da Informação/2025
-Direito Digital - Do Encarregado pelo Tratamento de Dados Pessoais (art. 41 da Lei nº 13.709/2018 - LGPD)
-818) 
-Julgue o item a seguir, com base na Lei Geral de Proteção de Dados Pessoais (LGPD), na Lei de Acesso à Informação e no Marco Civil da Internet.
-
- 
-Conforme a LGPD, o encarregado pelo tratamento de dados pessoais é a pessoa natural ou jurídica a quem competem as decisões referentes ao tratamento de dados pessoais.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3597886
-CEBRASPE (CESPE) - AJ (TJ PA)/TJ PA/Análise de Sistemas/2025
-Direito Digital - Do Encarregado pelo Tratamento de Dados Pessoais (art. 41 da Lei nº 13.709/2018 - LGPD)
-819) 
-A respeito da proteção de dados pessoais no Brasil, dos grandes modelos de linguagem (LLMs) e do uso de redes neurais no setor jurídico, julgue o item que se segue.
-
-
-De acordo com a Lei Geral de Proteção de Dados Pessoais,no contexto de um sistema informatizado de um órgão público, é atribuição do encarregado de dados tomar decisões referentes ao tratamento de dados pessoais, a exemplo da definição das finalidades do respectivo tratamento.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2839835
-CEBRASPE (CESPE) - Ana (APEX)/ApexBrasil/Operações e Segurança de Tecnologia da Informação e Comunicação/Infraestrutura/2024
-Direito Digital - Do Encarregado pelo Tratamento de Dados Pessoais (art. 41 da Lei nº 13.709/2018 - LGPD)
-820) 
-De acordo com a LGPD, é responsabilidade do encarregado de dados
-
-a)  obter consentimento específico do titular de dados para compartilhar dados pessoais com outros controladores.
-b) criar o relatório de impacto à proteção de dados pessoais.
-c) receber comunicações da autoridade nacional e adotar providências.
-d) manter registro das operações de tratamento de dados pessoais que realizar.
+a) Para a obtenção de DNA, o armazenamento do material biológico úmido em sacos plásticos deve ser de, no máximo, oito horas ou, quando possível, deve-se secá-lo antes do acondicionamento final.
+b) A conservação do DNA de amostras biológicas é um processo natural que ocorre pela exposição ao meio ambiente.
+c) A amostra de DNA pode ser coletada da maioria dos espécimes biológicos, pois é uma molécula estável em ambiente seco e frio.
+d) A presença de gorduras, fluidos e outros materiais auxilia na estabilidade da molécula de DNA.
+e) Amostras com sangue seco devem ser recolhidas em um tubo estéril que contenha o anticoagulante EDTA. Esses vestígios devem ser mantidos e transportados sob refrigeração a 4 ºC para o sucesso na obtenção do DNA.
 Gabarito: C
-## questao 2839981
-CEBRASPE (CESPE) - Ana (APEX)/ApexBrasil/Operações e Segurança de Tecnologia da Informação e Comunicação/Segurança da Informação/2024
-Direito Digital - Do Encarregado pelo Tratamento de Dados Pessoais (art. 41 da Lei nº 13.709/2018 - LGPD)
-821) 
-De acordo com a LGPD, é responsabilidade do encarregado de dados
-
-a)  receber comunicações da autoridade nacional e adotar providências.
-b) obter consentimento específico do titular de dados para compartilhar dados pessoais com outros controladores.
-c) criar o relatório de impacto à proteção de dados pessoais.
-d) manter registro das operações de tratamento de dados pessoais que realizar.
-Gabarito: A
-## questao 2841712
-CEBRASPE (CESPE) - Ana Min (MPE TO)/MPE TO/Especializado/Administração de Banco de Dados/2024
-Direito Digital - Do Encarregado pelo Tratamento de Dados Pessoais (art. 41 da Lei nº 13.709/2018 - LGPD)
-822) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais), julgue o item subsequente.
+## questao 614437
+CEBRASPE (CESPE) - Aux Per (PEFOCE)/PEFOCE/2012
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+402) 
+Julgue o item subsequente, relativo à sexologia forense e sua implicação na perícia.
 
  
-Encarregado é a pessoa natural ou jurídica, de direito público ou privado, que realiza o tratamento de dados pessoais em nome do controlador.
+
+Para se identificar o possível agressor em casos de crimes da esfera sexual deve-se fazer o exame de DNA a partir da amostra do sangue da vítima, para nele verificar a presença de material biológico do autor.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 2876016
-CEBRASPE (CESPE) - APO (MPO)/MPO/Geral/2024
-Direito Digital - Do Encarregado pelo Tratamento de Dados Pessoais (art. 41 da Lei nº 13.709/2018 - LGPD)
-823) 
-Com base na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item seguinte.
+## questao 845990
+CEBRASPE (CESPE) - Med Leg (PC ES)/PC ES/2011
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+403) 
+No código de Hamurabi, existem referências a uma forma de identificação dos criminosos por meio da observação de membros amputados. Na França, antes da Revolução, os ladrões eram marcados a ferro com uma flor de lis. Atualmente, já existem técnicas da hemogenética forense aplicáveis a mortos, vivos e esqueletos. Com base nessas informações, julgue o item subsecutivo, referente a identificações médico-legal e judiciária ou policial.
 
  
-A identidade e as informações de contato do encarregado pelo tratamento de dados pessoais deverão ser mantidas em sigilo, para a garantia da segurança e privacidade do encarregado.
+Para saber se o material colhido trata-se de sangue, utiliza-se uma técnica simples, que consiste na procura dos cristais de Teichmann. Nos casos positivos, revela-se uma cor azul esverdeada que se transforma, imediatamente, em azul intenso.
 
 Certo
 Errado
 Gabarito: Errado
-## questao 3076852
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Gestão de Dados/2024
-Direito Digital - Do Encarregado pelo Tratamento de Dados Pessoais (art. 41 da Lei nº 13.709/2018 - LGPD)
-824) 
-Conforme o que preconiza a LPGD para o encarregado de dados, julgue o item subsequente.
-
- 
-Cabe ao encarregado aceitar reclamações e comunicações dos titulares de dados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3076854
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Gestão de Dados/2024
-Direito Digital - Do Encarregado pelo Tratamento de Dados Pessoais (art. 41 da Lei nº 13.709/2018 - LGPD)
-825) 
-Conforme o que preconiza a LPGD para o encarregado de dados, julgue o item subsequente.
-
- 
-A identidade e as informações de contato do encarregado de dados devem ser mantidas em sigilo, podendo ser publicadas mediante solicitação do interessado.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3202740
-CEBRASPE (CESPE) - AJ TSE/TSE/Apoio Especializado/Arquivologia/2024
-Direito Digital - Do Encarregado pelo Tratamento de Dados Pessoais (art. 41 da Lei nº 13.709/2018 - LGPD)
-826) 
-Considerando que políticas de acesso aos documentos de arquivo devem ser formuladas de modo a respeitar normas que regulamentam o acesso a dados e informações, julgue o item seguinte, com base na Lei de Acesso à Informação e na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados).
-
- 
-A Autoridade Nacional de Proteção de Dados (ANPD) será a responsável por indicar o encarregado pelo tratamento de dados pessoais, processo que inclui as operações realizadas para acesso a esses dados e para seu arquivamento.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2877720
-CEBRASPE (CESPE) - Ana CT (CAPES)/CAPES/Informática/2024
-TI - Segurança da Informação - Spoofing
-827) 
-No que concerne aos tipos de ataque, julgue o seguinte item.
-
- 
-Considere que um email malicioso tenha sido recebido por uma pessoa, que identificou alterações no cabeçalho do email e, portanto, percebeu que o email havia sido enviado a partir de uma origem diferente daquela que supostamente o teria enviado. Nesse caso, a situação descrita configura um ataque de spoofing.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2997228
-CEBRASPE (CESPE) - TJ CNJ/CNJ/Apoio Especializado/Programação de Sistemas/2024
-TI - Segurança da Informação - Spoofing
-828) 
-No que se refere a autenticação multifator, OAuth 2.0, cross-site scripting, DNS spoofing e port scanning, julgue o item a seguir.
-
- 
-Entre as possíveis consequências de um ataque DNS spoofing estão o roubo de dados pessoais e financeiros e a infecção dos sistemas da vítima por malware.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3191061
-CEBRASPE (CESPE) - AJ STJ/STJ/Apoio Especializado/Suporte em Tecnologia da Informação/2024
-TI - Segurança da Informação - Spoofing
-829) 
-No que se refere a ataques em redes de computadores e redes wireless, julgue o item subsecutivo.
-
- 
-Nos ataques do tipo access point spoofing, os invasores circulam fisicamente por regiões onde desejam realizar os ataques e descobrem as redes que existem por ali, bem como os equipamentos físicos através dos quais poderão realizar as invasões posteriormente.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2716731
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Sistemas de TI/2023
-TI - Segurança da Informação - Spoofing
-830) 
-No que se refere a ataques a redes de computadores, julgue o próximo item.
-
- 
-DNS spoofing é uma técnica que envolve a manipulação de registros DNS por um atacante de maneira a direcionar o usuário a um destino diferente do desejado originalmente.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1980640
-CEBRASPE (CESPE) - Esp GT (TELEBRAS)/TELEBRAS/Engenheiro Redes/2022
-TI - Segurança da Informação - Spoofing
-831) 
-A respeito de ataques em redes e aplicações corporativas, julgue o próximo item.
-
- 
-A técnica de IP spoofing consiste em um atacante alterar o cabeçalho IP de um pacote, como se partisse de uma origem diferente.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2216221
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Analista de Segurança da Tecnologia da Informação/2022
-TI - Segurança da Informação - Spoofing
-832) 
-Julgue o item subsequente, a respeito de ataques a redes de computadores.
-
-
-Considere-se que um usuário tenha recebido uma mensagem de email em que os campos do cabeçalho tenham sido alterados de forma a aparentar que o email tivesse sido enviado por um remetente diferente do remetente real. Nesse caso, foi usada a técnica de falsificação denominada spoofing.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2218112
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Suporte à Infraestrutura de Tecnologia da Informação/2022
-TI - Segurança da Informação - Spoofing
-833) 
-Acerca dos tipos de ataques a redes de computadores, julgue o item subsecutivo.
-
-
-No ataque de spoofing, é feita uma verificação do fluxo da rede por meio da análise do envio e recebimento de pacotes de dados, de forma que se obtém um mapa dos dispositivos existentes na rede.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2218115
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Suporte à Infraestrutura de Tecnologia da Informação/2022
-TI - Segurança da Informação - Spoofing
-834) 
-Acerca dos tipos de ataques a redes de computadores, julgue o item subsecutivo.
-
-
-Chama-se spoofing o tipo de ataque em que se tenta autenticar uma máquina externa desconhecida como sendo uma máquina da rede interna.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1393795
-CEBRASPE (CESPE) - ProTI (ME)/ME/Atividades Técnicas de Complexidade Gerencial, de Tecnologia da Informação e de Engenharia Sênior/Segurança da Informação e Proteção de Dados/2020
-TI - Segurança da Informação - Spoofing
-835) 
-Acerca de ataques a roteadores e switches, julgue o item subsequente.
-
- 
-
-Em um ataque ao STP (Spanning Tree Protocol), o atacante transmite um BPDU (bridge protocol data unit) de alteração de configuração ou de topologia de STP.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 626264
-CEBRASPE (CESPE) - TJ STJ/STJ/Apoio Especializado/Suporte Técnico/2018
-TI - Segurança da Informação - Spoofing
-836) 
-A respeito das técnicas e características de ataques de rede, julgue o item que se segue.
-
-
-Spoofing é uma técnica que permite ocultar a origem do endereço IP, sendo utilizada em qualquer protocolo da camada de aplicação, mas não na camada de enlace da rede.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3269701
-CEBRASPE (CESPE) - Ana Tec II (SEBRAE)/SEBRAE/2025
-Direito Digital - Do Controlador e do Operador (arts. 37 a 40 da Lei nº 13.709/2018 - LGPD)
-837) 
-Acerca do relatório de impacto à proteção de dados pessoais (RIPD) do SEBRAE, julgue os itens a seguir. 
-
- 
-I As medidas, salvaguardas e mecanismos empregados para mitigar riscos devem estar descritos no RIPD.
-
- 
-II Todo tratamento de dados pessoais que tenha como base legal o legítimo interesse deve ser precedido do RIPD.
-
- 
-III O RIPD deve ser elaborado pelo encarregado pelo tratamento de dados pessoais do SEBRAE. 
-
- 
-Assinale a opção correta.
-
-a) Apenas os itens I e II estão certos.
-b) Apenas os itens I e III estão certos.
-c) Apenas os itens II e III estão certos.
-d) Todos os itens estão certos.
-Gabarito: A
-## questao 3296334
-CEBRASPE (CESPE) - Arq (InoversaSul)/InoversaSul/2025
-Direito Digital - Do Controlador e do Operador (arts. 37 a 40 da Lei nº 13.709/2018 - LGPD)
-838) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD), julgue o item a seguir.
-
- 
-O operador deverá realizar o tratamento de dados pessoais segundo as instruções fornecidas pela autoridade nacional de proteção de dados.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3429622
-CEBRASPE (CESPE) - Sup Ped (UNIVESP)/UNIVESP/Administração e Áreas Afins/2025
-Direito Digital - Do Controlador e do Operador (arts. 37 a 40 da Lei nº 13.709/2018 - LGPD)
-839) 
-À luz da Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD), assinale a opção que apresenta corretamente o nome dado à documentação do controlador de dados da qual deve constar a descrição dos processos de tratamento de dados pessoais que podem gerar riscos aos direitos fundamentais.
-
-a)  relatório de programa de governança em privacidade
-b) solicitação de acesso do titular de dados (DSAR)
-c) relatório de impacto à proteção de dados pessoais
-d) registro das operações de tratamento de dados pessoais
-
-e)  relatório de incidentes de segurança
-Gabarito: C
-## questao 3429632
-CEBRASPE (CESPE) - Sup Ped (UNIVESP)/UNIVESP/Administração e Áreas Afins/2025
-Direito Digital - Do Controlador e do Operador (arts. 37 a 40 da Lei nº 13.709/2018 - LGPD)
-840) 
-De acordo com a LGPD, a pessoa jurídica de direito público a quem competem as decisões referentes ao tratamento de dados pessoais é
-
-a)  o titular.
-b)  a Autoridade Nacional de Proteção de Dados (ANPD).
-c)  o controlador.
-d)  o operador.
-
-e)  o encarregado.
-Gabarito: C
-## questao 2855248
-CEBRASPE (CESPE) - ERSTT (ANTT)/ANTT/Direito/2024
-Direito Digital - Do Controlador e do Operador (arts. 37 a 40 da Lei nº 13.709/2018 - LGPD)
-841) 
-Julgue o item a seguir com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD).
-
- 
-São consideradas titulares as pessoas naturais ou jurídicas a que se referem os dados pessoais objeto de tratamento, e consideram-se agentes de tratamento o controlador, o operador e o encarregado responsáveis pelo tratamento de tais dados.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2924907
-CEBRASPE (CESPE) - TFE (SEFAZ AC)/SEFAZ AC/2024
-Direito Digital - Do Controlador e do Operador (arts. 37 a 40 da Lei nº 13.709/2018 - LGPD)
-842) 
-De acordo com a Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais), a pessoa jurídica de direito privado que realiza o tratamento de dados pessoais em nome do controlador é
-
-a) o anonimizador.
-b) o operador.
-c) o encarregado.
-d) a autoridade nacional de proteção de dados.
-
-e) o titular.
-Gabarito: B
-## questao 3008357
-CEBRASPE (CESPE) - AGP (SEPLAG CE)/SEPLAG CE/Tecnologia da Informação/2024
-Direito Digital - Do Controlador e do Operador (arts. 37 a 40 da Lei nº 13.709/2018 - LGPD)
-843) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD), julgue o item a seguir.
-
- 
-A disposição sobre padrões de interoperabilidade para fins de portabilidade é de responsabilidade do custodiante, não devendo a autoridade nacional dispor a esse respeito.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3081643
-CEBRASPE (CESPE) - TCE (TCE AC)/TCE AC/Técnico em Informática/2024
-Direito Digital - Do Controlador e do Operador (arts. 37 a 40 da Lei nº 13.709/2018 - LGPD)
-844) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais), julgue o item que se segue.
-
- 
-O controlador deverá realizar o tratamento de dados pessoais segundo as instruções fornecidas pelo operador, que deverá verificar a observância das próprias instruções e das normas sobre a matéria.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2165781
-CEBRASPE (CESPE) - Ana (APEX)/ApexBrasil/Operações e Segurança de Tecnologia da Informação e Comunicação/Infraestrutura/2022
-Direito Digital - Do Controlador e do Operador (arts. 37 a 40 da Lei nº 13.709/2018 - LGPD)
-845) 
-O relatório de impacto à proteção de dados pessoais, estabelecido para o controlador pela Lei n.º 13.709/2018 e suas alterações, deve conter a descrição
-
-a)  dos tipos de dados coletados.
-b)  das proteções aplicadas para evitar vazamento dos dados coletados.
-c)  das formas de criptografia utilizadas na guarda dos dados coletados.
-d)  dos dados coletados.
-Gabarito: A
-## questao 615511
-CEBRASPE (CESPE) - Of Int (ABIN)/ABIN/Qualquer Área de Formação/Área 1/2018
-Segurança Pública e Legislação Policial - Inteligência Cibernética
-846) 
-Com relação ao terrorismo e à segurança cibernética, julgue o item a seguir.
-
- 
-
-A despeito de os esforços de promoção da governança para a Internet privilegiarem o engajamento de atores governamentais e não governamentais, as agendas e os espaços institucionais internacionais voltados para o intercâmbio de experiências e para a discussão de propostas políticas relacionadas à promoção da segurança cibernética no plano global são, no presente, de caráter eminentemente intergovernamental e de alcance regional.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 615512
-CEBRASPE (CESPE) - Of Int (ABIN)/ABIN/Qualquer Área de Formação/Área 1/2018
-Segurança Pública e Legislação Policial - Inteligência Cibernética
-847) 
-Com relação ao terrorismo e à segurança cibernética, julgue o item a seguir.
-
- 
-
-Os estreitos vínculos entre o hacktivismo e o terrorismo cibernético representam, no presente, importante item da pauta das políticas de segurança dos países e da cooperação internacional em segurança cibernética.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 615976
-CEBRASPE (CESPE) - Of Int (ABIN)/ABIN/Qualquer Área de Formação/Área 4/2018
-Segurança Pública e Legislação Policial - Inteligência Cibernética
-848) 
-A respeito de inteligência de ameaças em fontes abertas (OSINT), julgue o item a seguir.
-
- 
-
-OSINT é potencialmente uma fonte de informação rápida e economicamente viável, e a informação e a inteligência derivadas de OSINT podem ser potencialmente compartilhadas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 615978
-CEBRASPE (CESPE) - Of Int (ABIN)/ABIN/Qualquer Área de Formação/Área 4/2018
-Segurança Pública e Legislação Policial - Inteligência Cibernética
-849) 
-A respeito de inteligência de ameaças em fontes abertas (OSINT), julgue o item a seguir.
-
- 
-Informações obtidas por meio de OSINT são menos confiáveis e menos precisas que aquelas obtidas usando-se disciplinas de inteligência tradicionais.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 616056
-CEBRASPE (CESPE) - Of Int (ABIN)/ABIN/Qualquer Área de Formação/Área 4/2018
-Segurança Pública e Legislação Policial - Inteligência Cibernética
-850) 
-Acerca de inteligência cibernética, julgue o item a seguir.
-
- 
-
-O aplicativo TOR permite o acesso a sítios na deep web, isto é, sítios que não possuem conteúdo disponibilizado em mecanismos de busca.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 616057
-CEBRASPE (CESPE) - Of Int (ABIN)/ABIN/Qualquer Área de Formação/Área 4/2018
-Segurança Pública e Legislação Policial - Inteligência Cibernética
-851) 
-Acerca de inteligência cibernética, julgue o item a seguir.
-
- 
-
-O registro e a análise de conjuntos de dados referentes a eventos de segurança da informação são úteis para a identificação de anomalias; esse tipo de recurso pode ser provido com uma solução de big data.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 616058
-CEBRASPE (CESPE) - Of Int (ABIN)/ABIN/Qualquer Área de Formação/Área 4/2018
-Segurança Pública e Legislação Policial - Inteligência Cibernética
-852) 
-Acerca de inteligência cibernética, julgue o item a seguir.
-
- 
-
-A utilização da Internet para o recrutamento de jovens pelos grupos radicais que praticam atos terroristas é considerada como terrorismo cibernético.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3323956
-CEBRASPE (CESPE) - ERM (ANM)/ANM/Tecnologia da Informação/Ciência de Dados/2025
-Direito Digital - Do Tratamento de Dados Pessoais de Crianças e de Adolescentes (art. 14 da Lei nº 13.709/2018 - LGPD)
-853) 
-Com base na Lei nº 13.709/2018 (LGPD), julgue o próximo item.
-
- 
-O tratamento de dados pessoais de crianças pode ser realizado, desde que siga o recomendado no Estatuto da Criança e do Adolescente.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2799218
-CEBRASPE (CESPE) - Tecno Jr (CTI)/CTI/Inovação e Gestão de Infraestrutura de P&D/Desenvolvimento Tecnológico voltado à Infraestrutura de Tecnologia da Informação e Comunicação/2024
-Direito Digital - Do Tratamento de Dados Pessoais de Crianças e de Adolescentes (art. 14 da Lei nº 13.709/2018 - LGPD)
-854) 
-Com base na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item subsequente.
-
- 
-Para o processamento de dados pessoais de crianças e adolescentes, é necessário o consentimento de ambos os pais ou, na falta deles, do responsável legal.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3142850
-CEBRASPE (CESPE) - AnDR (CODEVASF)/CODEVASF/Administração/2024
-Direito Digital - Do Tratamento de Dados Pessoais de Crianças e de Adolescentes (art. 14 da Lei nº 13.709/2018 - LGPD)
-855) 
-Em relação ao processo administrativo no âmbito da administração pública federal, conforme a Lei n.º 9.784/1999, e à proteção de dados pessoais, de acordo com a Lei Geral de Proteção de Dados Pessoais — LGPD (Lei n.º 13.709/2018), julgue o item seguinte.
-
-
-Haja vista a necessidade de proteção de crianças e de adolescentes, o tratamento de seus dados é, em regra, vedado, sendo possível apenas quando houver o consentimento específico e em destaque dado por ambos os pais ou pelo responsável legal.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2637345
-CEBRASPE (CESPE) - Ana Proc (DATAPREV)/DATAPREV/2023
-Direito Digital - Do Tratamento de Dados Pessoais de Crianças e de Adolescentes (art. 14 da Lei nº 13.709/2018 - LGPD)
-856) 
-Considerando o disposto na legislação referente à segurança da informação e à proteção de dados, julgue o item a seguir.
-
- 
-De acordo com a Lei Geral de Proteção de Dados Pessoais, o tratamento de dados pessoais de crianças deverá ser realizado com o consentimento específico de um dos pais ou responsável legal, devendo o controlador realizar todos os esforços razoáveis, consideradas as tecnologias disponíveis, para verificar que o consentimento foi dado pelo responsável pela criança.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2642343
-CEBRASPE (CESPE) - Ana TI (DATAPREV)/DATAPREV/Sustentação Tecnológica/2023
-Direito Digital - Do Tratamento de Dados Pessoais de Crianças e de Adolescentes (art. 14 da Lei nº 13.709/2018 - LGPD)
-857) 
-No que se refere a sistemas de armazenamento de dados, julgue o item a seguir.
-
- 
-A Lei Geral de Proteção de Dados Pessoais veda a coleta de dados pessoais de crianças sem o consentimento, independentemente da forma de armazenamento a ser utilizada.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1972216
-CEBRASPE (CESPE) - Esp GT (TELEBRAS)/TELEBRAS/Advogado/2022
-Direito Digital - Do Tratamento de Dados Pessoais de Crianças e de Adolescentes (art. 14 da Lei nº 13.709/2018 - LGPD)
-858) 
-Considerando as disposições da Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item que se segue.
-
- 
-Os dados pessoais de crianças poderão ser coletados sem consentimento dos pais ou do responsável legal quando for necessário para a proteção delas, hipótese em que tais dados poderão, ainda, ser repassados a terceiros.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1981943
-CEBRASPE (CESPE) - Tec GT (TELEBRAS)/TELEBRAS/Assistente Administrativo/2022
-Direito Digital - Do Tratamento de Dados Pessoais de Crianças e de Adolescentes (art. 14 da Lei nº 13.709/2018 - LGPD)
-859) 
-Com base na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item que se segue.
-
- 
-Na hipótese de tratamento de dados pessoais de crianças, a legislação de regência exige que ambos os pais deem o consentimento específico e em destaque, dada a ampla proteção das crianças no ordenamento pátrio.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3296338
-CEBRASPE (CESPE) - Arq (InoversaSul)/InoversaSul/2025
-Direito Digital - Do Término do Tratamento de Dados (arts. 15 a 16 da Lei nº 13.709/2018 - LGPD)
-860) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais — LGPD), julgue o item a seguir.
-
- 
-O término do tratamento de dados pessoais ocorrerá exatamente quando da revogação do consentimento pela autoridade nacional de proteção de dados.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3407740
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão de Pessoas/Saúde Ocupacional/2025
-Direito Digital - Do Término do Tratamento de Dados (arts. 15 a 16 da Lei nº 13.709/2018 - LGPD)
-861) 
-Com relação ao disposto na Lei Geral de Proteção de Dados Pessoais, julgue o item a seguir.
-
- 
-Os dados pessoais devem ser eliminados após o término de seu tratamento, vedadas a conservação e a guarda dessas informações.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3438633
-CEBRASPE (CESPE) - Ana (EMBRAPA)/EMBRAPA/Gestão de Pessoas/Folha de Pagamento/2025
-Direito Digital - Do Término do Tratamento de Dados (arts. 15 a 16 da Lei nº 13.709/2018 - LGPD)
-862) 
-À luz do disposto na Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item a seguir.
-
- 
-Após a demissão de um empregado, caso solicitado, a empresa será obrigada a excluir imediatamente todas as informações cadastrais desse empregado, independentemente de obrigações legais pendentes.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3102205
-CEBRASPE (CESPE) - ERSPT (ANATEL)/ANATEL/Ciência de Dados/2024
-Direito Digital - Do Término do Tratamento de Dados (arts. 15 a 16 da Lei nº 13.709/2018 - LGPD)
-863) 
-Em relação ao tratamento e à qualidade dos dados no sistema de gerenciamento de informações, julgue o item subsequente.
-
-
-De acordo com a Lei Geral de Proteção de Dados Pessoais (LGPD), os dados pessoais devem ser retidos por um período de cinco anos, mesmo após a conclusão do seu processamento, desde que sejam cumpridos os limites técnicos das atividades em questão.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1917472
-CEBRASPE (CESPE) - TAmb (ICMBio)/ICMBio/2022
-Direito Digital - Do Término do Tratamento de Dados (arts. 15 a 16 da Lei nº 13.709/2018 - LGPD)
-864) 
-À luz da Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o próximo item.
-
-
-Os dados pessoais serão eliminados após o término de seu tratamento, sendo autorizada a sua conservação para a finalidade de estudo por órgão de pesquisa, bem como garantida, sempre que possível, a anonimização desses dados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1393841
-CEBRASPE (CESPE) - ProTI (ME)/ME/Atividades Técnicas de Complexidade Gerencial, de Tecnologia da Informação e de Engenharia Sênior/Segurança da Informação e Proteção de Dados/2020
-Direito Digital - Do Término do Tratamento de Dados (arts. 15 a 16 da Lei nº 13.709/2018 - LGPD)
-865) 
-Acerca da Lei Geral de Proteção de Dados Pessoais (LGPD) e suas alterações, julgue o item que se segue.
-
- 
-
-Os dados pessoais serão eliminados após o término de seu tratamento, sendo autorizada a sua conservação para a finalidade de estudo por órgão de pesquisa, sendo garantida, sempre que possível, a anonimização desses dados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3081641
-CEBRASPE (CESPE) - TCE (TCE AC)/TCE AC/Técnico em Informática/2024
-Direito Digital - Das Boas Práticas e da Governança (arts. 50 a 51 da Lei nº 13.709/2018 - LGPD)
-866) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais), julgue o item que se segue.
-
- 
-O controlador poderá implementar programa de governança em privacidade que preveja, no mínimo, planos de resposta a incidentes e remediação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3081642
-CEBRASPE (CESPE) - TCE (TCE AC)/TCE AC/Técnico em Informática/2024
-Direito Digital - Das Boas Práticas e da Governança (arts. 50 a 51 da Lei nº 13.709/2018 - LGPD)
-867) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais), julgue o item que se segue.
-
- 
-Os sistemas utilizados para o tratamento de dados pessoais devem ser estruturados de forma a atender aos requisitos de segurança, aos padrões de boas práticas e de governança.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2576100
-CEBRASPE (CESPE) - Ana Sist (EMPREL)/EMPREL/2023
-Direito Digital - Das Boas Práticas e da Governança (arts. 50 a 51 da Lei nº 13.709/2018 - LGPD)
-868) 
-Como o tratamento de dados pessoais gera riscos para os titulares, o mecanismo recomendado para a avaliação desses riscos consiste em
-
-a)  avaliação de impactos potenciais.
-b)  avaliação de riscos de segurança da informação.
-c)  avaliação de desempenho.
-d)  avaliação de impacto de privacidade.
-
-e)  avaliação e decisão dos eventos de segurança da informação.
+## questao 2746594
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+404) 
+Quanto à coleta e ao processamento de evidências, assinale a opção correta.
+
+a) Existindo mais de um disparo de arma de fogo, na maioria dos casos, em uma placa de vidro, não é possível saber a sequência dos disparos.
+b) Em regra, o aspecto (forma) da mancha de sangue não pode fornecer esclarecimentos circunstanciais, tais como: se ele caiu perpendicularmente e se a pessoa ferida estava em movimento.
+c) Por meio do levantamento do local do crime, faz-se a coleta de materiais, suspeitos, ou não, que serão objeto de futuros exames, sendo que é dado ao perito selecionar o material que deverá ser previamente desprezado, por aparente e subjetiva apreciação de desvinculação com o fato, e assim rotulá-lo de sem importância para o caso.
+d) A diversidade e a quantidade de vestígios são proporcionais à espécie do delito cometido; há vestígios comuns a todos os tipos de infração e existem aqueles explícitos a cada fato delituoso.
+
+e)  Quando se trata da possível presença de impressões papilares em cartas e outros papéis, o manuseio destes documentos é executado sempre com o auxílio de espátulas especiais.
 Gabarito: D
-## questao 2590836
-CEBRASPE (CESPE) - Ana (MPE RO)/MPE RO/Redes e Comunicação de Dados/2023
-Direito Digital - Das Boas Práticas e da Governança (arts. 50 a 51 da Lei nº 13.709/2018 - LGPD)
-869) 
-De acordo com o que estabelece a Lei Geral de Proteção de Dados (LGPD), são habilitados a formular regras de boas práticas e de governança, que incluem, por exemplo, as ações educativas e os mecanismos internos de supervisão e de mitigação de riscos no tratamento de dados pessoais, os
+## questao 2746595
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+405) 
+Assinale a opção correta acerca da coleta de evidências.
 
-a)  serviços notariais e de registro.
-b)  titulares.
-c)  encarregados.
-d)  controladores e os operadores.
+a)  Recipiente será qualquer invólucro ou vasilhame que sirva para transportar uma evidência, o qual não necessita ser adequado à espécie da prova.
+b) O recipiente deve poder modificar a composição da evidência.
+c) Em regra, não há necessidade de que o recipiente seja novo, bastando que seja limpo.
+d) É recomendável, em regra, que as evidências sejam embaladas em conjunto, e não individualmente, para que não se percam as amostras semelhantes.
 
-e)  órgãos de pesquisa.
-Gabarito: D
-## questao 1916070
-CEBRASPE (CESPE) - ADP (DPE RO)/DPE RO/Redes e Comunicação de Dados/2022
-Direito Digital - Das Boas Práticas e da Governança (arts. 50 a 51 da Lei nº 13.709/2018 - LGPD)
-870) 
-Segundo a Lei Geral de Proteção de Dados Pessoais, as obrigações específicas para os diversos envolvidos no tratamento de dados pessoais serão estabelecidas pelos controladores e operadores por meio de
-
-a)  utilização de técnicas de tratamento.
-b)  responsabilização e prestação de contas.
-c)  publicação de relatórios de impacto.
-d)  formulação de regras de boas práticas e de governança .
-
-e)  solicitação da autoridade nacional.
-Gabarito: D
-## questao 1628506
-CEBRASPE (CESPE) - Ana (SERPRO)/SERPRO/Ciência de Dados/2021
-Direito Digital - Das Boas Práticas e da Governança (arts. 50 a 51 da Lei nº 13.709/2018 - LGPD)
-871) 
-Com base na Lei n.º 13.709/2018 — Lei Geral de Proteção de Dados Pessoais (LGPD) —, julgue o item a seguir.
-
- 
-Independentemente do modo como tenham sido coletados, todos os dados pessoais que estejam sob o controle dos operadores devem ser abrangidos por uma governança de privacidade.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 615362
-CEBRASPE (CESPE) - Of Int (ABIN)/ABIN/Qualquer Área de Formação/Área 1/2018
-Segurança Pública e Legislação Policial - Decreto nº 8.793/2016 - Política Nacional de Inteligência
-872) 
-Acerca da Estratégia e da Política Nacional de Inteligência, julgue o item a seguir.
-
- 
-
-A inteligência é uma atividade que deve possuir abrangência para identificar oportunidades à população do país.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 615367
-CEBRASPE (CESPE) - Of Int (ABIN)/ABIN/Qualquer Área de Formação/Área 1/2018
-Segurança Pública e Legislação Policial - Decreto nº 8.793/2016 - Política Nacional de Inteligência
-873) 
-Acerca da Estratégia e da Política Nacional de Inteligência, julgue o item a seguir.
-
- 
-
-Enquanto a inteligência é a atividade que tem o objetivo de evitar as ações de inteligência adversa, a contrainteligência difunde conhecimentos sobre situações que aconteceram dentro do território nacional de imediata influência sobre a ação governamental.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 620713
-CEBRASPE (CESPE) - Ag Int (ABIN)/ABIN/2018
-Segurança Pública e Legislação Policial - Decreto nº 8.793/2016 - Política Nacional de Inteligência
-874) 
-Com relação à Política Nacional de Inteligência (PNI), julgue o item a seguir.
-
- 
-
-A expansão da capacidade operacional da inteligência no espaço cibernético é diretriz da PNI, haja vista a rede mundial de computadores ser um espaço privilegiado de discussões.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 620714
-CEBRASPE (CESPE) - Ag Int (ABIN)/ABIN/2018
-Segurança Pública e Legislação Policial - Decreto nº 8.793/2016 - Política Nacional de Inteligência
-875) 
-Com relação à Política Nacional de Inteligência (PNI), julgue o item a seguir.
-
- 
-
-A elaboração de atos normativos e a disponibilização de recursos financeiros para atividades de inteligência são considerados instrumentos da inteligência previstos na PNI.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 620717
-CEBRASPE (CESPE) - Ag Int (ABIN)/ABIN/2018
-Segurança Pública e Legislação Policial - Decreto nº 8.793/2016 - Política Nacional de Inteligência
-876) 
-Julgue o item que se segue, relativo à Estratégia Nacional de Inteligência.
-
- 
-A sabotagem é um tipo de ameaça cuja ação pode ter efeito tanto físico quanto material ou psicológico.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3289931
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Comercial, Marketing e Comunicação Social/2025
-Direito Digital - Da Transferência Internacional de Dados (arts. 33 a 36 da Lei nº 13.709/2018 - LGPD)
-877) 
-Considerando o disposto na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD), julgue o item que se segue.
-
- 
-É vedada a transferência internacional de dados pessoais de cidadãos brasileiros a organismos internacionais.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3444442
-CEBRASPE (CESPE) - Pesq (EMBRAPA)/EMBRAPA/Ciências Exatas e da Terra/Rastreabilidade e Certificação Digital/2025
-Direito Digital - Da Transferência Internacional de Dados (arts. 33 a 36 da Lei nº 13.709/2018 - LGPD)
-878) 
-Com base na Lei Geral de Proteção de Dados (LGPD), julgue o item a seguir.
-
- 
-A transferência internacional de dados pessoais no contexto do agronegócio deve observar tanto a legislação de proteção de dados do país destinatário quanto a LGPD; no entanto, quando a transferência tiver como finalidade a obtenção de certificação internacional, ela não estará sujeita às exigências da LGPD.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2841715
-CEBRASPE (CESPE) - Ana Min (MPE TO)/MPE TO/Especializado/Administração de Banco de Dados/2024
-Direito Digital - Da Transferência Internacional de Dados (arts. 33 a 36 da Lei nº 13.709/2018 - LGPD)
-879) 
-Com base na Lei n.º 13.709/2018 (Lei Geral de Proteção de Dados Pessoais), julgue o item subsequente.
-
- 
-A lei não se aplica ao tratamento de dados pessoais provenientes de fora do território nacional que não sejam objeto de uso compartilhado de dados com agentes de tratamento brasileiros, desde que o país de proveniência proporcione grau de proteção de dados pessoais adequado ao previsto na lei.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2854425
-CEBRASPE (CESPE) - ERSTT (ANTT)/ANTT/"Sem Área"/2024
-Direito Digital - Da Transferência Internacional de Dados (arts. 33 a 36 da Lei nº 13.709/2018 - LGPD)
-880) 
-Com base no previsto na Lei n.º 12.527/2011, Lei de Acesso à Informação (LAI), e na Lei n.º 13.709/2018, Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o próximo item.
-
-
-A transferência internacional de dados pessoais é permitida a países ou organismos internacionais que tenham legislação equivalente à LGPD.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3318335
-CEBRASPE (CESPE) - ERM (ANM)/ANM/Comunicação/2025
-Direito Digital - Da Responsabilidade pelo Tratamento de Dados Pessoais (arts. 31 a 32 da Lei nº 13.709/2018 - LGPD)
-881) 
-Julgue o item a seguir, considerando as formas de transparência pública e o disposto na Lei de Acesso à Informação e na Lei Geral de Proteção de Dados Pessoais (LGPD).
-
-
-Quando houver infração à LGPD em decorrência do tratamento de dados pessoais por órgãos públicos, a autoridade nacional poderá enviar informe com medidas cabíveis para fazer cessar a violação.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3079252
-CEBRASPE (CESPE) - ACE (TCE AC)/TCE AC/Direito/2024
-Direito Digital - Da Responsabilidade pelo Tratamento de Dados Pessoais (arts. 31 a 32 da Lei nº 13.709/2018 - LGPD)
-882) 
-Com base nas disposições da Lei n.º 13.709/2018 e da Lei n.º 14.133/2021, julgue o próximo item.
-
- 
-Pode surgir responsabilidade patrimonial para empresas que coletem dados de usuários, mesmo que não haja vazamento desses dados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3102210
-CEBRASPE (CESPE) - ERSPT (ANATEL)/ANATEL/Ciência de Dados/2024
-Direito Digital - Da Responsabilidade pelo Tratamento de Dados Pessoais (arts. 31 a 32 da Lei nº 13.709/2018 - LGPD)
-883) 
-Em relação ao tratamento e à qualidade dos dados no sistema de gerenciamento de informações, julgue o item subsequente.
-
- 
-O agente de tratamento deve demonstrar a adoção de medidas eficazes e capazes de comprovar a observância e o cumprimento das normas de proteção de dados pessoais, bem como demonstrar a eficácia dessas medidas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3185879
-CEBRASPE (CESPE) - NeR (TJ PE)/TJ PE/Provimento/2024
-Direito Digital - Da Responsabilidade pelo Tratamento de Dados Pessoais (arts. 31 a 32 da Lei nº 13.709/2018 - LGPD)
-884) 
-Acerca da incidência da Lei Geral de Proteção de Dados Pessoais (LGPD) nas atividades registrais e da proteção de dados na atividade registral segundo o CNSNR/PE, assinale a opção correta.
-
-a) Os sistemas, programas e aplicativos que as serventias notariais e registrais utilizam são de livre escolha dos respectivos delegatários, desde que mediante aprovação da Corregedoria Geral da Justiça.
-b) Devido à natureza dos serviços notariais e de registro, eles são tratados pela LGPD com os mesmos padrões das empresas privadas.
-c) Após a promulgação da LGPD, surgiram as primeiras normas na legislação brasileira acerca do tratamento de dados resultantes da atividade registral.
-d) No regime da LGPD, os dados pessoais sensíveis não são passíveis de tratamento por notários e registradores.
-
-e) Na atividade registral, a LGPD aplica-se aos dados não apenas de clientes, mas também aos de outras pessoas que a serventia armazenar.
+e) Os vidros são os recipientes mais adequados para se guardar líquidos.
 Gabarito: E
-## questao 3606570
-CEBRASPE (CESPE) - OFA (TJ PA)/TJ PA/2025
-Direito Digital - Da Responsabilidade e do Ressarcimento de Danos (arts. 42 a 45 da Lei nº 13.709/2018 - LGPD)
-885) 
-De acordo com a Lei de Acesso à Informação (LAI), com a Lei Geral de Proteção de Dados (LGPD) e com a Lei de Introdução às Normas do Direito Brasileiro (LINDB), julgue o item que se segue.
+## questao 2746596
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+406) 
+Assinale a opção correta a respeito da coleta e da contaminação da prova.
 
- 
-No âmbito de ação civil de reparação de danos proposta contra controlador ou operador que, em razão do exercício de atividade de tratamento de dados pessoais, tenha causado prejuízo ao titular dos dados, a LGPD prevê inversãoautomática do ônus da prova em favor deste último.
+a) A forma como a prova é transportada não é capaz de influir em sua conservação ou deterioração.
+b) Causas naturais, como sol e chuva, não são capazes de alterar a prova.
+c) Para se ter uma informação precisa sobre a prova, é prescindível que se aponte o tipo de ocorrência, sendo suficiente que se indique o lugar onde foi encontrada e se faça a sua descrição.
+d) O objeto colhido deve ser identificado com pormenores a fim de que possa ser reconhecido em qualquer época.
 
-Certo
-Errado
-Gabarito: Errado
-## questao 1895231
-CEBRASPE (CESPE) - Tec Amb (IBAMA)/IBAMA/2022
-Direito Digital - Da Responsabilidade e do Ressarcimento de Danos (arts. 42 a 45 da Lei nº 13.709/2018 - LGPD)
-886) 
-A respeito do acesso a informação, da proteção de dados e do acesso público aos dados e às informações existentes nos órgãos e nas entidades integrantes do Sistema Nacional do Meio Ambiente, julgue os item que se segue.
-
- 
-
-O operador que causar dano a outrem no desempenho da atividade de tratamento de dados pessoais, por descumprir as obrigações da legislação de proteção de dados, terá responsabilidade subsidiária ao controlador.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1908071
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Jurídica/2022
-Direito Digital - Da Responsabilidade e do Ressarcimento de Danos (arts. 42 a 45 da Lei nº 13.709/2018 - LGPD)
-887) 
-A respeito das obrigações, dos contratos, do Marco Civil da Internet e da Proteção de Dados, julgue o item que se segue.
-
- 
-A obrigação de os agentes de tratamento de dados pessoais repararem dano patrimonial será afastada se não houver violação à legislação de proteção de dados.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1972218
-CEBRASPE (CESPE) - Esp GT (TELEBRAS)/TELEBRAS/Advogado/2022
-Direito Digital - Da Responsabilidade e do Ressarcimento de Danos (arts. 42 a 45 da Lei nº 13.709/2018 - LGPD)
-888) 
-Considerando as disposições da Lei Geral de Proteção de Dados Pessoais (LGPD), julgue o item que se segue.
-
- 
-O operador responde subsidiariamente pelos danos causados pelo tratamento dos dados quando descumprir as obrigações da legislação de regência, uma vez que a responsabilização principal fica a cargo do controlador.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3403488
-CEBRASPE (CESPE) - Pesq (EMBRAPA)/EMBRAPA/Ciências Exatas e da Terra/Engenharia de Processos Químicos/2025
-Direito Digital - Da Segurança e do Sigilo de Dados (arts. 46 a 49 da Lei nº 13.709/2018 - LGPD)
-889) 
-Julgue o item a seguir de acordo com a Lei Geral de Proteção de Dados Pessoais (LGPD).
-
- 
-Qualquer pessoa que intervenha em uma das fases do tratamento de dados pessoais deve garantir a segurança da informação em relação a tais dados, mesmo após o término do tratamento.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 1908422
-CEBRASPE (CESPE) - APC (FUNPRESP-EXE)/FUNPRESP-EXE/Tecnologia/2022
-Direito Digital - Da Segurança e do Sigilo de Dados (arts. 46 a 49 da Lei nº 13.709/2018 - LGPD)
-890) 
-Julgue o próximo item, com relação à segurança da informação.
-
- 
-De acordo com a classificação da informação em crítica, vital, sensível e não sensível, os documentos que necessitam de sigilo especial são classificados como críticos.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 1915101
-CEBRASPE (CESPE) - ADP (DPE RO)/DPE RO/Programação/2022
-Direito Digital - Da Segurança e do Sigilo de Dados (arts. 46 a 49 da Lei nº 13.709/2018 - LGPD)
-891) 
-De acordo com a Lei Geral de Proteção de Dados Pessoais, assinale a opção que indica quem deve comunicar à autoridade nacional a ocorrência de incidente de segurança relacionado a dados pessoais que possa acarretar risco ou dano relevante.
-
-a)  titular
-b)  segurança de TI
-c)  operador
-d)  controlador
-
-e)  encarregado
+e)  Para se ter uma informação precisa sobre a prova, é prescindível que se aponte o nome da pessoa que a recolheu, bastando que se indique a data do recolhimento da prova.
 Gabarito: D
-## questao 1790724
-CEBRASPE (CESPE) - AFCA (SEFAZ AL)/SEFAZ AL/2021
-Direito Digital - Da Segurança e do Sigilo de Dados (arts. 46 a 49 da Lei nº 13.709/2018 - LGPD)
-892) 
-Com relação às disposições da Lei Geral de Proteção de Dados (LGPD), à prevenção e ao tratamento de incidentes e à certificação digital ICP-Brasil, julgue o item que se seguem.
+## questao 2746597
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+407) 
+Assinale a opção correta com relação à manipulação de microevidências quanto a manchas de esperma.
 
- 
-De acordo com a LGPD, qualquer entidade que intervenha em uma das fases do tratamento de dados pessoais obriga-se a garantir a segurança da informação desses dados, mesmo após o término do tratamento.
+a) Quanto à forma, apresentam-se totalmente regulares.
+b) Quanto à cor, no exame com lâmpada de Wood, não se nota fluorescência própria.
+c) O esperma, logo após a emissão, sofre coagulação. Esse fato permite, quando a mancha se encontra em suporte de tecido, a identificação pelo aspecto de pano gomado.
+d) A caracterização da mancha de esperma segue uma sistemática bastante diferenciada da do sangue.
 
-Certo
-Errado
-Gabarito: Certo
-## questao 2855334
-CEBRASPE (CESPE) - ERSTT (ANTT)/ANTT/Direito/2024
-Direito Administrativo (Doutrina e Leis Federais) - Das Disposições Finais e Transitórias (arts. 35 a 47 da Lei nº 12.527/2011)
-893) 
-Conforme o disposto na Lei n.º 12.527/2011 (Lei de Acesso à Informação — LAI), julgue o item a seguir.
+e)  A baixa concentração de cristais de Barberio, presente em um tecido, por exemplo, em grau de probabilidade, identifica a mancha como sendo de esperma.
+Gabarito: C
+## questao 2746598
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+408) 
+Assinale a opção correta acerca da coleta e do processamento de evidências.
 
- 
-A ANTT subordina-se ao regime jurídico da LAI, devendo apresentar relatórios periódicos sobre o seu cumprimento.
+a) No local do crime, o sangue no estado líquido é recolhido com conta-gotas, ou outro instrumento, e colocado em tubo de ensaio ou frasco, adicionando-se soro fisiológico e encaminhando-se ao laboratório para posterior análise.
+b) Quando se tratar de sangue seco, a crosta, removida cuidadosamente, é colocada em recipiente plástico ou de vidro, não sendo indicada a adição de soro fisiológico para solubilização em nenhuma hipótese.
+c) Em um exame da mancha de sangue no local de crime, a caracterização morfológica da referida mancha é desimportante.
+d) No caso de vidro que sofreu disparos de arma de fogo, não se podem obter, no local, sem recursos técnicos, informações sobre a direção do choque.
 
-Certo
-Errado
-Gabarito: Certo
-## questao 3172733
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Arquivologia/2024
-Direito Administrativo (Doutrina e Leis Federais) - Das Disposições Finais e Transitórias (arts. 35 a 47 da Lei nº 12.527/2011)
-894) 
-Com base na Lei de Acesso à Informação, julgue o item que se seguem.
-
- 
-A Comissão Mista de Reavaliação de Informações, instituída no âmbito da administração pública federal, é incumbida de rever a classificação de informações secretas ou reservadas, de ofício ou mediante provocação de pessoa interessada.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 3172736
-CEBRASPE (CESPE) - ACE (TC DF)/TC DF/Especializada/Arquivologia/2024
-Direito Administrativo (Doutrina e Leis Federais) - Das Disposições Finais e Transitórias (arts. 35 a 47 da Lei nº 12.527/2011)
-895) 
-Com base na Lei de Acesso à Informação, julgue o item que se seguem.
-
- 
-Os objetivos do Núcleo de Segurança e Credenciamento, instituído no âmbito do Gabinete de Segurança Institucional da Presidência da República, incluem promover e propor a regulamentação do credenciamento de segurança de pessoas físicas, empresas, órgãos e entidades para tratamento de informações sigilosas e garantir a segurança de informações sigilosas.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 2876708
-CEBRASPE (CESPE) - ERVS (ANVISA)/ANVISA/Tecnologia da Informação/2024
-TI - Segurança da Informação - Ataques a Senhas
-896) 
-Considerando ameaças e ataques à segurança da informação, bem como mecanismos de segurança da informação, julgue o próximo item.
-
-
-Nos ataques de força bruta, hackers utilizam uma metodologia que identifica senhas disponíveis online e, depois, as testam, pesquisando nomes de usuários, até encontrarem uma correspondência.
-
-Certo
-Errado
-Gabarito: Errado
-## questao 2216220
-CEBRASPE (CESPE) - Tec TI (BANRISUL)/BANRISUL/Analista de Segurança da Tecnologia da Informação/2022
-TI - Segurança da Informação - Ataques a Senhas
-897) 
-Julgue o item subsequente, a respeito de ataques a redes de computadores.
-
-
-Um ataque de brute force consiste em adivinhar, por tentativa e erro, um nome de usuário e sua senha, para obter acesso a determinado sistema.
-
-Certo
-Errado
-Gabarito: Certo
-## questao 3166542
-CEBRASPE (CESPE) - Ana Tec II (SEBRAE)/SEBRAE/Infraestrutura e Sistemas Operacionais/2024
-TI - Redes de Computadores - Cloud Computing (Computação em Nuvem)
-898) 
-Em relação à segurança de nuvem computacional pública, assinale a opção correta.
-
-a)  A segurança é uma responsabilidade conjunta e compartilhada entre o provedor de nuvem e o usuário.
-b) A criptografia oferecida pelos provedores de nuvem é suficiente para garantir a segurança da informação na nuvem.
-c) Os usuários têm controle total sobre a segurança física dos servidores.
-d) A segurança é de total responsabilidade do provedor da nuvem pública.
+e) No caso de vidro que sofreu disparos de arma de fogo, informações sobre a direção do curso de determinada ruptura só podem ser obtidas em laboratório.
 Gabarito: A
-## questao 2877752
-CEBRASPE (CESPE) - Ana CT (CAPES)/CAPES/Informática/2024
-Direito Digital - Decreto nº 12.198/2024 - Estratégia Federal de Governo Digital para o Período de 2024 a 2027 e Infraestrutura Nacional de Dados
-899) 
-A respeito do Decreto n.º 10.332/2020, julgue o próximo item.
+## questao 2746600
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+409) 
+Com relação à análise microestrutural de materiais em geral e às técnicas utilizadas para esse tipo de análise, assinale a opção correta.
+
+a) A análise microestrutural permite entender as correlações entre microestrutura, defeito e propriedades, além de predizer as propriedades do material quando essas correlações são estabelecidas.
+b) A análise microestrutural, por meio da microscopia ótica, é usada para identificar componentes químicos em uma amostra.
+c) Nas análises microestruturais de interesse criminal, a microscopia eletrônica de varredura (MEV) é mais utilizada devido ao fácil manuseio do equipamento, fácil acesso e baixo custo.
+d) As amostras translúcidas e as opacas são facilmente analisadas tanto por MEV quanto por microscopia ótica.
+
+e)  Dispensa-se a análise microscópica quando a macroscópica for suficiente para mostrar a convergência de evidências nos materiais de interesse criminal, como a identificação de projéteis e estojos.
+Gabarito: A
+## questao 2746610
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+410) 
+A MEV, complementada pela espectroscopia de análise dispersiva de raios X, é uma técnica utilizada para permitir aplicações eficientes na área criminal. Com relação a esse assunto, assinale a opção correta.
+
+a) A análise da morfologia dos componentes de disparo de armas de fogo, como chumbo, bário e antimônio, é irrelevante para a investigação policial.
+b) A análise das marcas de ferramentas em materiais diversos deve ser feita usando-se a referida técnica, pois a sobreposição de materiais da ferramenta no material danificado, normalmente independe tanto da ferramenta utilizada como do material danificado.
+c) A técnica mencionada é utilizada para avaliação de fraturas e de danificações de fibras devido ao desgaste, sendo feita por meio de avaliações de superfície e de cortes transversais.
+d) Em relação a componentes do solo, como SiO2, Al2O3, Fe2O3 e TiO2, essa técnica permite obter apenas informações qualitativas.
+
+e) Na análise de amostras de tintas, essa técnica permite a identificação de todos os componentes e contaminantes, mas não fornece informações a respeito da proporção desses elementos na amostra.
+Gabarito: C
+## questao 2746612
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+411) 
+Acerca dos exames de microcomparação usados em criminalística, assinale a opção correta.
+
+a)  As ferramentas usadas contra obstáculos tais como portas, janelas, fechaduras etc. geralmente não produzem evidências, não sendo possível nem mesmo a análise microscópica nesses casos.
+b) As microevidências presentes nos projéteis expelidos por armas de fogo são sempre mais ricas que as observadas nos estojos, motivo pelo qual a análise dos estojos pode ser dispensada.
+c) A análise microscópica deve ser dispensada se as evidências macroscópicas forem totalmente convergentes.
+d) A análise de comparação microscópica entre as fraturas observadas em um vidro e no objeto suspeito de ter provocado essas fraturas pode revelar micropartículas passíveis de vincular o objeto suspeito ao vidro danificado.
+
+e) O exame mais comumente usado em ferramentas é o macroscópico qualitativo, uma vez que o tamanho das ferramentas e das marcas por elas produzidas são suficientes para um exame conclusivo, o que torna desnecessária a realização de exames microscópicos.
+Gabarito: D
+## questao 2746613
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+412) 
+Ainda acerca de exames realizados em criminalística, assinale a opção correta.
+
+a) A análise de pelos e cabelos, realizada por microscopia ótica (MO), não permite concluir se o pelo e o cabelo são de origem humana ou não.
+b) A sobreposição de tintas em documentos, como nos casos de assinaturas sobrepostas, é realizada por MO, com aumentos de 100 a 400 vezes e uso de luz visível.
+c) As fibras sintéticas e naturais são facilmente identificadas por MO, bastando-se usar aumento de 10 vezes.
+d) As microanálises e as análises de comparação realizadas em amostras de vidro por MO, com aumentos de 100 a 400 vezes, permite a comparação conclusiva entre amostra padrão e questionada, inclusive com relação a componentes químicos semelhantes nas duas amostras.
+
+e) A análise de amostras padrão e questionada de solo realizada por MEV permite a identificação de componentes comuns entre ambas. Essa técnica fornece informações qualitativas dessas amostras.
+Gabarito: E
+## questao 2746614
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+413) 
+Quanto ao uso de técnicas de microscopia e testes de microcomparação relacionados à criminalística, assinale a opção correta.
+
+a) Nas análises de resíduos de disparo de armas de fogo, a MEV é mais recomendada do que a MO.
+b) A MO revela mais informações relativas à natureza de amostras de fibras do que a MEV.
+c) A análise de amostras padrão e questionada de vidro realizada por MO é mais recomendada do que a análise por MEV.
+d) A MEV fornece informações sobre ranhuras e microvestígios em projéteis expelidos por armas de fogo que a MO não consegue fornecer. Dessa forma, os exames balísticos em projéteis devem ser necessariamente realizados por MEV.
+
+e) As tintas podem ser facilmente analisadas por MO, técnica que fornece informações sobre a estrutura química dos componentes da tinta.
+Gabarito: A
+## questao 532734
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/2009
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+414) 
+Considere que um projétil e a arma suspeita de tê-lo detonado tenham sido encaminhados para exame pericial. Nessa situação, o perito não deve
+
+a) efetuar disparos com a arma suspeita, para obtenção de projétil-padrão.
+b) dispensar exames a olho nu ou com lentes, a fim de obter exame mais preciso.
+c) examinar as estrias laterais finas ao microscópio.
+d) tirar fotografia ampliada dos projéteis questionados e do projétil-padrão.
+e) assinalar, ele próprio, na fotografia dos projéteis questionados e do projétil-padrão, a estriação lateral fina, quanto ao número, à direção, à profundidade, à situação, ao aspecto e à extensão.
+Gabarito: B
+## questao 533371
+CEBRASPE (CESPE) - Necro (PC PB)/PC PB/2009
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+415) 
+Assinale a opção correta no que se refere a procedimentos da perícia médico-legal e seus documentos.
+
+a)  A necessidade de realização de exame balístico pode ser suprimida caso o médico legista descreva no laudo as características detalhadas do projétil de arma de fogo retirado do cadáver.
+b)  A fim de se evitar deterioração do sangue que foi colhido de cadáver para realização de alcoolemia, costuma-se adicionar formol ao frasco de armazenamento.
+c) Antes de se iniciar o exame cadavérico pelo médico legista, o cadáver a ser submetido a necropsia deve estar despido e lavado para melhor visualização das lesões.
+d)  Para conservação de fragmentos de vísceras retirados de cadáveres, com vistas à realização de exame histopatológico, a adição de formol ao frasco é a medida mais adequada.
+e) O laudo pericial deve ser ditado ao auxiliar de necropsia, passando, então, a denominar-se auto.
+Gabarito: D
+## questao 1322355
+CEBRASPE (CESPE) - Med Leg (PC TO)/PC TO/2008
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+416) 
+O cadáver de uma adolescente foi encontrado na margem de um rio, com os pés dentro d’água. O corpo apresentava mancha verde abdominal, circulação de póstuma, distensão torácica e abdominal, rigidez cadavérica desfeita e livores vinhosos somente em dorso, mais nítidos nas extremidades inferiores. Na roupa íntima, na parte em contato com a região perineal, havia sangue e na região perianal havia fezes. O orifício anal estava dilatado. No pé havia ferida com perda de substância sem edema nas bordas. Durante a necropsia, foram constatados: edema de laringe, edema e hemorragias pulmonares, certo grau de distensão pulmonar, dilatação das câmaras direitas do coração; além disso, exames complementares mostraram eosinofilia.
+
+
+Com relação ao quadro hipotético acima descrito, julgue o item seguinte.
 
  
-A implementação da Lei Geral de Proteção de Dados (LGPD) no governo federal é dos objetivos especificados no decreto em apreço.
+
+A presença de sangue na roupa íntima sobre a região perineal é prova de violência sexual ou conjunção carnal.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1322368
+CEBRASPE (CESPE) - Med Leg (PC TO)/PC TO/2008
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+417) 
+Uma mulher foi encaminhada ao IML para realização de exame para verificação de conjunção carnal e de atentado violento ao pudor. Havia histórico de violência sexual durante a espera de ônibus em ponto mal iluminado e pouco frequentado. Ela fora arrastada a um matagal adjacente ao ponto, por dois homens que estavam de carro e pararam próximo ao local. A vítima era casada e mantivera relação sexual completa com o marido momentos antes de sair de casa naquele dia.
+
+
+Julgue o item subsequente com relação à ocorrência relatada acima.
+
+
+Como a vítima alegou ter mantido relação sexual com o marido, é desnecessária a coleta de material vaginal para pesquisa de espermatozóides, uma vez que é impossível, pelas técnicas disponíveis atualmente, a distinção entre os do marido e os dos agressores.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 447269
+CEBRASPE (CESPE) - Per (PC AC)/PC AC/Médico Legista/2006
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+418) 
+Em relação à sexologia forense, assinale a opção incorreta.
+
+a) A fosfatase ácida e o PSA (antígeno prostático) são substâncias que podem ser encontradas em vaginas de mulheres que mantiveram conjunção carnal recente e apresentaram resultado de exame para pesquisa de espermatozóides negativa, caso o homem tenha ejaculado durante a relação e não tenha usado preservativo.
+b) Na espécie humana, existe o hermafroditismo verdadeiro, que consiste na presença simultânea de gônadas funcionantes dos sexos masculino e feminino em um indivíduo.
+c) Na espécie humana, o pseudo-hermafroditismo é caracterizado por aquele indivíduo que só apresenta glândulas genitais de um sexo: ou testículo ou ovário, mas sua anomalia reside apenas nas vias genitais externas, que exibem, no todo ou em parte, conformação semelhante à do sexo oposto ao da glândula genital de que é portador.
+d) No caso de presença de lesões em região vulvar, existe forte indício de que o ato sexual foi violento, uma vez que não houve os necessários relaxamento e lubrificação fisiológicos para a conjunção carnal.
+Gabarito: B
+## questao 842207
+CEBRASPE (CESPE) - Med Leg (PC ES)/PC ES/2006
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+419) 
+A invenção da PCR (polimerase chaim reaction) ou reação em cadeia de polimerase por Mullis, em 1985, possibilitou a ampliação e reprodução de uma ínfima quantidade de fragmentos de moléculas de DNA e a análise química comparativa com o DNA colhido do suspeito de crime. Julgue o próximo item, relacionado à genética forense.
+
+ 
+Uma das principais diferenças entre as técnicas de análise de DNA por RFLP (restriction fragment length polymorphism) e o método embasado em PCR reside no fato de que a primeira técnica é mais lenta, depende de material radioativo, necessita de maior quantidade de DNA e de DNA menos degradado.
 
 Certo
 Errado
 Gabarito: Certo
-## questao 3077694
-CEBRASPE (CESPE) - ATI (TCE AC)/TCE AC/Segurança da Informação/2024
-TI - Segurança da Informação - Senhas (Gerenciamento, Política, etc.)
-900) 
-Acerca de criptografia e proteção de dados, julgue o item a seguir.
+## questao 842213
+CEBRASPE (CESPE) - Med Leg (PC ES)/PC ES/2006
+Criminalística e Medicina Legal - Microvestígios e Vestígios Biológicos
+420) 
+A invenção da PCR (polimerase chaim reaction) ou reação em cadeia de polimerase por Mullis, em 1985, possibilitou a ampliação e reprodução de uma ínfima quantidade de fragmentos de moléculas de DNA e a análise química comparativa com o DNA colhido do suspeito de crime. Julgue o próximo item, relacionado à genética forense.
 
  
-Salting é uma medida de segurança adicional que pode ser adicionada ao hash de uma senha para aumentar sua resiliência contra ataques.
+Não é possível a identificação de autor de crime de estupro por análise de DNA a partir de espermatozóides colhidos na vagina da vítima, mesmo utilizando a técnica de PCR, pois se tratam de células haplóides, isto é, com a metade do número de cromossomos da espécie.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 3546742
+CEBRASPE (CESPE) - DPF/PF/2025
+Criminologia - Prevenção da Criminalidade
+421) 
+Julgue o item a seguir, relativo a modelos teóricos da criminologia.
+
+
+O modelo ressocializador tem como finalidade o restabelecimento do status quo ante dos envolvidos no conflito criminal, priorizando a composição de interesses entre as partes e a reparação do dano causado à vítima.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2796310
+CEBRASPE (CESPE) - Del Pol (PC PE)/PC PE/2024
+Criminologia - Prevenção da Criminalidade
+422) 
+Assinale a opção em que são apresentados corretamente dois exemplos de formas de prevenção terciária do crime.
+
+a)  programas de combate à fome e financiamento de moradias
+b)  financiamento estudantil e programa de incentivo ao primeiro emprego
+c)  programas de reabilitação do recluso e financiamento estudantil
+d)  práticas de ressocialização e de reabilitação dos apenados
+
+e)  financiamento de moradias e programas de combate ao desemprego
+Gabarito: D
+## questao 2289196
+CEBRASPE (CESPE) - DP RO/DPE RO/2023
+Criminologia - Prevenção da Criminalidade
+423) 
+Como exemplo de prevenção secundária estão as políticas públicas que envolvem programas
+
+a) de melhoria de renda.
+b) educacionais de apoio.
+c) de estímulo ao trabalho.
+d) habitacionais.
+
+e) de prevenção policial, como rede de vizinhos.
+Gabarito: E
+## questao 2339330
+CEBRASPE (CESPE) - Per Crim (POLC AL)/POLC AL/Direito/2023
+Criminologia - Prevenção da Criminalidade
+424) 
+Considerando-se que a criminologia estuda o crime com objetividade, sem avaliação de valor, sem mediação e sem julgamentos, julgue o próximo item.
+
+ 
+A prevenção secundária do crime atua sobre a população carcerária com o objetivo de se evitar a reincidência.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1894652
+CEBRASPE (CESPE) - DP PA/DPE PA/2022
+Criminologia - Prevenção da Criminalidade
+425) 
+À luz das teorias sociológicas no âmbito da criminologia, assinale a opção que apresenta um exemplo de prevenção secundária.
+
+a) educação
+b) melhorias nas condições e oportunidades de trabalho
+c) programa de prevenção policial
+d) programa de combate à fome
+
+e) ressocialização de indivíduo encarcerado
+Gabarito: C
+## questao 1968220
+CEBRASPE (CESPE) - AAAJ (DP DF)/DP DF/Direito e Legislação/2022
+Criminologia - Prevenção da Criminalidade
+426) 
+Com relação à criminologia e às formas de prevenção de crimes, julgue o item a seguir.
+
+
+A prevenção terciária do delito ocorre por meio da implementação de medidas efetivas voltadas à ressocialização do apenado.
 
 Certo
 Errado
 Gabarito: Certo
-## questao 2877565
-CEBRASPE (CESPE) - APO (MPO)/MPO/Tecnologia da Informação/Gestão da Segurança da Informação Orçamentária/2024
-Direito Digital - Outras Normas sobre Direito Digital
-901) 
-Considerando a legislação e as normatizações aplicadas à segurança e à privacidade da informação na administração pública federal, julgue o item a seguir.
+## questao 1968222
+CEBRASPE (CESPE) - AAAJ (DP DF)/DP DF/Direito e Legislação/2022
+Criminologia - Prevenção da Criminalidade
+427) 
+Com relação à criminologia e às formas de prevenção de crimes, julgue o item a seguir.
 
  
-A Portaria SGD/MGI n.º 852/2023 determina que os órgãos e as entidades têm o dever de implementar as medidas consideradas obrigatórias pelo framework de privacidade e segurança da informação, proibindo-os de descumpri-lo sob qualquer justificativa.
+A prevenção primária consiste na prática de ações concretas que sejam eficazes, como a sanção de um novo tipo penal, e que apresentem efeitos imediatos na diminuição de crimes.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1968224
+CEBRASPE (CESPE) - AAAJ (DP DF)/DP DF/Direito e Legislação/2022
+Criminologia - Prevenção da Criminalidade
+428) 
+Com relação à criminologia e às formas de prevenção de crimes, julgue o item a seguir.
+
+ 
+Ações concretas da polícia judiciária dirigidas à proteção de vítimas legalmente classificadas como vulneráveis ou pertencentes a grupos de risco caracterizam a prevenção secundária.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1996863
+CEBRASPE (CESPE) - DP TO/DPE TO/2022
+Criminologia - Prevenção da Criminalidade
+429) 
+A polícia militar de determinado estado institui um programa educacional de prevenção e resistência às drogas, o que ensejou o atendimento de aproximadamente dois mil estudantes do ensino médio.
+
+ 
+Nessa situação hipotética, considerando-se os modelos de prevenção do delito pelo Estado, trata-se de
+
+a)  ação preventiva de natureza primária.
+
+b)  ação preventiva secundária.
+
+c)  ação repressiva primária.
+
+d)  ação repressiva secundária.
+
+e)  ação preventiva terciária.
+Gabarito: B
+## questao 2012966
+CEBRASPE (CESPE) - Del Pol (PC PB)/PC PB/2022
+Criminologia - Prevenção da Criminalidade
+430) 
+Acerca dos modelos de prevenção criminal e das políticas públicas de prevenção à violência contra a mulher, julgue os itens seguintes.
+
+ 
+I Políticas de prevenção primária destinam-se a enfrentar as causas mais profundas da violência de gênero e devem ser direcionadas à população em geral; tais causas estão relacionadas à desigualdade nas relações de poder entre homens e mulheres e à manutenção de visões estereotipadas sobre os papéis sociais.
+
+ 
+II A prevenção secundária, também conhecida como intervenção precoce, destina-se a determinados grupos de risco mais propensos a sofrerem ou praticarem a violência doméstica, usualmente associada aos serviços de saúde e assistência social.
+
+ 
+III A prevenção terciária, também conhecida como resposta, está relacionada à reação dos sistemas policial e de justiça à comunicação de um episódio de violência, e se destina a prevenir, a longo prazo, a reiteração da violência.
+
+ 
+Assinale a opção correta.
+
+a) Apenas o item I está certo.
+b) Apenas o item II está certo.
+c) Apenas os itens I e III estão certos.
+d) Apenas os itens II e III estão certos
+
+e) Todos os itens estão certos.
+Gabarito: E
+## questao 2182342
+CEBRASPE (CESPE) - Del Pol (PC ES)/PC ES/2022
+Criminologia - Prevenção da Criminalidade
+431) 
+Constitui exemplo de programa de prevenção primária aquele que busca
+
+a) a melhoria do bem-estar social.
+b) a prevenção policial.
+c) o controle dos meios de comunicação.
+d) a reabilitação do condenado.
+
+e) a ordenação urbana.
+Gabarito: A
+## questao 1624872
+CEBRASPE (CESPE) - DPF/PF/2021
+Criminologia - Prevenção da Criminalidade
+432) 
+No que se refere à criminologia, julgue o item a seguir.
+
+ 
+Prevenção primária consiste na implementação de medidas sociais indiretas de prevenção para evitar que fatores exógenos sirvam como estímulo à prática delituosa.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 923060
+CEBRASPE (CESPE) - DP DF/DP DF/2019
+Criminologia - Prevenção da Criminalidade
+433) 
+Como ações profiláticas contra o crime, a doutrina apresenta uma série analítica de prevenções, incidente no estado democrático de direito.
+
+ 
+
+A respeito de prevenção, julgue o item seguinte.
+
+ 
+
+A prevenção terciária do delito aponta suas diretrizes ao efetivo implemento das políticas sociais pelo estado social de direito, que consiste na adoção de medidas mais eficazes de prevenção ao delito.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 923061
+CEBRASPE (CESPE) - DP DF/DP DF/2019
+Criminologia - Prevenção da Criminalidade
+434) 
+Como ações profiláticas contra o crime, a doutrina apresenta uma série analítica de prevenções, incidente no estado democrático de direito.
+
+ 
+
+A respeito de prevenção, julgue o item seguinte.
+
+ 
+
+A prevenção primária do delito ocorre por meio de implementação de medidas efetivas voltadas à ressocialização do apenado.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 391085
+CEBRASPE (CESPE) - Del Pol (PC MA)/PC MA/2018
+Criminologia - Prevenção da Criminalidade
+435) 
+Dados publicados em dezembro de 2017 pelo Ministério da Justiça mostram que o Brasil tem uma taxa de superlotação nos estabelecimentos prisionais na ordem de 197,4%.
+
+ 
+
+Agência de Notícias, Empresa Brasil de Comunicação.
+
+ 
+
+Sob o enfoque da prevenção da infração penal no Estado democrático de direito, a superlotação carcerária aludida no fragmento de texto anterior é um problema que prejudica a
+
+ 
+
+I prevenção primária.
+
+II prevenção secundária.
+
+III prevenção terciária.
+
+ 
+
+Assinale a opção correta.
+
+
+a) Apenas o item II está certo.
+
+b) Apenas o item III está certo.
+
+c) Apenas os itens I e II estão certos.
+
+d) Apenas os itens I e III estão certos.
+
+e) Todos os itens estão certos.
+Gabarito: B
+## questao 589525
+CEBRASPE (CESPE) - Del Pol (PC MA)/PC MA/2018
+Criminologia - Prevenção da Criminalidade
+436) 
+A respeito das teorias que tratam das funções da pena, assinale a opção correta.
+
+a)  A teoria correcionalista considera que a pena se esgota na ideia da retribuição como resposta ao mal causado pelo autor do crime.
+
+b)  A teoria preventiva geral positiva considera que a pena tem a função de inibir comportamentos antissociais e moldar comportamentos socialmente aceitos.
+
+c)  A teoria absoluta considera que a pena possui caráter retributivo, preventivo e ressocializador.
+
+d)  A teoria preventiva geral considera a pena como um meio para prevenir a reincidência do indivíduo.
+
+e)  A teoria preventiva especial considera a pena como um meio para intimidar os potenciais praticantes de condutas delituosas.
+Gabarito: B
+## questao 699438
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2018
+Criminologia - Prevenção da Criminalidade
+437) 
+No que se refere à prevenção da infração penal no Estado democrático de direito, julgue o próximo item.
+
+ 
+
+Medidas indiretas de prevenção delitiva visam atacar as causas do crime: cessada a causa, cessam seus efeitos.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 699440
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2018
+Criminologia - Prevenção da Criminalidade
+438) 
+No que se refere à prevenção da infração penal no Estado democrático de direito, julgue o próximo item.
+
+ 
+
+A alteração dos espaços físicos e urbanos, como, por exemplo, a elaboração de novos desenhos arquitetônicos e o aumento da iluminação pública, pode ser considerada uma forma de prevenção delituosa.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 699441
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2018
+Criminologia - Prevenção da Criminalidade
+439) 
+No que se refere à prevenção da infração penal no Estado democrático de direito, julgue o próximo item.
+
+ 
+
+A prevenção terciária da infração penal consiste em medidas de longo prazo, como a garantia de educação, a redução da desigualdade social e a melhoria das condições de qualidade de vida, enquanto a prevenção primária é voltada à pessoa reclusa e visa à sua recuperação e reintegração social.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 442453
+CEBRASPE (CESPE) - Del Pol (PC GO)/PC GO/2017
+Criminologia - Prevenção da Criminalidade
+440) 
+Considerando que, para a criminologia, o delito é um grave problema social, que deve ser enfrentado por meio de medidas preventivas, assinale a opção correta acerca da prevenção do delito sob o aspecto criminológico.
+
+a) A transferência da administração das escolas públicas para organizações sociais sem fins lucrativos, com a finalidade de melhorar o ensino público do Estado, é uma das formas de prevenção terciária do delito.
+b) O aumento do desemprego no Brasil incrementa o risco das atividades delitivas, uma vez que o trabalho, como prevenção secundária do crime, é um elemento dissuasório, que opera no processo motivacional do infrator.
+c) A prevenção primária do delito é a menos eficaz no combate à criminalidade, uma vez que opera, etiologicamente, sobre pessoas determinadas por meio de medidas dissuasórias e a curto prazo, dispensando prestações sociais.
+d) Em caso de a Força Nacional de Segurança Pública apoiar e supervisionar as atividades policiais de investigação de determinado estado, devido ao grande número de homicídios não solucionados na capital do referido estado, essa iniciativa consistirá diretamente na prevenção terciária do delito.
+e) A prevenção terciária do crime consiste no conjunto de ações reabilitadoras e dissuasórias atuantes sobre o apenado encarcerado, na tentativa de se evitar a reincidência.
+Gabarito: E
+## questao 364095
+CEBRASPE (CESPE) - Del Pol (PC PE)/PC PE/2016
+Criminologia - Prevenção da Criminalidade
+441) 
+A criminologia reconhece que não basta reprimir o crime, deve-se atuar de forma imperiosa na prevenção dos fatores criminais. Considerando essa informação, assinale a opção correta acerca de prevenção de infração penal.
+
+a) Para a moderna criminologia, a alteração do cenário do crime não previne o delito: a falta das estruturas físicas sociais não obstaculiza a execução do plano criminal do delinquente.
+b) A prevenção terciária do crime implica na implementação efetiva de medidas que evitam o delito, com a instalação, por exemplo, de programas de policiamento ostensivo em locais de maior concentração de criminalidade.
+c) No estado democrático de direito, a prevenção secundária do delito atua diretamente na sociedade, de maneira difusa, a fim de implementar a qualidade dos direitos sociais, que são considerados pela criminologia fatores de desenvolvimento sadio da sociedade que mitiga a criminalidade.
+d) Trabalho, saúde, lazer, educação, saneamento básico e iluminação pública, quando oferecidos à sociedade de maneira satisfatória, são considerados forma de prevenção primária do delito, capaz de abrandar os fenômenos criminais.
+e) A doutrina da criminologia moderna reconhece a eficiência da prevenção primária do delito, uma vez que ela atua diretamente na pessoa do recluso, buscando evitar a reincidência penal e promover meios de ressocialização do apenado.
+Gabarito: D
+## questao 250653
+CEBRASPE (CESPE) - DP PE/DPE PE/2015
+Criminologia - Prevenção da Criminalidade
+442) 
+A respeito do objeto de estudo do direito penal, do direito penal do autor e das teorias da pena, julgue o item seguinte.
+
+ 
+
+O discurso da teoria da prevenção geral negativa é criticado porque confunde o direito em geral e toda a ética social com o poder punitivo.
+
+ 
+
+Certo
+Errado
+Gabarito: Certo
+## questao 280725
+CEBRASPE (CESPE) - AgFEP (DEPEN)/SENAPPEN/Área 3/2015
+Criminologia - Prevenção da Criminalidade
+443) 
+Julgue o item a seguir, referente às teorias da finalidade da pena.
+
+ 
+
+A teoria justificacionista relativa pode ser de caráter geral ou especial e considera a pena como meio para a realização do fim utilitário da prevenção de futuros delitos.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 280727
+CEBRASPE (CESPE) - AgFEP (DEPEN)/SENAPPEN/Área 3/2015
+Criminologia - Prevenção da Criminalidade
+444) 
+Julgue o item a seguir, referente às teorias da finalidade da pena.
+
+ 
+
+A função preventiva especial, em razão do caráter abstrato da previsão legal dos delitos e das penas, enfoca o delito e não o infrator individualmente.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 280729
+CEBRASPE (CESPE) - AgFEP (DEPEN)/SENAPPEN/Área 3/2015
+Criminologia - Prevenção da Criminalidade
+445) 
+Julgue o item a seguir, referente às teorias da finalidade da pena.
+
+ 
+
+A teoria utilitarista da prevenção especial positiva da pena está direcionada para a coletividade, no sentido de que a imposição e a execução da pena são úteis, respectivamente, para intimidar e neutralizar os criminosos.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 280730
+CEBRASPE (CESPE) - AgFEP (DEPEN)/SENAPPEN/Área 3/2015
+Criminologia - Prevenção da Criminalidade
+446) 
+Julgue o item a seguir, referente às teorias da finalidade da pena.
+
+ 
+
+A teoria utilitarista da prevenção geral negativa age para garantir a segurança social, com a concepção de que a reintegração social é medida necessária para impedir ou, ao menos, diminuir a reincidência criminosa dos condenados à pena privativa de liberdade.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 124089
+CEBRASPE (CESPE) - DPF/PF/2013
+Criminologia - Prevenção da Criminalidade
+447) 
+No que se refere à prevenção da infração penal, julgue o item.
+
+Ações como controle dos meios de comunicação e ordenação urbana, orientadas a determinados grupos ou subgrupos sociais, estão inseridas no âmbito da chamada prevenção secundária do delito.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 124090
+CEBRASPE (CESPE) - DPF/PF/2013
+Criminologia - Prevenção da Criminalidade
+448) 
+No que se refere à prevenção da infração penal, julgue o item.
+
+As modalidades preventivas nas quais se inserem os programas de policiamento orientado à solução de problemas e de policiamento comunitário, assim como outros programas de aproximação entre polícia e comunidade, podem ser incluídas na categoria de prevenção primária.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 124091
+CEBRASPE (CESPE) - DPF/PF/2013
+Criminologia - Prevenção da Criminalidade
+449) 
+No que se refere à prevenção da infração penal, julgue o item.
+
+Na terminologia criminológica, criminalização primária equivale à chamada prevenção primária.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 3429044
+CEBRASPE (CESPE) - Del Pol (PC CE)/PC CE/2025
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+450) 
+O conceito de delito não é exatamente o mesmo para o direito penal e para a criminologia. No direito penal, delito é a ação ou omissão típica, ilícita e culpável. Na criminologia, no entanto, como o crime deve ser encarado como um fenômeno comunitário e como um problema social, tal conceituação é insuficiente. Ademais, que fatores levam os homens, vivendo em sociedade, a “promover” um fato humano corriqueiro à condição de crime?
+
+ 
+Sérgio Salomão Shecaira. Criminologia. 6.ª ed., rev. e atual. São Paulo: Editora Revista dos Tribunais, 2014, p. 46 (com adaptações).
+
+ 
+Tendo como referência inicial as informações do texto precedente, assinale a opção em que são citados elementos constitutivos do delito conforme a perspectiva da criminologia.
+
+a)  incidência massiva na população, incidência aflitiva do ato praticado, persistência espaço-temporal do ato delituoso e consenso sobre sua etiologia e técnicas de intervenção eficazes
+b)  lesividade presumida, reprovabilidade moral, indignação pública e resposta penal proporcional ao bem jurídico violado
+c)  tipicidade, antijuridicidade e culpabilidade
+d)  previsão legal expressa, adequação típica formal, resultado naturalístico e ausência de excludentes de ilicitude
+
+e)  gravidade abstrata do fato, potencial ofensivo presumido, sanção penal cominada e repercussão midiática
+Gabarito: A
+## questao 2289192
+CEBRASPE (CESPE) - DP RO/DPE RO/2023
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+451) 
+Considera-se um objeto da criminologia
+
+a) as ciências sociais.
+b) o juiz processante.
+c) a mídia.
+d) o Ministério Público.
+
+e) a vítima.
+Gabarito: E
+## questao 2289199
+CEBRASPE (CESPE) - DP RO/DPE RO/2023
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+452) 
+Para a criminologia, deve ser encarado como um problema social e comunitário
+
+a) o delito.
+b) o delinquente.
+c) o controle social.
+d) a vítima.
+
+e) a atuação do Estado.
+Gabarito: A
+## questao 2289201
+CEBRASPE (CESPE) - DP RO/DPE RO/2023
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+453) 
+A criminologia tem como característica fundamental
+
+a) o tecnicismo na elaboração normativa.
+b) a interdisciplinaridade.
+c) a análise positivada do direito penal.
+d) o juízo sobre a efetividade do direito processual penal.
+
+e) o estudo do ordenamento jurídico pátrio como um todo.
+Gabarito: B
+## questao 1968208
+CEBRASPE (CESPE) - AAAJ (DP DF)/DP DF/Direito e Legislação/2022
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+454) 
+A respeito de aspectos da criminologia, julgue o item a seguir.
+
+
+Prevenir o crime e intervir com eficácia e de modo positivo em relação ao delinquente são algumas das funções da criminologia.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1968209
+CEBRASPE (CESPE) - AAAJ (DP DF)/DP DF/Direito e Legislação/2022
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+455) 
+A respeito de aspectos da criminologia, julgue o item a seguir.
+
+ 
+O método científico criminológico baseia-se na experimentação, o que garante ao investigador conhecimento mais confiável e seguro sobre o problema criminal.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1968210
+CEBRASPE (CESPE) - AAAJ (DP DF)/DP DF/Direito e Legislação/2022
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+456) 
+A respeito de aspectos da criminologia, julgue o item a seguir.
+
+ 
+A vítima não deve ser objeto de estudo da criminologia, cujo âmbito de estudo se restringe ao delito e ao delinquente.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1996872
+CEBRASPE (CESPE) - DP TO/DPE TO/2022
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+457) 
+O objeto de estudo da criminologia, na fase pré-científica, compreendia
+
+a)  o crime, o criminoso, a vítima e a pena.
+
+b)  o crime e o criminoso.
+
+c)  o crime, o criminoso, a vítima, o controle social e a pena.
+
+d)  o crime, o criminoso, a vítima e o controle social.
+
+e)  o crime, o criminoso e a vítima.
+Gabarito: B
+## questao 2012963
+CEBRASPE (CESPE) - Del Pol (PC PB)/PC PB/2022
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+458) 
+Julgue os itens que seguem quanto à função dos três pilares das ciências criminais.
+
+ 
+I A criminologia apresenta estratégias e meios de controle social da criminalidade.
+
+II A política criminal fornece o substrato empírico do sistema.
+
+III O direito penal analisa as condutas indesejadas, tipificando infrações e combinando sanções penais.
+
+ 
+Assinale a opção correta.
+
+a) Apenas o item I está certo.
+b) Apenas o item II está certo.
+c) Apenas o item III está certo.
+d) Apenas os itens II e III estão certos.
+
+e) Todos os itens estão certos.
+Gabarito: C
+## questao 2012964
+CEBRASPE (CESPE) - Del Pol (PC PB)/PC PB/2022
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+459) 
+Assinale a opção correta acerca da criminologia e de seus métodos.
+
+a)  Na análise do fenômeno criminal, é preferível a abordagem multidisciplinar, que apresenta visões independentes e distintas de um mesmo problema e que é mais ampla que o método interdisciplinar.
+b) A criminologia usa o método dedutivo, partindo de premissas genéricas para fazer inferências.
+c) A criminologia é uma ciência cultural, do dever-ser.
+d) No método criminológico, os fatos se sobrepõem a argumentos subjetivos de autoridade.
+
+e) O método experimental confunde-se com o método empírico
+Gabarito: D
+## questao 2169833
+CEBRASPE (CESPE) - Del Pol (PC RO)/PC RO/2022
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+460) 
+Acerca da conceituação e dos métodos utilizados pela criminologia, assinale a opção correta.
+
+a) A interdisciplinaridade da criminologia é uma construção moderna, verificada a partir do século XX.
+b) A criminologia é uma ciência normativa e valorativa que se baseia, precipuamente, nas normas jurídicas positivas.
+c) Os levantamentos estatísticos e a análise de dados que estabelecem a dinâmica e as variáveis do delito, entre outros elementos, caracterizam o método empírico da criminologia.
+d) A criminologia é uma ciência predominantemente parcial e de caráter desfragmentado e permanente.
+
+e) O método lógico abstrato ou dedutivo é utilizado para a definição do delinquente e as causas de sua conduta.
+Gabarito: C
+## questao 2182343
+CEBRASPE (CESPE) - Del Pol (PC ES)/PC ES/2022
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+461) 
+A interdisciplinaridade é intrínseca à natureza da criminologia. Dessa forma, a ciência que se afasta do estudo da criminologia é a
+
+a) biologia.
+b) hermenêutica dogmática.
+c) psicologia.
+d) estatística.
+
+e) sociologia.
+Gabarito: B
+## questao 2182345
+CEBRASPE (CESPE) - Del Pol (PC ES)/PC ES/2022
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+462) 
+A criminologia consiste em uma ciência
+
+a) exata.
+b) puramente academicista.
+c) prática.
+d) de dados.
+
+e) que atua como uma central de informações sobre o delito.
+Gabarito: C
+## questao 2182346
+CEBRASPE (CESPE) - Del Pol (PC ES)/PC ES/2022
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+463) 
+A função básica da criminologia consiste em
+
+a) informar a sociedade e o poder público sobre o delinquente, a vítima e o delito, reunindo-se elementos para compreender o problema criminal, preveni-lo e intervir positivamente no delinquente.
+b) ter um saber absoluto, certo e definitivo sobre o problema criminal existente dentro da sociedade.
+c) servir de inspiração para a edição de atos normativos pelo poder público.
+d) formar um banco de dados centralizado, a fim de auxiliar o poder público nas suas decisões.
+
+e) explicar o fenômeno científico tal qual uma ciência exata, a partir da formulação de leis universais e de relações de causa e efeito.
+Gabarito: A
+## questao 1624874
+CEBRASPE (CESPE) - DPF/PF/2021
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+464) 
+No que se refere à criminologia, julgue o item a seguir.
+
+ 
+Os objetos da criminologia são o delinquente, a vítima, o controle social e a justiça criminal.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 589564
+CEBRASPE (CESPE) - Del Pol (PC MA)/PC MA/2018
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+465) 
+Afirmar que a criminologia é interdisciplinar e tem o empirismo como método significa dizer que esse ramo da ciência
+
+a)  utiliza um método analítico para desenvolver uma análise indutiva.
+
+b)  considera os conhecimentos de outras áreas para formar um conhecimento novo, se afirmando, então, como independente.
+
+c)  utiliza um método silogístico.
+
+d)  utiliza um método racional de análise e trabalha o direito penal de forma dogmática.
+
+e)  é metafísica e leva em conta os métodos das ciências exatas para o estudo de seu objeto.
+Gabarito: A
+## questao 589565
+CEBRASPE (CESPE) - Del Pol (PC MA)/PC MA/2018
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+466) 
+Texto 
+
+ 
+
+João nutria grande desejo por sua colega de turma, Estela, mas não era correspondido. Esse desejo transformou-se em ódio e fez que João planejasse o estupro e o homicídio da colega. Para isso, ele passou a observar a rotina de Estela, que trabalhava durante o dia e estudava com João à noite. Determinado dia, após a aula, em uma rua escura no caminho de Estela para casa, João realizou seus intentos criminosos, certo de que ficaria impune, mas acabou sendo descoberto e preso.
+
+ 
+
+Com relação à situação hipotética descrita no texto e às funções da criminologia, da política criminal e do direito penal, assinale a opção correta.
+
+a)  O direito penal tem a função de analisar a forma como o crime foi cometido, bem como estudar os meios que devem ser adotados com relação à pena e à ressocialização de João.
+
+b)  O direito penal é o responsável pelo diagnóstico do fenômeno dos crimes cometidos contra as mulheres.
+
+c)  A criminologia deverá analisar a conduta de João, subsidiando o juiz quanto ao arbitramento da pena.
+
+d)  A política criminal tem a função de propor medidas para a redução das condições que facilitaram o cometimento do crime por João, como a urbanização e a iluminação de ruas.
+
+e)  A criminologia deverá indicar os trajetos que precisam de rondas policiais ou os locais para se instalarem postos policiais.
+Gabarito: D
+## questao 655865
+CEBRASPE (CESPE) - JE TJCE/TJ CE/2018
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+467) 
+A respeito da política criminal, da criminologia, da aplicação da lei penal e das funções da pena, julgue os itens subsequentes.
+
+ 
+
+I. Criminologia é a ciência que estuda o crime como fenômeno social e o criminoso como agente do ato ilícito, não se restringindo à análise da norma penal e seus efeitos, mas observando principalmente as causas que levam à delinquência, com o fim de possibilitar o aperfeiçoamento dogmático do sistema penal.
+
+ 
+
+II. A política criminal constitui a sistematização de estratégias, táticas e meios de controle social da criminalidade, com o propósito de sugerir e orientar reformas na legislação positivada.
+
+ 
+
+III. O direito penal positivado no ordenamento penal brasileiro corrobora a teoria absoluta, porquanto consagra a ideia do caráter retributivo da sanção penal.
+
+ 
+
+IV. Considera-se o lugar da prática do crime aquele onde tenha ocorrido a ação ou omissão, e não onde se tenha produzido o seu resultado.
+
+ 
+
+Estão certos apenas os itens
+
+
+a) I e II.
+
+b) I e IV.
+
+c) II e III.
+
+d) I, III e IV.
+
+e) II, III e IV.
+Gabarito: A
+## questao 699412
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2018
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+468) 
+Acerca do conceito e das funções da criminologia, julgue o item seguinte.
+
+ 
+
+A criminologia é uma ciência dogmática que se preocupa com o ser e o dever ser e parte do fato para analisar suas causas e buscar definir parâmetros de coerção punitiva e preventiva.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 699413
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2018
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+469) 
+Acerca do conceito e das funções da criminologia, julgue o item seguinte.
+
+ 
+
+Na inter-relação entre o direito penal, a política criminal e a criminologia, compete a esta facilitar a recepção das investigações empíricas e a sua transformação em preceitos normativos, incumbindo-se de converter a experiência criminológica em proposições jurídicas, gerais e obrigatórias.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 699420
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2018
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+470) 
+Acerca do conceito e das funções da criminologia, julgue o item seguinte.
+
+ 
+
+A pesquisa criminológica científica visa evitar o emprego da intuição ou de subjetivismos no que se refere ao ilícito criminal, haja vista sua função de apresentar um diagnóstico qualificado e conjuntural sobre o delito.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 442452
+CEBRASPE (CESPE) - Del Pol (PC GO)/PC GO/2017
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+471) 
+A respeito do conceito e das funções da criminologia, assinale a opção correta.
+
+a) A criminologia tem como objetivo estudar os deliquentes, a fim de estabelecer os melhores passos para sua ressocialização. A política criminal, ao contrário, tem funções mais relacionadas à prevenção do crime.
+b) A finalidade da criminologia em face do direito penal é de promover a eliminação do crime.
+c) A determinação da etimologia do crime é uma das finalidades da criminologia.
+d) A criminologia é a ciência que, entre outros aspectos, estuda as causas e as concausas da criminalidade e da periculosidade preparatória da criminalidade.
+e) A criminologia é orientada pela política criminal na prevenção especial e direta dos crimes socialmente relevantes, mediante intervenção nas manifestações e nos efeitos graves desses crimes para determinados indivíduos e famílias.
+Gabarito: D
+## questao 533874
+CEBRASPE (CESPE) - Def PF/DPU/2017
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+472) 
+A respeito do conceito e dos objetos da criminologia, julgue o item a seguir.
+
+ 
+
+O desvio ou o delito, objetos da criminologia, devem ser abordados, primordialmente, como um comportamento individual do desviante ou delinquente; em segundo plano, analisam-se as influências ambientais e sociais.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 364085
+CEBRASPE (CESPE) - Del Pol (PC PE)/PC PE/2016
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+473) 
+A criminologia moderna
+
+a) é uma ciência normativa, essencialmente profilática, que visa oferecer estratégias para minimizar os fatores estimulantes da criminalidade e que se preocupa com a repressão social contra o delito por meio de regras coibitivas, cuja transgressão implica sanções.
+b) ocupa-se com a pesquisa científica do fenômeno criminal — suas causas, características, sua prevenção e o controle de sua incidência —, sendo uma ciência causal-explicativa do delito como fenômeno social e individual.
+c) ocupa-se, como ciência causal-explicativa-normativa, em estudar o homem delinquente em seu aspecto antropológico, estabelece comandos legais de repressão à criminalidade e despreza, na análise empírica, o meio social como fatores criminógenos.
+d) é uma ciência empírica e normativa que fundamenta a investigação de um delito, de um delinquente, de uma vítima e do controle social a partir de fatos abstratos apreendidos mediante o método indutivo de observação.
+e) possui como objeto de estudo a diversidade patológica e a disfuncionalidade do comportamento criminal do indivíduo delinquente e produz fundamentos epistemológicos e ideológicos como forma segura de definição jurídico-formal do crime e da pena.
+Gabarito: B
+## questao 280714
+CEBRASPE (CESPE) - AgFEP (DEPEN)/SENAPPEN/Área 3/2015
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+474) 
+Em relação aos preceitos da criminologia contemporânea e a aspectos relevantes sobre a justiça criminal, o sistema penal e a estrutura social, julgue o item que se segue.
+
+
+Na criminologia contemporânea, não se consideram os protagonistas do crime — vítima, infrator e comunidade — nem o desenvolvimento de técnicas de intervenção e controle, pois essas matérias devem ser objeto de políticas públicas de segurança pública e não da ciência criminológica.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 280715
+CEBRASPE (CESPE) - AgFEP (DEPEN)/SENAPPEN/Área 3/2015
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+475) 
+Em relação aos preceitos da criminologia contemporânea e a aspectos relevantes sobre a justiça criminal, o sistema penal e a estrutura social, julgue o item que se segue.
+
+ 
+
+Entre outros, a reparação do dano é um dos objetivos da criminologia contemporânea.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 280717
+CEBRASPE (CESPE) - AgFEP (DEPEN)/SENAPPEN/Área 3/2015
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+476) 
+Em relação aos preceitos da criminologia contemporânea e a aspectos relevantes sobre a justiça criminal, o sistema penal e a estrutura social, julgue o item que se segue.
+
+ 
+O castigo como reprimenda penal por meio do confronto entre o Estado e o infrator de maneira polarizada caracteriza o modelo criminológico contemporâneo.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 255462
+CEBRASPE (CESPE) - AL (CAM DEP)/CAM DEP/Consultor Legislativo/Área XVII/2014
+Criminologia - Criminologia (conceito, objeto, método, função, finalidade)
+477) 
+Considerando o conceito de vítima e as implicações suscitadas pelo tema, julgue o item que se segue.
+
+ 
+
+O direito penal, a partir de sua vertente clássica, sempre concentrou seus estudos no trinômio delinquente, vítima e crime.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 3429037
+CEBRASPE (CESPE) - Del Pol (PC CE)/PC CE/2025
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+478) 
+Acerca das teorias sociológicas do crime, julgue os itens que se seguem.
+
+ 
+I A teoria da desorganização social, defendida por Robert Park e Ernest Burguess, atribui o incremento da criminalidade nas grandes cidades à debilidade do controle social informal, à desordem e à falta de integração e sentimento de solidariedade entre seus membros.
+
+ 
+II A teoria da anomia, proposta por Robert King Merton, pressupõe que o comportamento criminoso é resultado da ausência de normas sociais e morais em contextos de desorganização cultural, sem considerar a estrutura de oportunidades legítimas e a tensão entre meios institucionalizados e fins culturais.
+
+ 
+III A teoria da rotulação social (labelling approach), sustentada por Howard Becker e Edwin Lemert, desloca o foco do ato desviante para a reação social, compreendendo o desvio como o resultado de um processo interacional que estigmatiza o indivíduo, potencializando o desvio secundário.
+
+ 
+IV A teoria das janelas quebradas, defendida por Wilson e Kelling, parte do pressuposto de que a tolerância a pequenos sinais de desordem e incivilidade em espaços urbanos favorece o aumento da criminalidade, legitimando práticas de controle imediato e repressivo.
+
+ 
+Assinale a opção correta.
+
+a)  Apenas os itens I, II e III estão certos.
+b)  Apenas os itens I, II e IV estão certos.
+c)  Apenas os itens I, III e IV estão certos.
+d)  Apenas os itens II, III e IV estão certos.
+
+e)  Todos os itens estão certos.
+Gabarito: C
+## questao 3546738
+CEBRASPE (CESPE) - DPF/PF/2025
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+479) 
+A respeito das teorias sociológicas da criminologia, julgue o item seguinte.
+
+
+Segundo a teoria das janelas quebradas (broken windows theory), desenvolvida por James Wilson e George Kelling, há uma relação de causalidade entre a percepção de desordem e o aumento da criminalidade, o que sustentaria a necessidade de o Estado reprimir de forma imediata as pequenas infrações a fim de prevenir a prática de delitos mais graves.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 3546739
+CEBRASPE (CESPE) - DPF/PF/2025
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+480) 
+A respeito das teorias sociológicas da criminologia, julgue o item seguinte.
+
+ 
+A expressão "crime do colarinho branco" (white-collar crime) foi desenvolvida para se referir às condutas criminosas praticadas por indivíduos de alto status social no exercício de suas atividades profissionais, rompendo com a ideia equivocada e largamente difundida de que a criminalidade seria um fenômeno restrito a classes economicamente desfavorecidas.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2796312
+CEBRASPE (CESPE) - Del Pol (PC PE)/PC PE/2024
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+481) 
+Entre as teorias sociológicas do crime, aquela que buscou explicar os crimes de colarinho branco (white-collar crimes) foi a
+
+a)  teoria da anomia, desenvolvida por Robert King Merton, com base na doutrina de Durkheim.
+b)  teoria da associação diferencial, desenvolvida pelo sociólogo americano Edwin Sutherland, com base nos pensamentos de Gabriel Tarde.
+c)  escola de Chicago, cujos estudos se iniciaram nas décadas de 20 e 30 do século XX.
+d)  teoria da subcultura delinquente, desenvolvida por Erving Goffman e Howard Becker, na década de 50 do século XX.
+
+e)  teoria do labelling approach, desenvolvida a partir do trabalho do sociológo holandês Bonger, na década de 60 do século XX.
+Gabarito: B
+## questao 2796324
+CEBRASPE (CESPE) - Del Pol (PC PE)/PC PE/2024
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+482) 
+Assinale a opção que apresenta corretamente a teoria que defende a ideia de que a conduta criminosa resulta de uma série de estímulos contínuos na vida do indivíduo, sendo produto de suas experiências passadas.
+
+a)  teoria do reforço diferencial
+b)  teoria dos instintos
+c)  teoria do condicionamento operante
+d)  teoria da identificação diferencial
+
+e)  teoria dos tipos de autor
+Gabarito: C
+## questao 2289194
+CEBRASPE (CESPE) - DP RO/DPE RO/2023
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+483) 
+O crime como resultado do inadequado funcionamento da sociedade, em razão, especialmente, de uma situação social desprovida de regras ou lei, não se vislumbrando o delito como uma anomalia e considerando-se a sociedade um todo orgânico, é característica da teoria sociológica
+
+a) ecologia criminal.
+b) etiquetamento.
+c) anomia.
+d) associação diferencial.
+
+e) subcultura criminosa.
+Gabarito: C
+## questao 2339326
+CEBRASPE (CESPE) - Per Crim (POLC AL)/POLC AL/Direito/2023
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+484) 
+Considerando-se que a criminologia estuda o crime com objetividade, sem avaliação de valor, sem mediação e sem julgamentos, julgue o próximo item.
+
+ 
+Conforme a teoria da associação diferencial de Sutherland, a conduta criminal não se aprende, já que é suficiente que o indivíduo viva em um meio criminógeno, onde há situações frequentemente associadas ao delito, e manifeste determinados traços de personalidade.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2368079
+CEBRASPE (CESPE) - Prom Jus (MPE SC)/MPE SC/2023
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+485) 
+No que se refere às teorias macrossociológicas da criminalidade e aos movimentos atuais de política criminal, julgue o item a seguir.
+
+ 
+De acordo com a teoria da anomia, o comportamento delituoso é aprendido mediante o contato com valores, atitudes, definições e pautas de condutas criminais no curso normal de uma variedade de relações recíprocas desenvolvidas ao longo do tempo.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2012967
+CEBRASPE (CESPE) - Del Pol (PC PB)/PC PB/2022
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+486) 
+Acerca das teorias sociológicas da criminologia, assinale a opção correta.
+
+a) A teoria da desorganização social é considerada uma teoria do conflito social.
+b) A subcultura delinquente é um exemplo de teoria do consenso.
+c) A escola de Chicago, importante marco para o estudo da criminalidade urbana, representa uma das teorias do conflito social.
+d) A criminologia feminista opõe-se frontalmente à criminologia crítica que advém do positivismo criminológico.
+
+e)  A teoria do labelling approach é exemplo de teoria do consenso, uma vez que se preocupa com os comportamentos não desviantes.
+Gabarito: B
+## questao 2182341
+CEBRASPE (CESPE) - Del Pol (PC ES)/PC ES/2022
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+487) 
+A primeira teoria sociológica que fixou o entendimento de que o crime é produto da desorganização própria da grande cidade, onde se debilita o controle social e se deterioram as relações humanas, foi a
+
+a) ecológica.
+b) estrutural-funcionalista.
+c) da anomia.
+d) conflitual marxista.
+
+e) do conflito social.
+Gabarito: A
+## questao 1752141
+CEBRASPE (CESPE) - Prom Jus (MPE SC)/MPE SC/2021
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+488) 
+Com relação ao comportamento criminoso para as diferentes escolas criminais, julgue o item seguinte.
+
+ 
+A crise dos valores tradicionais e familiares, a alta mobilidade, a explosão demográfica e o enfraquecimento do controle social são considerados fatores criminógenos pela escola de Chicago.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1752150
+CEBRASPE (CESPE) - Prom Jus (MPE SC)/MPE SC/2021
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+489) 
+Com relação aos conceitos básicos das teorias criminológicas e aos movimentos atuais de política criminal, julgue o item a seguir.
+
+ 
+O fenômeno do crime organizado se ajusta aos fundamentos da teoria da associação diferencial, para a qual a conduta delitiva não é intrínseca às condições sociais ou a fatores outros como gênero, raça e idade do agente.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1554773
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+490) 
+No que se refere a criminologia e psicopatologia forense, julgue o item a seguir.
+
+ 
+A teoria da associação diferencial, segundo a qual o indivíduo desenvolve seu comportamento individual com base nos exemplos e nas influências que possui, explica, de certa forma, o denominado crime de colarinho-branco.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 766546
+CEBRASPE (CESPE) - JE TJBA/TJ BA/2019
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+491) 
+A explicação do crime como fenômeno coletivo cuja origem pode ser encontrada nas mais variadas causas sociais, como a pobreza, a educação, a família e o ambiente moral, corresponde à perspectiva criminológica denominada
+
+a) sociologia criminal.
+b)  criminologia da escola positiva.
+c)  criminologia socialista.
+d) labeling approach, ou etiquetamento.
+e)  ecologia criminal.
+Gabarito: A
+## questao 922850
+CEBRASPE (CESPE) - DP DF/DP DF/2019
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+492) 
+Acerca dos modelos teóricos da criminologia, julgue o item que se segue.
+
+ 
+
+Estabelecida por Durkheim, a teoria da anomia, que analisa o comportamento delinquencial sob o enfoque estrutural-funcionalista, admite o crime como um comportamento normal, ubíquo e propulsor da modernidade.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 922856
+CEBRASPE (CESPE) - DP DF/DP DF/2019
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+493) 
+Acerca dos modelos teóricos da criminologia, julgue o item que se segue.
+
+ 
+
+Para a teoria da conformidade diferencial, a comunidade produz estímulos e pressões que impulsionam o indivíduo à conduta criminal, mas tais impulsos são impedidos por fatores internos — como a personalidade forte — e externos — como a coação normativa exercida pela sociedade.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 684288
+CEBRASPE (CESPE) - DPF/PF/2018
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+494) 
+Julgue o item a seguir, relativo a modelos teóricos da criminologia.
+
+
+Conforme a teoria ecológica, crime é um fenômeno natural e o criminoso é um delinquente nato possuidor de uma série de estigmas comportamentais potencializados pela desorganização social.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 684289
+CEBRASPE (CESPE) - DPF/PF/2018
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+495) 
+Julgue o item a seguir, relativo a modelos teóricos da criminologia.
+
+ 
+
+De acordo com a teoria da anomia, o crime se origina da impossibilidade social do indivíduo de atingir suas metas pessoais, o que o faz negar a norma imposta e criar suas próprias regras, conforme o seu próprio interesse.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 699437
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2018
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+496) 
+Em seu início, a sociologia criminal buscava associar a gênese delituosa a fatores biológicos. Posteriormente, ela passou a englobar as chamadas teorias macrossociológicas, que não se limitavam à análise do delito segundo uma visão do indivíduo ou de pequenos grupos, mas consideravam a sociedade como um todo.
+
+ 
+
+Tendo esse fragmento de texto como referência inicial, julgue o item a seguir, relativo a teorias sociológicas em criminologia.
+
+ 
+
+As teorias sociológicas de consenso vinculam-se a orientações ideológicas e políticas progressistas. Essas teorias consideram que os objetivos da sociedade são atingidos quando as instituições funcionam e os indivíduos, que dividem os mesmos valores, concordam com as regras de convívio.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 364092
+CEBRASPE (CESPE) - Del Pol (PC PE)/PC PE/2016
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+497) 
+Considerando que, conforme a doutrina, a moderna sociologia criminal apresenta teorias e esquemas explicativos do crime, assinale a opção correta acerca dos modelos sociológicos explicativos do delito.
+
+a) Para a teoria ecológica da sociologia criminal, que considera normal o comportamento delituoso para o desenvolvimento regular da ordem social, é imprescindível e, até mesmo, positiva a existência da conduta delituosa no seio da comunidade.
+b) A teoria do conflito, sob o enfoque sociológico da Escola de Chicago, rechaça o papel das instâncias punitivas e fundamenta suas ideias em situações concretas, de fácil comprovação e verificação empírica das medidas adotadas para contenção do crime, sem que haja hostilidade e coerção no uso dos meios de controle.
+c) A teoria da integração, ao criticar a teoria consensual na solução do conflito, rotula o criminoso quando assevera que o delito é fruto do sistema capitalista e considera o fator econômico como justificativa para o ato criminoso, de modo que, para frear a criminalidade, devem-se separar as classes sociais.
+d) A Escola de Chicago, ao atentar para a mutação social das grandes cidades na análise empírica do delito, interessa-se em conhecer os mecanismos de aprendizagem e transmissão das culturas consideradas desviadas, por reconhecê-las como fatores de criminalidade.
+e) A teoria estrutural-funcionalista da sociologia criminal sustenta que o delito é produto da desorganização da cidade grande, que debilita o controle social e deteriora as relações humanas, propagando-se, consequentemente, o vício e a corrupção, que são considerados anormais e nocivos à coletividade.
+Gabarito: D
+## questao 124067
+CEBRASPE (CESPE) - DPF/PF/2013
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+498) 
+Julgue o item a seguir, relacionados aos modelos teóricos da criminologia.
+
+De acordo com o interacionismo simbólico, ou simplesmente interacionismo, cuja perspectiva é macrossociológica, deve-se indagar como se define o criminoso, e não quem é o criminoso.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 124069
+CEBRASPE (CESPE) - DPF/PF/2013
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+499) 
+Julgue o item a seguir, relacionados aos modelos teóricos da criminologia.
+
+As ideias sociológicas que fundamentam as construções teóricas de Merton e Parsons obedecem ao modelo da denominada sociologia do conflito.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 124070
+CEBRASPE (CESPE) - DPF/PF/2013
+Criminologia - Teorias Consensuais (Ecologia Criminal, Anomia e Associação Diferencial)
+500) 
+Julgue o item a seguir, relacionados aos modelos teóricos da criminologia.
+
+A teoria funcionalista da anomia e da criminalidade, introduzida por Emile Durkheim no século XIX, contrapunha à ideia da propensão ao crime como patologia a noção da normalidade do desvio como fenômeno social, podendo ser situada no contexto da guinada sociológica da criminologia, em que se origina uma concepção alternativa às teorias de orientação biológica e caracterológica do delinquente.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2339322
+CEBRASPE (CESPE) - Per Crim (POLC AL)/POLC AL/Direito/2023
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+501) 
+Considerando-se que a criminologia estuda o crime com objetividade, sem avaliação de valor, sem mediação e sem julgamentos, julgue o próximo item.
+
+
+Pela teoria de interação social, como a do labelling approach, a atuação da polícia é assimétrica quando relacionada com os cidadãos, seletiva e estigmatizante.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2368082
+CEBRASPE (CESPE) - Prom Jus (MPE SC)/MPE SC/2023
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+502) 
+No que se refere às teorias macrossociológicas da criminalidade e aos movimentos atuais de política criminal, julgue o item a seguir.
+
+ 
+Albert Cohen, um dos precursores da teoria da subcultura delinquente, assinala como características do fenômeno da delinquência juvenil a versatilidade, o hedonismo-imediatista e a autonomia do grupo.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1884118
+CEBRASPE (CESPE) - DP RS/DPE RS/2022
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+503) 
+Um homem branco, de 29 anos de idade, e um homem negro, de 21 anos de idade, foram presos por terem pichado, juntos, um prédio. Na posse deles, foram encontradas as tintas usadas no ato, além de um cigarro de maconha. O indivíduo branco assinou termo circunstanciado e foi liberado, enquanto o outro homem foi mantido preso.
+
+ 
+Considerando essa situação hipotética e as perspectivas da criminologia, julgue o item a seguir.
+
+ 
+A criminologia cultural analisa a pichação como ato de contracultura e de representação social de populações periféricas, resgatando e atualizando os estudos sobre o paradigma do etiquetamento social.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1884119
+CEBRASPE (CESPE) - DP RS/DPE RS/2022
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+504) 
+Um homem branco, de 29 anos de idade, e um homem negro, de 21 anos de idade, foram presos por terem pichado, juntos, um prédio. Na posse deles, foram encontradas as tintas usadas no ato, além de um cigarro de maconha. O indivíduo branco assinou termo circunstanciado e foi liberado, enquanto o outro homem foi mantido preso.
+
+ 
+Considerando essa situação hipotética e as perspectivas da criminologia, julgue o item a seguir.
+
+ 
+Na situação apresentada, a prisão do homem negro pela prática da pichação e pelo porte de maconha é relacionada ao estigma de desviante.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1894656
+CEBRASPE (CESPE) - DP PA/DPE PA/2022
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+505) 
+A teoria do labelling approach entende o crime como
+
+
+a) o ato típico, ilícito e culpável, em respeito ao conceito formal de crime.
+b) uma conduta que deve ser punível em razão da periculosidade do autor do fato.
+c) um delito natural, inerente a tudo aquilo que o ser humano rejeita.
+d) uma agressão realizada por força física ou engano contra bens jurídicos protegidos.
+
+e) um mero subproduto final do controle social, constituindo um instrumento seletivo dentro da sociedade.
+Gabarito: E
+## questao 2169836
+CEBRASPE (CESPE) - Del Pol (PC RO)/PC RO/2022
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+506) 
+A ideia de igualdade é refutada pela teoria da criminologia denominada
+
+a)  teoria do labelling approach ou etiquetamento social.
+b) teoria das zonas concêntricas.
+c) teoria crítica.
+d) teoria técnico-jurídica.
+
+e) teoria psicológica.
+Gabarito: A
+## questao 2169838
+CEBRASPE (CESPE) - Del Pol (PC RO)/PC RO/2022
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+507) 
+Na visão moderna, o delinquente deve ser compreendido
+
+a) como um ser atávico, prisioneiro de sua deformação patológica.
+b) como um ser movido subjetivamente pelo livre-arbítrio.
+c) como um ser inferior e incapaz de se governar.
+d) como vítima inocente das estruturas econômicas.
+
+e) como um ser influenciado por fatores biológicos, psicológicos e sociais.
+Gabarito: E
+## questao 2179517
+CEBRASPE (CESPE) - Proc (PGE PA)/PGE PA/2022
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+508) 
+Os atos mais grosseiros cometidos por pessoas sem acesso positivo à comunicação social acabam sendo divulgados por esta como os únicos delitos, e tais pessoas, como os únicos delinquentes. A estes últimos é proporcionado um acesso negativo à comunicação social que contribui para criar um estereótipo no imaginário coletivo. Por tratar-se de pessoas desvaloradas, é possível associar-lhes todas as cargas negativas existentes na sociedade sob a forma de preconceitos, o que resulta em fixar uma imagem pública do delinquente com componentes de classe social, étnicos, etários, de gênero e estéticos.
+
+ 
+Raúl Zaffaroni, Nilo Batista et alii. Direito Penal Brasileiro:
+
+Primeiro Volume – Teoria Geral do Direito Penal. Rio de Janeiro:
+
+Revan, 2003, p. 46 (com adaptações).
+
+ 
+O texto em questão refere-se ao estereótipo como
+
+a) garantia individual de toda pessoa humana.
+b) programa de descriminalização de condutas.
+c) limite ao poder punitivo do Estado, nos países de índole democrática.
+d) critério seletivo da criminalização.
+
+e) princípio constitucional da adequação social.
+Gabarito: D
+## questao 1752146
+CEBRASPE (CESPE) - Prom Jus (MPE SC)/MPE SC/2021
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+509) 
+Com relação aos conceitos básicos das teorias criminológicas e aos movimentos atuais de política criminal, julgue o item a seguir.
+
+ 
+A teoria do labeling approach se relaciona com o estudo de psicopatias e sociopatias para a compreensão do fenômeno delitivo, sendo um reflexo dessa teoria a imposição da medida de segurança aos inimputáveis.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 852250
+CEBRASPE (CESPE) - JE TJSC/TJ SC/2019
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+510) 
+O estudo das teorias relaciona-se intimamente com as finalidades da pena. Nesse sentido, a teoria que sustenta que a única função efetivamente desempenhada pela pena seria a neutralização do condenado, especialmente quando a prisão acarreta seu afastamento da sociedade, é a teoria
+
+a)  das janelas quebradas.
+b)  relativa.
+c)  unificadora.
+d)  absoluta.
+e)  agnóstica.
+Gabarito: E
+## questao 922853
+CEBRASPE (CESPE) - DP DF/DP DF/2019
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+511) 
+Acerca dos modelos teóricos da criminologia, julgue o item que se segue.
+
+ 
+
+Segundo a teoria do enraizamento social de Hirschi, o delito, como um comportamento natural do ser humano, é inibido pelo processo de assunção de normas sociais, pelo apego e afeto às pessoas e pelo medo de dano irreparável a essas relações interpessoais.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 923063
+CEBRASPE (CESPE) - DP DF/DP DF/2019
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+512) 
+A criminologia, diante do fenômeno do delito, na busca de conhecer fatores criminógenos, traça um paralelo entre vítima e criminoso. Partindo dessa premissa dual, chamada por Mendelsohn de “dupla-penal”, extraem-se importantes situações fenomenológicas.
+
+ 
+
+Acerca desses estudos, julgue o item seguinte.
+
+ 
+
+Na visão do marxismo, a responsabilidade pelo crime recai sobre a sociedade, tornando o infrator vítima do determinismo social e econômico.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1083886
+CEBRASPE (CESPE) - JE TJPA/TJ PA/2019
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+513) 
+Considerável parcela de doutrinadores compreende a política criminal como o conjunto de princípios e atividades que tem por fim reagir contra o fenômeno delitivo, através do sistema penal, determinando os meios mais adequados para o controle da criminalidade. A partir dessa afirmação, julgue os itens a seguir.
+
+ 
+I Os movimentos sociais conhecidos por Tolerância Zero, Nova Defesa Social e Despenalização das Contravenções são considerados instrumentos de endurecimento do Estado no combate ao crescimento da criminalidade.
+
+ 
+II Os defensores do movimento Lei e Ordem reconhecem que o agravamento das penas é medida necessária para combater a violência, embora acreditem que não faça justiça às vítimas.
+
+ 
+III O movimento Tolerância Zero parte da ideia de que o Estado não deve negligenciar fatos criminosos, por mais insignificantes que sejam, já que esses fatos contêm em si uma fonte de irradiação da criminalidade.
+
+ 
+Assinale a opção correta.
+
+a)  Apenas o item I está certo.
+
+b)  Apenas o item II está certo.
+
+c)  Apenas o item III está certo.
+
+d)  Apenas os itens I e II estão certos.
+
+e)  Apenas os itens II e III estão certos.
+Gabarito: C
+## questao 589566
+CEBRASPE (CESPE) - Del Pol (PC MA)/PC MA/2018
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+514) 
+Texto 
+
+ 
+
+João nutria grande desejo por sua colega de turma, Estela, mas não era correspondido. Esse desejo transformou-se em ódio e fez que João planejasse o estupro e o homicídio da colega. Para isso, ele passou a observar a rotina de Estela, que trabalhava durante o dia e estudava com João à noite. Determinado dia, após a aula, em uma rua escura no caminho de Estela para casa, João realizou seus intentos criminosos, certo de que ficaria impune, mas acabou sendo descoberto e preso.
+
+ 
+
+Conforme a criminologia crítica, o crime praticado contra Estela, descrito no texto, pode ser explicado
+
+
+a)  por traumas de infância desenvolvidos por João, o que tornou difícil a sua relação com as mulheres.
+
+b)  pela pouca iluminação da rua que Estela elegeu para voltar para casa depois da aula.
+
+c)  pelo comportamento imprudente de Estela, que, no período noturno, andava sozinha em rua mal iluminada.
+
+d)  pela existência de alguma característica inata de João, que fatalmente o levaria a cometer os crimes de estupro e homicídio.
+
+e)  por multifatores, como uma cultura misógina que desvaloriza as mulheres e que legitima a sua punição quando não forem atendidos os interesses e os desejos masculinos.
+Gabarito: E
+## questao 684290
+CEBRASPE (CESPE) - DPF/PF/2018
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+515) 
+Julgue o item a seguir, relativo a modelos teóricos da criminologia.
+
+ 
+Para a teoria da reação social, o delinquente é fruto de uma construção social, e a causa dos delitos é a própria lei; segundo essa teoria, o próprio sistema e sua reação às condutas desviantes, por meio do exercício de controle social, definem o que se entende por criminalidade.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 699432
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2018
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+516) 
+Em seu início, a sociologia criminal buscava associar a gênese delituosa a fatores biológicos. Posteriormente, ela passou a englobar as chamadas teorias macrossociológicas, que não se limitavam à análise do delito segundo uma visão do indivíduo ou de pequenos grupos, mas consideravam a sociedade como um todo.
+
+ 
+
+Tendo esse fragmento de texto como referência inicial, julgue o item a seguir, relativo a teorias sociológicas em criminologia.
+
+ 
+
+Na perspectiva macrossociológica, o pensamento criminológico moderno é influenciado por duas visões: a das teorias de consenso e a das teorias de conflito.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 364090
+CEBRASPE (CESPE) - Del Pol (PC PE)/PC PE/2016
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+517) 
+Acerca dos modelos teóricos explicativos do crime, oriundos das teorias específicas que, na evolução da história, buscaram entender o comportamento humano propulsor do crime, assinale a opção correta.
+
+a) O modelo positivista analisa os fatores criminológicos sob a concepção do delinquente como indivíduo racional e livre, que opta pelo crime em virtude de decisão baseada em critérios subjetivos.
+b) O objeto de estudo da criminologia é a culpabilidade, considerada em sentido amplo; já o direito penal se importa com a periculosidade na pesquisa etiológica do crime.
+c) A criminologia clássica atribui o comportamento criminal a fatores biológicos, psicológicos e sociais como determinantes desse comportamento, com paradigma etiológico na análise causal-explicativa do delito.
+d) Entre os modelos teóricos explicativos da criminologia, o conceito definitorial de delito afirma que, segundo a teoria do labeling approach, o delito carece de consistência material, sendo um processo de reação social, arbitrário e discriminatório de seleção do comportamento desviado.
+e) O modelo teórico de opção racional estuda a conduta criminosa a partir das causas que impulsionaram a decisão delitiva, com ênfase na observância da relevância causal etiológica do delito.
+Gabarito: D
+## questao 255999
+CEBRASPE (CESPE) - AL (CAM DEP)/CAM DEP/Consultor Legislativo/Área XXII/2014
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+518) 
+A respeito da criminologia, da lei penal e da teoria geral do crime, julgue o seguinte item.
+
+ 
+
+O Poder Legislativo é considerado como uma agência de criminalização primária.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 124066
+CEBRASPE (CESPE) - DPF/PF/2013
+Criminologia - Teorias Conflituais (Etiquetamento e Crítica ou Radical)
+519) 
+Julgue o item a seguir, relacionados aos modelos teóricos da criminologia.
+
+O surgimento das teorias sociológicas em criminologia marca o fim da pesquisa etiológica, própria da escola ou do modelo positivista.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 3428965
+CEBRASPE (CESPE) - Del Pol (PC CE)/PC CE/2025
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+520) 
+Em relação às escolas penais e a sua evolução histórica e metodológica, assinale a opção correta.
+
+a)  A escola técnico-jurídica, cujo maior expoente foi Cesare Lombroso, rejeitou qualquer forma de construção lógico-dedutiva ao conceber o delito exclusivamente como ente natural e estatístico, e excluiu do seu sistema o princípio da culpabilidade.
+b)  A escola moderna alemã, fundada por Carrara e Pessina, inaugurou a dogmática penal com ênfase no direito penal mínimo e defendeu a abolição da pena privativa de liberdade e sua substituição por sanções meramente preventivas.
+c)  A escola clássica, ainda que tenha defendido o princípio da responsabilidade moral, baseava-se em métodos empíricos de observação e análise estatística, fundando suas conclusões na psicologia criminal e na periculosidade do agente.
+d)  A escola positivista, apesar de seu forte vínculo com o determinismo biológico e social, consagrou a noção de pena retributiva como instrumento de justiça moral e universal, mantendo vínculo com o livre-arbítrio do agente.
+
+e)  A terceira escola, também chamada de escola eclética, buscou superar o antagonismo entre as escolas clássica e positiva, mantendo a estrutura dogmática da imputabilidade e introduzindo as medidas de segurança para os inimputáveis.
+Gabarito: E
+## questao 3429043
+CEBRASPE (CESPE) - Del Pol (PC CE)/PC CE/2025
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+521) 
+A respeito da concepção do delinquente como objeto da criminologia, segundo diferentes escolas criminológicas, assinale a opção correta.
+
+a)  De acordo com a escola correcionalista, o criminoso é um indivíduo que necessita de correção e a pena tem função terapêutica.
+b)  Segundo a escola clássica, o delinquente é um ser patológico, biologicamente determinado ao crime, e a pena deve ser terapêutica, com vistas à reabilitação moral do criminoso.
+c)  De acordo com a escola positivista, o criminoso é um ser racional, moralmente responsável por suas escolhas, e a sanção tem função retributiva.
+d)  Segundo a visão correcionalista, o criminoso deve ser neutralizado, pois representa um perigo irreversível à ordem social, sendo a pena dotada de natureza meramente retributiva.
+
+e)  A escola correcionalista rompe com o determinismo positivista ao considerar o criminoso um infrator ocasional, que deve ser punido exemplarmente para fins de prevenção geral.
+Gabarito: A
+## questao 3429045
+CEBRASPE (CESPE) - Del Pol (PC CE)/PC CE/2025
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+522) 
+Um dos expoentes da escola positivista da criminologia, Cesare Lombroso
+
+a)  defendia o determinismo social, apontando fatores antropológicos, sociais e físicos como as causas do delito.
+b)  classificava os delitos em legais e naturais.
+c)  desenvolveu uma tipologia penal baseada nos conceitos de dolo e culpa, com foco no fato jurídico.
+d)  adotou o método empírico-indutivo em suas investigações, sendo essa sua principal contribuição para a criminologia.
+
+e)  defendia o livre-arbítrio como fundamento da imputabilidade penal.
+Gabarito: D
+## questao 3429046
+CEBRASPE (CESPE) - Del Pol (PC CE)/PC CE/2025
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+523) 
+A escola clássica da criminologia
+
+a)  sustentou que a finalidade precípua de prevenção especial da pena é atuar como instrumento de defesa social.
+b)  representou o nascimento da criminologia científica, a partir da publicação da obra Dos delitos e das penas, de Cesare Beccaria.
+c)  centralizou seus estudos na figura do delinquente e fundamentou a responsabilidade penal na teoria determinista.
+d)  fundamentou a responsabilidade penal no livre-arbítrio e na autodeterminação do indivíduo.
+
+e)  buscou explicar cientificamente as causas do delito, a partir do método empírico-indutivo.
+Gabarito: D
+## questao 2796315
+CEBRASPE (CESPE) - Del Pol (PC PE)/PC PE/2024
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+524) 
+Assinale a opção que apresenta corretamente o teórico que classificava os criminosos nas três categorias seguintes: criminoso assassino, criminoso enérgico ou violento, e ladrão ou neurastênico.
+
+a)  Cesare Lombroso
+b)  Enrico Ferri
+c)  Giovanni Carmignani
+d)  Francesco Carrara
+
+e)  Raffaele Garofalo
+Gabarito: E
+## questao 1884117
+CEBRASPE (CESPE) - DP RS/DPE RS/2022
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+525) 
+Um homem branco, de 29 anos de idade, e um homem negro, de 21 anos de idade, foram presos por terem pichado, juntos, um prédio. Na posse deles, foram encontradas as tintas usadas no ato, além de um cigarro de maconha. O indivíduo branco assinou termo circunstanciado e foi liberado, enquanto o outro homem foi mantido preso.
+
+ 
+Considerando essa situação hipotética e as perspectivas da criminologia, julgue o item a seguir.
+
+ 
+Segundo a antropologia criminal de Lombroso, a manutenção da prisão do homem negro seria justificada por seu tipo racial e sua condição de criminoso na situação narrada.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1894661
+CEBRASPE (CESPE) - DP PA/DPE PA/2022
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+526) 
+A figura do delinquente como um indivíduo que optou pelo mal, mesmo podendo e devendo respeitar a lei, decorre da escola
+
+a) moderna.
+b) marxista.
+c) correcionalista.
+d) positivista.
+
+e) clássica.
+Gabarito: E
+## questao 1996876
+CEBRASPE (CESPE) - DP TO/DPE TO/2022
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+527) 
+Uma das grandes contribuições da Escola Clássica para o ordenamento penal brasileiro diz respeito ao princípio
+
+a)  da insignificância.
+
+b)  da ofensividade.
+
+c)  da adequação social.
+
+d)  da intervenção mínima.
+
+e)  da legalidade.
+Gabarito: E
+## questao 2012962
+CEBRASPE (CESPE) - Del Pol (PC PB)/PC PB/2022
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+528) 
+O conceito de ciência total do direito penal e sua divisão em pressupostos de punibilidade derivados de um Estado Liberal de Direito e em sanções baseadas nas necessidades sociais, a fim de se lidar com as divergências entre o direito penal e a política criminal, foi desenvolvido por
+
+a) Cesare Beccaria.
+b) Franz Von Liszt.
+c) Enrico Ferri.
+d) Claus Roxin.
+
+e) Rafael Garofalo.
+Gabarito: B
+## questao 2182344
+CEBRASPE (CESPE) - Del Pol (PC ES)/PC ES/2022
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+529) 
+Na criminologia, a concepção do delinquente como um ser inferior, que é incapaz de dirigir por si mesmo a própria vida e cuja vontade requer uma eficaz e desinteressada intervenção tutelar do Estado, é típica da visão
+
+a) clássica.
+b) positivista.
+c) correcionalista.
+d) pluralista.
+
+e) marxista.
+Gabarito: C
+## questao 1752139
+CEBRASPE (CESPE) - Prom Jus (MPE SC)/MPE SC/2021
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+530) 
+Com relação ao comportamento criminoso para as diferentes escolas criminais, julgue o item seguinte.
+
+ 
+Para a escola positivista, que se ocupa da tipificação dos delitos em termos legais e objetivos, o crime é um ente jurídico e a responsabilidade penal se sustenta no livre arbítrio.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1752143
+CEBRASPE (CESPE) - Prom Jus (MPE SC)/MPE SC/2021
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+531) 
+Com relação ao comportamento criminoso para as diferentes escolas criminais, julgue o item seguinte.
+
+ 
+Para a escola clássica, o comportamento criminoso é resultado da predisposição do agente. Que apresenta características inatas e biológicas identificáveis a partir de estigmas anatômicos.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 862632
+CEBRASPE (CESPE) - JE TJPR/TJ PR/2019
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+532) 
+Com relação às escolas e tendências penais, julgue os itens seguintes.
+
+ 
+
+I De acordo com a escola clássica, a responsabilidade penal é lastreada na imputabilidade moral e no livre-arbítrio humano.
+
+ 
+
+II A escola técnico-jurídica, que utiliza o método indutivo ou experimental, apresenta as fases antropológica, sociológica e jurídica.
+
+ 
+
+III A escola correcionalista fundamenta-se na proposta de imposição de pena, com caráter intimidativo, para os delinquentes normais, e de medida de segurança para os perigosos. Para essa escola, o direito penal é a insuperável barreira da política criminal.
+
+ 
+
+IV O movimento de defesa social sustenta a ressocialização do delinquente, e não a sua neutralização. Nesse movimento, o tratamento penal é visto como um instrumento preventivo.
+
+ 
+
+Estão certos apenas os itens
+
+
+a)  I e III.
+
+b)  I e IV.
+
+c)  II e III.
+
+d)  II e IV.
+Gabarito: B
+## questao 922847
+CEBRASPE (CESPE) - DP DF/DP DF/2019
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+533) 
+Acerca dos modelos teóricos da criminologia, julgue o item que se segue.
+
+ 
+
+As orientações sociológicas estão inseridas no panorama criminológico clássico e buscam identificar, por meio da análise psicológica, fatores criminais propulsores da delinquência, de modo a analisar fatores externos criminais introjetados no mundo anímico do homem.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 923062
+CEBRASPE (CESPE) - DP DF/DP DF/2019
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+534) 
+A criminologia, diante do fenômeno do delito, na busca de conhecer fatores criminógenos, traça um paralelo entre vítima e criminoso. Partindo dessa premissa dual, chamada por Mendelsohn de “dupla-penal”, extraem-se importantes situações fenomenológicas.
+
+ 
+
+Acerca desses estudos, julgue o item seguinte.
+
+ 
+
+De acordo com a teoria positivista, o criminoso é um ser inferior, incapaz de guiar livremente a sua conduta por haver debilidade em sua vontade: a intervenção estatal se faz necessária para correção da direção de sua vontade.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 593237
+CEBRASPE (CESPE) - DP PE/DPE PE/2018
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+535) 
+Com relação às escolas e às teorias jurídicas do direito penal, assinale a opção correta.
+
+a) Os positivistas conclamavam a justiça a olhar para o crime como uma entidade jurídica, enquanto os clássicos encaravam o crime como fatos sociais e humanos.
+b) Na primeira metade do século passado, floresceu, na Universidade de Chicago, a chamada teoria ecológica ou da desorganização social, que considerava o crime um fenômeno ligado a áreas naturais.
+c)  A labelling approach enxerga o comportamento criminoso como motivado por razões ontológicas ou intrínsecas, e não como decorrente do sistema de controle social.
+d)  A escola clássica ficou marcada pelo método de fundo dedutivo que empregava na ciência do direito penal: o jurista deveria partir do concreto, ou seja, das questões jurídico-penais, para passar ao abstrato, ou seja, ao direito positivo.
+e) Os clássicos adotavam princípios relativos e que não se sobrepunham às leis em vigor, evitando leis draconianas e excessivamente rigorosas, com penas desproporcionais.
+Gabarito: B
+## questao 533870
+CEBRASPE (CESPE) - Def PF/DPU/2017
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+536) 
+A respeito do conceito e dos objetos da criminologia, julgue o item a seguir.
+
+ 
+Para a escola clássica, o modelo ideal de prevenção do delito ou do desvio é o que se preocupa com a pena e seu rigor, compreendendo-a como um mecanismo intimidatório; já para a escola neoclássica, mais eficaz que o rigor das penas é o foco no correto funcionamento do sistema legal e em como esse sistema é percebido pelo desviante ou delinquente.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 364104
+CEBRASPE (CESPE) - Del Pol (PC PE)/PC PE/2016
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+537) 
+Os objetos de investigação da criminologia incluem o delito, o infrator, a vítima e o controle social. Acerca do delito e do delinquente, assinale a opção correta.
+
+a) Para a criminologia positivista, infrator é mera vítima inocente do sistema econômico; culpável é a sociedade capitalista.
+b) Para o marxismo, delinquente é o indivíduo pecador que optou pelo mal, embora pudesse escolher pela observância e pelo respeito à lei.
+c) Para os correcionalistas, criminoso é um ser inferior, incapaz de dirigir livremente os seus atos: ele necessita ser compreendido e direcionado, por meio de medidas educativas.
+d) Para a criminologia clássica, criminoso é um ser atávico, escravo de sua carga hereditária, nascido criminoso e prisioneiro de sua própria patologia.
+e) A criminologia e o direito penal utilizam os mesmos elementos para conceituar crime: ação típica, ilícita e culpável.
+Gabarito: C
+## questao 124068
+CEBRASPE (CESPE) - DPF/PF/2013
+Criminologia - Evolução Histórica e Escolas Criminológicas (Clássica, Positiva, Terza Scuola)
+538) 
+Julgue o item a seguir, relacionados aos modelos teóricos da criminologia.
+
+O positivismo criminológico caracteriza-se, entre outros aspectos, pela negação do livre arbítrio, pela crença no determinismo e pela adoção do método empírico-indutivo, ou indutivo-experimental, também apresentado como indutivo-quantitativo, embasado na observação dos fatos e dos dados, independentemente do conteúdo antropológico, psicológico ou sociológico, como também a neutralidade axiológica da ciência.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 3546966
+CEBRASPE (CESPE) - PCF/PF/Área 1/2025
+Criminalística e Medicina Legal - Fotografia Forense
+539) 
+A atuação pericial exige o domínio de conhecimentos e práticas como a documentação fotográfica do local, a análise dosvestígios, a preservação do cenário e o processamento de provas materiais. Acerca desse assunto, julgue o item subsequente.
+
+
+Quando ampliada, a imagem raster, predominantemente utilizada em registros fotográficos periciais, pode sofrer o processo de pixelização, que compromete a nitidez e os detalhes da imagem da cena.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2340878
+CEBRASPE (CESPE) - Per ML (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Fotografia Forense
+540) 
+Julgue o item seguinte, a respeito do processo de identificação humana e de assuntos correlacionados.
+
+ 
+No método de fotografia sinalética, são tiradas duas fotografias, uma rigorosamente de frente e outra de perfil, ambas com redução de 1/7 e sem retoques.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2341822
+CEBRASPE (CESPE) - Aux Per (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Fotografia Forense
+541) 
+No que se refere a fotografia, julgue o item subsequente.
+
+
+Para garantir que uma foto não fique tremida nem borrada, uma possibilidade é trabalhar com a câmera nos modos A ou Av, que significam prioridade de obturador, selecionando-se, assim, o tempo de exposição configurado pelo fotógrafo.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2341824
+CEBRASPE (CESPE) - Aux Per (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Fotografia Forense
+542) 
+No que se refere a fotografia, julgue o item subsequente.
+
+ 
+Em situações de pouca luminosidade, uma possibilidade é abrir o diafragma da lente, o que permitirá maior entrada de luz. No entanto, esse procedimento irá influenciar diretamente na granulação da imagem.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2341826
+CEBRASPE (CESPE) - Aux Per (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Fotografia Forense
+543) 
+No que se refere a fotografia, julgue o item subsequente.
+
+ 
+O obturador é o mecanismo responsável por controlar o tempo de exposição à luz. Na prática, isso irá determinar se um objeto em movimento aparecerá “congelado” ou “borrado”, com rastro, em uma foto. Todavia, o tempo de exposição não define se a foto ficará tremida ou não em decorrência do manuseio da câmera pelo fotógrafo.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2341829
+CEBRASPE (CESPE) - Aux Per (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Fotografia Forense
+544) 
+No que se refere a fotografia, julgue o item subsequente.
+
+ 
+O tamanho do pixel é determinado pela resolução da imagem. Logo, não basta considerar somente a quantidade de megapixels de uma imagem, é necessário levar em conta a quantidade de pixels por polegada. Se houver duas imagens de igual tamanho, porém, com quantidade de pixels por polegada diferente, a melhor resolução será daquela que apresentar maior quantidade de pixels por polegada.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 2341831
+CEBRASPE (CESPE) - Aux Per (POLC AL)/POLC AL/2023
+Criminalística e Medicina Legal - Fotografia Forense
+545) 
+No que se refere a fotografia, julgue o item subsequente.
+
+ 
+Em um ambiente de muita luz, uma foto feita com 1/200s e f/5.6 ficou superexposta. Mantendo-se as demais configurações da câmera e sem alterar as condições do ambiente, para evitar esse resultado, a solução seria reconfigurar a câmera com 1/100s e f/4. Assim, a incidência de luz no sensor da câmera seria menor e a foto ficaria corretamente exposta.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 368372
+CEBRASPE (CESPE) - Ag Per Crim (PCie PE)/PCie PE/2016
+Criminalística e Medicina Legal - Fotografia Forense
+546) 
+Mantidas todas as demais configurações da câmera e as condições da foto, as aberturas de diafragma que se relacionam a menor e maior profundidade de campo são, respectivamente,
+
+
+a)  f/5.6 e f/16.
+
+b)  f/11 e f/4.
+
+c)  f/16 e f/1.4.
+
+d)  f/1.4 e f/22.
+
+e)  f/1.4 e f/16.
+Gabarito: D
+## questao 368373
+CEBRASPE (CESPE) - Ag Per Crim (PCie PE)/PCie PE/2016
+Criminalística e Medicina Legal - Fotografia Forense
+547) 
+Em uma câmera fotográfica, o dispositivo que regula o tempo de exposição do sensor à luz é denominado
+
+
+a)  fotômetro.
+
+b)  lente.
+
+c)  diafragma.
+
+d)  obturador.
+
+e)  transportador.
+Gabarito: D
+## questao 368374
+CEBRASPE (CESPE) - Ag Per Crim (PCie PE)/PCie PE/2016
+Criminalística e Medicina Legal - Fotografia Forense
+548) 
+O fechamento da abertura do diafragma em dois f-stops reduz a passagem de luz em
+
+
+a)  50%.
+
+b)  62,5%.
+
+c)  75%.
+
+d)  12,5%.
+
+e)  25%.
+Gabarito: C
+## questao 368375
+CEBRASPE (CESPE) - Ag Per Crim (PCie PE)/PCie PE/2016
+Criminalística e Medicina Legal - Fotografia Forense
+549) 
+Assinale a opção que indica o tempo mínimo de exposição para se fazer um retrato de uma pessoa parada, sem que a foto fique tremida e sem o uso de um tripé.
+
+
+a)  12
+ de segundo
+
+b)  15
+ de segundo
+
+c)  115
+ de segundo
+
+d)  160
+ de segundo
+
+e)  1 segundo
+Gabarito: D
+## questao 368376
+CEBRASPE (CESPE) - Ag Per Crim (PCie PE)/PCie PE/2016
+Criminalística e Medicina Legal - Fotografia Forense
+550) 
+Se um arquivo digital de uma câmera tem o tamanho máximo de 5.184 pixels por 3.456 pixels, então a resolução dessa câmera, em megapixels, é igual a
+
+
+a)  18.
+
+b)  25.
+
+c) 29.
+
+d)  10.
+
+e)  12.
+Gabarito: A
+## questao 368377
+CEBRASPE (CESPE) - Ag Per Crim (PCie PE)/PCie PE/2016
+Criminalística e Medicina Legal - Fotografia Forense
+551) 
+Um megapixel equivale a
+
+
+a)  1.000.000 pixels.
+
+b)  1.000.000.000 pixels.
+
+c)  1.000 pixels.
+
+d)  10.000 pixels.
+
+e)  100.000 pixels.
+Gabarito: A
+## questao 368378
+CEBRASPE (CESPE) - Ag Per Crim (PCie PE)/PCie PE/2016
+Criminalística e Medicina Legal - Fotografia Forense
+552) 
+Na maioria das câmeras digitais SLR (Single Lens Reflex), a velocidade máxima de sincronia entre câmera e flash é igual a
+
+
+a)  160
+ de segundo.
+
+b)  1250
+ de segundo.
+
+c)  1500
+ de segundo.
+
+d)  115
+ de segundo.
+
+e)  130
+ de segundo.
+Gabarito: B
+## questao 368379
+CEBRASPE (CESPE) - Ag Per Crim (PCie PE)/PCie PE/2016
+Criminalística e Medicina Legal - Fotografia Forense
+553) 
+Sendo a condição de luz adversa, insuficiente para realizar a fotografia desejada, é necessário configurar a câmera fotográfica para que a imagem fique corretamente exposta. No caso de uma foto ficar subexposta, a relação tempo de exposição versus abertura do diafragma que permitirá uma passagem de luz maior do que 1125s×f/8
+ será
+
+
+a)  1250s×f/11.
+
+b)  1250s×f/4.
+
+c)  130s×f/16.
+
+d)  160s×f/11.
+
+e)  160s×f/16.
+Gabarito: B
+## questao 2013926
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Documentoscopia Forense
+554) 
+O histórico da documentoscopia forense pode ser descrito em três períodos, conhecidos como
+
+a) clássico, moderno e contemporâneo.
+b) arcaico, clássico e helenístico.
+c) de 1.ª geração, de 2.ª geração e de 3.ª geração.
+d) humanismo, realismo e cientificismo.
+
+e) empirismo romântico, empirismo científico e sinceridade técnico-científica
+Gabarito: E
+## questao 2013929
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Documentoscopia Forense
+555) 
+Os documentos podem ser alterados de diversas maneiras, entre as quais se destaca
+
+a)  a amputação, que é um tipo de alteração por subtração cujas finalidades são retirar, em definitivo, a informação do documento e servir como primeiro passo para uma montagem.
+b) a lavagem, que é um tipo de alteração aditiva em que se utiliza um reagente químico para retirar substâncias que compõem a tinta do documento.
+c) a amputação, que é a retirada de informações, depositadas no suporte por meio de tintas ou grafite, com a utilização de instrumento abrasivo e capaz de desgastar a superfície do suporte.
+d) a emenda, que designa um tipo de alteração por subtração cujo objetivo é o de alterar o sentido do lançamento.
+
+e) a sobrecarga, que é um processo complexo em que há substituição de parte do suporte do documento que será alterado por suporte de outra fonte com características semelhantes àquelas do documento alterado.
+Gabarito: A
+## questao 2013931
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Documentoscopia Forense
+556) 
+O documento suspeito de ter sido adulterado que é trazido ao perito, para ser submetido à perícia, recebe o nome de
+
+a) esboço.
+b) laudo.
+c) peça questionada.
+d) rascunho.
+
+e) peça- padrão.
+Gabarito: C
+## questao 2013940
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Documentoscopia Forense
+557) 
+Com relação aos princípios fundamentais e às leis do grafismo, assinale a opção correta.
+
+a) Quando o indivíduo escreve, o eu está em ação, mas o sentimento quase inconsciente de que o eu age passa por alternâncias de vigor e de enfraquecimento.
+b) O escritor que age em circunstâncias em que o ato de escrever é particularmente difícil traça instintivamente letras de formato mais complexo.
+c) As leis da escrita são dependentes dos alfabetos empregados.
+d) O gesto gráfico está sob influência indireta do cérebro.
+
+e) A escrita natural pode ser modificada voluntariamente, em dado momento, sem que se registre, no seu traçado, a marca do esforço feito para se obter a alteração.
+Gabarito: A
+## questao 2013943
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Documentoscopia Forense
+558) 
+Com referência às falsificações de assinaturas, que podem ocorrer de diversas formas e com diferentes características, assinale a opção correta.
+
+a)  As imitações exercitadas são feitas com treino excessivo, embasado em modelo, até que seja possível reproduzi-lo automaticamente, sem sinais de lentidão e de pressão excessiva da caneta.
+b) A falsificação sem imitação consiste em semelhanças formais, porém com traçado lento.
+c) As falsificações com modelo à vista caracterizam-se por semelhanças formais e dinamismo similar ao do titular.
+d) As falsificações por decalque trazem as características gráficas do autor registradas no traçado, o que facilita a determinação da autoria.
+
+e) A imitação de memória resulta em uma assinatura elaborada, com aspecto formal compatível com o do modelo e sem sinais de hesitação.
+Gabarito: A
+## questao 2013945
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Documentoscopia Forense
+559) 
+A respeito de perícias grafoscópicas, assinale a opção correta.
+
+a) O grau de importância é irrelevante nas divergências e convergências que apresentam características inconspícuas.
+b) A morfologia da escrita, por sua imperceptibilidade, é pouco imitada por falsificadores e pouco alterada quando se pretende disfarçar a própria assinatura.
+c) As canetas esferográficas de tinta pastosa são, há várias décadas, as mais utilizadas em todo o mundo, por não apresentarem falhas no entintamento e por não permitirem a determinação do sentido dos traços.
+d) O formato de uma letra raramente sofre alterações provocadas por letras vizinhas ou pela posição que a letra ocupa na palavra.
+
+e) A importância das características gráficas analisadas, em geral, depende de sua constância na escrita examinada, de sua raridade na população geral e de sua imperceptibilidade.
+Gabarito: E
+## questao 2013946
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Documentoscopia Forense
+560) 
+Acerca dos critérios de autenticidade, adequabilidade, contemporaneidade e quantidade, durante a colheita de padrões gráficos, assinale a opção correta.
+
+a) Como os padrões gráficos são o paradigma de uma autoria gráfica, caso apresentem qualquer vício de autenticidade, toda a análise grafoscópica será prejudicada.
+b) A adequabilidade dos padrões gráficos restringe-se a seu conteúdo e, por isso, independe do tipo de escrita empregada, se cursiva ou de forma.
+c) Como a escrita tende a ser imutável ao longo da vida da pessoa, é aceitável confrontar manuscritos que tenham sido redigidos em épocas muitos distantes.
+d) Os padrões gráficos devem ser coletados em papel pautado e com o uso de caneta esferográfica, o que permite desconsiderar outras características do documento questionado.
+
+e) Em geral, apenas uma repetição do texto que constituirá o padrão gráfico é suficiente para a realização do confronto.
+Gabarito: A
+## questao 1554427
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Documentoscopia Forense
+561) 
+Mário foi preso em estabelecimento comercial ao utilizar carteira de identidade falsa e cédulas de moeda nacional com aparência suspeita. A autoridade policial, diante dos fatos, solicitou exames periciais para a materialização do delito.
+
+ 
+A respeito da situação hipotética apresentada e de aspectos a ela relacionados, julgue o item a seguir, com base nas técnicas e nos conceitos de documentoscopia.
+
+ 
+As carteiras de identidade são documentos de segurança cujas características de fabricação são regulamentadas em normativos específicos.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1554428
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Documentoscopia Forense
+562) 
+Mário foi preso em estabelecimento comercial ao utilizar carteira de identidade falsa e cédulas de moeda nacional com aparência suspeita. A autoridade policial, diante dos fatos, solicitou exames periciais para a materialização do delito.
+
+ 
+A respeito da situação hipotética apresentada e de aspectos a ela relacionados, julgue o item a seguir, com base nas técnicas e nos conceitos de documentoscopia.
+
+ 
+O papel-moeda não é considerado documento de segurança, apesar de possuir características que permitem a verificação de sua autenticidade, tais como marca d’água, fio de segurança, alto relevo, microimpressões e marca tátil.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1554430
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Documentoscopia Forense
+563) 
+Mário foi preso em estabelecimento comercial ao utilizar carteira de identidade falsa e cédulas de moeda nacional com aparência suspeita. A autoridade policial, diante dos fatos, solicitou exames periciais para a materialização do delito.
+
+ 
+A respeito da situação hipotética apresentada e de aspectos a ela relacionados, julgue o item a seguir, com base nas técnicas e nos conceitos de documentoscopia.
+
+ 
+A carteira de identidade apreendida não poderá ser periciada enquanto não estiver presente o documento original correspondente, para ser confrontado com o utilizado por Mário.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1554432
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Documentoscopia Forense
+564) 
+Mário foi preso em estabelecimento comercial ao utilizar carteira de identidade falsa e cédulas de moeda nacional com aparência suspeita. A autoridade policial, diante dos fatos, solicitou exames periciais para a materialização do delito.
+
+ 
+A respeito da situação hipotética apresentada e de aspectos a ela relacionados, julgue o item a seguir, com base nas técnicas e nos conceitos de documentoscopia.
+
+ 
+O perito deve observar determinadas características de segurança para verificar a autenticidade de uma carteira de identidade, entre elas: tarja em talho doce na cor verde, fundo numismático, perfuração mecânica da sigla do órgão de identificação sobre a fotografia do titular e numeração tipográfica, sequencial, no verso, para controle do órgão expedidor.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 532738
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/2009
+Criminalística e Medicina Legal - Documentoscopia Forense
+565) 
+O enunciado “Não se pode modificar voluntariamente, em dado momento, a própria escrita natural, senão introduzindo no traçado marca do esforço que se fez para obter a modificação” define corretamente, segundo as leis do grafismo, a lei
+
+a) do menor esforço.
+b) da subordinação do gesto gráfico.
+c) do automatismo do gesto gráfico.
+d) dos disfarces das imitações.
+e) da simplificação do gesto gráfico.
+Gabarito: D
+## questao 533321
+CEBRASPE (CESPE) - Moto Pol (PC PB)/PC PB/2009
+Criminalística e Medicina Legal - Documentoscopia Forense
+566) 
+Antônio foi denunciado pela prática do crime de falsidade ideológica. Surgindo dúvida acerca de assinatura aposta em documento, foi requerida a realização de exame grafotécnico.
+
+
+Com base nessa situação hipotética, assinale a opção correta.
+
+a) Antônio deverá ser intimado para o ato, que não poderá se realizar se ele não for encontrado.
+b) Antônio será obrigado a redigir o que lhe for ditado pelos peritos, sob pena de ser configurado o crime de desobediência.
+c) Antônio será obrigado a redigir o que lhe for ditado pelos peritos, sob pena de ser considerada a assinatura como sendo de sua autoria.
+d) A autoridade judicial poderá requerer documentos existentes em estabelecimentos públicos para possibilitar a realização do exame.
+e) Configurará constrangimento ilegal a intimação de Antônio para o fornecimento de material gráfico, uma vez que ele não está obrigado a colaborar para a produção de prova contra si.
+Gabarito: D
+## questao 2013857
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Criminalística (Aspectos Gerais)
+567) 
+A respeito da criminalística e seus objetivos, julgue os seguintes itens.
+
+ 
+I A criminalística é a disciplina que tem por objetivo o reconhecimento dos indícios materiais intrínsecos (na pessoa) relativos ao crime.
+
+ 
+II A criminalística integra a análise dos vestígios materiais, as interligações entre eles e seus fatos geradores.
+
+ 
+III A criminalística não se restringe a uma estática narrativa da forma como se apresentam os vestígios, nela busca-se entender os meios e os modos como foram perpetrados os delitos.
+
+ 
+Assinale a opção correta.
+
+a) Apenas o item I está certo.
+b) Apenas o item III está certo.
+c) Apenas os itens I e II estão certos.
+d) Apenas os itens II e III estão certos.
+
+e) Todos os itens estão certos.
+Gabarito: D
+## questao 590862
+CEBRASPE (CESPE) - Odon Leg (PC MA)/PC MA/2018
+Criminalística e Medicina Legal - Criminalística (Aspectos Gerais)
+568) 
+Na noite de 12/6/1994, Nicole Brown Simpson e Ronald Goldman foram encontrados mortos na casa de Nicole, em Brentwood, Los Angeles, Califórnia. As investigações apontaram Orenthal James (O. J.) Simpson, ídolo do futebol americano, como principal suspeito.
+
+
+Na estratégia da defesa, destacam-se alegações centradas na manipulação incorreta e na contaminação de vestígios, que introduziram um grau de dúvida razoável com relação à autoria do crime.
+
+
+Após 372 dias de julgamento, O. J. Simpson foi declarado inocente.
+
+
+Internet: < http://pt.wikipedia.org>.
+
+
+As expressões “manipulação incorreta” e “contaminação de vestígios”, citadas no texto, tem relação com o conceito de
+
+a)  custódia de preso.
+b)  encadeamento lógico.
+c) logística de deslocamento.
+d)  reação em cadeia.
+e)  cadeia de custódia.
+Gabarito: E
+## questao 2746584
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Criminalística (Aspectos Gerais)
+569) 
+Assinale a opção correta acerca da definição da criminalística.
+
+a)  Criminalística é um procedimento investigatório que utiliza métodos científicos para analisar e interpretar evidências materiais.
+b) Apesar de seu crescimento gradativo, não se pode dizer que a criminalística seja uma disciplina autônoma.
+c) Criminalística é um procedimento investigatório que se presta a auxiliar e informar exclusivamente as atividades policiais em uma investigação criminal.
+d) A moderna criminalística restringe-se à fria estática narrativa, sem vida, da forma como se apresentam os vestígios.
+
+e) O propósito da criminalística se traduz em todos os vestígios, desde que suspeitos, encontrados no local do fato.
+Gabarito: A
+## questao 2746587
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Criminalística (Aspectos Gerais)
+570) 
+Toda e qualquer técnica proposta, que aponte uma conclusão, deve ser, antes de aceita como meio de prova, testada e aprovada pela comunidade científica envolvida no assunto.
+
+ 
+Ismar Estulano Garcia e Paulo
+
+César de Menezes Povoa.Criminalística (com adaptações).
+
+ 
+O princípio da criminalística a que se refere o texto acima é denominado princípio da
+
+a) universalidade.
+b) intercomunicabilidade.
+c) especificidade.
+d) sensibilidade.
+
+e) identidade.
+Gabarito: A
+## questao 2746588
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Criminalística (Aspectos Gerais)
+571) 
+Dois objetos podem ser indistinguíveis, mas nunca idênticos. Este princípio, também chamado de princípio da individualidade, preconiza que a identificação deve ser sempre enquadrada em três graus: a identificação genérica, a específica e a individual, sendo que os exames periciais deverão sempre alcançar este último grau.
+
+ 
+Luiz Eduardo Dorea. Criminalística (com adaptações).
+
+ 
+O princípio da perícia criminalística a que se refere o texto acima também é denominado princípio da
+
+a) observação.
+b) análise.
+c) interpretação.
+d) descrição.
+
+e)  documentação.
+Gabarito: C
+## questao 2746589
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Criminalística (Aspectos Gerais)
+572) 
+A análise pericial deve sempre seguir o método científico. A perícia científica visa definir como o fato ocorreu (teoria), por meio de uma criteriosa coleta de dados (vestígios e indícios), que permite estabelecer as conjeturas sobre como se desenvolveu o fato, formulando hipóteses coerentes sobre ele.
+
+ 
+Idem, ibidem.
+
+ 
+O princípio da perícia criminalística apresentado acima é denominado princípio da
+
+a) observação.
+b) análise.
+c) interpretação.
+d) descrição.
+
+e) documentação.
+Gabarito: B
+## questao 2746590
+CEBRASPE (CESPE) - Pesq MMQ (INMETRO)/INMETRO/Metrologia Aplicada à Ciências Forenses/2010
+Criminalística e Medicina Legal - Criminalística (Aspectos Gerais)
+573) 
+Este princípio, embasado na cadeia de custódia da prova material, visa proteger, seguramente, a fidelidade da prova material, evitando a inclusão de provas forjadas no conjunto das demais, para provocar a incriminação ou a inocência de alguém. Todo caminho do vestígio deve ser sempre documentado em cada passo, com documentos oficiais que o oficializem, de modo a não pairarem dúvidas sobre tais elementos probatórios.
+
+ 
+O princípio da perícia criminalística apresentado acima é denominado princípio da
+
+a) observação.
+b) análise.
+c) interpretação.
+d) descrição.
+
+e) documentação.
+Gabarito: E
+## questao 532697
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Médico Legal/2009
+Criminalística e Medicina Legal - Criminalística (Aspectos Gerais)
+574) 
+Com referência à máxima visum et repertum, que expressa a essência da atividade pericial, assinale a opção correta.
+
+a) Essa máxima expressa o debate, a confrontação de hipóteses e possíveis controvérsias decorrentes do objeto da perícia.
+b) O termo em questão faculta ao perito a liberdade de expressão de suas convicções, embora não o exima de enquadrar-se em estruturas preestabelecidas pelas normas e pela praxe.
+c) Os documentos médico-legais tais como relatórios, pareceres e atestados devem estar enquadrados na máxima em consideração.
+d)  Clareza, fidelidade e totalidade representam o significado da máxima em apreço.
+e)  É nulo o laudo pericial que não se enquadre na máxima citada.
+Gabarito: D
+## questao 532746
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/2009
+Criminalística e Medicina Legal - Criminalística (Aspectos Gerais)
+575) 
+“Todo contato deixa uma marca”
+
+
+Edmond Locard
+
+
+Em locais de crime, a pesquisa e a busca dos vestígios nem sempre é missão de fácil execução, sabendo-se que, em muitos casos, tais elementos resultantes da ação delituosa, quer originários dos autores, quer originários das vítimas, somente podem ser detectados por meio de análises microscópicas, ou mesmo aparelhos de altíssima precisão. Mas, o que é importante ter em mente, é que praticamente inexistem ações em que não resultem marcas de provas, sabendo-se, ainda, que é notória a evolução e a pesquisa do instrumental científicos capazes de detectar esses vestígios, ou mesmo, microvestígios.
+
+
+Luiz Eduardo Dorea. Criminalística (com adaptações).
+
+
+Nos trechos acima, segundo os princípios fundamentais da criminalística, definiu-se o princípio da
+
+a) observação.
+b) análise.
+c) interpretação.
+d) da descrição.
+e) da documentação.
+Gabarito: A
+## questao 532747
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/2009
+Criminalística e Medicina Legal - Criminalística (Aspectos Gerais)
+576) 
+Acerca dos postulados da ciminalística, assinale a opção correta.
+
+a) O conteúdo de um laudo pericial criminalístico varia de acordo com o perito criminal que o produziu.
+b) As conclusões de uma perícia criminalística dependem dos meios utilizados para alcançá-las.
+c) A perícia criminalística independe do tempo.
+d) Entre os postulados da criminalística, destaca-se o que estabelece que a análise pericial deve, preferencialmente, seguir o método científico.
+e) Dois objetos podem ser indistinguíveis, mas nunca idênticos. Tal postulado preconiza que a identificação deve ser sempre enquadrada em dois graus, ou seja, a identificação genérica e a específica, sendo que os exames periciais deverão sempre alcançar esse último grau.
+Gabarito: C
+## questao 532753
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/2009
+Criminalística e Medicina Legal - Criminalística (Aspectos Gerais)
+577) 
+Criminalística é
+
+a) a transposição, para o inquérito, do resultado dos exames técnicos realizados no local do delito, determinando a materialidade e apontando a autoria.
+b)  a ciência que visa ao estudo das armas de fogo, da munição e dos fenômenos e efeitos próprios dos disparos dessas armas, no que tiverem de útil ao esclarecimento e à prova de questões de fato, no interesse da justiça, tanto penal como civil.
+c) a ciência que trata do estudo dos documentos que contêm um registro gráfico.
+d) o conjunto de conhecimentos médicos e paramédicos que, no âmbito do direito, concorrem para a elaboração, a interpretação e a execução das leis existentes e ainda permite, por meio da pesquisa científica, o seu aperfeiçoamento.
+e) o sistema que se dedica à aplicação de faculdades de observação e de conhecimento científico que levem a descobrir, defender, pesar e interpretar os indícios de um delito, com vistas à descoberta do criminoso, possibilitando, à justiça, a aplicação da justa pena.
+Gabarito: E
+## questao 1649545
+CEBRASPE (CESPE) - Per ML (CPCRC)/CPCRC/Medicina/2007
+Criminalística e Medicina Legal - Criminalística (Aspectos Gerais)
+578) 
+O delegado deve solicitar exame pericial para
+
+a) verificação de conjunção carnal para comprovar adultério.
+b) verificação de conjunção carnal para comprovar sedução.
+c) verificação de conjunção carnal em rapaz de 14 anos, vítima de estupro.
+d) constatação de doença sexualmente transmissível.
+Gabarito: D
+## questao 2013912
+CEBRASPE (CESPE) - Per Of (PC PB)/PC PB/Criminal/Área Geral/2022
+Criminalística e Medicina Legal - Engenharia Forense e Perícia Audiovisual
+579) 
+Com relação aos vestígios encontrados no local de acidente de trânsito, assinale a opção correta.
+
+a) Marcas de frenagem produzidas sobre a superfície de asfalto molhado apresentam-se de cor escura, em tons variados de cinza.
+b) Em comparação com as marcas de frenagem comuns, as geradas pelo sistema de freio ABS são duráveis, de coloração escura e com estriações longitudinais paralelas.
+c) A presença de fragmentos desprendidos dos veículos auxilia principalmente na determinação da posição de repouso final que os veículos assumem após um acidente.
+d) O deslocamento dos pneumáticos divergente da orientação indicada pelo eixo longitudinal do veículo produz marcas de forma curvilínea e hachuradas.
+
+e) O rolamento dos pneumáticos sobre a superfície da pista produz marcas de sulcagens que auxiliam na determinação de trajetórias e na identificação de determinado pneumático de um veículo suspeito.
+Gabarito: D
+## questao 1554750
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2020
+Criminalística e Medicina Legal - Engenharia Forense e Perícia Audiovisual
+580) 
+Julgue o próximo item, acerca da aplicação pericial.
+
+ 
+Caso uma câmera de segurança flagre a face de uma pessoa cometendo um delito, a identificação pela comparação facial será exitosa se for apresentada para exame uma fotografia recente, com boa qualidade técnica, dessa pessoa.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 684791
+CEBRASPE (CESPE) - PCF/PF/Área 2/2018
+Criminalística e Medicina Legal - Engenharia Forense e Perícia Audiovisual
+581) 
+Acerca de codificação de voz, imagens e vídeo, julgue o item que se segue.
+
+
+A PCM (modulação por código de pulso) é um método assíncrono usado para representar digitalmente amostras de sinais analógicos.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 684792
+CEBRASPE (CESPE) - PCF/PF/Área 2/2018
+Criminalística e Medicina Legal - Engenharia Forense e Perícia Audiovisual
+582) 
+Acerca de codificação de voz, imagens e vídeo, julgue o item que se segue.
+
+ 
+
+O algoritmo de Huffman é um método de codificação sem perdas.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 684793
+CEBRASPE (CESPE) - PCF/PF/Área 2/2018
+Criminalística e Medicina Legal - Engenharia Forense e Perícia Audiovisual
+583) 
+Acerca de codificação de voz, imagens e vídeo, julgue o item que se segue.
+
+ 
+
+A codificação de vídeo do MPEG-2 é semelhante à do MPEG-1 — progressiva. Diferentemente do MPEG-2, porém, o MPEG-1 não oferece suporte à codificação de vídeo entrelaçado.
+
+ 
+
+Certo
+Errado
+Gabarito: Certo
+## questao 684794
+CEBRASPE (CESPE) - PCF/PF/Área 2/2018
+Criminalística e Medicina Legal - Engenharia Forense e Perícia Audiovisual
+584) 
+Acerca de codificação de voz, imagens e vídeo, julgue o item que se segue.
+
+ 
+
+Nos filtros digitais de resposta ao impulso finita (FIR), o valor da saída depende do valor de entrada presente e também de valores de entradas anteriores.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 684843
+CEBRASPE (CESPE) - PCF/PF/Área 2/2018
+Criminalística e Medicina Legal - Engenharia Forense e Perícia Audiovisual
+585) 
+Após sequestrarem a esposa de um gerente de determinado banco, os sequestradores fizeram três ligações para o gerente, de um celular não identificado, exigindo um resgate. As ligações foram gravadas, e a polícia realizou uma análise das gravações. Na primeira e na segunda gravação, falava um sequestrador do sexo masculino. Ele disfarçava a voz com um tipo de fonação conhecida como crepitação (ou creaky voice, caracterizada por uma baixa frequência fundamental e pulsos irregulares de vibração das pregas vocais. Porém, sobretudo quando gritava — abrindo mais a boca e aumentando a amplitude e a frequência fundamental da voz —, o sequestrador não conseguia sustentar esse tipo de fonação em algumas palavras, deixando transparecer traços de fonação modal e, consequentemente, traços mais característicos de sua voz normal. Também se notou que o sequestrador empregava fricativa alveolopalatal surda [ ∫
+] nos sons sublinhados em palavras como “poste” e “mais”; e usava fricativa alveolopalatal sonora [] nos sons sublinhados em palavras como “mesmo” e “desde”.
+
+
+Na terceira gravação, era apenas a mulher do gerente quem falava. Os sequestradores a haviam amordaçado, tendo colocado uma vareta entre seus caninos, o que a forçava a movimentar parcialmente a língua, sem conseguir elevá-la para além dos caninos, e a impedia de realizar qualquer tipo de obstrução usando os lábios.
+
+
+A esposa do gerente conseguiu fugir do cativeiro, e três suspeitos foram presos. Os investigadores os interrogaram, e, posteriormente, as gravações do áudio dos interrogatórios foram comparadas com as falas dos sequestradores durante as ligações, gravadas pelo celular do gerente.
+
+
+A partir do texto apresentado, julgue o item a seguir.
+
+ 
+Ao alterar a fonte de produção acústica do aparelho fonador, o sequestrador necessariamente alterava os pontos e modos de articulação das consoantes, uma vez que os parâmetros articulatórios do filtro dependem dos parâmetros da fonte na produção acústica.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 684844
+CEBRASPE (CESPE) - PCF/PF/Área 2/2018
+Criminalística e Medicina Legal - Engenharia Forense e Perícia Audiovisual
+586) 
+Após sequestrarem a esposa de um gerente de determinado banco, os sequestradores fizeram três ligações para o gerente, de um celular não identificado, exigindo um resgate. As ligações foram gravadas, e a polícia realizou uma análise das gravações. Na primeira e na segunda gravação, falava um sequestrador do sexo masculino. Ele disfarçava a voz com um tipo de fonação conhecida como crepitação (ou creaky voice, caracterizada por uma baixa frequência fundamental e pulsos irregulares de vibração das pregas vocais. Porém, sobretudo quando gritava — abrindo mais a boca e aumentando a amplitude e a frequência fundamental da voz —, o sequestrador não conseguia sustentar esse tipo de fonação em algumas palavras, deixando transparecer traços de fonação modal e, consequentemente, traços mais característicos de sua voz normal. Também se notou que o sequestrador empregava fricativa alveolopalatal surda [ ∫
+] nos sons sublinhados em palavras como “poste” e “mais”; e usava fricativa alveolopalatal sonora [] nos sons sublinhados em palavras como “mesmo” e “desde”.
+
+
+Na terceira gravação, era apenas a mulher do gerente quem falava. Os sequestradores a haviam amordaçado, tendo colocado uma vareta entre seus caninos, o que a forçava a movimentar parcialmente a língua, sem conseguir elevá-la para além dos caninos, e a impedia de realizar qualquer tipo de obstrução usando os lábios.
+
+
+A esposa do gerente conseguiu fugir do cativeiro, e três suspeitos foram presos. Os investigadores os interrogaram, e, posteriormente, as gravações do áudio dos interrogatórios foram comparadas com as falas dos sequestradores durante as ligações, gravadas pelo celular do gerente.
+
+
+A partir do texto apresentado, julgue o item a seguir.
+
+ 
+
+Os formantes vocálicos de uma pessoa não se alteram quando a frequência de vibração das pregas vocais se modifica, sendo, portanto, bons parâmetros acústicos para o reconhecimento da voz de indivíduos.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 684845
+CEBRASPE (CESPE) - PCF/PF/Área 2/2018
+Criminalística e Medicina Legal - Engenharia Forense e Perícia Audiovisual
+587) 
+Após sequestrarem a esposa de um gerente de determinado banco, os sequestradores fizeram três ligações para o gerente, de um celular não identificado, exigindo um resgate. As ligações foram gravadas, e a polícia realizou uma análise das gravações. Na primeira e na segunda gravação, falava um sequestrador do sexo masculino. Ele disfarçava a voz com um tipo de fonação conhecida como crepitação (ou creaky voice, caracterizada por uma baixa frequência fundamental e pulsos irregulares de vibração das pregas vocais. Porém, sobretudo quando gritava — abrindo mais a boca e aumentando a amplitude e a frequência fundamental da voz —, o sequestrador não conseguia sustentar esse tipo de fonação em algumas palavras, deixando transparecer traços de fonação modal e, consequentemente, traços mais característicos de sua voz normal. Também se notou que o sequestrador empregava fricativa alveolopalatal surda [ ∫
+] nos sons sublinhados em palavras como “poste” e “mais”; e usava fricativa alveolopalatal sonora [] nos sons sublinhados em palavras como “mesmo” e “desde”.
+
+
+Na terceira gravação, era apenas a mulher do gerente quem falava. Os sequestradores a haviam amordaçado, tendo colocado uma vareta entre seus caninos, o que a forçava a movimentar parcialmente a língua, sem conseguir elevá-la para além dos caninos, e a impedia de realizar qualquer tipo de obstrução usando os lábios.
+
+
+A esposa do gerente conseguiu fugir do cativeiro, e três suspeitos foram presos. Os investigadores os interrogaram, e, posteriormente, as gravações do áudio dos interrogatórios foram comparadas com as falas dos sequestradores durante as ligações, gravadas pelo celular do gerente.
+
+
+A partir do texto apresentado, julgue o item a seguir.
+
+ 
+Para gritar conforme descrito no texto, o sequestrador necessariamente alterava os valores médios do formante F1 nas vogais.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 684846
+CEBRASPE (CESPE) - PCF/PF/Área 2/2018
+Criminalística e Medicina Legal - Engenharia Forense e Perícia Audiovisual
+588) 
+Após sequestrarem a esposa de um gerente de determinado banco, os sequestradores fizeram três ligações para o gerente, de um celular não identificado, exigindo um resgate. As ligações foram gravadas, e a polícia realizou uma análise das gravações. Na primeira e na segunda gravação, falava um sequestrador do sexo masculino. Ele disfarçava a voz com um tipo de fonação conhecida como crepitação (ou creaky voice, caracterizada por uma baixa frequência fundamental e pulsos irregulares de vibração das pregas vocais. Porém, sobretudo quando gritava — abrindo mais a boca e aumentando a amplitude e a frequência fundamental da voz —, o sequestrador não conseguia sustentar esse tipo de fonação em algumas palavras, deixando transparecer traços de fonação modal e, consequentemente, traços mais característicos de sua voz normal. Também se notou que o sequestrador empregava fricativa alveolopalatal surda [ ∫
+] nos sons sublinhados em palavras como “poste” e “mais”; e usava fricativa alveolopalatal sonora [] nos sons sublinhados em palavras como “mesmo” e “desde”.
+
+
+Na terceira gravação, era apenas a mulher do gerente quem falava. Os sequestradores a haviam amordaçado, tendo colocado uma vareta entre seus caninos, o que a forçava a movimentar parcialmente a língua, sem conseguir elevá-la para além dos caninos, e a impedia de realizar qualquer tipo de obstrução usando os lábios.
+
+
+A esposa do gerente conseguiu fugir do cativeiro, e três suspeitos foram presos. Os investigadores os interrogaram, e, posteriormente, as gravações do áudio dos interrogatórios foram comparadas com as falas dos sequestradores durante as ligações, gravadas pelo celular do gerente.
+
+
+A partir do texto apresentado, julgue o item a seguir.
+
+ 
+A mordaça colocada na mulher do gerente não altera a frequência fundamental típica de sua voz, embora comprometa a articulação de consoantes alveolares, dentais, bilabiais e labiodentais do português brasileiro.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 3429041
+CEBRASPE (CESPE) - Del Pol (PC CE)/PC CE/2025
+Criminologia - Controle da Criminalidade
+589) 
+No que diz respeito ao controle social, objeto de estudo da criminologia, julgue os itens seguintes.
+
+ 
+I O controle social informal é exercido pela sociedade civil, mediante a difusão de regras sociais que são internalizadas na sociedade, para promover a educação do indivíduo no contexto social.
+
+ 
+II Diversos órgãos são responsáveis pelo controle social formal, por exemplo, a polícia judiciária, o Ministério Público e o Poder Judiciário, e tal controle se subdivide em três seleções, enquadrando-se a atuação da polícia na denominada primeira seleção.
+
+ 
+III Denomina-se segunda seleção a classificação que corresponde ao andamento do processo judicial criminal, no qual podem ocorrer a condenação do autor pelo fato criminoso e a aplicação da respectiva pena cabível.
+
+ 
+Assinale a opção correta.
+
+a)  Apenas o item II está certo.
+b)  Apenas o item III está certo.
+c)  Apenas os itens I e II estão certos.
+d)  Apenas os itens I e III estão certos.
+
+e)  Todos os itens estão certos.
+Gabarito: C
+## questao 1624876
+CEBRASPE (CESPE) - DPF/PF/2021
+Criminologia - Controle da Criminalidade
+590) 
+No que se refere à criminologia, julgue o item a seguir.
+
+ 
+A polícia, o Poder Judiciário e o sistema penitenciário exercem o controle social formal.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1792926
+CEBRASPE (CESPE) - AL (CAM DEP)/CAM DEP/Consultor Legislativo/Área XVII/2002
+Criminologia - Controle da Criminalidade
+591) 
+O fenômeno da criminalidade está relacionado ao funcionamento dos mecanismos de controle social existentes em uma sociedade. Esses mecanismos incluem o aparato policial, as políticas urbanas e sociais, bem como os valores existentes em uma sociedade. A partir desse contexto, julgue o item seguinte.
+
+ 
+A segregação espacial foi utilizada tradicionalmente no Brasil como forma de controle social. A partir da década de 60 do século XX, surgiram as primeiras favelas nas grandes cidades brasileiras como resultado do êxodo rural.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1792928
+CEBRASPE (CESPE) - AL (CAM DEP)/CAM DEP/Consultor Legislativo/Área XVII/2002
+Criminologia - Controle da Criminalidade
+592) 
+O fenômeno da criminalidade está relacionado ao funcionamento dos mecanismos de controle social existentes em uma sociedade. Esses mecanismos incluem o aparato policial, as políticas urbanas e sociais, bem como os valores existentes em uma sociedade. A partir desse contexto, julgue o item seguinte.
+
+ 
+Na década de 80 do século XX, verificou-se o surgimento da violência rural em função do agravamento do conflito fundiário.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1792931
+CEBRASPE (CESPE) - AL (CAM DEP)/CAM DEP/Consultor Legislativo/Área XVII/2002
+Criminologia - Controle da Criminalidade
+593) 
+O fenômeno da criminalidade está relacionado ao funcionamento dos mecanismos de controle social existentes em uma sociedade. Esses mecanismos incluem o aparato policial, as políticas urbanas e sociais, bem como os valores existentes em uma sociedade. A partir desse contexto, julgue o item seguinte.
+
+ 
+
+No que se refere ao controle social, cabe apenas ao Estado o controle coercitivo.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1792977
+CEBRASPE (CESPE) - AL (CAM DEP)/CAM DEP/Consultor Legislativo/Área XVII/2002
+Criminologia - Controle da Criminalidade
+594) 
+Pode-se definir as instituições policiais como aquelas organizações destinadas ao controle social com autorização para usar a força, caso necessário. A partir dessa definição, julgue o item seguinte.
+
+
+As forças armadas também são organizações autorizadas a usar a força no controle social. Entretanto, em um regime democrático, diferentemente das polícias, o fazem somente em circunstâncias extraordinárias e dentro de limites impostos pela lei.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1792981
+CEBRASPE (CESPE) - AL (CAM DEP)/CAM DEP/Consultor Legislativo/Área XVII/2002
+Criminologia - Controle da Criminalidade
+595) 
+Pode-se definir as instituições policiais como aquelas organizações destinadas ao controle social com autorização para usar a força, caso necessário. A partir dessa definição, julgue o item seguinte.
+
+ 
+
+Uma vez que são empregadas diariamente, as polícias não podem estar sujeitas aos limites impostos ao uso da força.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 1792982
+CEBRASPE (CESPE) - AL (CAM DEP)/CAM DEP/Consultor Legislativo/Área XVII/2002
+Criminologia - Controle da Criminalidade
+596) 
+Pode-se definir as instituições policiais como aquelas organizações destinadas ao controle social com autorização para usar a força, caso necessário. A partir dessa definição, julgue o item seguinte.
+
+ 
+
+A diferenciação entre forças armadas e polícia é uma tendência em vários países.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1792983
+CEBRASPE (CESPE) - AL (CAM DEP)/CAM DEP/Consultor Legislativo/Área XVII/2002
+Criminologia - Controle da Criminalidade
+597) 
+Pode-se definir as instituições policiais como aquelas organizações destinadas ao controle social com autorização para usar a força, caso necessário. A partir dessa definição, julgue o item seguinte.
+
+ 
+
+Assim como o Brasil, países como Chile, Espanha, França e Itália possuem instituições policiais organizadas nos moldes militares.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 3546743
+CEBRASPE (CESPE) - DPF/PF/2025
+Criminologia - Reação ao Delito (Modelos Clássico, Ressocializador e Restaurador)
+598) 
+Julgue o item a seguir, relativo a modelos teóricos da criminologia.
+
+ 
+Como expressão do modelo restaurador, a justiça restaurativa caracteriza-se pelo formalismo procedimental e pela transferência da responsabilidade pela solução do conflito à figura do mediador, que exerce função decisória.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 2339328
+CEBRASPE (CESPE) - Per Crim (POLC AL)/POLC AL/Direito/2023
+Criminologia - Reação ao Delito (Modelos Clássico, Ressocializador e Restaurador)
+599) 
+Considerando-se que a criminologia estuda o crime com objetividade, sem avaliação de valor, sem mediação e sem julgamentos, julgue o próximo item.
+
+ 
+A ação de se mostrar a um delinquente a pena a que ele se submeterá, o rigor e a severidade dessa e a suposta eficácia preventiva do mecanismo intimidatório é abrangida pelo modelo clássico de reação ao crime.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1894653
+CEBRASPE (CESPE) - DP PA/DPE PA/2022
+Criminologia - Reação ao Delito (Modelos Clássico, Ressocializador e Restaurador)
+600) 
+A justiça restaurativa, como modelo de reação ao crime, se adequa ao modelo
+
+
+a) marxista.
+b) dissuasório.
+c) clássico.
+d) ressocializador.
+
+e) integrador.
+Gabarito: E
+
+
+
+Criminologia e Noções de Criminalística para CAM DEP - 2026
+#
+Ordenação: Por Relevância (Somente Assuntos)
+## questao 1996822
+CEBRASPE (CESPE) - DP TO/DPE TO/2022
+Criminologia - Reação ao Delito (Modelos Clássico, Ressocializador e Restaurador)
+601) 
+Assinale a opção que indica escola criminológica que utilizou, entre outros, fundamentos da teoria do contratualismo.
+
+a)  Escola Técnico-jurídica
+
+b)  Escola Clássica
+
+c)  Escola Positiva ou Positivista
+
+d)  Escola Marxista
+
+e)  Escola Correcionalista
+Gabarito: B
+## questao 2012965
+CEBRASPE (CESPE) - Del Pol (PC PB)/PC PB/2022
+Criminologia - Reação ao Delito (Modelos Clássico, Ressocializador e Restaurador)
+602) 
+
+https://www.camara.leg.br › noticias
+
+
+Debatedores divergem sobre endurecimento da legislação penal
+no combate à criminalidade - Notícias - Portal da Câmara dos
+Deputados
+06/07/2021
+
+
+https://www.camara.leg.br › noticias
+CCJ aprova relatório que propõe penas mais rigorosas para
+crimes - Notícias - Portal da Câmara dos Deputados
+30 sept. 2021
+
+
+https://www.camara.leg.br › noticias
+Grupo sobre projeto anticrime aumenta para 40 anos tempo
+máximo de cumprimento de pena - Notícias - Portal da Câmara
+dos Deputados
+22 août 2019
+
+ 
+As notícias cujos títulos são apresentados acima tratam do recrudescimento da legislação penal brasileira nos últimos anos. Acerca da criminologia, das penas e dos modelos de reação ao crime, assinale a opção correta.
+
+a) Iniciativas legislativas de agravamento de penas estão relacionadas ao modelo restaurador de reação ao crime segundo o qual o mal causado pelo criminoso deve ser proporcionalmente retribuído pela pena.
+b) A transação penal e a composição civil, institutos previstos na Lei n.º 9.099/1995, que regula os juizados especiais, têm um caráter conciliatório, consoante com o modelo clássico de reação ao crime.
+c) O Direito Penal centrado na pessoa do infrator reflete o pensamento de Claus Roxin na chamada Terceira Via do Direito.
+d) O recrudescimento penal como resposta a um clamor por justiça resulta na edição de leis penais simbólicas que são editadas para reduzir tensões sociais, mas que, à falta de respaldo da ciência criminal, não garantem uma efetiva prevenção do crime.
+
+e)  Leis penais mais severas previnem o crime na mesma proporção que a certeza da punição, noção essa que tem origem em estudos do século XVIII de Cesare Bonesana.
+Gabarito: D
+## questao 923058
+CEBRASPE (CESPE) - DP DF/DP DF/2019
+Criminologia - Reação ao Delito (Modelos Clássico, Ressocializador e Restaurador)
+603) 
+Com relação às teorias da criminologia e à prevenção da infração penal no estado democrático de direito, julgue o item subsequente acerca dos modelos de reação ao delito.
+
+ 
+
+O modelo integrador baseia-se na ideia do criminoso racional, que, ao ponderar os malefícios do castigo pelo crime cometido, opta por respeitar a lei, especificamente diante da eficácia da lei e dos métodos de tratamento penitenciário.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 923059
+CEBRASPE (CESPE) - DP DF/DP DF/2019
+Criminologia - Reação ao Delito (Modelos Clássico, Ressocializador e Restaurador)
+604) 
+Com relação às teorias da criminologia e à prevenção da infração penal no estado democrático de direito, julgue o item subsequente acerca dos modelos de reação ao delito.
+
+ 
+
+O cumprimento dos deveres legais por parte do apenado recluso constitui instrumento de reação ao delito analisado pelo modelo restaurador: o real impacto do castigo aplicado ao indivíduo no caso concreto é capaz de aferir os diagnósticos e de proporcionar adequadas soluções para prevenir a reincidência.
+
+Certo
+Errado
+Gabarito: Errado
+## questao 442454
+CEBRASPE (CESPE) - Del Pol (PC GO)/PC GO/2017
+Criminologia - Reação ao Delito (Modelos Clássico, Ressocializador e Restaurador)
+605) 
+Em busca do melhor sistema de enfrentamento à criminalidade, a criminologia estuda os diversos modelos de reação ao delito.
+A respeito desses modelos, assinale a opção correta.
+
+a) De acordo com o modelo clássico de reação ao crime, os envolvidos devem resolver o conflito entre si, ainda que haja necessidade de inobservância das regras técnicas estatais de resolução da criminalidade, flexibilizando-se leis para se chegar ao consenso.
+b) Conforme o modelo ressocializador de reação ao delito, a existência de leis que recrudescem o sistema penal faz que se previna a reincidência, uma vez que o infrator racional irá sopesar o castigo com o eventual proveito obtido.
+c) Para a criminologia, as medidas despenalizadoras, com o viés reparador à vítima, condizem com o modelo integrador de reação ao delito, de modo a inserir os interessados como protagonistas na solução do conflito.
+d) A fim de facilitar o retorno do infrator à sociedade, por meio de instrumentos de reabilitação aptos a retirar o caráter aflitivo da pena, o modelo dissuasório de reação ao crime propõe uma inserção positiva do apenado no seio social.
+e) O modelo integrador de reação ao delito visa prevenir a criminalidade, conferindo especial relevância ao ius puniendi estatal, ao justo, rápido e necessário castigo ao criminoso, como forma de intimidação e prevenção do crime na sociedade.
+Gabarito: C
+## questao 364101
+CEBRASPE (CESPE) - Del Pol (PC PE)/PC PE/2016
+Criminologia - Reação ao Delito (Modelos Clássico, Ressocializador e Restaurador)
+606) 
+No que se refere aos métodos de combate à criminalidade, a criminologia analisa os controles formais e informais do fenômeno delitivo e busca descrever e apresentar os meios necessários e eficientes contra o mal causado pelo crime. A esse respeito, assinale a opção correta.
+
+a) A criminologia distingue os paradigmas de respostas conforme a finalidade pretendida, apresentando, entre os modelos de reação ao delito, o modelo dissuasório, o ressocializador e o integrador como formas de enfrentamento à criminalidade. Em determinado nível, admitem-se como conciliáveis esses modelos de enfrentamento ao crime.
+b) Como modelo de enfrentamento do crime, a justiça restaurativa é altamente repudiada pela criminologia por ser método benevolente ao infrator, sem cunho ressocializador e pedagógico.
+c) O modelo dissuasório de reação ao delito, no qual o infrator é objeto central da análise científica, busca mecanismos e instrumentos necessários à rápida e rigorosa efetivação docastigo ao criminoso, sendo desnecessário o aparelhamento estatal para esse fim.
+d) O modelo ressocializador de enfrentamento do crime propõe legitimar a vítima, a comunidade e o infrator na busca de soluções pacíficas, sem que haja a necessidade de lidar com a ira e a humilhação do infrator ou de utilizar o ius puniendi estatal.
+e) A doutrina admite pacificamente o modelo integrador na solução de conflitos havidos em razão do crime, independentemente da gravidade ou natureza, uma vez que o controle formal das instâncias não se abdica do poder punitivo estatal.
+Gabarito: A
+## questao 1894655
+CEBRASPE (CESPE) - DP PA/DPE PA/2022
+Criminologia - Vitimologia
+607) 
+Chama-se neutralização da vítima
+
+a) o abandono da vítima na relação jurídico-processual penal.
+b) a reparação do dano material sofrido pela vítima.
+c) a reinserção social da vítima após o trauma por ela sofrido.
+d) a atuação do Estado a fim de evitar a vingança privada.
+
+e) a possibilidade de participação da vítima na relação jurídico-processual penal.
+Gabarito: A
+## questao 1938880
+CEBRASPE (CESPE) - Del Pol (PC RJ)/PC RJ/2022
+Criminologia - Vitimologia
+608) 
+Maria, de 35 anos de idade, compareceu a uma delegacia de polícia noticiando ao policial plantonista que havia sido abusada sexualmente por um médico-cirurgião renomado, o qual teria manipulado o órgão genital dela enquanto ela ainda se encontrava sob efeito de anestésico após ter realizado mamoplastia. Diante da gravidade da denúncia, o policial verificou se havia anotações criminais contra o noticiado e não localizou nenhum registro de ocorrência nesse sentido. Então, indagou à noticiante se ela tinha certeza do que estava afirmando, pois se tratava de uma acusação muito séria e ela poderia ter-se confundido em função do efeito anestésico. Desconfortável com a indagação feita, a noticiante pediu que fosse chamada uma policial do sexo feminino para atendê-la. Assim feito, Maria narrou o fato vivenciado à policial, a qual, por sua vez, considerou conveniente chamar a autoridade policial para avaliar se o fato deveria ser efetivamente registrado, diante de quem, mais uma vez, a noticiante relatou o abuso sofrido.
+
+ 
+Com relação a essa situação hipotética, assinale a opção correta, considerando as normas de direito penal e os estudos críticos criminológicos.
+
+a) Os policiais foram diligentes, a fim de evitar eventual denunciação caluniosa em desfavor do médico.
+b) Os policiais agiram corretamente, uma vez que a Lei n.º 13.869/2019 tipifica como crime de abuso de autoridade a conduta de dar início à persecução penal sem justa causa fundamentada.
+c) Os policiais foram diligentes, porque, em sua atuação funcional, levaram em consideração a figura criminológica da síndrome da mulher de Potifar.
+d) Os policiais foram diligentes ao terem levado em consideração, no exercício funcional, a possibilidade de falsas memórias da vítima.
+
+e) A noticiante foi submetida a um processo de revitimização ao ter sido questionada sobre a credibilidade da notitia criminis e ao ter que relatar o abuso sofrido a diferentes profissionais da delegacia.
+Gabarito: E
+## questao 2169840
+CEBRASPE (CESPE) - Del Pol (PC RO)/PC RO/2022
+Criminologia - Vitimologia
+609) 
+À luz dos estudos criminológicos modernos, assinale a opção correta com relação ao papel da vítima e a sua importância na persecução penal.
+
+a) A vítima não possui capacidade de influir na gênese do crime.
+b) No processo penal, a participação da vítima é exclusivamente periférica, sendo o réu a figura central em destaque.
+c) No direito penal hodierno prevalece a tríade criminológica: delito, delinquente, pena.
+d) A atitude da vítima de colocar a si mesma em risco, em regra, é causa de exclusão do tipo penal.
+
+e) A participação da vítima em determinados crimes é indispensável para a configuração da figura típica.
+Gabarito: E
+## questao 923064
+CEBRASPE (CESPE) - DP DF/DP DF/2019
+Criminologia - Vitimologia
+610) 
+A criminologia, diante do fenômeno do delito, na busca de conhecer fatores criminógenos, traça um paralelo entre vítima e criminoso. Partindo dessa premissa dual, chamada por Mendelsohn de “dupla-penal”, extraem-se importantes situações fenomenológicas.
+
+ 
+
+Acerca desses estudos, julgue o item seguinte.
+
+ 
+
+A criminologia classifica como vitimização secundária a coisificação, pelas esferas de controle formal do delito, da pessoa ofendida, ao tratá-la como mero objeto e com desdém durante a persecução criminal.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 391086
+CEBRASPE (CESPE) - Del Pol (PC MA)/PC MA/2018
+Criminologia - Vitimologia
+611) 
+A criminologia considera que o papel da vítima varia de acordo com o modelo de reação da sociedade ao crime. No modelo
+
+
+a) clássico, a vítima é a responsável direta pela punição do criminoso, sendo figura protagonista no processo penal.
+
+b) ressocializador, busca-se o resgate da vítima, de modo a reintegrá-la na sociedade.
+
+c) retribucionista, o objetivo restringe-se ao ressarcimento do dano pelo criminoso à vítima.
+
+d) da justiça integradora, a vítima é tida como julgadora do criminoso.
+
+e) restaurativo, o foco é a participação dos envolvidos no conflito em atividades de reconciliação, nas quais a vítima tem um papel central.
+Gabarito: E
+## questao 699445
+CEBRASPE (CESPE) - Del Pol (PC SE)/PC SE/2018
+Criminologia - Vitimologia
+612) 
+Texto 1A9-I: Sentença
+
+ 
+
+Ação: Medidas Protetivas de Urgência (Lei Maria da Penha)
+Processo n.º: XXXXXXX
+
+ 
+
+Ana de Jesus foi à polícia reclamar que Mário, seu ex-namorado, alcoólatra e usuário de drogas, lhe fez ameaça de morte e ainda lhe deu umas refregas (sic), ao que se seguiram a comunicação do fato e o pedido de medida protetiva. É lamentável que a mulher não se dê ao respeito e, com isso, faça desmerecido o poder público. Simplesmente decidir que o agressor deve manter determinada distância da vítima é um nada. Depois que o sujeito, sentindo só a debilidade do poder público, invadir a distância marcada, caberá à vítima, mais uma vez, chamar a polícia, a qual, tendo ido ao local, o afastará dali. Mais que isso, legalmente, pouco há que fazer. Enfim, enquanto a mulher não se respeitar, não se valorizar, ficará nesse ramerrão sem fim — agressão, reclamação na polícia, falta de proteção. Por outro lado, ainda vige o instituto da legítima defesa, muito mais eficaz que qualquer medidazinha (sic) de proteção. Intimem-se, inclusive ao MP.
+
+ 
+
+Texto 1A9-II
+
+ 
+
+No Brasil, a edição da Lei Maria da Penha retratou a preocupação da sociedade com a violência doméstica contra a mulher, e a incorporação do feminicídio ao Código Penal refletiu o reconhecimento de conduta criminosa reiterada relacionada à questão de gênero. Mesmo com tais medidas, que visam reduzir a violência contra as mulheres, as estatísticas nacionais apontam para um agravamento do problema. No caso do estado de Sergipe, de acordo com dados do Panorama da Violência contra as Mulheres no Brasil (2016), a taxa de violência letal contra mulheres é superior à taxa nacional, enquanto a taxa de estupros é inferior, o que pode ser resultado de uma subnotificação desse tipo de violência.
+
+ 
+
+Internet: <www.senado.gov.br> (com adaptações).
+
+ 
+
+Considerando os textos apresentados, julgue o item que se segue, pertinentes aos objetos da criminologia.
+
+ 
+
+A sentença transcrita (texto 1A9-I) exemplifica o que a teoria criminológica descreve como revitimização ou vitimização secundária, que se expressa como o atendimento negligente, o descrédito na palavra da vítima, o descaso com seu sofrimento físico e(ou) mental, o desrespeito à sua privacidade, o constrangimento e a responsabilização da vítima pela violência sofrida.
+
+Certo
+Errado
+Gabarito: Certo
+## questao 1144047
+CEBRASPE (CESPE) - GM (Pref Aracaju)/Pref Aracaju/2004
+Criminologia - Vitimologia
+613) 
+Considerando as regras pertinentes aos direitos humanos e humanitários, julgue o item que se segue.
+
+ 
+
+São consideradas vítimas da criminalidade as pessoas que tenham sofrido um atentado à sua integridade física ou mental, desde que o autor seja identificado, preso, processado e declarado culpado.
 
 Certo
 Errado
