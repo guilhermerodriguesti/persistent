@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Questionário de Revisão – Policial Legislativo 2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh}
+.container{max-width:900px;margin:0 auto;padding:16px}
+
+/* ── Header ── */
+.header{text-align:center;padding:28px 20px;background:linear-gradient(135deg,#1e293b,#334155);border-radius:16px;margin-bottom:20px;border:1px solid #334155}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:12px;color:#94a3b8;margin-bottom:14px}
+.hstats{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hs{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(99,102,241,.15);color:#818cf8;border:1px solid rgba(99,102,241,.25)}
+.hs b{color:#a5b4fc;font-size:14px}
+
+/* ── Subject Selector ── */
+.subjects{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:8px;margin-bottom:20px}
+.subj-btn{padding:12px 10px;border-radius:12px;border:1px solid #334155;background:#1e293b;cursor:pointer;text-align:center;transition:all .2s;position:relative;overflow:hidden}
+.subj-btn:hover{border-color:#6366f1;transform:translateY(-2px)}
+.subj-btn.active{border-color:#6366f1;background:rgba(99,102,241,.1);box-shadow:0 0 20px rgba(99,102,241,.15)}
+.subj-btn.done{border-color:#22c55e}
+.subj-btn .si{font-size:22px;margin-bottom:4px}
+.subj-btn .sn{font-size:11px;font-weight:700;color:#e2e8f0;line-height:1.3}
+.subj-btn .sq{font-size:10px;color:#64748b;margin-top:2px}
+.subj-btn .score-pill{position:absolute;top:6px;right:6px;font-size:9px;font-weight:800;padding:2px 6px;border-radius:8px;display:none}
+.subj-btn.done .score-pill{display:block}
+
+/* ── Quiz Area ── */
+.quiz-area{display:none}
+.quiz-area.active{display:block}
+.progress-bar{height:6px;background:#1e293b;border-radius:3px;margin-bottom:16px;overflow:hidden;border:1px solid #334155}
+.progress-fill{height:100%;background:linear-gradient(90deg,#6366f1,#a78bfa);border-radius:3px;transition:width .4s ease}
+.q-counter{text-align:center;font-size:12px;color:#64748b;margin-bottom:12px;font-weight:600}
+
+.q-card{background:#1e293b;border:1px solid #334155;border-radius:14px;padding:24px;margin-bottom:16px;transition:border-color .3s}
+.q-card.correct{border-color:#22c55e;box-shadow:0 0 20px rgba(34,197,94,.1)}
+.q-card.wrong{border-color:#ef4444;box-shadow:0 0 20px rgba(239,68,68,.1)}
+.q-subject{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#6366f1;margin-bottom:8px}
+.q-text{font-size:15px;font-weight:600;color:#f1f5f9;line-height:1.6;margin-bottom:16px}
+.q-text b{color:#a78bfa}
+
+.opts{display:flex;gap:10px;margin-bottom:14px}
+.opt-btn{flex:1;padding:14px;border-radius:10px;border:2px solid #334155;background:#0f172a;cursor:pointer;font-size:14px;font-weight:800;color:#e2e8f0;transition:all .2s;text-align:center}
+.opt-btn:hover:not(.locked){border-color:#6366f1;background:rgba(99,102,241,.08)}
+.opt-btn.sel-c{border-color:#22c55e;background:rgba(34,197,94,.1);color:#22c55e}
+.opt-btn.sel-e{border-color:#ef4444;background:rgba(239,68,68,.1);color:#ef4444}
+.opt-btn.reveal-c{border-color:#22c55e;background:rgba(34,197,94,.08)}
+.opt-btn.reveal-e{border-color:#ef4444;background:rgba(239,68,68,.08)}
+.opt-btn.locked{cursor:default;opacity:.7}
+
+.feedback{display:none;padding:14px;border-radius:10px;margin-bottom:14px;font-size:12px;line-height:1.6}
+.feedback.show{display:block}
+.feedback.fb-c{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.3);color:#86efac}
+.feedback.fb-e{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.3);color:#fca5a5}
+.feedback b{color:#fff}
+
+.next-btn{width:100%;padding:14px;border:none;border-radius:10px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-size:14px;font-weight:700;cursor:pointer;display:none;transition:opacity .2s}
+.next-btn:hover{opacity:.9}
+.next-btn.show{display:block}
+
+/* ── Stats Dashboard ── */
+.stats-dash{display:none}
+.stats-dash.active{display:block}
+.stats-header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#1e293b,#334155);border-radius:16px;margin-bottom:20px;border:1px solid #334155}
+.stats-header h2{font-size:24px;color:#fff;margin-bottom:4px}
+.stats-header .big-score{font-size:56px;font-weight:900;background:linear-gradient(135deg,#6366f1,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin:10px 0}
+.stats-header .big-label{font-size:13px;color:#94a3b8}
+
+.perf-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}
+.perf-card{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:14px;text-align:center}
+.perf-card .pv{font-size:28px;font-weight:900;margin-bottom:2px}
+.perf-card .pl{font-size:11px;color:#94a3b8;font-weight:600}
+
+.subj-stats{margin-bottom:20px}
+.ss-row{display:flex;align-items:center;gap:12px;padding:12px 14px;background:#1e293b;border:1px solid #334155;border-radius:10px;margin-bottom:6px;transition:border-color .2s}
+.ss-row:hover{border-color:#475569}
+.ss-icon{font-size:20px;flex-shrink:0;width:32px;text-align:center}
+.ss-info{flex:1}
+.ss-name{font-size:13px;font-weight:700;color:#e2e8f0}
+.ss-detail{font-size:10px;color:#64748b;margin-top:2px}
+.ss-bar-bg{height:6px;background:#0f172a;border-radius:3px;margin-top:4px;overflow:hidden}
+.ss-bar-fill{height:100%;border-radius:3px;transition:width .6s ease}
+.ss-score{font-size:16px;font-weight:900;flex-shrink:0;min-width:45px;text-align:right}
+.ss-badge{font-size:9px;font-weight:700;padding:2px 8px;border-radius:6px;margin-left:6px}
+
+.alert-box{padding:14px;border-radius:10px;margin-bottom:14px;font-size:12px;line-height:1.5}
+.alert-box.danger{background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.25);color:#fca5a5}
+.alert-box.warning{background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.25);color:#fcd34d}
+.alert-box.success{background:rgba(34,197,94,.08);border:1px solid rgba(34,197,94,.25);color:#86efac}
+.alert-box b{color:#fff}
+
+.restart-btn{width:100%;padding:14px;border:none;border-radius:10px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-size:14px;font-weight:700;cursor:pointer;margin-top:10px}
+.restart-btn:hover{opacity:.9}
+
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#6366f1;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(99,102,241,.4);z-index:100;text-decoration:none}
+.back-btn:hover{background:#4f46e5}
+
+/* ── Keyboard Help ── */
+.kbd-hint{position:fixed;bottom:64px;right:20px;z-index:100}
+.kbd-toggle{width:40px;height:40px;border-radius:50%;border:1px solid #334155;background:#1e293b;color:#818cf8;font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.kbd-toggle:hover{background:#6366f1;color:#fff;border-color:#6366f1}
+.kbd-panel{display:none;position:fixed;bottom:112px;right:20px;background:#1e293b;border:1px solid #334155;border-radius:12px;padding:16px;z-index:101;width:260px;box-shadow:0 8px 32px rgba(0,0,0,.5)}
+.kbd-panel.show{display:block}
+.kbd-panel h4{font-size:13px;color:#a5b4fc;margin-bottom:10px;font-weight:700}
+.kbd-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.kbd{display:inline-block;padding:3px 8px;border-radius:5px;background:#0f172a;border:1px solid #475569;color:#e2e8f0;font-size:11px;font-weight:700;font-family:monospace;min-width:24px;text-align:center}
+.kbd-label{font-size:11px;color:#94a3b8}
+
+/* ── Touch feedback ── */
+.opt-btn:active:not(.locked){transform:scale(.97)}
+.subj-btn:active{transform:scale(.97)}
+.next-btn:active{transform:scale(.98)}
+
+/* ── Swipe indicator ── */
+.swipe-hint{display:none;text-align:center;font-size:11px;color:#475569;margin-top:6px;padding:4px}
+
+/* ── Responsive: Tablet ── */
+@media(max-width:768px){
+  .container{padding:10px}
+  .header{padding:20px 14px;border-radius:12px;margin-bottom:14px}
+  .header h1{font-size:18px}
+  .header .sub{font-size:11px}
+  .hstats{gap:5px}
+  .hs{font-size:10px;padding:4px 8px}
+  .subjects{grid-template-columns:repeat(2,1fr);gap:6px}
+  .subj-btn{padding:10px 8px}
+  .subj-btn .si{font-size:20px}
+  .subj-btn .sn{font-size:10px}
+  .q-card{padding:16px;border-radius:12px}
+  .q-text{font-size:14px;line-height:1.5;margin-bottom:14px}
+  .opt-btn{padding:16px 12px;font-size:15px;min-height:54px;display:flex;align-items:center;justify-content:center}
+  .feedback{font-size:12px;padding:12px}
+  .next-btn{padding:16px;font-size:15px}
+  .perf-grid{grid-template-columns:1fr 1fr;gap:8px}
+  .ss-row{padding:10px 12px;gap:8px}
+  .ss-name{font-size:12px}
+  .stats-header .big-score{font-size:48px}
+  .back-btn{bottom:14px;right:14px;padding:8px 14px;font-size:11px}
+  .kbd-hint{bottom:54px;right:14px}
+  .kbd-panel{right:14px;bottom:100px;width:240px}
+  .swipe-hint{display:block}
+}
+
+/* ── Responsive: Phone ── */
+@media(max-width:480px){
+  .container{padding:6px}
+  .header{padding:16px 10px;border-radius:10px;margin-bottom:10px}
+  .header h1{font-size:16px}
+  .header .sub{font-size:10px;margin-bottom:8px}
+  .hstats{gap:4px}
+  .hs{font-size:9px;padding:3px 6px}
+  .hs b{font-size:12px}
+  .subjects{grid-template-columns:repeat(2,1fr);gap:5px;margin-bottom:12px}
+  .subj-btn{padding:8px 6px;border-radius:10px}
+  .subj-btn .si{font-size:18px;margin-bottom:2px}
+  .subj-btn .sn{font-size:9px}
+  .subj-btn .sq{font-size:9px}
+  .q-card{padding:14px;margin-bottom:10px}
+  .q-subject{font-size:9px;margin-bottom:6px}
+  .q-text{font-size:13px;margin-bottom:12px}
+  .q-counter{font-size:11px;margin-bottom:8px}
+  .opts{gap:8px}
+  .opt-btn{padding:14px 10px;font-size:14px;min-height:50px;border-radius:8px}
+  .feedback{font-size:11px;padding:10px;border-radius:8px}
+  .next-btn{padding:14px;font-size:14px;border-radius:8px}
+  .perf-grid{grid-template-columns:1fr;gap:6px}
+  .perf-card{padding:10px}
+  .perf-card .pv{font-size:24px}
+  .perf-card .pl{font-size:10px}
+  .stats-header{padding:20px 14px}
+  .stats-header h2{font-size:20px}
+  .stats-header .big-score{font-size:42px}
+  .stats-header .big-label{font-size:12px}
+  .ss-row{gap:6px;padding:8px 10px}
+  .ss-icon{font-size:16px;width:24px}
+  .ss-name{font-size:11px}
+  .ss-detail{font-size:9px}
+  .ss-score{font-size:14px;min-width:36px}
+  .alert-box{font-size:11px;padding:10px}
+  .restart-btn{padding:12px;font-size:13px}
+  .back-btn{bottom:10px;right:10px;padding:7px 12px;font-size:10px;border-radius:8px}
+  .kbd-hint{display:none}
+  .progress-bar{height:5px;margin-bottom:10px}
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<div class="header" id="mainHeader">
+<h1>📝 Questionário de Revisão Final</h1>
+<div class="sub">Policial Legislativo CD 2026 • Perguntas essenciais que TÊM que ir sabendo • Formato CEBRASPE (C/E)</div>
+<div class="hstats">
+<div class="hs">📂 <b>10</b> matérias</div>
+<div class="hs">❓ <b id="totalQ">80</b> questões</div>
+<div class="hs">🎯 Alta probabilidade</div>
+<div class="hs">📊 Estatísticas ao final</div>
+</div>
+</div>
+
+<!-- Subject selector -->
+<div class="subjects" id="subjectGrid"></div>
+
+<!-- Quiz area -->
+<div class="quiz-area" id="quizArea">
+<div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+<div class="q-counter" id="qCounter"></div>
+<div class="q-card" id="qCard">
+<div class="q-subject" id="qSubject"></div>
+<div class="q-text" id="qText"></div>
+<div class="opts">
+<div class="opt-btn" id="btnC" onclick="answer(true)"><span class="kbd" style="margin-right:6px;font-size:10px">C</span> CERTO</div>
+<div class="opt-btn" id="btnE" onclick="answer(false)"><span class="kbd" style="margin-right:6px;font-size:10px">E</span> ERRADO</div>
+</div>
+<div class="feedback" id="feedback"></div>
+<button class="next-btn" id="nextBtn" onclick="nextQuestion()">Próxima → <span style="font-size:10px;opacity:.6;margin-left:6px">[ENTER / →]</span></button>
+<div class="swipe-hint">👆 Deslize para esquerda para avançar</div>
+</div>
+</div>
+
+<!-- Stats dashboard -->
+<div class="stats-dash" id="statsDash"></div>
+
+</div>
+
+<!-- Keyboard help -->
+<div class="kbd-hint">
+<button class="kbd-toggle" id="kbdToggle" onclick="toggleKbdPanel()" title="Atalhos do teclado"><i class="fas fa-keyboard"></i></button>
+<div class="kbd-panel" id="kbdPanel">
+<h4>⌨️ Atalhos do Teclado</h4>
+<div class="kbd-row"><span class="kbd">C</span><span class="kbd-label">Responder CERTO</span></div>
+<div class="kbd-row"><span class="kbd">E</span><span class="kbd-label">Responder ERRADO</span></div>
+<div class="kbd-row"><span class="kbd">→</span> <span class="kbd">Enter</span><span class="kbd-label">Próxima questão</span></div>
+<div class="kbd-row"><span class="kbd">1</span>–<span class="kbd">0</span><span class="kbd-label">Selecionar matéria</span></div>
+<div class="kbd-row"><span class="kbd">R</span><span class="kbd-label">Refazer questionário</span></div>
+<div class="kbd-row"><span class="kbd">H</span><span class="kbd-label">Mostrar/ocultar atalhos</span></div>
+<div class="kbd-row"><span class="kbd">Esc</span><span class="kbd-label">Voltar / fechar</span></div>
+</div>
+</div>
+
+<a href="reta-final.html" class="back-btn" id="backBtn">← Voltar</a>
+
+<script>
+// ═══════════════════════════════════════════════
+// BANCO DE QUESTÕES — 8 por matéria = 80 total
+// Formato: {q: texto, a: true/false, e: explicação}
+// ═══════════════════════════════════════════════
+const SUBJECTS = [
+{id:'info',name:'Informática e Dados',icon:'💻',color:'#2563eb',
+questions:[
+{q:'A tríade da segurança da informação é composta por <b>Confidencialidade, Integridade e Disponibilidade</b> (CID).',a:true,e:'CID (Confidentiality, Integrity, Availability) é a base da segurança da informação.'},
+{q:'Um <b>worm</b> precisa de um programa hospedeiro para se propagar, assim como um vírus.',a:false,e:'Worm se autopropaga pela rede SEM precisar de hospedeiro. Vírus é que precisa de hospedeiro.'},
+{q:'O protocolo <b>HTTPS</b> utiliza criptografia <b>SSL/TLS</b> para proteger a comunicação entre navegador e servidor.',a:true,e:'HTTPS = HTTP + SSL/TLS. O cadeado no navegador indica conexão criptografada.'},
+{q:'Na LGPD, o <b>controlador</b> é quem realiza o tratamento de dados pessoais em nome do operador.',a:false,e:'É o OPERADOR que trata dados em nome do CONTROLADOR. O controlador decide; o operador executa.'},
+{q:'O <b>ransomware</b> é um malware que criptografa arquivos da vítima e exige resgate (ransom) para descriptografar.',a:true,e:'Ransomware = ransom (resgate) + ware (software). WannaCry e Petya são exemplos famosos.'},
+{q:'No modelo <b>SaaS</b> (Software as a Service), o usuário gerencia a infraestrutura e o sistema operacional.',a:false,e:'No SaaS, o provedor gerencia TUDO. O usuário apenas usa o software (ex: Gmail, Google Docs). Quem gerencia infra é o IaaS.'},
+{q:'A <b>assinatura digital</b> garante autenticidade e integridade, utilizando a <b>chave privada</b> do remetente para assinar.',a:true,e:'Assinar = chave PRIVADA do remetente. Verificar = chave PÚBLICA. Garante autenticidade + integridade + não-repúdio.'},
+{q:'Em Big Data, os <b>5 Vs</b> são: Volume, Velocidade, Variedade, <b>Veracidade</b> e <b>Valor</b>.',a:true,e:'5 Vs do Big Data: Volume (quantidade), Velocidade (rapidez), Variedade (tipos), Veracidade (confiabilidade), Valor (utilidade).'}
+]},
+{id:'intel',name:'Atividade de Inteligência',icon:'🔍',color:'#7c3aed',
+questions:[
+{q:'A atividade de inteligência divide-se em dois ramos: <b>Inteligência</b> (produção de conhecimento) e <b>Contrainteligência</b> (proteção).',a:true,e:'Inteligência = produzir conhecimento. Contrainteligência = proteger conhecimentos sensíveis e neutralizar ações adversas.'},
+{q:'O <b>Decreto 8.793/2016</b> fixa a Política Nacional de Inteligência (PNI) e define as <b>ameaças</b>: espionagem, sabotagem, interferência externa, terrorismo, entre outras.',a:true,e:'A PNI lista ameaças como espionagem, sabotagem, interferência externa, ações contrárias à soberania, terrorismo, crime organizado, corrupção.'},
+{q:'O <b>SISBIN</b> (Sistema Brasileiro de Inteligência) é coordenado pela <b>Polícia Federal</b>.',a:false,e:'O SISBIN é coordenado pela ABIN (Agência Brasileira de Inteligência), não pela PF. A PF integra o SISBIN mas não o coordena.'},
+{q:'Os graus de sigilo na administração pública são: <b>reservado</b> (5 anos), <b>secreto</b> (15 anos) e <b>ultrassecreto</b> (25 anos).',a:true,e:'Reservado = 5 anos, Secreto = 15 anos, Ultrassecreto = 25 anos. Macete: 5-15-25 (de 10 em 10).'},
+{q:'Na análise de riscos, <b>risco = ameaça × vulnerabilidade × impacto</b>.',a:true,e:'A fórmula conceitual do risco considera a probabilidade da ameaça explorar uma vulnerabilidade e o impacto resultante.'},
+{q:'A criptografia <b>simétrica</b> utiliza duas chaves diferentes: uma pública e uma privada.',a:false,e:'Simétrica = UMA chave (mesma para cifrar e decifrar). Duas chaves (pública/privada) é ASSIMÉTRICA.'},
+{q:'O princípio da <b>compartimentação</b> determina que cada agente deve ter acesso apenas às informações necessárias para sua função.',a:true,e:'Need to know (necessidade de conhecer). Restringe acesso ao mínimo necessário para a função.'},
+{q:'A <b>contrainteligência</b> atua apenas na esfera defensiva, não realizando ações ofensivas.',a:false,e:'A contrainteligência atua tanto na esfera DEFENSIVA (proteção) quanto OFENSIVA (neutralização de ações adversas).'}
+]},
+{id:'crimin',name:'Criminologia e Criminalística',icon:'🔬',color:'#dc2626',
+questions:[
+{q:'O <b>exame de corpo de delito</b> é indispensável nos crimes que deixam vestígios, e NÃO pode ser suprido pela confissão do acusado.',a:true,e:'Art. 158 CPP: indispensável quando houver vestígios. A confissão NUNCA supre. Pode ser suprido por prova testemunhal quando vestígios desaparecerem.'},
+{q:'A <b>cadeia de custódia</b> inicia-se com a apreensão do vestígio pela autoridade policial na delegacia.',a:false,e:'A cadeia de custódia se inicia com a PRESERVAÇÃO do local do crime ou com o RECONHECIMENTO do vestígio, não na delegacia. Art. 158-A CPP.'},
+{q:'Segundo o <b>princípio de Locard</b>, todo contato deixa uma marca — o criminoso sempre leva e deixa algo na cena do crime.',a:true,e:'Princípio da Troca de Locard: "todo contato deixa um rastro". Fundamental na criminalística.'},
+{q:'A Escola <b>Positiva</b> (Lombroso, Ferri, Garofalo) focava no <b>criminoso nato</b> e usava método <b>empírico/científico</b>.',a:true,e:'Escola Positiva: método científico, determinismo, foco no criminoso (não no crime). Lombroso = criminoso nato, Ferri = sociologia criminal, Garofalo = criminoso natural.'},
+{q:'A teoria do <b>labelling approach</b> (etiquetamento) afirma que o crime é um fato objetivo, independente da reação social.',a:false,e:'O labelling approach afirma o CONTRÁRIO: o crime é uma CONSTRUÇÃO SOCIAL. O desvio é resultado do etiquetamento/rotulação pela sociedade.'},
+{q:'Na prevenção criminal, a prevenção <b>primária</b> atua nas causas (educação, emprego), a <b>secundária</b> em grupos de risco, e a <b>terciária</b> no preso (evitar reincidência).',a:true,e:'Primária = raiz/causa (longo prazo). Secundária = grupos vulneráveis (policiamento). Terciária = ressocialização do preso.'},
+{q:'A <b>necropsia</b> (autópsia) pode ser dispensada quando a causa da morte for evidente, a critério da autoridade policial.',a:false,e:'A necropsia é OBRIGATÓRIA em morte violenta ou suspeita, mesmo que causa pareça evidente. Só o PERITO decide sobre dispensa em casos específicos (art. 162 CPP).'},
+{q:'A <b>vitimologia</b> estuda a vítima e sua contribuição para o fato criminoso, sendo Mendelsohn um de seus precursores.',a:true,e:'Mendelsohn é o "pai da vitimologia". Classificou vítimas pelo grau de culpa: inocente, provocadora, voluntária, etc.'}
+]},
+{id:'admin',name:'Direito Administrativo',icon:'🏛️',color:'#8b5cf6',
+questions:[
+{q:'Os princípios expressos da Administração Pública no art. 37 da CF são: <b>Legalidade, Impessoalidade, Moralidade, Publicidade e Eficiência</b> (LIMPE).',a:true,e:'LIMPE = Legalidade, Impessoalidade, Moralidade, Publicidade, Eficiência. Art. 37, caput, CF/88.'},
+{q:'O ato administrativo <b>discricionário</b> permite ao administrador agir com liberdade total, inclusive quanto à <b>finalidade</b>.',a:false,e:'Mesmo no ato discricionário, COMPETÊNCIA, FINALIDADE e FORMA são sempre vinculados. Apenas MOTIVO e OBJETO admitem discricionariedade.'},
+{q:'A <b>autotutela</b> permite que a Administração anule seus próprios atos ilegais, sem precisar recorrer ao Judiciário.',a:true,e:'Súmula 473/STF: a Administração pode anular atos ilegais (autotutela) e revogar atos por conveniência/oportunidade.'},
+{q:'Na Lei de Improbidade Administrativa, o ato que causa <b>enriquecimento ilícito</b> exige <b>dolo</b>, enquanto o que causa <b>dano ao erário</b> admite <b>culpa</b>.',a:false,e:'Após a reforma (Lei 14.230/2021), TODOS os atos de improbidade exigem DOLO. Não se admite mais improbidade culposa.'},
+{q:'O prazo de validade de um concurso público é de até <b>2 anos</b>, prorrogável <b>uma vez</b> por igual período.',a:true,e:'Art. 37, III, CF: concurso válido por até 2 anos, prorrogável uma vez por igual período (2+2).'},
+{q:'O <b>poder de polícia</b> é a atividade do Estado que limita direitos individuais em benefício do interesse público, e pode ser <b>delegado</b> integralmente a particulares.',a:false,e:'O poder de polícia em sentido estrito (fiscalização/sanção por ordem de polícia) NÃO pode ser delegado a particulares. Apenas atos materiais/instrumentais podem.'},
+{q:'A <b>responsabilidade civil do Estado</b> por atos de seus agentes é <b>objetiva</b> (independe de dolo ou culpa), baseada na teoria do risco administrativo.',a:true,e:'Art. 37, §6º, CF: responsabilidade OBJETIVA do Estado (teoria do risco administrativo). Contra o agente, é subjetiva (dolo/culpa).'},
+{q:'O servidor público estável só pode perder o cargo por: sentença judicial transitada em julgado, PAD ou avaliação periódica de desempenho.',a:true,e:'Art. 41, §1º, CF: 3 hipóteses de perda do cargo do estável — sentença judicial, PAD e avaliação periódica (+ excesso de despesa, art. 169).'}
+]},
+{id:'const',name:'Direito Constitucional + RICD',icon:'⚖️',color:'#ea580c',
+questions:[
+{q:'Os <b>fundamentos</b> da República Federativa do Brasil (art. 1º) são: <b>SO-CI-DI-VA-PLU</b> (soberania, cidadania, dignidade, valores sociais do trabalho e pluralismo político).',a:true,e:'Art. 1º CF: macete SOCIDIVAPLU = Soberania, Cidadania, Dignidade da pessoa humana, Valores sociais do trabalho e livre iniciativa, Pluralismo político.'},
+{q:'Os direitos e garantias fundamentais previstos no art. 5º aplicam-se apenas aos <b>brasileiros</b>, não alcançando estrangeiros.',a:false,e:'Art. 5º, caput: "brasileiros E estrangeiros residentes no País". O STF estende aos estrangeiros em trânsito também.'},
+{q:'A <b>CPI</b> (Comissão Parlamentar de Inquérito) pode determinar a <b>quebra de sigilo bancário e fiscal</b>, mas NÃO pode determinar <b>interceptação telefônica</b>.',a:true,e:'CPI pode: quebra de sigilo bancário/fiscal/dados, busca e apreensão, oitiva de testemunha. NÃO pode: interceptação telefônica, prisão (salvo flagrante), busca domiciliar. Interceptação = reserva de jurisdição.'},
+{q:'A <b>imunidade material</b> dos parlamentares (inviolabilidade) protege opiniões, palavras e votos, sendo <b>absoluta</b> no exercício do mandato.',a:true,e:'Art. 53 CF: imunidade material = inviolabilidade por opiniões, palavras e votos. É absoluta, exclui crime e responsabilidade civil. Dentro e fora do Congresso se em função do mandato.'},
+{q:'Compete <b>privativamente</b> à União legislar sobre direito penal, processual e do trabalho, podendo <b>delegar</b> por lei complementar aos Estados.',a:true,e:'Art. 22 CF: competência privativa = delegável por LC. Diferente da competência EXCLUSIVA (art. 21) que é indelegável.'},
+{q:'A <b>Medida Provisória</b> tem prazo de <b>60 dias + 60 dias</b> de prorrogação, e pode versar sobre <b>direito penal</b>.',a:false,e:'MP tem prazo 60+60 dias, CORRETO. Mas NÃO pode versar sobre direito penal, processual penal, processual civil, organização do Judiciário/MP. Art. 62, §1º, CF.'},
+{q:'No <b>RICD</b>, a <b>Mesa da Câmara</b> é composta por <b>7 membros</b>, com mandato de <b>2 anos</b>, vedada a recondução para o mesmo cargo na eleição imediatamente subsequente.',a:true,e:'RICD: Mesa = 7 membros (Presidente, 2 Vice-Presidentes, 4 Secretários). Mandato 2 anos, vedada recondução na mesma legislatura.'},
+{q:'O art. 144 da CF elenca como órgãos de segurança pública: PF, PRF, PFF, Polícias Civis, Polícias Militares, Corpos de Bombeiros e Polícias Penais.',a:true,e:'Art. 144 CF (EC 104/2019): PF, PRF, PFF (Polícia Ferroviária Federal – ainda prevista), PC, PM, CBM e Polícias Penais (federal, estadual, distrital).'}
+]},
+{id:'penal',name:'Direito Penal e Processual',icon:'⚔️',color:'#0ea5e9',
+questions:[
+{q:'O princípio da <b>anterioridade</b> exige que a lei penal seja anterior ao fato, mas a lei penal <b>mais benéfica</b> retroage para beneficiar o réu.',a:true,e:'Art. 5º, XL, CF e art. 2º CP: lei penal não retroage, SALVO para beneficiar o réu (retroatividade da lei mais benéfica).'},
+{q:'A <b>legítima defesa</b> é uma causa excludente de <b>culpabilidade</b>.',a:false,e:'Legítima defesa é excludente de ILICITUDE (antijuridicidade), não de culpabilidade. Excludentes de ilicitude: legítima defesa, estado de necessidade, estrito cumprimento do dever legal, exercício regular de direito.'},
+{q:'O <b>flagrante delito</b> autoriza prisão <b>sem mandado judicial</b>, podendo ser realizado por <b>qualquer pessoa</b> do povo.',a:true,e:'Art. 301 CPP: qualquer do povo PODE prender em flagrante (facultativo). Autoridade policial DEVE (obrigatório). Não precisa de mandado.'},
+{q:'Na <b>coautoria</b>, todos os agentes praticam o verbo nuclear do tipo, enquanto na <b>participação</b>, o agente contribui sem executar o verbo.',a:true,e:'Coautor = executa a conduta típica. Partícipe = induz, instiga ou auxilia. Teoria Monista: todos respondem pelo mesmo crime (art. 29 CP).'},
+{q:'A ação penal nos crimes de <b>lesão corporal leve</b> contra a mulher no âmbito doméstico é <b>condicionada à representação</b> da vítima.',a:false,e:'Súmula 542/STJ e ADI 4424/STF: ação penal nos crimes de lesão corporal praticados contra a mulher no âmbito doméstico (Lei Maria da Penha) é PÚBLICA INCONDICIONADA.'},
+{q:'O <b>inquérito policial</b> é peça <b>dispensável</b> para o oferecimento da denúncia, desde que existam elementos de informação suficientes.',a:true,e:'O IP é DISPENSÁVEL (informativo, não obrigatório). O MP pode oferecer denúncia com base em outras fontes de informação (art. 39, §5º, CPP).'},
+{q:'A <b>prisão temporária</b> tem prazo de <b>5 dias</b> prorrogáveis por mais 5, e nos crimes hediondos, <b>30+30</b> dias.',a:true,e:'Lei 7.960/89: prisão temporária = 5+5 dias. Crimes hediondos (Lei 8.072/90): 30+30 dias.'},
+{q:'O <b>arrependimento posterior</b> (art. 16 CP) é causa de <b>diminuição de pena</b> e exige reparação do dano até o <b>recebimento da denúncia</b>, em crimes <b>sem violência ou grave ameaça</b>.',a:true,e:'Art. 16 CP: reparação do dano ou restituição da coisa até recebimento da denúncia, em crime sem violência/grave ameaça. Reduz pena de 1/3 a 2/3.'}
+]},
+{id:'dh',name:'Direitos Humanos',icon:'🤝',color:'#d946ef',
+questions:[
+{q:'As <b>gerações de direitos humanos</b> seguem a ordem: 1ª <b>Liberdade</b>, 2ª <b>Igualdade</b>, 3ª <b>Fraternidade</b> (LIF).',a:true,e:'Macete LIF: 1ª geração = Liberdade (civis/políticos), 2ª = Igualdade (sociais/econômicos), 3ª = Fraternidade (difusos/coletivos). Há ainda 4ª (globalização) e 5ª (paz).'},
+{q:'Tratados de DH aprovados com rito de <b>EC</b> (3/5 em 2 turnos nas 2 casas) têm status <b>supralegal</b>.',a:false,e:'Rito de EC = status de EMENDA CONSTITUCIONAL. Tratados de DH aprovados por rito ordinário = status SUPRALEGAL (acima das leis, abaixo da CF). STF, RE 466.343.'},
+{q:'Na <b>CADH</b> (Pacto de São José), a <b>Comissão Interamericana</b> pode receber petições individuais, e a <b>Corte Interamericana</b> julga os Estados.',a:true,e:'Comissão: recebe petições, investiga, recomenda. Corte: julga e condena Estados. Indivíduos NÃO peticionam diretamente à Corte (só Comissão e Estados-Parte).'},
+{q:'A <b>DUDH de 1948</b> é um tratado internacional juridicamente vinculante para todos os países.',a:false,e:'A DUDH é uma DECLARAÇÃO (resolução da Assembleia Geral da ONU), não um tratado. Não é juridicamente vinculante, mas tem grande força moral e costumeira.'},
+{q:'A Lei <b>13.060/2014</b> disciplina o uso de instrumentos de <b>menor potencial ofensivo</b> por agentes de segurança e estabelece que a arma de fogo é <b>último recurso</b>.',a:true,e:'Lei 13.060/2014: agentes de segurança devem priorizar instrumentos de menor potencial ofensivo. Arma de fogo = ÚLTIMO recurso.'},
+{q:'Na CADH, é permitida a aplicação da <b>pena de morte</b> para crimes políticos ou conexos.',a:false,e:'Art. 4º, §4º CADH: pena de morte NÃO pode ser aplicada a crimes políticos ou conexos. Também é proibido restabelecê-la se já abolida.'},
+{q:'O <b>princípio pro persona</b> determina que, em caso de conflito entre normas de DH, deve-se aplicar a que <b>mais proteja</b> a pessoa.',a:true,e:'Princípio pro persona (pro homine): prevalece a norma mais favorável ao ser humano, independentemente de sua hierarquia.'},
+{q:'O <b>Código de Conduta para Funcionários Responsáveis pela Aplicação da Lei</b> (ONU) permite o uso da força <b>sempre que necessário</b>, sem restrições.',a:false,e:'O Código de Conduta ONU permite uso da força SOMENTE quando estritamente necessário e na medida exigida. Princípios: legalidade, necessidade, proporcionalidade, moderação.'}
+]},
+{id:'eng',name:'Língua Inglesa',icon:'🌐',color:'#3b82f6',
+questions:[
+{q:'A palavra <b>"actually"</b> em inglês significa <b>"atualmente"</b> em português.',a:false,e:'FALSE FRIEND! "Actually" = NA VERDADE. "Atualmente" = currently / nowadays.'},
+{q:'Na frase "If I <b>were</b> rich, I <b>would</b> travel", temos o <b>2nd conditional</b> (situação hipotética).',a:true,e:'2nd conditional: If + past, would + base. Situação hipotética/improvável no presente. "Were" é usado para todas as pessoas (subjuntivo).'},
+{q:'"<b>Despite</b> the rain, we went out" está correto porque "despite" é seguido de <b>substantivo</b>.',a:true,e:'Despite + noun/gerund. "Despite the rain" ✅. "Despite it rained" ❌ (precisaria de "although"). Although + sujeito+verbo.'},
+{q:'O modal <b>"must not"</b> e <b>"don\'t have to"</b> têm o mesmo significado.',a:false,e:'Must not = PROIBIDO (proibição). Don\'t have to = não precisa (sem obrigação). Significados completamente diferentes!'},
+{q:'No <b>Present Perfect</b>, usa-se <b>have/has + past participle</b>, com marcadores como <b>since, for, already, yet</b>.',a:true,e:'Present Perfect: have/has + past participle. Ação passada com conexão ao presente. Since (ponto), for (período), already, yet, just, ever, never.'},
+{q:'A palavra <b>"sensible"</b> é traduzida corretamente como <b>"sensível"</b>.',a:false,e:'FALSE FRIEND! "Sensible" = SENSATO. "Sensível" = sensitive.'},
+{q:'<b>"However"</b> e <b>"therefore"</b> são conectores com o mesmo sentido de <b>contraste</b>.',a:false,e:'However = porém/contudo (CONTRASTE). Therefore = portanto (CONSEQUÊNCIA). Sentidos opostos!'},
+{q:'Na voz passiva em inglês, usa-se <b>to be + past participle</b>: "The law <b>was approved</b> by Congress".',a:true,e:'Passive voice: to be + past participle (+ by agent). Foco no objeto/resultado. Active: "Congress approved the law."'}
+]},
+{id:'port',name:'Língua Portuguesa',icon:'📝',color:'#10b981',
+questions:[
+{q:'É <b>vedado</b> separar o sujeito do verbo por vírgula na ordem direta da oração.',a:true,e:'Regra de ouro da pontuação: NUNCA vírgula entre sujeito-verbo-complemento na ordem direta. "O policial, prendeu..." = ERRADO.'},
+{q:'O verbo <b>"haver"</b> no sentido de <b>existir</b> é <b>pessoal</b> e deve concordar com o sujeito.',a:false,e:'Haver (= existir) é IMPESSOAL, sempre na 3ª pessoa do SINGULAR. "Havia muitos candidatos" ✅. "Haviam muitos candidatos" ❌. Existir é pessoal: "Existiam muitos candidatos" ✅.'},
+{q:'O acento grave (crase) ocorre quando há a fusão da preposição <b>"a"</b> com o artigo feminino <b>"a"</b>.',a:true,e:'Crase = preposição "a" + artigo "a". Teste: troque por masculino → se aparecer "ao", há crase no feminino. "Fui à escola" / "Fui ao colégio".'},
+{q:'Na frase <b>"Vendem-se casas"</b>, o <b>SE</b> é índice de indeterminação do sujeito e o verbo fica no <b>singular</b>.',a:false,e:'"Vendem-se casas" → SE = partícula APASSIVADORA (VTD + SE). "Casas" é sujeito paciente → verbo no PLURAL. SE indeterminador = VTI/VI + SE → verbo no singular: "Precisa-se de funcionários".'},
+{q:'<b>Embora</b> (concessivo) exige verbo no <b>subjuntivo</b>: "Embora <b>estude</b>, não passou".',a:true,e:'Embora/conquanto/ainda que/mesmo que = conjunções concessivas → exigem SUBJUNTIVO. "Embora estude" ✅. "Embora estuda" ❌.'},
+{q:'O verbo <b>"implicar"</b> no sentido de "acarretar" é <b>transitivo indireto</b> e rege a preposição <b>"em"</b>.',a:false,e:'Implicar (= acarretar) é VTD, sem preposição. "A decisão implica mudanças" ✅. "A decisão implica em mudanças" ❌ (coloquial, não aceito na norma culta).'},
+{q:'A oração adjetiva <b>explicativa</b> vem entre vírgulas e acrescenta informação acessória.',a:true,e:'Explicativa = entre vírgulas, informação extra. "O deputado, que é advogado, votou." (todos são advogados). Restritiva = sem vírgulas, delimita. "Os deputados que são advogados votaram." (só os advogados).'},
+{q:'O <b>"porém"</b> pode iniciar período, diferentemente do <b>"mas"</b>, que a tradição gramatical recomenda não usar no início.',a:true,e:'Porém/contudo/entretanto/todavia podem iniciar período. "Mas" tradicionalmente não inicia (embora linguistas aceitem). CEBRASPE costuma cobrar isso.'}
+]},
+{id:'rl',name:'Raciocínio Lógico e Estatística',icon:'🧠',color:'#f59e0b',
+questions:[
+{q:'A condicional (P→Q) só é <b>falsa</b> quando P é <b>verdadeira</b> e Q é <b>falsa</b> (V→F).',a:true,e:'Macete "Vera Fischer": V→F = FALSO. Todos os outros casos = V. V→V=V, F→V=V, F→F=V.'},
+{q:'A negação de <b>"Se chove, então molha"</b> (P→Q) é <b>"Se não chove, então não molha"</b> (~P→~Q).',a:false,e:'~P→~Q é a INVERSA, não a negação! Negação de P→Q = P ∧ ~Q (MANE: mantém a 1ª E nega a 2ª). "Chove E não molha".'},
+{q:'Pela <b>Lei de De Morgan</b>, a negação de (P ∧ Q) equivale a <b>(~P ∨ ~Q)</b>.',a:true,e:'De Morgan: ~(P∧Q) = ~P∨~Q (nega ambas e troca E por OU). ~(P∨Q) = ~P∧~Q (nega ambas e troca OU por E).'},
+{q:'A <b>contrapositiva</b> de P→Q é <b>~Q→~P</b> e tem o <b>mesmo valor lógico</b> que a original.',a:true,e:'Contrapositiva = inverte + nega. P→Q ≡ ~Q→~P. É uma EQUIVALÊNCIA (mesmo valor lógico). Muito cobrada!'},
+{q:'Em combinação (Cn,p), a <b>ordem importa</b>, diferentemente do arranjo.',a:false,e:'Na COMBINAÇÃO a ordem NÃO importa (AB = BA). No ARRANJO a ordem importa (AB ≠ BA). Macete: Combinação = Comitê (não importa quem é 1º).'},
+{q:'A <b>mediana</b> é mais robusta que a <b>média</b> na presença de <b>outliers</b> (valores extremos).',a:true,e:'A mediana não é afetada por valores extremos, sendo mais representativa em dados assimétricos. A média é "puxada" pelos outliers.'},
+{q:'A <b>variância amostral</b> utiliza <b>n</b> no denominador, enquanto a populacional usa <b>n-1</b>.',a:false,e:'É o CONTRÁRIO! Variância AMOSTRAL divide por (n-1) — correção de Bessel. POPULACIONAL divide por n.'},
+{q:'Se o <b>p-valor</b> for <b>menor</b> que o nível de significância (α), <b>rejeitamos</b> a hipótese nula (H₀).',a:true,e:'p-valor < α → rejeita H₀ (há evidência de diferença). p-valor ≥ α → NÃO rejeita H₀. Geralmente α = 0,05 (5%).'}
+]}
+];
+
+// ═══════════════════════════════════════════════
+// ESTADO DO QUIZ
+// ═══════════════════════════════════════════════
+let currentSubject = null;
+let currentQIndex = 0;
+let results = {}; // {subjectId: [{correct:bool, qIndex}]}
+let answeredSubjects = new Set();
+
+function init() {
+  SUBJECTS.forEach(s => { results[s.id] = []; });
+  renderSubjectGrid();
+  document.getElementById('totalQ').textContent = SUBJECTS.reduce((a,s)=>a+s.questions.length,0);
+}
+
+function renderSubjectGrid() {
+  const grid = document.getElementById('subjectGrid');
+  grid.innerHTML = SUBJECTS.map(s => {
+    const done = answeredSubjects.has(s.id);
+    const res = results[s.id];
+    const correct = res.filter(r=>r.correct).length;
+    const pct = res.length ? Math.round(correct/res.length*100) : 0;
+    const pillColor = pct >= 70 ? '#22c55e' : pct >= 50 ? '#f59e0b' : '#ef4444';
+    const pillBg = pct >= 70 ? 'rgba(34,197,94,.15)' : pct >= 50 ? 'rgba(245,158,11,.15)' : 'rgba(239,68,68,.15)';
+    return `<div class="subj-btn ${done?'done':''} ${currentSubject&&currentSubject.id===s.id?'active':''}" onclick="selectSubject('${s.id}')" style="${done?'border-color:'+pillColor:''}">
+      <div class="si">${s.icon}</div>
+      <div class="sn">${s.name}</div>
+      <div class="sq">${s.questions.length} questões</div>
+      <div class="score-pill" style="background:${pillBg};color:${pillColor}">${pct}%</div>
+    </div>`;
+  }).join('');
+}
+
+function selectSubject(id) {
+  if (answeredSubjects.has(id)) { showStats(); return; }
+  currentSubject = SUBJECTS.find(s=>s.id===id);
+  currentQIndex = 0;
+  document.getElementById('quizArea').classList.add('active');
+  document.getElementById('statsDash').classList.remove('active');
+  renderSubjectGrid();
+  showQuestion();
+}
+
+function showQuestion() {
+  const q = currentSubject.questions[currentQIndex];
+  const total = currentSubject.questions.length;
+  document.getElementById('progFill').style.width = ((currentQIndex)/total*100)+'%';
+  document.getElementById('qCounter').textContent = `${currentSubject.icon} ${currentSubject.name} — Questão ${currentQIndex+1} de ${total}`;
+  document.getElementById('qSubject').textContent = currentSubject.name.toUpperCase();
+  document.getElementById('qSubject').style.color = currentSubject.color;
+  document.getElementById('qText').innerHTML = q.q;
+  document.getElementById('feedback').className = 'feedback';
+  document.getElementById('feedback').innerHTML = '';
+  document.getElementById('nextBtn').className = 'next-btn';
+  document.getElementById('qCard').className = 'q-card';
+  const btnC = document.getElementById('btnC');
+  const btnE = document.getElementById('btnE');
+  btnC.className = 'opt-btn'; btnE.className = 'opt-btn';
+  window.scrollTo({top: document.getElementById('quizArea').offsetTop - 20, behavior:'smooth'});
+}
+
+function answer(userSaidTrue) {
+  const btnC = document.getElementById('btnC');
+  const btnE = document.getElementById('btnE');
+  if (btnC.classList.contains('locked')) return;
+  
+  const q = currentSubject.questions[currentQIndex];
+  const isCorrect = (userSaidTrue === q.a);
+  
+  results[currentSubject.id].push({correct: isCorrect, qIndex: currentQIndex});
+  
+  btnC.classList.add('locked'); btnE.classList.add('locked');
+  
+  if (userSaidTrue) {
+    btnC.classList.add(isCorrect ? 'sel-c' : 'sel-e');
+    if (!isCorrect) btnE.classList.add('reveal-c');
+  } else {
+    btnE.classList.add(isCorrect ? 'sel-c' : 'sel-e');
+    if (!isCorrect) btnC.classList.add('reveal-c');
+  }
+  
+  document.getElementById('qCard').classList.add(isCorrect ? 'correct' : 'wrong');
+  
+  const fb = document.getElementById('feedback');
+  fb.className = `feedback show ${isCorrect ? 'fb-c' : 'fb-e'}`;
+  fb.innerHTML = `<b>${isCorrect ? '✅ Correto!' : '❌ Errado!'}</b> ${q.e}`;
+  
+  document.getElementById('nextBtn').className = 'next-btn show';
+  document.getElementById('nextBtn').textContent = currentQIndex < currentSubject.questions.length - 1 ? 'Próxima →' : 'Ver Resultado →';
+}
+
+function nextQuestion() {
+  currentQIndex++;
+  if (currentQIndex >= currentSubject.questions.length) {
+    answeredSubjects.add(currentSubject.id);
+    document.getElementById('progFill').style.width = '100%';
+    renderSubjectGrid();
+    if (answeredSubjects.size === SUBJECTS.length) {
+      showStats();
+    } else {
+      document.getElementById('quizArea').classList.remove('active');
+      currentSubject = null;
+      renderSubjectGrid();
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+    return;
+  }
+  showQuestion();
+}
+
+// ═══════════════════════════════════════════════
+// DASHBOARD DE ESTATÍSTICAS
+// ═══════════════════════════════════════════════
+function showStats() {
+  document.getElementById('quizArea').classList.remove('active');
+  document.getElementById('statsDash').classList.add('active');
+  
+  let totalCorrect = 0, totalQ = 0;
+  SUBJECTS.forEach(s => {
+    const r = results[s.id];
+    totalCorrect += r.filter(x=>x.correct).length;
+    totalQ += r.length;
+  });
+  
+  const globalPct = totalQ ? Math.round(totalCorrect/totalQ*100) : 0;
+  const wrongTotal = totalQ - totalCorrect;
+  
+  // Build stats
+  let html = `
+  <div class="stats-header">
+    <h2>📊 Resultado Final</h2>
+    <div class="big-score">${globalPct}%</div>
+    <div class="big-label">${totalCorrect} de ${totalQ} questões corretas</div>
+  </div>
+  
+  <div class="perf-grid">
+    <div class="perf-card"><div class="pv" style="color:#22c55e">${totalCorrect}</div><div class="pl">Acertos</div></div>
+    <div class="perf-card"><div class="pv" style="color:#ef4444">${wrongTotal}</div><div class="pl">Erros</div></div>
+    <div class="perf-card"><div class="pv" style="color:#6366f1">${totalQ}</div><div class="pl">Total</div></div>
+    <div class="perf-card"><div class="pv" style="color:#f59e0b">${answeredSubjects.size}/${SUBJECTS.length}</div><div class="pl">Matérias</div></div>
+  </div>`;
+  
+  // Alerts based on performance
+  if (globalPct >= 80) {
+    html += `<div class="alert-box success">🏆 <b>Excelente!</b> Você está muito bem preparado. Continue revisando os pontos que errou para garantir a aprovação.</div>`;
+  } else if (globalPct >= 60) {
+    html += `<div class="alert-box warning">⚡ <b>Bom desempenho!</b> Foque nas matérias abaixo de 70% para subir sua nota. Os pontos fracos são decisivos na prova.</div>`;
+  } else {
+    html += `<div class="alert-box danger">🔴 <b>Atenção!</b> Revise com urgência os resumos rápidos das matérias com menor pontuação. Concentre-se nos conceitos fundamentais.</div>`;
+  }
+  
+  // Per-subject breakdown
+  html += `<div class="subj-stats">`;
+  
+  const sorted = [...SUBJECTS].sort((a,b) => {
+    const pa = results[a.id].length ? results[a.id].filter(x=>x.correct).length/results[a.id].length : -1;
+    const pb = results[b.id].length ? results[b.id].filter(x=>x.correct).length/results[b.id].length : -1;
+    return pa - pb; // worst first
+  });
+  
+  sorted.forEach(s => {
+    const r = results[s.id];
+    if (!r.length) {
+      html += `<div class="ss-row" style="opacity:.5">
+        <div class="ss-icon">${s.icon}</div>
+        <div class="ss-info"><div class="ss-name">${s.name}</div><div class="ss-detail">Não respondida</div></div>
+        <div class="ss-score" style="color:#64748b">—</div>
+      </div>`;
+      return;
+    }
+    const correct = r.filter(x=>x.correct).length;
+    const pct = Math.round(correct/r.length*100);
+    const barColor = pct >= 80 ? '#22c55e' : pct >= 60 ? '#f59e0b' : '#ef4444';
+    const badge = pct >= 80 ? '<span class="ss-badge" style="background:rgba(34,197,94,.15);color:#22c55e">Ótimo</span>' :
+                  pct >= 60 ? '<span class="ss-badge" style="background:rgba(245,158,11,.15);color:#f59e0b">Revisar</span>' :
+                              '<span class="ss-badge" style="background:rgba(239,68,68,.15);color:#ef4444">Atenção!</span>';
+    
+    // List wrong questions
+    const wrongQs = r.filter(x=>!x.correct).map(x => {
+      const q = s.questions[x.qIndex];
+      return q.e.split('.')[0];
+    });
+    const wrongText = wrongQs.length ? `Errou: ${wrongQs.join(' | ')}` : 'Acertou tudo! 🎯';
+    
+    html += `<div class="ss-row">
+      <div class="ss-icon">${s.icon}</div>
+      <div class="ss-info">
+        <div class="ss-name">${s.name} ${badge}</div>
+        <div class="ss-detail">${correct}/${r.length} corretas • ${wrongText}</div>
+        <div class="ss-bar-bg"><div class="ss-bar-fill" style="width:${pct}%;background:${barColor}"></div></div>
+      </div>
+      <div class="ss-score" style="color:${barColor}">${pct}%</div>
+    </div>`;
+  });
+  
+  html += `</div>`;
+  
+  // Weak points summary
+  const weakSubjects = sorted.filter(s => {
+    const r = results[s.id];
+    return r.length && (r.filter(x=>x.correct).length / r.length) < 0.7;
+  });
+  
+  if (weakSubjects.length) {
+    html += `<div class="alert-box danger">📋 <b>Priorize a revisão de:</b> ${weakSubjects.map(s => s.name).join(', ')}. Releia os resumos rápidos dessas matérias antes da prova.</div>`;
+  }
+  
+  html += `<button class="restart-btn" onclick="restart()">🔄 Refazer Questionário</button>`;
+  html += `<button class="restart-btn" onclick="window.location.href='reta-final.html'" style="background:linear-gradient(135deg,#334155,#475569);margin-top:8px">← Voltar para Revisões</button>`;
+  
+  document.getElementById('statsDash').innerHTML = html;
+  renderSubjectGrid();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function restart() {
+  SUBJECTS.forEach(s => { results[s.id] = []; });
+  answeredSubjects.clear();
+  currentSubject = null;
+  currentQIndex = 0;
+  document.getElementById('statsDash').classList.remove('active');
+  document.getElementById('quizArea').classList.remove('active');
+  renderSubjectGrid();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+init();
+
+// ═══════════════════════════════════════════════
+// KEYBOARD SHORTCUTS
+// ═══════════════════════════════════════════════
+document.addEventListener('keydown', function(e) {
+  const key = e.key.toLowerCase();
+  const quizActive = document.getElementById('quizArea').classList.contains('active');
+  const statsActive = document.getElementById('statsDash').classList.contains('active');
+  const btnC = document.getElementById('btnC');
+  
+  // C = Certo
+  if (key === 'c' && quizActive && !btnC.classList.contains('locked')) {
+    e.preventDefault(); answer(true); return;
+  }
+  // E = Errado
+  if (key === 'e' && quizActive && !btnC.classList.contains('locked')) {
+    e.preventDefault(); answer(false); return;
+  }
+  // Enter or ArrowRight = Next
+  if ((key === 'enter' || key === 'arrowright') && quizActive && document.getElementById('nextBtn').classList.contains('show')) {
+    e.preventDefault(); nextQuestion(); return;
+  }
+  // 1-9,0 = select subject
+  if (!quizActive && !statsActive && '1234567890'.includes(key)) {
+    const idx = key === '0' ? 9 : parseInt(key) - 1;
+    if (idx < SUBJECTS.length) { e.preventDefault(); selectSubject(SUBJECTS[idx].id); }
+    return;
+  }
+  // R = restart (only on stats screen)
+  if (key === 'r' && statsActive) { e.preventDefault(); restart(); return; }
+  // H = toggle help
+  if (key === 'h') { e.preventDefault(); toggleKbdPanel(); return; }
+  // Escape = close help or go back
+  if (key === 'escape') {
+    const panel = document.getElementById('kbdPanel');
+    if (panel.classList.contains('show')) { panel.classList.remove('show'); return; }
+    if (quizActive) {
+      document.getElementById('quizArea').classList.remove('active');
+      currentSubject = null; renderSubjectGrid();
+      window.scrollTo({top:0,behavior:'smooth'});
+      return;
+    }
+  }
+});
+
+function toggleKbdPanel() {
+  document.getElementById('kbdPanel').classList.toggle('show');
+}
+
+// ═══════════════════════════════════════════════
+// TOUCH / SWIPE SUPPORT
+// ═══════════════════════════════════════════════
+let touchStartX = 0, touchStartY = 0;
+document.addEventListener('touchstart', function(e) {
+  touchStartX = e.changedTouches[0].screenX;
+  touchStartY = e.changedTouches[0].screenY;
+}, {passive:true});
+
+document.addEventListener('touchend', function(e) {
+  const dx = e.changedTouches[0].screenX - touchStartX;
+  const dy = e.changedTouches[0].screenY - touchStartY;
+  if (Math.abs(dx) < 60 || Math.abs(dy) > Math.abs(dx)) return; // too short or vertical
+  
+  const quizActive = document.getElementById('quizArea').classList.contains('active');
+  if (!quizActive) return;
+  
+  // Swipe left = next question (if answered)
+  if (dx < -60 && document.getElementById('nextBtn').classList.contains('show')) {
+    nextQuestion();
+  }
+  // Swipe right = go back to subject selection
+  if (dx > 80) {
+    document.getElementById('quizArea').classList.remove('active');
+    currentSubject = null; renderSubjectGrid();
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+}, {passive:true});
+</script>
+</body>
+</html>
