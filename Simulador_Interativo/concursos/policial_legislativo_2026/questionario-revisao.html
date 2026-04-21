@@ -447,7 +447,7 @@ function answer(userSaidTrue) {
   
   const fb = document.getElementById('feedback');
   fb.className = `feedback show ${isCorrect ? 'fb-c' : 'fb-e'}`;
-  fb.innerHTML = `<b>${isCorrect ? '✅ Correto!' : '❌ Errado!'}</b> ${q.e}`;
+  fb.innerHTML = `<b>${isCorrect ? '✅ Você acertou!' : '❌ Você errou!'}</b> ${q.e}`;
   
   document.getElementById('nextBtn').className = 'next-btn show';
   document.getElementById('nextBtn').textContent = currentQIndex < currentSubject.questions.length - 1 ? 'Próxima →' : 'Ver Resultado →';
