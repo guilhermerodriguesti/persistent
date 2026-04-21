@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão Rápida – Direitos Humanos e Legislação Correlata</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#581c87,#d946ef);border-radius:16px;margin-bottom:20px;box-shadow:0 8px 32px rgba(217,70,239,0.3)}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:13px;color:#f5d0fe;margin-bottom:12px}
+.stats-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hstat{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(255,255,255,0.1);color:#f5d0fe;border:1px solid rgba(255,255,255,0.15)}
+.hstat b{font-size:15px;color:#fff}
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:16px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #e879f9;color:#a21caf;background:#fdf4ff;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:#d946ef;color:#fff;border-color:#d946ef}
+.search-box{margin-bottom:16px;display:flex;gap:8px}
+.search-box input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-size:13px;outline:none}
+.search-box input:focus{border-color:#d946ef}
+.ebtn{padding:8px 16px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#a21caf;cursor:pointer;font-size:11px;font-weight:700}
+.ebtn:hover{background:#d946ef;color:#fff;border-color:#d946ef}
+.macro{margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.mh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.mh:hover{background:#fdf4ff}
+.mi{font-size:26px;flex-shrink:0}
+.minfo{flex:1}.mt{font-size:17px;font-weight:800;color:#1e293b}
+.mm{font-size:11px;color:#64748b;margin-top:2px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#fdf4ff;color:#a21caf;border:1px solid #e879f9}
+.chv{font-size:14px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.macro.open .chv{transform:rotate(90deg)}
+.mb{display:none;padding:0 18px 18px;border-top:1px solid #f1f5f9}
+.macro.open .mb{display:block}
+.tp{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc}
+.th{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;transition:background .2s}
+.th:hover{background:#fdf4ff}
+.tt{flex:1;font-size:13px;font-weight:700;color:#1e293b}
+.tc{font-size:10px;color:#64748b;font-weight:600;padding:2px 8px;background:#f1f5f9;border-radius:10px;border:1px solid #e2e8f0}
+.tv{font-size:11px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.tp.open .tv{transform:rotate(90deg)}
+.tb{display:none;padding:0 14px 14px;border-top:1px solid #f1f5f9}
+.tp.open .tb{display:block}
+.kp h4{font-size:12px;font-weight:700;color:#a21caf;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.kp h4::before{content:'💡'}
+ul.k{list-style:none;padding:0}
+ul.k li{padding:6px 10px 6px 20px;font-size:12px;color:#334155;margin-bottom:3px;border-radius:6px;background:#f1f5f9;position:relative;line-height:1.5}
+ul.k li::before{content:'▸';position:absolute;left:8px;color:#d946ef;font-weight:700}
+ul.k li b{color:#1e293b}
+.ex{margin-top:8px;padding:10px 14px;background:#fdf4ff;border:1px solid #e879f9;border-radius:8px}
+.ex h4{font-size:12px;font-weight:700;color:#a21caf;margin-bottom:6px}
+.ex h4::before{content:'📌 '}
+.ex p,.ex li{font-size:11px;color:#581c87;line-height:1.5}
+.trap{margin-top:10px;padding:10px 14px;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px}
+.trap h4{font-size:12px;font-weight:700;color:#dc2626;margin-bottom:6px}
+.trap h4::before{content:'⚠️ '}
+ul.t{list-style:none;padding:0}
+ul.t li{padding:4px 10px 4px 20px;font-size:11px;color:#7f1d1d;margin-bottom:2px;position:relative;line-height:1.4}
+ul.t li::before{content:'✗';position:absolute;left:6px;color:#dc2626;font-weight:700}
+ul.t li b{color:#1e293b}
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#d946ef;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(217,70,239,.4);z-index:100;text-decoration:none}
+.back-btn:hover{background:#a21caf}
+.scroll-top{position:fixed;bottom:64px;right:20px;width:40px;height:40px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#1e293b;font-size:16px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{background:#d946ef;color:#fff;border-color:#d946ef}
+@media(max-width:768px){.container{padding:10px}.header h1{font-size:18px}.mt{font-size:15px}.nav-btn{padding:5px 8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🤝 Revisão Rápida – Direitos Humanos e Legislação Correlata</h1>
+<div class="sub">Policial Legislativo CD 2026 • Conceitos práticos com exemplos • Revisão 1 dia antes da prova</div>
+<div class="stats-row">
+<div class="hstat">📂 <b>6</b> temas do edital</div>
+<div class="hstat">📑 <b>18</b> subtópicos</div>
+<div class="hstat">📌 <b>Exemplos</b> e macetes</div>
+<div class="hstat">⚡ <b>Rápido</b> e prático</div>
+</div>
+</div>
+<div class="nav-bar">
+<span class="nav-btn" onclick="scrollToSection('m1')">1. Conceito/Gerações</span>
+<span class="nav-btn" onclick="scrollToSection('m2')">2. DH na CF/88</span>
+<span class="nav-btn" onclick="scrollToSection('m3')">3. CADH (Pacto SJ)</span>
+<span class="nav-btn" onclick="scrollToSection('m4')">4. DUDH 1948</span>
+<span class="nav-btn" onclick="scrollToSection('m5')">5. Uso da Força</span>
+<span class="nav-btn" onclick="scrollToSection('m6')">6. Cód. Conduta ONU</span>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Buscar conceito, artigo ou exemplo..." onkeyup="filterContent()">
+<button class="ebtn" onclick="toggleAll(true)">▼ Abrir Tudo</button>
+<button class="ebtn" onclick="toggleAll(false)">▲ Fechar Tudo</button>
+</div>
+
+<!-- ══════════ 1. CONCEITO, PRINCÍPIOS E GERAÇÕES ══════════ -->
+<div class="macro" id="m1">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🌍</div>
+<div class="minfo"><div class="mt">1. Conceito, Princípios e Gerações de DH</div><div class="mm">Definição, características, princípios essenciais, 5 gerações/dimensões</div></div>
+<span class="badge">Edital §1.1</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Conceito e Princípios Essenciais</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Direitos Humanos</b>: direitos inerentes a <b>todos os seres humanos</b>, independente de raça, sexo, nacionalidade, religião → baseados na <b>dignidade da pessoa humana</b></li>
+<li><b>Universalidade</b>: valem para <b>todos</b>, em todo lugar, a qualquer tempo</li>
+<li><b>Indivisibilidade</b>: DH formam um <b>bloco único</b> — não se pode garantir uns e negar outros</li>
+<li><b>Interdependência</b>: se complementam mutuamente (um depende do outro para ser efetivo)</li>
+<li><b>Inalienabilidade</b>: não podem ser vendidos, cedidos ou renunciados</li>
+<li><b>Imprescritibilidade</b>: não se perdem com o tempo</li>
+<li><b>Irrenunciabilidade</b>: titular não pode abrir mão de seus DH</li>
+<li><b>Historicidade</b>: são construídos ao longo da história (não são estáticos)</li>
+<li><b>Proibição do retrocesso</b>: uma vez conquistado, não se pode retroceder na proteção</li>
+<li><b>Princípio pro persona (pro homine)</b>: aplica-se a norma <b>mais favorável</b> ao ser humano</li>
+</ul></div>
+<div class="ex"><h4>Macete para princípios</h4>
+<p><b>U-I-I-I-I-H</b>: <b>U</b>niversalidade, <b>I</b>ndivisibilidade, <b>I</b>nterdependência, <b>I</b>nalienabilidade, <b>I</b>mprescritibilidade, <b>H</b>istoricidade</p>
+<p>Regra de ouro: na dúvida entre duas normas → aplica a mais <b>protetiva</b> (pro persona)</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Gerações (Dimensões) de Direitos Humanos</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>1ª Geração — LIBERDADE</b> (séc. XVIII): direitos civis e políticos. Estado <b>NÃO interfere</b> (prestação negativa). Ex.: vida, liberdade, propriedade, voto, expressão. Revolução Francesa 🇫🇷</li>
+<li><b>2ª Geração — IGUALDADE</b> (séc. XIX-XX): direitos sociais, econômicos e culturais. Estado <b>age</b> (prestação positiva). Ex.: saúde, educação, trabalho, moradia. Constituição de Weimar 🇩🇪</li>
+<li><b>3ª Geração — FRATERNIDADE</b> (séc. XX): direitos difusos/coletivos. Titularidade <b>coletiva</b>. Ex.: meio ambiente, paz, desenvolvimento, patrimônio da humanidade</li>
+<li><b>4ª Geração</b> (Bonavides): globalização, democracia, informação, pluralismo. Ex.: direito à democracia direta, biotecnologia</li>
+<li><b>5ª Geração</b> (Bonavides): direito à <b>paz</b> como direito supremo da humanidade</li>
+<li>ATENÇÃO: as gerações <b>NÃO se substituem</b> — se <b>acumulam</b> (por isso muitos preferem "dimensões")</li>
+</ul></div>
+<div class="ex"><h4>Macete "LIF" — Lema da Rev. Francesa</h4>
+<p>🗽 1ª = <b>L</b>iberdade (abstenção do Estado) — civis/políticos<br>
+⚖️ 2ª = <b>I</b>gualdade (ação do Estado) — sociais/econômicos<br>
+🤝 3ª = <b>F</b>raternidade (coletividade) — difusos</p>
+<p>Documentos-chave: 1ª → Declaração dos Direitos do Homem 1789 | 2ª → Weimar 1919 | 3ª → Estocolmo 1972</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"As gerações se substituem" — <b>ERRADO</b>, se acumulam</li>
+<li>"2ª geração exige abstenção do Estado" — <b>ERRADO</b>, exige ação (prestação positiva)</li>
+<li>"Direito ao meio ambiente é de 1ª geração" — <b>ERRADO</b>, é 3ª geração</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 2. DH NA CF/88 ══════════ -->
+<div class="macro" id="m2">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🇧🇷</div>
+<div class="minfo"><div class="mt">2. Direitos Humanos na CF/88</div><div class="mm">Dignidade, art. 4º II, art. 5º §§2º e 3º, incorporação de tratados, hierarquia</div></div>
+<span class="badge">Edital §1.2</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">DH na Constituição Federal</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Art. 1º III CF</b>: dignidade da pessoa humana é <b>fundamento</b> da República</li>
+<li><b>Art. 4º II CF</b>: prevalência dos DH é <b>princípio</b> das relações internacionais do Brasil</li>
+<li><b>Art. 5º §2º CF (cláusula de abertura)</b>: direitos do art. 5º NÃO excluem outros decorrentes de tratados internacionais → rol <b>exemplificativo</b></li>
+<li><b>Art. 5º §3º CF (EC 45/2004)</b>: tratados de DH aprovados com rito de <b>EC</b> (3/5 + 2 turnos + 2 casas) → <b>status constitucional</b></li>
+<li><b>Tratados de DH NÃO aprovados com rito de EC</b>: status <b>supralegal</b> (acima da lei, abaixo da CF) — decisão do STF (RE 466.343)</li>
+<li><b>Tratados comuns</b> (não DH): status de <b>lei ordinária</b></li>
+<li>Único tratado com status constitucional até hoje: <b>Convenção de NY sobre PcD</b> (Dec. 6.949/2009)</li>
+<li><b>IDC (Incidente de Deslocamento de Competência)</b> — art. 109 §5º CF: PGR pode pedir ao STJ deslocamento de processo para Justiça Federal em caso de <b>grave violação de DH</b></li>
+</ul></div>
+<div class="ex"><h4>Hierarquia dos tratados no Brasil</h4>
+<p>🔝 <b>Constitucional</b> = tratado DH + rito de EC (§3º) → ex.: Convenção NY/PcD<br>
+📊 <b>Supralegal</b> = tratado DH SEM rito de EC → ex.: Pacto de São José (CADH)<br>
+📋 <b>Legal (lei ordinária)</b> = tratado NÃO de DH</p>
+<p>Art. 5º §2º = "há mais direitos além dos listados" (cláusula aberta)</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Todo tratado de DH tem status constitucional" — <b>ERRADO</b>, só se aprovado com rito de EC</li>
+<li>"CADH tem status constitucional" — <b>ERRADO</b>, tem status supralegal (não foi aprovada com rito do §3º)</li>
+<li>"Art. 5º é rol taxativo de direitos" — <b>ERRADO</b>, é exemplificativo (§2º)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 3. CADH (PACTO DE SÃO JOSÉ) ══════════ -->
+<div class="macro" id="m3">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">⚖️</div>
+<div class="minfo"><div class="mt">3. CADH — Pacto de São José da Costa Rica</div><div class="mm">Direitos protegidos, Comissão e Corte IDH, sistema interamericano, petições</div></div>
+<span class="badge">Edital §1.3-1.4</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Direitos Protegidos pela CADH</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Direito à vida</b> (art. 4): protegida desde a <b>concepção</b>. Pena de morte: NÃO pode ser restabelecida em país que aboliu. Não pode ser imposta a &lt;18 anos, &gt;70 anos, gestante</li>
+<li><b>Integridade pessoal</b> (art. 5): proibição de tortura e penas cruéis. Penas privativas de liberdade: finalidade = <b>reforma e readaptação social</b></li>
+<li><b>Proibição da escravidão</b> (art. 6). <b>Liberdade pessoal</b> (art. 7): preso deve ser levado a juiz <b>sem demora</b></li>
+<li><b>Garantias judiciais</b> (art. 8): juiz imparcial, presunção de inocência, direito de defesa, não autoincriminação, duplo grau de jurisdição</li>
+<li><b>Liberdade de pensamento e expressão</b> (art. 13): proibida censura prévia (CADH). Responsabilidade ulterior é possível</li>
+<li><b>Direito de resposta</b> (art. 14). <b>Direito de reunião</b> (art. 15). <b>Liberdade de associação</b> (art. 16)</li>
+<li><b>Proteção da família</b> (art. 17). <b>Direitos da criança</b> (art. 19). <b>Nacionalidade</b> (art. 20): toda pessoa tem direito a uma nacionalidade</li>
+<li><b>Propriedade privada</b> (art. 21): sujeita ao interesse social. <b>Circulação/residência</b> (art. 22)</li>
+<li><b>Direitos políticos</b> (art. 23). <b>Igualdade perante a lei</b> (art. 24). <b>Proteção judicial</b> (art. 25): recurso efetivo perante juiz</li>
+<li><b>NÃO há na CADH</b>: direitos sociais detalhados (saúde, educação) — art. 26 é genérico ("desenvolvimento progressivo")</li>
+</ul></div>
+<div class="ex"><h4>Pena de morte na CADH</h4>
+<p>🚫 Aboliu? <b>NÃO pode restabelecer</b><br>
+👶 NÃO para: &lt;18 anos | 👴 &gt;70 anos | 🤰 gestante<br>
+⚠️ Só para crimes <b>mais graves</b> (onde ainda existe)</p>
+<p>Censura prévia: <b>proibida pela CADH</b> (diferente de responsabilidade posterior, que é permitida)</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Sistema Interamericano: Comissão e Corte IDH</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Comissão Interamericana (CIDH)</b>: sede em <b>Washington</b>. 7 membros (4 anos, recondução 1x). Funções: receber <b>petições individuais</b>, publicar relatórios, visitas in loco, recomendar</li>
+<li><b>Corte IDH</b>: sede em <b>San José, Costa Rica</b>. 7 juízes (6 anos, recondução 1x). Competência: contenciosa (julga Estados) e consultiva (interpreta tratados)</li>
+<li><b>Quem pode peticionar à Comissão</b>: qualquer <b>pessoa, grupo ou ONG</b> (indivíduos PODEM). NÃO precisa esgotar recursos internos se houver demora injustificada</li>
+<li><b>Quem pode acionar a Corte</b>: somente a <b>Comissão</b> e os <b>Estados-parte</b>. Indivíduos NÃO acessam a Corte diretamente</li>
+<li><b>Requisitos para petição à CIDH</b>: esgotamento dos recursos internos (regra), prazo de <b>6 meses</b> após decisão final interna, não estar pendente em outra instância</li>
+<li><b>Medidas provisórias</b>: Corte pode ordenar em casos de <b>extrema gravidade e urgência</b></li>
+<li><b>Sentenças da Corte</b>: definitivas, <b>inapeláveis</b>, obrigatórias para os Estados que aceitaram jurisdição</li>
+<li><b>Brasil</b>: reconheceu a jurisdição da Corte IDH em 1998 (Dec. 4.463/2002), para fatos <b>posteriores</b></li>
+</ul></div>
+<div class="ex"><h4>Comissão vs Corte — diferenças essenciais</h4>
+<p>📋 <b>Comissão (CIDH)</b> = Washington | 7 membros | Recebe petições de QUALQUER pessoa | Recomenda<br>
+⚖️ <b>Corte IDH</b> = San José | 7 juízes | Só Comissão e Estados acionam | Sentença vinculante</p>
+<p>Indivíduo → <b>Comissão</b> → (se necessário) → <b>Corte</b>. Indivíduo NUNCA vai direto à Corte</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Indivíduo pode acionar diretamente a Corte IDH" — <b>ERRADO</b>, só via Comissão ou Estado</li>
+<li>"Comissão fica em San José" — <b>ERRADO</b>, Comissão = Washington; Corte = San José</li>
+<li>"Sentenças da Corte são recorríveis" — <b>ERRADO</b>, são definitivas e inapeláveis</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Casos Emblemáticos contra o Brasil</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Ximenes Lopes (2006)</b>: 1º caso em que Brasil foi condenado pela Corte IDH. Morte em hospital psiquiátrico. Tema: saúde mental, maus-tratos</li>
+<li><b>Gomes Lund (Guerrilha do Araguaia, 2010)</b>: Corte condenou Brasil por desaparecimentos forçados na ditadura. Declarou Lei de Anistia <b>incompatível</b> com a CADH</li>
+<li><b>Trabalhadores da Fazenda Brasil Verde (2016)</b>: trabalho escravo. Brasil condenado por violação à proibição de escravidão e tráfico de pessoas</li>
+<li><b>Favela Nova Brasília (2017)</b>: execuções extrajudiciais em operações policiais no RJ</li>
+</ul></div>
+<div class="ex"><h4>Para decorar</h4>
+<p>1️⃣ <b>Ximenes</b> = 1ª condenação do BR | 2️⃣ <b>Gomes Lund</b> = Lei de Anistia incompatível | 3️⃣ <b>Brasil Verde</b> = trabalho escravo | 4️⃣ <b>Nova Brasília</b> = violência policial</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 4. DUDH 1948 ══════════ -->
+<div class="macro" id="m4">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📜</div>
+<div class="minfo"><div class="mt">4. Declaração Universal dos Direitos Humanos (1948)</div><div class="mm">Natureza jurídica, estrutura, artigos-chave, direitos civis/sociais</div></div>
+<span class="badge">Edital §2</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">DUDH — Pontos Essenciais</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Aprovada</b>: 10/12/1948, Assembleia Geral da ONU (Paris). <b>30 artigos</b></li>
+<li><b>Natureza jurídica</b>: <b>resolução</b> da AG/ONU → NÃO é tratado, NÃO é vinculante formalmente. Porém, é considerada <b>costume internacional</b> (soft law com força moral)</li>
+<li><b>Art. 1º</b>: "Todos os seres humanos nascem <b>livres e iguais</b> em dignidade e direitos, dotados de razão e consciência"</li>
+<li><b>Art. 2º</b>: Direitos sem distinção (raça, cor, sexo, língua, religião, opinião, origem, riqueza, nascimento)</li>
+<li><b>Arts. 3-21</b>: Direitos <b>civis e políticos</b> (1ª geração): vida, liberdade, segurança, proibição de tortura/escravidão, devido processo, asilo, nacionalidade, casamento, propriedade, reunião, voto</li>
+<li><b>Arts. 22-27</b>: Direitos <b>econômicos, sociais e culturais</b> (2ª geração): trabalho, repouso, nível de vida adequado, saúde, educação, cultura</li>
+<li><b>Arts. 28-30</b>: Disposições gerais: ordem social/internacional para efetivação dos DH; deveres para com a comunidade; limitação de direitos apenas por lei</li>
+<li><b>Art. 29</b>: toda pessoa tem <b>deveres</b> para com a comunidade. Direitos podem ser limitados por lei para garantir direitos de outros</li>
+</ul></div>
+<div class="ex"><h4>Estrutura da DUDH</h4>
+<p>📝 <b>30 artigos</b> divididos em:<br>
+1-2 = princípios (liberdade, igualdade, não discriminação)<br>
+3-21 = direitos <b>civis/políticos</b> (1ª geração)<br>
+22-27 = direitos <b>sociais/econômicos/culturais</b> (2ª geração)<br>
+28-30 = deveres e disposições gerais</p>
+<p>DUDH = <b>NÃO é tratado</b>, mas é <b>referência universal</b> de DH</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"DUDH é um tratado internacional vinculante" — <b>ERRADO</b>, é resolução (não vinculante formalmente)</li>
+<li>"DUDH só trata de direitos civis" — <b>ERRADO</b>, inclui sociais (arts. 22-27)</li>
+<li>"DUDH não prevê deveres" — <b>ERRADO</b>, art. 29 prevê deveres para com a comunidade</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 5. USO DA FORÇA ══════════ -->
+<div class="macro" id="m5">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔫</div>
+<div class="minfo"><div class="mt">5. Uso da Força — Lei 13.060/2014, Dec. 12.341/2024 e Princípios de Havana</div><div class="mm">Instrumentos de menor potencial ofensivo, proporcionalidade, legalidade, necessidade</div></div>
+<span class="badge">Edital §3.1 e 3.3</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Lei 13.060/2014 e Princípios sobre Uso da Força</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Lei 13.060/2014</b>: disciplina o uso de <b>instrumentos de menor potencial ofensivo</b> (spray, taser, munição de borracha, etc.) por agentes de segurança pública</li>
+<li><b>Regra</b>: agentes devem priorizar o uso de instrumentos de <b>menor potencial ofensivo</b> sempre que possível</li>
+<li><b>Arma de fogo (letal)</b>: só em <b>último caso</b> → quando houver <b>risco iminente de morte ou lesão grave</b> ao agente ou a terceiro, e os meios menos letais não forem suficientes</li>
+<li><b>Princípios do uso da força — "LNP + CR"</b>:<br>
+⚖️ <b>L</b>egalidade: respaldo legal para a ação<br>
+🎯 <b>N</b>ecessidade: força só quando indispensável<br>
+📊 <b>P</b>roporcionalidade: intensidade compatível com a ameaça<br>
+🎚️ <b>C</b>onveniência: uso adequado ao contexto<br>
+🔄 <b>R</b>azoabilidade: bom senso</li>
+<li><b>Princípios de Havana (1990 — ONU)</b>: funcionários responsáveis pela aplicação da lei devem usar força como <b>último recurso</b>; arma de fogo = exceção extrema. Uso proporcional à ameaça. Todo uso de arma de fogo deve ser <b>reportado</b></li>
+<li><b>Escalonamento do uso da força</b>: presença → verbalização → controle de contato → técnicas de submissão → menor potencial ofensivo → arma de fogo (último recurso)</li>
+</ul></div>
+<div class="ex"><h4>Escala de Força (do menos ao mais gravoso)</h4>
+<p>1️⃣ 👁️ <b>Presença</b> (aparecer fardado)<br>
+2️⃣ 🗣️ <b>Verbalização</b> (comando verbal)<br>
+3️⃣ 🤲 <b>Controle de contato</b> (condução, imobilização)<br>
+4️⃣ 💪 <b>Técnicas de submissão</b> (chaves de braço, etc.)<br>
+5️⃣ ⚡ <b>Menor potencial ofensivo</b> (spray, taser, borracha)<br>
+6️⃣ 🔫 <b>Arma de fogo</b> (ÚLTIMO RECURSO — risco de morte)</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Arma de fogo pode ser usada a qualquer momento" — <b>ERRADO</b>, só em último caso (risco iminente de morte)</li>
+<li>"Não é necessário reportar o uso de arma de fogo" — <b>ERRADO</b>, deve ser reportado sempre (Havana)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 6. CÓDIGO DE CONDUTA ONU ══════════ -->
+<div class="macro" id="m6">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏛️</div>
+<div class="minfo"><div class="mt">6. Código de Conduta para Funcionários Aplicação da Lei (ONU)</div><div class="mm">Resolução 34/169, deveres, uso da força, sigilo, tortura, saúde, corrupção</div></div>
+<span class="badge">Edital §3.2</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Código de Conduta — 8 Artigos Essenciais</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Resolução 34/169 da ONU (1979)</b>: Código de Conduta para Funcionários Responsáveis pela Aplicação da Lei. 8 artigos</li>
+<li><b>"Funcionários responsáveis pela aplicação da lei"</b>: inclui <b>todos</b> que exercem poderes de polícia (policiais, guardas, agentes penitenciários etc.)</li>
+<li><b>Art. 1º</b>: cumprir deveres impostos pela lei, <b>servir à comunidade</b> e proteger todas as pessoas</li>
+<li><b>Art. 2º</b>: respeitar e proteger a <b>dignidade humana</b> e os DH de todas as pessoas</li>
+<li><b>Art. 3º</b>: uso da força somente quando <b>estritamente necessário</b> e na medida exigida pelo cumprimento do dever. Arma de fogo = medida <b>extrema</b></li>
+<li><b>Art. 4º</b>: informações <b>confidenciais</b> devem ser mantidas em sigilo, salvo se exigido pelo desempenho do dever ou pela justiça</li>
+<li><b>Art. 5º</b>: <b>nenhum</b> funcionário pode infligir, instigar ou tolerar <b>tortura</b> ou tratamento cruel. Nem ordens superiores justificam</li>
+<li><b>Art. 6º</b>: assegurar proteção da <b>saúde</b> das pessoas sob sua custódia</li>
+<li><b>Art. 7º</b>: NÃO cometer atos de <b>corrupção</b>. Combater rigorosamente</li>
+<li><b>Art. 8º</b>: respeitar a <b>lei</b> e o presente código. Reportar violações</li>
+</ul></div>
+<div class="ex"><h4>8 artigos — macete "SDFSTSCK"</h4>
+<p>1️⃣ <b>S</b>ervir (comunidade)<br>
+2️⃣ <b>D</b>ignidade (DH)<br>
+3️⃣ <b>F</b>orça (só necessária)<br>
+4️⃣ <b>S</b>igilo (confidencialidade)<br>
+5️⃣ <b>T</b>ortura (proibida sempre)<br>
+6️⃣ <b>S</b>aúde (custódia)<br>
+7️⃣ <b>C</b>orrupção (proibida)<br>
+8️⃣ (respeitar o) <b>K</b>ódigo</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Ordem superior justifica tortura" — <b>ERRADO</b>, nenhuma circunstância justifica (art. 5º)</li>
+<li>"O código só se aplica a policiais militares" — <b>ERRADO</b>, aplica-se a TODOS que exercem poder de polícia</li>
+</ul></div></div></div>
+</div></div>
+
+</div>
+
+<a href="reta-final.html" class="back-btn">← Voltar</a>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+function toggleMacro(el){el.closest('.macro').classList.toggle('open')}
+function toggleTp(el){el.closest('.tp').classList.toggle('open')}
+function toggleAll(open){document.querySelectorAll('.macro').forEach(m=>{open?m.classList.add('open'):m.classList.remove('open')});document.querySelectorAll('.tp').forEach(t=>{open?t.classList.add('open'):t.classList.remove('open')})}
+function scrollToSection(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+function filterContent(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.macro').forEach(m=>{const t=m.textContent.toLowerCase();if(q===''||t.includes(q)){m.style.display='';if(q!==''){m.classList.add('open');m.querySelectorAll('.tp').forEach(tp=>tp.classList.add('open'))}}else{m.style.display='none'}})}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)})
+</script>
+</body>
+</html>

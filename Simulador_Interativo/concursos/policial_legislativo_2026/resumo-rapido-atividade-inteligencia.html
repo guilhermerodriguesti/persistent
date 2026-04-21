@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão Rápida – Atividade de Inteligência</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#312e81,#6366f1);border-radius:16px;margin-bottom:20px;box-shadow:0 8px 32px rgba(99,102,241,0.3)}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:13px;color:#c7d2fe;margin-bottom:12px}
+.stats-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hstat{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(255,255,255,0.1);color:#c7d2fe;border:1px solid rgba(255,255,255,0.15)}
+.hstat b{font-size:15px;color:#fff}
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:16px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #a5b4fc;color:#4338ca;background:#eef2ff;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:#6366f1;color:#fff;border-color:#6366f1}
+.search-box{margin-bottom:16px;display:flex;gap:8px}
+.search-box input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-size:13px;outline:none}
+.search-box input:focus{border-color:#6366f1}
+.ebtn{padding:8px 16px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#4338ca;cursor:pointer;font-size:11px;font-weight:700}
+.ebtn:hover{background:#6366f1;color:#fff;border-color:#6366f1}
+.macro{margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.mh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.mh:hover{background:#eef2ff}
+.mi{font-size:26px;flex-shrink:0}
+.minfo{flex:1}.mt{font-size:17px;font-weight:800;color:#1e293b}
+.mm{font-size:11px;color:#64748b;margin-top:2px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#eef2ff;color:#4338ca;border:1px solid #a5b4fc}
+.chv{font-size:14px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.macro.open .chv{transform:rotate(90deg)}
+.mb{display:none;padding:0 18px 18px;border-top:1px solid #f1f5f9}
+.macro.open .mb{display:block}
+.tp{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc}
+.th{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;transition:background .2s}
+.th:hover{background:#eef2ff}
+.tt{flex:1;font-size:13px;font-weight:700;color:#1e293b}
+.tc{font-size:10px;color:#64748b;font-weight:600;padding:2px 8px;background:#f1f5f9;border-radius:10px;border:1px solid #e2e8f0}
+.tv{font-size:11px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.tp.open .tv{transform:rotate(90deg)}
+.tb{display:none;padding:0 14px 14px;border-top:1px solid #f1f5f9}
+.tp.open .tb{display:block}
+.kp h4{font-size:12px;font-weight:700;color:#4338ca;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.kp h4::before{content:'💡'}
+ul.k{list-style:none;padding:0}
+ul.k li{padding:6px 10px 6px 20px;font-size:12px;color:#334155;margin-bottom:3px;border-radius:6px;background:#f1f5f9;position:relative;line-height:1.5}
+ul.k li::before{content:'▸';position:absolute;left:8px;color:#6366f1;font-weight:700}
+ul.k li b{color:#1e293b}
+.ex{margin-top:8px;padding:10px 14px;background:#eef2ff;border:1px solid #a5b4fc;border-radius:8px}
+.ex h4{font-size:12px;font-weight:700;color:#4338ca;margin-bottom:6px}
+.ex h4::before{content:'📌 '}
+.ex p,.ex li{font-size:11px;color:#312e81;line-height:1.5}
+.ex code{background:#c7d2fe;padding:1px 5px;border-radius:4px;font-size:11px;color:#312e81}
+.trap{margin-top:10px;padding:10px 14px;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px}
+.trap h4{font-size:12px;font-weight:700;color:#dc2626;margin-bottom:6px}
+.trap h4::before{content:'⚠️ '}
+ul.t{list-style:none;padding:0}
+ul.t li{padding:4px 10px 4px 20px;font-size:11px;color:#7f1d1d;margin-bottom:2px;position:relative;line-height:1.4}
+ul.t li::before{content:'✗';position:absolute;left:6px;color:#dc2626;font-weight:700}
+ul.t li b{color:#1e293b}
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#6366f1;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(99,102,241,.4);z-index:100}
+.back-btn:hover{background:#4338ca}
+.scroll-top{position:fixed;bottom:64px;right:20px;width:40px;height:40px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#1e293b;font-size:16px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{background:#6366f1;color:#fff;border-color:#6366f1}
+@media(max-width:768px){.container{padding:10px}.header h1{font-size:18px}.mt{font-size:15px}.nav-btn{padding:5px 8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🕵️ Revisão Rápida – Atividade de Inteligência</h1>
+<div class="sub">Policial Legislativo CD 2026 • Conceitos práticos com exemplos • Revisão 1 dia antes da prova</div>
+<div class="stats-row">
+<div class="hstat">📂 <b>5</b> temas do edital</div>
+<div class="hstat">📑 <b>15</b> subtópicos</div>
+<div class="hstat">📌 <b>Exemplos</b> em cada tópico</div>
+<div class="hstat">⚡ <b>Rápido</b> e prático</div>
+</div>
+</div>
+<div class="nav-bar" id="navBar">
+<span class="nav-btn" onclick="scrollToSection('m1')">1. Conceitos</span>
+<span class="nav-btn" onclick="scrollToSection('m2')">2. PNI (Dec. 8.793)</span>
+<span class="nav-btn" onclick="scrollToSection('m3')">3. Análise de Risco</span>
+<span class="nav-btn" onclick="scrollToSection('m4')">4. Controle</span>
+<span class="nav-btn" onclick="scrollToSection('m5')">5. Seg. Informação</span>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Buscar conceito, sigla ou exemplo..." onkeyup="filterContent()">
+<button class="ebtn" onclick="toggleAll(true)">▼ Abrir Tudo</button>
+<button class="ebtn" onclick="toggleAll(false)">▲ Fechar Tudo</button>
+</div>
+
+<!-- ══════════ 1. ATIVIDADE DE INTELIGÊNCIA ══════════ -->
+<div class="macro" id="m1">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🕵️</div>
+<div class="minfo"><div class="mt">1. Atividade de Inteligência – Conceitos</div><div class="mm">Escopo, categorias (inteligência, contrainteligência, contramedidas, operações), funções e ciclo de produção</div></div>
+<span class="badge">Edital §1</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">1.1 Conceitos e Categorias de Inteligência</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Inteligência</b>: atividade de <b>obtenção, análise e disseminação</b> de conhecimentos sobre fatos e situações que afetam a segurança do Estado e da sociedade</li>
+<li><b>Inteligência (ramo)</b>: produz <b>conhecimento</b> para assessorar a tomada de decisão. Foco: coletar, analisar e difundir</li>
+<li><b>Contrainteligência</b>: <b>protege</b> o conhecimento sensível e identifica/neutraliza ações de inteligência adversa. Foco: <b>defender, prevenir, detectar</b></li>
+<li><b>Contramedidas de vigilância técnica (CMVT)</b>: ações para detectar e neutralizar <b>dispositivos de espionagem eletrônica</b> (grampos, câmeras ocultas, escutas)</li>
+<li><b>Operações de Inteligência</b>: ações <b>sigilosas</b> para obter dados não disponíveis por meios convencionais. Técnicas Operacionais de Inteligência (TOI): vigilância, recrutamento, entrevista, infiltração, entrada</li>
+<li><b>Dado</b>: informação bruta, não processada. <b>Conhecimento</b>: dado analisado e contextualizado → útil para decisão</li>
+<li><b>Fontes</b>: <b>HUMINT</b> (humana), <b>SIGINT</b> (sinais), <b>OSINT</b> (fontes abertas), <b>IMINT</b> (imagens), <b>GEOINT</b> (geoespacial)</li>
+</ul></div>
+<div class="ex"><h4>Macete para categorias</h4>
+<p>🔍 <b>Inteligência</b> = "olho" → <b>busca</b> informação<br>
+🛡️ <b>Contrainteligência</b> = "escudo" → <b>protege</b> informação<br>
+📡 <b>CMVT</b> = "varredura" → caça grampos e escutas<br>
+🎭 <b>Operações</b> = "ação sigilosa" → obtém o que não está disponível</p>
+<p>Fontes: <b>H</b>UMINT = <b>H</b>umano | <b>S</b>IGINT = <b>S</b>inais | <b>OS</b>INT = <b>O</b>pen <b>S</b>ource | <b>IM</b>INT = <b>IM</b>agem</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Contrainteligência produz conhecimento para assessorar decisões" — <b>ERRADO</b>, quem faz isso é a Inteligência; contrainteligência protege</li>
+<li>"Operações de inteligência são ações ostensivas" — <b>ERRADO</b>, são sigilosas</li>
+<li>"OSINT utiliza fontes sigilosas" — <b>ERRADO</b>, usa fontes abertas (open source)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">1.2 Funções da Atividade de Inteligência</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Assessorar</b> o processo decisório: fornecer conhecimentos oportunos, precisos e relevantes a autoridades</li>
+<li><b>Salvaguardar</b> informações sensíveis: proteger dados sigilosos contra acesso indevido</li>
+<li><b>Prevenir</b> ameaças: antecipar riscos à segurança do Estado e da sociedade</li>
+<li><b>Subsidiar o planejamento</b>: oferecer base analítica para planejamento estratégico</li>
+<li>Inteligência NÃO é investigação policial — foco é <b>assessoramento</b>, não produção de provas</li>
+<li>Inteligência NÃO é espionagem — é atividade <b>legal</b> e <b>institucionalizada</b> do Estado</li>
+</ul></div>
+<div class="ex"><h4>Diferença-chave</h4>
+<p>🕵️ <b>Inteligência</b> = assessora decisão (estratégico)<br>
+🔎 <b>Investigação policial</b> = produz provas (operacional/jurídico)<br>
+→ Inteligência alimenta a decisão do gestor; investigação alimenta o processo penal</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">1.3 Metodologia de Produção de Conhecimentos</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Ciclo de Inteligência</b> (ou Ciclo de Produção de Conhecimento) — 5 fases:<br>
+1️⃣ <b>Planejamento/Orientação</b>: definir necessidades, prioridades e prazos<br>
+2️⃣ <b>Reunião/Coleta</b>: obter dados de todas as fontes disponíveis<br>
+3️⃣ <b>Processamento/Análise</b>: avaliar, integrar e interpretar os dados<br>
+4️⃣ <b>Difusão/Disseminação</b>: entregar o conhecimento ao decisor<br>
+5️⃣ <b>Feedback/Avaliação</b>: decisor avalia se atendeu às necessidades</li>
+<li><b>Tipos de conhecimento</b>:<br>
+📋 <b>Informe</b>: resultado de juízo sobre dado coletado (pode ser verdadeiro ou não — menor grau de certeza)<br>
+📊 <b>Informação</b>: resultado de raciocínio sobre dados, com análise (fato passado ou presente)<br>
+📈 <b>Apreciação</b>: projeção futura de um fato — inclui opinião do analista<br>
+📉 <b>Estimativa</b>: projeção futura mais complexa — cenários, tendências</li>
+<li><b>Princípios</b>: oportunidade, amplitude, imparcialidade, objetividade, simplicidade, compartimentação, controle, sigilo</li>
+</ul></div>
+<div class="ex"><h4>Macete para o Ciclo — "PRADO"</h4>
+<p><b>P</b>lanejamento → <b>R</b>eunião → <b>A</b>nálise → <b>D</b>ifusão → feedback (<b>O</b>K?)</p>
+<p>Tipos de conhecimento (do menos ao mais elaborado):<br>
+📋 <b>Informe</b> (dado bruto avaliado) → 📊 <b>Informação</b> (fato analisado) → 📈 <b>Apreciação</b> (opinião futura) → 📉 <b>Estimativa</b> (cenários)</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Informe é o tipo mais elaborado de conhecimento" — <b>ERRADO</b>, é o menos elaborado</li>
+<li>"A difusão antecede a análise" — <b>ERRADO</b>, análise vem antes da difusão</li>
+<li>"Estimativa trata apenas de fatos passados" — <b>ERRADO</b>, estimativa projeta cenários futuros</li>
+<li>"Apreciação não contém opinião do analista" — <b>ERRADO</b>, apreciação inclui opinião</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 2. PNI — DECRETO 8.793/2016 ══════════ -->
+<div class="macro" id="m2">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📜</div>
+<div class="minfo"><div class="mt">2. PNI — Decreto nº 8.793/2016</div><div class="mm">Pressupostos, Estado e sociedade, ambientes, instrumentos, ameaças, objetivos e diretrizes</div></div>
+<span class="badge">Edital §2</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">2.1 Pressupostos da Atividade de Inteligência</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li>A PNI fixa <b>pressupostos, objetivos, instrumentos</b> e <b>diretrizes</b> da atividade de Inteligência nacional</li>
+<li><b>Pressupostos</b>: a atividade de Inteligência deve ser exercida com <b>irrestrita observância</b> dos direitos e garantias individuais, <b>fidelidade às instituições</b> e aos princípios éticos</li>
+<li>Obediência à <b>CF/88</b> e à <b>legislação</b> vigente</li>
+<li><b>Profissionalismo</b>: atuação com método, técnica e ética</li>
+<li><b>Legalidade</b>: toda ação deve ter amparo legal</li>
+<li>Atividade de Inteligência é <b>permanente e sistemática</b></li>
+</ul></div>
+<div class="ex"><h4>Resumo dos pressupostos</h4>
+<p>⚖️ Legalidade + 🤝 Ética + 🏛️ Fidelidade institucional + 👨‍💼 Profissionalismo + 🔄 Permanente e sistemática</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">2.2-2.3 Estado, Sociedade e Ambientes</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Estado democrático</b>: inteligência é instrumento de <b>assessoria ao Estado</b> na defesa da sociedade e dos interesses nacionais</li>
+<li>A atividade de Inteligência deve conciliar <b>segurança</b> e <b>direitos fundamentais</b></li>
+<li><b>Ambiente internacional</b>: globalização, terrorismo, crime organizado transnacional, espionagem, conflitos assimétricos, ameaças cibernéticas</li>
+<li><b>Ambiente nacional</b>: crime organizado, corrupção, violência urbana, conflitos agrários, ameaças ao patrimônio público, ações contra a soberania</li>
+<li>Ambos os ambientes geram <b>ameaças</b> que a Inteligência deve identificar e antecipar</li>
+</ul></div>
+<div class="ex"><h4>Ambiente Internacional vs Nacional</h4>
+<p>🌍 <b>Internacional</b>: terrorismo, espionagem estrangeira, crime transnacional, cyber<br>
+🇧🇷 <b>Nacional</b>: crime organizado interno, corrupção, conflitos sociais, soberania</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">2.4 Instrumentos da Atividade de Inteligência</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>SISBIN</b> (Sistema Brasileiro de Inteligência): criado pela <b>Lei 9.883/1999</b>. Integra os órgãos de inteligência do governo federal</li>
+<li><b>Órgão central do SISBIN</b>: <b>ABIN</b> (Agência Brasileira de Inteligência) — subordinada ao <b>GSI/PR</b> (Gabinete de Segurança Institucional da Presidência)</li>
+<li><b>Plano Nacional de Inteligência</b>: desdobra a PNI em ações concretas</li>
+<li><b>Doutrina Nacional de Inteligência</b>: orienta a produção de conhecimento e a proteção de informações (padronização de conceitos e procedimentos)</li>
+<li>Intercâmbio de dados entre órgãos do SISBIN é <b>obrigatório</b> na forma do decreto</li>
+</ul></div>
+<div class="ex"><h4>Estrutura para decorar</h4>
+<p>📋 <b>PNI</b> (Política) → define o "quê" e "por quê"<br>
+📘 <b>Plano</b> → define o "como" (ações concretas)<br>
+📖 <b>Doutrina</b> → define a "linguagem" (conceitos padronizados)<br>
+🏗️ <b>SISBIN</b> → define o "quem" (estrutura de órgãos)<br>
+🏢 <b>ABIN</b> → órgão central do SISBIN → subordinada ao GSI/PR</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"ABIN é subordinada ao Ministério da Defesa" — <b>ERRADO</b>, é subordinada ao GSI/PR</li>
+<li>"SISBIN foi criado pelo Decreto 8.793/2016" — <b>ERRADO</b>, SISBIN foi criado pela Lei 9.883/1999</li>
+<li>"PNI é o mesmo que Plano Nacional de Inteligência" — <b>ERRADO</b>, PNI = política (diretrizes); Plano = ações</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">2.5 Principais Ameaças</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Espionagem</b>: obtenção de dados sigilosos por serviço de inteligência estrangeiro</li>
+<li><b>Sabotagem</b>: ação deliberada para destruir/danificar infraestrutura crítica ou sistemas</li>
+<li><b>Terrorismo</b>: uso ou ameaça de violência extrema com motivação política/ideológica para causar terror</li>
+<li><b>Crime organizado</b>: associações criminosas estruturadas (tráfico, lavagem de dinheiro)</li>
+<li><b>Ameaças cibernéticas</b>: ataques a redes e sistemas do Estado e infraestrutura crítica</li>
+<li><b>Armas de destruição em massa</b>: proliferação nuclear, química, biológica, radiológica</li>
+<li><b>Corrupção</b>: listada como ameaça na PNI</li>
+<li><b>Ações contrárias à soberania</b>: ingerência estrangeira, biopirataria, contrabando</li>
+</ul></div>
+<div class="ex"><h4>Macete "ESCTA + CAB"</h4>
+<p><b>E</b>spionagem | <b>S</b>abotagem | <b>C</b>rime organizado | <b>T</b>errorismo | <b>A</b>meaças cibernéticas<br>
+<b>C</b>orrupção | <b>A</b>rmas destruição em massa | <b>B</b>iopirataria/soberania</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">2.6 Objetivos e Diretrizes da Inteligência Nacional</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Objetivos</b>: acompanhar e avaliar conjunturas interna e externa; identificar ameaças; prevenir ações de espionagem, sabotagem, terrorismo; proteger áreas e instalações sensíveis; salvaguardar informações sigilosas</li>
+<li><b>Diretrizes</b> (como atingir os objetivos):<br>
+→ Prevenir ações de espionagem<br>
+→ Ampliar a capacidade de detectar vulnerabilidades e ameaças<br>
+→ Expandir a capacidade operacional do SISBIN<br>
+→ Fortalecer a cultura de proteção de conhecimentos sensíveis<br>
+→ Cooperação entre órgãos de inteligência<br>
+→ Aprimorar recursos humanos e tecnológicos</li>
+<li>Inteligência deve acompanhar <b>permanentemente</b> a conjuntura — não é reativa, é <b>proativa</b></li>
+</ul></div>
+<div class="ex"><h4>Objetivos vs Diretrizes</h4>
+<p>🎯 <b>Objetivos</b> = o que a inteligência quer alcançar ("proteger, prevenir, identificar")<br>
+🧭 <b>Diretrizes</b> = como vai alcançar ("fortalecer, ampliar, cooperar, aprimorar")</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 3. ANÁLISE DE RISCO ══════════ -->
+<div class="macro" id="m3">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">⚠️</div>
+<div class="minfo"><div class="mt">3. Análise de Risco na Atividade de Inteligência</div><div class="mm">Risco, ameaça, vulnerabilidade e metodologias de análise</div></div>
+<span class="badge">Edital §3</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">3.1 Conceitos: Risco, Ameaça e Vulnerabilidade</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Vulnerabilidade</b>: <b>fraqueza</b> ou falha que pode ser explorada. Ex.: porta destrancada, sistema sem atualização, falta de treinamento</li>
+<li><b>Ameaça</b>: agente ou fator com <b>potencial de explorar</b> uma vulnerabilidade. Ex.: espião, hacker, grupo terrorista, desastre natural</li>
+<li><b>Risco</b>: <b>possibilidade</b> de uma ameaça explorar uma vulnerabilidade e causar dano. <b>Risco = Ameaça × Vulnerabilidade × Impacto</b></li>
+<li><b>Impacto</b>: consequência negativa caso o risco se materialize (dano financeiro, perda de vidas, comprometimento de informações)</li>
+<li><b>Probabilidade</b>: chance de a ameaça explorar a vulnerabilidade efetivamente</li>
+<li>Sem vulnerabilidade = sem risco (mesmo com ameaça). Sem ameaça = sem risco (mesmo com vulnerabilidade)</li>
+</ul></div>
+<div class="ex"><h4>Analogia para lembrar</h4>
+<p>🏠 <b>Vulnerabilidade</b> = janela aberta<br>
+🦹 <b>Ameaça</b> = ladrão rondando<br>
+⚡ <b>Risco</b> = chance de o ladrão entrar pela janela aberta<br>
+💥 <b>Impacto</b> = o que ele vai roubar/destruir</p>
+<p>Se a janela estiver <b>fechada</b> (sem vulnerabilidade) → risco reduzido, mesmo com ladrão</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Risco e ameaça são a mesma coisa" — <b>ERRADO</b>, ameaça é o agente; risco é a possibilidade de dano</li>
+<li>"Vulnerabilidade é o dano causado" — <b>ERRADO</b>, vulnerabilidade é a fraqueza; dano é o impacto</li>
+<li>"Se há ameaça, há necessariamente risco" — <b>ERRADO</b>, precisa de vulnerabilidade também</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">3.2 Metodologias de Análise de Risco</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Etapas da análise de risco</b>:<br>
+1️⃣ <b>Identificação</b> dos ativos a proteger (pessoas, instalações, dados)<br>
+2️⃣ <b>Identificação das ameaças</b> e vulnerabilidades<br>
+3️⃣ <b>Estimativa</b> de probabilidade e impacto<br>
+4️⃣ <b>Avaliação do risco</b> (classificação: baixo/médio/alto/extremo)<br>
+5️⃣ <b>Tratamento</b> do risco (aceitar, mitigar, transferir, evitar)</li>
+<li><b>Matriz de risco</b>: cruza probabilidade (eixo X) × impacto (eixo Y) → classificação visual</li>
+<li><b>Tratamento dos riscos</b>:<br>
+🟢 <b>Aceitar</b>: risco tolerável — não faz nada<br>
+🔵 <b>Mitigar</b>: reduzir probabilidade ou impacto (ação mais comum)<br>
+🟡 <b>Transferir</b>: passar o risco para terceiro (ex.: seguro, contrato)<br>
+🔴 <b>Evitar</b>: eliminar a atividade que gera o risco</li>
+<li><b>ISO 31000</b>: norma internacional de gestão de riscos (framework genérico)</li>
+<li><b>Risco residual</b>: risco que permanece após o tratamento — nunca é zero</li>
+</ul></div>
+<div class="ex"><h4>Macete "AMTE" para tratamento</h4>
+<p><b>A</b>ceitar = "conviver" | <b>M</b>itigar = "reduzir" | <b>T</b>ransferir = "repassar" | <b>E</b>vitar = "eliminar"</p>
+<p>Exemplo: risco de incêndio no arquivo →<br>
+🟢 Aceitar = "improvável, não faço nada"<br>
+🔵 Mitigar = instalar extintores e detector de fumaça<br>
+🟡 Transferir = contratar seguro contra incêndio<br>
+🔴 Evitar = digitalizar tudo e eliminar o arquivo físico</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 4. CONTROLE ══════════ -->
+<div class="macro" id="m4">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏛️</div>
+<div class="minfo"><div class="mt">4. Controle da Atividade de Inteligência</div><div class="mm">Controle interno, externo, parlamentar e social</div></div>
+<span class="badge">Edital §4</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Mecanismos de Controle</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li>Atividade de Inteligência, embora sigilosa, NÃO está acima da lei — está sujeita a <b>controles</b></li>
+<li><b>Controle interno</b>: exercido pela própria organização (corregedoria, supervisão hierárquica). Foco: procedimentos e ética interna</li>
+<li><b>Controle externo</b>: exercido por órgãos externos — <b>Poder Judiciário</b> (autoriza interceptações, buscas) e <b>Ministério Público</b></li>
+<li><b>Controle parlamentar</b>: <b>CCAI</b> (Comissão Mista de Controle das Atividades de Inteligência) do Congresso Nacional — fiscaliza a atividade de Inteligência. Composição: deputados + senadores</li>
+<li><b>Controle social</b>: participação da sociedade (transparência possível, ouvidorias)</li>
+<li><b>CCAI</b>: órgão de controle <b>parlamentar</b> mais importante — examina políticas, fiscaliza ABIN e SISBIN, pode convocar diretores</li>
+<li>O sigilo <b>não impede</b> o controle — os controladores têm <b>credenciamento de acesso</b> a informações classificadas</li>
+</ul></div>
+<div class="ex"><h4>Quem controla o quê</h4>
+<p>🏢 <b>Interno</b> = corregedoria da ABIN (própria casa)<br>
+⚖️ <b>Judiciário</b> = juiz autoriza interceptação<br>
+🏛️ <b>CCAI</b> = Congresso fiscaliza a inteligência (controle parlamentar)<br>
+👥 <b>Social</b> = sociedade via ouvidorias e transparência</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"A atividade de Inteligência não está sujeita a controle externo" — <b>ERRADO</b></li>
+<li>"CCAI é órgão do Poder Executivo" — <b>ERRADO</b>, é do Legislativo (Congresso)</li>
+<li>"O sigilo impede qualquer forma de fiscalização" — <b>ERRADO</b>, controladores têm credenciamento</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 5. SEGURANÇA DA INFORMAÇÃO ══════════ -->
+<div class="macro" id="m5">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔐</div>
+<div class="minfo"><div class="mt">5. Segurança da Informação na Inteligência</div><div class="mm">Discrição, graus de sigilo, criptografia e cibersegurança</div></div>
+<span class="badge">Edital §5</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">5.1 Discrição e Segurança de Informações</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Need-to-know</b> (necessidade de conhecer): informação classificada só é acessada por quem <b>realmente precisa</b> para desempenhar sua função — mesmo que tenha credenciamento</li>
+<li><b>Compartimentação</b>: dividir informação em partes — cada pessoa conhece apenas o necessário para sua tarefa</li>
+<li><b>Segurança orgânica</b>: proteção de pessoal, documentos, instalações, comunicações, informática e material</li>
+<li><b>Segurança ativa</b>: ações ofensivas de contrainteligência — contraespionagem, contrassabotagem, contrapropaganda, contraterrorismo</li>
+<li><b>Credenciamento</b>: processo para autorizar acesso a informações classificadas — pessoa recebe credencial compatível com o grau de sigilo</li>
+</ul></div>
+<div class="ex"><h4>Macete</h4>
+<p>🔑 <b>Need-to-know</b> = ter credenciamento NÃO é suficiente — precisa também ter <b>necessidade funcional</b><br>
+📦 <b>Compartimentação</b> = "cada um sabe só o seu pedaço" → se um falhar, não compromete tudo</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Qualquer servidor credenciado pode acessar toda informação classificada" — <b>ERRADO</b>, precisa do need-to-know</li>
+<li>"Segurança ativa é apenas proteção física" — <b>ERRADO</b>, segurança ativa é ofensiva (contra-ações)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">5.2 Graus de Sigilo e Atributos Básicos</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>3 graus de sigilo</b> (Lei 12.527/2011 — LAI):<br>
+🟡 <b>Reservado</b>: até <b>5 anos</b><br>
+🟠 <b>Secreto</b>: até <b>15 anos</b><br>
+🔴 <b>Ultrassecreto</b>: até <b>25 anos</b> (renovável 1 vez = máximo 50 anos)</li>
+<li><b>Quem classifica</b>:<br>
+<b>Ultrassecreto</b>: Presidente, Vice, Ministros de Estado, Comandantes FA, chefes de missão diplomática<br>
+<b>Secreto</b>: autoridades acima + titulares de autarquias, fundações, empresas públicas<br>
+<b>Reservado</b>: autoridades acima + quem exercer função de direção, comando ou chefia (delegação)</li>
+<li><b>Atributos básicos (CID)</b>: <b>C</b>onfidencialidade, <b>I</b>ntegridade, <b>D</b>isponibilidade + Autenticidade</li>
+<li><b>Desclassificação</b>: retirar o grau de sigilo (tornar pública). <b>Reclassificação</b>: mudar o grau de sigilo</li>
+</ul></div>
+<div class="ex"><h4>Prazos para decorar</h4>
+<p>🟡 <b>Reservado</b> = <b>5</b> anos (5 letras em "cinco")<br>
+🟠 <b>Secreto</b> = <b>15</b> anos (1+5 = "quinze")<br>
+🔴 <b>Ultrassecreto</b> = <b>25</b> anos (renovável 1x = até 50)</p>
+<p>Macete crescente: <b>R-S-U</b> = <b>5-15-25</b> (pula de 10 em 10)</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Ultrassecreto dura 50 anos automaticamente" — <b>ERRADO</b>, 25 anos, renovável 1x (total 50)</li>
+<li>"Qualquer servidor pode classificar como ultrassecreto" — <b>ERRADO</b>, só Presidente, Vice, Ministros, Comandantes FA, chefes missão diplomática</li>
+<li>"Reservado dura 15 anos" — <b>ERRADO</b>, 5 anos; 15 é secreto</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">5.3 Criptografia e Cibersegurança</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Criptografia</b>: técnica para tornar informação ilegível a não autorizados → garante <b>confidencialidade</b></li>
+<li><b>Simétrica</b>: mesma chave cifra e decifra. Rápida. Ex.: AES, DES. Problema: compartilhar a chave</li>
+<li><b>Assimétrica</b>: par de chaves (pública + privada). Ex.: RSA. Pública cifra → privada decifra. Mais lenta, mais segura para troca</li>
+<li><b>Hash</b>: função que gera resumo único de tamanho fixo → garante <b>integridade</b>. Ex.: SHA-256, MD5. Qualquer alteração = hash diferente</li>
+<li><b>Cibersegurança na inteligência</b>: proteção de redes, sistemas e comunicações contra ataques cibernéticos — fundamental na era digital</li>
+<li><b>Esteganografia</b>: ocultar a <b>existência</b> da mensagem (dentro de imagem, áudio). Diferente de criptografia que oculta o <b>conteúdo</b></li>
+<li><b>Comunicação segura</b>: uso de canais criptografados (VPN, e-mail cifrado, rádio seguro) é obrigatório para informações classificadas</li>
+</ul></div>
+<div class="ex"><h4>Diferença-chave</h4>
+<p>🔒 <b>Criptografia</b> = "tranca a mensagem" (todos veem que existe, mas ninguém lê)<br>
+🫥 <b>Esteganografia</b> = "esconde a mensagem" (ninguém sabe que existe)<br>
+Podem ser <b>combinadas</b>: esconder uma mensagem criptografada dentro de uma imagem</p>
+<p>🔑 <b>Simétrica</b> = 1 chave (rápida, como cadeado com 1 cópia da chave)<br>
+🔑🔑 <b>Assimétrica</b> = 2 chaves (pública abre, privada fecha — como caixa de correio)</p>
+</div></div></div>
+</div></div>
+
+</div>
+
+<button class="back-btn" onclick="location.href='reta-final.html'">← Voltar</button>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+function toggleMacro(el){el.closest('.macro').classList.toggle('open')}
+function toggleTp(el){el.closest('.tp').classList.toggle('open')}
+function toggleAll(open){document.querySelectorAll('.macro').forEach(m=>{open?m.classList.add('open'):m.classList.remove('open')});document.querySelectorAll('.tp').forEach(t=>{open?t.classList.add('open'):t.classList.remove('open')})}
+function scrollToSection(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+function filterContent(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.macro').forEach(m=>{const t=m.textContent.toLowerCase();if(q===''||t.includes(q)){m.style.display='';if(q!==''){m.classList.add('open');m.querySelectorAll('.tp').forEach(tp=>tp.classList.add('open'))}}else{m.style.display='none'}})}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)})
+</script>
+</body>
+</html>

@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão Rápida – Língua Inglesa</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#1e3a5f,#3b82f6);border-radius:16px;margin-bottom:20px;box-shadow:0 8px 32px rgba(59,130,246,0.3)}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:13px;color:#bfdbfe;margin-bottom:12px}
+.stats-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hstat{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(255,255,255,0.1);color:#bfdbfe;border:1px solid rgba(255,255,255,0.15)}
+.hstat b{font-size:15px;color:#fff}
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:16px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #93c5fd;color:#1d4ed8;background:#eff6ff;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:#3b82f6;color:#fff;border-color:#3b82f6}
+.search-box{margin-bottom:16px;display:flex;gap:8px}
+.search-box input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-size:13px;outline:none}
+.search-box input:focus{border-color:#3b82f6}
+.ebtn{padding:8px 16px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1d4ed8;cursor:pointer;font-size:11px;font-weight:700}
+.ebtn:hover{background:#3b82f6;color:#fff;border-color:#3b82f6}
+.macro{margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.mh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.mh:hover{background:#eff6ff}
+.mi{font-size:26px;flex-shrink:0}
+.minfo{flex:1}.mt{font-size:17px;font-weight:800;color:#1e293b}
+.mm{font-size:11px;color:#64748b;margin-top:2px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#eff6ff;color:#1d4ed8;border:1px solid #93c5fd}
+.chv{font-size:14px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.macro.open .chv{transform:rotate(90deg)}
+.mb{display:none;padding:0 18px 18px;border-top:1px solid #f1f5f9}
+.macro.open .mb{display:block}
+.tp{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc}
+.th{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;transition:background .2s}
+.th:hover{background:#eff6ff}
+.tt{flex:1;font-size:13px;font-weight:700;color:#1e293b}
+.tc{font-size:10px;color:#64748b;font-weight:600;padding:2px 8px;background:#f1f5f9;border-radius:10px;border:1px solid #e2e8f0}
+.tv{font-size:11px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.tp.open .tv{transform:rotate(90deg)}
+.tb{display:none;padding:0 14px 14px;border-top:1px solid #f1f5f9}
+.tp.open .tb{display:block}
+.kp h4{font-size:12px;font-weight:700;color:#1d4ed8;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.kp h4::before{content:'💡'}
+ul.k{list-style:none;padding:0}
+ul.k li{padding:6px 10px 6px 20px;font-size:12px;color:#334155;margin-bottom:3px;border-radius:6px;background:#f1f5f9;position:relative;line-height:1.5}
+ul.k li::before{content:'▸';position:absolute;left:8px;color:#3b82f6;font-weight:700}
+ul.k li b{color:#1e293b}
+.ex{margin-top:8px;padding:10px 14px;background:#eff6ff;border:1px solid #93c5fd;border-radius:8px}
+.ex h4{font-size:12px;font-weight:700;color:#1d4ed8;margin-bottom:6px}
+.ex h4::before{content:'📌 '}
+.ex p,.ex li{font-size:11px;color:#1e3a5f;line-height:1.5}
+.trap{margin-top:10px;padding:10px 14px;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px}
+.trap h4{font-size:12px;font-weight:700;color:#dc2626;margin-bottom:6px}
+.trap h4::before{content:'⚠️ '}
+ul.t{list-style:none;padding:0}
+ul.t li{padding:4px 10px 4px 20px;font-size:11px;color:#7f1d1d;margin-bottom:2px;position:relative;line-height:1.4}
+ul.t li::before{content:'✗';position:absolute;left:6px;color:#dc2626;font-weight:700}
+ul.t li b{color:#1e293b}
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#3b82f6;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(59,130,246,.4);z-index:100;text-decoration:none}
+.back-btn:hover{background:#1d4ed8}
+.scroll-top{position:fixed;bottom:64px;right:20px;width:40px;height:40px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#1e293b;font-size:16px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{background:#3b82f6;color:#fff;border-color:#3b82f6}
+@media(max-width:768px){.container{padding:10px}.header h1{font-size:18px}.mt{font-size:15px}.nav-btn{padding:5px 8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🌐 Revisão Rápida – Língua Inglesa</h1>
+<div class="sub">Policial Legislativo CD 2026 • Gramática + Interpretação + Vocabulário • Revisão 1 dia antes da prova</div>
+<div class="stats-row">
+<div class="hstat">📂 <b>7</b> macro-temas</div>
+<div class="hstat">📑 <b>20+</b> subtópicos</div>
+<div class="hstat">📌 <b>Exemplos</b> práticos</div>
+<div class="hstat">⚡ <b>Pegadinhas</b> CEBRASPE</div>
+</div>
+</div>
+<div class="nav-bar">
+<span class="nav-btn" onclick="scrollToSection('m1')">1. Interpretação</span>
+<span class="nav-btn" onclick="scrollToSection('m2')">2. Verb Tenses</span>
+<span class="nav-btn" onclick="scrollToSection('m3')">3. Modals/Cond.</span>
+<span class="nav-btn" onclick="scrollToSection('m4')">4. Connectors</span>
+<span class="nav-btn" onclick="scrollToSection('m5')">5. Word Classes</span>
+<span class="nav-btn" onclick="scrollToSection('m6')">6. Vocabulary</span>
+<span class="nav-btn" onclick="scrollToSection('m7')">7. False Friends</span>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Buscar conceito, palavra ou exemplo..." onkeyup="filterContent()">
+<button class="ebtn" onclick="toggleAll(true)">▼ Abrir Tudo</button>
+<button class="ebtn" onclick="toggleAll(false)">▲ Fechar Tudo</button>
+</div>
+
+<!-- ══════════ 1. INTERPRETAÇÃO DE TEXTOS ══════════ -->
+<div class="macro" id="m1">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📖</div>
+<div class="minfo"><div class="mt">1. Compreensão e Interpretação de Textos</div><div class="mm">Ideias principais/secundárias, explícitas/implícitas, relações intra e intertextuais</div></div>
+<span class="badge">Edital §1</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Estratégias de Leitura e Tipos de Questão CEBRASPE</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Skimming</b>: leitura rápida para captar a <b>ideia geral</b> (topic sentence = 1ª frase de cada parágrafo)</li>
+<li><b>Scanning</b>: busca de <b>informação específica</b> (data, nome, número)</li>
+<li><b>Idea principal (main idea)</b>: geralmente na 1ª ou última frase do parágrafo. Pergunta: "What is the text mainly about?"</li>
+<li><b>Idea explícita</b>: está literalmente no texto. <b>Implícita (inference)</b>: deduzida a partir do contexto</li>
+<li><b>Referência pronominal</b>: "it", "they", "this", "those" — a prova pergunta a quem/o quê se referem. Volte ao texto e identifique o antecedente</li>
+<li><b>Relações intertextuais</b>: quando o texto cita ou faz alusão a outro texto/fonte</li>
+<li><b>CEBRASPE</b>: questões C/E (certo/errado). Costuma trocar UMA palavra para inverter o sentido. Leia com atenção cada item comparando com o texto original</li>
+</ul></div>
+<div class="ex"><h4>Técnica para a prova</h4>
+<p>1️⃣ Leia o <b>enunciado/itens antes</b> do texto (saber o que procurar)<br>
+2️⃣ Faça <b>skimming</b> do texto (captar tema geral)<br>
+3️⃣ Volte aos itens e faça <b>scanning</b> para localizar a resposta<br>
+4️⃣ Desconfie de palavras <b>absolutas</b>: "always", "never", "all", "none" → geralmente erradas</p>
+</div>
+<div class="trap"><h4>Pegadinhas CEBRASPE</h4>
+<ul class="t">
+<li>Trocar <b>"some"</b> por <b>"all"</b> (generalização indevida) → ERRADO</li>
+<li>Trocar <b>"may"</b> por <b>"must"</b> (possibilidade vira certeza) → ERRADO</li>
+<li>Inverter causa/consequência: "A causes B" → item diz "B causes A" → ERRADO</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 2. VERB TENSES ══════════ -->
+<div class="macro" id="m2">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">⏰</div>
+<div class="minfo"><div class="mt">2. Verb Tenses (Tempos Verbais)</div><div class="mm">Simple, continuous, perfect — present, past, future</div></div>
+<span class="badge">Edital §2-3</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Present Tenses</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Simple Present</b>: rotina, fato, verdade geral. Forma: I/you/we/they <b>work</b> | he/she/it <b>works</b> (-s na 3ª pessoa). Marcadores: always, usually, often, every day</li>
+<li><b>Present Continuous</b>: ação acontecendo <b>agora</b> ou em andamento. Forma: am/is/are + <b>-ing</b>. "She <b>is working</b> now."</li>
+<li><b>Present Perfect</b>: ação passada com <b>conexão ao presente</b> (resultado atual). Forma: have/has + <b>past participle</b>. "I <b>have lived</b> here since 2010." Marcadores: since, for, already, yet, just, ever, never</li>
+<li><b>Present Perfect Continuous</b>: ação em andamento que começou no passado e continua. Forma: have/has been + -ing. "She <b>has been studying</b> for 3 hours."</li>
+</ul></div>
+<div class="ex"><h4>Macete rápido</h4>
+<p>📅 <b>Simple</b> = rotina/fato → "I work every day"<br>
+🔄 <b>Continuous</b> = agora → "I am working now"<br>
+🔗 <b>Perfect</b> = passado→presente → "I have worked here since 2020"<br>
+⏳ <b>Perf. Continuous</b> = duração até agora → "I have been working for 5 hours"</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Past Tenses</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Simple Past</b>: ação <b>concluída</b> no passado. Forma: verbo + <b>-ed</b> (regulares) ou 2ª coluna (irregulares). "She <b>worked</b> yesterday." / "He <b>went</b> home."</li>
+<li><b>Past Continuous</b>: ação em <b>andamento</b> no passado (interrompida por outra). Forma: was/were + -ing. "I <b>was reading</b> when the phone rang."</li>
+<li><b>Past Perfect</b>: ação <b>anterior a outra</b> no passado (passado do passado). Forma: <b>had</b> + past participle. "She <b>had left</b> before I arrived."</li>
+<li><b>Past Perfect Continuous</b>: ação contínua anterior a outra no passado. Forma: had been + -ing</li>
+</ul></div>
+<div class="ex"><h4>Sequência temporal</h4>
+<p>⬅️⬅️ <b>Past Perfect</b> (1º) → ⬅️ <b>Simple Past</b> (2º) → 📍 <b>Present</b><br>
+"She <b>had finished</b> (1º) before he <b>arrived</b> (2º)."</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Future e Passive Voice</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Simple Future</b>: <b>will</b> + verbo base (decisão espontânea, previsão). "It <b>will rain</b> tomorrow."</li>
+<li><b>Going to</b>: plano/intenção já decidida. "I <b>am going to travel</b> next week."</li>
+<li><b>Future Continuous</b>: will be + -ing (ação em andamento no futuro)</li>
+<li><b>Future Perfect</b>: will have + past participle (ação completa antes de ponto futuro). "By 2030, I <b>will have graduated</b>."</li>
+<li><b>Passive Voice</b>: sujeito recebe a ação. Forma: <b>to be + past participle</b>. "The law <b>was approved</b> by Congress." Atenção: trocar active por passive muda a estrutura, não o sentido</li>
+</ul></div>
+<div class="ex"><h4>Active vs Passive</h4>
+<p>🟢 Active: "Congress <b>approved</b> the law."<br>
+🔵 Passive: "The law <b>was approved</b> by Congress."<br>
+Ambas dizem a mesma coisa. Passive enfatiza o <b>objeto/resultado</b></p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 3. MODALS E CONDICIONAIS ══════════ -->
+<div class="macro" id="m3">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔑</div>
+<div class="minfo"><div class="mt">3. Modal Verbs e Condicionais</div><div class="mm">Can, could, may, might, must, should, would, conditionals</div></div>
+<span class="badge">Edital §2</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Modal Verbs — Significados</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Can</b>: capacidade/habilidade ("I <b>can</b> swim") ou permissão informal</li>
+<li><b>Could</b>: capacidade no passado ("I <b>could</b> swim when I was 5") ou possibilidade/pedido educado</li>
+<li><b>May</b>: possibilidade ("It <b>may</b> rain") ou permissão formal. <b>Might</b>: possibilidade menor</li>
+<li><b>Must</b>: obrigação forte ("You <b>must</b> wear a mask") ou dedução lógica ("He <b>must</b> be tired")</li>
+<li><b>Should / Ought to</b>: conselho, recomendação ("You <b>should</b> study more")</li>
+<li><b>Would</b>: condicional, pedido educado, hábito passado ("I <b>would</b> play outside as a kid")</li>
+<li><b>Must not</b> = proibição ≠ <b>don't have to</b> = não precisa (sem obrigação)</li>
+<li><b>Shall</b>: usado em textos legais/formais = "deverá" ("The officer <b>shall</b> report...")</li>
+</ul></div>
+<div class="ex"><h4>Escala de certeza</h4>
+<p>🔴 <b>Must</b> (99%) → 🟠 <b>Should</b> (80%) → 🟡 <b>May</b> (50%) → 🟢 <b>Might/Could</b> (30%)<br>
+<b>Must not</b> = PROIBIDO 🚫 | <b>Don't have to</b> = não precisa ✅</p>
+</div>
+<div class="trap"><h4>Pegadinha CEBRASPE</h4>
+<ul class="t">
+<li>Trocar "may" (possibilidade) por "must" (certeza) → muda completamente o sentido → ERRADO</li>
+<li>"Must not" traduzido como "não precisa" → ERRADO, é "não deve/proibido"</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Conditional Sentences (If-clauses)</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Zero Conditional</b>: fato/verdade geral. If + present, present. "If you heat water, it boils."</li>
+<li><b>1st Conditional</b>: situação real/provável no futuro. If + present, <b>will</b> + base. "If it rains, I <b>will stay</b> home."</li>
+<li><b>2nd Conditional</b>: situação hipotética/improvável no presente. If + <b>past</b>, would + base. "If I <b>were</b> rich, I <b>would travel</b>."</li>
+<li><b>3rd Conditional</b>: situação irreal no passado (arrependimento). If + <b>past perfect</b>, would have + pp. "If I <b>had studied</b>, I <b>would have passed</b>."</li>
+</ul></div>
+<div class="ex"><h4>Macete "0-1-2-3"</h4>
+<p>0️⃣ Verdade → present/present<br>
+1️⃣ Provável futuro → present/<b>will</b><br>
+2️⃣ Hipotético presente → past/<b>would</b><br>
+3️⃣ Irreal passado → past perfect/<b>would have</b></p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 4. CONECTORES E REFERÊNCIA ══════════ -->
+<div class="macro" id="m4">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔗</div>
+<div class="minfo"><div class="mt">4. Connectors, Linkers e Referência Textual</div><div class="mm">Conjunções, linking words, pronomes relativos, referência pronominal</div></div>
+<span class="badge">Edital §1-2</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Linking Words e Conjunções</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Adição</b>: and, also, moreover, furthermore, in addition, besides, as well as</li>
+<li><b>Contraste/Concessão</b>: but, however, although, though, even though, nevertheless, nonetheless, despite, in spite of, yet, whereas, while</li>
+<li><b>Causa</b>: because, since, as, due to, owing to, because of</li>
+<li><b>Consequência</b>: so, therefore, thus, hence, consequently, as a result, accordingly</li>
+<li><b>Condição</b>: if, unless (= if not), provided that, as long as, in case</li>
+<li><b>Finalidade</b>: in order to, so that, so as to</li>
+<li><b>Tempo</b>: when, while, before, after, since, until, as soon as, by the time</li>
+<li><b>Comparação</b>: like, as...as, such as, similarly, likewise</li>
+<li><b>Exemplificação</b>: for example, for instance, such as, namely</li>
+<li><b>Conclusão</b>: in conclusion, to sum up, in short, overall, all in all</li>
+</ul></div>
+<div class="ex"><h4>Os mais cobrados na CEBRASPE</h4>
+<p>⚡ <b>However / Nevertheless</b> = porém, contudo (contraste)<br>
+⚡ <b>Although / Even though</b> = embora (concessão — não confundir com "but")<br>
+⚡ <b>Therefore / Thus</b> = portanto (consequência)<br>
+⚡ <b>Moreover / Furthermore</b> = além disso (adição)<br>
+⚡ <b>Despite / In spite of</b> + NOUN/-ing = apesar de (NÃO seguem sujeito+verbo)<br>
+⚡ <b>Although</b> + sujeito+verbo = embora</p>
+</div>
+<div class="trap"><h4>Pegadinha</h4>
+<ul class="t">
+<li>"Despite" seguido de sujeito+verbo direto → ERRADO (precisa de -ing ou noun). Use "Although" para S+V</li>
+<li>Confundir "since" temporal ("desde") com "since" causal ("já que") → contexto define</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Pronomes Relativos e Referência</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Who</b>: pessoas (sujeito). <b>Whom</b>: pessoas (objeto). <b>Which</b>: coisas/animais. <b>That</b>: pessoas ou coisas (restritiva)</li>
+<li><b>Whose</b>: posse (de quem). "The officer <b>whose</b> badge was lost..."</li>
+<li><b>Where</b>: lugar. <b>When</b>: tempo. <b>Why</b>: razão</li>
+<li><b>Referência pronominal</b>: "it" se refere ao substantivo mais próximo anteriormente mencionado. "The policy was effective. <b>It</b> reduced crime." (It = the policy)</li>
+<li><b>This/These</b>: próximo, recém-mencionado. <b>That/Those</b>: mais distante ou anterior</li>
+</ul></div>
+<div class="ex"><h4>Dica para questão de referência</h4>
+<p>Quando a questão perguntar "The word 'it' in line X refers to..." → substitua mentalmente o pronome pelo antecedente e veja se a frase faz sentido</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 5. WORD CLASSES ══════════ -->
+<div class="macro" id="m5">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📝</div>
+<div class="minfo"><div class="mt">5. Word Classes e Estruturas Gramaticais</div><div class="mm">Sufixos, prefixos, comparativos, articles, prepositions, phrasal verbs</div></div>
+<span class="badge">Edital §2-3</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Sufixos e Formação de Palavras</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Noun suffixes</b>: -tion/-sion (information), -ment (government), -ness (happiness), -ity (security), -er/-or (officer), -ance/-ence (evidence)</li>
+<li><b>Adjective suffixes</b>: -ful (careful), -less (careless), -ous (dangerous), -ive (effective), -able/-ible (reliable), -al (criminal), -ic (forensic)</li>
+<li><b>Verb suffixes</b>: -ize (organize), -ify (identify), -ate (investigate), -en (strengthen)</li>
+<li><b>Adverb suffix</b>: -ly (carefully, effectively, unfortunately)</li>
+<li><b>Negative prefixes</b>: un- (unable), in-/im-/ir-/il- (impossible, irregular, illegal), dis- (disagree), non- (non-lethal), mis- (misunderstand)</li>
+</ul></div>
+<div class="ex"><h4>Identificação rápida</h4>
+<p>📗 Noun = -tion, -ment, -ness, -ity<br>
+📘 Adjective = -ful, -less, -ous, -ive, -able<br>
+📕 Verb = -ize, -ify, -ate<br>
+📙 Adverb = -ly</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Artigos, Preposições e Comparativos</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>A/An</b>: indefinido (a + consoante, an + vogal sonora). <b>The</b>: definido (específico, único, já mencionado)</li>
+<li><b>Preposições de tempo</b>: <b>in</b> (mês/ano/estação), <b>on</b> (dia/data), <b>at</b> (hora/momento)</li>
+<li><b>Preposições de lugar</b>: <b>in</b> (dentro), <b>on</b> (sobre/em cima), <b>at</b> (ponto específico)</li>
+<li><b>Comparativo</b>: short adj + <b>-er</b> (bigger) ou <b>more</b> + long adj (more important). <b>Than</b> compara</li>
+<li><b>Superlativo</b>: <b>the</b> + short adj + <b>-est</b> (the biggest) ou <b>the most</b> + long adj (the most important)</li>
+<li><b>Irregulares</b>: good → better → best | bad → worse → worst | far → farther/further → farthest/furthest</li>
+</ul></div>
+<div class="ex"><h4>Preposições — macete IOA</h4>
+<p>📅 Tempo: <b>I</b>n = meses/anos | <b>O</b>n = dias/datas | <b>A</b>t = horas<br>
+"<b>In</b> January, <b>on</b> Monday, <b>at</b> 3 PM"</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 6. VOCABULÁRIO TEMÁTICO ══════════ -->
+<div class="macro" id="m6">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📚</div>
+<div class="minfo"><div class="mt">6. Vocabulário Temático (Segurança e Direito)</div><div class="mm">Palavras frequentes em textos de segurança pública, legislação, criminalística</div></div>
+<span class="badge">Edital §1</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Vocabulário de Segurança e Legislação</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Palavras-chave</h4>
+<ul class="k">
+<li><b>Law enforcement</b> = aplicação da lei / forças policiais</li>
+<li><b>Felony</b> = crime grave | <b>Misdemeanor</b> = infração leve</li>
+<li><b>Suspect</b> = suspeito | <b>Defendant</b> = réu | <b>Witness</b> = testemunha</li>
+<li><b>Indictment</b> = denúncia/acusação formal | <b>Bail</b> = fiança</li>
+<li><b>Plea</b> = declaração (guilty/not guilty) | <b>Sentence</b> = sentença/pena</li>
+<li><b>Prosecution</b> = acusação (MP) | <b>Defense counsel</b> = advogado de defesa</li>
+<li><b>Warrant</b> = mandado | <b>Search warrant</b> = mandado de busca</li>
+<li><b>Firearm</b> = arma de fogo | <b>Handgun</b> = pistola | <b>Ammunition</b> = munição</li>
+<li><b>Surveillance</b> = vigilância | <b>Undercover</b> = disfarçado | <b>Raid</b> = operação/batida</li>
+<li><b>Accountability</b> = responsabilização | <b>Oversight</b> = supervisão/fiscalização</li>
+<li><b>Compliance</b> = conformidade | <b>Breach</b> = violação</li>
+<li><b>To enforce</b> = fazer cumprir | <b>To enact</b> = promulgar lei | <b>To repeal</b> = revogar</li>
+<li><b>Bill</b> = projeto de lei | <b>Act/Statute</b> = lei aprovada | <b>Amendment</b> = emenda</li>
+<li><b>Deterrence</b> = dissuasão | <b>Recidivism</b> = reincidência</li>
+</ul></div>
+<div class="ex"><h4>Contexto policial legislativo</h4>
+<p>🏛️ <b>Legislature</b> = poder legislativo | <b>Lawmaker</b> = legislador<br>
+👮 <b>Law enforcement officer</b> = policial | <b>To patrol</b> = patrulhar<br>
+📜 <b>Bill → Act</b>: projeto vira lei quando aprovado e sancionado</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 7. FALSE FRIENDS ══════════ -->
+<div class="macro" id="m7">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">⚠️</div>
+<div class="minfo"><div class="mt">7. False Friends e Expressões Idiomáticas</div><div class="mm">Falsos cognatos mais cobrados, expressões comuns em textos de prova</div></div>
+<span class="badge">Edital §1-3</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Falsos Cognatos Essenciais</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Lista para decorar</h4>
+<ul class="k">
+<li><b>Actually</b> = na verdade (NÃO "atualmente" → currently)</li>
+<li><b>Realize</b> = perceber (NÃO "realizar" → accomplish, carry out)</li>
+<li><b>Pretend</b> = fingir (NÃO "pretender" → intend)</li>
+<li><b>Eventually</b> = finalmente (NÃO "eventualmente" → occasionally)</li>
+<li><b>Sensible</b> = sensato (NÃO "sensível" → sensitive)</li>
+<li><b>Attend</b> = comparecer a (NÃO "atender" → assist, answer)</li>
+<li><b>Fabric</b> = tecido (NÃO "fábrica" → factory)</li>
+<li><b>Library</b> = biblioteca (NÃO "livraria" → bookstore)</li>
+<li><b>Push</b> = empurrar (NÃO "puxar" → pull)</li>
+<li><b>Comprehensive</b> = abrangente (NÃO "compreensivo" → understanding)</li>
+<li><b>Intend</b> = pretender | <b>Injury</b> = ferimento (NÃO injúria → insult)</li>
+<li><b>Policy</b> = política/diretriz (NÃO polícia → police)</li>
+<li><b>Data</b> = dados | <b>Particular</b> = específico (NÃO privado)</li>
+<li><b>Assume</b> = pressupor | <b>Resume</b> = retomar (NÃO resumo → summary)</li>
+</ul></div>
+<div class="ex"><h4>Os 5 mais perigosos</h4>
+<p>🔴 <b>Actually</b> ≠ atualmente (= na verdade)<br>
+🔴 <b>Eventually</b> ≠ eventualmente (= finalmente)<br>
+🔴 <b>Pretend</b> ≠ pretender (= fingir)<br>
+🔴 <b>Realize</b> ≠ realizar (= perceber)<br>
+🔴 <b>Sensible</b> ≠ sensível (= sensato)</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Phrasal Verbs e Expressões Frequentes</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Mais comuns em provas</h4>
+<ul class="k">
+<li><b>Carry out</b> = realizar, executar | <b>Find out</b> = descobrir | <b>Point out</b> = apontar</li>
+<li><b>Set up</b> = estabelecer, montar | <b>Turn out</b> = revelar-se | <b>Break down</b> = decompor, falhar</li>
+<li><b>Look into</b> = investigar | <b>Deal with</b> = lidar com | <b>Come up with</b> = inventar, propor</li>
+<li><b>Take into account</b> = levar em consideração | <b>According to</b> = de acordo com</li>
+<li><b>In terms of</b> = em termos de | <b>As well as</b> = assim como, além de</li>
+<li><b>On the other hand</b> = por outro lado | <b>On behalf of</b> = em nome de</li>
+<li><b>In order to</b> = a fim de, para | <b>Regardless of</b> = independente de</li>
+<li><b>Rather than</b> = em vez de | <b>Whether... or</b> = se... ou</li>
+</ul></div>
+<div class="ex"><h4>Phrasal verbs policiais</h4>
+<p>🔎 <b>Look into</b> = investigar | 🚔 <b>Carry out</b> (a raid) = realizar (operação)<br>
+📋 <b>Set up</b> (a unit) = criar (unidade) | ⚖️ <b>Deal with</b> (crime) = lidar com</p>
+</div></div></div>
+</div></div>
+
+</div>
+
+<a href="reta-final.html" class="back-btn">← Voltar</a>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+function toggleMacro(el){el.closest('.macro').classList.toggle('open')}
+function toggleTp(el){el.closest('.tp').classList.toggle('open')}
+function toggleAll(open){document.querySelectorAll('.macro').forEach(m=>{open?m.classList.add('open'):m.classList.remove('open')});document.querySelectorAll('.tp').forEach(t=>{open?t.classList.add('open'):t.classList.remove('open')})}
+function scrollToSection(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+function filterContent(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.macro').forEach(m=>{const t=m.textContent.toLowerCase();if(q===''||t.includes(q)){m.style.display='';if(q!==''){m.classList.add('open');m.querySelectorAll('.tp').forEach(tp=>tp.classList.add('open'))}}else{m.style.display='none'}})}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)})
+</script>
+</body>
+</html>

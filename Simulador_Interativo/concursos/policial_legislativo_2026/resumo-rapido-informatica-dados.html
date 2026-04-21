@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão Rápida – Informática e Dados</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#1e3a5f,#2563eb);border-radius:16px;margin-bottom:20px;box-shadow:0 8px 32px rgba(37,99,235,0.3)}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:13px;color:#bfdbfe;margin-bottom:12px}
+.stats-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hstat{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(255,255,255,0.1);color:#bfdbfe;border:1px solid rgba(255,255,255,0.15)}
+.hstat b{font-size:15px;color:#fff}
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:16px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #93c5fd;color:#1d4ed8;background:#eff6ff;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:#2563eb;color:#fff;border-color:#2563eb}
+.search-box{margin-bottom:16px;display:flex;gap:8px}
+.search-box input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-size:13px;outline:none}
+.search-box input:focus{border-color:#2563eb}
+.ebtn{padding:8px 16px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1d4ed8;cursor:pointer;font-size:11px;font-weight:700}
+.ebtn:hover{background:#2563eb;color:#fff;border-color:#2563eb}
+.macro{margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.mh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.mh:hover{background:#eff6ff}
+.mi{font-size:26px;flex-shrink:0}
+.minfo{flex:1}.mt{font-size:17px;font-weight:800;color:#1e293b}
+.mm{font-size:11px;color:#64748b;margin-top:2px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#eff6ff;color:#1d4ed8;border:1px solid #93c5fd}
+.chv{font-size:14px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.macro.open .chv{transform:rotate(90deg)}
+.mb{display:none;padding:0 18px 18px;border-top:1px solid #f1f5f9}
+.macro.open .mb{display:block}
+.tp{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc}
+.th{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;transition:background .2s}
+.th:hover{background:#eff6ff}
+.tt{flex:1;font-size:13px;font-weight:700;color:#1e293b}
+.tc{font-size:10px;color:#64748b;font-weight:600;padding:2px 8px;background:#f1f5f9;border-radius:10px;border:1px solid #e2e8f0}
+.tv{font-size:11px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.tp.open .tv{transform:rotate(90deg)}
+.tb{display:none;padding:0 14px 14px;border-top:1px solid #f1f5f9}
+.tp.open .tb{display:block}
+.kp h4{font-size:12px;font-weight:700;color:#1d4ed8;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.kp h4::before{content:'💡'}
+ul.k{list-style:none;padding:0}
+ul.k li{padding:6px 10px 6px 20px;font-size:12px;color:#334155;margin-bottom:3px;border-radius:6px;background:#f1f5f9;position:relative;line-height:1.5}
+ul.k li::before{content:'▸';position:absolute;left:8px;color:#2563eb;font-weight:700}
+ul.k li b{color:#1e293b}
+.ex{margin-top:8px;padding:10px 14px;background:#eff6ff;border:1px solid #93c5fd;border-radius:8px}
+.ex h4{font-size:12px;font-weight:700;color:#1d4ed8;margin-bottom:6px}
+.ex h4::before{content:'📌 '}
+.ex p,.ex li{font-size:11px;color:#1e3a5f;line-height:1.5}
+.ex code{background:#dbeafe;padding:1px 5px;border-radius:4px;font-size:11px;color:#1e40af}
+.trap{margin-top:10px;padding:10px 14px;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px}
+.trap h4{font-size:12px;font-weight:700;color:#dc2626;margin-bottom:6px}
+.trap h4::before{content:'⚠️ '}
+ul.t{list-style:none;padding:0}
+ul.t li{padding:4px 10px 4px 20px;font-size:11px;color:#7f1d1d;margin-bottom:2px;position:relative;line-height:1.4}
+ul.t li::before{content:'✗';position:absolute;left:6px;color:#dc2626;font-weight:700}
+ul.t li b{color:#1e293b}
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#2563eb;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(37,99,235,.4);z-index:100}
+.back-btn:hover{background:#1d4ed8}
+.scroll-top{position:fixed;bottom:64px;right:20px;width:40px;height:40px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#1e293b;font-size:16px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{background:#2563eb;color:#fff;border-color:#2563eb}
+@media(max-width:768px){.container{padding:10px}.header h1{font-size:18px}.mt{font-size:15px}.nav-btn{padding:5px 8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>💻 Revisão Rápida – Informática e Dados</h1>
+<div class="sub">Policial Legislativo CD 2026 • Conceitos práticos com exemplos • Revisão 1 dia antes da prova</div>
+<div class="stats-row">
+<div class="hstat">📂 <b>7</b> temas do edital</div>
+<div class="hstat">📑 <b>26</b> subtópicos</div>
+<div class="hstat">📌 <b>Exemplos</b> em cada tópico</div>
+<div class="hstat">⚡ <b>Rápido</b> e prático</div>
+</div>
+</div>
+<div class="nav-bar" id="navBar">
+<span class="nav-btn" onclick="scrollToSection('m1')">1. Sist. Operacionais</span>
+<span class="nav-btn" onclick="scrollToSection('m2')">2. Navegadores</span>
+<span class="nav-btn" onclick="scrollToSection('m3')">3. Seg. Informação</span>
+<span class="nav-btn" onclick="scrollToSection('m4')">4. Bancos de Dados</span>
+<span class="nav-btn" onclick="scrollToSection('m5')">5. Redes</span>
+<span class="nav-btn" onclick="scrollToSection('m6')">6. IA / Big Data</span>
+<span class="nav-btn" onclick="scrollToSection('m7')">7. Forense</span>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Buscar conceito, sigla ou exemplo..." onkeyup="filterContent()">
+<button class="ebtn" onclick="toggleAll(true)">▼ Abrir Tudo</button>
+<button class="ebtn" onclick="toggleAll(false)">▲ Fechar Tudo</button>
+</div>
+
+<!-- ══════════ 1. SISTEMAS OPERACIONAIS ══════════ -->
+<div class="macro" id="m1">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🖥️</div>
+<div class="minfo"><div class="mt">1. Noções de Sistemas Operacionais</div><div class="mm">Windows, Android e iOS — conceitos, atalhos e diferenças</div></div>
+<span class="badge">Edital §1</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Windows</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Multitarefa preemptiva</b>: SO decide quando cada programa usa a CPU (ex.: rodar Word e Chrome ao mesmo tempo)</li>
+<li><b>NTFS</b>: sistema de arquivos padrão — suporta permissões, criptografia (EFS), compactação e arquivos &gt;4 GB. <b>FAT32</b>: limite 4 GB por arquivo, sem permissões</li>
+<li><b>Gerenciador de Tarefas</b> (Ctrl+Shift+Esc): mostra processos, CPU, memória, disco. Permite "Finalizar tarefa"</li>
+<li><b>Registro do Windows</b> (regedit): banco de dados hierárquico com config. do SO e programas. 5 hives: HKLM, HKCU, HKCR, HKU, HKCC</li>
+<li><b>Firewall do Windows</b>: filtra tráfego de rede — regras de entrada e saída. Já vem ativado por padrão</li>
+<li><b>BitLocker</b>: criptografia de disco inteiro — usa chip TPM. <b>EFS</b>: criptografia de arquivos individuais no NTFS</li>
+<li><b>Windows Defender</b>: antivírus nativo. Nas versões recentes inclui proteção contra ransomware (acesso a pastas controlado)</li>
+<li><b>UAC</b> (Controle de Conta de Usuário): aviso quando programa tenta alterar configurações do sistema → "Deseja permitir?"</li>
+</ul></div>
+<div class="ex"><h4>Atalhos essenciais para lembrar</h4>
+<p><code>Win+E</code> = Explorador de Arquivos &nbsp;|&nbsp; <code>Win+L</code> = Bloquear tela &nbsp;|&nbsp; <code>Win+R</code> = Executar &nbsp;|&nbsp; <code>Win+I</code> = Configurações</p>
+<p><code>Ctrl+Z</code> = Desfazer &nbsp;|&nbsp; <code>Ctrl+Shift+Esc</code> = Gerenciador de Tarefas &nbsp;|&nbsp; <code>Alt+Tab</code> = Alternar janelas</p>
+<p><code>Win+D</code> = Área de trabalho &nbsp;|&nbsp; <code>Win+Print Screen</code> = Captura de tela salva em Imagens</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"FAT32 suporta arquivos maiores que 4 GB" — <b>ERRADO</b>, limite é 4 GB (use NTFS ou exFAT)</li>
+<li>"BitLocker criptografa apenas arquivos" — <b>ERRADO</b>, criptografa disco inteiro; EFS que é por arquivo</li>
+<li>"Windows Defender substitui completamente antivírus de terceiros" — <b>cuidado</b>, é eficaz mas a banca pode questionar contexto corporativo</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Android e iOS</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Android</b>: SO <b>open source</b> (código aberto), baseado em Linux, desenvolvido pelo Google. Permite instalar apps fora da loja (<b>sideloading</b>). Customizável por fabricantes</li>
+<li><b>iOS</b>: SO <b>proprietário</b> da Apple, exclusivo para iPhone/iPad. <b>Não permite sideloading</b> (só App Store). Mais restritivo = maior controle de segurança</li>
+<li><b>Permissões</b>: ambos pedem autorização para câmera, microfone, localização. No Android pode-se instalar APK externo; no iOS não</li>
+<li><b>Sandbox</b>: apps rodam isolados em ambos os SOs — um app não acessa dados de outro diretamente</li>
+<li><b>Atualizações</b>: iOS atualiza todos os dispositivos ao mesmo tempo; Android depende de cada fabricante (fragmentação)</li>
+</ul></div>
+<div class="ex"><h4>Macete para lembrar</h4>
+<p>🤖 <b>Android</b> = "A de Aberto" (open source, APK, customizável)<br>
+🍎 <b>iOS</b> = "i de Isolado" (fechado, só App Store, Apple controla tudo)</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Android é mais seguro que iOS por ser open source" — <b>ERRADO</b>, open source não garante mais segurança</li>
+<li>"iOS permite instalação de apps fora da App Store" — <b>ERRADO</b> (regra geral — exceções recentes na UE não são foco)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 2. NAVEGADORES E FERRAMENTAS ══════════ -->
+<div class="macro" id="m2">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🌐</div>
+<div class="minfo"><div class="mt">2. Navegadores de Internet, Webmail e Ferramentas de Produtividade</div><div class="mm">Chrome, Firefox, Edge, protocolos de e-mail, Office, Google Workspace</div></div>
+<span class="badge">Edital §2</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Navegadores de Internet</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Chrome</b> (Google), <b>Firefox</b> (Mozilla), <b>Edge</b> (Microsoft, baseado no Chromium): todos suportam extensões/complementos</li>
+<li><b>Cookies</b>: pequenos arquivos armazenados pelo site no seu PC para lembrar preferências/login. <b>Cookies de terceiros</b> = rastreamento publicitário</li>
+<li><b>Cache</b>: cópia local de páginas/imagens para carregamento mais rápido. Limpar cache = <code>Ctrl+Shift+Del</code></li>
+<li><b>Navegação privativa</b>: <code>Ctrl+Shift+N</code> (Chrome/Edge) ou <code>Ctrl+Shift+P</code> (Firefox). NÃO salva histórico local, cookies ou cache — mas <b>NÃO dá anonimato</b> na internet (ISP ainda vê)</li>
+<li><b>HTTPS</b> = HTTP + TLS/SSL → cadeado no navegador = <b>conexão criptografada</b>. Não garante que o site é confiável, garante que a comunicação é segura</li>
+<li><b>Favoritos/Bookmarks</b>: <code>Ctrl+D</code> para salvar. <b>Gerenciador</b>: <code>Ctrl+Shift+O</code></li>
+<li><b>Extensões maliciosas</b>: podem capturar dados — instalar apenas de lojas oficiais</li>
+</ul></div>
+<div class="ex"><h4>Atalhos que caem na prova</h4>
+<p><code>Ctrl+T</code> = Nova aba &nbsp;|&nbsp; <code>Ctrl+W</code> = Fechar aba &nbsp;|&nbsp; <code>Ctrl+Shift+T</code> = Reabrir aba fechada</p>
+<p><code>Ctrl+L</code> ou <code>F6</code> = Selecionar barra de endereço &nbsp;|&nbsp; <code>Ctrl+F</code> = Buscar na página</p>
+<p><code>F5</code> = Atualizar &nbsp;|&nbsp; <code>Ctrl+F5</code> = Atualizar sem cache &nbsp;|&nbsp; <code>F11</code> = Tela cheia</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Navegação privativa garante anonimato na internet" — <b>ERRADO</b>, só não salva dados localmente</li>
+<li>"HTTPS garante que o site é confiável" — <b>ERRADO</b>, garante apenas criptografia da conexão</li>
+<li>"Cookies são vírus" — <b>ERRADO</b>, são arquivos de texto com dados de preferência</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Webmail e Protocolos de E-mail</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Webmail</b>: acesso ao e-mail pelo navegador (Gmail, Outlook.com). Não precisa instalar nada</li>
+<li><b>SMTP</b> (porta 587/465): protocolo para <b>enviar</b> e-mails. Lembrar: <b>S</b>MTP = <b>S</b>aída</li>
+<li><b>POP3</b> (porta 110/995): <b>baixa</b> e-mails para o PC e <b>apaga do servidor</b> (por padrão). Acesso offline</li>
+<li><b>IMAP</b> (porta 143/993): <b>sincroniza</b> e-mails com o servidor — e-mail fica no servidor. Ideal para acessar de vários dispositivos</li>
+<li><b>CC</b> (cópia): todos veem os destinatários. <b>CCO/BCC</b> (cópia oculta): destinatários ocultos — ninguém vê quem está em CCO</li>
+</ul></div>
+<div class="ex"><h4>Macete para lembrar protocolos</h4>
+<p>📤 <b>SMTP</b> = "<b>S</b>eu <b>M</b>ail <b>T</b>á <b>P</b>artindo" (envio)<br>
+📥 <b>POP3</b> = "<b>P</b>uxa e <b>O</b>cupa o <b>P</b>C" (baixa e remove do servidor)<br>
+🔄 <b>IMAP</b> = "<b>I</b>nternet <b>M</b>ail <b>A</b>cesso <b>P</b>ermanente" (sincroniza, fica no servidor)</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Ferramentas de Produtividade</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Microsoft Office</b>: Word (.docx), Excel (.xlsx), PowerPoint (.pptx). Versão online: Office 365/Microsoft 365</li>
+<li><b>Google Workspace</b>: Docs, Sheets, Slides — 100% online, colaboração em tempo real, salva no Google Drive</li>
+<li><b>LibreOffice</b>: alternativa gratuita/open source — Writer, Calc, Impress. Formato nativo: ODF (.odt, .ods, .odp)</li>
+<li><b>Computação em nuvem</b>: armazenamento e processamento remoto. Ex.: Google Drive, OneDrive, Dropbox. Modelos: <b>SaaS</b> (software), <b>PaaS</b> (plataforma), <b>IaaS</b> (infraestrutura)</li>
+<li><b>Colaboração em tempo real</b>: vários usuários editam mesmo documento simultaneamente (Google Docs, Office 365)</li>
+</ul></div>
+<div class="ex"><h4>Equivalências para lembrar</h4>
+<p>📝 Word = Docs = Writer &nbsp;|&nbsp; 📊 Excel = Sheets = Calc &nbsp;|&nbsp; 📽️ PowerPoint = Slides = Impress</p>
+<p>☁️ <b>SaaS</b> = você usa o software (Gmail) | <b>PaaS</b> = você desenvolve (Heroku) | <b>IaaS</b> = você monta o servidor (AWS EC2)</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 3. SEGURANÇA DA INFORMAÇÃO ══════════ -->
+<div class="macro" id="m3">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔒</div>
+<div class="minfo"><div class="mt">3. Noções de Segurança da Informação</div><div class="mm">Responsabilidades, malware, phishing, aplicativos de segurança, assinatura e certificação digital</div></div>
+<span class="badge">Edital §3</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">3.1 Responsabilidades e Deveres dos Usuários de TI</span><span class="tc">Base</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Tríade CID</b>: <b>C</b>onfidencialidade (só autorizado vê) + <b>I</b>ntegridade (dado não adulterado) + <b>D</b>isponibilidade (sempre acessível)</li>
+<li><b>Autenticidade</b>: garantia de que o remetente é quem diz ser</li>
+<li><b>Não-repúdio (irretratabilidade)</b>: quem enviou não pode negar que enviou</li>
+<li><b>Política de Senhas</b>: mínimo 8-12 caracteres, maiúsculas + minúsculas + números + especiais. Trocar periodicamente. NÃO reutilizar</li>
+<li><b>Menor privilégio</b>: cada usuário só acessa o necessário para sua função</li>
+<li><b>Backup</b>: completo (tudo), incremental (só o que mudou desde o último backup), diferencial (tudo desde o último completo)</li>
+</ul></div>
+<div class="ex"><h4>Macete CID + exemplos</h4>
+<p>🔐 <b>C</b>onfidencialidade = senha no arquivo | 🔏 <b>I</b>ntegridade = hash MD5 do download | 🟢 <b>D</b>isponibilidade = servidor redundante 24/7</p>
+<p>📦 Backup: Completo (seg) → Incremental (ter=Δter, qua=Δqua) → se der problema na qua, precisa do completo + Δter + Δqua</p>
+<p>📦 Backup: Completo (seg) → Diferencial (ter=Δseg-ter, qua=Δseg-qua) → se der problema na qua, precisa do completo + Δseg-qua apenas</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">3.2 Malware: Vírus, Worms, Trojans, Spyware, Ransomware e mais</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Vírus</b>: precisa de um <b>hospedeiro</b> (arquivo) e da <b>execução</b> pelo usuário para se propagar. Ex.: arquivo .exe infectado</li>
+<li><b>Worm</b>: <b>auto-replicável</b>, se espalha pela rede <b>sozinho</b>, sem precisar de hospedeiro ou ação do usuário. Consome banda</li>
+<li><b>Trojan (Cavalo de Troia)</b>: parece programa legítimo, mas carrega código malicioso. <b>NÃO se replica</b>. Ex.: jogo gratuito com backdoor</li>
+<li><b>Spyware</b>: espiona o usuário — coleta dados sem consentimento. Subtipo: <b>Keylogger</b> (captura teclado), <b>Screenlogger</b> (captura tela)</li>
+<li><b>Ransomware</b>: sequestra dados, <b>criptografa</b> e exige resgate (pagamento). Ex.: WannaCry. Melhor defesa: <b>backup offline atualizado</b></li>
+<li><b>Backdoor</b>: porta dos fundos — acesso remoto não autorizado sem o conhecimento do usuário</li>
+<li><b>Zero-day exploit</b>: exploração de vulnerabilidade <b>desconhecida</b> pelo fabricante (sem patch disponível)</li>
+<li><b>Rootkit</b>: esconde a presença de malware no sistema, altera o SO para se camuflar</li>
+<li><b>Bot/Botnet</b>: computador infectado controlado remotamente. Rede de bots = botnet (usada para DDoS)</li>
+</ul></div>
+<div class="ex"><h4>Tabela Rápida para Memorizar</h4>
+<p>🦠 <b>Vírus</b> = precisa de hospedeiro + ação do usuário<br>
+🐛 <b>Worm</b> = autônomo, rede, sem hospedeiro<br>
+🐴 <b>Trojan</b> = disfarçado, não se replica<br>
+👁️ <b>Spyware</b> = espiona silenciosamente<br>
+💰 <b>Ransomware</b> = criptografa + pede resgate<br>
+🚪 <b>Backdoor</b> = porta dos fundos<br>
+⏰ <b>Zero-day</b> = falha desconhecida, sem correção</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Worm precisa de ação do usuário para se propagar" — <b>ERRADO</b>, worm se propaga sozinho</li>
+<li>"Trojan se auto-replica como vírus" — <b>ERRADO</b>, trojan NÃO se replica</li>
+<li>"Vírus se propaga pela rede sem interação do usuário" — <b>ERRADO</b>, isso é worm</li>
+<li>"Ransomware apaga dados" — <b>ERRADO</b>, criptografa (não apaga)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">3.3 Phishing, Vishing e Engenharia Social</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Engenharia Social</b>: manipulação psicológica para obter informações. Não usa técnica computacional — usa <b>confiança humana</b></li>
+<li><b>Phishing</b>: e-mail/site falso imitando entidade confiável (banco, correios). Objetivo: roubar dados (login, cartão)</li>
+<li><b>Spear Phishing</b>: phishing <b>direcionado</b> a pessoa ou organização específica (personalizado)</li>
+<li><b>Vishing</b>: phishing por <b>voz</b> (telefone). Ex.: ligação falsa do banco pedindo senha</li>
+<li><b>Smishing</b>: phishing por <b>SMS</b>. Ex.: "Sua encomenda parou. Clique aqui"</li>
+<li><b>Pharming</b>: redireciona o DNS — mesmo digitando URL correta, vai para site falso</li>
+<li><b>Pretexting</b>: criminoso cria cenário falso (pretexto) para obter informação. Ex.: fingir ser do suporte técnico</li>
+</ul></div>
+<div class="ex"><h4>Macete "PVSPP"</h4>
+<p>📧 <b>P</b>hishing = e-mail falso<br>
+📞 <b>V</b>ishing = voz (telefone)<br>
+📱 <b>S</b>mishing = SMS<br>
+🌐 <b>P</b>harming = DNS envenenado<br>
+🎭 <b>P</b>retexting = fingir ser outra pessoa</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">3.4 Aplicativos para Segurança</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Antivírus</b>: detecta malware por <b>assinatura</b> (banco de dados conhecido) e <b>heurística</b> (comportamento suspeito)</li>
+<li><b>EDR (Endpoint Detection and Response)</b>: evolução do antivírus — monitora <b>continuamente</b> o endpoint, detecta ameaças avançadas, permite resposta automatizada. Foco em <b>detecção + resposta</b></li>
+<li><b>Firewall</b>: filtra pacotes de rede — <b>controla entrada e saída</b> de dados. Pode ser hardware ou software. NÃO detecta vírus dentro de arquivos</li>
+<li><b>Anti-spyware</b>: detecta e remove spyware/adware específicos</li>
+<li><b>Gerenciador de senhas</b>: armazena senhas criptografadas — você só lembra 1 senha mestra (ex.: KeePass, Bitwarden, 1Password)</li>
+<li><b>MFA (Autenticação Multifator)</b>: algo que <b>sabe</b> (senha) + algo que <b>tem</b> (token/celular) + algo que <b>é</b> (biometria)</li>
+</ul></div>
+<div class="ex"><h4>Diferença-chave: Antivírus vs EDR vs Firewall</h4>
+<p>🛡️ <b>Antivírus</b> = "porteiro que verifica identidades" (assinatura de malware)<br>
+🔍 <b>EDR</b> = "câmera + alarme + resposta" (monitora comportamento contínuo)<br>
+🧱 <b>Firewall</b> = "muro com portão" (controla tráfego de rede, não analisa conteúdo de arquivos)</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Firewall detecta vírus em anexos de e-mail" — <b>ERRADO</b>, quem faz isso é antivírus/EDR</li>
+<li>"EDR é a mesma coisa que antivírus" — <b>ERRADO</b>, EDR é mais completo (detecção + resposta + monitoramento contínuo)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">3.5 Assinatura e Certificação Digital</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Criptografia simétrica</b>: <b>mesma chave</b> para cifrar e decifrar. Rápida. Ex.: AES, DES. Problema: como compartilhar a chave?</li>
+<li><b>Criptografia assimétrica</b>: par de chaves — <b>pública</b> (todos têm) e <b>privada</b> (só o dono). Ex.: RSA. Cifra com pública → decifra com privada</li>
+<li><b>Hash</b>: função que gera um resumo único de tamanho fixo. Ex.: SHA-256, MD5. Qualquer alteração = hash diferente → garante <b>integridade</b></li>
+<li><b>Assinatura digital</b>: assinar = cifrar o <b>hash</b> com a <b>chave privada</b> do remetente. Verificar = decifrar com a <b>chave pública</b>. Garante: <b>autenticidade + integridade + não-repúdio</b></li>
+<li><b>Certificado digital</b>: documento eletrônico que vincula uma <b>chave pública</b> a uma <b>identidade</b>. Emitido por <b>AC (Autoridade Certificadora)</b></li>
+<li><b>ICP-Brasil</b>: infraestrutura brasileira de chaves públicas. <b>AC-Raiz</b> = ITI. Hierarquia: AC-Raiz → ACs → ARs</li>
+<li><b>Certificado A1</b>: armazenado no computador (software), validade 1 ano. <b>A3</b>: em token/smartcard (hardware), validade até 5 anos</li>
+</ul></div>
+<div class="ex"><h4>Fluxo da Assinatura Digital</h4>
+<p>1️⃣ João calcula o <b>hash</b> do documento<br>
+2️⃣ João <b>cifra o hash</b> com sua <b>chave privada</b> → essa é a assinatura<br>
+3️⃣ Maria recebe o documento + assinatura<br>
+4️⃣ Maria <b>decifra a assinatura</b> com a <b>chave pública</b> de João → obtém o hash original<br>
+5️⃣ Maria calcula o hash do documento recebido → se bater = autêntico e íntegro ✅</p>
+<p>🔑 Lembrar: <b>Privada assina, Pública verifica</b> | <b>Pública cifra, Privada decifra</b></p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Assinatura digital garante confidencialidade" — <b>ERRADO</b>, garante autenticidade, integridade e não-repúdio (quem garante confidencialidade é a criptografia)</li>
+<li>"Certificado digital é emitido pelo usuário" — <b>ERRADO</b>, emitido pela AC (Autoridade Certificadora)</li>
+<li>"A chave pública deve ser mantida em segredo" — <b>ERRADO</b>, a pública é distribuída; a privada é secreta</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 4. BANCOS DE DADOS ══════════ -->
+<div class="macro" id="m4">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🗄️</div>
+<div class="minfo"><div class="mt">4. Noções de Bancos de Dados</div><div class="mm">Conceitos, dados estruturados/não estruturados, chaves e relacionamentos</div></div>
+<span class="badge">Edital §4</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">4.1 Conceitos Básicos e Características</span><span class="tc">Base</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Banco de Dados (BD)</b>: coleção organizada de dados inter-relacionados. Ex.: cadastro de clientes com nome, CPF, endereço</li>
+<li><b>SGBD</b> (Sistema Gerenciador de BD): software que gerencia o BD. Ex.: MySQL, PostgreSQL, Oracle, SQL Server, MongoDB</li>
+<li><b>SQL</b>: linguagem padrão para consultar/manipular BD relacional. Comandos: <code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code></li>
+<li><b>Tabela (Relação)</b>: estrutura com linhas (registros/tuplas) e colunas (atributos/campos)</li>
+<li><b>Propriedades ACID</b>: <b>A</b>tomicidade (tudo ou nada), <b>C</b>onsistência (regras mantidas), <b>I</b>solamento (transações independentes), <b>D</b>urabilidade (dados persistem)</li>
+</ul></div>
+<div class="ex"><h4>Exemplo Visual</h4>
+<p>Tabela <code>CLIENTES</code>:<br>
+| <b>ID</b> | <b>Nome</b> | <b>CPF</b> | <b>Cidade</b> |<br>
+| 1 | Maria | 111.222.333-44 | Brasília |<br>
+| 2 | João | 555.666.777-88 | SP |<br>
+→ Cada linha = 1 registro (tupla). Cada coluna = 1 atributo (campo)</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">4.2 Dados Estruturados e Não Estruturados</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Estruturados</b>: organizados em tabelas com schema fixo. Ex.: planilha Excel, tabela SQL. Fácil de buscar e filtrar</li>
+<li><b>Não estruturados</b>: sem formato definido. Ex.: vídeos, imagens, PDFs, áudios, posts em redes sociais. ~80% dos dados mundiais</li>
+<li><b>Semiestruturados</b>: possuem alguma organização mas sem schema rígido. Ex.: JSON, XML, e-mails (tem campo, assunto, corpo)</li>
+<li><b>BD Relacional</b>: dados estruturados em tabelas (SQL). <b>BD NoSQL</b>: dados não/semi-estruturados (MongoDB, Cassandra)</li>
+</ul></div>
+<div class="ex"><h4>Macete para lembrar</h4>
+<p>📊 <b>Estruturado</b> = "cabe numa planilha" (linhas e colunas definidas)<br>
+📷 <b>Não estruturado</b> = "não cabe numa planilha" (fotos, vídeos, textos livres)<br>
+📋 <b>Semiestruturado</b> = "tem etiquetas mas não é planilha" (JSON, XML)</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">4.3 Chaves e Relacionamentos</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Chave Primária (PK)</b>: identifica <b>unicamente</b> cada registro na tabela. Não aceita NULL nem duplicatas. Ex.: CPF, ID</li>
+<li><b>Chave Estrangeira (FK)</b>: campo que referencia a PK de <b>outra tabela</b> — cria o relacionamento. Ex.: <code>cliente_id</code> na tabela Pedidos</li>
+<li><b>Chave Candidata</b>: qualquer coluna que poderia ser PK (única). A PK é escolhida entre as candidatas</li>
+<li><b>1:1</b> (um para um): 1 pessoa → 1 CPF. <b>1:N</b> (um para muitos): 1 cliente → N pedidos. <b>N:N</b> (muitos para muitos): alunos ↔ disciplinas (precisa tabela intermediária)</li>
+<li><b>Integridade referencial</b>: FK deve referenciar uma PK existente — não pode ter FK "solta" apontando para registro inexistente</li>
+</ul></div>
+<div class="ex"><h4>Exemplo de Relacionamento</h4>
+<p>Tabela <code>CLIENTES</code>: <b>ID</b> (PK), Nome<br>
+Tabela <code>PEDIDOS</code>: <b>PedidoID</b> (PK), Data, <b>ClienteID</b> (FK → CLIENTES.ID)<br>
+→ 1 Cliente tem N Pedidos = relacionamento <b>1:N</b></p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Chave primária pode ter valores duplicados" — <b>ERRADO</b>, deve ser única</li>
+<li>"Chave estrangeira identifica unicamente o registro" — <b>ERRADO</b>, quem faz isso é a primária</li>
+<li>"Relacionamento N:N é implementado diretamente" — <b>ERRADO</b>, precisa de tabela intermediária</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 5. REDES DE COMPUTADORES ══════════ -->
+<div class="macro" id="m5">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🌍</div>
+<div class="minfo"><div class="mt">5. Noções de Redes de Computadores</div><div class="mm">LAN/MAN/WAN, Internet/Intranet, TCP/IP, NAT, VPN, RDP</div></div>
+<span class="badge">Edital §5</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">5.1 Tipos de Rede: LAN, MAN e WAN</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>LAN (Local Area Network)</b>: rede local — escritório, casa, escola. Alcance: até ~1 km. Alta velocidade, baixo custo. Ex.: rede Wi-Fi da sua casa</li>
+<li><b>MAN (Metropolitan Area Network)</b>: rede metropolitana — interliga várias LANs numa cidade. Ex.: rede da prefeitura conectando vários prédios públicos</li>
+<li><b>WAN (Wide Area Network)</b>: rede de longa distância — conecta cidades, países, continentes. Ex.: a própria Internet é a maior WAN</li>
+<li><b>PAN (Personal Area Network)</b>: rede pessoal — Bluetooth, NFC. Alcance: ~10 m. Ex.: fone sem fio</li>
+<li><b>WLAN</b>: LAN sem fio (Wi-Fi). Padrão IEEE <b>802.11</b>. <b>Ethernet</b> = LAN cabeada, padrão IEEE <b>802.3</b></li>
+</ul></div>
+<div class="ex"><h4>Macete do tamanho crescente</h4>
+<p>👤 <b>PAN</b> (pessoa) → 🏠 <b>LAN</b> (local) → 🏙️ <b>MAN</b> (metrópole) → 🌍 <b>WAN</b> (mundo)</p>
+<p>Dica: <b>LAN</b>house = local | <b>MAN</b>hattan = cidade | <b>WAN</b>derlust = viajar pelo mundo</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">5.2 Internet e Intranet</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Internet</b>: rede pública mundial — qualquer pessoa acessa. Usa TCP/IP</li>
+<li><b>Intranet</b>: rede <b>privada</b> da organização — usa mesmos protocolos da Internet (TCP/IP, HTTP) mas acesso restrito a funcionários</li>
+<li><b>Extranet</b>: extensão da Intranet para <b>parceiros externos autorizados</b> (fornecedores, clientes). Ex.: portal do fornecedor</li>
+<li><b>DNS</b> (Domain Name System): traduz nomes de domínio para IPs. Ex.: <code>google.com</code> → <code>142.250.79.14</code>. Funciona como a "agenda telefônica" da Internet</li>
+<li><b>DHCP</b>: atribui IPs automaticamente aos dispositivos na rede. Sem DHCP = configurar IP manualmente</li>
+<li><b>URL</b>: endereço completo. Ex.: <code>https://www.exemplo.com.br/pagina</code> → protocolo + domínio + caminho</li>
+</ul></div>
+<div class="ex"><h4>Diferença visual</h4>
+<p>🌐 <b>Internet</b> = aberta para todos (rede pública)<br>
+🏢 <b>Intranet</b> = só para funcionários (rede privada, mesma tecnologia)<br>
+🤝 <b>Extranet</b> = intranet + parceiros autorizados de fora</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Intranet não usa protocolo TCP/IP" — <b>ERRADO</b>, usa os mesmos protocolos da Internet</li>
+<li>"Internet e Intranet são a mesma coisa" — <b>ERRADO</b>, Intranet é privada</li>
+<li>"Extranet é acessível por qualquer pessoa" — <b>ERRADO</b>, apenas parceiros autorizados</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">5.3 Arquitetura TCP/IP e NAT</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Modelo TCP/IP</b> — 4 camadas (de baixo para cima):<br>
+1️⃣ <b>Acesso à Rede</b> (enlace/física) → cabos, Wi-Fi, Ethernet<br>
+2️⃣ <b>Internet</b> → IP, ICMP, ARP → endereçamento e roteamento<br>
+3️⃣ <b>Transporte</b> → TCP (confiável, com conexão) e UDP (rápido, sem conexão)<br>
+4️⃣ <b>Aplicação</b> → HTTP, HTTPS, FTP, SMTP, DNS, DHCP</li>
+<li><b>IP (Internet Protocol)</b>: endereço lógico de cada dispositivo. <b>IPv4</b>: 32 bits (ex.: 192.168.1.1). <b>IPv6</b>: 128 bits (ex.: 2001:0db8::1)</li>
+<li><b>TCP</b>: orientado a conexão, confiável, garante entrega na ordem (handshake SYN-SYN/ACK-ACK). Usado por: HTTP, FTP, SMTP, SSH</li>
+<li><b>UDP</b>: sem conexão, mais rápido, não garante entrega. Usado por: DNS, streaming, VoIP, jogos online</li>
+<li><b>NAT (Network Address Translation)</b>: traduz IPs <b>privados</b> (da rede interna) para um IP <b>público</b> (da internet). Permite que vários dispositivos compartilhem 1 IP público</li>
+<li><b>IP privado</b>: 10.x.x.x, 172.16-31.x.x, 192.168.x.x — NÃO roteável na Internet</li>
+</ul></div>
+<div class="ex"><h4>Macete para protocolos e portas</h4>
+<p>🔵 <b>HTTP</b> = 80 | <b>HTTPS</b> = 443 | <b>FTP</b> = 20/21 | <b>SSH</b> = 22 | <b>DNS</b> = 53 | <b>SMTP</b> = 587</p>
+<p>🟢 <b>TCP</b> = "Tem Certeza, Parceiro?" (confiável, confirma tudo)<br>
+🟡 <b>UDP</b> = "Ui, Danou-se, Passou!" (manda e não verifica)</p>
+<p>🏠 <b>NAT</b> = "tradutor de endereços" — sua casa tem 5 dispositivos com IPs internos → o roteador tem 1 IP público → NAT traduz</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"UDP é confiável e garante entrega" — <b>ERRADO</b>, isso é TCP</li>
+<li>"IPv4 usa 128 bits" — <b>ERRADO</b>, IPv4 = 32 bits; IPv6 = 128 bits</li>
+<li>"NAT criptografa os dados" — <b>ERRADO</b>, NAT apenas traduz endereços IP</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">5.4 Acesso Remoto: VPN e RDP</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>VPN (Virtual Private Network)</b>: cria um <b>túnel criptografado</b> pela Internet pública, simulando uma rede privada. Garante <b>confidencialidade</b> e <b>integridade</b></li>
+<li>Uso: funcionário em casa acessa a rede da empresa de forma segura pela Internet</li>
+<li>Protocolos VPN: <b>IPSec</b> (camada rede), <b>OpenVPN</b> (SSL/TLS), <b>L2TP</b>, <b>WireGuard</b></li>
+<li><b>RDP (Remote Desktop Protocol)</b>: protocolo da Microsoft para <b>acesso remoto à área de trabalho</b>. Porta padrão: <b>3389</b>. Permite controlar outro PC como se estivesse na frente dele</li>
+<li>Diferença: VPN = acessar a <b>rede</b> da empresa. RDP = controlar a <b>tela</b> de outro computador</li>
+<li>Outros: <b>SSH</b> (porta 22) = acesso remoto via linha de comando (terminal); <b>TeamViewer/AnyDesk</b> = acesso remoto gráfico</li>
+</ul></div>
+<div class="ex"><h4>Analogia para lembrar</h4>
+<p>🔒 <b>VPN</b> = "túnel secreto" pela internet → você entra na rede da empresa como se estivesse lá<br>
+🖥️ <b>RDP</b> = "controle remoto da TV" → você vê e controla a tela do outro PC<br>
+⌨️ <b>SSH</b> = "telefone para o servidor" → só texto/comandos, sem tela gráfica</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 6. APRENDIZADO DE MÁQUINA ══════════ -->
+<div class="macro" id="m6">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🤖</div>
+<div class="minfo"><div class="mt">6. Noções de Aprendizado de Máquina</div><div class="mm">Mineração de dados, Big Data e IA Generativa</div></div>
+<span class="badge">Edital §6</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">6.1 Mineração de Dados (Data Mining)</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Mineração de dados</b>: processo de descobrir <b>padrões, correlações e anomalias</b> em grandes volumes de dados</li>
+<li>Objetivo: transformar dados brutos em <b>informação útil</b> para tomada de decisão</li>
+<li>Técnicas comuns: <b>classificação</b> (categorizar dados), <b>clustering</b> (agrupar sem rótulos), <b>associação</b> (encontrar relações — "quem compra X também compra Y"), <b>regressão</b> (prever valor numérico)</li>
+<li>Etapas (KDD): seleção → pré-processamento → transformação → mineração → interpretação/avaliação</li>
+<li><b>Machine Learning (ML)</b>: subárea da IA que usa algoritmos que <b>aprendem com os dados</b> sem serem explicitamente programados</li>
+<li>Tipos de ML: <b>Supervisionado</b> (dados rotulados — ex.: spam/não spam), <b>Não supervisionado</b> (sem rótulos — clustering), <b>Por reforço</b> (tentativa e erro com recompensas)</li>
+</ul></div>
+<div class="ex"><h4>Exemplos práticos</h4>
+<p>🛒 <b>Associação</b>: "Clientes que compram fraldas também compram cerveja" (supermercado)<br>
+📧 <b>Classificação</b>: Gmail separando e-mail em "spam" ou "não spam"<br>
+👥 <b>Clustering</b>: agrupar clientes por perfil de consumo (sem categorias prévias)<br>
+📈 <b>Regressão</b>: prever o preço de um imóvel com base em área, localização</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">6.2 Big Data: Conceito, Premissas e Aplicação</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Big Data</b>: conjuntos de dados tão grandes e complexos que ferramentas tradicionais de BD <b>não conseguem processar</b></li>
+<li><b>5 Vs do Big Data</b>:<br>
+📦 <b>Volume</b>: quantidade massiva de dados (petabytes, exabytes)<br>
+⚡ <b>Velocidade</b>: dados gerados e processados em tempo real (ou quase)<br>
+🔀 <b>Variedade</b>: dados de formatos diversos (texto, imagem, vídeo, sensor)<br>
+✅ <b>Veracidade</b>: confiabilidade e qualidade dos dados<br>
+💎 <b>Valor</b>: capacidade de extrair insights úteis dos dados</li>
+<li>Tecnologias: <b>Hadoop</b> (processamento distribuído), <b>Spark</b> (processamento em memória, mais rápido), <b>NoSQL</b> (BDs flexíveis)</li>
+<li>Aplicações: análise de redes sociais, detecção de fraude bancária, medicina personalizada, previsão de demanda</li>
+</ul></div>
+<div class="ex"><h4>Macete dos 5 Vs</h4>
+<p>Pense no <b>fluxo de água</b>:<br>
+📦 <b>Volume</b> = quanta água (dado) existe<br>
+⚡ <b>Velocidade</b> = quão rápido a água flui<br>
+🔀 <b>Variedade</b> = água doce, salgada, gelo, vapor (formatos diferentes)<br>
+✅ <b>Veracidade</b> = a água está limpa? (dado confiável?)<br>
+💎 <b>Valor</b> = consigo gerar energia com essa água? (insight útil?)</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Big Data são apenas dados em grande volume" — <b>ERRADO</b>, envolve os 5 Vs (não só volume)</li>
+<li>"Big Data pode ser processado com ferramentas tradicionais de BD" — <b>ERRADO</b>, requer tecnologias específicas</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">6.3 IA Generativa: Principais Características</span><span class="tc">Novo no edital</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>IA Generativa</b>: modelos de IA capazes de <b>criar conteúdo novo</b> (texto, imagem, código, áudio, vídeo) a partir de padrões aprendidos</li>
+<li>Exemplos: <b>ChatGPT</b> (texto), <b>DALL-E/Midjourney</b> (imagem), <b>GitHub Copilot</b> (código), <b>Suno</b> (música)</li>
+<li><b>LLM (Large Language Model)</b>: modelo treinado com bilhões de textos para gerar linguagem natural. Ex.: GPT, LLaMA, Gemini</li>
+<li><b>Prompt</b>: instrução/pergunta que o usuário fornece ao modelo. Qualidade do prompt → qualidade da resposta</li>
+<li><b>Alucinação</b>: quando o modelo gera informação <b>falsa</b> com aparência de verdadeira — risco principal</li>
+<li><b>Deep Learning</b>: redes neurais profundas (muitas camadas) — base da IA generativa. Subtipo de Machine Learning</li>
+<li><b>Deepfake</b>: manipulação de vídeo/áudio por IA para criar conteúdo falso hiper-realista (rostos, vozes)</li>
+<li>Riscos: viés algorítmico, desinformação, violação de direitos autorais, deepfakes</li>
+</ul></div>
+<div class="ex"><h4>Hierarquia para lembrar</h4>
+<p>🧠 <b>IA</b> (Inteligência Artificial) — campo amplo<br>
+&nbsp;&nbsp;↳ 📊 <b>Machine Learning</b> — aprender com dados<br>
+&nbsp;&nbsp;&nbsp;&nbsp;↳ 🔗 <b>Deep Learning</b> — redes neurais profundas<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ ✨ <b>IA Generativa</b> — criar conteúdo novo (ChatGPT, DALL-E)</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"IA generativa sempre produz informação verdadeira" — <b>ERRADO</b>, pode alucinar</li>
+<li>"Deep Learning é sinônimo de Machine Learning" — <b>ERRADO</b>, DL é uma subcategoria de ML</li>
+<li>"Deepfake só manipula vídeo" — <b>ERRADO</b>, também manipula áudio</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 7. FORENSE COMPUTACIONAL ══════════ -->
+<div class="macro" id="m7">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔬</div>
+<div class="minfo"><div class="mt">7. Noções de Forense Computacional</div><div class="mm">Recuperação de arquivos, vestígios cibernéticos, cadeia de custódia, logs do Windows</div></div>
+<span class="badge">Edital §7</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">7.1 Recuperação de Arquivos Apagados</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li>Quando um arquivo é "apagado", o SO <b>marca o espaço como disponível</b> mas os dados <b>permanecem no disco</b> até serem sobrescritos</li>
+<li><b>Data Carving (file carving)</b>: técnica de recuperar arquivos sem usar metadados do sistema de arquivos — busca por <b>assinaturas de arquivo</b> (magic numbers/headers). Ex.: JPEG começa com <code>FF D8 FF</code></li>
+<li><b>Tabela de alocação</b> (FAT/MFT): ao deletar, a referência na tabela é removida, mas os clusters com dados permanecem</li>
+<li><b>NTFS – MFT ($MFT)</b>: Master File Table registra metadados de cada arquivo. Arquivo deletado = flag marcada, mas entrada mantida</li>
+<li><b>Lixeira</b> do Windows: move arquivo para <code>$Recycle.Bin</code> — ainda recuperável facilmente. Após esvaziar = carving necessário</li>
+<li><b>SSD com TRIM</b>: ao deletar, o SSD pode zerar os blocos imediatamente → recuperação <b>muito mais difícil</b> ou impossível</li>
+<li>Ferramentas: <b>Autopsy</b>, <b>FTK</b>, <b>EnCase</b>, <b>Recuva</b>, <b>PhotoRec</b></li>
+</ul></div>
+<div class="ex"><h4>Analogia para lembrar</h4>
+<p>📖 Deletar arquivo = <b>arrancar o índice de um livro</b> — as páginas (dados) ainda existem, mas você perdeu a referência<br>
+🔍 <b>Carving</b> = folhear todas as páginas procurando pelo conteúdo sem usar o índice<br>
+⚡ <b>SSD + TRIM</b> = não só arrancou o índice, como <b>rasgou as páginas</b> (dados apagados de verdade)</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">7.2 Identificação, Isolamento, Preservação e Coleta de Vestígio Cibernético</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Vestígio cibernético</b>: qualquer dado digital que possa servir como evidência — arquivos, logs, registros de rede, metadados, e-mails</li>
+<li><b>Ordem de volatilidade</b> (coletar do mais volátil para o menos):<br>
+1️⃣ Registradores/Cache da CPU<br>
+2️⃣ Memória RAM<br>
+3️⃣ Dados de rede (tabela ARP, conexões ativas)<br>
+4️⃣ Dados em disco (arquivos, logs)<br>
+5️⃣ Logs remotos/backups</li>
+<li><b>Imagem forense (bit-a-bit)</b>: cópia exata do disco original — <b>nunca trabalhar no original</b>. Ferramentas: <code>dd</code>, FTK Imager, EnCase</li>
+<li><b>Hash de verificação</b>: calcular MD5/SHA-256 do original e da cópia — se baterem, a cópia é <b>íntegra</b></li>
+<li><b>Write blocker</b>: dispositivo que impede <b>qualquer escrita</b> no disco original durante a cópia — garante que o perito não altera a evidência</li>
+<li>Princípio: <b>nunca alterar a evidência original</b> — toda análise é feita na <b>cópia forense</b></li>
+</ul></div>
+<div class="ex"><h4>Sequência prática em cena de crime digital</h4>
+<p>1️⃣ <b>Identificar</b>: localizar dispositivos e mídias relevantes (PC, celular, pendrive, nuvem)<br>
+2️⃣ <b>Isolar</b>: desconectar da rede (evitar acesso/alteração remota). NÃO desligar antes de capturar RAM<br>
+3️⃣ <b>Preservar</b>: capturar RAM (volátil) → usar write blocker → gerar imagem bit-a-bit → calcular hash<br>
+4️⃣ <b>Coletar</b>: documentar tudo (fotos, anotações), embalar fisicamente, etiquetar, registrar cadeia de custódia</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"A análise deve ser feita diretamente no disco original" — <b>ERRADO</b>, sempre na cópia forense</li>
+<li>"RAM não é relevante para análise forense" — <b>ERRADO</b>, pode conter senhas, processos e chaves de criptografia</li>
+<li>"Desligar o computador é a primeira coisa a fazer" — <b>ERRADO</b>, primeiro capturar dados voláteis (RAM)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">7.3 Cadeia de Custódia Digital</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Cadeia de custódia</b>: documentação completa do histórico da evidência — quem coletou, quando, onde, como foi armazenada, quem acessou</li>
+<li>Garante a <b>admissibilidade</b> da prova em juízo — se a cadeia for quebrada, a prova pode ser questionada</li>
+<li><b>Hash</b> é a base da integridade digital: hash antes → análise → hash depois → se bater = não houve alteração</li>
+<li>Etapas (art. 158-B CPP): reconhecimento → isolamento → fixação → coleta → acondicionamento → transporte → recebimento → processamento → armazenamento → descarte</li>
+<li>Tudo documentado com <b>data, hora, responsável</b> e <b>procedimento realizado</b></li>
+<li>Evidência digital é <b>frágil</b>: pode ser alterada facilmente → por isso hash + write blocker são essenciais</li>
+</ul></div>
+<div class="ex"><h4>Analogia</h4>
+<p>📦 Cadeia de custódia digital = <b>"rastreamento de encomenda"</b> — você sabe exatamente onde a evidência esteve em cada momento, quem tocou nela, e pode provar que ninguém adulterou</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">7.4 Log de Eventos do Windows</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Visualizador de Eventos</b> (<code>eventvwr.msc</code>): ferramenta nativa do Windows para consultar logs de eventos do sistema</li>
+<li><b>Logs principais</b>:<br>
+📋 <b>Application</b> (Aplicativo): eventos de programas (erros, avisos do Word, SQL Server, etc.)<br>
+⚙️ <b>System</b> (Sistema): eventos do SO e drivers (falha de hardware, inicialização)<br>
+🔐 <b>Security</b> (Segurança): eventos de autenticação — <b>logon, logoff, acesso a recursos, falhas de login</b> (mais importante para forense)<br>
+📦 <b>Setup</b> (Instalação): eventos de instalação de componentes/atualizações</li>
+<li><b>Event IDs importantes</b>:<br>
+<code>4624</code> = logon bem-sucedido<br>
+<code>4625</code> = falha de logon<br>
+<code>4634</code> = logoff<br>
+<code>4720</code> = conta de usuário criada<br>
+<code>4726</code> = conta de usuário deletada<br>
+<code>4648</code> = logon com credenciais explícitas</li>
+<li>Formato do arquivo de log: <b>.evtx</b> (Windows Vista+). Armazenados em <code>C:\Windows\System32\winevt\Logs\</code></li>
+<li>Logs podem ser <b>exportados, filtrados</b> por data/ID/fonte e <b>encaminhados</b> para servidor centralizado (SIEM)</li>
+</ul></div>
+<div class="ex"><h4>Cenário forense prático</h4>
+<p>🕵️ Investigar acesso indevido:<br>
+1️⃣ Abrir <code>eventvwr.msc</code> → Security<br>
+2️⃣ Filtrar por <b>Event ID 4624</b> (logons bem-sucedidos) → ver horário e conta utilizada<br>
+3️⃣ Filtrar por <b>Event ID 4625</b> (falhas) → tentativas de senha errada = possível brute force<br>
+4️⃣ Correlacionar com horários suspeitos → evidência de acesso não autorizado</p>
+<p>📌 IDs para decorar: <b>4624</b> = entrou ✅ | <b>4625</b> = não entrou ❌ | <b>4720</b> = criou conta 👤</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Logs de segurança registram apenas eventos de sistema" — <b>ERRADO</b>, registram autenticação e acesso</li>
+<li>"Logs do Windows não podem ser exportados" — <b>ERRADO</b>, podem ser exportados e filtrados</li>
+<li>"Event ID 4624 indica falha de logon" — <b>ERRADO</b>, 4624 = sucesso; 4625 = falha</li>
+</ul></div></div></div>
+</div></div>
+
+</div>
+
+<button class="back-btn" onclick="location.href='reta-final.html'">← Voltar</button>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+function toggleMacro(el){el.closest('.macro').classList.toggle('open')}
+function toggleTp(el){el.closest('.tp').classList.toggle('open')}
+function toggleAll(open){document.querySelectorAll('.macro').forEach(m=>{open?m.classList.add('open'):m.classList.remove('open')});document.querySelectorAll('.tp').forEach(t=>{open?t.classList.add('open'):t.classList.remove('open')})}
+function scrollToSection(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+function filterContent(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.macro').forEach(m=>{const t=m.textContent.toLowerCase();if(q===''||t.includes(q)){m.style.display='';if(q!==''){m.classList.add('open');m.querySelectorAll('.tp').forEach(tp=>tp.classList.add('open'))}}else{m.style.display='none'}})}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)})
+</script>
+</body>
+</html>

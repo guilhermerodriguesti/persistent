@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão Rápida – Direito Constitucional e RICD</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#7c2d12,#ea580c);border-radius:16px;margin-bottom:20px;box-shadow:0 8px 32px rgba(234,88,12,0.3)}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:13px;color:#fed7aa;margin-bottom:12px}
+.stats-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hstat{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(255,255,255,0.1);color:#fed7aa;border:1px solid rgba(255,255,255,0.15)}
+.hstat b{font-size:15px;color:#fff}
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:16px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #fdba74;color:#c2410c;background:#fff7ed;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:#ea580c;color:#fff;border-color:#ea580c}
+.search-box{margin-bottom:16px;display:flex;gap:8px}
+.search-box input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-size:13px;outline:none}
+.search-box input:focus{border-color:#ea580c}
+.ebtn{padding:8px 16px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#c2410c;cursor:pointer;font-size:11px;font-weight:700}
+.ebtn:hover{background:#ea580c;color:#fff;border-color:#ea580c}
+.macro{margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.mh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.mh:hover{background:#fff7ed}
+.mi{font-size:26px;flex-shrink:0}
+.minfo{flex:1}.mt{font-size:17px;font-weight:800;color:#1e293b}
+.mm{font-size:11px;color:#64748b;margin-top:2px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#fff7ed;color:#c2410c;border:1px solid #fdba74}
+.chv{font-size:14px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.macro.open .chv{transform:rotate(90deg)}
+.mb{display:none;padding:0 18px 18px;border-top:1px solid #f1f5f9}
+.macro.open .mb{display:block}
+.tp{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc}
+.th{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;transition:background .2s}
+.th:hover{background:#fff7ed}
+.tt{flex:1;font-size:13px;font-weight:700;color:#1e293b}
+.tc{font-size:10px;color:#64748b;font-weight:600;padding:2px 8px;background:#f1f5f9;border-radius:10px;border:1px solid #e2e8f0}
+.tv{font-size:11px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.tp.open .tv{transform:rotate(90deg)}
+.tb{display:none;padding:0 14px 14px;border-top:1px solid #f1f5f9}
+.tp.open .tb{display:block}
+.kp h4{font-size:12px;font-weight:700;color:#c2410c;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.kp h4::before{content:'💡'}
+ul.k{list-style:none;padding:0}
+ul.k li{padding:6px 10px 6px 20px;font-size:12px;color:#334155;margin-bottom:3px;border-radius:6px;background:#f1f5f9;position:relative;line-height:1.5}
+ul.k li::before{content:'▸';position:absolute;left:8px;color:#ea580c;font-weight:700}
+ul.k li b{color:#1e293b}
+.ex{margin-top:8px;padding:10px 14px;background:#fff7ed;border:1px solid #fdba74;border-radius:8px}
+.ex h4{font-size:12px;font-weight:700;color:#c2410c;margin-bottom:6px}
+.ex h4::before{content:'📌 '}
+.ex p,.ex li{font-size:11px;color:#7c2d12;line-height:1.5}
+.trap{margin-top:10px;padding:10px 14px;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px}
+.trap h4{font-size:12px;font-weight:700;color:#dc2626;margin-bottom:6px}
+.trap h4::before{content:'⚠️ '}
+ul.t{list-style:none;padding:0}
+ul.t li{padding:4px 10px 4px 20px;font-size:11px;color:#7f1d1d;margin-bottom:2px;position:relative;line-height:1.4}
+ul.t li::before{content:'✗';position:absolute;left:6px;color:#dc2626;font-weight:700}
+ul.t li b{color:#1e293b}
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#ea580c;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(234,88,12,.4);z-index:100;text-decoration:none}
+.back-btn:hover{background:#c2410c}
+.scroll-top{position:fixed;bottom:64px;right:20px;width:40px;height:40px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#1e293b;font-size:16px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{background:#ea580c;color:#fff;border-color:#ea580c}
+@media(max-width:768px){.container{padding:10px}.header h1{font-size:18px}.mt{font-size:15px}.nav-btn{padding:5px 8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🏛️ Revisão Rápida – Direito Constitucional e RICD</h1>
+<div class="sub">Policial Legislativo CD 2026 • Conceitos práticos + macetes • Revisão 1 dia antes da prova</div>
+<div class="stats-row">
+<div class="hstat">📂 <b>10</b> macro-temas</div>
+<div class="hstat">📑 <b>30+</b> subtópicos</div>
+<div class="hstat">📌 <b>Macetes</b> e exemplos</div>
+<div class="hstat">⚡ <b>RICD</b> incluso</div>
+</div>
+</div>
+<div class="nav-bar">
+<span class="nav-btn" onclick="scrollToSection('m1')">1. CF/88</span>
+<span class="nav-btn" onclick="scrollToSection('m2')">2. Princípios</span>
+<span class="nav-btn" onclick="scrollToSection('m3')">3. Dir. Fundamentais</span>
+<span class="nav-btn" onclick="scrollToSection('m4')">4. Organização</span>
+<span class="nav-btn" onclick="scrollToSection('m5')">5. Adm. Pública</span>
+<span class="nav-btn" onclick="scrollToSection('m6')">6. P. Legislativo</span>
+<span class="nav-btn" onclick="scrollToSection('m7')">7. Proc. Legislativo</span>
+<span class="nav-btn" onclick="scrollToSection('m8')">8. Defesa/Seg.</span>
+<span class="nav-btn" onclick="scrollToSection('m9')">9. RICD</span>
+<span class="nav-btn" onclick="scrollToSection('m10')">10. Res. 18/2003</span>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Buscar conceito, artigo ou exemplo..." onkeyup="filterContent()">
+<button class="ebtn" onclick="toggleAll(true)">▼ Abrir Tudo</button>
+<button class="ebtn" onclick="toggleAll(false)">▲ Fechar Tudo</button>
+</div>
+
+<!-- ══════════ 1. CF/88 — CONCEITO ══════════ -->
+<div class="macro" id="m1">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📜</div>
+<div class="minfo"><div class="mt">1. CF/88 — Conceito e Estrutura</div><div class="mm">Contexto histórico, características, classificação, estrutura do texto</div></div>
+<span class="badge">Edital §1</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Classificação e Características</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Promulgada</b> em 05/10/1988 (redemocratização). Chamada "Constituição Cidadã" (Ulysses Guimarães)</li>
+<li><b>Classificação</b>: formal, escrita, analítica (extensa), dogmática, rígida, promulgada (democrática), eclética</li>
+<li><b>Estrutura</b>: Preâmbulo (não normativo — STF) + 9 Títulos + ADCT</li>
+<li><b>Títulos</b>: I Princípios Fundamentais | II Direitos e Garantias | III Organização do Estado | IV Organização dos Poderes | V Defesa do Estado | VI Tributação | VII Ordem Econômica | VIII Ordem Social | IX Disposições Gerais</li>
+<li><b>Rígida</b>: para alterar exige procedimento mais difícil que lei ordinária (EC = 3/5 + 2 turnos + 2 casas)</li>
+<li><b>Cláusulas pétreas</b> (art. 60 §4º): forma federativa, voto direto/secreto/universal/periódico, separação dos poderes, direitos e garantias individuais → NÃO podem ser <b>abolidas</b> (podem ser ampliadas)</li>
+</ul></div>
+<div class="ex"><h4>Macete classificação</h4>
+<p><b>F-E-A-D-R-P-E</b>: <b>F</b>ormal, <b>E</b>scrita, <b>A</b>nalítica, <b>D</b>ogmática, <b>R</b>ígida, <b>P</b>romulgada, <b>E</b>clética</p>
+<p>Cláusulas pétreas: <b>FoVoSeDi</b> → <b>Fo</b>rma federativa, <b>Vo</b>to, <b>Se</b>paração poderes, <b>Di</b>reitos individuais</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 2. PRINCÍPIOS FUNDAMENTAIS ══════════ -->
+<div class="macro" id="m2">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">⭐</div>
+<div class="minfo"><div class="mt">2. Princípios Fundamentais (Arts. 1-4)</div><div class="mm">Fundamentos, objetivos, princípios das relações internacionais</div></div>
+<span class="badge">Edital §2</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Fundamentos, Objetivos e Relações Internacionais</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Art. 1º — Fundamentos "SO-CI-DI-VA-PLU"</b>:<br>
+<b>SO</b>berania | <b>CI</b>dadania | <b>DI</b>gnidade da pessoa humana | <b>VA</b>lores sociais do trabalho e livre iniciativa | <b>PLU</b>ralismo político</li>
+<li><b>Parágrafo único art. 1º</b>: "Todo poder emana do <b>povo</b>" (exercido direta ou indiretamente)</li>
+<li><b>Art. 2º</b>: Poderes independentes e harmônicos: Legislativo, Executivo, Judiciário</li>
+<li><b>Art. 3º — Objetivos "CON-GAR-ERR-PRO"</b>:<br>
+<b>CON</b>struir sociedade livre, justa e solidária | <b>GAR</b>antir desenvolvimento nacional | <b>ERR</b>adicar pobreza e marginalização | <b>PRO</b>mover o bem de todos (sem preconceitos)</li>
+<li><b>Art. 4º — Relações Internacionais (10 princípios)</b>: independência nacional, prevalência dos DH, autodeterminação dos povos, não intervenção, igualdade entre Estados, defesa da paz, solução pacífica, repúdio ao terrorismo/racismo, cooperação, asilo político. <b>P.U.</b>: integração latino-americana</li>
+</ul></div>
+<div class="ex"><h4>Macetes essenciais</h4>
+<p>🏛️ <b>Fundamentos</b> (art. 1): <b>SO-CI-DI-VA-PLU</b><br>
+🎯 <b>Objetivos</b> (art. 3): verbos → <b>construir, garantir, erradicar, promover</b> (CGEP)<br>
+🌍 <b>Rel. Internacionais</b> (art. 4): prevalência DH + integração latino-americana</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Dignidade é objetivo da República" — <b>ERRADO</b>, é fundamento (art. 1º)</li>
+<li>"Erradicar pobreza é fundamento" — <b>ERRADO</b>, é objetivo (art. 3º)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 3. DIREITOS E GARANTIAS FUNDAMENTAIS ══════════ -->
+<div class="macro" id="m3">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🛡️</div>
+<div class="minfo"><div class="mt">3. Direitos e Garantias Fundamentais</div><div class="mm">Art. 5º (individuais/coletivos), direitos sociais, nacionalidade, direitos políticos, partidos</div></div>
+<span class="badge">Edital §3</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Art. 5º — Direitos Individuais e Coletivos</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Caput</b>: vida, liberdade, igualdade, segurança e propriedade. Brasileiros e <b>estrangeiros residentes</b> (STF estende a todos no território)</li>
+<li><b>Remédios constitucionais</b>: HC (liberdade de locomoção), HD (informações pessoais do impetrante), MS (direito líquido e certo não amparado por HC/HD), MI (norma faltante), Ação Popular (cidadão contra ato lesivo ao patrimônio)</li>
+<li><b>Inviolabilidade domiciliar</b> (XI): dia = mandado judicial. Noite = só flagrante, desastre, socorro</li>
+<li><b>Sigilo de comunicações</b> (XII): regra = inviolável. Exceção: interceptação telefônica com <b>ordem judicial</b> para investigação criminal</li>
+<li><b>Imprescritíveis</b>: racismo + ação grupos armados. <b>Inafiançáveis</b>: + hediondos, tortura, tráfico, terrorismo</li>
+<li><b>Prisão civil por dívida</b>: SÓ para <b>inadimplemento voluntário e inescusável de pensão alimentícia</b> (depositário infiel NÃO — SV 25)</li>
+<li>Art. 5º §2º: rol <b>exemplificativo</b> (cláusula de abertura). §3º: tratados DH com rito EC = constitucional</li>
+</ul></div>
+<div class="ex"><h4>Remédios — macete "HAMAI"</h4>
+<p>🔓 <b>H</b>C = locomoção | 📂 H<b>D</b> = dados pessoais | 📋 <b>M</b>S = direito líquido e certo | ⚖️ M<b>I</b> = norma faltante | 👥 <b>A</b>ção Popular = patrimônio público (só cidadão)</p>
+<p>Casa: ☀️ Dia = mandado | 🌙 Noite = flagrante/desastre/socorro (NUNCA mandado)</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Direitos Sociais, Nacionalidade e Direitos Políticos</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Direitos sociais</b> (art. 6º): educação, saúde, alimentação, trabalho, moradia, transporte, lazer, segurança, previdência, proteção à maternidade/infância, assistência</li>
+<li><b>Nacionalidade — Natos</b> (art. 12 I): nascidos no Brasil (jus soli, mesmo de pais estrangeiros a serviço de seu país = exceção) + nascidos no exterior de pai/mãe brasileiro a serviço do BR + nascidos no exterior registrados em repartição ou que vieram residir no BR e optaram</li>
+<li><b>Nacionalidade — Naturalizados</b> (art. 12 II): ordinária (estrangeiros conforme lei) e extraordinária (residentes há >15 anos + sem condenação → basta requerer)</li>
+<li><b>Cargos privativos de nato</b>: Presidente/Vice, Presidente da Câmara/Senado, Ministro STF, carreira diplomática, oficial FA, Ministro da Defesa</li>
+<li><b>Voto obrigatório</b>: 18 a 70 anos. <b>Facultativo</b>: 16-18, >70, analfabetos</li>
+<li><b>Inelegibilidade</b>: inalistáveis e analfabetos (absoluta). Reeleição chefe Executivo: 1 vez consecutiva</li>
+<li><b>Fidelidade partidária</b>: mandato pertence ao partido (STF). Candidatura avulsa: não admitida</li>
+</ul></div>
+<div class="ex"><h4>Voto</h4>
+<p>✅ <b>Obrigatório</b>: 18-70 | 🔄 <b>Facultativo</b>: 16-18, >70, analfabetos<br>
+❌ Analfabetos: votam (facultativo), mas <b>NÃO podem ser eleitos</b><br>
+🇧🇷 Cargos de nato: <b>MP3.COM</b> → Ministro STF, Presidente Câmara/Senado, Presidente/Vice, .COM (carreira diplomática, oficial FA, Min. Defesa)</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 4. ORGANIZAÇÃO DO ESTADO ══════════ -->
+<div class="macro" id="m4">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🗺️</div>
+<div class="minfo"><div class="mt">4. Organização do Estado e Intervenção Federal</div><div class="mm">Entes federativos, competências, intervenção</div></div>
+<span class="badge">Edital §4-5</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Competências e Intervenção</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Entes federativos</b>: União, Estados, DF, Municípios. Todos <b>autônomos</b> (sem hierarquia)</li>
+<li><b>Competência exclusiva</b> (art. 21): administrativa da União — <b>indelegável</b> (manter relações exteriores, declarar guerra, emitir moeda)</li>
+<li><b>Competência privativa</b> (art. 22): legislativa da União — <b>delegável</b> a Estados por LC (direito penal, civil, trabalho, trânsito)</li>
+<li><b>Competência comum</b> (art. 23): administrativa de TODOS os entes (saúde, educação, meio ambiente, patrimônio)</li>
+<li><b>Competência concorrente</b> (art. 24): legislativa de União + Estados + DF (tributário, penitenciário, urbanístico). Municípios NÃO</li>
+<li><b>DF</b>: acumula competências estaduais e municipais. NÃO pode ser dividido em Municípios. Lei Orgânica = "Constituição" do DF</li>
+<li><b>Intervenção Federal</b> (art. 34): exceção ao princípio da autonomia. Hipóteses: manter integridade nacional, repelir invasão, grave comprometimento da ordem pública, garantir livre exercício dos Poderes, organizar finanças, prover execução de lei federal/decisão judicial, princípios constitucionais sensíveis</li>
+<li>Quem decreta: <b>Presidente da República</b>. Prazo e condições no decreto</li>
+</ul></div>
+<div class="ex"><h4>Macete competências</h4>
+<p>🔒 <b>Exclusiva</b> (21) = administrativa, indelegável<br>
+🔑 <b>Privativa</b> (22) = legislativa, delegável por LC<br>
+🤝 <b>Comum</b> (23) = administrativa, todos os entes<br>
+📋 <b>Concorrente</b> (24) = legislativa, União + E + DF (sem Município)</p>
+<p>Dica: Exclusiva = "Ex" de "Executa" (adm.) | Privativa = "Priv" de "legisla com Priv"ilégio</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 5. ADM. PÚBLICA ══════════ -->
+<div class="macro" id="m5">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏢</div>
+<div class="minfo"><div class="mt">5. Administração Pública (Arts. 37-41)</div><div class="mm">LIMPE, servidores, concurso, acumulação, estabilidade, militares</div></div>
+<span class="badge">Edital §6</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Disposições Gerais e Servidores</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Art. 37 caput — LIMPE</b>: <b>L</b>egalidade, <b>I</b>mpessoalidade, <b>M</b>oralidade, <b>P</b>ublicidade, <b>E</b>ficiência (EC 19/98)</li>
+<li><b>Concurso público</b>: obrigatório (salvo cargo em comissão). Validade: <b>2 anos</b> + prorrogação 1x</li>
+<li><b>Acumulação</b>: vedada (regra). Exceções: 2 professor, 1 prof+1 técnico, 2 saúde → com compatibilidade de horários</li>
+<li><b>Estabilidade</b> (art. 41): <b>3 anos</b> de efetivo exercício. Perda: sentença transitada, PAD, avaliação periódica, excesso de despesa (art. 169)</li>
+<li><b>Teto remuneratório</b>: ninguém ganha mais que Ministro do STF (teto geral). Subtetos nos entes</li>
+<li><b>Militares</b> (art. 42): PM e Bombeiros → Estados. Vedações: sindicalização, greve, filiação partidária (enquanto em serviço ativo)</li>
+</ul></div>
+<div class="ex"><h4>LIMPE + números</h4>
+<p>⚖️ <b>LIMPE</b> → art. 37 caput (decorar, cai sempre)<br>
+📅 Concurso: <b>2+2</b> anos | Estágio/estabilidade: <b>3</b> anos<br>
+🚫 Militar: sem sindicato, sem greve, sem partido</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 6. PODER LEGISLATIVO ══════════ -->
+<div class="macro" id="m6">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏛️</div>
+<div class="minfo"><div class="mt">6. Poder Legislativo e Regime dos Parlamentares</div><div class="mm">CN, Câmara, Senado, competências, CPI, imunidades, prerrogativas</div></div>
+<span class="badge">Edital §7-8</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Congresso Nacional, Câmara e Senado</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Congresso Nacional</b> = Câmara dos Deputados + Senado Federal (bicameral)</li>
+<li><b>Câmara</b>: 513 deputados, proporcional à população, mandato <b>4 anos</b>, mín 8 máx 70 por estado</li>
+<li><b>Senado</b>: 81 senadores (3 por estado + DF), mandato <b>8 anos</b>, renovação alternada 1/3 e 2/3</li>
+<li><b>Competência exclusiva do CN</b> (art. 49): resolver sobre tratados, autorizar referendo, aprovar estado de defesa/sítio, sustar atos do Executivo, julgar contas do PR</li>
+<li><b>Competência privativa da Câmara</b> (art. 51): autorizar instauração de processo contra PR (2/3), eleger membros do Conselho da República</li>
+<li><b>Competência privativa do Senado</b> (art. 52): processar e julgar PR em crimes de responsabilidade (presidido pelo presidente do STF), aprovar indicações, fixar limites de endividamento</li>
+<li><b>CPI</b> (art. 58 §3º): criada por 1/3 dos membros da Casa. Poderes de investigação próprios de autoridades judiciais. Pode: quebrar sigilo bancário/fiscal/telefônico, ouvir testemunhas, requisitar documentos. NÃO pode: prender (exceto flagrante), busca domiciliar, interceptação telefônica, decretar indisponibilidade de bens</li>
+</ul></div>
+<div class="ex"><h4>Câmara vs Senado</h4>
+<p>🏠 <b>Câmara</b> = povo (513, 4a, proporcional) | <b>Autoriza</b> processo contra PR<br>
+🏛️ <b>Senado</b> = estados (81, 8a, 3 por UF) | <b>Julga</b> PR em crimes de responsabilidade<br>
+🔎 CPI: 1/3 cria | SIM sigilo bancário/fiscal | NÃO interceptação/prisão/busca</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Imunidades Parlamentares</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Imunidade material (inviolabilidade)</b> — art. 53 caput: deputados/senadores são <b>invioláveis</b> por opiniões, palavras e votos → exclui responsabilidade penal e civil. Dentro do Congresso = absoluta. Fora = precisa ter nexo com mandato</li>
+<li><b>Imunidade formal</b> — prisão (art. 53 §2º): após diplomação, só pode ser preso em <b>flagrante de crime inafiançável</b>. Autos → Casa em 24h → maioria absoluta decide se susta a prisão</li>
+<li><b>Imunidade formal</b> — processo (art. 53 §3º): após recebimento da denúncia, partido com representação pode pedir à Casa que <b>suste o processo</b>. Suspende prescrição enquanto durar mandato</li>
+<li><b>Foro privilegiado</b>: deputados e senadores são julgados pelo <b>STF</b> (crimes comuns)</li>
+<li>Imunidades NÃO podem ser renunciadas pelo parlamentar</li>
+</ul></div>
+<div class="ex"><h4>Material vs Formal</h4>
+<p>🗣️ <b>Material</b> = o que FALA (opiniões, votos) → irresponsabilidade<br>
+🔒 <b>Formal/prisão</b> = só flagrante de inafiançável<br>
+⏸️ <b>Formal/processo</b> = Casa pode sustar o andamento</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 7. PROCESSO LEGISLATIVO ══════════ -->
+<div class="macro" id="m7">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📝</div>
+<div class="minfo"><div class="mt">7. Processo Legislativo</div><div class="mm">Espécies normativas, fases, EC, LC, LO, MP, veto</div></div>
+<span class="badge">Edital §9</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Espécies e Fases do Processo Legislativo</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Espécies</b> (art. 59): EC, LC, LO, leis delegadas, MP, decretos legislativos, resoluções</li>
+<li><b>EC</b>: 3/5 + 2 turnos + 2 casas. Não sujeita a sanção/veto. Iniciativa: 1/3 Câmara ou Senado, PR, >50% das Assembleias Legislativas</li>
+<li><b>LC</b>: maioria <b>absoluta</b>. Matérias reservadas pela CF. Ex.: LC 95, finanças públicas</li>
+<li><b>LO</b>: maioria <b>simples</b> (dos presentes). Matéria residual</li>
+<li><b>MP (Medida Provisória)</b>: relevância + urgência. Editada pelo PR. Prazo: <b>60 dias</b> + prorrogação 60 = 120 dias. Se não votada em 45 dias → tranca pauta. Vedações: nacionalidade, cidadania, penal, processual penal, organização Judiciário/MP</li>
+<li><b>Fases da lei ordinária</b>: iniciativa → discussão → votação → sanção/veto → promulgação → publicação</li>
+<li><b>Veto</b> (art. 66): total ou parcial, jurídico (inconstitucional) ou político (contrário ao interesse público). Prazo: <b>15 dias úteis</b>. Derrubada do veto: <b>maioria absoluta</b> do CN em sessão conjunta</li>
+<li><b>Sanção tácita</b>: se PR não se manifestar em 15 dias úteis → sanção tácita</li>
+</ul></div>
+<div class="ex"><h4>Quóruns para decorar</h4>
+<p>🔴 <b>EC</b> = 3/5 (60%) em 2 turnos nas 2 casas<br>
+🟠 <b>LC</b> = maioria absoluta (metade + 1 do total)<br>
+🟢 <b>LO</b> = maioria simples (metade + 1 dos presentes)<br>
+📋 <b>MP</b> = 60+60 dias = 120 | Tranca pauta em 45d</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 8. DEFESA DO ESTADO E SEGURANÇA PÚBLICA ══════════ -->
+<div class="macro" id="m8">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🛡️</div>
+<div class="minfo"><div class="mt">8. Defesa do Estado, FA e Segurança Pública</div><div class="mm">Estado de defesa, estado de sítio, Forças Armadas, art. 144</div></div>
+<span class="badge">Edital §10-12</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Estado de Defesa, Estado de Sítio e Segurança Pública</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Estado de Defesa</b> (art. 136): PR decreta + ouve Conselho da República e Defesa Nacional → CN aprova em <b>24h</b>. Prazo: <b>30 dias</b> (prorrogável 1x). Locais restritos e determinados</li>
+<li><b>Estado de Sítio</b> (art. 137): PR solicita <b>autorização prévia</b> do CN. Mais grave. Prazo: <b>30 dias</b> (prorrogável). Pode restringir mais direitos (inviolabilidade, sigilo, reunião)</li>
+<li>Defesa = PR decreta primeiro, CN depois. Sítio = CN autoriza antes</li>
+<li><b>Forças Armadas</b> (art. 142): Marinha, Exército, Aeronáutica. Subordinadas ao PR (comandante supremo). Missão: defesa da Pátria, garantia dos poderes constitucionais, lei e ordem</li>
+<li><b>Segurança Pública</b> (art. 144) — órgãos:<br>
+🔵 <b>PF</b>: polícia judiciária da União + fronteira + drogas + contrabando<br>
+🟢 <b>PRF</b>: patrulhamento ostensivo das rodovias federais<br>
+🔴 <b>PC</b>: polícia judiciária estadual + investigação<br>
+🟡 <b>PM</b>: policiamento ostensivo + preservação da ordem pública<br>
+🟠 <b>CBM</b>: defesa civil + incêndios<br>
+🏙️ <b>Guardas Municipais</b>: proteção de bens, serviços e instalações do município</li>
+</ul></div>
+<div class="ex"><h4>Defesa vs Sítio</h4>
+<p>🟡 <b>Defesa</b> = PR decreta → CN aprova depois (24h) | 30d + 30d | Menos grave<br>
+🔴 <b>Sítio</b> = CN autoriza ANTES → PR decreta | 30d | Mais grave</p>
+<p>Art. 144: <b>PF</b> = judiciária União | <b>PC</b> = judiciária Estado | <b>PM</b> = ostensiva Estado | <b>PRF</b> = rodovias</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 9. RICD ══════════ -->
+<div class="macro" id="m9">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📋</div>
+<div class="minfo"><div class="mt">9. Regimento Interno da Câmara dos Deputados (RICD)</div><div class="mm">Órgãos, Mesa Diretora, comissões, sessões, deputados, administração</div></div>
+<span class="badge">Edital §12.1-12.4</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Disposições Preliminares e Órgãos (arts. 1-24)</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Mesa Diretora</b>: Presidente, 2 Vice-Presidentes, 4 Secretários (titulares) + 4 suplentes. Mandato: <b>2 anos</b> (vedada recondução dentro da mesma legislatura — art. 8º)</li>
+<li><b>Presidente da Câmara</b>: dirige sessões, mantém ordem, representa a Casa, decide questões de ordem, substitui PR (2º na linha)</li>
+<li><b>Colégio de Líderes</b>: líderes de bancadas e partidos. Assessora a Mesa, delibera sobre pauta</li>
+<li><b>Comissões permanentes</b>: funcionam na legislatura. Matérias específicas. Ex.: CCJ (Constituição e Justiça)</li>
+<li><b>Comissões temporárias</b>: especiais (matéria específica), de inquérito (CPI), externas</li>
+<li><b>CCJ</b>: analisa constitucionalidade, legalidade, juridicidade, regimentalidade e técnica legislativa de <b>toda</b> proposição</li>
+<li><b>Quórum</b>: maioria absoluta (257) para deliberação. Sessão: mínimo para abrir discussão</li>
+</ul></div>
+<div class="ex"><h4>Mesa Diretora</h4>
+<p>🪑 Presidente + 2 VP + 4 Secretários = <b>7 membros</b> titulares | Mandato <b>2 anos</b> | Sem recondução na mesma legislatura</p>
+<p>Linha sucessória PR: 1º VP → 2º <b>Presidente da Câmara</b> → 3º Presidente do Senado → 4º Presidente do STF</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Sessões (arts. 65-94) e Deputados (arts. 226-251)</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Sessões ordinárias</b>: terça a quinta, das 14h às 19h (regra). <b>Extraordinárias</b>: convocadas fora do horário/dia normal</li>
+<li><b>Sessões solenes</b>: comemorações, posse, homenagens. <b>Secretas</b>: a portas fechadas (segurança do Estado)</li>
+<li><b>Sessão legislativa ordinária</b>: 02/fev a 17/jul + 01/ago a 22/dez. Não pode haver recesso sem LOA aprovada</li>
+<li><b>Quórum de votação</b>: maioria simples (dos presentes) para LO; maioria absoluta para LC; 3/5 para EC</li>
+<li><b>Deputados</b>: imunidades material e formal (art. 53 CF). Deveres: comparecer às sessões, votar, manter decoro. Perda de mandato: art. 55 CF (cassação por 2/3 ou declaração da Mesa)</li>
+<li><b>Decoro parlamentar</b>: conduta incompatível → Conselho de Ética → cassação (2/3 da Câmara)</li>
+<li><b>Licenças</b>: para exercer cargo no Executivo (Ministro), por motivo de saúde, particular (sem remuneração)</li>
+</ul></div>
+<div class="ex"><h4>Sessão legislativa</h4>
+<p>📅 <b>1º período</b>: 02/fev a 17/jul | <b>2º período</b>: 01/ago a 22/dez<br>
+🗳️ Sessão ordinária: Ter-Qui 14h-19h</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Administração e Economia Interna (arts. 262-273)</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Autonomia administrativa e financeira</b>: a Câmara elabora e executa seu próprio orçamento</li>
+<li><b>Diretor-Geral</b>: responsável pela administração da Câmara. Nomeado pela Mesa Diretora</li>
+<li><b>Serviços administrativos</b>: Secretaria-Geral da Mesa, Diretoria-Geral, Consultoria Legislativa, Consultoria de Orçamento</li>
+<li><b>Polícia da Câmara</b>: subordinada à Mesa Diretora. Mantém segurança e ordem nas dependências. Chefiada pelo Diretor da Polícia (atual Departamento de Polícia Legislativa)</li>
+<li><b>Servidores da Câmara</b>: regidos pela Lei 8.112 + normas internas. Concurso público obrigatório para cargos efetivos</li>
+</ul></div>
+<div class="ex"><h4>Polícia Legislativa</h4>
+<p>🚔 Subordinada à <b>Mesa Diretora</b> (não ao Presidente sozinho)<br>
+🏛️ Atua nas <b>dependências da Câmara</b> (prédios, anexos, garagens)<br>
+👮 Policial legislativo = concursado, armado, com poder de polícia nas dependências</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 10. RESOLUÇÃO 18/2003 ══════════ -->
+<div class="macro" id="m10">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📑</div>
+<div class="minfo"><div class="mt">10. Resolução nº 18/2003 e Ato da Mesa 234/2025</div><div class="mm">Normas internas da Câmara, Polícia Legislativa, segurança institucional</div></div>
+<span class="badge">Edital §13</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Resolução 18/2003 — Polícia e Segurança da Câmara</span><span class="tc">Específico do cargo</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Resolução 18/2003</b>: dispõe sobre o <b>Departamento de Polícia Legislativa</b> da Câmara dos Deputados</li>
+<li><b>Competência da Polícia Legislativa</b>: policiamento e segurança nas dependências da Câmara; prevenção e apuração de infrações penais praticadas nas dependências; escoltas; segurança pessoal de parlamentares quando necessário; controle de acesso</li>
+<li><b>Subordinação</b>: à <b>Mesa Diretora</b> da Câmara. Direção operacional: Diretor do Departamento de Polícia</li>
+<li><b>Poder de polícia</b>: os policiais legislativos exercem <b>poder de polícia administrativa e judiciária</b> nas dependências da Câmara</li>
+<li><b>Inquérito policial</b>: crimes praticados nas dependências → IP conduzido pela Polícia Legislativa (polícia judiciária naquele âmbito)</li>
+<li><b>Ato da Mesa 234/2025</b>: atualização normativa sobre procedimentos de segurança, porte de arma, uso de tecnologias de vigilância, protocolos de acesso e emergência</li>
+<li><b>Policial Legislativo</b>: cargo de nível superior, concurso público, porte de arma funcional, regime estatutário (Lei 8.112)</li>
+</ul></div>
+<div class="ex"><h4>Pontos-chave para o cargo</h4>
+<p>🏛️ <b>Onde atua</b>: dependências da Câmara (prédios, anexos, garagens, áreas adjacentes)<br>
+👮 <b>O que faz</b>: policiamento + segurança + apuração de crimes (IP) + escolta + controle de acesso<br>
+📋 <b>Subordinação</b>: Mesa Diretora<br>
+⚖️ <b>Poder</b>: polícia administrativa E judiciária (nas dependências)</p>
+</div></div></div>
+</div></div>
+
+</div>
+
+<a href="reta-final.html" class="back-btn">← Voltar</a>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+function toggleMacro(el){el.closest('.macro').classList.toggle('open')}
+function toggleTp(el){el.closest('.tp').classList.toggle('open')}
+function toggleAll(open){document.querySelectorAll('.macro').forEach(m=>{open?m.classList.add('open'):m.classList.remove('open')});document.querySelectorAll('.tp').forEach(t=>{open?t.classList.add('open'):t.classList.remove('open')})}
+function scrollToSection(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+function filterContent(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.macro').forEach(m=>{const t=m.textContent.toLowerCase();if(q===''||t.includes(q)){m.style.display='';if(q!==''){m.classList.add('open');m.querySelectorAll('.tp').forEach(tp=>tp.classList.add('open'))}}else{m.style.display='none'}})}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)})
+</script>
+</body>
+</html>

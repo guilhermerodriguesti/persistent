@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão Rápida – Criminologia e Noções de Criminalística</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#7f1d1d,#ef4444);border-radius:16px;margin-bottom:20px;box-shadow:0 8px 32px rgba(239,68,68,0.3)}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:13px;color:#fecaca;margin-bottom:12px}
+.stats-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hstat{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(255,255,255,0.1);color:#fecaca;border:1px solid rgba(255,255,255,0.15)}
+.hstat b{font-size:15px;color:#fff}
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:16px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #fca5a5;color:#dc2626;background:#fef2f2;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:#ef4444;color:#fff;border-color:#ef4444}
+.search-box{margin-bottom:16px;display:flex;gap:8px}
+.search-box input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-size:13px;outline:none}
+.search-box input:focus{border-color:#ef4444}
+.ebtn{padding:8px 16px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#dc2626;cursor:pointer;font-size:11px;font-weight:700}
+.ebtn:hover{background:#ef4444;color:#fff;border-color:#ef4444}
+.macro{margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.mh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.mh:hover{background:#fef2f2}
+.mi{font-size:26px;flex-shrink:0}
+.minfo{flex:1}.mt{font-size:17px;font-weight:800;color:#1e293b}
+.mm{font-size:11px;color:#64748b;margin-top:2px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#fef2f2;color:#dc2626;border:1px solid #fca5a5}
+.chv{font-size:14px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.macro.open .chv{transform:rotate(90deg)}
+.mb{display:none;padding:0 18px 18px;border-top:1px solid #f1f5f9}
+.macro.open .mb{display:block}
+.tp{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc}
+.th{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;transition:background .2s}
+.th:hover{background:#fef2f2}
+.tt{flex:1;font-size:13px;font-weight:700;color:#1e293b}
+.tc{font-size:10px;color:#64748b;font-weight:600;padding:2px 8px;background:#f1f5f9;border-radius:10px;border:1px solid #e2e8f0}
+.tv{font-size:11px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.tp.open .tv{transform:rotate(90deg)}
+.tb{display:none;padding:0 14px 14px;border-top:1px solid #f1f5f9}
+.tp.open .tb{display:block}
+.kp h4{font-size:12px;font-weight:700;color:#dc2626;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.kp h4::before{content:'💡'}
+ul.k{list-style:none;padding:0}
+ul.k li{padding:6px 10px 6px 20px;font-size:12px;color:#334155;margin-bottom:3px;border-radius:6px;background:#f1f5f9;position:relative;line-height:1.5}
+ul.k li::before{content:'▸';position:absolute;left:8px;color:#ef4444;font-weight:700}
+ul.k li b{color:#1e293b}
+.ex{margin-top:8px;padding:10px 14px;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px}
+.ex h4{font-size:12px;font-weight:700;color:#dc2626;margin-bottom:6px}
+.ex h4::before{content:'📌 '}
+.ex p,.ex li{font-size:11px;color:#7f1d1d;line-height:1.5}
+.ex code{background:#fecaca;padding:1px 5px;border-radius:4px;font-size:11px;color:#7f1d1d}
+.trap{margin-top:10px;padding:10px 14px;background:#fefce8;border:1px solid #fde68a;border-radius:8px}
+.trap h4{font-size:12px;font-weight:700;color:#92400e;margin-bottom:6px}
+.trap h4::before{content:'⚠️ '}
+ul.t{list-style:none;padding:0}
+ul.t li{padding:4px 10px 4px 20px;font-size:11px;color:#78350f;margin-bottom:2px;position:relative;line-height:1.4}
+ul.t li::before{content:'✗';position:absolute;left:6px;color:#dc2626;font-weight:700}
+ul.t li b{color:#1e293b}
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#ef4444;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(239,68,68,.4);z-index:100}
+.back-btn:hover{background:#dc2626}
+.scroll-top{position:fixed;bottom:64px;right:20px;width:40px;height:40px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#1e293b;font-size:16px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{background:#ef4444;color:#fff;border-color:#ef4444}
+@media(max-width:768px){.container{padding:10px}.header h1{font-size:18px}.mt{font-size:15px}.nav-btn{padding:5px 8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🔬 Revisão Rápida – Criminologia e Noções de Criminalística</h1>
+<div class="sub">Policial Legislativo CD 2026 • Conceitos práticos com exemplos • Revisão 1 dia antes da prova</div>
+<div class="stats-row">
+<div class="hstat">📂 <b>7</b> temas do edital</div>
+<div class="hstat">📑 <b>22</b> subtópicos</div>
+<div class="hstat">📌 <b>Exemplos</b> em cada tópico</div>
+<div class="hstat">⚡ <b>Rápido</b> e prático</div>
+</div>
+</div>
+<div class="nav-bar" id="navBar">
+<span class="nav-btn" onclick="scrollToSection('m1')">1. Criminologia</span>
+<span class="nav-btn" onclick="scrollToSection('m2')">2. Criminalística</span>
+<span class="nav-btn" onclick="scrollToSection('m3')">3. Perícia</span>
+<span class="nav-btn" onclick="scrollToSection('m4')">4. Locais de Crime</span>
+<span class="nav-btn" onclick="scrollToSection('m5')">5. Cadeia de Custódia</span>
+<span class="nav-btn" onclick="scrollToSection('m6')">6. Rastreabilidade</span>
+<span class="nav-btn" onclick="scrollToSection('m7')">7. Vestígios</span>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Buscar conceito, sigla ou exemplo..." onkeyup="filterContent()">
+<button class="ebtn" onclick="toggleAll(true)">▼ Abrir Tudo</button>
+<button class="ebtn" onclick="toggleAll(false)">▲ Fechar Tudo</button>
+</div>
+
+<!-- ══════════ 1. CRIMINOLOGIA ══════════ -->
+<div class="macro" id="m1">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📚</div>
+<div class="minfo"><div class="mt">1. Criminologia</div><div class="mm">Conceito, métodos, objetos, funções, modelos teóricos, prevenção e modelos de reação</div></div>
+<span class="badge">Edital §1</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">1.1-1.2 Conceito e Métodos</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Criminologia</b>: ciência <b>empírica e interdisciplinar</b> que estuda o crime, o criminoso, a vítima e o controle social</li>
+<li><b>Empírica</b>: baseada na <b>observação da realidade</b> (dados, pesquisas de campo), NÃO em dedução teórica pura</li>
+<li><b>Interdisciplinar</b>: dialoga com Sociologia, Psicologia, Direito, Medicina, Biologia</li>
+<li>NÃO é ciência normativa (quem é normativo é o Direito Penal)</li>
+<li>NÃO é dogmática — é ciência do <b>ser</b> (como o crime acontece), não do <b>dever ser</b> (como a lei pune)</li>
+</ul></div>
+<div class="ex"><h4>Macete para diferenciar</h4>
+<p>🔬 <b>Criminologia</b> = "por que o crime acontece?" (empírica, ser)<br>
+⚖️ <b>Direito Penal</b> = "como a lei pune o crime?" (normativa, dever ser)<br>
+🏛️ <b>Política Criminal</b> = "o que fazer para prevenir/combater?" (estratégias)</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Criminologia é ciência normativa" — <b>ERRADO</b>, é empírica</li>
+<li>"Criminologia utiliza método dedutivo-abstrato" — <b>ERRADO</b>, usa método empírico</li>
+<li>"Criminologia estuda apenas o crime" — <b>ERRADO</b>, estuda 4 objetos</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">1.3 Objetos: Delito, Delinquente, Vítima, Controle Social</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>4 objetos da criminologia = "DDVC"</b>:<br>
+🔴 <b>D</b>elito: fato social, problema comunitário (não apenas infração penal)<br>
+👤 <b>D</b>elinquente: não mais visto como "anormal" — é ser real, influenciado por fatores bio-psico-sociais<br>
+😢 <b>V</b>ítima: papel no crime, relação com o autor, vitimização (1ª, 2ª, 3ª)<br>
+🏛️ <b>C</b>ontrole social: formal (Estado: polícia, MP, Judiciário) e informal (família, escola, religião, mídia)</li>
+<li><b>Vitimização primária</b>: dano direto do crime → "fui assaltado"</li>
+<li><b>Vitimização secundária</b>: sofrimento causado pelo <b>sistema</b> (polícia, justiça) → "fui mal tratado na delegacia"</li>
+<li><b>Vitimização terciária</b>: estigmatização <b>social</b> → "vizinhos me culpam"</li>
+<li><b>Cifra negra</b>: crimes NÃO registrados (subnotificação). <b>Cifra dourada</b>: crimes de colarinho branco não punidos</li>
+</ul></div>
+<div class="ex"><h4>Macete vitimização</h4>
+<p>1️⃣ <b>Primária</b> = <b>P</b>rejuízo direto (crime em si)<br>
+2️⃣ <b>Secundária</b> = <b>S</b>istema (polícia, justiça maltratam)<br>
+3️⃣ <b>Terciária</b> = <b>T</b>erceiros (sociedade estigmatiza)</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Vitimização secundária é o dano direto do crime" — <b>ERRADO</b>, isso é primária</li>
+<li>"Cifra negra = crimes de colarinho branco" — <b>ERRADO</b>, isso é cifra dourada</li>
+<li>"Controle formal = família e escola" — <b>ERRADO</b>, isso é informal; formal = Estado</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">1.4 Funções: Política Criminal e Direito Penal</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Funções da Criminologia</b>: informar o legislador e o operador jurídico sobre a realidade do crime → base para <b>política criminal</b></li>
+<li><b>Política Criminal</b>: ponte entre Criminologia e Direito Penal — transforma dados empíricos em <b>estratégias de prevenção e combate</b></li>
+<li>Relação: Criminologia <b>pesquisa</b> → Política Criminal <b>propõe</b> → Direito Penal <b>normatiza</b></li>
+<li><b>Direito Penal sob a ótica da Criminologia</b>: o DP deve ser instrumento de <b>última ratio</b> (último recurso), e a Criminologia fornece dados para avaliar se a criminalização é eficaz</li>
+<li>Criminologia questiona: "Punir mais resolve?" → dados empíricos informam a resposta</li>
+</ul></div>
+<div class="ex"><h4>Fluxo para decorar</h4>
+<p>🔬 <b>Criminologia</b> (pesquisa o fenômeno) → 🎯 <b>Política Criminal</b> (cria estratégias) → ⚖️ <b>Direito Penal</b> (cria/altera leis)</p>
+<p>Ex.: Criminologia identifica que superlotação aumenta reincidência → Política Criminal propõe penas alternativas → DP cria lei de monitoração eletrônica</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">1.5 Modelos Teóricos e Teorias Sociológicas</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Escola Clássica</b> (Beccaria, Carrara): livre-arbítrio, pena retributiva proporcional, crime = ente jurídico. Método dedutivo</li>
+<li><b>Escola Positiva</b> (Lombroso, Ferri, Garofalo): determinismo, criminoso nato, crime = ente natural. Método empírico</li>
+<li><b>Escola de Chicago</b> (consenso): crime = desorganização social da cidade grande. Fatores: mobilidade, crise de valores</li>
+<li><b>Anomia (Merton)</b> (consenso): tensão entre metas culturais e meios legítimos → crime quando meios são inacessíveis</li>
+<li><b>Associação Diferencial (Sutherland)</b> (consenso): crime é <b>aprendido</b> pela interação. Explicou colarinho branco. NÃO basta viver em meio criminógeno</li>
+<li><b>Subcultura Delinquente (Cohen)</b> (consenso): jovens de classes baixas criam valores próprios opostos à cultura dominante</li>
+<li><b>Labelling/Etiquetamento</b> (Becker) (<b>conflito</b>): delinquente = construção social; foco na <b>reação social</b>. Desvio primário → estigma → desvio secundário</li>
+<li><b>Criminologia Crítica/Radical</b> (<b>conflito</b>): crime = produto de fatores socioeconômicos (marxismo); sistema penal é seletivo</li>
+</ul></div>
+<div class="ex"><h4>Tabela Rápida: Consenso vs Conflito</h4>
+<p>✅ <b>CONSENSO</b> (sociedade é harmônica, crime é desvio):<br>
+Chicago, Anomia, Associação Diferencial, Subcultura<br><br>
+❌ <b>CONFLITO</b> (sociedade é desigual, crime é rótulo):<br>
+Labelling/Etiquetamento, Criminologia Crítica/Radical</p>
+<p>Macete: "<b>CAAS</b> = Consenso" (Chicago, Anomia, Associação, Subcultura)</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Escola de Chicago é teoria do conflito" — <b>ERRADO</b>, é consenso</li>
+<li>"Labelling é teoria do consenso" — <b>ERRADO</b>, é conflito</li>
+<li>"Clássica usa método empírico" — <b>ERRADO</b>, usa dedutivo; empírico é Positiva</li>
+<li>"Associação diferencial: basta viver em meio criminógeno" — <b>ERRADO</b>, crime é aprendido pela interação</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">1.5.2-1.5.5 Prevenção: Primária, Secundária e Terciária</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Primária</b>: atua na <b>raiz/causa</b> do crime — políticas sociais de longo prazo (educação, saúde, emprego, saneamento). Mais eficaz. Direcionada a <b>toda a sociedade</b></li>
+<li><b>Secundária</b>: atua sobre <b>grupos de risco</b> e situações criminógenas — policiamento ostensivo, câmeras, iluminação, alteração de espaços urbanos. Médio prazo</li>
+<li><b>Terciária</b>: atua sobre o <b>condenado/recluso</b> — ressocialização, reabilitação, evitar reincidência. Curto prazo</li>
+<li>Superlotação carcerária prejudica a prevenção <b>terciária</b></li>
+<li>Iluminação pública = prevenção <b>secundária</b> (situacional)</li>
+</ul></div>
+<div class="ex"><h4>Macete "PST = Causa-Risco-Recluso"</h4>
+<p>1️⃣ <b>P</b>rimária = <b>P</b>olíticas sociais (causa) → educação, saúde → TODOS<br>
+2️⃣ <b>S</b>ecundária = <b>S</b>ituacional (risco) → câmera, policiamento → GRUPOS DE RISCO<br>
+3️⃣ <b>T</b>erciária = <b>T</b>ratamento (recluso) → ressocialização → CONDENADOS</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Primária = ressocialização do apenado" — <b>ERRADO</b>, isso é terciária</li>
+<li>"Terciária = políticas sociais de longo prazo" — <b>ERRADO</b>, isso é primária</li>
+<li>"Superlotação prejudica prevenção primária" — <b>ERRADO</b>, prejudica terciária</li>
+<li>CEBRASPE <b>adora inverter</b> as definições — decorar: P=causa, S=risco, T=recluso</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">1.5.6 Modelos de Reação ao Crime</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Modelo clássico/dissuasório</b>: pena retributiva, proporcional ao crime. "Puniu, pagou"</li>
+<li><b>Modelo ressocializador</b>: pena visa reintegrar o condenado à sociedade. Foco na prevenção especial positiva</li>
+<li><b>Modelo restaurativo (Justiça Restaurativa)</b>: foco na <b>reparação do dano</b> e na relação vítima-ofensor. Diálogo, mediação. NÃO é punitivo</li>
+<li><b>Funções da pena</b>:<br>
+→ <b>Retributiva (absoluta)</b>: castigo proporcional<br>
+→ <b>Geral negativa</b>: intimidar a sociedade<br>
+→ <b>Geral positiva</b>: reforçar confiança na norma<br>
+→ <b>Especial negativa</b>: neutralizar o criminoso<br>
+→ <b>Especial positiva</b>: ressocializar o criminoso</li>
+</ul></div>
+<div class="ex"><h4>Macete para funções da pena</h4>
+<p>🔨 <b>Retributiva</b> = "olho por olho"<br>
+📢 <b>Geral negativa</b> = "assusta todo mundo" (intimidação)<br>
+💪 <b>Geral positiva</b> = "reforça a lei" (confiança)<br>
+🔒 <b>Especial negativa</b> = "tranca o sujeito" (neutraliza)<br>
+📖 <b>Especial positiva</b> = "educa o sujeito" (ressocializa)</p>
+<p><b>Geral</b> = efeito na <b>sociedade</b> | <b>Especial</b> = efeito no <b>indivíduo</b></p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 2. CRIMINALÍSTICA ══════════ -->
+<div class="macro" id="m2">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔬</div>
+<div class="minfo"><div class="mt">2. Criminalística</div><div class="mm">Definição, histórico, doutrina e postulados</div></div>
+<span class="badge">Edital §2</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">2.1-2.3 Definição, Histórico e Doutrina</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Criminalística</b>: disciplina técnico-científica que atua na <b>investigação criminal</b>, utilizando métodos científicos para examinar vestígios e produzir <b>provas materiais</b></li>
+<li>NÃO é sinônimo de Criminologia: Criminalística = <b>como</b> provar (técnica); Criminologia = <b>por que</b> o crime ocorre (teoria)</li>
+<li><b>Pai da Criminalística</b>: <b>Hans Gross</b> (1893, Áustria) — escreveu o primeiro manual de criminalística para juízes</li>
+<li><b>Edmond Locard</b> (francês): criou o <b>Princípio da Troca de Locard</b> — "todo contato deixa uma marca" (criminoso sempre deixa vestígio no local e leva algo do local)</li>
+<li><b>Postulados da Criminalística</b>:<br>
+1️⃣ O criminoso sempre deixa algo no local e leva algo (Locard)<br>
+2️⃣ Todo contato produz vestígio<br>
+3️⃣ A análise deve ser imparcial e científica<br>
+4️⃣ A individualização é possível (comparar e identificar)</li>
+<li><b>Alphonse Bertillon</b>: criou a antropometria criminal (bertillonagem) — medições corporais para identificação</li>
+</ul></div>
+<div class="ex"><h4>Analogia Locard</h4>
+<p>👣 Pense em andar na praia: você <b>deixa pegadas na areia</b> (vestígio no local) e <b>leva areia nos pés</b> (leva vestígio do local)<br>
+→ Isso acontece em TODO crime. O trabalho do perito é encontrar esses "rastros"</p>
+<p>🔬 <b>Criminalística</b> = "CSI" (investigação técnica) ≠ 📚 <b>Criminologia</b> = "estudo do crime na sociedade"</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Criminalística e Criminologia são a mesma coisa" — <b>ERRADO</b></li>
+<li>"Locard é o pai da Criminalística" — <b>ERRADO</b>, o pai é Hans Gross; Locard criou o princípio da troca</li>
+<li>"Bertillon criou a datiloscopia" — <b>ERRADO</b>, criou a bertillonagem (antropometria); datiloscopia = Juan Vucetich</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 3. PERÍCIA ══════════ -->
+<div class="macro" id="m3">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🧪</div>
+<div class="minfo"><div class="mt">3. Perícia</div><div class="mm">Definição, requisição, prazos, tipologias (documentoscópica, audiovisual, grafotécnica)</div></div>
+<span class="badge">Edital §3</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">3.1-3.2 Definição, Conceitos e Requisição</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Perícia</b>: exame técnico-científico realizado por <b>perito oficial</b> para produzir prova material</li>
+<li><b>Exame de corpo de delito</b>: <b>obrigatório</b> quando a infração deixar vestígios (art. 158 CPP). Não pode ser suprido pela confissão</li>
+<li><b>Direto</b>: perito examina o vestígio diretamente. <b>Indireto</b>: quando vestígio desapareceu — usa testemunhos e documentos</li>
+<li><b>Perito oficial</b>: servidor público concursado com diploma de nível superior. Na falta, <b>2 pessoas idôneas</b> com curso superior (peritos ad hoc)</li>
+<li><b>Requisição</b>: quem requisita a perícia? <b>Autoridade policial</b> (delegado), <b>juiz</b> ou <b>MP</b>. Partes podem requerer ao juiz</li>
+<li><b>Laudo pericial</b>: documento escrito pelo perito com os resultados do exame. Assinado por <b>1 perito oficial</b> (ou 2 ad hoc)</li>
+</ul></div>
+<div class="ex"><h4>Regra de ouro</h4>
+<p>🔒 Infração + vestígio = <b>corpo de delito obrigatório</b><br>
+❌ Confissão do acusado <b>NÃO</b> substitui o exame de corpo de delito<br>
+👤 <b>1</b> perito oficial assina o laudo (regra atual do CPP)</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Confissão do acusado supre o exame de corpo de delito" — <b>ERRADO</b> (art. 158 CPP)</li>
+<li>"São necessários 2 peritos oficiais para assinar o laudo" — <b>ERRADO</b>, basta 1 perito oficial (2 é para ad hoc)</li>
+<li>"Qualquer pessoa pode requisitar perícia diretamente" — <b>ERRADO</b>, partes requerem ao juiz</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">3.3 Prazo para Elaboração do Laudo</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li>Prazo para elaboração do laudo pericial: <b>10 dias</b> (art. 160 CPP), podendo ser prorrogado por requerimento do perito</li>
+<li>A autoridade que requisitou pode conceder prazo maior em casos de <b>exames complexos</b></li>
+<li><b>Necropsia</b>: no mínimo <b>6 horas</b> após o óbito (exceto: morte violenta evidente)</li>
+<li><b>Exumação</b>: desenterrar corpo para exame. Requisitada pela autoridade quando necessário. Realizada com presença de <b>perito</b></li>
+</ul></div>
+<div class="ex"><h4>Números para decorar</h4>
+<p>📋 Laudo = <b>10 dias</b> (prorrogável)<br>
+⚰️ Necropsia = mínimo <b>6 horas</b> após óbito<br>
+👤 Perito oficial = <b>1</b> assina | Ad hoc = <b>2</b> assinam</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">3.4 Tipologias Periciais</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Documentoscopia</b>: exame de <b>documentos</b> para verificar autenticidade/falsificação. Analisa: tintas, papel, impressão, selos, carimbos</li>
+<li><b>Grafotécnica (Grafoscopia)</b>: exame de <b>escritas e assinaturas</b> — verifica autoria (quem escreveu/assinou). Compara com <b>padrão gráfico</b> do suspeito</li>
+<li>Tipos de falsificação: <b>total</b> (documento inteiro falso), <b>parcial</b> (alteração em documento autêntico — rasura, acréscimo, supressão)</li>
+<li><b>Perícia audiovisual</b>: exame de gravações de <b>áudio e vídeo</b> — verificar autenticidade, transcrever, identificar vozes/pessoas, detectar edições</li>
+<li><b>Fonética forense</b>: identificação de voz em gravações (comparação com padrão vocal)</li>
+<li><b>Diferença-chave</b>: Documentoscopia = analisa o <b>documento</b>; Grafotécnica = analisa a <b>escrita/assinatura</b></li>
+</ul></div>
+<div class="ex"><h4>Exemplos práticos</h4>
+<p>📄 <b>Documentoscopia</b>: "Este RG é falso?" → analisa papel, tinta, impressão<br>
+✍️ <b>Grafotécnica</b>: "Quem assinou este cheque?" → compara assinatura com padrão<br>
+🎥 <b>Audiovisual</b>: "Este vídeo de segurança foi editado?" → verifica autenticidade</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 4. LOCAIS DE CRIME ══════════ -->
+<div class="macro" id="m4">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏚️</div>
+<div class="minfo"><div class="mt">4. Locais de Crime</div><div class="mm">Conceito, classificação, isolamento, preservação e levantamentos</div></div>
+<span class="badge">Edital §4</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">4.1 Conceituação e Classificação</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Local de crime</b>: área onde ocorreu o fato delituoso e que contém vestígios</li>
+<li><b>Classificação por natureza</b>: interno (ambiente fechado — casa, escritório), externo (ao ar livre — rua, campo), misto (ambos)</li>
+<li><b>Classificação por preservação</b>:<br>
+✅ <b>Idôneo</b>: local preservado, sem alteração desde o crime<br>
+❌ <b>Inidôneo</b>: local violado/alterado (pessoas mexeram, chuva destruiu vestígios)<br>
+⚠️ <b>Relacionado</b>: não é o local do crime, mas está conectado (rota de fuga, local onde arma foi encontrada)</li>
+<li><b>Local mediato</b>: arredores do local imediato (adjacências). <b>Local imediato</b>: onde ocorreu o fato principal</li>
+</ul></div>
+<div class="ex"><h4>Exemplo</h4>
+<p>🔪 Homicídio em apartamento:<br>
+→ <b>Imediato</b>: quarto onde a vítima foi encontrada<br>
+→ <b>Mediato</b>: escadas, corredor, portaria<br>
+→ <b>Relacionado</b>: carro do suspeito estacionado a 2 km</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">4.2 Isolamento e Preservação</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>1º a chegar no local</b>: geralmente o policial militar → deve <b>isolar e preservar</b> imediatamente</li>
+<li><b>Isolar</b>: fitas, cordas, barreiras — impedir acesso de curiosos, imprensa, até familiares</li>
+<li><b>Preservar</b>: NÃO tocar, mover ou alterar NADA antes da chegada do perito</li>
+<li><b>Art. 6º CPP</b>: autoridade policial deve <b>dirigir-se ao local</b> e <b>providenciar para que não se alterem</b> o estado e conservação das coisas</li>
+<li><b>Art. 169 CPP</b>: as coisas não devem ser mexidas antes da perícia. Exceção: necessidade de <b>socorrer vítima</b> ou <b>evitar risco iminente</b></li>
+<li><b>Reprodução simulada</b> (reconstituição): recriação das condições do crime — proibida se atentar contra a moralidade ou ordem pública</li>
+</ul></div>
+<div class="ex"><h4>Sequência do primeiro policial no local</h4>
+<p>1️⃣ Socorrer vítima (se viva) → 2️⃣ Isolar o local → 3️⃣ Preservar vestígios → 4️⃣ Anotar tudo (hora, quem estava, condições) → 5️⃣ Aguardar perito</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Nenhum objeto pode ser movido, nem para socorrer a vítima" — <b>ERRADO</b>, salvar vida é prioridade</li>
+<li>"O delegado deve manusear as provas antes do perito" — <b>ERRADO</b>, deve preservar até a perícia</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">4.3 Levantamentos de Locais</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Crimes contra a pessoa</b> (homicídio): foco em posição do corpo, arma, manchas de sangue, projéteis, trajetória</li>
+<li><b>Crimes contra o patrimônio</b> (furto, roubo): foco em sinais de arrombamento, pegadas, ferramentas, câmeras, ponto de entrada/saída</li>
+<li><b>Métodos de busca</b>: espiral (de fora para dentro), varrimento (linhas paralelas), quadrante (divide área em setores), ponto-a-ponto (do centro para fora)</li>
+<li><b>Documentação</b>: fotografias, croqui (desenho do local), filmagem, anotações escritas → tudo integra o laudo</li>
+</ul></div>
+<div class="ex"><h4>Métodos de busca — visual</h4>
+<p>🌀 <b>Espiral</b> = caracol (de fora para dentro ou vice-versa)<br>
+📏 <b>Varrimento</b> = linhas retas paralelas (como cortar grama)<br>
+📐 <b>Quadrante</b> = divide em 4 setores (grid)<br>
+⭐ <b>Ponto-a-ponto</b> = do centro para as bordas (raios)</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 5. CADEIA DE CUSTÓDIA ══════════ -->
+<div class="macro" id="m5">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔗</div>
+<div class="minfo"><div class="mt">5. Cadeia de Custódia</div><div class="mm">Conceitos, etapas, fase interna e fase externa</div></div>
+<span class="badge">Edital §5</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">5.1-5.2 Conceitos e Etapas</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Cadeia de custódia</b> (art. 158-A CPP): conjunto de procedimentos para <b>documentar a história cronológica do vestígio</b> — desde a identificação até o descarte</li>
+<li>Garante a <b>integridade</b> e <b>confiabilidade</b> da prova. Se quebrada → prova questionável</li>
+<li><b>Início</b>: a cadeia se inicia com a <b>preservação do local de crime</b> ou com as medidas para preservar o vestígio</li>
+<li><b>10 Etapas</b> (art. 158-B CPP):<br>
+1️⃣ <b>Reconhecimento</b> — identificar o potencial vestígio<br>
+2️⃣ <b>Isolamento</b> — proteger contra contaminação<br>
+3️⃣ <b>Fixação</b> — documentar (foto, vídeo, croqui) o vestígio no estado em que foi encontrado<br>
+4️⃣ <b>Coleta</b> — retirar o vestígio<br>
+5️⃣ <b>Acondicionamento</b> — embalar adequadamente (sacola, frasco, lacre)<br>
+6️⃣ <b>Transporte</b> — levar ao órgão pericial<br>
+7️⃣ <b>Recebimento</b> — entrada no órgão pericial (registro)<br>
+8️⃣ <b>Processamento</b> — exame pericial propriamente dito<br>
+9️⃣ <b>Armazenamento</b> — guardar após processamento<br>
+🔟 <b>Descarte</b> — disposição final após autorização judicial</li>
+</ul></div>
+<div class="ex"><h4>Macete "RIFCATRPAD" → "RI-FCA-TRP-AD"</h4>
+<p><b>R</b>econhecimento → <b>I</b>solamento → <b>F</b>ixação → <b>C</b>oleta → <b>A</b>condicionamento → <b>T</b>ransporte → <b>R</b>ecebimento → <b>P</b>rocessamento → <b>A</b>rmazenamento → <b>D</b>escarte</p>
+<p>Dica: pense na sequência lógica → "achei (RI), registrei (F), peguei (CA), levei (TR), examinei (P), guardei (A), joguei fora (D)"</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Fixação é a coleta do vestígio" — <b>ERRADO</b>, fixação é documentar (foto/vídeo); coleta é retirar</li>
+<li>"Acondicionamento é a mesma coisa que armazenamento" — <b>ERRADO</b>, acondicionamento = embalar para transporte; armazenamento = guardar após exame</li>
+<li>"A cadeia de custódia se inicia com a coleta" — <b>ERRADO</b>, se inicia com a preservação do local</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">5.3-5.4 Fase Interna e Fase Externa</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Fase interna</b>: etapas realizadas <b>no local do crime</b> (reconhecimento → isolamento → fixação → coleta → acondicionamento). Tudo antes de sair do local</li>
+<li><b>Fase externa</b>: etapas realizadas <b>fora do local</b> (transporte → recebimento → processamento → armazenamento → descarte). Do transporte em diante</li>
+<li><b>Perito</b>: responsável principal pela fase interna. <b>Central de custódia</b>: local oficial de guarda dos vestígios (fase externa)</li>
+<li>Todos que tiverem contato com o vestígio devem ser <b>registrados</b> (nome, data, hora, procedimento)</li>
+<li>Vestígio deve ser lacrado com <b>lacre individualizado</b> — qualquer violação = quebra da cadeia</li>
+</ul></div>
+<div class="ex"><h4>Divisão visual</h4>
+<p>📍 <b>NO LOCAL</b> (Fase Interna): Reconhecimento → Isolamento → Fixação → Coleta → Acondicionamento<br>
+🚗 <b>FORA DO LOCAL</b> (Fase Externa): Transporte → Recebimento → Processamento → Armazenamento → Descarte</p>
+<p>Ponto de corte: o vestígio <b>sai do local</b> = começa fase externa</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 6. RASTREABILIDADE ══════════ -->
+<div class="macro" id="m6">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📡</div>
+<div class="minfo"><div class="mt">6. Rastreabilidade</div><div class="mm">Conceito e relação com a cadeia de custódia</div></div>
+<span class="badge">Edital §6</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Rastreabilidade de Vestígios</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Rastreabilidade</b>: capacidade de <b>acompanhar o histórico completo</b> de um vestígio — saber onde esteve, quem manuseou, quando e como, em cada etapa</li>
+<li>É o <b>resultado prático</b> da cadeia de custódia bem executada</li>
+<li>Sem rastreabilidade → prova pode ser <b>impugnada</b> (questionada pela defesa)</li>
+<li>Ferramentas: <b>formulários de controle</b>, lacres numerados, etiquetas com código, sistemas informatizados de gestão de vestígios</li>
+<li>Cada <b>transferência de posse</b> (handoff) do vestígio deve ser registrada com assinatura de quem entrega e quem recebe</li>
+<li>Analogia com logística: funciona como o rastreamento de encomenda dos Correios → cada ponto registra passagem</li>
+</ul></div>
+<div class="ex"><h4>Cadeia de Custódia vs Rastreabilidade</h4>
+<p>🔗 <b>Cadeia de custódia</b> = o <b>processo</b> (conjunto de etapas e regras)<br>
+📡 <b>Rastreabilidade</b> = o <b>resultado</b> (conseguir rastrear todo o caminho do vestígio)<br>
+→ Cadeia bem feita = rastreabilidade garantida = prova válida ✅</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 7. VESTÍGIOS DE INTERESSE FORENSE ══════════ -->
+<div class="macro" id="m7">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🧬</div>
+<div class="minfo"><div class="mt">7. Vestígios de Interesse Forense</div><div class="mm">Vestígio × evidência × indício, busca, fixação, coleta, acondicionamento e liberação</div></div>
+<span class="badge">Edital §7</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">7.1 Vestígio, Evidência e Indício</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Vestígio</b>: todo e qualquer sinal, marca ou objeto encontrado no local — PODE ou não ter relação com o crime. É o mais amplo</li>
+<li><b>Evidência</b>: vestígio que, após análise pericial, mostra <b>relação com o crime</b>. Vestígio qualificado</li>
+<li><b>Indício</b>: conceito jurídico (art. 239 CPP) — circunstância conhecida e provada que, por raciocínio lógico, leva a concluir a existência de outra circunstância</li>
+<li>Sequência: <b>Vestígio → (análise pericial) → Evidência → (valoração jurídica) → Indício/Prova</b></li>
+<li><b>Tipos de vestígio</b>: visível (mancha de sangue), latente (impressão digital invisível), plástico (marca em cera), macroscópico, microscópico</li>
+</ul></div>
+<div class="ex"><h4>Macete "VEI" — do bruto ao jurídico</h4>
+<p>🔍 <b>V</b>estígio = "achei algo no local" (pode ser qualquer coisa)<br>
+✅ <b>E</b>vidência = "o perito confirmou que tem a ver com o crime"<br>
+⚖️ <b>I</b>ndício = "o juiz usa como base para concluir algo"</p>
+<p>Ex.: fio de cabelo (vestígio) → DNA bate com suspeito (evidência) → permite concluir presença no local (indício)</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Todo vestígio é evidência" — <b>ERRADO</b>, só se tornam evidência após análise que comprove relação com o crime</li>
+<li>"Indício e evidência são sinônimos" — <b>ERRADO</b>, indício é conceito jurídico, evidência é conceito técnico-pericial</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">7.2 Processamento Pericial de Locais de Crime</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>7.2.1 Busca de vestígios</b>: varredura sistemática do local usando métodos (espiral, varrimento, quadrante). Buscar na ordem: do geral para o particular, do perecível para o durável</li>
+<li><b>7.2.2 Documentação/Fixação</b>: registrar o local ANTES de tocar em qualquer coisa → <b>fotografias</b> (panorâmica → aproximação → detalhe), <b>filmagem</b>, <b>croqui</b> (desenho com medidas), <b>anotações</b></li>
+<li><b>7.2.3 Coleta</b>: retirada física do vestígio com técnica adequada (luvas, pinças, swabs). Vestígios biológicos: evitar contaminação</li>
+<li><b>7.2.4 Acondicionamento e Transporte</b>:<br>
+→ <b>Saco de papel</b>: vestígios biológicos úmidos (permite respirar, evita mofo)<br>
+→ <b>Saco plástico</b>: vestígios secos não biológicos<br>
+→ <b>Frasco de vidro</b>: líquidos, solventes<br>
+→ Cada item = <b>embalagem individual</b>, lacrada e etiquetada</li>
+<li><b>7.2.5 Liberação do local</b>: somente APÓS o perito concluir todos os trabalhos. A autoridade policial autoriza a liberação</li>
+</ul></div>
+<div class="ex"><h4>Sequência de processamento: "BFCAT-L"</h4>
+<p><b>B</b>usca → <b>F</b>ixação (documentação) → <b>C</b>oleta → <b>A</b>condicionamento → <b>T</b>ransporte → <b>L</b>iberação</p>
+<p>📸 Fotografias: sempre na ordem → <b>panorâmica</b> (contexto) → <b>média</b> (objeto no ambiente) → <b>close/detalhe</b> (vestígio isolado)</p>
+<p>📦 Biológico úmido = <b>papel</b> (respira) | Seco não-biológico = <b>plástico</b> | Líquido = <b>vidro</b></p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Vestígio biológico úmido deve ser acondicionado em saco plástico" — <b>ERRADO</b>, usa papel (plástico causa decomposição)</li>
+<li>"A coleta vem antes da fixação" — <b>ERRADO</b>, primeiro fixa (documenta), depois coleta</li>
+<li>"O local pode ser liberado antes da conclusão da perícia" — <b>ERRADO</b>, só após conclusão</li>
+</ul></div></div></div>
+</div></div>
+
+</div>
+
+<button class="back-btn" onclick="location.href='reta-final.html'">← Voltar</button>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+function toggleMacro(el){el.closest('.macro').classList.toggle('open')}
+function toggleTp(el){el.closest('.tp').classList.toggle('open')}
+function toggleAll(open){document.querySelectorAll('.macro').forEach(m=>{open?m.classList.add('open'):m.classList.remove('open')});document.querySelectorAll('.tp').forEach(t=>{open?t.classList.add('open'):t.classList.remove('open')})}
+function scrollToSection(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+function filterContent(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.macro').forEach(m=>{const t=m.textContent.toLowerCase();if(q===''||t.includes(q)){m.style.display='';if(q!==''){m.classList.add('open');m.querySelectorAll('.tp').forEach(tp=>tp.classList.add('open'))}}else{m.style.display='none'}})}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)})
+</script>
+</body>
+</html>

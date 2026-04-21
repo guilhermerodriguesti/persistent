@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão Rápida – Raciocínio Lógico e Estatística</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#78350f,#f59e0b);border-radius:16px;margin-bottom:20px;box-shadow:0 8px 32px rgba(245,158,11,0.3)}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:13px;color:#fef3c7;margin-bottom:12px}
+.stats-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hstat{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(255,255,255,0.1);color:#fef3c7;border:1px solid rgba(255,255,255,0.15)}
+.hstat b{font-size:15px;color:#fff}
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:16px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #fcd34d;color:#92400e;background:#fffbeb;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:#f59e0b;color:#fff;border-color:#f59e0b}
+.search-box{margin-bottom:16px;display:flex;gap:8px}
+.search-box input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-size:13px;outline:none}
+.search-box input:focus{border-color:#f59e0b}
+.ebtn{padding:8px 16px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#92400e;cursor:pointer;font-size:11px;font-weight:700}
+.ebtn:hover{background:#f59e0b;color:#fff;border-color:#f59e0b}
+.macro{margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.mh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.mh:hover{background:#fffbeb}
+.mi{font-size:26px;flex-shrink:0}
+.minfo{flex:1}.mt{font-size:17px;font-weight:800;color:#1e293b}
+.mm{font-size:11px;color:#64748b;margin-top:2px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#fffbeb;color:#92400e;border:1px solid #fcd34d}
+.chv{font-size:14px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.macro.open .chv{transform:rotate(90deg)}
+.mb{display:none;padding:0 18px 18px;border-top:1px solid #f1f5f9}
+.macro.open .mb{display:block}
+.tp{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc}
+.th{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;transition:background .2s}
+.th:hover{background:#fffbeb}
+.tt{flex:1;font-size:13px;font-weight:700;color:#1e293b}
+.tc{font-size:10px;color:#64748b;font-weight:600;padding:2px 8px;background:#f1f5f9;border-radius:10px;border:1px solid #e2e8f0}
+.tv{font-size:11px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.tp.open .tv{transform:rotate(90deg)}
+.tb{display:none;padding:0 14px 14px;border-top:1px solid #f1f5f9}
+.tp.open .tb{display:block}
+.kp h4{font-size:12px;font-weight:700;color:#92400e;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.kp h4::before{content:'💡'}
+ul.k{list-style:none;padding:0}
+ul.k li{padding:6px 10px 6px 20px;font-size:12px;color:#334155;margin-bottom:3px;border-radius:6px;background:#f1f5f9;position:relative;line-height:1.5}
+ul.k li::before{content:'▸';position:absolute;left:8px;color:#f59e0b;font-weight:700}
+ul.k li b{color:#1e293b}
+.ex{margin-top:8px;padding:10px 14px;background:#fffbeb;border:1px solid #fcd34d;border-radius:8px}
+.ex h4{font-size:12px;font-weight:700;color:#92400e;margin-bottom:6px}
+.ex h4::before{content:'📌 '}
+.ex p,.ex li{font-size:11px;color:#78350f;line-height:1.5}
+.trap{margin-top:10px;padding:10px 14px;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px}
+.trap h4{font-size:12px;font-weight:700;color:#dc2626;margin-bottom:6px}
+.trap h4::before{content:'⚠️ '}
+ul.t{list-style:none;padding:0}
+ul.t li{padding:4px 10px 4px 20px;font-size:11px;color:#7f1d1d;margin-bottom:2px;position:relative;line-height:1.4}
+ul.t li::before{content:'✗';position:absolute;left:6px;color:#dc2626;font-weight:700}
+ul.t li b{color:#1e293b}
+table.tv{width:100%;border-collapse:collapse;font-size:11px;margin:8px 0}
+table.tv th,table.tv td{border:1px solid #e2e8f0;padding:4px 8px;text-align:center}
+table.tv th{background:#fffbeb;color:#92400e;font-weight:700}
+table.tv td{color:#334155}
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#f59e0b;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(245,158,11,.4);z-index:100;text-decoration:none}
+.back-btn:hover{background:#d97706}
+.scroll-top{position:fixed;bottom:64px;right:20px;width:40px;height:40px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#1e293b;font-size:16px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{background:#f59e0b;color:#fff;border-color:#f59e0b}
+@media(max-width:768px){.container{padding:10px}.header h1{font-size:18px}.mt{font-size:15px}.nav-btn{padding:5px 8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🧠 Revisão Rápida – Raciocínio Lógico e Estatística</h1>
+<div class="sub">Policial Legislativo CD 2026 • Fórmulas + Macetes + Exemplos • Revisão 1 dia antes da prova</div>
+<div class="stats-row">
+<div class="hstat">📂 <b>8</b> macro-temas</div>
+<div class="hstat">📑 <b>22</b> subtópicos</div>
+<div class="hstat">📌 <b>Fórmulas</b> essenciais</div>
+<div class="hstat">⚡ <b>Macetes</b> rápidos</div>
+</div>
+</div>
+<div class="nav-bar">
+<span class="nav-btn" onclick="scrollToSection('m1')">1. Estruturas</span>
+<span class="nav-btn" onclick="scrollToSection('m2')">2. Argumentação</span>
+<span class="nav-btn" onclick="scrollToSection('m3')">3. Proposicional</span>
+<span class="nav-btn" onclick="scrollToSection('m4')">4. Tabelas/Equiv.</span>
+<span class="nav-btn" onclick="scrollToSection('m5')">5. 1ª Ordem</span>
+<span class="nav-btn" onclick="scrollToSection('m6')">6. Contagem/Prob.</span>
+<span class="nav-btn" onclick="scrollToSection('m7')">7. Aritmética</span>
+<span class="nav-btn" onclick="scrollToSection('m8')">8. Estatística</span>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Buscar conceito, fórmula ou exemplo..." onkeyup="filterContent()">
+<button class="ebtn" onclick="toggleAll(true)">▼ Abrir Tudo</button>
+<button class="ebtn" onclick="toggleAll(false)">▲ Fechar Tudo</button>
+</div>
+
+<!-- ══════════ 1. ESTRUTURAS LÓGICAS ══════════ -->
+<div class="macro" id="m1">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🧩</div>
+<div class="minfo"><div class="mt">1. Estruturas Lógicas</div><div class="mm">Proposições, conectivos, negação, sequências, padrões lógicos</div></div>
+<span class="badge">Edital §1</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Proposições e Conectivos</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Proposição</b>: frase declarativa que pode ser V ou F (nunca as duas). NÃO são proposições: perguntas, exclamações, ordens, frases abertas ("x > 5")</li>
+<li><b>Proposição simples</b>: não contém conectivo (p, q, r). <b>Composta</b>: conectivos ligam simples</li>
+<li><b>Conectivos lógicos</b>:<br>
+∧ <b>E</b> (conjunção) — só V quando <b>ambas V</b><br>
+∨ <b>OU</b> (disjunção inclusiva) — só F quando <b>ambas F</b><br>
+⊻ <b>OU...OU</b> (disjunção exclusiva) — V quando <b>valores diferentes</b><br>
+→ <b>SE...ENTÃO</b> (condicional) — só F quando <b>V→F</b> (Vera Fischer)<br>
+↔ <b>SE E SOMENTE SE</b> (bicondicional) — V quando <b>valores iguais</b></li>
+<li><b>Negação (~)</b>: inverte o valor. ~V = F, ~F = V</li>
+</ul></div>
+<div class="ex"><h4>Macete "Vera Fischer"</h4>
+<p>🎬 A condicional (→) só é <b>F</b>alsa no caso <b>V→F</b> (Vera→Fischer)<br>
+Todos os outros casos: V→V=V, F→V=V, F→F=V</p>
+<table class="tv">
+<tr><th>p</th><th>q</th><th>p∧q</th><th>p∨q</th><th>p→q</th><th>p↔q</th></tr>
+<tr><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td><td>V</td></tr>
+<tr><td>V</td><td>F</td><td>F</td><td>V</td><td><b>F</b></td><td>F</td></tr>
+<tr><td>F</td><td>V</td><td>F</td><td>V</td><td>V</td><td>F</td></tr>
+<tr><td>F</td><td>F</td><td>F</td><td>F</td><td>V</td><td>V</td></tr>
+</table>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 2. ARGUMENTAÇÃO ══════════ -->
+<div class="macro" id="m2">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">💬</div>
+<div class="minfo"><div class="mt">2. Lógica de Argumentação</div><div class="mm">Analogias, inferências, deduções, validade, falácias</div></div>
+<span class="badge">Edital §2</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Argumentos Válidos e Falácias</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Argumento</b>: premissas → conclusão. <b>Válido</b> se a conclusão decorre logicamente das premissas (não importa se premissas são V ou F)</li>
+<li><b>Modus Ponens</b>: P→Q, P ∴ Q. "Se chove, molha. Choveu. Logo, molhou." ✅</li>
+<li><b>Modus Tollens</b>: P→Q, ~Q ∴ ~P. "Se chove, molha. Não molhou. Logo, não choveu." ✅</li>
+<li><b>Silogismo Hipotético</b>: P→Q, Q→R ∴ P→R. "Se A então B, se B então C. Logo, se A então C." ✅</li>
+<li><b>Silogismo Disjuntivo</b>: P∨Q, ~P ∴ Q. "Ou A ou B. Não é A. Logo, é B." ✅</li>
+<li><b>Falácia da afirmação do consequente</b>: P→Q, Q ∴ P → <b>INVÁLIDO</b> ❌ "Se chove, molha. Molhou. Logo, choveu" (pode ter sido a mangueira)</li>
+<li><b>Falácia da negação do antecedente</b>: P→Q, ~P ∴ ~Q → <b>INVÁLIDO</b> ❌ "Se chove, molha. Não choveu. Logo, não molhou" (mangueira!)</li>
+<li><b>Analogia</b>: conclusão por semelhança entre situações. <b>Indução</b>: particular → geral. <b>Dedução</b>: geral → particular</li>
+</ul></div>
+<div class="ex"><h4>Macete para validar argumento</h4>
+<p>✅ <b>Ponens</b>: afirmou o antecedente (P) → conclui o consequente (Q)<br>
+✅ <b>Tollens</b>: negou o consequente (~Q) → conclui negação do antecedente (~P)<br>
+❌ Afirmou o consequente (Q) → NÃO pode concluir P<br>
+❌ Negou o antecedente (~P) → NÃO pode concluir ~Q</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 3. LÓGICA PROPOSICIONAL ══════════ -->
+<div class="macro" id="m3">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔢</div>
+<div class="minfo"><div class="mt">3. Lógica Sentencial (Proposicional)</div><div class="mm">Proposições compostas, tabelas-verdade, número de linhas</div></div>
+<span class="badge">Edital §3.1-3.2</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Tabelas-Verdade e Classificação</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Número de linhas</b>: 2ⁿ (n = número de proposições simples diferentes). 2 proposições = 4 linhas, 3 = 8, 4 = 16</li>
+<li><b>Tautologia</b>: SEMPRE verdadeira (todas as linhas V). Ex.: p ∨ ~p</li>
+<li><b>Contradição</b>: SEMPRE falsa (todas as linhas F). Ex.: p ∧ ~p</li>
+<li><b>Contingência</b>: V em algumas linhas e F em outras (nem tautologia nem contradição)</li>
+<li><b>Ordem de precedência</b>: ~ (negação) → ∧ (e) → ∨ (ou) → → (condicional) → ↔ (bicondicional)</li>
+</ul></div>
+<div class="ex"><h4>Atalho para contar V/F</h4>
+<p>∧ (E): só <b>1V</b> em 4 linhas (VV) → para n proposições: 1V e (2ⁿ-1)F<br>
+∨ (OU): só <b>1F</b> em 4 linhas (FF) → para n proposições: 1F e (2ⁿ-1)V<br>
+→ (SE-ENTÃO): só <b>1F</b> (VF = Vera Fischer)<br>
+↔ (SSE): <b>2V</b> e <b>2F</b> (valores iguais = V)</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 4. EQUIVALÊNCIAS E DE MORGAN ══════════ -->
+<div class="macro" id="m4">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔄</div>
+<div class="minfo"><div class="mt">4. Equivalências, Negações e Leis de De Morgan</div><div class="mm">Equivalência da condicional, bicondicional, negações, De Morgan, diagramas</div></div>
+<span class="badge">Edital §3.3-3.5</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Equivalências Lógicas</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Equivalência da condicional</b>: P→Q ≡ <b>~Q→~P</b> (contrapositiva) ≡ <b>~P∨Q</b> (nega primeira OU mantém segunda)</li>
+<li><b>Equivalência da bicondicional</b>: P↔Q ≡ (P→Q) ∧ (Q→P) ≡ (P∧Q) ∨ (~P∧~Q)</li>
+<li><b>Contrapositiva</b>: inverte a ordem E nega ambas. "Se chove, molha" ≡ "Se NÃO molha, NÃO chove"</li>
+</ul></div>
+<div class="ex"><h4>Macete "NECO" (Negação da Condicional)</h4>
+<p>P→Q equivale a:<br>
+🔄 <b>Contrapositiva</b>: ~Q→~P (inverte + nega)<br>
+🔄 <b>~P∨Q</b>: nega a 1ª OU mantém a 2ª</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Negações e Leis de De Morgan</span><span class="tc">Cai sempre</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Negação do E</b> (De Morgan): ~(P∧Q) ≡ <b>~P ∨ ~Q</b> — "nega ambas e troca E por OU"</li>
+<li><b>Negação do OU</b> (De Morgan): ~(P∨Q) ≡ <b>~P ∧ ~Q</b> — "nega ambas e troca OU por E"</li>
+<li><b>Negação do SE-ENTÃO</b>: ~(P→Q) ≡ <b>P ∧ ~Q</b> — "mantém a 1ª E nega a 2ª" (MANE)</li>
+<li><b>Negação do SSE</b>: ~(P↔Q) ≡ P⊻Q — uma V e outra F (disjunção exclusiva)</li>
+</ul></div>
+<div class="ex"><h4>Macete das negações — "NENE MANE"</h4>
+<p>🔴 <b>NE</b>ga do E: <b>NE</b>ga ambas + troca por OU → ~(P∧Q) = ~P∨~Q<br>
+🔵 <b>NE</b>ga do OU: <b>NE</b>ga ambas + troca por E → ~(P∨Q) = ~P∧~Q<br>
+🟡 <b>MA</b>ntém a 1ª + <b>NE</b>ga a 2ª + troca por E → ~(P→Q) = P∧~Q</p>
+<p>De Morgan = "nega tudo e troca o conectivo (E↔OU)"</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>Negação de P→Q NÃO é ~P→~Q (isso é a inversa, não a negação)</li>
+<li>Contrapositiva (~Q→~P) é EQUIVALÊNCIA, não negação</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Diagramas Lógicos</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Diagramas de Venn</b>: representam conjuntos e relações (todo, algum, nenhum)</li>
+<li><b>"Todo A é B"</b>: círculo A dentro de B. NÃO significa que todo B é A</li>
+<li><b>"Algum A é B"</b>: interseção entre A e B (pelo menos 1 elemento em comum). Equivale a "Algum B é A"</li>
+<li><b>"Nenhum A é B"</b>: círculos separados (sem interseção). Equivale a "Nenhum B é A"</li>
+<li><b>Negação de "Todo A é B"</b> → "Algum A <b>não</b> é B" (pelo menos um fora)</li>
+<li><b>Negação de "Algum A é B"</b> → "Nenhum A é B"</li>
+</ul></div>
+<div class="ex"><h4>Quantificadores — negações</h4>
+<p>~(Todo A é B) = <b>Algum A não é B</b><br>
+~(Algum A é B) = <b>Nenhum A é B</b><br>
+~(Nenhum A é B) = <b>Algum A é B</b><br>
+~(Algum A não é B) = <b>Todo A é B</b></p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 5. LÓGICA DE 1ª ORDEM ══════════ -->
+<div class="macro" id="m5">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">∀</div>
+<div class="minfo"><div class="mt">5. Lógica de Primeira Ordem</div><div class="mm">Quantificadores universal e existencial, negação de quantificadores</div></div>
+<span class="badge">Edital §4</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Quantificadores e Negações</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>∀ (para todo)</b>: quantificador universal. "Para todo x, P(x)" = todos os elementos satisfazem P</li>
+<li><b>∃ (existe)</b>: quantificador existencial. "Existe x tal que P(x)" = pelo menos um satisfaz P</li>
+<li><b>Negação de ∀</b>: ~(∀x P(x)) ≡ <b>∃x ~P(x)</b> — troca ∀ por ∃ e nega o predicado</li>
+<li><b>Negação de ∃</b>: ~(∃x P(x)) ≡ <b>∀x ~P(x)</b> — troca ∃ por ∀ e nega o predicado</li>
+<li><b>Regra geral</b>: para negar, troca o quantificador e nega o predicado (igual De Morgan para quantificadores)</li>
+</ul></div>
+<div class="ex"><h4>Exemplos</h4>
+<p>∀x: "Todos os policiais são treinados" → Negação: "∃x: Algum policial <b>não</b> é treinado"<br>
+∃x: "Existe um aluno aprovado" → Negação: "∀x: <b>Nenhum</b> aluno é aprovado"</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 6. CONTAGEM E PROBABILIDADE ══════════ -->
+<div class="macro" id="m6">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🎲</div>
+<div class="minfo"><div class="mt">6. Princípios de Contagem, Conjuntos e Probabilidade</div><div class="mm">PFC, arranjo, combinação, permutação, conjuntos, probabilidade</div></div>
+<span class="badge">Edital §5-6</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Contagem — Arranjo, Combinação, Permutação</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>PFC (Princípio Fundamental da Contagem)</b>: multiplica as possibilidades de cada etapa. 3 camisas × 2 calças = 6 combinações</li>
+<li><b>Permutação (Pn)</b>: todos os elementos, <b>ordem importa</b>. Pn = n! Ex.: anagramas de "AMOR" = 4! = 24</li>
+<li><b>Permutação com repetição</b>: Pn/(r1! × r2!...). Ex.: anagramas de "BANANA" = 6!/(3!×2!) = 60</li>
+<li><b>Arranjo (An,p)</b>: escolhe p de n, <b>ordem importa</b>. An,p = n!/(n-p)! Ex.: pódio de 3 entre 10 = 10!/(10-3)! = 720</li>
+<li><b>Combinação (Cn,p)</b>: escolhe p de n, <b>ordem NÃO importa</b>. Cn,p = n!/[p!(n-p)!] Ex.: comitê de 3 entre 10 = 10!/(3!×7!) = 120</li>
+</ul></div>
+<div class="ex"><h4>Macete: Ordem importa?</h4>
+<p>✅ Ordem importa → <b>Arranjo/Permutação</b> (AB ≠ BA)<br>
+❌ Ordem não importa → <b>Combinação</b> (AB = BA)<br>
+📋 Todos os elementos → <b>Permutação</b> | Parte dos elementos → <b>Arranjo ou Combinação</b></p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Conjuntos e Probabilidade</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>União (A∪B)</b>: A + B - A∩B. <b>Interseção (A∩B)</b>: elementos em comum</li>
+<li><b>Fórmula 2 conjuntos</b>: |A∪B| = |A| + |B| - |A∩B|</li>
+<li><b>Fórmula 3 conjuntos</b>: |A∪B∪C| = |A|+|B|+|C| - |A∩B| - |A∩C| - |B∩C| + |A∩B∩C|</li>
+<li><b>Probabilidade</b>: P(A) = favoráveis / possíveis. Sempre entre 0 e 1 (ou 0% a 100%)</li>
+<li><b>P(A∪B)</b> = P(A) + P(B) - P(A∩B). Se mutuamente exclusivos: P(A∪B) = P(A) + P(B)</li>
+<li><b>P(complementar)</b>: P(~A) = 1 - P(A). Útil: "pelo menos 1" = 1 - P(nenhum)</li>
+<li><b>Eventos independentes</b>: P(A∩B) = P(A) × P(B). Dado e moeda: resultado de um não afeta o outro</li>
+<li><b>Probabilidade condicional</b>: P(A|B) = P(A∩B) / P(B). "Dado que B ocorreu, qual a P de A?"</li>
+</ul></div>
+<div class="ex"><h4>Atalho "pelo menos 1"</h4>
+<p>P(pelo menos 1) = <b>1 - P(nenhum)</b><br>
+Ex.: P(pelo menos 1 cara em 3 lances) = 1 - P(3 coroas) = 1 - (1/2)³ = 1 - 1/8 = <b>7/8</b></p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 7. ARITMÉTICA, GEOMETRIA, MATRIZES ══════════ -->
+<div class="macro" id="m7">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📐</div>
+<div class="minfo"><div class="mt">7. Problemas Aritméticos, Geométricos e Matriciais</div><div class="mm">Razão, proporção, porcentagem, sequências, geometria básica, matrizes</div></div>
+<span class="badge">Edital §7</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Aritmética e Sequências</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Razão e Proporção</b>: a/b = c/d → ad = bc (produtos cruzados iguais)</li>
+<li><b>Porcentagem</b>: x% de N = (x/100) × N. Aumento de 20%: × 1,20. Desconto de 30%: × 0,70</li>
+<li><b>Aumentos e descontos sucessivos</b>: multiplica fatores. +10% e +20% = 1,1 × 1,2 = 1,32 (aumento de 32%)</li>
+<li><b>PA (Progressão Aritmética)</b>: razão constante (r = diferença). an = a1 + (n-1)r. Soma: Sn = (a1+an)×n/2</li>
+<li><b>PG (Progressão Geométrica)</b>: razão constante (q = multiplicador). an = a1 × q^(n-1). Soma finita: Sn = a1(qⁿ-1)/(q-1)</li>
+<li><b>Sequências lógicas</b>: identifique o padrão (soma, multiplicação, alternância, Fibonacci)</li>
+</ul></div>
+<div class="ex"><h4>Porcentagem — atalhos</h4>
+<p>📊 10% de X = X/10 | 25% de X = X/4 | 50% de X = X/2<br>
+🔄 Aumento de P% seguido de desconto de P% → NÃO volta ao original (sempre diminui)<br>
+Ex.: 100 +10% = 110 -10% = <b>99</b> (perdeu 1%)</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Geometria Básica e Matrizes</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Perímetro</b>: soma dos lados. <b>Área do retângulo</b>: b×h. <b>Área do triângulo</b>: b×h/2</li>
+<li><b>Área do círculo</b>: π×r². <b>Perímetro (circunferência)</b>: 2πr</li>
+<li><b>Pitágoras</b>: a² = b² + c² (triângulo retângulo). Ternas famosas: 3-4-5, 5-12-13, 8-15-17</li>
+<li><b>Matrizes</b>: tabela m×n. Soma: elemento a elemento. Multiplicação: linha × coluna (só se colunas de A = linhas de B)</li>
+<li><b>Determinante 2×2</b>: |a b; c d| = ad - bc</li>
+<li><b>Determinante 3×3</b>: regra de Sarrus (diagonais principais − diagonais secundárias)</li>
+<li><b>Matriz identidade (I)</b>: diagonal = 1, resto = 0. A × I = A</li>
+</ul></div>
+<div class="ex"><h4>Fórmulas de área</h4>
+<p>⬛ Quadrado: L² | ▬ Retângulo: b×h | △ Triângulo: b×h/2 | ⚪ Círculo: πr²<br>
+🔺 Pitágoras: 3²+4² = 5² (9+16=25) → a terna mais cobrada</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 8. ESTATÍSTICA ══════════ -->
+<div class="macro" id="m8">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📊</div>
+<div class="minfo"><div class="mt">8. Estatística e Probabilidade Básicas</div><div class="mm">Média, mediana, moda, desvio padrão, variância, hipóteses, amostragem, outliers</div></div>
+<span class="badge">Edital §8</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Medidas de Tendência Central</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Média aritmética</b>: soma dos valores / quantidade. x̄ = Σxi / n</li>
+<li><b>Média ponderada</b>: Σ(xi × pi) / Σpi (cada valor tem um peso)</li>
+<li><b>Mediana (Md)</b>: valor central quando dados estão <b>ordenados</b>. Se n ímpar: valor do meio. Se n par: média dos 2 do meio</li>
+<li><b>Moda (Mo)</b>: valor que mais se repete. Pode ser: amodal (nenhum repete), unimodal, bimodal, multimodal</li>
+<li><b>Relação empírica</b> (distribuição moderadamente assimétrica): Média - Moda ≈ 3 × (Média - Mediana)</li>
+<li><b>Assimetria positiva</b> (cauda à direita): Média > Mediana > Moda</li>
+<li><b>Assimetria negativa</b> (cauda à esquerda): Moda > Mediana > Média</li>
+<li><b>Simétrica</b>: Média = Mediana = Moda</li>
+</ul></div>
+<div class="ex"><h4>Macete assimetria</h4>
+<p>📈 Cauda à direita (positiva): <b>Mé > Md > Mo</b> (ordem alfabética)<br>
+📉 Cauda à esquerda (negativa): <b>Mo > Md > Mé</b> (ordem inversa)<br>
+⚖️ Simétrica: <b>Mé = Md = Mo</b></p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Medidas de Dispersão</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Amplitude</b>: maior valor - menor valor (simples, mas sensível a outliers)</li>
+<li><b>Variância (σ²)</b>: média dos quadrados dos desvios. σ² = Σ(xi - x̄)² / n (populacional) ou /(n-1) (amostral)</li>
+<li><b>Desvio padrão (σ)</b>: √variância. Mesma unidade dos dados. Quanto maior → mais disperso</li>
+<li><b>Coeficiente de variação (CV)</b>: CV = (σ / x̄) × 100%. Compara dispersão entre grupos com médias diferentes. CV > 30% = alta dispersão</li>
+<li><b>Se somar constante K a todos</b>: média aumenta K, desvio padrão NÃO muda</li>
+<li><b>Se multiplicar por constante K</b>: média × K, desvio padrão × |K|, variância × K²</li>
+</ul></div>
+<div class="ex"><h4>Propriedades importantes</h4>
+<p>➕ Somar constante: <b>média muda</b>, desvio <b>NÃO muda</b><br>
+✖️ Multiplicar constante: <b>média × K</b>, desvio <b>× |K|</b>, variância <b>× K²</b><br>
+Amostral usa <b>n-1</b> (correção de Bessel) | Populacional usa <b>n</b></p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Hipóteses, Amostragem e Outliers</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Hipótese nula (H₀)</b>: "não há diferença" / "não há efeito" (status quo). <b>Hipótese alternativa (H₁)</b>: "há diferença"</li>
+<li><b>Erro Tipo I (α)</b>: rejeitar H₀ quando ela é <b>verdadeira</b> (falso positivo). <b>Erro Tipo II (β)</b>: NÃO rejeitar H₀ quando é <b>falsa</b> (falso negativo)</li>
+<li><b>Nível de significância (α)</b>: probabilidade de erro tipo I (geralmente 5%). P-valor < α → rejeita H₀</li>
+<li><b>Amostragem aleatória simples</b>: todos têm mesma chance de ser escolhidos</li>
+<li><b>Amostragem estratificada</b>: divide em subgrupos (estratos) e sorteia de cada. <b>Sistemática</b>: a cada k elementos. <b>Por conveniência</b>: NÃO aleatória (viés!)</li>
+<li><b>Viés (bias)</b>: erro sistemático que distorce resultados. <b>Erro amostral</b>: diferença entre amostra e população (diminui com n maior)</li>
+<li><b>Normalização (Min-Max)</b>: x' = (x - min) / (max - min) → valores entre 0 e 1</li>
+<li><b>Padronização (Z-score)</b>: z = (x - x̄) / σ → média = 0, desvio = 1. Curva normal: 68% ±1σ, 95% ±2σ, 99,7% ±3σ</li>
+<li><b>Outliers</b>: valores extremos que se distanciam do padrão. Detecção: IQR (Q3-Q1). Outlier se x < Q1 - 1,5×IQR ou x > Q3 + 1,5×IQR. Ou se |z| > 3</li>
+</ul></div>
+<div class="ex"><h4>Regra empírica da normal (68-95-99,7)</h4>
+<p>📊 ±1σ = <b>68%</b> dos dados | ±2σ = <b>95%</b> | ±3σ = <b>99,7%</b><br>
+🎯 Erro I (α) = "alarme falso" | Erro II (β) = "não detectou"<br>
+📦 Outlier: fora de Q1-1,5×IQR ou Q3+1,5×IQR (regra do boxplot)</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Média é sempre a melhor medida de tendência central" → <b>ERRADO</b>, mediana é melhor com outliers/assimetria</li>
+<li>"Variância amostral divide por n" → <b>ERRADO</b>, divide por n-1 (correção de Bessel)</li>
+<li>"Amostragem por conveniência é aleatória" → <b>ERRADO</b>, é não probabilística (viés)</li>
+</ul></div></div></div>
+</div></div>
+
+</div>
+
+<a href="reta-final.html" class="back-btn">← Voltar</a>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+function toggleMacro(el){el.closest('.macro').classList.toggle('open')}
+function toggleTp(el){el.closest('.tp').classList.toggle('open')}
+function toggleAll(open){document.querySelectorAll('.macro').forEach(m=>{open?m.classList.add('open'):m.classList.remove('open')});document.querySelectorAll('.tp').forEach(t=>{open?t.classList.add('open'):t.classList.remove('open')})}
+function scrollToSection(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+function filterContent(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.macro').forEach(m=>{const t=m.textContent.toLowerCase();if(q===''||t.includes(q)){m.style.display='';if(q!==''){m.classList.add('open');m.querySelectorAll('.tp').forEach(tp=>tp.classList.add('open'))}}else{m.style.display='none'}})}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)})
+</script>
+</body>
+</html>

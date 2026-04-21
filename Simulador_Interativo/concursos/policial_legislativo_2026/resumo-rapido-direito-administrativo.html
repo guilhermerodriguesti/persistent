@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão Rápida – Direito Administrativo</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',sans-serif;background:#f8fafc;color:#1e293b;line-height:1.6}
+.container{max-width:1100px;margin:0 auto;padding:20px}
+.header{text-align:center;padding:30px 20px;background:linear-gradient(135deg,#581c87,#a855f7);border-radius:16px;margin-bottom:20px;box-shadow:0 8px 32px rgba(168,85,247,0.3)}
+.header h1{font-size:22px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:13px;color:#e9d5ff;margin-bottom:12px}
+.stats-row{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.hstat{padding:5px 12px;border-radius:20px;font-size:11px;font-weight:700;background:rgba(255,255,255,0.1);color:#e9d5ff;border:1px solid rgba(255,255,255,0.15)}
+.hstat b{font-size:15px;color:#fff}
+.nav-bar{display:flex;flex-wrap:wrap;gap:5px;justify-content:center;margin-bottom:16px;padding:12px;background:#fff;border-radius:12px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.nav-btn{padding:7px 14px;border-radius:8px;cursor:pointer;font-size:11px;font-weight:700;border:1px solid #c4b5fd;color:#7c3aed;background:#f5f3ff;transition:all .2s;white-space:nowrap}
+.nav-btn:hover{background:#a855f7;color:#fff;border-color:#a855f7}
+.search-box{margin-bottom:16px;display:flex;gap:8px}
+.search-box input{flex:1;padding:10px 14px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#1e293b;font-size:13px;outline:none}
+.search-box input:focus{border-color:#a855f7}
+.ebtn{padding:8px 16px;border-radius:10px;border:1px solid #e2e8f0;background:#fff;color:#7c3aed;cursor:pointer;font-size:11px;font-weight:700}
+.ebtn:hover{background:#a855f7;color:#fff;border-color:#a855f7}
+.macro{margin-bottom:20px;border-radius:14px;overflow:hidden;border:1px solid #e2e8f0;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+.mh{display:flex;align-items:center;gap:12px;padding:16px 18px;cursor:pointer;user-select:none;transition:background .2s}
+.mh:hover{background:#f5f3ff}
+.mi{font-size:26px;flex-shrink:0}
+.minfo{flex:1}.mt{font-size:17px;font-weight:800;color:#1e293b}
+.mm{font-size:11px;color:#64748b;margin-top:2px}
+.badge{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:700;background:#f5f3ff;color:#7c3aed;border:1px solid #c4b5fd}
+.chv{font-size:14px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.macro.open .chv{transform:rotate(90deg)}
+.mb{display:none;padding:0 18px 18px;border-top:1px solid #f1f5f9}
+.macro.open .mb{display:block}
+.tp{margin-top:14px;border-radius:10px;overflow:hidden;border:1px solid #e2e8f0;background:#f8fafc}
+.th{display:flex;align-items:center;gap:8px;padding:10px 14px;cursor:pointer;transition:background .2s}
+.th:hover{background:#f5f3ff}
+.tt{flex:1;font-size:13px;font-weight:700;color:#1e293b}
+.tc{font-size:10px;color:#64748b;font-weight:600;padding:2px 8px;background:#f1f5f9;border-radius:10px;border:1px solid #e2e8f0}
+.tv{font-size:11px;color:#94a3b8;transition:transform .3s;flex-shrink:0}
+.tp.open .tv{transform:rotate(90deg)}
+.tb{display:none;padding:0 14px 14px;border-top:1px solid #f1f5f9}
+.tp.open .tb{display:block}
+.kp h4{font-size:12px;font-weight:700;color:#7c3aed;margin:10px 0 6px;display:flex;align-items:center;gap:5px}
+.kp h4::before{content:'💡'}
+ul.k{list-style:none;padding:0}
+ul.k li{padding:6px 10px 6px 20px;font-size:12px;color:#334155;margin-bottom:3px;border-radius:6px;background:#f1f5f9;position:relative;line-height:1.5}
+ul.k li::before{content:'▸';position:absolute;left:8px;color:#a855f7;font-weight:700}
+ul.k li b{color:#1e293b}
+.ex{margin-top:8px;padding:10px 14px;background:#f5f3ff;border:1px solid #c4b5fd;border-radius:8px}
+.ex h4{font-size:12px;font-weight:700;color:#7c3aed;margin-bottom:6px}
+.ex h4::before{content:'📌 '}
+.ex p,.ex li{font-size:11px;color:#581c87;line-height:1.5}
+.trap{margin-top:10px;padding:10px 14px;background:#fef2f2;border:1px solid #fca5a5;border-radius:8px}
+.trap h4{font-size:12px;font-weight:700;color:#dc2626;margin-bottom:6px}
+.trap h4::before{content:'⚠️ '}
+ul.t{list-style:none;padding:0}
+ul.t li{padding:4px 10px 4px 20px;font-size:11px;color:#7f1d1d;margin-bottom:2px;position:relative;line-height:1.4}
+ul.t li::before{content:'✗';position:absolute;left:6px;color:#dc2626;font-weight:700}
+ul.t li b{color:#1e293b}
+.back-btn{position:fixed;bottom:20px;right:20px;padding:10px 18px;background:#a855f7;color:#fff;border:none;border-radius:10px;font-size:12px;font-weight:700;cursor:pointer;box-shadow:0 4px 20px rgba(168,85,247,.4);z-index:100;text-decoration:none}
+.back-btn:hover{background:#7c3aed}
+.scroll-top{position:fixed;bottom:64px;right:20px;width:40px;height:40px;background:#fff;border:1px solid #e2e8f0;border-radius:50%;display:none;align-items:center;justify-content:center;cursor:pointer;color:#1e293b;font-size:16px;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,0.1)}
+.scroll-top.visible{display:flex}
+.scroll-top:hover{background:#a855f7;color:#fff;border-color:#a855f7}
+@media(max-width:768px){.container{padding:10px}.header h1{font-size:18px}.mt{font-size:15px}.nav-btn{padding:5px 8px;font-size:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>🏛️ Revisão Rápida – Direito Administrativo</h1>
+<div class="sub">Policial Legislativo CD 2026 • Conceitos práticos com exemplos • Revisão 1 dia antes da prova</div>
+<div class="stats-row">
+<div class="hstat">📂 <b>14</b> temas do edital</div>
+<div class="hstat">📑 <b>35+</b> subtópicos</div>
+<div class="hstat">📌 <b>Exemplos</b> e macetes</div>
+<div class="hstat">⚡ <b>Rápido</b> e prático</div>
+</div>
+</div>
+<div class="nav-bar">
+<span class="nav-btn" onclick="scrollToSection('m1')">1. Organização</span>
+<span class="nav-btn" onclick="scrollToSection('m2')">2. Ato Admin.</span>
+<span class="nav-btn" onclick="scrollToSection('m3')">3. Agentes</span>
+<span class="nav-btn" onclick="scrollToSection('m4')">4. Disciplinar</span>
+<span class="nav-btn" onclick="scrollToSection('m5')">5. Poderes</span>
+<span class="nav-btn" onclick="scrollToSection('m6')">6. Controle</span>
+<span class="nav-btn" onclick="scrollToSection('m7')">7. Resp. Civil</span>
+<span class="nav-btn" onclick="scrollToSection('m8')">8. Improbidade</span>
+<span class="nav-btn" onclick="scrollToSection('m9')">9. LAI</span>
+<span class="nav-btn" onclick="scrollToSection('m10')">10. LGPD</span>
+<span class="nav-btn" onclick="scrollToSection('m11')">11. Bens</span>
+<span class="nav-btn" onclick="scrollToSection('m12')">12. LINDB</span>
+<span class="nav-btn" onclick="scrollToSection('m13')">13. Licitações</span>
+<span class="nav-btn" onclick="scrollToSection('m14')">14. Orçamento</span>
+</div>
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="🔍 Buscar conceito, sigla ou exemplo..." onkeyup="filterContent()">
+<button class="ebtn" onclick="toggleAll(true)">▼ Abrir Tudo</button>
+<button class="ebtn" onclick="toggleAll(false)">▲ Fechar Tudo</button>
+</div>
+
+<!-- ══════════ 1. ORGANIZAÇÃO ADMINISTRATIVA ══════════ -->
+<div class="macro" id="m1">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏗️</div>
+<div class="minfo"><div class="mt">1. Organização Administrativa</div><div class="mm">Centralização, descentralização, concentração, desconcentração, administração direta e indireta</div></div>
+<span class="badge">Edital §1</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">1.1 Centralização, Descentralização, Concentração e Desconcentração</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Centralização</b>: Estado executa tarefas <b>diretamente</b> por seus órgãos (sem criar nova pessoa jurídica)</li>
+<li><b>Descentralização</b>: Estado transfere a execução para <b>outra pessoa jurídica</b> (autarquia, empresa pública, concessionária). Cria nova PJ ou delega</li>
+<li><b>Concentração</b>: competências reunidas em <b>1 só órgão</b> (sem divisão interna)</li>
+<li><b>Desconcentração</b>: distribuição de competências <b>dentro da mesma PJ</b> (cria órgãos internos). Ex.: Ministério cria secretarias</li>
+<li><b>Macete</b>: Des<b>C</b>entralização = nova <b>P</b>essoa jurídica | Des<b>C</b>oncentração = novos <b>Ó</b>rgãos (mesma PJ)</li>
+</ul></div>
+<div class="ex"><h4>Exemplos para decorar</h4>
+<p>🏢 <b>Descentralização</b>: União cria o INSS (autarquia = nova PJ)<br>
+📂 <b>Desconcentração</b>: Ministério da Saúde cria a Secretaria de Vigilância (órgão interno, mesma PJ)</p>
+<p>Dica: Des<b>C</b>entral = <b>C</b>ria PJ | Des<b>C</b>oncentra = distribui <b>dentro</b> da mesma casa</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Desconcentração cria nova pessoa jurídica" — <b>ERRADO</b>, quem cria PJ é descentralização</li>
+<li>"Descentralização ocorre dentro do mesmo órgão" — <b>ERRADO</b>, isso é desconcentração</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">1.2-1.3 Administração Direta, Indireta e Entidades</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Administração Direta</b>: União, Estados, DF e Municípios + seus <b>órgãos</b> (ministérios, secretarias)</li>
+<li><b>Administração Indireta</b> (4 entidades): <b>A</b>utarquias, <b>F</b>undações Públicas, <b>E</b>mpresas Públicas, <b>S</b>ociedades de Economia Mista</li>
+<li><b>Autarquia</b>: PJ de direito <b>público</b>, criada por <b>lei específica</b>, atividade típica do Estado. Ex.: INSS, IBAMA, BACEN</li>
+<li><b>Fundação Pública</b>: PJ de direito público ou privado, autorizada por lei, finalidade <b>social/cultural/educacional</b>. Ex.: FUNAI, IBGE</li>
+<li><b>Empresa Pública</b>: PJ de direito <b>privado</b>, capital <b>100% público</b>, qualquer forma societária. Ex.: Correios, CEF, BNDES</li>
+<li><b>Sociedade de Economia Mista (SEM)</b>: PJ de direito <b>privado</b>, capital <b>misto</b> (público + privado, maioria público), <b>S.A. obrigatória</b>. Ex.: Petrobras, BB</li>
+<li>Todas criadas/autorizadas por <b>lei específica</b>. Autarquia = criada por lei. As demais = autorizadas por lei</li>
+</ul></div>
+<div class="ex"><h4>Tabela Rápida</h4>
+<p>🟢 <b>Autarquia</b> = Dir. Público | Criada por lei | Atividade típica<br>
+🔵 <b>Fundação</b> = Dir. Público ou Privado | Autorizada por lei | Social/cultural<br>
+🟠 <b>Empresa Pública</b> = Dir. Privado | Capital 100% público | Qualquer forma<br>
+🔴 <b>SEM</b> = Dir. Privado | Capital misto | Obrigatoriamente S.A.</p>
+<p>Macete <b>EP vs SEM</b>: <b>E</b>mpresa <b>P</b>ública = 100% <b>P</b>úblico | <b>S</b>EM = é <b>S</b>.A.</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"SEM pode adotar qualquer forma societária" — <b>ERRADO</b>, obrigatoriamente S.A.</li>
+<li>"Empresa pública tem capital misto" — <b>ERRADO</b>, 100% público</li>
+<li>"Autarquia é autorizada por lei" — <b>ERRADO</b>, autarquia é CRIADA diretamente por lei</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 2. ATO ADMINISTRATIVO ══════════ -->
+<div class="macro" id="m2">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📋</div>
+<div class="minfo"><div class="mt">2. Ato Administrativo</div><div class="mm">Requisitos (COMOFIFA), atributos (PATI), classificação, extinção, vícios e parecer</div></div>
+<span class="badge">Edital §2</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">2.1 Requisitos, Atributos, Classificação e Extinção</span><span class="tc">Altíssima incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>5 Requisitos (COMOFIFA)</b>:<br>
+<b>CO</b>mpetência: quem pode praticar (vinculado)<br>
+<b>MO</b>tivo: razão de fato e de direito (vinc. ou discric.)<br>
+<b>FI</b>nalidade: interesse público (vinculado)<br>
+<b>F</b>orma: modo de exteriorizar (vinculado)<br>
+<b>A</b> → <b>Objeto</b>: conteúdo do ato (vinc. ou discricionário)</li>
+<li><b>4 Atributos (PATI)</b>:<br>
+<b>P</b>resunção de legitimidade: todo ato é considerado válido até prova em contrário<br>
+<b>A</b>utoexecutoriedade: Adm. executa sem precisar do Judiciário (nem sempre presente)<br>
+<b>T</b>ipicidade: cada ato tem tipo legal específico<br>
+<b>I</b>mperatividade: impõe obrigações independente da concordância</li>
+<li><b>Vinculado</b>: todos os elementos definidos em lei (sem margem). <b>Discricionário</b>: há margem de mérito (conveniência e oportunidade) no <b>motivo</b> e no <b>objeto</b></li>
+<li><b>Anulação</b>: ato <b>ilegal</b> → pela Adm. ou Judiciário → efeito <b>ex tunc</b> (retroage)</li>
+<li><b>Revogação</b>: ato <b>legal</b> mas inconveniente → só pela <b>Adm.</b> → efeito <b>ex nunc</b> (não retroage)</li>
+<li><b>Convalidação</b>: corrigir vício sanável (competência, forma) → salva o ato</li>
+</ul></div>
+<div class="ex"><h4>Macetes essenciais</h4>
+<p>📝 Requisitos: <b>CO-MO-FI-FO-OB</b> (Competência, Motivo, Finalidade, Forma, Objeto)<br>
+💪 Atributos: <b>PATI</b> (Presunção, Autoexecutoriedade, Tipicidade, Imperatividade)</p>
+<p>❌ <b>Anulação</b> = ato <b>i</b>legal = efeito ex <b>t</b>unc = <b>retroage</b><br>
+🔄 <b>Revogação</b> = ato i<b>n</b>conveniente = efeito ex <b>n</b>unc = <b>não retroage</b></p>
+<p>Mérito (discricionariedade) = <b>MO</b>tivo + <b>OB</b>jeto ("MOB")</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Revogação tem efeito ex tunc" — <b>ERRADO</b>, ex tunc é anulação</li>
+<li>"Judiciário pode revogar ato administrativo" — <b>ERRADO</b>, Judiciário só anula (ilegalidade); revoga só a própria Adm.</li>
+<li>"Ato vinculado tem mérito administrativo" — <b>ERRADO</b>, mérito só existe no discricionário</li>
+<li>"Autoexecutoriedade está presente em todo ato" — <b>ERRADO</b>, nem sempre (ex.: multa precisa de execução judicial)</li>
+</ul></div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">2.2 Parecer e Responsabilidade</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Parecer facultativo</b>: autoridade não é obrigada a pedir → parecerista <b>não responde</b></li>
+<li><b>Parecer obrigatório</b>: lei exige, mas autoridade decide livremente → parecerista responde por <b>erro grosseiro</b></li>
+<li><b>Parecer vinculante</b>: autoridade é obrigada a seguir → parecerista <b>responde solidariamente</b> com o decisor</li>
+<li>STF: parecerista jurídico NÃO responde solidariamente em parecer meramente opinativo (a menos que haja erro grosseiro ou dolo)</li>
+</ul></div>
+<div class="ex"><h4>Escala de responsabilidade</h4>
+<p>📄 Facultativo = <b>zero</b> responsabilidade<br>
+📋 Obrigatório = responde por <b>erro grosseiro</b><br>
+🔗 Vinculante = responde <b>solidariamente</b></p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 3. AGENTES PÚBLICOS ══════════ -->
+<div class="macro" id="m3">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">👤</div>
+<div class="minfo"><div class="mt">3. Agentes Públicos</div><div class="mm">Espécies, cargo/emprego/função, regime jurídico (Lei 8.112), acumulação, estágio</div></div>
+<span class="badge">Edital §3</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">3.1-3.3 Conceito, Espécies, Cargo, Emprego e Função</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Agente público</b>: toda pessoa que exerce função pública, com ou sem remuneração, temporária ou permanente</li>
+<li><b>Espécies</b>: agentes <b>políticos</b> (presidente, governador, parlamentares), <b>administrativos</b> (servidores, empregados), <b>honoríficos</b> (jurados, mesários), <b>delegados</b> (concessionários), <b>credenciados</b> (representam o Estado em eventos)</li>
+<li><b>Cargo público</b>: lugar na estrutura do Estado, criado por <b>lei</b>, com atribuições e remuneração (estatutário)</li>
+<li><b>Emprego público</b>: vínculo contratual via <b>CLT</b> (celetista). Ex.: empregados de EP e SEM</li>
+<li><b>Função pública</b>: conjunto de atribuições sem cargo específico. Função de <b>confiança</b> = exclusiva de servidor efetivo</li>
+<li><b>Cargo em comissão</b>: livre nomeação e exoneração ("ad nutum"), para direção, chefia e assessoramento</li>
+</ul></div>
+<div class="ex"><h4>Diferença rápida</h4>
+<p>🏛️ <b>Cargo</b> = estatutário (Lei 8.112)<br>
+📑 <b>Emprego</b> = CLT (celetista)<br>
+⚡ <b>Função de confiança</b> = só para efetivo | <b>Cargo em comissão</b> = qualquer pessoa (mas % mínimo para efetivos)</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">3.5-3.6 Regime Jurídico (Lei 8.112): Admissão, Estágio, Acumulação, Direitos e Deveres</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Concurso público</b>: obrigatório para cargo efetivo. Validade: até <b>2 anos</b>, prorrogável 1x por igual período</li>
+<li><b>Estágio probatório</b>: <b>3 anos</b> (= prazo da estabilidade). Avalia: assiduidade, disciplina, capacidade, produtividade, responsabilidade</li>
+<li><b>Estabilidade</b>: após 3 anos de efetivo exercício. Perde cargo por: sentença judicial transitada, PAD, avaliação periódica, excesso de despesa (art. 169 CF)</li>
+<li><b>Acumulação de cargos</b>: regra = <b>proibida</b>. Exceções (se houver compatibilidade de horários):<br>
+→ 2 cargos de <b>professor</b><br>
+→ 1 de professor + 1 técnico/científico<br>
+→ 2 cargos de <b>saúde</b> com profissão regulamentada</li>
+<li><b>Remuneração</b>: vencimento básico + vantagens. <b>Subsídio</b>: parcela única (sem adicionais)</li>
+<li><b>Demissão</b>: penalidade por infração grave (PAD). <b>Exoneração</b>: saída sem caráter punitivo (a pedido ou de ofício)</li>
+<li><b>Deveres</b>: lealdade, obediência, assiduidade, urbanidade, sigilo</li>
+</ul></div>
+<div class="ex"><h4>Números para decorar</h4>
+<p>📅 Concurso: <b>2 anos</b> + 2 = até 4 anos<br>
+⏱️ Estágio probatório/Estabilidade: <b>3 anos</b><br>
+📝 Acumulação: <b>PP, PT, SS</b> (2 prof, prof+técn, 2 saúde)</p>
+<p>❌ <b>Demissão</b> = punição (PAD)<br>
+✅ <b>Exoneração</b> = não é punição (a pedido ou de ofício)</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Estágio probatório é de 2 anos" — <b>ERRADO</b>, é 3 anos (STF/STJ)</li>
+<li>"É possível acumular 2 cargos técnicos" — <b>ERRADO</b>, não está nas exceções</li>
+<li>"Exoneração é penalidade" — <b>ERRADO</b>, penalidade é demissão</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 4. DIREITO ADMINISTRATIVO DISCIPLINAR ══════════ -->
+<div class="macro" id="m4">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">⚖️</div>
+<div class="minfo"><div class="mt">4. Direito Administrativo Disciplinar</div><div class="mm">PAD, sindicância, Lei 9.784/1999 (processo administrativo federal)</div></div>
+<span class="badge">Edital §4</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">4.1-4.3 PAD e Procedimentos Disciplinares</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Sindicância</b>: apuração prévia, prazo <b>30 dias</b> (prorrogável +30). Resultados: arquivamento, penalidade leve (advertência/suspensão até 30 dias), ou instauração de PAD</li>
+<li><b>PAD (Processo Administrativo Disciplinar)</b>: obrigatório para penalidades graves. Prazo: <b>60 dias</b> (prorrogável +60). 3 fases: instauração → inquérito (instrução + defesa + relatório) → julgamento</li>
+<li><b>Comissão processante</b>: 3 servidores estáveis (presidente deve ser de cargo ≥ ao do acusado)</li>
+<li><b>Penalidades</b> (Lei 8.112): advertência, suspensão (até 90 dias), demissão, cassação de aposentadoria, destituição de cargo em comissão/função</li>
+<li><b>Prescrição</b>: advertência = <b>180 dias</b>; suspensão = <b>2 anos</b>; demissão = <b>5 anos</b></li>
+<li><b>Súmula Vinculante 5</b>: falta de advogado em PAD <b>NÃO</b> gera nulidade</li>
+</ul></div>
+<div class="ex"><h4>Prazos para decorar</h4>
+<p>🔎 Sindicância = <b>30+30</b> dias<br>
+📋 PAD = <b>60+60</b> dias<br>
+⏰ Prescrição: Advertência <b>180d</b> | Suspensão <b>2a</b> | Demissão <b>5a</b></p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">4.4 Processo Administrativo Federal (Lei 9.784/1999)</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li>Regula o processo administrativo no âmbito da <b>Administração Federal direta e indireta</b></li>
+<li><b>Princípios</b>: legalidade, finalidade, motivação, razoabilidade, proporcionalidade, moralidade, ampla defesa, contraditório, segurança jurídica, interesse público, eficiência</li>
+<li><b>Prazos</b>: decisão em <b>30 dias</b> (prorrogável +30); recurso em <b>10 dias</b>; decisão do recurso em <b>30 dias</b></li>
+<li><b>Recurso</b>: tramita por no máximo <b>3 instâncias</b>. Não exige caução (gratuito). Pode ser feito mesmo sem advogado</li>
+<li><b>Revisão</b>: a qualquer tempo, se surgir fato novo. Não pode <b>agravar</b> a sanção (reformatio in pejus proibida)</li>
+<li><b>Decadência</b>: Adm. tem <b>5 anos</b> para anular ato ilegal que beneficie terceiro de boa-fé (art. 54)</li>
+<li><b>Motivação</b> obrigatória para: negar direito, decidir recurso, dispensar licitação, impor sanção</li>
+</ul></div>
+<div class="ex"><h4>Números-chave Lei 9.784</h4>
+<p>📋 Decisão: <b>30 dias</b> (+30)<br>
+📩 Recurso: <b>10 dias</b> para interpor | <b>3</b> instâncias máximo<br>
+⏰ Decadência: <b>5 anos</b> (anular ato ilegal de boa-fé)<br>
+🔄 Revisão: sem prazo, mas <b>sem reformatio in pejus</b></p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 5. PODERES ADMINISTRATIVOS ══════════ -->
+<div class="macro" id="m5">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">💪</div>
+<div class="minfo"><div class="mt">5. Poderes Administrativos</div><div class="mm">Discricionário, hierárquico, disciplinar, regulamentar, polícia, uso e abuso</div></div>
+<span class="badge">Edital §5</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">5.1 Os 5 Poderes Administrativos</span><span class="tc">Essencial</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Discricionário</b>: Adm. atua com <b>margem de escolha</b> (conveniência e oportunidade) dentro da lei</li>
+<li><b>Hierárquico</b>: organiza, ordena, delega, avoca, fiscaliza servidores e órgãos. Relação de <b>subordinação</b>. NÃO existe entre entes diferentes (tutela ≠ hierarquia)</li>
+<li><b>Disciplinar</b>: apura infrações e aplica penalidades a servidores e pessoas com <b>vínculo especial</b> com a Adm. (contratados, alunos de escola pública). NÃO se confunde com poder de polícia</li>
+<li><b>Regulamentar (normativo)</b>: chefe do Executivo edita <b>decretos</b> para fiel execução da lei. NÃO pode inovar o ordenamento (exceção: decreto autônomo art. 84, VI CF)</li>
+<li><b>Poder de Polícia</b>: limita direitos individuais em favor do <b>interesse público</b>. Atributos: <b>DAC</b> — <b>D</b>iscricionariedade, <b>A</b>utoexecutoriedade, <b>C</b>oercibilidade. Ex.: fiscalização, multa, interdição, apreensão</li>
+</ul></div>
+<div class="ex"><h4>Macete para diferenciar</h4>
+<p>📊 <b>Discricionário</b> = "escolho" (margem)<br>
+📐 <b>Hierárquico</b> = "mando" (subordinação)<br>
+🔨 <b>Disciplinar</b> = "puno" (infração interna)<br>
+📜 <b>Regulamentar</b> = "regulamento" (decreto)<br>
+🚔 <b>Polícia</b> = "limito" (sociedade/interesse público)</p>
+<p>Disciplinar = vínculo <b>especial</b> | Polícia = vínculo <b>geral</b> (qualquer cidadão)</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">5.2 Uso e Abuso do Poder</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Excesso de poder</b>: agente atua <b>fora da competência</b> (vai além do permitido). Vício de <b>competência</b></li>
+<li><b>Desvio de poder (finalidade)</b>: agente atua dentro da competência, mas com <b>finalidade diversa</b> da prevista em lei. Vício de <b>finalidade</b></li>
+<li>Ambos são formas de <b>abuso de poder</b> → ato nulo</li>
+<li><b>Omissão</b>: agente que deveria agir e não age → também pode configurar abuso</li>
+</ul></div>
+<div class="ex"><h4>Exemplo clássico</h4>
+<p>👊 <b>Excesso</b>: policial prendeu alguém sem mandado em caso que exigia (foi além da competência)<br>
+🎯 <b>Desvio</b>: delegado removeu servidor para "puni-lo" (usou remoção com finalidade punitiva, quando é de interesse público)</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 6. CONTROLE DA ADMINISTRAÇÃO ══════════ -->
+<div class="macro" id="m6">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🔍</div>
+<div class="minfo"><div class="mt">6. Controle da Administração Pública</div><div class="mm">Controle administrativo, judicial e legislativo</div></div>
+<span class="badge">Edital §6</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Tipos de Controle</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Controle administrativo</b> (pela própria Adm.): autotutela — anula atos ilegais e revoga inconvenientes (<b>Súmulas 346 e 473 STF</b>)</li>
+<li><b>Controle judicial</b>: provocado pelo interessado. Analisa apenas <b>legalidade</b> (NÃO mérito). Instrumentos: MS, ação popular, ação civil pública, HC, HD</li>
+<li><b>Controle legislativo</b>: <b>político</b> (CPI, sustação de atos do Executivo, julgamento de contas pelo CN) e <b>financeiro</b> (TCU — controle externo de contas)</li>
+<li><b>Tutela (supervisão ministerial)</b>: controle da Adm. Direta sobre a Indireta. NÃO é hierarquia, é <b>vinculação</b></li>
+<li><b>Interno</b>: a própria Adm. se fiscaliza | <b>Externo</b>: outro Poder ou TCU fiscaliza</li>
+</ul></div>
+<div class="ex"><h4>Resumo</h4>
+<p>🏢 <b>Administrativo</b> = a própria Adm. (autotutela, legalidade + mérito)<br>
+⚖️ <b>Judicial</b> = só legalidade, provocado<br>
+🏛️ <b>Legislativo</b> = CPI + TCU + julgamento de contas</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Judiciário pode analisar mérito administrativo" — <b>ERRADO</b>, só legalidade (regra geral)</li>
+<li>"A relação entre Adm. Direta e Indireta é de hierarquia" — <b>ERRADO</b>, é de vinculação (tutela)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 7. RESPONSABILIDADE CIVIL DO ESTADO ══════════ -->
+<div class="macro" id="m7">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">⚡</div>
+<div class="minfo"><div class="mt">7. Responsabilidade Civil do Estado</div><div class="mm">Objetiva (comissão), subjetiva (omissão), excludentes e ação regressiva</div></div>
+<span class="badge">Edital §7</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Responsabilidade por Ação e por Omissão</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Art. 37, §6º CF</b>: PJ de direito público e privado prestadoras de serviço público respondem <b>objetivamente</b> (sem provar culpa) pelos danos que seus agentes causarem</li>
+<li><b>Ato comissivo (ação)</b>: responsabilidade <b>objetiva</b> → basta dano + nexo causal + conduta do agente. NÃO precisa provar culpa</li>
+<li><b>Ato omissivo (omissão)</b>: responsabilidade <b>subjetiva</b> (posição majoritária) → precisa provar culpa/negligência do Estado em agir</li>
+<li><b>Teoria do risco administrativo</b>: adotada no Brasil → aceita excludentes (diferente do risco integral)</li>
+<li><b>Excludentes</b>: culpa exclusiva da vítima, caso fortuito/força maior, fato de terceiro → excluem ou atenuam</li>
+<li><b>Culpa concorrente</b>: vítima e Estado contribuem → responsabilidade atenuada (não excluída)</li>
+<li><b>Ação regressiva</b>: Estado paga a vítima → depois cobra do agente (se dolo ou culpa). Ação regressiva é <b>subjetiva</b></li>
+<li><b>Dupla garantia</b> (STF): vítima aciona o Estado; Estado aciona o agente. Vítima NÃO pode acionar diretamente o agente</li>
+</ul></div>
+<div class="ex"><h4>Esquema para decorar</h4>
+<p>👊 <b>Ação</b> (comissivo) → responsabilidade <b>OBJETIVA</b> (sem culpa)<br>
+😴 <b>Omissão</b> → responsabilidade <b>SUBJETIVA</b> (prova culpa)<br>
+💰 Vítima → cobra do <b>Estado</b> → Estado → cobra do <b>agente</b> (regressiva, subjetiva)</p>
+<p>Teoria do <b>risco administrativo</b> (Brasil) ≠ risco integral (sem excludentes)</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Brasil adota teoria do risco integral" — <b>ERRADO</b>, adota risco administrativo (aceita excludentes). Exceção: dano ambiental e nuclear = risco integral</li>
+<li>"Vítima pode processar diretamente o agente público" — <b>ERRADO</b> (dupla garantia STF)</li>
+<li>"Omissão gera responsabilidade objetiva" — <b>ERRADO</b>, omissão = subjetiva (majoritário)</li>
+</ul></div></div></div>
+</div></div>
+
+<!-- ══════════ 8. IMPROBIDADE ══════════ -->
+<div class="macro" id="m8">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🚫</div>
+<div class="minfo"><div class="mt">8. Improbidade Administrativa (Lei 8.429/1992)</div><div class="mm">Atos ímprobos, sanções, após alterações da Lei 14.230/2021</div></div>
+<span class="badge">Edital §8</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Atos de Improbidade e Sanções</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>3 tipos de atos ímprobos</b> (do mais grave ao menos):<br>
+🔴 <b>Enriquecimento ilícito</b> (art. 9): exige <b>dolo</b>. Mais grave<br>
+🟠 <b>Prejuízo ao erário</b> (art. 10): exige <b>dolo</b> (após 14.230/2021 — antes admitia culpa)<br>
+🟡 <b>Atentar contra princípios</b> (art. 11): exige <b>dolo</b></li>
+<li><b>Após Lei 14.230/2021</b>: TODOS os atos exigem <b>DOLO</b> (acabou a improbidade culposa)</li>
+<li><b>Sanções</b>: perda de bens, ressarcimento integral, perda da função pública, suspensão dos direitos políticos, multa, proibição de contratar</li>
+<li><b>Suspensão dos direitos políticos</b>: enriquecimento = até <b>14 anos</b>; erário = até <b>12 anos</b>; princípios = até <b>4 anos</b></li>
+<li><b>Prescrição</b>: <b>8 anos</b> após a prática do ato (regra geral, após 14.230)</li>
+<li><b>Ação de improbidade</b>: legitimidade exclusiva do <b>MP</b> (após 14.230). Antes: MP e PJ lesada</li>
+<li><b>Indisponibilidade de bens</b>: pode ser decretada antes do julgamento (medida cautelar)</li>
+</ul></div>
+<div class="ex"><h4>Macete "EEP = 14-12-4"</h4>
+<p>🔴 <b>E</b>nriquecimento = <b>14</b> anos de suspensão<br>
+🟠 <b>E</b>rário = <b>12</b> anos<br>
+🟡 <b>P</b>rincípios = <b>4</b> anos</p>
+<p>Gravidade: Enriquecimento > Erário > Princípios (penas decrescentes)</p>
+<p>⚠️ <b>TUDO exige DOLO</b> (Lei 14.230/2021). Só o <b>MP</b> pode ajuizar. Prescrição: <b>8 anos</b></p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 9. LAI ══════════ -->
+<div class="macro" id="m9">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📂</div>
+<div class="minfo"><div class="mt">9. Lei de Acesso à Informação (Lei 12.527/2011)</div><div class="mm">Transparência, graus de sigilo, prazos, recursos</div></div>
+<span class="badge">Edital §9</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Pontos Essenciais da LAI</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Regra</b>: acesso é a regra, sigilo é <b>exceção</b></li>
+<li><b>Transparência ativa</b>: Adm. divulga espontaneamente (portais, sites). <b>Passiva</b>: cidadão solicita</li>
+<li><b>Pedido</b>: não precisa justificar motivo (identidade pode ser exigida). Resposta em <b>20 dias</b> (+10 de prorrogação)</li>
+<li><b>Graus de sigilo</b>: Reservado (<b>5a</b>), Secreto (<b>15a</b>), Ultrassecreto (<b>25a</b>, renovável 1x)</li>
+<li><b>Quem classifica ultrassecreto</b>: Presidente, Vice, Ministros, Comandantes FA, chefes missão diplomática</li>
+<li><b>Recurso</b>: 10 dias → autoridade superior → depois SIC → depois CGU → depois CMRI</li>
+<li><b>Informações pessoais</b>: restrição de acesso por <b>100 anos</b>, independente de classificação</li>
+</ul></div>
+<div class="ex"><h4>Prazos da LAI</h4>
+<p>📩 Resposta: <b>20 + 10</b> dias | Recurso: <b>10</b> dias<br>
+🟡 Reservado <b>5</b> | 🟠 Secreto <b>15</b> | 🔴 Ultra <b>25</b> (renova 1x = 50)<br>
+👤 Pessoal: <b>100 anos</b></p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 10. LGPD ══════════ -->
+<div class="macro" id="m10">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🛡️</div>
+<div class="minfo"><div class="mt">10. Lei Geral de Proteção de Dados (Lei 13.709/2018)</div><div class="mm">Princípios, bases legais, agentes, ANPD, direitos do titular</div></div>
+<span class="badge">Edital §10</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Pontos Essenciais da LGPD</span><span class="tc">Muito cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Dado pessoal</b>: informação que identifica ou pode identificar pessoa natural. <b>Dado sensível</b>: raça, religião, saúde, biometria, orientação sexual, genético, político, sindical</li>
+<li><b>Titular</b>: pessoa natural a quem os dados se referem. <b>Controlador</b>: decide o tratamento. <b>Operador</b>: executa o tratamento. <b>Encarregado (DPO)</b>: canal de comunicação</li>
+<li><b>10 bases legais</b> para tratamento (art. 7): consentimento, obrigação legal, políticas públicas, pesquisa, contrato, exercício regular de direitos, proteção da vida, tutela da saúde, legítimo interesse, proteção do crédito</li>
+<li><b>Dados sensíveis</b>: tratamento mais restritivo — consentimento específico e destacado OU sem consentimento em casos legais específicos</li>
+<li><b>Princípios</b>: finalidade, adequação, necessidade, livre acesso, qualidade dos dados, transparência, segurança, prevenção, não discriminação, responsabilização</li>
+<li><b>ANPD</b>: Autoridade Nacional de Proteção de Dados — órgão que fiscaliza e aplica sanções</li>
+<li><b>Sanções</b>: advertência, multa (até <b>2% do faturamento</b>, limitada a <b>R$50 milhões</b> por infração), bloqueio/eliminação de dados</li>
+</ul></div>
+<div class="ex"><h4>Agentes para decorar</h4>
+<p>👤 <b>Titular</b> = dono dos dados<br>
+🎯 <b>Controlador</b> = decide<br>
+⚙️ <b>Operador</b> = executa<br>
+📧 <b>Encarregado</b> = canal de comunicação (DPO)<br>
+🏛️ <b>ANPD</b> = fiscaliza</p>
+<p>Multa máxima: <b>2% do faturamento</b> ou <b>R$50 mi</b> (o que for menor)</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 11. BENS PÚBLICOS ══════════ -->
+<div class="macro" id="m11">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">🏗️</div>
+<div class="minfo"><div class="mt">11. Bens Públicos</div><div class="mm">Classificação, caracteres jurídicos, domínio público</div></div>
+<span class="badge">Edital §11</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Classificação e Caracteres</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>3 categorias</b> (art. 99 CC):<br>
+🏖️ <b>Uso comum do povo</b>: praças, ruas, praias, rios. Uso de todos<br>
+🏛️ <b>Uso especial</b>: destinados ao serviço público (prédios de repartições, quartéis, escolas públicas)<br>
+🏚️ <b>Dominicais (dominiais)</b>: patrimônio disponível sem destinação específica. São os únicos <b>alienáveis</b></li>
+<li><b>Caracteres</b>: <b>inalienabilidade</b> (uso comum e especial), <b>impenhorabilidade</b>, <b>imprescritibilidade</b> (não sofrem usucapião), <b>não onerabilidade</b> (não podem ser dados em garantia)</li>
+<li><b>Alienação de dominicais</b>: necessita desafetação (já são desafetados), interesse público, avaliação prévia, licitação</li>
+<li><b>Afetação</b>: dar destinação pública. <b>Desafetação</b>: retirar destinação</li>
+</ul></div>
+<div class="ex"><h4>Macete "UCD"</h4>
+<p>🏖️ <b>U</b>so comum = praia, rua, praça<br>
+🏛️ <b>U</b>so especial = prédio público, escola, hospital público<br>
+🏚️ <b>D</b>ominicais = terreno vago do Estado (alienável)</p>
+<p>Bens públicos: <b>I-I-I-N</b> (Inalienáveis*, Impenhoráveis, Imprescritíveis, Não oneráveis)<br>
+*Dominicais podem ser alienados se desafetados</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 12. LINDB ══════════ -->
+<div class="macro" id="m12">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📖</div>
+<div class="minfo"><div class="mt">12. LINDB (Lei 4.657/1942) – Regime Jurídico-Administrativo</div><div class="mm">Arts. 20-30 (inclusões de 2018), segurança jurídica, consequencialismo</div></div>
+<span class="badge">Edital §12</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Artigos 20-30 da LINDB</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Art. 20</b>: decisões baseadas em <b>valores jurídicos abstratos</b> devem considerar <b>consequências práticas</b> (consequencialismo)</li>
+<li><b>Art. 21</b>: decisão que decretar invalidação deve indicar <b>condições para regularização</b> (não basta anular)</li>
+<li><b>Art. 22</b>: interpretação de normas sobre gestão pública considerará <b>obstáculos e dificuldades</b> reais do gestor</li>
+<li><b>Art. 23</b>: decisão que estabelecer regime de transição — <b>proporcional e razoável</b></li>
+<li><b>Art. 24</b>: revisão de ato com base em nova orientação = regime de <b>transição</b> proporcional</li>
+<li><b>Art. 26</b>: Adm. pode celebrar <b>compromisso</b> para eliminar irregularidade, incerteza ou litígio</li>
+<li><b>Art. 28</b>: agente público só responde pessoalmente por <b>dolo ou erro grosseiro</b></li>
+<li><b>Art. 30</b>: aumentar a segurança jurídica com <b>súmulas, regulamentos, orientações</b> vinculantes</li>
+</ul></div>
+<div class="ex"><h4>Essência da LINDB (arts. 20-30)</h4>
+<p>🎯 Mensagem central: <b>decisão responsável, proporcional e que considere a realidade</b><br>
+⚖️ Agente público: só responde por <b>dolo ou erro grosseiro</b> (art. 28)<br>
+🤝 Adm. pode fazer <b>acordo</b> para resolver problema (art. 26)<br>
+📊 Considerar <b>consequências práticas</b> ao decidir (art. 20)</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 13. LICITAÇÕES E CONTRATOS ══════════ -->
+<div class="macro" id="m13">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">📝</div>
+<div class="minfo"><div class="mt">13. Licitações e Contratos (Lei 14.133/2021)</div><div class="mm">Modalidades, princípios, dispensa, inexigibilidade, contratos, fiscalização</div></div>
+<span class="badge">Edital §13</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">13.1 Licitação: Conceito, Princípios e Modalidades</span><span class="tc">Alta incidência</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Licitação</b>: procedimento para selecionar a proposta mais vantajosa para a Adm., garantindo isonomia e competição</li>
+<li><b>Princípios</b>: legalidade, impessoalidade, moralidade, publicidade, eficiência, competitividade, vinculação ao instrumento, julgamento objetivo</li>
+<li><b>5 Modalidades</b> (Lei 14.133):<br>
+🏷️ <b>Pregão</b>: bens e serviços <b>comuns</b> (qualquer valor). Modo de disputa: lances<br>
+📄 <b>Concorrência</b>: qualquer objeto (obras, serviços especiais, bens especiais)<br>
+🎪 <b>Concurso</b>: trabalho técnico, científico ou artístico (prêmio/remuneração)<br>
+🏠 <b>Leilão</b>: alienação de bens da Adm. (móveis/imóveis inservíveis)<br>
+💬 <b>Diálogo Competitivo</b>: inovação tecnológica, soluções complexas</li>
+<li><b>Dispensa</b>: licitação é possível, mas a lei permite não fazer (art. 75). Ex.: valor até R$50mil (serviço/compra) ou R$100mil (obras/engenharia)</li>
+<li><b>Inexigibilidade</b>: licitação é <b>impossível</b> (inviável competição). Ex.: fornecedor exclusivo, artista consagrado, notória especialização</li>
+</ul></div>
+<div class="ex"><h4>Dispensa vs Inexigibilidade</h4>
+<p>🟡 <b>Dispensa</b> = licitação é POSSÍVEL, mas a lei DISPENSA → rol taxativo<br>
+🔴 <b>Inexigibilidade</b> = licitação é IMPOSSÍVEL (sem competição) → rol exemplificativo</p>
+<p>Modalidades: <b>P-C-C-L-D</b> (Pregão, Concorrência, Concurso, Leilão, Diálogo)</p>
+</div></div></div>
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">13.2-13.8 Contratos Administrativos</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Cláusulas exorbitantes</b>: prerrogativas especiais da Adm. — alterar unilateralmente, rescindir unilateralmente, fiscalizar, aplicar sanções, ocupar provisoriamente</li>
+<li><b>Alteração unilateral</b>: acréscimos ou supressões de até <b>25%</b> do valor (reforma = até <b>50%</b>)</li>
+<li><b>Duração</b>: regra geral = vinculada ao crédito orçamentário (1 ano). Exceções: até 5 ou 10 anos conforme caso</li>
+<li><b>Fiscal do contrato</b>: servidor designado para acompanhar e fiscalizar a execução. Anota irregularidades e notifica a contratada</li>
+<li><b>Preposto</b>: representante da <b>contratada</b> no local (responsável pela execução)</li>
+<li><b>Equilíbrio econômico-financeiro</b>: direito do contratado à manutenção das condições iniciais (reajuste, revisão)</li>
+<li><b>Terceirização</b>: Adm. não responde por encargos trabalhistas (Súmula 331 TST → responsabilidade subsidiária se falhar na fiscalização)</li>
+</ul></div>
+<div class="ex"><h4>Números-chave</h4>
+<p>📐 Alteração: até <b>25%</b> (reforma <b>50%</b>)<br>
+👷 <b>Fiscal</b> = Adm. (fiscaliza) | <b>Preposto</b> = Contratada (executa)<br>
+⚖️ Terceirização: responsabilidade <b>subsidiária</b> da Adm. (se não fiscalizou)</p>
+</div></div></div>
+</div></div>
+
+<!-- ══════════ 14. ADMINISTRAÇÃO ORÇAMENTÁRIA ══════════ -->
+<div class="macro" id="m14">
+<div class="mh" onclick="toggleMacro(this)">
+<div class="mi">💰</div>
+<div class="minfo"><div class="mt">14. Noções de Administração Orçamentária e Financeira</div><div class="mm">Empenho, liquidação, pagamento, restos a pagar, suprimento de fundos</div></div>
+<span class="badge">Edital §14</span><span class="chv">▶</span>
+</div>
+<div class="mb">
+
+<div class="tp"><div class="th" onclick="toggleTp(this)"><span class="tt">Ciclo da Despesa e Conceitos</span><span class="tc">Cobrado</span><span class="tv">▶</span></div>
+<div class="tb"><div class="kp"><h4>Conceitos Rápidos</h4>
+<ul class="k">
+<li><b>Estágios da despesa pública</b>:<br>
+1️⃣ <b>Pré-empenho (planejamento)</b>: reserva orçamentária antes do empenho formal<br>
+2️⃣ <b>Empenho</b>: ato que <b>cria obrigação de pagamento</b> para o Estado (deduz do orçamento). É <b>obrigatório</b> antes de qualquer despesa<br>
+3️⃣ <b>Liquidação</b>: verifica o <b>direito do credor</b> — confere se o bem/serviço foi entregue conforme contratado<br>
+4️⃣ <b>Pagamento</b>: entrega do valor ao credor (ordem bancária)</li>
+<li><b>Tipos de empenho</b>: <b>ordinário</b> (valor certo, pagamento único), <b>estimativo</b> (valor variável — água, luz), <b>global</b> (valor certo, pagamento parcelado)</li>
+<li><b>Restos a pagar</b>: despesas empenhadas mas <b>não pagas até 31/12</b>. Processados (liquidados) = obrigação forte. Não processados (não liquidados) = podem ser cancelados</li>
+<li><b>DEA (Despesas de Exercícios Anteriores)</b>: despesas reconhecidas após o exercício financeiro, que não foram empenhadas na época</li>
+<li><b>Suprimento de fundos</b>: adiantamento em dinheiro a servidor para despesas <b>miúdas e urgentes</b> (material de consumo, viagens). Regime de exceção → servidor presta contas depois. NÃO é para despesas previsíveis</li>
+</ul></div>
+<div class="ex"><h4>Sequência para decorar: "PELP"</h4>
+<p><b>P</b>ré-empenho → <b>E</b>mpenho → <b>L</b>iquidação → <b>P</b>agamento</p>
+<p>💵 <b>Empenho</b> = "promessa de pagar" (reserva no orçamento)<br>
+✅ <b>Liquidação</b> = "conferência" (recebeu o serviço?)<br>
+💰 <b>Pagamento</b> = "pagou" ($$$ transferido)</p>
+<p>📦 <b>Restos a Pagar</b>: empenhei mas não paguei até 31/12<br>
+💸 <b>Suprimento de fundos</b>: "dinheiro no bolso do servidor" para despesas pequenas e urgentes</p>
+</div>
+<div class="trap"><h4>Cuidado na prova</h4>
+<ul class="t">
+<li>"Liquidação é o ato que cria a obrigação de pagar" — <b>ERRADO</b>, isso é empenho</li>
+<li>"É possível pagar sem empenho prévio" — <b>ERRADO</b>, empenho é obrigatório e precede o pagamento</li>
+<li>"Suprimento de fundos serve para qualquer despesa" — <b>ERRADO</b>, apenas miúdas, urgentes ou sigilosas</li>
+</ul></div></div></div>
+</div></div>
+
+</div>
+
+<a href="reta-final.html" class="back-btn">← Voltar</a>
+<div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+
+<script>
+function toggleMacro(el){el.closest('.macro').classList.toggle('open')}
+function toggleTp(el){el.closest('.tp').classList.toggle('open')}
+function toggleAll(open){document.querySelectorAll('.macro').forEach(m=>{open?m.classList.add('open'):m.classList.remove('open')});document.querySelectorAll('.tp').forEach(t=>{open?t.classList.add('open'):t.classList.remove('open')})}
+function scrollToSection(id){const el=document.getElementById(id);if(el){el.classList.add('open');el.scrollIntoView({behavior:'smooth',block:'start'})}}
+function filterContent(){const q=document.getElementById('searchInput').value.toLowerCase();document.querySelectorAll('.macro').forEach(m=>{const t=m.textContent.toLowerCase();if(q===''||t.includes(q)){m.style.display='';if(q!==''){m.classList.add('open');m.querySelectorAll('.tp').forEach(tp=>tp.classList.add('open'))}}else{m.style.display='none'}})}
+window.addEventListener('scroll',()=>{document.getElementById('scrollTop').classList.toggle('visible',window.scrollY>400)})
+</script>
+</body>
+</html>
