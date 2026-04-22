@@ -7,86 +7,98 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#f1f5f9;color:#1e293b;min-height:100vh}
 .container{max-width:960px;margin:0 auto;padding:16px}
-.header{text-align:center;padding:24px 16px;background:linear-gradient(135deg,#1e293b,#334155);border-radius:16px;margin-bottom:16px;border:1px solid #334155}
-.header h1{font-size:20px;color:#fff;margin-bottom:4px}
-.header .sub{font-size:11px;color:#94a3b8;margin-bottom:10px}
+.header{text-align:center;padding:24px 16px;background:linear-gradient(135deg,#ffffff,#f1f5f9);border-radius:16px;margin-bottom:16px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.header h1{font-size:20px;color:#1e293b;margin-bottom:4px}
+.header .sub{font-size:11px;color:#64748b;margin-bottom:10px}
 .hstats{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
-.hs{padding:4px 10px;border-radius:16px;font-size:10px;font-weight:700;background:rgba(99,102,241,.12);color:#818cf8;border:1px solid rgba(99,102,241,.2)}
-.hs b{color:#a5b4fc;font-size:13px}
-.nav-tabs{display:flex;gap:3px;margin-bottom:14px;background:#1e293b;border-radius:10px;padding:3px;border:1px solid #334155}
-.nav-tab{flex:1;padding:8px 4px;text-align:center;border-radius:7px;cursor:pointer;font-size:11px;font-weight:700;color:#94a3b8;transition:all .2s;border:none;background:none}
-.nav-tab:hover{color:#e2e8f0}.nav-tab.active{background:#6366f1;color:#fff}
+.hs{padding:4px 10px;border-radius:16px;font-size:10px;font-weight:700;background:rgba(99,102,241,.08);color:#4f46e5;border:1px solid rgba(99,102,241,.2)}
+.hs b{color:#4338ca;font-size:13px}
+.nav-tabs{display:flex;gap:3px;margin-bottom:14px;background:#ffffff;border-radius:10px;padding:3px;border:1px solid #e2e8f0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.nav-tab{flex:1;padding:8px 4px;text-align:center;border-radius:7px;cursor:pointer;font-size:11px;font-weight:700;color:#64748b;transition:all .2s;border:none;background:none}
+.nav-tab:hover{color:#1e293b}.nav-tab.active{background:#6366f1;color:#fff}
 .nav-tab .tc{display:block;font-size:8px;opacity:.7;margin-top:1px}
-.timer-bar{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;background:#1e293b;border-radius:10px;margin-bottom:14px;border:1px solid #334155}
-.timer{font-size:18px;font-weight:900;font-family:'Courier New',monospace;color:#a5b4fc}
-.tbtn{padding:5px 10px;border-radius:6px;border:1px solid #334155;background:#0f172a;color:#94a3b8;cursor:pointer;font-size:10px;font-weight:600}
-.tbtn:hover{border-color:#6366f1;color:#a5b4fc}
-.pbar{height:5px;background:#1e293b;border-radius:3px;margin-bottom:10px;overflow:hidden;border:1px solid #334155}
+.timer-bar{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;background:#ffffff;border-radius:10px;margin-bottom:14px;border:1px solid #e2e8f0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.timer{font-size:18px;font-weight:900;font-family:'Courier New',monospace;color:#4f46e5}
+.tbtn{padding:5px 10px;border-radius:6px;border:1px solid #e2e8f0;background:#f8fafc;color:#64748b;cursor:pointer;font-size:10px;font-weight:600}
+.tbtn:hover{border-color:#6366f1;color:#4f46e5}
+.pbar{height:5px;background:#e2e8f0;border-radius:3px;margin-bottom:10px;overflow:hidden;border:1px solid #cbd5e1}
 .pfill{height:100%;border-radius:3px;transition:width .4s}
 .pfill-cg{background:linear-gradient(90deg,#6366f1,#a78bfa)}
 .pfill-ce{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
-.qcnt{text-align:center;font-size:11px;color:#64748b;margin-bottom:10px;font-weight:600}
+.qcnt{text-align:center;font-size:11px;color:#475569;margin-bottom:10px;font-weight:600}
 .qsec{display:none}.qsec.active{display:block}
-.qc{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px;margin-bottom:10px;transition:all .3s}
+.qc{background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:18px;margin-bottom:10px;transition:all .3s;box-shadow:0 1px 3px rgba(0,0,0,.04)}
 .qc.ok{border-left:3px solid #22c55e}.qc.err{border-left:3px solid #ef4444}
 .qnum{display:inline-block;padding:2px 8px;border-radius:5px;font-size:9px;font-weight:800;margin-bottom:6px}
-.qnum-cg{background:rgba(99,102,241,.15);color:#818cf8}
-.qnum-ce{background:rgba(245,158,11,.15);color:#fbbf24}
-.qtop{font-size:9px;color:#64748b;font-weight:600;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
-.qtxt{font-size:13px;color:#f1f5f9;line-height:1.6;margin-bottom:12px}
-.qtxt b{color:#a78bfa}
+.qnum-cg{background:rgba(99,102,241,.1);color:#4f46e5}
+.qnum-ce{background:rgba(245,158,11,.1);color:#b45309}
+.qtop{font-size:9px;color:#94a3b8;font-weight:600;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.qtxt{font-size:13px;color:#1e293b;line-height:1.6;margin-bottom:12px}
+.qtxt b{color:#7c3aed}
 .opts{display:flex;gap:8px;margin-bottom:8px}
-.ob{flex:1;padding:12px;border-radius:8px;border:2px solid #334155;background:#0f172a;cursor:pointer;font-size:13px;font-weight:800;color:#e2e8f0;transition:all .2s;text-align:center;min-height:46px;display:flex;align-items:center;justify-content:center;gap:4px}
-.ob:hover:not(.lk){border-color:#6366f1;background:rgba(99,102,241,.06)}
+.ob{flex:1;padding:12px;border-radius:8px;border:2px solid #e2e8f0;background:#f8fafc;cursor:pointer;font-size:13px;font-weight:800;color:#334155;transition:all .2s;text-align:center;min-height:46px;display:flex;align-items:center;justify-content:center;gap:4px}
+.ob:hover:not(.lk){border-color:#6366f1;background:rgba(99,102,241,.04)}
 .ob:active:not(.lk){transform:scale(.97)}
-.ob .k{padding:1px 5px;border-radius:3px;background:#0f172a;border:1px solid #475569;font-size:9px;font-family:monospace}
-.ob.sc{border-color:#22c55e;background:rgba(34,197,94,.08);color:#22c55e}
-.ob.se{border-color:#ef4444;background:rgba(239,68,68,.08);color:#ef4444}
-.ob.rc{border-color:#22c55e;background:rgba(34,197,94,.06)}
+.ob .k{padding:1px 5px;border-radius:3px;background:#ffffff;border:1px solid #cbd5e1;font-size:9px;font-family:monospace;color:#64748b}
+.ob.sc{border-color:#16a34a;background:rgba(34,197,94,.08);color:#16a34a}
+.ob.se{border-color:#dc2626;background:rgba(239,68,68,.08);color:#dc2626}
+.ob.rc{border-color:#16a34a;background:rgba(34,197,94,.06)}
 .ob.lk{cursor:default;opacity:.7}
 .fb{display:none;padding:10px;border-radius:8px;margin-bottom:8px;font-size:11px;line-height:1.5}
-.fb.show{display:block}.fb.fc{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.25);color:#86efac}
-.fb.fe{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.25);color:#fca5a5}
-.fb b{color:#fff}
-.qnav{display:flex;gap:6px}.qnb{padding:10px 16px;border:1px solid #334155;border-radius:8px;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:11px;font-weight:700;flex:1;text-align:center;transition:all .2s}
-.qnb:hover{border-color:#6366f1;color:#a5b4fc}.qnb.pri{background:#6366f1;color:#fff;border-color:#6366f1}
-.grd-toggle{padding:6px 12px;border:1px solid #334155;border-radius:7px;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:10px;font-weight:700;margin-bottom:10px;display:inline-flex;align-items:center;gap:4px}
-.grd{display:none;grid-template-columns:repeat(15,1fr);gap:2px;margin-bottom:10px;padding:8px;background:#1e293b;border-radius:8px;border:1px solid #334155}
+.fb.show{display:block}.fb.fc{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.3);color:#15803d}
+.fb.fe{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.3);color:#b91c1c}
+.fb b{color:#1e293b}
+.qnav{display:flex;gap:6px}.qnb{padding:10px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;color:#64748b;cursor:pointer;font-size:11px;font-weight:700;flex:1;text-align:center;transition:all .2s}
+.qnb:hover{border-color:#6366f1;color:#4f46e5}.qnb.pri{background:#6366f1;color:#fff;border-color:#6366f1}
+.grd-toggle{padding:6px 12px;border:1px solid #e2e8f0;border-radius:7px;background:#ffffff;color:#64748b;cursor:pointer;font-size:10px;font-weight:700;margin-bottom:10px;display:inline-flex;align-items:center;gap:4px}
+.grd{display:none;grid-template-columns:repeat(15,1fr);gap:2px;margin-bottom:10px;padding:8px;background:#ffffff;border-radius:8px;border:1px solid #e2e8f0}
 .grd.show{display:grid}
-.gd{width:100%;aspect-ratio:1;border-radius:3px;border:1px solid #334155;background:#0f172a;cursor:pointer;font-size:7px;display:flex;align-items:center;justify-content:center;color:#64748b;font-weight:700}
-.gd:hover{border-color:#6366f1}.gd.cur{border-color:#6366f1;background:rgba(99,102,241,.15);color:#a5b4fc}
-.gd.dc{background:rgba(34,197,94,.12);border-color:#22c55e;color:#22c55e}
-.gd.de{background:rgba(239,68,68,.12);border-color:#ef4444;color:#ef4444}
+.gd{width:100%;aspect-ratio:1;border-radius:3px;border:1px solid #e2e8f0;background:#f8fafc;cursor:pointer;font-size:7px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-weight:700}
+.gd:hover{border-color:#6366f1}.gd.cur{border-color:#6366f1;background:rgba(99,102,241,.1);color:#4f46e5}
+.gd.dc{background:rgba(34,197,94,.1);border-color:#16a34a;color:#16a34a}
+.gd.de{background:rgba(239,68,68,.1);border-color:#dc2626;color:#dc2626}
+/* Grid Preview */
+.grd-preview{display:none;padding:10px 12px;background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:10px;font-size:11px;line-height:1.5;animation:fadeP .2s}
+.grd-preview.show{display:block}
+@keyframes fadeP{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+.grd-preview .gp-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.grd-preview .gp-num{padding:2px 7px;border-radius:4px;font-size:9px;font-weight:800}
+.grd-preview .gp-topic{font-size:9px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
+.grd-preview .gp-result{font-size:10px;font-weight:700;margin-left:auto}
+.grd-preview .gp-q{font-size:11px;color:#334155;margin-bottom:6px;line-height:1.5}
+.grd-preview .gp-q b{color:#7c3aed}
+.grd-preview .gp-ans{font-size:10px;font-weight:700;margin-bottom:4px}
+.grd-preview .gp-exp{font-size:10px;color:#64748b;line-height:1.5;padding:6px 8px;background:#f8fafc;border-radius:6px;border:1px solid #f1f5f9}
 /* Discursiva */
-.disc{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px;margin-bottom:14px}
-.disc h3{font-size:14px;color:#f1f5f9;margin-bottom:6px}.disc .di{font-size:10px;color:#64748b;margin-bottom:10px}
-.disc .dp{font-size:12px;color:#e2e8f0;line-height:1.6;margin-bottom:12px;padding:12px;background:#0f172a;border-radius:8px;border:1px solid #334155}
-.disc textarea{width:100%;min-height:180px;padding:12px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:12px;line-height:1.6;resize:vertical;font-family:inherit}
+.disc{background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:18px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.disc h3{font-size:14px;color:#1e293b;margin-bottom:6px}.disc .di{font-size:10px;color:#94a3b8;margin-bottom:10px}
+.disc .dp{font-size:12px;color:#334155;line-height:1.6;margin-bottom:12px;padding:12px;background:#f8fafc;border-radius:8px;border:1px solid #e2e8f0}
+.disc textarea{width:100%;min-height:180px;padding:12px;border-radius:8px;border:1px solid #e2e8f0;background:#ffffff;color:#1e293b;font-size:12px;line-height:1.6;resize:vertical;font-family:inherit}
 .disc textarea:focus{outline:none;border-color:#6366f1}
-.disc .pad{display:none;margin-top:10px;padding:12px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.2);border-radius:8px;font-size:11px;line-height:1.6;color:#cbd5e1}
-.disc .pad.show{display:block}.disc .pad h4{color:#a5b4fc;margin-bottom:4px;font-size:12px}.disc .pad b{color:#e2e8f0}
-.spbtn{padding:6px 12px;border:1px solid #334155;border-radius:7px;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:10px;font-weight:700;margin-top:6px}
+.disc .pad{display:none;margin-top:10px;padding:12px;background:rgba(99,102,241,.04);border:1px solid rgba(99,102,241,.15);border-radius:8px;font-size:11px;line-height:1.6;color:#475569}
+.disc .pad.show{display:block}.disc .pad h4{color:#4f46e5;margin-bottom:4px;font-size:12px}.disc .pad b{color:#1e293b}
+.spbtn{padding:6px 12px;border:1px solid #e2e8f0;border-radius:7px;background:#f8fafc;color:#64748b;cursor:pointer;font-size:10px;font-weight:700;margin-top:6px}
 /* Stats */
 .ssec{display:none}.ssec.active{display:block}
-.sh{text-align:center;padding:24px 16px;background:linear-gradient(135deg,#1e293b,#334155);border-radius:14px;margin-bottom:14px;border:1px solid #334155}
-.sh h2{font-size:20px;color:#fff}.bsc{font-size:48px;font-weight:900;background:linear-gradient(135deg,#6366f1,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin:8px 0}
+.sh{text-align:center;padding:24px 16px;background:linear-gradient(135deg,#ffffff,#f1f5f9);border-radius:14px;margin-bottom:14px;border:1px solid #e2e8f0;box-shadow:0 1px 3px rgba(0,0,0,.06)}
+.sh h2{font-size:20px;color:#1e293b}.bsc{font-size:48px;font-weight:900;background:linear-gradient(135deg,#6366f1,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin:8px 0}
 .bsl{font-size:11px;color:#94a3b8}
 .pgr{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:14px}
-.pc{background:#1e293b;border:1px solid #334155;border-radius:8px;padding:10px;text-align:center}
-.pc .pv{font-size:22px;font-weight:900}.pc .pl{font-size:9px;color:#94a3b8;font-weight:600}
-.tsr{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#1e293b;border:1px solid #334155;border-radius:7px;margin-bottom:4px}
-.tsn{flex:1;font-size:11px;font-weight:700}.tbb{width:100px;height:5px;background:#0f172a;border-radius:3px;overflow:hidden;flex-shrink:0}
+.pc{background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;padding:10px;text-align:center;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.pc .pv{font-size:22px;font-weight:900}.pc .pl{font-size:9px;color:#64748b;font-weight:600}
+.tsr{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#ffffff;border:1px solid #e2e8f0;border-radius:7px;margin-bottom:4px}
+.tsn{flex:1;font-size:11px;font-weight:700}.tbb{width:100px;height:5px;background:#e2e8f0;border-radius:3px;overflow:hidden;flex-shrink:0}
 .tbf{height:100%;border-radius:3px}.tss{font-size:13px;font-weight:900;min-width:36px;text-align:right;flex-shrink:0}
-.tsd{font-size:9px;color:#64748b;min-width:40px;text-align:right;flex-shrink:0}
+.tsd{font-size:9px;color:#94a3b8;min-width:40px;text-align:right;flex-shrink:0}
 .ab{padding:10px;border-radius:8px;margin-bottom:10px;font-size:11px;line-height:1.4}
-.ab.dng{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);color:#fca5a5}
-.ab.wrn{background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.2);color:#fcd34d}
-.ab.suc{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);color:#86efac}
-.ab b{color:#fff}
+.ab.dng{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.2);color:#b91c1c}
+.ab.wrn{background:rgba(245,158,11,.05);border:1px solid rgba(245,158,11,.2);color:#92400e}
+.ab.suc{background:rgba(34,197,94,.05);border:1px solid rgba(34,197,94,.2);color:#15803d}
+.ab b{color:#1e293b}
 .rbtn{width:100%;padding:12px;border:none;border-radius:8px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-size:13px;font-weight:700;cursor:pointer;margin-top:6px}
-.back-btn{position:fixed;bottom:14px;right:14px;padding:7px 14px;background:#6366f1;color:#fff;border:none;border-radius:8px;font-size:10px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(99,102,241,.3);z-index:100;text-decoration:none}
+.back-btn{position:fixed;bottom:14px;right:14px;padding:7px 14px;background:#6366f1;color:#fff;border:none;border-radius:8px;font-size:10px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(99,102,241,.25);z-index:100;text-decoration:none}
 @media(max-width:768px){.container{padding:8px}.header h1{font-size:17px}.grd{grid-template-columns:repeat(10,1fr)}.pgr{grid-template-columns:1fr 1fr}.tbb{width:70px}.nav-tab{font-size:9px}}
 @media(max-width:480px){.container{padding:6px}.header{padding:14px 10px}.header h1{font-size:15px}.grd{grid-template-columns:repeat(9,1fr)}.pgr{grid-template-columns:1fr}.ob{font-size:12px;padding:10px}}
 </style>
@@ -104,7 +116,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#0f172a;color:#e2e8f
 </div></div>
 
 <div class="timer-bar">
-<div><div style="font-size:9px;color:#64748b;font-weight:600">TEMPO</div><div class="timer" id="timer">05:00:00</div></div>
+<div><div style="font-size:9px;color:#94a3b8;font-weight:600">TEMPO</div><div class="timer" id="timer">05:00:00</div></div>
 <div style="display:flex;gap:4px">
 <button class="tbtn" onclick="toggleTimer()" id="tTgl">▶ Iniciar</button>
 <button class="tbtn" onclick="resetTimer()">↻ Zerar</button>
@@ -122,6 +134,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#0f172a;color:#e2e8f
 <div class="qcnt" id="c-cg"></div>
 <button class="grd-toggle" onclick="toggleGrd('cg')"><i class="fas fa-th"></i> Mapa</button>
 <div class="grd" id="g-cg"></div>
+<div class="grd-preview" id="gp-cg"></div>
 <div id="qa-cg"></div>
 <div class="qnav">
 <button class="qnb" onclick="nav('cg',-1)">← Anterior</button>
@@ -134,6 +147,7 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#0f172a;color:#e2e8f
 <div class="qcnt" id="c-ce"></div>
 <button class="grd-toggle" onclick="toggleGrd('ce')"><i class="fas fa-th"></i> Mapa</button>
 <div class="grd" id="g-ce"></div>
+<div class="grd-preview" id="gp-ce"></div>
 <div id="qa-ce"></div>
 <div class="qnav">
 <button class="qnb" onclick="nav('ce',-1)">← Anterior</button>
@@ -188,8 +202,18 @@ function nav(sec,d){const qs=sec==='cg'?CG:CE;cur[sec]=Math.max(0,Math.min(qs.le
 function skip(sec){const qs=sec==='cg'?CG:CE;if(!ans[sec][cur[sec]])ans[sec][cur[sec]]={u:null,c:false,skip:true};nav(sec,1)}
 function goQ(sec,i){cur[sec]=i;showQ(sec)}
 
-function renderGrid(sec){const qs=sec==='cg'?CG:CE;let h='';qs.forEach((q,i)=>{const a=ans[sec][i];let cls='';if(i===cur[sec])cls='cur';else if(a&&!a.skip)cls=a.c?'dc':'de';h+=`<div class="gd ${cls}" onclick="goQ('${sec}',${i})">${q.n}</div>`});document.getElementById('g-'+sec).innerHTML=h}
-function toggleGrd(sec){document.getElementById('g-'+sec).classList.toggle('show')}
+function renderGrid(sec){const qs=sec==='cg'?CG:CE;let h='';qs.forEach((q,i)=>{const a=ans[sec][i];let cls='';if(i===cur[sec])cls='cur';else if(a&&!a.skip)cls=a.c?'dc':'de';h+=`<div class="gd ${cls}" onclick="goQ('${sec}',${i})" onmouseenter="showGP('${sec}',${i})" onmouseleave="hideGP('${sec}')">${q.n}</div>`});document.getElementById('g-'+sec).innerHTML=h}
+function toggleGrd(sec){const g=document.getElementById('g-'+sec);g.classList.toggle('show');if(!g.classList.contains('show'))hideGP(sec)}
+function showGP(sec,i){const qs=sec==='cg'?CG:CE,q=qs[i],a=ans[sec][i],el=document.getElementById('gp-'+sec);
+const numCls=sec==='cg'?'qnum-cg':'qnum-ce';
+let h=`<div class="gp-head"><span class="gp-num ${numCls}">${sec==='cg'?'CG':'CE'} ${q.n}</span><span class="gp-topic">${q.t}</span>`;
+if(a&&!a.skip){h+=`<span class="gp-result" style="color:${a.c?'#16a34a':'#dc2626'}">${a.c?'✅ Acertou':'❌ Errou'}</span>`}
+else if(a&&a.skip){h+=`<span class="gp-result" style="color:#94a3b8">⏭ Pulou</span>`}
+else{h+=`<span class="gp-result" style="color:#94a3b8">⬜ Pendente</span>`}
+h+=`</div><div class="gp-q">${q.q}</div>`;
+if(a&&!a.skip){h+=`<div class="gp-ans" style="color:${q.a?'#16a34a':'#dc2626'}">Gabarito: ${q.a?'CERTO':'ERRADO'} ${a?'| Sua resposta: '+(a.u===true?'CERTO':'ERRADO'):''}</div>`;h+=`<div class="gp-exp">${q.e}</div>`}
+el.innerHTML=h;el.classList.add('show')}
+function hideGP(sec){document.getElementById('gp-'+sec).classList.remove('show')}
 
 // ═══ DISCURSIVAS ═══
 function renderDisc(){
@@ -197,7 +221,7 @@ document.getElementById('sec-disc').innerHTML=`
 <div class="disc"><h3>📝 Questão Discursiva 1 – Atividade de Inteligência</h3>
 <div class="di">Até 20 linhas • 15,00 pontos</div>
 <div class="dp">Conceitue <b>Inteligência</b> e <b>Contrainteligência</b> no contexto da atividade de inteligência de Estado. Discorra sobre os <b>pressupostos</b> e as <b>ameaças</b> elencados na Política Nacional de Inteligência (Decreto 8.793/2016), explicando como a <b>análise de riscos</b> contribui para a proteção de conhecimentos sensíveis. Aborde, ainda, o papel do <b>SISBIN</b> na coordenação das atividades de inteligência no Brasil.</div>
-<textarea placeholder="Digite sua resposta aqui..." oninput="updLC(this)"></textarea><div style="text-align:right;font-size:9px;color:#64748b;margin-top:2px">0/20 linhas</div>
+<textarea placeholder="Digite sua resposta aqui..." oninput="updLC(this)"></textarea><div style="text-align:right;font-size:9px;color:#94a3b8;margin-top:2px">0/20 linhas</div>
 <button class="spbtn" onclick="this.nextElementSibling.classList.toggle('show')">📋 Ver Padrão de Resposta</button>
 <div class="pad"><h4>Padrão de Resposta Esperado</h4>
 <b>1. Conceitos (3 pts):</b> Inteligência = atividade de obtenção, análise e disseminação de conhecimentos para assessorar o processo decisório. Contrainteligência = proteção de conhecimentos sensíveis e neutralização de ações adversas.<br>
@@ -209,7 +233,7 @@ document.getElementById('sec-disc').innerHTML=`
 <div class="disc"><h3>📝 Questão Discursiva 2 – Direitos Humanos e Legislação Correlata</h3>
 <div class="di">Até 20 linhas • 15,00 pontos</div>
 <div class="dp">Discorra sobre o <b>sistema interamericano de proteção dos direitos humanos</b>, diferenciando as funções da <b>Comissão</b> e da <b>Corte Interamericana</b>. Aborde os <b>direitos protegidos pela CADH</b> (Convenção Americana/Pacto de São José) e as hipóteses de <b>suspensão de garantias</b> (art. 27). Por fim, explique como a <b>Lei 13.060/2014</b> disciplina o uso da força por agentes de segurança pública, relacionando-a com os princípios internacionais de DH.</div>
-<textarea placeholder="Digite sua resposta aqui..." oninput="updLC(this)"></textarea><div style="text-align:right;font-size:9px;color:#64748b;margin-top:2px">0/20 linhas</div>
+<textarea placeholder="Digite sua resposta aqui..." oninput="updLC(this)"></textarea><div style="text-align:right;font-size:9px;color:#94a3b8;margin-top:2px">0/20 linhas</div>
 <button class="spbtn" onclick="this.nextElementSibling.classList.toggle('show')">📋 Ver Padrão de Resposta</button>
 <div class="pad"><h4>Padrão de Resposta Esperado</h4>
 <b>1. Sistema Interamericano (3 pts):</b> Criado no âmbito da OEA. Composto pela Comissão (CIDH) e pela Corte (CtIDH). Base normativa: CADH (1969), ratificada pelo Brasil em 1992.<br>
@@ -221,7 +245,7 @@ document.getElementById('sec-disc').innerHTML=`
 <div class="disc"><h3>📝 Questão Discursiva 3 – Peça Técnica (Direito Penal e Processual Penal)</h3>
 <div class="di">Até 50 linhas • 30,00 pontos</div>
 <div class="dp">João, servidor da Câmara dos Deputados, durante o exercício de suas funções como policial legislativo, foi abordado por Paulo, que ofereceu R$ 50.000,00 para que João facilitasse a entrada de pessoas não autorizadas nas dependências da Casa, burlando os protocolos de segurança. João recusou a proposta. Porém, dias depois, Carlos, colega de João, aceitou proposta similar de Paulo e efetivamente permitiu o ingresso irregular de terceiros nas dependências legislativas, durante sessão deliberativa. Posteriormente, durante investigação interna, Carlos, para encobrir sua conduta, alterou registros do sistema de controle de acesso e ameaçou um estagiário que presenciou os fatos.<br><br>Com base na situação hipotética, <b>elabore peça técnica</b> contendo:<br>a) Tipificação penal da conduta de <b>Paulo</b>, <b>Carlos</b> e análise da situação de <b>João</b>;<br>b) Análise das <b>qualificadoras, causas de aumento e concurso de crimes</b> aplicáveis;<br>c) Aspectos <b>processuais</b>: competência, tipo de ação penal, possibilidade de prisão, e medidas cautelares cabíveis.</div>
-<textarea placeholder="Elabore sua peça técnica aqui..." oninput="updLC(this)" style="min-height:300px"></textarea><div style="text-align:right;font-size:9px;color:#64748b;margin-top:2px">0/50 linhas</div>
+<textarea placeholder="Elabore sua peça técnica aqui..." oninput="updLC(this)" style="min-height:300px"></textarea><div style="text-align:right;font-size:9px;color:#94a3b8;margin-top:2px">0/50 linhas</div>
 <button class="spbtn" onclick="this.nextElementSibling.classList.toggle('show')">📋 Ver Padrão de Resposta</button>
 <div class="pad"><h4>Padrão de Resposta Esperado</h4>
 <b>1. Tipificação – Paulo (5 pts):</b> Corrupção ativa (art. 333 CP): ofereceu vantagem indevida a funcionário público. Em relação a João: tentativa de corrupção ativa (João recusou). Em relação a Carlos: corrupção ativa consumada. Paulo também responde como partícipe nos crimes praticados por Carlos (art. 29 CP – teoria monista).<br><br>
