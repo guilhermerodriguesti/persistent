@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🎯 Questões Certeza – Policial Legislativo 2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="certeza-data.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0f0f1a;--card:#1a1a2e;--card2:#16213e;--accent:#e94560;--accent2:#ff6b6b;--green:#00d68f;--red:#e94560;--gold:#f0c040;--txt:#e8e8e8;--muted:#8892b0;--border:#2a2a4a}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--txt);min-height:100vh}
+/* HEADER */
+.header{background:linear-gradient(135deg,#1a0a0a 0%,#2d0a0a 50%,#1a0a2e 100%);padding:20px;text-align:center;border-bottom:2px solid var(--accent);position:sticky;top:0;z-index:100;backdrop-filter:blur(10px)}
+.header h1{font-size:1.5rem;background:linear-gradient(90deg,var(--accent),var(--gold));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:4px}
+.header p{color:var(--muted);font-size:.85rem}
+/* STATS BAR */
+.stats-bar{display:flex;justify-content:center;gap:16px;padding:12px;background:var(--card);border-bottom:1px solid var(--border);flex-wrap:wrap}
+.stat-pill{display:flex;align-items:center;gap:6px;padding:6px 14px;border-radius:20px;font-size:.8rem;background:rgba(255,255,255,.05)}
+.stat-pill i{font-size:.75rem}
+.stat-pill .val{font-weight:700}
+.sp-total .val{color:var(--gold)}
+.sp-done .val{color:#64ffda}
+.sp-right .val{color:var(--green)}
+.sp-wrong .val{color:var(--red)}
+.sp-pct .val{color:var(--accent2)}
+/* FILTER TABS */
+.filter-bar{display:flex;gap:8px;padding:12px 16px;overflow-x:auto;background:var(--card2);border-bottom:1px solid var(--border)}
+.ftab{padding:6px 14px;border-radius:16px;font-size:.75rem;border:1px solid var(--border);background:transparent;color:var(--muted);cursor:pointer;white-space:nowrap;transition:.2s}
+.ftab.active,.ftab:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+/* PROGRESS */
+.progress-wrap{padding:8px 16px;background:var(--card)}
+.progress-bar{height:6px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--accent),var(--gold));border-radius:3px;transition:width .4s}
+/* QUESTION */
+.q-container{max-width:720px;margin:0 auto;padding:16px}
+.q-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;animation:fadeIn .3s}
+@keyframes fadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.q-top{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--border);background:rgba(255,255,255,.02)}
+.q-num{font-size:.8rem;color:var(--muted)}
+.q-tag{font-size:.7rem;padding:4px 10px;border-radius:10px;background:rgba(233,69,96,.15);color:var(--accent)}
+.q-body{padding:20px 18px;font-size:1rem;line-height:1.7}
+.q-body b{color:var(--gold)}
+/* BUTTONS */
+.q-actions{display:flex;gap:12px;padding:14px 18px;border-top:1px solid var(--border)}
+.btn-ce{flex:1;padding:14px;border:2px solid;border-radius:12px;font-size:1rem;font-weight:700;cursor:pointer;transition:.2s;background:transparent}
+.btn-c{border-color:var(--green);color:var(--green)}.btn-c:hover{background:var(--green);color:#000}
+.btn-e{border-color:var(--red);color:var(--red)}.btn-e:hover{background:var(--red);color:#fff}
+.btn-ce:disabled{opacity:.4;cursor:not-allowed}
+/* FEEDBACK */
+.feedback{padding:16px 18px;border-top:1px solid var(--border);animation:fadeIn .3s}
+.fb-correct{background:rgba(0,214,143,.08)}.fb-wrong{background:rgba(233,69,96,.08)}
+.fb-label{font-weight:700;margin-bottom:6px;font-size:.9rem}
+.fb-correct .fb-label{color:var(--green)}.fb-wrong .fb-label{color:var(--red)}
+.fb-text{color:var(--muted);font-size:.85rem;line-height:1.6}
+/* NAV */
+.q-nav{display:flex;justify-content:space-between;padding:16px;max-width:720px;margin:0 auto}
+.nav-btn{padding:10px 20px;border-radius:10px;border:1px solid var(--border);background:var(--card);color:var(--txt);cursor:pointer;font-size:.85rem;transition:.2s}
+.nav-btn:hover{border-color:var(--accent);color:var(--accent)}
+.nav-btn:disabled{opacity:.3;cursor:not-allowed}
+/* GRID */
+.grid-toggle{text-align:center;padding:8px}
+.grid-toggle button{background:transparent;border:1px solid var(--border);color:var(--muted);padding:6px 14px;border-radius:8px;cursor:pointer;font-size:.75rem}
+.grid-toggle button:hover{color:var(--accent);border-color:var(--accent)}
+.q-grid{display:none;grid-template-columns:repeat(auto-fill,38px);gap:6px;justify-content:center;padding:12px 16px;max-width:720px;margin:0 auto}
+.q-grid.show{display:grid}
+.g-item{width:38px;height:38px;display:flex;align-items:center;justify-content:center;border-radius:8px;font-size:.7rem;font-weight:700;cursor:pointer;border:1px solid var(--border);background:var(--card);transition:.15s}
+.g-item:hover{border-color:var(--accent)}.g-item.current{border-color:var(--gold);box-shadow:0 0 8px rgba(240,192,64,.3)}
+.g-item.correct{background:rgba(0,214,143,.2);color:var(--green);border-color:var(--green)}
+.g-item.wrong{background:rgba(233,69,96,.2);color:var(--red);border-color:var(--red)}
+/* RESULTS */
+.results-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;overflow-y:auto;padding:20px}
+.results-overlay.show{display:block}
+.results-card{max-width:600px;margin:40px auto;background:var(--card);border-radius:16px;border:1px solid var(--border);overflow:hidden;animation:fadeIn .4s}
+.results-header{padding:24px;text-align:center;background:linear-gradient(135deg,#1a0a0a,#2d0a2e);border-bottom:1px solid var(--border)}
+.results-header h2{font-size:1.4rem;margin-bottom:8px}
+.results-header .big-pct{font-size:3rem;font-weight:800}
+.pct-great{color:var(--green)}.pct-ok{color:var(--gold)}.pct-bad{color:var(--red)}
+.results-body{padding:20px}
+.res-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--border);font-size:.9rem}
+.res-row:last-child{border:none}
+.res-label{color:var(--muted)}.res-val{font-weight:700}
+.subj-list{margin-top:16px}
+.subj-item{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;margin-bottom:6px;border-radius:8px;background:rgba(255,255,255,.03);font-size:.82rem}
+.subj-bar{height:4px;flex:1;margin:0 12px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.subj-fill{height:100%;border-radius:2px}
+.results-footer{padding:16px;text-align:center;border-top:1px solid var(--border)}
+.results-footer button{padding:12px 32px;border-radius:10px;border:none;background:var(--accent);color:#fff;font-size:1rem;font-weight:700;cursor:pointer}
+/* KEYBOARD HINTS */
+.kbd-hints{text-align:center;padding:8px;font-size:.7rem;color:var(--muted)}
+.kbd{display:inline-block;padding:2px 6px;border:1px solid var(--border);border-radius:4px;font-family:monospace;margin:0 2px}
+/* RESPONSIVE */
+@media(max-width:480px){.header h1{font-size:1.2rem}.q-body{font-size:.92rem}.stats-bar{gap:8px}.stat-pill{padding:4px 10px;font-size:.72rem}}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1><i class="fas fa-crosshairs"></i> QUESTÕES CERTEZA</h1>
+  <p>180 itens • Temas que caem em TODA prova CEBRASPE 2022-2025</p>
+</div>
+
+<div class="stats-bar">
+  <div class="stat-pill sp-total"><i class="fas fa-list"></i> <span class="val" id="sTotal">0</span>/180</div>
+  <div class="stat-pill sp-done"><i class="fas fa-check-circle"></i> <span class="val" id="sDone">0</span></div>
+  <div class="stat-pill sp-right"><i class="fas fa-thumbs-up"></i> <span class="val" id="sRight">0</span></div>
+  <div class="stat-pill sp-wrong"><i class="fas fa-thumbs-down"></i> <span class="val" id="sWrong">0</span></div>
+  <div class="stat-pill sp-pct"><i class="fas fa-percentage"></i> <span class="val" id="sPct">0%</span></div>
+</div>
+
+<div class="filter-bar" id="filterBar"></div>
+
+<div class="progress-wrap"><div class="progress-bar"><div class="progress-fill" id="progFill" style="width:0%"></div></div></div>
+
+<div class="q-container">
+  <div class="q-card" id="qCard">
+    <div class="q-top">
+      <span class="q-num" id="qNum"></span>
+      <span class="q-tag" id="qTag"></span>
+    </div>
+    <div class="q-body" id="qBody"></div>
+    <div class="q-actions" id="qActions">
+      <button class="btn-ce btn-c" id="btnC" onclick="answer(true)"><i class="fas fa-check"></i> CERTO (C)</button>
+      <button class="btn-ce btn-e" id="btnE" onclick="answer(false)"><i class="fas fa-times"></i> ERRADO (E)</button>
+    </div>
+    <div class="feedback" id="fbArea" style="display:none">
+      <div class="fb-label" id="fbLabel"></div>
+      <div class="fb-text" id="fbText"></div>
+    </div>
+  </div>
+</div>
+
+<div class="q-nav">
+  <button class="nav-btn" id="btnPrev" onclick="nav(-1)"><i class="fas fa-arrow-left"></i> Anterior</button>
+  <button class="nav-btn" id="btnNext" onclick="nav(1)">Próxima <i class="fas fa-arrow-right"></i></button>
+</div>
+
+<div class="grid-toggle"><button onclick="toggleGrid()"><i class="fas fa-th"></i> Mapa de Questões</button></div>
+<div class="q-grid" id="qGrid"></div>
+
+<div class="kbd-hints">
+  <span class="kbd">C</span> Certo &nbsp; <span class="kbd">E</span> Errado &nbsp; <span class="kbd">←</span><span class="kbd">→</span> Navegar &nbsp; <span class="kbd">G</span> Grade
+</div>
+
+<div class="results-overlay" id="resOverlay">
+  <div class="results-card">
+    <div class="results-header">
+      <h2><i class="fas fa-trophy"></i> Resultado Final</h2>
+      <div class="big-pct" id="resPct"></div>
+      <p style="color:var(--muted)" id="resMsg"></p>
+    </div>
+    <div class="results-body" id="resBody"></div>
+    <div class="results-footer">
+      <button onclick="restart()"><i class="fas fa-redo"></i> Refazer</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// State
+let cur=0, answers={}, filtered=null;
+const subjects=[
+  {key:'Português',color:'#3b82f6',range:[0,9],range2:[90,99]},
+  {key:'Inglês',color:'#8b5cf6',range:[10,17],range2:[100,107]},
+  {key:'RLM',color:'#f59e0b',range:[18,25],range2:[108,115]},
+  {key:'Constitucional',color:'#f97316',range:[26,35],range2:[116,125]},
+  {key:'Administrativo',color:'#10b981',range:[36,45],range2:[126,135]},
+  {key:'Informática',color:'#06b6d4',range:[46,55],range2:[136,145]},
+  {key:'Penal',color:'#ef4444',range:[56,65],range2:[146,155]},
+  {key:'Criminalística',color:'#14b8a6',range:[66,73],range2:[156,163]},
+  {key:'DH',color:'#a855f7',range:[74,81],range2:[164,171]},
+  {key:'Inteligência',color:'#64748b',range:[82,89],range2:[172,179]}
+];
+
+function getPool(){return filtered||QC}
+function idxOf(q){return QC.indexOf(q)}
+
+// Init filters
+(function initFilters(){
+  const bar=document.getElementById('filterBar');
+  let h='<button class="ftab active" onclick="setFilter(null,this)">Todas (180)</button>';
+  subjects.forEach(s=>{
+    const cnt=(s.range[1]-s.range[0]+1)+(s.range2[1]-s.range2[0]+1);
+    h+=`<button class="ftab" onclick="setFilter('${s.key}',this)">${s.key} (${cnt})</button>`;
+  });
+  bar.innerHTML=h;
+})();
+
+function setFilter(key,el){
+  document.querySelectorAll('.ftab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  if(!key){filtered=null}
+  else{
+    const s=subjects.find(x=>x.key===key);
+    filtered=[...QC.slice(s.range[0],s.range[1]+1),...QC.slice(s.range2[0],s.range2[1]+1)];
+  }
+  cur=0;render();
+}
+
+function render(){
+  const pool=getPool(), q=pool[cur], gi=idxOf(q);
+  document.getElementById('qNum').textContent=`${cur+1} / ${pool.length}`;
+  document.getElementById('qTag').textContent=q.t.replace('🔴 ','');
+  document.getElementById('qBody').innerHTML=q.q;
+  // Feedback
+  const fb=document.getElementById('fbArea');
+  if(answers[gi]!==undefined){
+    const ok=answers[gi]===q.a;
+    fb.style.display='block';fb.className='feedback '+(ok?'fb-correct':'fb-wrong');
+    document.getElementById('fbLabel').textContent=ok?'✅ Você acertou!':'❌ Você errou!';
+    document.getElementById('fbText').innerHTML=`<b>Gabarito: ${q.a?'CERTO':'ERRADO'}</b><br>${q.e}`;
+    document.getElementById('btnC').disabled=true;document.getElementById('btnE').disabled=true;
+  } else {
+    fb.style.display='none';
+    document.getElementById('btnC').disabled=false;document.getElementById('btnE').disabled=false;
+  }
+  document.getElementById('btnPrev').disabled=cur===0;
+  document.getElementById('btnNext').disabled=cur>=pool.length-1;
+  updateStats();renderGrid();
+  document.getElementById('progFill').style.width=(Object.keys(answers).length/QC.length*100)+'%';
+}
+
+function answer(val){
+  const pool=getPool(),q=pool[cur],gi=idxOf(q);
+  if(answers[gi]!==undefined)return;
+  answers[gi]=val;
+  render();
+  // Auto-advance after 1.2s
+  if(cur<pool.length-1) setTimeout(()=>{cur++;render()},1200);
+  else if(Object.keys(answers).length>=QC.length) setTimeout(showResults,800);
+}
+
+function nav(d){const pool=getPool();cur=Math.max(0,Math.min(pool.length-1,cur+d));render()}
+
+function updateStats(){
+  let done=0,right=0,wrong=0;
+  QC.forEach((_,i)=>{if(answers[i]!==undefined){done++;if(answers[i]===QC[i].a)right++;else wrong++}});
+  document.getElementById('sDone').textContent=done;
+  document.getElementById('sRight').textContent=right;
+  document.getElementById('sWrong').textContent=wrong;
+  document.getElementById('sPct').textContent=done?Math.round(right/done*100)+'%':'0%';
+  document.getElementById('sTotal').textContent=done;
+}
+
+function renderGrid(){
+  const pool=getPool();
+  let h='';
+  pool.forEach((q,i)=>{
+    const gi=idxOf(q);
+    let cls=i===cur?'current':'';
+    if(answers[gi]!==undefined) cls+=' '+(answers[gi]===q.a?'correct':'wrong');
+    h+=`<div class="g-item ${cls}" onclick="cur=${i};render()">${q.n}</div>`;
+  });
+  document.getElementById('qGrid').innerHTML=h;
+}
+
+function toggleGrid(){document.getElementById('qGrid').classList.toggle('show')}
+
+function showResults(){
+  let done=0,right=0;
+  QC.forEach((_,i)=>{if(answers[i]!==undefined){done++;if(answers[i]===QC[i].a)right++}});
+  const pct=done?Math.round(right/done*100):0;
+  const el=document.getElementById('resPct');
+  el.textContent=pct+'%';
+  el.className='big-pct '+(pct>=80?'pct-great':pct>=60?'pct-ok':'pct-bad');
+  document.getElementById('resMsg').textContent=
+    pct>=80?'Excelente! Você domina os temas certeza!':
+    pct>=60?'Bom! Reforce os temas que errou.':'Revise os temas com atenção antes da prova.';
+  // Subject breakdown
+  let bh='';
+  subjects.forEach(s=>{
+    let tot=0,ok=0;
+    for(let i=s.range[0];i<=s.range[1];i++){
+      if(answers[i]!==undefined){tot++;if(answers[i]===QC[i].a)ok++}
+    }
+    for(let i=s.range2[0];i<=s.range2[1];i++){
+      if(answers[i]!==undefined){tot++;if(answers[i]===QC[i].a)ok++}
+    }
+    const sp=tot?Math.round(ok/tot*100):0;
+    bh+=`<div class="subj-item">
+      <span style="color:${s.color};min-width:100px">${s.key}</span>
+      <div class="subj-bar"><div class="subj-fill" style="width:${sp}%;background:${s.color}"></div></div>
+      <span style="font-weight:700">${ok}/${tot}</span>
+    </div>`;
+  });
+  document.getElementById('resBody').innerHTML=
+    `<div class="res-row"><span class="res-label">Acertos</span><span class="res-val" style="color:var(--green)">${right}</span></div>`+
+    `<div class="res-row"><span class="res-label">Erros</span><span class="res-val" style="color:var(--red)">${done-right}</span></div>`+
+    `<div class="res-row"><span class="res-label">Total</span><span class="res-val">${done}/180</span></div>`+
+    `<div class="subj-list">${bh}</div>`;
+  document.getElementById('resOverlay').classList.add('show');
+}
+
+function restart(){
+  answers={};cur=0;
+  document.getElementById('resOverlay').classList.remove('show');
+  render();
+}
+
+// Keyboard
+document.addEventListener('keydown',e=>{
+  if(e.key==='c'||e.key==='C')answer(true);
+  if(e.key==='e'||e.key==='E')answer(false);
+  if(e.key==='ArrowLeft')nav(-1);
+  if(e.key==='ArrowRight')nav(1);
+  if(e.key==='g'||e.key==='G')toggleGrid();
+});
+
+// Touch
+let tx=0;
+document.addEventListener('touchstart',e=>{tx=e.changedTouches[0].screenX});
+document.addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].screenX-tx;
+  if(Math.abs(dx)>60){dx>0?nav(-1):nav(1)}
+});
+
+render();
+</script>
+</body>
+</html>

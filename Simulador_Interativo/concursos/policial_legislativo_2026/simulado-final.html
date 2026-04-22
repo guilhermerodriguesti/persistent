@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado Final – Policial Legislativo CD 2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#0f172a;color:#e2e8f0;min-height:100vh}
+.container{max-width:960px;margin:0 auto;padding:16px}
+.header{text-align:center;padding:24px 16px;background:linear-gradient(135deg,#1e293b,#334155);border-radius:16px;margin-bottom:16px;border:1px solid #334155}
+.header h1{font-size:20px;color:#fff;margin-bottom:4px}
+.header .sub{font-size:11px;color:#94a3b8;margin-bottom:10px}
+.hstats{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+.hs{padding:4px 10px;border-radius:16px;font-size:10px;font-weight:700;background:rgba(99,102,241,.12);color:#818cf8;border:1px solid rgba(99,102,241,.2)}
+.hs b{color:#a5b4fc;font-size:13px}
+.nav-tabs{display:flex;gap:3px;margin-bottom:14px;background:#1e293b;border-radius:10px;padding:3px;border:1px solid #334155}
+.nav-tab{flex:1;padding:8px 4px;text-align:center;border-radius:7px;cursor:pointer;font-size:11px;font-weight:700;color:#94a3b8;transition:all .2s;border:none;background:none}
+.nav-tab:hover{color:#e2e8f0}.nav-tab.active{background:#6366f1;color:#fff}
+.nav-tab .tc{display:block;font-size:8px;opacity:.7;margin-top:1px}
+.timer-bar{display:flex;align-items:center;justify-content:space-between;padding:8px 14px;background:#1e293b;border-radius:10px;margin-bottom:14px;border:1px solid #334155}
+.timer{font-size:18px;font-weight:900;font-family:'Courier New',monospace;color:#a5b4fc}
+.tbtn{padding:5px 10px;border-radius:6px;border:1px solid #334155;background:#0f172a;color:#94a3b8;cursor:pointer;font-size:10px;font-weight:600}
+.tbtn:hover{border-color:#6366f1;color:#a5b4fc}
+.pbar{height:5px;background:#1e293b;border-radius:3px;margin-bottom:10px;overflow:hidden;border:1px solid #334155}
+.pfill{height:100%;border-radius:3px;transition:width .4s}
+.pfill-cg{background:linear-gradient(90deg,#6366f1,#a78bfa)}
+.pfill-ce{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.qcnt{text-align:center;font-size:11px;color:#64748b;margin-bottom:10px;font-weight:600}
+.qsec{display:none}.qsec.active{display:block}
+.qc{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px;margin-bottom:10px;transition:all .3s}
+.qc.ok{border-left:3px solid #22c55e}.qc.err{border-left:3px solid #ef4444}
+.qnum{display:inline-block;padding:2px 8px;border-radius:5px;font-size:9px;font-weight:800;margin-bottom:6px}
+.qnum-cg{background:rgba(99,102,241,.15);color:#818cf8}
+.qnum-ce{background:rgba(245,158,11,.15);color:#fbbf24}
+.qtop{font-size:9px;color:#64748b;font-weight:600;margin-bottom:4px;text-transform:uppercase;letter-spacing:.5px}
+.qtxt{font-size:13px;color:#f1f5f9;line-height:1.6;margin-bottom:12px}
+.qtxt b{color:#a78bfa}
+.opts{display:flex;gap:8px;margin-bottom:8px}
+.ob{flex:1;padding:12px;border-radius:8px;border:2px solid #334155;background:#0f172a;cursor:pointer;font-size:13px;font-weight:800;color:#e2e8f0;transition:all .2s;text-align:center;min-height:46px;display:flex;align-items:center;justify-content:center;gap:4px}
+.ob:hover:not(.lk){border-color:#6366f1;background:rgba(99,102,241,.06)}
+.ob:active:not(.lk){transform:scale(.97)}
+.ob .k{padding:1px 5px;border-radius:3px;background:#0f172a;border:1px solid #475569;font-size:9px;font-family:monospace}
+.ob.sc{border-color:#22c55e;background:rgba(34,197,94,.08);color:#22c55e}
+.ob.se{border-color:#ef4444;background:rgba(239,68,68,.08);color:#ef4444}
+.ob.rc{border-color:#22c55e;background:rgba(34,197,94,.06)}
+.ob.lk{cursor:default;opacity:.7}
+.fb{display:none;padding:10px;border-radius:8px;margin-bottom:8px;font-size:11px;line-height:1.5}
+.fb.show{display:block}.fb.fc{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.25);color:#86efac}
+.fb.fe{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.25);color:#fca5a5}
+.fb b{color:#fff}
+.qnav{display:flex;gap:6px}.qnb{padding:10px 16px;border:1px solid #334155;border-radius:8px;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:11px;font-weight:700;flex:1;text-align:center;transition:all .2s}
+.qnb:hover{border-color:#6366f1;color:#a5b4fc}.qnb.pri{background:#6366f1;color:#fff;border-color:#6366f1}
+.grd-toggle{padding:6px 12px;border:1px solid #334155;border-radius:7px;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:10px;font-weight:700;margin-bottom:10px;display:inline-flex;align-items:center;gap:4px}
+.grd{display:none;grid-template-columns:repeat(15,1fr);gap:2px;margin-bottom:10px;padding:8px;background:#1e293b;border-radius:8px;border:1px solid #334155}
+.grd.show{display:grid}
+.gd{width:100%;aspect-ratio:1;border-radius:3px;border:1px solid #334155;background:#0f172a;cursor:pointer;font-size:7px;display:flex;align-items:center;justify-content:center;color:#64748b;font-weight:700}
+.gd:hover{border-color:#6366f1}.gd.cur{border-color:#6366f1;background:rgba(99,102,241,.15);color:#a5b4fc}
+.gd.dc{background:rgba(34,197,94,.12);border-color:#22c55e;color:#22c55e}
+.gd.de{background:rgba(239,68,68,.12);border-color:#ef4444;color:#ef4444}
+/* Discursiva */
+.disc{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:18px;margin-bottom:14px}
+.disc h3{font-size:14px;color:#f1f5f9;margin-bottom:6px}.disc .di{font-size:10px;color:#64748b;margin-bottom:10px}
+.disc .dp{font-size:12px;color:#e2e8f0;line-height:1.6;margin-bottom:12px;padding:12px;background:#0f172a;border-radius:8px;border:1px solid #334155}
+.disc textarea{width:100%;min-height:180px;padding:12px;border-radius:8px;border:1px solid #334155;background:#0f172a;color:#e2e8f0;font-size:12px;line-height:1.6;resize:vertical;font-family:inherit}
+.disc textarea:focus{outline:none;border-color:#6366f1}
+.disc .pad{display:none;margin-top:10px;padding:12px;background:rgba(99,102,241,.06);border:1px solid rgba(99,102,241,.2);border-radius:8px;font-size:11px;line-height:1.6;color:#cbd5e1}
+.disc .pad.show{display:block}.disc .pad h4{color:#a5b4fc;margin-bottom:4px;font-size:12px}.disc .pad b{color:#e2e8f0}
+.spbtn{padding:6px 12px;border:1px solid #334155;border-radius:7px;background:#1e293b;color:#94a3b8;cursor:pointer;font-size:10px;font-weight:700;margin-top:6px}
+/* Stats */
+.ssec{display:none}.ssec.active{display:block}
+.sh{text-align:center;padding:24px 16px;background:linear-gradient(135deg,#1e293b,#334155);border-radius:14px;margin-bottom:14px;border:1px solid #334155}
+.sh h2{font-size:20px;color:#fff}.bsc{font-size:48px;font-weight:900;background:linear-gradient(135deg,#6366f1,#a78bfa);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;margin:8px 0}
+.bsl{font-size:11px;color:#94a3b8}
+.pgr{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:14px}
+.pc{background:#1e293b;border:1px solid #334155;border-radius:8px;padding:10px;text-align:center}
+.pc .pv{font-size:22px;font-weight:900}.pc .pl{font-size:9px;color:#94a3b8;font-weight:600}
+.tsr{display:flex;align-items:center;gap:8px;padding:8px 10px;background:#1e293b;border:1px solid #334155;border-radius:7px;margin-bottom:4px}
+.tsn{flex:1;font-size:11px;font-weight:700}.tbb{width:100px;height:5px;background:#0f172a;border-radius:3px;overflow:hidden;flex-shrink:0}
+.tbf{height:100%;border-radius:3px}.tss{font-size:13px;font-weight:900;min-width:36px;text-align:right;flex-shrink:0}
+.tsd{font-size:9px;color:#64748b;min-width:40px;text-align:right;flex-shrink:0}
+.ab{padding:10px;border-radius:8px;margin-bottom:10px;font-size:11px;line-height:1.4}
+.ab.dng{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);color:#fca5a5}
+.ab.wrn{background:rgba(245,158,11,.06);border:1px solid rgba(245,158,11,.2);color:#fcd34d}
+.ab.suc{background:rgba(34,197,94,.06);border:1px solid rgba(34,197,94,.2);color:#86efac}
+.ab b{color:#fff}
+.rbtn{width:100%;padding:12px;border:none;border-radius:8px;background:linear-gradient(135deg,#6366f1,#8b5cf6);color:#fff;font-size:13px;font-weight:700;cursor:pointer;margin-top:6px}
+.back-btn{position:fixed;bottom:14px;right:14px;padding:7px 14px;background:#6366f1;color:#fff;border:none;border-radius:8px;font-size:10px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(99,102,241,.3);z-index:100;text-decoration:none}
+@media(max-width:768px){.container{padding:8px}.header h1{font-size:17px}.grd{grid-template-columns:repeat(10,1fr)}.pgr{grid-template-columns:1fr 1fr}.tbb{width:70px}.nav-tab{font-size:9px}}
+@media(max-width:480px){.container{padding:6px}.header{padding:14px 10px}.header h1{font-size:15px}.grd{grid-template-columns:repeat(9,1fr)}.pgr{grid-template-columns:1fr}.ob{font-size:12px;padding:10px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="header">
+<h1>📋 Simulado Final – Policial Legislativo CD 2026</h1>
+<div class="sub">180 itens C/E + 3 discursivas • Baseado em questões CEBRASPE 2022-2025</div>
+<div class="hstats">
+<div class="hs">📘 <b>90</b> Conh. Gerais</div>
+<div class="hs">📙 <b>90</b> Conh. Específicos</div>
+<div class="hs">📝 <b>3</b> Discursivas</div>
+<div class="hs">⏱️ <b>5h</b> simuladas</div>
+</div></div>
+
+<div class="timer-bar">
+<div><div style="font-size:9px;color:#64748b;font-weight:600">TEMPO</div><div class="timer" id="timer">05:00:00</div></div>
+<div style="display:flex;gap:4px">
+<button class="tbtn" onclick="toggleTimer()" id="tTgl">▶ Iniciar</button>
+<button class="tbtn" onclick="resetTimer()">↻ Zerar</button>
+</div></div>
+
+<div class="nav-tabs">
+<div class="nav-tab active" onclick="switchSec('cg')">📘 Gerais<span class="tc">90 itens</span></div>
+<div class="nav-tab" onclick="switchSec('ce')">📙 Específicos<span class="tc">90 itens</span></div>
+<div class="nav-tab" onclick="switchSec('disc')">📝 Discursivas<span class="tc">3 questões</span></div>
+<div class="nav-tab" onclick="finishExam()">📊 Resultado<span class="tc">Estatísticas</span></div>
+</div>
+
+<div class="qsec active" id="sec-cg">
+<div class="pbar"><div class="pfill pfill-cg" id="p-cg"></div></div>
+<div class="qcnt" id="c-cg"></div>
+<button class="grd-toggle" onclick="toggleGrd('cg')"><i class="fas fa-th"></i> Mapa</button>
+<div class="grd" id="g-cg"></div>
+<div id="qa-cg"></div>
+<div class="qnav">
+<button class="qnb" onclick="nav('cg',-1)">← Anterior</button>
+<button class="qnb" onclick="skip('cg')">Pular</button>
+<button class="qnb pri" onclick="nav('cg',1)">Próxima →</button>
+</div></div>
+
+<div class="qsec" id="sec-ce">
+<div class="pbar"><div class="pfill pfill-ce" id="p-ce"></div></div>
+<div class="qcnt" id="c-ce"></div>
+<button class="grd-toggle" onclick="toggleGrd('ce')"><i class="fas fa-th"></i> Mapa</button>
+<div class="grd" id="g-ce"></div>
+<div id="qa-ce"></div>
+<div class="qnav">
+<button class="qnb" onclick="nav('ce',-1)">← Anterior</button>
+<button class="qnb" onclick="skip('ce')">Pular</button>
+<button class="qnb pri" onclick="nav('ce',1)">Próxima →</button>
+</div></div>
+
+<div class="qsec" id="sec-disc"></div>
+<div class="ssec" id="sec-stats"></div>
+</div>
+<a href="reta-final.html" class="back-btn">← Voltar</a>
+
+<script src="simulado-data.js"></script>
+<script>
+// ═══ STATE ═══
+let cur={cg:0,ce:0},ans={cg:{},ce:{}};
+let timerS=18000,timerRun=false,timerInt=null;
+
+// ═══ TIMER ═══
+function toggleTimer(){timerRun=!timerRun;document.getElementById('tTgl').textContent=timerRun?'⏸ Pausar':'▶ Iniciar';if(timerRun)timerInt=setInterval(tick,1000);else clearInterval(timerInt)}
+function resetTimer(){clearInterval(timerInt);timerRun=false;timerS=18000;document.getElementById('tTgl').textContent='▶ Iniciar';updTimer()}
+function tick(){if(timerS>0)timerS--;else{clearInterval(timerInt);timerRun=false}updTimer()}
+function updTimer(){const h=Math.floor(timerS/3600),m=Math.floor((timerS%3600)/60),s=timerS%60;document.getElementById('timer').textContent=`${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`}
+
+// ═══ SECTIONS ═══
+function switchSec(id){document.querySelectorAll('.qsec,.ssec').forEach(e=>e.classList.remove('active'));document.querySelectorAll('.nav-tab').forEach(e=>e.classList.remove('active'));
+if(id==='stats'){document.getElementById('sec-stats').classList.add('active');document.querySelectorAll('.nav-tab')[3].classList.add('active')}
+else{document.getElementById('sec-'+id).classList.add('active');document.querySelectorAll('.nav-tab')[id==='cg'?0:id==='ce'?1:2].classList.add('active')}
+if(id==='cg'||id==='ce')showQ(id);if(id==='disc')renderDisc()}
+
+// ═══ RENDER QUESTION ═══
+function showQ(sec){
+const qs=sec==='cg'?CG:CE,i=cur[sec],q=qs[i],total=qs.length;
+document.getElementById('p-'+sec).style.width=(Object.keys(ans[sec]).length/total*100)+'%';
+document.getElementById('c-'+sec).textContent=`Questão ${i+1} de ${total} – ${sec==='cg'?'Conhecimentos Gerais':'Conhecimentos Específicos'}`;
+const a=ans[sec][i],answered=a!==undefined;
+let h=`<div class="qc ${answered?(a.c?'ok':'err'):''}">
+<span class="qnum qnum-${sec}">${sec==='cg'?'CG':'CE'} ${q.n}</span>
+<div class="qtop">${q.t}</div>
+<div class="qtxt">${q.q}</div>
+<div class="opts">
+<div class="ob ${answered?'lk':''} ${answered?(a.u===true?(a.c?'sc':'se'):(q.a?'rc':'')):''}"><span class="k">C</span> CERTO</div>
+<div class="ob ${answered?'lk':''} ${answered?(a.u===false?(a.c?'sc':'se'):(!q.a?'rc':'')):''}"><span class="k">E</span> ERRADO</div>
+</div>
+<div class="fb ${answered?'show':''} ${answered?(a.c?'fc':'fe'):''}"><b>${answered?(a.c?'✅ Você acertou!':'❌ Você errou!'):''}${answered?' ':''}</b>${answered?q.e:''}</div></div>`;
+document.getElementById('qa-'+sec).innerHTML=h;
+if(!answered){const btns=document.querySelectorAll('#qa-'+sec+' .ob');btns[0].onclick=()=>doAns(sec,true);btns[1].onclick=()=>doAns(sec,false)}
+renderGrid(sec)}
+
+function doAns(sec,val){const qs=sec==='cg'?CG:CE,q=qs[cur[sec]];ans[sec][cur[sec]]={u:val,c:val===q.a};showQ(sec)}
+function nav(sec,d){const qs=sec==='cg'?CG:CE;cur[sec]=Math.max(0,Math.min(qs.length-1,cur[sec]+d));showQ(sec)}
+function skip(sec){const qs=sec==='cg'?CG:CE;if(!ans[sec][cur[sec]])ans[sec][cur[sec]]={u:null,c:false,skip:true};nav(sec,1)}
+function goQ(sec,i){cur[sec]=i;showQ(sec)}
+
+function renderGrid(sec){const qs=sec==='cg'?CG:CE;let h='';qs.forEach((q,i)=>{const a=ans[sec][i];let cls='';if(i===cur[sec])cls='cur';else if(a&&!a.skip)cls=a.c?'dc':'de';h+=`<div class="gd ${cls}" onclick="goQ('${sec}',${i})">${q.n}</div>`});document.getElementById('g-'+sec).innerHTML=h}
+function toggleGrd(sec){document.getElementById('g-'+sec).classList.toggle('show')}
+
+// ═══ DISCURSIVAS ═══
+function renderDisc(){
+document.getElementById('sec-disc').innerHTML=`
+<div class="disc"><h3>📝 Questão Discursiva 1 – Atividade de Inteligência</h3>
+<div class="di">Até 20 linhas • 15,00 pontos</div>
+<div class="dp">Conceitue <b>Inteligência</b> e <b>Contrainteligência</b> no contexto da atividade de inteligência de Estado. Discorra sobre os <b>pressupostos</b> e as <b>ameaças</b> elencados na Política Nacional de Inteligência (Decreto 8.793/2016), explicando como a <b>análise de riscos</b> contribui para a proteção de conhecimentos sensíveis. Aborde, ainda, o papel do <b>SISBIN</b> na coordenação das atividades de inteligência no Brasil.</div>
+<textarea placeholder="Digite sua resposta aqui..." oninput="updLC(this)"></textarea><div style="text-align:right;font-size:9px;color:#64748b;margin-top:2px">0/20 linhas</div>
+<button class="spbtn" onclick="this.nextElementSibling.classList.toggle('show')">📋 Ver Padrão de Resposta</button>
+<div class="pad"><h4>Padrão de Resposta Esperado</h4>
+<b>1. Conceitos (3 pts):</b> Inteligência = atividade de obtenção, análise e disseminação de conhecimentos para assessorar o processo decisório. Contrainteligência = proteção de conhecimentos sensíveis e neutralização de ações adversas.<br>
+<b>2. PNI – Pressupostos (3 pts):</b> Obediência à CF e às leis; atividade de Estado permanente; assessoramento ao mais alto nível decisório; uso de técnicas sigilosas; conduta ética.<br>
+<b>3. PNI – Ameaças (3 pts):</b> Espionagem, sabotagem, interferência externa, terrorismo, crime organizado, corrupção, ações contrárias à soberania nacional.<br>
+<b>4. Análise de Riscos (3 pts):</b> Risco = ameaça × vulnerabilidade × impacto. Identificação de vulnerabilidades, avaliação probabilística, medidas de proteção, classificação de informações (reservado/secreto/ultrassecreto).<br>
+<b>5. SISBIN (3 pts):</b> Instituído pela Lei 9.883/1999. Coordenado pela ABIN. Integra órgãos de inteligência de diversos ministérios. Responsável pelo fluxo de informações entre os componentes do sistema.</div></div>
+
+<div class="disc"><h3>📝 Questão Discursiva 2 – Direitos Humanos e Legislação Correlata</h3>
+<div class="di">Até 20 linhas • 15,00 pontos</div>
+<div class="dp">Discorra sobre o <b>sistema interamericano de proteção dos direitos humanos</b>, diferenciando as funções da <b>Comissão</b> e da <b>Corte Interamericana</b>. Aborde os <b>direitos protegidos pela CADH</b> (Convenção Americana/Pacto de São José) e as hipóteses de <b>suspensão de garantias</b> (art. 27). Por fim, explique como a <b>Lei 13.060/2014</b> disciplina o uso da força por agentes de segurança pública, relacionando-a com os princípios internacionais de DH.</div>
+<textarea placeholder="Digite sua resposta aqui..." oninput="updLC(this)"></textarea><div style="text-align:right;font-size:9px;color:#64748b;margin-top:2px">0/20 linhas</div>
+<button class="spbtn" onclick="this.nextElementSibling.classList.toggle('show')">📋 Ver Padrão de Resposta</button>
+<div class="pad"><h4>Padrão de Resposta Esperado</h4>
+<b>1. Sistema Interamericano (3 pts):</b> Criado no âmbito da OEA. Composto pela Comissão (CIDH) e pela Corte (CtIDH). Base normativa: CADH (1969), ratificada pelo Brasil em 1992.<br>
+<b>2. Comissão vs Corte (3 pts):</b> Comissão: recebe petições individuais, investiga, publica relatórios, recomenda medidas. Corte: julga Estados (não indivíduos diretamente), emite sentenças vinculantes e opiniões consultivas.<br>
+<b>3. Direitos na CADH (3 pts):</b> Direito à vida (art. 4º), integridade pessoal (art. 5º), liberdade pessoal (art. 7º), garantias judiciais (art. 8º), liberdade de expressão (art. 13º). Proibição de pena de morte para crimes políticos.<br>
+<b>4. Suspensão (art. 27) (3 pts):</b> Em caso de guerra, perigo público ou emergência. Direitos inderrogáveis: vida, integridade, proibição de escravidão, legalidade penal, liberdade religiosa, proteção da família, nome, nacionalidade, direitos políticos, proteção judicial.<br>
+<b>5. Lei 13.060/2014 (3 pts):</b> Prioridade para instrumentos de menor potencial ofensivo. Arma de fogo = último recurso. Princípios: legalidade, necessidade, proporcionalidade, moderação, conveniência. Alinhada com o Código de Conduta da ONU e Princípios de Havana.</div></div>
+
+<div class="disc"><h3>📝 Questão Discursiva 3 – Peça Técnica (Direito Penal e Processual Penal)</h3>
+<div class="di">Até 50 linhas • 30,00 pontos</div>
+<div class="dp">João, servidor da Câmara dos Deputados, durante o exercício de suas funções como policial legislativo, foi abordado por Paulo, que ofereceu R$ 50.000,00 para que João facilitasse a entrada de pessoas não autorizadas nas dependências da Casa, burlando os protocolos de segurança. João recusou a proposta. Porém, dias depois, Carlos, colega de João, aceitou proposta similar de Paulo e efetivamente permitiu o ingresso irregular de terceiros nas dependências legislativas, durante sessão deliberativa. Posteriormente, durante investigação interna, Carlos, para encobrir sua conduta, alterou registros do sistema de controle de acesso e ameaçou um estagiário que presenciou os fatos.<br><br>Com base na situação hipotética, <b>elabore peça técnica</b> contendo:<br>a) Tipificação penal da conduta de <b>Paulo</b>, <b>Carlos</b> e análise da situação de <b>João</b>;<br>b) Análise das <b>qualificadoras, causas de aumento e concurso de crimes</b> aplicáveis;<br>c) Aspectos <b>processuais</b>: competência, tipo de ação penal, possibilidade de prisão, e medidas cautelares cabíveis.</div>
+<textarea placeholder="Elabore sua peça técnica aqui..." oninput="updLC(this)" style="min-height:300px"></textarea><div style="text-align:right;font-size:9px;color:#64748b;margin-top:2px">0/50 linhas</div>
+<button class="spbtn" onclick="this.nextElementSibling.classList.toggle('show')">📋 Ver Padrão de Resposta</button>
+<div class="pad"><h4>Padrão de Resposta Esperado</h4>
+<b>1. Tipificação – Paulo (5 pts):</b> Corrupção ativa (art. 333 CP): ofereceu vantagem indevida a funcionário público. Em relação a João: tentativa de corrupção ativa (João recusou). Em relação a Carlos: corrupção ativa consumada. Paulo também responde como partícipe nos crimes praticados por Carlos (art. 29 CP – teoria monista).<br><br>
+<b>2. Tipificação – Carlos (5 pts):</b> Corrupção passiva (art. 317 CP): recebeu/aceitou vantagem indevida. Prevaricação (art. 319 CP): permitiu ingresso irregular para satisfazer interesse pessoal (vantagem financeira). Falsidade ideológica (art. 299 CP) ou fraude processual (art. 347 CP): alterou registros do sistema. Ameaça (art. 147 CP): ameaçou o estagiário testemunha.<br><br>
+<b>3. Tipificação – João (5 pts):</b> João não cometeu crime. Recusou a proposta. Não há que se falar em corrupção passiva pois não solicitou, recebeu nem aceitou vantagem. A mera oferta por Paulo não gera responsabilidade para João. Pode figurar como testemunha na investigação.<br><br>
+<b>4. Qualificadoras e concurso (5 pts):</b> Carlos: concurso material de crimes (art. 69 CP) – condutas autônomas com desígnios diversos. Causa de aumento na corrupção passiva se o ato de ofício foi efetivamente praticado (§1º art. 317). A alteração de registros pode configurar concurso formal com o crime funcional se praticada em contexto único.<br><br>
+<b>5. Aspectos processuais (10 pts):</b> Ação penal pública incondicionada (crimes contra a Administração Pública). Competência: Justiça Federal se envolver interesse da União, ou Justiça Comum Estadual. Possibilidade de prisão preventiva (art. 312 CPP): garantia da ordem pública e da instrução criminal (Carlos ameaçou testemunha). Medidas cautelares alternativas (art. 319 CPP): afastamento do cargo, proibição de contato com testemunhas. Inquérito policial ou procedimento investigatório criminal (PIC) do MP. Quebra de sigilo de dados do sistema de controle pode ser requerida.</div></div>`}
+function updLC(el){const lines=el.value.split('\\n').length;el.nextElementSibling.textContent=lines+' linhas'}
+
+// ═══ STATS ═══
+function finishExam(){switchSec('stats');buildStats()}
+function buildStats(){
+const topics={};let totC=0,totQ=0;
+[{qs:CG,sec:'cg',label:'CG'},{qs:CE,sec:'ce',label:'CE'}].forEach(({qs,sec,label})=>{
+qs.forEach((q,i)=>{const a=ans[sec][i];if(!topics[q.t])topics[q.t]={c:0,t:0};
+if(a&&!a.skip){topics[q.t].t++;totQ++;if(a.c){topics[q.t].c++;totC++}}else if(a&&a.skip){topics[q.t].t++;totQ++}})});
+const pct=totQ?Math.round(totC/totQ*100):0;
+let h=`<div class="sh"><h2>📊 Resultado do Simulado</h2><div class="bsc">${pct}%</div><div class="bsl">${totC} de ${totQ} itens corretos (${180-totQ} não respondidos)</div></div>`;
+// CG/CE breakdown
+const cgA=Object.keys(ans.cg).length,cgC=Object.values(ans.cg).filter(a=>a.c).length;
+const ceA=Object.keys(ans.ce).length,ceC=Object.values(ans.ce).filter(a=>a.c).length;
+h+=`<div class="pgr">
+<div class="pc"><div class="pv" style="color:#22c55e">${totC}</div><div class="pl">Acertos</div></div>
+<div class="pc"><div class="pv" style="color:#ef4444">${totQ-totC}</div><div class="pl">Erros</div></div>
+<div class="pc"><div class="pv" style="color:#6366f1">${cgA?Math.round(cgC/cgA*100):0}%</div><div class="pl">CG (${cgC}/${cgA})</div></div>
+<div class="pc"><div class="pv" style="color:#f59e0b">${ceA?Math.round(ceC/ceA*100):0}%</div><div class="pl">CE (${ceC}/${ceA})</div></div></div>`;
+if(pct>=70)h+=`<div class="ab suc">🏆 <b>Excelente!</b> Performance acima de 70%. Continue revisando os pontos fracos.</div>`;
+else if(pct>=50)h+=`<div class="ab wrn">⚡ <b>Bom!</b> Foque nas matérias abaixo de 60% para subir sua nota.</div>`;
+else h+=`<div class="ab dng">🔴 <b>Atenção!</b> Revise os resumos rápidos das matérias com menor pontuação.</div>`;
+// Per topic
+const sorted=Object.entries(topics).sort((a,b)=>(a[1].t?a[1].c/a[1].t:0)-(b[1].t?b[1].c/b[1].t:0));
+h+=`<div style="margin-bottom:14px">`;
+sorted.forEach(([name,d])=>{const p=d.t?Math.round(d.c/d.t*100):0;const col=p>=70?'#22c55e':p>=50?'#f59e0b':'#ef4444';
+h+=`<div class="tsr"><div class="tsn" style="color:${col}">${name}</div><div class="tbb"><div class="tbf" style="width:${p}%;background:${col}"></div></div><div class="tsd">${d.c}/${d.t}</div><div class="tss" style="color:${col}">${p}%</div></div>`});
+h+=`</div>`;
+const weak=sorted.filter(([,d])=>d.t&&d.c/d.t<0.6).map(([n])=>n);
+if(weak.length)h+=`<div class="ab dng">📋 <b>Priorize:</b> ${weak.join(', ')}</div>`;
+h+=`<button class="rbtn" onclick="restart()">🔄 Refazer Simulado</button>`;
+h+=`<button class="rbtn" onclick="window.location.href='reta-final.html'" style="background:linear-gradient(135deg,#334155,#475569);margin-top:6px">← Voltar</button>`;
+document.getElementById('sec-stats').innerHTML=h}
+
+function restart(){ans={cg:{},ce:{}};cur={cg:0,ce:0};resetTimer();switchSec('cg')}
+
+// ═══ KEYBOARD ═══
+document.addEventListener('keydown',e=>{
+const key=e.key.toLowerCase();const sec=document.getElementById('sec-cg').classList.contains('active')?'cg':document.getElementById('sec-ce').classList.contains('active')?'ce':null;
+if(sec){const ob=document.querySelectorAll('#qa-'+sec+' .ob');const locked=ob[0]&&ob[0].classList.contains('lk');
+if(key==='c'&&!locked){e.preventDefault();doAns(sec,true);return}
+if(key==='e'&&!locked){e.preventDefault();doAns(sec,false);return}
+if(key==='arrowright'){e.preventDefault();nav(sec,1);return}
+if(key==='arrowleft'){e.preventDefault();nav(sec,-1);return}
+if(key==='p'){e.preventDefault();skip(sec);return}
+if(key==='g'){e.preventDefault();toggleGrd(sec);return}}
+if(key==='1'){e.preventDefault();switchSec('cg')}
+if(key==='2'){e.preventDefault();switchSec('ce')}
+if(key==='3'){e.preventDefault();switchSec('disc')}
+if(key==='4'){e.preventDefault();finishExam()}
+if(key==='t'){e.preventDefault();toggleTimer()}
+});
+
+// ═══ TOUCH SWIPE ═══
+let tx=0;document.addEventListener('touchstart',e=>{tx=e.changedTouches[0].screenX},{passive:true});
+document.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-tx;if(Math.abs(dx)<60)return;
+const sec=document.getElementById('sec-cg').classList.contains('active')?'cg':document.getElementById('sec-ce').classList.contains('active')?'ce':null;
+if(sec){if(dx<-60)nav(sec,1);if(dx>80)nav(sec,-1)}},{passive:true});
+
+// ═══ INIT ═══
+showQ('cg');
+</script>
+</body>
+</html>
