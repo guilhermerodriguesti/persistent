@@ -53,24 +53,34 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#f1f5f9;color:#1e293
 .qnav{display:flex;gap:6px}.qnb{padding:10px 16px;border:1px solid #e2e8f0;border-radius:8px;background:#ffffff;color:#64748b;cursor:pointer;font-size:11px;font-weight:700;flex:1;text-align:center;transition:all .2s}
 .qnb:hover{border-color:#6366f1;color:#4f46e5}.qnb.pri{background:#6366f1;color:#fff;border-color:#6366f1}
 .grd-toggle{padding:6px 12px;border:1px solid #e2e8f0;border-radius:7px;background:#ffffff;color:#64748b;cursor:pointer;font-size:10px;font-weight:700;margin-bottom:10px;display:inline-flex;align-items:center;gap:4px}
-.grd{display:none;grid-template-columns:repeat(15,1fr);gap:2px;margin-bottom:10px;padding:8px;background:#ffffff;border-radius:8px;border:1px solid #e2e8f0}
-.grd.show{display:grid}
-.gd{width:100%;aspect-ratio:1;border-radius:3px;border:1px solid #e2e8f0;background:#f8fafc;cursor:pointer;font-size:7px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-weight:700}
-.gd:hover{border-color:#6366f1}.gd.cur{border-color:#6366f1;background:rgba(99,102,241,.1);color:#4f46e5}
-.gd.dc{background:rgba(34,197,94,.1);border-color:#16a34a;color:#16a34a}
-.gd.de{background:rgba(239,68,68,.1);border-color:#dc2626;color:#dc2626}
-/* Grid Preview */
-.grd-preview{display:none;padding:10px 12px;background:#ffffff;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:10px;font-size:11px;line-height:1.5;animation:fadeP .2s}
-.grd-preview.show{display:block}
-@keyframes fadeP{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
-.grd-preview .gp-head{display:flex;align-items:center;gap:6px;margin-bottom:6px}
-.grd-preview .gp-num{padding:2px 7px;border-radius:4px;font-size:9px;font-weight:800}
-.grd-preview .gp-topic{font-size:9px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:.3px}
-.grd-preview .gp-result{font-size:10px;font-weight:700;margin-left:auto}
-.grd-preview .gp-q{font-size:11px;color:#334155;margin-bottom:6px;line-height:1.5}
-.grd-preview .gp-q b{color:#7c3aed}
-.grd-preview .gp-ans{font-size:10px;font-weight:700;margin-bottom:4px}
-.grd-preview .gp-exp{font-size:10px;color:#64748b;line-height:1.5;padding:6px 8px;background:#f8fafc;border-radius:6px;border:1px solid #f1f5f9}
+.grd-toggle i{transition:transform .2s}.grd-toggle.open i{transform:rotate(180deg)}
+/* Flashcard Grid */
+.fc-grid{display:none;gap:8px;margin-bottom:14px;padding:4px 0}
+.fc-grid.show{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.fc{background:#fff;border:1px solid #e2e8f0;border-radius:10px;overflow:hidden;cursor:pointer;transition:all .2s;position:relative}
+.fc:hover{border-color:#a5b4fc;box-shadow:0 2px 8px rgba(99,102,241,.1)}
+.fc.fc-cur{border-color:#6366f1;box-shadow:0 0 0 2px rgba(99,102,241,.2)}
+.fc.fc-ok{border-left:3px solid #16a34a}.fc.fc-err{border-left:3px solid #dc2626}
+.fc-top{display:flex;align-items:center;gap:6px;padding:8px 10px;border-bottom:1px solid #f1f5f9;background:#fafbfc}
+.fc-num{padding:2px 7px;border-radius:4px;font-size:8px;font-weight:800}
+.fc-topic{font-size:8px;color:#94a3b8;font-weight:600;text-transform:uppercase;letter-spacing:.3px;flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fc-badge{font-size:8px;font-weight:700;padding:2px 6px;border-radius:4px}
+.fc-badge-ok{background:rgba(34,197,94,.1);color:#16a34a}.fc-badge-err{background:rgba(239,68,68,.1);color:#dc2626}
+.fc-badge-skip{background:rgba(148,163,184,.1);color:#94a3b8}.fc-badge-pen{background:rgba(99,102,241,.08);color:#818cf8}
+.fc-body{padding:8px 10px;font-size:10px;color:#334155;line-height:1.5;max-height:60px;overflow:hidden;position:relative}
+.fc-body b{color:#7c3aed}
+.fc-body::after{content:'';position:absolute;bottom:0;left:0;right:0;height:20px;background:linear-gradient(transparent,#fff)}
+.fc.fc-ok .fc-body::after,.fc.fc-err .fc-body::after{background:linear-gradient(transparent,#fff)}
+/* Flashcard expanded / explanation */
+.fc-exp{display:none;padding:0 10px 8px;font-size:9px;line-height:1.5}
+.fc.expanded .fc-body{max-height:none}.fc.expanded .fc-body::after{display:none}
+.fc.expanded .fc-exp{display:block}
+.fc-ans{font-weight:700;margin-bottom:3px;font-size:9px}
+.fc-exptxt{color:#64748b;padding:5px 7px;background:#f8fafc;border-radius:5px;border:1px solid #f1f5f9;font-size:9px;line-height:1.5}
+/* Filter tabs inside grid */
+.fc-filters{display:flex;gap:4px;margin-bottom:8px;flex-wrap:wrap}
+.fc-ft{padding:3px 8px;border-radius:12px;font-size:9px;font-weight:600;border:1px solid #e2e8f0;background:#fff;color:#64748b;cursor:pointer;transition:.15s}
+.fc-ft:hover,.fc-ft.active{background:#6366f1;color:#fff;border-color:#6366f1}
 /* Discursiva */
 .disc{background:#ffffff;border:1px solid #e2e8f0;border-radius:12px;padding:18px;margin-bottom:14px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
 .disc h3{font-size:14px;color:#1e293b;margin-bottom:6px}.disc .di{font-size:10px;color:#94a3b8;margin-bottom:10px}
@@ -132,9 +142,9 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#f1f5f9;color:#1e293
 <div class="qsec active" id="sec-cg">
 <div class="pbar"><div class="pfill pfill-cg" id="p-cg"></div></div>
 <div class="qcnt" id="c-cg"></div>
-<button class="grd-toggle" onclick="toggleGrd('cg')"><i class="fas fa-th"></i> Mapa</button>
-<div class="grd" id="g-cg"></div>
-<div class="grd-preview" id="gp-cg"></div>
+<button class="grd-toggle" onclick="toggleGrd('cg')" id="gt-cg"><i class="fas fa-layer-group"></i> Flashcards</button>
+<div class="fc-filters" id="ff-cg" style="display:none"></div>
+<div class="fc-grid" id="g-cg"></div>
 <div id="qa-cg"></div>
 <div class="qnav">
 <button class="qnb" onclick="nav('cg',-1)">← Anterior</button>
@@ -145,9 +155,9 @@ body{font-family:'Segoe UI',system-ui,sans-serif;background:#f1f5f9;color:#1e293
 <div class="qsec" id="sec-ce">
 <div class="pbar"><div class="pfill pfill-ce" id="p-ce"></div></div>
 <div class="qcnt" id="c-ce"></div>
-<button class="grd-toggle" onclick="toggleGrd('ce')"><i class="fas fa-th"></i> Mapa</button>
-<div class="grd" id="g-ce"></div>
-<div class="grd-preview" id="gp-ce"></div>
+<button class="grd-toggle" onclick="toggleGrd('ce')" id="gt-ce"><i class="fas fa-layer-group"></i> Flashcards</button>
+<div class="fc-filters" id="ff-ce" style="display:none"></div>
+<div class="fc-grid" id="g-ce"></div>
 <div id="qa-ce"></div>
 <div class="qnav">
 <button class="qnb" onclick="nav('ce',-1)">← Anterior</button>
@@ -202,18 +212,33 @@ function nav(sec,d){const qs=sec==='cg'?CG:CE;cur[sec]=Math.max(0,Math.min(qs.le
 function skip(sec){const qs=sec==='cg'?CG:CE;if(!ans[sec][cur[sec]])ans[sec][cur[sec]]={u:null,c:false,skip:true};nav(sec,1)}
 function goQ(sec,i){cur[sec]=i;showQ(sec)}
 
-function renderGrid(sec){const qs=sec==='cg'?CG:CE;let h='';qs.forEach((q,i)=>{const a=ans[sec][i];let cls='';if(i===cur[sec])cls='cur';else if(a&&!a.skip)cls=a.c?'dc':'de';h+=`<div class="gd ${cls}" onclick="goQ('${sec}',${i})" onmouseenter="showGP('${sec}',${i})" onmouseleave="hideGP('${sec}')">${q.n}</div>`});document.getElementById('g-'+sec).innerHTML=h}
-function toggleGrd(sec){const g=document.getElementById('g-'+sec);g.classList.toggle('show');if(!g.classList.contains('show'))hideGP(sec)}
-function showGP(sec,i){const qs=sec==='cg'?CG:CE,q=qs[i],a=ans[sec][i],el=document.getElementById('gp-'+sec);
-const numCls=sec==='cg'?'qnum-cg':'qnum-ce';
-let h=`<div class="gp-head"><span class="gp-num ${numCls}">${sec==='cg'?'CG':'CE'} ${q.n}</span><span class="gp-topic">${q.t}</span>`;
-if(a&&!a.skip){h+=`<span class="gp-result" style="color:${a.c?'#16a34a':'#dc2626'}">${a.c?'✅ Acertou':'❌ Errou'}</span>`}
-else if(a&&a.skip){h+=`<span class="gp-result" style="color:#94a3b8">⏭ Pulou</span>`}
-else{h+=`<span class="gp-result" style="color:#94a3b8">⬜ Pendente</span>`}
-h+=`</div><div class="gp-q">${q.q}</div>`;
-if(a&&!a.skip){h+=`<div class="gp-ans" style="color:${q.a?'#16a34a':'#dc2626'}">Gabarito: ${q.a?'CERTO':'ERRADO'} ${a?'| Sua resposta: '+(a.u===true?'CERTO':'ERRADO'):''}</div>`;h+=`<div class="gp-exp">${q.e}</div>`}
-el.innerHTML=h;el.classList.add('show')}
-function hideGP(sec){document.getElementById('gp-'+sec).classList.remove('show')}
+let fcFilter={cg:'all',ce:'all'};
+function renderGrid(sec){
+const qs=sec==='cg'?CG:CE,numCls=sec==='cg'?'qnum-cg':'qnum-ce',prefix=sec==='cg'?'CG':'CE';
+// Collect unique topics
+const topics=[...new Set(qs.map(q=>q.t))];
+let fh='<span class="fc-ft active" onclick="setFcFilter(\''+sec+'\',\'all\',this)">Todas</span>';
+topics.forEach(t=>{fh+=`<span class="fc-ft" onclick="setFcFilter('${sec}','${t.replace(/'/g,"\\'")}',this)">${t}</span>`});
+document.getElementById('ff-'+sec).innerHTML=fh;
+let h='';
+qs.forEach((q,i)=>{
+if(fcFilter[sec]!=='all'&&q.t!==fcFilter[sec])return;
+const a=ans[sec][i];
+let cls='';
+if(i===cur[sec])cls='fc-cur';
+if(a&&!a.skip)cls+=' '+(a.c?'fc-ok':'fc-err');
+let badge='';
+if(a&&!a.skip)badge=a.c?'<span class="fc-badge fc-badge-ok">✓ Certo</span>':'<span class="fc-badge fc-badge-err">✗ Errado</span>';
+else if(a&&a.skip)badge='<span class="fc-badge fc-badge-skip">⏭ Pulou</span>';
+else badge='<span class="fc-badge fc-badge-pen">Pendente</span>';
+let exp='';
+if(a&&!a.skip){exp=`<div class="fc-exp"><div class="fc-ans" style="color:${q.a?'#16a34a':'#dc2626'}">Gabarito: ${q.a?'CERTO':'ERRADO'} | Você: ${a.u===true?'CERTO':'ERRADO'}</div><div class="fc-exptxt">${q.e}</div></div>`}
+h+=`<div class="fc ${cls}" onclick="fcClick('${sec}',${i},this)"><div class="fc-top"><span class="fc-num ${numCls}">${prefix} ${q.n}</span><span class="fc-topic">${q.t}</span>${badge}</div><div class="fc-body">${q.q}</div>${exp}</div>`;
+});
+document.getElementById('g-'+sec).innerHTML=h}
+function toggleGrd(sec){const g=document.getElementById('g-'+sec),btn=document.getElementById('gt-'+sec),ff=document.getElementById('ff-'+sec);g.classList.toggle('show');btn.classList.toggle('open');ff.style.display=g.classList.contains('show')?'flex':'none'}
+function setFcFilter(sec,val,el){fcFilter[sec]=val;document.querySelectorAll('#ff-'+sec+' .fc-ft').forEach(e=>e.classList.remove('active'));el.classList.add('active');renderGrid(sec)}
+function fcClick(sec,i,el){if(el.classList.contains('expanded')){el.classList.remove('expanded')}else{document.querySelectorAll('#g-'+sec+' .fc.expanded').forEach(e=>e.classList.remove('expanded'));el.classList.add('expanded')}}
 
 // ═══ DISCURSIVAS ═══
 function renderDisc(){

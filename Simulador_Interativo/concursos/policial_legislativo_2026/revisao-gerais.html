@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revisão – Conhecimentos Gerais | Policial Legislativo 2026</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f5f7fa;color:#1e293b;line-height:1.7}
+
+/* ─── NAV TOP ─── */
+.topbar{position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid #e5e7eb;padding:10px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 1px 3px rgba(0,0,0,.04)}
+.topbar .logo{font-size:15px;font-weight:800;color:#059669;white-space:nowrap}
+.topbar .logo i{margin-right:4px}
+.hamburger{display:none;background:none;border:none;font-size:18px;color:#64748b;cursor:pointer;padding:4px}
+.progress-top{flex:1;height:4px;background:#e5e7eb;border-radius:2px;overflow:hidden;min-width:60px}
+.progress-top .bar{height:100%;background:linear-gradient(90deg,#059669,#34d399);border-radius:2px;transition:width .3s;width:0}
+.topbar .pct{font-size:10px;font-weight:700;color:#059669;min-width:28px;text-align:right}
+
+/* ─── SIDEBAR ─── */
+.layout{display:flex;max-width:1280px;margin:0 auto}
+.sidebar{position:sticky;top:52px;height:calc(100vh - 52px);width:260px;min-width:260px;overflow-y:auto;padding:12px 8px;background:#fff;border-right:1px solid #e5e7eb}
+.sidebar::-webkit-scrollbar{width:4px}.sidebar::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:2px}
+.sb-cat{margin-bottom:10px}
+.sb-cat-title{font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.6px;color:#94a3b8;padding:6px 10px 4px;display:flex;align-items:center;gap:5px}
+.sb-link{display:block;padding:4px 10px 4px 18px;font-size:11px;color:#475569;text-decoration:none;border-radius:6px;transition:.15s;line-height:1.4;border-left:2px solid transparent}
+.sb-link:hover{background:#f1f5f9;color:#1e293b}
+.sb-link.active{background:rgba(5,150,105,.06);color:#059669;font-weight:600;border-left-color:#059669}
+
+/* ─── MAIN ─── */
+.main{flex:1;padding:20px 24px 80px;min-width:0}
+
+/* ─── CATEGORY HEADER ─── */
+.cat-header{padding:18px 20px;margin-bottom:12px;border-radius:12px;border:1px solid #e5e7eb;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.03);display:flex;align-items:center;gap:10px;margin-top:24px}
+.cat-header:first-child{margin-top:0}
+.cat-header i{font-size:18px}
+.cat-header h2{font-size:17px;font-weight:800;flex:1}
+.cat-badge{padding:3px 10px;border-radius:12px;font-size:9px;font-weight:700}
+
+/* ─── CARDS ─── */
+.topic-card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;margin-bottom:8px;overflow:hidden;transition:box-shadow .2s}
+.topic-card:hover{box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.topic-card.highlight{border-color:#6ee7b7;box-shadow:0 0 0 2px rgba(5,150,105,.12)}
+.tc-head{padding:12px 16px;cursor:pointer;display:flex;align-items:flex-start;gap:10px;user-select:none}
+.tc-num{font-size:9px;font-weight:800;padding:3px 8px;border-radius:5px;white-space:nowrap;flex-shrink:0;margin-top:2px}
+.tc-title{font-size:13px;font-weight:700;color:#1e293b;flex:1}
+.tc-check{color:#d1d5db;font-size:11px;margin-top:2px;cursor:pointer;flex-shrink:0}
+.tc-check.read{color:#22c55e}
+.tc-chevron{color:#94a3b8;font-size:10px;transition:transform .2s;margin-top:4px;flex-shrink:0}
+.topic-card.open .tc-chevron{transform:rotate(180deg)}
+.tc-body{display:none;padding:0 16px 14px 16px;font-size:12.5px;color:#334155;line-height:1.8;border-top:1px solid #f1f5f9}
+.topic-card.open .tc-body{display:block;padding-top:12px}
+.tc-body ul,.tc-body ol{margin:6px 0 6px 18px}.tc-body li{margin-bottom:4px}
+.tc-body b{color:#059669}
+.tc-body .empty{color:#94a3b8;font-style:italic}
+
+/* ─── COLOR SCHEME PER CATEGORY ─── */
+.cat-port .cat-header{border-left:4px solid #059669}.cat-port .tc-num{background:rgba(5,150,105,.07);color:#047857}
+.cat-port .cat-header i,.cat-port .cat-header h2{color:#047857}.cat-port .cat-badge{background:rgba(5,150,105,.07);color:#047857}
+.cat-eng .cat-header{border-left:4px solid #0891b2}.cat-eng .tc-num{background:rgba(8,145,178,.07);color:#0e7490}
+.cat-eng .cat-header i,.cat-eng .cat-header h2{color:#0e7490}.cat-eng .cat-badge{background:rgba(8,145,178,.07);color:#0e7490}
+.cat-logic .cat-header{border-left:4px solid #7c3aed}.cat-logic .tc-num{background:rgba(124,58,237,.07);color:#6d28d9}
+.cat-logic .cat-header i,.cat-logic .cat-header h2{color:#6d28d9}.cat-logic .cat-badge{background:rgba(124,58,237,.07);color:#6d28d9}
+.cat-const .cat-header{border-left:4px solid #ea580c}.cat-const .tc-num{background:rgba(234,88,12,.07);color:#c2410c}
+.cat-const .cat-header i,.cat-const .cat-header h2{color:#c2410c}.cat-const .cat-badge{background:rgba(234,88,12,.07);color:#c2410c}
+.cat-ricd .cat-header{border-left:4px solid #b45309}.cat-ricd .tc-num{background:rgba(180,83,9,.07);color:#92400e}
+.cat-ricd .cat-header i,.cat-ricd .cat-header h2{color:#92400e}.cat-ricd .cat-badge{background:rgba(180,83,9,.07);color:#92400e}
+.cat-admin .cat-header{border-left:4px solid #dc2626}.cat-admin .tc-num{background:rgba(220,38,38,.07);color:#b91c1c}
+.cat-admin .cat-header i,.cat-admin .cat-header h2{color:#b91c1c}.cat-admin .cat-badge{background:rgba(220,38,38,.07);color:#b91c1c}
+.cat-info .cat-header{border-left:4px solid #2563eb}.cat-info .tc-num{background:rgba(37,99,235,.07);color:#1d4ed8}
+.cat-info .cat-header i,.cat-info .cat-header h2{color:#1d4ed8}.cat-info .cat-badge{background:rgba(37,99,235,.07);color:#1d4ed8}
+
+/* ─── SEARCH ─── */
+.search-wrap{position:relative;margin-bottom:12px}
+.search-wrap input{width:100%;padding:10px 14px 10px 36px;border:1px solid #e5e7eb;border-radius:8px;font-size:12px;background:#fff;color:#1e293b;outline:none;transition:.2s}
+.search-wrap input:focus{border-color:#059669;box-shadow:0 0 0 3px rgba(5,150,105,.08)}
+.search-wrap i{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#94a3b8;font-size:12px}
+
+/* ─── TOOLBAR ─── */
+.toolbar{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap;align-items:center}
+.tbtn{padding:5px 12px;border:1px solid #e5e7eb;border-radius:6px;background:#fff;color:#64748b;cursor:pointer;font-size:10px;font-weight:600;transition:.15s}
+.tbtn:hover{border-color:#059669;color:#047857}
+.tbtn.active{background:#059669;color:#fff;border-color:#059669}
+.toolbar .info{font-size:10px;color:#94a3b8;margin-left:auto}
+
+/* ─── FIXED BUTTONS ─── */
+.back-btn{position:fixed;bottom:14px;right:14px;padding:7px 14px;background:#059669;color:#fff;border:none;border-radius:8px;font-size:10px;font-weight:700;cursor:pointer;box-shadow:0 4px 16px rgba(5,150,105,.25);z-index:100;text-decoration:none}
+.scroll-top{position:fixed;bottom:14px;right:110px;width:36px;height:36px;background:#fff;border:1px solid #e5e7eb;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#059669;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,.08);z-index:100;font-size:12px;opacity:0;transition:.2s;text-decoration:none}
+.scroll-top.show{opacity:1}
+
+/* ─── MOBILE ─── */
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.3);z-index:200}
+.sidebar-overlay.show{display:block}
+
+@media(max-width:860px){
+  .sidebar{position:fixed;left:-280px;top:52px;z-index:201;height:calc(100vh - 52px);transition:left .25s;box-shadow:4px 0 16px rgba(0,0,0,.1)}
+  .sidebar.open{left:0}
+  .hamburger{display:block}
+  .main{padding:14px 12px 80px}
+  .cat-header{padding:14px 16px}.cat-header h2{font-size:15px}
+  .tc-head{padding:10px 12px}.tc-body{padding:0 12px 12px 12px}
+}
+@media(max-width:480px){
+  .topbar .logo span{display:none}
+  .tc-title{font-size:12px}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <button class="hamburger" onclick="toggleSidebar()"><i class="fas fa-bars"></i></button>
+  <div class="logo"><i class="fas fa-book-open"></i> <span>Conhecimentos Gerais</span></div>
+  <div class="progress-top"><div class="bar" id="readBar"></div></div>
+  <div class="pct" id="readPct">0%</div>
+</div>
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+<div class="layout">
+<!-- SIDEBAR NAV -->
+<nav class="sidebar" id="sidebar"></nav>
+
+<!-- MAIN -->
+<div class="main" id="mainContent">
+  <div class="search-wrap">
+    <i class="fas fa-search"></i>
+    <input type="text" id="searchInput" placeholder="Buscar temas, artigos, conceitos..." oninput="doSearch()">
+  </div>
+  <div class="toolbar">
+    <button class="tbtn" onclick="expandAll()"><i class="fas fa-expand-alt"></i> Abrir Todos</button>
+    <button class="tbtn" onclick="collapseAll()"><i class="fas fa-compress-alt"></i> Fechar Todos</button>
+    <button class="tbtn" onclick="toggleUnread()"><i class="fas fa-eye-slash"></i> Só não lidos</button>
+    <span class="info" id="statsInfo"></span>
+  </div>
+  <div id="content"></div>
+</div>
+</div>
+
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0})"><i class="fas fa-arrow-up"></i></button>
+<a href="reta-final.html" class="back-btn">← Voltar</a>
+
+<script src="gerais-data.js"></script>
+<script>
+// ═══ STATE ═══
+let readSet=new Set(JSON.parse(localStorage.getItem('ger-read')||'[]'));
+let filterUnread=false;
+
+// ═══ RENDER ═══
+function render(query){
+  const q=(query||'').toLowerCase().trim();
+  const contentEl=document.getElementById('content');
+  const sidebarEl=document.getElementById('sidebar');
+  let html='',navHtml='';
+  const catOrder=['port','eng','logic','const','ricd','admin','info'];
+  let totalItems=0,shown=0;
+
+  catOrder.forEach(catKey=>{
+    const catInfo=CATS[catKey];
+    const items=DATA.filter(d=>d.cat===catKey);
+    totalItems+=items.length;
+    const filtered=items.filter(d=>{
+      if(filterUnread&&readSet.has(d.id))return false;
+      if(!q)return true;
+      return (d.t+' '+d.b+' '+d.num).toLowerCase().includes(q);
+    });
+    if(filtered.length===0&&q)return;
+    shown+=filtered.length;
+
+    html+=`<div class="cat-${catKey}"><div class="cat-header" id="cat-${catKey}"><i class="fas ${catInfo.icon}"></i><h2>${catInfo.title}</h2><span class="cat-badge">${filtered.length} temas</span></div>`;
+    filtered.forEach(d=>{
+      const isRead=readSet.has(d.id);
+      const body=d.b||'<span class="empty">Conteúdo não disponível</span>';
+      html+=`<div class="topic-card" id="${d.id}" data-cat="${catKey}"><div class="tc-head" onclick="toggleCard(this.parentElement)"><span class="tc-num">${d.num}</span><span class="tc-title">${highlight(d.t,q)}</span><i class="fas fa-check-circle tc-check ${isRead?'read':''}" onclick="event.stopPropagation();toggleRead('${d.id}',this)"></i><i class="fas fa-chevron-down tc-chevron"></i></div><div class="tc-body">${highlight(body,q)}</div></div>`;
+    });
+    html+=`</div>`;
+
+    // sidebar
+    navHtml+=`<div class="sb-cat"><div class="sb-cat-title"><i class="fas ${catInfo.icon}"></i> ${catInfo.title}</div>`;
+    filtered.forEach(d=>{
+      navHtml+=`<a class="sb-link" href="#${d.id}" onclick="navClick(event,'${d.id}')">${d.num} ${d.t}</a>`;
+    });
+    navHtml+=`</div>`;
+  });
+
+  contentEl.innerHTML=html;
+  sidebarEl.innerHTML=navHtml;
+  document.getElementById('statsInfo').textContent=`${readSet.size}/${totalItems} lidos · ${shown} exibidos`;
+  updateProgress(totalItems);
+}
+
+function highlight(text,q){
+  if(!q)return text;
+  const esc=q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
+  return text.replace(new RegExp('('+esc+')','gi'),'<mark style="background:rgba(5,150,105,.15);padding:0 2px;border-radius:2px">$1</mark>');
+}
+
+// ═══ INTERACTIONS ═══
+function toggleCard(el){el.classList.toggle('open')}
+function expandAll(){document.querySelectorAll('.topic-card').forEach(c=>c.classList.add('open'))}
+function collapseAll(){document.querySelectorAll('.topic-card').forEach(c=>c.classList.remove('open'))}
+
+function toggleRead(id,iconEl){
+  if(readSet.has(id)){readSet.delete(id);iconEl.classList.remove('read')}
+  else{readSet.add(id);iconEl.classList.add('read')}
+  localStorage.setItem('ger-read',JSON.stringify([...readSet]));
+  updateProgress(DATA.length);
+  document.getElementById('statsInfo').textContent=`${readSet.size}/${DATA.length} lidos`;
+}
+
+function toggleUnread(){
+  filterUnread=!filterUnread;
+  document.querySelectorAll('.toolbar .tbtn')[2].classList.toggle('active',filterUnread);
+  render(document.getElementById('searchInput').value);
+}
+
+function doSearch(){render(document.getElementById('searchInput').value)}
+
+function updateProgress(total){
+  const pct=total?Math.round(readSet.size/total*100):0;
+  document.getElementById('readBar').style.width=pct+'%';
+  document.getElementById('readPct').textContent=pct+'%';
+}
+
+// ═══ SIDEBAR ═══
+function toggleSidebar(){
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sidebarOverlay').classList.toggle('show');
+}
+
+function navClick(e,id){
+  e.preventDefault();
+  const el=document.getElementById(id);
+  if(el){
+    el.classList.add('open');
+    el.scrollIntoView({behavior:'smooth',block:'center'});
+    el.classList.add('highlight');
+    setTimeout(()=>el.classList.remove('highlight'),1500);
+  }
+  if(window.innerWidth<=860)toggleSidebar();
+}
+
+// ═══ SCROLL TOP ═══
+window.addEventListener('scroll',()=>{
+  document.getElementById('scrollTop').classList.toggle('show',window.scrollY>400);
+  const cards=document.querySelectorAll('.topic-card');
+  let current='';
+  cards.forEach(c=>{if(c.getBoundingClientRect().top<150)current=c.id});
+  document.querySelectorAll('.sb-link').forEach(l=>{
+    l.classList.toggle('active',l.getAttribute('href')==='#'+current);
+  });
+});
+
+// ═══ KEYBOARD ═══
+document.addEventListener('keydown',e=>{
+  if(e.key==='/'&&document.activeElement.tagName!=='INPUT'){e.preventDefault();document.getElementById('searchInput').focus()}
+  if(e.key==='Escape'){document.getElementById('searchInput').value='';document.getElementById('searchInput').blur();render()}
+});
+
+// ═══ INIT ═══
+render();
+</script>
+</body>
+</html>
