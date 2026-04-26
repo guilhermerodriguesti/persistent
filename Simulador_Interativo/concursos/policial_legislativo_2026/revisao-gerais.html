@@ -33,11 +33,16 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f5f7f
 .main{flex:1;padding:20px 24px 80px;min-width:0}
 
 /* ─── CATEGORY HEADER ─── */
-.cat-header{padding:18px 20px;margin-bottom:12px;border-radius:12px;border:1px solid #e5e7eb;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.03);display:flex;align-items:center;gap:10px;margin-top:24px}
+.cat-header{padding:18px 20px;margin-bottom:12px;border-radius:12px;border:1px solid #e5e7eb;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.03);display:flex;align-items:center;gap:10px;margin-top:24px;cursor:pointer;user-select:none;transition:border-radius .2s}
 .cat-header:first-child{margin-top:0}
 .cat-header i{font-size:18px}
 .cat-header h2{font-size:17px;font-weight:800;flex:1}
 .cat-badge{padding:3px 10px;border-radius:12px;font-size:9px;font-weight:700}
+.cat-chevron{color:#94a3b8;font-size:12px;transition:transform .25s;flex-shrink:0}
+.cat-section.collapsed .cat-chevron{transform:rotate(-90deg)}
+.cat-section.collapsed .cat-header{margin-bottom:0;border-radius:12px}
+.cat-cards{overflow:hidden;transition:max-height .3s ease}
+.cat-section.collapsed .cat-cards{max-height:0!important;overflow:hidden}
 
 /* ─── CARDS ─── */
 .topic-card{background:#fff;border:1px solid #e5e7eb;border-radius:10px;margin-bottom:8px;overflow:hidden;transition:box-shadow .2s}
@@ -148,6 +153,7 @@ body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#f5f7f
 // ═══ STATE ═══
 let readSet=new Set(JSON.parse(localStorage.getItem('ger-read')||'[]'));
 let filterUnread=false;
+let collapsedCats=new Set(JSON.parse(localStorage.getItem('ger-collapsed')||'[]'));
 
 // ═══ RENDER ═══
 function render(query){
@@ -170,16 +176,17 @@ function render(query){
     if(filtered.length===0&&q)return;
     shown+=filtered.length;
 
-    html+=`<div class="cat-${catKey}"><div class="cat-header" id="cat-${catKey}"><i class="fas ${catInfo.icon}"></i><h2>${catInfo.title}</h2><span class="cat-badge">${filtered.length} temas</span></div>`;
+    const isCollapsed=collapsedCats.has(catKey)?'collapsed':'';
+    html+=`<div class="cat-${catKey} cat-section ${isCollapsed}" data-catkey="${catKey}"><div class="cat-header" id="cat-${catKey}" onclick="toggleCat('${catKey}')"><i class="fas ${catInfo.icon}"></i><h2>${catInfo.title}</h2><span class="cat-badge">${filtered.length} temas</span><i class="fas fa-chevron-down cat-chevron"></i></div><div class="cat-cards">`;
     filtered.forEach(d=>{
       const isRead=readSet.has(d.id);
       const body=d.b||'<span class="empty">Conteúdo não disponível</span>';
       html+=`<div class="topic-card" id="${d.id}" data-cat="${catKey}"><div class="tc-head" onclick="toggleCard(this.parentElement)"><span class="tc-num">${d.num}</span><span class="tc-title">${highlight(d.t,q)}</span><i class="fas fa-check-circle tc-check ${isRead?'read':''}" onclick="event.stopPropagation();toggleRead('${d.id}',this)"></i><i class="fas fa-chevron-down tc-chevron"></i></div><div class="tc-body">${highlight(body,q)}</div></div>`;
     });
-    html+=`</div>`;
+    html+=`</div></div>`;
 
     // sidebar
-    navHtml+=`<div class="sb-cat"><div class="sb-cat-title"><i class="fas ${catInfo.icon}"></i> ${catInfo.title}</div>`;
+    navHtml+=`<div class="sb-cat"><div class="sb-cat-title" style="cursor:pointer" onclick="toggleCat('${catKey}');scrollToCat('${catKey}')"><i class="fas ${catInfo.icon}"></i> ${catInfo.title}</div>`;
     filtered.forEach(d=>{
       navHtml+=`<a class="sb-link" href="#${d.id}" onclick="navClick(event,'${d.id}')">${d.num} ${d.t}</a>`;
     });
@@ -200,8 +207,21 @@ function highlight(text,q){
 
 // ═══ INTERACTIONS ═══
 function toggleCard(el){el.classList.toggle('open')}
-function expandAll(){document.querySelectorAll('.topic-card').forEach(c=>c.classList.add('open'))}
+function expandAll(){document.querySelectorAll('.cat-section').forEach(s=>s.classList.remove('collapsed'));collapsedCats.clear();saveCollapsed();document.querySelectorAll('.topic-card').forEach(c=>c.classList.add('open'))}
 function collapseAll(){document.querySelectorAll('.topic-card').forEach(c=>c.classList.remove('open'))}
+
+function toggleCat(catKey){
+  const sec=document.querySelector(`.cat-section[data-catkey="${catKey}"]`);
+  if(!sec)return;
+  sec.classList.toggle('collapsed');
+  if(sec.classList.contains('collapsed')){collapsedCats.add(catKey)}else{collapsedCats.delete(catKey)}
+  saveCollapsed();
+}
+function scrollToCat(catKey){
+  const el=document.getElementById('cat-'+catKey);
+  if(el)el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function saveCollapsed(){localStorage.setItem('ger-collapsed',JSON.stringify([...collapsedCats]))}
 
 function toggleRead(id,iconEl){
   if(readSet.has(id)){readSet.delete(id);iconEl.classList.remove('read')}
