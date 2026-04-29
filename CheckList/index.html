@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist - Enxoval do Curso de Formação Profissional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #1e3a5f;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #6b7280;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        .progress-container {
+            background: #e5e7eb;
+            border-radius: 10px;
+            height: 25px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            background: linear-gradient(90deg, #10b981, #059669);
+            height: 100%;
+            border-radius: 10px;
+            width: 0%;
+            transition: width 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+        .checklist {
+            list-style: none;
+        }
+        .checklist-item {
+            background: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .checklist-item:hover {
+            border-color: #2563eb;
+            background: #eff6ff;
+            transform: translateY(-2px);
+        }
+        .checklist-item.checked {
+            background: #d1fae5;
+            border-color: #10b981;
+        }
+        .checkbox {
+            width: 28px;
+            height: 28px;
+            border: 3px solid #d1d5db;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+        }
+        .checklist-item.checked .checkbox {
+            background: #10b981;
+            border-color: #10b981;
+        }
+        .checkbox::after {
+            content: '✓';
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .checklist-item.checked .checkbox::after {
+            opacity: 1;
+        }
+        .item-text {
+            flex: 1;
+            font-size: 16px;
+            color: #374151;
+            transition: color 0.3s ease;
+        }
+        .checklist-item.checked .item-text {
+            color: #059669;
+            text-decoration: line-through;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 25px;
+        }
+        button {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-check-all {
+            background: #10b981;
+            color: white;
+        }
+        .btn-check-all:hover {
+            background: #059669;
+            transform: translateY(-2px);
+        }
+        .btn-uncheck-all {
+            background: #ef4444;
+            color: white;
+        }
+        .btn-uncheck-all:hover {
+            background: #dc2626;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Enxoval do Curso de Formação</h1>
+        <p class="subtitle">Academia Nacional de Polícia</p>
+        
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar">0/43</div>
+        </div>
+        
+        <ul class="checklist">
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Material de higiene pessoal</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Toalhas de banho (duas, no mínimo)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Toalhas de rosto (duas, no mínimo)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Lençóis, colchas para cama de solteiro e fronhas (duas peças de cada, no mínimo)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Travesseiro</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Cobertor</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Traje social para a solenidade de formatura (terno para homens, social discreto para mulheres)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Computador portátil (dualcore, 2GB RAM, Wi-Fi, USB, 128GB) com leitor PDF, suíte de escritório e navegador</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Pendrive de no mínimo 8 GB</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Calçados totalmente pretos (tênis, botas ou botinas)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Meias pretas</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Bota operacional de sola de borracha na cor preta extra leve</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Calças táticas pretas de RipStop com sete bolsos (no mínimo, duas)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Bermuda tipo ciclista, na cor preta (duas, somente para mulheres)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Tênis apropriado para a prática de corrida</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Top preto (somente para mulheres)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Sunga preta (homens) e maiô de peça única preta (mulheres)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Chinelo de dedo de borracha na cor preta</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Algemas com chave</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Porta algemas (preferencialmente MOLLE, abertura/fechamento em velcro)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Lanterna tática (no mínimo 120 lúmens, com bateria e porta-lanterna tática)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">cinto em nylon preto (tipo SWAT BDU) – medidas da fita de aproximadamente 3,8 cm de largura e espessura de aproximadamente 0,2 cm – preferencialmente com sistema MOLLE, com fivela de trava tripla (2 laterais e uma central), cinto externo e interno, com velcro (macho e fêmea);</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Coldre para saque de arma de porte "velado" em Kydex ou polímero, na cor preta</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Óculos de segurança transparentes com proteção lateral</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Protetor auricular interno descartável (duas unidades, no mínimo)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Protetor bucal</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Máscara para RCP (com válvula, estojo de bolso dobrável, entrada para O2, filtro e válvula de não retorno)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Luvas de látex para procedimento cirúrgico (dez pares, no mínimo)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Atadura de crepom de 15 cm (cinco unidades)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Gaze (cinco unidades)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Caneta/pincel para quadro branco (três unidades)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Bermuda térmica (opcional para proteção em corridas)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Camiseta de neoprene preta para natação (opcional)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Óculos e touca de natação (opcional)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Capa transparente para chuva (opcional)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Bandagem para luva de boxe (opcional)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Porta luvas de látex (opcional)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Joelheira operacional tática preta (opcional)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Cotoveleira tática preta (opcional)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Protetor auricular/abafador externo tipo concha (opcional)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Óculos escuros (opcional)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Agasalho padrão ANP (adquirir na Academia)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Camiseta branca mangas curtas gola redonda padrão ANP eixo operacional (três, adquirir na Academia)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Boné preto sem estampas (poliéster/mesh/coolmax/nylon)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Short preto altura joelhos, modelo solto, tecido leve/respirável (poliéster/poliamida/dry fit)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Gandola preta ripstop, manga longa, fechamento frontal (botões ou zíper)</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Capa de chuva transparente</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Tênis totalmente preto</span>
+            </li>
+            <li class="checklist-item" onclick="toggleItem(this)">
+                <div class="checkbox"></div>
+                <span class="item-text">Mochila totalmente preta</span>
+            </li>
+        </ul>
+        
+        <div style="margin-top: 30px; padding: 20px; background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 8px;">
+            <h3 style="color: #92400e; margin-bottom: 15px; font-size: 18px;">📌 Informações Importantes</h3>
+            <ul style="list-style: none; color: #78350f; line-height: 1.8;">
+                <li style="margin-bottom: 8px;">• <b>Computador portátil:</b> candidatos hipossuficientes poderão receber computador da ANP (conforme estoque).</li>
+                <li style="margin-bottom: 8px;">• <b>Material didático:</b> Código Penal, Código de Processo Penal e Constituição Federal atualizados (fica a critério do candidato).</li>
+                <li style="margin-bottom: 8px;">• <b>Bagagem:</b> somente uma mala e uma mochila por aluno no alojamento. Mala limitada a 32kg.</li>
+                <li style="margin-bottom: 8px;">• <b>Aparência masculina:</b> cabelo curto, sem barba e sem bigode (raspados).</li>
+                <li style="margin-bottom: 8px;">• <b>Aparência feminina:</b> cabelos presos, sem brincos e sem maquiagem.</li>
+                <li>• <b>Material obrigatório:</b> não será permitido participar das instruções sem o material adequado.</li>
+            </ul>
+        </div>
+        
+        <div class="buttons">
+            <button class="btn-check-all" onclick="checkAll()">Marcar Todos</button>
+            <button class="btn-uncheck-all" onclick="uncheckAll()">Desmarcar Todos</button>
+        </div>
+    </div>
+    
+    <script>
+        function toggleItem(item) {
+            item.classList.toggle('checked');
+            updateProgress();
+            saveState();
+        }
+        
+        function updateProgress() {
+            const items = document.querySelectorAll('.checklist-item');
+            const checked = document.querySelectorAll('.checklist-item.checked');
+            const total = items.length;
+            const checkedCount = checked.length;
+            const percentage = (checkedCount / total) * 100;
+            
+            const progressBar = document.getElementById('progressBar');
+            progressBar.style.width = percentage + '%';
+            progressBar.textContent = checkedCount + '/' + total;
+        }
+        
+        function checkAll() {
+            const items = document.querySelectorAll('.checklist-item');
+            items.forEach(item => item.classList.add('checked'));
+            updateProgress();
+            saveState();
+        }
+        
+        function uncheckAll() {
+            const items = document.querySelectorAll('.checklist-item');
+            items.forEach(item => item.classList.remove('checked'));
+            updateProgress();
+            saveState();
+        }
+        
+        function saveState() {
+            const items = document.querySelectorAll('.checklist-item');
+            const state = Array.from(items).map(item => item.classList.contains('checked'));
+            localStorage.setItem('checklist-state', JSON.stringify(state));
+        }
+        
+        function loadState() {
+            const saved = localStorage.getItem('checklist-state');
+            if (saved) {
+                const state = JSON.parse(saved);
+                const items = document.querySelectorAll('.checklist-item');
+                items.forEach((item, index) => {
+                    if (state[index]) {
+                        item.classList.add('checked');
+                    }
+                });
+                updateProgress();
+            }
+        }
+        
+        // Load state on page load
+        loadState();
+    </script>
+</body>
+</html>
