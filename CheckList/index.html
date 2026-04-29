@@ -17,7 +17,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 700px;
+            max-width: 1000px;
             margin: 0 auto;
             background: white;
             border-radius: 16px;
@@ -67,7 +67,8 @@
             margin-bottom: 12px;
             cursor: pointer;
             transition: all 0.3s ease;
-            display: flex;
+            display: grid;
+            grid-template-columns: 40px 1fr 120px 180px;
             align-items: center;
             gap: 15px;
         }
@@ -107,14 +108,91 @@
             opacity: 1;
         }
         .item-text {
-            flex: 1;
-            font-size: 16px;
+            font-size: 15px;
             color: #374151;
             transition: color 0.3s ease;
+            word-break: break-word;
         }
         .checklist-item.checked .item-text {
             color: #059669;
             text-decoration: line-through;
+        }
+        .item-price {
+            display: flex;
+            align-items: center;
+        }
+        .item-price input {
+            width: 100%;
+            padding: 8px 10px;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+        .item-price input:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+        .item-link input {
+            width: 100%;
+            padding: 8px 10px;
+            border: 2px solid #e5e7eb;
+            border-radius: 6px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+        .item-link input:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+        .total-section {
+            margin-top: 25px;
+            padding: 20px;
+            background: linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%);
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+        }
+        .total-section h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+        .total-section .total-value {
+            font-size: 32px;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .checklist-item {
+                grid-template-columns: 40px 1fr;
+                grid-template-rows: auto auto;
+                gap: 10px;
+            }
+            .item-price {
+                grid-column: 2;
+                grid-row: 2;
+            }
+            .item-link {
+                grid-column: 1 / -1;
+                grid-row: 3;
+            }
+            .item-text {
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                padding: 20px 15px;
+            }
+            .checklist-item {
+                grid-template-columns: 35px 1fr;
+                padding: 12px 15px;
+            }
+            .item-text {
+                font-size: 13px;
+            }
+            .total-section .total-value {
+                font-size: 24px;
+            }
         }
         .buttons {
             display: flex;
@@ -162,200 +240,303 @@
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Material de higiene pessoal</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Toalhas de banho (duas, no mínimo)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Toalhas de rosto (duas, no mínimo)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Lençóis, colchas para cama de solteiro e fronhas (duas peças de cada, no mínimo)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Travesseiro</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Cobertor</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Traje social para a solenidade de formatura (terno para homens, social discreto para mulheres)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Computador portátil (dualcore, 2GB RAM, Wi-Fi, USB, 128GB) com leitor PDF, suíte de escritório e navegador</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Pendrive de no mínimo 8 GB</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Calçados totalmente pretos (tênis, botas ou botinas)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Meias pretas</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Bota operacional de sola de borracha na cor preta extra leve</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Calças táticas pretas de RipStop com sete bolsos (no mínimo, duas)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Bermuda tipo ciclista, na cor preta (duas, somente para mulheres)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Tênis apropriado para a prática de corrida</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Top preto (somente para mulheres)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Sunga preta (homens) e maiô de peça única preta (mulheres)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Chinelo de dedo de borracha na cor preta</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Algemas com chave</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Porta algemas (preferencialmente MOLLE, abertura/fechamento em velcro)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Lanterna tática (no mínimo 120 lúmens, com bateria e porta-lanterna tática)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">cinto em nylon preto (tipo SWAT BDU) – medidas da fita de aproximadamente 3,8 cm de largura e espessura de aproximadamente 0,2 cm – preferencialmente com sistema MOLLE, com fivela de trava tripla (2 laterais e uma central), cinto externo e interno, com velcro (macho e fêmea);</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Coldre para saque de arma de porte "velado" em Kydex ou polímero, na cor preta</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Óculos de segurança transparentes com proteção lateral</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Protetor auricular interno descartável (duas unidades, no mínimo)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Protetor bucal</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Máscara para RCP (com válvula, estojo de bolso dobrável, entrada para O2, filtro e válvula de não retorno)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Luvas de látex para procedimento cirúrgico (dez pares, no mínimo)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Atadura de crepom de 15 cm (cinco unidades)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Gaze (cinco unidades)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Caneta/pincel para quadro branco (três unidades)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Bermuda térmica (opcional para proteção em corridas)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Camiseta de neoprene preta para natação (opcional)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Óculos e touca de natação (opcional)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Capa transparente para chuva (opcional)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Bandagem para luva de boxe (opcional)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Porta luvas de látex (opcional)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Joelheira operacional tática preta (opcional)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Cotoveleira tática preta (opcional)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Protetor auricular/abafador externo tipo concha (opcional)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Óculos escuros (opcional)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Agasalho padrão ANP (adquirir na Academia)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Camiseta branca mangas curtas gola redonda padrão ANP eixo operacional (três, adquirir na Academia)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Boné preto sem estampas (poliéster/mesh/coolmax/nylon)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Short preto altura joelhos, modelo solto, tecido leve/respirável (poliéster/poliamida/dry fit)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Gandola preta ripstop, manga longa, fechamento frontal (botões ou zíper)</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Capa de chuva transparente</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Tênis totalmente preto</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
             <li class="checklist-item" onclick="toggleItem(this)">
                 <div class="checkbox"></div>
                 <span class="item-text">Mochila totalmente preta</span>
+                <div class="item-price"><input type="number" step="0.01" placeholder="R$ 0,00" onchange="updateTotal()"></div>
+                <div class="item-link"><input type="text" placeholder="Link"></div>
             </li>
         </ul>
+        
+        <div class="total-section">
+            <h3>💰 Total do Enxoval</h3>
+            <div class="total-value" id="totalValue">R$ 0,00</div>
+        </div>
         
         <div style="margin-top: 30px; padding: 20px; background: #fef3c7; border-left: 4px solid #f59e0b; border-radius: 8px;">
             <h3 style="color: #92400e; margin-bottom: 15px; font-size: 18px;">📌 Informações Importantes</h3>
@@ -377,6 +558,11 @@
     
     <script>
         function toggleItem(item) {
+            // Prevent toggle when clicking on input fields
+            if (event.target.tagName === 'INPUT') {
+                event.stopPropagation();
+                return;
+            }
             item.classList.toggle('checked');
             updateProgress();
             saveState();
@@ -392,6 +578,20 @@
             const progressBar = document.getElementById('progressBar');
             progressBar.style.width = percentage + '%';
             progressBar.textContent = checkedCount + '/' + total;
+        }
+        
+        function updateTotal() {
+            const priceInputs = document.querySelectorAll('.item-price input');
+            let total = 0;
+            priceInputs.forEach(input => {
+                const value = parseFloat(input.value) || 0;
+                total += value;
+            });
+            
+            const totalValue = document.getElementById('totalValue');
+            totalValue.textContent = 'R$ ' + total.toFixed(2).replace('.', ',');
+            
+            saveState();
         }
         
         function checkAll() {
@@ -410,7 +610,15 @@
         
         function saveState() {
             const items = document.querySelectorAll('.checklist-item');
-            const state = Array.from(items).map(item => item.classList.contains('checked'));
+            const priceInputs = document.querySelectorAll('.item-price input');
+            const linkInputs = document.querySelectorAll('.item-link input');
+            
+            const state = {
+                checked: Array.from(items).map(item => item.classList.contains('checked')),
+                prices: Array.from(priceInputs).map(input => input.value),
+                links: Array.from(linkInputs).map(input => input.value)
+            };
+            
             localStorage.setItem('checklist-state', JSON.stringify(state));
         }
         
@@ -419,12 +627,33 @@
             if (saved) {
                 const state = JSON.parse(saved);
                 const items = document.querySelectorAll('.checklist-item');
+                const priceInputs = document.querySelectorAll('.item-price input');
+                const linkInputs = document.querySelectorAll('.item-link input');
+                
                 items.forEach((item, index) => {
-                    if (state[index]) {
+                    if (state.checked && state.checked[index]) {
                         item.classList.add('checked');
                     }
                 });
+                
+                if (state.prices) {
+                    priceInputs.forEach((input, index) => {
+                        if (state.prices[index] !== undefined) {
+                            input.value = state.prices[index];
+                        }
+                    });
+                }
+                
+                if (state.links) {
+                    linkInputs.forEach((input, index) => {
+                        if (state.links[index] !== undefined) {
+                            input.value = state.links[index];
+                        }
+                    });
+                }
+                
                 updateProgress();
+                updateTotal();
             }
         }
         
