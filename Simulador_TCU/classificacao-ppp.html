@@ -12,6 +12,11 @@
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+  <script>
+    Chart.register(ChartDataLabels);
+  </script>
 
   <style>
     :root {
@@ -111,6 +116,116 @@
     .pill.active.green-pill { background: var(--secondary); border-color: var(--secondary); }
     .pill.active.red-pill { background: var(--danger); border-color: var(--danger); }
 
+    /* Analysis Section */
+    .analysis-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .analysis-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .analysis-title i {
+      color: var(--primary);
+    }
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+    .analysis-card {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(99, 102, 241, 0.02));
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      text-align: center;
+    }
+    .analysis-label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .analysis-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      font-family: 'Outfit', sans-serif;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .analysis-sub {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+    }
+
+    /* Charts Section */
+    .charts-section {
+      margin-bottom: 1.5rem;
+    }
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .chart-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.2rem;
+    }
+    .chart-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .chart-table {
+      width: 100%;
+      font-size: 0.8rem;
+      border-collapse: collapse;
+    }
+    .chart-table thead th {
+      background: rgba(99, 102, 241, 0.1);
+      color: var(--primary);
+      padding: 8px;
+      text-align: left;
+      font-weight: 700;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .chart-table tbody td {
+      padding: 8px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .chart-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .chart-table .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+    .badge-gold { background: #fbbf24; color: #1e293b; }
+    .badge-silver { background: #d1d5db; color: #1e293b; }
+    .badge-bronze { background: #cd7f32; color: #1e293b; }
+    .badge-other { background: rgba(99, 102, 241, 0.1); color: var(--primary); }
+
     /* Table */
     .table-wrapper {
       background: var(--card-bg); border: 1px solid var(--border-color);
@@ -203,6 +318,68 @@
         <div class="stat-card yellow">
           <div class="stat-value" id="statShowing">0</div>
           <div class="stat-label">Exibindo</div>
+        </div>
+      </div>
+
+      <!-- Análise Detalhada -->
+      <div class="analysis-section">
+        <h3 class="analysis-title"><i class="fas fa-chart-line"></i> Análise Estatística</h3>
+        <div class="analysis-grid">
+          <div class="analysis-card">
+            <div class="analysis-label">Média Geral</div>
+            <div class="analysis-value" id="avgTotal">0.00</div>
+            <div class="analysis-sub">pontos</div>
+          </div>
+          <div class="analysis-card">
+            <div class="analysis-label">Nota Máxima</div>
+            <div class="analysis-value" id="maxTotal">0.00</div>
+            <div class="analysis-sub">pontos</div>
+          </div>
+          <div class="analysis-card">
+            <div class="analysis-label">Nota Mínima</div>
+            <div class="analysis-value" id="minTotal">0.00</div>
+            <div class="analysis-sub">pontos</div>
+          </div>
+          <div class="analysis-card">
+            <div class="analysis-label">Média P1</div>
+            <div class="analysis-value" id="avgP1">0.00</div>
+            <div class="analysis-sub">pontos</div>
+          </div>
+          <div class="analysis-card">
+            <div class="analysis-label">Média P2</div>
+            <div class="analysis-value" id="avgP2">0.00</div>
+            <div class="analysis-sub">pontos</div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="border: none; border-top: 1px solid var(--border-color); margin: 1.5rem 0;">
+
+      <!-- Gráficos e Top 10 -->
+      <div class="charts-section">
+        <div class="charts-grid">
+          <!-- Top 10 Candidatos -->
+          <div class="chart-card">
+            <h4 class="chart-title"><i class="fas fa-trophy" style="color: var(--danger);"></i> Top 10 Candidatos</h4>
+            <div class="table-responsive">
+              <table class="chart-table">
+                <thead>
+                  <tr>
+                    <th>Posição</th>
+                    <th>Candidato</th>
+                    <th>Nota</th>
+                  </tr>
+                </thead>
+                <tbody id="top10Table"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Distribuição de Notas -->
+          <div class="chart-card">
+            <h4 class="chart-title"><i class="fas fa-chart-bar" style="color: var(--primary);"></i> Distribuição de Notas</h4>
+            <canvas id="rangesChart"></canvas>
+          </div>
         </div>
       </div>
 
@@ -1036,6 +1213,138 @@
       document.getElementById('statApproved').textContent = totalApproved;
       document.getElementById('statRejected').textContent = totalRejected;
       document.getElementById('statShowing').textContent = filtered.length;
+
+      // Detailed analysis - use filtered candidates for charts
+      const analysisCandidates = filtered.length > 0 ? filtered : candidates;
+      const allScores = analysisCandidates.map(c => c.total);
+      const p1Scores = analysisCandidates.map(c => c.p1score);
+      const p2Scores = analysisCandidates.map(c => c.p2score);
+
+      // Calculate averages
+      const avgTotal = allScores.reduce((a, b) => a + b, 0) / allScores.length;
+      const maxTotal = Math.max(...allScores);
+      const minTotal = Math.min(...allScores);
+      const avgP1 = p1Scores.reduce((a, b) => a + b, 0) / p1Scores.length;
+      const avgP2 = p2Scores.reduce((a, b) => a + b, 0) / p2Scores.length;
+
+      // Update DOM
+      document.getElementById('avgTotal').textContent = avgTotal.toFixed(2);
+      document.getElementById('maxTotal').textContent = maxTotal.toFixed(2);
+      document.getElementById('minTotal').textContent = minTotal.toFixed(2);
+      document.getElementById('avgP1').textContent = avgP1.toFixed(2);
+      document.getElementById('avgP2').textContent = avgP2.toFixed(2);
+
+      // Update charts and top 10 with filtered candidates
+      updateTop10Table(analysisCandidates);
+      updateDistributionChart(analysisCandidates);
+    }
+
+    function updateTop10Table(candidatesList = candidates) {
+      const top10Table = document.getElementById('top10Table');
+      if (!top10Table) return;
+
+      const top10 = [...candidatesList].sort((a, b) => b.total - a.total).slice(0, 10);
+
+      top10Table.innerHTML = top10.map((c, i) => {
+        const badgeClass = i === 0 ? 'badge-gold' : i === 1 ? 'badge-silver' : i === 2 ? 'badge-bronze' : 'badge-other';
+        const name = c.name.length > 18 ? c.name.substring(0, 18) + '...' : c.name;
+        return `<tr>
+          <td><span class="badge ${badgeClass}">${i + 1}º</span></td>
+          <td>${name}</td>
+          <td><strong>${c.total.toFixed(2)}</strong></td>
+        </tr>`;
+      }).join('');
+    }
+
+    function updateDistributionChart(candidatesList = candidates) {
+      const ctx = document.getElementById('rangesChart');
+      if (!ctx) return;
+
+      // Destroy existing chart
+      const existingChart = Chart.getChart(ctx);
+      if (existingChart) existingChart.destroy();
+
+      // Define ranges (adapted for total scores up to 200)
+      const ranges = {
+        '100-120': 0,
+        '121-130': 0,
+        '131-140': 0,
+        '141-150': 0,
+        '151-160': 0,
+        '161-170': 0
+      };
+
+      candidatesList.forEach(c => {
+        const score = c.total;
+        if (score <= 120) ranges['100-120']++;
+        else if (score <= 130) ranges['121-130']++;
+        else if (score <= 140) ranges['131-140']++;
+        else if (score <= 150) ranges['141-150']++;
+        else if (score <= 160) ranges['151-160']++;
+        else ranges['161-170']++;
+      });
+
+      const total = candidatesList.length;
+      const data = Object.entries(ranges).map(([range, count]) => ((count / total) * 100).toFixed(1));
+      const counts = Object.values(ranges);
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: Object.keys(ranges),
+          datasets: [{
+            label: 'Percentual',
+            data: data,
+            backgroundColor: [
+              'rgba(239, 68, 68, 0.7)',
+              'rgba(245, 158, 11, 0.7)',
+              'rgba(234, 179, 8, 0.7)',
+              'rgba(34, 197, 94, 0.7)',
+              'rgba(59, 130, 246, 0.7)',
+              'rgba(99, 102, 241, 0.7)'
+            ],
+            borderColor: [
+              'rgba(239, 68, 68, 1)',
+              'rgba(245, 158, 11, 1)',
+              'rgba(234, 179, 8, 1)',
+              'rgba(34, 197, 94, 1)',
+              'rgba(59, 130, 246, 1)',
+              'rgba(99, 102, 241, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            datalabels: {
+              anchor: 'end',
+              align: 'top',
+              color: '#1e293b',
+              font: {
+                weight: 'bold',
+                size: 10
+              },
+              formatter: (value, context) => {
+                const count = counts[context.dataIndex];
+                return `${value}% (${count})`;
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: (context) => {
+                  const count = counts[context.dataIndex];
+                  return `${context.raw}% - ${count} candidatos`;
+                }
+              }
+            }
+          },
+          scales: {
+            y: { beginAtZero: true, max: 100 }
+          }
+        }
+      });
     }
 
     // ===================== INIT =====================
