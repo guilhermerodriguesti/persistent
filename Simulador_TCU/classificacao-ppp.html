@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classificação PPP - Heteroidentificação | TCU 2025</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #10b981;
+      --accent: #f59e0b;
+      --danger: #ef4444;
+      --background: #0f172a;
+      --card-bg: #1e293b;
+      --glass-bg: rgba(30, 41, 59, 0.8);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --border-color: rgba(148, 163, 184, 0.1);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: radial-gradient(circle at top right, #1e1b4b, #0f172a);
+      color: var(--text-primary);
+      min-height: 100vh;
+    }
+
+    h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+
+    .bg-shape {
+      position: fixed; z-index: 0; filter: blur(100px);
+      border-radius: 50%; opacity: 0.3; pointer-events: none;
+    }
+    .shape-1 { width: 500px; height: 500px; background: var(--primary); top: -150px; right: -150px; }
+    .shape-2 { width: 400px; height: 400px; background: #9333ea; bottom: -100px; left: -100px; }
+
+    .app-container { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.2rem 2rem;
+    }
+    .header-inner {
+      max-width: 1400px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    }
+    .header h1 { font-size: 1.4rem; font-weight: 700; }
+    .header h1 i { color: var(--accent); margin-right: 8px; }
+    .header-back {
+      color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;
+      display: flex; align-items: center; gap: 6px; transition: color 0.2s;
+    }
+    .header-back:hover { color: var(--primary); }
+
+    .main { max-width: 1400px; margin: 0 auto; padding: 2rem; flex: 1; width: 100%; }
+
+    /* Stats */
+    .stats-row {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--card-bg); border: 1px solid var(--border-color);
+      border-radius: 12px; padding: 1.2rem 1.4rem; text-align: center;
+    }
+    .stat-card .stat-value { font-size: 2rem; font-weight: 800; font-family: 'Outfit', sans-serif; }
+    .stat-card .stat-label { font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px; }
+    .stat-card.green .stat-value { color: var(--secondary); }
+    .stat-card.red .stat-value { color: var(--danger); }
+    .stat-card.blue .stat-value { color: var(--primary); }
+    .stat-card.yellow .stat-value { color: var(--accent); }
+
+    /* Filters */
+    .filters {
+      display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 1.5rem; align-items: center;
+    }
+    .filter-group { display: flex; flex-direction: column; gap: 4px; }
+    .filter-group label { font-size: 0.75rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .filter-group select, .filter-group input {
+      background: var(--card-bg); color: var(--text-primary);
+      border: 1px solid var(--border-color); border-radius: 8px;
+      padding: 10px 14px; font-size: 0.9rem; font-family: inherit;
+      min-width: 200px; outline: none; transition: border-color 0.2s;
+    }
+    .filter-group select:focus, .filter-group input:focus { border-color: var(--primary); }
+    .filter-group input::placeholder { color: var(--text-secondary); }
+
+    .filter-pills { display: flex; gap: 8px; flex-wrap: wrap; align-items: flex-end; }
+    .pill {
+      padding: 10px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 600;
+      cursor: pointer; border: 1px solid var(--border-color); background: var(--card-bg);
+      color: var(--text-secondary); transition: all 0.2s; user-select: none;
+    }
+    .pill:hover { border-color: var(--primary); color: var(--text-primary); }
+    .pill.active { background: var(--primary); border-color: var(--primary); color: #fff; }
+    .pill.active.green-pill { background: var(--secondary); border-color: var(--secondary); }
+    .pill.active.red-pill { background: var(--danger); border-color: var(--danger); }
+
+    /* Table */
+    .table-wrapper {
+      background: var(--card-bg); border: 1px solid var(--border-color);
+      border-radius: 12px; overflow: hidden;
+    }
+    .table-scroll { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    thead th {
+      background: rgba(99, 102, 241, 0.15); color: var(--primary);
+      padding: 14px 16px; text-align: left; font-weight: 700; font-size: 0.78rem;
+      text-transform: uppercase; letter-spacing: 0.5px; white-space: nowrap;
+      cursor: pointer; user-select: none; position: sticky; top: 0;
+    }
+    thead th:hover { background: rgba(99, 102, 241, 0.25); }
+    thead th .sort-icon { margin-left: 4px; font-size: 0.7rem; opacity: 0.5; }
+    thead th.sorted .sort-icon { opacity: 1; color: var(--accent); }
+    tbody tr { border-bottom: 1px solid var(--border-color); transition: background 0.15s; }
+    tbody tr:hover { background: rgba(99, 102, 241, 0.08); }
+    tbody td { padding: 12px 16px; white-space: nowrap; }
+    .rank-cell { font-weight: 800; color: var(--accent); font-family: 'Outfit', sans-serif; text-align: center; }
+    .name-cell { white-space: normal; min-width: 250px; font-weight: 500; }
+    .score-cell { text-align: center; font-family: 'Outfit', sans-serif; font-weight: 600; }
+    .total-cell { text-align: center; font-family: 'Outfit', sans-serif; font-weight: 800; font-size: 1rem; color: var(--accent); }
+
+    .badge {
+      display: inline-block; padding: 4px 10px; border-radius: 6px;
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3px;
+    }
+    .badge-approved { background: rgba(16, 185, 129, 0.15); color: var(--secondary); }
+    .badge-rejected { background: rgba(239, 68, 68, 0.15); color: var(--danger); }
+    .badge-convoked { background: rgba(99, 102, 241, 0.15); color: var(--primary); }
+    .badge-not-convoked { background: rgba(148, 163, 184, 0.1); color: var(--text-secondary); }
+
+    .table-footer {
+      padding: 14px 20px; border-top: 1px solid var(--border-color);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+      font-size: 0.85rem; color: var(--text-secondary);
+    }
+
+    /* Highlight row */
+    tbody tr.highlight { background: rgba(245, 158, 11, 0.08); }
+    tbody tr.highlight td { color: var(--accent); }
+    tbody tr.highlight .name-cell { color: var(--text-primary); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header { padding: 1rem; }
+      .header h1 { font-size: 1.1rem; }
+      .main { padding: 1rem; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .filters { flex-direction: column; }
+      .filter-group select, .filter-group input { min-width: 100%; }
+      .filter-pills { width: 100%; }
+      .pill { flex: 1; text-align: center; }
+    }
+
+    /* Top 3 podium */
+    .rank-1 { color: #fbbf24 !important; }
+    .rank-2 { color: #d1d5db !important; }
+    .rank-3 { color: #cd7f32 !important; }
+  </style>
+</head>
+
+<body>
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <div class="app-container">
+    <div class="header">
+      <div class="header-inner">
+        <h1><i class="fas fa-ranking-star"></i> Classificação PPP – Heteroidentificação</h1>
+        <a href="index.html" class="header-back"><i class="fas fa-arrow-left"></i> Voltar ao Hub</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="stats-row">
+        <div class="stat-card blue">
+          <div class="stat-value" id="statTotal">0</div>
+          <div class="stat-label">Total Candidatos</div>
+        </div>
+        <div class="stat-card green">
+          <div class="stat-value" id="statApproved">0</div>
+          <div class="stat-label">Aprovados Heteroidentificação</div>
+        </div>
+        <div class="stat-card red">
+          <div class="stat-value" id="statRejected">0</div>
+          <div class="stat-label">Não Aprovados</div>
+        </div>
+        <div class="stat-card yellow">
+          <div class="stat-value" id="statShowing">0</div>
+          <div class="stat-label">Exibindo</div>
+        </div>
+      </div>
+
+      <div class="filters">
+        <div class="filter-group">
+          <label>Buscar candidato</label>
+          <input type="text" id="searchInput" placeholder="Nome ou inscrição..." oninput="applyFilters()">
+        </div>
+        <div class="filter-group">
+          <label>Resultado Heteroidentificação</label>
+          <div class="filter-pills">
+            <div class="pill active" data-filter="all" onclick="setFilter(this)">Todos</div>
+            <div class="pill green-pill" data-filter="approved" onclick="setFilter(this)">Aprovados</div>
+            <div class="pill red-pill" data-filter="rejected" onclick="setFilter(this)">Não Aprovados</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th onclick="sortTable('rank')">Class. <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+                <th onclick="sortTable('inscription')">Inscrição <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+                <th onclick="sortTable('name')">Nome <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+                <th onclick="sortTable('p1score')">P1 Nota <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+                <th onclick="sortTable('p1correct')">P1 Acertos <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+                <th onclick="sortTable('p2score')">P2 Nota <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+                <th onclick="sortTable('p2correct')">P2 Acertos <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+                <th onclick="sortTable('total')">Total <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+                <th onclick="sortTable('convocacao')">Convocação <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+                <th onclick="sortTable('resultado')">Resultado <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+        <div class="table-footer">
+          <span id="footerInfo">Carregando...</span>
+          <span id="footerAvg"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ===================== RAW DATA =====================
+    const rawNotas = `10003651, Adriana Mara de Almeida de Souza, 58.00, 72, 79.00, 84, 137.00
+10004421, Aecio Fernandes Galiza Magalhaes, 52.00, 76, 74.00, 87, 126.00
+10001880, Afonso Almeida da Silva, 63.00, 77, 79.00, 86, 142.00
+10002229, Aisha Negreiros da Costa Pedro, 60.00, 75, 62.00, 67, 122.00
+10010081, Alan Cliff Souza Silva, 69.00, 81, 72.00, 85, 141.00
+10006161, Alex Chaves Rocha Lima, 62.00, 78, 83.00, 89, 145.00
+10007387, Alexandre Ferreira Saraiva, 81.00, 90, 74.00, 80, 155.00
+10015803, Alexandre Silva Sousa, 56.00, 77, 75.00, 87, 131.00
+10013440, Alexsander Correa de Oliveira, 63.00, 78, 66.00, 75, 129.00
+10007880, Alexssander Saraiva Martins, 60.00, 76, 58.00, 76, 118.00
+10012036, Allan Almeida de Oliveira, 63.00, 78, 67.00, 79, 130.00
+10007094, Allyson Caetano da Silva, 66.00, 79, 70.00, 81, 136.00
+10000622, Alyson Sousa da Silva, 58.00, 79, 76.00, 88, 134.00
+10005865, Amos de Souza Domiense, 61.00, 71, 79.00, 84, 140.00
+10012351, Ana Claudia Cardoso de Souza, 50.00, 66, 71.00, 79, 121.00
+10003836, Anderson Alves Pereira, 56.00, 72, 74.00, 83, 130.00
+10001778, Anderson da Silva Vieira, 71.00, 81, 71.00, 81, 142.00
+10012574, Andre Godinho Dores, 71.00, 84, 54.00, 75, 125.00
+10001287, Angelo Jose Morais da Silva, 68.00, 82, 56.00, 74, 124.00
+10000754, Antonio Clarindo Oliveira de Souza, 63.00, 77, 64.00, 78, 127.00
+10001845, Antonio Erivaldo Santos Araujo, 60.00, 80, 74.00, 87, 134.00
+10008474, Antonio Francisco Osorio Junior, 47.00, 70, 71.00, 84, 118.00
+10002886, Antonio Guilherme Rodrigues Araujo, 50.00, 75, 78.00, 89, 128.00
+10015858, Antonio Luis Sombra de Medeiros, 72.00, 86, 90.00, 94, 162.00
+10001540, Arquimedes Aquides da Rocha Rodrigues Ferreira, 57.00, 66, 62.00, 71, 119.00
+10008359, Artur Vieira Silva, 63.00, 77, 81.00, 87, 144.00
+10015245, Athos Bruno dos Santos Lins, 51.00, 69, 72.00, 84, 123.00
+10005223, Augusto Cesar Freitas da Silva, 62.00, 71, 65.00, 74, 127.00
+10008559, Benefrancis do Nascimento, 58.00, 79, 77.00, 88, 135.00
+10000717, Breno Rodrigues Cardoso de Moura, 62.00, 81, 60.00, 80, 122.00
+10011017, Bruno Moura do Nascimento, 55.00, 69, 70.00, 80, 125.00
+10010720, Bruno Roberto Santos, 69.00, 79, 74.00, 83, 143.00
+10002011, Caio Fabio Ferreira de Oliveira, 46.00, 73, 74.00, 87, 120.00
+10006361, Carlos Eduardo Alves Cavalcante, 52.00, 59, 68.00, 70, 120.00
+10002177, Cassia Almeida Coelho, 50.00, 69, 69.00, 79, 119.00
+10002444, Cesar Augusto de Almeida Viana, 66.00, 76, 70.00, 79, 136.00
+10012145, Cesar de Sousa Arruda, 60.00, 80, 64.00, 82, 124.00
+10008069, Charlys Emanuel da Silva Rezende, 58.00, 73, 68.00, 75, 126.00
+10007945, Ciro Jonatas de Souza Oliveira, 74.00, 87, 76.00, 88, 150.00
+10000890, Cleber do Sacramento Pinto, 56.00, 69, 72.00, 77, 128.00
+10009457, Cleverson Angirley Silva Ferreira, 51.00, 69, 82.00, 87, 133.00
+10006165, Daniel Augusto Nunes da Silva, 51.00, 58, 67.00, 76, 118.00
+10005303, Daniel da Silva Cabral, 67.00, 82, 54.00, 73, 121.00
+10012465, Daniel de Sena Guerra, 86.00, 93, 70.00, 78, 156.00
+10013948, Daniel Gustavo Goncalves Caetano, 57.00, 67, 68.00, 72, 125.00
+10001679, Danilo Marra Rabelo, 57.00, 76, 61.00, 80, 118.00
+10000158, Denis Adonis de Novaes Rego, 64.00, 81, 55.00, 76, 119.00
+10002970, Diego Silva Vieira dos Santos, 56.00, 74, 72.00, 83, 128.00
+10013749, Diogo Alves Araujo, 67.00, 82, 64.00, 79, 131.00
+10013517, Douglas Domingues Ribeiro, 62.00, 64, 68.00, 83, 130.00
+10004854, Edmilson Veloso Borges, 44.00, 72, 80.00, 90, 124.00
+10013589, Edson Maciel Marques, 56.00, 74, 70.00, 85, 126.00
+10011104, Edson Santos de Jesus, 60.00, 74, 78.00, 85, 138.00
+10004142, Eduardo Batista dos Santos Cordeiro, 59.00, 78, 62.00, 80, 121.00
+10015919, Eduardo dos Santos Caetano, 58.00, 73, 62.00, 73, 120.00
+10006011, Eduardo Jacome Rodrigues, 60.00, 80, 82.00, 91, 142.00
+10011294, Edvan Oliveira Silva da Luz, 68.00, 84, 82.00, 91, 150.00
+10010102, Elizeu Santos de Andrade, 60.00, 72, 71.00, 76, 131.00
+10006661, Erico Correia de Alcantara, 62.00, 81, 72.00, 86, 134.00
+10009000, Eugenio Rocha da Silva Junior, 44.00, 65, 78.00, 86, 122.00
+10004680, Eusyar Alves de Carvalho, 79.00, 89, 84.00, 91, 163.00
+10008294, Ezequiel Silva Gomes, 51.00, 65, 71.00, 76, 122.00
+10001474, Fabio Fernando Ferreira Silva, 57.00, 73, 61.00, 72, 118.00
+10007231, Fabio Rodrigues Ferreira, 66.00, 83, 60.00, 80, 126.00
+10004038, Fabricio de Freitas Cardim, 78.00, 86, 83.00, 89, 161.00
+10007670, Fabricio Souza da Silva, 56.00, 72, 62.00, 76, 118.00
+10000657, Felipe Barros Silva, 61.00, 70, 78.00, 80, 139.00
+10010479, Felipe de Sousa Castro, 52.00, 66, 68.00, 77, 120.00
+10007693, Fernando Antonio Alves, 44.00, 72, 74.00, 87, 118.00
+10009938, Fernando Antonio de Oliveira, 70.00, 85, 70.00, 84, 140.00
+10011033, Fernando da Silva Costa, 60.00, 76, 70.00, 84, 130.00
+10003675, Fernando Itallo Lucena Ferreira, 63.00, 78, 87.00, 92, 150.00
+10002299, Fernando Ivan de Souza Lucas, 66.00, 78, 67.00, 78, 133.00
+10002557, Fernando Luis Teles Carneiro Monteiro, 85.00, 89, 80.00, 83, 165.00
+10013502, Filipe de Bianchi Andrade, 66.00, 77, 73.00, 83, 139.00
+10002175, Gabriel Brito dos Santos, 62.00, 79, 80.00, 88, 142.00
+10001515, Gabriel de Lemos Silva, 52.00, 69, 76.00, 88, 128.00
+10005493, Gabriel Dilly Vieira Furtuoso, 64.00, 82, 70.00, 83, 134.00
+10012075, Gabriel Fagundes da Fonseca, 68.00, 81, 89.00, 93, 157.00
+10000804, Gabriel Firmo Soares de Queiroz, 62.00, 81, 66.00, 83, 128.00
+10006979, Gabriel Vieira Neves, 62.00, 81, 76.00, 88, 138.00
+10010422, Gabriela de Oliveira Henriques, 64.00, 81, 76.00, 85, 140.00
+10009042, Gedalias Hugo de Oliveira Valentim, 67.00, 79, 73.00, 80, 140.00
+10009062, Giovanni Campos, 64.00, 82, 56.00, 78, 120.00
+10013450, Glauco Costa de Oliveira, 60.00, 78, 62.00, 78, 122.00
+10003358, Gleydson Cristiano de Azevedo, 71.00, 82, 74.00, 82, 145.00
+10010386, Gleyton de Castro Lima, 65.00, 70, 74.00, 79, 139.00
+10009675, Goudim Alvarenga Carneiro, 59.00, 78, 60.00, 80, 119.00
+10008667, Gustavo Brito de Almeida Mendonca, 60.00, 80, 76.00, 88, 136.00
+10001357, Gustavo Georranys da Silva Lins, 50.00, 74, 81.00, 90, 131.00
+10001141, Gustavo Henrique Coimbra Sobreira, 64.00, 80, 80.00, 88, 144.00
+10013954, Gustavo Moreira Pereira, 56.00, 78, 62.00, 81, 118.00
+10000353, Gustavo Oliveira Rocha, 40.00, 63, 78.00, 85, 118.00
+10000798, Gustavo Stenio Silva Sousa, 63.00, 79, 65.00, 78, 128.00
+10005608, Haroldo Assumpcao Neto, 54.00, 70, 70.00, 78, 124.00
+10009409, Heitor Jose dos Santos Barros, 63.00, 78, 68.00, 84, 131.00
+10015428, Helly Washington Guimaraes Mendes Barbosa, 55.00, 71, 67.00, 77, 122.00
+10006900, Hiago Gomes Pereira, 73.00, 85, 54.00, 73, 127.00
+10014998, Higo Felipe Silva Pires, 70.00, 78, 70.00, 76, 140.00
+10010667, Hugo da Silva da Silva, 58.00, 74, 66.00, 80, 124.00
+10007590, Hugo Leonardo Penha de Sousa, 66.00, 83, 78.00, 89, 144.00
+10010470, Igor de Oliveira Farias, 56.00, 75, 72.00, 83, 128.00
+10009547, Isaac Willyan Paiva Silva, 66.00, 81, 64.00, 82, 130.00
+10012089, Israel Alexandre da Silva, 53.00, 63, 76.00, 82, 129.00
+10003163, Italo Batista Queiroz, 66.00, 82, 84.00, 91, 150.00
+10002104, Izabel Leandra de Assis Maia, 76.00, 88, 60.00, 77, 136.00
+10006484, Jailson Duraes Cordeiro, 49.00, 70, 70.00, 81, 119.00
+10007595, Jailson Teixeira de Sousa, 50.00, 67, 68.00, 75, 118.00
+10002845, Jaqueline da Silva Leite, 61.00, 78, 64.00, 80, 125.00
+10010571, Jefferson Borges da Silva Moreira, 54.00, 71, 74.00, 83, 128.00
+10012762, Jhonny Fernandes de Jesus, 51.00, 71, 85.00, 92, 136.00
+10009956, Joao Paulo Rodrigues de Lima, 64.00, 82, 76.00, 88, 140.00
+10001344, Joao Renes Aparecido Barbosa Barreto, 54.00, 75, 80.00, 89, 134.00
+10000096, Joao Victor Barreto Carvalho, 56.00, 78, 70.00, 85, 126.00
+10011084, Joao Vitor da Silva Neto, 57.00, 72, 62.00, 74, 119.00
+10006574, Joedes Cardoso da Silva, 60.00, 77, 69.00, 79, 129.00
+10000592, Johnatan Lohan Borges de Souza Tavares, 51.00, 70, 72.00, 83, 123.00
+10002481, Jonatas da Silva Teixeira, 62.00, 80, 72.00, 86, 134.00
+10005790, Jonathan Domingos de Lima, 66.00, 83, 76.00, 88, 142.00
+10001891, Jonathan Felipe de Oliveira Santos, 62.00, 77, 79.00, 89, 141.00
+10000549, Kleryston Roberto Santos Sobrinho, 72.00, 85, 63.00, 80, 135.00
+10013850, Lauro Manoel Lima da Gama, 71.00, 80, 72.00, 82, 143.00
+10013429, Leandro Barbato Maldonado de Oliveira, 66.00, 77, 56.00, 68, 122.00
+10000228, Leandro Costa de Oliveira, 62.00, 79, 80.00, 86, 142.00
+10002426, Leandro dos Santos Matos, 50.00, 64, 72.00, 79, 122.00
+10011929, Leandro Marques da Silva, 54.00, 77, 66.00, 83, 120.00
+10003633, Leandro Teixeira de Andrade Filho, 65.00, 82, 82.00, 91, 147.00
+10000257, Leonardo Sampaio Barros, 74.00, 85, 73.00, 83, 147.00
+10011193, Livia Manuela Oliveira da Silva, 56.00, 73, 66.00, 73, 122.00
+10007900, Loyanne Moreira dos Santos, 66.00, 78, 76.00, 81, 142.00
+10014394, Luan Talles da Silva Araujo, 73.00, 86, 60.00, 78, 133.00
+10006925, Lucas Alves Rodrigues de Oliveira, 67.00, 80, 78.00, 87, 145.00
+10012217, Lucas Barcellos Oliveira, 62.00, 76, 65.00, 79, 127.00
+10011089, Lucas Guedes Pires, 70.00, 85, 76.00, 88, 146.00
+10000439, Lucas Pinto dos Santos, 70.00, 83, 74.00, 86, 144.00
+10012964, Lucas Torreao Machado, 63.00, 74, 83.00, 88, 146.00
+10008632, Luciano Pimentel Pinheiro, 73.00, 81, 70.00, 76, 143.00
+10012142, Luciano Vieira Ribeiro Ferreira, 72.00, 85, 71.00, 81, 143.00
+10009008, Luigi Minardi Ferreira Maia, 63.00, 81, 68.00, 84, 131.00
+10014305, Luis Guilherme Gomes de Sa, 66.00, 76, 71.00, 80, 137.00
+10006952, Luiz de Lima Souza, 69.00, 80, 77.00, 84, 146.00
+10002316, Luiz Eduardo de Oliveira, 52.00, 75, 80.00, 86, 132.00
+10002716, Luiza Mascarenhas Anderson, 66.00, 81, 55.00, 65, 121.00
+10006690, Luthiery Costa Cavalcante, 61.00, 74, 77.00, 83, 138.00
+10001973, Marcelo Alves Cunha, 70.00, 85, 82.00, 89, 152.00
+10003113, Marcia Soares Marques, 64.00, 75, 71.00, 79, 135.00
+10008711, Marco Antonio Rodrigues Loureiro Kuroiva, 72.00, 86, 74.00, 87, 146.00
+10001194, Marcondes Pereira de Melo, 47.00, 67, 75.00, 81, 122.00
+10006318, Marcos Andrez Santos da Silva, 53.00, 67, 67.00, 70, 120.00
+10009874, Marcos Martins Damaceno, 64.00, 82, 70.00, 85, 134.00
+10013206, Marcos Matheus Silva Sousa, 67.00, 82, 66.00, 81, 133.00
+10008456, Marcos Paulo Barros Barreto, 70.00, 85, 91.00, 95, 161.00
+10001207, Marcos Roberto Nascimento Cerqueira, 64.00, 82, 64.00, 82, 128.00
+10001464, Marcos Rogel Pacheco dos Reis, 62.00, 75, 80.00, 85, 142.00
+10002839, Marcos Venicio Goncalves Sales, 71.00, 85, 76.00, 88, 147.00
+10002216, Maria Eugenia Carvalho Matos dos Santos, 74.00, 87, 56.00, 78, 130.00
+10010420, Mateus Medeiros da Silva Tavares de Melo, 64.00, 82, 82.00, 91, 146.00
+10014450, Matheus Jarel Cataluna Bento Ramos, 60.00, 78, 69.00, 84, 129.00
+10010772, Matheus Mendes dos Santos, 65.00, 69, 72.00, 81, 137.00
+10000356, Matheus Ribeiro Gomes Herculano, 52.00, 72, 78.00, 87, 130.00
+10014602, Matheus Santos Coelho, 62.00, 81, 66.00, 82, 128.00
+10000206, Mauricelio de Sousa Vaz, 64.00, 80, 63.00, 78, 127.00
+10002361, Mauricio Moreira de Almeida, 48.00, 74, 78.00, 89, 126.00
+10007664, Mendel Nascimento de Oliveira, 76.00, 83, 77.00, 87, 153.00
+10012886, Michel Silva Santos, 70.00, 85, 70.00, 85, 140.00
+10015439, Miguel Hilario Soares Guedes, 46.00, 72, 72.00, 86, 118.00
+10013741, Natalia Oliveira Borges, 55.00, 76, 64.00, 76, 119.00
+10002273, Natan Mario Souza Nery de Lima, 71.00, 85, 80.00, 90, 151.00
+10009444, Nathan de Souza Oliveira, 59.00, 65, 70.00, 80, 129.00
+10011320, Nayara Menezes de Oliveira, 59.00, 77, 59.00, 68, 118.00
+10000618, Nelio Mesquita de Lima, 52.00, 73, 66.00, 80, 118.00
+10000127, Osvaldo Queta Fernando, 49.00, 70, 70.00, 85, 119.00
+10007734, Otalino Geraldino Soares Junior, 58.00, 79, 66.00, 83, 124.00
+10014733, Otavio Gomes Lumba de Oliveira, 53.00, 67, 81.00, 83, 134.00
+10014722, Paulo Gabriel Soares Pereira, 72.00, 86, 56.00, 75, 128.00
+10002992, Paulo Giovanny Rodrigues Souza, 61.00, 75, 82.00, 88, 143.00
+10007131, Paulo Matheus Nicolau Silva, 61.00, 77, 64.00, 76, 125.00
+10002881, Pedro Antonio de Almeida Adelino, 63.00, 69, 68.00, 71, 131.00
+10010658, Pedro Gomes Teixeira, 71.00, 78, 69.00, 75, 140.00
+10004853, Pedro Henrique da Silva Lima, 74.00, 85, 62.00, 78, 136.00
+10009340, Pedro Hortencio Moreira Rosa, 70.00, 80, 75.00, 85, 145.00
+10000961, Pedro Matheus Filadelfo dos Santos, 70.00, 82, 66.00, 81, 136.00
+10006019, Pedro Paulo Leal de Albuquerque, 56.00, 78, 76.00, 88, 132.00
+10000183, Pedro Victor Jovenal Fernandes da Silva, 66.00, 80, 67.00, 79, 133.00
+10000358, Rafael Alves da Silva, 74.00, 87, 72.00, 86, 146.00
+10005445, Rafael da Silva Rocha, 61.00, 75, 77.00, 87, 138.00
+10000428, Rafael Leopoldo Alves de Souza, 54.00, 77, 71.00, 85, 125.00
+10012174, Rafhael Eduardo Alves de Souza, 59.00, 77, 74.00, 83, 133.00
+10003712, Rajiv Geeverghese, 82.00, 91, 84.00, 92, 166.00
+10011966, Rayssa Pereira da Silva, 59.00, 69, 71.00, 76, 130.00
+10004096, Renan Barbosa de Ataide, 53.00, 76, 74.00, 87, 127.00
+10011856, Renato de Oliveira Silva, 67.00, 81, 66.00, 74, 133.00
+10010828, Ricardo Batista Rodrigues, 62.00, 81, 74.00, 87, 136.00
+10000762, Rigo Kaluwa Munkamba, 61.00, 77, 69.00, 82, 130.00
+10004546, Roberto Depollo Junior, 60.00, 80, 62.00, 81, 122.00
+10009487, Roberto Miranda Torga, 59.00, 74, 64.00, 76, 123.00
+10003228, Rodrigo Cartaxo Marques Duarte, 80.00, 90, 87.00, 93, 167.00
+10004549, Rodrigo de Medeiros Ramos, 64.00, 82, 74.00, 87, 138.00
+10007309, Rodrigo Gemaque de Almeida, 49.00, 71, 69.00, 80, 118.00
+10003303, Rodrigo Gomes Rodrigues, 63.00, 80, 86.00, 90, 149.00
+10002649, Rodrigo Silva Andrade, 60.00, 78, 74.00, 86, 134.00
+10004812, Rogerio Abreu dos Santos, 74.00, 87, 86.00, 93, 160.00
+10003151, Ronaldo Magalhaes Gomes, 66.00, 83, 79.00, 89, 145.00
+10000557, Ruan Donato Reis Costa, 61.00, 80, 78.00, 89, 139.00
+10007790, Rubens de Oliveira Souza, 56.00, 70, 65.00, 69, 121.00
+10000291, Samuel Silva Souza, 61.00, 76, 63.00, 79, 124.00
+10014883, Samuel Valerio Ozorio Parente Dutra, 59.00, 72, 70.00, 78, 129.00
+10000563, Sara Santos Rezende, 62.00, 78, 60.00, 68, 122.00
+10006201, Silas Rosa de Sales, 60.00, 78, 62.00, 81, 122.00
+10003041, Silvio de Alvarenga Souza, 59.00, 77, 61.00, 77, 120.00
+10003976, Tarcila Baptista Germano de Andrade, 58.00, 76, 65.00, 79, 123.00
+10006707, Tatiana Santos Serafim, 49.00, 71, 81.00, 89, 130.00
+10014820, Tatiane Gomes Silva, 65.00, 81, 56.00, 71, 121.00
+10010889, Thalles Oliveira Barros de Aquino, 60.00, 80, 60.00, 80, 120.00
+10010385, Thayane de Souza Santos, 68.00, 84, 51.00, 70, 119.00
+10003245, Thiago Coelho Vieira, 59.00, 67, 73.00, 78, 132.00
+10006556, Thiago de Matos Batista, 62.00, 75, 57.00, 73, 119.00
+10005422, Thiago Guedes Paysan, 66.00, 74, 81.00, 87, 147.00
+10014702, Thiago Souza Nunes Rodrigues, 72.00, 86, 60.00, 80, 132.00
+10000148, Thiago Vasconcelos Braga, 59.00, 68, 65.00, 68, 124.00
+10000470, Thiago Williams Siqueira Ramos, 62.00, 78, 81.00, 87, 143.00
+10006400, Tiago Oliveira da Silva, 57.00, 71, 68.00, 80, 125.00
+10015861, Uilson Gabriel Lopes, 50.00, 70, 71.00, 83, 121.00
+10000122, Uracir Portugal dos Santos, 52.00, 76, 71.00, 85, 123.00
+10000260, Victor Alexandre Santos de Carvalho, 63.00, 77, 77.00, 86, 140.00
+10000755, Victor do Nascimento Souza, 67.00, 83, 86.00, 90, 153.00
+10004030, Victor Hugo Oliveira Silva, 71.00, 85, 49.00, 68, 120.00
+10011671, Vinicius dos Santos Lima, 52.00, 75, 69.00, 84, 121.00
+10010111, Vinicius Macedo de Sousa, 62.00, 71, 64.00, 73, 126.00
+10002214, Vinicius Rodrigues Souza, 65.00, 78, 66.00, 79, 131.00
+10009078, Vinicius Vieira Meneses, 70.00, 75, 75.00, 81, 145.00
+10002901, Virginia Martins de Oliveira Lima e Silva, 62.00, 78, 65.00, 81, 127.00
+10000039, Vitor Ricardo Francisco Gomes, 60.00, 73, 76.00, 77, 136.00
+10013848, Walter Aparecido Alves dos Santos, 70.00, 85, 52.00, 76, 122.00
+10004948, Warley Soares Ribeiro, 57.00, 77, 78.00, 88, 135.00
+10001008, Weberson Pereira da Silva, 71.00, 85, 64.00, 82, 135.00
+10002285, Welder Alonso de Oliveira, 42.00, 67, 76.00, 87, 118.00
+10013881, Wellington Santos Ferreira, 62.00, 78, 76.00, 87, 138.00
+10005953, Wesley de Melo Pereira Sena, 56.00, 77, 69.00, 80, 125.00
+10012994, Wilson Jose Siqueira, 60.00, 77, 62.00, 76, 122.00`;
+
+    const rawConvocacao = `10003651, Adriana Mara de Almeida de Souza
+10004421, Aecio Fernandes Galiza Magalhaes
+10001880, Afonso Almeida da Silva
+10002229, Aisha Negreiros da Costa Pedro
+10010081, Alan Cliff Souza Silva
+10006161, Alex Chaves Rocha Lima
+10007387, Alexandre Ferreira Saraiva
+10015803, Alexandre Silva Sousa
+10013440, Alexsander Correa de Oliveira
+10007880, Alexssander Saraiva Martins
+10012036, Allan Almeida de Oliveira
+10007094, Allyson Caetano da Silva
+10000622, Alyson Sousa da Silva
+10005865, Amos de Souza Domiense
+10012351, Ana Claudia Cardoso de Souza
+10003836, Anderson Alves Pereira
+10001778, Anderson da Silva Vieira
+10012574, Andre Godinho Dores
+10001287, Angelo Jose Morais da Silva
+10000754, Antonio Clarindo Oliveira de Souza
+10001845, Antonio Erivaldo Santos Araujo
+10008474, Antonio Francisco Osorio Junior
+10002886, Antonio Guilherme Rodrigues Araujo
+10015858, Antonio Luis Sombra de Medeiros
+10001540, Arquimedes Aquides da Rocha Rodrigues Ferreira
+10008359, Artur Vieira Silva
+10015245, Athos Bruno dos Santos Lins
+10005223, Augusto Cesar Freitas da Silva
+10008559, Benefrancis do Nascimento
+10000717, Breno Rodrigues Cardoso de Moura
+10011017, Bruno Moura do Nascimento
+10010720, Bruno Roberto Santos
+10002011, Caio Fabio Ferreira de Oliveira
+10006361, Carlos Eduardo Alves Cavalcante
+10002177, Cassia Almeida Coelho
+10002444, Cesar Augusto de Almeida Viana
+10012145, Cesar de Sousa Arruda
+10008069, Charlys Emanuel da Silva Rezende
+10007945, Ciro Jonatas de Souza Oliveira
+10000890, Cleber do Sacramento Pinto
+10009457, Cleverson Angirley Silva Ferreira
+10006165, Daniel Augusto Nunes da Silva
+10005303, Daniel da Silva Cabral
+10012465, Daniel de Sena Guerra
+10013948, Daniel Gustavo Goncalves Caetano
+10001679, Danilo Marra Rabelo
+10000158, Denis Adonis de Novaes Rego
+10002970, Diego Silva Vieira dos Santos
+10013749, Diogo Alves Araujo
+10013517, Douglas Domingues Ribeiro
+10004854, Edmilson Veloso Borges
+10013589, Edson Maciel Marques
+10011104, Edson Santos de Jesus
+10004142, Eduardo Batista dos Santos Cordeiro
+10015919, Eduardo dos Santos Caetano
+10006011, Eduardo Jacome Rodrigues
+10011294, Edvan Oliveira Silva da Luz
+10010102, Elizeu Santos de Andrade
+10006661, Erico Correia de Alcantara
+10009000, Eugenio Rocha da Silva Junior
+10004680, Eusyar Alves de Carvalho
+10008294, Ezequiel Silva Gomes
+10001474, Fabio Fernando Ferreira Silva
+10007231, Fabio Rodrigues Ferreira
+10004038, Fabricio de Freitas Cardim
+10007670, Fabricio Souza da Silva
+10000657, Felipe Barros Silva
+10010479, Felipe de Sousa Castro
+10007693, Fernando Antonio Alves
+10009938, Fernando Antonio de Oliveira
+10011033, Fernando da Silva Costa
+10003675, Fernando Itallo Lucena Ferreira
+10002299, Fernando Ivan de Souza Lucas
+10002557, Fernando Luis Teles Carneiro Monteiro
+10013502, Filipe de Bianchi Andrade
+10002175, Gabriel Brito dos Santos
+10001515, Gabriel de Lemos Silva
+10005493, Gabriel Dilly Vieira Furtuoso
+10012075, Gabriel Fagundes da Fonseca
+10000804, Gabriel Firmo Soares de Queiroz
+10006979, Gabriel Vieira Neves
+10010422, Gabriela de Oliveira Henriques
+10009042, Gedalias Hugo de Oliveira Valentim
+10009062, Giovanni Campos
+10013450, Glauco Costa de Oliveira
+10003358, Gleydson Cristiano de Azevedo
+10010386, Gleyton de Castro Lima
+10009675, Goudim Alvarenga Carneiro
+10008667, Gustavo Brito de Almeida Mendonca
+10001357, Gustavo Georranys da Silva Lins
+10001141, Gustavo Henrique Coimbra Sobreira
+10013954, Gustavo Moreira Pereira
+10000353, Gustavo Oliveira Rocha
+10000798, Gustavo Stenio Silva Sousa
+10005608, Haroldo Assumpcao Neto
+10009409, Heitor Jose dos Santos Barros
+10015428, Helly Washington Guimaraes Mendes Barbosa
+10006900, Hiago Gomes Pereira
+10014998, Higo Felipe Silva Pires
+10010667, Hugo da Silva da Silva
+10007590, Hugo Leonardo Penha de Sousa
+10010470, Igor de Oliveira Farias
+10009547, Isaac Willyan Paiva Silva
+10012089, Israel Alexandre da Silva
+10003163, Italo Batista Queiroz
+10002104, Izabel Leandra de Assis Maia
+10006484, Jailson Duraes Cordeiro
+10007595, Jailson Teixeira de Sousa
+10002845, Jaqueline da Silva Leite
+10010571, Jefferson Borges da Silva Moreira
+10012762, Jhonny Fernandes de Jesus
+10009956, Joao Paulo Rodrigues de Lima
+10001344, Joao Renes Aparecido Barbosa Barreto
+10000096, Joao Victor Barreto Carvalho
+10011084, Joao Vitor da Silva Neto
+10006574, Joedes Cardoso da Silva
+10000592, Johnatan Lohan Borges de Souza Tavares
+10002481, Jonatas da Silva Teixeira
+10005790, Jonathan Domingos de Lima
+10001891, Jonathan Felipe de Oliveira Santos
+10000549, Kleryston Roberto Santos Sobrinho
+10013850, Lauro Manoel Lima da Gama
+10013429, Leandro Barbato Maldonado de Oliveira
+10000228, Leandro Costa de Oliveira
+10002426, Leandro dos Santos Matos
+10011929, Leandro Marques da Silva
+10003633, Leandro Teixeira de Andrade Filho
+10000257, Leonardo Sampaio Barros
+10011193, Livia Manuela Oliveira da Silva
+10007900, Loyanne Moreira dos Santos
+10014394, Luan Talles da Silva Araujo
+10006925, Lucas Alves Rodrigues de Oliveira
+10012217, Lucas Barcellos Oliveira
+10011089, Lucas Guedes Pires
+10000439, Lucas Pinto dos Santos
+10012964, Lucas Torreao Machado
+10008632, Luciano Pimentel Pinheiro
+10012142, Luciano Vieira Ribeiro Ferreira
+10009008, Luigi Minardi Ferreira Maia
+10014305, Luis Guilherme Gomes de Sa
+10006952, Luiz de Lima Souza
+10002316, Luiz Eduardo de Oliveira
+10002716, Luiza Mascarenhas Anderson
+10006690, Luthiery Costa Cavalcante
+10001973, Marcelo Alves Cunha
+10003113, Marcia Soares Marques
+10008711, Marco Antonio Rodrigues Loureiro Kuroiva
+10001194, Marcondes Pereira de Melo
+10006318, Marcos Andrez Santos da Silva
+10009874, Marcos Martins Damaceno
+10013206, Marcos Matheus Silva Sousa
+10008456, Marcos Paulo Barros Barreto
+10001207, Marcos Roberto Nascimento Cerqueira
+10001464, Marcos Rogel Pacheco dos Reis
+10002839, Marcos Venicio Goncalves Sales
+10002216, Maria Eugenia Carvalho Matos dos Santos
+10010420, Mateus Medeiros da Silva Tavares de Melo
+10014450, Matheus Jarel Cataluna Bento Ramos
+10010772, Matheus Mendes dos Santos
+10000356, Matheus Ribeiro Gomes Herculano
+10014602, Matheus Santos Coelho
+10000206, Mauricelio de Sousa Vaz
+10002361, Mauricio Moreira de Almeida
+10007664, Mendel Nascimento de Oliveira
+10012886, Michel Silva Santos
+10015439, Miguel Hilario Soares Guedes
+10013741, Natalia Oliveira Borges
+10002273, Natan Mario Souza Nery de Lima
+10009444, Nathan de Souza Oliveira
+10011320, Nayara Menezes de Oliveira
+10000618, Nelio Mesquita de Lima
+10000127, Osvaldo Queta Fernando
+10007734, Otalino Geraldino Soares Junior
+10014733, Otavio Gomes Lumba de Oliveira
+10014722, Paulo Gabriel Soares Pereira
+10002992, Paulo Giovanny Rodrigues Souza
+10007131, Paulo Matheus Nicolau Silva
+10002881, Pedro Antonio de Almeida Adelino
+10010658, Pedro Gomes Teixeira
+10004853, Pedro Henrique da Silva Lima
+10009340, Pedro Hortencio Moreira Rosa
+10000961, Pedro Matheus Filadelfo dos Santos
+10006019, Pedro Paulo Leal de Albuquerque
+10000183, Pedro Victor Jovenal Fernandes da Silva
+10000358, Rafael Alves da Silva
+10005445, Rafael da Silva Rocha
+10000428, Rafael Leopoldo Alves de Souza
+10012174, Rafhael Eduardo Alves de Souza
+10003712, Rajiv Geeverghese
+10011966, Rayssa Pereira da Silva
+10004096, Renan Barbosa de Ataide
+10011856, Renato de Oliveira Silva
+10010828, Ricardo Batista Rodrigues
+10000762, Rigo Kaluwa Munkamba
+10004546, Roberto Depollo Junior
+10009487, Roberto Miranda Torga
+10003228, Rodrigo Cartaxo Marques Duarte
+10004549, Rodrigo de Medeiros Ramos
+10007309, Rodrigo Gemaque de Almeida
+10003303, Rodrigo Gomes Rodrigues
+10002649, Rodrigo Silva Andrade
+10004812, Rogerio Abreu dos Santos
+10003151, Ronaldo Magalhaes Gomes
+10000557, Ruan Donato Reis Costa
+10007790, Rubens de Oliveira Souza
+10000291, Samuel Silva Souza
+10014883, Samuel Valerio Ozorio Parente Dutra
+10000563, Sara Santos Rezende
+10006201, Silas Rosa de Sales
+10003041, Silvio de Alvarenga Souza
+10003976, Tarcila Baptista Germano de Andrade
+10006707, Tatiana Santos Serafim
+10014820, Tatiane Gomes Silva
+10010889, Thalles Oliveira Barros de Aquino
+10010385, Thayane de Souza Santos
+10003245, Thiago Coelho Vieira
+10006556, Thiago de Matos Batista
+10005422, Thiago Guedes Paysan
+10014702, Thiago Souza Nunes Rodrigues
+10000148, Thiago Vasconcelos Braga
+10000470, Thiago Williams Siqueira Ramos
+10006400, Tiago Oliveira da Silva
+10015861, Uilson Gabriel Lopes
+10000122, Uracir Portugal dos Santos
+10000260, Victor Alexandre Santos de Carvalho
+10000755, Victor do Nascimento Souza
+10004030, Victor Hugo Oliveira Silva
+10011671, Vinicius dos Santos Lima
+10010111, Vinicius Macedo de Sousa
+10002214, Vinicius Rodrigues Souza
+10009078, Vinicius Vieira Meneses
+10002901, Virginia Martins de Oliveira Lima e Silva
+10000039, Vitor Ricardo Francisco Gomes
+10013848, Walter Aparecido Alves dos Santos
+10004948, Warley Soares Ribeiro
+10001008, Weberson Pereira da Silva
+10002285, Welder Alonso de Oliveira
+10013881, Wellington Santos Ferreira
+10005953, Wesley de Melo Pereira Sena
+10012994, Wilson Jose Siqueira`;
+
+    const rawResultado = `10003651, Adriana Mara de Almeida de Souza
+10002229, Aisha Negreiros da Costa Pedro
+10010081, Alan Cliff Souza Silva
+10007387, Alexandre Ferreira Saraiva
+10007880, Alexssander Saraiva Martins
+10012036, Allan Almeida de Oliveira
+10007094, Allyson Caetano da Silva
+10000622, Alyson Sousa da Silva
+10005865, Amos de Souza Domiense
+10012574, Andre Godinho Dores
+10000754, Antonio Clarindo Oliveira de Souza
+10001845, Antonio Erivaldo Santos Araujo
+10008474, Antonio Francisco Osorio Junior
+10002886, Antonio Guilherme Rodrigues Araujo
+10001540, Arquimedes Aquides da Rocha Rodrigues Ferreira
+10008359, Artur Vieira Silva
+10015245, Athos Bruno dos Santos Lins
+10005223, Augusto Cesar Freitas da Silva
+10008559, Benefrancis do Nascimento
+10000717, Breno Rodrigues Cardoso de Moura
+10011017, Bruno Moura do Nascimento
+10002444, Cesar Augusto de Almeida Viana
+10012145, Cesar de Sousa Arruda
+10007945, Ciro Jonatas de Souza Oliveira
+10000890, Cleber do Sacramento Pinto
+10009457, Cleverson Angirley Silva Ferreira
+10005303, Daniel da Silva Cabral
+10012465, Daniel de Sena Guerra
+10013948, Daniel Gustavo Goncalves Caetano
+10001679, Danilo Marra Rabelo
+10000158, Denis Adonis de Novaes Rego
+10013517, Douglas Domingues Ribeiro
+10004854, Edmilson Veloso Borges
+10013589, Edson Maciel Marques
+10011104, Edson Santos de Jesus
+10015919, Eduardo dos Santos Caetano
+10006011, Eduardo Jacome Rodrigues
+10011294, Edvan Oliveira Silva da Luz
+10006661, Erico Correia de Alcantara
+10009000, Eugenio Rocha da Silva Junior
+10004680, Eusyar Alves de Carvalho
+10001474, Fabio Fernando Ferreira Silva
+10007670, Fabricio Souza da Silva
+10000657, Felipe Barros Silva
+10007693, Fernando Antonio Alves
+10009938, Fernando Antonio de Oliveira
+10002299, Fernando Ivan de Souza Lucas
+10002557, Fernando Luis Teles Carneiro Monteiro
+10001515, Gabriel de Lemos Silva
+10005493, Gabriel Dilly Vieira Furtuoso
+10000804, Gabriel Firmo Soares de Queiroz
+10006979, Gabriel Vieira Neves
+10009042, Gedalias Hugo de Oliveira Valentim
+10009062, Giovanni Campos
+10013450, Glauco Costa de Oliveira
+10009675, Goudim Alvarenga Carneiro
+10008667, Gustavo Brito de Almeida Mendonca
+10001357, Gustavo Georranys da Silva Lins
+10001141, Gustavo Henrique Coimbra Sobreira
+10015428, Helly Washington Guimaraes Mendes Barbosa
+10009547, Isaac Willyan Paiva Silva
+10002104, Izabel Leandra de Assis Maia
+10006484, Jailson Duraes Cordeiro
+10007595, Jailson Teixeira de Sousa
+10002845, Jaqueline da Silva Leite
+10010571, Jefferson Borges da Silva Moreira
+10012762, Jhonny Fernandes de Jesus
+10009956, Joao Paulo Rodrigues de Lima
+10001344, Joao Renes Aparecido Barbosa Barreto
+10000096, Joao Victor Barreto Carvalho
+10011084, Joao Vitor da Silva Neto
+10006574, Joedes Cardoso da Silva
+10000592, Johnatan Lohan Borges de Souza Tavares
+10002481, Jonatas da Silva Teixeira
+10005790, Jonathan Domingos de Lima
+10001891, Jonathan Felipe de Oliveira Santos
+10000549, Kleryston Roberto Santos Sobrinho
+10013850, Lauro Manoel Lima da Gama
+10013429, Leandro Barbato Maldonado de Oliveira
+10000228, Leandro Costa de Oliveira
+10002426, Leandro dos Santos Matos
+10003633, Leandro Teixeira de Andrade Filho
+10000257, Leonardo Sampaio Barros
+10011193, Livia Manuela Oliveira da Silva
+10007900, Loyanne Moreira dos Santos
+10000439, Lucas Pinto dos Santos
+10012964, Lucas Torreao Machado
+10008632, Luciano Pimentel Pinheiro
+10006952, Luiz de Lima Souza
+10006690, Luthiery Costa Cavalcante
+10003113, Marcia Soares Marques
+10008711, Marco Antonio Rodrigues Loureiro Kuroiva
+10001194, Marcondes Pereira de Melo
+10006318, Marcos Andrez Santos da Silva
+10013206, Marcos Matheus Silva Sousa
+10008456, Marcos Paulo Barros Barreto
+10001207, Marcos Roberto Nascimento Cerqueira
+10001464, Marcos Rogel Pacheco dos Reis
+10002839, Marcos Venicio Goncalves Sales
+10014450, Matheus Jarel Cataluna Bento Ramos
+10010772, Matheus Mendes dos Santos
+10000356, Matheus Ribeiro Gomes Herculano
+10014602, Matheus Santos Coelho
+10002361, Mauricio Moreira de Almeida
+10007664, Mendel Nascimento de Oliveira
+10012886, Michel Silva Santos
+10002273, Natan Mario Souza Nery de Lima
+10011320, Nayara Menezes de Oliveira
+10000618, Nelio Mesquita de Lima
+10014733, Otavio Gomes Lumba de Oliveira
+10002992, Paulo Giovanny Rodrigues Souza
+10002881, Pedro Antonio de Almeida Adelino
+10004853, Pedro Henrique da Silva Lima
+10000961, Pedro Matheus Filadelfo dos Santos
+10006019, Pedro Paulo Leal de Albuquerque
+10000183, Pedro Victor Jovenal Fernandes da Silva
+10000358, Rafael Alves da Silva
+10005445, Rafael da Silva Rocha
+10000428, Rafael Leopoldo Alves de Souza
+10012174, Rafhael Eduardo Alves de Souza
+10003712, Rajiv Geeverghese
+10011966, Rayssa Pereira da Silva
+10004096, Renan Barbosa de Ataide
+10010828, Ricardo Batista Rodrigues
+10000762, Rigo Kaluwa Munkamba
+10004549, Rodrigo de Medeiros Ramos
+10003303, Rodrigo Gomes Rodrigues
+10004812, Rogerio Abreu dos Santos
+10003151, Ronaldo Magalhaes Gomes
+10007790, Rubens de Oliveira Souza
+10000563, Sara Santos Rezende
+10006201, Silas Rosa de Sales
+10003041, Silvio de Alvarenga Souza
+10006707, Tatiana Santos Serafim
+10014820, Tatiane Gomes Silva
+10010889, Thalles Oliveira Barros de Aquino
+10010385, Thayane de Souza Santos
+10006556, Thiago de Matos Batista
+10005422, Thiago Guedes Paysan
+10000148, Thiago Vasconcelos Braga
+10000470, Thiago Williams Siqueira Ramos
+10006400, Tiago Oliveira da Silva
+10015861, Uilson Gabriel Lopes
+10000122, Uracir Portugal dos Santos
+10000260, Victor Alexandre Santos de Carvalho
+10004030, Victor Hugo Oliveira Silva
+10011671, Vinicius dos Santos Lima
+10002214, Vinicius Rodrigues Souza
+10009078, Vinicius Vieira Meneses
+10002901, Virginia Martins de Oliveira Lima e Silva
+10000039, Vitor Ricardo Francisco Gomes
+10013848, Walter Aparecido Alves dos Santos
+10001008, Weberson Pereira da Silva
+10002285, Welder Alonso de Oliveira
+10013881, Wellington Santos Ferreira
+10005953, Wesley de Melo Pereira Sena`;
+
+    // ===================== PARSE DATA =====================
+    function parseNotas(raw) {
+      return raw.trim().split('\n').map(line => {
+        const parts = line.split(',').map(s => s.trim());
+        return {
+          inscription: parts[0],
+          name: parts[1],
+          p1score: parseFloat(parts[2]),
+          p1correct: parseInt(parts[3]),
+          p2score: parseFloat(parts[4]),
+          p2correct: parseInt(parts[5]),
+          total: parseFloat(parts[6])
+        };
+      });
+    }
+
+    function parseList(raw) {
+      return new Set(raw.trim().split('\n').map(line => line.split(',')[0].trim()));
+    }
+
+    const candidates = parseNotas(rawNotas);
+    const convokedSet = parseList(rawConvocacao);
+    const approvedSet = parseList(rawResultado);
+
+    // Enrich candidates
+    candidates.forEach(c => {
+      c.convoked = convokedSet.has(c.inscription);
+      c.approved = approvedSet.has(c.inscription);
+    });
+
+    // Sort by total desc, then P2 desc, then P1 desc
+    candidates.sort((a, b) => b.total - a.total || b.p2score - a.p2score || b.p1score - a.p1score);
+
+    // Assign ranks
+    candidates.forEach((c, i) => { c.rank = i + 1; });
+
+    // ===================== STATE =====================
+    let currentFilter = 'all';
+    let currentSort = { key: 'rank', asc: true };
+    let filtered = [...candidates];
+
+    // ===================== RENDER =====================
+    function applyFilters() {
+      const search = document.getElementById('searchInput').value.toLowerCase().trim();
+
+      filtered = candidates.filter(c => {
+        if (currentFilter === 'approved' && !c.approved) return false;
+        if (currentFilter === 'rejected' && c.approved) return false;
+        if (search && !c.name.toLowerCase().includes(search) && !c.inscription.includes(search)) return false;
+        return true;
+      });
+
+      // Re-sort
+      doSort();
+      render();
+      updateStats();
+    }
+
+    function setFilter(el) {
+      document.querySelectorAll('.pill').forEach(p => p.classList.remove('active'));
+      el.classList.add('active');
+      currentFilter = el.dataset.filter;
+      applyFilters();
+    }
+
+    function sortTable(key) {
+      if (currentSort.key === key) {
+        currentSort.asc = !currentSort.asc;
+      } else {
+        currentSort.key = key;
+        currentSort.asc = key === 'name' || key === 'inscription';
+      }
+      doSort();
+      render();
+    }
+
+    function doSort() {
+      const { key, asc } = currentSort;
+      filtered.sort((a, b) => {
+        let va = a[key], vb = b[key];
+        if (key === 'convocacao') { va = a.convoked ? 1 : 0; vb = b.convoked ? 1 : 0; }
+        if (key === 'resultado') { va = a.approved ? 1 : 0; vb = b.approved ? 1 : 0; }
+        if (typeof va === 'string') return asc ? va.localeCompare(vb) : vb.localeCompare(va);
+        return asc ? va - vb : vb - va;
+      });
+    }
+
+    function render() {
+      const tbody = document.getElementById('tableBody');
+      tbody.innerHTML = filtered.map(c => {
+        const rankClass = c.rank <= 3 ? ` rank-${c.rank}` : '';
+        const convBadge = c.convoked
+          ? '<span class="badge badge-convoked">Convocado</span>'
+          : '<span class="badge badge-not-convoked">—</span>';
+        const resBadge = c.approved
+          ? '<span class="badge badge-approved">Aprovado</span>'
+          : '<span class="badge badge-rejected">Não Aprovado</span>';
+        return `<tr>
+          <td class="rank-cell${rankClass}">${c.rank}º</td>
+          <td>${c.inscription}</td>
+          <td class="name-cell">${c.name}</td>
+          <td class="score-cell">${c.p1score.toFixed(2)}</td>
+          <td class="score-cell">${c.p1correct}</td>
+          <td class="score-cell">${c.p2score.toFixed(2)}</td>
+          <td class="score-cell">${c.p2correct}</td>
+          <td class="total-cell">${c.total.toFixed(2)}</td>
+          <td>${convBadge}</td>
+          <td>${resBadge}</td>
+        </tr>`;
+      }).join('');
+
+      // Footer
+      const avg = filtered.length > 0
+        ? (filtered.reduce((s, c) => s + c.total, 0) / filtered.length).toFixed(2)
+        : '0.00';
+      document.getElementById('footerInfo').textContent = `Exibindo ${filtered.length} de ${candidates.length} candidatos`;
+      document.getElementById('footerAvg').textContent = `Média: ${avg} pts`;
+
+      // Update sort indicators
+      document.querySelectorAll('thead th').forEach(th => th.classList.remove('sorted'));
+    }
+
+    function updateStats() {
+      const totalApproved = candidates.filter(c => c.approved).length;
+      const totalRejected = candidates.length - totalApproved;
+      document.getElementById('statTotal').textContent = candidates.length;
+      document.getElementById('statApproved').textContent = totalApproved;
+      document.getElementById('statRejected').textContent = totalRejected;
+      document.getElementById('statShowing').textContent = filtered.length;
+    }
+
+    // ===================== INIT =====================
+    applyFilters();
+  </script>
+</body>
+</html>
