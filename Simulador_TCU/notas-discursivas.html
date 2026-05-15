@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notas Discursivas - PPP | TCU 2025</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.0.0"></script>
+  <script>
+    Chart.register(ChartDataLabels);
+  </script>
+
+  <style>
+    :root {
+      --primary: #6366f1;
+      --primary-dark: #4f46e5;
+      --secondary: #10b981;
+      --accent: #f59e0b;
+      --danger: #ef4444;
+      --background: #f8fafc;
+      --card-bg: #ffffff;
+      --glass-bg: rgba(255, 255, 255, 0.8);
+      --text-primary: #1e293b;
+      --text-secondary: #64748b;
+      --border-color: rgba(148, 163, 184, 0.2);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 50%, #f0f9ff 100%);
+      color: var(--text-primary);
+      min-height: 100vh;
+    }
+
+    h1, h2, h3 { font-family: 'Outfit', sans-serif; }
+
+    .bg-shape {
+      position: fixed; z-index: 0; filter: blur(120px);
+      border-radius: 50%; opacity: 0.15; pointer-events: none;
+    }
+    .shape-1 { width: 500px; height: 500px; background: var(--primary); top: -150px; right: -150px; }
+    .shape-2 { width: 400px; height: 400px; background: #9333ea; bottom: -100px; left: -100px; }
+
+    .app-container { position: relative; z-index: 1; min-height: 100vh; display: flex; flex-direction: column; }
+
+    .header {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 1.2rem 2rem;
+    }
+    .header-inner {
+      max-width: 1400px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+    }
+    .header h1 { font-size: 1.4rem; font-weight: 700; }
+    .header h1 i { color: var(--accent); margin-right: 8px; }
+    .header-back {
+      color: var(--text-secondary); text-decoration: none; font-size: 0.85rem;
+      display: flex; align-items: center; gap: 6px; transition: color 0.2s;
+    }
+    .header-back:hover { color: var(--primary); }
+
+    .main { max-width: 1400px; margin: 0 auto; padding: 2rem; flex: 1; width: 100%; }
+
+    /* Stats */
+    .stats-row {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem; margin-bottom: 2rem;
+    }
+    .stat-card {
+      background: var(--card-bg); border: 1px solid var(--border-color);
+      border-radius: 12px; padding: 1.2rem 1.4rem; text-align: center;
+    }
+    .stat-card .stat-value { font-size: 2rem; font-weight: 800; font-family: 'Outfit', sans-serif; }
+    .stat-card .stat-label { font-size: 0.8rem; color: var(--text-secondary); margin-top: 4px; }
+    .stat-card.green .stat-value { color: var(--secondary); }
+    .stat-card.red .stat-value { color: var(--danger); }
+    .stat-card.blue .stat-value { color: var(--primary); }
+    .stat-card.yellow .stat-value { color: var(--accent); }
+
+    /* Filters */
+    .filters {
+      display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 1.5rem; align-items: center;
+    }
+    .filter-group { display: flex; flex-direction: column; gap: 4px; }
+    .filter-group label { font-size: 0.75rem; color: var(--text-secondary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+    .filter-group input {
+      background: var(--card-bg); color: var(--text-primary);
+      border: 1px solid var(--border-color); border-radius: 8px;
+      padding: 10px 14px; font-size: 0.9rem; font-family: inherit;
+      min-width: 200px; outline: none; transition: border-color 0.2s;
+    }
+    .filter-group input:focus { border-color: var(--primary); }
+    .filter-group input::placeholder { color: var(--text-secondary); }
+
+    /* Analysis Section */
+    .analysis-section {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .analysis-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .analysis-title i { color: var(--primary); }
+    .analysis-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+    }
+    .analysis-card {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(99, 102, 241, 0.02));
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 1rem 1.2rem;
+      text-align: center;
+    }
+    .analysis-label {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .analysis-value {
+      font-size: 1.6rem;
+      font-weight: 800;
+      font-family: 'Outfit', sans-serif;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .analysis-sub { font-size: 0.7rem; color: var(--text-secondary); }
+
+    /* Charts Section */
+    .charts-section { margin-bottom: 1.5rem; }
+    .charts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .chart-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.2rem;
+    }
+    .chart-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .chart-table {
+      width: 100%;
+      font-size: 0.8rem;
+      border-collapse: collapse;
+    }
+    .chart-table thead th {
+      background: rgba(99, 102, 241, 0.1);
+      color: var(--primary);
+      padding: 8px;
+      text-align: left;
+      font-weight: 700;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .chart-table tbody td { padding: 8px; border-bottom: 1px solid var(--border-color); }
+    .chart-table tbody tr:last-child td { border-bottom: none; }
+    .chart-table .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 12px;
+      font-size: 0.7rem;
+      font-weight: 700;
+    }
+    .badge-gold { background: #fbbf24; color: #1e293b; }
+    .badge-silver { background: #d1d5db; color: #1e293b; }
+    .badge-bronze { background: #cd7f32; color: #1e293b; }
+    .badge-other { background: rgba(99, 102, 241, 0.1); color: var(--primary); }
+
+    /* Table */
+    .table-wrapper {
+      background: var(--card-bg); border: 1px solid var(--border-color);
+      border-radius: 12px; overflow: hidden;
+    }
+    .table-scroll { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    thead th {
+      background: rgba(99, 102, 241, 0.15); color: var(--primary);
+      padding: 14px 16px; text-align: left; font-weight: 700; font-size: 0.78rem;
+      text-transform: uppercase; letter-spacing: 0.5px;
+      white-space: nowrap; cursor: pointer; user-select: none; position: sticky; top: 0;
+    }
+    thead th:hover { background: rgba(99, 102, 241, 0.25); }
+    thead th .sort-icon { margin-left: 6px; opacity: 0.4; font-size: 0.75rem; }
+    thead th.sorted .sort-icon { opacity: 1; }
+    tbody tr { border-bottom: 1px solid var(--border-color); transition: background 0.15s; }
+    tbody tr:hover { background: rgba(99, 102, 241, 0.03); }
+    tbody tr:last-child { border-bottom: none; }
+    tbody td { padding: 12px 16px; }
+    .rank-cell { font-weight: 700; color: var(--primary); }
+    .score-cell { font-weight: 600; }
+    .total-cell { font-weight: 800; color: var(--primary); font-size: 0.95rem; }
+    .table-footer {
+      background: rgba(99, 102, 241, 0.05);
+      padding: 12px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="bg-shape shape-1"></div>
+  <div class="bg-shape shape-2"></div>
+
+  <div class="app-container">
+    <div class="header">
+      <div class="header-inner">
+        <h1><i class="fas fa-file-alt"></i> Notas Discursivas - PPP</h1>
+        <a href="index.html" class="header-back"><i class="fas fa-arrow-left"></i> Voltar</a>
+      </div>
+    </div>
+
+    <div class="main">
+      <div class="stats-row">
+        <div class="stat-card blue">
+          <div class="stat-value" id="statTotal">0</div>
+          <div class="stat-label">Total Candidatos</div>
+        </div>
+        <div class="stat-card green">
+          <div class="stat-value" id="statAvg">0</div>
+          <div class="stat-label">Média Geral</div>
+        </div>
+        <div class="stat-card yellow">
+          <div class="stat-value" id="statMax">0</div>
+          <div class="stat-label">Nota Máxima</div>
+        </div>
+        <div class="stat-card red">
+          <div class="stat-value" id="statMin">0</div>
+          <div class="stat-label">Nota Mínima</div>
+        </div>
+      </div>
+
+      <!-- Análise Detalhada -->
+      <div class="analysis-section">
+        <h3 class="analysis-title"><i class="fas fa-chart-line"></i> Análise Estatística</h3>
+        <div class="analysis-grid">
+          <div class="analysis-card">
+            <div class="analysis-label">Média Q1</div>
+            <div class="analysis-value" id="avgQ1">0.00</div>
+            <div class="analysis-sub">pontos</div>
+          </div>
+          <div class="analysis-card">
+            <div class="analysis-label">Média Q2</div>
+            <div class="analysis-value" id="avgQ2">0.00</div>
+            <div class="analysis-sub">pontos</div>
+          </div>
+          <div class="analysis-card">
+            <div class="analysis-label">Média Q3</div>
+            <div class="analysis-value" id="avgQ3">0.00</div>
+            <div class="analysis-sub">pontos</div>
+          </div>
+          <div class="analysis-card">
+            <div class="analysis-label">Média Peça</div>
+            <div class="analysis-value" id="avgPeça">0.00</div>
+            <div class="analysis-sub">pontos</div>
+          </div>
+          <div class="analysis-card">
+            <div class="analysis-label">Nota Máxima</div>
+            <div class="analysis-value" id="maxTotal">0.00</div>
+            <div class="analysis-sub">pontos</div>
+          </div>
+          <div class="analysis-card">
+            <div class="analysis-label">Nota Mínima</div>
+            <div class="analysis-value" id="minTotal">0.00</div>
+            <div class="analysis-sub">pontos</div>
+          </div>
+        </div>
+      </div>
+
+      <hr style="border: none; border-top: 1px solid var(--border-color); margin: 1.5rem 0;">
+
+      <!-- Gráficos e Top 10 -->
+      <div class="charts-section">
+        <div class="charts-grid">
+          <!-- Top 10 Candidatos -->
+          <div class="chart-card">
+            <h4 class="chart-title"><i class="fas fa-trophy" style="color: var(--danger);"></i> Top 10 Candidatos</h4>
+            <div class="table-responsive">
+              <table class="chart-table">
+                <thead>
+                  <tr>
+                    <th>Posição</th>
+                    <th>Candidato</th>
+                    <th>Nota</th>
+                  </tr>
+                </thead>
+                <tbody id="top10Table"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Distribuição de Notas -->
+          <div class="chart-card">
+            <h4 class="chart-title"><i class="fas fa-chart-bar" style="color: var(--primary);"></i> Distribuição de Notas</h4>
+            <canvas id="rangesChart"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="filters">
+        <div class="filter-group">
+          <label>Buscar candidato</label>
+          <input type="text" id="searchInput" placeholder="Nome ou inscrição..." oninput="applyFilters()">
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th onclick="sortTable('rank')">Class. <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+                <th onclick="sortTable('inscription')">Inscrição <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+                <th onclick="sortTable('name')">Nome <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+                <th onclick="sortTable('q1')">Q1 <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+                <th onclick="sortTable('q2')">Q2 <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+                <th onclick="sortTable('q3')">Q3 <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+                <th onclick="sortTable('peca')">Peça Técnica <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+                <th onclick="sortTable('total')">Total <span class="sort-icon"><i class="fas fa-sort"></i></span></th>
+              </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+          </table>
+        </div>
+        <div class="table-footer">
+          <span id="footerInfo">Carregando...</span>
+          <span id="footerAvg"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ===================== RAW DATA =====================
+    const rawNotas = `10003651, Adriana Mara de Almeida de Souza, 2.74, 7.51, 7.25, 23.52, 41.02
+10002229, Aisha Negreiros da Costa Pedro, 9.70, 8.75, 8.37, 26.96, 53.78
+10010081, Alan Cliff Souza Silva, 8.82, 8.09, 9.11, 25.69, 51.71
+10007387, Alexandre Ferreira Saraiva, 8.52, 2.71, 7.83, 26.78, 45.84
+10007880, Alexssander Saraiva Martins, 5.63, 6.43, 7.83, 22.46, 42.35
+10012036, Allan Almeida de Oliveira, 5.89, 7.56, 8.47, 23.82, 45.74
+10007094, Allyson Caetano da Silva, 7.38, 9.03, 8.78, 19.87, 45.06
+10000622, Alyson Sousa da Silva, 5.26, 7.24, 7.50, 20.14, 40.14
+10005865, Amos de Souza Domiense, 4.72, 8.64, 7.58, 20.63, 41.57
+10012574, Andre Godinho Dores, 2.43, 1.64, 4.41, 18.65, 27.13
+10000754, Antonio Clarindo Oliveira de Souza, 4.50, 1.67, 7.36, 18.33, 31.86
+10001845, Antonio Erivaldo Santos Araujo, 6.00, 5.94, 9.33, 25.95, 47.22
+10008474, Antonio Francisco Osorio Junior, 3.64, 6.97, 7.34, 15.69, 33.64
+10002886, Antonio Guilherme Rodrigues Araujo, 7.18, 8.88, 9.00, 26.51, 51.57
+10001540, Arquimedes Aquides da Rocha Rodrigues Ferreira, 5.20, 9.80, 8.50, 17.96, 41.46
+10008359, Artur Vieira Silva, 9.00, 9.18, 8.00, 25.57, 51.75
+10015245, Athos Bruno dos Santos Lins, 2.81, 2.33, 9.37, 20.02, 34.53
+10005223, Augusto Cesar Freitas da Silva, 3.68, 8.50, 9.11, 26.18, 47.47
+10008559, Benefrancis do Nascimento, 5.08, 8.50, 8.48, 25.16, 47.22
+10000717, Breno Rodrigues Cardoso de Moura, 3.01, 5.91, 7.70, 21.17, 37.79
+10011017, Bruno Moura do Nascimento, 6.23, 8.06, 9.00, 27.83, 51.12
+10002444, Cesar Augusto de Almeida Viana, 6.13, 8.53, 8.07, 23.17, 45.90
+10012145, Cesar de Sousa Arruda, 4.47, 8.88, 9.00, 25.89, 48.24
+10007945, Ciro Jonatas de Souza Oliveira, 6.38, 9.13, 8.82, 27.07, 51.40
+10000890, Cleber do Sacramento Pinto, 9.10, 8.01, 6.75, 24.21, 48.07
+10009457, Cleverson Angirley Silva Ferreira, 4.17, 5.80, 8.83, 22.02, 40.82
+10005303, Daniel da Silva Cabral, 5.33, 4.36, 4.30, 22.10, 36.09
+10012465, Daniel de Sena Guerra, 7.14, 6.63, 8.85, 19.75, 42.37
+10013948, Daniel Gustavo Goncalves Caetano, 4.74, 9.90, 8.10, 24.26, 47.00
+10001679, Danilo Marra Rabelo, 5.50, 6.56, 8.28, 22.78, 43.12
+10000158, Denis Adonis de Novaes Rego, 5.55, 2.28, 7.52, 22.92, 38.27
+10013517, Douglas Domingues Ribeiro, 5.63, 4.99, 6.58, 17.39, 34.59
+10004854, Edmilson Veloso Borges, 5.58, 8.06, 8.12, 23.83, 45.59
+10013589, Edson Maciel Marques, 7.46, 9.58, 6.29, 28.04, 51.37
+10011104, Edson Santos de Jesus, 4.01, 9.16, 8.13, 26.58, 47.88
+10015919, Eduardo dos Santos Caetano, 7.14, 0.00, 5.48, 19.08, 31.70
+10006011, Eduardo Jacome Rodrigues, 7.78, 10.00, 10.00, 20.42, 48.20
+10011294, Edvan Oliveira Silva da Luz, 6.58, 3.05, 8.77, 20.88, 39.28
+10006661, Erico Correia de Alcantara, 6.28, 9.13, 9.20, 25.12, 49.73
+10009000, Eugenio Rocha da Silva Junior, 2.70, 5.71, 6.12, 15.41, 29.94
+10004680, Eusyar Alves de Carvalho, 2.88, 8.85, 8.12, 23.75, 43.60
+10001474, Fabio Fernando Ferreira Silva, 5.75, 5.33, 3.24, 15.89, 30.21
+10007670, Fabricio Souza da Silva, 4.09, 9.33, 7.23, 23.65, 44.30
+10000657, Felipe Barros Silva, 9.20, 8.00, 9.40, 24.90, 51.50
+10007693, Fernando Antonio Alves, 6.68, 8.40, 8.08, 26.12, 49.28
+10009938, Fernando Antonio de Oliveira, 8.25, 9.33, 9.05, 19.59, 46.22
+10002299, Fernando Ivan de Souza Lucas, 3.88, 6.79, 6.54, 21.49, 38.70
+10002557, Fernando Luis Teles Carneiro Monteiro, 8.10, 7.28, 8.27, 26.46, 50.11
+10001515, Gabriel de Lemos Silva, 6.00, 7.55, 9.10, 27.54, 50.19
+10005493, Gabriel Dilly Vieira Furtuoso, 6.31, 8.48, 7.53, 22.28, 44.60
+10012075, Gabriel Fagundes da Fonseca, 6.05, 7.56, 9.50, 25.95, 49.06
+10000804, Gabriel Firmo Soares de Queiroz, 5.25, 6.69, 8.27, 18.25, 38.46
+10006979, Gabriel Vieira Neves, 8.40, 6.63, 8.09, 21.63, 44.75
+10009042, Gedalias Hugo de Oliveira Valentim, 9.40, 8.08, 8.48, 23.86, 49.82
+10009062, Giovanni Campos, 7.26, 6.68, 6.43, 23.48, 43.85
+10013450, Glauco Costa de Oliveira, 3.35, 8.75, 1.48, 24.79, 38.37
+10009675, Goudim Alvarenga Carneiro, 4.78, 6.81, 6.56, 23.94, 42.09
+10008667, Gustavo Brito de Almeida Mendonca, 6.00, 7.67, 7.28, 21.17, 42.12
+10001357, Gustavo Georranys da Silva Lins, 8.15, 8.75, 7.38, 21.73, 46.01
+10001141, Gustavo Henrique Coimbra Sobreira, 5.00, 2.82, 5.30, 18.62, 31.74
+10015428, Helly Washington Guimaraes Mendes Barbosa, 5.10, 0.00, 8.20, 24.55, 37.85
+10009547, Isaac Willyan Paiva Silva, 7.05, 8.05, 5.32, 21.71, 42.13
+10002104, Izabel Leandra de Assis Maia, 6.43, 8.68, 5.82, 19.54, 40.47
+10006484, Jailson Duraes Cordeiro, 5.83, 8.53, 8.50, 20.45, 43.31
+10007595, Jailson Teixeira de Sousa, 6.47, 7.79, 7.47, 25.10, 46.83
+10002845, Jaqueline da Silva Leite, 6.53, 8.74, 8.68, 16.09, 40.04
+10010571, Jefferson Borges da Silva Moreira, 7.26, 7.13, 7.67, 22.73, 44.79
+10012762, Jhonny Fernandes de Jesus, 8.55, 8.65, 7.57, 26.21, 50.98
+10009956, Joao Paulo Rodrigues de Lima, 6.45, 7.15, 7.23, 23.23, 44.06
+10001344, Joao Renes Aparecido Barbosa Barreto, 5.25, 7.03, 8.90, 25.47, 46.65
+10000096, Joao Victor Barreto Carvalho, 5.54, 9.38, 6.39, 20.68, 41.99
+10011084, Joao Vitor da Silva Neto, 4.60, 9.24, 9.23, 16.60, 39.67
+10006574, Joedes Cardoso da Silva, 7.01, 8.20, 9.20, 21.55, 45.96
+10000592, Johnatan Lohan Borges de Souza Tavares, 7.48, 8.38, 8.77, 26.59, 51.22
+10002481, Jonatas da Silva Teixeira, 5.92, 7.38, 7.26, 21.99, 42.55
+10005790, Jonathan Domingos de Lima, 4.89, 9.02, 9.28, 23.77, 46.96
+10001891, Jonathan Felipe de Oliveira Santos, 7.77, 7.05, 9.68, 25.54, 50.04
+10000549, Kleryston Roberto Santos Sobrinho, 5.90, 9.80, 9.60, 26.80, 52.10
+10013850, Lauro Manoel Lima da Gama, 4.28, 8.48, 8.21, 22.06, 43.03
+10013429, Leandro Barbato Maldonado de Oliveira, 6.03, 5.72, 5.70, 22.04, 39.49
+10000228, Leandro Costa de Oliveira, 6.13, 7.26, 9.58, 26.32, 49.29
+10002426, Leandro dos Santos Matos, 4.75, 5.34, 8.00, 26.15, 44.24
+10003633, Leandro Teixeira de Andrade Filho, 9.00, 7.58, 8.67, 22.72, 47.97
+10000257, Leonardo Sampaio Barros, 5.26, 9.15, 7.75, 26.89, 49.05
+10011193, Livia Manuela Oliveira da Silva, 4.88, 5.75, 10.00, 24.65, 45.28
+10007900, Loyanne Moreira dos Santos, 4.18, 9.38, 8.57, 29.15, 51.28
+10006925, Lucas Alves Rodrigues de Oliveira, 7.33, 5.88, 9.20, 21.37, 43.78
+10000439, Lucas Pinto dos Santos, 6.95, 5.91, 9.06, 23.26, 45.18
+10012964, Lucas Torreao Machado, 2.95, 8.26, 8.77, 21.54, 41.52
+10008632, Luciano Pimentel Pinheiro, 4.71, 6.59, 6.47, 19.94, 37.71
+10006952, Luiz de Lima Souza, 7.55, 10.00, 9.56, 20.58, 47.69
+10006690, Luthiery Costa Cavalcante, 4.54, 7.78, 4.18, 25.24, 41.74
+10003113, Marcia Soares Marques, 6.19, 9.13, 8.34, 25.78, 49.44
+10008711, Marco Antonio Rodrigues Loureiro Kuroiva, 6.50, 8.56, 9.40, 24.88, 49.34
+10001194, Marcondes Pereira de Melo, 8.72, 8.76, 9.38, 18.96, 45.82
+10006318, Marcos Andrez Santos da Silva, 7.25, 8.43, 9.50, 26.51, 51.69
+10013206, Marcos Matheus Silva Sousa, 4.78, 2.58, 8.09, 23.05, 38.50
+10008456, Marcos Paulo Barros Barreto, 6.55, 9.68, 8.57, 22.94, 47.74
+10001207, Marcos Roberto Nascimento Cerqueira, 8.48, 4.88, 9.26, 24.15, 46.77
+10001464, Marcos Rogel Pacheco dos Reis, 7.05, 6.48, 8.38, 19.50, 41.41
+10002839, Marcos Venicio Goncalves Sales, 8.42, 8.78, 9.63, 20.93, 47.76
+10014450, Matheus Jarel Cataluna Bento Ramos, 1.33, 5.10, 7.67, 13.10, 27.20
+10010772, Matheus Mendes dos Santos, 4.88, 7.91, 8.62, 16.90, 38.31
+10000356, Matheus Ribeiro Gomes Herculano, 8.00, 9.13, 8.37, 23.14, 48.64
+10014602, Matheus Santos Coelho, 6.26, 6.58, 8.15, 19.46, 40.45
+10002361, Mauricio Moreira de Almeida, 5.50, 9.38, 8.00, 28.43, 51.31
+10007664, Mendel Nascimento de Oliveira, 2.93, 7.20, 7.13, 22.88, 40.14
+10012886, Michel Silva Santos, 7.70, 6.33, 8.97, 19.29, 42.29
+10015439, Miguel Hilario Soares Guedes, 5.37, 6.10, 9.07, 21.63, 42.17
+10002273, Natan Mario Souza Nery de Lima, 6.63, 8.82, 9.08, 24.66, 49.19
+10011320, Nayara Menezes de Oliveira, 4.58, 7.42, 9.29, 25.57, 46.86
+10000618, Nelio Mesquita de Lima, 6.18, 7.78, 7.67, 21.85, 43.48
+10014733, Otavio Gomes Lumba de Oliveira, 6.75, 9.28, 5.97, 19.34, 41.34
+10002992, Paulo Giovanny Rodrigues Souza, 8.11, 7.91, 7.91, 24.66, 48.59
+10002881, Pedro Antonio de Almeida Adelino, 5.71, 5.05, 8.89, 17.06, 36.71
+10004853, Pedro Henrique da Silva Lima, 7.04, 3.59, 8.28, 19.78, 38.69
+10000961, Pedro Matheus Filadelfo dos Santos, 5.88, 9.30, 8.00, 25.82, 49.00
+10006019, Pedro Paulo Leal de Albuquerque, 0.00, 6.32, 5.88, 23.70, 35.90
+10000183, Pedro Victor Jovenal Fernandes da Silva, 6.35, 4.05, 6.10, 18.32, 34.82
+10000358, Rafael Alves da Silva, 7.75, 7.83, 9.33, 25.98, 50.89
+10005445, Rafael da Silva Rocha, 4.43, 5.50, 8.37, 20.84, 39.14
+10000428, Rafael Leopoldo Alves de Souza, 7.14, 6.96, 8.63, 20.57, 43.30
+10012174, Rafhael Eduardo Alves de Souza, 6.98, 6.73, 5.05, 21.72, 40.48
+10003712, Rajiv Geeverghese, 5.78, 6.43, 9.05, 27.97, 49.23
+10011966, Rayssa Pereira da Silva, 6.05, 8.25, 7.76, 24.76, 46.82
+10004096, Renan Barbosa de Ataide, 8.15, 8.38, 7.19, 22.32, 46.04
+10010828, Ricardo Batista Rodrigues, 8.09, 1.27, 5.09, 25.06, 39.51
+10000762, Rigo Kaluwa Munkamba, 4.28, 4.83, 7.52, 17.59, 34.22
+10009487, Roberto Miranda Torga, 6.52, 6.08, 4.52, 24.35, 41.47
+10004549, Rodrigo de Medeiros Ramos, 5.30, 8.98, 7.47, 22.82, 44.57
+10003303, Rodrigo Gomes Rodrigues, 8.56, 9.50, 8.30, 28.39, 54.75
+10004812, Rogerio Abreu dos Santos, 6.19, 7.68, 8.84, 26.63, 49.34
+10003151, Ronaldo Magalhaes Gomes, 5.07, 8.38, 8.70, 24.94, 47.09
+10007790, Rubens de Oliveira Souza, 6.55, 7.85, 7.55, 18.93, 40.88
+10000563, Sara Santos Rezende, 3.26, 5.38, 5.32, 25.46, 39.42
+10006201, Silas Rosa de Sales, 8.04, 3.43, 5.65, 21.23, 38.35
+10003041, Silvio de Alvarenga Souza, 3.90, 7.26, 5.26, 25.94, 42.36
+10006707, Tatiana Santos Serafim, 6.09, 9.03, 8.08, 21.06, 44.26
+10014820, Tatiane Gomes Silva, 6.65, 9.44, 7.95, 26.76, 50.80
+10010889, Thalles Oliveira Barros de Aquino, 4.80, 8.83, 8.67, 18.10, 40.40
+10010385, Thayane de Souza Santos, 8.68, 5.35, 5.74, 26.50, 46.27
+10006556, Thiago de Matos Batista, 4.05, 5.07, 8.00, 17.88, 35.00
+10005422, Thiago Guedes Paysan, 5.79, 9.38, 9.30, 25.96, 50.43
+10000148, Thiago Vasconcelos Braga, 6.63, 8.49, 9.10, 23.16, 47.38
+10000470, Thiago Williams Siqueira Ramos, 6.75, 9.20, 9.20, 20.95, 46.10
+10006400, Tiago Oliveira da Silva, 5.67, 3.55, 9.08, 11.06, 29.36
+10015861, Uilson Gabriel Lopes, 5.73, 7.46, 7.30, 23.02, 43.51
+10000122, Uracir Portugal dos Santos, 5.25, 6.35, 5.70, 18.81, 36.11
+10000260, Victor Alexandre Santos de Carvalho, 7.03, 7.88, 9.47, 21.34, 45.72
+10004030, Victor Hugo Oliveira Silva, 6.95, 7.30, 8.90, 22.76, 45.91
+10011671, Vinicius dos Santos Lima, 4.49, 6.01, 7.49, 23.66, 41.65
+10002214, Vinicius Rodrigues Souza, 5.49, 1.81, 7.48, 16.41, 31.19
+10009078, Vinicius Vieira Meneses, 6.06, 8.43, 9.16, 21.12, 44.77
+10002901, Virginia Martins de Oliveira Lima e Silva, 9.70, 9.06, 8.97, 25.35, 53.08
+10000039, Vitor Ricardo Francisco Gomes, 5.26, 5.85, 8.20, 25.77, 45.08
+10013848, Walter Aparecido Alves dos Santos, 6.30, 0.00, 2.84, 15.85, 24.99
+10001008, Weberson Pereira da Silva, 7.14, 7.42, 7.10, 24.38, 46.04
+10002285, Welder Alonso de Oliveira, 5.30, 5.07, 5.18, 21.16, 36.71
+10013881, Wellington Santos Ferreira, 0.00, 5.69, 9.14, 20.31, 35.14
+10005953, Wesley de Melo Pereira Sena, 3.41, 8.67, 5.67, 18.81, 36.56`;
+
+    // ===================== PARSING =====================
+    function parseNotas() {
+      const lines = rawNotas.trim().split('\n');
+      return lines.map(line => {
+        const parts = line.split(', ');
+        return {
+          inscription: parts[0],
+          name: parts[1],
+          q1: parseFloat(parts[2]),
+          q2: parseFloat(parts[3]),
+          q3: parseFloat(parts[4]),
+          peca: parseFloat(parts[5]),
+          total: parseFloat(parts[6])
+        };
+      });
+    }
+
+    // ===================== STATE =====================
+    let candidates = parseNotas();
+    let filtered = [...candidates];
+    let currentSort = { key: 'total', asc: false };
+    let searchQuery = '';
+
+    // ===================== FILTERING =====================
+    function applyFilters() {
+      searchQuery = document.getElementById('searchInput').value.toLowerCase();
+      
+      filtered = candidates.filter(c => {
+        const matchSearch = !searchQuery || 
+          c.name.toLowerCase().includes(searchQuery) || 
+          c.inscription.includes(searchQuery);
+        return matchSearch;
+      });
+
+      sortData();
+      render();
+      updateStats();
+    }
+
+    // ===================== SORTING =====================
+    function sortTable(key) {
+      if (currentSort.key === key) {
+        currentSort.asc = !currentSort.asc;
+      } else {
+        currentSort.key = key;
+        currentSort.asc = false;
+      }
+      sortData();
+      render();
+    }
+
+    function sortData() {
+      const key = currentSort.key;
+      const asc = currentSort.asc;
+      
+      filtered.sort((a, b) => {
+        let valA = a[key];
+        let valB = b[key];
+        
+        if (typeof valA === 'string') {
+          valA = valA.toLowerCase();
+          valB = valB.toLowerCase();
+        }
+        
+        if (asc) return valA > valB ? 1 : valA < valB ? -1 : 0;
+        return valA < valB ? 1 : valA > valB ? -1 : 0;
+      });
+
+      // Update ranks
+      filtered.forEach((c, i) => { c.rank = i + 1; });
+    }
+
+    // ===================== RENDERING =====================
+    function render() {
+      const tbody = document.getElementById('tableBody');
+      
+      if (filtered.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 2rem; color: var(--text-secondary);">Nenhum candidato encontrado</td></tr>';
+        document.getElementById('footerInfo').textContent = 'Nenhum candidato';
+        document.getElementById('footerAvg').textContent = '';
+        return;
+      }
+
+      tbody.innerHTML = filtered.map(c => `
+        <tr>
+          <td class="rank-cell">${c.rank}</td>
+          <td>${c.inscription}</td>
+          <td>${c.name}</td>
+          <td class="score-cell">${c.q1.toFixed(2)}</td>
+          <td class="score-cell">${c.q2.toFixed(2)}</td>
+          <td class="score-cell">${c.q3.toFixed(2)}</td>
+          <td class="score-cell">${c.peca.toFixed(2)}</td>
+          <td class="total-cell">${c.total.toFixed(2)}</td>
+        </tr>
+      `).join('');
+
+      // Footer
+      const avg = filtered.reduce((s, c) => s + c.total, 0) / filtered.length;
+      document.getElementById('footerInfo').textContent = `Exibindo ${filtered.length} de ${candidates.length} candidatos`;
+      document.getElementById('footerAvg').textContent = `Média: ${avg.toFixed(2)} pts`;
+
+      // Update sort indicators
+      document.querySelectorAll('thead th').forEach(th => th.classList.remove('sorted'));
+    }
+
+    // ===================== STATS =====================
+    function updateStats() {
+      const allScores = candidates.map(c => c.total);
+      const q1Scores = candidates.map(c => c.q1);
+      const q2Scores = candidates.map(c => c.q2);
+      const q3Scores = candidates.map(c => c.q3);
+      const pecaScores = candidates.map(c => c.peca);
+
+      const avgTotal = allScores.reduce((a, b) => a + b, 0) / allScores.length;
+      const maxTotal = Math.max(...allScores);
+      const minTotal = Math.min(...allScores);
+      const avgQ1 = q1Scores.reduce((a, b) => a + b, 0) / q1Scores.length;
+      const avgQ2 = q2Scores.reduce((a, b) => a + b, 0) / q2Scores.length;
+      const avgQ3 = q3Scores.reduce((a, b) => a + b, 0) / q3Scores.length;
+      const avgPeça = pecaScores.reduce((a, b) => a + b, 0) / pecaScores.length;
+
+      document.getElementById('statTotal').textContent = candidates.length;
+      document.getElementById('statAvg').textContent = avgTotal.toFixed(1);
+      document.getElementById('statMax').textContent = maxTotal.toFixed(1);
+      document.getElementById('statMin').textContent = minTotal.toFixed(1);
+      document.getElementById('avgQ1').textContent = avgQ1.toFixed(2);
+      document.getElementById('avgQ2').textContent = avgQ2.toFixed(2);
+      document.getElementById('avgQ3').textContent = avgQ3.toFixed(2);
+      document.getElementById('avgPeça').textContent = avgPeça.toFixed(2);
+      document.getElementById('maxTotal').textContent = maxTotal.toFixed(2);
+      document.getElementById('minTotal').textContent = minTotal.toFixed(2);
+
+      updateTop10Table();
+      updateDistributionChart();
+    }
+
+    function updateTop10Table() {
+      const top10Table = document.getElementById('top10Table');
+      if (!top10Table) return;
+
+      const top10 = [...candidates].sort((a, b) => b.total - a.total).slice(0, 10);
+
+      top10Table.innerHTML = top10.map((c, i) => {
+        const badgeClass = i === 0 ? 'badge-gold' : i === 1 ? 'badge-silver' : i === 2 ? 'badge-bronze' : 'badge-other';
+        const name = c.name.length > 18 ? c.name.substring(0, 18) + '...' : c.name;
+        return `<tr>
+          <td><span class="badge ${badgeClass}">${i + 1}º</span></td>
+          <td>${name}</td>
+          <td><strong>${c.total.toFixed(2)}</strong></td>
+        </tr>`;
+      }).join('');
+    }
+
+    function updateDistributionChart() {
+      const ctx = document.getElementById('rangesChart');
+      if (!ctx) return;
+
+      const existingChart = Chart.getChart(ctx);
+      if (existingChart) existingChart.destroy();
+
+      const ranges = {
+        '0-20': 0,
+        '21-30': 0,
+        '31-40': 0,
+        '41-50': 0,
+        '51-55': 0
+      };
+
+      candidates.forEach(c => {
+        const score = c.total;
+        if (score <= 20) ranges['0-20']++;
+        else if (score <= 30) ranges['21-30']++;
+        else if (score <= 40) ranges['31-40']++;
+        else if (score <= 50) ranges['41-50']++;
+        else ranges['51-55']++;
+      });
+
+      const total = candidates.length;
+      const data = Object.entries(ranges).map(([range, count]) => ((count / total) * 100).toFixed(1));
+      const counts = Object.values(ranges);
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: Object.keys(ranges),
+          datasets: [{
+            label: 'Percentual',
+            data: data,
+            backgroundColor: [
+              'rgba(239, 68, 68, 0.7)',
+              'rgba(245, 158, 11, 0.7)',
+              'rgba(234, 179, 8, 0.7)',
+              'rgba(34, 197, 94, 0.7)',
+              'rgba(59, 130, 246, 0.7)'
+            ],
+            borderColor: [
+              'rgba(239, 68, 68, 1)',
+              'rgba(245, 158, 11, 1)',
+              'rgba(234, 179, 8, 1)',
+              'rgba(34, 197, 94, 1)',
+              'rgba(59, 130, 246, 1)'
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            datalabels: {
+              anchor: 'end',
+              align: 'top',
+              color: '#1e293b',
+              font: { weight: 'bold', size: 10 },
+              formatter: (value, context) => {
+                const count = counts[context.dataIndex];
+                return `${value}% (${count})`;
+              }
+            },
+            tooltip: {
+              callbacks: {
+                label: (context) => {
+                  const count = counts[context.dataIndex];
+                  return `${context.raw}% - ${count} candidatos`;
+                }
+              }
+            }
+          },
+          scales: {
+            y: { beginAtZero: true, max: 100 }
+          }
+        }
+      });
+    }
+
+    // ===================== INIT =====================
+    applyFilters();
+  </script>
+</body>
+</html>
