@@ -1,0 +1,623 @@
+
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulado IPO I APF 2026 T1 - Verificação Final</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f5f7fb;
+      --paper: #ffffff;
+      --ink: #172033;
+      --muted: #5e6a7d;
+      --line: #d9e1ec;
+      --brand: #1b4b84;
+      --brand-strong: #11345f;
+      --ok: #0f7b45;
+      --ok-bg: #e9f7ef;
+      --bad: #b42318;
+      --bad-bg: #fff0ed;
+      --warn: #946200;
+      --warn-bg: #fff8df;
+      --focus: #d8e9ff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.45;
+    }
+
+    header {
+      background: var(--brand);
+      color: #fff;
+      padding: 28px 20px 24px;
+    }
+
+    .wrap {
+      width: min(1100px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      line-height: 1.1;
+    }
+
+    .subtitle {
+      margin: 0;
+      max-width: 850px;
+      color: rgba(255, 255, 255, .88);
+      font-size: 1rem;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, .96);
+      backdrop-filter: blur(8px);
+    }
+
+    .toolbar-inner {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 12px 0;
+    }
+
+    .status {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      color: var(--muted);
+      font-size: .95rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      padding: 4px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+
+
+    .question-actions {
+      display: flex;
+      justify-content: flex-end;
+      padding: 10px 16px 14px;
+      border-top: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .answer-btn {
+      padding: 8px 11px;
+      font-size: .9rem;
+    }
+
+    .bottom-actions {
+      justify-content: flex-end;
+      margin: 20px 0 0;
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+    }
+
+    button {
+      border: 0;
+      border-radius: 7px;
+      padding: 10px 14px;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button.primary {
+      background: var(--brand);
+      color: #fff;
+    }
+
+    button.primary:hover {
+      background: var(--brand-strong);
+    }
+
+    button.secondary {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+    }
+
+    main {
+      padding: 22px 0 42px;
+    }
+
+    .result {
+      display: none;
+      margin: 0 0 18px;
+      border: 1px solid var(--line);
+      border-left: 6px solid var(--brand);
+      border-radius: 8px;
+      background: var(--paper);
+      padding: 16px;
+    }
+
+    .result.visible {
+      display: block;
+    }
+
+    .result h2 {
+      margin: 0 0 8px;
+      font-size: 1.35rem;
+    }
+
+    .result-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(130px, 1fr));
+      gap: 10px;
+    }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fbfcff;
+    }
+
+    .metric span {
+      display: block;
+      color: var(--muted);
+      font-size: .85rem;
+    }
+
+    .metric strong {
+      display: block;
+      margin-top: 2px;
+      font-size: 1.25rem;
+    }
+
+    .question {
+      margin: 0 0 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--paper);
+      overflow: hidden;
+    }
+
+    .question.unanswered {
+      border-color: #d49b00;
+      box-shadow: 0 0 0 3px rgba(212, 155, 0, .16);
+    }
+
+    .question-head {
+      padding: 14px 16px 10px;
+      border-bottom: 1px solid var(--line);
+      background: #fbfcff;
+    }
+
+    .topic {
+      margin: 0 0 5px;
+      color: var(--muted);
+      font-size: .82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .03em;
+    }
+
+    .statement {
+      margin: 0;
+      font-weight: 700;
+    }
+
+    .options {
+      display: grid;
+      gap: 0;
+      padding: 6px 0;
+    }
+
+    .option {
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 8px;
+      align-items: start;
+      padding: 10px 16px;
+      border-top: 1px solid transparent;
+      border-bottom: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .option:hover {
+      background: #f6f9ff;
+    }
+
+    .option input {
+      margin-top: 3px;
+      accent-color: var(--brand);
+    }
+
+    .option.correct {
+      background: var(--ok-bg);
+      border-color: #bde5cc;
+    }
+
+    .option.wrong {
+      background: var(--bad-bg);
+      border-color: #ffd2ca;
+    }
+
+    .option .letter {
+      font-weight: 700;
+    }
+
+    .feedback {
+      display: none;
+      margin: 0;
+      border-top: 1px solid var(--line);
+      padding: 12px 16px 14px;
+      color: var(--ink);
+      background: #fff;
+    }
+
+    .feedback.visible {
+      display: block;
+    }
+
+    .feedback strong.ok {
+      color: var(--ok);
+    }
+
+    .feedback strong.bad {
+      color: var(--bad);
+    }
+
+    .feedback strong.warn {
+      color: var(--warn);
+    }
+
+    .notice {
+      display: none;
+      margin: 0 0 12px;
+      border: 1px solid #f0d27a;
+      border-radius: 8px;
+      background: var(--warn-bg);
+      color: #4c3600;
+      padding: 10px 12px;
+      font-weight: 700;
+    }
+
+    .notice.visible {
+      display: block;
+    }
+
+    @media (max-width: 760px) {
+      .toolbar-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .bottom-actions {
+        padding: 12px;
+      }
+
+      .result-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media print {
+      .toolbar, .actions, .notice {
+        display: none;
+      }
+
+      body {
+        background: #fff;
+      }
+
+      .wrap {
+        width: 100%;
+      }
+
+      .question {
+        break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Simulado IPO I APF 2026 T1</h1>
+      <p class="subtitle">20 questões de múltipla escolha com base na Verificação Final de Aprendizagem. Responda às alternativas, revele o gabarito por item ou verifique a nota final.<br>Fonte: PDF de Verificação Final de Aprendizagem.</p>
+    </div>
+  </header>
+
+  <div class="toolbar">
+    <div class="wrap toolbar-inner">
+      <div class="status" aria-live="polite">
+        <span class="pill"><span id="answered">0</span>/20 respondidas</span>
+        <span id="score-pill" class="pill">Nota ainda não calculada</span>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <p class="notice" id="notice">Há questões sem resposta. Elas serão ignoradas na estatística final e o gabarito delas não será revelado.</p>
+
+    <section class="result" id="result" aria-live="polite">
+      <h2>Resultado</h2>
+      <div class="result-grid">
+        <div class="metric"><span>Acertos</span><strong id="hits">0</strong></div>
+        <div class="metric"><span>Erros</span><strong id="misses">0</strong></div>
+        <div class="metric"><span>Não consideradas</span><strong id="blank">0</strong></div>
+        <div class="metric"><span>Percentual</span><strong id="percent">0%</strong></div>
+      </div>
+    </section>
+
+    <form id="quiz" autocomplete="off"></form>
+    <div class="actions bottom-actions">
+      <button class="secondary" id="reset-btn" type="button">Refazer</button>
+      <button class="secondary" id="review-btn" type="button">Revisão Completa</button>
+      <button class="primary" id="grade-btn" type="button">Verificar Nota Final</button>
+    </div>
+  </main>
+
+  <script id="question-data" type="application/json">[{"numero": 1, "tema": "Crimes massivos", "pergunta": "Sobre o conceito de crime massivo, é correto afirmar que:", "alternativas": [{"letra": "A", "texto": "São crimes que envolvem violência física e sempre resultam em prisão em flagrante."}, {"letra": "B", "texto": "São crimes que exigem apuração individualizada e detalhada."}, {"letra": "C", "texto": "São sempre crimes de grande repercussão midiática."}, {"letra": "D", "texto": "São práticas delitivas repetidas em determinada área e período, cujo volume inviabiliza a apuração individual."}], "gabarito": "D", "explicacao": "São práticas delitivas repetidas em determinada área e período, cujo volume inviabiliza a apuração individual."}, {"numero": 2, "tema": "Investigação proativa e prospectiva", "pergunta": "Levando em consideração ao que se refere à investigação proativa e à investigação prospectiva, é correto afirmar que:", "alternativas": [{"letra": "A", "texto": "Na investigação proativa, a Polícia Federal deve sempre se basear na investigação de fatos e não de pessoas, ao passo que a investigação prospectiva, em regra, se caracteriza pela ausência de justa causa, consistindo em persecução subjetiva voltada a \"procurar algo criminoso\" em determinada pessoa, em violação ao princípio da impessoalidade."}, {"letra": "B", "texto": "A investigação proativa e a investigação prospectiva são equivalentes, pois ambas admitem o início da persecução penal sem a necessidade de causa provável, desde que voltadas ao combate a crimes graves ou praticados por organizações criminosas."}, {"letra": "C", "texto": "A investigação prospectiva é admitida no ordenamento jurídico brasileiro quando voltada à prevenção de futuros crimes, ainda que baseada em informações fragmentárias e na construção de um perfil suspeito, desde que haja autorização judicial genérica."}, {"letra": "D", "texto": "A principal finalidade da investigação proativa é permitir a chamada fishing expedition (“pescaria probatória”), lançando as redes da investigação de forma ampla e genérica, com o objetivo de encontrar qualquer prova para subsidiar uma futura acusação contra possíveis suspeitos."}], "gabarito": "A", "explicacao": "Na investigação proativa, a Polícia Federal deve sempre se basear na investigação de fatos e não de pessoas; a prospectiva, em regra, caracteriza-se pela ausência de justa causa e pela persecução subjetiva."}, {"numero": 3, "tema": "Inteligência policial e investigação policial", "pergunta": "Durante o monitoramento de criminosos, a unidade de inteligência policial da PF recebe informação de fonte humana de que um carregamento de armas chegará ao Porto X na próxima terça-feira. A inteligência elabora um Relatório de Inteligência (RI), com grau de sigilo, indicando janela provável, placa do caminhão e possíveis rotas de fuga. A equipe da investigação policial instaura inquérito e planeja diligências de vigilância e busca. No dia seguinte, o delegado responsável orienta a equipe a juntar o RI diretamente aos autos do inquérito para “dar lastro probatório” imediato, e cogita iniciar interceptações telefônicas com base apenas no RI. À luz das diferenças entre inteligência policial e investigação policial, é correto afirmar que:", "alternativas": [{"letra": "A", "texto": "Como a informação partiu de fonte humana, trata-se de típico conhecimento de senso comum; portanto, a investigação policial deve limitar-se ao tirocínio dos agentes, dispensando método e cadeia de custódia."}, {"letra": "B", "texto": "O RI pode ser juntado diretamente ao inquérito, pois documentos de inteligência têm valor probatório autônomo e suprem a necessidade de formalização de diligências."}, {"letra": "C", "texto": "O RI não deve ser juntado ao inquérito; ele orienta decisões, mas não substitui prova. A investigação deve formalizar suas próprias diligências, por exemplo, vigilância, e, para medidas com reserva de jurisdição, deve-se requerer ordem judicial. Se necessário, elabora-se documento próprio da polícia judiciária para subsidiar o procedimento, sem anexar o RI sigiloso."}, {"letra": "D", "texto": "Interceptações telefônicas podem ser iniciadas sem ordem judicial quando baseadas em produto de inteligência, já que se destinam à prevenção e não à instrução penal."}], "gabarito": "C", "explicacao": "O RI orienta decisões, mas não substitui prova nem deve ser juntado diretamente ao inquérito. A polícia judiciária deve formalizar diligências próprias e requerer ordem judicial para medidas sujeitas à reserva de jurisdição."}, {"numero": 4, "tema": "Sistema RAPINA", "pergunta": "O Sistema RAPINA, desenvolvido pela Polícia Federal, tem como principal finalidade:", "alternativas": [{"letra": "A", "texto": "Armazenar dados sobre fraudes bancárias."}, {"letra": "B", "texto": "Monitorar crimes ambientais em tempo real."}, {"letra": "C", "texto": "Armazenar, analisar e cruzar dados sobre abuso sexual infantil."}, {"letra": "D", "texto": "Gerenciar denúncias de corrupção política."}], "gabarito": "C", "explicacao": "Armazenar, analisar e cruzar dados sobre abuso sexual infantil."}, {"numero": 5, "tema": "Atribuições do Agente de Polícia Federal", "pergunta": "Com relação às atribuições do cargo de Agente de Polícia Federal, embora os normativos internos prevejam o desempenho de diversas atividades de natureza policial e administrativa, assinale a alternativa que indica uma atribuição típica do Agente de Polícia Federal no curso de uma investigação policial:", "alternativas": [{"letra": "A", "texto": "Executar tarefas de prevenção e repressão de ilícitos penais."}, {"letra": "B", "texto": "Realizar exames periciais em locais de crime."}, {"letra": "C", "texto": "Representar por medidas cautelares."}, {"letra": "D", "texto": "Lavrar termos e mandados judiciais."}], "gabarito": "A", "explicacao": "Executar tarefas de prevenção e repressão de ilícitos penais."}, {"numero": 6, "tema": "Recuperação de ativos", "pergunta": "O processo de recuperação de ativos é dividido em cinco etapas sequenciais que devem ser seguidas. A primeira etapa desse processo consiste em:", "alternativas": [{"letra": "A", "texto": "Alienar os bens quando necessário para preservar o valor econômico."}, {"letra": "B", "texto": "Identificar bens, direitos e valores relacionados à atividade ilícita."}, {"letra": "C", "texto": "Apreender e bloquear os ativos mediante decisão judicial."}, {"letra": "D", "texto": "Administrar e preservar o valor dos bens durante o processo."}], "gabarito": "B", "explicacao": "Identificar bens, direitos e valores relacionados à atividade ilícita."}, {"numero": 7, "tema": "Gerenciamento das investigações", "pergunta": "Sobre o gerenciamento das investigações na Polícia Federal, é correto afirmar que:", "alternativas": [{"letra": "A", "texto": "A intensidade e o nível de cuidado na gestão da investigação são sempre os mesmos, independentemente da necessidade do caso concreto, devendo o policial aplicar um padrão único de atuação em todas as ocorrências."}, {"letra": "B", "texto": "A gestão bem-sucedida de uma investigação requer planejamento, organização, controle e motivação, podendo envolver o gerenciamento de recursos materiais, recursos humanos, riscos, ações, registros e cadeia de custódia, sendo o tema voltado a todo policial federal, que muitas vezes será o primeiro a ter contato com o fato criminoso."}, {"letra": "C", "texto": "Por se tratar de matéria relacionada à condução do inquérito policial, o gerenciamento de recursos e riscos diz respeito exclusivamente ao Delegado de Polícia Federal, não sendo relevante para os demais policiais que atuam no atendimento inicial ou em local de crime."}, {"letra": "D", "texto": "O foco do gerenciamento nas investigações é somente o controle da cadeia de custódia."}], "gabarito": "B", "explicacao": "A gestão bem-sucedida de uma investigação requer planejamento, organização, controle e motivação, podendo envolver recursos materiais, humanos, riscos, ações, registros e cadeia de custódia."}, {"numero": 8, "tema": "Início do inquérito policial", "pergunta": "Considerando as disposições do Código de Processo Penal e da Instrução Normativa nº 255/2023 da Polícia Federal sobre o início do inquérito policial, analise as afirmativas dos itens abaixo: I. Havendo justa causa, a autoridade policial deve instaurar inquérito de ofício nos casos de crimes, cuja ação penal seja pública incondicionada. II. A comunicação de crime de ação penal pública incondicionada, feita por qualquer pessoa, mesmo que não seja vítima, não pode ser considerada forma legítima de notícia criminis. III. A notícia de fato registrada no sistema oficial pode ser convertida, conforme o caso, em notícia-crime, notícia-crime em verificação ou registro especial. IV. A autoridade policial está obrigada a instaurar inquérito sempre que houver requisição do Ministério Público, mesmo diante de fato manifestamente atípico ou prescrito. É correto o que se afirma em:", "alternativas": [{"letra": "A", "texto": "I e III, apenas."}, {"letra": "B", "texto": "II e III, apenas."}, {"letra": "C", "texto": "I e IV, apenas."}, {"letra": "D", "texto": "III e IV, apenas."}], "gabarito": "A", "explicacao": "I e III, apenas."}, {"numero": 9, "tema": "Notícia anônima", "pergunta": "De acordo com a legislação processual penal brasileira, quando a autoridade policial recebe uma denúncia anônima sobre a possível prática de um crime de ação penal pública incondicionada, qual deve ser o procedimento correto?", "alternativas": [{"letra": "A", "texto": "Instaurar imediatamente o inquérito policial, sem necessidade de verificação preliminar."}, {"letra": "B", "texto": "Encaminhar a denúncia anônima ao Ministério Público para que decida sobre a instauração."}, {"letra": "C", "texto": "Realizar procedimentos investigativos preliminares para verificar a procedência das informações, antes da instauração do inquérito policial."}, {"letra": "D", "texto": "Ignorar a denúncia anônima, pois não possui valor jurídico."}], "gabarito": "C", "explicacao": "Realizar procedimentos investigativos preliminares para verificar a procedência das informações, antes da instauração do inquérito policial."}, {"numero": 10, "tema": "Programa Prometheus", "pergunta": "O Programa Prometheus da Polícia Federal tem como objetivo:", "alternativas": [{"letra": "A", "texto": "Criar um banco de dados para crimes violentos."}, {"letra": "B", "texto": "Investigar exclusivamente crimes cometidos por servidores públicos."}, {"letra": "C", "texto": "Substituir o sistema ePol por uma nova plataforma."}, {"letra": "D", "texto": "Evitar a fragmentação de inquéritos e identificar organizações criminosas."}], "gabarito": "D", "explicacao": "Evitar a fragmentação de inquéritos e identificar organizações criminosas."}, {"numero": 11, "tema": "Prerrogativa de foro", "pergunta": "Sobre a atuação da Polícia Federal em investigações que envolvem autoridades com prerrogativa de foro, julgue os itens abaixo: I. Polícia Federal pode iniciar quaisquer diligências investigativas contra magistrados sem autorização do Tribunal competente. II. A Coordenação de Inquéritos nos Tribunais Superiores (CINQ) é responsável por acompanhar e controlar investigações que tramitam no STF. III. O indiciamento de membros do Ministério Público é permitido, desde que autorizado pelo Procurador-Geral. IV. A investigação contra magistrados é conduzida pelo próprio Poder Judiciário, podendo ser delegada à Polícia Federal. V. A prerrogativa de foro se aplica apenas enquanto o agente estiver no exercício do cargo, sendo extinta após o término da função. É correto o que se afirma em:", "alternativas": [{"letra": "A", "texto": "II e V, apenas."}, {"letra": "B", "texto": "II e IV, apenas."}, {"letra": "C", "texto": "I, III e IV, apenas."}, {"letra": "D", "texto": "II, III e V, apenas."}], "gabarito": "B", "explicacao": "II e IV, apenas."}, {"numero": 12, "tema": "Investigação patrimonial", "pergunta": "Durante uma investigação de tráfico de drogas em larga escala, a equipe policial identificou que o investigado utiliza interpostas pessoas (laranjas) para ocultar seu patrimônio, incluindo familiares, prestadores de serviços e empresas fantasmas. De acordo com as técnicas de investigação patrimonial ensinadas em aula, a equipe investigativa deve:", "alternativas": [{"letra": "A", "texto": "Limitar-se à quebra de sigilo bancário do investigado, sem incluir terceiros na investigação."}, {"letra": "B", "texto": "Mapear o círculo de relacionamentos do investigado (cônjuge, filhos, parentes, sócios e contatos frequentes) e investigar o patrimônio dessas pessoas para identificar o uso indevido de nomes e movimentações financeiras relacionadas."}, {"letra": "C", "texto": "Concentrar a investigação exclusivamente no patrimônio em nome do investigado principal, desconsiderando terceiros."}, {"letra": "D", "texto": "Aguardar a condenação definitiva do investigado para então iniciar a investigação patrimonial de pessoas relacionadas."}], "gabarito": "B", "explicacao": "Mapear o círculo de relacionamentos do investigado e investigar o patrimônio dessas pessoas para identificar o uso indevido de nomes e movimentações financeiras relacionadas."}, {"numero": 13, "tema": "Classificação de Eck", "pergunta": "Segundo a classificação de Eck (1983), os crimes podem ser triados conforme sua dificuldade de solução. Sobre essa classificação, é correto afirmar que:", "alternativas": [{"letra": "A", "texto": "Crimes cibernéticos, crimes patrimoniais e crimes violentos."}, {"letra": "B", "texto": "Crimes solucionados por sorte, crimes complexos e crimes sem solução."}, {"letra": "C", "texto": "Crimes leves, crimes graves e crimes hediondos."}, {"letra": "D", "texto": "Crimes auto solucionados, crimes solucionáveis com algum esforço e crimes insolúveis ou de esforço considerável."}], "gabarito": "D", "explicacao": "Crimes auto solucionados, crimes solucionáveis com algum esforço e crimes insolúveis ou de esforço considerável."}, {"numero": 14, "tema": "Investigação científica", "pergunta": "A partir das bases trazidas pela ciência contemporânea, podemos chegar às seguintes constatações com relação à investigação científica:", "alternativas": [{"letra": "A", "texto": "Para o êxito da investigação é prescindível que os problemas sejam propostos de forma precisa e objetiva."}, {"letra": "B", "texto": "As regras do método científico integram um sistema de normas independentemente das leis da lógica e das leis da ciência, podendo até contrariá-las em função de interesses prático."}, {"letra": "C", "texto": "Possui por finalidade a resolução de problemas propostos mediante a busca da verdade formal aproximada."}, {"letra": "D", "texto": "As regras que compõem a metodologia da investigação científica têm apenas uma justificação teórica, e não uma justificação pragmática."}], "gabarito": "C", "explicacao": "Possui por finalidade a resolução de problemas propostos mediante a busca da verdade formal aproximada."}, {"numero": 15, "tema": "Inquérito policial e garantias", "pergunta": "Durante uma investigação sobre crimes contra a saúde pública, a Polícia Federal realiza uma busca e apreensão em um laboratório clandestino, sem comunicar previamente o investigado. Após a diligência, o advogado do investigado solicita acesso aos documentos já juntados aos autos e requer a realização de perícia nos materiais apreendidos. O Delegado concede o acesso aos autos, mas indefere a perícia, justificando que os laudos já existentes são suficientes para os fins da investigação. Com base no exemplo acima e nos conceitos apresentados em aula, é correto afirmar que:", "alternativas": [{"letra": "A", "texto": "O sigilo da diligência compromete a legalidade do inquérito, pois o investigado tem direito à participação em tempo real em todas as fases da investigação."}, {"letra": "B", "texto": "O exemplo demonstra que, embora o inquérito policial ainda possua traços inquisitivos, segundo a doutrina clássica, ou apuratória de acordo com a nova doutrina ensinada em aula, há garantias como o acesso aos autos e o contraditório mitigado, sendo legítimo o indeferimento fundamentado de diligências requeridas pela defesa."}, {"letra": "C", "texto": "O Delegado de Polícia Federal não poderia indeferir a perícia requerida, pois toda prova solicitada pela defesa deve ser obrigatoriamente produzida durante o inquérito."}, {"letra": "D", "texto": "O Delegado de Polícia Federal agiu de forma ilegal, pois toda diligência deve ser previamente comunicada ao investigado para garantir o contraditório pleno."}], "gabarito": "B", "explicacao": "Há garantias como acesso aos autos e contraditório mitigado, sendo legítimo o indeferimento fundamentado de diligências requeridas pela defesa."}, {"numero": 16, "tema": "Hora de ouro", "pergunta": "Por que é essencial iniciar a investigação rapidamente após a ocorrência do crime?", "alternativas": [{"letra": "A", "texto": "Para garantir que todas as provas sejam admissíveis em juízo."}, {"letra": "B", "texto": "Para aproveitar a “hora de ouro” e maximizar a coleta de materiais probatórios."}, {"letra": "C", "texto": "Para reduzir o número de testemunhas envolvidas."}, {"letra": "D", "texto": "Para evitar que o suspeito seja preso sem provas."}], "gabarito": "B", "explicacao": "Para aproveitar a “hora de ouro” e maximizar a coleta de materiais probatórios."}, {"numero": 17, "tema": "Atores externos e reserva de jurisdição", "pergunta": "Durante uma investigação policial conduzida pela Polícia Federal, a equipe policial identifica a necessidade de interceptação telefônica para aprofundar a apuração. Considerando o papel dos atores externos à investigação, qual das alternativas representa corretamente o procedimento a ser adotado?", "alternativas": [{"letra": "A", "texto": "O Ministério Público deve autorizar previamente a interceptação, por meio de despacho fundamentado."}, {"letra": "B", "texto": "O Juiz das Garantias deve ser provocado pela autoridade policial para autorizar a interceptação, conforme previsão legal."}, {"letra": "C", "texto": "A interceptação pode ser realizada pela Polícia Federal sem autorização judicial, desde que haja urgência e posterior comunicação ao Judiciário."}, {"letra": "D", "texto": "O Delegado pode realizar a interceptação diretamente, desde que haja indícios suficientes de autoria."}], "gabarito": "B", "explicacao": "O Juiz das Garantias deve ser provocado pela autoridade policial para autorizar a interceptação, conforme previsão legal."}, {"numero": 18, "tema": "Princípio da disciplina", "pergunta": "Em uma unidade da polícia judiciária, o delegado de polícia preside investigação complexa e distribui, por despacho, diligências específicas aos integrantes da equipe, fixando prazos e orientando a forma de execução. Um dos agentes, discordando da prioridade definida pela autoridade policial, altera a ordem das diligências por conta própria, deixa de cumprir uma delas e não registra essa omissão em relatório, por considerar a medida “pouco relevante” e “desnecessária”. Com base no princípio da disciplina, é correto afirmar que:", "alternativas": [{"letra": "A", "texto": "Autoriza o agente a deixar de cumprir diligências determinadas pela autoridade policial sempre que, com base em sua experiência, entender que a medida é pouco relevante, ainda que não comunique formalmente sua decisão."}, {"letra": "B", "texto": "Em razão da autonomia técnica do agente de polícia, o princípio da disciplina não o obriga a seguir a direção do delegado na condução do inquérito, podendo redefinir, livremente, prioridades e procedimentos investigativos."}, {"letra": "C", "texto": "Diz respeito apenas a aspectos administrativos internos da corporação, não tendo qualquer relação com a condução da investigação nem com a preservação da cadeia de custódia de provas."}, {"letra": "D", "texto": "Decorre da natureza hierárquica da Polícia e impõe ao agente o cumprimento fiel das determinações legais da autoridade policial, observando ordens, prazos, rotinas e procedimentos, sob pena de comprometer a eficiência da investigação, a segurança da equipe e a integridade da prova."}], "gabarito": "D", "explicacao": "Decorre da natureza hierárquica da Polícia e impõe o cumprimento fiel das determinações legais da autoridade policial."}, {"numero": 19, "tema": "Confisco tradicional e alargado", "pergunta": "O confisco tradicional e o confisco alargado são duas modalidades distintas de confisco previstas no Código Penal brasileiro. A principal diferença entre essas modalidades está no fato de que:", "alternativas": [{"letra": "A", "texto": "O confisco tradicional é aplicado somente em crimes dolosos, enquanto o confisco alargado também se aplica a crimes culposos."}, {"letra": "B", "texto": "O confisco tradicional exige a comprovação de vínculo direto entre o bem e o crime específico (referibilidade), enquanto o confisco alargado foca no descompasso patrimonial do investigado."}, {"letra": "C", "texto": "O confisco tradicional aplica-se apenas a bens móveis, enquanto o confisco alargado incide sobre bens imóveis."}, {"letra": "D", "texto": "O confisco tradicional depende de condenação definitiva, enquanto o confisco alargado pode ser aplicado ainda durante o inquérito policial."}], "gabarito": "B", "explicacao": "O confisco tradicional exige referibilidade com o crime específico; o confisco alargado foca no descompasso patrimonial do investigado."}, {"numero": 20, "tema": "John Dewey", "pergunta": "Para o filósofo John Dewey, investigar não é apenas observar ou coletar dados, mas um processo ativo de transformação. Ele entende a investigação como uma forma de passar de uma situação confusa ou incerta para uma situação clara e organizada, em que os elementos passam a se relacionar de modo coerente. Com base nisso, é correto afirmar que:", "alternativas": [{"letra": "A", "texto": "A investigação consiste em buscar verdades absolutas e imutáveis sobre o mundo."}, {"letra": "B", "texto": "A investigação é a transformação controlada de uma situação indeterminada em uma situação determinada e unificada."}, {"letra": "C", "texto": "A investigação, para Dewey, é apenas a descrição objetiva dos fatos observados."}, {"letra": "D", "texto": "A investigação é um processo intuitivo e sem necessidade de método ou controle."}], "gabarito": "B", "explicacao": "A investigação é a transformação controlada de uma situação indeterminada em uma situação determinada e unificada."}]</script>
+  <script>
+    const questions = JSON.parse(document.getElementById('question-data').textContent);
+    const quiz = document.getElementById('quiz');
+    const answeredEl = document.getElementById('answered');
+    const scorePill = document.getElementById('score-pill');
+    const result = document.getElementById('result');
+    const notice = document.getElementById('notice');
+    const hitsEl = document.getElementById('hits');
+    const missesEl = document.getElementById('misses');
+    const blankEl = document.getElementById('blank');
+    const percentEl = document.getElementById('percent');
+    const gradeBtn = document.getElementById('grade-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const reviewBtn = document.getElementById('review-btn');
+
+    function renderQuiz() {
+      quiz.innerHTML = questions.map((q) => `
+        <article class="question" id="q-${q.numero}" data-question="${q.numero}">
+          <div class="question-head">
+            <p class="topic">${escapeHtml(q.tema)}</p>
+            <p class="statement">${q.numero}. ${escapeHtml(q.pergunta)}</p>
+          </div>
+          <div class="options">
+            ${q.alternativas.map((alt) => `
+              <label class="option" data-letter="${alt.letra}">
+                <input type="radio" name="q${q.numero}" value="${alt.letra}">
+                <span><span class="letter">${alt.letra})</span> ${escapeHtml(alt.texto)}</span>
+              </label>
+            `).join('')}
+          </div>
+          <div class="question-actions">
+            <button class="secondary answer-btn" type="button" data-reveal="${q.numero}">Revelar gabarito</button>
+          </div>
+          <p class="feedback" id="fb-${q.numero}"></p>
+        </article>
+      `).join('');
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll('&', '&amp;')
+        .replaceAll('<', '&lt;')
+        .replaceAll('>', '&gt;')
+        .replaceAll('"', '&quot;')
+        .replaceAll("'", '&#039;');
+    }
+
+    function selectedValue(numero) {
+      const checked = quiz.querySelector(`input[name="q${numero}"]:checked`);
+      return checked ? checked.value : null;
+    }
+
+    function updateAnsweredCount() {
+      const answered = questions.filter((q) => selectedValue(q.numero)).length;
+      answeredEl.textContent = answered;
+      notice.classList.toggle('visible', answered < questions.length);
+      return answered;
+    }
+
+    function clearCorrection() {
+      quiz.querySelectorAll('.question').forEach((card) => card.classList.remove('unanswered'));
+      quiz.querySelectorAll('.option').forEach((option) => option.classList.remove('correct', 'wrong'));
+      quiz.querySelectorAll('.feedback').forEach((feedback) => {
+        feedback.classList.remove('visible');
+        feedback.textContent = '';
+      });
+    }
+
+    function clearQuestionCorrection(numero) {
+      const card = document.getElementById(`q-${numero}`);
+      const feedback = document.getElementById(`fb-${numero}`);
+
+      card.classList.remove('unanswered');
+      card.querySelectorAll('.option').forEach((option) => option.classList.remove('correct', 'wrong'));
+      feedback.classList.remove('visible');
+      feedback.textContent = '';
+    }
+
+    function revealAnswer(numero) {
+      const q = questions.find((item) => item.numero === Number(numero));
+      if (!q) return;
+
+      clearQuestionCorrection(q.numero);
+
+      const selected = selectedValue(q.numero);
+      const card = document.getElementById(`q-${q.numero}`);
+      const feedback = document.getElementById(`fb-${q.numero}`);
+      const correctOption = card.querySelector(`.option[data-letter="${q.gabarito}"]`);
+
+      correctOption.classList.add('correct');
+
+      if (!selected) {
+        feedback.innerHTML = `<strong class="warn">Gabarito revelado.</strong> Resposta: ${q.gabarito}. ${escapeHtml(q.explicacao)}`;
+      } else if (selected === q.gabarito) {
+        feedback.innerHTML = `<strong class="ok">Correta.</strong> Gabarito: ${q.gabarito}. ${escapeHtml(q.explicacao)}`;
+      } else {
+        const wrongOption = card.querySelector(`.option[data-letter="${selected}"]`);
+        wrongOption.classList.add('wrong');
+        feedback.innerHTML = `<strong class="bad">Incorreta.</strong> Você marcou ${selected}. Gabarito: ${q.gabarito}. ${escapeHtml(q.explicacao)}`;
+      }
+
+      feedback.classList.add('visible');
+    }
+
+    function revealAllAnswers() {
+      clearCorrection();
+
+      questions.forEach((q) => {
+        const selected = selectedValue(q.numero);
+        const card = document.getElementById(`q-${q.numero}`);
+        const feedback = document.getElementById(`fb-${q.numero}`);
+        const correctOption = card.querySelector(`.option[data-letter="${q.gabarito}"]`);
+
+        correctOption.classList.add('correct');
+
+        if (!selected) {
+          feedback.innerHTML = `<strong class="warn">Gabarito revelado.</strong> Resposta: ${q.gabarito}. ${escapeHtml(q.explicacao)}`;
+        } else if (selected === q.gabarito) {
+          feedback.innerHTML = `<strong class="ok">Correta.</strong> Gabarito: ${q.gabarito}. ${escapeHtml(q.explicacao)}`;
+        } else {
+          const wrongOption = card.querySelector(`.option[data-letter="${selected}"]`);
+          wrongOption.classList.add('wrong');
+          feedback.innerHTML = `<strong class="bad">Incorreta.</strong> Você marcou ${selected}. Gabarito: ${q.gabarito}. ${escapeHtml(q.explicacao)}`;
+        }
+
+        feedback.classList.add('visible');
+      });
+
+      // Mostrar estatísticas da revisão
+      let hits = 0;
+      let misses = 0;
+      let blank = 0;
+
+      questions.forEach((q) => {
+        const selected = selectedValue(q.numero);
+        if (!selected) {
+          blank += 1;
+        } else if (selected === q.gabarito) {
+          hits += 1;
+        } else {
+          misses += 1;
+        }
+      });
+
+      const considered = hits + misses;
+      const percent = considered ? Math.round((hits / considered) * 1000) / 10 : 0;
+
+      hitsEl.textContent = hits;
+      missesEl.textContent = misses;
+      blankEl.textContent = blank;
+      percentEl.textContent = `${percent.toLocaleString('pt-BR')}%`;
+      scorePill.textContent = considered
+        ? `${hits}/${considered} acertos nas respondidas`
+        : 'Nenhuma questão respondida';
+      result.classList.add('visible');
+      notice.classList.toggle('visible', blank > 0);
+      result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function gradeQuiz() {
+      clearCorrection();
+
+      let hits = 0;
+      let misses = 0;
+      let blank = 0;
+
+      questions.forEach((q) => {
+        const selected = selectedValue(q.numero);
+        const card = document.getElementById(`q-${q.numero}`);
+        const feedback = document.getElementById(`fb-${q.numero}`);
+
+        if (!selected) {
+          blank += 1;
+          card.classList.add('unanswered');
+          return;
+        }
+
+        const correctOption = card.querySelector(`.option[data-letter="${q.gabarito}"]`);
+        correctOption.classList.add('correct');
+
+        if (selected === q.gabarito) {
+          hits += 1;
+          feedback.innerHTML = `<strong class="ok">Correta.</strong> Gabarito: ${q.gabarito}. ${escapeHtml(q.explicacao)}`;
+        } else {
+          misses += 1;
+          const wrongOption = card.querySelector(`.option[data-letter="${selected}"]`);
+          wrongOption.classList.add('wrong');
+          feedback.innerHTML = `<strong class="bad">Incorreta.</strong> Você marcou ${selected}. Gabarito: ${q.gabarito}. ${escapeHtml(q.explicacao)}`;
+        }
+
+        feedback.classList.add('visible');
+      });
+
+      const considered = hits + misses;
+      const percent = considered ? Math.round((hits / considered) * 1000) / 10 : 0;
+
+      hitsEl.textContent = hits;
+      missesEl.textContent = misses;
+      blankEl.textContent = blank;
+      percentEl.textContent = `${percent.toLocaleString('pt-BR')}%`;
+      scorePill.textContent = considered
+        ? `${hits}/${considered} acertos nas respondidas`
+        : 'Nenhuma questão respondida';
+      result.classList.add('visible');
+      notice.classList.toggle('visible', blank > 0);
+      result.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function resetQuiz() {
+      quiz.reset();
+      clearCorrection();
+      result.classList.remove('visible');
+      scorePill.textContent = 'Nota ainda não calculada';
+      updateAnsweredCount();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    renderQuiz();
+    updateAnsweredCount();
+    quiz.addEventListener('change', updateAnsweredCount);
+    quiz.addEventListener('click', (event) => {
+      const button = event.target.closest('[data-reveal]');
+      if (!button) return;
+      revealAnswer(button.dataset.reveal);
+    });
+    gradeBtn.addEventListener('click', gradeQuiz);
+    resetBtn.addEventListener('click', resetQuiz);
+    reviewBtn.addEventListener('click', revealAllAnswers);
+  </script>
+</body>
+</html>
