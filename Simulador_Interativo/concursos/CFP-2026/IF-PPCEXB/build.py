@@ -89,7 +89,7 @@ def parse_markdown(filepath):
     return root
 
 def main():
-    workspace = "/Users/guilhermerodrigues/Downloads/PROVA 3"
+    workspace = "/Users/guilhermerodrigues/Downloads/IF-PPCEXB"
     files = {
         "bombas": {
             "src": "BOMBAS E EXPLOSIVOS.md",

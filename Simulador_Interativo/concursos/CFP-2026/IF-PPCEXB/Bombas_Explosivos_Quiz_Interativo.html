@@ -1,0 +1,2772 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bombas e Explosivos – Quiz Interativo</title>
+<style>
+  :root{--cor:#1a3a5c;--cor2:#2e6da4;--cor3:#e8f0f8;--verde:#1e7e34;--vermelho:#c0392b;--laranja:#d35400;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#222;}
+  header{background:var(--cor);color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;}
+  header h1{font-size:1.3rem;font-weight:700;}
+  .subtitle{font-size:.85rem;opacity:.8;}
+  .scorebar{background:var(--cor2);color:#fff;padding:10px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .sc{font-size:.95rem;} .sc span{font-weight:700;}
+  .lbl{opacity:.75;font-size:.85rem;}
+  .btn-reset{background:#fff;color:var(--cor);border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;}
+  .btn-reset:hover{background:#e0e8f0;}
+  .btn-wrong{background:var(--laranja);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;margin-left:auto;}
+  .btn-wrong:hover:not(:disabled){background:#b94600;}
+  .btn-wrong:disabled{opacity:.4;cursor:not-allowed;}
+  main{max-width:860px;margin:28px auto;padding:0 16px 60px;}
+  .chapter{margin-bottom:32px;}
+  .chapter-title{background:var(--cor);color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;font-weight:700;font-size:1rem;}
+  .question{background:#fff;border:1px solid #d0dcea;border-top:none;padding:20px 20px 14px;}
+  .question:last-child{border-radius:0 0 8px 8px;}
+  .question+.question{border-top:1px dashed #c8d8ea;}
+  .q-num{font-size:.78rem;color:#888;margin-bottom:4px;}
+  .q-text{font-size:1rem;font-weight:600;margin-bottom:14px;line-height:1.5;}
+  .opt{display:block;width:100%;background:var(--cor3);border:2px solid transparent;border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;text-align:left;font-size:.93rem;line-height:1.4;transition:.15s;}
+  .opt:hover:not(:disabled){background:#d5e5f8;border-color:var(--cor2);}
+  .opt.correct{background:#d4edda;border-color:var(--verde);color:var(--verde);font-weight:600;}
+  .opt.wrong{background:#fde8e8;border-color:var(--vermelho);color:var(--vermelho);}
+  .opt:disabled{cursor:default;}
+  .feedback{margin-top:8px;font-size:.88rem;padding:8px 12px;border-radius:6px;line-height:1.5;}
+  .feedback.ok{background:#d4edda;color:#155724;}
+  .feedback.err{background:#fde8e8;color:#721c24;}
+  .feedback .loc{margin-top:4px;font-size:.8rem;opacity:.8;}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Bombas e Explosivos – Quiz Interativo</h1>
+    <div class="subtitle">PCEB – Academia Nacional de Polícia (foco: cadeia de fogo, sistemas de iniciação, carta-bomba, local com bomba e ameaça)</div>
+  </div>
+</header>
+<div class="scorebar">
+  <div class="sc">✅ Acertos: <span id="sc-c">0</span></div>
+  <div class="sc">❌ Erros: <span id="sc-w">0</span></div>
+  <div class="sc">📝 Respondidas: <span id="sc-a">0</span> <span class="lbl" id="sc-total"></span></div>
+  <button class="btn-reset" onclick="resetAll()">↺ Reiniciar tudo</button>
+  <button class="btn-wrong" id="btn-wrong" onclick="resetWrong()" disabled>↺ Só os erros</button>
+</div>
+<main id="quiz-container"></main>
+
+<script>
+const CHAPTERS = [
+  {
+    "title": "Cap. 1 – Contextualização",
+    "questions": [
+      {
+        "q": "Historicamente, o primeiro evento de que se tem notícia envolvendo a tentativa de uso de explosivos como arma de perpetração de crimes ocorreu:",
+        "opts": [
+          "Na França, durante a Revolução Francesa, no século XVIII.",
+          "Na Inglaterra, no século XVII, em 4 de novembro de 1605.",
+          "Na Espanha, durante a Guerra Civil Espanhola (1936-1939).",
+          "Na Colômbia, em 1963, com 103 incidentes registrados.",
+          "Nos Estados Unidos, durante a Guerra de Secessão, no século XIX."
+        ],
+        "ans": 1,
+        "exp": "“Historicamente, o primeiro evento que se tem notícia dessa atividade ocorreu na Inglaterra, no século XVII. Em 4 de novembro de 1605, um grupo de extremistas católicos tentou explodir 36 barris de pólvora sob a Casa dos Lordes, em Londres.”",
+        "loc": "Cap. 1, pág. 11"
+      },
+      {
+        "q": "Na conspiração conhecida como “The Gunpowder Plot” (A Conspiração da Pólvora), o responsável pela colocação das bombas foi:",
+        "opts": [
+          "Sir Thomas Knyvet.",
+          "Thomas Winter.",
+          "Thomas Percy.",
+          "Guy “Guido” Fawkes.",
+          "Lord Monteagle."
+        ],
+        "ans": 3,
+        "exp": "“Participavam do grupo Thomas Winter, Thomas Percy e Guy “Guido” Fawkes, responsável pela colocação das bombas.”",
+        "loc": "Cap. 1, pág. 11"
+      },
+      {
+        "q": "O objetivo do grupo de extremistas católicos na Conspiração da Pólvora era explodir 36 barris de pólvora sob a Casa dos Lordes a fim de:",
+        "opts": [
+          "Impedir a coroação do Rei James I e restaurar o catolicismo por via eleitoral.",
+          "Matar o Rei James I e todo o Parlamento Britânico em vingança ao exílio de padres Jesuítas.",
+          "Eliminar Lord Monteagle e os membros do governo protestante.",
+          "Provocar um incêndio de grandes proporções na cidade de Londres.",
+          "Destruir o Palácio de Buckingham e depor a monarquia inglesa."
+        ],
+        "ans": 1,
+        "exp": "“...a fim de matar o Rei James I e todo o Parlamento Britânico em vingança ao exílio de padres Jesuítas.”",
+        "loc": "Cap. 1, pág. 11"
+      },
+      {
+        "q": "Na Colômbia, o terrorismo se divide em duas modalidades:",
+        "opts": [
+          "O terrorismo urbano e o terrorismo rural.",
+          "O terrorismo étnico e o terrorismo religioso.",
+          "O terrorismo de Estado e o terrorismo revolucionário.",
+          "O terrorismo subversivo e o narcoterrorismo.",
+          "O terrorismo separatista e o ecoterrorismo."
+        ],
+        "ans": 3,
+        "exp": "“Na América do Sul, especificamente na Colômbia, o terrorismo se divide em duas modalidades: o terrorismo subversivo e o narcoterrorismo.”",
+        "loc": "Cap. 1, pág. 11"
+      },
+      {
+        "q": "Na Espanha, a motivação do terrorismo é:",
+        "opts": [
+          "Ideológico-comunista.",
+          "Étnica.",
+          "Econômica.",
+          "Ligada ao narcotráfico.",
+          "Religiosa."
+        ],
+        "ans": 1,
+        "exp": "“Na Espanha, a motivação do terrorismo é étnica. Os Bascos, cuja nação, a Euskadi, ou Basconia, nunca foi reconhecida como Estado livre...”",
+        "loc": "Cap. 1, pág. 11"
+      },
+      {
+        "q": "Em retaliação à luta dos bascos contra o General Franco na Guerra Civil Espanhola, a aviação da Alemanha Nazista destruiu:",
+        "opts": [
+          "Pamplona, sede do governo basco.",
+          "Bilbao, capital econômica do País Basco.",
+          "Vitória, centro político da Euskadi.",
+          "Guernica, a “cidade santa” dos bascos.",
+          "San Sebastián, cidade litorânea basca."
+        ],
+        "ans": 3,
+        "exp": "“Em retaliação, a aviação da Alemanha Nazista, que apoiava Franco, destruiu Guernica, a “cidade santa” dos bascos.”",
+        "loc": "Cap. 1, págs. 11-12"
+      },
+      {
+        "q": "Nos Estados Unidos, a preocupação em relação ao terrorismo aumentou consideravelmente, atingindo o clímax em:",
+        "opts": [
+          "4 de novembro de 1605.",
+          "11 de setembro de 2001.",
+          "19 de abril de 1995, no atentado de Oklahoma City.",
+          "7 de dezembro de 1941, no ataque a Pearl Harbor.",
+          "26 de fevereiro de 1993, no primeiro ataque ao World Trade Center."
+        ],
+        "ans": 1,
+        "exp": "“Nos Estados Unidos, a preocupação em relação ao terrorismo aumentou consideravelmente, atingindo o clímax em 11 de setembro de 2001.”",
+        "loc": "Cap. 1, pág. 12"
+      },
+      {
+        "q": "A fase mais marcante do terrorismo no Brasil foi durante o período do regime militar:",
+        "opts": [
+          "Entre os anos 79 e 85, no processo de redemocratização.",
+          "Entre os anos 61 e 64, no governo João Goulart.",
+          "Entre os anos 64 e 68, quando ocorreu o golpe militar.",
+          "Entre os anos 74 e 79, durante a abertura política.",
+          "Entre os anos 68 e 74, quando se intensificou a luta armada e guerrilha urbana."
+        ],
+        "ans": 4,
+        "exp": "“A fase mais marcante do terrorismo no Brasil foi durante o período do regime militar, entre os anos 68 e 74, quando se intensificou a luta armada e guerrilha urbana contra o governo.”",
+        "loc": "Cap. 1, pág. 12"
+      },
+      {
+        "q": "Ao retornar para o Brasil, Carlos Marighella fundou o Agrupamento Comunista que, posteriormente, em 1968, passou a se chamar:",
+        "opts": [
+          "Comando de Libertação Nacional (COLINA).",
+          "Movimento Revolucionário 8 de Outubro (MR-8).",
+          "Vanguarda Popular Revolucionária (VPR).",
+          "Partido Comunista Brasileiro (PCB).",
+          "Ação Libertadora Nacional (ALN)."
+        ],
+        "ans": 4,
+        "exp": "“Ao retornar para o Brasil, Marighella fundou o Agrupamento Comunista que, posteriormente, em 1968, passou a se chamar Ação Libertadora Nacional (ALN).”",
+        "loc": "Cap. 1, pág. 12"
+      },
+      {
+        "q": "Marighella escreveu em 1969 um texto no qual descreve o que é e como se desenvolve uma guerrilha, chamado:",
+        "opts": [
+          "Manual de Guerra Revolucionária.",
+          "Tratado da Guerrilha Urbana.",
+          "Manual do Terrorista.",
+          "Minimanual do Guerrilheiro Urbano.",
+          "Manual do Anarquista."
+        ],
+        "ans": 3,
+        "exp": "“Marighella escreveu em 1969 um texto chamado Minimanual do Guerrilheiro Urbano, no qual descreve o que é e como se desenvolve uma guerrilha.”",
+        "loc": "Cap. 1, págs. 12-13"
+      },
+      {
+        "q": "Sobre terrorismo, Marighella afirma que “é uma ação que na maior parte dos casos se resume na colocação de uma bomba ou de explosivos” e que o terrorismo é:",
+        "opts": [
+          "“O último recurso da luta revolucionária”.",
+          "“Uma arma a que o revolucionário nunca pode renunciar”.",
+          "“Uma tática de efeito psicológico sobre o inimigo”.",
+          "“Um instrumento de negociação política”.",
+          "“A forma mais eficaz de propaganda armada”."
+        ],
+        "ans": 1,
+        "exp": "“...e que “o terrorismo é uma arma a que o revolucionário nunca pode renunciar”.”",
+        "loc": "Cap. 1, pág. 13"
+      },
+      {
+        "q": "No âmbito da competência da Polícia Federal, as atividades em que geralmente se aplicam conhecimentos específicos sobre bombas e explosivos são:",
+        "opts": [
+          "O policiamento ostensivo de aeroportos e a fiscalização de produtos controlados.",
+          "Apenas as perícias em locais de explosão e a desativação de artefatos.",
+          "Exclusivamente a segurança de chefes de Estado estrangeiros em visita ao País.",
+          "Planos de segurança de dignitários, plano de segurança aeroportuária para aviação civil, locais sob ameaça de bomba em instalações públicas federais, operações policiais especiais e perícias em locais de explosão.",
+          "A investigação de crimes ambientais envolvendo o uso irregular de explosivos em mineração."
+        ],
+        "ans": 3,
+        "exp": "“...as atividades em que, geralmente, se aplicam conhecimentos específicos sobre este tema são: Nos planos de seguranças de dignitários, plano de segurança aeroportuária para aviação civil, locais sob ameaça de bomba em instalações públicas federais, operações policiais especiais e em perícias em locais de explosão.”",
+        "loc": "Cap. 1, pág. 13"
+      },
+      {
+        "q": "Em se tratando de incidentes envolvendo bombas e explosivos, a Norma de Serviço n° 001/80 - CCP/PF estabelece que a remoção, a neutralização ou desativação desses artefatos, porventura encontrados, cabe:",
+        "opts": [
+          "À polícia civil do Estado onde ocorrer o incidente.",
+          "À Polícia Federal, através de seus serviços especializados.",
+          "Ao Corpo de Bombeiros Militar da unidade federativa.",
+          "Às Forças Armadas, por meio de seus esquadrões antibombas.",
+          "Ao responsável pela segurança do local ameaçado."
+        ],
+        "ans": 1,
+        "exp": "“a remoção, a neutralização ou desativação desses artefatos, porventura encontrados, cabe à Polícia Federal, através de seus serviços especializados” (NS 001/80-CCP/PF).",
+        "loc": "Introdução, pág. 9"
+      },
+      {
+        "q": "A Instrução Normativa nº 005/04-DG/PF organiza e normatiza as atividades especializadas em Bombas e Explosivos e institui:",
+        "opts": [
+          "Os Grupos Especializados em Bombas e Explosivos - GBE, integrantes do Sistema de Criminalística do Departamento de Polícia Federal.",
+          "Os Núcleos de Desativação de Bombas, vinculados às Delegacias de Ordem Política e Social.",
+          "O Curso de Atualização em Bombas e Explosivos - CABE, no âmbito da ANP.",
+          "O Bomb Data Center brasileiro, no âmbito do Instituto Nacional de Criminalística.",
+          "O Comando de Operações Táticas (COT), vinculado à Direção-Geral."
+        ],
+        "ans": 0,
+        "exp": "“A Instrução Normativa nº 005/04-DG/PF organiza e normatiza as atividades especializadas em Bombas e Explosivos e institui os Grupos Especializados em Bombas e Explosivos - GBE, integrantes do Sistema de Criminalística do Departamento de Polícia Federal.”",
+        "loc": "Introdução, pág. 9"
+      }
+    ]
+  },
+  {
+    "title": "Cap. 2 – Bombas e Explosivos",
+    "questions": [
+      {
+        "q": "Segundo o texto, explosivos são substâncias capazes de produzir, por uma reação química rápida ou brusca:",
+        "opts": [
+          "Uma onda térmica de alta intensidade, acompanhada de radiação luminosa.",
+          "Uma combustão lenta e progressiva que necessita de confinamento para gerar trabalho mecânico.",
+          "A fusão ou fissão do núcleo do átomo, com transformação direta de matéria em energia.",
+          "Uma reação endotérmica que absorve calor do ambiente, gerando ondas de choque.",
+          "Um grande volume de gases, os quais são elevados a altas pressões e temperaturas pelo calor desprendido na reação (exotérmica)."
+        ],
+        "ans": 4,
+        "exp": "“Explosivos - são substâncias capazes de produzir, por uma reação química rápida ou brusca, um grande volume de gases, os quais são elevados a altas pressões e temperaturas pelo calor desprendido na reação (exotérmica).”",
+        "loc": "Cap. 2, pág. 15"
+      },
+      {
+        "q": "A explosão em que o explosivo é totalmente consumido é denominada:",
+        "opts": [
+          "Deflagração total.",
+          "Explosão de segunda ordem ou de baixa ordem.",
+          "Explosão de primeira ordem ou de alta ordem.",
+          "Explosão completa ou estequiométrica.",
+          "Detonação por simpatia."
+        ],
+        "ans": 2,
+        "exp": "“A explosão em que o explosivo é totalmente consumido é denominada explosão de primeira ordem ou de alta ordem e a explosão em que restam resíduos de explosivos não consumidos denomina-se explosão de segunda ordem ou de baixa ordem.”",
+        "loc": "Cap. 2, pág. 15"
+      },
+      {
+        "q": "A explosão que ocorre quando a pressão crescente dentro de um recipiente supera a sua resistência estrutural, como na explosão de uma caldeira a vapor, é classificada como explosão:",
+        "opts": [
+          "De baixa ordem.",
+          "Por simpatia.",
+          "Mecânica.",
+          "Química.",
+          "Atômica."
+        ],
+        "ans": 2,
+        "exp": "“Mecânica - quando a pressão crescente dentro de um recipiente supera a sua resistência estrutural, como ocorre na explosão de uma caldeira a vapor.”",
+        "loc": "Cap. 2, pág. 15"
+      },
+      {
+        "q": "Quanto aos tipos de explosões, é correto afirmar que todos os explosivos comerciais são:",
+        "opts": [
+          "Explosivos deflagrantes.",
+          "Explosivos atômicos.",
+          "Explosivos mecânicos.",
+          "Explosivos primários.",
+          "Explosivos químicos."
+        ],
+        "ans": 4,
+        "exp": "“Química - é a reação química que converte, de forma extremamente rápida, substâncias sólidas ou líquidas em gases. (...) Todos os explosivos comerciais são explosivos químicos.”",
+        "loc": "Cap. 2, pág. 15"
+      },
+      {
+        "q": "Segundo o texto, bomba é qualquer artefato confeccionado com uma carga explosiva:",
+        "opts": [
+          "De uso militar, capaz de provocar destruição em massa por efeito térmico.",
+          "Associada a um detonador elétrico e a um temporizador digital.",
+          "Improvisada, de fabricação caseira, com finalidade criminosa ou terrorista.",
+          "Confinada em recipiente metálico, capaz de gerar fragmentação primária.",
+          "Contendo um mecanismo de acionamento, sendo capaz de provocar destruição ou danos por meio da formação de ondas de choque e de fragmentação."
+        ],
+        "ans": 4,
+        "exp": "“Bomba - é qualquer artefato confeccionado com uma carga explosiva, contendo um mecanismo de acionamento, sendo capaz de provocar destruição ou danos por meio da formação de ondas de choque e de fragmentação.”",
+        "loc": "Cap. 2, pág. 15"
+      },
+      {
+        "q": "Entre os fatores a considerar no trato com explosivos, todo procedimento deverá ser orientado, principalmente:",
+        "opts": [
+          "Pela rapidez na neutralização do artefato.",
+          "Pela preservação dos vestígios para a investigação criminal.",
+          "Pela busca da máxima segurança do técnico em bombas.",
+          "Pela minimização dos riscos ao público envolvido.",
+          "Pela proteção do patrimônio público e privado."
+        ],
+        "ans": 2,
+        "exp": "“Segurança pessoal - todo procedimento deverá ser orientado, principalmente, pela busca da máxima segurança do técnico em bombas.”",
+        "loc": "Cap. 2, pág. 15"
+      },
+      {
+        "q": "A sensibilidade de um explosivo refere-se:",
+        "opts": [
+          "À sua capacidade de romper os materiais que o circundam.",
+          "À rapidez com que atinge a sua máxima pressão de detonação.",
+          "À sua estabilidade durante a produção, manuseio, transporte e armazenamento.",
+          "À facilidade com que ele pode ser iniciado por meio de choque, faísca, calor ou chama, eletricidade estática, atrito, vibração ou fricção.",
+          "À medida, em metros por segundo, da propagação da onda de choque."
+        ],
+        "ans": 3,
+        "exp": "“A sensibilidade de um explosivo refere-se à facilidade com que ele pode ser iniciado por meio de choque (impacto ou percussão), faísca, calor ou mesmo chama, eletricidade estática, atrito, vibração ou fricção, etc.”",
+        "loc": "Cap. 2, pág. 16"
+      },
+      {
+        "q": "São exemplos de explosivos sensíveis:",
+        "opts": [
+          "Explosivos plásticos, Tetril e PETN.",
+          "Trinitrotolueno (TNT), Anfo e explosivos plásticos.",
+          "Composto B, TNT e emulsões.",
+          "Nitroglicerina (NG), pólvoras e explosivos primários.",
+          "Anfo, nitrato de amônio e dinamites."
+        ],
+        "ans": 3,
+        "exp": "“Exemplos de explosivos sensíveis são: nitroglicerina (NG), pólvoras e explosivos primários. Como exemplos de explosivos pouco sensíveis podemos citar: trinitrotolueno (TNT), Anfo (...), explosivos plásticos, Composto B.”",
+        "loc": "Cap. 2, pág. 16"
+      },
+      {
+        "q": "Brisância é definida como:",
+        "opts": [
+          "A capacidade de ruptura do explosivo, mensurada pela rapidez com que este atinge a sua máxima pressão.",
+          "A velocidade com que a onda de choque se propaga através de uma coluna de explosivo.",
+          "A energia térmica liberada por unidade de massa na detonação.",
+          "A facilidade com que o explosivo pode ser iniciado por choque ou fricção.",
+          "A relação entre a pressão de detonação e o grau de confinamento do explosivo."
+        ],
+        "ans": 0,
+        "exp": "“Brisância: Capacidade de ruptura do explosivo, mensurada pela rapidez com este atinge a sua máxima pressão. Quanto mais rápido a pressão máxima é atingida, maior a sua capacidade de romper os materiais que o circundam.”",
+        "loc": "Cap. 2, pág. 16"
+      },
+      {
+        "q": "A velocidade de detonação varia de acordo com:",
+        "opts": [
+          "A sensibilidade, a brisância e a estabilidade do explosivo.",
+          "A composição química, a cor e o formato do explosivo.",
+          "A temperatura ambiente, a umidade relativa do ar e a altitude.",
+          "O diâmetro do cartucho, a granulometria, o grau de confinamento e a densidade do explosivo.",
+          "O tipo de detonador, o comprimento do estopim e a carga do booster."
+        ],
+        "ans": 3,
+        "exp": "“Ela varia de acordo com o diâmetro do cartucho, a granulometria, o grau de confinamento e a densidade do explosivo.”",
+        "loc": "Cap. 2, pág. 16"
+      },
+      {
+        "q": "Quanto ao uso, os explosivos militares apresentam:",
+        "opts": [
+          "Alta estabilidade, alta sensibilidade e baixa brisância.",
+          "Baixa brisância, baixa sensibilidade e baixo custo.",
+          "Alta sensibilidade, baixa estabilidade e baixo custo.",
+          "Baixa estabilidade, alta sensibilidade e alta brisância.",
+          "Alta estabilidade, baixa sensibilidade e alta brisância."
+        ],
+        "ans": 4,
+        "exp": "“Explosivos militares - apresentam alta estabilidade, baixa sensibilidade e alta brisância. Ex.: TNT, Tetril, explosivos plásticos, dinamites militares, etc.”",
+        "loc": "Cap. 2, pág. 16"
+      },
+      {
+        "q": "Os explosivos comerciais, em comparação com os militares, são:",
+        "opts": [
+          "Menos sensíveis e menos brisantes, com baixo custo e alta estabilidade.",
+          "Mais sensíveis e menos brisantes, apresentam baixo custo e menor estabilidade.",
+          "Menos sensíveis e mais brisantes, com alto custo e maior estabilidade.",
+          "Igualmente sensíveis, porém mais estáveis e mais caros.",
+          "Mais sensíveis e mais brisantes, com custo elevado."
+        ],
+        "ans": 1,
+        "exp": "“Explosivos comerciais - são mais sensíveis e menos brisantes do que os militares, apresentam baixo custo e menor estabilidade. Ex.: Dinamites, pólvoras, fogos de artifício, cordel detonante, emulsões, etc.”",
+        "loc": "Cap. 2, pág. 16"
+      },
+      {
+        "q": "A mistura Armstrong, exemplo de explosivo de fabricação caseira, é composta de:",
+        "opts": [
+          "Clorato de potássio (70%) + açúcar (15%) + carvão (10%) + enxofre (5%).",
+          "Nitrato de amônio (94%) + óleo diesel (6%).",
+          "Clorato de potássio (65%) + fósforo vermelho (35%).",
+          "Clorato de potássio (77%) + resina fenólica (17%) + enxofre (5%) + alumínio (1%).",
+          "Salitre (75%) + carvão (15%) + enxofre (10%)."
+        ],
+        "ans": 2,
+        "exp": "“Explosivos de fabricação caseira - misturas incendiárias. Ex.: Coquetel Molotov, mistura Armstrong (KClO3-65% + Fósforo vermelho-35%), Napalm, pólvoras caseiras, etc.”",
+        "loc": "Cap. 2, págs. 16-17"
+      },
+      {
+        "q": "Os baixos explosivos, também denominados explosivos de baixa força, deflagrantes ou explosivos propulsores, apresentam:",
+        "opts": [
+          "Alta velocidade de detonação, ficando no final da cadeia de fogo.",
+          "Alta relação pressão de detonação por tempo, dispensando confinamento.",
+          "Uma combustão lenta e progressiva (até 1.000 m/s).",
+          "Sensibilidade ao choque mecânico, calor e fricção, sendo usados em detonadores.",
+          "Velocidade de detonação superior a 5.000 m/s."
+        ],
+        "ans": 2,
+        "exp": "“Baixos explosivos - são também denominados explosivos de baixa força, deflagrantes ou, ainda, explosivos propulsores. Apresentam uma combustão lenta e progressiva (até 1.000 m/s). Ex.: pólvora negra, que possui uma velocidade de deflagração em torno de 300 m/s e precisa estar confinada para explodir.”",
+        "loc": "Cap. 2, pág. 17"
+      },
+      {
+        "q": "Os altos explosivos primários são os explosivos intermediários ou de iniciação (dentro de uma cadeia de fogo) e que:",
+        "opts": [
+          "Precisam estar confinados para explodir, com combustão lenta e progressiva.",
+          "Têm alto poder de brisância, sendo chamados de explosivos de ruptura.",
+          "Fornecem energia de ativação para o explosivo de ruptura, sendo sensíveis ao choque mecânico, calor e fricção.",
+          "Apresentam baixa velocidade de detonação e são usados como propelentes.",
+          "Necessitam de carga inicial (detonador ou reforçador) para serem iniciados."
+        ],
+        "ans": 2,
+        "exp": "“Altos explosivos primários - são os explosivos intermediários ou de iniciação (dentro de uma cadeia de fogo) e que fornecem energia de ativação para o explosivo de ruptura, sendo sensíveis ao choque mecânico, calor e fricção. São os explosivos usados na fabricação de detonadores.”",
+        "loc": "Cap. 2, pág. 17"
+      },
+      {
+        "q": "Sobre os altos explosivos secundários, é correto afirmar que todo alto explosivo secundário precisa de uma carga inicial (detonador ou reforçador), exceto:",
+        "opts": [
+          "A nitroglicerina.",
+          "A nitropenta (PETN).",
+          "O tetril.",
+          "O TNT.",
+          "O explosivo plástico C4."
+        ],
+        "ans": 0,
+        "exp": "“Todo alto explosivo secundário precisa de uma carga inicial (detonador ou reforçador), exceto a nitroglicerina.”",
+        "loc": "Cap. 2, pág. 17"
+      },
+      {
+        "q": "Os altos explosivos secundários, chamados explosivos de ruptura, ficam em que posição da cadeia de fogo e qual sua relação com o confinamento?",
+        "opts": [
+          "No meio da cadeia de fogo, fornecendo energia de ativação, sem necessidade de confinamento.",
+          "Fora da cadeia de fogo, pois são iniciados diretamente por chama.",
+          "No início da cadeia de fogo e precisam de confinamento para explodir.",
+          "No final da cadeia de fogo e não necessitam de confinamento para explodir.",
+          "No final da cadeia de fogo e só explodem quando confinados."
+        ],
+        "ans": 3,
+        "exp": "“Altos explosivos secundários - são os chamados explosivos de ruptura (...) Apresentam alta velocidade de detonação ficando no final de uma cadeia de fogo. (...) Apresentam uma alta relação pressão de detonação por tempo e não necessitam de confinamento para explodir.”",
+        "loc": "Cap. 2, pág. 17"
+      },
+      {
+        "q": "Em 1867, o sueco Alfred Nobel dessensibilizou com êxito a nitroglicerina, mediante a sua saturação com sílica (Kieselguhr), e inventou a dinamite. A descoberta da nitroglicerina ocorrera em 1846, pelo químico italiano:",
+        "opts": [
+          "Giulio Natta, que a chamou de glicerina nítrica.",
+          "Ascanio Sobrero, que a chamou de piroglicerina.",
+          "Ascanio Sobrero, que a chamou de balistita.",
+          "Amedeo Avogadro, que a chamou de trinitrina.",
+          "Stanislao Cannizzaro, que a chamou de nitroglicerol."
+        ],
+        "ans": 1,
+        "exp": "“A descoberta da nitroglicerina ocorrera em 1846, pelo químico italiano Ascanio Sobrero, que a chamou de piroglicerina.”",
+        "loc": "Cap. 2, pág. 19"
+      },
+      {
+        "q": "Sobre o Trinitrotolueno (TNT), é correto afirmar:",
+        "opts": [
+          "É o mais seguro dos explosivos, sendo usado como padrão de referência para outros explosivos.",
+          "É solúvel em água e apresenta velocidade de detonação de 8.400 m/s.",
+          "É um alto explosivo primário, muito sensível, usado na fabricação de detonadores.",
+          "É um explosivo comercial de baixo custo, usado principalmente em mineração.",
+          "Necessita de confinamento para explodir e deflagra a 300 m/s."
+        ],
+        "ans": 0,
+        "exp": "“É impermeável e apresenta uma velocidade de detonação igual a 6.900 m/s (...) É o mais seguro dos explosivos, sendo usado como padrão de referência para outros explosivos.”",
+        "loc": "Cap. 2, pág. 20"
+      },
+      {
+        "q": "O explosivo plástico C4 apresenta:",
+        "opts": [
+          "Núcleo branco, sendo usado em pedreiras para interligar cargas explosivas.",
+          "Coloração amarelada, contendo RDX, DNT, TNT e nitrocelulose.",
+          "Cor cinza, com velocidade de detonação de 5.100 m/s, sendo usado em espoletas.",
+          "Cor branca ou rósea, 91% de RDX e velocidade de detonação a 8.050 m/s.",
+          "Forma de folha flexível composta por RDX (63%), nitrocelulose (8%) e material agregante (29%)."
+        ],
+        "ans": 3,
+        "exp": "“...enquanto o C4 apresenta cor branca ou rósea, 91% de RDX e velocidade de detonação a 8.050 m/s.”",
+        "loc": "Cap. 2, pág. 21"
+      },
+      {
+        "q": "As ondas de choque são capazes de produzir efeitos mecânicos, provocando outras explosões a distância, por influência (simpatia). Esse é o princípio de funcionamento:",
+        "opts": [
+          "Do efeito Monroe.",
+          "Das cargas ocas.",
+          "Do efeito cumulativo.",
+          "Dos estopins.",
+          "Dos detonadores."
+        ],
+        "ans": 4,
+        "exp": "“Têm velocidade inicial suficiente para produzir uma compressão capaz de provocar a detonação de outra carga explosiva que se encontre próxima. É esse o princípio de funcionamento dos detonadores.”",
+        "loc": "Cap. 2, pág. 24"
+      },
+      {
+        "q": "O efeito Monroe ou efeito bazuca é utilizado para se obter maior pressão no momento da explosão, ocorrendo quando:",
+        "opts": [
+          "Há convergência de várias ondas de choque para um mesmo ponto.",
+          "Detonações sucessivas ocorrem em intervalos regulares de tempo.",
+          "A atmosfera comprimida volta rapidamente a preencher o vácuo recém-formado.",
+          "As ondas de choque são refletidas por superfícies rígidas próximas ao artefato.",
+          "O explosivo é confinado em recipientes com pedaços de metal ao redor da carga."
+        ],
+        "ans": 0,
+        "exp": "“Efeito Monroe ou efeito bazuca - é utilizado para se obter maior pressão no momento da explosão, ocorrendo quando há convergência de várias ondas de choque para um mesmo ponto. É usado em implosões...”",
+        "loc": "Cap. 2, pág. 24"
+      },
+      {
+        "q": "No deslocamento de ar ou concussão, forma-se uma onda de alta pressão (pressão positiva) à medida que os gases aquecidos são irradiados, seguida de:",
+        "opts": [
+          "Uma pressão negativa, que ocorre quando a atmosfera comprimida é deslocada e volta rapidamente a preencher o vácuo recém-formado, sendo ambas as forças destrutivas.",
+          "Uma fragmentação secundária dos materiais que circundam o explosivo.",
+          "Uma onda térmica que provoca incêndios nas proximidades.",
+          "Um período de calmaria, sem qualquer efeito destrutivo adicional.",
+          "Uma onda de choque refletida, de intensidade superior à onda original."
+        ],
+        "ans": 0,
+        "exp": "“Forma-se uma onda de alta pressão (pressão positiva) à medida que os gases aquecidos são irradiados, seguida de uma pressão negativa, que ocorre quando a atmosfera comprimida é deslocada e volta rapidamente a preencher o vácuo recém formado, sendo ambas as forças destrutivas.”",
+        "loc": "Cap. 2, pág. 23"
+      },
+      {
+        "q": "A potência de uma explosão está relacionada com:",
+        "opts": [
+          "A distância entre o artefato e o alvo.",
+          "O tipo, o formato, a quantidade e o confinamento do explosivo.",
+          "Apenas a velocidade de detonação e a brisância do explosivo.",
+          "O sistema de iniciação e o mecanismo de acionamento empregados.",
+          "A sensibilidade, a cor e a densidade do explosivo."
+        ],
+        "ans": 1,
+        "exp": "“A potência de uma explosão está relacionada com o tipo, o formato, a quantidade e o confinamento do explosivo.”",
+        "loc": "Cap. 2, pág. 24"
+      }
+    ]
+  },
+  {
+    "title": "Cap. 3 – Sistemas de Iniciação ⭐ (foco da prova)",
+    "questions": [
+      {
+        "q": "Os estopins são à base de pólvora e usados para:",
+        "opts": [
+          "Transmitir a chama de um ponto a outro.",
+          "Sensibilizar a espoleta por meio de onda de choque.",
+          "Fornecer energia de ativação diretamente ao explosivo de ruptura.",
+          "Reforçar a detonação de altos explosivos secundários.",
+          "Iniciar cargas explosivas por meio de corrente elétrica."
+        ],
+        "ans": 0,
+        "exp": "“São à base de pólvora e usados para transmitir a chama de um ponto a outro.”",
+        "loc": "Cap. 3, pág. 29"
+      },
+      {
+        "q": "O estopim hidráulico é o estopim impermeável que permite utilização subaquática. Seu tempo de queima e quantidade de pólvora são, respectivamente:",
+        "opts": [
+          "60 a 90 s/m e 25 g por metro.",
+          "110 a 240 s/m e 16 g por metro.",
+          "300 s/m e 10 g por metro.",
+          "8 s/m e 16 g por metro.",
+          "110 a 240 s/m e 21 g por metro."
+        ],
+        "ans": 4,
+        "exp": "“Hidráulico - estopim impermeável que permite utilização subaquática. (...) Tempo de queima: 110 a 240 s/m. Quantidade de pólvora: 21 g por metro.”",
+        "loc": "Cap. 3, pág. 29"
+      },
+      {
+        "q": "No estopim hidráulico, a queima se dá de modo lento e uniforme, sendo:",
+        "opts": [
+          "Comum a extinção espontânea da chama em ambientes úmidos.",
+          "Possível interromper a queima mergulhando-o em água.",
+          "Visualmente possível acompanhar o ponto de queima da pólvora.",
+          "Visualmente impossível saber em que parte do estopim a pólvora está queimando.",
+          "Necessário o confinamento para que a queima prossiga."
+        ],
+        "ans": 3,
+        "exp": "“Queima de modo lento e uniforme, sendo visualmente impossível saber em que parte do estopim a pólvora está queimando.”",
+        "loc": "Cap. 3, pág. 29"
+      },
+      {
+        "q": "O estopim comum tem uma quantidade menor de pólvora que o hidráulico, correspondente a:",
+        "opts": [
+          "25 g/m.",
+          "8 g/m.",
+          "10 g/m.",
+          "21 g/m.",
+          "16 g/m."
+        ],
+        "ans": 4,
+        "exp": "“Comum - tem uma quantidade menor de pólvora: 16 g/m.”",
+        "loc": "Cap. 3, pág. 29"
+      },
+      {
+        "q": "A mecha, com pólvora aparente, por fora do tecido, é muito usada em pirotecnia, com tempo de queima de:",
+        "opts": [
+          "8 s/m.",
+          "21 s/m.",
+          "16 s/m.",
+          "110 a 240 s/m.",
+          "2 s/m."
+        ],
+        "ans": 0,
+        "exp": "“Mecha - com pólvora aparente, por fora do tecido, é muito usado em pirotecnia. Tempo de queima: 8 s/m.”",
+        "loc": "Cap. 3, pág. 29"
+      },
+      {
+        "q": "O rastilho caracteriza-se por:",
+        "opts": [
+          "Ser impermeável, permitindo uso subaquático.",
+          "Queimar de modo lento e uniforme, sem visualização da queima.",
+          "Ter a menor velocidade de queima entre os estopins.",
+          "Ter pólvora aparente, com tempo de queima ainda mais veloz do que a mecha.",
+          "Ser usado exclusivamente em detonadores elétricos."
+        ],
+        "ans": 3,
+        "exp": "“Rastilho - com pólvora aparente, com tempo de queima ainda mais veloz do que a mecha.”",
+        "loc": "Cap. 3, pág. 29"
+      },
+      {
+        "q": "Como medida de precaução no uso de estopins, deve-se:",
+        "opts": [
+          "Usar sempre um único estopim longo para cada carga explosiva.",
+          "Medir o tempo de queima do estopim e usar sempre dois estopins de igual comprimento para uma mesma carga explosiva.",
+          "No caso de falhas, aproximar-se imediatamente para verificar o problema.",
+          "Usar estopins de comprimentos diferentes para garantir redundância.",
+          "Preparar a escorva com antecedência mínima de 24 horas."
+        ],
+        "ans": 1,
+        "exp": "“Como medida de precaução, deve-se medir o tempo de queima do estopim, usar sempre dois estopins de igual comprimento para uma mesma carga explosiva...”",
+        "loc": "Cap. 3, pág. 29"
+      },
+      {
+        "q": "No caso de falhas na queima do estopim, deve-se esperar quanto tempo para uma aproximação?",
+        "opts": [
+          "Cerca de 5 minutos.",
+          "Cerca de 60 minutos.",
+          "Cerca de 30 minutos.",
+          "Cerca de 10 minutos.",
+          "Cerca de 20 minutos."
+        ],
+        "ans": 4,
+        "exp": "“...e, no caso de falhas, esperar cerca de 20 minutos para uma aproximação. A escorva deve ser preparada na hora.”",
+        "loc": "Cap. 3, pág. 29"
+      },
+      {
+        "q": "As cápsulas explosivas, espoletas ou detonadores não-elétricos apresentam-se como um pequeno cilindro metálico (Al ou Cu) com:",
+        "opts": [
+          "Comprimento de 2 a 4 cm e diâmetro de 10 mm, com dois fios condutores.",
+          "Comprimento fixo de 5 cm e diâmetro de 3 mm, com paredes revestidas de material pirotécnico.",
+          "Comprimento variável de 4 a 8 cm e diâmetro de cerca de 7 mm, aberto em uma das extremidades para a introdução do estopim.",
+          "Comprimento de 10 a 15 cm e diâmetro de 12 mm, fechado em ambas as extremidades.",
+          "Comprimento de 4 a 8 cm e diâmetro de 15 mm, aberto em ambas as extremidades."
+        ],
+        "ans": 2,
+        "exp": "“...um pequeno cilindro metálico (Al ou Cu) com comprimento variável de 4 a 8 cm, diâmetro de cerca de 7 mm, aberto em uma das extremidades para a introdução do estopim, que deve ser fixado com amolgador.”",
+        "loc": "Cap. 3, pág. 29"
+      },
+      {
+        "q": "Atualmente, as cápsulas explosivas não-elétricas são fabricadas com uma carga primária de:",
+        "opts": [
+          "Fulminato de mercúrio (0,4 g) e uma carga secundária de TNT (0,8 g).",
+          "Nitroglicerina (0,4 g) e uma carga secundária de dinamite (0,8 g).",
+          "Azida de chumbo + trinitroresorcinato (estifnato) de chumbo (0,4 g) e uma carga secundária de nitropenta (0,8 g), Tetril ou RDX.",
+          "DDNP (0,8 g) e uma carga secundária de azida de chumbo (0,4 g).",
+          "Pólvora negra (0,4 g) e uma carga secundária de PETN (0,8 g)."
+        ],
+        "ans": 2,
+        "exp": "“Atualmente, são fabricadas com uma carga primária de azida de chumbo + trinitroresorcinato (estifnato) de chumbo (0,4 g) e uma carga secundária de nitropenta (0,8 g), Tetril ou RDX.”",
+        "loc": "Cap. 3, pág. 29"
+      },
+      {
+        "q": "Nas cápsulas explosivas elétricas, quando a corrente elétrica é aplicada, o fio ponte se aquece até incandescer-se, acionando o explosivo de ignição. Esse aquecimento do condutor pela corrente elétrica é denominado:",
+        "opts": [
+          "Efeito Joule.",
+          "Efeito Monroe.",
+          "Efeito cumulativo.",
+          "Efeito termoiônico.",
+          "Efeito fotoelétrico."
+        ],
+        "ans": 0,
+        "exp": "“Quando a corrente elétrica é aplicada, o fio ponte se aquece até incandescer-se (efeito Joule), acionando o explosivo de ignição e causando a detonação do alto explosivo contido.”",
+        "loc": "Cap. 3, pág. 29"
+      },
+      {
+        "q": "As cápsulas explosivas elétricas geram uma pressão acima de 200 quilobars e têm uma resistência de:",
+        "opts": [
+          "5,0 Ohm.",
+          "3,0 Ohm.",
+          "0,5 Ohm.",
+          "15 Ohm.",
+          "1,5 Ohm."
+        ],
+        "ans": 4,
+        "exp": "“Geram uma pressão acima de 200 quilobars, têm uma resistência de 1,5 Ohm e podem ser com ou sem retardo.”",
+        "loc": "Cap. 3, pág. 29"
+      },
+      {
+        "q": "Em função da finalidade a que se destinam, as espoletas podem ser classificadas da seguinte forma:",
+        "opts": [
+          "Tipo coluna, carvão, túnel ou sismográficas.",
+          "Tipo militar, comercial ou caseira.",
+          "Tipo primária, secundária ou terciária.",
+          "Tipo elétrica, mecânica, química ou combinada.",
+          "Tipo instantânea, de retardo curto ou de retardo longo."
+        ],
+        "ans": 0,
+        "exp": "“Em função da finalidade a que se destinam, as espoletas podem ser classificadas da seguinte forma: tipo coluna, carvão, túnel ou sismográficas.”",
+        "loc": "Cap. 3, pág. 29"
+      },
+      {
+        "q": "São vantagens da espoleta elétrica:",
+        "opts": [
+          "Detonação instantânea, sem necessidade de linha elétrica.",
+          "Baixo custo, insensibilidade à eletricidade estática e dispensa de explosor.",
+          "Queima visível, tempo de retardo fixo e uso subaquático.",
+          "Detonação no momento desejado, aproximação no caso de falhas e detonação de várias cargas simultaneamente.",
+          "Imunidade à indução eletromagnética e detonação silenciosa."
+        ],
+        "ans": 3,
+        "exp": "“Vantagens da espoleta elétrica: Detonação no momento desejado; Aproximação no caso de falhas; Detonação de várias cargas simultaneamente.”",
+        "loc": "Cap. 3, pág. 30"
+      },
+      {
+        "q": "É desvantagem da espoleta elétrica:",
+        "opts": [
+          "O elevado tempo de queima, entre 110 e 240 s/m.",
+          "A impossibilidade de aproximação no caso de falhas.",
+          "A necessidade de confinamento para a detonação.",
+          "A impossibilidade de detonação de várias cargas simultaneamente.",
+          "O acionamento acidental por eletricidade estática ou indução eletromagnética."
+        ],
+        "ans": 4,
+        "exp": "“Desvantagens da espoleta elétrica: Acionamento acidental por eletricidade estática ou indução eletromagnética.”",
+        "loc": "Cap. 3, pág. 30"
+      },
+      {
+        "q": "O sistema disparador de tubo de choque consiste em um tubo plástico oco, flexível e resistente, de pequeno diâmetro (cerca de 3 mm), com as paredes revestidas internamente por uma fina camada de material pirotécnico composto de:",
+        "opts": [
+          "HMX (Octogênio) + alumínio em pó.",
+          "Azida de chumbo + estifnato de chumbo.",
+          "Fulminato de mercúrio + clorato de potássio.",
+          "RDX (Hexogênio) + cera.",
+          "PETN + pólvora negra."
+        ],
+        "ans": 0,
+        "exp": "“...com as paredes revestidas internamente por uma fina camada de material pirotécnico (HMX - (Octogênio) + alumínio em pó).”",
+        "loc": "Cap. 3, pág. 30"
+      },
+      {
+        "q": "Quando acionado, o tubo de choque produz uma chama que percorre o interior do tubo a uma velocidade de cerca de:",
+        "opts": [
+          "1.000 m/s, sensibilizando a espoleta com muito mais segurança.",
+          "5.000 m/s, detonando diretamente a carga principal.",
+          "100 m/s, permitindo o afastamento do operador.",
+          "300 m/s, sensibilizando a espoleta.",
+          "8.050 m/s, equivalente à velocidade do C4."
+        ],
+        "ans": 0,
+        "exp": "“Quando acionado, produz uma chama que percorre o interior do tubo a uma velocidade de cerca de 1.000 m/s, sensibilizando a espoleta com muito mais segurança.”",
+        "loc": "Cap. 3, pág. 30"
+      },
+      {
+        "q": "Entre as regras de segurança para o manuseio de detonadores, no caso de detonadores elétricos, deve-se:",
+        "opts": [
+          "Unir as pontas dos fios para evitar iniciação acidental.",
+          "Enrolar os fios ao redor do corpo do detonador.",
+          "Desencapar as pontas dos fios apenas no armazenamento.",
+          "Conectar os fios diretamente ao explosor durante o transporte.",
+          "Manter as pontas dos fios separadas para evitar curto-circuito."
+        ],
+        "ans": 0,
+        "exp": "“No caso de detonadores elétricos, unir as pontas dos fios para evitar iniciação acidental.”",
+        "loc": "Cap. 3, pág. 30"
+      },
+      {
+        "q": "Segundo as regras de segurança, não se deve usar detonadores próximo à rede de alta tensão, pois:",
+        "opts": [
+          "O campo elétrico pode degradar a carga primária do detonador.",
+          "O ruído elétrico impede o teste de continuidade da linha.",
+          "A umidade próxima às redes compromete a escorva.",
+          "A rede pode sofrer curto-circuito com a linha de fogo.",
+          "As espoletas elétricas podem detonar por indução eletromagnética."
+        ],
+        "ans": 4,
+        "exp": "“Não usar detonadores próximo à rede de alta tensão, pois as espoletas elétricas podem detonar por indução eletromagnética.”",
+        "loc": "Cap. 3, pág. 30"
+      },
+      {
+        "q": "Quanto ao armazenamento, nunca armazenar detonadores a menos de qual distância de quaisquer outros explosivos até que estejam prontos para serem escorvados?",
+        "opts": [
+          "10 metros.",
+          "1 metro.",
+          "3 metros.",
+          "5 metros.",
+          "20 metros."
+        ],
+        "ans": 2,
+        "exp": "“Nunca armazenar detonadores a menos de 3 metros de quaisquer outros explosivos até que estejam prontos para serem escorvados.”",
+        "loc": "Cap. 3, pág. 30"
+      },
+      {
+        "q": "Antes de passar uma espoleta elétrica para outra pessoa, deve-se:",
+        "opts": [
+          "Conectar a espoleta à carga principal.",
+          "Testar a continuidade da linha elétrica.",
+          "Equilibrar a eletricidade estática dos corpos.",
+          "Umedecer as mãos para dissipar a energia estática.",
+          "Cortar os dois fios simultaneamente."
+        ],
+        "ans": 2,
+        "exp": "“Antes de passar uma espoleta elétrica para outra pessoa, equilibrar a eletricidade estática dos corpos.”",
+        "loc": "Cap. 3, págs. 30-31"
+      },
+      {
+        "q": "Ao trabalhar com os fios de uma espoleta elétrica, a regra de segurança determina:",
+        "opts": [
+          "Cortar sempre um fio de cada vez.",
+          "Cortar os fios apenas em ambientes úmidos.",
+          "Cortar os fios somente após a escorva.",
+          "Nunca cortar os fios, apenas desconectá-los.",
+          "Cortar sempre os dois fios ao mesmo tempo, com alicate isolado."
+        ],
+        "ans": 0,
+        "exp": "“Cortar sempre um fio de cada vez de uma espoleta elétrica.”",
+        "loc": "Cap. 3, pág. 31"
+      }
+    ]
+  },
+  {
+    "title": "Cap. 4 – Mecanismos de Acionamento",
+    "questions": [
+      {
+        "q": "Para que um artefato explosivo funcione de forma eficaz, é necessário que apresente:",
+        "opts": [
+          "Um sistema de iniciação redundante e uma fonte de energia.",
+          "Uma carga primária, uma carga secundária e um reforçador.",
+          "Um invólucro metálico, fragmentos e a carga explosiva.",
+          "Um detonador elétrico, um temporizador e a carga explosiva.",
+          "Ao menos um mecanismo de acionamento e a carga explosiva."
+        ],
+        "ans": 4,
+        "exp": "“Para que um artefato explosivo funcione de forma eficaz, é necessário que apresente ao menos um mecanismo de acionamento e a carga explosiva.”",
+        "loc": "Cap. 4, pág. 33"
+      },
+      {
+        "q": "O princípio básico de acionamento baseado no fato de que alguns compostos químicos, ao se unirem, produzem uma reação exotérmica incendiária, é o princípio:",
+        "opts": [
+          "Químico.",
+          "Térmico.",
+          "Combinado.",
+          "Elétrico.",
+          "Mecânico."
+        ],
+        "ans": 0,
+        "exp": "“Químico - baseado no fato de que alguns compostos químicos, ao se unirem, produzem uma reação exotérmica incendiária.”",
+        "loc": "Cap. 4, pág. 33"
+      },
+      {
+        "q": "No princípio elétrico de acionamento, a corrente elétrica, ao percorrer um condutor, provoca o seu aquecimento, o que é conhecido como:",
+        "opts": [
+          "Efeito Monroe.",
+          "Efeito cumulativo.",
+          "Efeito bazuca.",
+          "Efeito Joule.",
+          "Indução eletromagnética."
+        ],
+        "ans": 3,
+        "exp": "“Elétrico - a corrente elétrica, ao percorrer um condutor, provoca o seu aquecimento (efeito Joule), que pode ser capaz de iniciar um explosivo sensível ao calor.”",
+        "loc": "Cap. 4, pág. 33"
+      },
+      {
+        "q": "Os dispositivos que utilizam o mecanismo de acionamento por pressão são muito utilizados:",
+        "opts": [
+          "Sob assentos de veículos, estofados em geral, tapetes, colchões, assoalhos, etc.",
+          "Em cartas-bomba e envelopes suspeitos.",
+          "Em artefatos acionados por controle remoto de radiofrequência.",
+          "Em bombas-relógio com temporizadores digitais.",
+          "Em armadilhas com cabo de tropeço em trilhas militares."
+        ],
+        "ans": 0,
+        "exp": "“São muito utilizados sob assentos de veículos, estofados em geral, tapetes, colchões, assoalhos, etc. Podem ser controlados de acordo com a pressão exercida.”",
+        "loc": "Cap. 4, pág. 33"
+      },
+      {
+        "q": "Sobre as características dos mecanismos de pressão, é correto afirmar:",
+        "opts": [
+          "Os mecanismos podem apresentar pressões mínimas, ou em níveis elevados, como no caso de minas antipessoal e antitanque, ou seja, uma pessoa não acionaria uma mina antitanque.",
+          "Todos são acionados com pressões mínimas, independentemente do alvo.",
+          "Não podem ser montados por descompressão.",
+          "Dependem sempre de circuito elétrico com temporizador.",
+          "São acionados exclusivamente por veículos pesados."
+        ],
+        "ans": 0,
+        "exp": "“Os mecanismos podem apresentar pressões mínimas, ou em níveis elevados, como no caso de minas antipessoal e antitanque, ou seja, uma pessoa não acionaria uma mina antitanque. O mesmo esquema pode ser montado por descompressão.”",
+        "loc": "Cap. 4, pág. 34"
+      },
+      {
+        "q": "O mecanismo de descompressão funciona pela remoção de um objeto ou da pressão, sendo muito utilizado em:",
+        "opts": [
+          "Carta-bomba.",
+          "Carros-bomba.",
+          "Bombas barométricas.",
+          "Bombas-relógio.",
+          "Minas antitanque."
+        ],
+        "ans": 0,
+        "exp": "“O mecanismo funciona pela remoção de um objeto ou da pressão. É muito utilizado em carta-bomba. Os exemplos práticos são muitos, como ao se abrir um livro, uma porta, uma maleta ou ao se retirar o telefone do gancho.”",
+        "loc": "Cap. 4, pág. 34"
+      },
+      {
+        "q": "O mecanismo de acionamento por tensão é empregado:",
+        "opts": [
+          "Em cartas-bomba, quando o envelope é aberto pelo destinatário.",
+          "Em artefatos iniciados quando mudados de posição ou sob vibração.",
+          "Em dispositivos com temporizador de circuito integrado.",
+          "Em bombas acionadas pela diferença de pressões na água e no ar.",
+          "Nas armadilhas em que há um fio ou arame esticado que ao se romperem provocam a liberação de um percussor ou fecham um circuito elétrico."
+        ],
+        "ans": 4,
+        "exp": "“É empregada nas armadilhas em que há um fio ou arame esticado que ao se romperem provocam a liberação de um percussor ou fecham um circuito elétrico.”",
+        "loc": "Cap. 4, pág. 34"
+      },
+      {
+        "q": "No mecanismo de tensão, se o cabo de tropeço for cortado ou tracionado:",
+        "opts": [
+          "O percussor será travado pelo pino de segurança.",
+          "A carga explosiva será separada do detonador.",
+          "O circuito elétrico será interrompido, desativando o artefato.",
+          "Ele fechará o contato elétrico e provocará a explosão.",
+          "A lâmina tensionada se soltará sem consequências."
+        ],
+        "ans": 3,
+        "exp": "“Se o cabo de tropeço for cortado ou tracionado, ele fechará o contato elétrico e provocará a explosão.”",
+        "loc": "Cap. 4, pág. 34"
+      },
+      {
+        "q": "O mecanismo de tração, também utilizado nos casos de carta-bomba, funciona normalmente com:",
+        "opts": [
+          "Uma solução de cloreto cúprico que corrói um filamento tensionado.",
+          "Um relógio analógico com contato de espera no vidro.",
+          "Um isolante que, ao ser tracionado, permitirá que o circuito elétrico seja fechado; um simples puxão num fio poderá soltar um pino percussor previamente armado.",
+          "Uma chave de mercúrio que fecha o circuito ao ser inclinada.",
+          "Um diafragma que deflete com a variação de pressão atmosférica."
+        ],
+        "ans": 2,
+        "exp": "“Funciona normalmente com um isolante que, ao ser tracionado, permitirá que o circuito elétrico seja fechado. Um simples puxão num fio poderá soltar um pino percussor previamente armado.”",
+        "loc": "Cap. 4, pág. 35"
+      },
+      {
+        "q": "No mecanismo de tração com percussor, uma vez retirado o pino de segurança, se o pino de liberação também for retirado:",
+        "opts": [
+          "O artefato será desarmado automaticamente.",
+          "O percussor irá acionar a espoleta.",
+          "A lâmina tensionada tocará o contato de espera.",
+          "O circuito elétrico será interrompido.",
+          "O temporizador iniciará a contagem regressiva."
+        ],
+        "ans": 1,
+        "exp": "“Uma vez retirado o pino de segurança, se o pino de liberação também for retirado, o percussor irá acionar a espoleta.”",
+        "loc": "Cap. 4, pág. 35"
+      },
+      {
+        "q": "O mecanismo de tempo ou retardo é o tipo de mecanismo de acionamento característico das:",
+        "opts": [
+          "Bombas incendiárias.",
+          "Cartas-bomba.",
+          "Bombas-relógio.",
+          "Minas antipessoal.",
+          "Bombas barométricas."
+        ],
+        "ans": 2,
+        "exp": "“É o tipo de mecanismo de acionamento característico das bombas-relógio, podendo ser utilizados substâncias químicas, estopins, cigarros, etc.”",
+        "loc": "Cap. 4, pág. 35"
+      },
+      {
+        "q": "No caso de o mecanismo de tempo ser um relógio analógico de ponteiros, é comum que a chave seja:",
+        "opts": [
+          "Um circuito integrado dedicado com amplificação do sinal de alarme.",
+          "Um contato de espera no vidro do relógio e o outro, o próprio ponteiro.",
+          "Um sensor fotoelétrico atrás do mostrador.",
+          "Uma chave de mercúrio acoplada ao mecanismo de corda.",
+          "Um fio ponte que se aquece por efeito Joule."
+        ],
+        "ans": 1,
+        "exp": "“No caso de o mecanismo de tempo ser um relógio analógico de ponteiros, é comum que a chave seja um contato de espera no vidro do relógio e o outro, o próprio ponteiro.”",
+        "loc": "Cap. 4, pág. 36"
+      },
+      {
+        "q": "No mecanismo de retardo químico, a explosão ocorre quando:",
+        "opts": [
+          "A glicerina entra em contato com o permanganato de potássio dentro do reservatório.",
+          "O clorato de potássio reage com o enxofre sob pressão.",
+          "O ácido sulfúrico dissolve o invólucro plástico da carga principal.",
+          "A solução de cloreto cúprico corrói o fio que tenciona a lâmina até o momento em que o fio se parte e a lâmina toca o contato de espera.",
+          "A reação exotérmica aquece o fio ponte até a incandescência."
+        ],
+        "ans": 3,
+        "exp": "“A solução de cloreto cúprico corrói o fio que tenciona a lâmina até o momento em que o fio se parte e a lâmina toca o contato de espera, ocorrendo a explosão.”",
+        "loc": "Cap. 4, pág. 36"
+      },
+      {
+        "q": "Entre as combinações químicas que podem provocar explosões, a pólvora composta de clorato de potássio + açúcar + enxofre apresenta a proporção:",
+        "opts": [
+          "50:50.",
+          "75:15:10.",
+          "65:35.",
+          "7:2:1.",
+          "94:6."
+        ],
+        "ans": 3,
+        "exp": "“Clorato de potássio + açúcar + enxofre (7:2:1) – pólvora que pode ser ativada de várias maneiras: ampola de ácido sulfúrico ou filamento incandescente de lâmpadas...”",
+        "loc": "Cap. 4, pág. 37"
+      },
+      {
+        "q": "O acionamento por controle remoto pode se dar:",
+        "opts": [
+          "Apenas por feixe de infravermelho e ondas de rádio.",
+          "Por ondas sonoras, luz visível ou vibração.",
+          "Por meio de fios, por feixe de infravermelho ou por ondas de rádio (RF).",
+          "Por variação de pressão, temperatura ou umidade.",
+          "Apenas por ondas de rádio (RF)."
+        ],
+        "ans": 2,
+        "exp": "“Controle remoto: Por meio de fios; Por feixe de infravermelho (...); Por ondas de rádio (RF) - esse sistema utiliza um transmissor de radiofreqüência com modulador e fonte de alimentação.”",
+        "loc": "Cap. 4, pág. 37"
+      },
+      {
+        "q": "São soluções para a desativação de artefato acionado por controle remoto de radiofrequência:",
+        "opts": [
+          "Retirar a antena do receptor; usar uma manta metálica na tentativa de fazer a blindagem eletromagnética; bloquear a transmissão.",
+          "Aumentar a potência do sinal; interferir na frequência F1; remover a bateria à distância.",
+          "Molhar o receptor; envolver o artefato em sacos de areia; aguardar 20 minutos.",
+          "Resfriar drasticamente o receptor; cortar os fios da antena; aterrar o transmissor.",
+          "Usar o canhão d'água diretamente sobre a antena; isolar a área; acionar o explosor."
+        ],
+        "ans": 0,
+        "exp": "“Soluções para desativação: Retirar a antena do receptor; Usar uma manta metálica (ou mesmo rede ou papel alumínio) na tentativa de fazer a blindagem eletromagnética; Bloquear a transmissão.”",
+        "loc": "Cap. 4, pág. 38"
+      },
+      {
+        "q": "Artefatos com mecanismo antimovimento/antidistúrbio são iniciados quando mudados de posição ou quando sofrem qualquer tipo de vibração, podendo utilizar:",
+        "opts": [
+          "Diafragma com contato móvel e tampa de vedação removível.",
+          "Fio ponte incandescente e resistor de 1,5 Ohm.",
+          "Pêndulo, chave de mercúrio ou mecanismos de alarme antifurto usados em automóveis.",
+          "Célula fotoelétrica sensível ao raio X.",
+          "Timer analógico ou digital com chave comutadora."
+        ],
+        "ans": 2,
+        "exp": "“Podem utilizar pêndulo, chave de mercúrio ou mesmo mecanismos de alarme antifurto usados em automóveis.”",
+        "loc": "Cap. 4, pág. 38"
+      },
+      {
+        "q": "Os mecanismos barométricos são sistemas ativados:",
+        "opts": [
+          "Pela diferença de pressões na água e no ar.",
+          "Pela aplicação ou eliminação de luz.",
+          "Pelo calor de um corpo ou de um motor.",
+          "Por sons audíveis ou ultra-sônicos.",
+          "Pelo mais leve toque em superfície metálica."
+        ],
+        "ans": 0,
+        "exp": "“São sistemas ativados pela diferença de pressões na água e no ar. Geralmente, são vinculados a dispositivos que serão movidos por meio de transportes que implicam grandes flutuações de altitude ou profundidade.”",
+        "loc": "Cap. 4, pág. 39"
+      },
+      {
+        "q": "O mecanismo anti-raio X usa:",
+        "opts": [
+          "A superfície metálica de um objeto para ser sensibilizado ao mais leve toque.",
+          "Um meio que intensifica a luz dentro de um circuito, ativando uma célula fotoelétrica ao ser exposta ao raio X.",
+          "Um feixe de raios infravermelhos que detecta movimentos.",
+          "Um pêndulo condutor que fecha o circuito quando o artefato é radiografado.",
+          "Sons ultra-sônicos para acionar o circuito de fogo."
+        ],
+        "ans": 1,
+        "exp": "“Anti-raio X - usam um meio que intensifica a luz dentro de um circuito, ativando uma célula fotoelétrica ao ser exposta ao raio X.”",
+        "loc": "Cap. 4, pág. 40"
+      },
+      {
+        "q": "O sensor de capacitância é o sistema que:",
+        "opts": [
+          "Detecta movimentos por meio de um feixe de raios infravermelhos.",
+          "Aciona quando a luz é aplicada ou eliminada.",
+          "É acionado por sons audíveis ou mesmo ultra-sônicos.",
+          "Usa a superfície metálica de um objeto para ser sensibilizado ao mais leve toque.",
+          "É ativado pela diferença de pressões na água e no ar."
+        ],
+        "ans": 3,
+        "exp": "“Sensor de capacitância - esse sistema usa a superfície metálica de um objeto para ser sensibilizado ao mais leve toque.”",
+        "loc": "Cap. 4, pág. 40"
+      }
+    ]
+  },
+  {
+    "title": "Cap. 5 – Técnicas de Desativação",
+    "questions": [
+      {
+        "q": "As técnicas de desativação passivas são aquelas que:",
+        "opts": [
+          "Empregam o disparo com arma de fogo longa contra o artefato.",
+          "Utilizam contracarga de explosivo para destruir o artefato.",
+          "Interrompem o circuito de fogo por meio de alterações físico-químicas previsíveis.",
+          "Não provocam, em tese, alterações físico-químicas no objeto suspeito que sejam capazes de acioná-lo.",
+          "Exigem a entrada manual no invólucro do artefato."
+        ],
+        "ans": 3,
+        "exp": "“Passivas - São aquelas que não provocam, em tese, alterações físico-químicas no objeto suspeito que sejam capazes de acioná-lo.”",
+        "loc": "Cap. 5, pág. 41"
+      },
+      {
+        "q": "São exemplos de técnicas passivas de desativação:",
+        "opts": [
+          "Utilização de cargas especiais e técnica do chicote.",
+          "Técnica da corda, canhão d'água e destruição por chama.",
+          "Interrupção do mecanismo de acionamento e disparo com arma longa.",
+          "Contracarga com explosivo, entrada manual e câmara de descompressão.",
+          "Barreiras de proteção, auscultação, exame por raios X e detectores de metais, e resfriamento drástico (criogenia)."
+        ],
+        "ans": 4,
+        "exp": "“Exemplos: Barreiras de proteção; Auscultação; Exame por meio de raios X e detectores de metais; Perfuração ou incisão no pacote (...); Resfriamento drástico e rápido para desativação da fonte elétrica (criogenia).”",
+        "loc": "Cap. 5, pág. 41"
+      },
+      {
+        "q": "Nas técnicas ativas de desativação, o principal objetivo é:",
+        "opts": [
+          "Resfriar a fonte elétrica do artefato.",
+          "Preservar os vestígios para a investigação criminal.",
+          "Identificar o autor do artefato explosivo.",
+          "Confinar a onda de choque da explosão.",
+          "Interromper o circuito de fogo."
+        ],
+        "ans": 4,
+        "exp": "“Ativas - São aquelas que podem provocar alterações físico-químicas previsíveis no artefato, ativando-o. O principal objetivo é interromper o circuito de fogo.”",
+        "loc": "Cap. 5, pág. 41"
+      },
+      {
+        "q": "Em relação ao emprego das técnicas de desativação, deve-se observar as vantagens e desvantagens de cada método, sempre:",
+        "opts": [
+          "Utilizando primeiro a entrada manual.",
+          "Aguardando a chegada da imprensa para documentação.",
+          "Molhando o artefato antes de qualquer intervenção.",
+          "Permanecendo o menor tempo possível próximo ao objeto suspeito.",
+          "Priorizando as técnicas ativas sobre as passivas."
+        ],
+        "ans": 3,
+        "exp": "“Para cada caso, devem-se observar as vantagens e desvantagens do emprego de um ou outro método, sempre permanecendo o menor tempo possível próximo ao objeto suspeito.”",
+        "loc": "Cap. 5, pág. 41"
+      },
+      {
+        "q": "O canhão d'água (disruptor) fundamenta-se basicamente:",
+        "opts": [
+          "Na onda de choque explosiva.",
+          "No efeito Monroe.",
+          "Na força hidrodinâmica.",
+          "No efeito Joule.",
+          "Na pressão hidrostática."
+        ],
+        "ans": 2,
+        "exp": "“O canhão d'água fundamenta-se basicamente na força hidrodinâmica. Consiste em um equipamento capaz de desarticular um artefato explosivo com grande probabilidade de não acioná-lo.”",
+        "loc": "Cap. 5, pág. 41"
+      },
+      {
+        "q": "O disruptor é carregado com uma quantidade de água de aproximadamente:",
+        "opts": [
+          "1.000 ml, lançada por ar comprimido.",
+          "250 ml, lançada por cartucho calibre 38.",
+          "500 ml, lançada por carga de PETN.",
+          "50 ml, lançada por cartucho calibre 20.",
+          "150 ml, que fica na luz do cano entre buchas plásticas, lançada por carga propelente confeccionada com cartucho de calibre 12."
+        ],
+        "ans": 4,
+        "exp": "“É carregado com uma quantidade de água de aproximadamente 150 ml, que fica na luz do cano entre buchas plásticas. Essa carga é lançada com alta pressão no objeto suspeito, por uma carga propelente, confeccionada com cartucho de calibre 12, especialmente carregado.”",
+        "loc": "Cap. 5, págs. 41-42"
+      },
+      {
+        "q": "A carga de ataque “Avon” do canhão d'água é composta de:",
+        "opts": [
+          "Água + buchas plásticas + limalha de ferro.",
+          "Areia + água + espuma expansiva.",
+          "Água pura com corante.",
+          "Gel balístico + esferas de chumbo.",
+          "Gesso + esferas ocas metálicas + água, formando balote rígido que não provoca ricochete."
+        ],
+        "ans": 4,
+        "exp": "“Avon (gesso + esferas ocas metálicas + água) - balote rígido e relativamente resistente que não provoca ricochete. Uso em alvos mais rígidos (ex: bomba tubo).”",
+        "loc": "Cap. 5, pág. 42"
+      },
+      {
+        "q": "No posicionamento do canhão d'água, se o artefato puder ser interpretado, deve-se:",
+        "opts": [
+          "Obter a maior área de varredura dos elementos do artefato.",
+          "Atingir diretamente a carga explosiva principal.",
+          "Atingir fios, baterias e mecanismos de acionamento.",
+          "Mirar o centro geométrico do invólucro.",
+          "Posicionar o canhão a 90º de qualquer superfície."
+        ],
+        "ans": 2,
+        "exp": "“Se o artefato puder ser interpretado: atingir fios/baterias/mecanismos de acionamento. Se não for possível interpretar o artefato: obter a maior área de varredura dos elementos do artefato.”",
+        "loc": "Cap. 5, pág. 42"
+      },
+      {
+        "q": "No ataque com canhão d'água a bombas-tubo, o posicionamento correto é:",
+        "opts": [
+          "Em tubo de PVC, canhão posicionado a 45º da tampa (cap); em tubo de ferro, canhão posicionado a 15º da tampa (cap).",
+          "Em tubo de PVC, canhão a 30º; em tubo de ferro, a 60º da tampa.",
+          "Em ambos os casos, canhão a 90º da tampa.",
+          "Em tubo de PVC, canhão a 15º da tampa; em tubo de ferro, a 45º da tampa.",
+          "Em ambos os casos, canhão alinhado ao eixo longitudinal do tubo."
+        ],
+        "ans": 0,
+        "exp": "“Em tubo de PVC. Canhão posicionado a 45º da tampa (cap). Em tubo de ferro. Canhão posicionado a 15º da tampa (cap).”",
+        "loc": "Cap. 5, pág. 42"
+      },
+      {
+        "q": "Na técnica de desativação de artefato explosivo com garrafa plástica, cordel e água, o cordel detonante, ao ser iniciado:",
+        "opts": [
+          "Irá arremessar a garrafa contra o artefato, derrubando-o.",
+          "Irá perfurar o invólucro do artefato, permitindo a inserção do fibroscópio.",
+          "Irá lançar a massa de água contida na garrafa na direção radial, atingindo o artefato e provocando a separação dos seus componentes.",
+          "Irá gerar calor suficiente para queimar a carga explosiva sem detonação.",
+          "Irá cortar os fios do artefato por meio do efeito Monroe."
+        ],
+        "ans": 2,
+        "exp": "“O cordel detonante, ao ser iniciado, irá lançar a massa de água contida na garrafa na direção radial e atingirá o artefato explosivo, provocando a separação dos seus componentes.”",
+        "loc": "Cap. 5, pág. 43"
+      },
+      {
+        "q": "Na técnica da garrafa plástica com cordel e água, o fato de a garrafa ser plástica:",
+        "opts": [
+          "Impede a formação de ondas de choque.",
+          "Aumenta o alcance da massa de água lançada.",
+          "Facilita a visualização do interior do artefato.",
+          "Reduz o custo da operação, apenas.",
+          "Minimiza a possibilidade de fragmentos iniciarem o artefato explosivo."
+        ],
+        "ans": 4,
+        "exp": "“O fato de a garrafa ser plástica minimiza a possibilidade de fragmentos iniciarem o artefato explosivo; Técnica bastante utilizada no Canadá. O cordel normalmente utilizado é o NP 10.”",
+        "loc": "Cap. 5, pág. 43"
+      },
+      {
+        "q": "Na abertura remota de envelope suspeito com o uso de cordel em cartão formato V, o que faz o envelope se abrir?",
+        "opts": [
+          "A tração exercida por cordas e ganchos.",
+          "A coluna d'água lançada pela carga propelente.",
+          "O arremesso do fio rígido de cobre contra o envelope.",
+          "O calor gerado pela queima do estopim.",
+          "A onda explosiva e os fragmentos do revestimento plástico do cordel."
+        ],
+        "ans": 4,
+        "exp": "“A onda explosiva e os fragmentos do revestimento plástico do cordel fazem com que o envelope se abra. (...) Experiências têm dado bons resultados com o uso de cordel NP 05.”",
+        "loc": "Cap. 5, pág. 43"
+      },
+      {
+        "q": "Na técnica do chicote, para abertura remota de envelope com cordel e fio rígido:",
+        "opts": [
+          "O cordel é colocado dentro do envelope por meio de uma incisão.",
+          "A detonação do cordel provoca o arremesso do fio rígido (chicote), o qual provoca a abertura do envelope suspeito ao atingi-lo.",
+          "A onda de choque abre o envelope sem contato físico.",
+          "O fio rígido é tracionado manualmente à distância por meio de cordas.",
+          "O chicote é acionado por um circuito elétrico com temporizador."
+        ],
+        "ans": 1,
+        "exp": "“A detonação do cordel provoca o arremesso do fio rígido (chicote), o qual provoca a abertura do envelope suspeito ao atingi-lo.”",
+        "loc": "Cap. 5, pág. 44"
+      },
+      {
+        "q": "Na técnica do chicote, o cordel NP normalmente dá bons resultados a que distância do alvo?",
+        "opts": [
+          "5 a 8 cm.",
+          "50 cm.",
+          "10 a 15 cm.",
+          "20 a 30 cm.",
+          "1 a 2 cm."
+        ],
+        "ans": 0,
+        "exp": "“O cordel NP com 5 a 8 cm de distância do alvo, normalmente, dá bons resultados.”",
+        "loc": "Cap. 5, pág. 44"
+      },
+      {
+        "q": "Ainda sobre a técnica do chicote, o chicote poderá cortar fios existentes no interior do envelope caso:",
+        "opts": [
+          "A detonação ocorra em ambiente confinado.",
+          "O envelope esteja umedecido.",
+          "A técnica seja aplicada com o envelope sobre piso rígido ou chapa de aço.",
+          "O envelope esteja suspenso por cordas.",
+          "O cordel utilizado seja o NP 10."
+        ],
+        "ans": 2,
+        "exp": "“O chicote poderá cortar fios existentes no interior do envelope caso essa técnica seja aplicada com o envelope sobre piso rígido ou chapa de aço.”",
+        "loc": "Cap. 5, pág. 44"
+      },
+      {
+        "q": "Nos procedimentos para o acionamento de cargas especiais em linha elétrica, a mensagem de alerta a ser dada antes do acionamento do explosor é:",
+        "opts": [
+          "“Atenção, fogo na linha”.",
+          "“Atenção, detonação iminente”.",
+          "“Atenção, carga conectada”.",
+          "“Atenção, linha armada”.",
+          "“Atenção, linha quente”."
+        ],
+        "ans": 4,
+        "exp": "“Dar mensagem de alerta: “atenção, linha quente”; Acionar o explosor/bateria após contagem regressiva e “fogo”.”",
+        "loc": "Cap. 5, pág. 44"
+      }
+    ]
+  },
+  {
+    "title": "Cap. 6 – Bombas Postais (Carta-Bomba) ⭐ (foco da prova)",
+    "questions": [
+      {
+        "q": "As bombas postais são preparadas para explodir quando:",
+        "opts": [
+          "O pacote ou a carta forem abertos.",
+          "São transportadas pelos Correios.",
+          "São expostas ao aparelho de raios X.",
+          "São manuseadas pela primeira vez.",
+          "Permanecem em quarentena por muito tempo."
+        ],
+        "ans": 0,
+        "exp": "“Essas bombas são preparadas para explodir quando o pacote ou a carta forem abertos.”",
+        "loc": "Cap. 6, pág. 45"
+      },
+      {
+        "q": "Quanto ao tamanho e formato das bombas postais, são mais frequentes:",
+        "opts": [
+          "Pacotes com formato de livros, agendas, álbuns fotográficos e grossas cartas.",
+          "Envelopes finos, com espessura inferior a 5 mm.",
+          "Malotes e sacos postais de grande volume.",
+          "Caixas de sapato, garrafas e latas.",
+          "Tubos e cilindros metálicos."
+        ],
+        "ans": 0,
+        "exp": "“O tamanho desses artefatos pode variar, mas pacotes com formato de livros, agendas, álbuns fotográficos e grossas cartas são mais freqüentes.”",
+        "loc": "Cap. 6, pág. 45"
+      },
+      {
+        "q": "Os motivos que levam alguém a enviar uma carta-bomba são os mais variados, mas os principais são:",
+        "opts": [
+          "Disputas comerciais, herança e vingança empresarial.",
+          "Fanatismo religioso, apenas.",
+          "Vingança (incluindo-se os crimes passionais), motivos políticos ou religiosos e casos de extorsão.",
+          "Motivos políticos e ideológicos, exclusivamente.",
+          "Terrorismo internacional, tráfico de drogas e lavagem de dinheiro."
+        ],
+        "ans": 2,
+        "exp": "“...mas os principais são vingança (incluindo-se os crimes passionais), motivos políticos ou religiosos e casos de extorsão.”",
+        "loc": "Cap. 6, pág. 45"
+      },
+      {
+        "q": "Como as bombas postais são enviadas pelos Correios, pode-se concluir que elas:",
+        "opts": [
+          "Não podem ser tocadas em hipótese alguma.",
+          "Podem ser transportadas e manuseadas com relativa segurança.",
+          "Devem ser imediatamente imersas em água.",
+          "São sempre acionadas por controle remoto.",
+          "Explodem com qualquer movimento brusco."
+        ],
+        "ans": 1,
+        "exp": "“Como são enviadas pelos Correios, pode-se concluir que elas podem ser transportadas e manuseadas com relativa segurança. Logo, os objetos suspeitos podem ser separados durante a distribuição postal normal.”",
+        "loc": "Cap. 6, pág. 45"
+      },
+      {
+        "q": "Quanto à forma de entrega, deve-se desconfiar principalmente de correspondência “pessoal”:",
+        "opts": [
+          "Enviada por sedex ou serviço expresso.",
+          "Registrada com aviso de recebimento.",
+          "Entregue fora do endereço normal ou com inscrições do tipo: “Deverá ser aberta exclusivamente por...”.",
+          "Entregue no endereço comercial do destinatário.",
+          "Com remetente identificado no verso."
+        ],
+        "ans": 2,
+        "exp": "“Desconfiar principalmente de correspondência “pessoal” entregue fora do endereço normal ou com inscrições do tipo: “Deverá ser aberta exclusivamente por...”.”",
+        "loc": "Cap. 6, pág. 45"
+      },
+      {
+        "q": "Quanto à escrita do remetente, é indicação de suspeição:",
+        "opts": [
+          "Uso de caneta esferográfica azul.",
+          "Letra cursiva legível e uniforme.",
+          "Endereçamento impresso em etiqueta padronizada.",
+          "Dúvidas quanto à autoria (letras recortadas, coladas, decalcadas, datilografadas ou criptografadas).",
+          "Assinatura reconhecida em cartório."
+        ],
+        "ans": 3,
+        "exp": "“Escrita do remetente - se apresentar dúvidas quanto à autoria (letras recortadas, coladas, decalcadas, datilografadas ou criptografadas).”",
+        "loc": "Cap. 6, pág. 45"
+      },
+      {
+        "q": "Quanto ao peso, um pacote ou carta é suspeito se aparentar estar em excesso em relação ao volume:",
+        "opts": [
+          "Acima de 250 g ou peso mal distribuído.",
+          "Acima de 100 g, independentemente da distribuição.",
+          "Acima de 10 g ou peso mal distribuído.",
+          "Acima de 25 g ou peso mal distribuído.",
+          "Acima de 50 g ou peso concentrado no centro."
+        ],
+        "ans": 3,
+        "exp": "“Peso - se aparentar estar em excesso em relação ao volume: acima de 25 g ou peso mal distribuído.”",
+        "loc": "Cap. 6, pág. 45"
+      },
+      {
+        "q": "Quanto à espessura, as cartas-bomba invariavelmente apresentam uma espessura:",
+        "opts": [
+          "Inferior a 5 mm.",
+          "Superior a 50 mm.",
+          "Superior a 25 mm.",
+          "Superior a 5 mm.",
+          "Entre 1 e 3 mm."
+        ],
+        "ans": 3,
+        "exp": "“Espessura - as cartas-bomba invariavelmente apresentam uma espessura superior a 5 mm.”",
+        "loc": "Cap. 6, pág. 45"
+      },
+      {
+        "q": "A menor resistência no fundo ou nos lados do pacote (flexibilidade) indica a possibilidade de existência de:",
+        "opts": [
+          "Papel alumínio.",
+          "Detonadores.",
+          "Baterias.",
+          "Molas.",
+          "Líquidos explosivos."
+        ],
+        "ans": 3,
+        "exp": "“Flexibilidade - se no fundo ou nos lados do pacote houver menor resistência (possibilidade de existência de molas).”",
+        "loc": "Cap. 6, pág. 45"
+      },
+      {
+        "q": "As manchas de gordura ou graxa no envelope podem ser resultantes:",
+        "opts": [
+          "Da umidade acumulada durante o transporte.",
+          "Do lacre de segurança utilizado pelo remetente.",
+          "Do manuseio pelos funcionários dos Correios.",
+          "Da exsudação da substância explosiva (dinamite ou explosivo plástico).",
+          "Da tinta utilizada no endereçamento."
+        ],
+        "ans": 3,
+        "exp": "“Manchas de gordura ou graxa no envelope - podem ser resultantes da exsudação da substância explosiva (dinamite ou explosivo plástico).”",
+        "loc": "Cap. 6, pág. 46"
+      },
+      {
+        "q": "Quanto ao odor, é suspeito o envelope que apresentar forte odor de:",
+        "opts": [
+          "Gasolina, querosene ou óleo diesel.",
+          "Amêndoas (C2, C3, Semtex), pólvora ou mesmo de amoníaco.",
+          "Enxofre, fósforo ou carvão.",
+          "Perfume, essências ou produtos de limpeza.",
+          "Mofo, papel envelhecido ou cola."
+        ],
+        "ans": 1,
+        "exp": "“Odor - se o envelope apresentar forte odor de amêndoas (C2, C3, Semtex), pólvora ou mesmo de amoníaco.”",
+        "loc": "Cap. 6, pág. 46"
+      },
+      {
+        "q": "Quanto à rigidez do envelope, pelo tato podem-se identificar metais, presença de baterias, detonadores, massas etc. Nas cartas-bomba, é comum o uso de:",
+        "opts": [
+          "Papel alumínio.",
+          "Isopor.",
+          "Plástico-bolha.",
+          "Papelão duplo.",
+          "Papel carbono."
+        ],
+        "ans": 0,
+        "exp": "“Rigidez - pelo tato, podem-se identificar metais, presença de baterias, detonadores, massas, etc. ou saber se há somente papel dobrado. É comum o uso de papel alumínio.”",
+        "loc": "Cap. 6, pág. 46"
+      },
+      {
+        "q": "Sobre selos em cartas-bomba, o texto afirma que:",
+        "opts": [
+          "O número de selos é sempre exato para o peso.",
+          "É comum o uso excessivo de selos.",
+          "Cartas-bomba geralmente não apresentam selos.",
+          "Os selos são sempre falsificados.",
+          "Selos comemorativos indicam suspeição."
+        ],
+        "ans": 1,
+        "exp": "“Excesso de selos - é comum o uso excessivo de selos em cartas-bomba.”",
+        "loc": "Cap. 6, pág. 46"
+      },
+      {
+        "q": "Os mecanismos de acionamento mais usuais em cartas-bomba são os de:",
+        "opts": [
+          "Retardo químico e/ou barométrico.",
+          "Controle remoto e/ou antimovimento.",
+          "Tensão e/ou fotoelétrico.",
+          "Pressão e/ou tempo.",
+          "Descompressão e/ou tração."
+        ],
+        "ans": 4,
+        "exp": "“Os mecanismos de acionamento mais usuais em cartas-bomba são os de descompressão e/ou tração. Assim, é razoável supor que uma bomba postal não desengatilhará até que seja aberta.”",
+        "loc": "Cap. 6, pág. 46"
+      },
+      {
+        "q": "Embora seja razoável supor que uma bomba postal não desengatilhará até que seja aberta, deve-se evitar manuseá-la desnecessariamente, pois:",
+        "opts": [
+          "As impressões digitais podem ser destruídas.",
+          "O manuseio pode ativar o temporizador digital.",
+          "O calor das mãos pode iniciar o explosivo.",
+          "É possível que, após muito manuseio, o mecanismo seja deslocado, aumentando o risco de explosão.",
+          "A exsudação do explosivo é acelerada pelo movimento."
+        ],
+        "ans": 3,
+        "exp": "“De qualquer forma, deve-se evitar manuseá-la desnecessariamente, pois é possível que, após muito manuseio, o mecanismo seja deslocado, aumentando o risco de explosão.”",
+        "loc": "Cap. 6, pág. 46"
+      },
+      {
+        "q": "Em alguns casos, o material suspeito de ser bomba postal poderá ser deixado de quarentena:",
+        "opts": [
+          "Em uma área remota, cercado de sacos de areia.",
+          "Em cofre blindado, à disposição da perícia.",
+          "Em câmara frigorífica, para desativação da fonte elétrica.",
+          "Imerso em recipiente com água.",
+          "No próprio local de recebimento, isolado por fitas."
+        ],
+        "ans": 0,
+        "exp": "“Em alguns casos o material suspeito poderá ser deixado de quarentena em uma área remota cercado de sacos de areia.”",
+        "loc": "Cap. 6, pág. 46"
+      },
+      {
+        "q": "As técnicas de desativação ativa indicadas para o caso de bombas postais são:",
+        "opts": [
+          "A imersão em água e o exame por raios X.",
+          "A contracarga, a destruição por chama e a entrada manual.",
+          "O disparo com arma de fogo longa e a queima controlada.",
+          "As do “chicote”, do cartão em V e o uso do canhão d'água, sempre visando o mecanismo de acionamento, os fios e as baterias do artefato.",
+          "A técnica da corda, a criogenia e a câmara de descompressão."
+        ],
+        "ans": 3,
+        "exp": "“As técnicas de desativação ativa indicadas para o caso de bombas postais são as do “chicote”, do cartão em V e o uso do canhão d'água, sempre visando o mecanismo de acionamento, os fios e as baterias do artefato.”",
+        "loc": "Cap. 6, pág. 46"
+      },
+      {
+        "q": "Entre os equipamentos sugeridos para utilização em caso de suspeita de bombas postais, requerem que seja feita uma incisão no pacote ou que o pacote seja perfurado para inspeção interna:",
+        "opts": [
+          "Os detectores de vapores explosivos e os fibroscópios.",
+          "Os estetoscópios eletrônicos e os detectores de metais.",
+          "Os equipamentos de proteção individual e os fibroscópios.",
+          "Os aparelhos de raios X e os estetoscópios eletrônicos.",
+          "Os detectores de metais e os aparelhos de raios X."
+        ],
+        "ans": 0,
+        "exp": "“Obs.: Os dois últimos [detectores de vapores explosivos e fibroscópios] requerem que seja feita uma incisão no pacote ou que o pacote seja perfurado para inspeção interna.”",
+        "loc": "Cap. 6, págs. 46-47"
+      },
+      {
+        "q": "Entre as medidas preventivas de segurança no caso de bombas postais, NÃO se deve colocar a correspondência suspeita dentro d'água porque:",
+        "opts": [
+          "A água pode danificar os vestígios necessários à investigação.",
+          "A água acelera a exsudação da dinamite.",
+          "A água torna o explosivo mais sensível ao atrito.",
+          "A umidade impede o posterior exame por raios X.",
+          "Essa medida, em certos casos, pode provocar a explosão do artefato com a ativação de um circuito elétrico ou iniciação de violentas reações químicas."
+        ],
+        "ans": 4,
+        "exp": "“Não colocar a correspondência suspeita dentro d'água. Essa medida, em certos casos, pode provocar a explosão do artefato com a ativação de um circuito elétrico, iniciação de violentas reações químicas, etc.”",
+        "loc": "Cap. 6, pág. 47"
+      },
+      {
+        "q": "Ainda entre as medidas preventivas no caso de bombas postais, é correto:",
+        "opts": [
+          "Fechar todas as portas e janelas do local onde se encontra a correspondência suspeita.",
+          "Tentar desarmar a carta-bomba com ferramentas de mão.",
+          "Abrir cuidadosamente a correspondência pela borda oposta ao lacre.",
+          "Abrir todas as portas e janelas do local onde se encontra uma correspondência suspeita.",
+          "Transportar a correspondência suspeita para o subsolo do prédio."
+        ],
+        "ans": 3,
+        "exp": "“Abrir todas as portas e janelas do local onde se encontra uma correspondência suspeita; (...) Nunca tentar desarmar uma carta-bomba.”",
+        "loc": "Cap. 6, pág. 47"
+      },
+      {
+        "q": "Sobre a regra final das medidas preventivas com cartas-bomba:",
+        "opts": [
+          "O desarme é permitido a policiais treinados, no próprio local.",
+          "O desarme manual é a técnica preferencial.",
+          "A carta-bomba deve ser desarmada pelo destinatário, com orientação remota.",
+          "Pode-se tentar desarmá-la apenas se o mecanismo for visível.",
+          "Nunca tentar desarmar uma carta-bomba."
+        ],
+        "ans": 4,
+        "exp": "“Nunca tentar desarmar uma carta-bomba. Observação: Uma bomba postal contendo uma pequena quantidade de determinados explosivos poderá matar quem a abrir e produzir ferimentos nas pessoas que estiverem próximas.”",
+        "loc": "Cap. 6, pág. 47"
+      }
+    ]
+  },
+  {
+    "title": "Cap. 7 – Inspeções de Segurança",
+    "questions": [
+      {
+        "q": "Uma das táticas empregadas por grupos terroristas para a colocação de bombas é a do:",
+        "opts": [
+          "Disfarce de artefatos em uniformes de funcionários.",
+          "Arremesso de artefatos por cima de muros e grades.",
+          "“Esquecimento” voluntário de uma maleta ou pacote, visando atingir uma pessoa ou instituição.",
+          "Envio de correspondência com excesso de selos.",
+          "Uso de veículos abandonados em vias públicas."
+        ],
+        "ans": 2,
+        "exp": "“Uma das táticas empregadas por grupos terroristas para a colocação de bombas é a do “esquecimento” voluntário de uma maleta ou pacote, visando atingir uma pessoa ou instituição.”",
+        "loc": "Cap. 7, pág. 49"
+      },
+      {
+        "q": "Entre os motivos que originam uma solicitação de varredura, o motivo “rotina” corresponde à:",
+        "opts": [
+          "Cerimônia de posse ou ocupação temporária de um local.",
+          "Situação de ameaça por carta ou telefonemas.",
+          "Ocorrência de eventos na própria cidade, fora do ambiente normal de trabalho.",
+          "Notícia de vazamento de informações por elementos infiltrados.",
+          "Inspeção onde se verifica se um ambiente mantido sob constante vigilância apresenta alguma alteração."
+        ],
+        "ans": 4,
+        "exp": "“Rotina - inspeção onde se verifica se um ambiente mantido sob constante vigilância apresenta alguma alteração.”",
+        "loc": "Cap. 7, pág. 49"
+      },
+      {
+        "q": "O motivo de varredura denominado “perigo iminente” ocorre:",
+        "opts": [
+          "Em cerimônias de posse.",
+          "Na ocupação definitiva de um local.",
+          "Quando há infiltração de elementos estranhos.",
+          "Quando há visita a outras cidades.",
+          "Quando sob ameaça por carta, telefonemas, etc."
+        ],
+        "ans": 4,
+        "exp": "“Perigo iminente - quando sob ameaça por carta, telefonemas, etc.”",
+        "loc": "Cap. 7, pág. 49"
+      },
+      {
+        "q": "A finalidade das inspeções de segurança é verificar se existe no local de um determinado evento:",
+        "opts": [
+          "Falhas estruturais na edificação.",
+          "Algum perigo natural ou intencional à autoridade que estará presente.",
+          "Equipamentos de escuta e câmeras escondidas.",
+          "Apenas artefatos explosivos ocultados.",
+          "Rotas de fuga para a comitiva."
+        ],
+        "ans": 1,
+        "exp": "“A finalidade das inspeções de segurança é verificar se existe no local de um determinado evento algum perigo natural ou intencional à autoridade que estará presente.”",
+        "loc": "Cap. 7, pág. 49"
+      },
+      {
+        "q": "São considerados perigos naturais:",
+        "opts": [
+          "Instalações elétricas e aparelhagem de som alteradas.",
+          "Lustres mal presos, piso excessivamente encerado, dobras nos tapetes, perigos em palanques, cadeiras, cortinas, escadas, etc.",
+          "Vasos e arranjos de flores modificados recentemente.",
+          "Caixas de incêndio e extintores substituídos.",
+          "Equipamentos de escuta, como telefones e microfones embutidos."
+        ],
+        "ans": 1,
+        "exp": "“São considerados perigos naturais, lustres mal presos, piso excessivamente encerado - caso em que devem ser usados uma passadeira ou um tapete - dobras nos tapetes, perigos em palanques, cadeiras, cortinas, escadas, etc.”",
+        "loc": "Cap. 7, pág. 49"
+      },
+      {
+        "q": "Como perigos intencionais, deve-se estar atento a todas as modificações feitas recentemente no ambiente. Entre os locais citados, os preferidos são:",
+        "opts": [
+          "As casas de máquinas dos elevadores.",
+          "As caixas de incêndio.",
+          "Os toaletes.",
+          "Os distribuidores telefônicos.",
+          "As lixeiras."
+        ],
+        "ans": 2,
+        "exp": "“...portas, escadas, toaletes (estes os locais preferidos), descargas, equipamentos de escuta (telefones e microfones embutidos), etc.”",
+        "loc": "Cap. 7, pág. 49"
+      },
+      {
+        "q": "Em locais abertos, as laterais das pistas devem ser verificadas por serem preferidas por:",
+        "opts": [
+          "Batedores de carteira.",
+          "Franco-atiradores.",
+          "Equipes de imprensa.",
+          "Motociclistas.",
+          "Manifestantes."
+        ],
+        "ans": 1,
+        "exp": "“...palanques, elevações, laterais das pistas (preferidas por franco-atiradores), consertos nas pistas, etc.”",
+        "loc": "Cap. 7, pág. 49"
+      },
+      {
+        "q": "No planejamento da segurança de comitivas, deve-se:",
+        "opts": [
+          "Vistoriar apenas o trajeto principal da comitiva.",
+          "Divulgar o trajeto com antecedência à população.",
+          "Manter sempre o mesmo trajeto para facilitar a vistoria.",
+          "Criar uma segunda opção de trajeto da comitiva, que também será vistoriado, evitando formar hábitos diários.",
+          "Alternar os trajetos sem necessidade de vistoria prévia."
+        ],
+        "ans": 3,
+        "exp": "“No planejamento da segurança, deve-se criar uma segunda opção de trajeto da comitiva, que também será vistoriado. Sugere-se que se evite formar hábitos diários.”",
+        "loc": "Cap. 7, pág. 49"
+      },
+      {
+        "q": "A escolha do local para a colocação de uma bomba normalmente leva em consideração os seguintes aspectos:",
+        "opts": [
+          "Proximidade de saídas de emergência; iluminação do ambiente; fluxo de pessoas.",
+          "Visibilidade do artefato; acesso a redes elétricas; presença de materiais inflamáveis.",
+          "Presença de câmeras; distância da polícia; horário de menor movimento.",
+          "Resistência estrutural do prédio; material do piso; ventilação do ambiente.",
+          "Facilidade de acesso e ocultação do artefato; menor possibilidade de que o indivíduo que irá colocá-la seja visto; chance de causar o maior dano possível."
+        ],
+        "ans": 4,
+        "exp": "“A escolha do local para a colocação de uma bomba normalmente leva em consideração os seguintes aspectos: Facilidade de acesso e ocultação do artefato; Menor possibilidade de que o indivíduo que irá colocá-la seja visto; Chance de causar o maior dano possível.”",
+        "loc": "Cap. 7, pág. 50"
+      },
+      {
+        "q": "Em local interno, o procedimento de varredura preventiva deve ser sistematizado para que se possa:",
+        "opts": [
+          "Restringir a inspeção à área imediata do evento.",
+          "Identificar todos os funcionários presentes.",
+          "Evacuar o local antes da chegada da autoridade.",
+          "Inspecionar toda a área (mediata e imediata) no tempo disponível.",
+          "Priorizar apenas os locais de acesso público."
+        ],
+        "ans": 3,
+        "exp": "“Em local interno, o procedimento deve ser sistematizado para que se possa inspecionar toda a área (mediata e imediata) no tempo disponível.”",
+        "loc": "Cap. 7, pág. 49"
+      }
+    ]
+  },
+  {
+    "title": "Cap. 8 – Ameaça de Bomba ⭐ (foco da prova)",
+    "questions": [
+      {
+        "q": "Os dispositivos explosivos improvisados (DEI) são também conhecidos como:",
+        "opts": [
+          "Artefatos explosivos ou bombas caseiras.",
+          "Explosivos militares ou de emprego bélico.",
+          "Cargas ocas ou cargas dirigidas.",
+          "Petardos ou boosters.",
+          "Bombas discriminatórias."
+        ],
+        "ans": 0,
+        "exp": "“Os dispositivos explosivos improvisados (DEI), também conhecidos como artefatos explosivos ou bombas caseiras, são facilmente disfarçados e podem ter vários tipos de forma e tamanho, sendo rústicos ou sofisticados.”",
+        "loc": "Cap. 8, pág. 51"
+      },
+      {
+        "q": "As bombas postais ou cartas-bomba são consideradas discriminatórias porque:",
+        "opts": [
+          "São construídas para iniciar reações em cadeia e provocar incêndios.",
+          "Causam destruição e morte em massa e indiscriminadamente.",
+          "Explodem se tocadas, movimentadas ou por mera aproximação.",
+          "Escolhem o alvo por critérios políticos ou religiosos.",
+          "São feitas para serem ativadas quando abertas pela vítima-alvo."
+        ],
+        "ans": 4,
+        "exp": "“Existem também bombas postais ou cartas-bomba, que são discriminatórias, ou seja, são feitas para serem ativadas quando abertas pela vítima-alvo.”",
+        "loc": "Cap. 8, pág. 51"
+      },
+      {
+        "q": "Segundo o texto, tem efeito altamente devastador, capaz de causar destruição e morte em massa e indiscriminadamente:",
+        "opts": [
+          "A bomba postal.",
+          "A bomba barométrica.",
+          "A bomba incendiária.",
+          "O carro-bomba.",
+          "A bomba-tubo."
+        ],
+        "ans": 3,
+        "exp": "“O carro-bomba tem efeito altamente devastador, capaz de causar destruição e morte em massa e indiscriminadamente.”",
+        "loc": "Cap. 8, pág. 51"
+      },
+      {
+        "q": "A ameaça de bomba é comunicação normalmente anônima, contra pessoas ou instituições, usualmente feita diretamente ao alvo, sendo o meio mais utilizado:",
+        "opts": [
+          "O recado por interposta pessoa.",
+          "A ameaça escrita.",
+          "A ameaça por redes sociais.",
+          "A ameaça telefônica.",
+          "A ameaça por e-mail."
+        ],
+        "ans": 3,
+        "exp": "“...usualmente feita diretamente ao alvo, por meio de ameaça escrita ou telefônica, sendo este último o meio mais utilizado.”",
+        "loc": "Cap. 8, pág. 51"
+      },
+      {
+        "q": "Na maioria dos casos, as denúncias de ameaça de bomba atingem seus objetivos, que é apenas o de:",
+        "opts": [
+          "Testar a capacidade de resposta da polícia.",
+          "Causar tumulto e gerar pânico na área envolvida, provocando o adiamento ou até mesmo o cancelamento de eventos.",
+          "Desviar a atenção da segurança para outro alvo.",
+          "Obter vantagem financeira mediante extorsão.",
+          "Reivindicar autoria de atentados anteriores."
+        ],
+        "ans": 1,
+        "exp": "“Na maioria dos casos, as denúncias atingem seus objetivos que é apenas o de causar tumulto e gerar pânico na área envolvida, provocando o adiamento ou até mesmo o cancelamento de eventos.”",
+        "loc": "Cap. 8, pág. 51"
+      },
+      {
+        "q": "Os funcionários que operam mesas telefônicas devem ser treinados para obter o máximo de informações sobre a ameaça. Assim, o funcionário deverá:",
+        "opts": [
+          "Encerrar a ligação rapidamente e acionar a polícia.",
+          "Desligar e retornar a ligação para confirmar o número.",
+          "Questionar agressivamente o autor da ameaça para obter sua identificação.",
+          "Manter a calma, anotar tudo (se possível gravar), procurar prolongar a conversa, estar atento a ruídos de fundo e à voz da pessoa que ligou.",
+          "Transferir a ligação imediatamente ao coordenador de segurança."
+        ],
+        "ans": 3,
+        "exp": "“...o funcionário deverá manter a calma ao receber o telefonema, anotar tudo (se possível gravar), procurar prolongar a conversa, estar atento a ruídos de fundo, a voz da pessoa que ligou, dados precisos sobre o artefato, etc.”",
+        "loc": "Cap. 8, pág. 51"
+      },
+      {
+        "q": "No caso de ameaças por escrito, a preservação do documento é fundamental para a realização de exames técnicos tais como:",
+        "opts": [
+          "A grafotecnia e a busca de impressões papiloscópicas.",
+          "A balística e a química forense.",
+          "O confronto de DNA e a análise de fibras.",
+          "A datiloscopia e o exame de voz.",
+          "A documentoscopia e o exame residuográfico."
+        ],
+        "ans": 0,
+        "exp": "“No caso de ameaças por escrito, a preservação do documento é fundamental para a realização de exames técnicos tais como a grafotecnia, a busca de impressões papiloscópicas, etc.”",
+        "loc": "Cap. 8, pág. 52"
+      },
+      {
+        "q": "Deve-se redobrar a atenção no caso de uma nova chamada para um mesmo local, já que a primeira chamada:",
+        "opts": [
+          "Certamente era um trote sem relevância.",
+          "Pode ter sido apenas para avaliar a segurança, identificando os pontos falhos para uma ação mais efetiva.",
+          "Indica que o artefato já foi colocado no local.",
+          "Deve ser desconsiderada no registro da ocorrência.",
+          "Sempre precede a detonação em menos de uma hora."
+        ],
+        "ans": 1,
+        "exp": "“Deve-se redobrar a atenção no caso de uma nova chamada para um mesmo local, já que a primeira chamada pode ter sido apenas para avaliar a segurança, identificando os pontos falhos para uma ação mais efetiva.”",
+        "loc": "Cap. 8, pág. 52"
+      },
+      {
+        "q": "No plano de segurança, a cadeia de comando é fundamental para:",
+        "opts": [
+          "Se evitar ações repetidas ou divergentes.",
+          "Treinar os funcionários das mesas telefônicas.",
+          "Realizar a classificação da ameaça.",
+          "Garantir a comunicação com a imprensa.",
+          "Definir as rotas de evacuação do local."
+        ],
+        "ans": 0,
+        "exp": "“Cadeia de comando – é fundamental que se estabeleça uma hierarquia de comando para se evitar ações repetidas ou divergentes.”",
+        "loc": "Cap. 8, pág. 55"
+      },
+      {
+        "q": "No plano de segurança, a Assessoria de risco é:",
+        "opts": [
+          "O órgão policial acionado após a localização de objeto suspeito.",
+          "A equipe treinada encarregada das vistorias nas instalações físicas.",
+          "O setor responsável pela comunicação restrita entre os integrantes do plano.",
+          "Um grupo especializado formado por pessoas com visões distintas e que dividem a responsabilidade de avaliar o risco, classificando a ameaça.",
+          "O grupo responsável pelo preenchimento do formulário de telefonistas."
+        ],
+        "ans": 3,
+        "exp": "“Assessoria de risco – trata-se de um grupo especializado formado por pessoas com visões distintas e que dividem a responsabilidade de avaliar o risco, classificando a ameaça.”",
+        "loc": "Cap. 8, pág. 55"
+      },
+      {
+        "q": "Quanto à evacuação do local, o plano de segurança deve prever:",
+        "opts": [
+          "Rotas definidas pelo esquadrão antibombas no momento da ocorrência.",
+          "A evacuação somente após a confirmação da existência do artefato.",
+          "Uma única rota fixa, amplamente divulgada e treinada.",
+          "A evacuação exclusivamente pelas escadas de emergência.",
+          "Rotas para evacuação do local, e rodízios destas, evitando o estabelecimento de uma rotina previsível que gere um alvo fácil para um ataque terrorista."
+        ],
+        "ans": 4,
+        "exp": "“Evacuação do local – há que se prever rotas para evacuação do local, e rodízios destas, evitando o estabelecimento de uma rotina previsível que gere um alvo fácil para um ataque terrorista.”",
+        "loc": "Cap. 8, pág. 55"
+      },
+      {
+        "q": "Na classificação internacional da ameaça, a ameaça verde é aquela que:",
+        "opts": [
+          "Constitui uma ameaça real.",
+          "Exige evacuação imediata total.",
+          "Pode vir a ser considerada.",
+          "Não é levada em consideração.",
+          "Exige vistoria e vigilância crescente."
+        ],
+        "ans": 3,
+        "exp": "“Ameaça verde - Não é levada em consideração. Ameaça âmbar - Pode vir a ser considerada. Ameaça vermelha - Constitui uma ameaça real.”",
+        "loc": "Cap. 8, págs. 55-56"
+      },
+      {
+        "q": "Segundo a tabela de classificação da ameaça, a ameaça âmbar é definida como:",
+        "opts": [
+          "Com IPA, sem fato gerador, com precedentes.",
+          "É específica, alega e existe o motivo, a ameaça é real.",
+          "Sem IPA, sem fato (motivação) gerador, sem precedentes.",
+          "Com IPA e fato gerador, credibilidade confirmada.",
+          "Sem IPA, há fato gerador, credibilidade duvidosa."
+        ],
+        "ans": 4,
+        "exp": "“Ameaça âmbar - Definição: Sem IPA, há fato gerador, credibilidade duvidosa. Ação: Vistoria e, se necessário, evacuação (parcial ou total). Vigilância crescente.”",
+        "loc": "Cap. 8, pág. 56"
+      },
+      {
+        "q": "A ação correspondente à ameaça vermelha é:",
+        "opts": [
+          "Evacuação imediata total ou parcial, alto risco e sem tempo para vistorias (caso extremo).",
+          "Acionamento da assessoria de imprensa.",
+          "Vistoria e, se necessário, evacuação parcial.",
+          "Registrar e desconsiderar.",
+          "Vigilância crescente, sem evacuação."
+        ],
+        "ans": 0,
+        "exp": "“Ameaça vermelha - Ação: Evacuação imediata total ou parcial, alto risco e sem tempo para vistorias (caso extremo). Ameaça real.”",
+        "loc": "Cap. 8, pág. 56"
+      },
+      {
+        "q": "O PTI (Positive Target Identification) ou Identificação Positiva do Alvo (IPA) é:",
+        "opts": [
+          "O laudo técnico que classifica a ameaça como verde, âmbar ou vermelha.",
+          "A confirmação da existência física do artefato pelo esquadrão antibombas.",
+          "A informação referente ao alvo da ameaça que não seja de conhecimento público incluída na ameaça de bomba, indicando conhecimento singular ou em primeira mão do alvo.",
+          "A identificação do autor da ameaça por meio do identificador de chamadas.",
+          "O registro fotográfico do suposto artefato explosivo feito pelo técnico."
+        ],
+        "ans": 2,
+        "exp": "“Trata-se da informação referente ao alvo da ameaça (...) ou qualquer outra informação que não seja de conhecimento público incluída na ameaça de bomba, indicando conhecimento singular ou em primeira mão do alvo.”",
+        "loc": "Cap. 8, pág. 56"
+      },
+      {
+        "q": "Sempre deverá ser feito o registro da ameaça, o qual:",
+        "opts": [
+          "Deverá ser encaminhado ao Ministério Público.",
+          "Poderá ser levado em conta em uma nova ameaça.",
+          "Só é obrigatório para ameaças vermelhas.",
+          "Será destruído após 30 dias, se não confirmada a ameaça.",
+          "Substituirá o formulário das telefonistas."
+        ],
+        "ans": 1,
+        "exp": "“Sempre deverá ser feito o registro da ameaça, o qual poderá ser levado em conta em uma nova ameaça.”",
+        "loc": "Cap. 8, pág. 56"
+      },
+      {
+        "q": "A vistoria de rotina (fiscalização), realizada por equipe encarregada unicamente de fiscalizar as áreas sob sua responsabilidade, tem eficiência em torno de:",
+        "opts": [
+          "70% a 80%.",
+          "80% a 90%.",
+          "30% a 40%.",
+          "Acima de 90%.",
+          "50% a 65%."
+        ],
+        "ans": 4,
+        "exp": "“Geralmente, não vistoria locais sujos ou desagradáveis. A eficiência desse tipo de vistoria gira em torno de 50% a 65%.”",
+        "loc": "Cap. 8, pág. 57"
+      },
+      {
+        "q": "A vistoria pelos próprios ocupantes do local alcança 80% a 90% de eficácia porque:",
+        "opts": [
+          "Os ocupantes têm treinamento técnico em explosivos.",
+          "É a vistoria mais demorada e minuciosa.",
+          "Geralmente os próprios ocupantes do local são os mais qualificados para vistoriar suas respectivas áreas, reconhecendo o que a eles não pertence e é estranho.",
+          "Os ocupantes têm acesso a equipamentos de detecção.",
+          "Os ocupantes conhecem os procedimentos do esquadrão antibombas."
+        ],
+        "ans": 2,
+        "exp": "“Vistoria pelos próprios ocupantes do local - geralmente os próprios ocupantes do local são os mais qualificados para vistoriar suas respectivas áreas, reconhecendo o que a eles não pertence e é estranho. (...) Esse tipo de vistoria alcança 80% a 90% de eficácia.”",
+        "loc": "Cap. 8, pág. 57"
+      },
+      {
+        "q": "A doutrina recomenda que, na maioria dos casos, a vistoria seja realizada:",
+        "opts": [
+          "Por equipe treinada do esquadrão antibombas.",
+          "Pela brigada de incêndio da edificação.",
+          "Pela segurança física do local, exclusivamente.",
+          "Pelo pessoal ocupante do local ameaçado.",
+          "Por equipe de fiscalização de rotina."
+        ],
+        "ans": 3,
+        "exp": "“A doutrina recomenda que, na maioria dos casos, a vistoria seja realizada pelo pessoal ocupante do local ameaçado. Em caso de localização positiva de um objeto suspeito (...), deve ser acionado o esquadrão antibombas da polícia.”",
+        "loc": "Cap. 8, pág. 57"
+      },
+      {
+        "q": "A vistoria por equipe treinada proporciona um alto nível de segurança, mas tem como desvantagem:",
+        "opts": [
+          "Exigir a presença do proprietário do local.",
+          "Não vistoriar locais sujos ou desagradáveis.",
+          "Índices de eficácia inferiores a 50%.",
+          "Ser mais vagarosa, em função de não estar familiarizada com o local sob ameaça.",
+          "A ausência de disciplina e raciocínio lógico."
+        ],
+        "ans": 3,
+        "exp": "“Essas equipes proporcionam um alto nível de segurança, mas são mais vagarosas, em função de não estar familiarizada com o local sob ameaça. A maior vantagem é que os índices de eficácia dão resultados acima de 90%.”",
+        "loc": "Cap. 8, pág. 57"
+      },
+      {
+        "q": "As vistorias devem ser sempre efetuadas por equipes de, no mínimo:",
+        "opts": [
+          "Quatro técnicos, divididos em duplas.",
+          "Dois técnicos, com busca realizada de cima para baixo.",
+          "Dois técnicos, com busca realizada de fora para dentro e de baixo para cima.",
+          "Três técnicos, com busca realizada de dentro para fora e de cima para baixo.",
+          "Um técnico, acompanhado do coordenador de segurança."
+        ],
+        "ans": 2,
+        "exp": "“As vistorias devem ser sempre efetuadas por equipes de no mínimo dois técnicos. A busca deve ser realizada de fora para dentro e de baixo para cima.”",
+        "loc": "Cap. 8, pág. 58"
+      },
+      {
+        "q": "O ensaio dos procedimentos de vistoria deve ser o mais realista possível, observando os objetos que:",
+        "opts": [
+          "Tenham sido tocados recentemente; estejam sujos; sejam volumosos.",
+          "Estejam conectados à rede elétrica; contenham metais; emitam ruídos.",
+          "Estejam próximos a janelas; sejam inflamáveis; estejam ocultos.",
+          "Tenham valor patrimonial elevado; estejam trancados; pertençam a visitantes.",
+          "Não deveriam estar no local vistoriado; estejam fora do seu lugar habitual; sejam similares ao objeto descrito na ameaça."
+        ],
+        "ans": 4,
+        "exp": "“...observando os objetos que: Não deveriam estar no local vistoriado; Estejam fora do seu lugar habitual; Sejam similares ao objeto descrito na ameaça. Nenhuma área deve ficar sem ser checada.”",
+        "loc": "Cap. 8, pág. 58"
+      },
+      {
+        "q": "Na vistoria de área externa, são vistoriados floreiras, cestas de lixo, veículos estacionados e qualquer objeto ou obstáculo a que distância das edificações?",
+        "opts": [
+          "Entre 5 m e 10 m.",
+          "Entre 30 m e 50 m.",
+          "Entre 15 m e 20 m.",
+          "Até 100 m.",
+          "Entre 50 m e 100 m."
+        ],
+        "ans": 2,
+        "exp": "“São vistoriados floreiras, cestas de lixo, veículos estacionados e qualquer objeto ou obstáculo entre 15 m e 20 m das edificações.”",
+        "loc": "Cap. 8, pág. 58"
+      },
+      {
+        "q": "Nas áreas de acesso público, os locais que são estatisticamente os preferidos para ocultação de artefatos explosivos são:",
+        "opts": [
+          "As escadas.",
+          "As salas de escritórios.",
+          "Os banheiros.",
+          "As salas de espera.",
+          "Os elevadores."
+        ],
+        "ans": 2,
+        "exp": "“Devem ser vistoriados salas de escritórios, salas de espera, escadas, elevadores e banheiros. Estes últimos são estatisticamente os locais preferidos para ocultação de artefatos explosivos.”",
+        "loc": "Cap. 8, pág. 58"
+      },
+      {
+        "q": "Na vistoria detalhada de uma sala, o ambiente deve ser dividido visualmente em três seções, a saber:",
+        "opts": [
+          "1) Paredes; 2) piso; 3) teto.",
+          "1) Do chão (inclusive) até a altura da cintura; 2) da altura da cintura até a altura da cabeça; 3) da altura da cabeça até o teto, inclusive.",
+          "1) Do chão até a altura do joelho; 2) do joelho ao peito; 3) do peito ao teto.",
+          "1) Entrada; 2) centro da sala; 3) fundos.",
+          "1) Piso; 2) mobiliário; 3) forro e luminárias."
+        ],
+        "ans": 1,
+        "exp": "“O ambiente deve ser dividido visualmente em três seções, a saber: 1) Do chão (inclusive) até a altura da cintura; 2) Da altura da cintura até a altura da cabeça; 3) Da altura da cabeça até o teto, inclusive.”",
+        "loc": "Cap. 8, pág. 59"
+      },
+      {
+        "q": "Na vistoria detalhada de uma sala, os dois técnicos devem proceder da seguinte forma:",
+        "opts": [
+          "Ambos no sentido horário, um atrás do outro.",
+          "Um vistoria o piso e o outro, o teto.",
+          "Um permanece na porta enquanto o outro vistoria.",
+          "Um dos técnicos deve iniciar a vistoria do ambiente no sentido horário e o outro no sentido anti-horário.",
+          "Ambos partem do centro da sala para as extremidades."
+        ],
+        "ans": 3,
+        "exp": "“Um dos técnicos deve iniciar a vistoria do ambiente no sentido horário e o outro no sentido anti-horário, verificando lustres, objetos sobre os móveis, etc.”",
+        "loc": "Cap. 8, pág. 59"
+      },
+      {
+        "q": "Caso um objeto suspeito seja encontrado durante a vistoria, a principal regra de segurança é:",
+        "opts": [
+          "Fotografá-lo de vários ângulos.",
+          "Removê-lo imediatamente para área remota.",
+          "NÃO O TOCAR.",
+          "Cortar eventuais fios aparentes.",
+          "Cobri-lo com sacos de areia."
+        ],
+        "ans": 2,
+        "exp": "“Caso um objeto suspeito seja encontrado, a principal regra de segurança é: NÃO O TOCAR. As pessoas que por ventura estejam nesse ambiente devem ser encaminhadas para uma área segura.”",
+        "loc": "Cap. 8, pág. 59"
+      },
+      {
+        "q": "Quando a ameaça estipula a hora da explosão e isso não acontece, antes de iniciar a reocupação, começar ou continuar a vistoria, deve-se aguardar o prazo mínimo de:",
+        "opts": [
+          "30 minutos.",
+          "20 minutos.",
+          "2 horas.",
+          "1 hora.",
+          "10 minutos."
+        ],
+        "ans": 1,
+        "exp": "“Quando a ameaça estipula a hora da explosão e isso não acontece, deve-se aguardar o prazo mínimo de 20 minutos antes de iniciar a reocupação, começar ou continuar a vistoria.”",
+        "loc": "Cap. 8, pág. 60"
+      },
+      {
+        "q": "Na vistoria de automóveis, decidindo-se pela aproximação, esta deve ser feita:",
+        "opts": [
+          "Frontalmente, observando o interior pelo para-brisa.",
+          "Em sentido diagonal ao automóvel, concentrando-se a atenção na área ao redor do automóvel e mantendo-se alerta para sinais de entrada forçada.",
+          "Em linha reta, pelo lado do motorista.",
+          "Somente após o reboque do veículo para área remota.",
+          "Por trás do veículo, agachado, evitando os vidros."
+        ],
+        "ans": 1,
+        "exp": "“Decidindo-se pela aproximação, esta deve ser feita em sentido diagonal ao automóvel, concentrando-se a atenção na área ao redor do automóvel e mantendo-se alerta para sinais de entrada forçada (arrombamento e/ou violação).”",
+        "loc": "Cap. 8, págs. 71-72"
+      },
+      {
+        "q": "Na vistoria de aeronaves sob ameaça de bomba, o isolamento inicial ideal deve ter um raio mínimo de:",
+        "opts": [
+          "200 m.",
+          "150 m.",
+          "500 m.",
+          "50 m.",
+          "100 m."
+        ],
+        "ans": 4,
+        "exp": "“A aeronave deve ser evacuada e posicionada em um ponto remoto; O isolamento inicial ideal deve ter um raio mínimo de 100 m.”",
+        "loc": "Cap. 8, pág. 73"
+      },
+      {
+        "q": "No caso de se encontrar um possível artefato em aeronave, além dos procedimentos normalmente adotados, deve-se pensar em:",
+        "opts": [
+          "Deslocar a aeronave para o hangar mais próximo.",
+          "Manter portas e janelas fechadas para conter a explosão.",
+          "Esvaziar os tanques de combustível do aparelho e remover o artefato para uma área remota.",
+          "Acionar os sistemas de extinção de incêndio da aeronave.",
+          "Abastecer a aeronave para eventual decolagem de emergência."
+        ],
+        "ans": 2,
+        "exp": "“No caso de se encontrar o possível artefato, além dos procedimentos normalmente adotados, deve-se pensar em esvaziar os tanques de combustível do aparelho e remover o artefato para uma área remota.”",
+        "loc": "Cap. 8, pág. 73"
+      }
+    ]
+  },
+  {
+    "title": "Cap. 9 – Procedimentos de Reação a Bombas (Local com Bomba) ⭐ (foco da prova)",
+    "questions": [
+      {
+        "q": "Em 1992, o “Bomb Data Center” do FBI realizou a Conferência dos Comandantes de Esquadrão de Bombas na Academia do FBI em:",
+        "opts": [
+          "Quântico, Virgínia.",
+          "Camberra, Austrália.",
+          "Nova York.",
+          "Louisiana.",
+          "Washington, D.C."
+        ],
+        "ans": 0,
+        "exp": "“Em 1992, o “Bomb Data Center” do FBI realizou a Conferência dos Comandantes de Esquadrão de Bombas na Academia do FBI em Quântico, Virgínia.”",
+        "loc": "Cap. 9, pág. 75"
+      },
+      {
+        "q": "A norma principal no planejamento do procedimento de neutralização de bombas (Filosofia) é que:",
+        "opts": [
+          "O técnico deve agir com máxima rapidez.",
+          "A vida não pode ser substituída.",
+          "Os vestígios devem ser preservados prioritariamente.",
+          "O patrimônio deve ser preservado a todo custo.",
+          "A imprensa deve ser mantida afastada."
+        ],
+        "ans": 1,
+        "exp": "“A VIDA NÃO PODE SER SUBSTITUÍDA. A norma principal no planejamento do procedimento de neutralização de bombas é que a vida não pode ser substituída. Os objetos podem ser repostos, mas a vida não.”",
+        "loc": "Cap. 9, pág. 75"
+      },
+      {
+        "q": "A hierarquia de prioridades nas ações do técnico em bombas deve ser:",
+        "opts": [
+          "O patrimônio, os vestígios e a vida.",
+          "A vida, os vestígios e o patrimônio.",
+          "Os vestígios, a vida e o patrimônio.",
+          "A segurança pública, o patrimônio e a vida do técnico.",
+          "A vida, o patrimônio e os vestígios."
+        ],
+        "ans": 4,
+        "exp": "“A hierarquia de prioridades deve ser: a vida, o patrimônio e os vestígios.”",
+        "loc": "Cap. 9, pág. 75"
+      },
+      {
+        "q": "Dentro das prioridades, a vida de quem deve vir em primeiro lugar?",
+        "opts": [
+          "A vida do técnico em bombas.",
+          "A vida dos socorristas e bombeiros.",
+          "A vida da autoridade ameaçada.",
+          "A vida das testemunhas.",
+          "A vida das pessoas próximas ao local."
+        ],
+        "ans": 0,
+        "exp": "“A vida do técnico em bombas deve vir em primeiro lugar, pois é por meio do conhecimento desse técnico que serão tomadas decisões que poderão preservar a vida das demais pessoas, além de se tratar de uma mão-de-obra extremamente especializada e de difícil formação.”",
+        "loc": "Cap. 9, pág. 75"
+      },
+      {
+        "q": "A responsabilidade por manter o equipamento em condições de uso, em uma ocorrência envolvendo artefato explosivo, é:",
+        "opts": [
+          "Do técnico em bombas.",
+          "Da equipe de apoio logístico.",
+          "Do responsável pelo evento.",
+          "Do chefe da Delegacia de Polícia Federal.",
+          "Do coordenador de segurança do local."
+        ],
+        "ans": 0,
+        "exp": "“É de responsabilidade do técnico em bombas a verificação dos equipamentos que podem ser necessários em uma ocorrência envolvendo artefato explosivo. (...) A responsabilidade por manter o equipamento em condições de uso é do técnico.”",
+        "loc": "Cap. 9, pág. 76"
+      },
+      {
+        "q": "Ao estabelecer o perímetro, a sugestão é que seja feita uma evacuação de:",
+        "opts": [
+          "200 metros de raio, apenas para artefatos militares.",
+          "20 metros de raio, para bombas postais.",
+          "50 metros de raio, com visada direta do epicentro.",
+          "100 metros de raio e sem visada direta do epicentro de onde está o suposto artefato explosivo.",
+          "150 metros de raio, com posto de controle no epicentro."
+        ],
+        "ans": 3,
+        "exp": "“A sugestão é que seja feita uma evacuação de 100 metros de raio e sem visada direta do epicentro de onde está o suposto artefato explosivo, para que não haja perigo de um estilhaço atingir alguém, no caso dele vir a explodir.”",
+        "loc": "Cap. 9, págs. 76-77"
+      },
+      {
+        "q": "A equipe de resposta a um chamado de bombas é sempre composta por, no mínimo:",
+        "opts": [
+          "Um integrante, que atua como chefe.",
+          "Quatro integrantes, divididos em duplas.",
+          "Dois integrantes, um dos quais deve ser o chefe.",
+          "Três integrantes, incluindo um fotógrafo.",
+          "Dois integrantes, ambos com a mesma função."
+        ],
+        "ans": 2,
+        "exp": "“A equipe de resposta a um chamado de bombas é sempre composta por, no mínimo, dois integrantes, um dos quais deve ser o chefe.”",
+        "loc": "Cap. 9, pág. 77"
+      },
+      {
+        "q": "Sobre a atuação da equipe junto ao suposto artefato explosivo:",
+        "opts": [
+          "O chefe permanece sempre no posto de controle.",
+          "Os dois se revezam a cada cinco minutos junto ao artefato.",
+          "Ambos os técnicos se aproximam simultaneamente do artefato.",
+          "Somente um técnico vai até a bomba de cada vez, o outro fica em segurança no posto de controle.",
+          "O técnico menos experiente vai até a bomba."
+        ],
+        "ans": 3,
+        "exp": "“Somente um técnico vai até a bomba de cada vez, o outro fica em segurança no posto de controle.”",
+        "loc": "Cap. 9, pág. 77"
+      },
+      {
+        "q": "Toda e qualquer comunicação com o exterior do local do chamado deve ser feita do posto de controle porque:",
+        "opts": [
+          "A utilização de aparelhos de comunicação perto do suposto artefato explosivo pode vir a acioná-lo.",
+          "As comunicações precisam ser gravadas.",
+          "O chefe da equipe centraliza todas as informações.",
+          "É onde está o equipamento de rádio de maior potência.",
+          "O posto de controle tem melhor sinal de rádio."
+        ],
+        "ans": 0,
+        "exp": "“Não devem ser feitas comunicações perto do artefato explosivo, pois a utilização de aparelhos de comunicação perto do suposto artefato explosivo pode vir a acioná-lo.”",
+        "loc": "Cap. 9, pág. 77"
+      },
+      {
+        "q": "Na etapa de observação do suposto artefato, a regra fundamental é:",
+        "opts": [
+          "Aproximação lenta e gradual.",
+          "Contato físico cuidadoso com o artefato.",
+          "Tempo mínimo no alvo.",
+          "Comunicação constante por rádio junto ao artefato.",
+          "Máximo de fotografias, sem limite de tempo."
+        ],
+        "ans": 2,
+        "exp": "“Tirar várias fotos e sair o mais rapidamente possível de perto do suposto artefato explosivo (...). A regra é: tempo mínimo no alvo.”",
+        "loc": "Cap. 9, pág. 78"
+      },
+      {
+        "q": "Ao entrevistar testemunhas, o técnico deve:",
+        "opts": [
+          "Aceitar todas as informações como verdadeiras.",
+          "Evitar entrevistar testemunhas para não perder tempo.",
+          "Ser hostil para obter informações rápidas e precisas.",
+          "Fazer apenas perguntas fechadas de sim ou não.",
+          "Deixar a pessoa falar, permitindo que narre primeiro suas histórias, sendo amistoso e não hostil, mas crítico com relação às informações que receber."
+        ],
+        "ans": 4,
+        "exp": "“Deixar que elas narrem primeiro suas histórias, ao invés de começar a fazer perguntas específicas. Ser amistoso e não hostil com as testemunhas (...). É preciso ser crítico com relação às informações que receber.”",
+        "loc": "Cap. 9, pág. 77"
+      },
+      {
+        "q": "Na condução da neutralização, o texto recomenda que o chefe:",
+        "opts": [
+          "OUÇA SEMPRE SUA EQUIPE, pois o parceiro pode ter uma solução melhor, a qual deverá ser usada.",
+          "Decida sozinho, por ser o mais experiente.",
+          "Delegue integralmente a decisão ao parceiro.",
+          "Execute os procedimentos às pressas, dado o estresse.",
+          "Aguarde ordens do coordenador de segurança."
+        ],
+        "ans": 0,
+        "exp": "“Quem estiver na condição de chefe deve ouvir o parceiro, pois ele pode ter uma solução melhor (...). O chefe deve OUVIR SEMPRE SUA EQUIPE.”",
+        "loc": "Cap. 9, pág. 78"
+      },
+      {
+        "q": "Na Categoria A (Ameaça imediata/direta à vida):",
+        "opts": [
+          "O local já foi evacuado, havendo apenas risco ao patrimônio.",
+          "Não há indicação de grande perigo à vida nem ao patrimônio.",
+          "Deve-se aguardar o tempo de molho de 20 minutos antes de agir.",
+          "Existe ameaça imediata (direta) à vida, ou seja, se o suposto artefato explodir, irá ferir ou matar alguém; as operações para se livrar da bomba devem começar imediatamente.",
+          "A solução normalmente é contracarregar com explosivo."
+        ],
+        "ans": 3,
+        "exp": "“Na categoria A existe ameaça imediata (direta) à vida, ou seja, se o suposto artefato explodir, irá ferir ou matar alguém. As operações para se livrar da bomba devem começar imediatamente.”",
+        "loc": "Cap. 9, pág. 79"
+      },
+      {
+        "q": "Na Categoria A, a primeira ação a ser tomada é:",
+        "opts": [
+          "Contracarregar o artefato com explosivo.",
+          "Preservar o patrimônio do local.",
+          "Aguardar o tempo de molho de 20 minutos.",
+          "Transformar essa categoria A em categoria B ou C.",
+          "Coletar e preservar os vestígios."
+        ],
+        "ans": 3,
+        "exp": "“A primeira ação a ser tomada é transformar essa categoria A em categoria B ou C, pois os procedimentos serão totalmente diferentes e, principalmente, remotos.”",
+        "loc": "Cap. 9, pág. 79"
+      },
+      {
+        "q": "Ainda na Categoria A, para uma situação extremada é necessária uma ação igualmente extremada, ou seja:",
+        "opts": [
+          "A entrada manual, abrindo o invólucro com ferramentas de mão.",
+          "A evacuação total do quarteirão.",
+          "O disparo com arma de fogo longa.",
+          "O uso exclusivo do canhão d'água.",
+          "A contracarga com explosivo militar."
+        ],
+        "ans": 0,
+        "exp": "“Caso isso não seja possível, para uma situação extremada é necessária uma ação igualmente extremada. Ou seja, entrada manual. Você terá de abrir o invólucro com ferramentas de mão e neutralizá-lo ou reduzir a situação para uma categoria B ou C.”",
+        "loc": "Cap. 9, págs. 79-80"
+      },
+      {
+        "q": "Na Categoria B (Ameaça indireta à vida e direta ao patrimônio), quando for usada uma técnica ativa, deve-se esperar o “tempo de molho” de:",
+        "opts": [
+          "5 minutos.",
+          "1 hora.",
+          "20 minutos.",
+          "10 minutos.",
+          "30 minutos."
+        ],
+        "ans": 2,
+        "exp": "“Quando for usada uma técnica ativa, deve-se esperar o “tempo de molho” de 20 minutos antes de se aproximar novamente do suposto artefato explosivo.”",
+        "loc": "Cap. 9, pág. 80"
+      },
+      {
+        "q": "A Categoria C (Não há indicação de grande perigo à vida e nem ao patrimônio) deve ser considerada:",
+        "opts": [
+          "Antes das categorias A e B.",
+          "Apenas quando há ameaça direta à vida.",
+          "Depois que as categorias A e B tiverem sido eliminadas; representa perigo mínimo para o pessoal e normalmente a solução é contracarregar com explosivo.",
+          "Somente em locais confinados.",
+          "Quando o artefato é uma carta-bomba."
+        ],
+        "ans": 2,
+        "exp": "“Essa situação deve ser considerada depois que as categorias A e B tiverem sido eliminadas. Representa perigo mínimo para o pessoal. Normalmente, a solução para essa situação é contracarregar com explosivo.”",
+        "loc": "Cap. 9, pág. 80"
+      },
+      {
+        "q": "O documento que serve de modelo para a comunidade de esquadrões de bombas dos EUA, produzido pelos Comandantes de Esquadrão de Bombas em 1992:",
+        "opts": [
+          "É uma sugestão de modelo de procedimento e não uma imposição.",
+          "Só se aplica a artefatos militares.",
+          "É uma imposição de procedimentos obrigatórios.",
+          "Substitui a legislação brasileira sobre o tema.",
+          "Foi elaborado pela polícia australiana."
+        ],
+        "ans": 0,
+        "exp": "“...confeccionaram um documento que serve de modelo para a comunidade de esquadrões de bombas dos EUA. Esse documento é uma sugestão de modelo de procedimento e não uma imposição.”",
+        "loc": "Cap. 9, pág. 75"
+      }
+    ]
+  },
+  {
+    "title": "Cap. 10 – Perícia em Local de Explosão",
+    "questions": [
+      {
+        "q": "O exame de um local de explosão requer que se siga um documento que contém as atribuições dos membros da equipe e cuja finalidade é assegurar que nada seja ignorado no exame do local. Esse documento é o:",
+        "opts": [
+          "Registro Administrativo de Ocorrência (RAO).",
+          "Auto de Apreensão e Depósito (AAD).",
+          "Procedimento Operacional Padronizado (POP).",
+          "Laudo Pericial Preliminar (LPP).",
+          "Termo Circunstanciado de Explosão (TCE)."
+        ],
+        "ans": 2,
+        "exp": "“É necessário seguir um Procedimento Operacional Padronizado (POP), que é o documento que contém as atribuições dos membros da equipe e cuja finalidade é assegurar que nada seja ignorado no exame do local.”",
+        "loc": "Cap. 10, pág. 81"
+      },
+      {
+        "q": "Entre as atribuições do chefe da equipe de perícia em local de explosão está:",
+        "opts": [
+          "Fotografar os vestígios conforme encontrados.",
+          "Fazer croquis da área imediata da explosão.",
+          "Medir a largura, comprimento e profundidade da cratera.",
+          "Utilizar as técnicas de abordagem da cena do crime, preservar a área, estabelecer o posto de comando e coordenar os contatos com outros órgãos/autoridades.",
+          "Coletar impressões latentes."
+        ],
+        "ans": 3,
+        "exp": "“Chefe da equipe: Utilizar as técnicas de abordagem da cena do crime; Verificar perigos em potencial (...); Preservar a área; (...) Estabelecer o posto de comando; Coordenar os contatos com outros órgãos/autoridades; Avaliar os vestígios coletados; Conduzir reuniões de trabalho.”",
+        "loc": "Cap. 10, pág. 81"
+      },
+      {
+        "q": "É atribuição exclusiva dos papiloscopistas na equipe de perícia em local de explosão:",
+        "opts": [
+          "Fazer croquis do local.",
+          "Classificar as evidências coletadas.",
+          "Fotografar em sequência lógica e metódica.",
+          "Medir o perímetro externo.",
+          "Coletar impressões latentes."
+        ],
+        "ans": 4,
+        "exp": "“Papiloscopistas: Coletar impressões latentes.”",
+        "loc": "Cap. 10, pág. 82"
+      },
+      {
+        "q": "No trato com a imprensa, o texto recomenda que:",
+        "opts": [
+          "As informações devem ser divulgadas em tempo real.",
+          "O chefe da equipe deve ser o porta-voz.",
+          "É melhor não fornecer informação nenhuma do que fornecer informação falsa.",
+          "A imprensa não deve ter acesso a nenhum assessor.",
+          "Deve-se fornecer todas as informações disponíveis."
+        ],
+        "ans": 2,
+        "exp": "“No trato com a imprensa, é melhor não fornecer informação nenhuma do que fornecer informação falsa.”",
+        "loc": "Cap. 10, pág. 83"
+      },
+      {
+        "q": "Os objetivos de uma equipe de investigação pós-explosão são determinar:",
+        "opts": [
+          "A autoria, a materialidade e a motivação, exclusivamente.",
+          "O que aconteceu? Como aconteceu? Por que aconteceu?",
+          "Quem fez, onde comprou e quanto custou o artefato.",
+          "O tipo de explosivo, a marca do detonador e a origem dos componentes.",
+          "Quando explodiu, quantos feridos e o valor do prejuízo."
+        ],
+        "ans": 1,
+        "exp": "“Os objetivos de uma equipe de investigação pós-explosão são determinar: O que aconteceu? Como aconteceu? Por que aconteceu? O sucesso da investigação depende da comunicação.”",
+        "loc": "Cap. 10, pág. 84"
+      },
+      {
+        "q": "O perímetro externo geralmente é marcado em um ponto:",
+        "opts": [
+          "100% maior que a distância do vestígio mais distante.",
+          "50% maior que a distância entre o local da explosão da bomba e a maior distância onde foi encontrado um vestígio no levantamento preliminar.",
+          "Fixado em 100 metros do epicentro.",
+          "Fixado em 20 metros do epicentro.",
+          "Igual à distância entre o local da explosão e o vestígio mais distante."
+        ],
+        "ans": 1,
+        "exp": "“O perímetro externo geralmente é marcado em um ponto 50% maior que a distância entre o local da explosão da bomba e a maior distância onde foi encontrado um vestígio no levantamento preliminar. Por exemplo: se a maior distância (...) está a 10 m (...), estabelecer a marcação (...) em 15 m do centro da explosão.”",
+        "loc": "Cap. 10, págs. 85-86"
+      },
+      {
+        "q": "As buscas no local devem ser conduzidas segundo a teoria de que:",
+        "opts": [
+          "Os vestígios concentram-se exclusivamente na cratera.",
+          "A causa de uma grande explosão geralmente permanece desconhecida.",
+          "A maior parte dos vestígios evapora com a explosão.",
+          "Os vestígios são sempre lançados para fora do perímetro externo.",
+          "Tudo o que estava na cena antes da explosão da bomba ainda está, a menos que tenha evaporado com a explosão."
+        ],
+        "ans": 4,
+        "exp": "“As buscas no local devem ser conduzidas segundo a teoria de que tudo o que estava na cena antes da explosão da bomba ainda está, a menos que tenha evaporado com a explosão.”",
+        "loc": "Cap. 10, pág. 86"
+      },
+      {
+        "q": "O padrão de busca em espiral tem início em ponto próximo ao centro da explosão, seguindo até o limite do perímetro externo, e é aplicado geralmente:",
+        "opts": [
+          "Em áreas de acesso restrito.",
+          "Em áreas alagadas.",
+          "Em locais com múltiplos epicentros.",
+          "Em ambientes menores, como uma sala.",
+          "Em grandes áreas abertas."
+        ],
+        "ans": 3,
+        "exp": "“Espiral - tem início em ponto próximo ao centro da explosão, sendo realizada em espiral em torno do local, seguindo até o limite do perímetro externo. Esse padrão de busca é aplicado, geralmente, em ambientes menores, como uma sala.”",
+        "loc": "Cap. 10, pág. 87"
+      },
+      {
+        "q": "No padrão de busca em rede, o local é:",
+        "opts": [
+          "Dividido em quadrantes ou zonas e subdividido em setores.",
+          "Percorrido em espiral a partir do epicentro.",
+          "Examinado apenas na área da cratera.",
+          "Vistoriado por componentes alinhados lado a lado.",
+          "Dividido e marcado com fitas, cordas ou barbantes, identificando-se cada espaço com letras, números ou ambos, os quais são vistoriados individualmente."
+        ],
+        "ans": 4,
+        "exp": "“Rede - o local é dividido e marcado com fitas, cordas ou barbantes, identificando-se cada espaço com letras, números ou ambos, os quais são vistoriados individualmente.”",
+        "loc": "Cap. 10, pág. 87"
+      },
+      {
+        "q": "No padrão de busca em fileiras ou linhas, particularmente eficiente em grandes áreas, os componentes do grupo:",
+        "opts": [
+          "Trabalham do perímetro interno para o externo.",
+          "Concentram-se exclusivamente no epicentro da explosão.",
+          "Dividem-se em quadrantes marcados com letras.",
+          "Percorrem o local individualmente em espiral.",
+          "Alinham-se, lado a lado, a uma distância equivalente a braços abertos, para vistoriar a área, e ao encontrar um vestígio gritam: - PARE!"
+        ],
+        "ans": 4,
+        "exp": "“Os componentes do grupo alinham-se, lado a lado, a uma distância equivalente a braços abertos, para vistoriar a área. Ao encontrar um vestígio gritam: - PARE!”",
+        "loc": "Cap. 10, pág. 88"
+      },
+      {
+        "q": "A determinação da autoria de um artefato explosivo após a sua detonação é muito difícil devido:",
+        "opts": [
+          "À contaminação inevitável da cena pela imprensa.",
+          "À falta de padrão de busca adequado.",
+          "À ausência de câmeras de segurança nos locais.",
+          "Ao tamanho e estado dos fragmentos.",
+          "À rápida evaporação de todos os vestígios."
+        ],
+        "ans": 3,
+        "exp": "“A determinação da autoria de um artefato explosivo após a sua detonação é muito difícil devido ao tamanho e estado dos fragmentos. Deve-se tomar cuidado ao coletar fragmentos da explosão para não contaminar nem estragar alguma eventual impressão digital deixada pelo autor.”",
+        "loc": "Cap. 9, pág. 76"
+      },
+      {
+        "q": "A inspeção preliminar do local de explosão deve ser realizada:",
+        "opts": [
+          "Pelo menor número de pessoas possível, devendo incluir um especialista em bombas.",
+          "Pela defesa civil e pelo corpo de bombeiros.",
+          "Por toda a equipe simultaneamente.",
+          "Pelo assessor de imprensa e pelo chefe da equipe.",
+          "Apenas pelo fotógrafo e pelo desenhista."
+        ],
+        "ans": 0,
+        "exp": "“A inspeção preliminar deve ser realizada pelo menor número de pessoas possível, devendo incluir um especialista em bombas.”",
+        "loc": "Cap. 10, pág. 85"
+      }
+    ]
+  },
+  {
+    "title": "Cap. 11 – Anexos e Legislação",
+    "questions": [
+      {
+        "q": "Segundo as Regras de segurança na área de testes (Anexo 1), adota-se como procedimento padrão:",
+        "opts": [
+          "Manter o detonador conectado à carga durante todo o transporte.",
+          "Conectar o detonador à linha para só então conectá-lo à carga principal.",
+          "Conectar a carga principal diretamente ao explosor.",
+          "Escorvar a carga antes de testar a continuidade da linha.",
+          "Conectar o detonador à carga principal para só então conectá-lo à linha."
+        ],
+        "ans": 1,
+        "exp": "“Adote como procedimento padrão, conectar o detonador à linha para só então conectá-lo à carga principal.”",
+        "loc": "Anexo 1, pág. 95"
+      },
+      {
+        "q": "Ainda nas Regras de segurança na área de testes, toda explosão com iniciação elétrica ou tubo de choque será precedida do grito de alerta:",
+        "opts": [
+          "“Cuidado, explosivo armado!”",
+          "“Atenção, fogo!”",
+          "“Atenção, detonação!”",
+          "“Atenção, área isolada!”",
+          "“Atenção, linha quente!”, sendo então iniciada a contagem regressiva."
+        ],
+        "ans": 4,
+        "exp": "“Toda explosão com iniciação elétrica ou tubo de choque será precedida do grito de alerta: “Atenção, linha quente!”, sendo então iniciada a contagem regressiva.”",
+        "loc": "Anexo 1, pág. 95"
+      },
+      {
+        "q": "Na queima de explosivos (Anexo 2), deve-se utilizar como combustível, preferencialmente:",
+        "opts": [
+          "Álcool combustível e gasolina, por terem pontos de fulgor altos.",
+          "Querosene de aviação, querosene e óleo diesel, nessa ordem, devido aos respectivos pontos de fulgor serem mais baixos do que o dos explosivos.",
+          "Gasolina, álcool e óleo diesel, nessa ordem.",
+          "Somente querosene de aviação, por ser o único seguro.",
+          "Óleo diesel e gasolina, exclusivamente."
+        ],
+        "ans": 1,
+        "exp": "“Utilize como combustível preferencialmente querosene de aviação, querosene e óleo diesel, nessa ordem, devido aos respectivos pontos de fulgor serem mais baixos do que o dos explosivos. O uso da gasolina e do álcool combustível aumenta o risco de provocar explosão...”",
+        "loc": "Anexo 2, pág. 97"
+      },
+      {
+        "q": "Na queima de explosivos, deve ser queimado o máximo, por vez, de:",
+        "opts": [
+          "500 g de dinamite ou 2 kg de cordel.",
+          "3 kg de dinamite ou 10 kg de cordel.",
+          "10 kg de dinamite ou 30 kg de cordel.",
+          "5 kg de dinamite ou 15 kg de cordel.",
+          "1 kg de dinamite ou 5 kg de cordel."
+        ],
+        "ans": 1,
+        "exp": "“Deve ser queimado o máximo de 3 kg de dinamite ou 10 kg de cordel por vez.”",
+        "loc": "Anexo 2, pág. 97"
+      },
+      {
+        "q": "Sobre a responsabilidade penal do Perito Criminal Federal na desativação de petrechos explosivos, o artigo 23 do Código Penal estabelece que não há crime quando o agente pratica o fato:",
+        "opts": [
+          "Por obediência hierárquica.",
+          "Em legítima defesa putativa.",
+          "Sob coação moral irresistível.",
+          "Em estado de necessidade agressivo.",
+          "Em estrito cumprimento do dever legal ou no exercício regular de direito."
+        ],
+        "ans": 4,
+        "exp": "“No tocante à responsabilidade penal, o artigo 23 do Código Penal brasileiro diz: “Não há crime quando o agente pratica o fato: (...) III - em estrito cumprimento do dever legal ou no exercício regular de direito.””",
+        "loc": "Anexo 3, pág. 99"
+      },
+      {
+        "q": "A Instrução Normativa n° 005/04-DG/PF institui os Grupos Especializados em Bombas e Explosivos (GBE). Segundo ela, os GBEs serão gerenciados por:",
+        "opts": [
+          "Agente de Polícia Federal voluntário e treinado.",
+          "Delegado de Polícia Federal com curso de operações especiais.",
+          "Perito Criminal Federal, com especialização em bombas e explosivos, a ser designado pelo Diretor Técnico-Científico ou pelos Superintendentes Regionais.",
+          "Oficial das Forças Armadas cedido à Polícia Federal.",
+          "Diretor da Academia Nacional de Polícia."
+        ],
+        "ans": 2,
+        "exp": "“Os GBEs serão gerenciados por Perito Criminal Federal, com especialização em bombas e explosivos, a ser designado pelo Diretor Técnico-Científico, no âmbito do órgão central, e pelos Superintendentes Regionais, nas unidades descentralizadas.”",
+        "loc": "Anexo 4 (IN 005/04), pág. 107"
+      },
+      {
+        "q": "Entre as competências dos GBEs, previstas na IN 005/04, está:",
+        "opts": [
+          "Instaurar inquéritos policiais sobre crimes com explosivos.",
+          "Julgar administrativamente as ocorrências com explosivos.",
+          "Realizar o policiamento ostensivo de aeroportos.",
+          "Atender e gerir os locais sob ameaça de bombas e explosivos, bem como os locais de pós-explosão.",
+          "Fiscalizar o comércio de produtos químicos controlados."
+        ],
+        "ans": 3,
+        "exp": "“Art. 4º Aos GBEs (...) compete: I – atender e gerir os locais sob ameaça de bombas e explosivos; II – atender e gerir os locais de pós-explosão...”",
+        "loc": "Anexo 4 (IN 005/04), pág. 108"
+      },
+      {
+        "q": "Quanto ao recrutamento e seleção de integrantes para os GBEs, é requisito:",
+        "opts": [
+          "Possuir mais de dez anos de serviço na Polícia Federal.",
+          "Ser ocupante do cargo de Perito Criminal Federal, exclusivamente.",
+          "Ser servidor da Carreira Policial Federal, ativo e voluntário.",
+          "Ter formação superior em Química ou Engenharia.",
+          "Ter participado de missão internacional antiterrorismo."
+        ],
+        "ans": 2,
+        "exp": "“Art. 7° O recrutamento e a seleção de integrante (...) I – ser servidor da Carreira Policial Federal, ativo e voluntário; (...) III – ter participado e sido aprovado no Curso de Atualização em Bombas e Explosivos – CABE da Academia Nacional de Polícia e/ou curso similar...”",
+        "loc": "Anexo 4 (IN 005/04), pág. 109"
+      },
+      {
+        "q": "Segundo a Norma de Serviço n° 001/80-CCP/PF, as responsabilidades das buscas para a localização de artefatos explosivos e/ou incendiários deverão ficar a cargo:",
+        "opts": [
+          "Do Corpo de Bombeiros Militar.",
+          "Do Instituto Nacional de Criminalística.",
+          "Da Delegacia de Ordem Política e Social.",
+          "Da Polícia Federal, através de seus serviços especializados.",
+          "Do responsável pelo local ameaçado."
+        ],
+        "ans": 4,
+        "exp": "“As responsabilidades das buscas para a localização de tais artefatos deverão ficar a cargo do responsável pelo local ameaçado. A remoção, a neutralização ou desativação desses artefatos (...) cabe à Polícia Federal, através de seus serviços especializados.”",
+        "loc": "Anexo 4 (NS 001/80), pág. 101"
+      }
+    ]
+  }
+];
+
+let answered = 0, corrects = 0, wrongs = 0;
+let wrongQuestions = [];
+
+function updateScore(){
+  document.getElementById('sc-c').textContent = corrects;
+  document.getElementById('sc-w').textContent = wrongs;
+  document.getElementById('sc-a').textContent = answered;
+  document.getElementById('btn-wrong').disabled = (wrongQuestions.length === 0);
+}
+
+function buildQuiz(dataSource){
+  dataSource = dataSource || CHAPTERS;
+  window._currentData = dataSource;
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  let total = 0;
+  dataSource.forEach(ch => total += ch.questions.length);
+  document.getElementById('sc-total').textContent = '/ ' + total;
+
+  dataSource.forEach((ch, ci) => {
+    const div = document.createElement('div');
+    div.className = 'chapter';
+    let html = `<div class="chapter-title">${ch.title}</div>`;
+    ch.questions.forEach((q, qi) => {
+      const qid = 'q_' + ci + '_' + qi;
+      html += `<div class="question" id="block_${qid}">
+        <div class="q-num">Questão ${qi+1}</div>
+        <div class="q-text">${q.q}</div>`;
+      q.opts.forEach((opt, oi) => {
+        html += `<button class="opt" id="${qid}_${oi}" onclick="handleAnswer(${ci}, ${qi}, ${oi})">${opt}</button>`;
+      });
+      html += `<div class="feedback" id="fb_${qid}" style="display:none"></div></div>`;
+    });
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+}
+
+function handleAnswer(ci, qi, chosen){
+  const dataSource = window._currentData || CHAPTERS;
+  const ch = dataSource[ci];
+  const q = ch.questions[qi];
+  const qid = 'q_' + ci + '_' + qi;
+  const correct = q.ans;
+  const isRight = (chosen === correct);
+
+  q.opts.forEach((_, oi) => {
+    const btn = document.getElementById(qid + '_' + oi);
+    btn.disabled = true;
+    if(oi === correct) btn.classList.add('correct');
+    if(oi === chosen && !isRight) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('fb_' + qid);
+  fb.style.display = 'block';
+  if(isRight){
+    fb.className = 'feedback ok';
+    fb.innerHTML = `✅ <strong>Correto!</strong> ${q.exp}<div class="loc">📍 ${q.loc}</div>`;
+    corrects++;
+  } else {
+    fb.className = 'feedback err';
+    fb.innerHTML = `❌ <strong>Incorreto.</strong> ${q.exp}<div class="loc">📍 ${q.loc}</div>`;
+    wrongs++;
+    wrongQuestions.push({chTitle: ch.title, qObj: q});
+  }
+  answered++;
+  updateScore();
+}
+
+function resetAll(){
+  if(!confirm('Reiniciar o quiz completo?')) return;
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(CHAPTERS);
+  updateScore();
+}
+
+function resetWrong(){
+  if(wrongQuestions.length === 0) return;
+  if(!confirm('Reiniciar apenas com as ' + wrongQuestions.length + ' questão(ões) que você errou?')) return;
+  const chapMap = {};
+  wrongQuestions.forEach(({chTitle, qObj}) => {
+    if(!chapMap[chTitle]) chapMap[chTitle] = {title: chTitle, questions: []};
+    chapMap[chTitle].questions.push(qObj);
+  });
+  const filtered = Object.values(chapMap);
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(filtered);
+  updateScore();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>
