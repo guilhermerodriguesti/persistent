@@ -1,0 +1,1676 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizu Pericial - Química Forense</title>
+    <meta name="description" content="Resumo de alto rendimento para concursos periciais cobrindo Testes Colorimétricos, Classificação de Drogas, Laudo Preliminar e Análise Instrumental.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Tema Claro Premium (Branco) */
+            --bg-body: #f1f5f9;
+            --bg-sidebar: #ffffff;
+            --bg-card: #ffffff;
+            --border-color: #cbd5e1;
+            
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-light: #64748b;
+            
+            --color-primary: #1e3a8a; /* Azul Marinho Pericial */
+            --color-accent: #f97316; /* Laranja Alerta */
+            --color-success: #16a34a;
+            --color-danger: #dc2626;
+            
+            --color-quimica: #0284c7;
+            --color-quimica-bg: #e0f2fe;
+            
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            
+            --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-display: 'Outfit', sans-serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            line-height: 1.6;
+        }
+
+        /* SIDEBAR */
+        aside {
+            width: 280px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            flex-shrink: 0;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .brand-icon {
+            background-color: var(--color-quimica-bg);
+            color: var(--color-quimica);
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .brand-text h1 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+
+        .brand-text span {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+        }
+
+        .menu-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border: 1px solid transparent;
+            margin-bottom: 8px;
+        }
+
+        .menu-item:hover {
+            background-color: var(--bg-body);
+            color: var(--color-primary);
+        }
+
+        .menu-item.active {
+            background-color: var(--color-primary);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+        }
+
+        .menu-item kbd {
+            margin-left: auto;
+            font-family: monospace;
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1px 5px;
+            border-radius: 4px;
+            font-size: 10px;
+        }
+
+        .menu-item.active kbd {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+
+        /* MAIN CONTENT AREA */
+        main {
+            flex-grow: 1;
+            padding: 32px 40px;
+            overflow-y: auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .header-title h2 {
+            font-family: var(--font-display);
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+
+        .header-title p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-action {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-action:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            background-color: #f8fafc;
+        }
+
+        /* PAGES */
+        .page {
+            display: none;
+            animation: fadeIn 0.3s ease;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .page.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* GRID LAYOUTS */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        /* CARDS */
+        .bizu-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .bizu-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .bizu-card-icon {
+            background-color: #f0fdf4;
+            color: var(--color-success);
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .bizu-card-icon.danger {
+            background-color: #fef2f2;
+            color: var(--color-danger);
+        }
+
+        .bizu-card-icon.warning {
+            background-color: #fff7ed;
+            color: var(--color-accent);
+        }
+
+        .bizu-card-header h3 {
+            font-family: var(--font-display);
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        /* TEST TUBE SIMULATOR */
+        .simulator-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .drug-selector {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .drug-selector button {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: var(--transition-smooth);
+        }
+
+        .drug-selector button.active {
+            background-color: var(--color-primary);
+            color: #ffffff;
+            border-color: var(--color-primary);
+        }
+
+        .tube-visualizer {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 10px 0;
+        }
+
+        .tube-glass {
+            width: 50px;
+            height: 200px;
+            border: 3px solid #64748b;
+            border-bottom-left-radius: 25px;
+            border-bottom-right-radius: 25px;
+            position: relative;
+            overflow: hidden;
+            background-color: rgba(255, 255, 255, 0.5);
+            box-shadow: inset 0 0 15px rgba(0,0,0,0.05);
+        }
+
+        .tube-liquid {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0%; /* Dynamic */
+            background-color: #e2e8f0;
+            transition: height 0.6s ease, background-color 0.6s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .tube-liquid.two-phase {
+            /* Scott test / Duquenois chloroform layer */
+            background: linear-gradient(to bottom, #94a3b8 50%, #3b82f6 50%);
+        }
+
+        .tube-liquid-top {
+            height: 50%;
+            width: 100%;
+            transition: background-color 0.6s ease;
+        }
+
+        .tube-liquid-bottom {
+            height: 50%;
+            width: 100%;
+            transition: background-color 0.6s ease;
+        }
+
+        .step-bubble {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--text-muted);
+            background-color: #f1f5f9;
+            border: 1px solid var(--border-color);
+            padding: 4px 10px;
+            border-radius: 12px;
+            margin-top: 4px;
+            display: inline-block;
+        }
+
+        .reagent-info-panel {
+            width: 100%;
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px;
+            min-height: 130px;
+        }
+
+        /* TABLES */
+        table.bizu-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+            text-align: left;
+        }
+
+        table.bizu-table th {
+            background-color: #f8fafc;
+            padding: 12px 16px;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--color-primary);
+        }
+
+        table.bizu-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        table.bizu-table tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        /* FLOWCHART */
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+            padding: 10px 0;
+        }
+
+        .flowchart-step {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            border-left: 5px solid var(--color-primary);
+        }
+
+        .flowchart-step:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-left-color: var(--color-accent);
+        }
+
+        .flowchart-step::after {
+            content: '\f107'; /* Chevron down */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            bottom: -22px;
+            left: 32px;
+            color: var(--text-light);
+            font-size: 16px;
+        }
+
+        .flowchart-step:last-child::after {
+            display: none;
+        }
+
+        .flowchart-step-title {
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 4px;
+        }
+
+        .flowchart-step-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* INSTRUMENTAL GRAPH */
+        .instrumental-view {
+            width: 100%;
+            height: 240px;
+            background-color: #0f172a; /* Dark screen style for laboratory instrument */
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .chromatogram-svg {
+            width: 80%;
+            height: 80%;
+        }
+
+        .instrumental-info-box {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 16px;
+            min-height: 120px;
+        }
+
+        /* FLASHCARDS */
+        .flashcard-section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .flashcard-wrapper {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 500px;
+            height: 240px;
+        }
+
+        .flashcard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 16px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .flashcard-front {
+            background-color: #ffffff;
+            color: var(--text-main);
+        }
+
+        .flashcard-back {
+            background-color: #eff6ff;
+            color: var(--color-primary);
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-category {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-quimica);
+            margin-bottom: 12px;
+        }
+
+        .flashcard-text {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .flashcard-instruction {
+            font-size: 11px;
+            color: var(--text-light);
+            margin-top: 16px;
+        }
+
+        .flashcard-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .flash-btn {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            transition: var(--transition-smooth);
+        }
+
+        .flash-btn:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* QUIZ */
+        .quiz-section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .quiz-progress-text {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .quiz-question-box {
+            margin-bottom: 20px;
+        }
+
+        .quiz-question-text {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 16px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .quiz-option {
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 13.5px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .quiz-option:hover:not(.checked) {
+            background-color: #f8fafc;
+            border-color: var(--color-primary);
+        }
+
+        .quiz-option-letter {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            background-color: #f1f5f9;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .quiz-option.correct {
+            background-color: #dcfce7;
+            border-color: var(--color-success);
+            color: var(--color-success);
+        }
+
+        .quiz-option.correct .quiz-option-letter {
+            background-color: var(--color-success);
+            color: #ffffff;
+        }
+
+        .quiz-option.incorrect {
+            background-color: #fee2e2;
+            border-color: var(--color-danger);
+            color: var(--color-danger);
+        }
+
+        .quiz-option.incorrect .quiz-option-letter {
+            background-color: var(--color-danger);
+            color: #ffffff;
+        }
+
+        .quiz-explanation {
+            margin-top: 16px;
+            padding: 16px;
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            font-size: 13.5px;
+            display: none;
+        }
+
+        .quiz-explanation.show {
+            display: block;
+        }
+
+        /* MODAL ATALHOS */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 28px;
+            width: 450px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .shortcut-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13.5px;
+            border-bottom: 1px solid #f1f5f9;
+            padding: 8px 0;
+        }
+
+        .shortcut-row kbd {
+            font-family: monospace;
+            background-color: #f1f5f9;
+            border: 1px solid var(--border-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* PROGRESSION */
+        .progress-bar-container {
+            width: 100%;
+            background-color: #e2e8f0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background-color: var(--color-quimica);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* FOCUS VISIBLE */
+        :focus-visible {
+            outline: 3px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside role="navigation">
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-flask-vial"></i>
+            </div>
+            <div class="brand-text">
+                <h1>Bizu Pericial</h1>
+                <span>Química Forense</span>
+            </div>
+        </div>
+
+        <div class="menu-title">Tópicos do Bizu</div>
+        <div class="menu-item active" id="menu-1" onclick="switchBizuPage(1)" tabindex="0" role="tab">
+            <i class="fa-solid fa-droplet"></i> Testes Colorimétricos <kbd>1</kbd>
+        </div>
+        <div class="menu-item" id="menu-2" onclick="switchBizuPage(2)" tabindex="0" role="tab">
+            <i class="fa-solid fa-pills"></i> Drogas de Abuso <kbd>2</kbd>
+        </div>
+        <div class="menu-item" id="menu-3" onclick="switchBizuPage(3)" tabindex="0" role="tab">
+            <i class="fa-solid fa-file-signature"></i> Laudos e Legislação <kbd>3</kbd>
+        </div>
+        <div class="menu-item" id="menu-4" onclick="switchBizuPage(4)" tabindex="0" role="tab">
+            <i class="fa-solid fa-microscope"></i> Análise Instrumental <kbd>4</kbd>
+        </div>
+        <div class="menu-item" id="menu-5" onclick="switchBizuPage(5)" tabindex="0" role="tab">
+            <i class="fa-solid fa-circle-question"></i> Simulado Geral <kbd>5</kbd>
+        </div>
+
+        <div class="menu-title" style="margin-top: 24px;">Progresso de Revisão</div>
+        <div style="font-size: 12px; font-weight: 600; color: var(--text-muted); display:flex; justify-content:space-between; margin-bottom: 2px;">
+            <span>Conclusão</span>
+            <span id="prog-pct">0%</span>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="prog-fill"></div>
+        </div>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main>
+        <header>
+            <div class="header-title">
+                <h2 id="page-title">Testes Colorimétricos</h2>
+                <p id="page-subtitle">Testes cromáticos rápidos de triagem pericial.</p>
+            </div>
+            <div class="top-actions">
+                <button class="btn-action" onclick="toggleHelpModal()" title="Atalhos do Teclado (H)" tabindex="0">
+                    <i class="fa-solid fa-keyboard"></i> Atalhos <kbd>H</kbd>
+                </button>
+                <button class="btn-action" onclick="window.history.back()" title="Voltar ao Painel" tabindex="0">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar
+                </button>
+            </div>
+        </header>
+
+        <!-- PAGE 1: TESTES COLORIMÉTRICOS (SIMULADOR) -->
+        <section id="page-sec-1" class="page active">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon"><i class="fa-solid fa-flask"></i></div>
+                    <h3>Simulador Interativo de Reações Cromáticas (Drogas)</h3>
+                </div>
+                <p style="font-size: 13.5px; color: var(--text-muted);">
+                    Selecione a droga suspeita no painel abaixo para simular o teste químico preliminar realizado pelos peritos em campo e analisar as reações específicas.
+                </p>
+
+                <div class="simulator-container">
+                    <div class="drug-selector">
+                        <button id="drug-btn-cocaine" class="active" onclick="simulateTest('cocaine')">❄️ Cocaína</button>
+                        <button id="drug-btn-cannabis" onclick="simulateTest('cannabis')">🌿 Maconha</button>
+                        <button id="drug-btn-heroin" onclick="simulateTest('heroin')">💉 Heroína / Ópio</button>
+                        <button id="drug-btn-lsd" onclick="simulateTest('lsd')">🦄 LSD</button>
+                        <button id="drug-btn-mdma" onclick="simulateTest('mdma')">💊 MDMA (Ecstasy)</button>
+                    </div>
+
+                    <div class="tube-visualizer">
+                        <div class="tube-glass">
+                            <div class="tube-liquid" id="tube-liquid-element">
+                                <div class="tube-liquid-top" id="liquid-top-part"></div>
+                                <div class="tube-liquid-bottom" id="liquid-bottom-part"></div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="step-bubble" id="step-label">Passo 1: Reagente de Scott</span>
+                            <div class="reagent-info-panel" id="reagent-info" style="margin-top: 10px; width: 320px; font-size: 13.5px; color: var(--text-muted);">
+                                <strong>Reação: Scott Acidificado (Tiocianato de cobalto)</strong>
+                                <p style="margin-top: 4px;">Ao adicionar o reagente à cocaína, a solução adquire uma coloração <strong>azul cobalto</strong>. Falso-positivos comuns: lidocaína, heroína e metadona.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FLASHCARDS CROMÁTICOS -->
+            <div class="grid-2col">
+                <div class="flashcard-section">
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-primary); width:100%; text-align:left; border-bottom:1px solid var(--border-color); padding-bottom:8px;"><i class="fa-solid fa-clone"></i> Memorização Flashcard</h4>
+                    <div class="flashcard-wrapper">
+                        <div class="flashcard" id="fcard-1" onclick="flipBizuCard(1)">
+                            <div class="flashcard-front">
+                                <span class="flashcard-category">Testes Cromáticos 🧪</span>
+                                <p class="flashcard-text">Qual teste preliminar é utilizado para identificar a maconha e em qual solvente ocorre a extração da cor final?</p>
+                                <span class="flashcard-instruction">Clique para girar</span>
+                            </div>
+                            <div class="flashcard-back">
+                                <span class="flashcard-category">Resposta 🧠</span>
+                                <p class="flashcard-text" style="font-size: 14.5px;">Utiliza-se o reagente de **Duquenois-Levine** (ou o sal Fast Blue B). No teste Duquenois-Levine, adiciona-se clorofórmio no final; a coloração **violeta/púrpura** é extraída especificamente para a camada inferior orgânica (clorofórmica).</p>
+                                <span class="flashcard-instruction">Clique para girar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DICAS DE SEGURANÇA -->
+                <div class="bizu-card" style="justify-content: flex-start;">
+                    <div class="bizu-card-header">
+                        <div class="bizu-card-icon danger"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <h3>Segurança em Testes de Campo</h3>
+                    </div>
+                    <ul style="font-size: 13px; color: var(--text-muted); padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+                        <li><strong>Reativos Ácidos</strong>: Os reagentes de Marquis (H2SO4) e Ehrlich (HCl) contêm ácidos concentrados corrosivos. Use sempre luvas e evite inalação.</li>
+                        <li><strong>Fast Blue B</strong>: O sal de diazônio utilizado como reativo para maconha é classificado como carcinogênico comprovado. Manuseie com espátulas limpas.</li>
+                        <li><strong>Descarte de Amostras</strong>: Os tubos e placas spot contendo misturas ácidas e solventes orgânicos (clorofórmio) devem ser recolhidos em frascos de descarte adequados.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 2: DRoGAS DE ABUSO -->
+        <section id="page-sec-2" class="page">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon warning"><i class="fa-solid fa-pills"></i></div>
+                    <h3>Classificação Farmacológica e Química das Drogas</h3>
+                </div>
+
+                <table class="bizu-table">
+                    <thead>
+                        <tr>
+                            <th>Classificação</th>
+                            <th>Efeito no SNC</th>
+                            <th>Principais Exemplos e Princípios Ativos</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong style="color: var(--color-danger);">Psicoanalépticos (Estimulantes)</strong></td>
+                            <td>Aceleram a atividade do SNC. Provocam insônia, euforia e taquicardia.</td>
+                            <td><strong>Cocaína</strong> (éster - alcaloide da *Erythroxylum coca*), <strong>Anfetaminas</strong>, <strong>MDMA</strong> (Ecstasy), <strong>Nicotina</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: var(--color-primary);">Psicopanalépticos (Depressores)</strong></td>
+                            <td>Diminuem a atividade do SNC. Reduzem a ansiedade e induzem o sono.</td>
+                            <td><strong>Heroína / Morfina</strong> (opioides derivados do ópio), <strong>Etanol</strong>, <strong>Benzodiazepínicos</strong>, <strong>Barbitúricos</strong>.</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color: var(--color-accent);">Psicodislépticos (Perturbadores)</strong></td>
+                            <td>Alteram a percepção sensorial (alucinações e distorções de tempo/espaço).</td>
+                            <td><strong>Maconha</strong> (THC - *Cannabis sativa*), <strong>LSD</strong> (semissintético do ergot), <strong>Psilocibina</strong> (cogumelos), <strong>Mescalina</strong>.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="background-color: #f0f9ff; border: 1px solid #bae6fd; border-radius: 12px; padding: 16px; font-size: 13px; color: #0369a1;">
+                    <i class="fa-solid fa-circle-info"></i> <strong>Bizu de Síntese Química (Alto Rendimento):</strong>
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li><strong>Cloridrato de Cocaína (Pó)</strong>: Solúvel em água, consumido por via intranasal ou endovenosa.</li>
+                        <li><strong>Cocaína Base (Crack / Merla)</strong>: Insolúvel em água, ponto de ebulição baixo. Permite ser fumada/vaporizada.</li>
+                        <li><strong>Acetilação da Morfina</strong>: A reação de diacetilação da morfina com anidrido acético produz a <strong>Heroína</strong> (diacetilmorfina), que é muito mais lipossolúvel e potente.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 3: LAUDO E LEGISLAÇÃO -->
+        <section id="page-sec-3" class="page">
+            <div class="grid-2col">
+                <div class="bizu-card">
+                    <div class="bizu-card-header">
+                        <div class="bizu-card-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                        <h3>Laudo de Constatação Preliminar vs Definitivo</h3>
+                    </div>
+                    <p style="font-size: 13.5px; color: var(--text-muted);">
+                        Clique nos cartões do fluxo de apreensão de drogas de acordo com o Artigo 50 da Lei de Drogas (11.343/06).
+                    </p>
+
+                    <div class="flowchart">
+                        <div class="flowchart-step" onclick="showFlowInfo(1)">
+                            <div class="flowchart-step-title">1. Apreensão e Amostragem</div>
+                            <div class="flowchart-step-desc">Sequestro da substância. Exige isolamento e cadeia de custódia inicial.</div>
+                        </div>
+                        <div class="flowchart-step" onclick="showFlowInfo(2)">
+                            <div class="flowchart-step-title">2. Laudo de Constatação Preliminar</div>
+                            <div class="flowchart-step-desc">Atesta a natureza e quantidade da droga. Assinado por perito ou pessoa idônea.</div>
+                        </div>
+                        <div class="flowchart-step" onclick="showFlowInfo(3)">
+                            <div class="flowchart-step-title">3. Lavratura do Auto de Flagrante (APF)</div>
+                            <div class="flowchart-step-desc">O laudo preliminar é a peça mínima exigida para prender em flagrante.</div>
+                        </div>
+                        <div class="flowchart-step" onclick="showFlowInfo(4)">
+                            <div class="flowchart-step-title">4. Laudo Definitivo (Confirmatório)</div>
+                            <div class="flowchart-step-desc">Obrigatório para condenação. Assinado exclusivamente por perito oficial.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bizu-card" style="justify-content: flex-start; gap: 16px;">
+                    <div class="bizu-card-header">
+                        <div class="bizu-card-icon warning"><i class="fa-solid fa-file-shield"></i></div>
+                        <h3>Regras e Aspectos Formais da Lei 11.343/06</h3>
+                    </div>
+                    
+                    <div class="reagent-info-panel" id="flow-info-panel" style="min-height: 240px; padding: 18px;">
+                        <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-quimica); margin-bottom: 8px;">Fluxo Legal de Drogas</h4>
+                        <p style="font-size: 13.5px; color: var(--text-muted);">
+                            Selecione uma etapa do fluxo pericial ao lado para inspecionar os artigos, deveres e as implicações jurídicas na persecução criminal.
+                        </p>
+                    </div>
+
+                    <div style="background-color: #fef2f2; border: 1px solid #fecaca; border-radius: 12px; padding: 16px; font-size: 13px; color: #991b1b;">
+                        <i class="fa-solid fa-triangle-exclamation"></i> <strong>Norma Penal em Branco:</strong> A Lei de Drogas define condutas, mas a relação de substâncias consideradas "drogas" depende da **Portaria 344/98 da ANVISA**, que é constantemente atualizada (ex: inclusão de Novas Substâncias Psicoativas - NSP).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 4: ANÁLISE INSTRUMENTAL -->
+        <section id="page-sec-4" class="page">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon"><i class="fa-solid fa-microscope"></i></div>
+                    <h3>Cromatografia em Fase Gasosa e Espectrometria de Massas (CG-MS)</h3>
+                </div>
+                <p style="font-size: 13.5px; color: var(--text-muted);">
+                    Para o laudo definitivo, é exigido um teste confirmatório de alta especificidade. O padrão-ouro mundial é a hifenização **CG-MS**, que combina a separação física com a identificação por padrão de fragmentação molecular.
+                </p>
+
+                <div class="grid-2col">
+                    <div class="instrumental-view">
+                        <!-- Simulated peak chromatogram -->
+                        <svg class="chromatogram-svg" viewBox="0 0 400 200">
+                            <!-- Baseline -->
+                            <line x1="40" y1="160" x2="380" y2="160" stroke="#64748b" stroke-width="2"/>
+                            <line x1="40" y1="20" x2="40" y2="160" stroke="#64748b" stroke-width="2"/>
+                            
+                            <!-- Chromatogram peak 1 (Solvente) -->
+                            <path d="M 60 160 Q 75 160 80 40 T 95 160" fill="none" stroke="#38bdf8" stroke-dasharray="2" stroke-width="2"/>
+                            <text x="65" y="30" fill="#38bdf8" font-size="10" font-family="monospace">Solvente</text>
+                            
+                            <!-- Chromatogram peak 2 (Cocaína) -->
+                            <path d="M 200 160 Q 220 160 230 20 T 250 160" fill="none" stroke="#f43f5e" stroke-width="3"/>
+                            <circle cx="230" cy="20" r="4" fill="#f43f5e" style="cursor: pointer;" onclick="selectInstrumentalInfo('cocaine')"/>
+                            <text x="215" y="15" fill="#f43f5e" font-size="10" font-family="monospace" style="font-weight: 700;">Cocaína</text>
+                            
+                            <!-- Chromatogram peak 3 (Lidocaína - Falso positivo Scott) -->
+                            <path d="M 280 160 Q 295 160 300 70 T 315 160" fill="none" stroke="#eab308" stroke-width="2"/>
+                            <circle cx="300" cy="70" r="4" fill="#eab308" style="cursor: pointer;" onclick="selectInstrumentalInfo('lido')"/>
+                            <text x="285" y="65" fill="#eab308" font-size="10" font-family="monospace">Lidocaína</text>
+                        </svg>
+                    </div>
+
+                    <div class="instrumental-info-box" id="inst-info-panel">
+                        <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-primary); margin-bottom: 8px;">Cromatograma Simulado (Separação)</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">
+                            O eixo X mostra o **Tempo de Retenção (Rt)**. Note que substâncias muito parecidas que enganam o teste de Scott (como a Lidocaína e a Cocaína) se separam perfeitamente na coluna de CG por possuírem diferentes afinidades e volatilidades.
+                        </p>
+                        <p style="font-size: 12px; color: var(--text-light); margin-top: 8px; font-style: italic;">Clique nos pontos marcados no gráfico para analisar as assinaturas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FLASHCARDS INSTRUMENTAL -->
+            <div class="grid-2col">
+                <div class="flashcard-section">
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-primary); width:100%; text-align:left; border-bottom:1px solid var(--border-color); padding-bottom:8px;"><i class="fa-solid fa-clone"></i> Memorização Flashcard</h4>
+                    <div class="flashcard-wrapper">
+                        <div class="flashcard" id="fcard-2" onclick="flipBizuCard(2)">
+                            <div class="flashcard-front">
+                                <span class="flashcard-category">Análise Confirmatória 🔬</span>
+                                <p class="flashcard-text">Como funciona a identificação da droga na Espectrometria de Massas (MS)?</p>
+                                <span class="flashcard-instruction">Clique para girar</span>
+                            </div>
+                            <div class="flashcard-back">
+                                <span class="flashcard-category">Resposta 🧠</span>
+                                <p class="flashcard-text" style="font-size: 14.5px;">A molécula da droga é ionizada e bombardeada, fragmentando-se em íons menores. O aparelho mede a relação **massa/carga (m/z)** desses íons, gerando um espectro de massas que atua como uma **impressão digital química** única e inequívoca da droga.</p>
+                                <span class="flashcard-instruction">Clique para girar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- QUALIDADE ANALÍTICA -->
+                <div class="bizu-card" style="justify-content: flex-start;">
+                    <div class="bizu-card-header">
+                        <div class="bizu-card-icon warning"><i class="fa-solid fa-vial-circle-check"></i></div>
+                        <h3>Garantia de Qualidade Analítica</h3>
+                    </div>
+                    <ul style="font-size: 13px; color: var(--text-muted); padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+                        <li><strong>Corrida de Branco</strong>: Antes de analisar a amostra de droga no CG-MS, roda-se um branco (apenas solvente) para garantir que não haja contaminações na coluna.</li>
+                        <li><strong>Padrão de Calibração</strong>: Utilização de padrões puros certificados de drogas (ex: Cocaína 1mg/mL) para verificar o tempo de retenção Rt exato no dia do teste.</li>
+                        <li><strong>Cadeia de Custódia</strong>: O frasco do auto-amostrador do CG-MS deve possuir etiqueta que vincule a amostra ao número do laudo pericial correspondente.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 5: SIMULADO DE FIXAÇÃO -->
+        <section id="page-sec-5" class="page">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon"><i class="fa-solid fa-circle-question"></i></div>
+                    <h3>Simulado de Fixação Pericial</h3>
+                </div>
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    Testes de múltipla escolha com foco em questões de provas de perito criminal. Responda para fixação dos conhecimentos.
+                </p>
+
+                <div class="quiz-section" style="border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; background-color: #ffffff;">
+                    <div class="quiz-header" style="border-bottom: 1px solid var(--border-color); padding-bottom: 12px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+                        <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-primary);" id="sim-question-title">Questão 1 de 5</h4>
+                        <div style="display: flex; gap: 6px;" id="sim-question-dots">
+                            <!-- JS will inject dots representing status -->
+                        </div>
+                    </div>
+
+                    <div class="quiz-question-box">
+                        <p class="quiz-question-text" id="sim-question-text">Questão...</p>
+                        <div class="quiz-options" id="sim-options-container">
+                            <!-- Options injected by JS -->
+                        </div>
+                        <div class="quiz-explanation" id="sim-explanation-box" style="margin-top: 16px; padding: 16px; background-color: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; font-size: 13.5px; display: none;">
+                            <!-- Explanation injected by JS -->
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-color);">
+                        <button class="btn-action" onclick="prevSimQuestion()"><i class="fa-solid fa-chevron-left"></i> Anterior</button>
+                        <span style="font-size: 13.5px; font-weight: 700; color: var(--text-muted);" id="sim-score-text">Acertos: 0 de 5</span>
+                        <button class="btn-action" onclick="nextSimQuestion()">Próxima <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHORTCUT KEYBOARD HELP MODAL -->
+        <div class="modal" id="help-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Atalhos Globais do Teclado</h3>
+                    <button class="modal-close" onclick="toggleHelpModal()"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="shortcut-row">
+                    <span>Navegar para Testes Colorimétricos</span>
+                    <kbd>1</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Navegar para Drogas de Abuso</span>
+                    <kbd>2</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Navegar para Laudos e Legislação</span>
+                    <kbd>3</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Navegar para Análise Instrumental</span>
+                    <kbd>4</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Navegar para Simulado Geral</span>
+                    <kbd>5</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Girar Flashcard ativo</span>
+                    <kbd>Espaço</kbd> ou <kbd>Enter</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Fechar janela de ajuda</span>
+                    <kbd>Esc</kbd>
+                </div>
+                <button class="btn-action" style="margin-top: 12px; width:100%; justify-content:center; background-color: var(--color-primary); color:#fff;" onclick="toggleHelpModal()">Entendido</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // ESTADO GLOBAL DO BIZU
+        let currentPage = 1;
+        const pageData = {
+            1: { title: "Testes Colorimétricos", subtitle: "Testes cromáticos rápidos de triagem pericial." },
+            2: { title: "Drogas de Abuso", subtitle: "Classificação farmacológica, química e comportamento de substâncias." },
+            3: { title: "Laudos e Legislação", subtitle: "As regras do Artigo 50 da Lei de Drogas e Portaria 344 ANVISA." },
+            4: { title: "Análise Instrumental", subtitle: "A metodologia confirmatória padrão-ouro (CG-MS e FTIR)." },
+            5: { title: "Simulado Geral", subtitle: "Teste seus conhecimentos periciais com questões de fixação." }
+        };
+
+        const totalPages = 5;
+        let reviewedPages = new Set([1]); // Primeira página ativa conta como revisada
+
+        // AO CARREGAR
+        window.addEventListener('DOMContentLoaded', () => {
+            updateProgressBar();
+            setupKeyboardNavigation();
+            initSimulado();
+        });
+
+        // NAVEGAÇÃO DE PÁGINAS DO BIZU
+        function switchBizuPage(pageNum) {
+            if (pageNum < 1 || pageNum > totalPages) return;
+            
+            // Remover ativo dos menus e seções anteriores
+            document.getElementById(`menu-${currentPage}`).classList.remove('active');
+            document.getElementById(`page-sec-${currentPage}`).classList.remove('active');
+            
+            // Ativar novos
+            currentPage = pageNum;
+            document.getElementById(`menu-${currentPage}`).classList.add('active');
+            document.getElementById(`page-sec-${currentPage}`).classList.add('active');
+            
+            // Atualizar títulos
+            document.getElementById('page-title').innerText = pageData[currentPage].title;
+            document.getElementById('page-subtitle').innerText = pageData[currentPage].subtitle;
+            
+            // Registrar revisão
+            reviewedPages.add(pageNum);
+            updateProgressBar();
+        }
+
+        // ATALHO DE PROGRESSO
+        function updateProgressBar() {
+            const pct = Math.round((reviewedPages.size / totalPages) * 100);
+            document.getElementById('prog-pct').innerText = `${pct}%`;
+            document.getElementById('prog-fill').style.width = `${pct}%`;
+        }
+
+        // SIMULADOR COLORIMÉTRICO
+        const simData = {
+            cocaine: {
+                step: "Passo 1: Reagente de Scott",
+                color: "#1e3a8a", // Azul
+                desc: "<strong>Scott Acidificado (Tiocianato de cobalto)</strong><p style='margin-top:4px;'>Ao reagir com cloridrato de cocaína, forma complexo de coordenação **azul cobalto**. Em base livre (crack), o teste falha se não for acidificado previamente (Mayer/Tanred também precipita branco).</p>"
+            },
+            cannabis: {
+                step: "Passo 2: Duquenois-Levine",
+                color: "#6b21a8", // Roxo
+                desc: "<strong>Duquenois-Levine (Vanilina + HCl + Clorofórmio)</strong><p style='margin-top:4px;'>A coloração roxa/violeta é gerada no topo e, após adição de clorofórmio (solvente insolúvel orgânico), é extraída especificamente para a **camada inferior**. Alta especificidade contra patchouli.</p>"
+            },
+            heroin: {
+                step: "Passo 1: Reagente de Marquis",
+                color: "#881337", // Roxo-avermelhado
+                desc: "<strong>Marquis (Formaldeído + Ácido Sulfúrico)</strong><p style='margin-top:4px;'>Opioides e derivados como a Heroína e Morfina reagem imediatamente, desenvolvendo uma coloração **violeta/púrpura-avermelhada** intensa na placa de porcelana spot.</p>"
+            },
+            lsd: {
+                step: "Passo 1: Reagente de Ehrlich",
+                color: "#581c87", // Violeta profundo
+                desc: "<strong>Ehrlich (p-dimetilaminobenzaldeído)</strong><p style='margin-top:4px;'>O reativo interage com o anel indol do LSD (e psilocibina), gerando um complexo de cor **violeta**. Por ser em papel absorvente, o desenvolvimento cromático pode levar de 2 a 3 minutos.</p>"
+            },
+            mdma: {
+                step: "Passo 1: Reagente de Marquis",
+                color: "#030712", // Preto escuro
+                desc: "<strong>Marquis (Formalina / H2SO4)</strong><p style='margin-top:4px;'>MDMA e outras anfetaminas com ponte metilenodioxi (MDA, MDEA) causam uma reação ultrarrápida que vai de azul escuro a **preto intenso** em segundos, com liberação suave de calor.</p>"
+            }
+        };
+
+        function simulateTest(drugKey) {
+            // Atualizar botões
+            const keys = ['cocaine', 'cannabis', 'heroin', 'lsd', 'mdma'];
+            keys.forEach(k => {
+                document.getElementById(`drug-btn-${k}`).classList.remove('active');
+            });
+            document.getElementById(`drug-btn-${drugKey}`).classList.add('active');
+
+            // Animar líquido
+            const liquid = document.getElementById('tube-liquid-element');
+            const topPart = document.getElementById('liquid-top-part');
+            const bottomPart = document.getElementById('liquid-bottom-part');
+            
+            // Zerar líquido para reiniciar animação
+            liquid.style.height = "0%";
+            topPart.style.backgroundColor = "transparent";
+            bottomPart.style.backgroundColor = "transparent";
+
+            setTimeout(() => {
+                liquid.style.height = "60%";
+                if (drugKey === 'cannabis') {
+                    // Duas fases no Duquenois-Levine
+                    topPart.style.backgroundColor = "rgba(100, 116, 139, 0.4)"; // Camada ácida superior
+                    bottomPart.style.backgroundColor = "#6b21a8"; // Camada de clorofórmio violeta inferior
+                } else if (drugKey === 'cocaine') {
+                    // Teste Scott tem a camada clorofórmica inferior azul
+                    topPart.style.backgroundColor = "rgba(239, 68, 68, 0.2)"; // Rosa superior ácido
+                    bottomPart.style.backgroundColor = "#1e3a8a"; // Azul cobalto inferior
+                } else {
+                    topPart.style.backgroundColor = simData[drugKey].color;
+                    bottomPart.style.backgroundColor = simData[drugKey].color;
+                }
+            }, 100);
+
+            // Atualizar info
+            document.getElementById('step-label').innerText = simData[drugKey].step;
+            document.getElementById('reagent-info').innerHTML = simData[drugKey].desc;
+        }
+
+        // FLOWCHART LEGAL INFO
+        const flowDetails = {
+            1: {
+                title: "1. Apreensão e Amostragem",
+                desc: "No momento da apreensão da substância entorpecente, o perito ou autoridade policial deve realizar a amostragem de forma padronizada. Recomenda-se quarteamento de pós e amostragem probabilística de comprimidos para assegurar a representatividade da massa periciada."
+            },
+            2: {
+                title: "2. Laudo de Constatação Preliminar",
+                desc: "Previsto no **Artigo 50, § 1º da Lei 11.343/06**. Deve atestar apenas a materialidade da droga (se o reagente deu positivo) e a quantidade aproximada. Pode ser elaborado por perito oficial ou, na sua ausência, por **pessoa idônea** nomeada pela autoridade."
+            },
+            3: {
+                title: "3. Lavratura do Auto de Flagrante",
+                desc: "A assinatura do laudo preliminar de constatação é condição essencial e **suficiente** para embasar a prisão em flagrante e certificar a materialidade do crime de tráfico de drogas em sede policial."
+            },
+            4: {
+                title: "4. Laudo Pericial Definitivo",
+                desc: "Apenas um **perito oficial concursado** pode assinar o laudo definitivo confirmatório. Ele exige metodologia científica confirmatória (instrumental) de alta especificidade (ex: CG-MS). É peça obrigatória para a sentença condenatória do juiz."
+            }
+        };
+
+        function showFlowInfo(stepNum) {
+            const panel = document.getElementById('flow-info-panel');
+            panel.innerHTML = `
+                <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-quimica); margin-bottom: 8px;">${flowDetails[stepNum].title}</h4>
+                <p style="font-size: 13.5px; color: var(--text-muted);">${flowDetails[stepNum].desc}</p>
+            `;
+        }
+
+        // INSTRUMENTAL CHROMATOGRAPHY INFO
+        const instDetails = {
+            cocaine: {
+                title: "Evidência: Cocaína",
+                desc: "A cocaína elui na coluna cromatográfica em um tempo de retenção fixo (ex: Rt = 11.2 min). No espectrômetro de massas, ela se fragmenta em íons principais com relações m/z em **82, 182 e 303** (sendo 303 o íon molecular e 82 o fragmento tropânico principal). Essa assinatura é exclusiva e confirma 100% a presença da droga."
+            },
+            lido: {
+                title: "Adulterante: Lidocaína",
+                desc: "A lidocaína é um anestésico local comumente adicionado para adulterar a cocaína. Embora dê cor azul no teste de Scott, na cromatografia ela é separada e elui em tempo de retenção distinto (ex: Rt = 8.5 min), fornecendo fragmentação de massas principal em **m/z 86**. A perícia mapeia os adulterantes para traçar a rota do tráfico."
+            }
+        };
+
+        function selectInstrumentalInfo(key) {
+            const panel = document.getElementById('inst-info-panel');
+            panel.innerHTML = `
+                <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-danger); margin-bottom: 8px;"><i class="fa-solid fa-microscope"></i> ${instDetails[key].title}</h4>
+                <p style="font-size: 13px; color: var(--text-muted);">${instDetails[key].desc}</p>
+            `;
+        }
+
+        // FLASHCARD ROTATION
+        function flipBizuCard(idx) {
+            const card = document.getElementById(`fcard-${idx}`);
+            if (card) {
+                card.classList.toggle('flipped');
+            }
+        }
+
+        // SIMULADO DE FIXAÇÃO STATE & FUNCTIONS
+        const simQuestions = [
+            {
+                q: "Qual reagente colorimétrico é tipicamente empregado para a identificação preliminar do LSD em amostras postais/papéis?",
+                options: [
+                    "Reagente de Scott",
+                    "Reagente de Marquis",
+                    "Reagente de Ehrlich",
+                    "Reagente de Tanred (Mayer)"
+                ],
+                correct: 2,
+                expl: "<strong>Correto! (Alternativa C)</strong> O reagente de <strong>Ehrlich</strong> (contendo p-dimetilaminobenzaldeído acidificado) reage com o núcleo indol do LSD, produzindo lentamente uma coloração violeta-púrpura característica em papel de filtro."
+            },
+            {
+                q: "Qual método instrumental baseia-se na absorção da radiação infravermelha para identificar grupos funcionais específicos de moléculas orgânicas?",
+                options: [
+                    "Cromatografia Gasosa (CG)",
+                    "Espectroscopia de Infravermelho (FTIR)",
+                    "Espectrometria de Massas (MS)",
+                    "Reagente de Scott"
+                ],
+                correct: 1,
+                expl: "<strong>Correto! (Alternativa B)</strong> A espectroscopia de <strong>Infravermelho (FTIR)</strong> mede a absorção de luz infravermelha pelas ligações químicas das moléculas, que vibram ou esticam em comprimentos de onda específicos, permitindo determinar a estrutura e os grupos funcionais presentes na droga."
+            },
+            {
+                q: "No teste Duquenois-Levine para identificação de canabinoides (maconha), qual a utilidade da etapa final de adição de clorofórmio?",
+                options: [
+                    "Provocar a precipitação de clorofila para clarificar a amostra.",
+                    "Extrair o complexo corado violeta para a camada orgânica inferior, garantindo especificidade.",
+                    "Acidificar a solução para acelerar o desenvolvimento cromático.",
+                    "Dissolver o THC livre para evaporar e cheirar o vapor."
+                ],
+                correct: 1,
+                expl: "<strong>Correto! (Alternativa B)</strong> O clorofórmio é um solvente orgânico denso insolúvel em água. Ele extrai seletivamente o produto de reação corado violeta-púrpura para a camada inferior. Se a cor violeta não migrar para essa camada inferior, o teste é considerado negativo (evitando falsos-positivos)."
+            },
+            {
+                q: "De acordo com o Código de Processo Penal e a Lei 11.343/06 (Art. 50, § 1º), qual a finalidade e quem subscreve o Laudo de Constatação Preliminar?",
+                options: [
+                    "Subsidiado por espectrometria de massas, assinado obrigatoriamente por 3 peritos para justificar a sentença condenatória.",
+                    "Apenas atesta a natureza e quantidade da droga, assinado por perito oficial ou pessoa idônea, suficiente para lavrar a prisão em flagrante.",
+                    "Serve apenas para inventariar o material recolhido, assinado pelo escrivão da delegacia.",
+                    "Atesta o valor comercial da droga apreendida, assinado pelo delegado de polícia."
+                ],
+                correct: 1,
+                expl: "<strong>Correto! (Alternativa B)</strong> O laudo de constatação da natureza e quantidade da substância, firmado por perito oficial ou, na falta deste, por pessoa idônea, atesta a materialidade inicial e é suficiente para a lavratura do auto de prisão em flagrante."
+            },
+            {
+                q: "Qual a principal vantagem da técnica de Cromatografia em Fase Gasosa acoplada à Espectrometria de Massas (CG-MS) sobre os testes colorimétricos preliminares?",
+                options: [
+                    "É um teste mais barato e realizável na própria cena do crime por policiais militares.",
+                    "Permite a identificação definitiva e separação de misturas complexas com alta especificidade, eliminando falsos positivos.",
+                    "Permite identificar a origem geográfica exata da semente de maconha ou folha de coca.",
+                    "Detecta apenas substâncias inorgânicas como venenos metálicos e arsênico."
+                ],
+                correct: 1,
+                expl: "<strong>Correto! (Alternativa B)</strong> A hifenização CG-MS separa os componentes de uma mistura física na coluna do cromatógrafo (tempo de retenção Rt) e depois identifica cada substância isolada por sua assinatura de fragmentação no espectrômetro de massas (m/z). É o padrão-ouro pericial confirmatório."
+            }
+        ];
+
+        let activeSimIdx = 0;
+        let simAnswers = new Array(simQuestions.length).fill(null);
+        let showingSummary = false;
+
+        function initSimulado() {
+            showingSummary = false;
+            activeSimIdx = 0;
+            simAnswers.fill(null);
+            renderSimQuestion();
+            updateSimScore();
+        }
+
+        function renderSimQuestion() {
+            const container = document.getElementById('sim-options-container');
+            const explBox = document.getElementById('sim-explanation-box');
+            
+            if (showingSummary) {
+                renderSummaryScreen();
+                return;
+            }
+
+            const q = simQuestions[activeSimIdx];
+            
+            // Textos
+            document.getElementById('sim-question-title').innerHTML = `Questão ${activeSimIdx + 1} de ${simQuestions.length}`;
+            document.getElementById('sim-question-text').innerHTML = q.q;
+            
+            // Dots
+            const dotsContainer = document.getElementById('sim-question-dots');
+            dotsContainer.innerHTML = '';
+            simQuestions.forEach((_, idx) => {
+                const dot = document.createElement('div');
+                dot.style.width = '8px';
+                dot.style.height = '8px';
+                dot.style.borderRadius = '50%';
+                dot.style.backgroundColor = idx === activeSimIdx ? 'var(--color-primary)' : '#e2e8f0';
+                if (simAnswers[idx] !== null) {
+                    dot.style.backgroundColor = simAnswers[idx] === simQuestions[idx].correct ? 'var(--color-success)' : 'var(--color-danger)';
+                }
+                dotsContainer.appendChild(dot);
+            });
+
+            // Options
+            container.innerHTML = '';
+            
+            const answered = simAnswers[activeSimIdx] !== null;
+            const letters = ['A', 'B', 'C', 'D'];
+            
+            q.options.forEach((opt, idx) => {
+                const div = document.createElement('div');
+                div.className = 'quiz-option';
+                
+                // Letra da alternativa
+                const letterBox = document.createElement('div');
+                letterBox.className = 'quiz-option-letter';
+                letterBox.innerText = letters[idx];
+                div.appendChild(letterBox);
+                
+                // Texto da alternativa
+                const textSpan = document.createElement('span');
+                textSpan.innerText = opt;
+                div.appendChild(textSpan);
+                
+                if (answered) {
+                    if (idx === q.correct) {
+                        div.classList.add('correct');
+                    } else if (idx === simAnswers[activeSimIdx]) {
+                        div.classList.add('incorrect');
+                    }
+                } else {
+                    div.style.cursor = 'pointer';
+                    div.onclick = () => selectSimOption(idx);
+                }
+                
+                container.appendChild(div);
+            });
+
+            // Explanation
+            if (answered) {
+                explBox.innerHTML = q.expl;
+                explBox.style.display = 'block';
+            } else {
+                explBox.style.display = 'none';
+            }
+        }
+
+        function renderSummaryScreen() {
+            let correctCount = 0;
+            simAnswers.forEach((ans, idx) => {
+                if (ans === simQuestions[idx].correct) correctCount++;
+            });
+
+            const pct = Math.round((correctCount / simQuestions.length) * 100);
+            const offset = 345.6 * (1 - pct / 100);
+
+            let feedbackTitle = "Atenção! ⚠️";
+            let feedbackDesc = "Refaça a leitura dos resumos para reforçar os pontos fracos.";
+            if (pct === 100) {
+                feedbackTitle = "Excelente! 🏆";
+                feedbackDesc = "Desempenho perfeito! Você está totalmente preparado(a) para as questões de prova.";
+            } else if (pct >= 80) {
+                feedbackTitle = "Muito bom! 🥇";
+                feedbackDesc = "Ótimo desempenho. Revise apenas as questões que errou para fechar a matéria.";
+            } else if (pct >= 60) {
+                feedbackTitle = "Bom! 🥈";
+                feedbackDesc = "Bom aproveitamento. Recomendamos uma leitura rápida dos flashcards para fixar mais detalhes.";
+            }
+
+            document.getElementById('sim-question-title').innerHTML = `Resultado Final do Simulado`;
+            document.getElementById('sim-question-dots').innerHTML = ''; // Limpar dots normais
+            
+            // Injetar tela de sumário no local da pergunta
+            document.getElementById('sim-question-text').innerHTML = `
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 10px 0; text-align: center;">
+                    <!-- Concentric Progress Donut Chart -->
+                    <div style="position: relative; width: 140px; height: 140px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                        <svg width="140" height="140" viewBox="0 0 140 140">
+                            <circle cx="70" cy="70" r="55" fill="none" stroke="#e2e8f0" stroke-width="12"></circle>
+                            <circle cx="70" cy="70" r="55" fill="none" stroke="${pct >= 80 ? 'var(--color-success)' : (pct >= 60 ? 'var(--color-accent)' : 'var(--color-danger)')}" stroke-width="12" stroke-dasharray="345.6" stroke-dashoffset="${offset}" stroke-linecap="round" transform="rotate(-90 70 70)" style="transition: stroke-dashoffset 1s ease-out;"></circle>
+                        </svg>
+                        <div style="position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <span style="font-size: 26px; font-weight: 800; font-family: var(--font-display); color: var(--text-main);">${pct}%</span>
+                            <span style="font-size: 11px; font-weight: 600; color: var(--text-light);">${correctCount}/${simQuestions.length} Acertos</span>
+                        </div>
+                    </div>
+
+                    <!-- Rating message -->
+                    <div style="max-width: 340px; margin: 0 auto;">
+                        <h4 style="font-size: 16px; font-weight: 700; color: var(--text-main);">${feedbackTitle}</h4>
+                        <p style="font-size: 13.5px; color: var(--text-muted); margin-top: 4px;">${feedbackDesc}</p>
+                    </div>
+
+                    <!-- Botão de Reinício -->
+                    <button class="btn-action" style="margin-top: 10px; background-color: var(--color-primary); color: #ffffff; border-color: var(--color-primary); margin: 10px auto 0 auto;" onclick="initSimulado()">
+                        <i class="fa-solid fa-rotate-right"></i> Refazer Simulado
+                    </button>
+                </div>
+            `;
+            
+            document.getElementById('sim-options-container').innerHTML = '';
+            document.getElementById('sim-explanation-box').style.display = 'none';
+        }
+
+        function selectSimOption(optIdx) {
+            if (simAnswers[activeSimIdx] !== null) return; // Locked
+            
+            simAnswers[activeSimIdx] = optIdx;
+            renderSimQuestion();
+            updateSimScore();
+        }
+
+        function updateSimScore() {
+            let correctCount = 0;
+            simAnswers.forEach((ans, idx) => {
+                if (ans === simQuestions[idx].correct) correctCount++;
+            });
+            document.getElementById('sim-score-text').innerText = `Acertos: ${correctCount} de ${simQuestions.length}`;
+        }
+
+        function nextSimQuestion() {
+            if (showingSummary) return;
+
+            if (activeSimIdx < simQuestions.length - 1) {
+                activeSimIdx++;
+                renderSimQuestion();
+            } else {
+                showingSummary = true;
+                renderSimQuestion();
+            }
+        }
+
+        function prevSimQuestion() {
+            if (showingSummary) {
+                showingSummary = false;
+                renderSimQuestion();
+                return;
+            }
+
+            if (activeSimIdx > 0) {
+                activeSimIdx--;
+                renderSimQuestion();
+            }
+        }
+
+        // CONFIGURAR ATALHOS DO TECLADO
+        function setupKeyboardNavigation() {
+            document.addEventListener('keydown', (e) => {
+                const modal = document.getElementById('help-modal');
+                
+                // Toggle Modal Help
+                if (e.key.toLowerCase() === 'h') {
+                    e.preventDefault();
+                    toggleHelpModal();
+                    return;
+                }
+                
+                // Close Modal on Esc
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    e.preventDefault();
+                    toggleHelpModal();
+                    return;
+                }
+                
+                // Mudar abas por número
+                if (e.key >= '1' && e.key <= '5') {
+                    e.preventDefault();
+                    switchBizuPage(parseInt(e.key));
+                    return;
+                }
+
+                // Seta esquerda / direita navega no Simulado se estiver na aba 5
+                if (currentPage === 5) {
+                    if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        prevSimQuestion();
+                        return;
+                    }
+                    if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        nextSimQuestion();
+                        return;
+                    }
+                    // Letras A-D para responder no simulado
+                    const keyChar = e.key.toUpperCase();
+                    const choiceMap = { 'A': 0, 'B': 1, 'C': 2, 'D': 3 };
+                    if (choiceMap[keyChar] !== undefined) {
+                        e.preventDefault();
+                        selectSimOption(choiceMap[keyChar]);
+                        return;
+                    }
+                }
+                
+                // Girar flashcard por espaço ou enter
+                if (e.key === ' ' || e.key === 'Enter') {
+                    const activeSec = document.querySelector('.page.active');
+                    const card = activeSec.querySelector('.flashcard');
+                    if (card && document.activeElement === card) {
+                        e.preventDefault();
+                        card.classList.toggle('flipped');
+                    }
+                }
+            });
+
+            // Permitir foco de teclado nos cards para rodar via espaço
+            document.querySelectorAll('.flashcard').forEach(card => {
+                card.setAttribute('tabindex', '0');
+            });
+        }
+    </script>
+</body>
+</html>

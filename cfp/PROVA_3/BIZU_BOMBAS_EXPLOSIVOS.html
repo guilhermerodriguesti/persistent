@@ -1,0 +1,2105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizu Pericial - Bombas e Explosivos</title>
+    <meta name="description" content="Resumo de alto rendimento para concursos periciais cobrindo Trem de Fogo, Iniciação, Carta Bomba, Ameaça e Local de Incidente.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Tema Claro Premium (Branco) */
+            --bg-body: #f1f5f9;
+            --bg-sidebar: #ffffff;
+            --bg-card: #ffffff;
+            --border-color: #cbd5e1;
+            
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-light: #64748b;
+            
+            --color-primary: #1e3a8a; /* Azul Marinho Pericial */
+            --color-accent: #f97316; /* Laranja Alerta */
+            --color-success: #16a34a;
+            --color-danger: #dc2626;
+            
+            --color-bombas: #e11d48;
+            --color-bombas-bg: #ffe4e6;
+            
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            
+            --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-display: 'Outfit', sans-serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            line-height: 1.6;
+        }
+
+        /* SIDEBAR */
+        aside {
+            width: 280px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            flex-shrink: 0;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .brand-icon {
+            background-color: var(--color-bombas-bg);
+            color: var(--color-bombas);
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .brand-text h1 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+
+        .brand-text span {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+        }
+
+        .menu-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border: 1px solid transparent;
+            margin-bottom: 8px;
+        }
+
+        .menu-item:hover {
+            background-color: var(--bg-body);
+            color: var(--color-primary);
+        }
+
+        .menu-item.active {
+            background-color: var(--color-primary);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+        }
+
+        .menu-item kbd {
+            margin-left: auto;
+            font-family: monospace;
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1px 5px;
+            border-radius: 4px;
+            font-size: 10px;
+        }
+
+        .menu-item.active kbd {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+
+        /* MAIN CONTENT AREA */
+        main {
+            flex-grow: 1;
+            padding: 32px 40px;
+            overflow-y: auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .header-title h2 {
+            font-family: var(--font-display);
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+
+        .header-title p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-action {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-action:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            background-color: #f8fafc;
+        }
+
+        /* PAGES */
+        .page {
+            display: none;
+            animation: fadeIn 0.3s ease;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .page.active {
+            display: flex;
+        }
+
+        /* GRID LAYOUTS */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        /* CARDS */
+        .bizu-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .bizu-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .bizu-card-icon {
+            background-color: #f0fdf4;
+            color: var(--color-success);
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .bizu-card-icon.danger {
+            background-color: #fef2f2;
+            color: var(--color-danger);
+        }
+
+        .bizu-card-icon.warning {
+            background-color: #fff7ed;
+            color: var(--color-accent);
+        }
+
+        .bizu-card-header h3 {
+            font-family: var(--font-display);
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        /* INTERACTIVE TREM DE FOGO */
+        .trem-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .trem-visualizer {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .trem-visualizer::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            right: 10%;
+            height: 4px;
+            background: linear-gradient(to right, var(--color-danger), var(--color-accent), var(--color-primary));
+            z-index: 1;
+            transform: translateY(-50%);
+        }
+
+        .trem-step {
+            width: 28%;
+            background-color: var(--bg-card);
+            border: 2px solid var(--border-color);
+            border-radius: 16px;
+            padding: 16px;
+            text-align: center;
+            cursor: pointer;
+            z-index: 2;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .trem-step:hover, .trem-step.active {
+            border-color: var(--color-primary);
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .trem-step.active {
+            background-color: #eff6ff;
+            border-color: var(--color-primary);
+        }
+
+        .trem-step-num {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background-color: var(--text-light);
+            color: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .trem-step.active .trem-step-num {
+            background-color: var(--color-primary);
+        }
+
+        .trem-step-title {
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .trem-details {
+            width: 100%;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            min-height: 120px;
+        }
+
+        /* TABLES */
+        table.bizu-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+            text-align: left;
+        }
+
+        table.bizu-table th {
+            background-color: #f8fafc;
+            padding: 12px 16px;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--color-primary);
+        }
+
+        table.bizu-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        table.bizu-table tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        /* CARTA BOMBA HOTSPOTS */
+        .package-container {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .package-visual {
+            width: 320px;
+            height: 240px;
+            background-color: #e2e8f0;
+            border: 2px dashed #94a3b8;
+            border-radius: 12px;
+            position: relative;
+            flex-shrink: 0;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+        }
+
+        .package-label {
+            position: absolute;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            padding: 8px;
+            font-size: 10px;
+            font-family: monospace;
+            top: 20px;
+            left: 20px;
+            width: 120px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .package-stamp {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 4px;
+        }
+
+        .stamp {
+            width: 24px;
+            height: 28px;
+            background-color: #fecdd3;
+            border: 1px solid #fda4af;
+            border-radius: 2px;
+        }
+
+        .package-oil-spot {
+            position: absolute;
+            width: 60px;
+            height: 40px;
+            background: radial-gradient(circle, rgba(120, 113, 108, 0.4) 0%, rgba(120, 113, 108, 0) 70%);
+            bottom: 40px;
+            left: 50px;
+            border-radius: 50%;
+        }
+
+        .package-wire {
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background-color: #0f172a;
+            bottom: 50px;
+            right: 40px;
+            transform: rotate(15deg);
+        }
+
+        .hotspot {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: var(--color-danger);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.3);
+            animation: pulse 1.5s infinite;
+            z-index: 10;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0px rgba(220, 38, 38, 0.5); }
+            100% { box-shadow: 0 0 0 8px rgba(220, 38, 38, 0); }
+        }
+
+        .package-info-panel {
+            flex-grow: 1;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            min-height: 240px;
+        }
+
+        /* CHECKLIST */
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .checklist-bullet {
+            background-color: var(--color-bombas-bg);
+            color: var(--color-bombas);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .checklist-text strong {
+            display: block;
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        .checklist-text span {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* THREAT CLASSIFICATION CARDS */
+        .threat-level-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .threat-level-card {
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            border-top: 4px solid var(--border-color);
+        }
+
+        .threat-level-card.verde { border-top-color: var(--color-success); }
+        .threat-level-card.ambar { border-top-color: var(--color-accent); }
+        .threat-level-card.vermelha { border-top-color: var(--color-danger); }
+
+        .threat-badge {
+            align-self: flex-start;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 12px;
+        }
+
+        .threat-level-card.verde .threat-badge { background-color: #dcfce7; color: var(--color-success); }
+        .threat-level-card.ambar .threat-badge { background-color: #ffedd5; color: var(--color-accent); }
+        .threat-level-card.vermelha .threat-badge { background-color: #fee2e2; color: var(--color-danger); }
+
+        /* FLASHCARDS */
+        .flashcard-section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .flashcard-wrapper {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 500px;
+            height: 240px;
+        }
+
+        .flashcard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 16px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .flashcard-front {
+            background-color: #ffffff;
+            color: var(--text-main);
+        }
+
+        .flashcard-back {
+            background-color: #eff6ff;
+            color: var(--color-primary);
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-category {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-bombas);
+            margin-bottom: 12px;
+        }
+
+        .flashcard-text {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .flashcard-instruction {
+            font-size: 11px;
+            color: var(--text-light);
+            margin-top: 16px;
+        }
+
+        .flashcard-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .flash-btn {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            transition: var(--transition-smooth);
+        }
+
+        .flash-btn:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* QUIZ */
+        .quiz-section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .quiz-progress-text {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .quiz-question-box {
+            margin-bottom: 20px;
+        }
+
+        .quiz-question-text {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 16px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .quiz-option {
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 13.5px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .quiz-option:hover:not(.checked) {
+            background-color: #f8fafc;
+            border-color: var(--color-primary);
+        }
+
+        .quiz-option-letter {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            background-color: #f1f5f9;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .quiz-option.correct {
+            background-color: #dcfce7;
+            border-color: var(--color-success);
+            color: var(--color-success);
+        }
+
+        .quiz-option.correct .quiz-option-letter {
+            background-color: var(--color-success);
+            color: #ffffff;
+        }
+
+        .quiz-option.incorrect {
+            background-color: #fee2e2;
+            border-color: var(--color-danger);
+            color: var(--color-danger);
+        }
+
+        .quiz-option.incorrect .quiz-option-letter {
+            background-color: var(--color-danger);
+            color: #ffffff;
+        }
+
+        .quiz-explanation {
+            margin-top: 16px;
+            padding: 16px;
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            font-size: 13.5px;
+            display: none;
+        }
+
+        .quiz-explanation.show {
+            display: block;
+        }
+
+        /* MODAL ATALHOS */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 28px;
+            width: 450px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .shortcut-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13.5px;
+            border-bottom: 1px solid #f1f5f9;
+            padding: 8px 0;
+        }
+
+        .shortcut-row kbd {
+            font-family: monospace;
+            background-color: #f1f5f9;
+            border: 1px solid var(--border-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* PROGRESSION */
+        .progress-bar-container {
+            width: 100%;
+            background-color: #e2e8f0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background-color: var(--color-bombas);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Tactical Map */
+        .tactical-map-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .map-selector {
+            display: flex;
+            gap: 12px;
+        }
+
+        .map-selector button {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: var(--transition-smooth);
+        }
+
+        .map-selector button.active {
+            background-color: var(--color-primary);
+            color: #ffffff;
+            border-color: var(--color-primary);
+        }
+
+        .tactical-map-view {
+            width: 100%;
+            height: 280px;
+            background-color: #e2e8f0;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* SVG Overlay styling */
+        .map-grid-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                linear-gradient(rgba(148, 163, 184, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(148, 163, 184, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
+
+        .threat-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 48px;
+            height: 48px;
+            background-color: var(--color-danger);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 0 0 8px rgba(220, 38, 38, 0.2);
+            z-index: 10;
+        }
+
+        .threat-circle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            pointer-events: none;
+            transition: width 0.4s ease, height 0.4s ease, background-color 0.4s ease, border-color 0.4s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px dashed rgba(220, 38, 38, 0.5);
+            background-color: rgba(220, 38, 38, 0.08);
+            box-sizing: border-box;
+        }
+
+        .threat-circle::after {
+            content: attr(data-label);
+            position: absolute;
+            bottom: 10px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--color-danger);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2px 8px;
+            border-radius: 10px;
+            border: 1px solid var(--border-color);
+        }
+
+        .map-legend {
+            display: flex;
+            gap: 16px;
+            font-size: 12px;
+            color: var(--text-muted);
+            margin-top: 10px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+        }
+
+        /* Crater Sweep Illustration */
+        .crater-container {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .crater-center {
+            width: 70px;
+            height: 50px;
+            background: radial-gradient(ellipse at center, #475569 0%, #1e293b 80%, transparent 100%);
+            border-radius: 50%;
+            position: relative;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        .crater-blast-wave {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            border: 1.5px solid rgba(249, 115, 22, 0.3);
+            animation: blastExpand 3s infinite linear;
+            pointer-events: none;
+        }
+
+        @keyframes blastExpand {
+            0% { width: 50px; height: 35px; opacity: 1; }
+            100% { width: 320px; height: 230px; opacity: 0; }
+        }
+
+        .sweep-arrow {
+            position: absolute;
+            color: var(--color-success);
+            font-size: 18px;
+            animation: arrowPulse 1.5s infinite ease-in-out;
+            pointer-events: none;
+        }
+
+        @keyframes arrowPulse {
+            0% { transform: scale(1) translate(0, 0); opacity: 0.4; }
+            50% { transform: scale(1.1) translate(var(--tx), var(--ty)); opacity: 1; }
+            100% { transform: scale(1) translate(0, 0); opacity: 0.4; }
+        }
+
+        .crater-hotspot {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background-color: var(--color-primary);
+            color: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+            transition: var(--transition-smooth);
+            z-index: 10;
+        }
+
+        .crater-hotspot:hover {
+            transform: scale(1.2);
+            background-color: var(--color-bombas);
+            box-shadow: 0 0 0 5px rgba(225, 29, 72, 0.3);
+        }
+
+        /* FOCUS VISIBLE */
+        :focus-visible {
+            outline: 3px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside role="navigation">
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-bomb"></i>
+            </div>
+            <div class="brand-text">
+                <h1>Bizu Pericial</h1>
+                <span>Bombas & Explosivos</span>
+            </div>
+        </div>
+
+        <div class="menu-title">Tópicos do Bizu</div>
+        <div class="menu-item active" id="menu-1" onclick="switchBizuPage(1)" tabindex="0" role="tab">
+            <i class="fa-solid fa-fire-burner"></i> Trem de Fogo <kbd>1</kbd>
+        </div>
+        <div class="menu-item" id="menu-2" onclick="switchBizuPage(2)" tabindex="0" role="tab">
+            <i class="fa-solid fa-plug"></i> Iniciação <kbd>2</kbd>
+        </div>
+        <div class="menu-item" id="menu-3" onclick="switchBizuPage(3)" tabindex="0" role="tab">
+            <i class="fa-solid fa-envelope-open-text"></i> Carta Bomba <kbd>3</kbd>
+        </div>
+        <div class="menu-item" id="menu-4" onclick="switchBizuPage(4)" tabindex="0" role="tab">
+            <i class="fa-solid fa-triangle-exclamation"></i> Local com Bomba <kbd>4</kbd>
+        </div>
+        <div class="menu-item" id="menu-5" onclick="switchBizuPage(5)" tabindex="0" role="tab">
+            <i class="fa-solid fa-phone-volume"></i> Ameaça de Bomba <kbd>5</kbd>
+        </div>
+        <div class="menu-item" id="menu-6" onclick="switchBizuPage(6)" tabindex="0" role="tab">
+            <i class="fa-solid fa-circle-question"></i> Simulado Geral <kbd>6</kbd>
+        </div>
+
+        <div class="menu-title" style="margin-top: 24px;">Progresso de Revisão</div>
+        <div style="font-size: 12px; font-weight: 600; color: var(--text-muted); display:flex; justify-content:space-between; margin-bottom: 2px;">
+            <span>Conclusão</span>
+            <span id="prog-pct">0%</span>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="prog-fill"></div>
+        </div>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main>
+        <header>
+            <div class="header-title">
+                <h2 id="page-title">Trem de Fogo</h2>
+                <p id="page-subtitle">A sequência mecânica/química de detonação em um artefato explosivo.</p>
+            </div>
+            <div class="top-actions">
+                <button class="btn-action" onclick="toggleHelpModal()" title="Atalhos do Teclado (H)" tabindex="0">
+                    <i class="fa-solid fa-keyboard"></i> Atalhos <kbd>H</kbd>
+                </button>
+                <button class="btn-action" onclick="window.history.back()" title="Voltar ao Painel" tabindex="0">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar
+                </button>
+            </div>
+        </header>
+
+        <!-- PAGE 1: TREM DE FOGO -->
+        <section id="page-sec-1" class="page active">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon"><i class="fa-solid fa-circle-nodes"></i></div>
+                    <h3>Detonação em Cadeia de fogo (Trem Explosivo)</h3>
+                </div>
+                <p style="font-size: 14px; color: var(--text-muted);">
+                    A detonação de altos explosivos modernos de forma segura exige uma cadeia de transferência de energia. Altos explosivos secundários (ex: RDX, TNT, ANFO) são estáveis e insensíveis, requerendo uma onda de choque de alta energia que se inicia em um composto extremamente sensível (primário).
+                </p>
+
+                <div class="trem-container">
+                    <div class="trem-visualizer">
+                        <div class="trem-step active" id="trem-step-1" onclick="selectTremStep(1)">
+                            <div class="trem-step-num">1</div>
+                            <div class="trem-step-title">Iniciador</div>
+                        </div>
+                        <div class="trem-step" id="trem-step-2" onclick="selectTremStep(2)">
+                            <div class="trem-step-num">2</div>
+                            <div class="trem-step-title">Reforçador (Booster)</div>
+                        </div>
+                        <div class="trem-step" id="trem-step-3" onclick="selectTremStep(3)">
+                            <div class="trem-step-num">3</div>
+                            <div class="trem-step-title">Carga Principal</div>
+                        </div>
+                    </div>
+
+                    <div class="trem-details" id="trem-details-panel">
+                        <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-primary); margin-bottom: 8px;">1. Iniciador (Explosivo Primário)</h4>
+                        <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 10px;">
+                            Composto de <strong>altíssima sensibilidade</strong> a choque, atrito, faísca ou calor. Utilizado em pequenas quantidades dentro de detonadores para iniciar a onda de choque.
+                        </p>
+                        <div style="font-size: 13px; font-weight: 600; color: var(--color-bombas);">
+                            Exemplos: Azida de Chumbo, Estifnato de Chumbo, Fulminato de Mercúrio.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FLASHCARDS TREM DE FOGO -->
+            <div class="grid-2col">
+                <div class="flashcard-section">
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-primary); width:100%; text-align:left; border-bottom:1px solid var(--border-color); padding-bottom:8px;"><i class="fa-solid fa-clone"></i> Memorização Flashcard</h4>
+                    <div class="flashcard-wrapper">
+                        <div class="flashcard" id="fcard-1" onclick="flipBizuCard(1)">
+                            <div class="flashcard-front">
+                                <span class="flashcard-category">Trem de Fogo 💥</span>
+                                <p class="flashcard-text">Por que altos explosivos secundários (ex: TNT) não podem ser iniciados diretamente por faísca ou pavio?</p>
+                                <span class="flashcard-instruction">Clique para girar</span>
+                            </div>
+                            <div class="flashcard-back">
+                                <span class="flashcard-category">Resposta 🧠</span>
+                                <p class="flashcard-text" style="font-size: 14.5px;">Porque eles possuem alta estabilidade física/química e baixa sensibilidade ao calor comum. Eles requerem uma onda de choque de altíssima velocidade e pressão, fornecida pelo explosivo primário (detonador) e amplificada pelo booster.</p>
+                                <span class="flashcard-instruction">Clique para girar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DIRETRIZ DE SEGURANÇA EOD -->
+                <div class="bizu-card" style="justify-content: flex-start;">
+                    <div class="bizu-card-header">
+                        <div class="bizu-card-icon danger"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <h3>Segurança com Altos Explosivos</h3>
+                    </div>
+                    <ul style="font-size: 13px; color: var(--text-muted); padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+                        <li><strong>Estabilidade Química</strong>: A dinamite à base de nitroglicerina líquida exsudada é extremamente instável e sensível ao menor impacto mecânico ou fricção.</li>
+                        <li><strong>Propagação Simpática</strong>: Explosivos estocados próximos podem sofrer detonação por simpatia (onda de choque transmitida pelo ar/solo). Mantenha distâncias de segurança regulamentares.</li>
+                        <li><strong>Estilhaços Diretos</strong>: São originados do próprio invólucro do artefato (metal, pregos, esferas). Possuem velocidades de propagação que podem superar a da onda gasosa.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 2: SISTEMAS DE INICIAÇÃO -->
+        <section id="page-sec-2" class="page">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon warning"><i class="fa-solid fa-plug"></i></div>
+                    <h3>Sistemas e Dispositivos de Iniciação Pericial</h3>
+                </div>
+                
+                <table class="bizu-table">
+                    <thead>
+                        <tr>
+                            <th>Sistema</th>
+                            <th>Mecanismo / Velocidade</th>
+                            <th>Regra de Segurança Pericial / Característica</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Estopim Hidráulico</strong></td>
+                            <td>Combustão de pólvora lenta (110 a 240 s/m)</td>
+                            <td>Permite uso subaquático. Impossível ver visualmente onde a queima está ocorrendo. Em falha, aguardar 20 min.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mecha / Rastilho</strong></td>
+                            <td>Queima pirotécnica rápida (Mecha: 8 s/m)</td>
+                            <td>Pólvora exposta por fora. Muito sensível e rápida; usada em fogos de artifício e pirotecnia.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Espoletas Elétricas</strong></td>
+                            <td>Fio-ponte aquecido por Efeito Joule</td>
+                            <td><strong>Alto risco de acionamento acidental</strong> por indução eletromagnética (radiotransmissores HT, celulares, alta tensão).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tubo de Choque (Nonel)</strong></td>
+                            <td>Onda de choque interna pirotécnica (~ 1.000 m/s)</td>
+                            <td><strong>Altamente seguro</strong> contra correntes induzidas e eletricidade estática. Tubo de plástico oco com HMX + Alumínio.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="background-color: #fffbeb; border: 1px solid #fef08a; border-radius: 12px; padding: 16px; font-size: 13px; color: #854d0e;">
+                    <i class="fa-solid fa-circle-exclamation"></i> <strong>Bizuz de Segurança em Campo:</strong>
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li>Sempre unir as pontas dos fios de detonadores elétricos (curto-circuitar) para evitar iniciação acidental por estática.</li>
+                        <li>Desligar radiotransmissores HT e celulares a menos de 50 metros de detonadores elétricos sob risco de indução eletromagnética.</li>
+                        <li>Grito de alerta obrigatório antes de detonar espoletas elétricas ou tubo de choque: <strong>"Atenção, linha quente!"</strong></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FLASHCARDS SISTEMAS -->
+            <div class="grid-2col">
+                <div class="flashcard-section">
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-primary); width:100%; text-align:left; border-bottom:1px solid var(--border-color); padding-bottom:8px;"><i class="fa-solid fa-clone"></i> Memorização Flashcard</h4>
+                    <div class="flashcard-wrapper">
+                        <div class="flashcard" id="fcard-2" onclick="flipBizuCard(2)">
+                            <div class="flashcard-front">
+                                <span class="flashcard-category">Iniciação 🔌</span>
+                                <p class="flashcard-text">Qual a principal vantagem de segurança do Tubo de Choque (Nonel) sobre as Espoletas Elétricas?</p>
+                                <span class="flashcard-instruction">Clique para girar</span>
+                            </div>
+                            <div class="flashcard-back">
+                                <span class="flashcard-category">Resposta 🧠</span>
+                                <p class="flashcard-text" style="font-size: 14.5px;">O tubo de choque (Nonel) é imune à indução eletromagnética ou eletricidade estática (gerada por antenas de rádio, linhas de alta tensão ou celulares), pois a transmissão de calor/onda ocorre mecanicamente dentro do plástico.</p>
+                                <span class="flashcard-instruction">Clique para girar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DICAS DE PRESERVAÇÃO DE SISTEMAS -->
+                <div class="bizu-card" style="justify-content: flex-start;">
+                    <div class="bizu-card-header">
+                        <div class="bizu-card-icon danger"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <h3>Segurança com Estopins</h3>
+                    </div>
+                    <ul style="font-size: 13px; color: var(--text-muted); padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+                        <li><strong>Estopim Pirotécnico</strong>: Queima lenta de pólvora negra (velocidade uniforme). Nunca dobre ou pise no estopim para não fraturar o núcleo.</li>
+                        <li><strong>Cordel Detonante</strong>: Possui núcleo de PETN (Pentrita), detonando com velocidade de ~6.500m/s. É usado como booster linear de alta VOD.</li>
+                        <li><strong>Retardo de Iniciação</strong>: Falhas elétricas podem conter retardo de queima em espoletas. A regra operacional é isolar e aguardar 30 minutos em sistemas elétricos.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 3: CARTA BOMBA -->
+        <section id="page-sec-3" class="page">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon danger"><i class="fa-solid fa-envelope-open-text"></i></div>
+                    <h3>Reconhecimento & Procedimentos de Carta Bomba</h3>
+                </div>
+
+                <div class="package-container">
+                    <div class="package-visual">
+                        <div class="package-label">PACOTE PESSOAL<br>Remetente: Confidencial</div>
+                        <div class="package-stamp">
+                            <div class="stamp"></div>
+                            <div class="stamp"></div>
+                            <div class="stamp"></div>
+                        </div>
+                        <div class="package-oil-spot"></div>
+                        <div class="package-wire"></div>
+                        
+                        <!-- Hotspots -->
+                        <div class="hotspot" style="top: 15px; right: 40px;" onclick="showHotspotInfo(1)">1</div>
+                        <div class="hotspot" style="bottom: 40px; left: 70px;" onclick="showHotspotInfo(2)">2</div>
+                        <div class="hotspot" style="bottom: 50px; right: 50px;" onclick="showHotspotInfo(3)">3</div>
+                        <div class="hotspot" style="top: 30px; left: 80px;" onclick="showHotspotInfo(4)">4</div>
+                    </div>
+
+                    <div class="package-info-panel" id="hotspot-info-panel">
+                        <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-bombas); margin-bottom: 10px;">Pontos Críticos de Suspeição</h4>
+                        <p style="font-size: 13.5px; color: var(--text-muted);">
+                            Clique nos números numerados no pacote suspeito ao lado para inspecionar os indicadores periciais de carta ou pacote bomba.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid-2col" style="margin-top: 12px;">
+                    <div>
+                        <h4 style="font-family: var(--font-display); font-size: 14.5px; font-weight: 700; color: var(--color-primary); margin-bottom: 10px;">Procedimento em Caso de Suspeita:</h4>
+                        <div class="checklist-item">
+                            <div class="checklist-bullet">1</div>
+                            <div class="checklist-text">
+                                <strong>Isolamento Imediato</strong>
+                                <span>Afastar todas as pessoas e isolar o local com raio mínimo de 100 metros.</span>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-bullet">2</div>
+                            <div class="checklist-text">
+                                <strong>Não mergulhar em água!</strong>
+                                <span>A água pode causar curto-circuito na bateria interna, fechando o circuito elétrico e detonando o artefato.</span>
+                            </div>
+                        </div>
+                        <div class="checklist-item">
+                            <div class="checklist-bullet">3</div>
+                            <div class="checklist-text">
+                                <strong>Contenção Passiva</strong>
+                                <span>Cercar o pacote com sacos de areia (para conter a onda e fragmentos) e abrir portas/janelas (para dissipar a onda de choque).</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h4 style="font-family: var(--font-display); font-size: 14.5px; font-weight: 700; color: var(--color-primary); margin-bottom: 10px;">Mecanismos e Ferramentas:</h4>
+                        <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                            <strong>Mecanismo Comum:</strong> Acionamento por descompressão/tração (molas/pinos que fecham o contato quando o envelope/livro é aberto).
+                        </p>
+                        <p style="font-size: 13.5px; color: var(--text-muted);">
+                            <strong>Ferramentas de Varredura:</strong> Raios X portátil, detector de metals, estetoscópio acústico, farejadores/detectores de vapores orgânicos (RDX exala odor característico de amêndoas / marzipã).
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 4: LOCAL COM BOMBA -->
+        <section id="page-sec-4" class="page">
+            <div class="grid-2col">
+                <!-- Coluna 1: Mapa Interativo de Isolamento -->
+                <div class="bizu-card">
+                    <div class="bizu-card-header">
+                        <div class="bizu-card-icon danger"><i class="fa-solid fa-expand"></i></div>
+                        <h3>Raio de Isolamento Tático</h3>
+                    </div>
+                    <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                        Selecione o tipo de ameaça detectada para visualizar o raio de isolamento mínimo regulamentar e o perímetro de segurança.
+                    </p>
+
+                    <div class="tactical-map-container">
+                        <div class="map-selector">
+                            <button id="map-btn-bag" class="active" onclick="drawTacticalMap('bag')">🎒 Bolsa/Pacote Suspeito</button>
+                            <button id="map-btn-car" onclick="drawTacticalMap('car')">🚗 Veículo Suspeito</button>
+                        </div>
+
+                        <div class="tactical-map-view">
+                            <div class="map-grid-lines"></div>
+                            
+                            <!-- Threat Center -->
+                            <div class="threat-center" id="map-threat-icon">
+                                <i class="fa-solid fa-suitcase"></i>
+                            </div>
+
+                            <!-- Threat Circle (Danger zone) -->
+                            <div class="threat-circle" id="map-danger-zone" style="width: 120px; height: 120px;" data-label="Zona de Perigo: 100m"></div>
+                        </div>
+
+                        <div class="map-legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: rgba(220, 38, 38, 0.15); border: 1.5px dashed rgba(220, 38, 38, 0.5);"></div>
+                                <span>Área de Exclusão (Isolamento)</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background-color: #cbd5e1;"></div>
+                                <span>Ponto de Comando / Zona Segura</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background-color: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; font-size: 13px;" id="map-info-text">
+                        <strong>🎒 Raio Mínimo: 100 metros</strong>
+                        <p style="color: var(--text-muted); margin-top: 4px;">Indicado para volumes de tamanho médio carregados manualmente. O raio visa blindar vidas contra a onda de choque inicial, estilhaços diretos e evitar o efeito de canalização de gases em ruas estreitas.</p>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Varredura de Local Pós-Explosão -->
+                <div class="bizu-card">
+                    <div class="bizu-card-header">
+                        <div class="bizu-card-icon"><i class="fa-solid fa-arrows-to-circle"></i></div>
+                        <h3>Varredura Forense Pós-Explosão</h3>
+                    </div>
+                    <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                        Clique nas evidências espalhadas ao redor do epicentro (cratera) para ver as orientações de coleta pericial.
+                    </p>
+
+                    <div class="crater-container">
+                        <!-- Crater -->
+                        <div class="crater-center"></div>
+                        
+                        <!-- Blast wave animation -->
+                        <div class="crater-blast-wave"></div>
+                        
+                        <!-- Sweep Direction Arrows -->
+                        <!-- Top Arrow pointing down -->
+                        <div class="sweep-arrow fa-solid fa-arrow-down" style="top: 20px; left: 50%; transform: translateX(-50%); --tx: 0px; --ty: 30px;"></div>
+                        <!-- Bottom Arrow pointing up -->
+                        <div class="sweep-arrow fa-solid fa-arrow-up" style="bottom: 20px; left: 50%; transform: translateX(-50%); --tx: 0px; --ty: -30px;"></div>
+                        <!-- Left Arrow pointing right -->
+                        <div class="sweep-arrow fa-solid fa-arrow-right" style="left: 20px; top: 50%; transform: translateY(-50%); --tx: 30px; --ty: 0px;"></div>
+                        <!-- Right Arrow pointing left -->
+                        <div class="sweep-arrow fa-solid fa-arrow-left" style="right: 20px; top: 50%; transform: translateY(-50%); --tx: -30px; --ty: 0px;"></div>
+
+                        <!-- Hotspots -->
+                        <div class="crater-hotspot" style="top: 60px; left: 80px;" onclick="showCraterInfo(1)">1</div>
+                        <div class="crater-hotspot" style="bottom: 70px; right: 80px;" onclick="showCraterInfo(2)">2</div>
+                        <div class="crater-hotspot" style="top: 80px; right: 100px;" onclick="showCraterInfo(3)">3</div>
+                        <div class="crater-hotspot" style="bottom: 50px; left: 110px;" onclick="showCraterInfo(4)">4</div>
+                    </div>
+
+                    <div class="package-info-panel" id="crater-info-panel" style="min-height: 140px; padding: 16px;">
+                        <h4 style="font-family: var(--font-display); font-size: 14.5px; font-weight: 700; color: var(--color-primary); margin-bottom: 8px;"><i class="fa-solid fa-circle-info"></i> Direção de Varredura</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">
+                            <strong>Regra de Ouro:</strong> Varredura pericial sempre do **perímetro externo** em direção ao **epicentro** (cratera), mapeando e recolhendo fragmentos antes que sejam pisoteados.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Horizontal: Condutas de Emergência -->
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon danger"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Condutas Periciais Imediatas (Segurança de Cena)</h3>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;">
+                    <div style="background-color: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; font-size: 13px;">
+                        <span style="font-size: 20px;">🚨</span>
+                        <h4 style="font-family: var(--font-display); font-weight: 700; margin: 8px 0 4px 0;">1. Evacuar</h4>
+                        <p style="color: var(--text-muted);">Retirar todas as pessoas da cena. A vida precede qualquer coleta de vestígios.</p>
+                    </div>
+                    <div style="background-color: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; font-size: 13px;">
+                        <span style="font-size: 20px;">🔇</span>
+                        <h4 style="font-family: var(--font-display); font-weight: 700; margin: 8px 0 4px 0;">2. Silêncio Rádio</h4>
+                        <p style="color: var(--text-muted);">Bloquear o uso de celulares e HTs. Evita disparo acidental por indução (RFI).</p>
+                    </div>
+                    <div style="background-color: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; font-size: 13px;">
+                        <span style="font-size: 20px;">🪟</span>
+                        <h4 style="font-family: var(--font-display); font-weight: 700; margin: 8px 0 4px 0;">3. Ventilar</h4>
+                        <p style="color: var(--text-muted);">Abrir portas e janelas se o local for fechado. Reduz a pressão de sobrecarga no ar.</p>
+                    </div>
+                    <div style="background-color: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; padding: 16px; font-size: 13px;">
+                        <span style="font-size: 20px;">🚧</span>
+                        <h4 style="font-family: var(--font-display); font-weight: 700; margin: 8px 0 4px 0;">4. Blindagem</h4>
+                        <p style="color: var(--text-muted);">Cercar o objeto com sacos de areia. Desvia e absorve energia fragmentária.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 5: AMEAÇA DE BOMBA -->
+        <section id="page-sec-5" class="page">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                    <h3>Triagem e Classificação de Ameaça de Bomba</h3>
+                </div>
+
+                <div class="threat-level-grid">
+                    <div class="threat-level-card verde">
+                        <span class="threat-badge">Ameaça Verde</span>
+                        <h4 style="font-family: var(--font-display); font-size: 14.5px; font-weight: 700;">Sem IPA (Sem identificação)</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">Sem Identificação Positiva do Alvo (IPA), sem motivos evidentes, sem credibilidade.</p>
+                        <div style="font-size: 12px; font-weight:700; color: var(--color-success); margin-top: auto;">Conduta: Registrar e ignorar.</div>
+                    </div>
+                    
+                    <div class="threat-level-card ambar">
+                        <span class="threat-badge">Ameaça Âmbar</span>
+                        <h4 style="font-family: var(--font-display); font-size: 14.5px; font-weight: 700;">Credibilidade Média</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">Sem IPA específico, mas há um fato gerador real de risco ou conflito no local.</p>
+                        <div style="font-size: 12px; font-weight:700; color: var(--color-accent); margin-top: auto;">Conduta: Vistoria preventiva; evacuação parcial.</div>
+                    </div>
+
+                    <div class="threat-level-card vermelha">
+                        <span class="threat-badge">Ameaça Vermelha</span>
+                        <h4 style="font-family: var(--font-display); font-size: 14.5px; font-weight: 700;">Ameaça Real com IPA</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">Ameaça detalhada, possui Identificação Positiva de Alvo (IPA - ex: cita nomenclatura, nomes ou salas específicas).</p>
+                        <div style="font-size: 12px; font-weight:700; color: var(--color-danger); margin-top: auto;">Conduta: Evacuação imediata total/parcial.</div>
+                    </div>
+                </div>
+
+                <div style="background-color: #f8fafc; border: 1px solid var(--border-color); border-radius: 12px; padding: 20px; margin-top: 10px;">
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-primary); margin-bottom: 12px;">Checklist Telefonista (Gerenciamento de Crise)</h4>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; font-size: 13.5px; color: var(--text-muted);">
+                        <div>
+                            <p style="margin-bottom: 8px;"><strong>1. Identificação de Voz:</strong> Anotar gênero, sotaque, velocidade da fala, tom (calmo, gago, bêbado, agressivo, nervoso).</p>
+                            <p><strong>2. Ruídos de Fundo:</strong> Barulho de tráfego, trens, música, máquinas industriais, vozes em escritório, avião, silêncio absoluto.</p>
+                        </div>
+                        <div>
+                            <p style="margin-bottom: 8px;"><strong>3. Informações do Artefato:</strong> Tentar obter do interlocutor: onde está a bomba, quando vai explodir, qual o formato físico, por que foi colocada.</p>
+                            <p><strong>4. Ação Técnica:</strong> Tentar prolongar a chamada para auxiliar o rastreamento técnico policial.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 6: SIMULADO DE FIXAÇÃO -->
+        <section id="page-sec-6" class="page">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon"><i class="fa-solid fa-circle-question"></i></div>
+                    <h3>Simulado de Fixação Pericial</h3>
+                </div>
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    Testes de múltipla escolha com foco em questões de provas de perito criminal. Responda para fixação dos conhecimentos.
+                </p>
+
+                <div class="quiz-section" style="border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; background-color: #ffffff;">
+                    <div class="quiz-header" style="border-bottom: 1px solid var(--border-color); padding-bottom: 12px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+                        <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-primary);" id="sim-question-title">Questão 1 de 5</h4>
+                        <div style="display: flex; gap: 6px;" id="sim-question-dots">
+                            <!-- JS will inject dots representing status -->
+                        </div>
+                    </div>
+
+                    <div class="quiz-question-box">
+                        <p class="quiz-question-text" id="sim-question-text">Questão...</p>
+                        <div class="quiz-options" id="sim-options-container">
+                            <!-- Options injected by JS -->
+                        </div>
+                        <div class="quiz-explanation" id="sim-explanation-box" style="margin-top: 16px; padding: 16px; background-color: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; font-size: 13.5px; display: none;">
+                            <!-- Explanation injected by JS -->
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-color);">
+                        <button class="btn-action" onclick="prevSimQuestion()"><i class="fa-solid fa-chevron-left"></i> Anterior</button>
+                        <span style="font-size: 13.5px; font-weight: 700; color: var(--text-muted);" id="sim-score-text">Acertos: 0 de 5</span>
+                        <button class="btn-action" onclick="nextSimQuestion()">Próxima <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHORTCUT KEYBOARD HELP MODAL -->
+        <div class="modal" id="help-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Atalhos Globais do Teclado</h3>
+                    <button class="modal-close" onclick="toggleHelpModal()"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="shortcut-row">
+                    <span>Navegar para Trem de Fogo</span>
+                    <kbd>1</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Navegar para Iniciação</span>
+                    <kbd>2</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Navegar para Carta Bomba</span>
+                    <kbd>3</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Navegar para Local com Bomba</span>
+                    <kbd>4</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Navegar para Ameaça de Bomba</span>
+                    <kbd>5</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Navegar para Simulado Geral</span>
+                    <kbd>6</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Girar Flashcard ativo</span>
+                    <kbd>Espaço</kbd> ou <kbd>Enter</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Fechar janela de ajuda</span>
+                    <kbd>Esc</kbd>
+                </div>
+                <button class="btn-action" style="margin-top: 12px; width:100%; justify-content:center; background-color: var(--color-primary); color:#fff;" onclick="toggleHelpModal()">Entendido</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // ESTADO GLOBAL DO BIZU
+        let currentPage = 1;
+        const pageData = {
+            1: { title: "Trem de Fogo", subtitle: "A sequência mecânica/química de detonação em um artefato explosivo." },
+            2: { title: "Sistemas de Iniciação", subtitle: "Dispositivos e regras de segurança para detonação pericial." },
+            3: { title: "Carta Bomba", subtitle: "Procedimentos e indícios de suspeição de pacotes postais." },
+            4: { title: "Local com Bomba", subtitle: "Protocolo de varredura forense e perícia pós-explosão." },
+            5: { title: "Ameaça de Bomba", subtitle: "Triagem de ligações e classificação pericial do risco." },
+            6: { title: "Simulado Geral", subtitle: "Teste seus conhecimentos periciais com questões de fixação." }
+        };
+
+        const totalPages = 6;
+        let reviewedPages = new Set([1]); // Primeira página já conta revisada
+
+        // AO CARREGAR
+        window.addEventListener('DOMContentLoaded', () => {
+            updateProgressBar();
+            setupKeyboardNavigation();
+            initSimulado();
+        });
+
+        // NAVEGAÇÃO DE PÁGINAS DO BIZU
+        function switchBizuPage(pageNum) {
+            if (pageNum < 1 || pageNum > totalPages) return;
+            
+            // Remover ativo dos menus e seções anteriores
+            document.getElementById(`menu-${currentPage}`).classList.remove('active');
+            document.getElementById(`page-sec-${currentPage}`).classList.remove('active');
+            
+            // Ativar novos
+            currentPage = pageNum;
+            document.getElementById(`menu-${currentPage}`).classList.add('active');
+            document.getElementById(`page-sec-${currentPage}`).classList.add('active');
+            
+            // Atualizar títulos
+            document.getElementById('page-title').innerText = pageData[currentPage].title;
+            document.getElementById('page-subtitle').innerText = pageData[currentPage].subtitle;
+            
+            // Registrar revisão
+            reviewedPages.add(pageNum);
+            updateProgressBar();
+        }
+
+        // ATUALIZAÇÃO DO PROGRESSO
+        function updateProgressBar() {
+            const pct = Math.round((reviewedPages.size / totalPages) * 100);
+            document.getElementById('prog-pct').innerText = `${pct}%`;
+            document.getElementById('prog-fill').style.width = `${pct}%`;
+        }
+
+        // INTERAÇÃO TREM DE FOGO
+        const tremDetails = {
+            1: {
+                title: "1. Iniciador (Explosivo Primário)",
+                desc: "Composto de <strong>altíssima sensibilidade</strong> a choque, atrito, faísca ou calor. Utilizado em pequenas quantidades dentro de detonadores para iniciar a onda de choque.",
+                exs: "Azida de Chumbo, Estifnato de Chumbo, Fulminato de Mercúrio."
+            },
+            2: {
+                title: "2. Reforçador (Booster)",
+                desc: "Composto de <strong>sensibilidade média</strong> e altíssima velocidade de detonação (VOD). Recebe a pequena onda de choque da espoleta e a amplifica o suficiente para detonar a carga principal, que é insensível.",
+                exs: "PETN (Nitropenta), RDX, Tetril."
+            },
+            3: {
+                title: "3. Carga Principal (Explosivo Secundário / Terciário)",
+                desc: "Composto de <strong>baixa sensibilidade</strong> e alta estabilidade física/química. Atua como o corpo volumoso da detonação, liberando os gases, ondas mecânicas e a energia destrutiva real do artefato.",
+                exs: "TNT, ANFO, Plastite/C4, Dinamites."
+            }
+        };
+
+        function selectTremStep(stepNum) {
+            // Alternar classe ativa nos passos do Trem
+            for (let i = 1; i <= 3; i++) {
+                document.getElementById(`trem-step-${i}`).classList.remove('active');
+            }
+            document.getElementById(`trem-step-${stepNum}`).classList.add('active');
+            
+            // Atualizar textos detalhados
+            const detailPanel = document.getElementById('trem-details-panel');
+            detailPanel.innerHTML = `
+                <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-primary); margin-bottom: 8px;">${tremDetails[stepNum].title}</h4>
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 10px;">${tremDetails[stepNum].desc}</p>
+                <div style="font-size: 13px; font-weight: 600; color: var(--color-bombas);">Exemplos: ${tremDetails[stepNum].exs}</div>
+            `;
+        }
+
+        // CARTA BOMBA HOTSPOTS
+        const hotspotDetails = {
+            1: {
+                title: "Excesso de Selos e Postagens",
+                desc: "Cartas-bomba costumam ser enviadas com excesso de selos para garantir a postagem sem a necessidade de devolução ou contato no guichê postal."
+            },
+            2: {
+                title: "Manchas de Óleo ou Graxa",
+                desc: "A exsudação de óleos plastificantes de altos explosivos como dinamite ou compostos plásticos (Semtex, RDX, C4) provoca manchas lubrificadas no papel do envelope/embrulho."
+            },
+            3: {
+                title: "Fios ou Cabos Salientes",
+                desc: "A fiação mecânica do circuito eletrônico de ignição pode causar pequenos relevos, calotes rígidos ou pequenos arames pontiagudos saindo da embalagem."
+            },
+            4: {
+                title: "Endereçamento Genérico ou Criptográfico",
+                desc: "Rótulos impressos com recortes de letras coladas, ou rótulo genérico direcionado como 'Pessoal e Confidencial', ou títulos de cargo grafados incorretamente para o alvo da entrega."
+            }
+        };
+
+        function showHotspotInfo(num) {
+            const panel = document.getElementById('hotspot-info-panel');
+            panel.innerHTML = `
+                <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-danger); margin-bottom: 10px;">${num}. ${hotspotDetails[num].title}</h4>
+                <p style="font-size: 13.5px; color: var(--text-muted);">${hotspotDetails[num].desc}</p>
+            `;
+        }
+
+        // LOCAL COM BOMBA INTERACTIVE MAP LOGIC
+        function drawTacticalMap(type) {
+            const btnBag = document.getElementById('map-btn-bag');
+            const btnCar = document.getElementById('map-btn-car');
+            const icon = document.getElementById('map-threat-icon');
+            const zone = document.getElementById('map-danger-zone');
+            const infoText = document.getElementById('map-info-text');
+
+            if (type === 'bag') {
+                btnBag.classList.add('active');
+                btnCar.classList.remove('active');
+                icon.innerHTML = '<i class="fa-solid fa-suitcase"></i>';
+                zone.style.width = '120px';
+                zone.style.height = '120px';
+                zone.setAttribute('data-label', 'Zona de Perigo: 100m');
+                infoText.innerHTML = `
+                    <strong>🎒 Raio Mínimo: 100 metros</strong>
+                    <p style="color: var(--text-muted); margin-top: 4px;">Indicado para volumes de tamanho médio carregados manualmente (mochilas, bolsas). O raio visa blindar vidas contra a onda de choque inicial, estilhaços diretos e evitar o efeito de canalização de gases em ruas estreitas.</p>
+                `;
+            } else {
+                btnBag.classList.remove('active');
+                btnCar.classList.add('active');
+                icon.innerHTML = '<i class="fa-solid fa-car"></i>';
+                zone.style.width = '240px';
+                zone.style.height = '240px';
+                zone.setAttribute('data-label', 'Zona de Perigo: 400m');
+                infoText.innerHTML = `
+                    <strong>🚗 Raio Mínimo: 400 metros</strong>
+                    <p style="color: var(--text-muted); margin-top: 4px;">Indicado para ameaças envolvendo veículos carregados (carros, vans). Devido à grande carga explosiva e alta projeção de fragmentos metálicos (partes da viatura, vidros e estilhaços secundários), o isolamento de 400 metros é o mínimo aceitável.</p>
+                `;
+            }
+        }
+
+        // CRATER FORENSIC DEBRIS HOTSPOTS
+        const craterDetails = {
+            1: {
+                title: "Fragmentos de Fios e Condutores",
+                desc: "Geralmente lançados a médias distâncias. São cruciais para a perícia remontar o circuito de iniciação (elétrico, temporizado ou por tração)."
+            },
+            2: {
+                title: "Resíduos e Estilhaços da Espoleta (Iniciador)",
+                desc: "Os componentes metálicos do detonador (cobre ou alumínio) costumam ficar incrustados em superfícies próximas (postes, paredes, árvores) no epicentro."
+            },
+            3: {
+                title: "Partes de Baterias e Placas Eletrônicas",
+                desc: "Evidências essenciais para provar a autoria e o tipo de temporizador. Podem ser encontradas na área externa, tendo sido arremessadas pela força da onda de choque."
+            },
+            4: {
+                title: "Resíduos Químicos (Fundo da Cratera)",
+                desc: "O ponto exato da detonação (fundo da cratera) concentra vestígios químicos não consumidos. Coleta-se solo/material desse epicentro para análise cromatográfica (GC-MS) em laboratório."
+            }
+        };
+
+        function showCraterInfo(num) {
+            const panel = document.getElementById('crater-info-panel');
+            panel.innerHTML = `
+                <h4 style="font-family: var(--font-display); font-size: 14.5px; font-weight: 700; color: var(--color-primary); margin-bottom: 8px;"><i class="fa-solid fa-arrows-to-circle"></i> Evidência ${num}: ${craterDetails[num].title}</h4>
+                <p style="font-size: 13px; color: var(--text-muted);">${craterDetails[num].desc}</p>
+            `;
+        }
+
+        // FLASHCARD ROTATION
+        function flipBizuCard(idx) {
+            const card = document.getElementById(`fcard-${idx}`);
+            if (card) {
+                card.classList.toggle('flipped');
+            }
+        }
+
+        // SIMULADO DE FIXAÇÃO STATE & FUNCTIONS
+        const simQuestions = [
+            {
+                q: "Qual das seguintes substâncias é classificada como explosivo primário de iniciação (usado em espoletas)?",
+                options: [
+                    "Trinitrotolueno (TNT)",
+                    "ANFO (Nitrato de Amônio + Óleo Combustível)",
+                    "Azida de Chumbo",
+                    "Nitroglicerina gelatinada"
+                ],
+                correct: 2,
+                expl: "<strong>Correto! (Alternativa C)</strong> A Azida de Chumbo e o Estifnato de Chumbo são compostos de altíssima sensibilidade a estímulos mecânicos ou térmicos, características típicas de explosivos primários de iniciação em espoletas. TNT, ANFO e Nitroglicerina gelatinada atuam como explosivos secundários/cargas principais."
+            },
+            {
+                q: "Em caso de falha de detonação usando estopim pirotécnico, qual o tempo de segurança regulamentar para aproximação pericial?",
+                options: [
+                    "Aproximação imediata para verificação da escorva.",
+                    "Aguardar no mínimo 5 minutos após o tempo calculado.",
+                    "Aguardar cerca de 20 a 30 minutos antes de se aproximar.",
+                    "Apenas realizar nova escorva à distância, sem se aproximar."
+                ],
+                correct: 2,
+                expl: "<strong>Correto! (Alternativa C)</strong> Normas de segurança de EOD prescrevem que, em falhas de iniciação com estopim de combustão pirotécnica, deve-se aguardar no mínimo 20 minutos (30 para elétricos). Isso previne o risco de 'retardo de queima' (quando a pólvora queima lentamente e detona tardiamente)."
+            },
+            {
+                q: "Qual o raio mínimo regulamentar de isolamento para um veículo suspeito (carro-bomba) em campo aberto?",
+                options: [
+                    "50 metros",
+                    "100 metros",
+                    "400 metros",
+                    "1000 metros"
+                ],
+                correct: 2,
+                expl: "<strong>Correto! (Alternativa C)</strong> O raio mínimo de isolamento tático para ameaças veiculares (carro-bomba) é de <strong>400 metros</strong> devido à massa volumosa de carga explosiva armazenável no chassi e alta taxa de estilhaços secundários metálicos e vidros arremessados."
+            },
+            {
+                q: "Em uma investigação pós-detonação (local de crime com explosão), qual o sentido correto de varredura pericial para recolhimento de fragmentos?",
+                options: [
+                    "Do epicentro (cratera) em direção ao perímetro externo.",
+                    "Do perímetro externo (área mais externa) em direção ao epicentro.",
+                    "Em formato espiral partindo direto do centro da cratera.",
+                    "A varredura é aleatória, dependendo apenas do local onde caíram os maiores destroços."
+                ],
+                correct: 1,
+                expl: "<strong>Correto! (Alternativa B)</strong> A varredura deve iniciar da periferia externa rumo ao epicentro. Isso previne o pisoteamento e destruição de microvestígios essenciais (espoletas, temporizadores, fios) que costumam ser lançados para longe."
+            },
+            {
+                q: "Uma ligação de ameaça de bomba apresenta identificação de alvo específica (IPA positivo), detalhando salas e nomes de funcionários. Qual a classificação de gravidade da ameaça?",
+                options: [
+                    "Ameaça Verde (Registrar e ignorar)",
+                    "Ameaça Âmbar (Vistoria preventiva sem evacuar)",
+                    "Ameaça Vermelha (Risco crítico e evacuação imediata)",
+                    "Ameaça Azul (Apenas isolamento pericial preventivo)"
+                ],
+                correct: 2,
+                expl: "<strong>Correto! (Alternativa C)</strong> Ameaças com Identificação Positiva de Alvo (IPA) têm alto nível de detalhes e credibilidade. São classificadas como <strong>Ameaça Vermelha</strong>, exigindo acionamento imediato da equipe EOD e evacuação total ou parcial de segurança."
+            }
+        ];
+
+        let activeSimIdx = 0;
+        let simAnswers = new Array(simQuestions.length).fill(null);
+        let showingSummary = false;
+
+        function initSimulado() {
+            showingSummary = false;
+            activeSimIdx = 0;
+            simAnswers.fill(null);
+            renderSimQuestion();
+            updateSimScore();
+        }
+
+        function renderSimQuestion() {
+            const container = document.getElementById('sim-options-container');
+            const explBox = document.getElementById('sim-explanation-box');
+            
+            if (showingSummary) {
+                renderSummaryScreen();
+                return;
+            }
+
+            const q = simQuestions[activeSimIdx];
+            
+            // Textos
+            document.getElementById('sim-question-title').innerHTML = `Questão ${activeSimIdx + 1} de ${simQuestions.length}`;
+            document.getElementById('sim-question-text').innerHTML = q.q;
+            
+            // Dots
+            const dotsContainer = document.getElementById('sim-question-dots');
+            dotsContainer.innerHTML = '';
+            simQuestions.forEach((_, idx) => {
+                const dot = document.createElement('div');
+                dot.style.width = '8px';
+                dot.style.height = '8px';
+                dot.style.borderRadius = '50%';
+                dot.style.backgroundColor = idx === activeSimIdx ? 'var(--color-primary)' : '#e2e8f0';
+                if (simAnswers[idx] !== null) {
+                    dot.style.backgroundColor = simAnswers[idx] === simQuestions[idx].correct ? 'var(--color-success)' : 'var(--color-danger)';
+                }
+                dotsContainer.appendChild(dot);
+            });
+
+            // Options
+            container.innerHTML = '';
+            
+            const answered = simAnswers[activeSimIdx] !== null;
+            const letters = ['A', 'B', 'C', 'D'];
+            
+            q.options.forEach((opt, idx) => {
+                const div = document.createElement('div');
+                div.className = 'quiz-option';
+                
+                // Letra da alternativa
+                const letterBox = document.createElement('div');
+                letterBox.className = 'quiz-option-letter';
+                letterBox.innerText = letters[idx];
+                div.appendChild(letterBox);
+                
+                // Texto da alternativa
+                const textSpan = document.createElement('span');
+                textSpan.innerText = opt;
+                div.appendChild(textSpan);
+                
+                if (answered) {
+                    if (idx === q.correct) {
+                        div.classList.add('correct');
+                    } else if (idx === simAnswers[activeSimIdx]) {
+                        div.classList.add('incorrect');
+                    }
+                } else {
+                    div.style.cursor = 'pointer';
+                    div.onclick = () => selectSimOption(idx);
+                }
+                
+                container.appendChild(div);
+            });
+
+            // Explanation
+            if (answered) {
+                explBox.innerHTML = q.expl;
+                explBox.style.display = 'block';
+            } else {
+                explBox.style.display = 'none';
+            }
+        }
+
+        function renderSummaryScreen() {
+            let correctCount = 0;
+            simAnswers.forEach((ans, idx) => {
+                if (ans === simQuestions[idx].correct) correctCount++;
+            });
+
+            const pct = Math.round((correctCount / simQuestions.length) * 100);
+            const offset = 345.6 * (1 - pct / 100);
+
+            let feedbackTitle = "Atenção! ⚠️";
+            let feedbackDesc = "Refaça a leitura dos resumos para reforçar os pontos fracos.";
+            if (pct === 100) {
+                feedbackTitle = "Excelente! 🏆";
+                feedbackDesc = "Desempenho perfeito! Você está totalmente preparado(a) para as questões de prova.";
+            } else if (pct >= 80) {
+                feedbackTitle = "Muito bom! 🥇";
+                feedbackDesc = "Ótimo desempenho. Revise apenas as questões que errou para fechar a matéria.";
+            } else if (pct >= 60) {
+                feedbackTitle = "Bom! 🥈";
+                feedbackDesc = "Bom aproveitamento. Recomendamos uma leitura rápida dos flashcards para fixar mais detalhes.";
+            }
+
+            document.getElementById('sim-question-title').innerHTML = `Resultado Final do Simulado`;
+            document.getElementById('sim-question-dots').innerHTML = ''; // Limpar dots normais
+            
+            // Injetar tela de sumário no local da pergunta
+            document.getElementById('sim-question-text').innerHTML = `
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 10px 0; text-align: center;">
+                    <!-- Concentric Progress Donut Chart -->
+                    <div style="position: relative; width: 140px; height: 140px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                        <svg width="140" height="140" viewBox="0 0 140 140">
+                            <circle cx="70" cy="70" r="55" fill="none" stroke="#e2e8f0" stroke-width="12"></circle>
+                            <circle cx="70" cy="70" r="55" fill="none" stroke="${pct >= 80 ? 'var(--color-success)' : (pct >= 60 ? 'var(--color-accent)' : 'var(--color-danger)')}" stroke-width="12" stroke-dasharray="345.6" stroke-dashoffset="${offset}" stroke-linecap="round" transform="rotate(-90 70 70)" style="transition: stroke-dashoffset 1s ease-out;"></circle>
+                        </svg>
+                        <div style="position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <span style="font-size: 26px; font-weight: 800; font-family: var(--font-display); color: var(--text-main);">${pct}%</span>
+                            <span style="font-size: 11px; font-weight: 600; color: var(--text-light);">${correctCount}/${simQuestions.length} Acertos</span>
+                        </div>
+                    </div>
+
+                    <!-- Rating message -->
+                    <div style="max-width: 340px; margin: 0 auto;">
+                        <h4 style="font-size: 16px; font-weight: 700; color: var(--text-main);">${feedbackTitle}</h4>
+                        <p style="font-size: 13.5px; color: var(--text-muted); margin-top: 4px;">${feedbackDesc}</p>
+                    </div>
+
+                    <!-- Botão de Reinício -->
+                    <button class="btn-action" style="margin-top: 10px; background-color: var(--color-primary); color: #ffffff; border-color: var(--color-primary); margin: 10px auto 0 auto;" onclick="initSimulado()">
+                        <i class="fa-solid fa-rotate-right"></i> Refazer Simulado
+                    </button>
+                </div>
+            `;
+            
+            document.getElementById('sim-options-container').innerHTML = '';
+            document.getElementById('sim-explanation-box').style.display = 'none';
+        }
+
+        function selectSimOption(optIdx) {
+            if (simAnswers[activeSimIdx] !== null) return; // Locked
+            
+            simAnswers[activeSimIdx] = optIdx;
+            renderSimQuestion();
+            updateSimScore();
+        }
+
+        function updateSimScore() {
+            let correctCount = 0;
+            simAnswers.forEach((ans, idx) => {
+                if (ans === simQuestions[idx].correct) correctCount++;
+            });
+            document.getElementById('sim-score-text').innerText = `Acertos: ${correctCount} de ${simQuestions.length}`;
+        }
+
+        function nextSimQuestion() {
+            if (showingSummary) return;
+
+            if (activeSimIdx < simQuestions.length - 1) {
+                activeSimIdx++;
+                renderSimQuestion();
+            } else {
+                showingSummary = true;
+                renderSimQuestion();
+            }
+        }
+
+        function prevSimQuestion() {
+            if (showingSummary) {
+                showingSummary = false;
+                renderSimQuestion();
+                return;
+            }
+
+            if (activeSimIdx > 0) {
+                activeSimIdx--;
+                renderSimQuestion();
+            }
+        }
+
+        // CONFIGURAR ATALHOS DO TECLADO
+        function setupKeyboardNavigation() {
+            document.addEventListener('keydown', (e) => {
+                const modal = document.getElementById('help-modal');
+                
+                // Toggle Modal Help
+                if (e.key.toLowerCase() === 'h') {
+                    e.preventDefault();
+                    toggleHelpModal();
+                    return;
+                }
+                
+                // Close Modal on Esc
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    e.preventDefault();
+                    toggleHelpModal();
+                    return;
+                }
+                
+                // Mudar abas por número
+                if (e.key >= '1' && e.key <= '6') {
+                    e.preventDefault();
+                    switchBizuPage(parseInt(e.key));
+                    return;
+                }
+
+                // Seta esquerda / direita navega no Simulado se estiver na aba 6
+                if (currentPage === 6) {
+                    if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        prevSimQuestion();
+                        return;
+                    }
+                    if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        nextSimQuestion();
+                        return;
+                    }
+                    // Letras A-D para responder no simulado
+                    const keyChar = e.key.toUpperCase();
+                    const choiceMap = { 'A': 0, 'B': 1, 'C': 2, 'D': 3 };
+                    if (choiceMap[keyChar] !== undefined) {
+                        e.preventDefault();
+                        selectSimOption(choiceMap[keyChar]);
+                        return;
+                    }
+                }
+                
+                // Girar flashcard por espaço ou enter
+                if (e.key === ' ' || e.key === 'Enter') {
+                    const activeSec = document.querySelector('.page.active');
+                    const card = activeSec.querySelector('.flashcard');
+                    if (card && document.activeElement === card) {
+                        e.preventDefault();
+                        card.classList.toggle('flipped');
+                    }
+                }
+            });
+
+            // Permitir foco de teclado nos cards para rodar via espaço
+            document.querySelectorAll('.flashcard').forEach(card => {
+                card.setAttribute('tabindex', '0');
+            });
+        }
+    </script>
+</body>
+</html>

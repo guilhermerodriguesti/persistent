@@ -1,0 +1,1702 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizu Pericial - Informática Forense</title>
+    <meta name="description" content="Resumo de alto rendimento para concursos periciais cobrindo Volatilidade de Dados, Duplicação Forense, Cadeia de Custódia e Métodos de Extração em Celulares.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Tema Claro Premium (Branco) */
+            --bg-body: #f1f5f9;
+            --bg-sidebar: #ffffff;
+            --bg-card: #ffffff;
+            --border-color: #cbd5e1;
+            
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-light: #64748b;
+            
+            --color-primary: #1e3a8a; /* Azul Marinho Pericial */
+            --color-accent: #f97316; /* Laranja Alerta */
+            --color-success: #16a34a;
+            --color-danger: #dc2626;
+            
+            --color-informatica: #7c3aed;
+            --color-informatica-bg: #f5f3ff;
+            
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            
+            --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-display: 'Outfit', sans-serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            line-height: 1.6;
+        }
+
+        /* SIDEBAR */
+        aside {
+            width: 280px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            flex-shrink: 0;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .brand-icon {
+            background-color: var(--color-informatica-bg);
+            color: var(--color-informatica);
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .brand-text h1 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+
+        .brand-text span {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+        }
+
+        .menu-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border: 1px solid transparent;
+            margin-bottom: 8px;
+        }
+
+        .menu-item:hover {
+            background-color: var(--bg-body);
+            color: var(--color-primary);
+        }
+
+        .menu-item.active {
+            background-color: var(--color-primary);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+        }
+
+        .menu-item kbd {
+            margin-left: auto;
+            font-family: monospace;
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1px 5px;
+            border-radius: 4px;
+            font-size: 10px;
+        }
+
+        .menu-item.active kbd {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+
+        /* MAIN CONTENT AREA */
+        main {
+            flex-grow: 1;
+            padding: 32px 40px;
+            overflow-y: auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .header-title h2 {
+            font-family: var(--font-display);
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+
+        .header-title p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-action {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-action:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+            background-color: #f8fafc;
+        }
+
+        /* PAGES */
+        .page {
+            display: none;
+            animation: fadeIn 0.3s ease;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        .page.active {
+            display: flex;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* GRID LAYOUTS */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        /* CARDS */
+        .bizu-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .bizu-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .bizu-card-icon {
+            background-color: #f0fdf4;
+            color: var(--color-success);
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .bizu-card-icon.danger {
+            background-color: #fef2f2;
+            color: var(--color-danger);
+        }
+
+        .bizu-card-icon.warning {
+            background-color: #fff7ed;
+            color: var(--color-accent);
+        }
+
+        .bizu-card-header h3 {
+            font-family: var(--font-display);
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        /* VOLATILITY LADDER */
+        .ladder-container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 10px 0;
+        }
+
+        .ladder-step {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border-left: 5px solid var(--text-light);
+            position: relative;
+        }
+
+        .ladder-step:hover, .ladder-step.active {
+            transform: translateX(6px);
+            box-shadow: var(--shadow-sm);
+            border-left-color: var(--color-informatica);
+        }
+
+        .ladder-step.active {
+            background-color: #f3e8ff;
+            border-color: #c084fc;
+        }
+
+        .ladder-step-name {
+            font-weight: 700;
+            font-size: 13.5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .ladder-badge {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 12px;
+            background-color: #f1f5f9;
+            color: var(--text-muted);
+        }
+
+        .ladder-step[data-level="max"] { border-left-color: var(--color-danger); }
+        .ladder-step[data-level="max"].active { background-color: #fef2f2; border-color: #fca5a5; }
+        .ladder-step[data-level="max"] .ladder-badge { background-color: #fee2e2; color: var(--color-danger); }
+        
+        .ladder-step[data-level="min"] { border-left-color: var(--color-success); }
+        .ladder-step[data-level="min"].active { background-color: #f0fdf4; border-color: #86efac; }
+        .ladder-step[data-level="min"] .ladder-badge { background-color: #dcfce7; color: var(--color-success); }
+
+        .ladder-info-panel {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+            min-height: 120px;
+        }
+
+        /* DUPLICATION SIMULATOR */
+        .dup-container {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .dup-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 10px 0;
+            position: relative;
+        }
+
+        .dup-disk {
+            width: 80px;
+            height: 90px;
+            background-color: #ffffff;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            box-shadow: var(--shadow-sm);
+            z-index: 2;
+            transition: var(--transition-smooth);
+        }
+
+        .dup-disk.altered {
+            border-color: var(--color-danger);
+            background-color: #fef2f2;
+        }
+
+        .dup-disk.success {
+            border-color: var(--color-success);
+            background-color: #f0fdf4;
+        }
+
+        .dup-blocker {
+            width: 90px;
+            height: 60px;
+            border: 2px solid var(--border-color);
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 11px;
+            font-weight: 700;
+            z-index: 2;
+            transition: var(--transition-smooth);
+            background-color: #ffffff;
+        }
+
+        .dup-blocker.active {
+            border-color: var(--color-success);
+            background-color: #dcfce7;
+            color: var(--color-success);
+        }
+
+        .dup-blocker.inactive {
+            border-color: var(--color-danger);
+            background-color: #fee2e2;
+            color: var(--color-danger);
+        }
+
+        .dup-arrow {
+            flex-grow: 1;
+            height: 4px;
+            background-color: var(--border-color);
+            z-index: 1;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+
+        .dup-arrow.active {
+            background: linear-gradient(to right, var(--color-success), var(--color-success));
+        }
+
+        .dup-arrow.active::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+            width: 10px;
+            height: 10px;
+            border-top: 4px solid var(--color-success);
+            border-right: 4px solid var(--color-success);
+        }
+
+        .dup-hash-label {
+            font-family: monospace;
+            font-size: 11px;
+            color: var(--text-light);
+            background-color: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-top: 4px;
+            text-align: center;
+            max-width: 90px;
+            word-break: break-all;
+        }
+
+        /* TABLES */
+        table.bizu-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13.5px;
+            text-align: left;
+        }
+
+        table.bizu-table th {
+            background-color: #f8fafc;
+            padding: 12px 16px;
+            font-weight: 700;
+            border-bottom: 2px solid var(--border-color);
+            color: var(--color-primary);
+        }
+
+        table.bizu-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        /* FLOWCHART */
+        .flowchart {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .flowchart-step {
+            background-color: #ffffff;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 14px 18px;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            border-left: 5px solid var(--color-primary);
+        }
+
+        .flowchart-step:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+            border-left-color: var(--color-accent);
+        }
+
+        .flowchart-step-title {
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 2px;
+        }
+
+        .flowchart-step-desc {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        /* FLASHCARDS */
+        .flashcard-section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .flashcard-wrapper {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 500px;
+            height: 240px;
+        }
+
+        .flashcard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            cursor: pointer;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-front, .flashcard-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 16px;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+
+        .flashcard-front {
+            background-color: #ffffff;
+            color: var(--text-main);
+        }
+
+        .flashcard-back {
+            background-color: #eff6ff;
+            color: var(--color-primary);
+            transform: rotateY(180deg);
+        }
+
+        .flashcard-category {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-informatica);
+            margin-bottom: 12px;
+        }
+
+        .flashcard-text {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+
+        .flashcard-instruction {
+            font-size: 11px;
+            color: var(--text-light);
+            margin-top: 16px;
+        }
+
+        /* QUIZ */
+        .quiz-section {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 24px;
+        }
+
+        .quiz-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            align-items: center;
+        }
+
+        .quiz-progress-text {
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .quiz-question-box {
+            margin-bottom: 20px;
+        }
+
+        .quiz-question-text {
+            font-family: var(--font-display);
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 16px;
+        }
+
+        .quiz-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .quiz-option {
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 14px 18px;
+            font-size: 13.5px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .quiz-option:hover:not(.checked) {
+            background-color: #f8fafc;
+            border-color: var(--color-primary);
+        }
+
+        .quiz-option-letter {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            background-color: #f1f5f9;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+        }
+
+        .quiz-option.correct {
+            background-color: #dcfce7;
+            border-color: var(--color-success);
+            color: var(--color-success);
+        }
+
+        .quiz-option.correct .quiz-option-letter {
+            background-color: var(--color-success);
+            color: #ffffff;
+        }
+
+        .quiz-option.incorrect {
+            background-color: #fee2e2;
+            border-color: var(--color-danger);
+            color: var(--color-danger);
+        }
+
+        .quiz-option.incorrect .quiz-option-letter {
+            background-color: var(--color-danger);
+            color: #ffffff;
+        }
+
+        .quiz-explanation {
+            margin-top: 16px;
+            padding: 16px;
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            font-size: 13.5px;
+            display: none;
+        }
+
+        .quiz-explanation.show {
+            display: block;
+        }
+
+        /* MODAL ATALHOS */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 28px;
+            width: 450px;
+            box-shadow: var(--shadow-lg);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h3 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            color: var(--text-muted);
+        }
+
+        .shortcut-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13.5px;
+            border-bottom: 1px solid #f1f5f9;
+            padding: 8px 0;
+        }
+
+        .shortcut-row kbd {
+            font-family: monospace;
+            background-color: #f1f5f9;
+            border: 1px solid var(--border-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        /* PROGRESSION */
+        .progress-bar-container {
+            width: 100%;
+            background-color: #e2e8f0;
+            height: 8px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            background-color: var(--color-informatica);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* FOCUS VISIBLE */
+        :focus-visible {
+            outline: 3px solid var(--color-primary);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside role="navigation">
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <div class="brand-text">
+                <h1>Bizu Pericial</h1>
+                <span>Informática</span>
+            </div>
+        </div>
+
+        <div class="menu-title">Tópicos do Bizu</div>
+        <div class="menu-item active" id="menu-1" onclick="switchBizuPage(1)" tabindex="0" role="tab">
+            <i class="fa-solid fa-arrow-down-up-across-line"></i> Volatilidade (RFC 3227) <kbd>1</kbd>
+        </div>
+        <div class="menu-item" id="menu-2" onclick="switchBizuPage(2)" tabindex="0" role="tab">
+            <i class="fa-solid fa-clone"></i> Duplicação Forense <kbd>2</kbd>
+        </div>
+        <div class="menu-item" id="menu-3" onclick="switchBizuPage(3)" tabindex="0" role="tab">
+            <i class="fa-solid fa-mobile-screen-button"></i> Extração em Celulares <kbd>3</kbd>
+        </div>
+        <div class="menu-item" id="menu-4" onclick="switchBizuPage(4)" tabindex="0" role="tab">
+            <i class="fa-solid fa-server"></i> Cadeia de Custódia <kbd>4</kbd>
+        </div>
+        <div class="menu-item" id="menu-5" onclick="switchBizuPage(5)" tabindex="0" role="tab">
+            <i class="fa-solid fa-circle-question"></i> Simulado Geral <kbd>5</kbd>
+        </div>
+
+        <div class="menu-title" style="margin-top: 24px;">Progresso de Revisão</div>
+        <div style="font-size: 12px; font-weight: 600; color: var(--text-muted); display:flex; justify-content:space-between; margin-bottom: 2px;">
+            <span>Conclusão</span>
+            <span id="prog-pct">0%</span>
+        </div>
+        <div class="progress-bar-container">
+            <div class="progress-bar-fill" id="prog-fill"></div>
+        </div>
+    </aside>
+
+    <!-- MAIN AREA -->
+    <main>
+        <header>
+            <div class="header-title">
+                <h2 id="page-title">Volatilidade de Dados</h2>
+                <p id="page-subtitle">A ordem de prioridade na preservação de evidências digitais (RFC 3227).</p>
+            </div>
+            <div class="top-actions">
+                <button class="btn-action" onclick="toggleHelpModal()" title="Atalhos do Teclado (H)" tabindex="0">
+                    <i class="fa-solid fa-keyboard"></i> Atalhos <kbd>H</kbd>
+                </button>
+                <button class="btn-action" onclick="window.history.back()" title="Voltar ao Painel" tabindex="0">
+                    <i class="fa-solid fa-arrow-left"></i> Voltar
+                </button>
+            </div>
+        </header>
+
+        <!-- PAGE 1: ORDEM DE VOLATILIDADE -->
+        <section id="page-sec-1" class="page active">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon"><i class="fa-solid fa-stairs"></i></div>
+                    <h3>Escada de Volatilidade de Provas Digitais (RFC 3227)</h3>
+                </div>
+                <p style="font-size: 13.5px; color: var(--text-muted);">
+                    Ao apreender um computador ligado, o perito deve recolher primeiro as informações mais voláteis para evitar sua perda ao desligar o aparelho. Selecione os degraus para ver detalhes.
+                </p>
+
+                <div class="grid-2col">
+                    <div class="ladder-container">
+                        <div class="ladder-step" data-level="max" id="ladder-step-1" onclick="selectLadderStep(1)">
+                            <div class="ladder-step-name"><i class="fa-solid fa-microchip"></i> 1. Registradores e Cache do Processador</div>
+                            <span class="ladder-badge">Mais Volátil</span>
+                        </div>
+                        <div class="ladder-step" id="ladder-step-2" onclick="selectLadderStep(2)">
+                            <div class="ladder-step-name"><i class="fa-solid fa-network-wired"></i> 2. Tabelas de Roteamento e ARP Cache</div>
+                            <span class="ladder-badge">Média-Alta</span>
+                        </div>
+                        <div class="ladder-step" id="ladder-step-3" onclick="selectLadderStep(3)">
+                            <div class="ladder-step-name"><i class="fa-solid fa-memory"></i> 3. Memória RAM (Estado do Sistema/Processos)</div>
+                            <span class="ladder-badge">Média</span>
+                        </div>
+                        <div class="ladder-step" id="ladder-step-4" onclick="selectLadderStep(4)">
+                            <div class="ladder-step-name"><i class="fa-solid fa-hard-drive"></i> 4. Disco Rígido (HD / SSD)</div>
+                            <span class="ladder-badge">Baixa</span>
+                        </div>
+                        <div class="ladder-step" data-level="min" id="ladder-step-5" onclick="selectLadderStep(5)">
+                            <div class="ladder-step-name"><i class="fa-solid fa-tape"></i> 5. Backups em Fita e Mídias Ópticas</div>
+                            <span class="ladder-badge">Menos Volátil</span>
+                        </div>
+                    </div>
+
+                    <div class="ladder-info-panel" id="ladder-info">
+                        <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-informatica); margin-bottom: 8px;">1. Registradores e Cache</h4>
+                        <p style="font-size: 13.5px; color: var(--text-muted);">
+                            Dados em constante tráfego nos registradores e na memória cache (L1, L2, L3) do processador. Durabilidade de nanossegundos. Perdem-se instantaneamente quando há qualquer alteração no ciclo de clock.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FLASHCARDS VOLATILIDADE -->
+            <div class="grid-2col">
+                <div class="flashcard-section">
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-primary); width:100%; text-align:left; border-bottom:1px solid var(--border-color); padding-bottom:8px;"><i class="fa-solid fa-clone"></i> Memorização Flashcard</h4>
+                    <div class="flashcard-wrapper">
+                        <div class="flashcard" id="fcard-1" onclick="flipBizuCard(1)">
+                            <div class="flashcard-front">
+                                <span class="flashcard-category">Preservação Digital 💻</span>
+                                <p class="flashcard-text">O que diz a RFC 3227 em termos de ordem de prioridade de coleta entre a memória RAM e um HD?</p>
+                                <span class="flashcard-instruction">Clique para girar</span>
+                            </div>
+                            <div class="flashcard-back">
+                                <span class="flashcard-category">Resposta 🧠</span>
+                                <p class="flashcard-text" style="font-size: 14.5px;">A memória RAM é muito mais volátil que o HD. Portanto, ela **deve ser extraída primeiro** (aquisição "live" ou em memória activa) antes de o sistema ser desligado para a coleta do HD (aquisição estática).</p>
+                                <span class="flashcard-instruction">Clique para girar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DIRETRIZES DE TRIAGEM -->
+                <div class="bizu-card" style="justify-content: flex-start;">
+                    <div class="bizu-card-header">
+                        <div class="bizu-card-icon danger"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                        <h3>Regras de Aquisição Live</h3>
+                    </div>
+                    <ul style="font-size: 13px; color: var(--text-muted); padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+                        <li><strong>Minimizar Alterações</strong>: Toda ferramenta de coleta rodada na máquina ativa (ex: dump de RAM) deixa pegadas. Use scripts portáteis em pendrives dedicados.</li>
+                        <li><strong>Criptografia de Disco</strong>: Se a máquina estiver ligada com volumes criptografados montados (BitLocker, VeraCrypt), o dump de RAM captura as chaves de descriptografia.</li>
+                        <li><strong>Comando do Sistema</strong>: Nunca use comandos do próprio sistema alvo (como `netstat` nativo) se houver suspeita de Rootkits na máquina; utilize binários estáticos confiáveis.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 2: DUPLICAÇÃO FORENSE -->
+        <section id="page-sec-2" class="page">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon"><i class="fa-solid fa-copy"></i></div>
+                    <h3>Integridade de Mídias e Duplicação Forense</h3>
+                </div>
+                <p style="font-size: 13.5px; color: var(--text-muted);">
+                    Para realizar a perícia, a mídia original nunca deve ser modificada. O perito faz uma duplicação física **bit a bit** (imagem forense). Ative o bloqueador de escrita abaixo para analisar a integridade.
+                </p>
+
+                <div class="dup-container">
+                    <!-- Toggle Blocker -->
+                    <button class="btn-action" style="background-color: var(--color-success); color:#fff; border-color:var(--color-success);" id="blocker-toggle-btn" onclick="toggleWriteBlocker()">Bloqueador de Escrita: ATIVADO (Recomendado)</button>
+
+                    <div class="dup-flow">
+                        <!-- Source Disk -->
+                        <div class="dup-disk" id="source-disk">
+                            <span style="font-size: 20px;">💿</span>
+                            <strong style="font-size: 11px;">Mídia Orig.</strong>
+                            <div class="dup-hash-label" id="source-hash">SHA256:<br>e3b0c442...</div>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="dup-arrow active" id="dup-flow-arrow"></div>
+
+                        <!-- Write Blocker Hardware -->
+                        <div class="dup-blocker active" id="write-blocker-element">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Write Blocker</span>
+                        </div>
+
+                        <!-- Arrow -->
+                        <div class="dup-arrow active" id="dup-flow-arrow-2"></div>
+
+                        <!-- Target Image -->
+                        <div class="dup-disk success" id="target-disk">
+                            <span style="font-size: 20px;">💾</span>
+                            <strong style="font-size: 11px;">Imagem Bit</strong>
+                            <div class="dup-hash-label" id="target-hash">SHA256:<br>e3b0c442...</div>
+                        </div>
+                    </div>
+
+                    <div style="background-color: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 12px; padding: 16px; font-size: 13px; color: var(--color-success); width: 100%;" id="dup-status-panel">
+                        <i class="fa-solid fa-circle-check"></i> <strong>Duplicação Válida:</strong> O Bloqueador de Escrita ativo impediu qualquer alteração de metadados na mídia original. Os hashes criptográficos de origem e destino batem perfeitamente. Evidência admissível judicialmente.
+                    </div>
+                </div>
+
+                <div class="grid-2col">
+                    <div style="background-color: #faf5ff; border: 1px solid #e9d5ff; border-radius: 12px; padding: 16px; font-size: 13px;">
+                        <strong><i class="fa-solid fa-fingerprint"></i> Hashes e Criptografia pericial:</strong>
+                        <ul style="margin-left: 20px; margin-top: 6px; color: var(--text-muted);">
+                            <li><strong>MD5</strong>: Produz resumo de 128 bits (32 caracteres hexadecimais). Sofre de colisões.</li>
+                            <li><strong>SHA-1</strong>: Produz resumo de 160 bits (40 caracteres hexadecimais). Obsoleto para segurança, mas ainda visto.</li>
+                            <li><strong>SHA-256</strong>: Produz resumo de 256 bits (64 caracteres hexadecimais). Altamente robusto e seguro.</li>
+                        </ul>
+                    </div>
+                    <div style="background-color: #fffbeb; border: 1px solid #fef08a; border-radius: 12px; padding: 16px; font-size: 13px;">
+                        <strong><i class="fa-solid fa-triangle-exclamation"></i> Cópia Física vs Cópia Lógica:</strong>
+                        <ul style="margin-left: 20px; margin-top: 6px; color: var(--text-muted);">
+                            <li><strong>Cópia Lógica (Arquivos)</strong>: Copia apenas arquivos ativos. Ignora dados apagados.</li>
+                            <li><strong>Cópia Física (Bit a bit)</strong>: Copia setores brutos inteiros, incluindo o **Slack Space** (espaço de folga), áreas não alocadas e arquivos excluídos.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 3: EXTRAÇÃO EM CELULARES -->
+        <section id="page-sec-3" class="page">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <h3>Extração Pericial em Smartphones</h3>
+                </div>
+
+                <table class="bizu-table">
+                    <thead>
+                        <tr>
+                            <th>Método de Extração</th>
+                            <th>Nível de Acesso aos Dados / Aplicação</th>
+                            <th>Vantagens e Desvantagens Periciais</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Extração Lógica</strong></td>
+                            <td>Extrai apenas arquivos visíveis ao SO utilizando APIs nativas e protocolos de backup.</td>
+                            <td>Rápido e simples. <strong>Não recupera arquivos excluídos</strong> nos bancos de dados SQLite.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Extração Física</strong></td>
+                            <td>Cópia bit a bit de partições da memória Flash. Contorna as restrições do SO.</td>
+                            <td><strong>Recupera dados e arquivos excluídos</strong>. Requer contornar a criptografia de disco (FDE/FBE).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>JTAG / ISP</strong></td>
+                            <td>Soldagem direta de fios em barramentos e portas de teste do circuito impresso.</td>
+                            <td>Contorna processador e travas eletrônicas. Altamente invasivo e com risco de dano ao chip.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Chip-Off</strong></td>
+                            <td>Dessoldagem física do chip de memória (BGA) e leitura direta em adaptador externo.</td>
+                            <td>Último recurso em hardware destruído. Alto risco de perda por calor extremo.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div style="background-color: #fff7ed; border: 1px solid #ffedd5; border-radius: 12px; padding: 16px; font-size: 13.5px; color: #c2410c;">
+                    <i class="fa-solid fa-shield-cat"></i> <strong>Bizus de Busca de Celulares (Apreensão):</strong>
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li>Isolar o celular imediatamente em **Gaiola de Faraday** ou colocá-lo em **Modo Avião** para evitar o comando de "Wipe" (apagamento remoto) via internet.</li>
+                        <li>Se o celular estiver desbloqueado na busca: **desativar bloqueio de tela** nas configurações imediatamente antes de isolá-lo para evitar que trave.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- FLASHCARDS SMARTPHONE -->
+            <div class="grid-2col">
+                <div class="flashcard-section">
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-primary); width:100%; text-align:left; border-bottom:1px solid var(--border-color); padding-bottom:8px;"><i class="fa-solid fa-clone"></i> Memorização Flashcard</h4>
+                    <div class="flashcard-wrapper">
+                        <div class="flashcard" id="fcard-3" onclick="flipBizuCard(3)">
+                            <div class="flashcard-front">
+                                <span class="flashcard-category">Extração Celular 📱</span>
+                                <p class="flashcard-text">Qual tipo de criptografia de celular protege chaves diferentes para cada arquivo (File-Based Encryption)?</p>
+                                <span class="flashcard-instruction">Clique para girar</span>
+                            </div>
+                            <div class="flashcard-back">
+                                <span class="flashcard-category">Resposta 🧠</span>
+                                <p class="flashcard-text" style="font-size: 14.5px;">É a criptografia **FBE** (File-Based Encryption / Criptografia baseada em Arquivos). Diferente da FDE (Full Disk Encryption), ela permite que partes do sistema funcionem sem senha (ex: alarmes), protegendo pastas individuais de forma isolada.</p>
+                                <span class="flashcard-instruction">Clique para girar</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRESERVAÇÃO DE HARDWARE -->
+                <div class="bizu-card" style="justify-content: flex-start;">
+                    <div class="bizu-card-header">
+                        <div class="bizu-card-icon warning"><i class="fa-solid fa-shield-cat"></i></div>
+                        <h3>Segurança em Celulares Apreendidos</h3>
+                    </div>
+                    <ul style="font-size: 13px; color: var(--text-muted); padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+                        <li><strong>Preservação de Energia</strong>: Manter o smartphone carregado é prioritário. Se ele descarregar e desligar, o sistema entra em estado de 'Antes do Primeiro Desbloqueio' (BFU), dificultando a quebra de senha.</li>
+                        <li><strong>Evitar Conexão com PC Alvo</strong>: Nunca conecte o celular apreendido diretamente em máquinas sob investigação para recarga ou extração improvisada.</li>
+                        <li><strong>Cadeia de Custódia</strong>: Registre o número IMEI de cada chip e o número de série físico impresso na carcaça traseira ou bandeja do SIM.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 4: CADEIA DE CUSTÓDIA -->
+        <section id="page-sec-4" class="page">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Cadeia de Custódia Digital (RIFCATRPAD)</h3>
+                </div>
+                <p style="font-size: 13.5px; color: var(--text-muted);">
+                    As 10 etapas da cadeia de custódia definidas pelo Código de Processo Penal (Art. 158-B). Memorize com o mnemônico pericial.
+                </p>
+
+                <div class="grid-2col">
+                    <div>
+                        <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-informatica); margin-bottom: 8px;">Mnemônico RIFCATRPAD</h4>
+                        <p style="font-size: 13px; font-style: italic; color: var(--text-muted); margin-bottom: 12px;">
+                            "<strong>R</strong>onaldo <strong>I</strong>rá <strong>F</strong>azer <strong>C</strong>elulares <strong>A</strong>ssim que <strong>T</strong>eclado <strong>R</strong>evelar <strong>P</strong>adrões <strong>A</strong>ntigos de <strong>D</strong>ados"
+                        </p>
+                        
+                        <div class="flowchart">
+                            <div class="flowchart-step" onclick="showFlowInfo(1)">
+                                <div class="flowchart-step-title">R I F (Iniciais)</div>
+                                <div class="flowchart-step-desc">Reconhecimento ➔ Isolamento ➔ Fixação</div>
+                            </div>
+                            <div class="flowchart-step" onclick="showFlowInfo(2)">
+                                <div class="flowchart-step-title">C A T (Coleta & Envio)</div>
+                                <div class="flowchart-step-desc">Coleta ➔ Acondicionamento ➔ Transporte</div>
+                            </div>
+                            <div class="flowchart-step" onclick="showFlowInfo(3)">
+                                <div class="flowchart-step-title">R P A D (Processo & Fim)</div>
+                                <div class="flowchart-step-desc">Recebimento ➔ Processamento ➔ Armazenamento ➔ Descarte</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="reagent-info-panel" id="flow-info-panel" style="min-height: 240px; padding: 18px;">
+                        <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-informatica); margin-bottom: 8px;">Fases da Cadeia de Custódia</h4>
+                        <p style="font-size: 13.5px; color: var(--text-muted);">
+                            Selecione uma fase do mnemônico ao lado para detalhar as respectivas etapas regulamentares do Código de Processo Penal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 5: SIMULADO DE FIXAÇÃO -->
+        <section id="page-sec-5" class="page">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon"><i class="fa-solid fa-circle-question"></i></div>
+                    <h3>Simulado de Fixação Pericial</h3>
+                </div>
+                <p style="font-size: 13.5px; color: var(--text-muted); margin-bottom: 8px;">
+                    Testes de múltipla escolha com foco em questões de provas de perito criminal. Responda para fixação dos conhecimentos.
+                </p>
+
+                <div class="quiz-section" style="border: 1px solid var(--border-color); border-radius: 12px; padding: 24px; background-color: #ffffff;">
+                    <div class="quiz-header" style="border-bottom: 1px solid var(--border-color); padding-bottom: 12px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center;">
+                        <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-primary);" id="sim-question-title">Questão 1 de 5</h4>
+                        <div style="display: flex; gap: 6px;" id="sim-question-dots">
+                            <!-- JS will inject dots representing status -->
+                        </div>
+                    </div>
+
+                    <div class="quiz-question-box">
+                        <p class="quiz-question-text" id="sim-question-text">Questão...</p>
+                        <div class="quiz-options" id="sim-options-container">
+                            <!-- Options injected by JS -->
+                        </div>
+                        <div class="quiz-explanation" id="sim-explanation-box" style="margin-top: 16px; padding: 16px; background-color: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; font-size: 13.5px; display: none;">
+                            <!-- Explanation injected by JS -->
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 24px; padding-top: 16px; border-top: 1px solid var(--border-color);">
+                        <button class="btn-action" onclick="prevSimQuestion()"><i class="fa-solid fa-chevron-left"></i> Anterior</button>
+                        <span style="font-size: 13.5px; font-weight: 700; color: var(--text-muted);" id="sim-score-text">Acertos: 0 de 5</span>
+                        <button class="btn-action" onclick="nextSimQuestion()">Próxima <i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SHORTCUT KEYBOARD HELP MODAL -->
+        <div class="modal" id="help-modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Atalhos Globais do Teclado</h3>
+                    <button class="modal-close" onclick="toggleHelpModal()"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <div class="shortcut-row">
+                    <span>Navegar para Volatilidade (RFC 3227)</span>
+                    <kbd>1</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Navegar para Duplicação Forense</span>
+                    <kbd>2</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Navegar para Extração em Celulares</span>
+                    <kbd>3</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Navegar para Cadeia de Custódia</span>
+                    <kbd>4</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Navegar para Simulado Geral</span>
+                    <kbd>5</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Girar Flashcard ativo</span>
+                    <kbd>Espaço</kbd> ou <kbd>Enter</kbd>
+                </div>
+                <div class="shortcut-row">
+                    <span>Fechar janela de ajuda</span>
+                    <kbd>Esc</kbd>
+                </div>
+                <button class="btn-action" style="margin-top: 12px; width:100%; justify-content:center; background-color: var(--color-primary); color:#fff;" onclick="toggleHelpModal()">Entendido</button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // ESTADO GLOBAL DO BIZU
+        let currentPage = 1;
+        const pageData = {
+            1: { title: "Volatilidade de Dados", subtitle: "A ordem de prioridade na preservação de evidências digitais (RFC 3227)." },
+            2: { title: "Duplicação Forense", subtitle: "Integridade de mídias, bloqueador de escrita e hashes criptográficos." },
+            3: { title: "Extração em Celulares", subtitle: "Lógica vs Física, contorno de criptografia e sacos de Faraday." },
+            4: { title: "Cadeia de Custódia", subtitle: "As 10 etapas da cadeia de custódia digital do CPP (RIFCATRPAD)." },
+            5: { title: "Simulado Geral", subtitle: "Teste seus conhecimentos periciais com questões de fixação." }
+        };
+
+        const totalPages = 5;
+        let reviewedPages = new Set([1]); // Primeira página ativa conta como revisada
+
+        // AO CARREGAR
+        window.addEventListener('DOMContentLoaded', () => {
+            updateProgressBar();
+            setupKeyboardNavigation();
+            initSimulado();
+        });
+
+        // NAVEGAÇÃO DE PÁGINAS DO BIZU
+        function switchBizuPage(pageNum) {
+            if (pageNum < 1 || pageNum > totalPages) return;
+            
+            // Remover ativo dos menus e seções anteriores
+            document.getElementById(`menu-${currentPage}`).classList.remove('active');
+            document.getElementById(`page-sec-${currentPage}`).classList.remove('active');
+            
+            // Ativar novos
+            currentPage = pageNum;
+            document.getElementById(`menu-${currentPage}`).classList.add('active');
+            document.getElementById(`page-sec-${currentPage}`).classList.add('active');
+            
+            // Atualizar títulos
+            document.getElementById('page-title').innerText = pageData[currentPage].title;
+            document.getElementById('page-subtitle').innerText = pageData[currentPage].subtitle;
+            
+            // Registrar revisão
+            reviewedPages.add(pageNum);
+            updateProgressBar();
+        }
+
+        // ATALHO DE PROGRESSO
+        function updateProgressBar() {
+            const pct = Math.round((reviewedPages.size / totalPages) * 100);
+            document.getElementById('prog-pct').innerText = `${pct}%`;
+            document.getElementById('prog-fill').style.width = `${pct}%`;
+        }
+
+        // VOLATILIDADE LADDER DETAILS
+        const ladderDetails = {
+            1: {
+                title: "1. Registradores e Cache do Processador",
+                desc: "Dados nos registradores de hardware e memória cache interna (L1, L2, L3). Altamente temporários. Perdem-se em microssegundos com novas instruções do clock."
+            },
+            2: {
+                title: "2. Tabelas de Roteamento e ARP Cache",
+                desc: "Contêm o estado atual das conexões de rede locais e cache ARP (endereços MAC associados aos IPs). Perdem-se instantaneamente no desligamento do roteador/computador."
+            },
+            3: {
+                title: "3. Memória Principal (RAM)",
+                desc: "Armazena o estado dinâmico do SO, processos em execução, chaves criptográficas ativas e conexões de rede abertas. Deve ser extraída com a máquina ligada (aquisição Live)."
+            },
+            4: {
+                title: "4. Disco Rígido (HD / SSD)",
+                desc: "Dados persistentes gravados magneticamente ou em células NAND flash. Mantêm-se sem energia. Contêm o sistema de arquivos, partições, arquivos ocultos e área não alocada."
+            },
+            5: {
+                title: "5. Backups em Fita e Mídias Ópticas",
+                desc: "Fitas magnéticas, DVDs, backups frios off-line e arquivos em papel. Representam o menor grau de volatilidade; podem durar anos sem degradação ou alimentação elétrica."
+            }
+        };
+
+        function selectLadderStep(stepNum) {
+            for (let i = 1; i <= 5; i++) {
+                document.getElementById(`ladder-step-${i}`).classList.remove('active');
+            }
+            document.getElementById(`ladder-step-${stepNum}`).classList.add('active');
+            
+            const panel = document.getElementById('ladder-info');
+            panel.innerHTML = `
+                <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-informatica); margin-bottom: 8px;">${ladderDetails[stepNum].title}</h4>
+                <p style="font-size: 13.5px; color: var(--text-muted);">${ladderDetails[stepNum].desc}</p>
+            `;
+        }
+
+        // DUPLICATION BLOCKER TOGGLE SIMULATOR
+        let writeBlockerActive = true;
+
+        function toggleWriteBlocker() {
+            writeBlockerActive = !writeBlockerActive;
+            const btn = document.getElementById('blocker-toggle-btn');
+            const blocker = document.getElementById('write-blocker-element');
+            const targetDisk = document.getElementById('target-disk');
+            const targetHash = document.getElementById('target-hash');
+            const sourceDisk = document.getElementById('source-disk');
+            const sourceHash = document.getElementById('source-hash');
+            const arrow1 = document.getElementById('dup-flow-arrow');
+            const arrow2 = document.getElementById('dup-flow-arrow-2');
+            const panel = document.getElementById('dup-status-panel');
+
+            if (writeBlockerActive) {
+                btn.innerText = "Bloqueador de Escrita: ATIVADO (Recomendado)";
+                btn.style.backgroundColor = "var(--color-success)";
+                btn.style.borderColor = "var(--color-success)";
+                
+                blocker.className = "dup-blocker active";
+                blocker.innerHTML = '<i class="fa-solid fa-shield-halved"></i><span>Write Blocker</span>';
+                
+                targetDisk.className = "dup-disk success";
+                sourceDisk.className = "dup-disk";
+                
+                sourceHash.innerHTML = "SHA256:<br>e3b0c442...";
+                targetHash.innerHTML = "SHA256:<br>e3b0c442...";
+                
+                arrow1.className = "dup-arrow active";
+                arrow2.className = "dup-arrow active";
+
+                panel.style.backgroundColor = "#f0fdf4";
+                panel.style.borderColor = "#bbf7d0";
+                panel.style.color = "var(--color-success)";
+                panel.innerHTML = '<i class="fa-solid fa-circle-check"></i> <strong>Duplicação Válida:</strong> O Bloqueador de Escrita ativo impediu qualquer alteração de metadados na mídia original. Os hashes criptográficos de origem e destino batem perfeitamente. Evidência admissível.';
+            } else {
+                btn.innerText = "Bloqueador de Escrita: DESATIVADO (Risco!)";
+                btn.style.backgroundColor = "var(--color-danger)";
+                btn.style.borderColor = "var(--color-danger)";
+                
+                blocker.className = "dup-blocker inactive";
+                blocker.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i><span>Sem Bloqueador</span>';
+                
+                targetDisk.className = "dup-disk altered";
+                sourceDisk.className = "dup-disk altered";
+                
+                sourceHash.innerHTML = "SHA256:<br><strong>9fa254cf...</strong>";
+                targetHash.innerHTML = "SHA256:<br>e3b0c442...";
+                
+                arrow1.className = "dup-arrow";
+                arrow2.className = "dup-arrow";
+
+                panel.style.backgroundColor = "#fef2f2";
+                panel.style.borderColor = "#fca5a5";
+                panel.style.color = "var(--color-danger)";
+                panel.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> <strong>PROVA INVÁLIDA!</strong> Sem o bloqueador de escrita, o sistema operacional da máquina pericial gravou arquivos/metadados na mídia de origem durante a montagem. Os hashes não coincidem. A prova está maculada.';
+            }
+        }
+
+        // CADEIA DE CUSTÓDIA DETAILS
+        const flowDetails = {
+            1: {
+                title: "Fase de Entrada: R I F",
+                desc: "<p><strong>Reconhecimento</strong>: Identificar a potencial prova digital no local do crime.</p><p style='margin-top:6px;'><strong>Isolamento</strong>: Evitar que pessoas não autorizadas tenham acesso ao hardware ou conectem redes.</p><p style='margin-top:6px;'><strong>Fixação</strong>: Descrição detalhada da cena e dos dispositivos (fotos, marcas, estado ligado/desligado).</p>"
+            },
+            2: {
+                title: "Fase de Coleta: C A T",
+                desc: "<p><strong>Coleta</strong>: Arrecadar fisicamente os dispositivos seguindo regras de proteção (Faraday, sem alterar cabos).</p><p style='margin-top:6px;'><strong>Acondicionamento</strong>: Embalar individualmente com lacre oficial numerado para impedir violação.</p><p style='margin-top:6px;'><strong>Transporte</strong>: Mover com segurança logística, mantendo registro sob custódia oficial.</p>"
+            },
+            3: {
+                title: "Fase de Conclusão: R P A D",
+                desc: "<p><strong>Recebimento</strong>: Entrada no Instituto de Criminalística, triagem de lacres.</p><p style='margin-top:6px;'><strong>Processamento</strong>: Exame pericial, duplicação e confecção do Laudo.</p><p style='margin-top:6px;'><strong>Armazenamento</strong>: Guarda da prova original na central de custódia para eventual contraperícia.</p><p style='margin-top:6px;'><strong>Descarte</strong>: Destinação final autorizada judicialmente.</p>"
+            }
+        };
+
+        function showFlowInfo(stepNum) {
+            const panel = document.getElementById('flow-info-panel');
+            panel.innerHTML = `
+                <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; color: var(--color-informatica); margin-bottom: 8px;">${flowDetails[stepNum].title}</h4>
+                <div style="font-size: 13.5px; color: var(--text-muted);">${flowDetails[stepNum].desc}</div>
+            `;
+        }
+
+        // FLASHCARD ROTATION
+        function flipBizuCard(idx) {
+            const card = document.getElementById(`fcard-${idx}`);
+            if (card) {
+                card.classList.toggle('flipped');
+            }
+        }
+
+        // SIMULADO DE FIXAÇÃO STATE & FUNCTIONS
+        const simQuestions = [
+            {
+                q: "De acordo com a RFC 3227, qual das seguintes fontes de informação apresenta o MENOR grau de volatilidade?",
+                options: [
+                    "Tabela ARP do cache de rede.",
+                    "Memória física do sistema (RAM).",
+                    "Tabela de conexões de portas TCP ativas.",
+                    "Arquivos gravados no disco de armazenamento (HD/SSD)."
+                ],
+                correct: 3,
+                expl: "<strong>Correto! (Alternativa D)</strong> Dentre as opções, o HD/SSD representa armazenamento permanente (não-volátil), retendo dados mesmo sem energia elétrica. Tabelas ARP, RAM e conexões de portas se perdem com o desligamento do hardware."
+            },
+            {
+                q: "Qual o objetivo imediato de acondicionar um smartphone apreendido dentro de um invólucro blindado eletromagneticamente (Saco de Faraday)?",
+                options: [
+                    "Preservar as impressões digitais físicas na carcaça.",
+                    "Evitar que a bateria exploda por sobrecarga de rede.",
+                    "Bloquear sinais de rádio para impedir comandos de apagamento ou alteração remota de dados.",
+                    "Permitir a clonagem lógica automática da linha telefônica no local."
+                ],
+                correct: 2,
+                expl: "<strong>Correto! (Alternativa C)</strong> A gaiola ou saco de Faraday isola o dispositivo de qualquer rede sem fio (GSM, Wi-Fi, Bluetooth). Isso garante a integridade da prova digital, mitigando o risco de que o suspeito apague os dados remotamente via nuvem."
+            },
+            {
+                q: "Qual o objetivo do uso de bloqueadores de escrita (Write Blockers) no ato de duplicação forense de um dispositivo de armazenamento?",
+                options: [
+                    "Aumentar a velocidade de transferência dos dados na rede pericial.",
+                    "Garantir a integridade da mídia original, impedindo que o sistema operacional grave ou altere metadados durante a leitura.",
+                    "Criptografar automaticamente a imagem de destino com chaves SHA-256.",
+                    "Compactar o tamanho da imagem final bit a bit para economizar espaço."
+                ],
+                correct: 1,
+                expl: "<strong>Correto! (Alternativa B)</strong> Os bloqueadores de escrita (de hardware ou software) filtram comandos de escrita enviados pelo sistema operacional da máquina pericial, permitindo apenas a leitura dos setores, assegurando a fidelidade absoluta dos dados de origem."
+            },
+            {
+                q: "Em termos de extração pericial de telefones celulares, qual a principal diferença prática entre a Extração Lógica e a Extração Física?",
+                options: [
+                    "A lógica extrai as peças físicas e chips, enquanto a física usa emuladores de software.",
+                    "A lógica extrai apenas dados ativos estruturados via API do SO, enquanto a física copia blocos de memória brutos e permite a recuperação de dados excluídos.",
+                    "A física é mais rápida e não contorna senhas, ao passo que a lógica quebra senhas com calor extremo.",
+                    "Não há diferenças práticas entre elas, apenas terminologia de fabricantes."
+                ],
+                correct: 1,
+                expl: "<strong>Correto! (Alternativa B)</strong> A extração física faz um dump bit a bit da memória NAND flash, permitindo examinar o espaço não alocado onde registros de bancos de dados SQLite (como conversas de mensageiros) marcados como excluídos podem ser recuperados."
+            },
+            {
+                q: "O mnemônico RIFCATRPAD representa as 10 etapas da cadeia de custódia do CPP brasileiro (Art. 158-B). Quais são as 3 etapas contidas na fase de Entrada (iniciais do mnemônico)?",
+                options: [
+                    "Recebimento, Isolamento, Fixação",
+                    "Reconhecimento, Isolamento, Fixação",
+                    "Reconhecimento, Acondicionamento, Transporte",
+                    "Recebimento, Processamento, Armazenamento"
+                ],
+                correct: 1,
+                expl: "<strong>Correto! (Alternativa B)</strong> O RIF corresponde a <strong>Reconhecimento</strong> (reconhecer o vestígio), <strong>Isolamento</strong> (isolar a cena) e <strong>Fixação</strong> (descrever detalhadamente a evidência em auto ou foto)."
+            }
+        ];
+
+        let activeSimIdx = 0;
+        let simAnswers = new Array(simQuestions.length).fill(null);
+        let showingSummary = false;
+
+        function initSimulado() {
+            showingSummary = false;
+            activeSimIdx = 0;
+            simAnswers.fill(null);
+            renderSimQuestion();
+            updateSimScore();
+        }
+
+        function renderSimQuestion() {
+            const container = document.getElementById('sim-options-container');
+            const explBox = document.getElementById('sim-explanation-box');
+            
+            if (showingSummary) {
+                renderSummaryScreen();
+                return;
+            }
+
+            const q = simQuestions[activeSimIdx];
+            
+            // Textos
+            document.getElementById('sim-question-title').innerHTML = `Questão ${activeSimIdx + 1} de ${simQuestions.length}`;
+            document.getElementById('sim-question-text').innerHTML = q.q;
+            
+            // Dots
+            const dotsContainer = document.getElementById('sim-question-dots');
+            dotsContainer.innerHTML = '';
+            simQuestions.forEach((_, idx) => {
+                const dot = document.createElement('div');
+                dot.style.width = '8px';
+                dot.style.height = '8px';
+                dot.style.borderRadius = '50%';
+                dot.style.backgroundColor = idx === activeSimIdx ? 'var(--color-primary)' : '#e2e8f0';
+                if (simAnswers[idx] !== null) {
+                    dot.style.backgroundColor = simAnswers[idx] === simQuestions[idx].correct ? 'var(--color-success)' : 'var(--color-danger)';
+                }
+                dotsContainer.appendChild(dot);
+            });
+
+            // Options
+            container.innerHTML = '';
+            
+            const answered = simAnswers[activeSimIdx] !== null;
+            const letters = ['A', 'B', 'C', 'D'];
+            
+            q.options.forEach((opt, idx) => {
+                const div = document.createElement('div');
+                div.className = 'quiz-option';
+                
+                // Letra da alternativa
+                const letterBox = document.createElement('div');
+                letterBox.className = 'quiz-option-letter';
+                letterBox.innerText = letters[idx];
+                div.appendChild(letterBox);
+                
+                // Texto da alternativa
+                const textSpan = document.createElement('span');
+                textSpan.innerText = opt;
+                div.appendChild(textSpan);
+                
+                if (answered) {
+                    if (idx === q.correct) {
+                        div.classList.add('correct');
+                    } else if (idx === simAnswers[activeSimIdx]) {
+                        div.classList.add('incorrect');
+                    }
+                } else {
+                    div.style.cursor = 'pointer';
+                    div.onclick = () => selectSimOption(idx);
+                }
+                
+                container.appendChild(div);
+            });
+
+            // Explanation
+            if (answered) {
+                explBox.innerHTML = q.expl;
+                explBox.style.display = 'block';
+            } else {
+                explBox.style.display = 'none';
+            }
+        }
+
+        function renderSummaryScreen() {
+            let correctCount = 0;
+            simAnswers.forEach((ans, idx) => {
+                if (ans === simQuestions[idx].correct) correctCount++;
+            });
+
+            const pct = Math.round((correctCount / simQuestions.length) * 100);
+            const offset = 345.6 * (1 - pct / 100);
+
+            let feedbackTitle = "Atenção! ⚠️";
+            let feedbackDesc = "Refaça a leitura dos resumos para reforçar os pontos fracos.";
+            if (pct === 100) {
+                feedbackTitle = "Excelente! 🏆";
+                feedbackDesc = "Desempenho perfeito! Você está totalmente preparado(a) para as questões de prova.";
+            } else if (pct >= 80) {
+                feedbackTitle = "Muito bom! 🥇";
+                feedbackDesc = "Ótimo desempenho. Revise apenas as questões que errou para fechar a matéria.";
+            } else if (pct >= 60) {
+                feedbackTitle = "Bom! 🥈";
+                feedbackDesc = "Bom aproveitamento. Recomendamos uma leitura rápida dos flashcards para fixar mais detalhes.";
+            }
+
+            document.getElementById('sim-question-title').innerHTML = `Resultado Final do Simulado`;
+            document.getElementById('sim-question-dots').innerHTML = ''; // Limpar dots normais
+            
+            // Injetar tela de sumário no local da pergunta
+            document.getElementById('sim-question-text').innerHTML = `
+                <div style="display: flex; flex-direction: column; align-items: center; gap: 20px; padding: 10px 0; text-align: center;">
+                    <!-- Concentric Progress Donut Chart -->
+                    <div style="position: relative; width: 140px; height: 140px; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                        <svg width="140" height="140" viewBox="0 0 140 140">
+                            <circle cx="70" cy="70" r="55" fill="none" stroke="#e2e8f0" stroke-width="12"></circle>
+                            <circle cx="70" cy="70" r="55" fill="none" stroke="${pct >= 80 ? 'var(--color-success)' : (pct >= 60 ? 'var(--color-accent)' : 'var(--color-danger)')}" stroke-width="12" stroke-dasharray="345.6" stroke-dashoffset="${offset}" stroke-linecap="round" transform="rotate(-90 70 70)" style="transition: stroke-dashoffset 1s ease-out;"></circle>
+                        </svg>
+                        <div style="position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <span style="font-size: 26px; font-weight: 800; font-family: var(--font-display); color: var(--text-main);">${pct}%</span>
+                            <span style="font-size: 11px; font-weight: 600; color: var(--text-light);">${correctCount}/${simQuestions.length} Acertos</span>
+                        </div>
+                    </div>
+
+                    <!-- Rating message -->
+                    <div style="max-width: 340px; margin: 0 auto;">
+                        <h4 style="font-size: 16px; font-weight: 700; color: var(--text-main);">${feedbackTitle}</h4>
+                        <p style="font-size: 13.5px; color: var(--text-muted); margin-top: 4px;">${feedbackDesc}</p>
+                    </div>
+
+                    <!-- Botão de Reinício -->
+                    <button class="btn-action" style="margin-top: 10px; background-color: var(--color-primary); color: #ffffff; border-color: var(--color-primary); margin: 10px auto 0 auto;" onclick="initSimulado()">
+                        <i class="fa-solid fa-rotate-right"></i> Refazer Simulado
+                    </button>
+                </div>
+            `;
+            
+            document.getElementById('sim-options-container').innerHTML = '';
+            document.getElementById('sim-explanation-box').style.display = 'none';
+        }
+
+        function selectSimOption(optIdx) {
+            if (simAnswers[activeSimIdx] !== null) return; // Locked
+            
+            simAnswers[activeSimIdx] = optIdx;
+            renderSimQuestion();
+            updateSimScore();
+        }
+
+        function updateSimScore() {
+            let correctCount = 0;
+            simAnswers.forEach((ans, idx) => {
+                if (ans === simQuestions[idx].correct) correctCount++;
+            });
+            document.getElementById('sim-score-text').innerText = `Acertos: ${correctCount} de ${simQuestions.length}`;
+        }
+
+        function nextSimQuestion() {
+            if (showingSummary) return;
+
+            if (activeSimIdx < simQuestions.length - 1) {
+                activeSimIdx++;
+                renderSimQuestion();
+            } else {
+                showingSummary = true;
+                renderSimQuestion();
+            }
+        }
+
+        function prevSimQuestion() {
+            if (showingSummary) {
+                showingSummary = false;
+                renderSimQuestion();
+                return;
+            }
+
+            if (activeSimIdx > 0) {
+                activeSimIdx--;
+                renderSimQuestion();
+            }
+        }
+
+        // CONFIGURAR ATALHOS DO TECLADO
+        function setupKeyboardNavigation() {
+            document.addEventListener('keydown', (e) => {
+                const modal = document.getElementById('help-modal');
+                
+                // Toggle Modal Help
+                if (e.key.toLowerCase() === 'h') {
+                    e.preventDefault();
+                    toggleHelpModal();
+                    return;
+                }
+                
+                // Close Modal on Esc
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    e.preventDefault();
+                    toggleHelpModal();
+                    return;
+                }
+                
+                // Mudar abas por número
+                if (e.key >= '1' && e.key <= '5') {
+                    e.preventDefault();
+                    switchBizuPage(parseInt(e.key));
+                    return;
+                }
+
+                // Seta esquerda / direita navega no Simulado se estiver na aba 5
+                if (currentPage === 5) {
+                    if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        prevSimQuestion();
+                        return;
+                    }
+                    if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        nextSimQuestion();
+                        return;
+                    }
+                    // Letras A-D para responder no simulado
+                    const keyChar = e.key.toUpperCase();
+                    const choiceMap = { 'A': 0, 'B': 1, 'C': 2, 'D': 3 };
+                    if (choiceMap[keyChar] !== undefined) {
+                        e.preventDefault();
+                        selectSimOption(choiceMap[keyChar]);
+                        return;
+                    }
+                }
+                
+                // Girar flashcard por espaço ou enter
+                if (e.key === ' ' || e.key === 'Enter') {
+                    const activeSec = document.querySelector('.page.active');
+                    const card = activeSec.querySelector('.flashcard');
+                    if (card && document.activeElement === card) {
+                        e.preventDefault();
+                        card.classList.toggle('flipped');
+                    }
+                }
+            });
+
+            // Permitir foco de teclado nos cards para rodar via espaço
+            document.querySelectorAll('.flashcard').forEach(card => {
+                card.setAttribute('tabindex', '0');
+            });
+        }
+    </script>
+</body>
+</html>
