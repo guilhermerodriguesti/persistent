@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bombas e Explosivos - CFP 2026</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #f59e0b;
+            --primary-dark: #d97706;
+            --primary-light: #fef3c7;
+            --accent: #ef4444;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-sidebar: #ffffff;
+            --border: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --text-light: #94a3b8;
+            
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 24px 16px;
+        }
+
+        .sidebar-header {
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .sidebar-subtitle {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-section {
+            margin-bottom: 24px;
+        }
+
+        .nav-section-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            padding-left: 8px;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 10px 12px;
+            color: var(--text-main);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+            margin-bottom: 4px;
+        }
+
+        .nav-item:hover {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        .nav-item.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .nav-item i {
+            margin-right: 8px;
+            width: 16px;
+        }
+
+        .main-content {
+            padding: 40px 60px;
+            max-width: 1200px;
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .header p {
+            font-size: 16px;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--primary);
+            color: var(--text-main);
+        }
+
+        .subsection {
+            margin-bottom: 32px;
+        }
+
+        .subsection-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .subsection-title i {
+            color: var(--primary);
+        }
+
+        .concept-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
+        }
+
+        .concept-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .concept-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .concept-content {
+            font-size: 15px;
+            color: var(--text-main);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-light), #fffbeb);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-box.warning {
+            background: linear-gradient(135deg, #fef3c7, #fef9c3);
+            border-left-color: var(--warning);
+        }
+
+        .highlight-box.danger {
+            background: linear-gradient(135deg, #fee2e2, #fef2f2);
+            border-left-color: var(--danger);
+        }
+
+        .highlight-box.info {
+            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+            border-left-color: #3b82f6;
+        }
+
+        .highlight-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .topic-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .topic-item {
+            padding: 12px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: all 0.2s;
+        }
+
+        .topic-item:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .topic-icon {
+            color: var(--primary);
+            font-weight: 600;
+            min-width: 24px;
+        }
+
+        .topic-content {
+            flex: 1;
+        }
+
+        .topic-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .topic-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            margin: 20px 0;
+        }
+
+        .data-table th {
+            background: var(--primary);
+            color: white;
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .data-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+
+        .data-table tr:hover {
+            background: var(--primary-light);
+        }
+
+        .mnemonic {
+            background: linear-gradient(135deg, #fffbeb, #fef3c7);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+            text-align: center;
+        }
+
+        .mnemonic-acronym {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+        }
+
+        .mnemonic-phrase {
+            font-size: 16px;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .mnemonic-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .mnemonic-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .mnemonic-item strong {
+            color: var(--primary);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .tag-primary {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        .tag-success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .tag-warning {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .tag-danger {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .tag-info {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--primary-light);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: var(--primary-dark);
+        }
+
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-body);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--text-light);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        @media (max-width: 1024px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .main-content {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .mnemonic-breakdown {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Bombas e Explosivos</div>
+                <div class="sidebar-subtitle">CFP 2026 - PROVA 3</div>
+            </div>
+
+            <nav>
+                <div class="nav-section">
+                    <div class="nav-section-title">Fundamentos</div>
+                    <a href="#introducao" class="nav-item active"><i class="fas fa-bomb"></i>Introdução</a>
+                    <a href="#base-legal" class="nav-item"><i class="fas fa-gavel"></i>Base Legal</a>
+                    <a href="#ecletismo" class="nav-item"><i class="fas fa-cogs"></i>Ecletismo</a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Explosivos</div>
+                    <a href="#classificacao" class="nav-item"><i class="fas fa-list"></i>Classificação</a>
+                    <a href="#altos-baixos" class="nav-item"><i class="fas fa-arrow-up"></i>Altos vs Baixos</a>
+                    <a href="#propriedades" class="nav-item"><i class="fas fa-flask"></i>Propriedades</a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Explosão</div>
+                    <a href="#efeitos" class="nav-item"><i class="fas fa-bolt"></i>Efeitos da Explosão</a>
+                    <a href="#brisancia" class="nav-item"><i class="fas fa-burst"></i>Brisância</a>
+                    <a href="#ondas-choque" class="nav-item"><i class="fas fa-wave-square"></i>Ondas de Choque</a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Iniciação</div>
+                    <a href="#sistemas-iniciacao" class="nav-item"><i class="fas fa-fire"></i>Sistemas de Iniciação</a>
+                    <a href="#nonel" class="nav-item"><i class="fas fa-plug"></i>Tubo de Choque (Nonel)</a>
+                    <a href="#espoletas" class="nav-item"><i class="fas fa-bolt"></i>Espoletas</a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Desativação</div>
+                    <a href="#eod" class="nav-item"><i class="fas fa-shield-alt"></i>EOD</a>
+                    <a href="#disruptor" class="nav-item"><i class="fas fa-water"></i>Disruptor</a>
+                    <a href="#armadilhas" class="nav-item"><i class="fas fa-skull"></i>Armadilhas</a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Procedimentos</div>
+                    <a href="#isolamento" class="nav-item"><i class="fas fa-ruler-combined"></i>Isolamento</a>
+                    <a href="#procedimentos" class="nav-item"><i class="fas fa-clipboard-list"></i>Procedimentos</a>
+                    <a href="#gbe" class="nav-item"><i class="fas fa-users"></i>GBE</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h1>Bombas e Explosivos</h1>
+                <p>Perícia Criminal Federal - CFP 2026 | PROVA 3</p>
+                <div style="margin-top: 16px;">
+                    <span class="tag tag-primary">EOD</span>
+                    <span class="tag tag-success">Nonel</span>
+                    <span class="tag tag-warning">Brisância</span>
+                    <span class="tag tag-danger">Disruptor</span>
+                </div>
+            </header>
+
+            <!-- Seção 1: Introdução -->
+            <section id="introducao" class="section">
+                <h2 class="section-title">1. Introdução</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Definição</h3>
+                    <div class="concept-content">
+                        <p>Bombas e Explosivos é uma área pericial eclética que envolve conhecimentos de química, mecânica e eletricidade. Requer constante treinamento e aperfeiçoamento devido à evolução das técnicas e tecnologias.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box warning">
+                    <div class="highlight-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Ecletismo
+                    </div>
+                    <p style="margin-top: 8px;">Esta área pericial é multidisciplinar, integrando:</p>
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li><strong>Química:</strong> Composição de explosivos, reações</li>
+                        <li><strong>Mecânica:</strong> Fragmentação, ondas de choque</li>
+                        <li><strong>Eletricidade:</strong> Circuitos de iniciação, espoletas elétricas</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 2: Base Legal -->
+            <section id="base-legal" class="section">
+                <h2 class="section-title">2. Base Legal e Institucional</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-balance-scale"></i>Constituição Federal - Art. 144</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🏛️</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Polícia Federal</div>
+                                <div class="topic-desc">Órgão permanente de segurança pública</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🛡️</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Atribuições</div>
+                                <div class="topic-desc">Preservação da ordem pública e incolumidade das pessoas e patrimônio</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-file-alt"></i>Norma de Serviço nº 001/80-CCP/PF</h3>
+                    <div class="concept-card">
+                        <h3 class="concept-title">Disposições</h3>
+                        <div class="concept-content">
+                            <ul style="margin-left: 20px;">
+                                <li>Normatiza detecção, remoção, neutralização ou desativação de artefatos explosivos e/ou incendiários</li>
+                                <li>Atribui responsabilidade à Polícia Federal</li>
+                                <li>Estabelece procedimentos padronizados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-clipboard"></i>Instrução Normativa nº 005/04-DG/PF</h3>
+                    <div class="concept-card">
+                        <h3 class="concept-title">Disposições</h3>
+                        <div class="concept-content">
+                            <ul style="margin-left: 20px;">
+                                <li>Organiza e normatiza atividades especializadas em Bombas e Explosivos</li>
+                                <li>Institui os Grupos Especializados em Bombas e Explosivos (GBE)</li>
+                                <li>Integrantes do Sistema de Criminalística do DPF</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 3: Ecletismo -->
+            <section id="ecletismo" class="section">
+                <h2 class="section-title">3. Ecletismo do Tema</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-globe"></i>Acessibilidade de Informações</h3>
+                    
+                    <div class="highlight-box danger">
+                        <div class="highlight-title">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            Manuais Disponíveis na Internet
+                        </div>
+                        <p style="margin-top: 8px;">O aumento do acesso público a informações via internet contribuiu para a proliferação de conhecimentos sobre fabricação de explosivos:</p>
+                        <ul style="margin-left: 20px; margin-top: 8px;">
+                            <li>Manual do Terrorista</li>
+                            <li>Manual do Anarquista</li>
+                            <li>Como Fabricar Bombas e Explosivos</li>
+                            <li>Receitas de explosivos plásticos</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-book"></i>Minimanual do Guerrilheiro Urbano</h3>
+                    <div class="concept-card">
+                        <h3 class="concept-title">Carlos Marighella (1969)</h3>
+                        <div class="concept-content">
+                            <p>Obra teórica adotada por grupos revolucionários armados que descreve táticas de guerrilha e terrorismo urbano, incluindo o uso de bombas. O texto conceitua o terrorismo como "uma arma a que o revolucionário nunca pode renunciar".</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 4: Classificação -->
+            <section id="classificacao" class="section">
+                <h2 class="section-title">4. Classificação de Explosivos</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-list"></i>Classificação por Ordem</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Ordem</th>
+                                <th>Característica</th>
+                                <th>Velocidade</th>
+                                <th>Exemplos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>1ª Ordem (Alta)</strong></td>
+                                <td>Detonação completa</td>
+                                <td>Supersônica (>1000 m/s)</td>
+                                <td>TNT, C-4, RDX, PETN</td>
+                            </tr>
+                            <tr>
+                                <td><strong>2ª Ordem (Baixa)</strong></td>
+                                <td>Deflagração incompleta</td>
+                                <td>Subsônica</td>
+                                <td>Pólvora negra, pólvora sem fumaça</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="highlight-box warning">
+                    <div class="highlight-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Diferença Fundamental
+                    </div>
+                    <p style="margin-top: 8px;">Na <strong>alta ordem</strong>, o explosivo é totalmente consumido à sua velocidade máxima de detonação. Na <strong>baixa ordem</strong>, a reação é incompleta ou mais lenta (deflagração), restando resíduos não consumidos.</p>
+                </div>
+            </section>
+
+            <!-- Seção 5: Altos vs Baixos -->
+            <section id="altos-baixos" class="section">
+                <h2 class="section-title">5. Altos vs Baixos Explosivos</h2>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Característica</th>
+                            <th>Altos Explosivos</th>
+                            <th>Baixos Explosivos (Pólvoras)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Reação</strong></td>
+                            <td>Detonação por choque</td>
+                            <td>Deflagração por calor/chama</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Velocidade</strong></td>
+                            <td>Supersônica (>1000 m/s)</td>
+                            <td>Subsônica</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Iniciação</strong></td>
+                            <td>Requer espoleta</td>
+                            <td>Pode ser iniciada por fogo</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Resíduos</strong></td>
+                            <td>Consumo total</td>
+                            <td>Resíduos não consumidos</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Exemplos</strong></td>
+                            <td>TNT, C-4, RDX</td>
+                            <td>Pólvora negra, smokeless</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <!-- Seção 6: Propriedades -->
+            <section id="propriedades" class="section">
+                <h2 class="section-title">6. Propriedades dos Explosivos</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-flask"></i>Propriedades Principais</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">⚡</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Sensibilidade</div>
+                                <div class="topic-desc">Facilidade de iniciação por choque, fricção, calor ou eletricidade</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🚀</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Velocidade de Detonação (VOD)</div>
+                                <div class="topic-desc">Velocidade de propagação da onda de choque através do explosivo</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">💥</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Brisância</div>
+                                <div class="topic-desc">Capacidade de fragmentação ou poder de quebra</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">📊</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Potência</div>
+                                <div class="topic-desc">Capacidade de realizar trabalho (deslocamento, deformação)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">💧</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Estabilidade</div>
+                                <div class="topic-desc">Resistência à degradação química ao longo do tempo</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 7: Efeitos da Explosão -->
+            <section id="efeitos" class="section">
+                <h2 class="section-title">7. Efeitos Mecânicos da Explosão</h2>
+                
+                <div class="mnemonic">
+                    <div class="mnemonic-acronym">FOQ</div>
+                    <div class="mnemonic-phrase">"Fogo, Onda, Quebra"</div>
+                    <div class="mnemonic-breakdown">
+                        <div class="mnemonic-item"><strong>F</strong>ogo (Efeito Térmico)</div>
+                        <div class="mnemonic-item"><strong>O</strong>nda (Onda de Choque)</div>
+                        <div class="mnemonic-item"><strong>Q</strong>uebra (Fragmentação)</div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-bolt"></i>Três Efeitos Principais</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🌊</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Onda de Choque</div>
+                                <div class="topic-desc">Fase de pressão positiva seguida de fase de sucção negativa. Causa danos estruturais e lesões por sobrepressão.</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">💥</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Fragmentação</div>
+                                <div class="topic-desc">Estilhaços do próprio invólucro do artefato ou de objetos próximos. Principal causa de lesões em pessoas.</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔥</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Efeito Térmico</div>
+                                <div class="topic-desc">Calor intenso e chamas. Pode causar queimaduras e iniciar incêndios secundários.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 8: Brisância -->
+            <section id="brisancia" class="section">
+                <h2 class="section-title">8. Brisância (Brisance)</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Definição</h3>
+                    <div class="concept-content">
+                        <p>A brisância é a capacidade de fragmentação ou poder de quebra de um explosivo. Está diretamente ligada à velocidade de detonação (VOD) do artefato. Explosivos com alta VOD possuem maior brisância.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box info">
+                    <div class="highlight-title">
+                        <i class="fas fa-info-circle"></i>
+                        Relação com VOD
+                    </div>
+                    <p style="margin-top: 8px;">Quanto maior a velocidade de detonação, maior a brisância. Por isso, altos explosivos como TNT e C-4 têm alto poder de fragmentação.</p>
+                </div>
+            </section>
+
+            <!-- Seção 9: Ondas de Choque -->
+            <section id="ondas-choque" class="section">
+                <h2 class="section-title">9. Ondas de Choque</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-wave-square"></i>Fases da Onda de Choque</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Fase</th>
+                                <th>Característica</th>
+                                <th>Efeitos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Pressão Positiva</strong></td>
+                                <td>Frente de onda com alta pressão</td>
+                                <td>Compressão, danos estruturais</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sucção Negativa</strong></td>
+                                <td>Fase de baixa pressão subsequente</td>
+                                <td>Deslocamento de ar, colapso de estruturas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="highlight-box warning">
+                    <div class="highlight-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Perigo da Sucção
+                    </div>
+                    <p style="margin-top: 8px;">A fase de sucção negativa pode ser tão destrutiva quanto a fase de pressão positiva, especialmente em estruturas que não foram projetadas para suportar forças de tração.</p>
+                </div>
+            </section>
+
+            <!-- Seção 10: Sistemas de Iniciação -->
+            <section id="sistemas-iniciacao" class="section">
+                <h2 class="section-title">10. Sistemas de Iniciação</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-fire"></i>Tipos de Iniciação</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">⚡</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Elétrica</div>
+                                <div class="topic-desc">Espoletas elétricas acionadas por corrente elétrica</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔥</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Não Elétrica</div>
+                                <div class="topic-desc">Estopim, cordel detonante, tubo de choque</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">⏰</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Temporizada</div>
+                                <div class="topic-desc">Relógios, timers, fusíveis químicos</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🎯</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Por Comando</div>
+                                <div class="topic-desc">Acionamento remoto, pressão, liberação</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 11: Nonel -->
+            <section id="nonel" class="section">
+                <h2 class="section-title">11. Tubo de Choque (Nonel)</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Definição</h3>
+                    <div class="concept-content">
+                        <p>Sistema de iniciação não elétrico composto por um tubo plástico revestido internamente por uma fina película de explosivo. Transmite o sinal de iniciação por meio de uma onda de choque de baixa energia.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box success">
+                    <div class="highlight-title">
+                        <i class="fas fa-check-circle"></i>
+                        Características
+                    </div>
+                    <ul style="margin-left: 20px; margin-top: 12px;">
+                        <li>Não provoca calor ou faísca por fora</li>
+                        <li>Imune a interferências eletromagnéticas</li>
+                        <li>Seguro para uso em ambientes com gases explosivos</li>
+                        <li>Transmite sinal por onda de choque interna</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 12: Espoletas -->
+            <section id="espoletas" class="section">
+                <h2 class="section-title">12. Espoletas</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-bolt"></i>Tipos de Espoletas</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Característica</th>
+                                <th>Uso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Elétrica</strong></td>
+                                <td>Acionada por corrente elétrica</td>
+                                <td>Mineração, demolição controlada</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Não Elétrica</strong></td>
+                                <td>Acionada por estopim ou choque</td>
+                                <td>Uso geral, ambientes perigosos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>De Percussão</strong></td>
+                                <td>Acionada por impacto mecânico</td>
+                                <td>Munição, artefatos militares</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Química</strong></td>
+                                <td>Reação química retardada</td>
+                                <td>Temporizadores químicos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Seção 13: EOD -->
+            <section id="eod" class="section">
+                <h2 class="section-title">13. EOD (Explosive Ordnance Disposal)</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Definição</h3>
+                    <div class="concept-content">
+                        <p>EOD é a sigla para Explosive Ordnance Disposal (Desativação de Munições e Explosivos). Refere-se às técnicas e procedimentos para neutralizar artefatos explosivos de forma segura.</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-shield-alt"></i>Princípios do EOD</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🛡️</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Segurança Primeiro</div>
+                                <div class="topic-desc">Proteção de vidas e propriedades é prioridade absoluta</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔍</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Avaliação</div>
+                                <div class="topic-desc">Análise cuidadosa do artefato antes de qualquer ação</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🎯</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Neutralização</div>
+                                <div class="topic-desc">Desativação controlada do artefato</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 14: Disruptor -->
+            <section id="disruptor" class="section">
+                <h2 class="section-title">14. Disruptor (Canhão d'Água)</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Definição</h3>
+                    <div class="concept-content">
+                        <p>Dispositivo usado para neutralizar ou desarticular o circuito elétrico/mecânico de fogo de um artefato explosivo à distância. Dispara um jato de água pressurizado em frações de milissegundos.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box info">
+                    <div class="highlight-title">
+                        <i class="fas fa-info-circle"></i>
+                        Funcionamento
+                    </div>
+                    <p style="margin-top: 8px;">O disruptor projeta uma pequena quantidade de água sob altíssima velocidade e pressão, cortando os fios e conexões do artefato por energia hidrodinâmica antes que a espoleta elétrica seja percutida.</p>
+                </div>
+            </section>
+
+            <!-- Seção 15: Armadilhas -->
+            <section id="armadilhas" class="section">
+                <h2 class="section-title">15. Armadilhas e Dispositivos de Acionamento</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-skull"></i>Tipos de Armadilhas</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">⚖️</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Alívio de Pressão (Descompressão)</div>
+                                <div class="topic-desc">Dispara quando um peso que comprimia o detonador é removido. Ex: bomba sob livro pesado.</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🚪</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Por Abertura</div>
+                                <div class="topic-desc">Acionado ao abrir porta, gaveta ou recipiente</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">👣</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Por Pressão</div>
+                                <div class="topic-desc">Acionado ao pisar em determinado local</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔌</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Por Tensão</div>
+                                <div class="topic-desc">Acionado ao cortar fio ou remover componente</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 16: Isolamento -->
+            <section id="isolamento" class="section">
+                <h2 class="section-title">16. Isolamento de Área</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-ruler-combined"></i>Distâncias Recomendadas</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Artefato</th>
+                                <th>Isolamento Mínimo</th>
+                                <th>Contexto</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Bomba Portátil</strong></td>
+                                <td>100 metros</td>
+                                <td>Mochilas, pacotes (campo aberto)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Veículo Suspeito</strong></td>
+                                <td>400 metros</td>
+                                <td>Carros, motos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Artefato Grande</strong></td>
+                                <td>500+ metros</td>
+                                <td>Conforme avaliação pericial</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="highlight-box danger">
+                    <div class="highlight-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Importante
+                    </div>
+                    <p style="margin-top: 8px;">Normativos periciais sugerem isolamento mínimo de 100m para volumes pequenos em campo aberto e no mínimo 400m para veículos suspeitos. Distâncias podem ser aumentadas conforme avaliação do perito.</p>
+                </div>
+            </section>
+
+            <!-- Seção 17: Procedimentos -->
+            <section id="procedimentos" class="section">
+                <h2 class="section-title">17. Procedimentos Periciais</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-clipboard-list"></i>Etapas do Procedimento</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">1️⃣</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Reconhecimento</div>
+                                <div class="topic-desc">Identificação da suspeita de artefato explosivo</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">2️⃣</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Isolamento</div>
+                                <div class="topic-desc">Estabelecimento de perímetro de segurança</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">3️⃣</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Avaliação</div>
+                                <div class="topic-desc">Análise remota do artefato</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">4️⃣</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Neutralização</div>
+                                <div class="topic-desc">Desativação controlada (disruptor, renderização)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">5️⃣</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Coleta de Evidências</div>
+                                <div class="topic-desc">Preservação de vestígios para perícia</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 18: GBE -->
+            <section id="gbe" class="section">
+                <h2 class="section-title">18. Grupos Especializados em Bombas e Explosivos (GBE)</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Instituição</h3>
+                    <div class="concept-content">
+                        <p>Os GBEs foram instituídos pela Instrução Normativa nº 005/04-DG/PF e são integrantes do Sistema de Criminalística do Departamento de Polícia Federal. São responsáveis pelas atividades especializadas em bombas e explosivos.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box success">
+                    <div class="highlight-title">
+                        <i class="fas fa-check-circle"></i>
+                        Atribuições
+                    </div>
+                    <ul style="margin-left: 20px; margin-top: 12px;">
+                        <li>Detecção de artefatos explosivos</li>
+                        <li>Remoção de artefatos explosivos</li>
+                        <li>Neutralização de artefatos explosivos</li>
+                        <li>Desativação de artefatos explosivos</li>
+                        <li>Perícia em locais de explosão</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer style="margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted);">
+                <p>Bombas e Explosivos - CFP 2026 | PROVA 3</p>
+                <p style="font-size: 14px; margin-top: 8px;">Material de estudo</p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // Smooth scroll para navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Highlight da seção atual no scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Expandir mnemonic cards
+        document.querySelectorAll('.mnemonic').forEach(mnemonic => {
+            mnemonic.style.cursor = 'pointer';
+            mnemonic.addEventListener('click', function() {
+                const breakdown = this.querySelector('.mnemonic-breakdown');
+                breakdown.style.display = breakdown.style.display === 'grid' ? 'none' : 'grid';
+            });
+        });
+    </script>
+</body>
+</html>

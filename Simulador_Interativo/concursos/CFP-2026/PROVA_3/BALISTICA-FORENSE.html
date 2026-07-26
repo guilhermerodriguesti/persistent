@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balística Forense - CFP 2026</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --primary-light: #e0e7ff;
+            --accent: #8b5cf6;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-sidebar: #ffffff;
+            --border: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --text-light: #94a3b8;
+            
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 24px 16px;
+        }
+
+        .sidebar-header {
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .sidebar-subtitle {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-section {
+            margin-bottom: 24px;
+        }
+
+        .nav-section-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            padding-left: 8px;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 10px 12px;
+            color: var(--text-main);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+            margin-bottom: 4px;
+        }
+
+        .nav-item:hover {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        .nav-item.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .nav-item i {
+            margin-right: 8px;
+            width: 16px;
+        }
+
+        .main-content {
+            padding: 40px 60px;
+            max-width: 1200px;
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .header p {
+            font-size: 16px;
+            color: var(--text-muted);
+        }
+
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--primary);
+            color: var(--text-main);
+        }
+
+        .subsection {
+            margin-bottom: 32px;
+        }
+
+        .subsection-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .subsection-title i {
+            color: var(--primary);
+        }
+
+        .concept-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
+        }
+
+        .concept-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .concept-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .concept-content {
+            font-size: 15px;
+            color: var(--text-main);
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-light), #eef2ff);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-box.warning {
+            background: linear-gradient(135deg, #fef3c7, #fef9c3);
+            border-left-color: var(--warning);
+        }
+
+        .highlight-box.danger {
+            background: linear-gradient(135deg, #fee2e2, #fef2f2);
+            border-left-color: var(--danger);
+        }
+
+        .highlight-box.info {
+            background: linear-gradient(135deg, #dbeafe, #eff6ff);
+            border-left-color: #3b82f6;
+        }
+
+        .highlight-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .topic-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .topic-item {
+            padding: 12px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: all 0.2s;
+        }
+
+        .topic-item:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .topic-icon {
+            color: var(--primary);
+            font-weight: 600;
+            min-width: 24px;
+        }
+
+        .topic-content {
+            flex: 1;
+        }
+
+        .topic-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .topic-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            margin: 20px 0;
+        }
+
+        .data-table th {
+            background: var(--primary);
+            color: white;
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .data-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+
+        .data-table tr:hover {
+            background: var(--primary-light);
+        }
+
+        .mnemonic {
+            background: linear-gradient(135deg, #eef2ff, #e0e7ff);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+            text-align: center;
+        }
+
+        .mnemonic-acronym {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+        }
+
+        .mnemonic-phrase {
+            font-size: 16px;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .mnemonic-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .mnemonic-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .mnemonic-item strong {
+            color: var(--primary);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .tag-primary {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        .tag-success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .tag-warning {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .tag-danger {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        .tag-info {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--primary-light);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: var(--primary-dark);
+        }
+
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-body);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--text-light);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        @media (max-width: 1024px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .main-content {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .mnemonic-breakdown {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Balística Forense</div>
+                <div class="sidebar-subtitle">CFP 2026 - PROVA 3</div>
+            </div>
+
+            <nav>
+                <div class="nav-section">
+                    <div class="nav-section-title">Fundamentos</div>
+                    <a href="#prefacio" class="nav-item active"><i class="fas fa-book"></i>Prefácio</a>
+                    <a href="#conceituacao" class="nav-item"><i class="fas fa-crosshairs"></i>Conceituação</a>
+                    <a href="#divisoes" class="nav-item"><i class="fas fa-layer-group"></i>Divisões</a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Arma e Munição</div>
+                    <a href="#arma-municao" class="nav-item"><i class="fas fa-gun"></i>Arma e Munição</a>
+                    <a href="#cartucho" class="nav-item"><i class="fas fa-bullet"></i>Cartucho</a>
+                    <a href="#classificacao-armas" class="nav-item"><i class="fas fa-list"></i>Classificação</a>
+                    <a href="#calibre" class="nav-item"><i class="fas fa-ruler"></i>Calibre</a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Armas Curtas</div>
+                    <a href="#armas-curtas" class="nav-item"><i class="fas fa-handgun"></i>Armas Curtas</a>
+                    <a href="#revolver" class="nav-item"><i class="fas fa-circle-notch"></i>Revólver</a>
+                    <a href="#pistola" class="nav-item"><i class="fas fa-pistol"></i>Pistola</a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Armas Longas</div>
+                    <a href="#armas-longas" class="nav-item"><i class="fas fa-crosshairs"></i>Armas Longas</a>
+                    <a href="#rifle" class="nav-item"><i class="fas fa-bullseye"></i>Rifle</a>
+                    <a href="#fuzil" class="nav-item"><i class="fas fa-rifle"></i>Fuzil</a>
+                    <a href="#carabina" class="nav-item"><i class="fas fa-gun"></i>Carabina</a>
+                    <a href="#mosquetao" class="nav-item"><i class="fas fa-axe"></i>Mosquetão</a>
+                    <a href="#espingarda" class="nav-item"><i class="fas fa-shield"></i>Espingarda</a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Exames</div>
+                    <a href="#exames-armas" class="nav-item"><i class="fas fa-microscope"></i>Exames em Armas</a>
+                    <a href="#exames-municao" class="nav-item"><i class="fas fa-vial"></i>Exames em Munição</a>
+                    <a href="#confronto" class="nav-item"><i class="fas fa-balance-scale"></i>Confronto Balístico</a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Técnicas</div>
+                    <a href="#residuos" class="nav-item"><i class="fas fa-fingerprint"></i>Resíduos</a>
+                    <a href="#revelacao" class="nav-item"><i class="fas fa-search"></i>Revelação</a>
+                    <a href="#sinab" class="nav-item"><i class="fas fa-database"></i>SINAB/BNPB</a>
+                </div>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="header">
+                <h1>Balística Forense</h1>
+                <p>Perícia Criminal Federal - CFP 2026 | PROVA 3</p>
+                <div style="margin-top: 16px;">
+                    <span class="tag tag-primary">Confronto Balístico</span>
+                    <span class="tag tag-success">SINAB</span>
+                    <span class="tag tag-warning">Resíduos</span>
+                    <span class="tag tag-info">Revelação</span>
+                </div>
+            </header>
+
+            <!-- Seção 1: Prefácio -->
+            <section id="prefacio" class="section">
+                <h2 class="section-title">Prefácio</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Objetivo</h3>
+                    <div class="concept-content">
+                        <p>Proporcionar conhecimentos básicos sobre armas de fogo e munições, abrangendo características, classificação, funcionamento e realização de exames periciais.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box warning">
+                    <div class="highlight-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Não Abrange
+                    </div>
+                    <p style="margin-top: 8px;">Balística Terminal (lesões traumáticas em alvos humanos) - esta área é de competência da Medicina Legal.</p>
+                </div>
+            </section>
+
+            <!-- Seção 2: Conceituação -->
+            <section id="conceituacao" class="section">
+                <h2 class="section-title">1. Conceituação e Divisões</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-language"></i>Etimologia</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">📜</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Origem</div>
+                                <div class="topic-desc">Do latim <em>baleare</em> → do grego <em>βαλλω (ballo)</em> = atirar, arremessar</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-atom"></i>Balística Geral</h3>
+                    <div class="concept-card">
+                        <h3 class="concept-title">Definição</h3>
+                        <div class="concept-content">
+                            <p>Parte da Física (Mecânica) que estuda o movimento dos projéteis. Projétil: todo corpo que se desloca livre no espaço em virtude de um impulso recebido.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-search"></i>Balística Forense</h3>
+                    <div class="concept-card">
+                        <h3 class="concept-title">Definição</h3>
+                        <div class="concept-content">
+                            <p>Disciplina da Criminalística que estuda armas de fogo, sua munição e os efeitos dos disparos, sempre que tiverem relação direta ou indireta com infrações penais. Objetivo: esclarecer e provar a ocorrência de infrações.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Seção 3: Divisões -->
+            <section id="divisoes" class="section">
+                <h2 class="section-title">2. Divisões da Balística Forense</h2>
+                
+                <div class="mnemonic">
+                    <div class="mnemonic-acronym">IET</div>
+                    <div class="mnemonic-phrase">"Interna, Externa, Terminal"</div>
+                    <div class="mnemonic-breakdown">
+                        <div class="mnemonic-item"><strong>I</strong>nterna (dentro da arma)</div>
+                        <div class="mnemonic-item"><strong>E</strong>xterna (trajetória no ar)</div>
+                        <div class="mnemonic-item"><strong>T</strong>erminal (no alvo)</div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-cog"></i>Balística Interna</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🔧</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Estuda</div>
+                                <div class="topic-desc">Estrutura, mecanismos, funcionamento e características das armas de fogo</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">⚡</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Fenômenos</div>
+                                <div class="topic-desc">Efeitos ocorridos na arma do momento da detonação da espoleta até o projétil sair do cano</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-wind"></i>Balística Externa</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🎯</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Estuda</div>
+                                <div class="topic-desc">Projétil desde a saída do cano até a parada final</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">📊</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Analisa</div>
+                                <div class="topic-desc">Trajetória, velocidade e energia</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🌍</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Considera</div>
+                                <div class="topic-desc">Características do projétil (geometria, massa, movimentos) e fatores externos (resistência do ar, gravidade)</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-bullseye"></i>Balística Terminal</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🎯</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Estuda</div>
+                                <div class="topic-desc">Efeitos produzidos pelo projétil ao atingir um alvo</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">👤</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Alvo Humano</div>
+                                <div class="topic-desc">Medicina Legal: vestígios intrínsecos (lesões traumáticas) | Balística: vestígios extrínsecos (resíduos de pólvora e projéteis)</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 4: Campos de Estudo PF -->
+            <section id="campos-estudo" class="section">
+                <h2 class="section-title">3. Principais Campos de Estudo (PF)</h2>
+                
+                <ul class="topic-list">
+                    <li class="topic-item">
+                        <span class="topic-icon">🔍</span>
+                        <div class="topic-content">
+                            <div class="topic-title">Caracterização das Armas</div>
+                            <div class="topic-desc">Determinação das características diferenciais dos tipos de armas e verificação de adulteração</div>
+                        </div>
+                    </li>
+                    <li class="topic-item">
+                        <span class="topic-icon">🆔</span>
+                        <div class="topic-content">
+                            <div class="topic-title">Identificação das Armas</div>
+                            <div class="topic-desc">Imediata: características do armamento | Mediata: confrontos balísticos em estojos e projéteis</div>
+                        </div>
+                    </li>
+                    <li class="topic-item">
+                        <span class="topic-icon">⚡</span>
+                        <div class="topic-content">
+                            <div class="topic-title">Verificação de Eficiência</div>
+                            <div class="topic-desc">Verificação das propriedades e capacidade de efetuar disparos e determinação dos possíveis efeitos</div>
+                        </div>
+                    </li>
+                    <li class="topic-item">
+                        <span class="topic-icon">🔧</span>
+                        <div class="topic-content">
+                            <div class="topic-title">Regeneração de Identificadores</div>
+                            <div class="topic-desc">Determinação de marca, modelo, procedência e número de série (revelação de caracteres removidos)</div>
+                        </div>
+                    </li>
+                    <li class="topic-item">
+                        <span class="topic-icon">💊</span>
+                        <div class="topic-content">
+                            <div class="topic-title">Exames em Munições</div>
+                            <div class="topic-desc">Determinação de calibre, procedência, eficiência, energia e identificação de munições recarregadas</div>
+                        </div>
+                    </li>
+                    <li class="topic-item">
+                        <span class="topic-icon">💥</span>
+                        <div class="topic-content">
+                            <div class="topic-title">Efeitos de Impactos</div>
+                            <div class="topic-desc">Diferenciação entre perfurações, resistência de materiais e diferenciação entre orifícios de entrada e saída</div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Seção 5: Arma e Munição -->
+            <section id="arma-municao" class="section">
+                <h2 class="section-title">4. Arma e Munição</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-shield-alt"></i>Definição de Arma</h3>
+                    <div class="concept-card">
+                        <h3 class="concept-title">Conceito</h3>
+                        <div class="concept-content">
+                            <p>Todo objeto que pode aumentar a capacidade de ataque ou defesa do homem.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-list"></i>Classificação das Armas</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Definição</th>
+                                <th>Exemplos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Próprias</strong></td>
+                                <td>Concebidas com finalidade específica de uso como arma</td>
+                                <td>Espada, arma de fogo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Impróprias</strong></td>
+                                <td>Não projetadas como arma, mas podem ser utilizadas como tal</td>
+                                <td>Garfo, enxada</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-hand-rock"></i>Quanto ao Tipo</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">👊</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Manuais</div>
+                                <div class="topic-desc">Combate corpo a corpo; funcionam como prolongamento do braço (espadas, punhais)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🎯</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Arremesso Simples</div>
+                                <div class="topic-desc">Lançamento efetuado diretamente pela mão (dardos, lanças, granadas)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🏹</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Arremesso Complexas</div>
+                                <div class="topic-desc">Aparato lançador com projéteis substituíveis (catapultas, bestas, arcos, revólveres, pistolas)</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 6: Arma de Fogo -->
+            <section id="arma-fogo" class="section">
+                <h2 class="section-title">5. Arma de Fogo</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Definição</h3>
+                    <div class="concept-content">
+                        <p>Engenhos mecânicos dotados da propriedade de expelir projéteis utilizando a força expansiva de gases resultantes da combustão da pólvora. Classificam-se como armas de arremesso complexas.</p>
+                    </div>
+                </div>
+
+                <div class="mnemonic">
+                    <div class="mnemonic-acronym">ACP</div>
+                    <div class="mnemonic-phrase">"Aparato, Carga, Projétil"</div>
+                    <div class="mnemonic-breakdown">
+                        <div class="mnemonic-item"><strong>A</strong>parato arremessador</div>
+                        <div class="mnemonic-item"><strong>C</strong>arga de projeção</div>
+                        <div class="mnemonic-item"><strong>P</strong>rojétil</div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-cogs"></i>Três Elementos Essenciais</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🔧</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Aparato Arremessador</div>
+                                <div class="topic-desc">Recebe o projétil com a carga de projeção; permite expansão dos gases; guia e conduz o projétil</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">💥</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Carga de Projeção</div>
+                                <div class="topic-desc">Substância inflamável sólida granular que produz grande volume de gases</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🎯</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Projétil</div>
+                                <div class="topic-desc">Parte vulnerante da arma; produz efeitos primários conforme geometria, massa e velocidade</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box info">
+                    <div class="highlight-title">
+                        <i class="fas fa-info-circle"></i>
+                        Legislação
+                    </div>
+                    <p style="margin-top: 8px;">Lei 10.826/2003: registro, posse, porte e comercialização de armas de fogo e munição. O texto legal não conceitua "arma de fogo" (delimitação a cargo dos regulamentos).</p>
+                </div>
+            </section>
+
+            <!-- Seção 7: Cartucho -->
+            <section id="cartucho" class="section">
+                <h2 class="section-title">6. Munição de Arma de Fogo</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-history"></i>Evolução Histórica</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">📜</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Primeiras Formas</div>
+                                <div class="topic-desc">Pólvora em pó + projéteis irregulares carregados pela boca do cano</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">⚫</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Século XV</div>
+                                <div class="topic-desc">Pólvora negra (salitre + carvão + enxofre) como padrão; carregamento pela boca</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔄</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Invenção dos Cartuchos</div>
+                                <div class="topic-desc">Elementos acoplados em unidade completa → possibilitou fogo central e raiamento</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mnemonic">
+                    <div class="mnemonic-acronym">CECP</div>
+                    <div class="mnemonic-phrase">"Cartucho: Estojo, Espoleta, Carga, Projétil"</div>
+                    <div class="mnemonic-breakdown">
+                        <div class="mnemonic-item"><strong>C</strong>Estojo</div>
+                        <div class="mnemonic-item"><strong>E</strong>spoleta (cápsula)</div>
+                        <div class="mnemonic-item"><strong>C</strong>arga (propelente)</div>
+                        <div class="mnemonic-item"><strong>P</strong>rojétil</div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-box"></i>O Estojo</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🔩</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Material</div>
+                                <div class="topic-desc">Geralmente metal; formatos variados conforme a câmara de combustão</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔄</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Elemento Inerte</div>
+                                <div class="topic-desc">Não participa da combustão nem é expelido pelo cano</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">📍</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Partes</div>
+                                <div class="topic-desc">Boca (parte anterior - projétil) | Culote (extremidade posterior - espoleta, estampa)</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-shapes"></i>Formatos do Estojo</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🔵</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Cilíndrico</div>
+                            <div class="topic-desc">Formato reto</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔺</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Levemente Cônico</div>
+                                <div class="topic-desc">Leve afunilamento</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🍾</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Garrafa</div>
+                                <div class="topic-desc">Com estrangulamento frontal (5,56 OTAN, 7,62 OTAN)</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-ring"></i>Tipos de Culote</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Característica</th>
+                                <th>Uso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Rim</strong></td>
+                                <td>Aro saliente</td>
+                                <td>Revólver</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Semi-rim</strong></td>
+                                <td>Borda semisaliente</td>
+                                <td>Alguns revólveres</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Rimless</strong></td>
+                                <td>Sem borda</td>
+                                <td>Pistola</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Seção 8: Classificação das Armas -->
+            <section id="classificacao-armas" class="section">
+                <h2 class="section-title">7. Classificação das Armas de Fogo</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-pipe"></i>Quanto à Alma</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Característica</th>
+                                <th>Exemplo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Alma Lisa</strong></td>
+                                <td>Superfície interna lisa; seção reta gera circunferência</td>
+                                <td>Espingardas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Alma Raiada</strong></td>
+                                <td>Estrias paralelas helicoidais (sulcos/raias + cristas/cheios); imprime rotação ao projétil</td>
+                                <td>Revólveres, pistolas, rifles, fuzis</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Alma Mista</strong></td>
+                                <td>Um cano liso + outro raiado</td>
+                                <td>Modelo Apache Rossi</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-exchange-alt"></i>Quanto ao Sistema de Carregamento</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Característica</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Antecarga</strong></td>
+                                <td>Carregamento pela boca do cano</td>
+                                <td>Obsoleto (artesanais)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Retrocarga</strong></td>
+                                <td>Inserção de cartucho em câmara na parte posterior</td>
+                                <td>Quase totalidade das armas modernas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-fire"></i>Quanto ao Sistema de Inflamação</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🔥</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Obsoletos</div>
+                                <div class="topic-desc">Por mecha (pavio), por atrito (faísca)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">⚡</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Elétricas</div>
+                                <div class="topic-desc">Bazucas, artilharia (uso militar)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔨</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Percussão</div>
+                                <div class="topic-desc">Extrínseca (espoleta independente) | Intrínseca central (mais usado) | Intrínseca radial/rimfire (.22")</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-cogs"></i>Quanto ao Funcionamento</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Característica</th>
+                                <th>Exemplos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Tiro Unitário</strong></td>
+                                <td>Retrocarga manual; câmara única; carregamento individual</td>
+                                <td>Espingarda cano único, pistola tiro único</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Repetição</strong></td>
+                                <td>Força muscular aciona mecanismos de disparo e repetição</td>
+                                <td>Revólveres, armas longas manuais</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Semiautomática</strong></td>
+                                <td>Muscular: disparo | Gases: ciclagem (tiro intermitente)</td>
+                                <td>Maioria das pistolas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Automática</strong></td>
+                                <td>Muscular: primeiro disparo | Gases: ciclagem contínua (rajada)</td>
+                                <td>Submetralhadoras, fuzis</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-walking"></i>Quanto à Mobilidade (Decreto 11.615/2023)</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Característica</th>
+                                <th>Exemplos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Porte</strong></td>
+                                <td>Dimensão e peso reduzidos; disparada com uma mão</td>
+                                <td>Pistola, revólver, garrucha</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Portátil</strong></td>
+                                <td>Transportada por um indivíduo; exige ambas as mãos</td>
+                                <td>Rifles, carabinas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Não Portátil</strong></td>
+                                <td>Transportada por mais de uma pessoa ou fixa em estrutura</td>
+                                <td>Artilharia</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Seção 9: Calibre -->
+            <section id="calibre" class="section">
+                <h2 class="section-title">8. Calibre das Armas e Munição</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-ruler"></i>Calibre Real (Alma Raiada)</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">📏</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Definição</div>
+                                <div class="topic-desc">Medida tomada na boca do cano: diâmetro interno da alma</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔢</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Tecnicamente</div>
+                                <div class="topic-desc">Menor dimensão da alma (medida entre dois cheios diametralmente opostos)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">📐</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Expressão</div>
+                                <div class="topic-desc">Medida exata e aferível, expressa em milímetros</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-tag"></i>Calibre Nominal (Alma Raiada)</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🏷️</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Definição</div>
+                                <div class="topic-desc">Designativo de um tipo particular de munição e da arma que a utiliza</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">📍</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Localização</div>
+                                <div class="topic-desc">Gravado na base do culote do cartucho e geralmente no cano ou lateral do ferrolho</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">📊</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Expressão</div>
+                                <div class="topic-desc">Frações de polegada ou milímetros</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box warning">
+                    <div class="highlight-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Correspondências
+                    </div>
+                    <p style="margin-top: 8px;">.223" Remington = 5,56x45mm OTAN | .308" Winchester = 7,62x51mm OTAN | .380" Auto = 9mm Curto</p>
+                </div>
+            </section>
+
+            <!-- Seção 10: Armas Curtas -->
+            <section id="armas-curtas" class="section">
+                <h2 class="section-title">9. Estudo das Armas Curtas</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Características Fundamentais</h3>
+                    <div class="concept-content">
+                        <ul style="margin-left: 20px;">
+                            <li>Raramente ultrapassam 30 cm totais ou 15 cm de cano</li>
+                            <li>Peso habitualmente inferior a 1 kg</li>
+                            <li>Mecanismos de disparo compactos</li>
+                            <li>Ângulo anatômico entre coronha e cano (uso com uma mão)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="highlight-box success">
+                    <div class="highlight-title">
+                        <i class="fas fa-check-circle"></i>
+                        Utilidade
+                    </div>
+                    <p style="margin-top: 8px;">Fácil transporte, manuseio e ocultação. Principais exemplares: revólveres e pistolas.</p>
+                </div>
+            </section>
+
+            <!-- Seção 11: Revólver -->
+            <section id="revolver" class="section">
+                <h2 class="section-title">10. Revólver</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Características Gerais</h3>
+                    <div class="concept-content">
+                        <p>Arma de fogo de porte com sistema de repetição não automático. Maior robustez e tolerância a condições adversas. Característica marcante: tambor com várias câmaras para um único cano.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box info">
+                    <div class="highlight-title">
+                        <i class="fas fa-info-circle"></i>
+                        Características Únicas
+                    </div>
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li>Único armamento cujo cano não possui câmara de combustão</li>
+                        <li>Presença de cartucho íntegro alinhado com cano não significa que está carregado (tambor rota antes do disparo)</li>
+                        <li>Câmaras abertas em ambos os lados (não apresenta culatra)</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-cubes"></i>Quatro Partes Principais</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🔧</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Armação</div>
+                                <div class="topic-desc">Corpo da arma; elementos de identificação; única peça não substituível</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">⭕</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Tambor</div>
+                                <div class="topic-desc">Receptáculo para cartuchos; alimenta câmara por ação do gatilho</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔫</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Cano</div>
+                                <div class="topic-desc">Conduz projétil; parte posterior lisa (cone de forçamento); anterior com raias</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">⚙️</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Mecanismo</div>
+                                <div class="topic-desc">Disparo, repetição e segurança funcionando solidariamente</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 12: Pistola -->
+            <section id="pistola" class="section">
+                <h2 class="section-title">11. Pistola Semiautomática</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Princípio de Funcionamento</h3>
+                    <div class="concept-content">
+                        <p>Aproveitamento dos gases da detonação para efetuar a ciclagem (realimentação com nova munição). Semiautomática: cada tiro precedido de acionamento do gatilho pelo atirador.</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-cubes"></i>Quatro Partes Principais</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🔧</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Armação</div>
+                                <div class="topic-desc">Suporte do cano e ferrolho; receptáculo do carregador; aloja mecanismo de disparo</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">📦</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Carregador</div>
+                                <div class="topic-desc">Peça separada; tubo oco para armazenar munição</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔫</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Cano</div>
+                                <div class="topic-desc">Posterior: câmara sem raiamento; Central: alma raiada; Anterior: massa de mira</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔄</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Ferrolho</div>
+                                <div class="topic-desc">Peça móvel que desliza nas fases de recuo e recuperação</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 13: Armas Longas -->
+            <section id="armas-longas" class="section">
+                <h2 class="section-title">12. Armas de Fogo Longas</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Características Gerais</h3>
+                    <div class="concept-content">
+                        <ul style="margin-left: 20px;">
+                            <li>Comprimento acentuado (cano e coronha)</li>
+                            <li>Não consideradas armas de defesa pessoal</li>
+                            <li>Uso requer ambas as mãos e o ombro</li>
+                            <li>Destinadas à caça, esporte ou armamento de longo alcance</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-list"></i>Principais Categorias</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🎯</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Rifle</div>
+                                <div class="topic-desc">Cano raiado > 20 polegadas; alta potência</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔫</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Fuzil</div>
+                                <div class="topic-desc">Cano raiado; uso militar ou caça grande; calibres potentes</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🏹</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Carabina</div>
+                                <div class="topic-desc">Cano raiado menor que rifles/fuzis (limite 20-22,5 polegadas)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🪓</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Mosquetão</div>
+                                <div class="topic-desc">Cano 30 polegadas; ferrolho com alavanca característica</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🛡️</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Espingarda</div>
+                                <div class="topic-desc">Cano de alma lisa; escopeta = cano curto e grosso calibre</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 14: Exames em Armas -->
+            <section id="exames-armas" class="section">
+                <h2 class="section-title">13. Exames em Armas de Fogo</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-microscope"></i>Tipos de Identificação</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🔍</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Imediata (Direta)</div>
+                                <div class="topic-desc">Exame efetuado diretamente na arma</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔬</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Mediata (Indireta)</div>
+                                <div class="topic-desc">Exame nas marcas impressas pela arma em elementos de munição</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-exclamation-triangle"></i>Cuidados com Material Questionado</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🧬</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Exames Precedentes</div>
+                                <div class="topic-desc">Verificar necessidade de exames papiloscópicos, DNA ou microvestígios (devem preceder Balística)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔫</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Desmuniciamento Obrigatório</div>
+                                <div class="topic-desc">Retirar pente carregador e cartuchos/estojos; fechar travas de segurança</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">📦</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Acondicionamento</div>
+                                <div class="topic-desc">Envelope de segurança; munição em embalagem primária separada</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 15: Exames em Munição -->
+            <section id="exames-municao" class="section">
+                <h2 class="section-title">14. Exames em Cartuchos e Munição</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-list"></i>Tipos de Exames</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">📝</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Identificação Direta</div>
+                                <div class="topic-desc">Descrição de características e procedência</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">⚡</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Teste de Eficiência</div>
+                                <div class="topic-desc">Cartuchos íntegros</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">⚖️</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Confronto Balístico</div>
+                                <div class="topic-desc">Elementos de munição disparados</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 16: Confronto Balístico -->
+            <section id="confronto" class="section">
+                <h2 class="section-title">15. Exame de Confronto Balístico</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Fundamentos Científicos</h3>
+                    <div class="concept-content">
+                        <ul style="margin-left: 20px;">
+                            <li><strong>Reprodutibilidade:</strong> Pressão interna deforma plasticamente elementos de munição, imprimindo molde que se repete a cada disparo</li>
+                            <li><strong>Unicidade:</strong> Marcas nas superfícies internas são únicas para cada arma, permitindo individualização</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-vial"></i>Requisitos dos Padrões</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">✅</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Autenticidade</div>
+                                <div class="topic-desc">Origem certa e inquestionável (coletado com a arma questionada)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🎯</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Adequabilidade</div>
+                                <div class="topic-desc">Características mais similares possíveis ao material questionado</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">⏰</span>
+                            <div class="topic-content">
+                                <div class="topic-title;">Contemporaneidade</div>
+                                <div class="topic-desc">Coletado no menor lapso temporal após produção do questionado</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔢</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Quantidade</div>
+                                <div class="topic-desc">Tantos quantos necessários para convicção (mínimo 4 por arma)</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box success">
+                    <div class="highlight-title">
+                        <i class="fas fa-check-circle"></i>
+                        Equipamento
+                    </div>
+                    <p style="margin-top: 8px;">Microscópio comparador balístico - par de objetivas que fusionam imagens dos materiais para comparação de estrias microscópicas.</p>
+                </div>
+            </section>
+
+            <!-- Seção 17: Resíduos -->
+            <section id="residuos" class="section">
+                <h2 class="section-title">16. Exames em Resíduos</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-fingerprint"></i>Resíduos nas Mãos do Atirador</h3>
+                    <div class="concept-card">
+                        <h3 class="concept-title">Técnica Moderna</h3>
+                        <div class="concept-content">
+                            <p>Microscopia Eletrônica de Varredura (MEV) - detecta partículas microscópicas com metais da mistura iniciadora (chumbo, bário e antimônio), provenientes unicamente de disparos com arma de fogo.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-shield-alt"></i>Resíduos em Anteparos</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🔥</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Zona de Chama</div>
+                                <div class="topic-desc">Gases em combustão e alta temperatura; tecido queimado, pelos crestados (até 10cm)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">💨</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Zona de Esfumaçamento</div>
+                                <div class="topic-desc">Partículas de resíduos de combustão e fuligem; indicam tipo de pólvora e ângulo de tiro</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🎯</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Zona de Tatuagem</div>
+                                <div class="topic-desc">Incrustação de grãos de pólvora incombusta (microprojéteis); concêntrica ou elíptica</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 18: Revelação -->
+            <section id="revelacao" class="section">
+                <h2 class="section-title">17. Revelação de Caracteres Suprimidos</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Fundamento Técnico</h3>
+                    <div class="concept-content">
+                        <p>Cunhagem a frio altera a estrutura metálica por baixo dos caracteres. Mesmo após remoção cuidadosa, vestígios latentes podem ser revelados por reagentes adequados.</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-flask"></i>Reagentes por Metal</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Metal</th>
+                                <th>Reagente</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Aço-Carbono/Titânio</strong></td>
+                                <td>Reagente de Hatcher (brando/agressivo/variante)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Aço Inoxidável</strong></td>
+                                <td>Reagente de Besseman & Haemers (brando/agressivo)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Alumínio</strong></td>
+                                <td>Reagente de Keller, Tucker, Hume Rothery</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cobre</strong></td>
+                                <td>Cloreto férrico + ácido clorídrico</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Seção 19: SINAB/BNPB -->
+            <section id="sinab" class="section">
+                <h2 class="section-title">18. SINAB e BNPB</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-database"></i>Legislação</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">📜</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Lei 13.964/2019</div>
+                                <div class="topic-desc">Criou o Banco Nacional de Perfis Balísticos (BNPB)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">📋</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Decreto 10.711/2021</div>
+                                <div class="topic-desc">Instituiu formalmente o BNPB e criou o Sistema Nacional de Análise Balística (SINAB)</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-network-wired"></i>Arquitetura do SINAB</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🔗</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Rede Nacional</div>
+                                <div class="topic-desc">Laboratórios de Balística Forense da PF e Polícias Científicas de todas as UFs</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">💻</span>
+                            <div class="topic-content">
+                                <div class="topic-title">SIB</div>
+                                <div class="topic-desc">Sistema de Identificação Balístico conectado a servidor central</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🤖</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Tecnologia</div>
+                                <div class="topic-desc">Sistema IBIS® (comparadores balísticos virtuais)</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box success">
+                    <div class="highlight-title">
+                        <i class="fas fa-check-circle"></i>
+                        Funcionalidades
+                    </div>
+                    <ul style="margin-left: 20px; margin-top: 8px;">
+                        <li>Aquisição padronizada de imagens de projéteis e estojos</li>
+                        <li>Armazenamento centralizado de imagens e metadados</li>
+                        <li>Correlação automatizada de novas amostras</li>
+                        <li>Geração de listas de possíveis correspondências (HITs)</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer style="margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted);">
+                <p>Balística Forense - CFP 2026 | PROVA 3</p>
+                <p style="font-size: 14px; margin-top: 8px;">Material de estudo baseado em conceitos de balística forense, legislação brasileira e procedimentos periciais da PF</p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // Smooth scroll para navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Highlight da seção atual no scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Expandir mnemonic cards
+        document.querySelectorAll('.mnemonic').forEach(mnemonic => {
+            mnemonic.style.cursor = 'pointer';
+            mnemonic.addEventListener('click', function() {
+                const breakdown = this.querySelector('.mnemonic-breakdown');
+                breakdown.style.display = breakdown.style.display === 'grid' ? 'none' : 'grid';
+            });
+        });
+    </script>
+</body>
+</html>

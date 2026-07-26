@@ -1,0 +1,1896 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informática Forense - CFP 2026</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #3b82f6;
+            --primary-dark: #2563eb;
+            --primary-light: #dbeafe;
+            --accent: #f59e0b;
+            --success: #10b981;
+            --danger: #ef4444;
+            --warning: #f59e0b;
+            
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --bg-sidebar: #ffffff;
+            --border: #e2e8f0;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --text-light: #94a3b8;
+            
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px rgba(0,0,0,0.07);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        /* Layout Principal */
+        .layout {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            padding: 24px 16px;
+        }
+
+        .sidebar-header {
+            margin-bottom: 32px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .sidebar-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 4px;
+        }
+
+        .sidebar-subtitle {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-section {
+            margin-bottom: 24px;
+        }
+
+        .nav-section-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            padding-left: 8px;
+        }
+
+        .nav-item {
+            display: block;
+            padding: 10px 12px;
+            color: var(--text-main);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s;
+            margin-bottom: 4px;
+        }
+
+        .nav-item:hover {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        .nav-item.active {
+            background: var(--primary);
+            color: white;
+        }
+
+        .nav-item i {
+            margin-right: 8px;
+            width: 16px;
+        }
+
+        /* Conteúdo Principal */
+        .main-content {
+            padding: 40px 60px;
+            max-width: 1200px;
+        }
+
+        .header {
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .header p {
+            font-size: 16px;
+            color: var(--text-muted);
+        }
+
+        /* Seções */
+        .section {
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid var(--primary);
+            color: var(--text-main);
+        }
+
+        .subsection {
+            margin-bottom: 32px;
+        }
+
+        .subsection-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .subsection-title i {
+            color: var(--primary);
+        }
+
+        /* Cards de Conceito */
+        .concept-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.2s;
+        }
+
+        .concept-card:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary);
+        }
+
+        .concept-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+
+        .concept-content {
+            font-size: 15px;
+            color: var(--text-main);
+        }
+
+        /* Caixas de Destaque */
+        .highlight-box {
+            background: linear-gradient(135deg, var(--primary-light), #eff6ff);
+            border-left: 4px solid var(--primary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-box.warning {
+            background: linear-gradient(135deg, #fef3c7, #fef9c3);
+            border-left-color: var(--warning);
+        }
+
+        .highlight-box.success {
+            background: linear-gradient(135deg, #d1fae5, #ecfdf5);
+            border-left-color: var(--success);
+        }
+
+        .highlight-box.danger {
+            background: linear-gradient(135deg, #fee2e2, #fef2f2);
+            border-left-color: var(--danger);
+        }
+
+        .highlight-title {
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Listas */
+        .topic-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .topic-item {
+            padding: 12px 16px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            transition: all 0.2s;
+        }
+
+        .topic-item:hover {
+            border-color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .topic-icon {
+            color: var(--primary);
+            font-weight: 600;
+            min-width: 24px;
+        }
+
+        .topic-content {
+            flex: 1;
+        }
+
+        .topic-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .topic-desc {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* Tabelas */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--bg-card);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            margin: 20px 0;
+        }
+
+        .data-table th {
+            background: var(--primary);
+            color: white;
+            padding: 16px;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .data-table td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border);
+            font-size: 14px;
+        }
+
+        .data-table tr:hover {
+            background: var(--primary-light);
+        }
+
+        /* Mnemônicos */
+        .mnemonic {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            padding: 24px;
+            margin: 24px 0;
+            text-align: center;
+        }
+
+        .mnemonic-acronym {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 4px;
+            margin-bottom: 12px;
+        }
+
+        .mnemonic-phrase {
+            font-size: 16px;
+            font-style: italic;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+        }
+
+        .mnemonic-breakdown {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
+            margin-top: 16px;
+        }
+
+        .mnemonic-item {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .mnemonic-item strong {
+            color: var(--primary);
+        }
+
+        /* Tags */
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+
+        .tag-primary {
+            background: var(--primary-light);
+            color: var(--primary-dark);
+        }
+
+        .tag-success {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .tag-warning {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .tag-danger {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+
+        /* Código */
+        code {
+            font-family: 'JetBrains Mono', monospace;
+            background: var(--primary-light);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 13px;
+            color: var(--primary-dark);
+        }
+
+        pre {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 16px 0;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+
+        /* Progress Bar */
+        .progress-section {
+            margin-bottom: 32px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: var(--border);
+            border-radius: 4px;
+            overflow: hidden;
+            margin-top: 8px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 4px;
+            transition: width 0.3s;
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-body);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--text-light);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar {
+                display: none;
+            }
+
+            .main-content {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .mnemonic-breakdown {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="sidebar-title">Informática Forense</div>
+                <div class="sidebar-subtitle">CFP 2026 - PROVA 3</div>
+            </div>
+
+            <nav>
+                <div class="nav-section">
+                    <div class="nav-section-title">Fundamentos</div>
+                    <a href="#introducao" class="nav-item active"><i class="fas fa-book"></i>Introdução</a>
+                    <a href="#volatilidade" class="nav-item"><i class="fas fa-clock"></i>Ordem de Volatilidade</a>
+                    <a href="#cadeia-custodia" class="nav-item"><i class="fas fa-link"></i>Cadeia de Custódia</a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Coleta de Evidências</div>
+                    <a href="#imagem-bit" class="nav-item"><i class="fas fa-clone"></i>Imagem Bit-a-Bit</a>
+                    <a href="#write-blocker" class="nav-item"><i class="fas fa-shield"></i>Write Blocker</a>
+                    <a href="#hash" class="nav-item"><i class="fas fa-fingerprint"></i>Hash e Integridade</a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Análise Forense</div>
+                    <a href="#windows" class="nav-item"><i class="fab fa-windows"></i>Windows Forense</a>
+                    <a href="#linux" class="nav-item"><i class="fab fa-linux"></i>Linux Forense</a>
+                    <a href="#mobile" class="nav-item"><i class="fas fa-mobile-alt"></i>Mobile Forense</a>
+                    <a href="#logs" class="nav-item"><i class="fas fa-list-alt"></i>Análise de Logs</a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Técnicas Especiais</div>
+                    <a href="#recuperacao" class="nav-item"><i class="fas fa-hdd"></i>Recuperação de Dados</a>
+                    <a href="#esteganografia" class="nav-item"><i class="fas fa-eye-slash"></i>Esteganografia</a>
+                    <a href="#criptografia" class="nav-item"><i class="fas fa-key"></i>Criptografia Forense</a>
+                </div>
+
+                <div class="nav-section">
+                    <div class="nav-section-title">Redes</div>
+                    <a href="#network" class="nav-item"><i class="fas fa-network-wired"></i>Network Forense</a>
+                    <a href="#malware" class="nav-item"><i class="fas fa-bug"></i>Malware Analysis</a>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Conteúdo Principal -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Informática Forense</h1>
+                <p>Perícia Criminal Federal - CFP 2026 | PROVA 3</p>
+                <div style="margin-top: 16px;">
+                    <span class="tag tag-primary">RFC 3227</span>
+                    <span class="tag tag-success">Cadeia de Custódia</span>
+                    <span class="tag tag-warning">Volatilidade</span>
+                    <span class="tag tag-danger">Write Blocker</span>
+                </div>
+            </header>
+
+            <!-- Seção 1: Introdução -->
+            <section id="introducao" class="section">
+                <h2 class="section-title">1. Introdução à Informática Forense</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Definição</h3>
+                    <div class="concept-content">
+                        <p>A Informática Forense (ou Digital Forensics) é a aplicação de princípios científicos e técnicos à preservação, coleta, validação, identificação, análise, interpretação, documentação e apresentação de evidências digitais, de forma que sejam admissíveis em processos judiciais.</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box success">
+                    <div class="highlight-title">
+                        <i class="fas fa-check-circle"></i>
+                        Princípios Fundamentais
+                    </div>
+                    <ul style="margin-left: 20px; margin-top: 12px;">
+                        <li><strong>Integridade:</strong> Evidências não podem ser alteradas</li>
+                        <li><strong>Cadeia de Custódia:</strong> Rastreabilidade completa da evidência</li>
+                        <li><strong>Originalidade:</strong> Preservação do estado original</li>
+                        <li><strong>Reprodutibilidade:</strong> Processos podem ser replicados</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-gavel"></i>Base Legal</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">⚖️</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Art. 158-B do CPP</div>
+                                <div class="topic-desc">Cadeia de custódia da prova - 10 etapas obrigatórias</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">📜</span>
+                            <div class="topic-content">
+                                <div class="topic-title">RFC 3227 (IETF)</div>
+                                <div class="topic-desc">Guia para coleta de evidências em incidentes de segurança</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔒</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Marco Civil da Internet</div>
+                                <div class="topic-desc">Proteção de dados e privacidade na coleta forense</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 2: Ordem de Volatilidade -->
+            <section id="volatilidade" class="section">
+                <h2 class="section-title">2. Ordem de Volatilidade (RFC 3227)</h2>
+                
+                <div class="highlight-box warning">
+                    <div class="highlight-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Regra de Ouro
+                    </div>
+                    <p style="margin-top: 8px;"><strong>Evidências mais voláteis devem ser coletadas primeiro!</strong> A ordem é crítica para evitar perda de dados.</p>
+                </div>
+
+                <div class="mnemonic">
+                    <div class="mnemonic-acronym">VOCÊ</div>
+                    <div class="mnemonic-phrase">"Volatilidade: O que Cai, Você Coleta"</div>
+                    <div class="mnemonic-breakdown">
+                        <div class="mnemonic-item"><strong>V</strong>olátil → Primeiro</div>
+                        <div class="mnemonic-item"><strong>O</strong>rdem → Cronológica</div>
+                        <div class="mnemonic-item"><strong>C</strong>oleta → Imediata</div>
+                        <div class="mnemonic-item"><strong>Ê</strong>nfase → Prioridade</div>
+                    </div>
+                </div>
+
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Ordem</th>
+                            <th>Evidência</th>
+                            <th>Volatilidade</th>
+                            <th>Exemplo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1º</td>
+                            <td>Registradores da CPU</td>
+                            <td><span class="tag tag-danger">Extrema</span></td>
+                            <td>EAX, EBX, flags do processador</td>
+                        </tr>
+                        <tr>
+                            <td>2º</td>
+                            <td>Cache da CPU</td>
+                            <td><span class="tag tag-danger">Muito Alta</span></td>
+                            <td>L1, L2, L3 cache</td>
+                        </tr>
+                        <tr>
+                            <td>3º</td>
+                            <td>Memória RAM</td>
+                            <td><span class="tag tag-danger">Alta</span></td>
+                            <td>Processos em execução, senhas</td>
+                        </tr>
+                        <tr>
+                            <td>4º</td>
+                            <td>Tabelas de Roteamento</td>
+                            <td><span class="tag tag-warning">Média-Alta</span></td>
+                            <td>ARP cache, tabela de roteamento</td>
+                        </tr>
+                        <tr>
+                            <td>5º</td>
+                            <td>Estado da Rede</td>
+                            <td><span class="tag tag-warning">Média</span></td>
+                            <td>Conexões ativas, portas abertas</td>
+                        </tr>
+                        <tr>
+                            <td>6º</td>
+                            <td>Logs do Sistema</td>
+                            <td><span class="tag tag-warning">Média</span></td>
+                            <td>Event Viewer, syslog</td>
+                        </tr>
+                        <tr>
+                            <td>7º</td>
+                            <td>Arquivos de Configuração</td>
+                            <td><span class="tag tag-success">Baixa</span></td>
+                            <td>/etc, Registry</td>
+                        </tr>
+                        <tr>
+                            <td>8º</td>
+                            <td>Armazenamento em Disco</td>
+                            <td><span class="tag tag-success">Baixa</span></td>
+                            <td>HD, SSD, USB</td>
+                        </tr>
+                        <tr>
+                            <td>9º</td>
+                            <td>Backups e Mídia Removível</td>
+                            <td><span class="tag tag-success">Muito Baixa</span></td>
+                            <td>Fitas, CDs, DVDs</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="highlight-box danger">
+                    <div class="highlight-title">
+                        <i class="fas fa-times-circle"></i>
+                        Erros Comuns
+                    </div>
+                    <ul style="margin-left: 20px; margin-top: 12px;">
+                        <li>Desligar o sistema antes de coletar a RAM</li>
+                        <li>Ignorar cache e registradores</li>
+                        <li>Coletar disco antes da memória</li>
+                        <li>Alterar timestamps durante a coleta</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 3: Cadeia de Custódia -->
+            <section id="cadeia-custodia" class="section">
+                <h2 class="section-title">3. Cadeia de Custódia Digital</h2>
+                
+                <div class="mnemonic">
+                    <div class="mnemonic-acronym">RIFCATRPAD</div>
+                    <div class="mnemonic-phrase">"Ronaldo Irá Fazer Celulares Assim que Teclado Revelar Padrões Antigos de Dados"</div>
+                    <div class="mnemonic-breakdown">
+                        <div class="mnemonic-item"><strong>R</strong>econhecimento</div>
+                        <div class="mnemonic-item"><strong>I</strong>solamento</div>
+                        <div class="mnemonic-item"><strong>F</strong>ixação</div>
+                        <div class="mnemonic-item"><strong>C</strong>oleta</div>
+                        <div class="mnemonic-item"><strong>A</strong>condicionamento</div>
+                        <div class="mnemonic-item"><strong>T</strong>ransporte</div>
+                        <div class="mnemonic-item"><strong>R</strong>ecebimento</div>
+                        <div class="mnemonic-item"><strong>P</strong>rocessamento</div>
+                        <div class="mnemonic-item"><strong>A</strong>rmazenamento</div>
+                        <div class="mnemonic-item"><strong>D</strong>escarte</div>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-list-ol"></i>Detalhamento das Etapas</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">1</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Reconhecimento</div>
+                                <div class="topic-desc">Identificação da evidência digital no contexto do crime</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">2</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Isolamento</div>
+                                <div class="topic-desc">Separação e proteção da evidência de alterações</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">3</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Fixação</div>
+                                <div class="topic-desc">Documentação do estado original (fotos, vídeos, hash)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">4</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Coleta</div>
+                                <div class="topic-desc">Extração da evidência com técnicas forenses</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">5</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Acondicionamento</div>
+                                <div class="topic-desc">Embalagem adequada para preservação e transporte</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">6</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Transporte</div>
+                                <div class="topic-desc">Movimentação segura com registro de responsáveis</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">7</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Recebimento</div>
+                                <div class="topic-desc">Formalização da entrega no laboratório forense</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">8</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Processamento</div>
+                                <div class="topic-desc">Análise e exame pericial da evidência</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">9</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Armazenamento</div>
+                                <div class="topic-desc">Guarda segura com controle de acesso</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">10</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Descarte</div>
+                                <div class="topic-desc">Destruição autorizada quando não mais necessária</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box warning">
+                    <div class="highlight-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Quebra da Cadeia de Custódia
+                    </div>
+                    <p style="margin-top: 8px;">Qualquer quebra na cadeia de custódia pode tornar a evidência <strong>inadmissível</strong> em juízo. Documentação completa é essencial.</p>
+                </div>
+            </section>
+
+            <!-- Seção 4: Imagem Bit-a-Bit -->
+            <section id="imagem-bit" class="section">
+                <h2 class="section-title">4. Imagem Forense Bit-a-Bit</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Definição</h3>
+                    <div class="concept-content">
+                        <p>Cópia exata e completa de todos os bits de um dispositivo de armazenamento, incluindo espaço não alocado, dados apagados e metadados. É a base da perícia digital.</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-file-archive"></i>Formatos de Imagem Forense</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Formato</th>
+                                <th>Extensão</th>
+                                <th>Características</th>
+                                <th>Uso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>DD</td>
+                                <td>.dd, .img</td>
+                                <td>Raw, sem metadados</td>
+                                <td>Universal, compatível com todas as ferramentas</td>
+                            </tr>
+                            <tr>
+                                <td>E01</td>
+                                <td>.E01</td>
+                                <td>Compressão, metadados</td>
+                                <td>EnCase, padrão de mercado</td>
+                            </tr>
+                            <tr>
+                                <td>AFF</td>
+                                <td>.aff, .afd</td>
+                                <td>Compressão, criptografia</td>
+                                <td>AFF4, open source</td>
+                            </tr>
+                            <tr>
+                                <td>DMG</td>
+                                <td>.dmg</td>
+                                <td>Apple Disk Image</td>
+                                <td>macOS forense</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="highlight-box success">
+                    <div class="highlight-title">
+                        <i class="fas fa-check-circle"></i>
+                        Vantagens da Imagem Bit-a-Bit
+                    </div>
+                    <ul style="margin-left: 20px; margin-top: 12px;">
+                        <li>Preserva dados apagados (recuperáveis)</li>
+                        <li>Inclui espaço não alocado</li>
+                        <li>Mantém timestamps originais</li>
+                        <li>Permite análise offline segura</li>
+                        <li>Reproduzível e verificável via hash</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-terminal"></i>Comandos Comuns</h3>
+                    <pre><code># Criar imagem DD
+dd if=/dev/sdX of=evidencia.dd bs=4M conv=noerror,sync status=progress
+
+# Verificar hash
+sha256sum evidencia.dd > evidencia.dd.sha256
+
+# Converter E01 para DD
+ewfinfo evidencia.E01
+ewfexport -f dd -o evidencia.dd evidencia.E01</code></pre>
+                </div>
+            </section>
+
+            <!-- Seção 5: Write Blocker -->
+            <section id="write-blocker" class="section">
+                <h2 class="section-title">5. Write Blocker</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Definição</h3>
+                    <div class="concept-content">
+                        <p>Dispositivo hardware ou software que impede qualquer escrita no disco durante a aquisição da imagem forense, garantindo a integridade da evidência.</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-microchip"></i>Tipos de Write Blocker</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🔌</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Hardware Write Blocker</div>
+                                <div class="topic-desc">Dispositivo físico entre o disco e o computador. Mais seguro e confiável.</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">💻</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Software Write Blocker</div>
+                                <div class="topic-desc">Driver ou software que bloqueia escritas. Menos seguro, pode ser contornado.</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box warning">
+                    <div class="highlight-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Importante
+                    </div>
+                    <p style="margin-top: 8px;">Sempre use <strong>hardware write blocker</strong> quando possível. Software write blockers podem falhar ou serem desativados pelo sistema operacional.</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-tools"></i>Ferramentas Comerciais</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Ferramenta</th>
+                                <th>Tipo</th>
+                                <th>Interface</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tableau</td>
+                                <td>Hardware</td>
+                                <td>IDE, SATA, SCSI, USB</td>
+                            </tr>
+                            <tr>
+                                <td>WiebeTech</td>
+                                <td>Hardware</td>
+                                <td>SATA, USB, FireWire</td>
+                            </tr>
+                            <tr>
+                                <td>UltraBlock</td>
+                                <td>Hardware</td>
+                                <td>SATA, SAS, USB</td>
+                            </tr>
+                            <tr>
+                                <td>Linux blockdev</td>
+                                <td>Software</td>
+                                <td>Comando: blockdev --setro</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Seção 6: Hash e Integridade -->
+            <section id="hash" class="section">
+                <h2 class="section-title">6. Hash e Integridade de Evidências</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Função Hash</h3>
+                    <div class="concept-content">
+                        <p>Algoritmo matemático que gera um valor fixo (fingerprint) único para um arquivo. Qualquer alteração no arquivo altera o hash completamente.</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-fingerprint"></i>Algoritmos de Hash</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Algoritmo</th>
+                                <th>Bits</th>
+                                <th>Hexadecimal</th>
+                                <th>Segurança</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>MD5</td>
+                                <td>128</td>
+                                <td>32 caracteres</td>
+                                <td><span class="tag tag-danger">Baixa</span></td>
+                                <td>Colisões conhecidas - <strong>NÃO usar</strong></td>
+                            </tr>
+                            <tr>
+                                <td>SHA-1</td>
+                                <td>160</td>
+                                <td>40 caracteres</td>
+                                <td><span class="tag tag-warning">Média</span></td>
+                                <td>Desuso - colisões demonstradas</td>
+                            </tr>
+                            <tr>
+                                <td>SHA-256</td>
+                                <td>256</td>
+                                <td>64 caracteres</td>
+                                <td><span class="tag tag-success">Alta</span></td>
+                                <td><strong>Padrão recomendado</strong></td>
+                            </tr>
+                            <tr>
+                                <td>SHA-512</td>
+                                <td>512</td>
+                                <td>128 caracteres</td>
+                                <td><span class="tag tag-success">Muito Alta</span></td>
+                                <td>Máxima segurança</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="highlight-box success">
+                    <div class="highlight-title">
+                        <i class="fas fa-check-circle"></i>
+                        Boas Práticas
+                    </div>
+                    <ul style="margin-left: 20px; margin-top: 12px;">
+                        <li>Use <strong>SHA-256</strong> ou superior para novas perícias</li>
+                        <li>Calcule hash antes e depois da aquisição</li>
+                        <li>Documente o hash no laudo pericial</li>
+                        <li>Verifique periodicamente integridade de evidências armazenadas</li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-terminal"></i>Comandos de Hash</h3>
+                    <pre><code># SHA-256 (Linux/Mac)
+sha256sum arquivo.dd
+
+# SHA-256 (Windows PowerShell)
+Get-FileHash -Algorithm SHA256 arquivo.dd
+
+# Verificar integridade
+sha256sum -c arquivo.dd.sha256</code></pre>
+                </div>
+            </section>
+
+            <!-- Seção 7: Windows Forense -->
+            <section id="windows" class="section">
+                <h2 class="section-title">7. Windows Forense</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-folder"></i>Arquivos e Registros Críticos</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">📁</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Registry (Registro)</div>
+                                <div class="topic-desc">Configurações do sistema, programas, usuário. Caminho: <code>C:\Windows\System32\config</code></div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">📝</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Event Logs</div>
+                                <div class="topic-desc">Logs de segurança, sistema, aplicativos. Event Viewer: <code>eventvwr.msc</code></div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🗑️</span>
+                            <div class="topic-content">
+                                <div class="topic-title">$Recycle Bin</div>
+                                <div class="topic-desc">Arquivos deletados. Info em <code>$I</code> (metadata) e <code>$R</code> (dados)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔍</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Prefetch</div>
+                                <div class="topic-desc">Rastreamento de execução de programas. <code>C:\Windows\Prefetch</code></div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🕐</span>
+                            <div class="topic-content">
+                                <div class="topic-title">SRUM</div>
+                                <div class="topic-desc">System Resource Usage Monitor - histórico de uso de recursos</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🌐</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Amcache.hve</div>
+                                <div class="topic-desc">Cache de aplicações executadas, mesmo após deletar Prefetch</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-exclamation-circle"></i>Event IDs Importantes</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Event ID</th>
+                                <th>Categoria</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>4624</strong></td>
+                                <td>Login</td>
+                                <td>Login bem-sucedido (conta autenticada)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4625</strong></td>
+                                <td>Login</td>
+                                <td>Falha de login (credenciais incorretas)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4634</strong></td>
+                                <td>Logout</td>
+                                <td>Logout de conta</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4720</strong></td>
+                                <td>Criação</td>
+                                <td>Criação de conta de usuário</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4726</strong></td>
+                                <td>Deleção</td>
+                                <td>Deleção de conta de usuário</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4728</strong></td>
+                                <td>Grupo</td>
+                                <td>Membro adicionado a grupo com privilégios</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4732</strong></td>
+                                <td>Grupo</td>
+                                <td>Membro adicionado a grupo local</td>
+                            </tr>
+                            <tr>
+                                <td><strong>4740</strong></td>
+                                <td>Bloqueio</td>
+                                <td>Conta de usuário bloqueada</td>
+                            </tr>
+                            <tr>
+                                <td><strong>1102</strong></td>
+                                <td>Logs</td>
+                                <td>Log de segurança limpo/clear</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="highlight-box warning">
+                    <div class="highlight-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Registry Keys Importantes
+                    </div>
+                    <ul style="margin-left: 20px; margin-top: 12px;">
+                        <li><code>HKEY_LOCAL_MACHINE\SYSTEM</code> - Configurações do sistema</li>
+                        <li><code>HKEY_LOCAL_MACHINE\SOFTWARE</code> - Programas instalados</li>
+                        <li><code>HKEY_LOCAL_MACHINE\SAM</code> - Contas e senhas (protegido)</li>
+                        <li><code>HKEY_CURRENT_USER\Software</code> - Configurações do usuário</li>
+                        <li><code>HKEY_CURRENT_USER\NTUSER.DAT</code> - Hive do usuário atual</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 8: Linux Forense -->
+            <section id="linux" class="section">
+                <h2 class="section-title">8. Linux Forense</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-folder-open"></i>Diretórios e Arquivos Críticos</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">📁</span>
+                            <div class="topic-content">
+                                <div class="topic-title">/etc/passwd</div>
+                                <div class="topic-desc">Contas de usuários (sem senhas)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔐</span>
+                            <div class="topic-content">
+                                <div class="topic-title">/etc/shadow</div>
+                                <div class="topic-desc">Hashes de senhas (requer root)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">📝</span>
+                            <div class="topic-content">
+                                <div class="topic-title">/var/log/</div>
+                                <div class="topic-desc">Logs do sistema (auth.log, syslog, kern.log)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">⚡</span>
+                            <div class="topic-content">
+                                <div class="topic-title">/var/log/wtmp</div>
+                                <div class="topic-desc">Histórico de logins (comando <code>last</code>)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔒</span>
+                            <div class="topic-content">
+                                <div class="topic-title">/var/log/btmp</div>
+                                <div class="topic-desc">Histórico de falhas de login (comando <code>lastb</code>)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🕐</span>
+                            <div class="topic-content">
+                                <div class="topic-title">/var/log/utmp</div>
+                                <div class="topic-desc">Usuários logados atualmente (comando <code>who</code>)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🗑️</span>
+                            <div class="topic-content">
+                                <div class="topic-title">~/.bash_history</div>
+                                <div class="topic-desc">Histórico de comandos do usuário</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔗</span>
+                            <div class="topic-content">
+                                <div class="topic-title">/etc/crontab</div>
+                                <div class="topic-desc">Tarefas agendadas (cron jobs)</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-terminal"></i>Comandos Forenses</h3>
+                    <pre><code># Histórico de logins
+last -n 50
+lastb -n 50
+
+# Usuários atuais
+who
+w
+
+# Processos em execução
+ps aux
+ps -ef
+
+# Conexões de rede
+netstat -tulpn
+ss -tulpn
+
+# Arquivos abertos por processo
+lsof -p [PID]
+
+# Arquivos modificados recentemente
+find / -mtime -7 -type f
+
+# Verificar SUID/SGID
+find / -perm -4000 -o -perm -2000</code></pre>
+                </div>
+            </section>
+
+            <!-- Seção 9: Mobile Forense -->
+            <section id="mobile" class="section">
+                <h2 class="section-title">9. Mobile Forense</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Desafios Específicos</h3>
+                    <div class="concept-content">
+                        <p>Dispositivos móveis apresentam desafios únicos: criptografia por hardware, isolamento de processos, atualizações constantes e proteção contra jailbreak/root.</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-mobile-alt"></i>Métodos de Extração</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Método</th>
+                                <th>Tipo</th>
+                                <th>Dados</th>
+                                <th>Complexidade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Lógica</strong></td>
+                                <td>Software</td>
+                                <td>Dados ativos (contatos, SMS, apps)</td>
+                                <td><span class="tag tag-success">Baixa</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Física</strong></td>
+                                <td>Bit-a-bit</td>
+                                <td>Partições completas, dados apagados</td>
+                                <td><span class="tag tag-warning">Média</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>JTAG</strong></td>
+                                <td>Hardware</td>
+                                <td>Dump da memória via test points</td>
+                                <td><span class="tag tag-danger">Alta</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Chip-Off</strong></td>
+                                <td>Hardware</td>
+                                <td>Leitura direta do chip de memória</td>
+                                <td><span class="tag tag-danger">Muito Alta</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="highlight-box warning">
+                    <div class="highlight-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Ordem de Preferência
+                    </div>
+                    <p style="margin-top: 8px;">Sempre tente <strong>extração lógica</strong> primeiro (menos invasiva). Se não for suficiente, avance para física, JTAG e finalmente Chip-Off (último recurso).</p>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fab fa-android"></i>Android vs iOS</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Característica</th>
+                                <th>Android</th>
+                                <th>iOS</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Criptografia</td>
+                                <td>FDE (Full Disk Encryption)</td>
+                                <td>Data Protection (hardware)</td>
+                            </tr>
+                            <tr>
+                                <td>Arquitetura</td>
+                                <td>Linux-based, open source</td>
+                                <td>Proprietária, closed source</td>
+                            </tr>
+                            <tr>
+                                <td>Root</td>
+                                <td>Possível (varia por fabricante)</td>
+                                <td>Muito difícil (checkm8)</td>
+                            </tr>
+                            <tr>
+                                <td>Extração</td>
+                                <td>Adb, ferramentas variadas</td>
+                                <td>Requer ferramentas especializadas</td>
+                            </tr>
+                            <tr>
+                                <td>Logs</td>
+                                <td>/log, /data/log</td>
+                                <td>syslog, crash logs</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Seção 10: Análise de Logs -->
+            <section id="logs" class="section">
+                <h2 class="section-title">10. Análise de Logs</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Importância dos Logs</h3>
+                    <div class="concept-content">
+                        <p>Logs são registros de eventos do sistema que fornecem linha do tempo de atividades, essenciais para reconstrução de incidentes e atribuição de responsabilidade.</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-list-alt"></i>Tipos de Logs</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🔒</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Security Logs</div>
+                                <div class="topic-desc">Autenticação, autorização, acessos</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">⚙️</span>
+                            <div class="topic-content">
+                                <div class="topic-title">System Logs</div>
+                                <div class="topic-desc">Eventos do sistema operacional</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">📱</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Application Logs</div>
+                                <div class="topic-desc">Eventos de programas e serviços</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🌐</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Network Logs</div>
+                                <div class="topic-desc">Firewall, proxy, roteador, IDS/IPS</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔍</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Antivirus/EDR Logs</div>
+                                <div class="topic-desc">Detecções de malware, quarentenas</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box success">
+                    <div class="highlight-title">
+                        <i class="fas fa-check-circle"></i>
+                        Técnicas de Análise
+                    </div>
+                    <ul style="margin-left: 20px; margin-top: 12px;">
+                        <li><strong>Timeline:</strong> Ordenar eventos cronologicamente</li>
+                        <li><strong>Correlação:</strong> Cruzar informações de diferentes fontes</li>
+                        <li><strong>Filtragem:</strong> Isolar eventos relevantes</li>
+                        <li><strong>Padrões:</strong> Identificar comportamentos anômalos</li>
+                        <li><strong>Baseline:</strong> Comparar com comportamento normal</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 11: Recuperação de Dados -->
+            <section id="recuperacao" class="section">
+                <h2 class="section-title">11. Recuperação de Dados</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Carving</h3>
+                    <div class="concept-content">
+                        <p>Técnica de recuperação de dados baseada em identificação de cabeçalhos de arquivos (file signatures) em espaço não alocado do disco, independentemente do sistema de arquivos.</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-file-signature"></i>File Signatures Comuns</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Extensão</th>
+                                <th>Header (Hex)</th>
+                                <th>Footer (Hex)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>JPEG</td>
+                                <td>.jpg, .jpeg</td>
+                                <td>FF D8 FF</td>
+                                <td>FF D9</td>
+                            </tr>
+                            <tr>
+                                <td>PNG</td>
+                                <td>.png</td>
+                                <td>89 50 4E 47</td>
+                                <td>49 45 4E 44 AE 42 60 82</td>
+                            </tr>
+                            <tr>
+                                <td>PDF</td>
+                                <td>.pdf</td>
+                                <td>25 50 44 46</td>
+                                <td>25 25 45 4F 46</td>
+                            </tr>
+                            <tr>
+                                <td>ZIP</td>
+                                <td>.zip</td>
+                                <td>50 4B 03 04</td>
+                                <td>50 4B 05 06</td>
+                            </tr>
+                            <tr>
+                                <td>DOCX</td>
+                                <td>.docx</td>
+                                <td>50 4B 03 04</td>
+                                <td>50 4B 05 06</td>
+                            </tr>
+                            <tr>
+                                <td>MPEG</td>
+                                <td>.mpg, .mpeg</td>
+                                <td>00 00 01 BA</td>
+                                <td>00 00 01 B7</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-hdd"></i>NTFS e MFT</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">📋</span>
+                            <div class="topic-content">
+                                <div class="topic-title">MFT (Master File Table)</div>
+                                <div class="topic-desc">"Índice" do NTFS - metadados de todos os arquivos</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🗑️</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Deleção NTFS</div>
+                                <div class="topic-desc">Arquivo marcado como "deletado" no MFT, dados permanecem</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">✏️</span>
+                            <div class="topic-content">
+                                <div class="topic-title">$USNJrnl</div>
+                                <div class="topic-desc">Journal de alterações NTFS (Change Journal)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔍</span>
+                            <div class="topic-content">
+                                <div class="topic-title">$LogFile</div>
+                                <div class="topic-desc">Log transacional do NTFS</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="highlight-box warning">
+                    <div class="highlight-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        SSD vs HDD
+                    </div>
+                    <p style="margin-top: 8px;">Em SSDs com TRIM ativado, dados deletados podem ser sobrescritos automaticamente. Recuperação em SSDs é mais difícil que em HDDs magnéticos.</p>
+                </div>
+            </section>
+
+            <!-- Seção 12: Esteganografia -->
+            <section id="esteganografia" class="section">
+                <h2 class="section-title">12. Esteganografia Forense</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Definição</h3>
+                    <div class="concept-content">
+                        <p>Técnica de ocultar informações dentro de outras informações (ex: mensagem em imagem) de forma que a existência da informação oculta seja imperceptível.</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-eye-slash"></i>Técnicas Comuns</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">🖼️</span>
+                            <div class="topic-content">
+                                <div class="topic-title">LSB (Least Significant Bit)</div>
+                                <div class="topic-desc">Modificação dos bits menos significativos de pixels em imagens</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🎵</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Audio Steganography</div>
+                                <div class="topic-desc">Ocultação em arquivos de áudio (MP3, WAV)</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">📄</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Document Steganography</div>
+                                <div class="topic-desc">Ocultação em metadados ou whitespace de documentos</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🌐</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Network Steganography</div>
+                                <div class="topic-desc">Ocultação em headers de protocolos de rede</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-tools"></i>Ferramentas de Análise</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Ferramenta</th>
+                                <th>Tipo</th>
+                                <th>Uso</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Stegdetect</td>
+                                <td>Open Source</td>
+                                <td>Detecta steganografia em imagens JPEG</td>
+                            </tr>
+                            <tr>
+                                <td>Steghide</td>
+                                <td>Open Source</td>
+                                <td>Extração de dados ocultos</td>
+                            </tr>
+                            <tr>
+                                <td>Outguess</td>
+                                <td>Open Source</td>
+                                <td>Análise de esteganografia</td>
+                            </tr>
+                            <tr>
+                                <td>StegSecret</td>
+                                <td>Comercial</td>
+                                <td>Suite completa de análise</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Seção 13: Criptografia Forense -->
+            <section id="criptografia" class="section">
+                <h2 class="section-title">13. Criptografia Forense</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Desafios</h3>
+                    <div class="concept-content">
+                        <p>Criptografia forte pode tornar evidências inacessíveis. Peritos precisam identificar e contornar proteções criptográficas quando possível.</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-key"></i>Tipos de Criptografia</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Chaves</th>
+                                <th>Exemplo</th>
+                                <th>Uso Comum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Simétrica</td>
+                                <td>1 chave (secreta)</td>
+                                <td>AES, 3DES</td>
+                                <td>Criptografia de disco (BitLocker)</td>
+                            </tr>
+                            <tr>
+                                <td>Assimétrica</td>
+                                <td>2 chaves (pública/privada)</td>
+                                <td>RSA, ECC</td>
+                                <td>Assinaturas, PGP</td>
+                            </tr>
+                            <tr>
+                                <td>Hash</td>
+                                <td>Sem chave (one-way)</td>
+                                <td>SHA-256, MD5</td>
+                                <td>Integridade, senhas</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="highlight-box warning">
+                    <div class="highlight-title">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        Contornando Criptografia
+                    </div>
+                    <ul style="margin-left: 20px; margin-top: 12px;">
+                        <li><strong>Key Recovery:</strong> Buscar chaves em memória, swap, hibernação</li>
+                        <li><strong>Weak Keys:</strong> Tentar força bruta em chaves fracas</li>
+                        <li><strong>Side-Channel:</strong> Análise de consumo de energia, timing</li>
+                        <li><strong>Backdoors:</strong> Verificar vulnerabilidades conhecidas</li>
+                        <li><strong>Legal:</strong> Ordem judicial para entrega de chaves</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Seção 14: Network Forense -->
+            <section id="network" class="section">
+                <h2 class="section-title">14. Network Forense</h2>
+                
+                <div class="concept-card">
+                    <h3 class="concept-title">Definição</h3>
+                    <div class="concept-content">
+                        <p>Análise de tráfego de rede para identificar atividades maliciosas, reconstruir incidentes e atribuir responsabilidade. Envolve captura e análise de pacotes.</p>
+                    </div>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-network-wired"></i>Fontes de Evidência de Rede</h3>
+                    <ul class="topic-list">
+                        <li class="topic-item">
+                            <span class="topic-icon">📦</span>
+                            <div class="topic-content">
+                                <div class="topic-title">PCAP (Packet Capture)</div>
+                                <div class="topic-desc">Captura completa de pacotes de rede</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔥</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Firewall Logs</div>
+                                <div class="topic-desc">Registros de conexões bloqueadas/permitidas</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🌐</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Proxy Logs</div>
+                                <div class="topic-desc">HTTP/HTTPS requests, URLs acessadas</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">📡</span>
+                            <div class="topic-content">
+                                <div class="topic-title">Router/Switch Logs</div>
+                                <div class="topic-desc">Conexões, ARP, routing</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">🔍</span>
+                            <div class="topic-content">
+                                <div class="topic-title">DNS Logs</div>
+                                <div class="topic-desc">Resoluções de nomes, queries DNS</div>
+                            </div>
+                        </li>
+                        <li class="topic-item">
+                            <span class="topic-icon">⚠️</span>
+                            <div class="topic-content">
+                                <div class="topic-title">IDS/IPS Logs</div>
+                                <div class="topic-desc">Alertas de intrusão, assinaturas ativadas</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-tools"></i>Ferramentas de Análise</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Ferramenta</th>
+                                <th>Tipo</th>
+                                <th>Uso Principal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Wireshark</td>
+                                <td>Open Source</td>
+                                <td>Análise profunda de PCAP</td>
+                            </tr>
+                            <tr>
+                                <td>Tcpdump</td>
+                                <td>CLI</td>
+                                <td>Captura e filtragem de pacotes</td>
+                            </tr>
+                            <tr>
+                                <td>NetworkMiner</td>
+                                <td>Open Source</td>
+                                <td>Extração de arquivos, hosts</td>
+                            </tr>
+                            <tr>
+                                <td>Snort</td>
+                                <td>IDS/IPS</td>
+                                <td>Detecção em tempo real</td>
+                            </tr>
+                            <tr>
+                                <td>Zeek (Bro)</td>
+                                <td>NSM</td>
+                                <td>Monitoramento de segurança de rede</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Seção 15: Malware Analysis -->
+            <section id="malware" class="section">
+                <h2 class="section-title">15. Análise de Malware</h2>
+                
+                <div class="subsection">
+                    <h3 class="subsection-title"><i class="fas fa-microscope"></i>Tipos de Análise</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Descrição</th>
+                                <th>Ferramentas</th>
+                                <th>Risco</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Estática</strong></td>
+                                <td>Análise sem executar (código, strings, PE)</td>
+                                <td>IDA Pro, Ghidra, Strings</td>
+                                <td><span class="tag tag-success">Nenhum</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dinâmica</strong></td>
+                                <td>Análise durante execução (comportamento)</td>
+                                <td>Sandbox, Process Monitor, Wireshark</td>
+                                <td><span class="tag tag-warning">Médio</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Híbrida</strong></td>
+                                <td>Combinação de estática + dinâmica</td>
+                                <td>Várias ferramentas</td>
+                                <td><span class="tag tag-warning">Médio</span></td>
+                            </tr>
+                            <tr>
+                                <td><strong>Memory</strong></td>
+                                <td>Análise de dump de memória RAM</td>
+                                <td>Volatility, Rekall</td>
+                                <td><span class="tag tag-success">Baixo</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="highlight-box success">
+                    <div class="highlight-title">
+                        <i class="fas fa-check-circle"></i>
+                        Indicadores de Comprometimento (IOCs)
+                    </div>
+                    <ul style="margin-left: 20px; margin-top: 12px;">
+                        <li><strong>Hashes:</strong> MD5, SHA-1, SHA-256 de arquivos maliciosos</li>
+                        <li><strong>IPs:</strong> Endereços IP de C2 (Command & Control)</li>
+                        <li><strong>Domínios:</strong> Domínios usados para comunicação</li>
+                        <li><strong>URLs:</strong> URLs de download, phishing</li>
+                        <li><strong>Email:</strong> Endereços usados em campanhas</li>
+                        <li><strong>Registry Keys:</strong> Chaves criadas/modificadas</li>
+                        <li><strong>Filenames:</strong> Nomes de arquivos maliciosos</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer style="margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--border); text-align: center; color: var(--text-muted);">
+                <p>Informática Forense - CFP 2026 | PROVA 3</p>
+                <p style="font-size: 14px; margin-top: 8px;">Material de estudo baseado em RFC 3227, Art. 158-B do CPP e melhores práticas de perícia digital</p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        // Smooth scroll para navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    
+                    // Atualizar nav item ativo
+                    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+                    this.classList.add('active');
+                }
+            });
+        });
+
+        // Highlight da seção atual no scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navItems = document.querySelectorAll('.nav-item');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (scrollY >= sectionTop - 100) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href') === `#${current}`) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Expandir mnemonic cards
+        document.querySelectorAll('.mnemonic').forEach(mnemonic => {
+            mnemonic.style.cursor = 'pointer';
+            mnemonic.addEventListener('click', function() {
+                const breakdown = this.querySelector('.mnemonic-breakdown');
+                breakdown.style.display = breakdown.style.display === 'grid' ? 'none' : 'grid';
+            });
+        });
+    </script>
+</body>
+</html>
