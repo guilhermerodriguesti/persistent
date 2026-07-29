@@ -1057,6 +1057,354 @@
         ::-webkit-scrollbar-thumb:hover {
             background: var(--active-color);
         }
+
+        /* ==================== TABLET RESPONSIVE (768px - 1024px) ==================== */
+        @media (max-width: 1024px) {
+            /* Sidebar colapsável */
+            aside {
+                position: fixed;
+                left: -280px;
+                top: 0;
+                height: 100vh;
+                z-index: 1000;
+                transition: left 0.3s ease;
+                box-shadow: 2px 0 20px rgba(0, 0, 0, 0.3);
+            }
+
+            aside.sidebar-open {
+                left: 0;
+            }
+
+            /* Overlay quando sidebar está aberta */
+            .sidebar-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .sidebar-overlay.active {
+                display: block;
+                opacity: 1;
+            }
+
+            /* Botão hamburger no header */
+            .hamburger-btn {
+                display: flex !important;
+                background-color: rgba(0, 0, 0, 0.03);
+                border: 1px solid var(--border-color);
+                color: var(--text-main);
+                width: 44px;
+                height: 44px;
+                border-radius: 44px;
+                cursor: pointer;
+                align-items: center;
+                justify-content: center;
+                transition: var(--transition-smooth);
+                font-size: 18px;
+                margin-right: 12px;
+            }
+            body:not(.light-theme) .hamburger-btn {
+                background-color: rgba(255, 255, 255, 0.05);
+            }
+
+            .hamburger-btn:hover {
+                background-color: rgba(0, 0, 0, 0.08);
+                border-color: var(--active-color);
+                color: var(--active-color);
+            }
+            body:not(.light-theme) .hamburger-btn:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+            }
+
+            /* Ajuste do header */
+            header {
+                padding: 0 20px;
+            }
+
+            .header-title h2 {
+                font-size: 18px;
+            }
+
+            .search-container {
+                width: 200px;
+            }
+
+            /* Ajuste da área de conteúdo */
+            .content-area {
+                padding: 20px;
+            }
+
+            /* Grid de dashboard: 2 colunas em tablets */
+            .dashboard-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 16px;
+            }
+
+            /* Grid de bizus: 2 colunas em tablets */
+            .dashboard-grid + h3 + div[style*="grid-template-columns: repeat(3, 1fr)"],
+            div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 16px;
+            }
+
+            /* Grid de materiais: 1 coluna em tablets */
+            .dashboard-grid + h3 + h3 + div[style*="grid-template-columns: repeat(2, 1fr)"],
+            div[style*="grid-template-columns: repeat(2, 1fr)"] {
+                grid-template-columns: 1fr !important;
+                gap: 16px;
+            }
+
+            /* Welcome card */
+            .welcome-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 24px;
+            }
+
+            .welcome-content {
+                margin-bottom: 20px;
+            }
+
+            .welcome-content p {
+                max-width: 100%;
+            }
+
+            /* Quiz container */
+            .quiz-container {
+                padding: 24px;
+            }
+
+            .quiz-question {
+                font-size: 16px;
+            }
+
+            /* Flashcards */
+            .flashcard {
+                width: 100%;
+                max-width: 400px;
+                height: 280px;
+            }
+
+            .card-question {
+                font-size: 18px;
+            }
+
+            .card-answer {
+                font-size: 14px;
+            }
+
+            .flash-btn {
+                width: 48px;
+                height: 48px;
+            }
+
+            /* Mnemônicos grid */
+            .mnemonics-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 16px;
+            }
+
+            /* Botões maiores para touch */
+            .icon-btn {
+                width: 44px;
+                height: 44px;
+                font-size: 18px;
+            }
+
+            .btn {
+                padding: 10px 16px;
+                font-size: 14px;
+            }
+
+            .quiz-option {
+                padding: 18px 16px;
+                font-size: 15px;
+            }
+
+            /* Notes toolbar */
+            .notes-toolbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .toolbar-buttons {
+                flex-wrap: wrap;
+                width: 100%;
+            }
+
+            .toolbar-buttons .btn {
+                flex: 1;
+                min-width: 120px;
+            }
+
+            /* Stat cards */
+            .stat-card {
+                padding: 20px;
+            }
+
+            .stat-icon {
+                font-size: 24px;
+                padding: 12px;
+            }
+
+            .stat-number {
+                font-size: 20px;
+            }
+        }
+
+        /* ==================== MOBILE (< 768px) ==================== */
+        @media (max-width: 767px) {
+            /* Sidebar */
+            aside {
+                width: 100%;
+                left: -100%;
+            }
+
+            aside.sidebar-open {
+                left: 0;
+            }
+
+            /* Header */
+            header {
+                height: 60px;
+                padding: 0 16px;
+            }
+
+            .header-title h2 {
+                font-size: 16px;
+            }
+
+            .search-container {
+                display: none !important;
+            }
+
+            /* Content area */
+            .content-area {
+                padding: 16px;
+            }
+
+            /* Dashboard grid: 1 coluna */
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            /* Grid de bizus: 1 coluna */
+            div[style*="grid-template-columns: repeat(2, 1fr)"],
+            div[style*="grid-template-columns: repeat(3, 1fr)"] {
+                grid-template-columns: 1fr !important;
+                gap: 12px;
+            }
+
+            /* Welcome card */
+            .welcome-card {
+                padding: 20px;
+            }
+
+            .welcome-content h2 {
+                font-size: 20px;
+            }
+
+            .welcome-content p {
+                font-size: 14px;
+            }
+
+            /* Quiz */
+            .quiz-container {
+                padding: 20px;
+            }
+
+            .quiz-question {
+                font-size: 15px;
+            }
+
+            .quiz-option {
+                padding: 16px 14px;
+                font-size: 14px;
+            }
+
+            /* Flashcards */
+            .flashcard {
+                height: 260px;
+            }
+
+            .card-question {
+                font-size: 16px;
+            }
+
+            .card-answer {
+                font-size: 13px;
+            }
+
+            /* Mnemônicos */
+            .mnemonics-grid {
+                grid-template-columns: 1fr !important;
+                gap: 12px;
+            }
+
+            /* Botões */
+            .icon-btn {
+                width: 40px;
+                height: 40px;
+                font-size: 16px;
+            }
+
+            .btn {
+                padding: 8px 14px;
+                font-size: 13px;
+            }
+
+            /* Stat cards */
+            .stat-card {
+                padding: 16px;
+            }
+
+            .stat-icon {
+                font-size: 22px;
+                padding: 10px;
+            }
+
+            .stat-number {
+                font-size: 18px;
+            }
+
+            .stat-details h3 {
+                font-size: 14px;
+            }
+
+            .stat-meta {
+                font-size: 11px;
+            }
+
+            /* Flash action buttons */
+            .flash-action-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .flash-action-buttons .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            /* Hamburger button sempre visível */
+            .hamburger-btn {
+                display: flex !important;
+            }
+        }
+
+        /* Esconder hamburger button em desktop */
+        .hamburger-btn {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -1138,11 +1486,19 @@
         </div>
     </aside>
 
+    <!-- SIDEBAR OVERLAY -->
+    <div class="sidebar-overlay" id="sidebar-overlay" onclick="toggleSidebar()"></div>
+
     <!-- CONTENT AREA -->
     <main>
         <header>
-            <div class="header-title">
-                <h2 id="current-title">Dashboard Principal</h2>
+            <div style="display: flex; align-items: center; gap: 12px;">
+                <button class="hamburger-btn" onclick="toggleSidebar()" aria-label="Abrir menu" tabindex="0">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+                <div class="header-title">
+                    <h2 id="current-title">Dashboard Principal</h2>
+                </div>
             </div>
             
             <div class="header-controls">
@@ -1928,6 +2284,28 @@
             } else {
                 localStorage.setItem('forenses_theme', 'dark');
                 icon.className = 'fa-solid fa-sun';
+            }
+        }
+
+        // Toggle Sidebar para tablets/mobile
+        function toggleSidebar() {
+            const sidebar = document.querySelector('aside');
+            const overlay = document.getElementById('sidebar-overlay');
+            
+            sidebar.classList.toggle('sidebar-open');
+            overlay.classList.toggle('active');
+            
+            // Fechar sidebar ao pressionar Escape
+            if (sidebar.classList.contains('sidebar-open')) {
+                document.addEventListener('keydown', handleSidebarEscape);
+            } else {
+                document.removeEventListener('keydown', handleSidebarEscape);
+            }
+        }
+
+        function handleSidebarEscape(e) {
+            if (e.key === 'Escape') {
+                toggleSidebar();
             }
         }
 
