@@ -1,0 +1,719 @@
+Excelente progresso! A melhor forma de consolidar a memória sobre a apostila é continuar testando a literalidade dos conceitos. 
+
+Abaixo, elaborei **mais 40 novas questões estritamente literais**, explorando trechos inéditos e diferentes daqueles cobrados na bateria anterior. O foco agora é em outras definições exatas de componentes, artefatos de celulares, etapas detalhadas do Laudo, descrições precisas de equipamentos e normas contidas no material base.
+
+Aqui está o código HTML completo, com **letras grandes** e correção automática. Salve-o como `.html` (por exemplo, `simulado_forense_parte7.html`) e abra no seu navegador para praticar:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado Literal: Informática Forense (40 Novas Questões)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f9;
+            color: #1a202c;
+            /* Letras grandes para facilitar leitura */
+            font-size: 24px; 
+            line-height: 1.6;
+            margin: 0;
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 38px;
+            color: #2c5282;
+            margin-bottom: 40px;
+        }
+        .question-container {
+            background-color: #ffffff;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #2d3748;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: baseline;
+            background-color: #edf2f7;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e0;
+            transition: background-color 0.2s;
+        }
+        .options li:hover {
+            background-color: #e2e8f0;
+        }
+        input[type="radio"] {
+            transform: scale(1.8);
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        label {
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn-responder {
+            background-color: #3182ce;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 35px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .btn-responder:hover {
+            background-color: #2b6cb0;
+        }
+        .feedback {
+            display: none;
+            margin-top: 25px;
+            padding: 25px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .correct {
+            background-color: #c6f6d5;
+            color: #22543d;
+            border: 2px solid #9ae6b4;
+        }
+        .incorrect {
+            background-color: #fed7d7;
+            color: #742a2a;
+            border: 2px solid #feb2b2;
+        }
+        .explanation {
+            margin-top: 15px;
+            font-weight: normal;
+            font-size: 22px;
+            color: #2d3748;
+        }
+
+        /* ==================== TABLET RESPONSIVE (768px - 1024px) ==================== */
+        @media (max-width: 1024px) {
+            body {
+                font-size: 20px;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 30px;
+                margin-bottom: 30px;
+            }
+            .question-container {
+                padding: 25px;
+                margin-bottom: 30px;
+            }
+            .question-text {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            .options li {
+                margin-bottom: 12px;
+                padding: 12px;
+            }
+            input[type="radio"] {
+                transform: scale(1.5);
+                margin-right: 12px;
+            }
+            .btn-responder {
+                font-size: 20px;
+                padding: 12px 25px;
+            }
+            .feedback {
+                font-size: 18px;
+                padding: 15px;
+            }
+            .explanation {
+                font-size: 18px;
+            }
+        }
+
+        /* ==================== MOBILE (< 768px) ==================== */
+        @media (max-width: 767px) {
+            body {
+                font-size: 18px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 26px;
+                margin-bottom: 25px;
+            }
+            .question-container {
+                padding: 20px;
+                margin-bottom: 25px;
+                border-radius: 8px;
+            }
+            .question-text {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+            .options li {
+                margin-bottom: 10px;
+                padding: 12px;
+            }
+            input[type="radio"] {
+                transform: scale(1.4);
+                margin-right: 10px;
+            }
+            .btn-responder {
+                font-size: 18px;
+                padding: 12px 20px;
+                width: 100%;
+            }
+            .feedback {
+                font-size: 16px;
+                padding: 12px;
+            }
+            .explanation {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Simulado de Revisão Literal - Parte 7 (40 Inéditas)</h1>
+    <div id="quiz-container"></div>
+
+    <script>
+        const questoes = [
+            {
+                q: "1. No tópico que aborda as Etapas dos Procedimentos (1.2.2), a apostila afirma literalmente que o ideal é que os peritos participem do planejamento e da coordenação da operação de busca e apreensão, orientando quanto a quê?",
+                opcoes: [
+                    "Ao interrogatório dos suspeitos e extração física de chaves FDE.",
+                    "À seleção, coleta e transporte correto do material que deve ser arrecadado no local.",
+                    "À instalação de interceptadores P2P e grampos telefônicos autorizados.",
+                    "À quebra imediata de senhas no local antes da chegada do juiz."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Seção 1.2.2: 'O ideal é que os peritos participem do planejamento e da coordenação da operação de busca e apreensão, orientando quanto à seleção, coleta e transporte correto do material que deve ser arrecadado no local'."
+            },
+            {
+                q: "2. Segundo a apostila, uma vez que o material de informática chega à unidade de Criminalística, qual é o primeiro procedimento a ser adotado?",
+                opcoes: [
+                    "A duplicação forense do tipo mídia para mídia com CAINE.",
+                    "O cálculo do hash SHA-256 de todas as memórias voláteis.",
+                    "A devida identificação e descrição do material no Sistema Criminalística.",
+                    "A abertura dos arquivos ZIP contidos nos discos rígidos."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 1.2.2: 'Uma vez que o material de informática chega à unidade de Criminalística, o primeiro procedimento a ser adotado é a devida identificação e descrição do material no Sistema Criminalística'."
+            },
+            {
+                q: "3. Ao categorizar o material examinado, a apostila define 'mídias de armazenamento computacional' declarando literalmente que os dados estão localizados em mídias que armazenam informações, tais como:",
+                opcoes: [
+                    "Dispositivos móveis, celulares, smartphones e tablets.",
+                    "Nuvem, servidores remotos e páginas na Internet.",
+                    "Discos rígidos, SSDs, mídias óticas, cartões de memória, pen drives e outros.",
+                    "Roteadores, switches e pontos de acesso de rede."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 1.2.3: 'mídias de armazenamento computacional: os dados estão localizados em mídias que armazenam informações, tais como discos rígidos, SSDs, mídias óticas, cartões de memória, pen drives e outros'."
+            },
+            {
+                q: "4. No tipo de exame classificado como 'Análise de sistemas' pela apostila, os exames são realizados, em geral, por meio de quais técnicas expressamente descritas?",
+                opcoes: [
+                    "Extração lógica e extração física avançada (AFU).",
+                    "Engenharia reversa ou análise comportamental.",
+                    "Dumping da memória e decodificação esteganográfica.",
+                    "Cálculo de hashes e expansão de arquivos-contêiner."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Seção 1.2.3: 'análise de sistemas: em geral, esses exames são realizados por meio de engenharia reversa ou análise comportamental'."
+            },
+            {
+                q: "5. A Placa-mãe é definida textualmente como a placa de circuito integrado que interconecta os diversos dispositivos. O que a apostila afirma literalmente que a Placa-mãe 'possui' para controlar os acessos ao processador, disco rígido e RAM?",
+                opcoes: [
+                    "Coolers a nitrogênio líquido e fontes de energia.",
+                    "Software de sistema operacional Ext4 e bootloaders.",
+                    "Barramentos e circuitos de apoio.",
+                    "Clusters contíguos e mapa de bits alocados."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 2.2.1: 'Possui barramentos e circuitos de apoio para controlar os acessos ao processador, disco rígido, memória RAM e demais dispositivos que estiverem conectados'."
+            },
+            {
+                q: "6. Ao descrever a memória secundária e o disco rígido, a apostila explica como os dados ficam armazenados internamente. Qual a disposição física mencionada literalmente?",
+                opcoes: [
+                    "Em pastilhas de silício em estado sólido.",
+                    "Em discos magnéticos concêntricos, divididos em trilhas e setores.",
+                    "Em células de bateria de lítio encapsuladas.",
+                    "Em microchips injetados com códigos ESN."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Seção 2.2.4: 'Internamente, os dados ficam armazenados em discos magnéticos concêntricos, divididos em trilhas e setores'."
+            },
+            {
+                q: "7. Segundo a apostila, os discos de estado sólido (Solid-State Drive ou SSD) utilizam qual tecnologia primária para armazenar os dados?",
+                opcoes: [
+                    "Pratos metálicos banhados a níquel.",
+                    "Cartões inteligentes padrão SIM.",
+                    "Um conjunto de memórias flash.",
+                    "Chips TPM criptografados de fábrica."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 2.2.4: 'Os discos de estado sólido (Solid-State Drive ou SSD, da sigla em inglês) utilizam um conjunto de memórias flash para armazenar os dados'."
+            },
+            {
+                q: "8. A apostila lista expressamente exemplos de periféricos que atuam SIMULTANEAMENTE como 'entrada e saída'. Assinale a opção que reflete literalmente os exemplos dados:",
+                opcoes: [
+                    "Teclado, mouse e scanner.",
+                    "Monitor, impressora e caixas de som.",
+                    "Interface de rede, monitor touch-screen e impressora multifuncional.",
+                    "Webcam, microfone e leitor de DVD."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 2.2.5 (c): 'entrada e saída: interface de rede, monitor touch-screen e impressora multifuncional'."
+            },
+            {
+                q: "9. Quais são, literalmente, as funcionalidades básicas do sistema operacional citadas na seção 2.3?",
+                opcoes: [
+                    "Bloqueio remoto de redes, isolamento Faraday e quebra de PUK.",
+                    "Duplicação forense, criptografia FDE, esteganografia e data carving.",
+                    "Gerência de memória, acesso a dispositivos de entrada e saída de dados, carregamento de outros programas, interface gráfica e gerenciamento do sistema de arquivos.",
+                    "Mapeamento de octetos ASCII, varredura de Hash MD5 e expansão ZIP."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 2.3: 'Dentre as funcionalidades básicas do sistema operacional, podemos citar: gerência de memória, acesso a dispositivos de entrada e saída de dados, carregamento de outros programas, interface gráfica e gerenciamento do sistema de arquivos'."
+            },
+            {
+                q: "10. Conforme a seção 2.4, o sistema de arquivos utiliza um mapa de bits. A apostila descreve de forma estrita o que acontece 'Sempre que um arquivo novo é criado'. Qual é esse procedimento?",
+                opcoes: [
+                    "O mapa de bits é compactado para dar lugar aos metadados na memória RAM.",
+                    "O mapa de bits é consultado para saber quais blocos estão livres e, em seguida, o mapa é atualizado para registrar quais blocos foram ocupados pelo arquivo.",
+                    "Os blocos preexistentes são zerados (wipe) para impedir a contaminação cruzada.",
+                    "A BIOS intercepta o tamanho do arquivo e aloca o espaço na Placa-mãe."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Seção 2.4: 'Sempre que um arquivo novo é criado, o mapa de bits é consultado para saber quais blocos estão livres e, em seguida, o mapa é atualizado para registrar quais blocos foram ocupados pelo arquivo'."
+            },
+            {
+                q: "11. Na seção de Planejamento de Busca (3.1), a apostila orienta que 'atenção especial deve ser tomada nos casos que envolvam crimes próprios'. Qual é a justificativa literal dada pelo texto para essa atenção especial?",
+                opcoes: [
+                    "Pela eventual ausência de outros elementos que possam servir como prova.",
+                    "Pelo fato de crimes próprios ocorrerem exclusivamente com dispositivos móveis AFU.",
+                    "Porque o juiz não emite mandados diretos para nuvens computacionais.",
+                    "Porque a extração de hardware deve ser feita exclusivamente no exterior."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. Seção 3.1: 'Pela eventual ausência de outros elementos que possam servir como prova, atenção especial deve ser tomada nos casos que envolvam crimes próprios...'."
+            },
+            {
+                q: "12. Na Execução da busca (3.2), a apostila adverte sobre materiais que são 'fáceis de serem ocultados' e que podem ser 'danificados em questão de segundos'. Quais são os exemplos exatos listados no material?",
+                opcoes: [
+                    "Servidores, racks de rede e nobreaks industriais.",
+                    "Monitores touch-screen, cabos IDE e teclados.",
+                    "Disquetes, CDs, DVDs, pen drives e mídias de armazenamento de tamanho reduzido.",
+                    "Bolsas de Faraday, luvas antiestáticas e lacres invioláveis."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 3.2: 'Disquetes, CDs, DVDs, pen drives e mídias de armazenamento de tamanho reduzido são fáceis de serem ocultados. Alguns materiais podem ser danificados em questão de segundos'."
+            },
+            {
+                q: "13. Ainda sobre Busca e Apreensão, sob qual justificativa e regra estrita a apostila aconselha a apreensão de 'Dispositivos de entrada e saída de dados - impressoras, teclados, monitores e outros periféricos'?",
+                opcoes: [
+                    "Apenas se o gabinete não puder ser transportado devido ao peso.",
+                    "Devem ser apreendidos sempre e incondicionalmente, para preservar as digitais papiloscópicas.",
+                    "Devem ser apreendidos somente se houver algum interesse específico (ex: determinar se um documento foi impresso na impressora).",
+                    "Apenas se pertencerem a empresas envolvidas em espionagem industrial."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 3.3.1: 'Dispositivos de entrada e saída de dados - impressoras, teclados, monitores e outros periféricos - devem ser apreendidos somente se houver algum interesse específico...'."
+            },
+            {
+                q: "14. De acordo com as diretrizes de 'Arrecadação' (3.4), as etiquetas identificadoras de equipamentos devem ser afixadas preferencialmente em qual local?",
+                opcoes: [
+                    "Na parte interna dos plásticos bolhas que o envolvem.",
+                    "Dentro da caixa de papelão de transporte da viatura.",
+                    "Sobre o equipamento em si, não sobre as embalagens.",
+                    "No conector USB principal do computador."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 3.4: 'As etiquetas identificadoras devem, preferencialmente, ser afixadas sobre o equipamento em si, não sobre as embalagens'."
+            },
+            {
+                q: "15. A apostila conceitua a 'Duplicação de mídia para mídia' definindo-a de modo explícito como um procedimento que consiste em:",
+                opcoes: [
+                    "Armazenar múltiplos arquivos-contêineres numa única mídia maior.",
+                    "Cópia completa dos dados da mídia de origem diretamente para a mídia de destino.",
+                    "Exportar somente a árvore de diretórios do Windows para o Pen Drive.",
+                    "Calcular o hash de arquivos sem gerar cópia física dos dados apagados."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Seção 4.1.1: 'A duplicação forense do tipo mídia para mídia consiste na cópia completa dos dados da mídia de origem diretamente para a mídia de destino'."
+            },
+            {
+                q: "16. Na seção que trata de Equipamento Forense Especializado (4.2.1), os dispositivos exemplificados textualmente pela apostila (Tableau TD3, Tableau TX1 e Atola) possuem a capacidade notável de:",
+                opcoes: [
+                    "Ignorar a Convenção de Budapeste durante a cópia.",
+                    "Imprimir o laudo em papel A4 automaticamente no próprio local.",
+                    "Realizar duplicações simultâneas.",
+                    "Quebrar senhas FBE de smartphones Android com apenas um clique."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 4.2.1: 'Os equipamentos à disposição do Perito Criminal, como o Tableau TD3, Tableau TX1 e Atola, possuem interface para praticamente todos os tipos de discos rígidos e possuem a capacidade de realizar duplicações simultâneas'."
+            },
+            {
+                q: "17. Ao explicar o 'Bloqueio físico' na seção de Computador comum (4.2.2), a apostila dita que existem dispositivos de hardware que, quando conectados entre a mídia e o computador, impedem a escrita de dados, permitindo:",
+                opcoes: [
+                    "A alteração controlada do metadado da BIOS.",
+                    "Apenas sua leitura.",
+                    "Apenas que a formatação zero fill opere.",
+                    "A transferência P2P bidirecional."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Seção 4.2.2: 'bloqueio físico: existem dispositivos de hardware que, quando conectados entre a mídia e o computador, impedem a escrita de dados, permitindo apenas sua leitura'."
+            },
+            {
+                q: "18. Na explicação técnica sobre apagar arquivos (5.1.1), a apostila justifica que 'Apagar definitivamente a área ocupada pelo arquivo no disco gastaria tempo considerável'. O que, em vez disso, o sistema operacional adota literalmente?",
+                opcoes: [
+                    "Um método de encriptação rápida RSA-256.",
+                    "Um método que consiste em simplesmente marcar como 'livres para uso' tanto os blocos ocupados pelo arquivo apagado como a entrada correspondente na tabela.",
+                    "A transferência dos dados para uma pasta oculta chamada 'Shadow Copy'.",
+                    "A conversão do arquivo em um contêiner ZIP invisível."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Seção 5.1.1: 'Em vez disso, o sistema operacional adota um método mais prático e otimizado que consiste em simplesmente marcar como “livres para uso” tanto os blocos ocupados pelo arquivo apagado como a entrada correspondente...'"
+            },
+            {
+                q: "19. A técnica de recuperação 'Data Carving' possui uma limitação severa citada expressamente no texto: 'Como esse método não utiliza as informações presentes no sistema de arquivos, ele não irá recuperar...'",
+                opcoes: [
+                    "As fotos em formato JPEG.",
+                    "A assinatura hexadecimal no cabeçalho.",
+                    "Os metadados, tal como o nome, dos arquivos.",
+                    "O conteúdo dos e-mails NSF."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 5.1.1: 'Como esse método não utiliza as informações presentes no sistema de arquivos, ele não irá recuperar os metadados, tal como o nome, dos arquivos'."
+            },
+            {
+                q: "20. O processo de Processamento -> Categorização (5.2.2) informa que 'Nesse processo, todos os arquivos são identificados e categorizados'. Como a identificação é feita de forma estrita segundo o texto?",
+                opcoes: [
+                    "Pela data de criação e histórico Web.",
+                    "Pelo endereço de IP do qual foram baixados.",
+                    "Pela assinatura e extensão dos arquivos.",
+                    "Pelas senhas criptografadas associadas."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 5.2.2: 'A identificação é feita pela assinatura e extensão dos arquivos'."
+            },
+            {
+                q: "21. A etapa de Indexação (5.2.3) é comparada didaticamente na apostila a qual elemento comum de leitura?",
+                opcoes: [
+                    "A um tradutor simultâneo.",
+                    "A um dicionário de sinônimos.",
+                    "A um índice remissivo.",
+                    "A um código de barras de mercadoria."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 5.2.3: 'A indexação é como um índice remissivo, ou seja, ao final do processo haverá uma tabela listando todas as palavras encontradas e suas respectivas localizações'."
+            },
+            {
+                q: "22. Qual elemento matemático é utilizado especificamente como 'base' do processo de Redução na etapa de Filtragem (5.3.1) para descartar arquivos desconexos?",
+                opcoes: [
+                    "Os metadados do tipo MAC (Modificado, Acessado, Criado).",
+                    "A extensão nativa do software (ex: .exe, .dll).",
+                    "Os valores de hash calculados na etapa anterior.",
+                    "A matriz termodinâmica do disco MBR."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 5.3.1: 'A base do processo de redução utiliza os valores de hash calculados na etapa anterior. Utilizando uma base de dados de arquivos conhecidos...'"
+            },
+            {
+                q: "23. Dentre as várias atividades da etapa de Análise (5.4.1) exemplificadas literalmente, o que o Perito pode determinar ao analisar um aplicativo malicioso?",
+                opcoes: [
+                    "Se ele foi programado em Java puro ou C++.",
+                    "Se ele é capaz de capturar senhas bancárias.",
+                    "Se ele burla o módulo TPM por indução quântica.",
+                    "O nome de batismo do hacker internacional criador."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Seção 5.4.1 traz o exemplo: 'a análise de um aplicativo malicioso, determinando se ele é capaz de capturar senhas bancárias'."
+            },
+            {
+                q: "24. A seção que trata da Decifragem de arquivos (5.4.3) assinala que o acesso aos arquivos cifrados depende da recuperação da senha do usuário, que se dá, segundo a apostila, por meio de quais três ataques estruturados?",
+                opcoes: [
+                    "Bypass físico, Exploit USB e Root.",
+                    "Data Carving, Engenharia Reversa e OCR.",
+                    "Força bruta, dicionário e probabilísticos.",
+                    "Wipe reverso, Hasheamento Cego e Indexação Curinga."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 5.4.3 descreve esses três ataques: 'Isso se dá por meio dos seguintes ataques: a) força bruta; b) dicionário; c) probabilísticos'."
+            },
+            {
+                q: "25. Na terminologia apresentada no capítulo de Abuso Sexual (6.1), o conceito de 'peer-to-peer - P2P' é estritamente definido como uma arquitetura de redes ponto-a-ponto que permite o compartilhamento de serviços e dados sem a necessidade de quê?",
+                opcoes: [
+                    "Um link de banda larga superior a 10 Mbps.",
+                    "Cabos de conexão física.",
+                    "Um servidor central.",
+                    "Uso de criptografia SSL."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 6.1 (VI): 'peer-to-peer - P2P: arquitetura de redes de computadores ponto-a-ponto que permite o compartilhamento de serviços e dados sem a necessidade de um servidor central'."
+            },
+            {
+                q: "26. Segundo o inciso V do tópico 6.2 (Visão Geral da ASI), o exame de análise de conteúdo é composto por uma lista de etapas. A última etapa enumerada (inciso V) refere-se explicitamente a:",
+                opcoes: [
+                    "Remessa do material ao Ministério Público imediatamente.",
+                    "Descarte de 100% dos dados para proteção emocional da equipe.",
+                    "Análises adicionais relacionadas a quesitos específicos.",
+                    "Instalação do IPED nos sistemas do tribunal."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 6.2 (V): 'análises adicionais relacionadas a quesitos específicos'."
+            },
+            {
+                q: "27. No subcapítulo 6.3 (Organização e priorização do material), a apostila diz que a ordenação dos arquivos para análise deve dar prioridade absoluta (primeiro lugar) a qual critério objetivo?",
+                opcoes: [
+                    "Aos arquivos que não possuem extensões registradas.",
+                    "Apenas aos vídeos maiores que 5 Gigabytes.",
+                    "Por identificação positiva realizada via BFAC.",
+                    "Ao estado químico-biológico do cartão SIM do dispositivo."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 6.3 orienta: 'Para a priorização do material examinado, recomenda-se a ordenação dos arquivos, preferencialmente: primeiro, por identificação positiva realizada via BFAC'."
+            },
+            {
+                q: "28. No início do capítulo sobre Dispositivos Móveis (7.1), a evolução histórica do aparelho celular é contextualizada. O texto diz literalmente que 'Os telefones móveis ditos inteligentes (smartphones) tomaram o lugar...'",
+                opcoes: [
+                    "Dos desktops de alto rendimento empresarial.",
+                    "Da agenda eletrônica e do PDA.",
+                    "Dos servidores centrais e do protocolo de telefonia fixa.",
+                    "Das câmeras fotográficas analógicas e dos cabos coaxiais."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Seção 7.1: 'Os telefones móveis ditos inteligentes (smartphones) tomaram o lugar da agenda eletrônica e do PDA e são hoje utilizados por muitos usuários...'"
+            },
+            {
+                q: "29. Quando discorre sobre a 'Descrição do material' na análise de celulares (7.2.1), a apostila é taxativa ao declarar que 'O primeiro passo em uma análise pericial é a...'",
+                opcoes: [
+                    "Quebra da senha de proteção do aparelho.",
+                    "Conexão do equipamento à rede Wi-Fi da delegacia.",
+                    "Descrição do material submetido a exame.",
+                    "Ação de zerar a memória via Wipe Remoto."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 7.2.1: 'O primeiro passo em uma análise pericial é a descrição do material submetido a exame'."
+            },
+            {
+                q: "30. Ao tratar de chamadas e mensagens no celular (7.2.2), a apostila orienta o Perito a fazer uma 'ressalva' importante, destacando que apenas UMA entidade pode informar com precisão as chamadas realizadas e mensagens de texto, pois o usuário pode ter apagado do aparelho. Qual entidade?",
+                opcoes: [
+                    "A fabricante do telefone móvel (Apple ou Samsung).",
+                    "A Interpol.",
+                    "A operadora.",
+                    "O Conselho da Europa (Budapeste)."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 7.2.2: 'Apenas a operadora pode informar com precisão as chamadas realmente realizadas ou recebidas, bem como as mensagens de texto e correio de voz...'"
+            },
+            {
+                q: "31. A lista de artefatos de celular extraíveis contém o item 'Autopreenchimento'. Como esse artefato é textualmente definido na apostila (7.2.2)?",
+                opcoes: [
+                    "O ato do sistema digitar a senha PIN sozinho.",
+                    "Coleção de valores armazenados usados no preenchimento de campos de formulários.",
+                    "Bateria viciada que indica carga 100% de modo irreal.",
+                    "Função P2P que completa downloads interrompidos."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Seção 7.2.2 letra (c): 'Autopreenchimento: coleção de valores armazenados usados no preenchimento de campos de formulários'."
+            },
+            {
+                q: "32. O que representam os artefatos denominados literalmente de 'Cartões móveis' na lista da seção 7.2.2?",
+                opcoes: [
+                    "Os chips SIM em formato Micro e Nano.",
+                    "Memórias removíveis de leitura óptica.",
+                    "Informações sobre arquivos armazenados no telefone que funcionam como cupons, cartões de embarque, ingressos, cartões de fidelidade e gift cards.",
+                    "Placas de circuito impresso para expansão RAM do smartphone."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 7.2.2 letra (f): 'Cartões móveis: informações sobre arquivos armazenados no telefone que funcionam como cupons, cartões de embarque, ingressos...'"
+            },
+            {
+                q: "33. Comparando os métodos de extração em celulares, qual é o benefício investigativo que a 'extração via sistema de arquivos' fornece literalmente além de entender a estrutura de arquivos e histórico Web?",
+                opcoes: [
+                    "Realizar wipe instantâneo em caso de invasão do FBI.",
+                    "Permitir ao Perito Criminal realizar a análise de possíveis arquivos que não foram decodificados pela ferramenta de extração.",
+                    "Substituir integralmente a análise laboratorial humana pelo uso da IA P2P.",
+                    "Desligar as antenas ERBs que emitem pulsos BFU."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Seção 7.2.2 letra (c): 'além de permitir ao Perito Criminal realizar a análise de possíveis arquivos que não foram decodificados pela ferramenta de extração'."
+            },
+            {
+                q: "34. Abordando o problema da 'bateria' nas dificuldades de extração (7.2.3), o texto faz uma diferenciação estrutural na fabricação: 'Em aparelhos mais antigos, a bateria costuma ser removível e de fácil acesso. Já em modelos mais recentes, a bateria é...'",
+                opcoes: [
+                    "Injetada magneticamente na Placa-Mãe.",
+                    "Baseada em Urânio enriquecido para longa duração BFU.",
+                    "Interna e o acesso exige a remoção da tampa traseira, que geralmente é colada.",
+                    "Acionada por luz solar impossibilitando exame noturno."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 7.2.3 letra (a): 'Já em modelos mais recentes, a bateria é interna e o acesso exige a remoção da tampa traseira, que geralmente é colada'."
+            },
+            {
+                q: "35. Sobre o bloqueio Biométrico de um celular (7.3.1), a doutrina explica que, normalmente, esse tipo de bloqueio deve ser combinado com PIN ou padrão geométrico, que são exigidos obrigatoriamente quando o aparelho:",
+                opcoes: [
+                    "Atravessa as fronteiras nacionais e muda de fuso horário.",
+                    "É reiniciado ou fica um longo período sem desbloqueio.",
+                    "Se conecta a redes Wi-Fi não cadastradas na Placa-mãe.",
+                    "Sofre jailbreak ou recebe cabo de força não-original."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Seção 7.3.1: 'Normalmente, este bloqueio deve ser utilizado combinado com um outro tipo [...] que são exigidos toda vez que o aparelho é reiniciado ou fica um longo período sem desbloqueio'."
+            },
+            {
+                q: "36. Na descrição do estado AFU, a apostila explica por que ele é valioso para a perícia: 'Quando o aparelho já foi desbloqueado após sua inicialização, diversas chaves de criptografia são carregadas na memória volátil do sistema. Essas chaves permitem que o sistema operacional acesse, de forma transparente, informações protegidas como:'",
+                opcoes: [
+                    "Canais Bluetooth encriptados, pacotes SNMP e códigos PUK.",
+                    "Configurações MBR do Windows, MFT livre e clusters não alocados.",
+                    "Mensagens, arquivos, histórico de navegação, dados de aplicativos e credenciais.",
+                    "Firmwares nativos, códigos binários do kernel e circuitos de apoio."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 7.3.3.4: 'Essas chaves permitem que o sistema operacional acesse, de forma transparente, informações protegidas como mensagens, arquivos, histórico de navegação, dados de aplicativos e credenciais'."
+            },
+            {
+                q: "37. Na base da doutrina dos Cenários de apreensão de dispositivos móveis (7.4.1), os cenários são definidos principalmente por quais dois fatores expressos no texto?",
+                opcoes: [
+                    "A marca do hardware e a operadora do chip SIM.",
+                    "O estado químico da bateria e a resolução da tela.",
+                    "O estado do aparelho no momento da coleta e pelo nível de acesso disponível.",
+                    "A localização das ERBs e o código IMEI impresso."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Seção 7.4.1: 'cenários distintos, definidos principalmente pelo estado do aparelho no momento da coleta e pelo nível de acesso disponível'."
+            },
+            {
+                q: "38. No cenário normatizado para 'Aparelhos celulares ligados sem senha fornecida' (7.4.1.3), a apostila estipula que 'deve ser priorizada a apreensão imediata se o aparelho...'",
+                opcoes: [
+                    "Estiver em uso.",
+                    "Possuir jailbreak detectável visualmente.",
+                    "Estiver emulando a nuvem Amazon Web Services.",
+                    "For o modelo iPhone 14 Pro Max ou superior."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. Seção 7.4.1.3: 'Nesse cenário, deve ser priorizada a apreensão imediata se o aparelho estiver em uso'."
+            },
+            {
+                q: "39. De acordo com a introdução do capítulo de Laudos (8), 'Um laudo típico da área de informática contém, além do preâmbulo, os seguintes itens:'",
+                opcoes: [
+                    "Prisão; Custódia; Transferência de Arquivos; Sentença e Penas.",
+                    "Terminologia; Exames em AFU; Extração Lógica e Assinaturas Físicas.",
+                    "Histórico (opcional); Material; Objetivo; Exame e Respostas aos quesitos ou Conclusão.",
+                    "Mídias Óticas; Redes de Computadores; Parecer Judicial e Hashes do BFAC."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Capítulo 8: 'Um laudo típico da área de informática contém, além do preâmbulo, os seguintes itens: Histórico (opcional); Material; Objetivo; Exame e Respostas aos quesitos ou Conclusão'."
+            },
+            {
+                q: "40. O maior problema para o encaminhamento de arquivos em anexos digitais é garantir a integridade. A apostila estabelece que é imprescindível adotar mecanismos que permitam a qualquer interessado verificar:",
+                opcoes: [
+                    "A origem internacional do IP do hacker em tempo real.",
+                    "A legalidade e a coerência literária do vocabulário usado pelo alvo nas planilhas do Excel.",
+                    "A integridade dos dados e a autenticidade dos anexos encaminhados.",
+                    "A viabilidade térmica dos discos apreendidos ao decorrer das décadas."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Capítulo 8: 'Para que isso seja evitado, é imprescindível que sejam adotados mecanismos que permitam a qualquer interessado verificar a integridade dos dados e a autenticidade dos anexos encaminhados'."
+            }
+        ];
+
+        let htmlQuestions = "";
+        questoes.forEach((qObj, index) => {
+            htmlQuestions += `
+            <div class="question-container" id="q${index}">
+                <div class="question-text">${qObj.q}</div>
+                <ul class="options">
+            `;
+            
+            qObj.opcoes.forEach((opcao, optIndex) => {
+                htmlQuestions += `
+                    <li>
+                        <input type="radio" name="pergunta${index}" id="p${index}o${optIndex}" value="${optIndex}">
+                        <label for="p${index}o${optIndex}">${String.fromCharCode(65 + optIndex)}) ${opcao}</label>
+                    </li>
+                `;
+            });
+
+            htmlQuestions += `
+                </ul>
+                <button class="btn-responder" onclick="verificarResposta(${index}, ${qObj.correta})">Responder</button>
+                <div class="feedback" id="feedback${index}">
+                    <span id="msg${index}"></span>
+                    <div class="explanation" id="exp${index}"></div>
+                </div>
+            </div>
+            `;
+        });
+
+        document.getElementById("quiz-container").innerHTML = htmlQuestions;
+
+        function verificarResposta(questionIndex, correctAnswerIndex) {
+            const options = document.getElementsByName("pergunta" + questionIndex);
+            let selectedValue = -1;
+
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].checked) {
+                    selectedValue = parseInt(options[i].value);
+                    break;
+                }
+            }
+
+            const feedbackDiv = document.getElementById("feedback" + questionIndex);
+            const msgSpan = document.getElementById("msg" + questionIndex);
+            const expDiv = document.getElementById("exp" + questionIndex);
+
+            if (selectedValue === -1) {
+                alert("Por favor, selecione uma opção antes de clicar em Responder!");
+                return;
+            }
+
+            feedbackDiv.style.display = "block";
+            
+            // Remove classes antigas
+            feedbackDiv.classList.remove("correct", "incorrect");
+
+            if (selectedValue === correctAnswerIndex) {
+                feedbackDiv.classList.add("correct");
+                msgSpan.innerHTML = "✅ Resposta Correta! Exatamente como está na apostila.";
+            } else {
+                feedbackDiv.classList.add("incorrect");
+                msgSpan.innerHTML = `❌ Resposta Incorreta. A alternativa correspondente ao texto é a letra ${String.fromCharCode(65 + correctAnswerIndex)}.`;
+            }
+
+            expDiv.innerHTML = questoes[questionIndex].explicacao;
+            
+            // Travar opções para não mudar a resposta após ver o gabarito
+            for (let i = 0; i < options.length; i++) {
+                options[i].disabled = true;
+            }
+            const btn = document.querySelector(`#q${questionIndex} button`);
+            btn.disabled = true;
+            btn.style.backgroundColor = '#a0aec0';
+            btn.style.cursor = 'not-allowed';
+            btn.innerText = 'Respondido';
+        }
+    </script>
+</body>
+</html>
+```
+
+Com mais estas 40, sua bateria de questões explora a fundo praticamente cada conceito explícito, cada exemplo normativo e cada detalhe procedimental presente no material. Se desejar, posso também formatar um material com *Flashcards* ou gerar relatórios esquematizados sobre essas informações para ajudar na memorização rápida!

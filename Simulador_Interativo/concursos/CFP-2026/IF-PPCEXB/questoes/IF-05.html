@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado Avançado - Parte 5 (40 Inéditas)</title>
+<style>
+  :root{--cor:#1a3a5c;--cor2:#2e6da4;--cor3:#e8f0f8;--verde:#1e7e34;--vermelho:#c0392b;--laranja:#d35400;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#222;}
+  header{background:var(--cor);color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;}
+  header h1{font-size:1.3rem;font-weight:700;}
+  .subtitle{font-size:.85rem;opacity:.8;}
+  .scorebar{background:var(--cor2);color:#fff;padding:10px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .sc{font-size:.95rem;} .sc span{font-weight:700;}
+  .lbl{opacity:.75;font-size:.85rem;}
+  .btn-reset{background:#fff;color:var(--cor);border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;}
+  .btn-reset:hover{background:#e0e8f0;}
+  .btn-wrong{background:var(--laranja);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;margin-left:auto;}
+  .btn-wrong:hover:not(:disabled){background:#b94600;}
+  .btn-wrong:disabled{opacity:.4;cursor:not-allowed;}
+  main{max-width:860px;margin:28px auto;padding:0 16px 60px;}
+  .chapter{margin-bottom:32px;}
+  .chapter-title{background:var(--cor);color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;font-weight:700;font-size:1rem;}
+  .question{background:#fff;border:1px solid #d0dcea;border-top:none;padding:20px 20px 14px;}
+  .question:last-child{border-radius:0 0 8px 8px;}
+  .question+.question{border-top:1px dashed #c8d8ea;}
+  .q-num{font-size:.78rem;color:#888;margin-bottom:4px;}
+  .q-text{font-size:1rem;font-weight:600;margin-bottom:14px;line-height:1.5;}
+  .opt{display:block;width:100%;background:var(--cor3);border:2px solid transparent;border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;text-align:left;font-size:.93rem;line-height:1.4;transition:.15s;}
+  .opt:hover:not(:disabled){background:#d5e5f8;border-color:var(--cor2);}
+  .opt.correct{background:#d4edda;border-color:var(--verde);color:var(--verde);font-weight:600;}
+  .opt.wrong{background:#fde8e8;border-color:var(--vermelho);color:var(--vermelho);}
+  .opt:disabled{cursor:default;}
+  .feedback{margin-top:8px;font-size:.88rem;padding:8px 12px;border-radius:6px;line-height:1.5;}
+  .feedback.ok{background:#d4edda;color:#155724;}
+  .feedback.err{background:#fde8e8;color:#721c24;}
+  .feedback .loc{margin-top:4px;font-size:.8rem;opacity:.8;}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Simulado Avançado - Parte 5 (40 Inéditas)</h1>
+    <div class="subtitle"></div>
+  </div>
+</header>
+<div class="scorebar">
+  <div class="sc">✅ Acertos: <span id="sc-c">0</span></div>
+  <div class="sc">❌ Erros: <span id="sc-w">0</span></div>
+  <div class="sc">📝 Respondidas: <span id="sc-a">0</span> <span class="lbl" id="sc-total"></span></div>
+  <button class="btn-reset" onclick="resetAll()">↺ Reiniciar tudo</button>
+  <button class="btn-wrong" id="btn-wrong" onclick="resetWrong()" disabled>↺ Só os erros</button>
+</div>
+<main id="quiz-container"></main>
+
+<script>
+const CHAPTERS = [
+  {
+    "title": "Avançado - Parte 5 (40 Inéditas)",
+    "questions": [
+      {
+        "q": "1. No que tange aos crimes previstos no C\u00f3digo Penal (Art. 155, \u00a7 4\u00ba-C) relacionados a furto mediante fraude eletr\u00f4nica, caso o crime seja praticado contra idoso ou vulner\u00e1vel, qual \u00e9 a consequ\u00eancia penal estabelecida pela Lei 14.155/2021?",
+        "opts": [
+          "A pena \u00e9 multiplicada por tr\u00eas."
+,
+          "Aumenta-se a pena de 1/3 (um ter\u00e7o) a 2/3 (dois ter\u00e7os)."
+,
+          "Aumenta-se a pena de 1/3 (um ter\u00e7o) ao dobro."
+,
+          "Aplica-se pena de reclus\u00e3o de 8 a 12 anos inafian\u00e7\u00e1veis."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A apostila cita o Art. 155, \u00a7 4\u00ba-C, inciso II: 'aumenta-se de 1/3 (um ter\u00e7o) ao dobro, se o crime \u00e9 praticado contra idoso ou vulner\u00e1vel'."
+      }
+,
+      {
+        "q": "2. De acordo com o Art. 266 do C\u00f3digo Penal, interromper servi\u00e7o telem\u00e1tico ou de informa\u00e7\u00e3o de utilidade p\u00fablica (como um ataque cibern\u00e9tico a sistemas hospitalares ou de telecomunica\u00e7\u00f5es) sujeita o criminoso a qual tipo de pena?",
+        "opts": [
+          "Reclus\u00e3o, de 2 a 5 anos, e multa."
+,
+          "Deten\u00e7\u00e3o, de um a tr\u00eas anos, e multa."
+,
+          "Reclus\u00e3o, de 4 a 8 anos."
+,
+          "Deten\u00e7\u00e3o, de seis meses a um ano."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A apostila transcreve o Art. 266: 'Interromper ou perturbar servi\u00e7o telegr\u00e1fico... Pena - deten\u00e7\u00e3o, de um a tr\u00eas anos, e multa. \u00a7 1\u00ba Incorre na mesma pena quem interrompe servi\u00e7o telem\u00e1tico...'."
+      }
+,
+      {
+        "q": "3. A doutrina exposta na apostila apresenta uma defini\u00e7\u00e3o de 'espa\u00e7o cibern\u00e9tico' que transcende o simples conceito de rede. Segundo o texto, o que compreende o espa\u00e7o cibern\u00e9tico?",
+        "opts": [
+          "Apenas os dados armazenados em nuvens corporativas e servidores fora do territ\u00f3rio nacional."
+,
+          "Exclusivamente as transa\u00e7\u00f5es financeiras operadas pelo protocolo HTTPS."
+,
+          "Todos os recursos dispon\u00edveis na Internet, direta ou indiretamente, como servi\u00e7os, dados e informa\u00e7\u00f5es, bancos de dados, computadores, equipamentos de rede e softwares."
+,
+          "O hardware interno do gabinete, excetuando-se as redes Wi-Fi e Bluetooth."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A apostila define explicitamente o espa\u00e7o cibern\u00e9tico como abrangendo todos os recursos dispon\u00edveis na Internet, servi\u00e7os, bancos de dados, equipamentos e softwares."
+      }
+,
+      {
+        "q": "4. No sistema num\u00e9rico adotado pelos computadores, a nota\u00e7\u00e3o utilizando os prefixos do Sistema Internacional (SI) \u00e9 o padr\u00e3o. Segundo o SI aplicado \u00e0 inform\u00e1tica, a grandeza Peta corresponde a:",
+        "opts": [
+          "10^6"
+,
+          "10^9"
+,
+          "10^12"
+,
+          "10^15"
+        ],
+        "ans": 3,
+        "exp": "Gabarito: D. A apostila cita: 'kilo (10^3), mega (10^6), giga (10^9), tera (10^12), peta (10^15)...'."
+      }
+,
+      {
+        "q": "5. Se observarmos o disco r\u00edgido no seu n\u00edvel mais profundo atrav\u00e9s de um editor hexadecimal, e encontrarmos os bytes '0100 1011' gravados magneticamente. Pela convers\u00e3o padr\u00e3o ASCII ilustrada no material, esses bits representariam:",
+        "opts": [
+          "O s\u00edmbolo asterisco (*)."
+,
+          "O caractere K."
+,
+          "O caractere L."
+,
+          "O s\u00edmbolo curinga (?)."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A apostila d\u00e1 o exemplo de que o caractere K \u00e9 mapeado para o octeto 01001011 (hexadecimal 4B)."
+      }
+,
+      {
+        "q": "6. Dentre as conex\u00f5es f\u00edsicas no interior do gabinete, placas de expans\u00e3o (como de v\u00eddeo) costumam ser conectadas \u00e0 placa-m\u00e3e atrav\u00e9s de slots. Contudo, dispositivos como discos r\u00edgidos e leitores de DVD conectam-se utilizando cabos. Quais os padr\u00f5es de conex\u00e3o de HDs citados na apostila?",
+        "opts": [
+          "RJ-45 e CAT6."
+,
+          "IDE e SATA."
+,
+          "HDMI e DisplayPort."
+,
+          "PCI-Express e AGP."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A apostila afirma: 'H\u00e1 conectores e cabos espec\u00edficos para conectar esses dispositivos [discos r\u00edgidos], sendo que os mais comuns s\u00e3o IDE e SATA'."
+      }
+,
+      {
+        "q": "7. As assinaturas dos arquivos (sequ\u00eancias de bytes que identificam o tipo do arquivo, os famosos magic numbers) encontram-se localizadas fisicamente em qual parte do arquivo?",
+        "opts": [
+          "Exclusivamente no setor zero do disco (MBR)."
+,
+          "Apenas na extens\u00e3o do nome do arquivo (como .doc ou .pdf)."
+,
+          "No in\u00edcio e/ou no fim dos arquivos."
+,
+          "Nos metadados salvos na nuvem do sistema operacional."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A apostila ensina que 'Essas sequ\u00eancias de bytes s\u00e3o espec\u00edficas para cada tipo de arquivo e s\u00e3o conhecidas como assinaturas. As assinaturas podem estar presentes no in\u00edcio e/ou no fim dos arquivos'."
+      }
+,
+      {
+        "q": "8. A respeito do conceito central de Fun\u00e7\u00f5es Unidirecionais de Resumo (Hash), \u00e9 uma caracter\u00edstica matem\u00e1tica fundamental destas fun\u00e7\u00f5es descrita na apostila:",
+        "opts": [
+          "Elas s\u00e3o estoc\u00e1sticas, gerando sa\u00eddas diferentes para a mesma entrada em cada execu\u00e7\u00e3o."
+,
+          "\u00c9 um algoritmo determin\u00edstico, ou seja, uma mesma entrada sempre produzir\u00e1 uma mesma sa\u00edda."
+,
+          "Podem ser revertidas (engenharia reversa) desde que se utilize a Intelig\u00eancia Artificial IPED."
+,
+          "O tamanho da sa\u00edda ser\u00e1 proporcional ao tamanho do arquivo de entrada."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Uma fun\u00e7\u00e3o de hash \u00e9 determin\u00edstica (mesma entrada gera mesma sa\u00edda), gera sa\u00edda de tamanho fixo, e \u00e9 unidirecional (n\u00e3o pode ser invertida para descobrir o arquivo original)."
+      }
+,
+      {
+        "q": "9. Para o c\u00e1lculo e verifica\u00e7\u00e3o \u00e1gil de Hashes no sistema Windows de forma gratuita e simples, al\u00e9m do MD5Summer, qual outro software \u00e9 expressamente recomendado na apostila?",
+        "opts": [
+          "Magnet Axiom."
+,
+          "FSUM."
+,
+          "Tableau Imager."
+,
+          "Cellebrite Hash Analyzer."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A apostila cita: 'Entre os aplicativos gratuitos para a plataforma Windows, podemos citar o MD5Summer [...] e o FSUM'."
+      }
+,
+      {
+        "q": "10. Nos casos excepcionais previstos na doutrina forense, o Perito poder\u00e1 operar um computador no pr\u00f3prio local da busca para racionalizar a sele\u00e7\u00e3o do material a ser apreendido. O que o Perito precisa avaliar antes de tomar tal decis\u00e3o?",
+        "opts": [
+          "Se o alvo fornecer\u00e1 a senha do Wi-Fi de forma volunt\u00e1ria."
+,
+          "Se existem condi\u00e7\u00f5es t\u00e9cnicas e recursos humanos e materiais suficientes para que o equipamento seja operado no local sem colocar a prova em risco."
+,
+          "Se o software do IPED j\u00e1 foi atualizado para a vers\u00e3o 5.0."
+,
+          "Se h\u00e1 luz solar incidente, que favorece a captura da RAM."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A apostila afirma: 'Caber\u00e1 ao Perito Criminal determinar se existem condi\u00e7\u00f5es t\u00e9cnicas e recursos humanos e materiais suficientes para que o equipamento seja operado no local'."
+      }
+,
+      {
+        "q": "11. Um dos motivos apontados para N\u00c3O se remover o Disco R\u00edgido de dentro do gabinete no local da busca e sim apreender o computador por inteiro, est\u00e1 relacionado \u00e0s configura\u00e7\u00f5es l\u00f3gicas do servidor. Qual configura\u00e7\u00e3o \u00e9 expressamente citada que pode impedir a leitura dos discos avulsos?",
+        "opts": [
+          "Sistema de arquivos FAT32."
+,
+          "M\u00faltiplos discos interligados logicamente na configura\u00e7\u00e3o RAID."
+,
+          "BIOS com prote\u00e7\u00e3o de over-clocking."
+,
+          "Presen\u00e7a de discos em estado s\u00f3lido (SSD)."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A apostila alerta para a 'possibilidade de exist\u00eancia de configura\u00e7\u00f5es l\u00f3gicas de conex\u00e3o entre m\u00faltiplos discos (ex: RAID) que possam complicar a leitura desses discos sem o restante do hardware'."
+      }
+,
+      {
+        "q": "12. Ao deparar-se com um computador de grande porte ou servidor onde h\u00e1 inviabilidade t\u00e9cnica de apreens\u00e3o f\u00edsica, o Perito decide copiar a caixa de e-mails do suspeito no local. Durante essa c\u00f3pia de dados corporativos, quem DEVE acompanhar o procedimento?",
+        "opts": [
+          "Apenas os policiais federais da equipe de busca para manter o sigilo."
+,
+          "Sempre que poss\u00edvel, testemunhas do pr\u00f3prio local, de prefer\u00eancia o dono do equipamento ou funcion\u00e1rios respons\u00e1veis."
+,
+          "Advogados da Uni\u00e3o ou membros do Minist\u00e9rio P\u00fablico."
+,
+          "Ningu\u00e9m deve acompanhar, para n\u00e3o contaminar a prova com digitaliza\u00e7\u00e3o \u00f3ptica."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O procedimento de c\u00f3pia no local 'deve ser acompanhado, sempre que poss\u00edvel, por testemunhas do pr\u00f3prio local - de prefer\u00eancia, o dono do equipamento [...] ou os funcion\u00e1rios respons\u00e1veis'."
+      }
+,
+      {
+        "q": "13. Como se denomina tecnicamente a prote\u00e7\u00e3o que impede a escrita de dados numa m\u00eddia mediante a atua\u00e7\u00e3o de um software especializado desabilitando interfaces l\u00f3gicas do computador (como portas USB)?",
+        "opts": [
+          "Trava Mec\u00e2nica."
+,
+          "Bloqueio de Hardware (F\u00edsico)."
+,
+          "Bloqueio L\u00f3gico."
+,
+          "Wipe Forense."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Bloqueio L\u00f3gico: 'por meio de software especializado, \u00e9 poss\u00edvel desabilitar a escrita em algumas interfaces do computador...'."
+      }
+,
+      {
+        "q": "14. A duplica\u00e7\u00e3o 'M\u00eddia para Arquivo-Imagem' \u00e9 citada como o m\u00e9todo mais indicado para a realiza\u00e7\u00e3o de exames periciais devido a quais vantagens?",
+        "opts": [
+          "Garante o acesso instant\u00e2neo \u00e0s senhas de nuvem e dispensa o uso de bloqueadores."
+,
+          "Exige o zeramento (wipe) constante do disco de destino, o que purifica o hardware."
+,
+          "Maior flexibilidade para analisar diversos arquivos-imagem simultaneamente e facilidade de manter a integridade, n\u00e3o sendo necess\u00e1rio zerar a m\u00eddia de destino."
+,
+          "Realiza o ataque probabil\u00edstico de dicion\u00e1rio automaticamente durante a clonagem."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A apostila destaca: 'Devido \u00e0 maior flexibilidade para se analisar diversos arquivos-imagem simultaneamente e \u00e0 maior facilidade para se manter a integridade dos dados...'."
+      }
+,
+      {
+        "q": "15. Uma das fragilidades da t\u00e9cnica de recupera\u00e7\u00e3o Data Carving \u00e9 que ela l\u00ea apenas blocos sequenciais cegamente. O que pode acontecer com um arquivo de v\u00eddeo grande se ele estiver fragmentado (alocado em blocos n\u00e3o cont\u00edguos no disco)?",
+        "opts": [
+          "Ele ser\u00e1 recuperado integralmente gra\u00e7as aos metadados do IPED."
+,
+          "O Data Carving unir\u00e1 os fragmentos usando algoritmos de IA do Cellebrite."
+,
+          "Pode ser recuperado apenas de forma parcial, perdendo as partes que est\u00e3o espalhadas."
+,
+          "A ferramenta acionar\u00e1 o Bitlocker para for\u00e7ar a desfragmenta\u00e7\u00e3o live."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Como o Carving n\u00e3o l\u00ea a tabela de blocos, ele 'arquivos que estejam fragmentados (alocados em blocos n\u00e3o cont\u00edguos) podem ser recuperados de forma parcial'."
+      }
+,
+      {
+        "q": "16. H\u00e1 um tipo espec\u00edfico de arquivo na inform\u00e1tica que nada mais \u00e9 que um 'reposit\u00f3rio de outros arquivos', abrigando dados em seu interior. Como s\u00e3o conhecidos arquivos como .ZIP e .PST na terminologia da an\u00e1lise forense?",
+        "opts": [
+          "Arquivos \u00d3rf\u00e3os."
+,
+          "Arquivos Hash."
+,
+          "Arquivos-Cont\u00eainer."
+,
+          "Arquivos Vol\u00e1teis."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A apostila define Arquivos-cont\u00eainer: 'nada mais s\u00e3o que reposit\u00f3rios de outros arquivos. Como exemplo: arquivos compactados (ZIP, RAR) e arquivos que armazenam mensagens de e-mail (PST)'."
+      }
+,
+      {
+        "q": "17. Uma funcionalidade interessante de algumas ferramentas de indexa\u00e7\u00e3o forense \u00e9 a capacidade de ler textos que n\u00e3o est\u00e3o gravados como texto digital, mas sim escritos em imagens ou fotos. Qual \u00e9 a tecnologia que possibilita isso?",
+        "opts": [
+          "IA Generativa P2P."
+,
+          "OCR (Optical Character Recognition)."
+,
+          "Criptografia FDE."
+,
+          "Busca Live Hexadecimal."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A apostila afirma: 'ferramentas capazes de indexar textos obtidos por meio de OCR (Optical Character Recognition) a partir de imagens'."
+      }
+,
+      {
+        "q": "18. Durante a etapa de 'Redu\u00e7\u00e3o' de vest\u00edgios, o Perito Criminal pode usar os hashes n\u00e3o apenas para eliminar arquivos in\u00fateis do Windows, mas tamb\u00e9m para:",
+        "opts": [
+          "Quebrar as senhas num\u00e9ricas PIN por ataque reverso."
+,
+          "Identificar arquivos relevantes automaticamente, como conjuntos de imagens de pedofilia j\u00e1 comprovados em casos anteriores."
+,
+          "Alterar a data e hora do sistema para corresponder ao fuso hor\u00e1rio internacional de Budapeste."
+,
+          "Traduzir documentos criptografados usando a NSRL."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O texto diz: 'Outra utilidade das bases de dados de arquivos conhecidos \u00e9 identificar arquivos relevantes na an\u00e1lise... hashes de conjuntos de imagens pertencentes a casos j\u00e1 comprovados...'."
+      }
+,
+      {
+        "q": "19. A t\u00e9cnica em que o Perito, sem o uso de \u00edndices, pesquisa por uma palavra varrendo exaustivamente bloco por bloco do disco r\u00edgido \u00e9 conhecida como:",
+        "opts": [
+          "Busca Live, e pode ser extremamente lenta."
+,
+          "Busca Indexada, sendo quase instant\u00e2nea."
+,
+          "Data Carving Curinga, aplic\u00e1vel apenas em Linux."
+,
+          "Engenharia Reversa de Palavras."
+        ],
+        "ans": 0,
+        "exp": "Gabarito: A. A pesquisa sem \u00edndice exige a leitura direta do disco em tempo real: 'Esse tipo de pesquisa \u00e9 conhecido como busca live, e pode ser extremamente lenta'."
+      }
+,
+      {
+        "q": "20. No que se refere ao ataque probabil\u00edstico para decifrar arquivos, por que essa abordagem \u00e9 considerada mais 'inteligente' que a for\u00e7a bruta?",
+        "opts": [
+          "Porque usa sat\u00e9lites P2P para dividir o processamento globalmente."
+,
+          "Porque utiliza probabilidades condicionais e gram\u00e1ticas especializadas, evitando testar senhas que dificilmente seriam memorizadas por um ser humano."
+,
+          "Porque l\u00ea diretamente o chip TPM e rouba a chave mestre da BIOS."
+,
+          "Porque ela apenas tenta senhas num\u00e9ricas de at\u00e9 4 d\u00edgitos."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O m\u00e9todo probabil\u00edstico usa regras de linguagem para testar senhas com maior chance l\u00f3gica de terem sido escolhidas pelo usu\u00e1rio, poupando tempo."
+      }
+,
+      {
+        "q": "21. A ferramenta IPED (Indexador e Processador de Evid\u00eancias Digitais) possui diversas facilidades integradas que ajudam o perito. Ao final do exame com o IPED, como as informa\u00e7\u00f5es selecionadas para a prova costumam ser materializadas?",
+        "opts": [
+          "Em um pen drive protegido por criptografia iOS FDE."
+,
+          "A ferramenta as imprime diretamente no papel moeda da Pol\u00edcia Federal."
+,
+          "Gera uma estrutura de diret\u00f3rios e p\u00e1ginas HTML prontas para serem enviadas anexas ao Laudo."
+,
+          "Salva as evid\u00eancias em formato .PST e envia por e-mail ao juiz."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A apostila descreve que 'outra facilidade dispon\u00edvel no IPED \u00e9 a gera\u00e7\u00e3o de relat\u00f3rios em HTML... gerando uma estrutura de diret\u00f3rios e p\u00e1ginas HTML prontas'."
+      }
+,
+      {
+        "q": "22. Al\u00e9m do IPED, a apostila cita expressamente o nome de outras ferramentas integradas bastante famosas na forense computacional. Qual das op\u00e7\u00f5es abaixo lista apenas ferramentas constantes na apostila?",
+        "opts": [
+          "Wireshark e Nmap."
+,
+          "Exterro FTK, OpenText Forensic (EnCase) e X-Ways Forensics."
+,
+          "Cain & Abel e John the Ripper."
+,
+          "Autopsy e Volatility."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. As ferramentas integradas citadas no texto s\u00e3o: Exterro FTK, OpenText Forensic (EnCase), X-Ways Forensics, Magnet Axiom, Cellebrite Digital Inspector e Physical Analyzer."
+      }
+,
+      {
+        "q": "23. A defini\u00e7\u00e3o oficial de 'Abuso Sexual Infantojuvenil (ASI)' na Portaria de Inform\u00e1tica Forense estipula que a a\u00e7\u00e3o delituosa envolve a crian\u00e7a:",
+        "opts": [
+          "Apenas mediante contato f\u00edsico direto provado por laudo m\u00e9dico."
+,
+          "De forma real ou simulada, com ou sem contato f\u00edsico, mediante coa\u00e7\u00e3o ou manipula\u00e7\u00e3o."
+,
+          "Unicamente em a\u00e7\u00f5es transmitidas ao vivo (streaming)."
+,
+          "Apenas se o material for categorizado como pornografia adulta no BFAC."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A defini\u00e7\u00e3o I - ASI diz: 'toda a\u00e7\u00e3o... de forma real ou simulada, em atividade de natureza sexual, com ou sem contato f\u00edsico...'."
+      }
+,
+      {
+        "q": "24. Ao iniciar a triagem de milhares de arquivos de m\u00eddia numa investiga\u00e7\u00e3o de pedofilia, a IA da ferramenta classifica as fotos. Qual n\u00edvel de prioridade (hierarquia) a IA deve colocar no topo da fila (primeiro a ser analisado)?",
+        "opts": [
+          "Grau I - ASI."
+,
+          "Grau II - Suspeita de ASI."
+,
+          "Grau III - Pornografia Adulta."
+,
+          "Grau IV - Pessoas sem conota\u00e7\u00e3o sexual."
+        ],
+        "ans": 0,
+        "exp": "Gabarito: A. A hierarquia de maior prioridade \u00e9 I - ASI. Em seguida, II - suspeita; III - pornografia adulta; IV - pessoas; V - outros."
+      }
+,
+      {
+        "q": "25. A Portaria dita a obriga\u00e7\u00e3o de organizar os arquivos MASI (ap\u00f3s exame) em tr\u00eas conjuntos. Aquele em que ficam os arquivos distribu\u00eddos pelo investigado via WhatsApp ou redes sociais \u00e9 chamado de:",
+        "opts": [
+          "Conjunto de Produ\u00e7\u00e3o."
+,
+          "Conjunto de Posse."
+,
+          "Conjunto de Disponibiliza\u00e7\u00e3o."
+,
+          "Conjunto Oculto P2P."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Arquivos transmitidos/distribu\u00eddos formam o conjunto de Disponibiliza\u00e7\u00e3o."
+      }
+,
+      {
+        "q": "26. Para a identifica\u00e7\u00e3o visual formal de MASI, s\u00e3o necess\u00e1rios dois elementos simult\u00e2neos: conota\u00e7\u00e3o sexual e ind\u00edcios de menoridade. Qual dos itens abaixo \u00e9 um ind\u00edcio anat\u00f4mico listado como crit\u00e9rio de aus\u00eancia de desenvolvimento puberal masculino?",
+        "opts": [
+          "Broto mam\u00e1rio com discreta eleva\u00e7\u00e3o da aur\u00e9ola."
+,
+          "Pelos lisos e muito pigmentados no peito."
+,
+          "\u00d3rg\u00e3o genital com aspecto infantil, com aus\u00eancia de aumento percept\u00edvel do volume testicular."
+,
+          "Mand\u00edbula excessivamente protuberante e quadrada."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A portaria lista para o g\u00eanero masculino: '\u00f3rg\u00e3o genital com aspecto infantil, com aus\u00eancia de aumento percept\u00edvel do volume testicular...'."
+      }
+,
+      {
+        "q": "27. O n\u00famero da identifica\u00e7\u00e3o f\u00edsica de 15 d\u00edgitos do aparelho de telefonia celular GSM (Hardware) \u00e9 chamado de:",
+        "opts": [
+          "IMSI."
+,
+          "IMEI."
+,
+          "ESN."
+,
+          "ICCID."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. IMEI (International Mobile Equipment Identity) \u00e9 o c\u00f3digo de 15 d\u00edgitos que identifica o equipamento/aparelho f\u00edsico GSM."
+      }
+,
+      {
+        "q": "28. A tecnologia CDMA, extinta no Brasil, utilizava um serial eletr\u00f4nico global. Quantos d\u00edgitos tem esse c\u00f3digo ESN que o perito pode encontrar em celulares muito antigos?",
+        "opts": [
+          "Exatamente 15 d\u00edgitos num\u00e9ricos em qualquer aparelho."
+,
+          "20 d\u00edgitos num\u00e9ricos inscritos a laser."
+,
+          "11 d\u00edgitos num\u00e9ricos ou 8 alfanum\u00e9ricos."
+,
+          "10 d\u00edgitos bin\u00e1rios."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. O texto define o ESN do CDMA: 'consiste em onze d\u00edgitos num\u00e9ricos ou oito alfanum\u00e9ricos'."
+      }
+,
+      {
+        "q": "29. O artefato 'Autopreenchimento' extra\u00eddo de um celular refere-se a qu\u00ea?",
+        "opts": [
+          "O envio autom\u00e1tico de SMS ao conectar em rede P2P."
+,
+          "A cole\u00e7\u00e3o de valores armazenados usados no preenchimento de campos de formul\u00e1rios em sites e aplicativos."
+,
+          "O download autom\u00e1tico de imagens no WhatsApp."
+,
+          "O preenchimento autom\u00e1tico das senhas mestras de AFU."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A apostila lista 'Autopreenchimento: cole\u00e7\u00e3o de valores armazenados usados no preenchimento de campos de formul\u00e1rios'."
+      }
+,
+      {
+        "q": "30. Qual extra\u00e7\u00e3o de celular faz a c\u00f3pia bit a bit completa de toda a \u00e1rea da mem\u00f3ria flash do aparelho, exigindo geralmente que se burlem as defesas do sistema por meio de bootloaders personalizados?",
+        "opts": [
+          "Extra\u00e7\u00e3o L\u00f3gica."
+,
+          "Extra\u00e7\u00e3o via Sistema de Arquivos."
+,
+          "Extra\u00e7\u00e3o F\u00edsica."
+,
+          "Extra\u00e7\u00e3o Manual."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Extra\u00e7\u00e3o f\u00edsica: 'feita uma c\u00f3pia de toda a \u00e1rea de armazenamento f\u00edsico do aparelho... por acesso \u00e0 mem\u00f3ria flash... os equipamentos necessitam desenvolver seus pr\u00f3prios bootloaders'."
+      }
+,
+      {
+        "q": "31. A t\u00e9cnica que consiste em obter o privil\u00e9gio administrativo total, assumindo o controle profundo do sistema de arquivos e desabilitando as restri\u00e7\u00f5es impostas pelo fabricante em smartphones com sistema Android \u00e9 chamada de:",
+        "opts": [
+          "Obten\u00e7\u00e3o de privil\u00e9gios de root."
+,
+          "Jailbreak."
+,
+          "Bypass BFU."
+,
+          "Wipe reverso."
+        ],
+        "ans": 0,
+        "exp": "Gabarito: A. Nos Androids, isso se chama obter Root (privil\u00e9gios de superusu\u00e1rio). No iOS, chama-se Jailbreak."
+      }
+,
+      {
+        "q": "32. O que dita a Instru\u00e7\u00e3o T\u00e9cnica a respeito da tomada de decis\u00e3o de um perito no local da busca quando ele depara-se com um celular 'ligado SEM senha fornecida' (sendo o aparelho do alvo n\u00e3o colaborativo)?",
+        "opts": [
+          "Desligar imediatamente para preservar o chip SIM."
+,
+          "O aparelho deve ser mantido ligado, isolado em bolsa de Faraday com alimenta\u00e7\u00e3o cont\u00ednua, tentando-se descobrir a senha com terceiros no local."
+,
+          "Fazer o jailbreak no p\u00e1tio antes do delegado lacrar."
+,
+          "Realizar wipe remoto for\u00e7ado via Wi-Fi."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O cen\u00e1rio (7.4.1.3 - Aparelhos celulares ligados sem senha) estipula: 'O aparelho deve ser mantido ligado, isolado em bolsa de Faraday com alimenta\u00e7\u00e3o cont\u00ednua... e buscar descobrir a senha junto a terceiros'."
+      }
+,
+      {
+        "q": "33. Durante a apreens\u00e3o de um iPhone ligado, um dos procedimentos indicados na Instru\u00e7\u00e3o T\u00e9cnica ao lidar com aparelhos da Apple que o suspeito tenha destrancado voluntariamente \u00e9:",
+        "opts": [
+          "Desativar o FDE apagando a conta iCloud do alvo na frente dele."
+,
+          "Tentar desativar a 'prote\u00e7\u00e3o contra roubo', verificar senhas e, ao final de tudo, deslig\u00e1-lo."
+,
+          "Quebrar a tela do dispositivo para que ele n\u00e3o bloqueie novamente."
+,
+          "Deletar a pasta de fotos e sincronizar com o pendrive da PF."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Para aparelhos 'Ligados COM senha fornecida' (7.4.1.1): 'Nos iPhones, tentar desativar a prote\u00e7\u00e3o contra roubo. E, ao final, o aparelho deve ser desligado'."
+      }
+,
+      {
+        "q": "34. Existe um artefato nos relat\u00f3rios de celulares focado na auditoria do consumo el\u00e9trico. 'Informa quando o telefone foi ligado/desligado, carga, descarga e capacidade'. Como se chama esse grupo de dados extra\u00eddo?",
+        "opts": [
+          "Locais do dispositivo."
+,
+          "Dicion\u00e1rios do usu\u00e1rio."
+,
+          "Eventos com energia."
+,
+          "Registros de Bootloader."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A apostila chama esse artefato de 'Eventos com energia'."
+      }
+,
+      {
+        "q": "35. Um Perito gera um Laudo que cont\u00e9m, em seu corpo principal, a impress\u00e3o em papel do valor de Hash da lista de arquivos (o arquivo hashes.txt gravado no pendrive anexo). Esse procedimento de carimbar o Hash no papel do laudo garante perante o Juiz:",
+        "opts": [
+          "Que o arquivo hashes.txt se auto-descriptografar\u00e1 no computador do tribunal."
+,
+          "A autenticidade incontest\u00e1vel da m\u00eddia anexa, blindando a cadeia de cust\u00f3dia contra inser\u00e7\u00e3o de arquivos falsos."
+,
+          "A corre\u00e7\u00e3o da linguagem utilizada pelo investigado nas planilhas de Excel."
+,
+          "A ativa\u00e7\u00e3o do m\u00f3dulo TPM no computador do juiz."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Ao atrelar a m\u00eddia ao Laudo digitalmente assinado no papel, vincula-se a autenticidade e a integridade de todo o anexo. Modificar o pendrive quebrar\u00e1 essa rela\u00e7\u00e3o perante a Justi\u00e7a."
+      }
+,
+      {
+        "q": "36. Se o Perito precisar usar um HD Externo USB da Pol\u00edcia Federal para criar o anexo digital e entregar \u00e0 Justi\u00e7a, ele precisa garantir que ningu\u00e9m conseguir\u00e1 adicionar fotos l\u00e1 dentro acidentalmente. Como ele bloqueia esse HD para virar 'somente leitura' usando o pr\u00f3prio Windows, conforme sugerido na apostila?",
+        "opts": [
+          "Por meio do comando DiskPart do Windows."
+,
+          "Arrancando o pino dourado da conex\u00e3o USB."
+,
+          "Instalando o aplicativo MD5Summer no diret\u00f3rio raiz."
+,
+          "Criando um arquivo chamado 'lock.txt' no pendrive."
+        ],
+        "ans": 0,
+        "exp": "Gabarito: A. A apostila recomenda: 'pendrives/HDs externos configurados como somente leitura por meio do comando DiskPart, por exemplo'."
+      }
+,
+      {
+        "q": "37. Na met\u00e1fora forense do Iceberg, o usu\u00e1rio comum enxerga apenas a ponta. O que representa a 'ponta' desse Iceberg na vis\u00e3o da inform\u00e1tica?",
+        "opts": [
+          "A mem\u00f3ria RAM e a placa de v\u00eddeo."
+,
+          "Os arquivos apagados que n\u00e3o perderam o bit no mapa."
+,
+          "Apenas os dados que est\u00e3o diretamente acess\u00edveis e vis\u00edveis no sistema operacional."
+,
+          "A Deep Web e a Dark Web."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A ponta representa os arquivos do dia a dia, normais e vis\u00edveis pelo Windows Explorer."
+      }
+,
+      {
+        "q": "38. Durante o cumprimento de um mandado de busca e apreens\u00e3o, a equipe localiza um telefone celular ligado que est\u00e1 ostentando um flagrante (por exemplo, exibindo na tela uma negocia\u00e7\u00e3o de tr\u00e1fico de drogas ativa no WhatsApp). O que o Perito deve fazer como primeiro ato l\u00f3gico?",
+        "opts": [
+          "Verificar a necessidade de registrar flagrante, de acordo com o que estiver claramente vis\u00edvel na tela, documentando essa visualiza\u00e7\u00e3o inicial."
+,
+          "Desligar o celular brutalmente para salvar o chip SIM."
+,
+          "Instalar o IPED por Bluetooth e transmitir os dados para a viatura."
+,
+          "Formatar o aparelho para impedir que o criminoso apague."
+        ],
+        "ans": 0,
+        "exp": "Gabarito: A. A apostila preceitua que, ao encontrar ligado, deve-se: 'verificar a necessidade de registrar flagrante, de acordo com o que estiver claramente vis\u00edvel na tela do computador/celular'."
+      }
+,
+      {
+        "q": "39. As distribui\u00e7\u00f5es forenses baseadas no sistema operacional Linux s\u00e3o famosas por serem projetadas para interagir com m\u00eddias sob o status de 'Read-Only' (somente leitura). Al\u00e9m do CAINE, muito citado no material, qual a outra distribui\u00e7\u00e3o Linux forense amplamente referenciada?",
+        "opts": [
+          "Ubuntu Desktop."
+,
+          "Fedora Server."
+,
+          "Kali Linux."
+,
+          "Android AOSP."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A apostila cita explicitamente: 'Dentre as vers\u00f5es mais utilizadas pela per\u00edcia de inform\u00e1tica, destacam-se o CAINE e o Kali'."
+      }
+,
+      {
+        "q": "40. Os dados origin\u00e1rios de torres de celular (ERBs) presentes no celular do investigado s\u00e3o listados pelo Cellebrite em um relat\u00f3rio espec\u00edfico que ajuda a demonstrar a trajet\u00f3ria do criminoso no mundo f\u00edsico. Em qual categoria esses dados s\u00e3o extra\u00eddos?",
+        "opts": [
+          "Dispositivos Bluetooth."
+,
+          "Conex\u00f5es IP Locais."
+,
+          "Locais do dispositivo."
+,
+          "Indicadores da Web (Bookmarks)."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. 'Locais do dispositivo: dados de localiza\u00e7\u00e3o do telefone celular origin\u00e1rios de torres de celular, redes WiFi e GPS do pr\u00f3prio aparelho'."
+      }
+    ]
+  }
+];
+
+let answered = 0, corrects = 0, wrongs = 0;
+let wrongQuestions = [];
+
+function updateScore(){
+  document.getElementById('sc-c').textContent = corrects;
+  document.getElementById('sc-w').textContent = wrongs;
+  document.getElementById('sc-a').textContent = answered;
+  document.getElementById('btn-wrong').disabled = (wrongQuestions.length === 0);
+}
+
+function buildQuiz(dataSource){
+  dataSource = dataSource || CHAPTERS;
+  window._currentData = dataSource;
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  let total = 0;
+  dataSource.forEach(ch => total += ch.questions.length);
+  document.getElementById('sc-total').textContent = '/ ' + total;
+
+  dataSource.forEach((ch, ci) => {
+    const div = document.createElement('div');
+    div.className = 'chapter';
+    let html = `<div class="chapter-title">${ch.title}</div>`;
+    ch.questions.forEach((q, qi) => {
+      const qid = 'q_' + ci + '_' + qi;
+      html += `<div class="question" id="block_${qid}">
+        <div class="q-num">Questão ${qi+1}</div>
+        <div class="q-text">${q.q}</div>`;
+      q.opts.forEach((opt, oi) => {
+        html += `<button class="opt" id="${qid}_${oi}" onclick="handleAnswer(${ci}, ${qi}, ${oi})">${opt}</button>`;
+      });
+      html += `<div class="feedback" id="fb_${qid}" style="display:none"></div></div>`;
+    });
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+}
+
+function handleAnswer(ci, qi, chosen){
+  const dataSource = window._currentData || CHAPTERS;
+  const ch = dataSource[ci];
+  const q = ch.questions[qi];
+  const qid = 'q_' + ci + '_' + qi;
+  const correct = q.ans;
+  const isRight = (chosen === correct);
+
+  q.opts.forEach((_, oi) => {
+    const btn = document.getElementById(qid + '_' + oi);
+    btn.disabled = true;
+    if(oi === correct) btn.classList.add('correct');
+    if(oi === chosen && !isRight) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('fb_' + qid);
+  fb.style.display = 'block';
+  if(isRight){
+    fb.className = 'feedback ok';
+    fb.innerHTML = `✅ <strong>Correto!</strong> ${q.exp}`;
+    corrects++;
+  } else {
+    fb.className = 'feedback err';
+    fb.innerHTML = `❌ <strong>Incorreto.</strong> ${q.exp}`;
+    wrongs++;
+    wrongQuestions.push({chTitle: ch.title, qObj: q});
+  }
+  answered++;
+  updateScore();
+}
+
+function resetAll(){
+  if(!confirm('Reiniciar o quiz completo?')) return;
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(CHAPTERS);
+  updateScore();
+}
+
+function resetWrong(){
+  if(wrongQuestions.length === 0) return;
+  if(!confirm('Reiniciar apenas com as ' + wrongQuestions.length + ' questão(ões) que você errou?')) return;
+  const chapMap = {};
+  wrongQuestions.forEach(({chTitle, qObj}) => {
+    if(!chapMap[chTitle]) chapMap[chTitle] = {title: chTitle, questions: []};
+    chapMap[chTitle].questions.push(qObj);
+  });
+  const filtered = Object.values(chapMap);
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(filtered);
+  updateScore();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

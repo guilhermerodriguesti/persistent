@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado: Tópicos 7 a 10</title>
+<style>
+  :root{--cor:#1a3a5c;--cor2:#2e6da4;--cor3:#e8f0f8;--verde:#1e7e34;--vermelho:#c0392b;--laranja:#d35400;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#222;}
+  header{background:var(--cor);color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;}
+  header h1{font-size:1.3rem;font-weight:700;}
+  .subtitle{font-size:.85rem;opacity:.8;}
+  .scorebar{background:var(--cor2);color:#fff;padding:10px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .sc{font-size:.95rem;} .sc span{font-weight:700;}
+  .lbl{opacity:.75;font-size:.85rem;}
+  .btn-reset{background:#fff;color:var(--cor);border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;}
+  .btn-reset:hover{background:#e0e8f0;}
+  .btn-wrong{background:var(--laranja);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;margin-left:auto;}
+  .btn-wrong:hover:not(:disabled){background:#b94600;}
+  .btn-wrong:disabled{opacity:.4;cursor:not-allowed;}
+  main{max-width:860px;margin:28px auto;padding:0 16px 60px;}
+  .chapter{margin-bottom:32px;}
+  .chapter-title{background:var(--cor);color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;font-weight:700;font-size:1rem;}
+  .question{background:#fff;border:1px solid #d0dcea;border-top:none;padding:20px 20px 14px;}
+  .question:last-child{border-radius:0 0 8px 8px;}
+  .question+.question{border-top:1px dashed #c8d8ea;}
+  .q-num{font-size:.78rem;color:#888;margin-bottom:4px;}
+  .q-text{font-size:1rem;font-weight:600;margin-bottom:14px;line-height:1.5;}
+  .opt{display:block;width:100%;background:var(--cor3);border:2px solid transparent;border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;text-align:left;font-size:.93rem;line-height:1.4;transition:.15s;}
+  .opt:hover:not(:disabled){background:#d5e5f8;border-color:var(--cor2);}
+  .opt.correct{background:#d4edda;border-color:var(--verde);color:var(--verde);font-weight:600;}
+  .opt.wrong{background:#fde8e8;border-color:var(--vermelho);color:var(--vermelho);}
+  .opt:disabled{cursor:default;}
+  .feedback{margin-top:8px;font-size:.88rem;padding:8px 12px;border-radius:6px;line-height:1.5;}
+  .feedback.ok{background:#d4edda;color:#155724;}
+  .feedback.err{background:#fde8e8;color:#721c24;}
+  .feedback .loc{margin-top:4px;font-size:.8rem;opacity:.8;}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Simulado: Tópicos 7 a 10</h1>
+    <div class="subtitle">Inspeções, Ameaça de Bomba, Reação e Perícia de Local (30 Questões Inéditas)</div>
+  </div>
+</header>
+<div class="scorebar">
+  <div class="sc">✅ Acertos: <span id="sc-c">0</span></div>
+  <div class="sc">❌ Erros: <span id="sc-w">0</span></div>
+  <div class="sc">📝 Respondidas: <span id="sc-a">0</span> <span class="lbl" id="sc-total"></span></div>
+  <button class="btn-reset" onclick="resetAll()">↺ Reiniciar tudo</button>
+  <button class="btn-wrong" id="btn-wrong" onclick="resetWrong()" disabled>↺ Só os erros</button>
+</div>
+<main id="quiz-container"></main>
+
+<script>
+const CHAPTERS = [
+  {
+    "title": "Tópicos 7 a 10",
+    "questions": [
+      {
+        "q": "1. Segundo o T\u00f3pico 7 (Inspe\u00e7\u00f5es de Seguran\u00e7a), as solicita\u00e7\u00f5es de varredura podem originar-se de diferentes motivos. Qual motiva\u00e7\u00e3o se aplica quando h\u00e1 not\u00edcia da presen\u00e7a de elementos estranhos buscando apropriar-se de dados sens\u00edveis da institui\u00e7\u00e3o?",
+        "opts": [
+          "Visita."
+,
+          "Vazamento de informa\u00e7\u00f5es ou infiltra\u00e7\u00f5es."
+,
+          "Rotina."
+,
+          "Instala\u00e7\u00e3o."
+        ],
+        "ans": 1,
+        "exp": " O 'vazamento de informa\u00e7\u00f5es ou infiltra\u00e7\u00f5es' \u00e9 um dos motivos que originam a varredura, acionado quando se tem not\u00edcia de vazamento devido \u00e0 presen\u00e7a de elementos infiltrados."
+      }
+,
+      {
+        "q": "2. Na avalia\u00e7\u00e3o do ambiente durante uma varredura, o t\u00e9cnico deve distinguir perigos naturais de intencionais. De acordo com a apostila, \u00e9 considerado um exemplo claro de 'perigo intencional':",
+        "opts": [
+          "Lustres mal presos no teto."
+,
+          "Dobras nos tapetes em escadarias."
+,
+          "Pisos excessivamente encerados."
+,
+          "Modifica\u00e7\u00f5es feitas recentemente no ambiente, como extintores, lixeiras e telefones embutidos."
+        ],
+        "ans": 3,
+        "exp": " S\u00e3o perigos naturais: lustres mal presos, piso encerado e dobras em tapetes. Perigos intencionais s\u00e3o modifica\u00e7\u00f5es recentes no ambiente (caixas de inc\u00eandio, extintores, arranjos de flores, equipamentos de escuta, etc)."
+      }
+,
+      {
+        "q": "3. Na varredura preventiva de trajetos e locais abertos por onde passar\u00e1 uma autoridade, qual \u00e9 a principal raz\u00e3o apontada para a rigorosa vistoria das laterais das pistas?",
+        "opts": [
+          "Para evitar a ocorr\u00eancia de derrapagens dos carros oficiais."
+,
+          "Para impedir que manifestantes bloqueiem o trajeto com faixas."
+,
+          "Porque s\u00e3o os locais preferidos para atua\u00e7\u00e3o de franco-atiradores."
+,
+          "Porque \u00e9 onde os explosivos subterr\u00e2neos causam mais danos s\u00edsmicos."
+        ],
+        "ans": 2,
+        "exp": " A apostila alerta que, nos locais abertos, devem ser verificadas as laterais das pistas, justificando que estas s\u00e3o 'preferidas por franco-atiradores'."
+      }
+,
+      {
+        "q": "4. A l\u00f3gica criminal na escolha de um local para coloca\u00e7\u00e3o de uma bomba baseia-se em tr\u00eas aspectos principais. Quais s\u00e3o eles?",
+        "opts": [
+          "Luz solar abundante, presen\u00e7a de c\u00e2meras para documentar o ato e proximidade de rios."
+,
+          "Facilidade de acesso/oculta\u00e7\u00e3o, menor chance de ser visto e chance de causar o maior dano poss\u00edvel."
+,
+          "Impossibilidade de acesso, isolamento t\u00e9rmico e destrui\u00e7\u00e3o exclusiva de monumentos."
+,
+          "Proximidade de torres de celular, ventila\u00e7\u00e3o cruzada e material b\u00e9lico dispon\u00edvel."
+        ],
+        "ans": 1,
+        "exp": " A escolha do local leva em conta: 1) facilidade de acesso e oculta\u00e7\u00e3o do artefato; 2) menor possibilidade de que o indiv\u00edduo seja visto; 3) chance de causar o maior dano poss\u00edvel."
+      }
+,
+      {
+        "q": "5. A maioria das den\u00fancias de amea\u00e7as de bomba atinge exatamente os seus objetivos prim\u00e1rios, mesmo que nenhum artefato real exista. Qual \u00e9 o objetivo prim\u00e1rio rotineiro dessas amea\u00e7as falsas?",
+        "opts": [
+          "Provar a efici\u00eancia do esquadr\u00e3o antibombas da pol\u00edcia."
+,
+          "Testar a velocidade de fuga dos moradores locais."
+,
+          "Causar tumulto, gerar p\u00e2nico na \u00e1rea e provocar o adiamento ou cancelamento de eventos."
+,
+          "Desvalorizar os im\u00f3veis da regi\u00e3o comercial atingida."
+        ],
+        "ans": 2,
+        "exp": " Na maioria dos casos, as den\u00fancias atingem seu objetivo, que \u00e9 apenas o de causar tumulto e gerar p\u00e2nico na \u00e1rea envolvida, provocando o adiamento ou at\u00e9 o cancelamento de eventos."
+      }
+,
+      {
+        "q": "6. No tratamento inicial de uma informa\u00e7\u00e3o de amea\u00e7a por telefone, os funcion\u00e1rios da mesa telef\u00f4nica devem adotar determinados protocolos essenciais. Assinale a a\u00e7\u00e3o INCORRETA:",
+        "opts": [
+          "Desligar imediatamente para que a linha possa ser rastreada pela central telef\u00f4nica."
+,
+          "Manter a calma, anotar tudo e, se poss\u00edvel, gravar a conversa."
+,
+          "Prestar aten\u00e7\u00e3o a ru\u00eddos de fundo e caracter\u00edsticas da voz da pessoa que ligou."
+,
+          "Tentar prolongar a conversa e fazer perguntas sobre o artefato."
+        ],
+        "ans": 0,
+        "exp": " A instru\u00e7\u00e3o \u00e9 exatamente o oposto: o funcion\u00e1rio n\u00e3o deve desligar, devendo 'procurar prolongar a conversa', extrair dados, notar ru\u00eddos e a voz do denunciante."
+      }
+,
+      {
+        "q": "7. Um dos elementos cruciais para o processamento do grau de amea\u00e7a pela Assessoria de Risco \u00e9 o 'PTI' ou 'IPA' (Identifica\u00e7\u00e3o Positiva do Alvo). O que a IPA demonstra?",
+        "opts": [
+          "Que a bomba foi localizada visualmente pelas equipes."
+,
+          "Que a amea\u00e7a cont\u00e9m informa\u00e7\u00f5es restritas (como nomes, atividades e nomenclatura interna), indicando que o autor possui conhecimento singular e real do alvo."
+,
+          "Que o alvo se recusa a evacuar o pr\u00e9dio."
+,
+          "O n\u00famero do telefone do suspeito obtido pelo bina (identificador de chamadas)."
+        ],
+        "ans": 1,
+        "exp": " Identifica\u00e7\u00e3o Positiva do Alvo (IPA/PTI) \u00e9 a informa\u00e7\u00e3o sobre o alvo (nomes, atividades espec\u00edficas, nomenclatura) que n\u00e3o seja de conhecimento p\u00fablico, indicando conhecimento singular ou em primeira m\u00e3o do alvo."
+      }
+,
+      {
+        "q": "8. A classifica\u00e7\u00e3o internacional de amea\u00e7as utiliza cores. Quando o telefonema n\u00e3o possui IPA (Identifica\u00e7\u00e3o Positiva do Alvo), MAS apresenta um 'fato gerador' no ambiente que lhe d\u00e1 alguma base, embora com credibilidade duvidosa, trata-se de uma amea\u00e7a de n\u00edvel:",
+        "opts": [
+          "Amea\u00e7a Verde."
+,
+          "Amea\u00e7a \u00c2mbar."
+,
+          "Amea\u00e7a Vermelha."
+,
+          "Amea\u00e7a Negra."
+        ],
+        "ans": 1,
+        "exp": " A Amea\u00e7a \u00c2mbar \u00e9 caracterizada por: 'Sem IPA, h\u00e1 fato gerador, credibilidade duvidosa'. A a\u00e7\u00e3o sugerida \u00e9 vistoria e, se necess\u00e1rio, evacua\u00e7\u00e3o."
+      }
+,
+      {
+        "q": "9. Diante de uma 'Amea\u00e7a Vermelha', que \u00e9 considerada uma amea\u00e7a real, espec\u00edfica, com motivo e com IPA, qual \u00e9 a a\u00e7\u00e3o protocolar recomendada pela tabela do manual?",
+        "opts": [
+          "Aumentar apenas a vigil\u00e2ncia ostensiva externa sem alarde."
+,
+          "Registrar e desconsiderar a den\u00fancia para evitar falso p\u00e2nico."
+,
+          "Providenciar vistoria rotineira apenas no dia seguinte."
+,
+          "Evacua\u00e7\u00e3o imediata total ou parcial, sendo considerado de alto risco e sem tempo para vistorias (caso extremo)."
+        ],
+        "ans": 3,
+        "exp": " Na Amea\u00e7a Vermelha, a a\u00e7\u00e3o exigida \u00e9: 'Evacua\u00e7\u00e3o imediata total ou parcial, alto risco e sem tempo para vistorias (caso extremo)'."
+      }
+,
+      {
+        "q": "10. Existem tr\u00eas tipos b\u00e1sicos de vistoria. Qual delas, segundo a doutrina de seguran\u00e7a, alcan\u00e7a excelente efic\u00e1cia (80% a 90%) e \u00e9 a MAIS RECOMENDADA pela facilidade em reconhecer o que n\u00e3o pertence ao local?",
+        "opts": [
+          "Vistoria por equipe treinada do esquadr\u00e3o antibombas (sem conhecimento pr\u00e9vio da sala)."
+,
+          "Vistoria de rotina efetuada pela equipe de fiscaliza\u00e7\u00e3o geral noturna."
+,
+          "Vistoria efetuada pelos pr\u00f3prios ocupantes do local (funcion\u00e1rios)."
+,
+          "Vistoria terceirizada por c\u00e3es farejadores independentes."
+        ],
+        "ans": 2,
+        "exp": " A 'Vistoria pelos pr\u00f3prios ocupantes do local' atinge 80% a 90% de efic\u00e1cia pois reconhecem o que lhes \u00e9 estranho. A doutrina recomenda que, na maioria dos casos, seja a realizada pelo pessoal ocupante."
+      }
+,
+      {
+        "q": "11. Apesar de altamente eficaz (acima de 90%), a Vistoria por 'Equipe Treinada' (Seguran\u00e7a/Pol\u00edcia) apresenta uma grave DESVANTAGEM t\u00e1tica em locais muito grandes e fechados. Qual \u00e9 essa desvantagem?",
+        "opts": [
+          "Essas equipes costumam detonar as bombas de prop\u00f3sito."
+,
+          "S\u00e3o muito vagarosas, pois os t\u00e9cnicos n\u00e3o est\u00e3o familiarizados com o local amea\u00e7ado nem com o posicionamento original de seus objetos."
+,
+          "Recusam-se a usar qualquer prote\u00e7\u00e3o individual."
+,
+          "N\u00e3o possuem treinamento para ler amea\u00e7as \u00e2mbar."
+        ],
+        "ans": 1,
+        "exp": " A equipe treinada (pol\u00edcia) oferece alto n\u00edvel de seguran\u00e7a, mas 's\u00e3o mais vagarosas, em fun\u00e7\u00e3o de n\u00e3o estar familiarizada com o local sob amea\u00e7a'."
+      }
+,
+      {
+        "q": "12. H\u00e1 uma regra fundamental e progressiva na varredura e vistoria de locais confinados para n\u00e3o deixar lacunas para tr\u00e1s. A busca deve ser realizada rigorosamente em qual sentido espacial?",
+        "opts": [
+          "De cima para baixo e de dentro para fora."
+,
+          "Do centro da sala para as janelas e do teto ao ch\u00e3o."
+,
+          "De fora para dentro e de baixo para cima."
+,
+          "Come\u00e7ando pelas tubula\u00e7\u00f5es de ar at\u00e9 os alicerces do edif\u00edcio."
+        ],
+        "ans": 2,
+        "exp": " A regra expl\u00edcita no manual \u00e9: 'A busca deve ser realizada de fora para dentro e de baixo para cima'."
+      }
+,
+      {
+        "q": "13. Em rela\u00e7\u00e3o \u00e0s \u00e1reas de acesso p\u00fablico do edif\u00edcio (salas de espera, escadas, elevadores), qual ambiente espec\u00edfico a estat\u00edstica aponta como o preferido para a oculta\u00e7\u00e3o de artefatos explosivos pelos criminosos?",
+        "opts": [
+          "O hall de entrada frontal."
+,
+          "As lixeiras da cal\u00e7ada."
+,
+          "Os banheiros (toaletes)."
+,
+          "A cabine principal do elevador."
+        ],
+        "ans": 2,
+        "exp": " O manual ressalta que banheiros (toaletes) s\u00e3o 'estatisticamente os locais preferidos para oculta\u00e7\u00e3o de artefatos explosivos'."
+      }
+,
+      {
+        "q": "14. A vistoria detalhada de uma sala por equipe policial \u00e9 visualmente dividida em n\u00edveis para facilitar a varredura minuciosa. Quantas se\u00e7\u00f5es de altura o ambiente recebe nessa metodologia descrita no texto?",
+        "opts": [
+          "Duas se\u00e7\u00f5es: n\u00edvel do piso e n\u00edvel do teto falso."
+,
+          "Tr\u00eas se\u00e7\u00f5es: Do ch\u00e3o \u00e0 cintura; da cintura \u00e0 cabe\u00e7a; e da cabe\u00e7a ao teto."
+,
+          "Quatro se\u00e7\u00f5es conc\u00eantricas partindo do lustre."
+,
+          "Cinco se\u00e7\u00f5es laterais, de acordo com o compasso magn\u00e9tico."
+        ],
+        "ans": 1,
+        "exp": " O ambiente deve ser dividido em tr\u00eas se\u00e7\u00f5es: 1) ch\u00e3o \u00e0 altura da cintura; 2) cintura \u00e0 altura da cabe\u00e7a; 3) cabe\u00e7a at\u00e9 o teto inclusive."
+      }
+,
+      {
+        "q": "15. Durante a vistoria, um t\u00e9cnico avista um pacote quadrado emitindo um leve som de 'tic-tac' sob a mesa do gerente. Qual deve ser o comportamento imediato perante a principal regra de seguran\u00e7a do manual?",
+        "opts": [
+          "Girar o pacote para tentar identificar o tipo de timer."
+,
+          "Tentar remover o pacote para a rua correndo."
+,
+          "N\u00c3O TOCAR, isolar a \u00e1rea, abrir portas e janelas com cuidado para evitar confinamento, e evacuar o local a partir dos pisos superiores."
+,
+          "Encharcar o artefato com \u00e1gua do balde de inc\u00eandio."
+        ],
+        "ans": 2,
+        "exp": " A principal regra \u00e9: N\u00c3O O TOCAR. Evacuar a partir dos andares superiores, acionar a pol\u00edcia e abrir portas e janelas (exame pr\u00e9vio) para facilitar o escape da onda de choque (reduzindo o confinamento)."
+      }
+,
+      {
+        "q": "16. Para a tomada de decis\u00e3o de reocupa\u00e7\u00e3o das instala\u00e7\u00f5es, nos casos em que o terrorista estipulou uma 'hora exata' para a explos\u00e3o e o evento n\u00e3o aconteceu naquele instante estipulado, quanto tempo a pol\u00edcia deve aguardar, no m\u00ednimo, antes de reentrar ou recome\u00e7ar as buscas?",
+        "opts": [
+          "5 minutos."
+,
+          "20 minutos."
+,
+          "2 horas."
+,
+          "Imediatamente, pois ficou provado que era trote."
+        ],
+        "ans": 1,
+        "exp": " Quando a amea\u00e7a estipula a hora e isso n\u00e3o acontece, 'deve-se aguardar o prazo m\u00ednimo de 20 minutos antes de iniciar a reocupa\u00e7\u00e3o, come\u00e7ar ou continuar a vistoria'."
+      }
+,
+      {
+        "q": "17. A vistoria externa de um autom\u00f3vel sob suspeita de abrigar uma bomba deve atentar primariamente para: (Assinale a incorreta)",
+        "opts": [
+          "Marcas de entrada for\u00e7ada ou viola\u00e7\u00e3o das portas."
+,
+          "Sinais de remo\u00e7\u00e3o de sujeira e manuseio do chassi, suspens\u00e3o ou p\u00e1ra-lamas na parte inferior."
+,
+          "Presen\u00e7a de fios na mesma bitola de fios de detonadores nas lanternas traseiras e na bateria."
+,
+          "Rebater imediatamente a porta do motorista e dar a partida no motor para testar o circuito de escape."
+        ],
+        "ans": 3,
+        "exp": " N\u00e3o se deve abrir imediatamente e muito menos dar partida no motor (pode ser o estopim de acionamento el\u00e9trico ou mec\u00e2nico). A vistoria externa envolve olhar marcas de arrombamento, sujeira removida na parte inferior e liga\u00e7\u00f5es estranhas nas lanternas/bateria."
+      }
+,
+      {
+        "q": "18. Esgotada a observa\u00e7\u00e3o inicial, a entrada t\u00e1tica ativa na parte interna de um carro sob suspeita de explosivos (feita por policiais especializados) deve utilizar qual das t\u00e9cnicas abaixo para neutralizar dispositivos acionados por antimovimento na abertura?",
+        "opts": [
+          "Instalar ganchos e/ou ventosas presas a cordas que ser\u00e3o puxadas a dist\u00e2ncia, para movimentar e abrir remotamente as portas."
+,
+          "Ligar o motor via igni\u00e7\u00e3o direta na caixa de fus\u00edveis interna."
+,
+          "Cortar o freio de m\u00e3o com alicate de corte frio."
+,
+          "Congelar a lataria e quebrar os vidros a pauladas."
+        ],
+        "ans": 0,
+        "exp": " 'Instalar ganchos e/ou ventosas presas a cordas que ser\u00e3o puxadas a dist\u00e2ncia, provocando movimento e eliminando a possibilidade do uso de sistemas de acionamento por movimento... s\u00f3 deve ser usada por t\u00e9cnicos da pol\u00edcia.'"
+      }
+,
+      {
+        "q": "19. Em casos de suspeita de bombas em Aeronaves, al\u00e9m da evacua\u00e7\u00e3o imediata, do desembarque ordenado e de isolamento de 100m, qual medida especial deve ser considerada caso o artefato explosivo seja efetivamente encontrado dentro do aparelho?",
+        "opts": [
+          "Mergulhar o avi\u00e3o no oceano se estiver na cabeceira da pista."
+,
+          "Atirar com armas de fogo nos trens de pouso."
+,
+          "Esvaziar os tanques de combust\u00edvel do aparelho e tentar remover o artefato para \u00e1rea remota."
+,
+          "Ligar os motores para aquecer a estrutura e afastar a onda de choque."
+        ],
+        "ans": 2,
+        "exp": " No caso de encontrar o artefato, deve-se 'pensar em esvaziar os tanques de combust\u00edvel do aparelho e remover o artefato para uma \u00e1rea remota'."
+      }
+,
+      {
+        "q": "20. O T\u00f3pico 9, baseado no Bomb Data Center do FBI, estabelece a Filosofia central das opera\u00e7\u00f5es antibombas com a m\u00e1xima de que 'A vida n\u00e3o pode ser substitu\u00edda'. Baseado nisso, qual \u00e9 a Primeira Prioridade da ocorr\u00eancia?",
+        "opts": [
+          "Seguran\u00e7a do t\u00e9cnico em bombas, pois seu conhecimento salva vidas."
+,
+          "Preserva\u00e7\u00e3o rigorosa do patrim\u00f4nio federal."
+,
+          "Prote\u00e7\u00e3o estrita dos vest\u00edgios de DNA na bomba para persecu\u00e7\u00e3o penal."
+,
+          "Seguran\u00e7a de um c\u00e3o farejador."
+        ],
+        "ans": 0,
+        "exp": " A ordem de prioridades \u00e9: 1\u00ba Seguran\u00e7a do t\u00e9cnico em bombas; 2\u00ba Seguran\u00e7a p\u00fablica; 3\u00ba Proteger propriedades; 4\u00ba Coletar e preservar vest\u00edgios."
+      }
+,
+      {
+        "q": "21. Dentro da 'Sequ\u00eancia de Eventos' para rea\u00e7\u00f5es a bombas, ao chegar e avaliar preliminarmente o cen\u00e1rio, recomenda-se estabelecer o per\u00edmetro de isolamento protetivo (Posto de Controle) a qual dist\u00e2ncia em rela\u00e7\u00e3o ao artefato explosivo suspeito?",
+        "opts": [
+          "A 10 metros, podendo observar o cron\u00f4metro visualmente."
+,
+          "A cerca de 30 metros, mas com visada direta para a equipe avan\u00e7ar r\u00e1pido."
+,
+          "Sugere-se um raio de 100 metros e, preferencialmente, SEM visada direta do epicentro, para evitar estilha\u00e7os."
+,
+          "N\u00e3o h\u00e1 dist\u00e2ncia m\u00ednima, apenas uma fita delimitadora de isolamento civil."
+        ],
+        "ans": 2,
+        "exp": " A sugest\u00e3o \u00e9 'que seja feita uma evacua\u00e7\u00e3o de 100 metros de raio e sem visada direta do epicentro de onde est\u00e1 o suposto artefato explosivo, para que n\u00e3o haja perigo de um estilha\u00e7o atingir algu\u00e9m'."
+      }
+,
+      {
+        "q": "22. Qual conduta \u00e9 rigorosamente OBRIGAT\u00d3RIA para o Posto de Controle quanto \u00e0s transmiss\u00f5es de r\u00e1dio ou uso de celulares para coordena\u00e7\u00e3o do evento?",
+        "opts": [
+          "O chefe de equipe deve usar o r\u00e1dio colado \u00e0 bomba para pedir ajuda."
+,
+          "Toda e qualquer comunica\u00e7\u00e3o com o exterior deve ser feita a partir do Posto de Controle, afastado, nunca perto do artefato explosivo, pois transmiss\u00f5es pr\u00f3ximas podem acion\u00e1-lo."
+,
+          "N\u00e3o se deve usar telefones, apenas sinais de fuma\u00e7a na ocorr\u00eancia."
+,
+          "Radiocomunica\u00e7\u00e3o \u00e9 permitida desde que a antena aponte para baixo."
+        ],
+        "ans": 1,
+        "exp": " 'Toda e qualquer comunica\u00e7\u00e3o com o exterior do local do chamado deve ser feita desse posto de controle. N\u00e3o devem ser feitas comunica\u00e7\u00f5es perto do artefato explosivo...'"
+      }
+,
+      {
+        "q": "23. Na etapa de 'Observa\u00e7\u00e3o' da bomba (onde ocorre o primeiro contato real com a amea\u00e7a), o t\u00e9cnico utiliza circuito de TV, bin\u00f3culos ou uma c\u00e2mera para tirar fotos r\u00e1pidas. Qual \u00e9 a regra de ouro que o perito deve seguir rigorosamente nesse contato f\u00edsico prim\u00e1rio?",
+        "opts": [
+          "Tempo m\u00e1ximo na bomba (ficar o maior tempo poss\u00edvel estudando)."
+,
+          "Mudar os fios el\u00e9tricos de lugar durante as fotografias."
+,
+          "Tempo m\u00ednimo no alvo (tirar fotos e sair o mais rapidamente poss\u00edvel)."
+,
+          "Soprar a poeira de todas as fendas."
+        ],
+        "ans": 2,
+        "exp": " A regra \u00e9 estrita: 'Tempo m\u00ednimo no alvo'. O t\u00e9cnico tira fotos e sai r\u00e1pido, pois quanto mais tempo, maior a chance de explos\u00e3o durante a incurs\u00e3o."
+      }
+,
+      {
+        "q": "24. Na fase final de avalia\u00e7\u00e3o t\u00e9cnica, o chefe de equipe deve ponderar informa\u00e7\u00f5es e ideias. Qual \u00e9 o papel moral recomendado pela doutrina para a atua\u00e7\u00e3o do chefe do esquadr\u00e3o antibombas perante seus auxiliares nesse momento?",
+        "opts": [
+          "O chefe \u00e9 o dono da verdade, por sua vasta experi\u00eancia e maior patente."
+,
+          "O chefe deve calar os parceiros para n\u00e3o se distrair."
+,
+          "O chefe deve discutir a melhor abordagem e SEMPRE OUVIR a sua equipe, pois o parceiro pode ter uma solu\u00e7\u00e3o mais segura."
+,
+          "O chefe n\u00e3o atua, apenas manda o parceiro novato desarmar."
+        ],
+        "ans": 2,
+        "exp": " O texto dita: 'O chefe n\u00e3o deve ser o dono da verdade... O chefe deve OUVIR SEMPRE SUA EQUIPE'."
+      }
+,
+      {
+        "q": "25. A classifica\u00e7\u00e3o (categoriza\u00e7\u00e3o) do incidente \u00e9 feita para adotar a postura t\u00e1tica de rea\u00e7\u00e3o. O que caracteriza a 'Categoria A' de ocorr\u00eancia?",
+        "opts": [
+          "\u00c9 um pacote esquecido numa pra\u00e7a isolada."
+,
+          "Amea\u00e7a indireta \u00e0 vida e direta ao patrim\u00f4nio, quando a \u00e1rea j\u00e1 est\u00e1 vazia."
+,
+          "Nenhum perigo iminente. Sugere uso de contracarga (Categoria C)."
+,
+          "Amea\u00e7a imediata/direta \u00e0 vida: se o artefato explodir, ir\u00e1 ferir ou matar algu\u00e9m. As opera\u00e7\u00f5es come\u00e7am sem demora para afastar o ref\u00e9m ou a bomba."
+        ],
+        "ans": 3,
+        "exp": " Categoria A \u00e9 quando h\u00e1 Amea\u00e7a imediata (direta) \u00e0 vida. A a\u00e7\u00e3o n\u00e3o perde tempo com entrevistas, tentando afastar a vida em perigo ou agir no artefato transformando-o em Cat. B ou C."
+      }
+,
+      {
+        "q": "26. Ao intervir em uma ocorr\u00eancia categorizada como 'Categoria B' (patrim\u00f4nio em risco, local j\u00e1 evacuado sem risco de vida imediato), caso o t\u00e9cnico utilize uma t\u00e9cnica ATIVA (como um disruptor ou cordel de afastamento), qual \u00e9 a recomenda\u00e7\u00e3o de tempo de seguran\u00e7a caso ele precise voltar ao alvo?",
+        "opts": [
+          "N\u00e3o precisa esperar, o alvo j\u00e1 est\u00e1 morto."
+,
+          "Aguardar o 'tempo de molho' de 20 minutos antes de se aproximar novamente do suposto artefato explosivo."
+,
+          "Esperar apenas a nuvem de fuma\u00e7a abaixar."
+,
+          "Isolar o local por 48 horas inteiras e s\u00f3 voltar no dia seguinte."
+        ],
+        "ans": 1,
+        "exp": " Na Categoria B, 'Quando for usada uma t\u00e9cnica ativa, deve-se esperar o 'tempo de molho' de 20 minutos antes de se aproximar novamente'."
+      }
+,
+      {
+        "q": "27. J\u00e1 em rela\u00e7\u00e3o ao T\u00f3pico 10 (Per\u00edcia de P\u00f3s-Explos\u00e3o), a complexidade exige uma equipe multidisciplinar. Qual \u00e9 a responsabilidade do 'Grupo de Busca de Vest\u00edgios' em oposi\u00e7\u00e3o ao 'Grupo de Busca do Epicentro'?",
+        "opts": [
+          "O Grupo de Vest\u00edgios mede a cratera, e o do Epicentro fica fora anotando o tempo."
+,
+          "O Grupo de Vest\u00edgios determina e vistoria o per\u00edmetro externo em dire\u00e7\u00e3o ao interno (marcando o que acha no caminho), enquanto o do Epicentro atua isolado no centro medindo e esquadrinhando a cratera."
+,
+          "O Grupo de Vest\u00edgios desenha o croqui e fotografa, o do Epicentro d\u00e1 entrevistas \u00e0 TV."
+,
+          "Nenhuma. N\u00e3o h\u00e1 divis\u00e3o de fun\u00e7\u00f5es na equipe de per\u00edcia de bombas."
+        ],
+        "ans": 1,
+        "exp": " O Grupo de busca de vest\u00edgios determina o per\u00edmetro externo, e vistoria do externo para o interno marcando as evid\u00eancias. O Grupo do epicentro situa a cratera, mede largura/formato e coleta a amostra qu\u00edmica e o \u00e2ngulo de destrui\u00e7\u00e3o na \u00e1rea imediata da explos\u00e3o."
+      }
+,
+      {
+        "q": "28. Qual a f\u00f3rmula/regra geral recomendada pela doutrina de Criminal\u00edstica para o estabelecimento da marca\u00e7\u00e3o f\u00edsica do PER\u00cdMETRO EXTERNO numa cena de crime p\u00f3s-explos\u00e3o?",
+        "opts": [
+          "\u00c9 tra\u00e7ado exatamente a 200 metros do pr\u00e9dio atingido."
+,
+          "\u00c9 a dist\u00e2ncia do Epicentro at\u00e9 o fragmento mais distante encontrado."
+,
+          "\u00c9 calculado em um ponto 50% maior que a dist\u00e2ncia entre o local da explos\u00e3o e o vest\u00edgio mais distante achado no levantamento preliminar."
+,
+          "Sempre usar todo o quarteir\u00e3o envolvido no per\u00edmetro civil."
+        ],
+        "ans": 2,
+        "exp": " A marca\u00e7\u00e3o se faz adicionando 50% \u00e0 medida: 'O per\u00edmetro externo geralmente \u00e9 marcado em um ponto 50% maior que a dist\u00e2ncia entre o local da explos\u00e3o da bomba e a maior dist\u00e2ncia onde foi encontrado um vest\u00edgio'."
+      }
+,
+      {
+        "q": "29. Dentre os padr\u00f5es de busca utilizados na varredura minuciosa dos escombros p\u00f3s-explos\u00e3o, existe um conhecido por dividir fisicamente o local utilizando cordas ou barbantes para identificar quadrados (espa\u00e7os) nomeados com n\u00fameros e letras. Como se chama esse padr\u00e3o?",
+        "opts": [
+          "Padr\u00e3o em Espiral."
+,
+          "Padr\u00e3o em Rede."
+,
+          "Padr\u00e3o em Fileiras (Linhas)."
+,
+          "Padr\u00e3o Zigue-Zague."
+        ],
+        "ans": 1,
+        "exp": " 'Rede - o local \u00e9 dividido e marcado com fitas, cordas ou barbantes, identificando-se cada espa\u00e7o com letras, n\u00fameros ou ambos, os quais s\u00e3o vistoriados individualmente'."
+      }
+,
+      {
+        "q": "30. O 'Padr\u00e3o em Fileiras' ou linhas \u00e9 apontado como extremamente eficiente para buscas exaustivas em grandes \u00e1reas abertas com contingente reduzido de pessoal. Como funciona a regra de comunica\u00e7\u00e3o fundamental nesse m\u00e9todo ao achar uma evid\u00eancia?",
+        "opts": [
+          "O membro do grupo pisca a lanterna em sil\u00eancio e todos guardam a pe\u00e7a no bolso."
+,
+          "O componente pega a pe\u00e7a, leva ao l\u00edder no final e depois a fileira avan\u00e7a."
+,
+          "Ao encontrar um vest\u00edgio, o membro grita 'PARE!', marcando e informando sobre a evid\u00eancia, todos cessam o avan\u00e7o at\u00e9 o registro, e s\u00f3 ent\u00e3o a linha continua junta novamente."
+,
+          "A linha nunca para, joga-se uma bandeira no objeto correndo sem parar."
+        ],
+        "ans": 2,
+        "exp": " No Padr\u00e3o Fileiras: 'Ao encontrar um vest\u00edgio gritam: - PARE! Observam e tentam identificar a evid\u00eancia, passando a informa\u00e7\u00e3o ao resto do grupo, marcando o local... e a fileira continua vistoriando'."
+      }
+    ]
+  }
+];
+
+let answered = 0, corrects = 0, wrongs = 0;
+let wrongQuestions = [];
+
+function updateScore(){
+  document.getElementById('sc-c').textContent = corrects;
+  document.getElementById('sc-w').textContent = wrongs;
+  document.getElementById('sc-a').textContent = answered;
+  document.getElementById('btn-wrong').disabled = (wrongQuestions.length === 0);
+}
+
+function buildQuiz(dataSource){
+  dataSource = dataSource || CHAPTERS;
+  window._currentData = dataSource;
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  let total = 0;
+  dataSource.forEach(ch => total += ch.questions.length);
+  document.getElementById('sc-total').textContent = '/ ' + total;
+
+  dataSource.forEach((ch, ci) => {
+    const div = document.createElement('div');
+    div.className = 'chapter';
+    let html = `<div class="chapter-title">${ch.title}</div>`;
+    ch.questions.forEach((q, qi) => {
+      const qid = 'q_' + ci + '_' + qi;
+      html += `<div class="question" id="block_${qid}">
+        <div class="q-num">Questão ${qi+1}</div>
+        <div class="q-text">${q.q}</div>`;
+      q.opts.forEach((opt, oi) => {
+        html += `<button class="opt" id="${qid}_${oi}" onclick="handleAnswer(${ci}, ${qi}, ${oi})">${opt}</button>`;
+      });
+      html += `<div class="feedback" id="fb_${qid}" style="display:none"></div></div>`;
+    });
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+}
+
+function handleAnswer(ci, qi, chosen){
+  const dataSource = window._currentData || CHAPTERS;
+  const ch = dataSource[ci];
+  const q = ch.questions[qi];
+  const qid = 'q_' + ci + '_' + qi;
+  const correct = q.ans;
+  const isRight = (chosen === correct);
+
+  q.opts.forEach((_, oi) => {
+    const btn = document.getElementById(qid + '_' + oi);
+    btn.disabled = true;
+    if(oi === correct) btn.classList.add('correct');
+    if(oi === chosen && !isRight) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('fb_' + qid);
+  fb.style.display = 'block';
+  if(isRight){
+    fb.className = 'feedback ok';
+    fb.innerHTML = `✅ <strong>Correto!</strong> ${q.exp}`;
+    corrects++;
+  } else {
+    fb.className = 'feedback err';
+    fb.innerHTML = `❌ <strong>Incorreto.</strong> ${q.exp}`;
+    wrongs++;
+    wrongQuestions.push({chTitle: ch.title, qObj: q});
+  }
+  answered++;
+  updateScore();
+}
+
+function resetAll(){
+  if(!confirm('Reiniciar o quiz completo?')) return;
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(CHAPTERS);
+  updateScore();
+}
+
+function resetWrong(){
+  if(wrongQuestions.length === 0) return;
+  if(!confirm('Reiniciar apenas com as ' + wrongQuestions.length + ' questão(ões) que você errou?')) return;
+  const chapMap = {};
+  wrongQuestions.forEach(({chTitle, qObj}) => {
+    if(!chapMap[chTitle]) chapMap[chTitle] = {title: chTitle, questions: []};
+    chapMap[chTitle].questions.push(qObj);
+  });
+  const filtered = Object.values(chapMap);
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(filtered);
+  updateScore();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

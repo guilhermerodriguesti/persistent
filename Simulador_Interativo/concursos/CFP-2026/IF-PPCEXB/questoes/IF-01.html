@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado: Informática Forense - Parte 1</title>
+<style>
+  :root{--cor:#1a3a5c;--cor2:#2e6da4;--cor3:#e8f0f8;--verde:#1e7e34;--vermelho:#c0392b;--laranja:#d35400;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#222;}
+  header{background:var(--cor);color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;}
+  header h1{font-size:1.3rem;font-weight:700;}
+  .subtitle{font-size:.85rem;opacity:.8;}
+  .scorebar{background:var(--cor2);color:#fff;padding:10px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .sc{font-size:.95rem;} .sc span{font-weight:700;}
+  .lbl{opacity:.75;font-size:.85rem;}
+  .btn-reset{background:#fff;color:var(--cor);border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;}
+  .btn-reset:hover{background:#e0e8f0;}
+  .btn-wrong{background:var(--laranja);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;margin-left:auto;}
+  .btn-wrong:hover:not(:disabled){background:#b94600;}
+  .btn-wrong:disabled{opacity:.4;cursor:not-allowed;}
+  main{max-width:860px;margin:28px auto;padding:0 16px 60px;}
+  .chapter{margin-bottom:32px;}
+  .chapter-title{background:var(--cor);color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;font-weight:700;font-size:1rem;}
+  .question{background:#fff;border:1px solid #d0dcea;border-top:none;padding:20px 20px 14px;}
+  .question:last-child{border-radius:0 0 8px 8px;}
+  .question+.question{border-top:1px dashed #c8d8ea;}
+  .q-num{font-size:.78rem;color:#888;margin-bottom:4px;}
+  .q-text{font-size:1rem;font-weight:600;margin-bottom:14px;line-height:1.5;}
+  .opt{display:block;width:100%;background:var(--cor3);border:2px solid transparent;border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;text-align:left;font-size:.93rem;line-height:1.4;transition:.15s;}
+  .opt:hover:not(:disabled){background:#d5e5f8;border-color:var(--cor2);}
+  .opt.correct{background:#d4edda;border-color:var(--verde);color:var(--verde);font-weight:600;}
+  .opt.wrong{background:#fde8e8;border-color:var(--vermelho);color:var(--vermelho);}
+  .opt:disabled{cursor:default;}
+  .feedback{margin-top:8px;font-size:.88rem;padding:8px 12px;border-radius:6px;line-height:1.5;}
+  .feedback.ok{background:#d4edda;color:#155724;}
+  .feedback.err{background:#fde8e8;color:#721c24;}
+  .feedback .loc{margin-top:4px;font-size:.8rem;opacity:.8;}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Simulado: Informática Forense - Parte 1</h1>
+    <div class="subtitle">30 questões de nível avançado sobre Informática Forense</div>
+  </div>
+</header>
+<div class="scorebar">
+  <div class="sc">✅ Acertos: <span id="sc-c">0</span></div>
+  <div class="sc">❌ Erros: <span id="sc-w">0</span></div>
+  <div class="sc">📝 Respondidas: <span id="sc-a">0</span> <span class="lbl" id="sc-total"></span></div>
+  <button class="btn-reset" onclick="resetAll()">↺ Reiniciar tudo</button>
+  <button class="btn-wrong" id="btn-wrong" onclick="resetWrong()" disabled>↺ Só os erros</button>
+</div>
+<main id="quiz-container"></main>
+
+<script>
+const CHAPTERS = [
+  {
+    "title": "Parte 1 - Informática Forense",
+    "questions": [
+      {
+        "q": "1. Um criminoso invade a rede de uma grande empresa de varejo, contornando firewalls, com o objetivo exclusivo de disseminar um ransomware que criptografa os servidores, exigindo pagamento. Sob a ótica da classificação dos crimes informáticos, essa conduta é estritamente classificada como:",
+        "opts": [
+          "Crime Impuro, pois a extorsão financeira ocorre no mundo físico, tutelado pelo direito patrimonial.",
+          "Crime Puro, pois a conduta criminosa é consumada dentro do espaço cibernético e o recurso de informática é o próprio alvo da ação.",
+          "Crime Indireto, pois a rede atuou apenas como testemunha de um crime de extorsão.",
+          "Crime Próprio Absoluto, pois o pagamento do resgate deverá ser feito em criptomoedas, vinculando o lucro ao ambiente virtual."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Crimes Puros (ou Próprios) são aqueles em que a conduta é consumada no espaço cibernético e o recurso de informática é o ALVO da ação (ex: disseminação de programas maliciosos e invasão de rede)."
+      },
+      {
+        "q": "2. Segundo a metáfora do Iceberg aplicada à Informática Forense, o Perito Criminal se diferencia de um usuário comum ao utilizar ferramentas forenses. O que compõe a 'parte submersa' desse iceberg?",
+        "opts": [
+          "Apenas arquivos de metadados do sistema operacional, como o Registro do Windows.",
+          "Dispositivos de hardware integrados on-board na placa-mãe, inacessíveis pela interface do usuário.",
+          "Dados que não estão diretamente acessíveis, como arquivos apagados, ocultos, com extensões alteradas ou criptografados.",
+          "A interface gráfica do sistema operacional (GUI) e os arquivos visíveis do pacote Office."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A ponta do iceberg é o que está visível ao usuário comum. A parte submersa compreende dados não diretamente acessíveis, como arquivos apagados, ocultos, renomeados para esconder conteúdo ou criptografados, visíveis apenas ao perito com ferramentas apropriadas."
+      },
+      {
+        "q": "3. Na notação computacional em base hexadecimal, muito utilizada na perícia para leitura de assinaturas e estruturas de dados, os caracteres '4B' e '4C' representam sequências binárias de 8 bits (um byte). Como o hexadecimal facilita a leitura humana?",
+        "opts": [
+          "Agrupando cada conjunto de 4 bits em um único símbolo (de 0 a F), fazendo com que um byte seja representado por exatamente dois símbolos hexadecimais.",
+          "Mapeando os bits diretamente para o padrão ASCII em blocos de 16 bits, reduzindo pela metade a cadeia visual.",
+          "Utilizando grandezas do Sistema Internacional (Kilo, Mega, Giga) para substituir cadeias longas de 0s e 1s.",
+          "Invertendo a unidirecionalidade do bit, permitindo a decifragem visual rápida de hashes complexos como o MD5."
+        ],
+        "ans": 0,
+        "exp": "Gabarito: A. A notação hexadecimal utiliza 16 símbolos e representa cada conjunto de 4 bits por um único símbolo. Como um byte possui 8 bits, ele é perfeitamente representado por 2 símbolos hexadecimais."
+      },
+      {
+        "q": "4. Ao apagar um arquivo, o sistema operacional realiza uma operação focada na eficiência em vez da eliminação física imediata do dado. Como o sistema de arquivos trata essa exclusão?",
+        "opts": [
+          "Substitui imediatamente os blocos ocupados por zeros (zero fill), garantindo a velocidade de gravação futura.",
+          "Altera a extensão do arquivo para um formato contêiner, aguardando que o espaço seja sobrescrito no futuro.",
+          "Apaga os dados fisicamente do disco, mas preserva os metadados intactos no mapa de bits.",
+          "Marca como 'livres para uso' os blocos no mapa de bits e a entrada correspondente na tabela, mantendo os dados fisicamente no disco até serem sobrescritos."
+        ],
+        "ans": 3,
+        "exp": "Gabarito: D. O sistema apenas marca os blocos e a entrada da tabela como 'livres'. A informação original permanece fisicamente intacta no disco até que outro arquivo sobrescreva essa área específica."
+      },
+      {
+        "q": "5. A técnica de Data Carving (recuperação baseada em assinatura) é amplamente utilizada pela perícia. No entanto, ela possui limitações técnicas intrínsecas. Qual das alternativas aponta corretamente essas limitações?",
+        "opts": [
+          "Não funciona em discos particionados no formato NTFS, exigindo que o sistema seja previamente convertido para FAT32.",
+          "Não recupera metadados (como o nome original do arquivo) e pode falhar na recuperação parcial se o arquivo estiver fragmentado em blocos não contíguos.",
+          "Recupera o nome do arquivo, porém é incapaz de ler dados em áreas não alocadas, restringindo-se à tabela do sistema.",
+          "Depende inteiramente do arquivo 'hashes.txt' para verificar a assinatura e a extensão do arquivo apagado."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Como o Data Carving não utiliza a tabela do sistema de arquivos, ele ignora metadados (logo, não sabe o nome original do arquivo ou data de criação). Além disso, a recuperação falha ou fica incompleta se o arquivo apagado estiver fragmentado."
+      },
+      {
+        "q": "6. Durante o exame de um disco rígido, o perito utiliza a função unidirecional de resumo SHA-256 em um arquivo de 200 kB e obtém um hash. Se o suspeito alterar intencionalmente apenas 1 bit desse arquivo para esconder evidências, qual será o comportamento matemático esperado do novo hash gerado?",
+        "opts": [
+          "Gerará um hash com tamanho idêntico ao primeiro (256 bits), mas com o valor da cadeia hexadecimal completamente diferente.",
+          "Gerará um hash de tamanho menor, pois a unidirecionalidade do algoritmo compensa o bit corrompido.",
+          "O hash permanecerá inalterado, pois as funções da família SHA corrigem automaticamente alterações inferiores a 1 byte.",
+          "Ocorrerá uma colisão determinística, gerando uma mensagem de erro na ferramenta IPED."
+        ],
+        "ans": 0,
+        "exp": "Gabarito: A. Funções Hash geram saídas de tamanho fixo (o SHA-256 sempre gera 256 bits) independentemente do tamanho do arquivo. Alterar um único bit altera completamente o valor gerado, evidenciando a modificação (efeito cascata)."
+      },
+      {
+        "q": "7. Ao iniciar o cumprimento de mandado de busca em uma empresa, o Perito Criminal depara-se com um desktop ligado. A tela apresenta um sistema corporativo operante. Considerando a doutrina forense de busca e apreensão, qual a conduta prioritária?",
+        "opts": [
+          "Desligar imediatamente puxando o cabo de energia da tomada (pull the plug) para evitar que um malware apague os dados.",
+          "Verificar flagrante em tela e avaliar a presença de criptografia de disco (como Bitlocker) e dados na RAM antes de capturar a memória ou iniciar hibernação.",
+          "Desconectar o disco rígido (HD) da placa-mãe com o sistema ligado, garantindo que o módulo TPM não trave os dados.",
+          "Executar uma varredura (busca live) utilizando software instalado na própria máquina suspeita para economizar o tempo de extração."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Se estiver ligado, o perito NÃO deve desligar imediatamente. Deve-se verificar flagrantes visíveis, existência de criptografia de disco, necessidade de obtenção de chaves (ex: Bitlocker, WhatsApp Web) e captura da memória RAM volátil."
+      },
+      {
+        "q": "8. Por qual motivo técnico a perícia desaconselha fortemente a retirada apenas do Disco Rígido (HD) de um desktop no local da busca, preconizando a apreensão do gabinete por inteiro?",
+        "opts": [
+          "Para garantir que a fonte de energia original seja usada durante a duplicação no laboratório, pois as voltagens variam entre marcas.",
+          "Porque as funções Hash do sistema CAINE exigem a placa-mãe original para calcular a assinatura digital do disco.",
+          "Devido ao risco de criptografia atrelada ao hardware (chip TPM na placa-mãe) ou configurações de discos interligados logicamente (RAID).",
+          "Para que a limpeza do disco (wipe) no momento do exame não apague acidentalmente o chip de BIOS."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A apreensão do gabinete inteiro evita problemas com discos protegidos por criptografia vinculada ao hardware da placa-mãe (módulo TPM) ou configurações lógicas complexas de conexão (como RAID)."
+      },
+      {
+        "q": "9. Se houver inviabilidade técnica para apreender um supercomputador em uma grande corporação petrolífera, o perito precisará extrair cópias dos dados no local. Para garantir a legalidade e integridade dessa cópia extraída, qual a etapa obrigatória?",
+        "opts": [
+          "Utilizar exclusivamente um bloqueador de escrita mecânico para extrair a RAM, não se preocupando com os discos magnéticos.",
+          "A submissão de todos os dados apreendidos a funções unidirecionais de resumo (hash), constando idealmente este valor já no Auto de Apreensão.",
+          "Realizar o wipe (zerofill) na máquina original do suspeito logo após a cópia para evitar vazamentos.",
+          "Compactar tudo no formato ZIP e enviar para o Banco Federal de Arquivos Conhecidos (BFAC)."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Ao extrair cópias lógicas ou em contêineres no local (quando a apreensão física for inviável), a integridade é assegurada submetendo os dados copiados ao cálculo de hash, anotando esse valor no Auto de Apreensão."
+      },
+      {
+        "q": "10. Os discos rígidos mecânicos e outros componentes eletrônicos apreendidos necessitam de arrecadação cuidadosa contra diversos inimigos ambientais. O uso de embalagens antiestáticas foca especificamente em mitigar qual risco?",
+        "opts": [
+          "Desmagnetização dos pratos causada por ímãs e motores elétricos na viatura policial.",
+          "Condensação de vapor no interior do gabinete gerada por umidade excessiva.",
+          "A queima de componentes eletrônicos sensíveis devido à transferência de energia acumulada no corpo humano ou em plásticos comuns.",
+          "Choques mecânicos causados por vibrações e impactos severos nas ruas."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. O isolamento contra a estática (presente no corpo humano ou gerada por plásticos comuns) é feito através de embalagens antiestáticas, pois descargas súbitas podem queimar circuitos eletrônicos fundamentais."
+      },
+      {
+        "q": "11. Um perito necessita inicializar o sistema operacional de um computador apreendido para realizar uma análise de sistema sem comprometer o disco rígido original. Para isso, ele decide realizar a Duplicação Forense do tipo 'Mídia para Mídia'. Qual procedimento é técnica e obrigatoriamente prévio a esta clonagem?",
+        "opts": [
+          "A indexação total da mídia de destino para que a pesquisa de palavras-chave funcione durante o boot.",
+          "A formatação da mídia de destino usando o sistema de arquivos FAT32 para garantir compatibilidade cruzada.",
+          "O procedimento de 'wipe' (zero fill), gravando zeros em toda a extensão da mídia de destino para eliminar quaisquer resquícios de dados antigos.",
+          "A decifragem prévia do Bitlocker utilizando um ataque de força bruta no laboratório."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Na duplicação 'Mídia para Mídia', o disco de destino DEVE ser previamente 'zerado' (wipe / zero fill). Isso garante que arquivos antigos daquele HD de destino não se misturem aos dados da nova prova material, corrompendo o exame."
+      },
+      {
+        "q": "12. Se o Perito não dispuser de equipamentos especialistas como o Tableau ou Atola para clonar um disco, ele poderá usar um computador comum. Nesse cenário, o uso do Linux CAINE ou Kali é fundamental por qual característica intrínseca?",
+        "opts": [
+          "Eles possuem um chip emulador TPM on-board que quebra as senhas automaticamente na inicialização.",
+          "São distribuições forenses projetadas especificamente para não montar discos automaticamente e nem efetuar qualquer modificação (escrita) nas mídias conectadas.",
+          "Convertem arquivos NTFS em Ext4 de forma transparente, permitindo ignorar o mapa de bits corrompido.",
+          "Realizam wipe automático do disco de origem no primeiro boot, protegendo o perito de malwares."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. CAINE e Kali possuem travas lógicas nativas (não alteram, montando como read-only) que impedem que o sistema operacional escreva acidentalmente na mídia de origem, o que destruiria a integridade da prova."
+      },
+      {
+        "q": "13. Durante o processamento no IPED, a fase de Expansão de Arquivos-Contêiner tem como objetivo central:",
+        "opts": [
+          "Identificar arquivos renomeados através de suas assinaturas hexadecimais de início e de fim.",
+          "Gerar um índice remissivo contendo todas as palavras-chave encontradas nos blocos da memória.",
+          "Aplicar dicionários de senhas probabilísticos para quebrar a criptografia do Microsoft Word.",
+          "Abrir repositórios, como arquivos ZIP e arquivos de caixas de e-mail (PST), extraindo seu conteúdo interno para a fase de análise."
+        ],
+        "ans": 3,
+        "exp": "Gabarito: D. A expansão de contêineres atua sobre arquivos que carregam outros em seu interior (como ZIP, RAR, caixas de e-mail PST). O IPED 'abre' esses arquivos para que o que está dentro deles possa ser lido, calculado (hash) e indexado."
+      },
+      {
+        "q": "14. A etapa de Filtragem em um disco com milhões de arquivos é crucial. Ao cruzar os dados gerados na extração com o BFAC (Banco Federal de Arquivos Conhecidos), o perito realiza um processo de 'Redução'. O que isso permite?",
+        "opts": [
+          "Excluir automaticamente arquivos já conhecidos do sistema operacional que não interessam à investigação, baseando-se unicamente em seus hashes.",
+          "Compactar os arquivos repetidos em um arquivo RAR secundário, aumentando o espaço no laboratório.",
+          "Reescrever o cabeçalho dos arquivos ilegíveis usando metadados da Nuvem.",
+          "Decifrar hashes da família MD5 por meio de ataques em dicionário massivos operados pela Inteligência Artificial do IPED."
+        ],
+        "ans": 0,
+        "exp": "Gabarito: A. A Redução usa bancos de hash conhecidos (como NSRL ou do BFAC) para eliminar do horizonte de análise pericial arquivos do Windows, dlls e pacotes de instalação que não agregam valor e poluem a busca, focando apenas nos arquivos do usuário."
+      },
+      {
+        "q": "15. Para decifrar um contêiner criptografado do alvo, o perito utiliza listas contendo nomes de familiares do suspeito, o time de futebol dele, adicionando regras que trocam o 'a' por '@' e adicionam '123' ao final. Essa modalidade de ataque é classificada tecnicamente como:",
+        "opts": [
+          "Ataque de Força Bruta Puro.",
+          "Ataque Probabilístico Baseado em Gramática.",
+          "Ataque de Dicionário com Regras.",
+          "Engenharia Reversa de Hashes MD5."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. O ataque de Dicionário tenta ocorrências de um conjunto de palavras (frequentemente criadas a partir da vida do alvo) e aplica regras pré-definidas (como transformar tudo em maiúscula ou trocar caracteres)."
+      },
+      {
+        "q": "16. A Portaria nº 1710/2026 padroniza os exames de Abuso Sexual Infantojuvenil (ASI). Para caracterizar visualmente o material (MASI), quais elementos devem estar OBRIGATORIAMENTE presentes de forma simultânea?",
+        "opts": [
+          "Conotação sexual (explícita ou implícita) E a estimativa numérica exata da idade do alvo apontando para menos de 18 anos.",
+          "Conotação sexual (explícita ou implícita) E indícios de menoridade corporal/facial, sendo vedada ao perito a estimativa de idade numérica exata.",
+          "Presença do criminoso na cena E indícios de violência real com trauma psicológico constatável no vídeo.",
+          "Hashes que estejam no BFAC E marca d'água de sites de compartilhamento P2P, independentemente da análise visual física."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A identificação visual exige dois critérios concomitantes: 1) Conotação sexual; 2) Indícios visuais de menoridade (proporção de cabeça, falta de desenvolvimento puberal, etc.). A portaria orienta o perito a NÃO estimar a idade numérica."
+      },
+      {
+        "q": "17. A Regra da Saturação Qualitativa nos exames de ASI orienta a interrupção da busca por mais vestígios quando constatada uma determinada quantidade de arquivos classificáveis como 'Posse'. Esse número serve para preservar a saúde mental do perito, indicando que já há materialidade probatória inquestionável. Qual é esse número?",
+        "opts": [
+          "100 arquivos.",
+          "500 arquivos.",
+          "1.000 arquivos.",
+          "10.000 arquivos."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O texto da Portaria 1710/2026 estabelece a marca de 500 arquivos contendo MASI como a quantidade para alcançar a saturação qualitativa no crime de 'posse'."
+      },
+      {
+        "q": "18. Na organização do material examinado em casos de ASI, os arquivos de MASI classificados como 'Produção' (aqueles possivelmente produzidos pelo próprio investigado) possuem uma destinação pericial específica na cadeia. Qual é?",
+        "opts": [
+          "Devem ser isolados em pastas criptografadas e enviados diretamente à Interpol, pulando o Laudo tradicional.",
+          "Devem ser submetidos à técnica de Data Carving para buscar o equipamento que gerou a imagem e apagados em seguida.",
+          "Devem ser agrupados em marcadores específicos e encaminhados OBRIGATORIAMENTE para inclusão no Banco Federal de Arquivos Conhecidos (BFAC).",
+          "São automaticamente descartados após o cálculo de hash para proteção psicológica do perito federal."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A portaria orienta separar em Disponibilização, Produção e Posse. Todo o material caracterizado como PRODUÇÃO do investigado deve ser encaminhado para alimentar o BFAC, ajudando na identificação rápida em laudos futuros por todo o país."
+      },
+      {
+        "q": "19. Sobre tecnologias de telefonia celular e seus identificadores físicos e lógicos, assinale a correlação técnica inteiramente correta adotada nas descrições de Laudo Pericial:",
+        "opts": [
+          "O IMEI (15 dígitos) identifica o hardware do aparelho na rede GSM, enquanto o IMSI e o ICCID são armazenados no cartão SIM para identificar o assinante e o próprio cartão, respectivamente.",
+          "O ESN é o código internacional padrão para aparelhos GSM, enquanto o IMEI é exclusivo da tecnologia ultrapassada CDMA.",
+          "O ICCID é o número gravado a laser no processador (CPU) do celular e o MSISDN representa o modelo físico da bateria do smartphone.",
+          "Um cartão eSIM não possui ICCID, pois dispensa credenciais da operadora, rodando exclusivamente via Bluetooth e Wi-Fi Direct."
+        ],
+        "ans": 0,
+        "exp": "Gabarito: A. GSM usa IMEI para o aparelho físico. O cartão SIM guarda o IMSI (identificador do assinante na rede) e possui um serial próprio de 20 dígitos chamado ICCID. CDMA usava ESN/MEID."
+      },
+      {
+        "q": "20. O Perito utiliza ferramentas como Cellebrite Inseyets para acessar os dados de um celular protegido por bloqueios pesados do fabricante, explorando vulnerabilidades na inicialização para acessar diretamente a memória Flash inteira, copiando bit a bit, mesmo sem a senha. Trata-se de qual tipo de extração?",
+        "opts": [
+          "Extração Lógica (Logical Dump).",
+          "Extração via Sistema de Arquivos (File System).",
+          "Extração Física (Physical Dump) via Bootloader.",
+          "Extração Manual Direta (Handset Navigation)."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A cópia bit a bit da memória flash, que geralmente exige o desenvolvimento de bootloaders para burlar restrições do fabricante, configurando o exame mais complexo e abrangente, é a Extração Física."
+      },
+      {
+        "q": "21. A principal diferença prática entre o celular apreendido no estado BFU (Before First Unlock) e AFU (After First Unlock) é:",
+        "opts": [
+          "No estado BFU, os dados estão descriptografados na memória secundária; no AFU eles migram para a nuvem via Wi-Fi.",
+          "No estado AFU, o usuário já desbloqueou o celular após ligá-lo, fazendo com que chaves de criptografia cruciais permaneçam armazenadas na RAM (memória volátil).",
+          "O BFU é o estágio exclusivo de iPhones (iOS), enquanto o AFU é o protocolo do Google para Androids em processo de Wipe remoto.",
+          "O AFU exige que a senha seja trocada imediatamente pelo perito via cabo OTG antes que a bateria zere, enquanto o BFU é imune ao descarregamento."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. AFU significa que o aparelho foi desbloqueado pelo menos uma vez após ligar. Nesse estado, as chaves mestras de criptografia ficam hospedadas na RAM, permitindo acesso muito superior pelas ferramentas forenses do que no estado BFU (onde as chaves ainda estão bloqueadas e fora da RAM)."
+      },
+      {
+        "q": "22. Durante uma operação policial de manhã, a equipe depara-se com um iPhone de última geração na mesa de centro. Ele está LIGADO, com a tela bloqueada por senha, porém a equipe consegue que o criminoso forneça o PIN correto voluntariamente. Qual o conjunto de medidas adequadas que o Perito adotará em cena?",
+        "opts": [
+          "Desligar o iPhone imediatamente, colocar em saco antiestático e guardar a senha num pedaço de papel anexo.",
+          "Ligar o Wi-Fi, realizar backup iCloud, mudar a senha do usuário para uma senha padrão da Polícia Federal e depois desligar.",
+          "Ativar o Modo Avião, validar a senha sem removê-la, desativar temporizadores, verificar senhas adicionais (como WhatsApp), desativar a 'proteção contra roubo' se possível, e SÓ ENTÃO desligar o aparelho para transporte.",
+          "Remover o chip SIM sem ativar o modo avião, apagar a senha mestra nas configurações de biometria e entregar o aparelho funcionando para o delegado na mesma hora."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Aparelhos ligados COM senha fornecida: ativa-se modo avião, valida-se a senha (sem mudá-la ou excluí-la), avalia-se senhas internas, tenta-se desativar proteção contra roubo e por fim o aparelho deve ser desligado de maneira segura, com a senha anotada no auto."
+      },
+      {
+        "q": "23. Nos casos em que o suspeito se recusa a dar a senha e o celular é apreendido LIGADO E BLOQUEADO, uma das maiores preocupações do Perito que atende o local é impedir que o aparelho reinicie, perca energia ou seja desligado, usando 'power banks'. Por qual razão forense de alto nível isso é feito?",
+        "opts": [
+          "Evitar a desmagnetização espontânea do eSIM, o que impediria a leitura do número ICCID.",
+          "A bateria de smartphones modernos quebra fisicamente caso seja zerada a carga sem aviso prévio pelo sistema operacional.",
+          "Manter o aparelho obrigatoriamente no estado AFU (After First Unlock), garantindo que as chaves criptográficas não desapareçam da memória RAM.",
+          "Aguardar que o modo de extração do WhatsApp conclua a indexação oculta de arquivos de mídia."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Ao evitar o desligamento (mantendo a carga e não reiniciando), o perito tenta preservar o aparelho no valioso estado AFU, não permitindo que ele volte ao bloqueio máximo (BFU), o que ocorre inevitavelmente quando o celular é desligado."
+      },
+      {
+        "q": "24. Como a Polícia Federal soluciona, no Laudo Pericial, a garantia INEQUÍVOCA da autenticidade da mídia física anexada (DVD/Pendrive) e a integridade matemática dos dezenas de milhares de arquivos (fotos, vídeos) nela contidos, impedindo que partes plantem provas após a entrega?",
+        "opts": [
+          "A mídia é trancada num cofre de Faraday com bloqueador mecânico de hardware irreversível, impossibilitando até a leitura sem a presença de um juiz.",
+          "Gera-se um arquivo 'hashes.txt' com os hashes de todos os arquivos gravados. Em seguida, calcula-se o HASH deste arquivo 'hashes.txt' e o TRANSCRÊ-SE fisicamente no corpo do Laudo assinado pelo perito.",
+          "Os arquivos de vídeo sofrem esteganografia forense com uma marca d'água da Polícia Federal visível quadro a quadro, e os metadados são assinados com chave GPG.",
+          "O pendrive é lacrado fisicamente e os dados sofrem wipe (zero fill) parcial, sendo legíveis apenas por engenharia reversa via IPED no laboratório da PF."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A PF soluciona o problema da garantia de integridade de grandes volumes e autenticidade da mídia através da técnica de gerar o hash de todos os arquivos na lista 'hashes.txt', e em seguida calcular o hash do próprio arquivo 'hashes.txt', imprimindo-o no Laudo formal assinado. Se mudarem 1 foto no pendrive, o hashes.txt falha na verificação com o Laudo."
+      },
+      {
+        "q": "25. A assinatura interna de um arquivo em disco permite identificar seu verdadeiro tipo (ex: docx, pdf, jpg), independentemente de sua extensão estar forjada (ex: renomeado para .mp3). A qual categoria de ferramenta e procedimento pericial pertence essa técnica de filtragem?",
+        "opts": [
+          "Processo de Decifragem Probabilística (Hash Cracking).",
+          "Processo de Extração de Rede (Packet Sniffing).",
+          "Processo de Categorização via Análise de Assinaturas Hexadecimais no processamento dos vestígios.",
+          "Processo de Saturação Qualitativa via BFAC."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A técnica pertence à etapa de Processamento -> Categorização. A ferramenta (como IPED) lê o cabeçalho/rodapé do arquivo (sequências hexadecimais de assinaturas, conhecidas como magic numbers) para descobrir o que o arquivo realmente é, desmascarando a extensão renomeada."
+      },
+      {
+        "q": "26. Nos smartphones Android, os desenvolvedores de equipamentos forenses muitas vezes lutam para acessar a memória ignorando barreiras de sistema. O desenvolvimento próprio de bootloaders ou exploração de privilégios superiores atende pela sigla 'root'. Nos aparelhos iOS (Apple), a técnica correspondente de remoção de restrições para obter acesso profundo à memória é denominada:",
+        "opts": [
+          "Wipe Control.",
+          "Jailbreak.",
+          "Full Disk Encryption (FDE).",
+          "SIM Unlocking."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. No iOS, a técnica para remoção das restrições do sistema para conseguir privilégios profundos de root e burlar sistemas de extração fechados é chamada de Jailbreak."
+      },
+      {
+        "q": "27. No contexto do Sistema de Arquivos, se um usuário salva no disco um arquivo TXT de texto contendo apenas uma palavra (ex: 5 bytes) e seu sistema adota 'blocos' de 4096 bytes (4 kB) como unidade mínima. O que acontecerá na alocação física deste arquivo?",
+        "opts": [
+          "O sistema salvará o arquivo compactado em metadados sem usar blocos magnéticos.",
+          "O sistema alocará exatamente 5 bytes físicos no disco, deixando o resto do bloco livre para outros arquivos dividirem o espaço.",
+          "O arquivo ocupará no mínimo 1 bloco inteiro (4096 bytes), desperdiçando fisicamente o resto do bloco (slack space).",
+          "Ocorrerá um erro de fragmentação forçando o Windows a aplicar a função Hash antes de preencher o Mapa de Bits."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. O bloco é a unidade mínima de armazenamento. Mesmo que o arquivo seja infinitamente pequeno, ele ocupará um bloco inteiro no disco. Nenhum outro arquivo poderá usar os bytes restantes daquele mesmo bloco."
+      },
+      {
+        "q": "28. Ao configurar o modo de 'Pesquisa por palavras-chave' (Keyword Search), o Perito Criminal depara-se com a necessidade de descobrir se o termo 'luiz' ou 'luis' consta na evidência. Caso ele não conte com a 'busca indexada' pronta do IPED e decida fazer essa pesquisa por meio de um varrimento exaustivo disco abaixo, como essa varredura é tecnicamente nomeada e qual é sua característica temporal?",
+        "opts": [
+          "Busca Expressa, e ocorre de forma instantânea através da API do Windows Explorer.",
+          "Busca Hashed, sendo concluída apenas em discos com FBE aplicado.",
+          "Busca Live, e costuma ser extremamente lenta devido à varredura setor a setor sem um índice.",
+          "Busca RAM, sendo dependente de que o equipamento seja mantido no estado AFU contínuo."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Quando o índice pré-fabricado (buscada indexada) não está presente ou não foi rodado, a pesquisa varre o disco inteiro bloco a bloco no momento da requisição, processo chamado de 'busca live', e que se caracteriza por ser extremamente lenta."
+      },
+      {
+        "q": "29. O File-Based Encryption (FBE) nos smartphones mais modernos difere profundamente da Criptografia de Disco Completo (FDE). A respeito de sua arquitetura de defesa forense, é correto afirmar que:",
+        "opts": [
+          "O FBE utiliza uma única chave mestra gigantesca (PIN do chip) para barrar toda a partição do sistema.",
+          "O FBE protege arquivos individualmente ou em grupos, utilizando diferentes chaves criptográficas na memória Flash, permitindo, por exemplo, que certas partes do aparelho liguem, mas aplicativos fiquem trancados.",
+          "O FBE atua apenas no bloqueio do cartão eSIM impedindo o MSISDN de conectar em redes estrangeiras P2P.",
+          "O FDE é imune ao estado AFU, exigindo a função unidirecional MD5 para inicializar a tela (bootloader)."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Enquanto o FDE protege todo o disco com uma chave única, o File-Based Encryption (FBE) protege os dados em nível de arquivo ou grupos, usando múltiplas chaves distintas, o que o torna mais complexo de ser extraído completamente."
+      },
+      {
+        "q": "30. A Convenção de Budapeste, a qual o Brasil aderiu formalmente em 2023, reflete um aspecto muito sensível da natureza moderna dos crimes cibernéticos (computadores e crimes). Qual fator intrínseco aos crimes cibernéticos justifica a criação desse grande acordo europeu/internacional?",
+        "opts": [
+          "A estrita territorialidade das redes de cabos de cobre que exige cabos submarinos exclusivos da Polícia Federal para perícia física.",
+          "A ausência completa de vestígios reais na arquitetura do TCP/IP (iceberg impuro).",
+          "A limitação da IA que apenas atua com MASI em servidores instalados em Budapeste.",
+          "O dinamismo e a abrangência frequentemente internacional, onde o criminoso em um país, utilizando servidores em um segundo, pratica crimes contra cidadãos num terceiro, exigindo padronização e cooperação mútua na persecução."
+        ],
+        "ans": 3,
+        "exp": "Gabarito: D. A Convenção de Crimes Cibernéticos (Budapeste) se fez urgente devido à natureza transnacional rápida do cibercrime. As legislações precisavam de harmonia e de um canal internacional para busca ágil de provas em outros territórios soberanos."
+      }
+    ]
+  }
+];
+
+let answered = 0, corrects = 0, wrongs = 0;
+let wrongQuestions = [];
+
+function updateScore(){
+  document.getElementById('sc-c').textContent = corrects;
+  document.getElementById('sc-w').textContent = wrongs;
+  document.getElementById('sc-a').textContent = answered;
+  document.getElementById('btn-wrong').disabled = (wrongQuestions.length === 0);
+}
+
+function buildQuiz(dataSource){
+  dataSource = dataSource || CHAPTERS;
+  window._currentData = dataSource;
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  let total = 0;
+  dataSource.forEach(ch => total += ch.questions.length);
+  document.getElementById('sc-total').textContent = '/ ' + total;
+
+  dataSource.forEach((ch, ci) => {
+    const div = document.createElement('div');
+    div.className = 'chapter';
+    let html = `<div class="chapter-title">${ch.title}</div>`;
+    ch.questions.forEach((q, qi) => {
+      const qid = 'q_' + ci + '_' + qi;
+      html += `<div class="question" id="block_${qid}">
+        <div class="q-num">Questão ${qi+1}</div>
+        <div class="q-text">${q.q}</div>`;
+      q.opts.forEach((opt, oi) => {
+        html += `<button class="opt" id="${qid}_${oi}" onclick="handleAnswer(${ci}, ${qi}, ${oi})">${opt}</button>`;
+      });
+      html += `<div class="feedback" id="fb_${qid}" style="display:none"></div></div>`;
+    });
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+}
+
+function handleAnswer(ci, qi, chosen){
+  const dataSource = window._currentData || CHAPTERS;
+  const ch = dataSource[ci];
+  const q = ch.questions[qi];
+  const qid = 'q_' + ci + '_' + qi;
+  const correct = q.ans;
+  const isRight = (chosen === correct);
+
+  q.opts.forEach((_, oi) => {
+    const btn = document.getElementById(qid + '_' + oi);
+    btn.disabled = true;
+    if(oi === correct) btn.classList.add('correct');
+    if(oi === chosen && !isRight) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('fb_' + qid);
+  fb.style.display = 'block';
+  if(isRight){
+    fb.className = 'feedback ok';
+    fb.innerHTML = `✅ <strong>Correto!</strong> ${q.exp}`;
+    corrects++;
+  } else {
+    fb.className = 'feedback err';
+    fb.innerHTML = `❌ <strong>Incorreto.</strong> ${q.exp}`;
+    wrongs++;
+    wrongQuestions.push({chTitle: ch.title, qObj: q});
+  }
+  answered++;
+  updateScore();
+}
+
+function resetAll(){
+  if(!confirm('Reiniciar o quiz completo?')) return;
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(CHAPTERS);
+  updateScore();
+}
+
+function resetWrong(){
+  if(wrongQuestions.length === 0) return;
+  if(!confirm('Reiniciar apenas com as ' + wrongQuestions.length + ' questão(ões) que você errou?')) return;
+  const chapMap = {};
+  wrongQuestions.forEach(({chTitle, qObj}) => {
+    if(!chapMap[chTitle]) chapMap[chTitle] = {title: chTitle, questions: []};
+    chapMap[chTitle].questions.push(qObj);
+  });
+  const filtered = Object.values(chapMap);
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(filtered);
+  updateScore();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

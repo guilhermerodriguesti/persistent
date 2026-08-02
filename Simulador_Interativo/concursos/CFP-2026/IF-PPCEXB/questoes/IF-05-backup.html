@@ -1,0 +1,714 @@
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado Parte 5: Informática Forense (40 Inéditas)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            color: #1f2937;
+            font-size: 24px; /* Letras grandes */
+            line-height: 1.6;
+            margin: 0;
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 38px;
+            color: #111827;
+            margin-bottom: 40px;
+        }
+        .question-container {
+            background-color: #ffffff;
+            border: 2px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #000;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: baseline;
+            background-color: #f9fafb;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e5e7eb;
+            transition: background-color 0.2s;
+        }
+        .options li:hover {
+            background-color: #f3f4f6;
+        }
+        input[type="radio"] {
+            transform: scale(1.8);
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        label {
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn-responder {
+            background-color: #3b82f6;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 35px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .btn-responder:hover {
+            background-color: #2563eb;
+        }
+        .feedback {
+            display: none;
+            margin-top: 25px;
+            padding: 25px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .correct {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 2px solid #a7f3d0;
+        }
+        .incorrect {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 2px solid #fecaca;
+        }
+        .explanation {
+            margin-top: 20px;
+            font-weight: normal;
+            font-size: 22px;
+            color: #1f2937;
+            border-top: 1px solid currentColor;
+            padding-top: 15px;
+        }
+
+        /* ==================== TABLET RESPONSIVE (768px - 1024px) ==================== */
+        @media (max-width: 1024px) {
+            body {
+                font-size: 20px;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 30px;
+                margin-bottom: 30px;
+            }
+            .question-container {
+                padding: 25px;
+                margin-bottom: 30px;
+            }
+            .question-text {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            .options li {
+                margin-bottom: 12px;
+                padding: 10px;
+            }
+            input[type="radio"] {
+                transform: scale(1.5);
+                margin-right: 12px;
+            }
+            .btn-responder {
+                font-size: 20px;
+                padding: 12px 25px;
+            }
+            .feedback {
+                font-size: 18px;
+                padding: 15px;
+            }
+            .explanation {
+                font-size: 18px;
+            }
+        }
+
+        /* ==================== MOBILE (< 768px) ==================== */
+        @media (max-width: 767px) {
+            body {
+                font-size: 18px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 26px;
+                margin-bottom: 25px;
+            }
+            .question-container {
+                padding: 20px;
+                margin-bottom: 25px;
+                border-radius: 8px;
+            }
+            .question-text {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+            .options li {
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+            input[type="radio"] {
+                transform: scale(1.4);
+                margin-right: 10px;
+            }
+            .btn-responder {
+                font-size: 18px;
+                padding: 12px 20px;
+                width: 100%;
+            }
+            .feedback {
+                font-size: 16px;
+                padding: 12px;
+            }
+            .explanation {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Simulado Avançado - Parte 5 (40 Inéditas)</h1>
+    <div id="quiz-container"></div>
+
+    <script>
+        const questoes = [
+            {
+                q: "1. No que tange aos crimes previstos no Código Penal (Art. 155, § 4º-C) relacionados a furto mediante fraude eletrônica, caso o crime seja praticado contra idoso ou vulnerável, qual é a consequência penal estabelecida pela Lei 14.155/2021?",
+                opcoes: [
+                    "A pena é multiplicada por três.",
+                    "Aumenta-se a pena de 1/3 (um terço) a 2/3 (dois terços).",
+                    "Aumenta-se a pena de 1/3 (um terço) ao dobro.",
+                    "Aplica-se pena de reclusão de 8 a 12 anos inafiançáveis."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A apostila cita o Art. 155, § 4º-C, inciso II: 'aumenta-se de 1/3 (um terço) ao dobro, se o crime é praticado contra idoso ou vulnerável'."
+            },
+            {
+                q: "2. De acordo com o Art. 266 do Código Penal, interromper serviço telemático ou de informação de utilidade pública (como um ataque cibernético a sistemas hospitalares ou de telecomunicações) sujeita o criminoso a qual tipo de pena?",
+                opcoes: [
+                    "Reclusão, de 2 a 5 anos, e multa.",
+                    "Detenção, de um a três anos, e multa.",
+                    "Reclusão, de 4 a 8 anos.",
+                    "Detenção, de seis meses a um ano."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila transcreve o Art. 266: 'Interromper ou perturbar serviço telegráfico... Pena - detenção, de um a três anos, e multa. § 1º Incorre na mesma pena quem interrompe serviço telemático...'."
+            },
+            {
+                q: "3. A doutrina exposta na apostila apresenta uma definição de 'espaço cibernético' que transcende o simples conceito de rede. Segundo o texto, o que compreende o espaço cibernético?",
+                opcoes: [
+                    "Apenas os dados armazenados em nuvens corporativas e servidores fora do território nacional.",
+                    "Exclusivamente as transações financeiras operadas pelo protocolo HTTPS.",
+                    "Todos os recursos disponíveis na Internet, direta ou indiretamente, como serviços, dados e informações, bancos de dados, computadores, equipamentos de rede e softwares.",
+                    "O hardware interno do gabinete, excetuando-se as redes Wi-Fi e Bluetooth."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A apostila define explicitamente o espaço cibernético como abrangendo todos os recursos disponíveis na Internet, serviços, bancos de dados, equipamentos e softwares."
+            },
+            {
+                q: "4. No sistema numérico adotado pelos computadores, a notação utilizando os prefixos do Sistema Internacional (SI) é o padrão. Segundo o SI aplicado à informática, a grandeza Peta corresponde a:",
+                opcoes: [
+                    "10^6",
+                    "10^9",
+                    "10^12",
+                    "10^15"
+                ],
+                correta: 3,
+                explicacao: "Gabarito: D. A apostila cita: 'kilo (10^3), mega (10^6), giga (10^9), tera (10^12), peta (10^15)...'."
+            },
+            {
+                q: "5. Se observarmos o disco rígido no seu nível mais profundo através de um editor hexadecimal, e encontrarmos os bytes '0100 1011' gravados magneticamente. Pela conversão padrão ASCII ilustrada no material, esses bits representariam:",
+                opcoes: [
+                    "O símbolo asterisco (*).",
+                    "O caractere K.",
+                    "O caractere L.",
+                    "O símbolo curinga (?)."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila dá o exemplo de que o caractere K é mapeado para o octeto 01001011 (hexadecimal 4B)."
+            },
+            {
+                q: "6. Dentre as conexões físicas no interior do gabinete, placas de expansão (como de vídeo) costumam ser conectadas à placa-mãe através de slots. Contudo, dispositivos como discos rígidos e leitores de DVD conectam-se utilizando cabos. Quais os padrões de conexão de HDs citados na apostila?",
+                opcoes: [
+                    "RJ-45 e CAT6.",
+                    "IDE e SATA.",
+                    "HDMI e DisplayPort.",
+                    "PCI-Express e AGP."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila afirma: 'Há conectores e cabos específicos para conectar esses dispositivos [discos rígidos], sendo que os mais comuns são IDE e SATA'."
+            },
+            {
+                q: "7. As assinaturas dos arquivos (sequências de bytes que identificam o tipo do arquivo, os famosos magic numbers) encontram-se localizadas fisicamente em qual parte do arquivo?",
+                opcoes: [
+                    "Exclusivamente no setor zero do disco (MBR).",
+                    "Apenas na extensão do nome do arquivo (como .doc ou .pdf).",
+                    "No início e/ou no fim dos arquivos.",
+                    "Nos metadados salvos na nuvem do sistema operacional."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A apostila ensina que 'Essas sequências de bytes são específicas para cada tipo de arquivo e são conhecidas como assinaturas. As assinaturas podem estar presentes no início e/ou no fim dos arquivos'."
+            },
+            {
+                q: "8. A respeito do conceito central de Funções Unidirecionais de Resumo (Hash), é uma característica matemática fundamental destas funções descrita na apostila:",
+                opcoes: [
+                    "Elas são estocásticas, gerando saídas diferentes para a mesma entrada em cada execução.",
+                    "É um algoritmo determinístico, ou seja, uma mesma entrada sempre produzirá uma mesma saída.",
+                    "Podem ser revertidas (engenharia reversa) desde que se utilize a Inteligência Artificial IPED.",
+                    "O tamanho da saída será proporcional ao tamanho do arquivo de entrada."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Uma função de hash é determinística (mesma entrada gera mesma saída), gera saída de tamanho fixo, e é unidirecional (não pode ser invertida para descobrir o arquivo original)."
+            },
+            {
+                q: "9. Para o cálculo e verificação ágil de Hashes no sistema Windows de forma gratuita e simples, além do MD5Summer, qual outro software é expressamente recomendado na apostila?",
+                opcoes: [
+                    "Magnet Axiom.",
+                    "FSUM.",
+                    "Tableau Imager.",
+                    "Cellebrite Hash Analyzer."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila cita: 'Entre os aplicativos gratuitos para a plataforma Windows, podemos citar o MD5Summer [...] e o FSUM'."
+            },
+            {
+                q: "10. Nos casos excepcionais previstos na doutrina forense, o Perito poderá operar um computador no próprio local da busca para racionalizar a seleção do material a ser apreendido. O que o Perito precisa avaliar antes de tomar tal decisão?",
+                opcoes: [
+                    "Se o alvo fornecerá a senha do Wi-Fi de forma voluntária.",
+                    "Se existem condições técnicas e recursos humanos e materiais suficientes para que o equipamento seja operado no local sem colocar a prova em risco.",
+                    "Se o software do IPED já foi atualizado para a versão 5.0.",
+                    "Se há luz solar incidente, que favorece a captura da RAM."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila afirma: 'Caberá ao Perito Criminal determinar se existem condições técnicas e recursos humanos e materiais suficientes para que o equipamento seja operado no local'."
+            },
+            {
+                q: "11. Um dos motivos apontados para NÃO se remover o Disco Rígido de dentro do gabinete no local da busca e sim apreender o computador por inteiro, está relacionado às configurações lógicas do servidor. Qual configuração é expressamente citada que pode impedir a leitura dos discos avulsos?",
+                opcoes: [
+                    "Sistema de arquivos FAT32.",
+                    "Múltiplos discos interligados logicamente na configuração RAID.",
+                    "BIOS com proteção de over-clocking.",
+                    "Presença de discos em estado sólido (SSD)."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila alerta para a 'possibilidade de existência de configurações lógicas de conexão entre múltiplos discos (ex: RAID) que possam complicar a leitura desses discos sem o restante do hardware'."
+            },
+            {
+                q: "12. Ao deparar-se com um computador de grande porte ou servidor onde há inviabilidade técnica de apreensão física, o Perito decide copiar a caixa de e-mails do suspeito no local. Durante essa cópia de dados corporativos, quem DEVE acompanhar o procedimento?",
+                opcoes: [
+                    "Apenas os policiais federais da equipe de busca para manter o sigilo.",
+                    "Sempre que possível, testemunhas do próprio local, de preferência o dono do equipamento ou funcionários responsáveis.",
+                    "Advogados da União ou membros do Ministério Público.",
+                    "Ninguém deve acompanhar, para não contaminar a prova com digitalização óptica."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O procedimento de cópia no local 'deve ser acompanhado, sempre que possível, por testemunhas do próprio local - de preferência, o dono do equipamento [...] ou os funcionários responsáveis'."
+            },
+            {
+                q: "13. Como se denomina tecnicamente a proteção que impede a escrita de dados numa mídia mediante a atuação de um software especializado desabilitando interfaces lógicas do computador (como portas USB)?",
+                opcoes: [
+                    "Trava Mecânica.",
+                    "Bloqueio de Hardware (Físico).",
+                    "Bloqueio Lógico.",
+                    "Wipe Forense."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Bloqueio Lógico: 'por meio de software especializado, é possível desabilitar a escrita em algumas interfaces do computador...'."
+            },
+            {
+                q: "14. A duplicação 'Mídia para Arquivo-Imagem' é citada como o método mais indicado para a realização de exames periciais devido a quais vantagens?",
+                opcoes: [
+                    "Garante o acesso instantâneo às senhas de nuvem e dispensa o uso de bloqueadores.",
+                    "Exige o zeramento (wipe) constante do disco de destino, o que purifica o hardware.",
+                    "Maior flexibilidade para analisar diversos arquivos-imagem simultaneamente e facilidade de manter a integridade, não sendo necessário zerar a mídia de destino.",
+                    "Realiza o ataque probabilístico de dicionário automaticamente durante a clonagem."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A apostila destaca: 'Devido à maior flexibilidade para se analisar diversos arquivos-imagem simultaneamente e à maior facilidade para se manter a integridade dos dados...'."
+            },
+            {
+                q: "15. Uma das fragilidades da técnica de recuperação Data Carving é que ela lê apenas blocos sequenciais cegamente. O que pode acontecer com um arquivo de vídeo grande se ele estiver fragmentado (alocado em blocos não contíguos no disco)?",
+                opcoes: [
+                    "Ele será recuperado integralmente graças aos metadados do IPED.",
+                    "O Data Carving unirá os fragmentos usando algoritmos de IA do Cellebrite.",
+                    "Pode ser recuperado apenas de forma parcial, perdendo as partes que estão espalhadas.",
+                    "A ferramenta acionará o Bitlocker para forçar a desfragmentação live."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Como o Carving não lê a tabela de blocos, ele 'arquivos que estejam fragmentados (alocados em blocos não contíguos) podem ser recuperados de forma parcial'."
+            },
+            {
+                q: "16. Há um tipo específico de arquivo na informática que nada mais é que um 'repositório de outros arquivos', abrigando dados em seu interior. Como são conhecidos arquivos como .ZIP e .PST na terminologia da análise forense?",
+                opcoes: [
+                    "Arquivos Órfãos.",
+                    "Arquivos Hash.",
+                    "Arquivos-Contêiner.",
+                    "Arquivos Voláteis."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A apostila define Arquivos-contêiner: 'nada mais são que repositórios de outros arquivos. Como exemplo: arquivos compactados (ZIP, RAR) e arquivos que armazenam mensagens de e-mail (PST)'."
+            },
+            {
+                q: "17. Uma funcionalidade interessante de algumas ferramentas de indexação forense é a capacidade de ler textos que não estão gravados como texto digital, mas sim escritos em imagens ou fotos. Qual é a tecnologia que possibilita isso?",
+                opcoes: [
+                    "IA Generativa P2P.",
+                    "OCR (Optical Character Recognition).",
+                    "Criptografia FDE.",
+                    "Busca Live Hexadecimal."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila afirma: 'ferramentas capazes de indexar textos obtidos por meio de OCR (Optical Character Recognition) a partir de imagens'."
+            },
+            {
+                q: "18. Durante a etapa de 'Redução' de vestígios, o Perito Criminal pode usar os hashes não apenas para eliminar arquivos inúteis do Windows, mas também para:",
+                opcoes: [
+                    "Quebrar as senhas numéricas PIN por ataque reverso.",
+                    "Identificar arquivos relevantes automaticamente, como conjuntos de imagens de pedofilia já comprovados em casos anteriores.",
+                    "Alterar a data e hora do sistema para corresponder ao fuso horário internacional de Budapeste.",
+                    "Traduzir documentos criptografados usando a NSRL."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O texto diz: 'Outra utilidade das bases de dados de arquivos conhecidos é identificar arquivos relevantes na análise... hashes de conjuntos de imagens pertencentes a casos já comprovados...'."
+            },
+            {
+                q: "19. A técnica em que o Perito, sem o uso de índices, pesquisa por uma palavra varrendo exaustivamente bloco por bloco do disco rígido é conhecida como:",
+                opcoes: [
+                    "Busca Live, e pode ser extremamente lenta.",
+                    "Busca Indexada, sendo quase instantânea.",
+                    "Data Carving Curinga, aplicável apenas em Linux.",
+                    "Engenharia Reversa de Palavras."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. A pesquisa sem índice exige a leitura direta do disco em tempo real: 'Esse tipo de pesquisa é conhecido como busca live, e pode ser extremamente lenta'."
+            },
+            {
+                q: "20. No que se refere ao ataque probabilístico para decifrar arquivos, por que essa abordagem é considerada mais 'inteligente' que a força bruta?",
+                opcoes: [
+                    "Porque usa satélites P2P para dividir o processamento globalmente.",
+                    "Porque utiliza probabilidades condicionais e gramáticas especializadas, evitando testar senhas que dificilmente seriam memorizadas por um ser humano.",
+                    "Porque lê diretamente o chip TPM e rouba a chave mestre da BIOS.",
+                    "Porque ela apenas tenta senhas numéricas de até 4 dígitos."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O método probabilístico usa regras de linguagem para testar senhas com maior chance lógica de terem sido escolhidas pelo usuário, poupando tempo."
+            },
+            {
+                q: "21. A ferramenta IPED (Indexador e Processador de Evidências Digitais) possui diversas facilidades integradas que ajudam o perito. Ao final do exame com o IPED, como as informações selecionadas para a prova costumam ser materializadas?",
+                opcoes: [
+                    "Em um pen drive protegido por criptografia iOS FDE.",
+                    "A ferramenta as imprime diretamente no papel moeda da Polícia Federal.",
+                    "Gera uma estrutura de diretórios e páginas HTML prontas para serem enviadas anexas ao Laudo.",
+                    "Salva as evidências em formato .PST e envia por e-mail ao juiz."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A apostila descreve que 'outra facilidade disponível no IPED é a geração de relatórios em HTML... gerando uma estrutura de diretórios e páginas HTML prontas'."
+            },
+            {
+                q: "22. Além do IPED, a apostila cita expressamente o nome de outras ferramentas integradas bastante famosas na forense computacional. Qual das opções abaixo lista apenas ferramentas constantes na apostila?",
+                opcoes: [
+                    "Wireshark e Nmap.",
+                    "Exterro FTK, OpenText Forensic (EnCase) e X-Ways Forensics.",
+                    "Cain & Abel e John the Ripper.",
+                    "Autopsy e Volatility."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. As ferramentas integradas citadas no texto são: Exterro FTK, OpenText Forensic (EnCase), X-Ways Forensics, Magnet Axiom, Cellebrite Digital Inspector e Physical Analyzer."
+            },
+            {
+                q: "23. A definição oficial de 'Abuso Sexual Infantojuvenil (ASI)' na Portaria de Informática Forense estipula que a ação delituosa envolve a criança:",
+                opcoes: [
+                    "Apenas mediante contato físico direto provado por laudo médico.",
+                    "De forma real ou simulada, com ou sem contato físico, mediante coação ou manipulação.",
+                    "Unicamente em ações transmitidas ao vivo (streaming).",
+                    "Apenas se o material for categorizado como pornografia adulta no BFAC."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A definição I - ASI diz: 'toda ação... de forma real ou simulada, em atividade de natureza sexual, com ou sem contato físico...'."
+            },
+            {
+                q: "24. Ao iniciar a triagem de milhares de arquivos de mídia numa investigação de pedofilia, a IA da ferramenta classifica as fotos. Qual nível de prioridade (hierarquia) a IA deve colocar no topo da fila (primeiro a ser analisado)?",
+                opcoes: [
+                    "Grau I - ASI.",
+                    "Grau II - Suspeita de ASI.",
+                    "Grau III - Pornografia Adulta.",
+                    "Grau IV - Pessoas sem conotação sexual."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. A hierarquia de maior prioridade é I - ASI. Em seguida, II - suspeita; III - pornografia adulta; IV - pessoas; V - outros."
+            },
+            {
+                q: "25. A Portaria dita a obrigação de organizar os arquivos MASI (após exame) em três conjuntos. Aquele em que ficam os arquivos distribuídos pelo investigado via WhatsApp ou redes sociais é chamado de:",
+                opcoes: [
+                    "Conjunto de Produção.",
+                    "Conjunto de Posse.",
+                    "Conjunto de Disponibilização.",
+                    "Conjunto Oculto P2P."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Arquivos transmitidos/distribuídos formam o conjunto de Disponibilização."
+            },
+            {
+                q: "26. Para a identificação visual formal de MASI, são necessários dois elementos simultâneos: conotação sexual e indícios de menoridade. Qual dos itens abaixo é um indício anatômico listado como critério de ausência de desenvolvimento puberal masculino?",
+                opcoes: [
+                    "Broto mamário com discreta elevação da auréola.",
+                    "Pelos lisos e muito pigmentados no peito.",
+                    "Órgão genital com aspecto infantil, com ausência de aumento perceptível do volume testicular.",
+                    "Mandíbula excessivamente protuberante e quadrada."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A portaria lista para o gênero masculino: 'órgão genital com aspecto infantil, com ausência de aumento perceptível do volume testicular...'."
+            },
+            {
+                q: "27. O número da identificação física de 15 dígitos do aparelho de telefonia celular GSM (Hardware) é chamado de:",
+                opcoes: [
+                    "IMSI.",
+                    "IMEI.",
+                    "ESN.",
+                    "ICCID."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. IMEI (International Mobile Equipment Identity) é o código de 15 dígitos que identifica o equipamento/aparelho físico GSM."
+            },
+            {
+                q: "28. A tecnologia CDMA, extinta no Brasil, utilizava um serial eletrônico global. Quantos dígitos tem esse código ESN que o perito pode encontrar em celulares muito antigos?",
+                opcoes: [
+                    "Exatamente 15 dígitos numéricos em qualquer aparelho.",
+                    "20 dígitos numéricos inscritos a laser.",
+                    "11 dígitos numéricos ou 8 alfanuméricos.",
+                    "10 dígitos binários."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. O texto define o ESN do CDMA: 'consiste em onze dígitos numéricos ou oito alfanuméricos'."
+            },
+            {
+                q: "29. O artefato 'Autopreenchimento' extraído de um celular refere-se a quê?",
+                opcoes: [
+                    "O envio automático de SMS ao conectar em rede P2P.",
+                    "A coleção de valores armazenados usados no preenchimento de campos de formulários em sites e aplicativos.",
+                    "O download automático de imagens no WhatsApp.",
+                    "O preenchimento automático das senhas mestras de AFU."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila lista 'Autopreenchimento: coleção de valores armazenados usados no preenchimento de campos de formulários'."
+            },
+            {
+                q: "30. Qual extração de celular faz a cópia bit a bit completa de toda a área da memória flash do aparelho, exigindo geralmente que se burlem as defesas do sistema por meio de bootloaders personalizados?",
+                opcoes: [
+                    "Extração Lógica.",
+                    "Extração via Sistema de Arquivos.",
+                    "Extração Física.",
+                    "Extração Manual."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Extração física: 'feita uma cópia de toda a área de armazenamento físico do aparelho... por acesso à memória flash... os equipamentos necessitam desenvolver seus próprios bootloaders'."
+            },
+            {
+                q: "31. A técnica que consiste em obter o privilégio administrativo total, assumindo o controle profundo do sistema de arquivos e desabilitando as restrições impostas pelo fabricante em smartphones com sistema Android é chamada de:",
+                opcoes: [
+                    "Obtenção de privilégios de root.",
+                    "Jailbreak.",
+                    "Bypass BFU.",
+                    "Wipe reverso."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. Nos Androids, isso se chama obter Root (privilégios de superusuário). No iOS, chama-se Jailbreak."
+            },
+            {
+                q: "32. O que dita a Instrução Técnica a respeito da tomada de decisão de um perito no local da busca quando ele depara-se com um celular 'ligado SEM senha fornecida' (sendo o aparelho do alvo não colaborativo)?",
+                opcoes: [
+                    "Desligar imediatamente para preservar o chip SIM.",
+                    "O aparelho deve ser mantido ligado, isolado em bolsa de Faraday com alimentação contínua, tentando-se descobrir a senha com terceiros no local.",
+                    "Fazer o jailbreak no pátio antes do delegado lacrar.",
+                    "Realizar wipe remoto forçado via Wi-Fi."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O cenário (7.4.1.3 - Aparelhos celulares ligados sem senha) estipula: 'O aparelho deve ser mantido ligado, isolado em bolsa de Faraday com alimentação contínua... e buscar descobrir a senha junto a terceiros'."
+            },
+            {
+                q: "33. Durante a apreensão de um iPhone ligado, um dos procedimentos indicados na Instrução Técnica ao lidar com aparelhos da Apple que o suspeito tenha destrancado voluntariamente é:",
+                opcoes: [
+                    "Desativar o FDE apagando a conta iCloud do alvo na frente dele.",
+                    "Tentar desativar a 'proteção contra roubo', verificar senhas e, ao final de tudo, desligá-lo.",
+                    "Quebrar a tela do dispositivo para que ele não bloqueie novamente.",
+                    "Deletar a pasta de fotos e sincronizar com o pendrive da PF."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Para aparelhos 'Ligados COM senha fornecida' (7.4.1.1): 'Nos iPhones, tentar desativar a proteção contra roubo. E, ao final, o aparelho deve ser desligado'."
+            },
+            {
+                q: "34. Existe um artefato nos relatórios de celulares focado na auditoria do consumo elétrico. 'Informa quando o telefone foi ligado/desligado, carga, descarga e capacidade'. Como se chama esse grupo de dados extraído?",
+                opcoes: [
+                    "Locais do dispositivo.",
+                    "Dicionários do usuário.",
+                    "Eventos com energia.",
+                    "Registros de Bootloader."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A apostila chama esse artefato de 'Eventos com energia'."
+            },
+            {
+                q: "35. Um Perito gera um Laudo que contém, em seu corpo principal, a impressão em papel do valor de Hash da lista de arquivos (o arquivo hashes.txt gravado no pendrive anexo). Esse procedimento de carimbar o Hash no papel do laudo garante perante o Juiz:",
+                opcoes: [
+                    "Que o arquivo hashes.txt se auto-descriptografará no computador do tribunal.",
+                    "A autenticidade incontestável da mídia anexa, blindando a cadeia de custódia contra inserção de arquivos falsos.",
+                    "A correção da linguagem utilizada pelo investigado nas planilhas de Excel.",
+                    "A ativação do módulo TPM no computador do juiz."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Ao atrelar a mídia ao Laudo digitalmente assinado no papel, vincula-se a autenticidade e a integridade de todo o anexo. Modificar o pendrive quebrará essa relação perante a Justiça."
+            },
+            {
+                q: "36. Se o Perito precisar usar um HD Externo USB da Polícia Federal para criar o anexo digital e entregar à Justiça, ele precisa garantir que ninguém conseguirá adicionar fotos lá dentro acidentalmente. Como ele bloqueia esse HD para virar 'somente leitura' usando o próprio Windows, conforme sugerido na apostila?",
+                opcoes: [
+                    "Por meio do comando DiskPart do Windows.",
+                    "Arrancando o pino dourado da conexão USB.",
+                    "Instalando o aplicativo MD5Summer no diretório raiz.",
+                    "Criando um arquivo chamado 'lock.txt' no pendrive."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. A apostila recomenda: 'pendrives/HDs externos configurados como somente leitura por meio do comando DiskPart, por exemplo'."
+            },
+            {
+                q: "37. Na metáfora forense do Iceberg, o usuário comum enxerga apenas a ponta. O que representa a 'ponta' desse Iceberg na visão da informática?",
+                opcoes: [
+                    "A memória RAM e a placa de vídeo.",
+                    "Os arquivos apagados que não perderam o bit no mapa.",
+                    "Apenas os dados que estão diretamente acessíveis e visíveis no sistema operacional.",
+                    "A Deep Web e a Dark Web."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A ponta representa os arquivos do dia a dia, normais e visíveis pelo Windows Explorer."
+            },
+            {
+                q: "38. Durante o cumprimento de um mandado de busca e apreensão, a equipe localiza um telefone celular ligado que está ostentando um flagrante (por exemplo, exibindo na tela uma negociação de tráfico de drogas ativa no WhatsApp). O que o Perito deve fazer como primeiro ato lógico?",
+                opcoes: [
+                    "Verificar a necessidade de registrar flagrante, de acordo com o que estiver claramente visível na tela, documentando essa visualização inicial.",
+                    "Desligar o celular brutalmente para salvar o chip SIM.",
+                    "Instalar o IPED por Bluetooth e transmitir os dados para a viatura.",
+                    "Formatar o aparelho para impedir que o criminoso apague."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. A apostila preceitua que, ao encontrar ligado, deve-se: 'verificar a necessidade de registrar flagrante, de acordo com o que estiver claramente visível na tela do computador/celular'."
+            },
+            {
+                q: "39. As distribuições forenses baseadas no sistema operacional Linux são famosas por serem projetadas para interagir com mídias sob o status de 'Read-Only' (somente leitura). Além do CAINE, muito citado no material, qual a outra distribuição Linux forense amplamente referenciada?",
+                opcoes: [
+                    "Ubuntu Desktop.",
+                    "Fedora Server.",
+                    "Kali Linux.",
+                    "Android AOSP."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A apostila cita explicitamente: 'Dentre as versões mais utilizadas pela perícia de informática, destacam-se o CAINE e o Kali'."
+            },
+            {
+                q: "40. Os dados originários de torres de celular (ERBs) presentes no celular do investigado são listados pelo Cellebrite em um relatório específico que ajuda a demonstrar a trajetória do criminoso no mundo físico. Em qual categoria esses dados são extraídos?",
+                opcoes: [
+                    "Dispositivos Bluetooth.",
+                    "Conexões IP Locais.",
+                    "Locais do dispositivo.",
+                    "Indicadores da Web (Bookmarks)."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. 'Locais do dispositivo: dados de localização do telefone celular originários de torres de celular, redes WiFi e GPS do próprio aparelho'."
+            }
+        ];
+
+        let htmlQuestions = "";
+        questoes.forEach((qObj, index) => {
+            htmlQuestions += `
+            <div class="question-container" id="q${index}">
+                <div class="question-text">${qObj.q}</div>
+                <ul class="options">
+            `;
+            
+            qObj.opcoes.forEach((opcao, optIndex) => {
+                htmlQuestions += `
+                    <li>
+                        <input type="radio" name="pergunta${index}" id="p${index}o${optIndex}" value="${optIndex}">
+                        <label for="p${index}o${optIndex}">${String.fromCharCode(65 + optIndex)}) ${opcao}</label>
+                    </li>
+                `;
+            });
+
+            htmlQuestions += `
+                </ul>
+                <button class="btn-responder" onclick="verificarResposta(${index}, ${qObj.correta})">Responder</button>
+                <div class="feedback" id="feedback${index}">
+                    <span id="msg${index}"></span>
+                    <div class="explanation" id="exp${index}"></div>
+                </div>
+            </div>
+            `;
+        });
+
+        document.getElementById("quiz-container").innerHTML = htmlQuestions;
+
+        function verificarResposta(questionIndex, correctAnswerIndex) {
+            const options = document.getElementsByName("pergunta" + questionIndex);
+            let selectedValue = -1;
+
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].checked) {
+                    selectedValue = parseInt(options[i].value);
+                    break;
+                }
+            }
+
+            const feedbackDiv = document.getElementById("feedback" + questionIndex);
+            const msgSpan = document.getElementById("msg" + questionIndex);
+            const expDiv = document.getElementById("exp" + questionIndex);
+
+            if (selectedValue === -1) {
+                alert("Por favor, selecione uma opção antes de clicar em Responder!");
+                return;
+            }
+
+            feedbackDiv.style.display = "block";
+            
+            feedbackDiv.classList.remove("correct", "incorrect");
+
+            if (selectedValue === correctAnswerIndex) {
+                feedbackDiv.classList.add("correct");
+                msgSpan.innerHTML = "✅ Resposta Correta! Muito bem.";
+            } else {
+                feedbackDiv.classList.add("incorrect");
+                msgSpan.innerHTML = `❌ Resposta Incorreta. A alternativa certa é a letra ${String.fromCharCode(65 + correctAnswerIndex)}.`;
+            }
+
+            expDiv.innerHTML = questoes[questionIndex].explicacao;
+            
+            // Opcional: Travar a questão após responder
+            for (let i = 0; i < options.length; i++) {
+                options[i].disabled = true;
+            }
+            const btn = document.querySelector(`#q${questionIndex} button`);
+            btn.disabled = true;
+            btn.style.backgroundColor = '#9ca3af';
+            btn.style.cursor = 'not-allowed';
+            btn.innerText = 'Respondido';
+        }
+    </script>
+</body>
+</html>
+```
+
+Com este lote você atinge **170 questões totais** sobre a apostila! Fique à vontade para me avisar se quiser testar os conhecimentos de alguma forma diferente, ou pedir aprofundamento ou recursos visuais extras de alguma área. Bons estudos!

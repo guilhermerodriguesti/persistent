@@ -1,0 +1,625 @@
+Preparei o código HTML com as 30 questões inéditas de múltipla escolha focadas nos Capítulos 1 a 5 da apostila de Bombas e Explosivos. Conforme você solicitou, o layout foi programado com **letras significativamente maiores** para facilitar a leitura na tela. 
+
+Basta copiar o código abaixo, salvá-lo como um arquivo `.html` (ex: `bombas_explosivos.html`) e abri-lo no seu navegador:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treino de Questões - Bombas e Explosivos</title>
+<style>
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        background-color: #f4f6f9; 
+        color: #333; 
+        margin: 0; 
+        padding: 20px; 
+        font-size: 22px; /* Letras grandes conforme solicitado */
+    }
+    .container { 
+        max-width: 1000px; 
+        margin: 0 auto; 
+        background: #fff; 
+        padding: 40px; 
+        border-radius: 12px; 
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1); 
+    }
+    h1 { 
+        text-align: center; 
+        color: #2c3e50; 
+        font-size: 34px; 
+        margin-bottom: 20px;
+    }
+    p.subtitle {
+        text-align: center; 
+        color: #7f8c8d; 
+        margin-bottom: 40px; 
+        font-size: 24px;
+    }
+    .question-card { 
+        margin-bottom: 35px; 
+        padding: 25px; 
+        border: 2px solid #e1e8ed; 
+        border-radius: 10px; 
+        background-color: #fcfcfc; 
+    }
+    .question-text { 
+        font-weight: bold; 
+        font-size: 26px; 
+        margin-bottom: 20px; 
+        color: #2c3e50; 
+    }
+    .options { 
+        list-style-type: none; 
+        padding: 0; 
+        margin: 0;
+    }
+    .options li { 
+        margin-bottom: 15px; 
+        background: #fff; 
+        border: 2px solid #ddd; 
+        border-radius: 8px; 
+        transition: background 0.2s; 
+    }
+    .options li:hover { 
+        background-color: #f1f5f8; 
+    }
+    .options label { 
+        cursor: pointer; 
+        display: flex; 
+        align-items: center; 
+        padding: 15px 20px; 
+        width: 100%; 
+        box-sizing: border-box;
+        font-size: 22px;
+    }
+    .options input { 
+        margin-right: 18px; 
+        transform: scale(1.6); 
+    }
+    button { 
+        background-color: #3498db; 
+        color: #fff; 
+        border: none; 
+        padding: 15px 30px; 
+        border-radius: 8px; 
+        cursor: pointer; 
+        font-size: 22px; 
+        font-weight: bold;
+        margin-top: 20px; 
+        transition: background-color 0.3s;
+    }
+    button:hover { 
+        background-color: #2980b9; 
+    }
+    button:disabled { 
+        background-color: #bdc3c7; 
+        cursor: not-allowed; 
+    }
+    .feedback { 
+        margin-top: 20px; 
+        padding: 20px; 
+        border-radius: 8px; 
+        display: none; 
+        line-height: 1.6; 
+        font-size: 22px;
+    }
+    .correct { 
+        background-color: #d4edda; 
+        color: #155724; 
+        border: 2px solid #c3e6cb; 
+    }
+    .incorrect { 
+        background-color: #f8d7da; 
+        color: #721c24; 
+        border: 2px solid #f5c6cb; 
+    }
+    .explanation { 
+        margin-top: 15px; 
+        font-style: italic; 
+        font-size: 20px; 
+    }
+
+    /* ==================== TABLET RESPONSIVE (768px - 1024px) ==================== */
+    @media (max-width: 1024px) {
+        body { 
+            font-size: 20px; 
+            padding: 15px; 
+        }
+        .container { 
+            max-width: 100%; 
+            padding: 30px; 
+        }
+        h1 { 
+            font-size: 30px; 
+            margin-bottom: 15px;
+        }
+        p.subtitle {
+            font-size: 20px;
+            margin-bottom: 30px; 
+        }
+        .question-card { 
+            margin-bottom: 30px; 
+            padding: 20px; 
+        }
+        .question-text { 
+            font-size: 22px; 
+            margin-bottom: 15px; 
+        }
+        .options li { 
+            margin-bottom: 12px; 
+        }
+        .options label { 
+            padding: 12px 15px; 
+            font-size: 20px;
+        }
+        .options input { 
+            transform: scale(1.4); 
+            margin-right: 15px; 
+        }
+        button { 
+            font-size: 20px; 
+            padding: 12px 25px; 
+        }
+        .feedback { 
+            font-size: 18px;
+            padding: 15px;
+        }
+        .explanation { 
+            font-size: 18px; 
+        }
+    }
+
+    /* ==================== MOBILE (< 768px) ==================== */
+    @media (max-width: 767px) {
+        body { 
+            font-size: 18px; 
+            padding: 10px; 
+        }
+        .container { 
+            max-width: 100%; 
+            padding: 20px; 
+        }
+        h1 { 
+            font-size: 26px; 
+            margin-bottom: 12px;
+        }
+        p.subtitle {
+            font-size: 18px;
+            margin-bottom: 25px; 
+        }
+        .question-card { 
+            margin-bottom: 25px; 
+            padding: 15px; 
+            border-radius: 8px;
+        }
+        .question-text { 
+            font-size: 18px; 
+            margin-bottom: 12px; 
+        }
+        .options li { 
+            margin-bottom: 10px; 
+        }
+        .options label { 
+            padding: 10px 12px; 
+            font-size: 18px;
+        }
+        .options input { 
+            transform: scale(1.3); 
+            margin-right: 12px; 
+        }
+        button { 
+            font-size: 18px; 
+            padding: 12px 20px; 
+            width: 100%;
+        }
+        .feedback { 
+            font-size: 16px;
+            padding: 12px;
+        }
+        .explanation { 
+            font-size: 16px; 
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Treino de Questões: Bombas e Explosivos</h1>
+    <p class="subtitle">Abrangendo os Capítulos 1 a 5 (com fonte ampliada)</p>
+    <div id="quiz-container"></div>
+</div>
+
+<script>
+const quizData = [
+    {
+        question: "Historicamente, qual evento ocorrido na Inglaterra em 1605 é considerado a primeira ação terrorista com bombas na história?",
+        options: [
+            "A Revolução Gloriosa",
+            "A Conspiração da Pólvora (The Gunpowder Plot)",
+            "O Atentado de Westminster",
+            "A Queda da Bastilha"
+        ],
+        answer: 1,
+        explanation: "Em 4 de novembro de 1605, um grupo de extremistas católicos tentou explodir o Parlamento Inglês usando 36 barris de pólvora. O evento ficou conhecido como 'A Conspiração da Pólvora'."
+    },
+    {
+        question: "Como é classificada a explosão que ocorre pela ruptura estrutural de um recipiente quando a pressão crescente em seu interior supera a sua resistência (ex: caldeira a vapor)?",
+        options: [
+            "Explosão atômica",
+            "Explosão química",
+            "Explosão mecânica",
+            "Explosão secundária"
+        ],
+        answer: 2,
+        explanation: "A explosão mecânica ocorre quando a pressão crescente dentro de um recipiente supera a sua resistência estrutural, como na explosão de uma caldeira a vapor."
+    },
+    {
+        question: "A capacidade de ruptura de um explosivo, mensurada pela rapidez com que este atinge a sua máxima pressão, recebe o nome de:",
+        options: [
+            "Brisância",
+            "Sensibilidade",
+            "Concussão",
+            "Efeito Monroe"
+        ],
+        answer: 0,
+        explanation: "Brisância é a capacidade de ruptura do explosivo, mensurada pela rapidez com que ele atinge a sua máxima pressão."
+    },
+    {
+        question: "Como são denominados os altos explosivos que fornecem energia de ativação dentro de uma cadeia de fogo (sendo muito sensíveis ao choque, calor e fricção)?",
+        options: [
+            "Baixos explosivos deflagrantes",
+            "Altos explosivos secundários",
+            "Explosivos de ruptura",
+            "Altos explosivos primários"
+        ],
+        answer: 3,
+        explanation: "Altos explosivos primários são os explosivos intermediários ou de iniciação que fornecem energia de ativação, sensíveis ao choque mecânico, calor e fricção."
+    },
+    {
+        question: "A pólvora cloratada é frequentemente empregada em atentados terroristas devido à facilidade de obtenção. Nela, o salitre da fórmula original da pólvora negra é substituído por qual substância?",
+        options: [
+            "Nitroglicerina",
+            "Clorato de potássio",
+            "Dinitrato de etileno glicol",
+            "Ácido pícrico"
+        ],
+        answer: 1,
+        explanation: "Na pólvora cloratada, o salitre é substituído pelo clorato de potássio (KClO3) na proporção de 70%, misturado com açúcar, carvão e enxofre."
+    },
+    {
+        question: "Qual composto foi utilizado por Alfred Nobel em 1867 para saturar e dessensibilizar a nitroglicerina com êxito, inventando assim a dinamite?",
+        options: [
+            "Algodão colódio",
+            "Hexogênio (RDX)",
+            "Sílica (Kieselguhr)",
+            "Óleo diesel"
+        ],
+        answer: 2,
+        explanation: "Alfred Nobel dessensibilizou a nitroglicerina mediante a sua saturação com sílica (Kieselguhr), inventando assim a dinamite."
+    },
+    {
+        question: "A nitroglicerina é um alto explosivo líquido, denso e viscoso. O que acontece com ela caso atinja a temperatura de 13 °C?",
+        options: [
+            "Ela evapora rapidamente de forma inofensiva.",
+            "Ela se estabiliza totalmente, tornando-se imune a atritos.",
+            "Ela se solidifica, tornando-se altamente instável e perigosa.",
+            "Ela se transforma em dinamite pura."
+        ],
+        answer: 2,
+        explanation: "A nitroglicerina solidifica-se a 13 graus, tornando-se altamente instável (devido ao cisalhamento dos cristais)."
+    },
+    {
+        question: "Qual explosivo é considerado o mais seguro, sendo utilizado em blocos fundidos de cor amarela e servindo como padrão de referência de cálculo para outros explosivos?",
+        options: [
+            "Fulminato de mercúrio",
+            "TNT (Trinitrotolueno)",
+            "Azida de chumbo",
+            "Pólvora cloratada"
+        ],
+        answer: 1,
+        explanation: "O TNT (Trinitrotolueno) é o mais seguro dos explosivos, pouco sensível e altamente estável, sendo usado como padrão de referência para medir a eficácia de outros explosivos."
+    },
+    {
+        question: "O explosivo comercial conhecido como Anfo é formado por uma mistura de óleo diesel e qual outra substância comumente encontrada em fertilizantes?",
+        options: [
+            "TNT",
+            "Clorato de potássio",
+            "Ácido pícrico",
+            "Nitrato de amônio"
+        ],
+        answer: 3,
+        explanation: "O Anfo é formado pela adição de óleo diesel (cerca de 5,7%) aos grânulos (prills) de nitrato de amônio encontrados em fertilizantes agrícolas."
+    },
+    {
+        question: "Que classe de altos explosivos comerciais de última geração é obtida a partir da dispersão de óleo em solução aquosa de nitrato de amônia?",
+        options: [
+            "Emulsões",
+            "Pólvoras de base dupla",
+            "Plásticos C4",
+            "Explosivos primários"
+        ],
+        answer: 0,
+        explanation: "As emulsões são explosivos secundários comerciais de última geração obtidos a partir da dispersão de óleo em solução aquosa de nitrato de amônia."
+    },
+    {
+        question: "Dentre os efeitos primários de uma explosão, qual é o responsável por gerar chamas que podem provocar incêndios em materiais inflamáveis próximos?",
+        options: [
+            "Onda de choque",
+            "Concussão",
+            "Efeito térmico",
+            "Fragmentação"
+        ],
+        answer: 2,
+        explanation: "O efeito térmico-incendiário ocorre quando a explosão gera calor e surgem chamas, podendo provocar incêndios em materiais próximos."
+    },
+    {
+        question: "Qual é o nome do efeito utilizado em implosões e perfurações, que consiste na convergência intencional de várias ondas de choque para um mesmo ponto de menor resistência?",
+        options: [
+            "Efeito Doppler",
+            "Efeito Joule",
+            "Efeito Monroe (ou efeito bazuca)",
+            "Efeito de retardo"
+        ],
+        answer: 2,
+        explanation: "O Efeito Monroe ou efeito bazuca é a concentração das ondas de choque em um mesmo ponto, utilizado para direcionar a explosão e cortar/perfurar superfícies altamente resistentes."
+    },
+    {
+        question: "Na previsão de danos e conversão de massa de diferentes explosivos, as tabelas usam o chamado 'Fator de Eficácia Relativa'. Qual explosivo possui o Fator exato de 1,0 como referência base?",
+        options: [
+            "Nitrato de amônio",
+            "TNT",
+            "C-4",
+            "Pólvora negra"
+        ],
+        answer: 1,
+        explanation: "O explosivo utilizado como referência (com Fator de eficácia relativa igual a 1,0) é o TNT."
+    },
+    {
+        question: "No contexto dos sistemas de iniciação, o estopim hidráulico é caracterizado por:",
+        options: [
+            "Queimar muito rapidamente, a 8 s/m.",
+            "Ser usado para deflagração exclusivamente de bombas nucleares.",
+            "Ser impermeável, permitir uso subaquático e queimar de modo lento sem que a queima da pólvora seja visível externamente.",
+            "Ser altamente suscetível a correntes de rádio."
+        ],
+        answer: 2,
+        explanation: "O estopim hidráulico é impermeável (usado embaixo d'água), queima lenta e uniformemente, sendo visualmente impossível saber em que parte interna a pólvora está queimando."
+    },
+    {
+        question: "O sistema disparador de tubo de choque se diferencia dos fios elétricos pois:",
+        options: [
+            "Usa uma pequena corrente contínua gerada por pilha.",
+            "Consiste num tubo plástico com material pirotécnico (HMX+alumínio) que propaga uma chama pelo interior a 1.000 m/s.",
+            "Exige contato com água pressurizada para funcionar.",
+            "É imune ao corte físico por alicates."
+        ],
+        answer: 1,
+        explanation: "O tubo de choque é um tubo plástico oco revestido por HMX e alumínio em pó, propagando uma chama que sensibiliza a espoleta sem usar fios elétricos."
+    },
+    {
+        question: "Em relação ao uso de espoletas elétricas, qual o principal risco ou desvantagem de segurança apontado pela literatura?",
+        options: [
+            "A impossibilidade de detonar várias cargas ao mesmo tempo.",
+            "O tempo de espera obrigatório de 4 horas após a conexão.",
+            "O acionamento acidental por eletricidade estática ou indução eletromagnética.",
+            "A sua extrema lentidão no disparo."
+        ],
+        answer: 2,
+        explanation: "As cápsulas elétricas podem ser acionadas acidentalmente por eletricidade estática ou indução eletromagnética (como ondas de rádios e celulares)."
+    },
+    {
+        question: "Ao lidar com detonadores elétricos em uma ocorrência, o que o técnico deve evitar fazer, visando a segurança contra indução eletromagnética?",
+        options: [
+            "Evitar guardar detonadores junto com a carga explosiva principal.",
+            "Usar ou manter ligado radiotransmissores (HT) e celulares próximos ao local.",
+            "Unir as pontas dos fios do detonador (curto-circuito).",
+            "Medir o tempo de queima."
+        ],
+        answer: 1,
+        explanation: "As regras de segurança exigem desligar radiotransmissores, incluindo HT e celulares, próximos à ocorrência para evitar deflagração induzida por ondas eletromagnéticas."
+    },
+    {
+        question: "O mecanismo de acionamento que exige a aplicação de um peso/força para soltar o percussor ou fechar o circuito (muito usado sob assentos ou tapetes) é do tipo:",
+        options: [
+            "Tração",
+            "Tensão",
+            "Pressão",
+            "Descompressão"
+        ],
+        answer: 2,
+        explanation: "Os dispositivos de pressão exigem a aplicação de pressão (peso de quem senta ou pisa) para fechar o circuito elétrico."
+    },
+    {
+        question: "Um mecanismo clássico empregado em armadilhas de cartas-bomba, que é ativado quando a vítima levanta a aba ou remove algo de cima do artefato, é chamado de:",
+        options: [
+            "Barométrico",
+            "Descompressão",
+            "Tempo",
+            "Pressão"
+        ],
+        answer: 1,
+        explanation: "A descompressão funciona pela remoção de um objeto ou da pressão, sendo muito usada em cartas-bomba ou ao abrir um livro/maleta."
+    },
+    {
+        question: "No ambiente militar, armadilhas em trilhas que detonam a carga quando o soldado rompe ou esbarra em um fio esticado (cabo de tropeço) utilizam o mecanismo de:",
+        options: [
+            "Pressão",
+            "Barométrico",
+            "Retardo químico",
+            "Tensão"
+        ],
+        answer: 3,
+        explanation: "O mecanismo de tensão é empregado quando há um fio ou arame esticado (cabo de tropeço) que, ao se romper, libera o percussor."
+    },
+    {
+        question: "Uma bomba postal pode ter um pino ou um isolante amarrado a um barbante interno que, ao sofrer um simples puxão, ativa a bomba. Esse é o mecanismo por:",
+        options: [
+            "Tração",
+            "Descompressão",
+            "Retardo químico",
+            "Acústica"
+        ],
+        answer: 0,
+        explanation: "O mecanismo por tração funciona através de um fio ou isolante que, ao ser tracionado/sofrer puxão, permite fechar o circuito elétrico ou soltar o pino percussor."
+    },
+    {
+        question: "O mecanismo de acionamento onde se utiliza a corrosão lenta de um fio de sustentação por uma solução de cloreto cúprico encaixa-se na categoria de:",
+        options: [
+            "Retardo químico",
+            "Temporizador mecânico analógico",
+            "Antimovimento",
+            "Tração magnética"
+        ],
+        answer: 0,
+        explanation: "No retardo químico, uma solução corrosiva (como o cloreto cúprico) corrói o filamento até ele se romper, acionando a bomba em tempos variáveis."
+    },
+    {
+        question: "Qual o método de segurança aplicado pelos esquadrões para neutralizar um acionamento por controle remoto via RF (radiofrequência)?",
+        options: [
+            "Atirar na bateria usando pistola de água.",
+            "Usar uma manta metálica/papel alumínio para criar uma blindagem eletromagnética e bloquear a transmissão.",
+            "Mudar a bomba rapidamente de posição.",
+            "Iluminar o pacote com luz infravermelha."
+        ],
+        answer: 1,
+        explanation: "Uma das soluções de desativação contra controle remoto é o uso de mantas metálicas ou redes para fazer blindagem eletromagnética e bloquear a transmissão."
+    },
+    {
+        question: "Os dispositivos que ativam a bomba ao menor sinal de vibração ou se o artefato for inclinado (usando chaves de mercúrio ou pêndulos) são conhecidos como:",
+        options: [
+            "Barométricos",
+            "De tensão",
+            "De retardo químico",
+            "Antimovimento/antidistúrbio"
+        ],
+        answer: 3,
+        explanation: "Artefatos iniciados ao serem mudados de posição ou por vibração, utilizando chaves de mercúrio ou pêndulos, possuem mecanismo antimovimento/antidistúrbio."
+    },
+    {
+        question: "Um mecanismo criado para explodir durante o voo de uma aeronave, acionando-se assim que a aeronave ganha altitude e a pressão externa diminui, chama-se:",
+        options: [
+            "Fotoelétrico",
+            "Barométrico",
+            "Efeito Joule",
+            "Tensão de altitude"
+        ],
+        answer: 1,
+        explanation: "Mecanismos barométricos são ativados pela diferença de pressões na água e no ar, sendo comuns em artefatos transportados com flutuações de altitude, como aviões."
+    },
+    {
+        question: "No contexto das Técnicas de Desativação, a 'Criogenia' (resfriamento rápido para desativar a fonte elétrica) e o uso do 'Raio-X' são classificados como:",
+        options: [
+            "Técnicas Ativas Invasivas",
+            "Técnicas de Efeito Monroe",
+            "Técnicas Passivas",
+            "Técnicas de Retardo"
+        ],
+        answer: 2,
+        explanation: "O exame por Raios X e a Criogenia são exemplos de Técnicas Passivas, pois não provocam, em tese, alterações capazes de acionar a bomba."
+    },
+    {
+        question: "O equipamento ativo conhecido como Disruptor (Canhão D'Água) é acionado empregando a força gerada por:",
+        options: [
+            "Uma bomba de alta pressão ligada a um caminhão de bombeiros.",
+            "Um cartucho especial de calibre 12 que impulsiona a água e destrói o invólucro.",
+            "Um tanque de nitrogênio líquido.",
+            "A explosão secundária de uma granada militar acoplada."
+        ],
+        answer: 1,
+        explanation: "O disruptor dispara uma coluna de água contida no cano, impulsionada pela detonação de um cartucho especial de calibre 12, desarticulando o artefato rapidamente."
+    },
+    {
+        question: "Ao utilizar o canhão d'água contra invólucros mais rígidos (como bombas-tubo) onde há risco de ricochete, qual carga de ataque é a mais recomendada?",
+        options: [
+            "Água pura mineral",
+            "Nitroglicerina gelatinosa",
+            "Carga Avon (gesso + esferas ocas metálicas + água)",
+            "Lamas explosivas bombeadas"
+        ],
+        answer: 2,
+        explanation: "A carga Avon forma um balote rígido e resistente de gesso e esferas metálicas que não provoca ricochete, sendo indicada para alvos mais rígidos."
+    },
+    {
+        question: "Na técnica improvisada de desativação que emprega uma garrafa cheia de água e um cordel detonador, por que se utiliza obrigatoriamente uma garrafa plástica (tipo PET)?",
+        options: [
+            "Para não alterar a temperatura da água.",
+            "Porque o vidro bloqueia as ondas de rádio e o plástico não.",
+            "Para minimizar a possibilidade de fragmentos rígidos iniciarem o artefato explosivo alvo.",
+            "Para derreter e selar os contatos elétricos."
+        ],
+        answer: 2,
+        explanation: "O fato de a garrafa ser plástica minimiza a possibilidade de os seus estilhaços e fragmentos iniciarem o artefato explosivo por impacto."
+    },
+    {
+        question: "A técnica do 'Chicote' é empregada frequentemente na abertura remota de envelopes suspeitos. Qual o mecanismo de atuação desta técnica?",
+        options: [
+            "Um jato contínuo de água que derrete o papel em formato de V.",
+            "O arremesso de um fio rígido de cobre contra o envelope pela detonação de um cordel.",
+            "Um laser infravermelho de alta potência focando na borda do pacote.",
+            "A expansão lenta de uma bola de gesso."
+        ],
+        answer: 1,
+        explanation: "Na técnica do chicote, a detonação do cordel arremessa um fio rígido de cobre (chicote) em altíssima velocidade, que corta e abre o envelope suspeito."
+    }
+];
+
+const quizContainer = document.getElementById('quiz-container');
+
+quizData.forEach((q, index) => {
+    const questionDiv = document.createElement('div');
+    questionDiv.className = 'question-card';
+
+    let optionsHtml = '';
+    q.options.forEach((opt, i) => {
+        optionsHtml += `<li><label><input type="radio" name="q${index}" value="${i}"> ${opt}</label></li>`;
+    });
+
+    questionDiv.innerHTML = `
+        <div class="question-text">Questão ${index + 1}: ${q.question}</div>
+        <ul class="options">${optionsHtml}</ul>
+        <button onclick="checkAnswer(${index}, this)">Responder</button>
+        <div class="feedback" id="feedback-${index}"></div>
+    `;
+    quizContainer.appendChild(questionDiv);
+});
+
+function checkAnswer(index, btn) {
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    const feedbackDiv = document.getElementById(`feedback-${index}`);
+
+    if (!selected) {
+        alert('Por favor, selecione uma opção antes de responder.');
+        return;
+    }
+
+    const answerObj = quizData[index];
+    const isCorrect = parseInt(selected.value) === answerObj.answer;
+
+    feedbackDiv.style.display = 'block';
+    if (isCorrect) {
+        feedbackDiv.className = 'feedback correct';
+        feedbackDiv.innerHTML = `<strong>Correto!</strong><div class="explanation">${answerObj.explanation}</div>`;
+    } else {
+        feedbackDiv.className = 'feedback incorrect';
+        feedbackDiv.innerHTML = `<strong>Incorreto. A resposta correta é: "${answerObj.options[answerObj.answer]}"</strong><div class="explanation">${answerObj.explanation}</div>`;
+    }
+    
+    // Desativa as opções de rádio para prevenir mudanças
+    const allInputs = document.querySelectorAll(`input[name="q${index}"]`);
+    allInputs.forEach(input => input.disabled = true);
+    
+    // Desativa o botão e altera o texto
+    btn.disabled = true;
+    btn.textContent = 'Respondido';
+}
+</script>
+
+</body>
+</html>
+```
+
+Qualquer dúvida no uso do arquivo HTML gerado, ou se precisar treinar exames específicos nos locais de pós-explosão (Capítulo 10), estou à disposição! Bons estudos!

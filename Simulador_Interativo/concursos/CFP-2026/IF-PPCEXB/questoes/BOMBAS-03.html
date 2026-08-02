@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado: Tópicos 4 a 6</title>
+<style>
+  :root{--cor:#1a3a5c;--cor2:#2e6da4;--cor3:#e8f0f8;--verde:#1e7e34;--vermelho:#c0392b;--laranja:#d35400;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#222;}
+  header{background:var(--cor);color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;}
+  header h1{font-size:1.3rem;font-weight:700;}
+  .subtitle{font-size:.85rem;opacity:.8;}
+  .scorebar{background:var(--cor2);color:#fff;padding:10px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .sc{font-size:.95rem;} .sc span{font-weight:700;}
+  .lbl{opacity:.75;font-size:.85rem;}
+  .btn-reset{background:#fff;color:var(--cor);border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;}
+  .btn-reset:hover{background:#e0e8f0;}
+  .btn-wrong{background:var(--laranja);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;margin-left:auto;}
+  .btn-wrong:hover:not(:disabled){background:#b94600;}
+  .btn-wrong:disabled{opacity:.4;cursor:not-allowed;}
+  main{max-width:860px;margin:28px auto;padding:0 16px 60px;}
+  .chapter{margin-bottom:32px;}
+  .chapter-title{background:var(--cor);color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;font-weight:700;font-size:1rem;}
+  .question{background:#fff;border:1px solid #d0dcea;border-top:none;padding:20px 20px 14px;}
+  .question:last-child{border-radius:0 0 8px 8px;}
+  .question+.question{border-top:1px dashed #c8d8ea;}
+  .q-num{font-size:.78rem;color:#888;margin-bottom:4px;}
+  .q-text{font-size:1rem;font-weight:600;margin-bottom:14px;line-height:1.5;}
+  .opt{display:block;width:100%;background:var(--cor3);border:2px solid transparent;border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;text-align:left;font-size:.93rem;line-height:1.4;transition:.15s;}
+  .opt:hover:not(:disabled){background:#d5e5f8;border-color:var(--cor2);}
+  .opt.correct{background:#d4edda;border-color:var(--verde);color:var(--verde);font-weight:600;}
+  .opt.wrong{background:#fde8e8;border-color:var(--vermelho);color:var(--vermelho);}
+  .opt:disabled{cursor:default;}
+  .feedback{margin-top:8px;font-size:.88rem;padding:8px 12px;border-radius:6px;line-height:1.5;}
+  .feedback.ok{background:#d4edda;color:#155724;}
+  .feedback.err{background:#fde8e8;color:#721c24;}
+  .feedback .loc{margin-top:4px;font-size:.8rem;opacity:.8;}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Simulado: Tópicos 4 a 6</h1>
+    <div class="subtitle">Mecanismos de Acionamento, Técnicas de Desativação e Bombas Postais</div>
+  </div>
+</header>
+<div class="scorebar">
+  <div class="sc">✅ Acertos: <span id="sc-c">0</span></div>
+  <div class="sc">❌ Erros: <span id="sc-w">0</span></div>
+  <div class="sc">📝 Respondidas: <span id="sc-a">0</span> <span class="lbl" id="sc-total"></span></div>
+  <button class="btn-reset" onclick="resetAll()">↺ Reiniciar tudo</button>
+  <button class="btn-wrong" id="btn-wrong" onclick="resetWrong()" disabled>↺ Só os erros</button>
+</div>
+<main id="quiz-container"></main>
+
+<script>
+const CHAPTERS = [
+  {
+    "title": "Tópicos 4 a 6",
+    "questions": [
+      {
+        "q": "1. Os mecanismos de acionamento baseiam-se em princ\u00edpios b\u00e1sicos para iniciar a carga explosiva. Qual princ\u00edpio atua com base no Efeito Joule, aquecendo um condutor capaz de iniciar um explosivo sens\u00edvel ao calor?",
+        "opts": [
+          "Mec\u00e2nico."
+,
+          "Qu\u00edmico."
+,
+          "El\u00e9trico."
+,
+          "Barom\u00e9trico."
+        ],
+        "ans": 2,
+        "exp": "O princ\u00edpio el\u00e9trico fundamenta-se no fato de que a corrente el\u00e9trica, ao percorrer um condutor, provoca o seu aquecimento (efeito Joule), iniciando a carga."
+      }
+,
+      {
+        "q": "2. Em qual dos mecanismos de acionamento descritos na apostila o dispositivo \u00e9 ativado pela remo\u00e7\u00e3o de um objeto ou al\u00edvio de peso, sendo um sistema classicamente utilizado em cartas-bomba, maletas ou ao se retirar um telefone do gancho?",
+        "opts": [
+          "Press\u00e3o."
+,
+          "Tra\u00e7\u00e3o."
+,
+          "Descompress\u00e3o."
+,
+          "Tens\u00e3o."
+        ],
+        "ans": 2,
+        "exp": "A descompress\u00e3o funciona pela remo\u00e7\u00e3o de um objeto ou da press\u00e3o, sendo muito usada ao se abrir livros, portas ou levantar o fone do gancho."
+      }
+,
+      {
+        "q": "3. H\u00e1 uma diferen\u00e7a t\u00e9cnica entre os mecanismos de Tens\u00e3o e Tra\u00e7\u00e3o. De acordo com o manual, o mecanismo de TENS\u00c3O funciona quando:",
+        "opts": [
+          "Um cabo isolante \u00e9 retirado suavemente."
+,
+          "Um fio ou arame esticado se rompe (ou \u00e9 tracionado), provocando a libera\u00e7\u00e3o de um percussor ou fechando um circuito."
+,
+          "Uma diferen\u00e7a de press\u00e3o atmosf\u00e9rica curva o diafragma do contato."
+,
+          "O pino de seguran\u00e7a \u00e9 sacado do percussor cil\u00edndrico."
+        ],
+        "ans": 1,
+        "exp": "Na tens\u00e3o, existe um fio/arame esticado que, ao se romper ou sofrer tra\u00e7\u00e3o/trope\u00e7o, aciona o dispositivo, sendo muito usado em armadilhamento de trilhas (cabo trope\u00e7o)."
+      }
+,
+      {
+        "q": "4. Nos mecanismos ativados por Retardo Qu\u00edmico, um material atua de forma gradual at\u00e9 acionar a bomba. O exemplo principal citado na doutrina utiliza uma solu\u00e7\u00e3o l\u00edquida que corr\u00f3i o fio que tensiona uma l\u00e2mina. Que solu\u00e7\u00e3o \u00e9 essa?",
+        "opts": [
+          "\u00c1cido P\u00edcrico."
+,
+          "Sulfeto de Carbono."
+,
+          "Cloreto C\u00faprico."
+,
+          "\u00c1cido N\u00edtrico."
+        ],
+        "ans": 2,
+        "exp": "O exemplo da apostila afirma que a solu\u00e7\u00e3o de cloreto c\u00faprico corr\u00f3i o fio que tensiona a l\u00e2mina at\u00e9 que ele se parta e a l\u00e2mina toque o contato de espera."
+      }
+,
+      {
+        "q": "5. Uma perigosa mistura caseira de a\u00e7\u00e3o qu\u00edmica pode ser ativada usando uma ampola de \u00e1cido sulf\u00farico. A qual mistura o \u00e1cido sulf\u00farico \u00e9 frequentemente associado para criar uma p\u00f3lvora improvisada incendi\u00e1ria?",
+        "opts": [
+          "Nitroglicerina e p\u00f3 de serra."
+,
+          "Clorato de pot\u00e1ssio e enxofre."
+,
+          "Glicerina e permanganato de pot\u00e1ssio."
+,
+          "TNT e alum\u00ednio em p\u00f3."
+        ],
+        "ans": 1,
+        "exp": "Um dos exemplos de combina\u00e7\u00f5es qu\u00edmicas no texto \u00e9 o uso de uma ampola de \u00e1cido sulf\u00farico com mistura de clorato de pot\u00e1ssio e enxofre (p\u00f3lvora caseira)."
+      }
+,
+      {
+        "q": "6. Bombas acionadas por Controle Remoto (via Ondas de R\u00e1dio - RF) s\u00e3o altamente suscet\u00edveis a interfer\u00eancias. Qual a t\u00e1tica sugerida pelo manual para realizar uma blindagem eletromagn\u00e9tica numa bomba deste tipo?",
+        "opts": [
+          "Resfriar o equipamento com criogenia (Nitrog\u00eanio l\u00edquido)."
+,
+          "Mergulh\u00e1-la imediatamente na \u00e1gua."
+,
+          "Envolv\u00ea-la em uma manta met\u00e1lica, tela ou papel alum\u00ednio."
+,
+          "Retirar as pilhas com o aux\u00edlio de um chicote."
+        ],
+        "ans": 2,
+        "exp": "Para tentar desativar/blindar o receptor, a doutrina orienta retirar a antena, usar uma manta met\u00e1lica (ou papel alum\u00ednio/rede) para tentar a blindagem eletromagn\u00e9tica, ou bloquear a transmiss\u00e3o."
+      }
+,
+      {
+        "q": "7. Como funciona o mecanismo de acionamento Barom\u00e9trico comumente utilizado contra aeronaves, relacionando a press\u00e3o interna e externa quando o avi\u00e3o decola?",
+        "opts": [
+          "Com a decolagem, a press\u00e3o externa (P1) aumenta muito, empurrando o contato m\u00f3vel."
+,
+          "Com a decolagem, a temperatura da cabine cai e congela o diafragma do sensor."
+,
+          "Com a decolagem, a press\u00e3o externa (P1) diminui (ficando P1 < P2 da press\u00e3o selada), fazendo o diafragma defletir em dire\u00e7\u00e3o ao contato fixo."
+,
+          "Com o som das turbinas, a vibra\u00e7\u00e3o sonora sintoniza com a frequ\u00eancia do sensor barom\u00e9trico."
+        ],
+        "ans": 2,
+        "exp": "O sensor mant\u00e9m a press\u00e3o em solo aprisionada no reservat\u00f3rio (P2). Quando a aeronave decola, a press\u00e3o ambiente externa (P1) cai. Como P1 < P2, o diafragma incha e fecha o circuito el\u00e9trico."
+      }
+,
+      {
+        "q": "8. Alguns sensores eletr\u00f4nicos s\u00e3o extremamente sens\u00edveis. O sensor conhecido como 'Anti-raio X' \u00e9 ativado por que altera\u00e7\u00e3o no seu circuito?",
+        "opts": [
+          "Diferen\u00e7a de temperatura ao ser colocado no scanner."
+,
+          "Eleva o fluxo magn\u00e9tico do rolo transportador do scanner aeroportu\u00e1rio."
+,
+          "Usa um meio que intensifica a luz dentro do circuito, ativando uma c\u00e9lula fotoel\u00e9trica ao ser exposto aos raios X."
+,
+          "Sente a onda sonora do aparelho de raio X e aciona microfones ultra-s\u00f4nicos."
+        ],
+        "ans": 2,
+        "exp": "O mecanismo anti-raio X usa componentes que se iluminam ou intensificam a luz quando atingidos pelos raios X, o que ativa uma c\u00e9lula fotoel\u00e9trica interna que detona o artefato."
+      }
+,
+      {
+        "q": "9. O manual classifica as t\u00e9cnicas de desativa\u00e7\u00e3o de artefatos explosivos em 'Ativas' e 'Passivas'. Qual t\u00e9cnica abaixo \u00e9 um exemplo de t\u00e9cnica PASSIVA?",
+        "opts": [
+          "Contracarga utilizando explosivo."
+,
+          "Disparo com arma de fogo longa."
+,
+          "Uso de canh\u00e3o d'\u00e1gua (Disruptor)."
+,
+          "Resfriamento dr\u00e1stico e r\u00e1pido para desativa\u00e7\u00e3o da fonte el\u00e9trica (criogenia)."
+        ],
+        "ans": 3,
+        "exp": "T\u00e9cnicas passivas s\u00e3o aquelas que n\u00e3o provocam, em tese, altera\u00e7\u00f5es que acionem o artefato (ex: Raio X, ausculta\u00e7\u00e3o, barreiras de prote\u00e7\u00e3o e criogenia). As demais s\u00e3o ativas."
+      }
+,
+      {
+        "q": "10. Qual \u00e9 a finalidade principal do emprego de T\u00e9cnicas Ativas de desativa\u00e7\u00e3o pelo esquadr\u00e3o antibombas?",
+        "opts": [
+          "Preservar todas as digitais e material gen\u00e9tico perfeitamente."
+,
+          "Transportar o objeto intacto para o laborat\u00f3rio."
+,
+          "Interromper o circuito de fogo, provocando altera\u00e7\u00f5es f\u00edsico-qu\u00edmicas previs\u00edveis no artefato para desarticul\u00e1-lo."
+,
+          "Avaliar o tipo de bateria usada com ultrassom."
+        ],
+        "ans": 2,
+        "exp": "O texto define as t\u00e9cnicas ativas como aquelas que podem provocar altera\u00e7\u00f5es f\u00edsico-qu\u00edmicas previs\u00edveis, tendo como objetivo principal interromper o circuito de fogo."
+      }
+,
+      {
+        "q": "11. O canh\u00e3o d\u2019\u00e1gua (Disruptor) fundamenta-se na for\u00e7a hidrodin\u00e2mica. Em seu funcionamento normal, que quantidade aproximada de \u00e1gua e que tipo de carga propelente ele utiliza?",
+        "opts": [
+          "Aproximadamente 5 litros de \u00e1gua, impulsionada por p\u00f3lvora negra solta."
+,
+          "Aproximadamente 150 ml de \u00e1gua, lan\u00e7ada por um cartucho de calibre 12 especialmente carregado."
+,
+          "Aproximadamente 2 litros de \u00e1gua de uma garrafa PET, impulsionados por cordel NP 10."
+,
+          "Aproximadamente 500 ml de \u00e1gua com areia, lan\u00e7ados por press\u00e3o pneum\u00e1tica."
+        ],
+        "ans": 1,
+        "exp": "O disruptor usa 150 ml de \u00e1gua entre buchas pl\u00e1sticas, lan\u00e7ados a alta press\u00e3o por uma carga propelente contida num cartucho de calibre 12 especial."
+      }
+,
+      {
+        "q": "12. Quando o Disruptor \u00e9 utilizado contra alvos r\u00edgidos, como uma 'bomba tubo', onde a \u00e1gua n\u00e3o cortaria facilmente e geraria ricochete, qual carga de ataque especial \u00e9 adotada?",
+        "opts": [
+          "Carga DMNB em p\u00f3."
+,
+          "Somente areia seca."
+,
+          "\u00c1cido sulf\u00farico dilu\u00eddo."
+,
+          "Balote r\u00edgido conhecido como 'Avon' (gesso + esferas ocas met\u00e1licas + \u00e1gua)."
+        ],
+        "ans": 3,
+        "exp": "O Avon \u00e9 um balote composto por gesso, esferas ocas met\u00e1licas e \u00e1gua. Por ser mais resistente e r\u00edgido, evita o ricochete e corta estruturas densas como canos e metais (bomba tubo)."
+      }
+,
+      {
+        "q": "13. O posicionamento do canh\u00e3o d'\u00e1gua difere segundo o material do artefato. Para desarticular um tubo (cano) que n\u00e3o puder ser interpretado visando a tampa (cap), qual a angula\u00e7\u00e3o recomendada, respectivamente, se o tubo for de PVC e se o tubo for de FERRO?",
+        "opts": [
+          "PVC: 90 graus / Ferro: 90 graus."
+,
+          "PVC: 45 graus / Ferro: 15 graus."
+,
+          "PVC: 15 graus / Ferro: 45 graus."
+,
+          "PVC: 180 graus / Ferro: 360 graus."
+        ],
+        "ans": 1,
+        "exp": "Segundo a apostila, em tubo de PVC o canh\u00e3o \u00e9 posicionado a 45\u00ba da tampa (cap). Em tubo de ferro, que \u00e9 mais resistente, atira-se com \u00e2ngulo mais rasante para arrancar a tampa: posicionado a 15\u00ba."
+      }
+,
+      {
+        "q": "14. Na aus\u00eancia do canh\u00e3o d'\u00e1gua, o perito pode usar 'Cargas Especiais' constru\u00eddas com material improvisado, como a garrafa pl\u00e1stica. Por qual motivo prioriza-se o uso da garrafa de PL\u00c1STICO (ex: refrigerante de 2 litros) ao inv\u00e9s de outros materiais r\u00edgidos?",
+        "opts": [
+          "Porque dissolve os \u00e1cidos do explosivo."
+,
+          "Porque amplifica o Efeito Monroe em 50%."
+,
+          "Porque o fato de ser pl\u00e1stica minimiza severamente a possibilidade de fragmentos secund\u00e1rios iniciarem ou detonarem acidentalmente o artefato alvo."
+,
+          "Porque conduz melhor a eletricidade est\u00e1tica para o solo."
+        ],
+        "ans": 2,
+        "exp": "A garrafa cont\u00e9m \u00e1gua que ser\u00e1 lan\u00e7ada como proj\u00e9til h\u00eddrico pelo cordel detonante (NP 10). Ser de pl\u00e1stico macio garante que estilha\u00e7os contundentes n\u00e3o atinjam e acionem a bomba."
+      }
+,
+      {
+        "q": "15. Existem duas t\u00e9cnicas para abertura remota de cartas ou envelopes suspeitos. Na t\u00e9cnica do 'Cart\u00e3o formato V', um explosivo abre o envelope usando a onda de choque. Qual cordel \u00e9 indicado para esse arranjo?",
+        "opts": [
+          "Cordel NP 10."
+,
+          "Cordel NP 05."
+,
+          "Tubo de Choque a p\u00f3 de alum\u00ednio."
+,
+          "Estopim hidr\u00e1ulico submerso."
+        ],
+        "ans": 1,
+        "exp": "Para o cart\u00e3o V (onde o cordel corre por cima do envelope na ponta do cart\u00e3o), experi\u00eancias t\u00eam dado bons resultados utilizando a menor carga do cordel NP 05."
+      }
+,
+      {
+        "q": "16. A t\u00e9cnica de abertura de envelopes conhecida como 'T\u00e9cnica do Chicote' utiliza o cordel detonante (geralmente NP) colocado entre 5 e 8 cm de dist\u00e2ncia do alvo, mas qual \u00e9 o elemento f\u00edsico que efetivamente \u00e9 arremessado para rasgar e abrir a carta-bomba?",
+        "opts": [
+          "Uma l\u00e2mina de barbear soldada ao detonador."
+,
+          "Gesso misturado com \u00e1gua."
+,
+          "O pr\u00f3prio g\u00e1s de expans\u00e3o livre (concuss\u00e3o pura)."
+,
+          "Um fio r\u00edgido de cobre fixado junto ao cordel detonante."
+        ],
+        "ans": 3,
+        "exp": "A t\u00e9cnica do chicote apoia um fio r\u00edgido de cobre pr\u00f3ximo ao cordel. A detona\u00e7\u00e3o arremessa esse fio que 'chicoteia' e rasga o envelope."
+      }
+,
+      {
+        "q": "17. A 'T\u00e9cnica do Chicote' apresenta uma excelente vantagem t\u00e1tica quando acionada sobre uma chapa de a\u00e7o ou piso muito r\u00edgido. Qual \u00e9 esse efeito secund\u00e1rio \u00fatil?",
+        "opts": [
+          "Derrete a bateria do explosivo imediatamente."
+,
+          "O fio r\u00edgido arremessado poder\u00e1 cortar simultaneamente os fios el\u00e9tricos existentes no interior do envelope, neutralizando os circuitos do artefato."
+,
+          "Anula o som da explos\u00e3o, evitando p\u00e2nico."
+,
+          "Transforma a carta em cinzas sem detonar os prim\u00e1rios."
+        ],
+        "ans": 1,
+        "exp": "O fio r\u00edgido, ao ser arremessado contra um fundo duro, atua como uma guilhotina e pode seccionar os fios e circuitos el\u00e9tricos dentro do envelope."
+      }
+,
+      {
+        "q": "18. Antes do disparo de uma carga especial em uma linha de fogo el\u00e9trica, o perito obedece a um procedimento protocolar rigoroso. Logo ap\u00f3s testar a descontinuidade da linha e antes de conectar a espoleta, o que o perito deve fazer como prote\u00e7\u00e3o vital?",
+        "opts": [
+          "Dar a mensagem: Aten\u00e7\u00e3o, linha quente."
+,
+          "Conectar o explosor (bateria) para carregar o fio."
+,
+          "Curto-circuitar o in\u00edcio da linha (juntando os polos), garantindo uma 'tomada de seguran\u00e7a' contra est\u00e1tica e indu\u00e7\u00e3o."
+,
+          "Lavar as pontas da linha em solu\u00e7\u00e3o de cloreto."
+        ],
+        "ans": 2,
+        "exp": "A sequ\u00eancia \u00e9: abrir a linha -> testar descontinuidade -> curto-circuitar o in\u00edcio da linha (tomada de seguran\u00e7a) -> testar continuidade -> conectar a espoleta... O curto evita acidente."
+      }
+,
+      {
+        "q": "19. Sobre as Bombas Postais (cartas-bomba), a doutrina aponta quais como os tr\u00eas motivos principais que levam algu\u00e9m a envi\u00e1-las?",
+        "opts": [
+          "Apenas assalto a bancos, fuga de pris\u00f5es e fraudes de seguros."
+,
+          "Vingan\u00e7a (incluindo crimes passionais), motivos pol\u00edticos/religiosos e casos de extors\u00e3o."
+,
+          "Brincadeiras juvenis, tr\u00e1fico de armas e sabotagem corporativa leve."
+,
+          "Exclusivamente atentados internacionais de terrorismo at\u00f4mico."
+        ],
+        "ans": 1,
+        "exp": "Os motivos principais listados na apostila s\u00e3o: vingan\u00e7a (incluindo passionais), motivos pol\u00edticos ou religiosos e extors\u00e3o."
+      }
+,
+      {
+        "q": "20. Na triagem e suspei\u00e7\u00e3o de correspond\u00eancias em uma empresa, os funcion\u00e1rios devem ficar em alerta aos sinais externos dos pacotes. Em rela\u00e7\u00e3o ao peso e \u00e0 espessura de uma carta suspeita, quais s\u00e3o os limites de alerta definidos no manual?",
+        "opts": [
+          "Peso acima de 1 kg e espessura de 1 cm."
+,
+          "Peso acima de 50 g e espessura de 2 mm."
+,
+          "Peso aparente em excesso ao volume (acima de 25 g) e espessura invariavelmente superior a 5 mm."
+,
+          "Qualquer pacote acima de 500 g independentemente da espessura."
+        ],
+        "ans": 2,
+        "exp": "As indica\u00e7\u00f5es afirmam que cartas-bomba invariavelmente t\u00eam espessura superior a 5 mm e pesam mais de 25 g (ou peso mal distribu\u00eddo)."
+      }
+,
+      {
+        "q": "21. A presen\u00e7a de odores peculiares emanando de um envelope pode delatar o tipo de subst\u00e2ncia explosiva ocultada. Qual tipo de explosivo \u00e9 denunciado pelo forte 'odor de am\u00eandoas'?",
+        "opts": [
+          "A p\u00f3lvora negra cloratada."
+,
+          "O fulminato de merc\u00fario e o DDNP."
+,
+          "O nitrato de am\u00f4nio (Anfo)."
+,
+          "Explosivos pl\u00e1sticos como C2, C3 e Semtex."
+        ],
+        "ans": 3,
+        "exp": "Odor de am\u00eandoas sugere a presen\u00e7a de explosivos pl\u00e1sticos das s\u00e9ries C2, C3 ou Semtex. J\u00e1 amon\u00edaco sugere nitrato de am\u00f4nio, e p\u00f3lvora o seu pr\u00f3prio cheiro."
+      }
+,
+      {
+        "q": "22. Dentre os sinais subjetivos e visuais de uma correspond\u00eancia maliciosa, a presen\u00e7a de manchas de gordura ou graxa no papel do envelope \u00e9 um indicativo grav\u00edssimo de:",
+        "opts": [
+          "Contamina\u00e7\u00e3o do selo postal pelos correios."
+,
+          "Exsuda\u00e7\u00e3o natural da subst\u00e2ncia explosiva contida no interior (como dinamite ou pl\u00e1stico)."
+,
+          "Uso de cloreto c\u00faprico vazando de retardadores qu\u00edmicos."
+,
+          "Rea\u00e7\u00e3o da p\u00f3lvora negra com a umidade do ar."
+        ],
+        "ans": 1,
+        "exp": "Manchas de gordura/graxa no envelope s\u00e3o t\u00edpicas do processo de 'exsuda\u00e7\u00e3o' (vazamento/suor) da nitroglicerina da dinamite ou dos \u00f3leos e plastificantes de altos explosivos."
+      }
+,
+      {
+        "q": "23. Uma das dicas para detectar a exist\u00eancia de armadilhas no interior da carta-bomba envolve tatear sutilmente as laterais e o fundo da correspond\u00eancia buscando sinais de um componente mec\u00e2nico. Qual componente produz 'menor resist\u00eancia ou maior flexibilidade' ao toque nas bordas do pacote?",
+        "opts": [
+          "Baterias cil\u00edndricas ou retangulares."
+,
+          "Fios de cobre."
+,
+          "As molas tensionadas do dispositivo."
+,
+          "O material explosivo cristalino."
+        ],
+        "ans": 2,
+        "exp": "A 'flexibilidade' (menor resist\u00eancia nas laterais ou no fundo do pacote) pode acusar a possibilidade de exist\u00eancia de molas montadas no percussor da armadilha interna."
+      }
+,
+      {
+        "q": "24. Ao se identificar visualmente uma correspond\u00eancia altamente suspeita, a pessoa N\u00c3O DEVE de maneira alguma praticar qual destas a\u00e7\u00f5es instintivas baseada no senso comum de apagar fogo?",
+        "opts": [
+          "Abrir as portas e janelas da sala onde se encontra o pacote."
+,
+          "Colocar o pacote imediatamente dentro de um balde com \u00e1gua."
+,
+          "Cercar o material com poltronas, sacos de areia ou capim."
+,
+          "Transportar, apenas se seguro e estritamente necess\u00e1rio, para \u00e1rea remota."
+        ],
+        "ans": 1,
+        "exp": "Nunca coloque a bomba na \u00e1gua! A \u00e1gua \u00e9 condutora e pode fechar curto-circuitos el\u00e9tricos ou iniciar rea\u00e7\u00f5es qu\u00edmicas exot\u00e9rmicas violentas entre os compostos ali presentes."
+      }
+,
+      {
+        "q": "25. Por que \u00e9 orientado aos funcion\u00e1rios e peritos abrirem todas as portas e janelas da sala em que um artefato suspeito for abandonado antes da evacua\u00e7\u00e3o total?",
+        "opts": [
+          "Para permitir que a fuma\u00e7a t\u00f3xica saia, dificultando a inflama\u00e7\u00e3o do pacote."
+,
+          "Para facilitar o escape das ondas de choque, reduzindo a press\u00e3o e os danos confinados no caso de uma poss\u00edvel explos\u00e3o."
+,
+          "Para os franco-atiradores da seguran\u00e7a externa terem vis\u00e3o da bomba."
+,
+          "Para os vapores do c\u00e3o farejador se dispersarem e ele n\u00e3o sufocar."
+        ],
+        "ans": 1,
+        "exp": "Abrir portas e janelas reduz drasticamente os danos estruturais, pois diminui o confinamento e permite que a concuss\u00e3o/onda de deslocamento de ar escape e se dissipe para fora do pr\u00e9dio."
+      }
+,
+      {
+        "q": "26. O equipamento 'Fibrosc\u00f3pio', listado como um dos materiais sugeridos para uso em suspeita de bombas postais, possui qual requisito e desvantagem operacional para que possa funcionar?",
+        "opts": [
+          "Depende da radia\u00e7\u00e3o de is\u00f3topos de c\u00e9sio para funcionar."
+,
+          "Precisa emitir ondas ultrass\u00f4nicas que podem ativar sensores ac\u00fasticos."
+,
+          "Requer que o perito fa\u00e7a, obrigatoriamente, um furo ou incis\u00e3o no pacote para conseguir inserir a sonda e realizar a inspe\u00e7\u00e3o visual interna."
+,
+          "Ele aquece a superf\u00edcie do papel, correndo o risco de acender p\u00f3lvora por infravermelho."
+        ],
+        "ans": 2,
+        "exp": "Para utilizar o fibrosc\u00f3pio (e alguns detectores de g\u00e1s), \u00e9 necess\u00e1rio fazer uma incis\u00e3o ou perfurar o pacote para poder introduzir a haste \u00f3ptica da ferramenta."
+      }
+,
+      {
+        "q": "27. Se o pacote suspeito apresentar excesso de selos e os lacres aparentarem ter sido violados e colados novamente, qual t\u00e9cnica do criminoso essa evid\u00eancia sugere?",
+        "opts": [
+          "Isso \u00e9 feito unicamente para esconder a origem do envio na ag\u00eancia."
+,
+          "Essa caracter\u00edstica sugere a possibilidade de o criminoso ter interceptado uma correspond\u00eancia original leg\u00edtima e a substitu\u00eddo (substitui\u00e7\u00e3o de correspond\u00eancia) para o alvo n\u00e3o desconfiar."
+,
+          "Garante que os selos protejam a parte el\u00e9trica de ondas de r\u00e1dio."
+,
+          "A cola do selo serve de base qu\u00edmica para ativar o detonador por am\u00f4nia."
+        ],
+        "ans": 1,
+        "exp": "Selos ou lacres alterados/violados levantam a suspeita de 'substitui\u00e7\u00e3o de correspond\u00eancia', ou seja, roubou-se uma encomenda esperada pela v\u00edtima e entregou-se uma bomba na mesma capa."
+      }
+,
+      {
+        "q": "28. Qual o mecanismo de acionamento que fundamenta a proibi\u00e7\u00e3o taxativa da regra de seguran\u00e7a: 'Nunca tente desarmar ou abrir uma carta-bomba, pois elas n\u00e3o desengatilhar\u00e3o at\u00e9 o momento planejado'?",
+        "opts": [
+          "A carta \u00e9 ativada por press\u00e3o do carteiro ao jog\u00e1-la."
+,
+          "Ela possui apenas mecanismos baseados em rel\u00f3gios de sol."
+,
+          "Sendo predominantemente acionada por mecanismos de Descompress\u00e3o e/ou Tra\u00e7\u00e3o, a pr\u00f3pria a\u00e7\u00e3o f\u00edsica de abrir a tampa da carta completa o circuito ou solta o percussor mec\u00e2nico."
+,
+          "O mecanismo depende da respira\u00e7\u00e3o do alvo (sensor de CO2)."
+        ],
+        "ans": 2,
+        "exp": "As bombas postais s\u00e3o projetadas para explodir no instante da abertura pelo destinat\u00e1rio, utilizando largamente sistemas de tra\u00e7\u00e3o (puxar a aba) e descompress\u00e3o (al\u00edvio do envelope fechado)."
+      }
+,
+      {
+        "q": "29. Se houver um pequeno orif\u00edcio no pacote que n\u00e3o aparente ser defeito de f\u00e1brica nem dano do transporte, a doutrina alerta que esse envelope deve ser considerado suspeito. Por que os criminosos produzem esses furos?",
+        "opts": [
+          "Para permitir que a subst\u00e2ncia explosiva respire e n\u00e3o sue."
+,
+          "O furo seria o orif\u00edcio de acesso por onde o terrorista inseriu um pino ou ferramenta para armar o dispositivo j\u00e1 ap\u00f3s o pacote estar fechado e selado, garantindo a sua pr\u00f3pria seguran\u00e7a."
+,
+          "Para que os c\u00e3es n\u00e3o farejem o vapor confinado."
+,
+          "Para esfriar os contatos el\u00e9tricos e evitar explos\u00e3o t\u00e9rmica nos caminh\u00f5es de correio."
+        ],
+        "ans": 1,
+        "exp": "Pequenos orif\u00edcios s\u00e3o extremamente suspeitos, pois s\u00e3o frequentemente deixados pelo dispositivo usado para armar a bomba com seguran\u00e7a j\u00e1 depois da embalagem estar pronta."
+      }
+,
+      {
+        "q": "30. Sobre as orienta\u00e7\u00f5es para o procedimento em locais com objetos postais que cont\u00eam fios ou arames aparentes despontando do envelope:",
+        "opts": [
+          "Corte o arame aparente para interromper o fornecimento de energia antes que entre em a\u00e7\u00e3o."
+,
+          "O fio aparente \u00e9 apenas para segurar a caixa e pode ser destravado com alicate isolado."
+,
+          "Pode ser que, mesmo no melhor dispositivo montado, um arame se solte; ou at\u00e9 mesmo que o fio j\u00e1 tenha fechado o contato final. Deve ser deixado na quarentena e isolado sem toque."
+,
+          "Deve-se prender o fio num ponto fixo de aterramento na parede para dispersar est\u00e1tica el\u00e9trica."
+        ],
+        "ans": 2,
+        "exp": "Fio/arame aparente significa defeito de montagem ou o pr\u00f3prio fechamento do contato (que pode ter falhado momentaneamente). A ordem m\u00e1xima \u00e9 N\u00c3O TOCAR, isolar, n\u00e3o cortar absolutamente nada."
+      }
+    ]
+  }
+];
+
+let answered = 0, corrects = 0, wrongs = 0;
+let wrongQuestions = [];
+
+function updateScore(){
+  document.getElementById('sc-c').textContent = corrects;
+  document.getElementById('sc-w').textContent = wrongs;
+  document.getElementById('sc-a').textContent = answered;
+  document.getElementById('btn-wrong').disabled = (wrongQuestions.length === 0);
+}
+
+function buildQuiz(dataSource){
+  dataSource = dataSource || CHAPTERS;
+  window._currentData = dataSource;
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  let total = 0;
+  dataSource.forEach(ch => total += ch.questions.length);
+  document.getElementById('sc-total').textContent = '/ ' + total;
+
+  dataSource.forEach((ch, ci) => {
+    const div = document.createElement('div');
+    div.className = 'chapter';
+    let html = `<div class="chapter-title">${ch.title}</div>`;
+    ch.questions.forEach((q, qi) => {
+      const qid = 'q_' + ci + '_' + qi;
+      html += `<div class="question" id="block_${qid}">
+        <div class="q-num">Questão ${qi+1}</div>
+        <div class="q-text">${q.q}</div>`;
+      q.opts.forEach((opt, oi) => {
+        html += `<button class="opt" id="${qid}_${oi}" onclick="handleAnswer(${ci}, ${qi}, ${oi})">${opt}</button>`;
+      });
+      html += `<div class="feedback" id="fb_${qid}" style="display:none"></div></div>`;
+    });
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+}
+
+function handleAnswer(ci, qi, chosen){
+  const dataSource = window._currentData || CHAPTERS;
+  const ch = dataSource[ci];
+  const q = ch.questions[qi];
+  const qid = 'q_' + ci + '_' + qi;
+  const correct = q.ans;
+  const isRight = (chosen === correct);
+
+  q.opts.forEach((_, oi) => {
+    const btn = document.getElementById(qid + '_' + oi);
+    btn.disabled = true;
+    if(oi === correct) btn.classList.add('correct');
+    if(oi === chosen && !isRight) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('fb_' + qid);
+  fb.style.display = 'block';
+  if(isRight){
+    fb.className = 'feedback ok';
+    fb.innerHTML = `✅ <strong>Correto!</strong> ${q.exp}`;
+    corrects++;
+  } else {
+    fb.className = 'feedback err';
+    fb.innerHTML = `❌ <strong>Incorreto.</strong> ${q.exp}`;
+    wrongs++;
+    wrongQuestions.push({chTitle: ch.title, qObj: q});
+  }
+  answered++;
+  updateScore();
+}
+
+function resetAll(){
+  if(!confirm('Reiniciar o quiz completo?')) return;
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(CHAPTERS);
+  updateScore();
+}
+
+function resetWrong(){
+  if(wrongQuestions.length === 0) return;
+  if(!confirm('Reiniciar apenas com as ' + wrongQuestions.length + ' questão(ões) que você errou?')) return;
+  const chapMap = {};
+  wrongQuestions.forEach(({chTitle, qObj}) => {
+    if(!chapMap[chTitle]) chapMap[chTitle] = {title: chTitle, questions: []};
+    chapMap[chTitle].questions.push(qObj);
+  });
+  const filtered = Object.values(chapMap);
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(filtered);
+  updateScore();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado de Revisão Literal - Parte 6 (40 Inéditas)</title>
+<style>
+  :root{--cor:#1a3a5c;--cor2:#2e6da4;--cor3:#e8f0f8;--verde:#1e7e34;--vermelho:#c0392b;--laranja:#d35400;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#222;}
+  header{background:var(--cor);color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;}
+  header h1{font-size:1.3rem;font-weight:700;}
+  .subtitle{font-size:.85rem;opacity:.8;}
+  .scorebar{background:var(--cor2);color:#fff;padding:10px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .sc{font-size:.95rem;} .sc span{font-weight:700;}
+  .lbl{opacity:.75;font-size:.85rem;}
+  .btn-reset{background:#fff;color:var(--cor);border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;}
+  .btn-reset:hover{background:#e0e8f0;}
+  .btn-wrong{background:var(--laranja);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;margin-left:auto;}
+  .btn-wrong:hover:not(:disabled){background:#b94600;}
+  .btn-wrong:disabled{opacity:.4;cursor:not-allowed;}
+  main{max-width:860px;margin:28px auto;padding:0 16px 60px;}
+  .chapter{margin-bottom:32px;}
+  .chapter-title{background:var(--cor);color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;font-weight:700;font-size:1rem;}
+  .question{background:#fff;border:1px solid #d0dcea;border-top:none;padding:20px 20px 14px;}
+  .question:last-child{border-radius:0 0 8px 8px;}
+  .question+.question{border-top:1px dashed #c8d8ea;}
+  .q-num{font-size:.78rem;color:#888;margin-bottom:4px;}
+  .q-text{font-size:1rem;font-weight:600;margin-bottom:14px;line-height:1.5;}
+  .opt{display:block;width:100%;background:var(--cor3);border:2px solid transparent;border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;text-align:left;font-size:.93rem;line-height:1.4;transition:.15s;}
+  .opt:hover:not(:disabled){background:#d5e5f8;border-color:var(--cor2);}
+  .opt.correct{background:#d4edda;border-color:var(--verde);color:var(--verde);font-weight:600;}
+  .opt.wrong{background:#fde8e8;border-color:var(--vermelho);color:var(--vermelho);}
+  .opt:disabled{cursor:default;}
+  .feedback{margin-top:8px;font-size:.88rem;padding:8px 12px;border-radius:6px;line-height:1.5;}
+  .feedback.ok{background:#d4edda;color:#155724;}
+  .feedback.err{background:#fde8e8;color:#721c24;}
+  .feedback .loc{margin-top:4px;font-size:.8rem;opacity:.8;}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Simulado de Revisão Literal - Parte 6 (40 Inéditas)</h1>
+    <div class="subtitle"></div>
+  </div>
+</header>
+<div class="scorebar">
+  <div class="sc">✅ Acertos: <span id="sc-c">0</span></div>
+  <div class="sc">❌ Erros: <span id="sc-w">0</span></div>
+  <div class="sc">📝 Respondidas: <span id="sc-a">0</span> <span class="lbl" id="sc-total"></span></div>
+  <button class="btn-reset" onclick="resetAll()">↺ Reiniciar tudo</button>
+  <button class="btn-wrong" id="btn-wrong" onclick="resetWrong()" disabled>↺ Só os erros</button>
+</div>
+<main id="quiz-container"></main>
+
+<script>
+const CHAPTERS = [
+  {
+    "title": "de Revisão Literal - Parte 6 (40 Inéditas)",
+    "questions": [
+      {
+        "q": "1. De acordo com a Ficha Catalogr\u00e1fica de identifica\u00e7\u00e3o elaborada pela Biblioteca da Academia Nacional de Pol\u00edcia (ANP), qual \u00e9 o c\u00f3digo CDU (Classifica\u00e7\u00e3o Decimal Universal) atribu\u00eddo formalmente a este material de Inform\u00e1tica Forense?",
+        "opts": [
+          "CDU 343.132:004"
+,
+          "CDU 004:343.132"
+,
+          "CDU 004:343"
+,
+          "CDU 343:004"
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A Ficha Catalogr\u00e1fica localizada no in\u00edcio do material indica literalmente o c\u00f3digo classificat\u00f3rio 'CDU 004:343.132'."
+      }
+,
+      {
+        "q": "2. No Cap\u00edtulo 1 (Introdu\u00e7\u00e3o), destaca-se que, a rigor, deve-se evitar o emprego da express\u00e3o 'crimes virtuais'. Qual a justificativa literal trazida pela apostila para essa recomenda\u00e7\u00e3o?",
+        "opts": [
+          "Trata-se de uma nomenclatura sem amparo doutrin\u00e1rio na Conven\u00e7\u00e3o de Budapeste."
+,
+          "Esse termo pode dar a falsa impress\u00e3o de que s\u00e3o crimes que n\u00e3o deixam rastros."
+,
+          "O termo 'crime cibern\u00e9tico' \u00e9 o \u00fanico amparado no C\u00f3digo Penal brasileiro."
+,
+          "O termo 'virtual' induz o erro interpretativo de que o hardware f\u00edsico foi adulterado."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A apostila afirma expressamente que 'n\u00e3o se deve falar em \u201ccrimes virtuais\u201d \u2013 esse termo pode dar a falsa impress\u00e3o de que s\u00e3o crimes que n\u00e3o deixam rastros'."
+      }
+,
+      {
+        "q": "3. Com base nas defini\u00e7\u00f5es literais do material de apoio, como pode ser definido um 'vest\u00edgio digital' no contexto da inform\u00e1tica forense?",
+        "opts": [
+          "Qualquer dado criptografado extra\u00eddo unicamente da mem\u00f3ria vol\u00e1til RAM."
+,
+          "Dados armazenados ou transmitidos em meio computacional ou eletr\u00f4nico que se relacionam \u00e0 infra\u00e7\u00e3o penal."
+,
+          "Todo arquivo ocultado via esteganografia que possua hash MD5 Summer correspondente."
+,
+          "O c\u00f3digo hexadecimal mapeado a partir das m\u00eddias avulsas recolhidas em campo."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O texto define literalmente que 'Um vest\u00edgio digital, portanto, pode ser definido como dados armazenados ou transmitidos em meio computacional ou eletr\u00f4nico que se relacionam \u00e0 infra\u00e7\u00e3o penal'."
+      }
+,
+      {
+        "q": "4. Na nota de rodap\u00e9 n\u00ba 1 do Cap\u00edtulo 1, a Lei n\u00ba 12.737/2012 \u00e9 apontada como conhecida nacionalmente pelo nome de 'Lei Carolina Dieckmann'. Qual foi o motivo literal que motivou essa denomina\u00e7\u00e3o?",
+        "opts": [
+          "A atriz participou ativamente da reda\u00e7\u00e3o do projeto de lei no Congresso."
+,
+          "Ter sido motivada por um caso de divulga\u00e7\u00e3o de material pessoal que estava no computador da atriz."
+,
+          "O fato de a atriz ter tido suas contas em redes sociais hackeadas fora do territ\u00f3rio nacional."
+,
+          "A clonagem do cart\u00e3o de d\u00e9bito e cr\u00e9dito de uso pessoal da referida atriz."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A nota de rodap\u00e9 n\u00ba 1 explica que a lei ficou 'Tamb\u00e9m conhecida como \u201cLei Carolina Dieckmann\u201d, por ter sido motivada por um caso de divulga\u00e7\u00e3o de material pessoal que estava no computador da atriz de mesmo nome'."
+      }
+,
+      {
+        "q": "5. Em conformidade com a tipifica\u00e7\u00e3o trazida pelas reformas penais (Art. 154-A), o crime de 'Invadir dispositivo inform\u00e1tico de uso alheio' prev\u00ea qual pena base de reclus\u00e3o?",
+        "opts": [
+          "Reclus\u00e3o, de 6 meses a 2 anos, e multa."
+,
+          "Reclus\u00e3o, de 1 (um) a 4 (quatro) anos, e multa."
+,
+          "Reclus\u00e3o, de 2 (dois) a 5 (cinco) anos, e multa."
+,
+          "Reclus\u00e3o, de 4 (quatro) a 8 (oito) anos, e multa."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Conforme reda\u00e7\u00e3o literal do Art. 154-A do C\u00f3digo Penal: 'Pena \u2013 reclus\u00e3o, de 1 (um) a 4 (quatro) anos, e multa'."
+      }
+,
+      {
+        "q": "6. No Art. 154-A, \u00a7 2\u00ba do C\u00f3digo Penal, se da invas\u00e3o ao dispositivo inform\u00e1tico de uso alheio resultar preju\u00edzo econ\u00f4mico para o usu\u00e1rio, qual a fra\u00e7\u00e3o de aumento de pena estipulada pela legisla\u00e7\u00e3o?",
+        "opts": [
+          "Aumenta-se a pena de um sexto a um ter\u00e7o."
+,
+          "Aumenta-se a pena de 1/3 (um ter\u00e7o) a 2/3 (dois ter\u00e7os)."
+,
+          "Aumenta-se a pena de um ter\u00e7o ao dobro."
+,
+          "Aumenta-se a pena de metade a dois ter\u00e7os."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O \u00a7 2\u00ba do Art. 154-A prev\u00ea literalmente: 'Aumenta-se a pena de 1/3 (um ter\u00e7o) a 2/3 (dois ter\u00e7os) se da invas\u00e3o resulta preju\u00edzo econ\u00f4mico'."
+      }
+,
+      {
+        "q": "7. Caso a invas\u00e3o ao dispositivo resulte em obten\u00e7\u00e3o de comunica\u00e7\u00f5es privadas, segredos comerciais ou industriais (\u00a7 3\u00ba do Art. 154-A), qual o aumento aplic\u00e1vel conforme o \u00a7 4\u00ba se houver posterior 'divulga\u00e7\u00e3o, comercializa\u00e7\u00e3o ou transmiss\u00e3o a terceiro'?",
+        "opts": [
+          "De um sexto a um ter\u00e7o."
+,
+          "De um a dois ter\u00e7os."
+,
+          "De um ter\u00e7o ao dobro."
+,
+          "De metade ao dobro."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O \u00a7 4\u00ba do Art. 154-A reza literalmente: 'Na hip\u00f3tese do \u00a7 3\u00ba, aumenta-se a pena de um a dois ter\u00e7os se houver divulga\u00e7\u00e3o, comercializa\u00e7\u00e3o ou transmiss\u00e3o a terceiro, a qualquer t\u00edtulo, dos dados ou informa\u00e7\u00f5es obtidos'."
+      }
+,
+      {
+        "q": "8. No crime de furto mediante fraude cometido por meio de dispositivo eletr\u00f4nico (Art. 155, \u00a7 4\u00ba-B), caso o delito seja praticado mediante a utiliza\u00e7\u00e3o de servidor mantido fora do territ\u00f3rio nacional, a pena \u00e9 aumentada de:",
+        "opts": [
+          "1/3 (um ter\u00e7o) ao dobro."
+,
+          "1/3 (um ter\u00e7o) a 2/3 (dois ter\u00e7os)."
+,
+          "Metade ao dobro."
+,
+          "Um sexto a um ter\u00e7o."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O Art. 155, \u00a7 4\u00ba-C, inciso I estabelece literalmente: 'I \u2013 aumenta-se de 1/3 (um ter\u00e7o) a 2/3 (dois ter\u00e7os), se o crime \u00e9 praticado mediante a utiliza\u00e7\u00e3o de servidor mantido fora do territ\u00f3rio nacional'."
+      }
+,
+      {
+        "q": "9. De acordo com o Art. 171, \u00a7 2\u00ba-A, introduzido pela Lei 14.155/2021, se o estelionato (fraude) for cometido com informa\u00e7\u00f5es fornecidas pela v\u00edtima ou terceiro induzido a erro por redes sociais ou correio eletr\u00f4nico fraudulento, qual \u00e9 a pena prevista?",
+        "opts": [
+          "Reclus\u00e3o, de um a cinco anos, e multa."
+,
+          "Reclus\u00e3o, de 4 (quatro) a 8 (oito) anos, e multa."
+,
+          "Reclus\u00e3o, de 2 a 5 anos, e multa."
+,
+          "Deten\u00e7\u00e3o, de um a tr\u00eas anos, e multa."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O Art. 171, \u00a7 2\u00ba-A prev\u00ea textualmente: 'Pena - reclus\u00e3o, de 4 (quatro) a 8 (oito) anos, e multa, se a fraude \u00e9 cometida com a utiliza\u00e7\u00e3o de informa\u00e7\u00f5es fornecidas pela v\u00edtima... por meio de redes sociais... ou correio eletr\u00f4nico fraudulento...'."
+      }
+,
+      {
+        "q": "10. De acordo com o Art. 298 do C\u00f3digo Penal, o ato de falsificar ou alterar documento particular verdadeiro prev\u00ea pena de reclus\u00e3o de um a cinco anos e multa. Conforme o par\u00e1grafo \u00fanico desse artigo, o que se equipara literalmente a documento particular?",
+        "opts": [
+          "As chaves criptogr\u00e1ficas de discos r\u00edgidos."
+,
+          "O cart\u00e3o de cr\u00e9dito ou d\u00e9bito."
+,
+          "Os registros de logs armazenados em servidores locais."
+,
+          "Os e-mails corporativos transmitidos por rede HTTPS."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O par\u00e1grafo \u00fanico do Art. 298 dita de forma literal: 'Para fins do disposto no caput, equipara-se a documento particular o cart\u00e3o de cr\u00e9dito ou d\u00e9bito'."
+      }
+,
+      {
+        "q": "11. A Conven\u00e7\u00e3o de Crimes Cibern\u00e9ticos (Conven\u00e7\u00e3o de Budapeste) foi publicada em 2001. No ano de 2026, de acordo com o texto, quantos pa\u00edses j\u00e1 haviam assinado essa Conven\u00e7\u00e3o formalmente?",
+        "opts": [
+          "Mais de 50 pa\u00edses."
+,
+          "Mais de 80 pa\u00edses."
+,
+          "Cerca de 100 pa\u00edses."
+,
+          "Todos os 193 pa\u00edses membros da ONU."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Consta do texto que 'Em 2026, mais de 80 pa\u00edses j\u00e1 haviam assinado a Conven\u00e7\u00e3o, incluindo o Brasil, que aderiu em 2023'."
+      }
+,
+      {
+        "q": "12. A Inform\u00e1tica Forense \u00e9 classificada na apostila como uma jovem disciplina das Ci\u00eancias Forenses. O surgimento dessa \u00e1rea ocorreu de forma textual em qual per\u00edodo hist\u00f3rico?",
+        "opts": [
+          "Ap\u00f3s a d\u00e9cada de 1950 com os primeiros computadores valvulados."
+,
+          "Ap\u00f3s a d\u00e9cada de 1960 com la populariza\u00e7\u00e3o dos computadores e das telecomunica\u00e7\u00f5es."
+,
+          "Em meados de 1980 com a populariza\u00e7\u00e3o da internet comercial."
+,
+          "Na virada do mil\u00eanio, com o advento das ferramentas Cellebrite e Magnet."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O materialdid\u00e1tico registra que a Inform\u00e1tica Forense \u00e9 uma 'surgida ap\u00f3s a d\u00e9cada de 1960 com a populariza\u00e7\u00e3o dos computadores e das telecomunica\u00e7\u00f5es'."
+      }
+,
+      {
+        "q": "13. Segundo a apostila, quando houver a necessidade de realizar exames periciais que impliquem sigilo quanto \u00e0 origem dos acessos na Internet, qual infraestrutura deve ser fornecida ao Perito Criminal?",
+        "opts": [
+          "Acesso \u00e0 Internet de alta velocidade restrita \u00e0 rede criptografada da Pol\u00edcia Federal."
+,
+          "Conex\u00e3o irrestrita \u00e0 Internet, distinta da rede corporativa, e com dados de registro n\u00e3o vinculados \u00e0 Pol\u00edcia Federal."
+,
+          "Conex\u00e3o via rede P2P autenticada pelo Banco Federal de Arquivos Conhecidos (BFAC)."
+,
+          "Interface direta com a intranet do Minist\u00e9rio da Justi\u00e7a e Seguran\u00e7a P\u00fablica."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O item 1.2.1 estabelece textualmente: 'Para a realiza\u00e7\u00e3o de exames que impliquem sigilo quanto \u00e0 origem dos acessos, o Perito Criminal deve dispor de conex\u00e3o irrestrita \u00e0 Internet, distinta da rede corporativa, e com dados de registro n\u00e3o vinculados \u00e0 Pol\u00edcia Federal'."
+      }
+,
+      {
+        "q": "14. De acordo com o item 1.2.2 (Procedimentos), quando o material arrecadado chega \u00e0 unidade de Criminal\u00edstica, qual deve ser o primeiro procedimento a ser adotado formalmente?",
+        "opts": [
+          "O c\u00e1lculo do hash MD5 de todas as parti\u00e7\u00f5es do HD."
+,
+          "A devida identifica\u00e7\u00e3o e descri\u00e7\u00e3o do material no Sistema Criminal\u00edstica."
+,
+          "A abertura imediata dos gabinetes para detec\u00e7\u00e3o f\u00edsica de m\u00f3dulos TPM."
+,
+          "A extra\u00e7\u00e3o f\u00edsica por meio de bootloaders personalizados no local."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O texto aponta literalmente: 'Uma vez que o material de inform\u00e1tica chega \u00e0 unidade de Criminal\u00edstica, o primeiro procedimento a ser adotado \u00e9 a devida identifica\u00e7\u00e3o e descri\u00e7\u00e3o do material no Sistema Criminal\u00edstica'."
+      }
+,
+      {
+        "q": "15. A apostila define os objetivos dos exames. O exame de 'An\u00e1lise de registros' (logs) \u00e9 exemplificado por diversas determina\u00e7\u00f5es poss\u00edveis. Qual das alternativas abaixo N\u00c3O corresponde a um exemplo listado literalmente no texto?",
+        "opts": [
+          "Determinar a hora em que o computador foi utilizado pela \u00faltima vez."
+,
+          "Determinar qual usu\u00e1rio excluiu determinada entrada em um banco de dados."
+,
+          "Determinar o c\u00f3digo de programa\u00e7\u00e3o do malware utilizado para as fraudes banc\u00e1rias."
+,
+          "Determinar se determinado aparelho celular esteve nas proximidades de uma coordenada."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A an\u00e1lise de 'aplicativos maliciosos' por engenharia reversa para entender fraudes banc\u00e1rias pertence literalmente aos exames de 'an\u00e1lise de sistemas', e n\u00e3o \u00e0 'an\u00e1lise de registros'."
+      }
+,
+      {
+        "q": "16. No item 1.2.3, quando os quesitos periciais recebidos est\u00e3o relacionados a \u00e1reas de conhecimento diversas da inform\u00e1tica, mas as informa\u00e7\u00f5es digitais est\u00e3o contidas em m\u00eddias computacionais, o respons\u00e1vel pela unidade de Criminal\u00edstica pode determinar:",
+        "opts": [
+          "A transfer\u00eancia imediata do material periciado para peritos de fora da institui\u00e7\u00e3o."
+,
+          "A extra\u00e7\u00e3o e disponibiliza\u00e7\u00e3o dos dados pelo perito de inform\u00e1tica para subsidiar a \u00e1rea espec\u00edfica ou a execu\u00e7\u00e3o do exame em conjunto."
+,
+          "O descarte sum\u00e1rio do material computacional para focar apenas nas provas testemunhais do crime."
+,
+          "A suspens\u00e3o total do laudo pericial at\u00e9 manifesta\u00e7\u00e3o do Poder Judici\u00e1rio."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O texto orienta literalmente que 'o respons\u00e1vel pela unidade de Criminal\u00edstica pode determinar ao Perito Criminal de inform\u00e1tica a extra\u00e7\u00e3o e disponibiliza\u00e7\u00e3o dos dados para subsidiar a realiza\u00e7\u00e3o do exame pela \u00e1rea espec\u00edfica ou determinar a execu\u00e7\u00e3o do exame em conjunto por peritos das duas \u00e1reas'."
+      }
+,
+      {
+        "q": "17. No sistema de nota\u00e7\u00e3o bin\u00e1ria utilizado pelos computadores pessoais, a menor unidade de informa\u00e7\u00e3o que pode ser armazenada \u00e9 o bit. O texto assinala que um conjunto de 8 bits constitui um byte ou octeto, sendo capaz de gerar:",
+        "opts": [
+          "128 combina\u00e7\u00f5es poss\u00edveis."
+,
+          "256 combina\u00e7\u00f5es poss\u00edveis."
+,
+          "512 combina\u00e7\u00f5es poss\u00edveis."
+,
+          "1024 combina\u00e7\u00f5es poss\u00edveis."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A apostila ensina literalmente que: 'Um conjunto de 8 (oito) bits \u00e9 chamado de byte ou octeto. Utilizando um byte, \u00e9 poss\u00edvel gerar 256 combina\u00e7\u00f5es poss\u00edveis'."
+      }
+,
+      {
+        "q": "18. Na codifica\u00e7\u00e3o de caracteres de texto usando o padr\u00e3o ASCII (mapeamento mais comum exemplificado no material), qual \u00e9 a representa\u00e7\u00e3o literal em octeto bin\u00e1rio para o caractere 'L'?",
+        "opts": [
+          "01001011"
+,
+          "01001100"
+,
+          "01001111"
+,
+          "01001110"
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. No item 2.1, consta textualmente: 'utilizando o padr\u00e3o de mapeamento mais comum (conhecido como ASCII), o caractere K \u00e9 mapeado para o octeto 01001011; e o caractere L \u00e9 mapeado para o octeto 01001100'."
+      }
+,
+      {
+        "q": "19. A nota\u00e7\u00e3o hexadecimal \u00e9 utilizada para tornar as representa\u00e7\u00f5es amig\u00e1veis aos seres humanos. Qual a equival\u00eancia perfeita literal de convers\u00e3o entre s\u00edmbolos hexadecimais e bits no computador?",
+        "opts": [
+          "Cada conjunto de 2 bits \u00e9 representado por um s\u00edmbolo hexadecimal."
+,
+          "Cada conjunto de 4 bits \u00e9 representado por um s\u00edmbolo hexadecimal."
+,
+          "Cada conjunto de 8 bits \u00e9 representado por um s\u00edmbolo hexadecimal."
+,
+          "Cada conjunto de 16 bits \u00e9 representado por um s\u00edmbolo hexadecimal."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O texto explica que: 'cada conjunto de 4 bits \u00e9 representado por um s\u00edmbolo hexadecimal. Esse relacionamento funciona perfeitamente, pois existem 16 combina\u00e7\u00f5es poss\u00edveis para um conjunto de 4 bits'."
+      }
+,
+      {
+        "q": "20. De acordo com o material did\u00e1tico e com a 'Tabela 2 - M\u00eddias de armazenamento e suas capacidades usuais', qual a capacidade atribu\u00edda de maneira literal \u00e0 categoria 'Pen drive e cart\u00f5es de mem\u00f3ria'?",
+        "opts": [
+          "120GB a 8TB."
+,
+          "16GB a 2TB."
+,
+          "500GB a 30TB."
+,
+          "25GB ou 50GB."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Na Tabela 2, a capacidade usual apontada explicitamente para 'Pen drive e cart\u00f5es de mem\u00f3ria' \u00e9 de '16GB a 2TB'."
+      }
+,
+      {
+        "q": "21. Na mesma 'Tabela 2 - M\u00eddias de armazenamento e suas capacidades usuais', qual o volume de capacidade usual de armazenamento indicado expressamente para os 'Discos r\u00edgidos' magn\u00e9ticos?",
+        "opts": [
+          "120GB a 8TB."
+,
+          "500GB a 30TB."
+,
+          "1TB a 100TB."
+,
+          "16GB a 2TB."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A Tabela 2 define literalmente a capacidade usual do 'Disco r\u00edgido' como sendo de '500GB a 30TB'."
+      }
+,
+      {
+        "q": "22. Ao contextualizar os componentes de um computador no item 2.2, qual \u00e9 a vantagem t\u00e9cnica e pr\u00e1tica apontada textualmente para a exist\u00eancia de componentes separados de armazenamento/processamento da placa-m\u00e3e?",
+        "opts": [
+          "Garantir maior isolamento contra est\u00e1tica e esteganografia reversa."
+,
+          "A possibilidade de substitui\u00e7\u00e3o desses dispositivos em caso de falhas ou necessidade de evolu\u00e7\u00e3o tecnol\u00f3gica."
+,
+          "A facilidade de criptografia total baseada em hardware sem uso de TPM."
+,
+          "Reduzir o tempo de inicializa\u00e7\u00e3o do sistema operacional Linux para duplica\u00e7\u00f5es simult\u00e2neas."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O texto dita: 'A vantagem de se ter componentes separados da placa-m\u00e3e \u00e9 a possibilidade de substitui\u00e7\u00e3o desses dispositivos em caso de falhas ou necessidade de evolu\u00e7\u00e3o tecnol\u00f3gica'."
+      }
+,
+      {
+        "q": "23. A placa-m\u00e3e interconecta os diversos dispositivos do computador. Qual \u00e9 a finalidade literal de seus barramentos e circuitos de apoio?",
+        "opts": [
+          "Mapear e traduzir bits ASCII gerando assinaturas no in\u00edcio dos arquivos."
+,
+          "Controlar os acessos ao processador, disco r\u00edgido, mem\u00f3ria RAM e demais dispositivos que estiverem conectados."
+,
+          "Acelerar o processamento de algoritmos MD5 de 128 bits."
+,
+          "Garantir a alimenta\u00e7\u00e3o ininterrupta da BIOS em m\u00eddias \u00f3ticas backups."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. De acordo com o item 2.2.1, a placa-m\u00e3e 'Possui barramentos e circuitos de apoio para controlar os acessos ao processador, disco r\u00edgido, mem\u00f3ria RAM e demais dispositivos que estiverem conectados'."
+      }
+,
+      {
+        "q": "24. No gerenciamento de espa\u00e7o livre e ocupado pelo sistema de arquivos, o bloco \u00e9 definido como a unidade m\u00ednima de armazenamento. O que acontece literalmente se um arquivo gravado for extremamente pequeno?",
+        "opts": [
+          "Apenas um fragmento de bloco proporcional ao seu tamanho ser\u00e1 alocado."
+,
+          "A ele ser\u00e1 alocado um bloco inteiro."
+,
+          "O arquivo ser\u00e1 gravado temporariamente e diretamente na mem\u00f3ria RAM vol\u00e1til."
+,
+          "O sistema de arquivos gerar\u00e1 um mapa de bits corrompido que impede a leitura posterior."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A apostila ensina expressamente: 'O bloco \u00e9 a unidade m\u00ednima de armazenamento que um arquivo pode ocupar. Mesmo que o arquivo seja muito pequeno, a ele ser\u00e1 alocado um bloco inteiro'."
+      }
+,
+      {
+        "q": "25. Com rela\u00e7\u00e3o ao mapa de bits utilizado pelo sistema de arquivos para saber quais blocos est\u00e3o livres ou ocupados, qual alternativa reflete literalmente sua estrutura descrita na se\u00e7\u00e3o 2.4?",
+        "opts": [
+          "Consiste em um \u00edndice remissivo de metadados como nome, datas e tamanho."
+,
+          "Consiste em uma tabela composta por 0s e 1s em que cada bloco corresponde a um bit na tabela."
+,
+          "Uma lista de assinaturas digitais e magic numbers gravada no setor zero (MBR)."
+,
+          "Uma \u00e1rvore l\u00f3gica hier\u00e1rquica baseada nos sistemas de arquivo HFS+ e Ext4."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O texto define literalmente: 'Esse mapa consiste em uma tabela composta por 0s e 1s em que cada bloco corresponde a um bit na tabela. Assim, se o bit correspondente ao en\u00e9simo bloco for igual a 1, este bloco estar\u00e1 ocupado (e vice-versa)'."
+      }
+,
+      {
+        "q": "26. Ao ilustrar a seguran\u00e7a existente no uso de fun\u00e7\u00f5es de resumo (hashes) como impress\u00f5es digitais, a apostila assinala que uma fun\u00e7\u00e3o de hash com sa\u00edda de apenas 64 bits \u00e9 capaz de gerar:",
+        "opts": [
+          "Cerca de 18 milh\u00f5es de valores de hashes diferentes."
+,
+          "Cerca de 18 quintilh\u00f5es (2^64) de valores de hashes diferentes."
+,
+          "Exatamente 256 combina\u00e7\u00f5es vinculadas ao padr\u00e3o de mapeamento ASCII."
+,
+          "At\u00e9 512 bits de sa\u00edda de tamanho vari\u00e1vel proporcional ao arquivo."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A apostila dita textualmente que 'uma fun\u00e7\u00e3o de hash com sa\u00edda de apenas 64 bits pode gerar cerca de 18 quintilh\u00f5es (2^64) de valores de hashes diferentes'."
+      }
+,
+      {
+        "q": "27. Dentre as instru\u00e7\u00f5es t\u00e9cnicas reguladoras mencionadas na apostila, o que normatiza e orienta expressamente a 'IT 018/2013-Ditec/DPF'?",
+        "opts": [
+          "Os procedimentos gerais a serem adotados pelo Perito no local de busca comum."
+,
+          "Os procedimentos de busca e apreens\u00e3o para casos que envolvam crimes de abuso sexual contra crian\u00e7as e adolescentes."
+,
+          "As boas pr\u00e1ticas para a gera\u00e7\u00e3o de arquivos hashes.txt e c\u00f3pias em m\u00eddias \u00f3ticas."
+,
+          "Os cen\u00e1rios de apreens\u00e3o de celulares e smartphones em estado AFU ou BFU."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Conforme o material did\u00e1tico, a 'IT 018/2013-Ditec/DPF normatiza os procedimentos de busca e apreens\u00e3o para casos que envolvam crimes de abuso sexual contra crian\u00e7as e adolescentes'."
+      }
+,
+      {
+        "q": "28. Ao apreender computadores desktops ou notebooks no local, a regra t\u00e9cnica assevera que os discos r\u00edgidos (HD ou SSD) N\u00c3O devem ser retirados de dentro do gabinete. Qual o principal motivo t\u00e9cnico citado para apreender o computador por inteiro?",
+        "opts": [
+          "O risco de contamina\u00e7\u00e3o magn\u00e9tica externa gerada pelo manuseio manual."
+,
+          "A possibilidade de haver criptografia de disco ativada, vinculada a um m\u00f3dulo de seguran\u00e7a existente na placa-m\u00e3e (TPM)."
+,
+          "A obrigatoriedade de preservar as marcas de dedos do investigado para a papiloscopia."
+,
+          "A eventual aus\u00eancia de cabos IDE ou SATA sobressalentes na unidade de Criminal\u00edstica."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O texto aponta de forma estrita que 'O principal motivo \u00e9 a possibilidade de haver criptografia de disco ativada, vinculada a um m\u00f3dulo de seguran\u00e7a existente na placa-m\u00e3e (TPM), que faz com que os dados contidos nos discos avulsos se tornem inacess\u00edveis'."
+      }
+,
+      {
+        "q": "29. Se o computador a ser apreendido na busca estiver LIGADO, a apostila lista procedimentos periciais sugeridos para a preserva\u00e7\u00e3o dos dados. Qual das op\u00e7\u00f5es abaixo N\u00c3O faz parte dessa lista literal?",
+        "opts": [
+          "Obten\u00e7\u00e3o da chave de recupera\u00e7\u00e3o do Bitlocker."
+,
+          "Configura\u00e7\u00e3o do Bitlocker em modo de suspens\u00e3o."
+,
+          "Instala\u00e7\u00e3o do IPED no disco r\u00edgido para indexa\u00e7\u00e3o r\u00e1pida no local."
+,
+          "Ativa\u00e7\u00e3o do modo de hiberna\u00e7\u00e3o do Windows."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. A instala\u00e7\u00e3o do IPED no local de busca n\u00e3o pertence aos procedimentos listados no item 3.3.1. A lista inclui: obten\u00e7\u00e3o da chave do Bitlocker, configura\u00e7\u00e3o em suspens\u00e3o, obten\u00e7\u00e3o de chaves do WhatsApp Web, ativa\u00e7\u00e3o de hiberna\u00e7\u00e3o do Windows, captura de RAM e colocar em hiberna\u00e7\u00e3o."
+      }
+,
+      {
+        "q": "30. Ao final do processo de preserva\u00e7\u00e3o e c\u00f3pia de dados, qual o produto que os equipamentos de duplica\u00e7\u00e3o forense especializados (como Tableau TD3, TX1 ou Atola) emitem de forma automatizada?",
+        "opts": [
+          "Um arquivo compactado ISO contendo os hashes individuais das parti\u00e7\u00f5es."
+,
+          "Um relat\u00f3rio contendo a identifica\u00e7\u00e3o das m\u00eddias (marcas, modelos e n\u00fameros de s\u00e9rie), as informa\u00e7\u00f5es do processo de c\u00f3pia e o hash dos dados copiados."
+,
+          "Um script em bash projetado para inicializar parti\u00e7\u00f5es sob o sistema CAINE."
+,
+          "Uma lista de palavras-chave indexadas com suporte de OCR."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O texto \u00e9 literal: 'Ao final do processo, esses equipamentos emitem um relat\u00f3rio contendo a identifica\u00e7\u00e3o das m\u00eddias (marcas, modelos e n\u00fameros de s\u00e9rie), as informa\u00e7\u00f5es do processo de c\u00f3pia e o hash dos dados copiados'."
+      }
+,
+      {
+        "q": "31. Especialmente no caso de discos r\u00edgidos a serem duplicados forenses, por que \u00e9 aconselh\u00e1vel utilizar sempre uma m\u00eddia de destino com capacidade superior \u00e0 m\u00eddia de origem?",
+        "opts": [
+          "Porque o processo de duplica\u00e7\u00e3o expande o tamanho dos arquivos l\u00f3gicos."
+,
+          "Devido a pequenas varia\u00e7\u00f5es na capacidade nominal de diferentes fabricantes e modelos."
+,
+          "Para permitir a grava\u00e7\u00e3o do sistema operacional Linux CAINE na raiz."
+,
+          "Porque m\u00eddias de origem podem conter trilhas fragmentadas imposs\u00edveis de compactar."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A apostila recomenda: 'Especialmente no caso de discos r\u00edgidos, h\u00e1 pequenas varia\u00e7\u00f5es na capacidade nominal de diferentes fabricantes e modelos, sendo aconselh\u00e1vel sempre utilizar um disco r\u00edgido de destino com capacidade superior ao de origem'."
+      }
+,
+      {
+        "q": "32. De acordo com a se\u00e7\u00e3o 2.2.4 (discos r\u00edgidos), quais s\u00e3o, literalmente, as interfaces de conectores e cabos mais comuns existentes para conectar os HDs magn\u00e9ticos tradicionais \u00e0 placa-m\u00e3e?",
+        "opts": [
+          "IDE e SATA."
+,
+          "USB e RJ-45."
+,
+          "HDMI e SCSI."
+,
+          "PCI-Express e AGP."
+        ],
+        "ans": 0,
+        "exp": "Gabarito: A. Conforme o material did\u00e1tico, os conectores e cabos 'mais comuns s\u00e3o IDE e SATA'."
+      }
+,
+      {
+        "q": "33. Na recupera\u00e7\u00e3o de arquivos apagados, a t\u00e9cnica baseada na assinatura do arquivo (Data Carving) \u00e9 muito valiosa. No entanto, qual das seguintes fragilidades \u00e9 listada como limitadora desse m\u00e9todo?",
+        "opts": [
+          "N\u00e3o funciona sob sistema operacional Linux CAINE ou Kali."
+,
+          "N\u00e3o ir\u00e1 recuperar os metadados, tal como o nome, dos arquivos."
+,
+          "Apaga fisicamente do disco os arquivos que forem recuperados de forma incompleta."
+,
+          "Modifica o valor de hash original dos dados recuperados impedindo sua integridade."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A apostila explica literalmente: 'Como esse m\u00e9todo n\u00e3o utiliza as informa\u00e7\u00f5es presentes no sistema de arquivos, ele n\u00e3o ir\u00e1 recuperar os metadados, tal como o nome, dos arquivos'."
+      }
+,
+      {
+        "q": "34. Em qual grupo ou terminologia de arquivos a apostila classifica explicitamente formatos como ZIP, RAR, PST e NSF?",
+        "opts": [
+          "Arquivos Criptografados."
+,
+          "Arquivos-Cont\u00eainer."
+,
+          "Arquivos de Sistema."
+,
+          "M\u00eddias \u00f3ticas digitais."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. De acordo com o item 5.1.2: 'Existe um grupo de arquivos conhecido como arquivos-cont\u00eainer. Esses arquivos nada mais s\u00e3o que reposit\u00f3rios de outros arquivos. Como exemplo, podem ser citados: arquivos compactados (ZIP, RAR) e arquivos que armazenam mensagens de e-mail (PST, NSF), entre outros'."
+      }
+,
+      {
+        "q": "35. Durante a filtragem de dados na etapa de 'Redu\u00e7\u00e3o', o perito utiliza bases de hashes para eliminar arquivos in\u00f3cuos (do Windows, jogos, etc.). De acordo com a se\u00e7\u00e3o 5.3.1, quais outros elementos podem ser ocultados por meio do uso de filtros?",
+        "opts": [
+          "Arquivos com extens\u00f5es alteradas como Apostila.mp3."
+,
+          "Arquivos com conte\u00fado duplicado (que possuem hashes id\u00eanticos) ou arquivos com tamanho zero."
+,
+          "Arquivos de imagens ou v\u00eddeos recuperados exclusivamente via Data Carving."
+,
+          "Arquivos protegidos por criptografia de disco completo (FDE)."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O texto \u00e9 claro: 'Utilizando-se de filtros, pode-se ainda ocultar arquivos com conte\u00fado duplicado (que possuem hashes id\u00eanticos) ou arquivos com tamanho zero, por exemplo'."
+      }
+,
+      {
+        "q": "36. De acordo com a Portaria 1710/2026, com o objetivo espec\u00edfico de caracterizar o crime de posse de material de abuso sexual (MASI), a partir de qual quantidade exata de arquivos identificados alcan\u00e7a-se a satura\u00e7\u00e3o qualitativa, permitindo interromper o exame?",
+        "opts": [
+          "100 arquivos."
+,
+          "500 arquivos."
+,
+          "1000 arquivos."
+,
+          "Dezenas de milhares de arquivos."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A portaria preceitua literalmente que: 'a quantidade de 500 arquivos contendo cenas de ASI como suficiente para alcan\u00e7ar a satura\u00e7\u00e3o qualitativa [...] o exame de Identifica\u00e7\u00e3o de MASI com o prop\u00f3sito de caracterizar a posse pode ser interrompido quando constatar tal quantidade...'."
+      }
+,
+      {
+        "q": "37. Na se\u00e7\u00e3o de an\u00e1lise de celulares (7.2.2), qual \u00e9 a recomenda\u00e7\u00e3o literal para a an\u00e1lise de cart\u00f5es SIM e de mem\u00f3ria?",
+        "opts": [
+          "Devem ser inseridos em aparelhos novos de f\u00e1brica para visualizar as agendas."
+,
+          "Devem ser analisados separadamente, utilizando-se leitores espec\u00edficos, n\u00e3o sendo recomend\u00e1vel inseri-los em outro telefone."
+,
+          "Devem ser processados conjuntamente e duplicados no Tableau TD3."
+,
+          "Devem ser submetidos a wipe f\u00edsico para revelar dados do IMSI e ICCID."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. O texto estabelece textualmente: 'Os cart\u00f5es SIM e de mem\u00f3ria devem ser analisados separadamente, utilizando-se leitores espec\u00edficos. N\u00e3o \u00e9 recomend\u00e1vel inserir os cart\u00f5es em um aparelho diverso do telefone examinado...'."
+      }
+,
+      {
+        "q": "38. Ao analisar as especificidades da linha telef\u00f4nica GSM (7.2.3), por que o perito deve detalhar com ressalvas o n\u00famero de linha encontrado em op\u00e7\u00f5es do celular do tipo 'Meu n\u00famero'?",
+        "opts": [
+          "Porque o n\u00famero ali contido pode ter sido inserido pelo pr\u00f3prio usu\u00e1rio e n\u00e3o corresponder necessariamente \u00e0 linha ativa real no cart\u00e3o SIM."
+,
+          "Porque esse campo exp\u00f5e de forma autom\u00e1tica as credenciais do eSIM."
+,
+          "Pelo risco de alterar de forma remota o IMEI atrelado \u00e0 operadora."
+,
+          "Porque esse campo pode desabilitar as travas mec\u00e2nicas de prote\u00e7\u00e3o de escrita."
+        ],
+        "ans": 0,
+        "exp": "Gabarito: A. A apostila dita textualmente que: '\u00c9 importante notar que alguns celulares possuem op\u00e7\u00f5es como Meu n\u00famero, que registram um n\u00famero inserido pelo usu\u00e1rio e que n\u00e3o corresponde necessariamente \u00e0 linha no cart\u00e3o SIM em uso, mas sim ao valor do campo MSISDN do cart\u00e3o SIM. Tal informa\u00e7\u00e3o pode ser citada no Laudo, desde que acompanhada dessas ressalvas'."
+      }
+,
+      {
+        "q": "39. Nos laudos periciais da Pol\u00edcia Federal, qual o mecanismo literal empregado para 'garantir a autenticidade da m\u00eddia anexa ao laudo pericial' e afastar qualquer d\u00favida judicial?",
+        "opts": [
+          "A grava\u00e7\u00e3o obrigat\u00f3ria das provas exclusivamente em m\u00eddias n\u00e3o-regrav\u00e1veis protegidas por BitLocker."
+,
+          "O c\u00e1lculo do valor de hash do arquivo de texto hashes.txt e a transcri\u00e7\u00e3o desse valor calculado no corpo do Laudo, que \u00e9 assinado digitalmente."
+,
+          "A reten\u00e7\u00e3o da m\u00eddia f\u00edsica original sob cust\u00f3dia ininterrupta do Diretor-Geral."
+,
+          "A formata\u00e7\u00e3o da m\u00eddia anexa pelo comando Diskpart sob o CAINE."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. De acordo com o item 8.1: 'este problema \u00e9 resolvido calculando-se o valor do hash do arquivo de texto que cont\u00e9m a lista de hashes e transcrevendo esse valor de hash no corpo do Laudo, que \u00e9 assinado digitalmente'."
+      }
+,
+      {
+        "q": "40. Dentre os tipos de bloqueios de acesso em celulares modernos, o bloqueio Biom\u00e9trico (digital, \u00edris ou facial) oferece alta praticidade. De acordo com o item 7.3.1, em quais situa\u00e7\u00f5es obrigat\u00f3rias o bloqueio de PIN ou geom\u00e9trico secund\u00e1rio \u00e9 exigido pelo sistema?",
+        "opts": [
+          "Toda vez que o aparelho celular perde conex\u00e3o de rede m\u00f3vel ou Wi-Fi."
+,
+          "Toda vez que o aparelho \u00e9 reiniciado ou fica um longo per\u00edodo sem desbloqueio."
+,
+          "Sempre que se tenta desativar as credenciais eSIM virtualmente."
+,
+          "Caso o telefone entre em estado AFU ou seja isolado em bolsa de Faraday."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. A apostila informa literally: 'Normalmente, este bloqueio deve ser utilizado combinado com um outro tipo, como bloqueio de PIN ou padr\u00e3o geom\u00e9trico, que s\u00e3o exigidos toda vez que o aparelho \u00e9 reiniciado ou fica um longo per\u00edodo sem desbloqueio'."
+      }
+    ]
+  }
+];
+
+let answered = 0, corrects = 0, wrongs = 0;
+let wrongQuestions = [];
+
+function updateScore(){
+  document.getElementById('sc-c').textContent = corrects;
+  document.getElementById('sc-w').textContent = wrongs;
+  document.getElementById('sc-a').textContent = answered;
+  document.getElementById('btn-wrong').disabled = (wrongQuestions.length === 0);
+}
+
+function buildQuiz(dataSource){
+  dataSource = dataSource || CHAPTERS;
+  window._currentData = dataSource;
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  let total = 0;
+  dataSource.forEach(ch => total += ch.questions.length);
+  document.getElementById('sc-total').textContent = '/ ' + total;
+
+  dataSource.forEach((ch, ci) => {
+    const div = document.createElement('div');
+    div.className = 'chapter';
+    let html = `<div class="chapter-title">${ch.title}</div>`;
+    ch.questions.forEach((q, qi) => {
+      const qid = 'q_' + ci + '_' + qi;
+      html += `<div class="question" id="block_${qid}">
+        <div class="q-num">Questão ${qi+1}</div>
+        <div class="q-text">${q.q}</div>`;
+      q.opts.forEach((opt, oi) => {
+        html += `<button class="opt" id="${qid}_${oi}" onclick="handleAnswer(${ci}, ${qi}, ${oi})">${opt}</button>`;
+      });
+      html += `<div class="feedback" id="fb_${qid}" style="display:none"></div></div>`;
+    });
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+}
+
+function handleAnswer(ci, qi, chosen){
+  const dataSource = window._currentData || CHAPTERS;
+  const ch = dataSource[ci];
+  const q = ch.questions[qi];
+  const qid = 'q_' + ci + '_' + qi;
+  const correct = q.ans;
+  const isRight = (chosen === correct);
+
+  q.opts.forEach((_, oi) => {
+    const btn = document.getElementById(qid + '_' + oi);
+    btn.disabled = true;
+    if(oi === correct) btn.classList.add('correct');
+    if(oi === chosen && !isRight) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('fb_' + qid);
+  fb.style.display = 'block';
+  if(isRight){
+    fb.className = 'feedback ok';
+    fb.innerHTML = `✅ <strong>Correto!</strong> ${q.exp}`;
+    corrects++;
+  } else {
+    fb.className = 'feedback err';
+    fb.innerHTML = `❌ <strong>Incorreto.</strong> ${q.exp}`;
+    wrongs++;
+    wrongQuestions.push({chTitle: ch.title, qObj: q});
+  }
+  answered++;
+  updateScore();
+}
+
+function resetAll(){
+  if(!confirm('Reiniciar o quiz completo?')) return;
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(CHAPTERS);
+  updateScore();
+}
+
+function resetWrong(){
+  if(wrongQuestions.length === 0) return;
+  if(!confirm('Reiniciar apenas com as ' + wrongQuestions.length + ' questão(ões) que você errou?')) return;
+  const chapMap = {};
+  wrongQuestions.forEach(({chTitle, qObj}) => {
+    if(!chapMap[chTitle]) chapMap[chTitle] = {title: chTitle, questions: []};
+    chapMap[chTitle].questions.push(qObj);
+  });
+  const filtered = Object.values(chapMap);
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(filtered);
+  updateScore();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

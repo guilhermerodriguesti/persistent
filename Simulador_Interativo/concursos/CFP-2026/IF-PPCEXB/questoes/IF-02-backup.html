@@ -1,0 +1,590 @@
+Fico feliz que tenha gostado do simulado anterior! 
+
+Como solicitado, criei **mais 30 questões inéditas e de nível dificílimo**, focando em detalhes minuciosos e trechos específicos da apostila (como legislações, detalhes físicos de hardware, fases exatas da análise pericial, fluxos de apreensão de celulares desligados, e nuances dos exames de ASI).
+
+Abaixo está o código HTML completo. Salve-o como um arquivo `.html` (por exemplo, `simulado_forense_parte2.html`) e abra-o no seu navegador. O layout foi mantido com letras grandes e o sistema de gabarito detalhado após a resposta.
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado Parte 2: Informática Forense</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            font-size: 24px; 
+            line-height: 1.6;
+            margin: 0;
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #2c3e50;
+            margin-bottom: 40px;
+        }
+        .question-container {
+            background-color: #fff;
+            border: 2px solid #ccc;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: baseline;
+        }
+        input[type="radio"] {
+            transform: scale(1.8);
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        label {
+            cursor: pointer;
+        }
+        .btn-responder {
+            background-color: #e67e22;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 30px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .btn-responder:hover {
+            background-color: #d35400;
+        }
+        .feedback {
+            display: none;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .correct {
+            background-color: #d4edda;
+            color: #155724;
+            border: 2px solid #c3e6cb;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            color: #721c24;
+            border: 2px solid #f5c6cb;
+        }
+        .explanation {
+            margin-top: 15px;
+            font-weight: normal;
+            font-size: 22px;
+            color: #222;
+        }
+
+        /* ==================== TABLET RESPONSIVE (768px - 1024px) ==================== */
+        @media (max-width: 1024px) {
+            body {
+                font-size: 20px;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 30px;
+                margin-bottom: 30px;
+            }
+            .question-container {
+                padding: 25px;
+                margin-bottom: 30px;
+            }
+            .question-text {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            .options li {
+                margin-bottom: 12px;
+            }
+            input[type="radio"] {
+                transform: scale(1.5);
+                margin-right: 12px;
+            }
+            .btn-responder {
+                font-size: 20px;
+                padding: 12px 25px;
+            }
+            .feedback {
+                font-size: 18px;
+                padding: 15px;
+            }
+            .explanation {
+                font-size: 18px;
+            }
+        }
+
+        /* ==================== MOBILE (< 768px) ==================== */
+        @media (max-width: 767px) {
+            body {
+                font-size: 18px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 26px;
+                margin-bottom: 25px;
+            }
+            .question-container {
+                padding: 20px;
+                margin-bottom: 25px;
+                border-radius: 8px;
+            }
+            .question-text {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+            .options li {
+                margin-bottom: 10px;
+            }
+            input[type="radio"] {
+                transform: scale(1.4);
+                margin-right: 10px;
+            }
+            .btn-responder {
+                font-size: 18px;
+                padding: 12px 20px;
+                width: 100%;
+            }
+            .feedback {
+                font-size: 16px;
+                padding: 12px;
+            }
+            .explanation {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Simulado Avançado - Parte 2 (Inéditas)</h1>
+    <div id="quiz-container"></div>
+
+    <script>
+        const questoes = [
+            {
+                q: "1. De acordo com as alterações no Código Penal (Art. 154-A) promovidas pela Lei 'Carolina Dieckmann' e Lei 14.155/2021, a invasão de dispositivo informático alheio possui causa de aumento de pena (1/3 a 2/3) OU qualificadora com pena de reclusão maior (2 a 5 anos) dependendo do resultado. Qual situação abaixo gera a pena de reclusão de 2 a 5 anos?",
+                opcoes: [
+                    "Quando a invasão resulta exclusivamente em prejuízo econômico ao usuário do dispositivo.",
+                    "Quando o crime é praticado mediante a utilização de um servidor mantido fora do território nacional (estrangeiro).",
+                    "Quando da invasão resultar a obtenção de conteúdo de comunicações eletrônicas privadas, segredos comerciais ou o controle remoto não autorizado do dispositivo.",
+                    "Quando a invasão ocorrer em um equipamento conectado fisicamente à rede de computadores, dispensando redes Wi-Fi."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. O Art. 154-A, § 3º, prevê reclusão de 2 a 5 anos (pena mais grave) se a invasão resultar na obtenção de comunicações privadas, segredos ou controle remoto não autorizado. O prejuízo econômico gera apenas aumento de pena de 1/3 a 2/3 (§ 2º)."
+            },
+            {
+                q: "2. Um grupo de extermínio utilizava planilhas eletrônicas no Microsoft Excel para contabilizar armas e pagamentos, mantendo-as armazenadas em um desktop comum sem acesso à rede. Diante dessa dinâmica, como a doutrina forense classifica esse crime em relação à informática?",
+                opcoes: [
+                    "Crime Puro, pois os registros foram materializados exclusivamente em ambiente digital.",
+                    "Crime Impuro, uma vez que a fraude financeira afeta o bem jurídico tutelado no mundo físico.",
+                    "Crime Indireto ou Incidental, pois o computador atuou apenas como uma 'testemunha' que guarda documentos relacionados ao crime investigado.",
+                    "Crime Próprio Absoluto, pois o Excel atua como alvo e meio da conduta tipificada."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Crimes Indiretos (ou Incidentais) são aqueles em que o computador não é o meio nem o alvo da ação, mas atua como uma 'testemunha' silenciosa que possui arquivos (planilhas, fotos, e-mails) relacionados ao crime."
+            },
+            {
+                q: "3. Na arquitetura de computadores, a BIOS (Basic Input Output System) é um programa essencial responsável por identificar, configurar e inicializar os dispositivos do sistema. Onde esse pequeno programa encontra-se fisicamente gravado?",
+                opcoes: [
+                    "Em um setor oculto e volátil da Memória Principal (RAM).",
+                    "No primeiro bloco de alocação física do Disco Rígido (HD).",
+                    "Em um tipo de memória diretamente contida na Placa-mãe.",
+                    "No chip controlador de rede integrado (on-board)."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A apostila afirma que 'As placas-mãe também contêm um tipo de memória na qual está gravado um pequeno programa conhecido como BIOS'."
+            },
+            {
+                q: "4. Ao converter as capacidades de armazenamento de mídias, é crucial aplicar corretamente as convenções computacionais e o Sistema Internacional (SI). Se um perito descreve um arquivo como tendo '7kb' e '5MB', ele se refere tecnicamente a:",
+                opcoes: [
+                    "7.000 bytes e 5.000.000 bits.",
+                    "7.000 bits e 5.000.000 bytes.",
+                    "7.000 bytes e 5.000.000 bytes.",
+                    "7 bytes e 5 megabits."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Por convenção, o 'b' minúsculo representa bits e o 'B' maiúsculo representa bytes. Assim, 7kb = 7.000 bits e 5MB = 5.000.000 bytes."
+            },
+            {
+                q: "5. Uma das atribuições cruciais do sistema operacional e do sistema de arquivos é o armazenamento de Metadados. Qual das opções abaixo NÃO é um metadado gerenciado pelo sistema de arquivos?",
+                opcoes: [
+                    "O nome do arquivo e sua extensão.",
+                    "As datas de criação, modificação e último acesso.",
+                    "A assinatura interna hexadecimal do arquivo (magic number).",
+                    "O tamanho total do arquivo."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Metadados incluem nome, tamanho e datas. A 'assinatura' é o conteúdo interno gravado DENTRO do próprio arquivo para identificar seu tipo, e não um metadado gerenciado externamente na tabela do sistema de arquivos."
+            },
+            {
+                q: "6. Para justificar a inquestionável segurança das funções de resumo (Hash) nos tribunais, os peritos citam o vasto universo de combinações possíveis. Uma função hash extremamente simples com saída de apenas 64 bits seria capaz de gerar, aproximadamente, quantas combinações diferentes?",
+                opcoes: [
+                    "Cerca de 64 milhões de combinações.",
+                    "Cerca de 18 quintilhões de combinações.",
+                    "Cerca de 256 bilhões de combinações.",
+                    "Exatamente 4.096 combinações hexadecimais."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila ilustra que uma saída de apenas 64 bits pode gerar cerca de 18 quintilhões (2^64) de valores de hashes diferentes, demonstrando ser probabilisticamente improvável uma colisão acidental."
+            },
+            {
+                q: "7. O MD5 e o SHA-256 são algoritmos de hash amplamente utilizados. Em relação ao tamanho das saídas (impressões digitais) geradas por essas funções, é correto afirmar que:",
+                opcoes: [
+                    "O MD5 produz hashes de 128 bits e o SHA-256 produz hashes de 256 bits.",
+                    "O MD5 produz hashes de 256 bytes e o SHA-256 produz hashes de 512 bytes.",
+                    "O tamanho de saída de ambos depende exclusivamente do tamanho do arquivo de entrada.",
+                    "O MD5 produz saídas variáveis baseadas em blocos alocados, e o SHA-256 produz saídas fixas de 128 bits."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. Funções hash geram saídas fixas independentes da entrada. O MD5 (Message Digest 5) produz valores de 128 bits, e o SHA-256 produz valores de 256 bits."
+            },
+            {
+                q: "8. Em um local de busca e apreensão, a Regra Geral é NÃO operar os computadores da cena do crime. Contudo, a doutrina forense permite exceções restritas. Qual das opções abaixo representa uma justificativa correta para operar o computador do alvo no local?",
+                opcoes: [
+                    "A necessidade de copiar o software do sistema operacional para o pendrive do perito.",
+                    "A curiosidade da equipe de investigação para ler e-mails antes da lavratura do Auto de Apreensão.",
+                    "A necessidade de preservar evidências voláteis (como dados da RAM) cujo acesso posterior seja inviável caso a máquina seja desligada.",
+                    "A ausência de lacres plásticos e sacos antiestáticos para transporte da máquina."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. O perito só opera o computador no local sob ordem judicial expressa, para racionalizar a apreensão (triagem) ou para preservar dados voláteis (memória RAM) que se perderiam ao desligar."
+            },
+            {
+                q: "9. O Perito encontra um HD externo contendo um software corporativo complexo e atrelado a um 'Dongle' (chave de hardware USB) inserido no computador. O que deve ser feito em relação à apreensão?",
+                opcoes: [
+                    "Apreender o HD externo e ignorar o Dongle, pois chaves de hardware não armazenam arquivos do usuário.",
+                    "Apreender obrigatoriamente tanto a mídia de armazenamento (HD) quanto o dispositivo de leitura ou chave (Dongle), para viabilizar o exame.",
+                    "Realizar o 'wipe' do Dongle no local e anexá-lo ao Auto de Apreensão isoladamente.",
+                    "Quebrar a criptografia do Dongle no local utilizando o Linux CAINE."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Mídias com interfaces incomuns, atreladas a hardwares específicos ou 'Dongles' (chaves de hardware) devem ser apreendidas JUNTO com seus dispositivos correspondentes, sob o risco de os dados se tornarem inacessíveis no laboratório."
+            },
+            {
+                q: "10. Devido à inviabilidade técnica de apreender o servidor principal de um banco, o Perito realiza a cópia dos dados no local da busca. Qual providência formal deve ser adotada para assegurar a integridade da cópia logo no momento de sua criação?",
+                opcoes: [
+                    "Submeter os dados copiados ao cálculo de funções de resumo (hash) e constar esse valor no Auto de Apreensão.",
+                    "Compactar os dados em um arquivo .ZIP com senha e entregar a chave ao gerente do banco.",
+                    "Instalar a ferramenta IPED na rede do banco e indexar toda a base antes de copiar.",
+                    "Imprimir os códigos fontes na viatura e assiná-los rubricando página a página."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. A apostila ressalta que os dados apreendidos no local (cópias) devem ser submetidos a funções de hash, visando futuras verificações de integridade. Idealmente, o hash deve constar no próprio Auto de Apreensão lavrado na cena."
+            },
+            {
+                q: "11. Um Perito decide realizar a duplicação 'de mídia para arquivo-imagem' usando um HD de destino grande. Por que, diferentemente da cópia 'mídia para mídia', este método NÃO exige que o HD de destino seja 'zerado' (wipe) previamente?",
+                opcoes: [
+                    "Porque arquivos-imagem (como ISO ou E01) sobrescrevem fisicamente os pratos magnéticos da mídia destino, apagando tudo automaticamente.",
+                    "Porque o conteúdo da mídia original ficará logicamente restrito ao interior do arquivo gerado, não havendo risco de seus dados se misturarem com setores livres antigos da mídia de destino.",
+                    "Porque os bloqueadores de escrita de hardware limpam a tabela MFT em tempo real durante a conexão.",
+                    "Porque a legislação processual dispensa a cadeia de custódia quando o perito utiliza softwares de código aberto."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Como a cópia é encapsulada dentro de um arquivo (contêiner) gravado pelo sistema de arquivos de destino, os bytes do disco original não se misturarão aos resquícios antigos do HD do perito, dispensando a exigência do wipe prévio."
+            },
+            {
+                q: "12. Durante a etapa de 'Extração' de vestígios digitais, a técnica de recuperação baseada no Sistema de Arquivos diferencia-se da técnica de 'Data Carving' por qual característica operacional?",
+                opcoes: [
+                    "A recuperação pelo sistema de arquivos lê as entradas antigas marcadas como 'livres' na tabela e recupera os metadados (como nome do arquivo), ao passo que o Data Carving ignora a tabela e busca apenas assinaturas hexadecimais brutas.",
+                    "O Data Carving é capaz de recuperar senhas de BIOS, enquanto a recuperação pelo sistema lida apenas com PDFs.",
+                    "A recuperação pelo sistema exige o wipe do disco original, enquanto o Data Carving funciona apenas na memória RAM.",
+                    "O Data Carving reestrutura os blocos fisicamente usando ímãs, ao contrário da recuperação lógica."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. A recuperação pelo sistema de arquivos usa a tabela (metadados, localização exata dos blocos). O Data Carving (assinatura) varre o disco às cegas em busca de 'magic numbers', não recuperando nomes originais ou datas."
+            },
+            {
+                q: "13. O 'Processamento' pericial de um HD contendo milhões de arquivos envolve uma etapa chamada 'Categorização'. Qual a utilidade pericial específica dessa etapa?",
+                opcoes: [
+                    "Realizar a quebra de senhas complexas por força bruta.",
+                    "Expurgar arquivos repetidos usando Hash MD5.",
+                    "Agrupar os arquivos por tipo baseando-se na leitura de suas verdadeiras assinaturas internas, e identificar inconsistências em casos de arquivos renomeados para ocultar o conteúdo.",
+                    "Gerar relatórios HTML automaticamente para anexar ao Laudo."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A categorização lê as assinaturas (cabeçalhos) para descobrir o verdadeiro formato do arquivo (vídeo, texto, planilha), ignorando extensões falsas criadas pelo suspeito para despistar a investigação."
+            },
+            {
+                q: "14. A 'Indexação' é um processamento que lê textos dentro dos arquivos para criar um índice remissivo gigantesco. Qual o principal benefício dessa técnica para a etapa de 'Pesquisa por Palavras-chave'?",
+                opcoes: [
+                    "Permite traduzir documentos estrangeiros simultaneamente.",
+                    "Evita a necessidade de usar caracteres curingas, como a interrogação (?).",
+                    "Permite que as pesquisas futuras (buscas indexadas) sejam quase instantâneas, evitando a lentidão extrema da 'busca live' setor a setor.",
+                    "Permite que arquivos apagados sejam recuperados unicamente a partir de suas consoantes."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. O grande benefício de criar o índice antes é que a busca por palavras não precisará varrer o disco inteiro bloco a bloco no momento da consulta (busca live), tornando a resposta da ferramenta quase instantânea."
+            },
+            {
+                q: "15. Um Perito precisa decifrar um arquivo protegido por senha de um estelionatário. Ele aplica um ataque que usa informações como a placa do carro do alvo, seu nome e data de nascimento. Trata-se de qual tipo de ataque?",
+                opcoes: [
+                    "Força Bruta Estática.",
+                    "Ataque Probabilístico Baseado em Hashes.",
+                    "Ataque de Dicionário (frequentemente usando palavras da vida cotidiana ou contexto do alvo).",
+                    "Ataque de Extração Física."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. O ataque de dicionário testa listas de palavras, que podem ser generalistas (como um dicionário comum) ou customizadas com o contexto e a vida pessoal do alvo."
+            },
+            {
+                q: "16. Durante exames de Abuso Sexual Infantojuvenil (ASI), qual o papel do BFAC (Banco Federal de Arquivos Conhecidos) na fase de Triagem/Redução?",
+                opcoes: [
+                    "Identificar automaticamente através do hash os arquivos de MASI já conhecidos e confirmados em investigações anteriores, poupando tempo e desgaste psicológico do perito.",
+                    "Reduzir o tamanho dos arquivos de vídeo, alterando a resolução 4K para 480p.",
+                    "Enviar automaticamente intimações aos usuários conectados na rede P2P.",
+                    "Estimar numericamente a idade exata da vítima através de Inteligência Artificial."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. O BFAC contém hashes de arquivos MASI já conhecidos pelas polícias em todo o país. O cruzamento evita que o perito tenha que classificar do zero imagens e vídeos já documentados e confirmados como ilícitos."
+            },
+            {
+                q: "17. A Portaria 1710/2026 estabelece que arquivos classificados como MASI exclusivamente por Inteligência Artificial ou BFAC, sem confirmação visual do perito humano, devem:",
+                opcoes: [
+                    "Ser excluídos do Laudo, pois a justiça não aceita indícios autônomos de IA.",
+                    "Ser incluídos em marcador próprio, com a devida ressalva no Laudo evidenciando que foram classificados dessa forma, independentemente da supervisão humana.",
+                    "Ser enviados para quebra de criptografia no IPED usando Força Bruta.",
+                    "Ser considerados inequivocamente como prova de Produção do investigado."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Se a IA ou o BFAC classificou o material como MASI e o perito decidiu não analisar visualmente (por já ter atingido a saturação de posse, por exemplo), esses arquivos vão em um marcador específico com a devida anotação formal no Laudo."
+            },
+            {
+                q: "18. Na análise visual de MASI, os indícios de menoridade (ausência de pelos pubianos, broto mamário ou genitália infantil) são considerados:",
+                opcoes: [
+                    "Indícios de conotação sexual explícita.",
+                    "Critérios de ausência ou início precoce de desenvolvimento puberal.",
+                    "Padrões de Inteligência Artificial inquestionáveis.",
+                    "Elementos que o perito deve usar para fixar a data de nascimento exata do alvo."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Esses sinais biológicos são categorizados pela Portaria e pelo ECA como características de ausência ou início precoce de desenvolvimento puberal (fase de transição entre infância e idade adulta)."
+            },
+            {
+                q: "19. Qual das tecnologias abaixo, historicamente associada a um código ESN ou MEID gravado sob a bateria e que NÃO faz uso dos tradicionais cartões SIM, é citada como praticamente inexistente no Brasil hoje?",
+                opcoes: [
+                    "GSM.",
+                    "iDEN.",
+                    "CDMA.",
+                    "eSIM."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A tecnologia CDMA (Code Division Multiple Access) utiliza o ESN ou MEID e não utiliza o cartão SIM da mesma forma que o padrão global GSM. Ela caiu em desuso total no mercado brasileiro."
+            },
+            {
+                q: "20. Durante a extração forense de um celular, o Perito obtém uma lista chamada 'Conexões IP' e os 'Indicadores da Web/Cookies'. Que tipo de informação comportamental esses dados fornecem?",
+                opcoes: [
+                    "Apenas os dados de localização GPS de torres de celular e satélites.",
+                    "As informações da rede móvel do chip, como o IMSI do eSIM.",
+                    "Artefatos originados das atividades de navegação do usuário na Internet e IPs trafegados pelo dispositivo.",
+                    "Os metadados físicos de desgaste químico da bateria."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Cookies, Histórico da Web, Bookmarks e Conexões IP são artefatos que revelam as atividades de navegação na Internet e a comunicação TCP/IP do telefone móvel."
+            },
+            {
+                q: "21. A extração LÓGICA de um smartphone, comparada às outras, apresenta qual limitação significativa para o Perito Criminal?",
+                opcoes: [
+                    "Ela corrompe imediatamente os cartões Micro-SD no processo.",
+                    "Retorna a menor quantidade de dados sensíveis, pois apenas copia os arquivos e pastas visíveis, sendo incapaz de recuperar dados apagados ou acessar a área protegida.",
+                    "Exige o uso de bolsas de Faraday com nitrogênio líquido.",
+                    "Desliga o aparelho permanentemente por invocar falhas de Bootloader."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A extração lógica copia os dados visíveis que o aparelho libera de forma amigável via software/API. Não acessa bancos de dados profundos nem recupera áreas apagadas, diferentemente das extrações File System ou Física."
+            },
+            {
+                q: "22. Qual é a principal diferença de arquitetura de defesa entre o FDE (Full Disk Encryption) e o FBE (File-Based Encryption) presentes em celulares?",
+                opcoes: [
+                    "O FDE protege arquivos com múltiplas chaves distintas; o FBE utiliza uma única chave para todo o aparelho.",
+                    "O FDE utiliza uma única chave para criptografar todo o disco de forma integrada; o FBE protege os dados individualmente ou em grupos usando múltiplas chaves diferentes.",
+                    "O FBE é um método de bloqueio geométrico na tela, enquanto o FDE é biométrico.",
+                    "O FDE afeta apenas cartões SIM, enquanto o FBE afeta apenas conexões Bluetooth."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. FDE (Criptografia de Disco Completo) tranca tudo junto sob uma única chave mestra. FBE (Criptografia Baseada em Arquivos) é um mecanismo mais moderno onde cada arquivo/grupo possui chaves próprias, aumentando a complexidade da extração."
+            },
+            {
+                q: "23. Se a equipe de rua apreende um iPhone e o aparelho se encontra DESLIGADO, e o investigado fornece voluntariamente a senha correta, qual a sequência de providências prevista na Instrução Técnica e apostilas?",
+                opcoes: [
+                    "Remover os cartões SIM -> Ligar o aparelho -> Ativar Modo Avião -> Validar a senha -> Tentar desativar proteções temporárias -> Desligar o aparelho e anotar tudo.",
+                    "Ligar o aparelho imediatamente -> Trocar a senha do iCloud na frente do investigado -> Limpar a RAM.",
+                    "Remover o cartão SIM -> Conectar ao Wi-Fi da viatura -> Realizar Jailbreak -> Inserir em Bolsa Faraday.",
+                    "Ligar o aparelho no laboratório da PF apenas, mantendo-o desligado até lá para evitar wipe."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. Cenário de aparelho desligado com senha: saca-se o SIM card (para isolamento físico de rede celular), liga-se a máquina, põe em modo avião (para bloquear wifi), valida-se se a senha é verdadeira e procede com o preparo para transporte."
+            },
+            {
+                q: "24. Durante os procedimentos de isolamento de rede num celular LIGADO e BLOQUEADO (sem senha), recomenda-se usar bolsas de Faraday caso não se consiga acionar o modo avião. Qual o risco central que se tenta mitigar com esse isolamento?",
+                opcoes: [
+                    "Danos físicos causados por eletricidade estática vinda das mãos do perito.",
+                    "Perda de arquivos pelo desgaste do modo ocioso da bateria (idle battery loss).",
+                    "Acesso indevido de curiosos aos jogos instalados no aparelho.",
+                    "Recebimento de comandos remotos (como o 'Find my Device') enviados pelo criminoso à distância, que ordenam o apagamento total (wipe) dos dados."
+                ],
+                correta: 3,
+                explicacao: "Gabarito: D. As redes precisam ser bloqueadas (Modo Avião, remoção de SIM, bolsas de Faraday) para que a internet não chegue ao aparelho, impedindo a recepção de comandos remotos de destruição de provas (wipe)."
+            },
+            {
+                q: "25. Se um celular se encontra com a bateria severamente inchada (estufada), os procedimentos forenses orientam que o Perito tenha cautela devido a qual risco?",
+                opcoes: [
+                    "Risco de emissão de radiação ionizante no laboratório.",
+                    "Risco iminente de incêndio ou explosão da célula de lítio durante o manuseio, exigindo cuidados específicos de segurança antes de prosseguir o exame.",
+                    "Risco de o modo avião ser ativado permanentemente pelo chip baseband.",
+                    "Risco de colapso quântico das funções de Hash geradas no Cellebrite."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Baterias inchadas demonstram falha química (gases) e representam um sério e real risco de incêndio ou explosão, exigindo manuseio técnico com ferramentas corretas e segurança reforçada."
+            },
+            {
+                q: "26. Ao extrair os dados lógicos do celular do traficante, o Perito percebe no laudo do operador um campo que mostra o número da linha na opção 'Meu Número' do próprio aparelho. Por que a apostila adverte que esse campo não é confiável?",
+                opcoes: [
+                    "Porque o campo 'Meu número' é criptografado por FBE.",
+                    "Porque o 'Meu número' é um campo preenchido manualmente pelo próprio usuário ou resquício do MSISDN, podendo não corresponder à linha telefônica (IMSI) que realmente está operando vinculada àquele chip atual.",
+                    "Porque 'Meu número' reflete o IMEI físico do aparelho asiático falsificado.",
+                    "Porque ele muda automaticamente conforme o GPS do aparelho viaja entre antenas (ERBs)."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O campo de configurações que exibe o número pode ser editado pelo usuário ou manter um registro velho. O verdadeiro número da linha pertencente àquele chip deve ser atestado junto à operadora pelo ICCID ou IMSI."
+            },
+            {
+                q: "27. No contexto da formatação final do Laudo Pericial, a PF gera um anexo digital contendo dezenas de milhares de fotos extraídas de um crime indireto. Qual arquivo-chave garante a integridade individual de CADA uma dessas milhares de fotos no momento da conferência judicial?",
+                opcoes: [
+                    "O arquivo E01 gravado no CD-ROM de leitura óptica.",
+                    "A etiqueta de laca presa ao cabo USB.",
+                    "O arquivo de texto geralmente chamado 'hashes.txt', contendo o valor hexadecimal de hash de cada foto anexa.",
+                    "O relatório em HTML exportado pelo IPED que contém links visuais e formatação em cascata."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A integridade individual de cada um dos milhares de arquivos é assegurada pela relação matemática contida dentro do arquivo de texto 'hashes.txt' que acompanha a mídia."
+            },
+            {
+                q: "28. Após gerar o arquivo 'hashes.txt' no interior do pendrive do Laudo, a autenticidade e inviolabilidade de toda essa estrutura é chancelada legalmente como?",
+                opcoes: [
+                    "Pela inserção do pendrive num envelope plástico bolha assinado à caneta.",
+                    "Pelo cálculo do hash DO PRÓPRIO arquivo 'hashes.txt', valor este que é transcrito impresso no corpo do laudo e assinado digitalmente pelo Perito.",
+                    "Pelo carimbo físico sobre a entrada USB do HD Externo.",
+                    "Pela criptografia em BitLocker aplicada a 100% da evidência."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O mecanismo de garantia consiste em calcular a assinatura digital do arquivo de texto de hashes e afixá-la permanentemente no documento oficial do Laudo. Qualquer modificação na mídia fará esse cálculo falhar no tribunal."
+            },
+            {
+                q: "29. Uma ferramenta de software nacional é muito citada no material devido à sua capacidade de extrair dados e integrar funções de busca, indexação e relatórios HTML. Trata-se do:",
+                opcoes: [
+                    "EnCase Forensics.",
+                    "IPED (Indexador e Processador de Evidências Digitais).",
+                    "Cellebrite Inseyets.",
+                    "Magnet Axiom."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O IPED é uma solução de software de código aberto desenvolvida internamente na Polícia Federal para integrar extração, processamento, indexação e exportação de dados em massa."
+            },
+            {
+                q: "30. Ao realizar uma busca com o curinga '?' na fase de filtragem, o Perito Criminal está usando uma funcionalidade pertinente à:",
+                opcoes: [
+                    "Filtragem baseada na Redução Hash por BFAC.",
+                    "Pesquisa por palavras-chave com flexibilização de caracteres em termos não exatos.",
+                    "Recuperação baseada em Data Carving para recuperar cabeçalhos corrompidos.",
+                    "Decifragem Probabilística (onde '?' significa uma senha numérica ausente)."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O caractere curinga na pesquisa por palavras-chave ('?' ou '*') é usado para substituir caracteres desconhecidos ou alternativos, ampliando a busca e permitindo capturar variações de escrita de um nome ou termo."
+            }
+        ];
+
+        let htmlQuestions = "";
+        questoes.forEach((qObj, index) => {
+            htmlQuestions += `
+            <div class="question-container" id="q${index}">
+                <div class="question-text">${qObj.q}</div>
+                <ul class="options">
+            `;
+            
+            qObj.opcoes.forEach((opcao, optIndex) => {
+                htmlQuestions += `
+                    <li>
+                        <input type="radio" name="pergunta${index}" id="p${index}o${optIndex}" value="${optIndex}">
+                        <label for="p${index}o${optIndex}">${String.fromCharCode(65 + optIndex)}) ${opcao}</label>
+                    </li>
+                `;
+            });
+
+            htmlQuestions += `
+                </ul>
+                <button class="btn-responder" onclick="verificarResposta(${index}, ${qObj.correta})">Responder</button>
+                <div class="feedback" id="feedback${index}">
+                    <span id="msg${index}"></span>
+                    <div class="explanation" id="exp${index}"></div>
+                </div>
+            </div>
+            `;
+        });
+
+        document.getElementById("quiz-container").innerHTML = htmlQuestions;
+
+        function verificarResposta(questionIndex, correctAnswerIndex) {
+            const options = document.getElementsByName("pergunta" + questionIndex);
+            let selectedValue = -1;
+
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].checked) {
+                    selectedValue = parseInt(options[i].value);
+                    break;
+                }
+            }
+
+            const feedbackDiv = document.getElementById("feedback" + questionIndex);
+            const msgSpan = document.getElementById("msg" + questionIndex);
+            const expDiv = document.getElementById("exp" + questionIndex);
+
+            if (selectedValue === -1) {
+                alert("Por favor, selecione uma opção antes de clicar em Responder!");
+                return;
+            }
+
+            feedbackDiv.style.display = "block";
+            
+            feedbackDiv.classList.remove("correct", "incorrect");
+
+            if (selectedValue === correctAnswerIndex) {
+                feedbackDiv.classList.add("correct");
+                msgSpan.innerHTML = "✅ Resposta Correta!";
+            } else {
+                feedbackDiv.classList.add("incorrect");
+                msgSpan.innerHTML = `❌ Resposta Incorreta. Você marcou a alternativa ${String.fromCharCode(65 + selectedValue)}.`;
+            }
+
+            expDiv.innerHTML = questoes[questionIndex].explicacao;
+            
+            for (let i = 0; i < options.length; i++) {
+                options[i].disabled = true;
+            }
+            document.querySelector(`#q${questionIndex} button`).disabled = true;
+            document.querySelector(`#q${questionIndex} button`).style.backgroundColor = '#95a5a6';
+            document.querySelector(`#q${questionIndex} button`).style.cursor = 'not-allowed';
+        }
+    </script>
+</body>
+</html>
+```

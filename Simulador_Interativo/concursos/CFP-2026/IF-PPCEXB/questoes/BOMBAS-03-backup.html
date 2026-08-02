@@ -1,0 +1,629 @@
+Aqui está o código HTML completo contendo **30 questões inéditas de múltipla escolha**, de nível difícil e focadas detalhadamente nos **Tópicos 4, 5 e 6** (Mecanismos de Acionamento, Técnicas de Desativação e Bombas Postais) da apostila de Bombas e Explosivos da Polícia Federal.
+
+O simulado foi elaborado com **letras grandes** para facilitar a leitura e conta com o sistema interativo para revelar o gabarito e a explicação fundamentada logo após a sua tentativa.
+
+Copie o código abaixo, salve-o em um arquivo com a extensão `.html` (por exemplo, `simulado_bombas_topicos4a6.html`) e abra-o no seu navegador:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado: Bombas e Explosivos (Tópicos 4 a 6)</title>
+<style>
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        background-color: #f4f6f9; 
+        color: #333; 
+        margin: 0; 
+        padding: 30px; 
+        font-size: 26px; /* Letras grandes conforme solicitado */
+    }
+    .container { 
+        max-width: 1300px; 
+        margin: 0 auto; 
+        background: #ffffff; 
+        padding: 45px; 
+        border-radius: 12px; 
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+    }
+    h1 { 
+        text-align: center; 
+        color: #2c3e50; 
+        font-size: 44px; 
+        margin-bottom: 15px;
+    }
+    p.subtitle {
+        text-align: center; 
+        color: #7f8c8d; 
+        margin-bottom: 40px; 
+        font-size: 28px;
+    }
+    .question-card { 
+        margin-bottom: 50px; 
+        padding: 40px; 
+        border: 2px solid #e1e8ed; 
+        border-radius: 10px; 
+        background-color: #fafbfc; 
+    }
+    .question-text { 
+        font-weight: bold; 
+        font-size: 32px; 
+        margin-bottom: 25px; 
+        color: #1a252f; 
+        line-height: 1.4;
+    }
+    .options { 
+        list-style-type: none; 
+        padding: 0; 
+        margin: 0;
+    }
+    .options li { 
+        margin-bottom: 18px; 
+        background: #fff; 
+        border: 2px solid #bdc3c7; 
+        border-radius: 8px; 
+        transition: background-color 0.2s, border-color 0.2s; 
+    }
+    .options li:hover { 
+        background-color: #ecf0f1; 
+    }
+    .options label { 
+        cursor: pointer; 
+        display: flex; 
+        align-items: center; 
+        padding: 22px; 
+        width: 100%; 
+        box-sizing: border-box;
+        font-size: 28px;
+        line-height: 1.4;
+    }
+    .options input { 
+        margin-right: 25px; 
+        transform: scale(2.0); 
+    }
+    button { 
+        background-color: #2980b9; 
+        color: #fff; 
+        border: none; 
+        padding: 22px 45px; 
+        border-radius: 10px; 
+        cursor: pointer; 
+        font-size: 30px; 
+        font-weight: bold;
+        margin-top: 30px; 
+        transition: background-color 0.3s;
+    }
+    button:hover { 
+        background-color: #1f6391; 
+    }
+    button:disabled { 
+        background-color: #95a5a6; 
+        cursor: not-allowed; 
+    }
+    .feedback { 
+        margin-top: 30px; 
+        padding: 30px; 
+        border-radius: 10px; 
+        display: none; 
+        line-height: 1.5; 
+        font-size: 28px;
+    }
+    .correct { 
+        background-color: #d4edda; 
+        color: #155724; 
+        border: 2px solid #c3e6cb; 
+    }
+    .incorrect { 
+        background-color: #f8d7da; 
+        color: #721c24; 
+        border: 2px solid #f5c6cb; 
+    }
+    .explanation { 
+        margin-top: 20px; 
+        font-style: italic; 
+        font-size: 26px; 
+        color: #34495e;
+    }
+
+    /* ==================== TABLET RESPONSIVE (768px - 1024px) ==================== */
+    @media (max-width: 1024px) {
+        body { 
+            font-size: 22px; 
+            padding: 20px; 
+        }
+        .container { 
+            max-width: 100%; 
+            padding: 35px; 
+        }
+        h1 { 
+            font-size: 34px; 
+            margin-bottom: 12px;
+        }
+        p.subtitle {
+            font-size: 22px;
+            margin-bottom: 30px; 
+        }
+        .question-card { 
+            margin-bottom: 40px; 
+            padding: 30px; 
+        }
+        .question-text { 
+            font-size: 26px; 
+            margin-bottom: 20px; 
+        }
+        .options li { 
+            margin-bottom: 14px; 
+        }
+        .options label { 
+            padding: 18px; 
+            font-size: 24px;
+        }
+        .options input { 
+            transform: scale(1.6); 
+            margin-right: 18px; 
+        }
+        button { 
+            font-size: 24px; 
+            padding: 18px 35px; 
+        }
+        .feedback { 
+            font-size: 22px;
+            padding: 25px;
+        }
+        .explanation { 
+            font-size: 22px; 
+        }
+    }
+
+    /* ==================== MOBILE (< 768px) ==================== */
+    @media (max-width: 767px) {
+        body { 
+            font-size: 18px; 
+            padding: 15px; 
+        }
+        .container { 
+            max-width: 100%; 
+            padding: 20px; 
+        }
+        h1 { 
+            font-size: 28px; 
+            margin-bottom: 10px;
+        }
+        p.subtitle {
+            font-size: 18px;
+            margin-bottom: 25px; 
+        }
+        .question-card { 
+            margin-bottom: 30px; 
+            padding: 20px; 
+            border-radius: 8px;
+        }
+        .question-text { 
+            font-size: 18px; 
+            margin-bottom: 15px; 
+        }
+        .options li { 
+            margin-bottom: 12px; 
+        }
+        .options label { 
+            padding: 15px; 
+            font-size: 18px;
+        }
+        .options input { 
+            transform: scale(1.4); 
+            margin-right: 12px; 
+        }
+        button { 
+            font-size: 18px; 
+            padding: 15px 25px; 
+            width: 100%;
+        }
+        .feedback { 
+            font-size: 16px;
+            padding: 20px;
+        }
+        .explanation { 
+            font-size: 16px; 
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Simulado: Tópicos 4 a 6</h1>
+    <p class="subtitle">Mecanismos de Acionamento, Técnicas de Desativação e Bombas Postais</p>
+    <div id="quiz-container"></div>
+</div>
+
+<script>
+const quizData = [
+    {
+        question: "1. Os mecanismos de acionamento baseiam-se em princípios básicos para iniciar a carga explosiva. Qual princípio atua com base no Efeito Joule, aquecendo um condutor capaz de iniciar um explosivo sensível ao calor?",
+        options: [
+            "Mecânico.",
+            "Químico.",
+            "Elétrico.",
+            "Barométrico."
+        ],
+        answer: 2,
+        explanation: "O princípio elétrico fundamenta-se no fato de que a corrente elétrica, ao percorrer um condutor, provoca o seu aquecimento (efeito Joule), iniciando a carga."
+    },
+    {
+        question: "2. Em qual dos mecanismos de acionamento descritos na apostila o dispositivo é ativado pela remoção de um objeto ou alívio de peso, sendo um sistema classicamente utilizado em cartas-bomba, maletas ou ao se retirar um telefone do gancho?",
+        options: [
+            "Pressão.",
+            "Tração.",
+            "Descompressão.",
+            "Tensão."
+        ],
+        answer: 2,
+        explanation: "A descompressão funciona pela remoção de um objeto ou da pressão, sendo muito usada ao se abrir livros, portas ou levantar o fone do gancho."
+    },
+    {
+        question: "3. Há uma diferença técnica entre os mecanismos de Tensão e Tração. De acordo com o manual, o mecanismo de TENSÃO funciona quando:",
+        options: [
+            "Um cabo isolante é retirado suavemente.",
+            "Um fio ou arame esticado se rompe (ou é tracionado), provocando a liberação de um percussor ou fechando um circuito.",
+            "Uma diferença de pressão atmosférica curva o diafragma do contato.",
+            "O pino de segurança é sacado do percussor cilíndrico."
+        ],
+        answer: 1,
+        explanation: "Na tensão, existe um fio/arame esticado que, ao se romper ou sofrer tração/tropeço, aciona o dispositivo, sendo muito usado em armadilhamento de trilhas (cabo tropeço)."
+    },
+    {
+        question: "4. Nos mecanismos ativados por Retardo Químico, um material atua de forma gradual até acionar a bomba. O exemplo principal citado na doutrina utiliza uma solução líquida que corrói o fio que tensiona uma lâmina. Que solução é essa?",
+        options: [
+            "Ácido Pícrico.",
+            "Sulfeto de Carbono.",
+            "Cloreto Cúprico.",
+            "Ácido Nítrico."
+        ],
+        answer: 2,
+        explanation: "O exemplo da apostila afirma que a solução de cloreto cúprico corrói o fio que tensiona a lâmina até que ele se parta e a lâmina toque o contato de espera."
+    },
+    {
+        question: "5. Uma perigosa mistura caseira de ação química pode ser ativada usando uma ampola de ácido sulfúrico. A qual mistura o ácido sulfúrico é frequentemente associado para criar uma pólvora improvisada incendiária?",
+        options: [
+            "Nitroglicerina e pó de serra.",
+            "Clorato de potássio e enxofre.",
+            "Glicerina e permanganato de potássio.",
+            "TNT e alumínio em pó."
+        ],
+        answer: 1,
+        explanation: "Um dos exemplos de combinações químicas no texto é o uso de uma ampola de ácido sulfúrico com mistura de clorato de potássio e enxofre (pólvora caseira)."
+    },
+    {
+        question: "6. Bombas acionadas por Controle Remoto (via Ondas de Rádio - RF) são altamente suscetíveis a interferências. Qual a tática sugerida pelo manual para realizar uma blindagem eletromagnética numa bomba deste tipo?",
+        options: [
+            "Resfriar o equipamento com criogenia (Nitrogênio líquido).",
+            "Mergulhá-la imediatamente na água.",
+            "Envolvê-la em uma manta metálica, tela ou papel alumínio.",
+            "Retirar as pilhas com o auxílio de um chicote."
+        ],
+        answer: 2,
+        explanation: "Para tentar desativar/blindar o receptor, a doutrina orienta retirar a antena, usar uma manta metálica (ou papel alumínio/rede) para tentar a blindagem eletromagnética, ou bloquear a transmissão."
+    },
+    {
+        question: "7. Como funciona o mecanismo de acionamento Barométrico comumente utilizado contra aeronaves, relacionando a pressão interna e externa quando o avião decola?",
+        options: [
+            "Com a decolagem, a pressão externa (P1) aumenta muito, empurrando o contato móvel.",
+            "Com a decolagem, a temperatura da cabine cai e congela o diafragma do sensor.",
+            "Com a decolagem, a pressão externa (P1) diminui (ficando P1 < P2 da pressão selada), fazendo o diafragma defletir em direção ao contato fixo.",
+            "Com o som das turbinas, a vibração sonora sintoniza com a frequência do sensor barométrico."
+        ],
+        answer: 2,
+        explanation: "O sensor mantém a pressão em solo aprisionada no reservatório (P2). Quando a aeronave decola, a pressão ambiente externa (P1) cai. Como P1 < P2, o diafragma incha e fecha o circuito elétrico."
+    },
+    {
+        question: "8. Alguns sensores eletrônicos são extremamente sensíveis. O sensor conhecido como 'Anti-raio X' é ativado por que alteração no seu circuito?",
+        options: [
+            "Diferença de temperatura ao ser colocado no scanner.",
+            "Eleva o fluxo magnético do rolo transportador do scanner aeroportuário.",
+            "Usa um meio que intensifica a luz dentro do circuito, ativando uma célula fotoelétrica ao ser exposto aos raios X.",
+            "Sente a onda sonora do aparelho de raio X e aciona microfones ultra-sônicos."
+        ],
+        answer: 2,
+        explanation: "O mecanismo anti-raio X usa componentes que se iluminam ou intensificam a luz quando atingidos pelos raios X, o que ativa uma célula fotoelétrica interna que detona o artefato."
+    },
+    {
+        question: "9. O manual classifica as técnicas de desativação de artefatos explosivos em 'Ativas' e 'Passivas'. Qual técnica abaixo é um exemplo de técnica PASSIVA?",
+        options: [
+            "Contracarga utilizando explosivo.",
+            "Disparo com arma de fogo longa.",
+            "Uso de canhão d'água (Disruptor).",
+            "Resfriamento drástico e rápido para desativação da fonte elétrica (criogenia)."
+        ],
+        answer: 3,
+        explanation: "Técnicas passivas são aquelas que não provocam, em tese, alterações que acionem o artefato (ex: Raio X, auscultação, barreiras de proteção e criogenia). As demais são ativas."
+    },
+    {
+        question: "10. Qual é a finalidade principal do emprego de Técnicas Ativas de desativação pelo esquadrão antibombas?",
+        options: [
+            "Preservar todas as digitais e material genético perfeitamente.",
+            "Transportar o objeto intacto para o laboratório.",
+            "Interromper o circuito de fogo, provocando alterações físico-químicas previsíveis no artefato para desarticulá-lo.",
+            "Avaliar o tipo de bateria usada com ultrassom."
+        ],
+        answer: 2,
+        explanation: "O texto define as técnicas ativas como aquelas que podem provocar alterações físico-químicas previsíveis, tendo como objetivo principal interromper o circuito de fogo."
+    },
+    {
+        question: "11. O canhão d’água (Disruptor) fundamenta-se na força hidrodinâmica. Em seu funcionamento normal, que quantidade aproximada de água e que tipo de carga propelente ele utiliza?",
+        options: [
+            "Aproximadamente 5 litros de água, impulsionada por pólvora negra solta.",
+            "Aproximadamente 150 ml de água, lançada por um cartucho de calibre 12 especialmente carregado.",
+            "Aproximadamente 2 litros de água de uma garrafa PET, impulsionados por cordel NP 10.",
+            "Aproximadamente 500 ml de água com areia, lançados por pressão pneumática."
+        ],
+        answer: 1,
+        explanation: "O disruptor usa 150 ml de água entre buchas plásticas, lançados a alta pressão por uma carga propelente contida num cartucho de calibre 12 especial."
+    },
+    {
+        question: "12. Quando o Disruptor é utilizado contra alvos rígidos, como uma 'bomba tubo', onde a água não cortaria facilmente e geraria ricochete, qual carga de ataque especial é adotada?",
+        options: [
+            "Carga DMNB em pó.",
+            "Somente areia seca.",
+            "Ácido sulfúrico diluído.",
+            "Balote rígido conhecido como 'Avon' (gesso + esferas ocas metálicas + água)."
+        ],
+        answer: 3,
+        explanation: "O Avon é um balote composto por gesso, esferas ocas metálicas e água. Por ser mais resistente e rígido, evita o ricochete e corta estruturas densas como canos e metais (bomba tubo)."
+    },
+    {
+        question: "13. O posicionamento do canhão d'água difere segundo o material do artefato. Para desarticular um tubo (cano) que não puder ser interpretado visando a tampa (cap), qual a angulação recomendada, respectivamente, se o tubo for de PVC e se o tubo for de FERRO?",
+        options: [
+            "PVC: 90 graus / Ferro: 90 graus.",
+            "PVC: 45 graus / Ferro: 15 graus.",
+            "PVC: 15 graus / Ferro: 45 graus.",
+            "PVC: 180 graus / Ferro: 360 graus."
+        ],
+        answer: 1,
+        explanation: "Segundo a apostila, em tubo de PVC o canhão é posicionado a 45º da tampa (cap). Em tubo de ferro, que é mais resistente, atira-se com ângulo mais rasante para arrancar a tampa: posicionado a 15º."
+    },
+    {
+        question: "14. Na ausência do canhão d'água, o perito pode usar 'Cargas Especiais' construídas com material improvisado, como a garrafa plástica. Por qual motivo prioriza-se o uso da garrafa de PLÁSTICO (ex: refrigerante de 2 litros) ao invés de outros materiais rígidos?",
+        options: [
+            "Porque dissolve os ácidos do explosivo.",
+            "Porque amplifica o Efeito Monroe em 50%.",
+            "Porque o fato de ser plástica minimiza severamente a possibilidade de fragmentos secundários iniciarem ou detonarem acidentalmente o artefato alvo.",
+            "Porque conduz melhor a eletricidade estática para o solo."
+        ],
+        answer: 2,
+        explanation: "A garrafa contém água que será lançada como projétil hídrico pelo cordel detonante (NP 10). Ser de plástico macio garante que estilhaços contundentes não atinjam e acionem a bomba."
+    },
+    {
+        question: "15. Existem duas técnicas para abertura remota de cartas ou envelopes suspeitos. Na técnica do 'Cartão formato V', um explosivo abre o envelope usando a onda de choque. Qual cordel é indicado para esse arranjo?",
+        options: [
+            "Cordel NP 10.",
+            "Cordel NP 05.",
+            "Tubo de Choque a pó de alumínio.",
+            "Estopim hidráulico submerso."
+        ],
+        answer: 1,
+        explanation: "Para o cartão V (onde o cordel corre por cima do envelope na ponta do cartão), experiências têm dado bons resultados utilizando a menor carga do cordel NP 05."
+    },
+    {
+        question: "16. A técnica de abertura de envelopes conhecida como 'Técnica do Chicote' utiliza o cordel detonante (geralmente NP) colocado entre 5 e 8 cm de distância do alvo, mas qual é o elemento físico que efetivamente é arremessado para rasgar e abrir a carta-bomba?",
+        options: [
+            "Uma lâmina de barbear soldada ao detonador.",
+            "Gesso misturado com água.",
+            "O próprio gás de expansão livre (concussão pura).",
+            "Um fio rígido de cobre fixado junto ao cordel detonante."
+        ],
+        answer: 3,
+        explanation: "A técnica do chicote apoia um fio rígido de cobre próximo ao cordel. A detonação arremessa esse fio que 'chicoteia' e rasga o envelope."
+    },
+    {
+        question: "17. A 'Técnica do Chicote' apresenta uma excelente vantagem tática quando acionada sobre uma chapa de aço ou piso muito rígido. Qual é esse efeito secundário útil?",
+        options: [
+            "Derrete a bateria do explosivo imediatamente.",
+            "O fio rígido arremessado poderá cortar simultaneamente os fios elétricos existentes no interior do envelope, neutralizando os circuitos do artefato.",
+            "Anula o som da explosão, evitando pânico.",
+            "Transforma a carta em cinzas sem detonar os primários."
+        ],
+        answer: 1,
+        explanation: "O fio rígido, ao ser arremessado contra um fundo duro, atua como uma guilhotina e pode seccionar os fios e circuitos elétricos dentro do envelope."
+    },
+    {
+        question: "18. Antes do disparo de uma carga especial em uma linha de fogo elétrica, o perito obedece a um procedimento protocolar rigoroso. Logo após testar a descontinuidade da linha e antes de conectar a espoleta, o que o perito deve fazer como proteção vital?",
+        options: [
+            "Dar a mensagem: Atenção, linha quente.",
+            "Conectar o explosor (bateria) para carregar o fio.",
+            "Curto-circuitar o início da linha (juntando os polos), garantindo uma 'tomada de segurança' contra estática e indução.",
+            "Lavar as pontas da linha em solução de cloreto."
+        ],
+        answer: 2,
+        explanation: "A sequência é: abrir a linha -> testar descontinuidade -> curto-circuitar o início da linha (tomada de segurança) -> testar continuidade -> conectar a espoleta... O curto evita acidente."
+    },
+    {
+        question: "19. Sobre as Bombas Postais (cartas-bomba), a doutrina aponta quais como os três motivos principais que levam alguém a enviá-las?",
+        options: [
+            "Apenas assalto a bancos, fuga de prisões e fraudes de seguros.",
+            "Vingança (incluindo crimes passionais), motivos políticos/religiosos e casos de extorsão.",
+            "Brincadeiras juvenis, tráfico de armas e sabotagem corporativa leve.",
+            "Exclusivamente atentados internacionais de terrorismo atômico."
+        ],
+        answer: 1,
+        explanation: "Os motivos principais listados na apostila são: vingança (incluindo passionais), motivos políticos ou religiosos e extorsão."
+    },
+    {
+        question: "20. Na triagem e suspeição de correspondências em uma empresa, os funcionários devem ficar em alerta aos sinais externos dos pacotes. Em relação ao peso e à espessura de uma carta suspeita, quais são os limites de alerta definidos no manual?",
+        options: [
+            "Peso acima de 1 kg e espessura de 1 cm.",
+            "Peso acima de 50 g e espessura de 2 mm.",
+            "Peso aparente em excesso ao volume (acima de 25 g) e espessura invariavelmente superior a 5 mm.",
+            "Qualquer pacote acima de 500 g independentemente da espessura."
+        ],
+        answer: 2,
+        explanation: "As indicações afirmam que cartas-bomba invariavelmente têm espessura superior a 5 mm e pesam mais de 25 g (ou peso mal distribuído)."
+    },
+    {
+        question: "21. A presença de odores peculiares emanando de um envelope pode delatar o tipo de substância explosiva ocultada. Qual tipo de explosivo é denunciado pelo forte 'odor de amêndoas'?",
+        options: [
+            "A pólvora negra cloratada.",
+            "O fulminato de mercúrio e o DDNP.",
+            "O nitrato de amônio (Anfo).",
+            "Explosivos plásticos como C2, C3 e Semtex."
+        ],
+        answer: 3,
+        explanation: "Odor de amêndoas sugere a presença de explosivos plásticos das séries C2, C3 ou Semtex. Já amoníaco sugere nitrato de amônio, e pólvora o seu próprio cheiro."
+    },
+    {
+        question: "22. Dentre os sinais subjetivos e visuais de uma correspondência maliciosa, a presença de manchas de gordura ou graxa no papel do envelope é um indicativo gravíssimo de:",
+        options: [
+            "Contaminação do selo postal pelos correios.",
+            "Exsudação natural da substância explosiva contida no interior (como dinamite ou plástico).",
+            "Uso de cloreto cúprico vazando de retardadores químicos.",
+            "Reação da pólvora negra com a umidade do ar."
+        ],
+        answer: 1,
+        explanation: "Manchas de gordura/graxa no envelope são típicas do processo de 'exsudação' (vazamento/suor) da nitroglicerina da dinamite ou dos óleos e plastificantes de altos explosivos."
+    },
+    {
+        question: "23. Uma das dicas para detectar a existência de armadilhas no interior da carta-bomba envolve tatear sutilmente as laterais e o fundo da correspondência buscando sinais de um componente mecânico. Qual componente produz 'menor resistência ou maior flexibilidade' ao toque nas bordas do pacote?",
+        options: [
+            "Baterias cilíndricas ou retangulares.",
+            "Fios de cobre.",
+            "As molas tensionadas do dispositivo.",
+            "O material explosivo cristalino."
+        ],
+        answer: 2,
+        explanation: "A 'flexibilidade' (menor resistência nas laterais ou no fundo do pacote) pode acusar a possibilidade de existência de molas montadas no percussor da armadilha interna."
+    },
+    {
+        question: "24. Ao se identificar visualmente uma correspondência altamente suspeita, a pessoa NÃO DEVE de maneira alguma praticar qual destas ações instintivas baseada no senso comum de apagar fogo?",
+        options: [
+            "Abrir as portas e janelas da sala onde se encontra o pacote.",
+            "Colocar o pacote imediatamente dentro de um balde com água.",
+            "Cercar o material com poltronas, sacos de areia ou capim.",
+            "Transportar, apenas se seguro e estritamente necessário, para área remota."
+        ],
+        answer: 1,
+        explanation: "Nunca coloque a bomba na água! A água é condutora e pode fechar curto-circuitos elétricos ou iniciar reações químicas exotérmicas violentas entre os compostos ali presentes."
+    },
+    {
+        question: "25. Por que é orientado aos funcionários e peritos abrirem todas as portas e janelas da sala em que um artefato suspeito for abandonado antes da evacuação total?",
+        options: [
+            "Para permitir que a fumaça tóxica saia, dificultando a inflamação do pacote.",
+            "Para facilitar o escape das ondas de choque, reduzindo a pressão e os danos confinados no caso de uma possível explosão.",
+            "Para os franco-atiradores da segurança externa terem visão da bomba.",
+            "Para os vapores do cão farejador se dispersarem e ele não sufocar."
+        ],
+        answer: 1,
+        explanation: "Abrir portas e janelas reduz drasticamente os danos estruturais, pois diminui o confinamento e permite que a concussão/onda de deslocamento de ar escape e se dissipe para fora do prédio."
+    },
+    {
+        question: "26. O equipamento 'Fibroscópio', listado como um dos materiais sugeridos para uso em suspeita de bombas postais, possui qual requisito e desvantagem operacional para que possa funcionar?",
+        options: [
+            "Depende da radiação de isótopos de césio para funcionar.",
+            "Precisa emitir ondas ultrassônicas que podem ativar sensores acústicos.",
+            "Requer que o perito faça, obrigatoriamente, um furo ou incisão no pacote para conseguir inserir a sonda e realizar a inspeção visual interna.",
+            "Ele aquece a superfície do papel, correndo o risco de acender pólvora por infravermelho."
+        ],
+        answer: 2,
+        explanation: "Para utilizar o fibroscópio (e alguns detectores de gás), é necessário fazer uma incisão ou perfurar o pacote para poder introduzir a haste óptica da ferramenta."
+    },
+    {
+        question: "27. Se o pacote suspeito apresentar excesso de selos e os lacres aparentarem ter sido violados e colados novamente, qual técnica do criminoso essa evidência sugere?",
+        options: [
+            "Isso é feito unicamente para esconder a origem do envio na agência.",
+            "Essa característica sugere a possibilidade de o criminoso ter interceptado uma correspondência original legítima e a substituído (substituição de correspondência) para o alvo não desconfiar.",
+            "Garante que os selos protejam a parte elétrica de ondas de rádio.",
+            "A cola do selo serve de base química para ativar o detonador por amônia."
+        ],
+        answer: 1,
+        explanation: "Selos ou lacres alterados/violados levantam a suspeita de 'substituição de correspondência', ou seja, roubou-se uma encomenda esperada pela vítima e entregou-se uma bomba na mesma capa."
+    },
+    {
+        question: "28. Qual o mecanismo de acionamento que fundamenta a proibição taxativa da regra de segurança: 'Nunca tente desarmar ou abrir uma carta-bomba, pois elas não desengatilharão até o momento planejado'?",
+        options: [
+            "A carta é ativada por pressão do carteiro ao jogá-la.",
+            "Ela possui apenas mecanismos baseados em relógios de sol.",
+            "Sendo predominantemente acionada por mecanismos de Descompressão e/ou Tração, a própria ação física de abrir a tampa da carta completa o circuito ou solta o percussor mecânico.",
+            "O mecanismo depende da respiração do alvo (sensor de CO2)."
+        ],
+        answer: 2,
+        explanation: "As bombas postais são projetadas para explodir no instante da abertura pelo destinatário, utilizando largamente sistemas de tração (puxar a aba) e descompressão (alívio do envelope fechado)."
+    },
+    {
+        question: "29. Se houver um pequeno orifício no pacote que não aparente ser defeito de fábrica nem dano do transporte, a doutrina alerta que esse envelope deve ser considerado suspeito. Por que os criminosos produzem esses furos?",
+        options: [
+            "Para permitir que a substância explosiva respire e não sue.",
+            "O furo seria o orifício de acesso por onde o terrorista inseriu um pino ou ferramenta para armar o dispositivo já após o pacote estar fechado e selado, garantindo a sua própria segurança.",
+            "Para que os cães não farejem o vapor confinado.",
+            "Para esfriar os contatos elétricos e evitar explosão térmica nos caminhões de correio."
+        ],
+        answer: 1,
+        explanation: "Pequenos orifícios são extremamente suspeitos, pois são frequentemente deixados pelo dispositivo usado para armar a bomba com segurança já depois da embalagem estar pronta."
+    },
+    {
+        question: "30. Sobre as orientações para o procedimento em locais com objetos postais que contêm fios ou arames aparentes despontando do envelope:",
+        options: [
+            "Corte o arame aparente para interromper o fornecimento de energia antes que entre em ação.",
+            "O fio aparente é apenas para segurar a caixa e pode ser destravado com alicate isolado.",
+            "Pode ser que, mesmo no melhor dispositivo montado, um arame se solte; ou até mesmo que o fio já tenha fechado o contato final. Deve ser deixado na quarentena e isolado sem toque.",
+            "Deve-se prender o fio num ponto fixo de aterramento na parede para dispersar estática elétrica."
+        ],
+        answer: 2,
+        explanation: "Fio/arame aparente significa defeito de montagem ou o próprio fechamento do contato (que pode ter falhado momentaneamente). A ordem máxima é NÃO TOCAR, isolar, não cortar absolutamente nada."
+    }
+];
+
+const quizContainer = document.getElementById('quiz-container');
+
+quizData.forEach((q, index) => {
+    const questionDiv = document.createElement('div');
+    questionDiv.className = 'question-card';
+
+    let optionsHtml = '';
+    q.options.forEach((opt, i) => {
+        optionsHtml += `<li><label><input type="radio" name="q${index}" value="${i}"> ${opt}</label></li>`;
+    });
+
+    questionDiv.innerHTML = `
+        <div class="question-text">${q.question}</div>
+        <ul class="options">${optionsHtml}</ul>
+        <button onclick="checkAnswer(${index}, this)">Responder</button>
+        <div class="feedback" id="feedback-${index}"></div>
+    `;
+    quizContainer.appendChild(questionDiv);
+});
+
+function checkAnswer(index, btn) {
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    const feedbackDiv = document.getElementById(`feedback-${index}`);
+
+    if (!selected) {
+        alert('Por favor, selecione uma opção antes de confirmar sua resposta.');
+        return;
+    }
+
+    const answerObj = quizData[index];
+    const isCorrect = parseInt(selected.value) === answerObj.answer;
+
+    feedbackDiv.style.display = 'block';
+    if (isCorrect) {
+        feedbackDiv.className = 'feedback correct';
+        feedbackDiv.innerHTML = `<strong>✔️ Perfeito!</strong><div class="explanation"><em>Fundamentação Técnica:</em> ${answerObj.explanation}</div>`;
+    } else {
+        feedbackDiv.className = 'feedback incorrect';
+        feedbackDiv.innerHTML = `<strong>❌ Incorreto. A alternativa certa é a ${answerObj.answer + 1}: "${answerObj.options[answerObj.answer]}"</strong><div class="explanation"><em>Fundamentação Técnica:</em> ${answerObj.explanation}</div>`;
+    }
+    
+    // Desativar opções e botão
+    const allInputs = document.querySelectorAll(`input[name="q${index}"]`);
+    allInputs.forEach(input => input.disabled = true);
+    
+    btn.disabled = true;
+    btn.textContent = 'Respondido';
+}
+</script>
+
+</body>
+</html>
+```
+
+Essa nova bateria abrange de forma abrangente as teorias, a engenharia química/elétrica e as ações operacionais e posturais da doutrina. Continue seu treinamento e qualquer outra parte do manual que precisar transformar em questões ou infográficos, é só pedir!

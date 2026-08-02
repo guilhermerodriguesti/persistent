@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado de Revisão Literal - Parte 7 (40 Inéditas)</title>
+<style>
+  :root{--cor:#1a3a5c;--cor2:#2e6da4;--cor3:#e8f0f8;--verde:#1e7e34;--vermelho:#c0392b;--laranja:#d35400;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#222;}
+  header{background:var(--cor);color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;}
+  header h1{font-size:1.3rem;font-weight:700;}
+  .subtitle{font-size:.85rem;opacity:.8;}
+  .scorebar{background:var(--cor2);color:#fff;padding:10px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .sc{font-size:.95rem;} .sc span{font-weight:700;}
+  .lbl{opacity:.75;font-size:.85rem;}
+  .btn-reset{background:#fff;color:var(--cor);border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;}
+  .btn-reset:hover{background:#e0e8f0;}
+  .btn-wrong{background:var(--laranja);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;margin-left:auto;}
+  .btn-wrong:hover:not(:disabled){background:#b94600;}
+  .btn-wrong:disabled{opacity:.4;cursor:not-allowed;}
+  main{max-width:860px;margin:28px auto;padding:0 16px 60px;}
+  .chapter{margin-bottom:32px;}
+  .chapter-title{background:var(--cor);color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;font-weight:700;font-size:1rem;}
+  .question{background:#fff;border:1px solid #d0dcea;border-top:none;padding:20px 20px 14px;}
+  .question:last-child{border-radius:0 0 8px 8px;}
+  .question+.question{border-top:1px dashed #c8d8ea;}
+  .q-num{font-size:.78rem;color:#888;margin-bottom:4px;}
+  .q-text{font-size:1rem;font-weight:600;margin-bottom:14px;line-height:1.5;}
+  .opt{display:block;width:100%;background:var(--cor3);border:2px solid transparent;border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;text-align:left;font-size:.93rem;line-height:1.4;transition:.15s;}
+  .opt:hover:not(:disabled){background:#d5e5f8;border-color:var(--cor2);}
+  .opt.correct{background:#d4edda;border-color:var(--verde);color:var(--verde);font-weight:600;}
+  .opt.wrong{background:#fde8e8;border-color:var(--vermelho);color:var(--vermelho);}
+  .opt:disabled{cursor:default;}
+  .feedback{margin-top:8px;font-size:.88rem;padding:8px 12px;border-radius:6px;line-height:1.5;}
+  .feedback.ok{background:#d4edda;color:#155724;}
+  .feedback.err{background:#fde8e8;color:#721c24;}
+  .feedback .loc{margin-top:4px;font-size:.8rem;opacity:.8;}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Simulado de Revisão Literal - Parte 7 (40 Inéditas)</h1>
+    <div class="subtitle"></div>
+  </div>
+</header>
+<div class="scorebar">
+  <div class="sc">✅ Acertos: <span id="sc-c">0</span></div>
+  <div class="sc">❌ Erros: <span id="sc-w">0</span></div>
+  <div class="sc">📝 Respondidas: <span id="sc-a">0</span> <span class="lbl" id="sc-total"></span></div>
+  <button class="btn-reset" onclick="resetAll()">↺ Reiniciar tudo</button>
+  <button class="btn-wrong" id="btn-wrong" onclick="resetWrong()" disabled>↺ Só os erros</button>
+</div>
+<main id="quiz-container"></main>
+
+<script>
+const CHAPTERS = [
+  {
+    "title": "de Revisão Literal - Parte 7 (40 Inéditas)",
+    "questions": [
+      {
+        "q": "1. No t\u00f3pico que aborda as Etapas dos Procedimentos (1.2.2), a apostila afirma literalmente que o ideal \u00e9 que os peritos participem do planejamento e da coordena\u00e7\u00e3o da opera\u00e7\u00e3o de busca e apreens\u00e3o, orientando quanto a qu\u00ea?",
+        "opts": [
+          "Ao interrogat\u00f3rio dos suspeitos e extra\u00e7\u00e3o f\u00edsica de chaves FDE."
+,
+          "\u00c0 sele\u00e7\u00e3o, coleta e transporte correto do material que deve ser arrecadado no local."
+,
+          "\u00c0 instala\u00e7\u00e3o de interceptadores P2P e grampos telef\u00f4nicos autorizados."
+,
+          "\u00c0 quebra imediata de senhas no local antes da chegada do juiz."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Se\u00e7\u00e3o 1.2.2: 'O ideal \u00e9 que os peritos participem do planejamento e da coordena\u00e7\u00e3o da opera\u00e7\u00e3o de busca e apreens\u00e3o, orientando quanto \u00e0 sele\u00e7\u00e3o, coleta e transporte correto do material que deve ser arrecadado no local'."
+      }
+,
+      {
+        "q": "2. Segundo a apostila, uma vez que o material de inform\u00e1tica chega \u00e0 unidade de Criminal\u00edstica, qual \u00e9 o primeiro procedimento a ser adotado?",
+        "opts": [
+          "A duplica\u00e7\u00e3o forense do tipo m\u00eddia para m\u00eddia com CAINE."
+,
+          "O c\u00e1lculo do hash SHA-256 de todas as mem\u00f3rias vol\u00e1teis."
+,
+          "A devida identifica\u00e7\u00e3o e descri\u00e7\u00e3o do material no Sistema Criminal\u00edstica."
+,
+          "A abertura dos arquivos ZIP contidos nos discos r\u00edgidos."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 1.2.2: 'Uma vez que o material de inform\u00e1tica chega \u00e0 unidade de Criminal\u00edstica, o primeiro procedimento a ser adotado \u00e9 a devida identifica\u00e7\u00e3o e descri\u00e7\u00e3o do material no Sistema Criminal\u00edstica'."
+      }
+,
+      {
+        "q": "3. Ao categorizar o material examinado, a apostila define 'm\u00eddias de armazenamento computacional' declarando literalmente que os dados est\u00e3o localizados em m\u00eddias que armazenam informa\u00e7\u00f5es, tais como:",
+        "opts": [
+          "Dispositivos m\u00f3veis, celulares, smartphones e tablets."
+,
+          "Nuvem, servidores remotos e p\u00e1ginas na Internet."
+,
+          "Discos r\u00edgidos, SSDs, m\u00eddias \u00f3ticas, cart\u00f5es de mem\u00f3ria, pen drives e outros."
+,
+          "Roteadores, switches e pontos de acesso de rede."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 1.2.3: 'm\u00eddias de armazenamento computacional: os dados est\u00e3o localizados em m\u00eddias que armazenam informa\u00e7\u00f5es, tais como discos r\u00edgidos, SSDs, m\u00eddias \u00f3ticas, cart\u00f5es de mem\u00f3ria, pen drives e outros'."
+      }
+,
+      {
+        "q": "4. No tipo de exame classificado como 'An\u00e1lise de sistemas' pela apostila, os exames s\u00e3o realizados, em geral, por meio de quais t\u00e9cnicas expressamente descritas?",
+        "opts": [
+          "Extra\u00e7\u00e3o l\u00f3gica e extra\u00e7\u00e3o f\u00edsica avan\u00e7ada (AFU)."
+,
+          "Engenharia reversa ou an\u00e1lise comportamental."
+,
+          "Dumping da mem\u00f3ria e decodifica\u00e7\u00e3o esteganogr\u00e1fica."
+,
+          "C\u00e1lculo de hashes e expans\u00e3o de arquivos-cont\u00eainer."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Se\u00e7\u00e3o 1.2.3: 'an\u00e1lise de sistemas: em geral, esses exames s\u00e3o realizados por meio de engenharia reversa ou an\u00e1lise comportamental'."
+      }
+,
+      {
+        "q": "5. A Placa-m\u00e3e \u00e9 definida textualmente como a placa de circuito integrado que interconecta os diversos dispositivos. O que a apostila afirma literalmente que a Placa-m\u00e3e 'possui' para controlar os acessos ao processador, disco r\u00edgido e RAM?",
+        "opts": [
+          "Coolers a nitrog\u00eanio l\u00edquido e fontes de energia."
+,
+          "Software de sistema operacional Ext4 e bootloaders."
+,
+          "Barramentos e circuitos de apoio."
+,
+          "Clusters cont\u00edguos e mapa de bits alocados."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 2.2.1: 'Possui barramentos e circuitos de apoio para controlar os acessos ao processador, disco r\u00edgido, mem\u00f3ria RAM e demais dispositivos que estiverem conectados'."
+      }
+,
+      {
+        "q": "6. Ao descrever a mem\u00f3ria secund\u00e1ria e o disco r\u00edgido, a apostila explica como os dados ficam armazenados internamente. Qual a disposi\u00e7\u00e3o f\u00edsica mencionada literalmente?",
+        "opts": [
+          "Em pastilhas de sil\u00edcio em estado s\u00f3lido."
+,
+          "Em discos magn\u00e9ticos conc\u00eantricos, divididos em trilhas e setores."
+,
+          "Em c\u00e9lulas de bateria de l\u00edtio encapsuladas."
+,
+          "Em microchips injetados com c\u00f3digos ESN."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Se\u00e7\u00e3o 2.2.4: 'Internamente, os dados ficam armazenados em discos magn\u00e9ticos conc\u00eantricos, divididos em trilhas e setores'."
+      }
+,
+      {
+        "q": "7. Segundo a apostila, os discos de estado s\u00f3lido (Solid-State Drive ou SSD) utilizam qual tecnologia prim\u00e1ria para armazenar os dados?",
+        "opts": [
+          "Pratos met\u00e1licos banhados a n\u00edquel."
+,
+          "Cart\u00f5es inteligentes padr\u00e3o SIM."
+,
+          "Um conjunto de mem\u00f3rias flash."
+,
+          "Chips TPM criptografados de f\u00e1brica."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 2.2.4: 'Os discos de estado s\u00f3lido (Solid-State Drive ou SSD, da sigla em ingl\u00eas) utilizam um conjunto de mem\u00f3rias flash para armazenar os dados'."
+      }
+,
+      {
+        "q": "8. A apostila lista expressamente exemplos de perif\u00e9ricos que atuam SIMULTANEAMENTE como 'entrada e sa\u00edda'. Assinale a op\u00e7\u00e3o que reflete literalmente os exemplos dados:",
+        "opts": [
+          "Teclado, mouse e scanner."
+,
+          "Monitor, impressora e caixas de som."
+,
+          "Interface de rede, monitor touch-screen e impressora multifuncional."
+,
+          "Webcam, microfone e leitor de DVD."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 2.2.5 (c): 'entrada e sa\u00edda: interface de rede, monitor touch-screen e impressora multifuncional'."
+      }
+,
+      {
+        "q": "9. Quais s\u00e3o, literalmente, as funcionalidades b\u00e1sicas do sistema operacional citadas na se\u00e7\u00e3o 2.3?",
+        "opts": [
+          "Bloqueio remoto de redes, isolamento Faraday e quebra de PUK."
+,
+          "Duplica\u00e7\u00e3o forense, criptografia FDE, esteganografia e data carving."
+,
+          "Ger\u00eancia de mem\u00f3ria, acesso a dispositivos de entrada e sa\u00edda de dados, carregamento de outros programas, interface gr\u00e1fica e gerenciamento do sistema de arquivos."
+,
+          "Mapeamento de octetos ASCII, varredura de Hash MD5 e expans\u00e3o ZIP."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 2.3: 'Dentre as funcionalidades b\u00e1sicas do sistema operacional, podemos citar: ger\u00eancia de mem\u00f3ria, acesso a dispositivos de entrada e sa\u00edda de dados, carregamento de outros programas, interface gr\u00e1fica e gerenciamento do sistema de arquivos'."
+      }
+,
+      {
+        "q": "10. Conforme a se\u00e7\u00e3o 2.4, o sistema de arquivos utiliza um mapa de bits. A apostila descreve de forma estrita o que acontece 'Sempre que um arquivo novo \u00e9 criado'. Qual \u00e9 esse procedimento?",
+        "opts": [
+          "O mapa de bits \u00e9 compactado para dar lugar aos metadados na mem\u00f3ria RAM."
+,
+          "O mapa de bits \u00e9 consultado para saber quais blocos est\u00e3o livres e, em seguida, o mapa \u00e9 atualizado para registrar quais blocos foram ocupados pelo arquivo."
+,
+          "Os blocos preexistentes s\u00e3o zerados (wipe) para impedir a contamina\u00e7\u00e3o cruzada."
+,
+          "A BIOS intercepta o tamanho do arquivo e aloca o espa\u00e7o na Placa-m\u00e3e."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Se\u00e7\u00e3o 2.4: 'Sempre que um arquivo novo \u00e9 criado, o mapa de bits \u00e9 consultado para saber quais blocos est\u00e3o livres e, em seguida, o mapa \u00e9 atualizado para registrar quais blocos foram ocupados pelo arquivo'."
+      }
+,
+      {
+        "q": "11. Na se\u00e7\u00e3o de Planejamento de Busca (3.1), a apostila orienta que 'aten\u00e7\u00e3o especial deve ser tomada nos casos que envolvam crimes pr\u00f3prios'. Qual \u00e9 a justificativa literal dada pelo texto para essa aten\u00e7\u00e3o especial?",
+        "opts": [
+          "Pela eventual aus\u00eancia de outros elementos que possam servir como prova."
+,
+          "Pelo fato de crimes pr\u00f3prios ocorrerem exclusivamente com dispositivos m\u00f3veis AFU."
+,
+          "Porque o juiz n\u00e3o emite mandados diretos para nuvens computacionais."
+,
+          "Porque a extra\u00e7\u00e3o de hardware deve ser feita exclusivamente no exterior."
+        ],
+        "ans": 0,
+        "exp": "Gabarito: A. Se\u00e7\u00e3o 3.1: 'Pela eventual aus\u00eancia de outros elementos que possam servir como prova, aten\u00e7\u00e3o especial deve ser tomada nos casos que envolvam crimes pr\u00f3prios...'."
+      }
+,
+      {
+        "q": "12. Na Execu\u00e7\u00e3o da busca (3.2), a apostila adverte sobre materiais que s\u00e3o 'f\u00e1ceis de serem ocultados' e que podem ser 'danificados em quest\u00e3o de segundos'. Quais s\u00e3o os exemplos exatos listados no material?",
+        "opts": [
+          "Servidores, racks de rede e nobreaks industriais."
+,
+          "Monitores touch-screen, cabos IDE e teclados."
+,
+          "Disquetes, CDs, DVDs, pen drives e m\u00eddias de armazenamento de tamanho reduzido."
+,
+          "Bolsas de Faraday, luvas antiest\u00e1ticas e lacres inviol\u00e1veis."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 3.2: 'Disquetes, CDs, DVDs, pen drives e m\u00eddias de armazenamento de tamanho reduzido s\u00e3o f\u00e1ceis de serem ocultados. Alguns materiais podem ser danificados em quest\u00e3o de segundos'."
+      }
+,
+      {
+        "q": "13. Ainda sobre Busca e Apreens\u00e3o, sob qual justificativa e regra estrita a apostila aconselha a apreens\u00e3o de 'Dispositivos de entrada e sa\u00edda de dados - impressoras, teclados, monitores e outros perif\u00e9ricos'?",
+        "opts": [
+          "Apenas se o gabinete n\u00e3o puder ser transportado devido ao peso."
+,
+          "Devem ser apreendidos sempre e incondicionalmente, para preservar as digitais papilosc\u00f3picas."
+,
+          "Devem ser apreendidos somente se houver algum interesse espec\u00edfico (ex: determinar se um documento foi impresso na impressora)."
+,
+          "Apenas se pertencerem a empresas envolvidas em espionagem industrial."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 3.3.1: 'Dispositivos de entrada e sa\u00edda de dados - impressoras, teclados, monitores e outros perif\u00e9ricos - devem ser apreendidos somente se houver algum interesse espec\u00edfico...'."
+      }
+,
+      {
+        "q": "14. De acordo com as diretrizes de 'Arrecada\u00e7\u00e3o' (3.4), as etiquetas identificadoras de equipamentos devem ser afixadas preferencialmente em qual local?",
+        "opts": [
+          "Na parte interna dos pl\u00e1sticos bolhas que o envolvem."
+,
+          "Dentro da caixa de papel\u00e3o de transporte da viatura."
+,
+          "Sobre o equipamento em si, n\u00e3o sobre as embalagens."
+,
+          "No conector USB principal do computador."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 3.4: 'As etiquetas identificadoras devem, preferencialmente, ser afixadas sobre o equipamento em si, n\u00e3o sobre as embalagens'."
+      }
+,
+      {
+        "q": "15. A apostila conceitua a 'Duplica\u00e7\u00e3o de m\u00eddia para m\u00eddia' definindo-a de modo expl\u00edcito como um procedimento que consiste em:",
+        "opts": [
+          "Armazenar m\u00faltiplos arquivos-cont\u00eaineres numa \u00fanica m\u00eddia maior."
+,
+          "C\u00f3pia completa dos dados da m\u00eddia de origem diretamente para a m\u00eddia de destino."
+,
+          "Exportar somente a \u00e1rvore de diret\u00f3rios do Windows para o Pen Drive."
+,
+          "Calcular o hash de arquivos sem gerar c\u00f3pia f\u00edsica dos dados apagados."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Se\u00e7\u00e3o 4.1.1: 'A duplica\u00e7\u00e3o forense do tipo m\u00eddia para m\u00eddia consiste na c\u00f3pia completa dos dados da m\u00eddia de origem diretamente para a m\u00eddia de destino'."
+      }
+,
+      {
+        "q": "16. Na se\u00e7\u00e3o que trata de Equipamento Forense Especializado (4.2.1), os dispositivos exemplificados textualmente pela apostila (Tableau TD3, Tableau TX1 e Atola) possuem a capacidade not\u00e1vel de:",
+        "opts": [
+          "Ignorar a Conven\u00e7\u00e3o de Budapeste durante a c\u00f3pia."
+,
+          "Imprimir o laudo em papel A4 automaticamente no pr\u00f3prio local."
+,
+          "Realizar duplica\u00e7\u00f5es simult\u00e2neas."
+,
+          "Quebrar senhas FBE de smartphones Android com apenas um clique."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 4.2.1: 'Os equipamentos \u00e0 disposi\u00e7\u00e3o do Perito Criminal, como o Tableau TD3, Tableau TX1 e Atola, possuem interface para praticamente todos os tipos de discos r\u00edgidos e possuem a capacidade de realizar duplica\u00e7\u00f5es simult\u00e2neas'."
+      }
+,
+      {
+        "q": "17. Ao explicar o 'Bloqueio f\u00edsico' na se\u00e7\u00e3o de Computador comum (4.2.2), a apostila dita que existem dispositivos de hardware que, quando conectados entre a m\u00eddia e o computador, impedem a escrita de dados, permitindo:",
+        "opts": [
+          "A altera\u00e7\u00e3o controlada do metadado da BIOS."
+,
+          "Apenas sua leitura."
+,
+          "Apenas que a formata\u00e7\u00e3o zero fill opere."
+,
+          "A transfer\u00eancia P2P bidirecional."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Se\u00e7\u00e3o 4.2.2: 'bloqueio f\u00edsico: existem dispositivos de hardware que, quando conectados entre a m\u00eddia e o computador, impedem a escrita de dados, permitindo apenas sua leitura'."
+      }
+,
+      {
+        "q": "18. Na explica\u00e7\u00e3o t\u00e9cnica sobre apagar arquivos (5.1.1), a apostila justifica que 'Apagar definitivamente a \u00e1rea ocupada pelo arquivo no disco gastaria tempo consider\u00e1vel'. O que, em vez disso, o sistema operacional adota literalmente?",
+        "opts": [
+          "Um m\u00e9todo de encripta\u00e7\u00e3o r\u00e1pida RSA-256."
+,
+          "Um m\u00e9todo que consiste em simplesmente marcar como 'livres para uso' tanto os blocos ocupados pelo arquivo apagado como a entrada correspondente na tabela."
+,
+          "A transfer\u00eancia dos dados para uma pasta oculta chamada 'Shadow Copy'."
+,
+          "A convers\u00e3o do arquivo em um cont\u00eainer ZIP invis\u00edvel."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Se\u00e7\u00e3o 5.1.1: 'Em vez disso, o sistema operacional adota um m\u00e9todo mais pr\u00e1tico e otimizado que consiste em simplesmente marcar como \u201clivres para uso\u201d tanto os blocos ocupados pelo arquivo apagado como a entrada correspondente...'"
+      }
+,
+      {
+        "q": "19. A t\u00e9cnica de recupera\u00e7\u00e3o 'Data Carving' possui uma limita\u00e7\u00e3o severa citada expressamente no texto: 'Como esse m\u00e9todo n\u00e3o utiliza as informa\u00e7\u00f5es presentes no sistema de arquivos, ele n\u00e3o ir\u00e1 recuperar...'",
+        "opts": [
+          "As fotos em formato JPEG."
+,
+          "A assinatura hexadecimal no cabe\u00e7alho."
+,
+          "Os metadados, tal como o nome, dos arquivos."
+,
+          "O conte\u00fado dos e-mails NSF."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 5.1.1: 'Como esse m\u00e9todo n\u00e3o utiliza as informa\u00e7\u00f5es presentes no sistema de arquivos, ele n\u00e3o ir\u00e1 recuperar os metadados, tal como o nome, dos arquivos'."
+      }
+,
+      {
+        "q": "20. O processo de Processamento -> Categoriza\u00e7\u00e3o (5.2.2) informa que 'Nesse processo, todos os arquivos s\u00e3o identificados e categorizados'. Como a identifica\u00e7\u00e3o \u00e9 feita de forma estrita segundo o texto?",
+        "opts": [
+          "Pela data de cria\u00e7\u00e3o e hist\u00f3rico Web."
+,
+          "Pelo endere\u00e7o de IP do qual foram baixados."
+,
+          "Pela assinatura e extens\u00e3o dos arquivos."
+,
+          "Pelas senhas criptografadas associadas."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 5.2.2: 'A identifica\u00e7\u00e3o \u00e9 feita pela assinatura e extens\u00e3o dos arquivos'."
+      }
+,
+      {
+        "q": "21. A etapa de Indexa\u00e7\u00e3o (5.2.3) \u00e9 comparada didaticamente na apostila a qual elemento comum de leitura?",
+        "opts": [
+          "A um tradutor simult\u00e2neo."
+,
+          "A um dicion\u00e1rio de sin\u00f4nimos."
+,
+          "A um \u00edndice remissivo."
+,
+          "A um c\u00f3digo de barras de mercadoria."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 5.2.3: 'A indexa\u00e7\u00e3o \u00e9 como um \u00edndice remissivo, ou seja, ao final do processo haver\u00e1 uma tabela listando todas as palavras encontradas e suas respectivas localiza\u00e7\u00f5es'."
+      }
+,
+      {
+        "q": "22. Qual elemento matem\u00e1tico \u00e9 utilizado especificamente como 'base' do processo de Redu\u00e7\u00e3o na etapa de Filtragem (5.3.1) para descartar arquivos desconexos?",
+        "opts": [
+          "Os metadados do tipo MAC (Modificado, Acessado, Criado)."
+,
+          "A extens\u00e3o nativa do software (ex: .exe, .dll)."
+,
+          "Os valores de hash calculados na etapa anterior."
+,
+          "A matriz termodin\u00e2mica do disco MBR."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 5.3.1: 'A base do processo de redu\u00e7\u00e3o utiliza os valores de hash calculados na etapa anterior. Utilizando uma base de dados de arquivos conhecidos...'"
+      }
+,
+      {
+        "q": "23. Dentre as v\u00e1rias atividades da etapa de An\u00e1lise (5.4.1) exemplificadas literalmente, o que o Perito pode determinar ao analisar um aplicativo malicioso?",
+        "opts": [
+          "Se ele foi programado em Java puro ou C++."
+,
+          "Se ele \u00e9 capaz de capturar senhas banc\u00e1rias."
+,
+          "Se ele burla o m\u00f3dulo TPM por indu\u00e7\u00e3o qu\u00e2ntica."
+,
+          "O nome de batismo do hacker internacional criador."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Se\u00e7\u00e3o 5.4.1 traz o exemplo: 'a an\u00e1lise de um aplicativo malicioso, determinando se ele \u00e9 capaz de capturar senhas banc\u00e1rias'."
+      }
+,
+      {
+        "q": "24. A se\u00e7\u00e3o que trata da Decifragem de arquivos (5.4.3) assinala que o acesso aos arquivos cifrados depende da recupera\u00e7\u00e3o da senha do usu\u00e1rio, que se d\u00e1, segundo a apostila, por meio de quais tr\u00eas ataques estruturados?",
+        "opts": [
+          "Bypass f\u00edsico, Exploit USB e Root."
+,
+          "Data Carving, Engenharia Reversa e OCR."
+,
+          "For\u00e7a bruta, dicion\u00e1rio e probabil\u00edsticos."
+,
+          "Wipe reverso, Hasheamento Cego e Indexa\u00e7\u00e3o Curinga."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 5.4.3 descreve esses tr\u00eas ataques: 'Isso se d\u00e1 por meio dos seguintes ataques: a) for\u00e7a bruta; b) dicion\u00e1rio; c) probabil\u00edsticos'."
+      }
+,
+      {
+        "q": "25. Na terminologia apresentada no cap\u00edtulo de Abuso Sexual (6.1), o conceito de 'peer-to-peer - P2P' \u00e9 estritamente definido como uma arquitetura de redes ponto-a-ponto que permite o compartilhamento de servi\u00e7os e dados sem a necessidade de qu\u00ea?",
+        "opts": [
+          "Um link de banda larga superior a 10 Mbps."
+,
+          "Cabos de conex\u00e3o f\u00edsica."
+,
+          "Um servidor central."
+,
+          "Uso de criptografia SSL."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 6.1 (VI): 'peer-to-peer - P2P: arquitetura de redes de computadores ponto-a-ponto que permite o compartilhamento de servi\u00e7os e dados sem a necessidade de um servidor central'."
+      }
+,
+      {
+        "q": "26. Segundo o inciso V do t\u00f3pico 6.2 (Vis\u00e3o Geral da ASI), o exame de an\u00e1lise de conte\u00fado \u00e9 composto por uma lista de etapas. A \u00faltima etapa enumerada (inciso V) refere-se explicitamente a:",
+        "opts": [
+          "Remessa do material ao Minist\u00e9rio P\u00fablico imediatamente."
+,
+          "Descarte de 100% dos dados para prote\u00e7\u00e3o emocional da equipe."
+,
+          "An\u00e1lises adicionais relacionadas a quesitos espec\u00edficos."
+,
+          "Instala\u00e7\u00e3o do IPED nos sistemas do tribunal."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 6.2 (V): 'an\u00e1lises adicionais relacionadas a quesitos espec\u00edficos'."
+      }
+,
+      {
+        "q": "27. No subcap\u00edtulo 6.3 (Organiza\u00e7\u00e3o e prioriza\u00e7\u00e3o do material), a apostila diz que a ordena\u00e7\u00e3o dos arquivos para an\u00e1lise deve dar prioridade absoluta (primeiro lugar) a qual crit\u00e9rio objetivo?",
+        "opts": [
+          "Aos arquivos que n\u00e3o possuem extens\u00f5es registradas."
+,
+          "Apenas aos v\u00eddeos maiores que 5 Gigabytes."
+,
+          "Por identifica\u00e7\u00e3o positiva realizada via BFAC."
+,
+          "Ao estado qu\u00edmico-biol\u00f3gico do cart\u00e3o SIM do dispositivo."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 6.3 orienta: 'Para a prioriza\u00e7\u00e3o do material examinado, recomenda-se a ordena\u00e7\u00e3o dos arquivos, preferencialmente: primeiro, por identifica\u00e7\u00e3o positiva realizada via BFAC'."
+      }
+,
+      {
+        "q": "28. No in\u00edcio do cap\u00edtulo sobre Dispositivos M\u00f3veis (7.1), a evolu\u00e7\u00e3o hist\u00f3rica do aparelho celular \u00e9 contextualizada. O texto diz literalmente que 'Os telefones m\u00f3veis ditos inteligentes (smartphones) tomaram o lugar...'",
+        "opts": [
+          "Dos desktops de alto rendimento empresarial."
+,
+          "Da agenda eletr\u00f4nica e do PDA."
+,
+          "Dos servidores centrais e do protocolo de telefonia fixa."
+,
+          "Das c\u00e2meras fotogr\u00e1ficas anal\u00f3gicas e dos cabos coaxiais."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Se\u00e7\u00e3o 7.1: 'Os telefones m\u00f3veis ditos inteligentes (smartphones) tomaram o lugar da agenda eletr\u00f4nica e do PDA e s\u00e3o hoje utilizados por muitos usu\u00e1rios...'"
+      }
+,
+      {
+        "q": "29. Quando discorre sobre a 'Descri\u00e7\u00e3o do material' na an\u00e1lise de celulares (7.2.1), a apostila \u00e9 taxativa ao declarar que 'O primeiro passo em uma an\u00e1lise pericial \u00e9 a...'",
+        "opts": [
+          "Quebra da senha de prote\u00e7\u00e3o do aparelho."
+,
+          "Conex\u00e3o do equipamento \u00e0 rede Wi-Fi da delegacia."
+,
+          "Descri\u00e7\u00e3o do material submetido a exame."
+,
+          "A\u00e7\u00e3o de zerar a mem\u00f3ria via Wipe Remoto."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 7.2.1: 'O primeiro passo em uma an\u00e1lise pericial \u00e9 a descri\u00e7\u00e3o do material submetido a exame'."
+      }
+,
+      {
+        "q": "30. Ao tratar de chamadas e mensagens no celular (7.2.2), a apostila orienta o Perito a fazer uma 'ressalva' importante, destacando que apenas UMA entidade pode informar com precis\u00e3o as chamadas realizadas e mensagens de texto, pois o usu\u00e1rio pode ter apagado do aparelho. Qual entidade?",
+        "opts": [
+          "A fabricante do telefone m\u00f3vel (Apple ou Samsung)."
+,
+          "A Interpol."
+,
+          "A operadora."
+,
+          "O Conselho da Europa (Budapeste)."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 7.2.2: 'Apenas a operadora pode informar com precis\u00e3o as chamadas realmente realizadas ou recebidas, bem como as mensagens de texto e correio de voz...'"
+      }
+,
+      {
+        "q": "31. A lista de artefatos de celular extra\u00edveis cont\u00e9m o item 'Autopreenchimento'. Como esse artefato \u00e9 textualmente definido na apostila (7.2.2)?",
+        "opts": [
+          "O ato do sistema digitar a senha PIN sozinho."
+,
+          "Cole\u00e7\u00e3o de valores armazenados usados no preenchimento de campos de formul\u00e1rios."
+,
+          "Bateria viciada que indica carga 100% de modo irreal."
+,
+          "Fun\u00e7\u00e3o P2P que completa downloads interrompidos."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Se\u00e7\u00e3o 7.2.2 letra (c): 'Autopreenchimento: cole\u00e7\u00e3o de valores armazenados usados no preenchimento de campos de formul\u00e1rios'."
+      }
+,
+      {
+        "q": "32. O que representam os artefatos denominados literalmente de 'Cart\u00f5es m\u00f3veis' na lista da se\u00e7\u00e3o 7.2.2?",
+        "opts": [
+          "Os chips SIM em formato Micro e Nano."
+,
+          "Mem\u00f3rias remov\u00edveis de leitura \u00f3ptica."
+,
+          "Informa\u00e7\u00f5es sobre arquivos armazenados no telefone que funcionam como cupons, cart\u00f5es de embarque, ingressos, cart\u00f5es de fidelidade e gift cards."
+,
+          "Placas de circuito impresso para expans\u00e3o RAM do smartphone."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 7.2.2 letra (f): 'Cart\u00f5es m\u00f3veis: informa\u00e7\u00f5es sobre arquivos armazenados no telefone que funcionam como cupons, cart\u00f5es de embarque, ingressos...'"
+      }
+,
+      {
+        "q": "33. Comparando os m\u00e9todos de extra\u00e7\u00e3o em celulares, qual \u00e9 o benef\u00edcio investigativo que a 'extra\u00e7\u00e3o via sistema de arquivos' fornece literalmente al\u00e9m de entender a estrutura de arquivos e hist\u00f3rico Web?",
+        "opts": [
+          "Realizar wipe instant\u00e2neo em caso de invas\u00e3o do FBI."
+,
+          "Permitir ao Perito Criminal realizar a an\u00e1lise de poss\u00edveis arquivos que n\u00e3o foram decodificados pela ferramenta de extra\u00e7\u00e3o."
+,
+          "Substituir integralmente a an\u00e1lise laboratorial humana pelo uso da IA P2P."
+,
+          "Desligar as antenas ERBs que emitem pulsos BFU."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Se\u00e7\u00e3o 7.2.2 letra (c): 'al\u00e9m de permitir ao Perito Criminal realizar a an\u00e1lise de poss\u00edveis arquivos que n\u00e3o foram decodificados pela ferramenta de extra\u00e7\u00e3o'."
+      }
+,
+      {
+        "q": "34. Abordando o problema da 'bateria' nas dificuldades de extra\u00e7\u00e3o (7.2.3), o texto faz uma diferencia\u00e7\u00e3o estrutural na fabrica\u00e7\u00e3o: 'Em aparelhos mais antigos, a bateria costuma ser remov\u00edvel e de f\u00e1cil acesso. J\u00e1 em modelos mais recentes, a bateria \u00e9...'",
+        "opts": [
+          "Injetada magneticamente na Placa-M\u00e3e."
+,
+          "Baseada em Ur\u00e2nio enriquecido para longa dura\u00e7\u00e3o BFU."
+,
+          "Interna e o acesso exige a remo\u00e7\u00e3o da tampa traseira, que geralmente \u00e9 colada."
+,
+          "Acionada por luz solar impossibilitando exame noturno."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 7.2.3 letra (a): 'J\u00e1 em modelos mais recentes, a bateria \u00e9 interna e o acesso exige a remo\u00e7\u00e3o da tampa traseira, que geralmente \u00e9 colada'."
+      }
+,
+      {
+        "q": "35. Sobre o bloqueio Biom\u00e9trico de um celular (7.3.1), a doutrina explica que, normalmente, esse tipo de bloqueio deve ser combinado com PIN ou padr\u00e3o geom\u00e9trico, que s\u00e3o exigidos obrigatoriamente quando o aparelho:",
+        "opts": [
+          "Atravessa as fronteiras nacionais e muda de fuso hor\u00e1rio."
+,
+          "\u00c9 reiniciado ou fica um longo per\u00edodo sem desbloqueio."
+,
+          "Se conecta a redes Wi-Fi n\u00e3o cadastradas na Placa-m\u00e3e."
+,
+          "Sofre jailbreak ou recebe cabo de for\u00e7a n\u00e3o-original."
+        ],
+        "ans": 1,
+        "exp": "Gabarito: B. Se\u00e7\u00e3o 7.3.1: 'Normalmente, este bloqueio deve ser utilizado combinado com um outro tipo [...] que s\u00e3o exigidos toda vez que o aparelho \u00e9 reiniciado ou fica um longo per\u00edodo sem desbloqueio'."
+      }
+,
+      {
+        "q": "36. Na descri\u00e7\u00e3o do estado AFU, a apostila explica por que ele \u00e9 valioso para a per\u00edcia: 'Quando o aparelho j\u00e1 foi desbloqueado ap\u00f3s sua inicializa\u00e7\u00e3o, diversas chaves de criptografia s\u00e3o carregadas na mem\u00f3ria vol\u00e1til do sistema. Essas chaves permitem que o sistema operacional acesse, de forma transparente, informa\u00e7\u00f5es protegidas como:'",
+        "opts": [
+          "Canais Bluetooth encriptados, pacotes SNMP e c\u00f3digos PUK."
+,
+          "Configura\u00e7\u00f5es MBR do Windows, MFT livre e clusters n\u00e3o alocados."
+,
+          "Mensagens, arquivos, hist\u00f3rico de navega\u00e7\u00e3o, dados de aplicativos e credenciais."
+,
+          "Firmwares nativos, c\u00f3digos bin\u00e1rios do kernel e circuitos de apoio."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 7.3.3.4: 'Essas chaves permitem que o sistema operacional acesse, de forma transparente, informa\u00e7\u00f5es protegidas como mensagens, arquivos, hist\u00f3rico de navega\u00e7\u00e3o, dados de aplicativos e credenciais'."
+      }
+,
+      {
+        "q": "37. Na base da doutrina dos Cen\u00e1rios de apreens\u00e3o de dispositivos m\u00f3veis (7.4.1), os cen\u00e1rios s\u00e3o definidos principalmente por quais dois fatores expressos no texto?",
+        "opts": [
+          "A marca do hardware e a operadora do chip SIM."
+,
+          "O estado qu\u00edmico da bateria e a resolu\u00e7\u00e3o da tela."
+,
+          "O estado do aparelho no momento da coleta e pelo n\u00edvel de acesso dispon\u00edvel."
+,
+          "A localiza\u00e7\u00e3o das ERBs e o c\u00f3digo IMEI impresso."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Se\u00e7\u00e3o 7.4.1: 'cen\u00e1rios distintos, definidos principalmente pelo estado do aparelho no momento da coleta e pelo n\u00edvel de acesso dispon\u00edvel'."
+      }
+,
+      {
+        "q": "38. No cen\u00e1rio normatizado para 'Aparelhos celulares ligados sem senha fornecida' (7.4.1.3), a apostila estipula que 'deve ser priorizada a apreens\u00e3o imediata se o aparelho...'",
+        "opts": [
+          "Estiver em uso."
+,
+          "Possuir jailbreak detect\u00e1vel visualmente."
+,
+          "Estiver emulando a nuvem Amazon Web Services."
+,
+          "For o modelo iPhone 14 Pro Max ou superior."
+        ],
+        "ans": 0,
+        "exp": "Gabarito: A. Se\u00e7\u00e3o 7.4.1.3: 'Nesse cen\u00e1rio, deve ser priorizada a apreens\u00e3o imediata se o aparelho estiver em uso'."
+      }
+,
+      {
+        "q": "39. De acordo com a introdu\u00e7\u00e3o do cap\u00edtulo de Laudos (8), 'Um laudo t\u00edpico da \u00e1rea de inform\u00e1tica cont\u00e9m, al\u00e9m do pre\u00e2mbulo, os seguintes itens:'",
+        "opts": [
+          "Pris\u00e3o; Cust\u00f3dia; Transfer\u00eancia de Arquivos; Senten\u00e7a e Penas."
+,
+          "Terminologia; Exames em AFU; Extra\u00e7\u00e3o L\u00f3gica e Assinaturas F\u00edsicas."
+,
+          "Hist\u00f3rico (opcional); Material; Objetivo; Exame e Respostas aos quesitos ou Conclus\u00e3o."
+,
+          "M\u00eddias \u00d3ticas; Redes de Computadores; Parecer Judicial e Hashes do BFAC."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Cap\u00edtulo 8: 'Um laudo t\u00edpico da \u00e1rea de inform\u00e1tica cont\u00e9m, al\u00e9m do pre\u00e2mbulo, os seguintes itens: Hist\u00f3rico (opcional); Material; Objetivo; Exame e Respostas aos quesitos ou Conclus\u00e3o'."
+      }
+,
+      {
+        "q": "40. O maior problema para o encaminhamento de arquivos em anexos digitais \u00e9 garantir a integridade. A apostila estabelece que \u00e9 imprescind\u00edvel adotar mecanismos que permitam a qualquer interessado verificar:",
+        "opts": [
+          "A origem internacional do IP do hacker em tempo real."
+,
+          "A legalidade e a coer\u00eancia liter\u00e1ria do vocabul\u00e1rio usado pelo alvo nas planilhas do Excel."
+,
+          "A integridade dos dados e a autenticidade dos anexos encaminhados."
+,
+          "A viabilidade t\u00e9rmica dos discos apreendidos ao decorrer das d\u00e9cadas."
+        ],
+        "ans": 2,
+        "exp": "Gabarito: C. Cap\u00edtulo 8: 'Para que isso seja evitado, \u00e9 imprescind\u00edvel que sejam adotados mecanismos que permitam a qualquer interessado verificar a integridade dos dados e a autenticidade dos anexos encaminhados'."
+      }
+    ]
+  }
+];
+
+let answered = 0, corrects = 0, wrongs = 0;
+let wrongQuestions = [];
+
+function updateScore(){
+  document.getElementById('sc-c').textContent = corrects;
+  document.getElementById('sc-w').textContent = wrongs;
+  document.getElementById('sc-a').textContent = answered;
+  document.getElementById('btn-wrong').disabled = (wrongQuestions.length === 0);
+}
+
+function buildQuiz(dataSource){
+  dataSource = dataSource || CHAPTERS;
+  window._currentData = dataSource;
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  let total = 0;
+  dataSource.forEach(ch => total += ch.questions.length);
+  document.getElementById('sc-total').textContent = '/ ' + total;
+
+  dataSource.forEach((ch, ci) => {
+    const div = document.createElement('div');
+    div.className = 'chapter';
+    let html = `<div class="chapter-title">${ch.title}</div>`;
+    ch.questions.forEach((q, qi) => {
+      const qid = 'q_' + ci + '_' + qi;
+      html += `<div class="question" id="block_${qid}">
+        <div class="q-num">Questão ${qi+1}</div>
+        <div class="q-text">${q.q}</div>`;
+      q.opts.forEach((opt, oi) => {
+        html += `<button class="opt" id="${qid}_${oi}" onclick="handleAnswer(${ci}, ${qi}, ${oi})">${opt}</button>`;
+      });
+      html += `<div class="feedback" id="fb_${qid}" style="display:none"></div></div>`;
+    });
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+}
+
+function handleAnswer(ci, qi, chosen){
+  const dataSource = window._currentData || CHAPTERS;
+  const ch = dataSource[ci];
+  const q = ch.questions[qi];
+  const qid = 'q_' + ci + '_' + qi;
+  const correct = q.ans;
+  const isRight = (chosen === correct);
+
+  q.opts.forEach((_, oi) => {
+    const btn = document.getElementById(qid + '_' + oi);
+    btn.disabled = true;
+    if(oi === correct) btn.classList.add('correct');
+    if(oi === chosen && !isRight) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('fb_' + qid);
+  fb.style.display = 'block';
+  if(isRight){
+    fb.className = 'feedback ok';
+    fb.innerHTML = `✅ <strong>Correto!</strong> ${q.exp}`;
+    corrects++;
+  } else {
+    fb.className = 'feedback err';
+    fb.innerHTML = `❌ <strong>Incorreto.</strong> ${q.exp}`;
+    wrongs++;
+    wrongQuestions.push({chTitle: ch.title, qObj: q});
+  }
+  answered++;
+  updateScore();
+}
+
+function resetAll(){
+  if(!confirm('Reiniciar o quiz completo?')) return;
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(CHAPTERS);
+  updateScore();
+}
+
+function resetWrong(){
+  if(wrongQuestions.length === 0) return;
+  if(!confirm('Reiniciar apenas com as ' + wrongQuestions.length + ' questão(ões) que você errou?')) return;
+  const chapMap = {};
+  wrongQuestions.forEach(({chTitle, qObj}) => {
+    if(!chapMap[chTitle]) chapMap[chTitle] = {title: chTitle, questions: []};
+    chapMap[chTitle].questions.push(qObj);
+  });
+  const filtered = Object.values(chapMap);
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(filtered);
+  updateScore();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

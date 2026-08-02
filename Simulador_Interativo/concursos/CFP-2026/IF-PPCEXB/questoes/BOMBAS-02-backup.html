@@ -1,0 +1,629 @@
+Aqui está o código HTML completo com as **30 questões inéditas de múltipla escolha**, focadas exclusivamente nos **Tópicos 1 a 3** (Contextualização, Bombas e Explosivos e Sistemas de Iniciação) da sua apostila oficial da Polícia Federal.
+
+O simulado foi construído com **letras grandes** e conta com a interatividade solicitada: ao clicar em "Responder", o sistema informa se você acertou ou errou, além de exibir a explicação baseada no texto do manual.
+
+Para treinar, copie o código abaixo, salve-o em seu computador com a extensão `.html` (ex: `simulado_bombas_topicos1a3.html`) e abra-o no seu navegador:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado: Bombas e Explosivos - Tópicos 1 a 3</title>
+<style>
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        background-color: #f4f6f9; 
+        color: #333; 
+        margin: 0; 
+        padding: 30px; 
+        font-size: 26px; /* Letras grandes para facilitar a leitura */
+    }
+    .container { 
+        max-width: 1200px; 
+        margin: 0 auto; 
+        background: #ffffff; 
+        padding: 40px; 
+        border-radius: 12px; 
+        box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+    }
+    h1 { 
+        text-align: center; 
+        color: #b71c1c; 
+        font-size: 42px; 
+        margin-bottom: 15px;
+    }
+    p.subtitle {
+        text-align: center; 
+        color: #555; 
+        margin-bottom: 40px; 
+        font-size: 28px;
+    }
+    .question-card { 
+        margin-bottom: 40px; 
+        padding: 35px; 
+        border: 2px solid #e0e0e0; 
+        border-radius: 10px; 
+        background-color: #fafafa; 
+    }
+    .question-text { 
+        font-weight: bold; 
+        font-size: 30px; 
+        margin-bottom: 25px; 
+        color: #2c3e50; 
+        line-height: 1.4;
+    }
+    .options { 
+        list-style-type: none; 
+        padding: 0; 
+        margin: 0;
+    }
+    .options li { 
+        margin-bottom: 15px; 
+        background: #fff; 
+        border: 2px solid #ccc; 
+        border-radius: 8px; 
+        transition: background-color 0.2s, border-color 0.2s; 
+    }
+    .options li:hover { 
+        background-color: #eef2f5; 
+    }
+    .options label { 
+        cursor: pointer; 
+        display: flex; 
+        align-items: center; 
+        padding: 20px; 
+        width: 100%; 
+        box-sizing: border-box;
+        font-size: 26px;
+        line-height: 1.4;
+    }
+    .options input { 
+        margin-right: 20px; 
+        transform: scale(1.8); 
+    }
+    button { 
+        background-color: #b71c1c; 
+        color: #fff; 
+        border: none; 
+        padding: 20px 40px; 
+        border-radius: 8px; 
+        cursor: pointer; 
+        font-size: 28px; 
+        font-weight: bold;
+        margin-top: 25px; 
+        transition: background-color 0.3s;
+    }
+    button:hover { 
+        background-color: #881010; 
+    }
+    button:disabled { 
+        background-color: #9e9e9e; 
+        cursor: not-allowed; 
+    }
+    .feedback { 
+        margin-top: 25px; 
+        padding: 25px; 
+        border-radius: 8px; 
+        display: none; 
+        line-height: 1.5; 
+        font-size: 26px;
+    }
+    .correct { 
+        background-color: #e8f5e9; 
+        color: #2e7d32; 
+        border: 2px solid #c8e6c9; 
+    }
+    .incorrect { 
+        background-color: #ffebee; 
+        color: #c62828; 
+        border: 2px solid #ffcdd2; 
+    }
+    .explanation { 
+        margin-top: 15px; 
+        font-style: italic; 
+        font-size: 24px; 
+        color: #424242;
+    }
+
+    /* ==================== TABLET RESPONSIVE (768px - 1024px) ==================== */
+    @media (max-width: 1024px) {
+        body { 
+            font-size: 22px; 
+            padding: 20px; 
+        }
+        .container { 
+            max-width: 100%; 
+            padding: 30px; 
+        }
+        h1 { 
+            font-size: 32px; 
+            margin-bottom: 12px;
+        }
+        p.subtitle {
+            font-size: 22px;
+            margin-bottom: 30px; 
+        }
+        .question-card { 
+            margin-bottom: 35px; 
+            padding: 25px; 
+        }
+        .question-text { 
+            font-size: 24px; 
+            margin-bottom: 20px; 
+        }
+        .options li { 
+            margin-bottom: 12px; 
+        }
+        .options label { 
+            padding: 15px; 
+            font-size: 22px;
+        }
+        .options input { 
+            transform: scale(1.5); 
+            margin-right: 15px; 
+        }
+        button { 
+            font-size: 22px; 
+            padding: 15px 30px; 
+        }
+        .feedback { 
+            font-size: 20px;
+            padding: 20px;
+        }
+        .explanation { 
+            font-size: 20px; 
+        }
+    }
+
+    /* ==================== MOBILE (< 768px) ==================== */
+    @media (max-width: 767px) {
+        body { 
+            font-size: 18px; 
+            padding: 15px; 
+        }
+        .container { 
+            max-width: 100%; 
+            padding: 20px; 
+        }
+        h1 { 
+            font-size: 26px; 
+            margin-bottom: 10px;
+        }
+        p.subtitle {
+            font-size: 18px;
+            margin-bottom: 25px; 
+        }
+        .question-card { 
+            margin-bottom: 25px; 
+            padding: 20px; 
+            border-radius: 8px;
+        }
+        .question-text { 
+            font-size: 18px; 
+            margin-bottom: 15px; 
+        }
+        .options li { 
+            margin-bottom: 10px; 
+        }
+        .options label { 
+            padding: 12px; 
+            font-size: 18px;
+        }
+        .options input { 
+            transform: scale(1.4); 
+            margin-right: 12px; 
+        }
+        button { 
+            font-size: 18px; 
+            padding: 12px 20px; 
+            width: 100%;
+        }
+        .feedback { 
+            font-size: 16px;
+            padding: 15px;
+        }
+        .explanation { 
+            font-size: 16px; 
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Simulado: Bombas e Explosivos</h1>
+    <p class="subtitle">30 Questões Inéditas - Tópicos 1 a 3 da Apostila</p>
+    <div id="quiz-container"></div>
+</div>
+
+<script>
+const quizData = [
+    {
+        question: "1. Historicamente, qual evento de 1605 é considerado a primeira ação terrorista com bombas na história, tendo Guy Fawkes como um de seus principais responsáveis?",
+        options: [
+            "A Revolução Francesa.",
+            "O Atentado de Guernica.",
+            "The Gunpowder Plot (A Conspiração da Pólvora).",
+            "A Intentona Comunista."
+        ],
+        answer: 2,
+        explanation: "Em 4 de novembro de 1605, extremistas católicos tentaram explodir barris de pólvora sob a Casa dos Lordes para matar o Rei James I. Este evento, conhecido como 'A Conspiração da Pólvora', teve a participação de Guy Fawkes e é tido como a primeira ação terrorista com bombas."
+    },
+    {
+        question: "2. Na Colômbia, os atos terroristas estavam ligados apenas à subversão política até determinado momento, quando os incidentes aumentaram consideravelmente. A partir de que ano surgiu a modalidade do 'narcoterrorismo' naquele país?",
+        options: [
+            "1963.",
+            "1976.",
+            "1985.",
+            "1991."
+        ],
+        answer: 1,
+        explanation: "Os registros apontam atos de terrorismo subversivo desde 1963, mas foi a partir de 1976 que surgiu o narcoterrorismo, elevando os incidentes para 262 naquele ano."
+    },
+    {
+        question: "3. O terrorista brasileiro Carlos Marighella, figura de destaque na luta armada, publicou em 1969 um texto famoso ensinando técnicas de guerrilha, incluindo sabotagem e terrorismo. Qual o nome desse texto?",
+        options: [
+            "O Livro Vermelho da Guerrilha.",
+            "O Manual do Anarquista.",
+            "Minimanual do Guerrilheiro Urbano.",
+            "Como Fabricar Bombas e Explosivos."
+        ],
+        answer: 2,
+        explanation: "Marighella publicou em 1969 o 'Minimanual do Guerrilheiro Urbano', onde afirma que 'o terrorismo é uma arma a que o revolucionário nunca pode renunciar'."
+    },
+    {
+        question: "4. No estudo das explosões, como se denomina especificamente a explosão em que restam resíduos de explosivos não consumidos no local?",
+        options: [
+            "Explosão deflagrante.",
+            "Explosão de primeira ordem (ou alta ordem).",
+            "Explosão de segunda ordem (ou baixa ordem).",
+            "Explosão de efeito Monroe."
+        ],
+        answer: 2,
+        explanation: "A explosão em que o explosivo é totalmente consumido chama-se de alta ordem. Aquela em que restam resíduos não consumidos denomina-se explosão de segunda ordem ou baixa ordem."
+    },
+    {
+        question: "5. Uma explosão decorrente do escape súbito de energia e ruptura devido à pressão crescente dentro de um recipiente que supera sua resistência estrutural (como uma caldeira a vapor) é classificada como:",
+        options: [
+            "Explosão química.",
+            "Explosão mecânica.",
+            "Explosão nuclear.",
+            "Explosão pirotécnica."
+        ],
+        answer: 1,
+        explanation: "A explosão mecânica ocorre quando a pressão interna crescente supera a resistência estrutural do invólucro, como em caldeiras."
+    },
+    {
+        question: "6. Dentre os fatores a serem considerados no trato com explosivos, a doutrina estabelece como prioridade máxima e norteadora de todo o procedimento:",
+        options: [
+            "A preservação do patrimônio.",
+            "A prevenção da destruição dos vestígios (processo investigatório).",
+            "A segurança pessoal do técnico em bombas.",
+            "A neutralização química das lamas explosivas."
+        ],
+        answer: 2,
+        explanation: "Todo procedimento deverá ser orientado, principalmente, pela busca da máxima segurança do técnico em bombas."
+    },
+    {
+        question: "7. A propriedade do explosivo que mede sua capacidade de ruptura pela rapidez com que atinge sua pressão máxima, destruindo os materiais que o circundam, chama-se:",
+        options: [
+            "Sensibilidade.",
+            "Brisância.",
+            "Efeito cumulativo.",
+            "Hygroscopicidade."
+        ],
+        answer: 1,
+        explanation: "Brisância é a capacidade de ruptura do explosivo, mensurada pela rapidez com que este atinge a sua máxima pressão."
+    },
+    {
+        question: "8. Quanto ao uso, como se diferenciam os explosivos militares dos comerciais?",
+        options: [
+            "Os militares são mais sensíveis, de baixo custo e menor estabilidade; os comerciais possuem alta estabilidade e altíssima brisância.",
+            "Os comerciais não produzem onda de choque, enquanto os militares sim.",
+            "Os militares apresentam alta estabilidade, baixa sensibilidade e alta brisância; os comerciais são mais sensíveis, menos brisantes, têm baixo custo e menor estabilidade.",
+            "Ambos são idênticos quimicamente, diferindo apenas na documentação exigida."
+        ],
+        answer: 2,
+        explanation: "Explosivos militares apresentam alta estabilidade e baixa sensibilidade para segurança no front. Explosivos comerciais (dinamites, pólvoras) são mais sensíveis e menos brisantes."
+    },
+    {
+        question: "9. De acordo com a velocidade de detonação, quais explosivos fornecem a energia de ativação no início da cadeia de fogo, sendo altamente sensíveis a choque, calor e fricção?",
+        options: [
+            "Altos explosivos secundários.",
+            "Baixos explosivos propulsores.",
+            "Altos explosivos primários (ou intermediários).",
+            "Explosivos de ruptura tipo ANFO."
+        ],
+        answer: 2,
+        explanation: "Os altos explosivos primários fornecem a energia de ativação para o explosivo de ruptura, sendo muito sensíveis (usados nas espoletas/detonadores)."
+    },
+    {
+        question: "10. Qual é a composição clássica da Pólvora Negra (baixo explosivo) conhecida desde a Idade Média?",
+        options: [
+            "Clorato de potássio, nitrocelulose e enxofre.",
+            "Salitre (Nitrato de potássio/sódio), carvão e enxofre.",
+            "Nitroglicerina, algodão e bário.",
+            "Fulminato de mercúrio e açúcar."
+        ],
+        answer: 1,
+        explanation: "A pólvora negra continha tradicionalmente 75% de salitre (KNO3), 15% de carvão e 10% de enxofre."
+    },
+    {
+        question: "11. Em atentados terroristas, é comum o uso da Pólvora Cloratada. Nela, o salitre da pólvora negra é substituído, na proporção de 70%, por qual substância?",
+        options: [
+            "Nitrato de amônio.",
+            "Nitroguanidina.",
+            "Clorato de potássio.",
+            "Ácido pícrico."
+        ],
+        answer: 2,
+        explanation: "Na pólvora cloratada, o salitre é substituído pelo clorato de potássio (KClO3), e a mistura frequentemente leva açúcar refinado, carvão e enxofre."
+    },
+    {
+        question: "12. As pólvoras sem fumaça são divididas em Bases. A pólvora de Base Dupla (BD) contém em sua formulação, além de conservantes:",
+        options: [
+            "Nitrocelulose apenas.",
+            "Nitrocelulose, nitroglicerina e nitroguanidina.",
+            "Nitrocelulose e nitroglicerina.",
+            "Clorato de potássio e resina fenólica."
+        ],
+        answer: 2,
+        explanation: "A Pólvora de Base Dupla contém nitrocelulose e nitroglicerina. A de Base Simples tem só nitrocelulose, e a de Base Tripla adiciona nitroguanidina."
+    },
+    {
+        question: "13. Qual é o mais antigo explosivo primário, de cor amarela-clara e velocidade de detonação de 5.000 m/s, que gradativamente foi substituído pelo DDNP ou pela azida de chumbo nas espoletas?",
+        options: [
+            "Nitropenta (PETN).",
+            "Fulminato de mercúrio.",
+            "Hexogênio (RDX).",
+            "Dinitrato de etileno glicol (EGDN)."
+        ],
+        answer: 1,
+        explanation: "O fulminato de mercúrio é o mais antigo explosivo primário, extremamente sensível a choque, calor e atrito."
+    },
+    {
+        question: "14. A descoberta de Ascanio Sobrero em 1846 gerou um poderoso líquido explosivo que foi posteriormente dessensibilizado por Alfred Nobel. Como se chama a mistura criada por Nobel em 1867 que saturou essa substância com sílica?",
+        options: [
+            "Dinamite.",
+            "Lama explosiva.",
+            "Plastex.",
+            "Tetril."
+        ],
+        answer: 0,
+        explanation: "Alfred Nobel dessensibilizou a nitroglicerina saturando-a com sílica (Kieselguhr) em 1867, inventando assim a dinamite."
+    },
+    {
+        question: "15. A Nitroglicerina (NG) é um líquido viscoso incolor com altíssima velocidade de detonação (7.800 m/s). Qual é o grave perigo associado à sua temperatura de armazenamento em ambientes frios?",
+        options: [
+            "Evapora rapidamente se a temperatura ficar abaixo de 10°C.",
+            "Solidifica-se a 13°C, tornando-se altamente instável devido ao cisalhamento dos cristais.",
+            "Torna-se imune à detonação, exigindo aquecimento prévio a 100°C.",
+            "Transforma-se em explosivo plástico C4 se exposta ao frio."
+        ],
+        answer: 1,
+        explanation: "A nitroglicerina solidifica-se a 13 graus, tornando-se altamente instável (cisalhamento dos cristais), sendo muito perigoso o manuseio nesse estado."
+    },
+    {
+        question: "16. Este alto explosivo secundário de uso militar apresenta-se sob a forma sólida de blocos fundidos ou petardos de cor amarela, funde a 80,5°C e é tão seguro que é utilizado como padrão de referência para medir a eficácia de outros explosivos. Trata-se do:",
+        options: [
+            "Nitrato de amônio.",
+            "Ácido pícrico.",
+            "Hexogênio.",
+            "Trinitrotolueno (TNT ou Trotil)."
+        ],
+        answer: 3,
+        explanation: "O TNT (Trotil) é um explosivo militar estável, muito seguro, funde a 80,5°C e é o padrão referencial de eficácia (fator 1,0)."
+    },
+    {
+        question: "17. O Anfo é um explosivo comercial estável e muito utilizado, fabricado a partir da mistura de prills porosos de nitrato de amônio (94,3%). Qual é a outra substância adicionada em 5,7% para formar o Anfo?",
+        options: [
+            "Querosene de aviação.",
+            "Óleo diesel.",
+            "Nitrometano.",
+            "Água e alumínio em pó."
+        ],
+        answer: 1,
+        explanation: "O Anfo (ammonium nitrate-fuel oil) é feito misturando nitrato de amônio com óleo diesel na proporção de 5,7%."
+    },
+    {
+        question: "18. Na composição dos cordéis detonantes impermeáveis usados em pedreiras e demolições de pontes, há um alto explosivo secundário no núcleo branco. Esse explosivo é o:",
+        options: [
+            "Tetril.",
+            "Nitropenta (PETN).",
+            "Fulminato de mercúrio.",
+            "HMX (Octogênio)."
+        ],
+        answer: 1,
+        explanation: "A Nitropenta (PETN) é o núcleo branco do cordel detonante, detonando a 6.400 m/s."
+    },
+    {
+        question: "19. Os explosivos plásticos militares C4 apresentam cor branca ou rósea, velocidade de detonação a 8.050 m/s e um componente explosivo base correspondente a 91% de sua massa. Qual é esse explosivo principal do C4?",
+        options: [
+            "TNT.",
+            "Nitrocelulose.",
+            "Hexogênio (RDX).",
+            "Nitrato de amônio."
+        ],
+        answer: 2,
+        explanation: "O explosivo plástico C4 contém 91% de RDX (Hexogênio) misturado a um agente plastificante."
+    },
+    {
+        question: "20. Para combater o terrorismo em aeroportos, a Convenção de Montreal (1991) estabeleceu que explosivos plásticos receberão uma marcação para facilitar a leitura por detectores de vapores. Qual das substâncias abaixo é um desses agentes de marcação?",
+        options: [
+            "Trotil plastificado.",
+            "Dinitrato de etileno glicol (EGDN).",
+            "Cloreto de potássio.",
+            "Sal zincato de o-Dianisidina."
+        ],
+        answer: 1,
+        explanation: "Os agentes de detecção (marcadores) previstos pela convenção são o EGDN, DMNB, p-MNT e o-MNT."
+    },
+    {
+        question: "21. A onda de choque primária da explosão gera o fenômeno físico do deslocamento de ar (concussão). Como as frentes de pressão se comportam neste processo?",
+        options: [
+            "Há apenas uma pressão negativa contínua de vácuo.",
+            "Forma-se uma onda de alta pressão (pressão positiva) seguida de uma pressão negativa que puxa o ar para preencher o vácuo recém-formado.",
+            "As ondas só geram pressão se o explosivo estiver em local aberto.",
+            "A onda termal cancela a onda de deslocamento mecânico."
+        ],
+        answer: 1,
+        explanation: "O deslocamento de ar cria uma onda de alta pressão (positiva) à medida que os gases se expandem, seguida por uma onda de pressão negativa (vácuo) quando o ar retorna violentamente."
+    },
+    {
+        question: "22. Um fenômeno utilizado para direcionar a onda de choque, obtendo maior pressão num ponto específico para cortar blindagens ou realizar implosões calculadas, é conhecido como:",
+        options: [
+            "Efeito Doppler.",
+            "Efeito Monroe (ou efeito bazuca).",
+            "Descompressão volumétrica.",
+            "Fragmentação primária."
+        ],
+        answer: 1,
+        explanation: "O Efeito Monroe (ou efeito bazuca) ocorre com a convergência de várias ondas de choque para um mesmo ponto devido à modelagem física da carga oca, otimizando o corte do alvo."
+    },
+    {
+        question: "23. Com base na tabela de 'Eficácia Relativa' fornecida pela apostila (onde o TNT é a referência = 1,0), qual dos explosivos abaixo é considerado MAIS potente que o TNT, possuindo fator 1,50?",
+        options: [
+            "Pólvora negra.",
+            "Nitrato de amônio.",
+            "Hexogênio (RDX).",
+            "Dinamite 60%."
+        ],
+        answer: 2,
+        explanation: "O Hexogênio (RDX) e o Octogênio (HMX) possuem fator de eficácia relativa de 1,50, sendo muito mais potentes que o TNT (1,0)."
+    },
+    {
+        question: "24. Nos sistemas de iniciação, os estopins são à base de pólvora e usados para transmitir a chama. Qual é uma característica marcante do 'Estopim Hidráulico'?",
+        options: [
+            "É visualmente impossível saber em que parte do estopim a pólvora está queimando.",
+            "Sua queima é instantânea, a quase 1.000 m/s.",
+            "Não pode ser utilizado embaixo d'água.",
+            "Possui a menor quantidade de pólvora entre os estopins (apenas 8 g/m)."
+        ],
+        answer: 0,
+        explanation: "O estopim hidráulico é impermeável (funciona sob água) e queima de modo uniforme (110 a 240 s/m), mas é visualmente impossível ver onde a pólvora está queimando."
+    },
+    {
+        question: "25. Qual é o tempo de segurança (quarentena) estipulado como regra no caso de haver uma falha no momento da queima do estopim, antes que o técnico se aproxime do artefato?",
+        options: [
+            "Aguardar 5 minutos.",
+            "Aguardar cerca de 20 minutos.",
+            "Aguardar 24 horas.",
+            "Não precisa aguardar se tiver colete."
+        ],
+        answer: 1,
+        explanation: "A medida de precaução determina que, em caso de falhas no estopim, deve-se esperar cerca de 20 minutos para uma aproximação."
+    },
+    {
+        question: "26. As cápsulas explosivas elétricas (espoletas elétricas) oferecem um acionamento por aquecimento do fio ponte. Qual é a principal DESVANTAGEM de segurança desse sistema?",
+        options: [
+            "Impossibilidade de detonação simultânea.",
+            "Não permite aproximação no caso de falhas.",
+            "Risco de acionamento acidental por eletricidade estática ou indução eletromagnética.",
+            "O fio sempre congela em temperaturas baixas."
+        ],
+        answer: 2,
+        explanation: "Enquanto oferecem precisão, as espoletas elétricas podem ser acionadas acidentalmente por eletricidade estática ou rádio-frequência/indução eletromagnética."
+    },
+    {
+        question: "27. Dentre as regras de segurança no manuseio de detonadores elétricos, o que se deve fazer fisicamente com as pontas dos fios do detonador antes do seu uso?",
+        options: [
+            "Lixar o cobre exposto e deixá-las afastadas.",
+            "Unir as pontas dos fios para curto-circuitá-los, evitando iniciação acidental.",
+            "Aplicar 3 volts para testar a ponte.",
+            "Mergulhá-las em querosene para descarregar estática."
+        ],
+        answer: 1,
+        explanation: "A regra manda unir as pontas dos fios (curto-circuito) para evitar o fechamento do circuito por indução ou estática."
+    },
+    {
+        question: "28. O 'Sistema disparador de tubo de choque' tem sua propagação baseada em uma chama que percorre o tubo. Qual material pirotécnico reveste a parede interna deste pequeno tubo plástico?",
+        options: [
+            "TNT e cera.",
+            "HMX (Octogênio) e alumínio em pó.",
+            "Salitre e enxofre.",
+            "Nitroglicerina pura."
+        ],
+        answer: 1,
+        explanation: "O tubo oco flexível é revestido internamente por uma fina camada de HMX (Octogênio) misturado com alumínio em pó, transmitindo a chama a cerca de 1.000 m/s."
+    },
+    {
+        question: "29. O explosivo caseiro ou improvisado amplamente conhecido como 'Mistura Armstrong' é iniciado por meio de atrito forte ou uso de sulfeto de carbono. Qual a sua composição química descrita no manual?",
+        options: [
+            "Clorato de potássio (65%) e Fósforo vermelho (35%).",
+            "Nitrato de amônio (94%) e Óleo diesel (6%).",
+            "Açúcar (50%) e Salitre (50%).",
+            "Ácido pícrico fundido com chumbo."
+        ],
+        answer: 0,
+        explanation: "A mistura Armstrong é um perigoso explosivo improvisado/caseiro feito de Clorato de potássio (65%) e Fósforo vermelho (35%)."
+    },
+    {
+        question: "30. Sobre o armazenamento e manuseio, a que distância mínima os detonadores (espoletas) devem ser armazenados de quaisquer outros explosivos até que estejam prontos para escorvamento?",
+        options: [
+            "1 metro.",
+            "3 metros.",
+            "10 metros.",
+            "No mesmo caixote, separados apenas por papelão."
+        ],
+        answer: 1,
+        explanation: "A regra de segurança diz: 'Nunca armazenar detonadores a menos de 3 metros de quaisquer outros explosivos até que estejam prontos para serem escorvados'."
+    }
+];
+
+const quizContainer = document.getElementById('quiz-container');
+
+quizData.forEach((q, index) => {
+    const questionDiv = document.createElement('div');
+    questionDiv.className = 'question-card';
+
+    let optionsHtml = '';
+    q.options.forEach((opt, i) => {
+        optionsHtml += `<li><label><input type="radio" name="q${index}" value="${i}"> ${opt}</label></li>`;
+    });
+
+    questionDiv.innerHTML = `
+        <div class="question-text">${q.question}</div>
+        <ul class="options">${optionsHtml}</ul>
+        <button onclick="checkAnswer(${index}, this)">Responder</button>
+        <div class="feedback" id="feedback-${index}"></div>
+    `;
+    quizContainer.appendChild(questionDiv);
+});
+
+function checkAnswer(index, btn) {
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    const feedbackDiv = document.getElementById(`feedback-${index}`);
+
+    if (!selected) {
+        alert('Por favor, selecione uma opção antes de confirmar sua resposta.');
+        return;
+    }
+
+    const answerObj = quizData[index];
+    const isCorrect = parseInt(selected.value) === answerObj.answer;
+
+    feedbackDiv.style.display = 'block';
+    if (isCorrect) {
+        feedbackDiv.className = 'feedback correct';
+        feedbackDiv.innerHTML = `<strong>✔️ Correto!</strong><div class="explanation"><em>Fundamentação:</em> ${answerObj.explanation}</div>`;
+    } else {
+        feedbackDiv.className = 'feedback incorrect';
+        feedbackDiv.innerHTML = `<strong>❌ Incorreto. A alternativa correta é a ${answerObj.answer + 1}: "${answerObj.options[answerObj.answer]}"</strong><div class="explanation"><em>Fundamentação:</em> ${answerObj.explanation}</div>`;
+    }
+    
+    // Desativar opções e o botão de responder
+    const allInputs = document.querySelectorAll(`input[name="q${index}"]`);
+    allInputs.forEach(input => input.disabled = true);
+    
+    btn.disabled = true;
+    btn.textContent = 'Respondido';
+}
+</script>
+
+</body>
+</html>
+```
+
+Essa estrutura completa o conteúdo abordado do início da apostila (História, Química dos Explosivos e Sistemas de Iniciação). Qualquer dúvida ou ajuste que necessite, estou à disposição! Bons estudos.

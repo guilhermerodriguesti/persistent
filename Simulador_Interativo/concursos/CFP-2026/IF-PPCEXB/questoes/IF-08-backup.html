@@ -1,0 +1,716 @@
+Com grande satisfação, elaborei **mais 40 questões totalmente inéditas e estritamente literais** baseadas na sua apostila. Esta sexta bateria foi desenhada especificamente para abranger **tópicos, detalhes e rodapés que ainda não haviam sido testados anteriormente** (incluindo dados catalográficos exatos, frações de aumento de pena específicas de crimes informáticos, estatísticas históricas, detalhes de conectores, tabelas de mapeamento e regras operacionais específicas do laudo pericial).
+
+Abaixo, forneço o código HTML completo. O layout continua padronizado com **letras grandes** para facilitar a leitura e o sistema dinâmico que exibe o **gabarito comentado** e a respectiva fundamentação assim que você clica em "Responder". 
+
+Basta copiar o código abaixo, salvá-lo como um arquivo de extensão `.html` (por exemplo, `simulado_forense_parte6.html`) e abri-lo em qualquer navegador de internet para praticar:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado Literal - Parte 6: Informática Forense (40 Questões)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7fafc;
+            color: #2d3748;
+            /* Letras grandes conforme solicitado */
+            font-size: 24px; 
+            line-height: 1.6;
+            margin: 0;
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 38px;
+            color: #2b6cb0;
+            margin-bottom: 40px;
+        }
+        .question-container {
+            background-color: #ffffff;
+            border: 2px solid #edf2f7;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #1a202c;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: baseline;
+            background-color: #f7fafc;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #edf2f7;
+            transition: background-color 0.2s;
+        }
+        .options li:hover {
+            background-color: #edf2f7;
+        }
+        input[type="radio"] {
+            transform: scale(1.8);
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        label {
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn-responder {
+            background-color: #3182ce;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 35px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .btn-responder:hover {
+            background-color: #2b6cb0;
+        }
+        .feedback {
+            display: none;
+            margin-top: 25px;
+            padding: 25px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .correct {
+            background-color: #c6f6d5;
+            color: #22543d;
+            border: 2px solid #9ae6b4;
+        }
+        .incorrect {
+            background-color: #fed7d7;
+            color: #742a2a;
+            border: 2px solid #feb2b2;
+        }
+        .explanation {
+            margin-top: 15px;
+            font-weight: normal;
+            font-size: 22px;
+            color: #2d3748;
+        }
+
+        /* ==================== TABLET RESPONSIVE (768px - 1024px) ==================== */
+        @media (max-width: 1024px) {
+            body {
+                font-size: 20px;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 30px;
+                margin-bottom: 30px;
+            }
+            .question-container {
+                padding: 25px;
+                margin-bottom: 30px;
+            }
+            .question-text {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            .options li {
+                margin-bottom: 12px;
+                padding: 12px;
+            }
+            input[type="radio"] {
+                transform: scale(1.5);
+                margin-right: 12px;
+            }
+            .btn-responder {
+                font-size: 20px;
+                padding: 12px 25px;
+            }
+            .feedback {
+                font-size: 18px;
+                padding: 15px;
+            }
+            .explanation {
+                font-size: 18px;
+            }
+        }
+
+        /* ==================== MOBILE (< 768px) ==================== */
+        @media (max-width: 767px) {
+            body {
+                font-size: 18px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 26px;
+                margin-bottom: 25px;
+            }
+            .question-container {
+                padding: 20px;
+                margin-bottom: 25px;
+                border-radius: 8px;
+            }
+            .question-text {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+            .options li {
+                margin-bottom: 10px;
+                padding: 12px;
+            }
+            input[type="radio"] {
+                transform: scale(1.4);
+                margin-right: 10px;
+            }
+            .btn-responder {
+                font-size: 18px;
+                padding: 12px 20px;
+                width: 100%;
+            }
+            .feedback {
+                font-size: 16px;
+                padding: 12px;
+            }
+            .explanation {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Simulado de Revisão Literal - Parte 6 (40 Inéditas)</h1>
+    <div id="quiz-container"></div>
+
+    <script>
+        const questoes = [
+            {
+                q: "1. De acordo com a Ficha Catalográfica de identificação elaborada pela Biblioteca da Academia Nacional de Polícia (ANP), qual é o código CDU (Classificação Decimal Universal) atribuído formalmente a este material de Informática Forense?",
+                opcoes: [
+                    "CDU 343.132:004",
+                    "CDU 004:343.132",
+                    "CDU 004:343",
+                    "CDU 343:004"
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A Ficha Catalográfica localizada no início do material indica literalmente o código classificatório 'CDU 004:343.132'."
+            },
+            {
+                q: "2. No Capítulo 1 (Introdução), destaca-se que, a rigor, deve-se evitar o emprego da expressão 'crimes virtuais'. Qual a justificativa literal trazida pela apostila para essa recomendação?",
+                opcoes: [
+                    "Trata-se de uma nomenclatura sem amparo doutrinário na Convenção de Budapeste.",
+                    "Esse termo pode dar a falsa impressão de que são crimes que não deixam rastros.",
+                    "O termo 'crime cibernético' é o único amparado no Código Penal brasileiro.",
+                    "O termo 'virtual' induz o erro interpretativo de que o hardware físico foi adulterado."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila afirma expressamente que 'não se deve falar em “crimes virtuais” – esse termo pode dar a falsa impressão de que são crimes que não deixam rastros'."
+            },
+            {
+                q: "3. Com base nas definições literais do material de apoio, como pode ser definido um 'vestígio digital' no contexto da informática forense?",
+                opcoes: [
+                    "Qualquer dado criptografado extraído unicamente da memória volátil RAM.",
+                    "Dados armazenados ou transmitidos em meio computacional ou eletrônico que se relacionam à infração penal.",
+                    "Todo arquivo ocultado via esteganografia que possua hash MD5 Summer correspondente.",
+                    "O código hexadecimal mapeado a partir das mídias avulsas recolhidas em campo."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O texto define literalmente que 'Um vestígio digital, portanto, pode ser definido como dados armazenados ou transmitidos em meio computacional ou eletrônico que se relacionam à infração penal'."
+            },
+            {
+                q: "4. Na nota de rodapé nº 1 do Capítulo 1, a Lei nº 12.737/2012 é apontada como conhecida nacionalmente pelo nome de 'Lei Carolina Dieckmann'. Qual foi o motivo literal que motivou essa denominação?",
+                opcoes: [
+                    "A atriz participou ativamente da redação do projeto de lei no Congresso.",
+                    "Ter sido motivada por um caso de divulgação de material pessoal que estava no computador da atriz.",
+                    "O fato de a atriz ter tido suas contas em redes sociais hackeadas fora do território nacional.",
+                    "A clonagem do cartão de débito e crédito de uso pessoal da referida atriz."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A nota de rodapé nº 1 explica que a lei ficou 'Também conhecida como “Lei Carolina Dieckmann”, por ter sido motivada por um caso de divulgação de material pessoal que estava no computador da atriz de mesmo nome'."
+            },
+            {
+                q: "5. Em conformidade com a tipificação trazida pelas reformas penais (Art. 154-A), o crime de 'Invadir dispositivo informático de uso alheio' prevê qual pena base de reclusão?",
+                opcoes: [
+                    "Reclusão, de 6 meses a 2 anos, e multa.",
+                    "Reclusão, de 1 (um) a 4 (quatro) anos, e multa.",
+                    "Reclusão, de 2 (dois) a 5 (cinco) anos, e multa.",
+                    "Reclusão, de 4 (quatro) a 8 (oito) anos, e multa."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Conforme redação literal do Art. 154-A do Código Penal: 'Pena – reclusão, de 1 (um) a 4 (quatro) anos, e multa'."
+            },
+            {
+                q: "6. No Art. 154-A, § 2º do Código Penal, se da invasão ao dispositivo informático de uso alheio resultar prejuízo econômico para o usuário, qual a fração de aumento de pena estipulada pela legislação?",
+                opcoes: [
+                    "Aumenta-se a pena de um sexto a um terço.",
+                    "Aumenta-se a pena de 1/3 (um terço) a 2/3 (dois terços).",
+                    "Aumenta-se a pena de um terço ao dobro.",
+                    "Aumenta-se a pena de metade a dois terços."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O § 2º do Art. 154-A prevê literalmente: 'Aumenta-se a pena de 1/3 (um terço) a 2/3 (dois terços) se da invasão resulta prejuízo econômico'."
+            },
+            {
+                q: "7. Caso a invasão ao dispositivo resulte em obtenção de comunicações privadas, segredos comerciais ou industriais (§ 3º do Art. 154-A), qual o aumento aplicável conforme o § 4º se houver posterior 'divulgação, comercialização ou transmissão a terceiro'?",
+                opcoes: [
+                    "De um sexto a um terço.",
+                    "De um a dois terços.",
+                    "De um terço ao dobro.",
+                    "De metade ao dobro."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O § 4º do Art. 154-A reza literalmente: 'Na hipótese do § 3º, aumenta-se a pena de um a dois terços se houver divulgação, comercialização ou transmissão a terceiro, a qualquer título, dos dados ou informações obtidos'."
+            },
+            {
+                q: "8. No crime de furto mediante fraude cometido por meio de dispositivo eletrônico (Art. 155, § 4º-B), caso o delito seja praticado mediante a utilização de servidor mantido fora do território nacional, a pena é aumentada de:",
+                opcoes: [
+                    "1/3 (um terço) ao dobro.",
+                    "1/3 (um terço) a 2/3 (dois terços).",
+                    "Metade ao dobro.",
+                    "Um sexto a um terço."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O Art. 155, § 4º-C, inciso I estabelece literalmente: 'I – aumenta-se de 1/3 (um terço) a 2/3 (dois terços), se o crime é praticado mediante a utilização de servidor mantido fora do território nacional'."
+            },
+            {
+                q: "9. De acordo com o Art. 171, § 2º-A, introduzido pela Lei 14.155/2021, se o estelionato (fraude) for cometido com informações fornecidas pela vítima ou terceiro induzido a erro por redes sociais ou correio eletrônico fraudulento, qual é a pena prevista?",
+                opcoes: [
+                    "Reclusão, de um a cinco anos, e multa.",
+                    "Reclusão, de 4 (quatro) a 8 (oito) anos, e multa.",
+                    "Reclusão, de 2 a 5 anos, e multa.",
+                    "Detenção, de um a três anos, e multa."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O Art. 171, § 2º-A prevê textualmente: 'Pena - reclusão, de 4 (quatro) a 8 (oito) anos, e multa, se a fraude é cometida com a utilização de informações fornecidas pela vítima... por meio de redes sociais... ou correio eletrônico fraudulento...'."
+            },
+            {
+                q: "10. De acordo com o Art. 298 do Código Penal, o ato de falsificar ou alterar documento particular verdadeiro prevê pena de reclusão de um a cinco anos e multa. Conforme o parágrafo único desse artigo, o que se equipara literalmente a documento particular?",
+                opcoes: [
+                    "As chaves criptográficas de discos rígidos.",
+                    "O cartão de crédito ou débito.",
+                    "Os registros de logs armazenados em servidores locais.",
+                    "Os e-mails corporativos transmitidos por rede HTTPS."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O parágrafo único do Art. 298 dita de forma literal: 'Para fins do disposto no caput, equipara-se a documento particular o cartão de crédito ou débito'."
+            },
+            {
+                q: "11. A Convenção de Crimes Cibernéticos (Convenção de Budapeste) foi publicada em 2001. No ano de 2026, de acordo com o texto, quantos países já haviam assinado essa Convenção formalmente?",
+                opcoes: [
+                    "Mais de 50 países.",
+                    "Mais de 80 países.",
+                    "Cerca de 100 países.",
+                    "Todos os 193 países membros da ONU."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Consta do texto que 'Em 2026, mais de 80 países já haviam assinado a Convenção, incluindo o Brasil, que aderiu em 2023'."
+            },
+            {
+                q: "12. A Informática Forense é classificada na apostila como uma jovem disciplina das Ciências Forenses. O surgimento dessa área ocorreu de forma textual em qual período histórico?",
+                opcoes: [
+                    "Após a década de 1950 com os primeiros computadores valvulados.",
+                    "Após a década de 1960 com la popularização dos computadores e das telecomunicações.",
+                    "Em meados de 1980 com a popularização da internet comercial.",
+                    "Na virada do milênio, com o advento das ferramentas Cellebrite e Magnet."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O materialdidático registra que a Informática Forense é uma 'surgida após a década de 1960 com a popularização dos computadores e das telecomunicações'."
+            },
+            {
+                q: "13. Segundo a apostila, quando houver a necessidade de realizar exames periciais que impliquem sigilo quanto à origem dos acessos na Internet, qual infraestrutura deve ser fornecida ao Perito Criminal?",
+                opcoes: [
+                    "Acesso à Internet de alta velocidade restrita à rede criptografada da Polícia Federal.",
+                    "Conexão irrestrita à Internet, distinta da rede corporativa, e com dados de registro não vinculados à Polícia Federal.",
+                    "Conexão via rede P2P autenticada pelo Banco Federal de Arquivos Conhecidos (BFAC).",
+                    "Interface direta com a intranet do Ministério da Justiça e Segurança Pública."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O item 1.2.1 estabelece textualmente: 'Para a realização de exames que impliquem sigilo quanto à origem dos acessos, o Perito Criminal deve dispor de conexão irrestrita à Internet, distinta da rede corporativa, e com dados de registro não vinculados à Polícia Federal'."
+            },
+            {
+                q: "14. De acordo com o item 1.2.2 (Procedimentos), quando o material arrecadado chega à unidade de Criminalística, qual deve ser o primeiro procedimento a ser adotado formalmente?",
+                opcoes: [
+                    "O cálculo do hash MD5 de todas as partições do HD.",
+                    "A devida identificação e descrição do material no Sistema Criminalística.",
+                    "A abertura imediata dos gabinetes para detecção física de módulos TPM.",
+                    "A extração física por meio de bootloaders personalizados no local."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O texto aponta literalmente: 'Uma vez que o material de informática chega à unidade de Criminalística, o primeiro procedimento a ser adotado é a devida identificação e descrição do material no Sistema Criminalística'."
+            },
+            {
+                q: "15. A apostila define os objetivos dos exames. O exame de 'Análise de registros' (logs) é exemplificado por diversas determinações possíveis. Qual das alternativas abaixo NÃO corresponde a um exemplo listado literalmente no texto?",
+                opcoes: [
+                    "Determinar a hora em que o computador foi utilizado pela última vez.",
+                    "Determinar qual usuário excluiu determinada entrada em um banco de dados.",
+                    "Determinar o código de programação do malware utilizado para as fraudes bancárias.",
+                    "Determinar se determinado aparelho celular esteve nas proximidades de uma coordenada."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A análise de 'aplicativos maliciosos' por engenharia reversa para entender fraudes bancárias pertence literalmente aos exames de 'análise de sistemas', e não à 'análise de registros'."
+            },
+            {
+                q: "16. No item 1.2.3, quando os quesitos periciais recebidos estão relacionados a áreas de conhecimento diversas da informática, mas as informações digitais estão contidas em mídias computacionais, o responsável pela unidade de Criminalística pode determinar:",
+                opcoes: [
+                    "A transferência imediata do material periciado para peritos de fora da instituição.",
+                    "A extração e disponibilização dos dados pelo perito de informática para subsidiar a área específica ou a execução do exame em conjunto.",
+                    "O descarte sumário do material computacional para focar apenas nas provas testemunhais do crime.",
+                    "A suspensão total do laudo pericial até manifestação do Poder Judiciário."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O texto orienta literalmente que 'o responsável pela unidade de Criminalística pode determinar ao Perito Criminal de informática a extração e disponibilização dos dados para subsidiar a realização do exame pela área específica ou determinar a execução do exame em conjunto por peritos das duas áreas'."
+            },
+            {
+                q: "17. No sistema de notação binária utilizado pelos computadores pessoais, a menor unidade de informação que pode ser armazenada é o bit. O texto assinala que um conjunto de 8 bits constitui um byte ou octeto, sendo capaz de gerar:",
+                opcoes: [
+                    "128 combinações possíveis.",
+                    "256 combinações possíveis.",
+                    "512 combinações possíveis.",
+                    "1024 combinações possíveis."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila ensina literalmente que: 'Um conjunto de 8 (oito) bits é chamado de byte ou octeto. Utilizando um byte, é possível gerar 256 combinações possíveis'."
+            },
+            {
+                q: "18. Na codificação de caracteres de texto usando o padrão ASCII (mapeamento mais comum exemplificado no material), qual é a representação literal em octeto binário para o caractere 'L'?",
+                opcoes: [
+                    "01001011",
+                    "01001100",
+                    "01001111",
+                    "01001110"
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. No item 2.1, consta textualmente: 'utilizando o padrão de mapeamento mais comum (conhecido como ASCII), o caractere K é mapeado para o octeto 01001011; e o caractere L é mapeado para o octeto 01001100'."
+            },
+            {
+                q: "19. A notação hexadecimal é utilizada para tornar as representações amigáveis aos seres humanos. Qual a equivalência perfeita literal de conversão entre símbolos hexadecimais e bits no computador?",
+                opcoes: [
+                    "Cada conjunto de 2 bits é representado por um símbolo hexadecimal.",
+                    "Cada conjunto de 4 bits é representado por um símbolo hexadecimal.",
+                    "Cada conjunto de 8 bits é representado por um símbolo hexadecimal.",
+                    "Cada conjunto de 16 bits é representado por um símbolo hexadecimal."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O texto explica que: 'cada conjunto de 4 bits é representado por um símbolo hexadecimal. Esse relacionamento funciona perfeitamente, pois existem 16 combinações possíveis para um conjunto de 4 bits'."
+            },
+            {
+                q: "20. De acordo com o material didático e com a 'Tabela 2 - Mídias de armazenamento e suas capacidades usuais', qual a capacidade atribuída de maneira literal à categoria 'Pen drive e cartões de memória'?",
+                opcoes: [
+                    "120GB a 8TB.",
+                    "16GB a 2TB.",
+                    "500GB a 30TB.",
+                    "25GB ou 50GB."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Na Tabela 2, a capacidade usual apontada explicitamente para 'Pen drive e cartões de memória' é de '16GB a 2TB'."
+            },
+            {
+                q: "21. Na mesma 'Tabela 2 - Mídias de armazenamento e suas capacidades usuais', qual o volume de capacidade usual de armazenamento indicado expressamente para os 'Discos rígidos' magnéticos?",
+                opcoes: [
+                    "120GB a 8TB.",
+                    "500GB a 30TB.",
+                    "1TB a 100TB.",
+                    "16GB a 2TB."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A Tabela 2 define literalmente a capacidade usual do 'Disco rígido' como sendo de '500GB a 30TB'."
+            },
+            {
+                q: "22. Ao contextualizar os componentes de um computador no item 2.2, qual é a vantagem técnica e prática apontada textualmente para a existência de componentes separados de armazenamento/processamento da placa-mãe?",
+                opcoes: [
+                    "Garantir maior isolamento contra estática e esteganografia reversa.",
+                    "A possibilidade de substituição desses dispositivos em caso de falhas ou necessidade de evolução tecnológica.",
+                    "A facilidade de criptografia total baseada em hardware sem uso de TPM.",
+                    "Reduzir o tempo de inicialização do sistema operacional Linux para duplicações simultâneas."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O texto dita: 'A vantagem de se ter componentes separados da placa-mãe é a possibilidade de substituição desses dispositivos em caso de falhas ou necessidade de evolução tecnológica'."
+            },
+            {
+                q: "23. A placa-mãe interconecta os diversos dispositivos do computador. Qual é a finalidade literal de seus barramentos e circuitos de apoio?",
+                opcoes: [
+                    "Mapear e traduzir bits ASCII gerando assinaturas no início dos arquivos.",
+                    "Controlar os acessos ao processador, disco rígido, memória RAM e demais dispositivos que estiverem conectados.",
+                    "Acelerar o processamento de algoritmos MD5 de 128 bits.",
+                    "Garantir a alimentação ininterrupta da BIOS em mídias óticas backups."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. De acordo com o item 2.2.1, a placa-mãe 'Possui barramentos e circuitos de apoio para controlar os acessos ao processador, disco rígido, memória RAM e demais dispositivos que estiverem conectados'."
+            },
+            {
+                q: "24. No gerenciamento de espaço livre e ocupado pelo sistema de arquivos, o bloco é definido como a unidade mínima de armazenamento. O que acontece literalmente se um arquivo gravado for extremamente pequeno?",
+                opcoes: [
+                    "Apenas um fragmento de bloco proporcional ao seu tamanho será alocado.",
+                    "A ele será alocado um bloco inteiro.",
+                    "O arquivo será gravado temporariamente e diretamente na memória RAM volátil.",
+                    "O sistema de arquivos gerará um mapa de bits corrompido que impede a leitura posterior."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila ensina expressamente: 'O bloco é a unidade mínima de armazenamento que um arquivo pode ocupar. Mesmo que o arquivo seja muito pequeno, a ele será alocado um bloco inteiro'."
+            },
+            {
+                q: "25. Com relação ao mapa de bits utilizado pelo sistema de arquivos para saber quais blocos estão livres ou ocupados, qual alternativa reflete literalmente sua estrutura descrita na seção 2.4?",
+                opcoes: [
+                    "Consiste em um índice remissivo de metadados como nome, datas e tamanho.",
+                    "Consiste em uma tabela composta por 0s e 1s em que cada bloco corresponde a um bit na tabela.",
+                    "Uma lista de assinaturas digitais e magic numbers gravada no setor zero (MBR).",
+                    "Uma árvore lógica hierárquica baseada nos sistemas de arquivo HFS+ e Ext4."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O texto define literalmente: 'Esse mapa consiste em uma tabela composta por 0s e 1s em que cada bloco corresponde a um bit na tabela. Assim, se o bit correspondente ao enésimo bloco for igual a 1, este bloco estará ocupado (e vice-versa)'."
+            },
+            {
+                q: "26. Ao ilustrar a segurança existente no uso de funções de resumo (hashes) como impressões digitais, a apostila assinala que uma função de hash com saída de apenas 64 bits é capaz de gerar:",
+                opcoes: [
+                    "Cerca de 18 milhões de valores de hashes diferentes.",
+                    "Cerca de 18 quintilhões (2^64) de valores de hashes diferentes.",
+                    "Exatamente 256 combinações vinculadas ao padrão de mapeamento ASCII.",
+                    "Até 512 bits de saída de tamanho variável proporcional ao arquivo."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila dita textualmente que 'uma função de hash com saída de apenas 64 bits pode gerar cerca de 18 quintilhões (2^64) de valores de hashes diferentes'."
+            },
+            {
+                q: "27. Dentre as instruções técnicas reguladoras mencionadas na apostila, o que normatiza e orienta expressamente a 'IT 018/2013-Ditec/DPF'?",
+                opcoes: [
+                    "Os procedimentos gerais a serem adotados pelo Perito no local de busca comum.",
+                    "Os procedimentos de busca e apreensão para casos que envolvam crimes de abuso sexual contra crianças e adolescentes.",
+                    "As boas práticas para a geração de arquivos hashes.txt e cópias em mídias óticas.",
+                    "Os cenários de apreensão de celulares e smartphones em estado AFU ou BFU."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Conforme o material didático, a 'IT 018/2013-Ditec/DPF normatiza os procedimentos de busca e apreensão para casos que envolvam crimes de abuso sexual contra crianças e adolescentes'."
+            },
+            {
+                q: "28. Ao apreender computadores desktops ou notebooks no local, a regra técnica assevera que os discos rígidos (HD ou SSD) NÃO devem ser retirados de dentro do gabinete. Qual o principal motivo técnico citado para apreender o computador por inteiro?",
+                opcoes: [
+                    "O risco de contaminação magnética externa gerada pelo manuseio manual.",
+                    "A possibilidade de haver criptografia de disco ativada, vinculada a um módulo de segurança existente na placa-mãe (TPM).",
+                    "A obrigatoriedade de preservar as marcas de dedos do investigado para a papiloscopia.",
+                    "A eventual ausência de cabos IDE ou SATA sobressalentes na unidade de Criminalística."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O texto aponta de forma estrita que 'O principal motivo é a possibilidade de haver criptografia de disco ativada, vinculada a um módulo de segurança existente na placa-mãe (TPM), que faz com que os dados contidos nos discos avulsos se tornem inacessíveis'."
+            },
+            {
+                q: "29. Se o computador a ser apreendido na busca estiver LIGADO, a apostila lista procedimentos periciais sugeridos para a preservação dos dados. Qual das opções abaixo NÃO faz parte dessa lista literal?",
+                opcoes: [
+                    "Obtenção da chave de recuperação do Bitlocker.",
+                    "Configuração do Bitlocker em modo de suspensão.",
+                    "Instalação do IPED no disco rígido para indexação rápida no local.",
+                    "Ativação do modo de hibernação do Windows."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A instalação do IPED no local de busca não pertence aos procedimentos listados no item 3.3.1. A lista inclui: obtenção da chave do Bitlocker, configuração em suspensão, obtenção de chaves do WhatsApp Web, ativação de hibernação do Windows, captura de RAM e colocar em hibernação."
+            },
+            {
+                q: "30. Ao final do processo de preservação e cópia de dados, qual o produto que os equipamentos de duplicação forense especializados (como Tableau TD3, TX1 ou Atola) emitem de forma automatizada?",
+                opcoes: [
+                    "Um arquivo compactado ISO contendo os hashes individuais das partições.",
+                    "Um relatório contendo a identificação das mídias (marcas, modelos e números de série), as informações do processo de cópia e o hash dos dados copiados.",
+                    "Um script em bash projetado para inicializar partições sob o sistema CAINE.",
+                    "Uma lista de palavras-chave indexadas com suporte de OCR."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O texto é literal: 'Ao final do processo, esses equipamentos emitem um relatório contendo a identificação das mídias (marcas, modelos e números de série), as informações do processo de cópia e o hash dos dados copiados'."
+            },
+            {
+                q: "31. Especialmente no caso de discos rígidos a serem duplicados forenses, por que é aconselhável utilizar sempre uma mídia de destino com capacidade superior à mídia de origem?",
+                opcoes: [
+                    "Porque o processo de duplicação expande o tamanho dos arquivos lógicos.",
+                    "Devido a pequenas variações na capacidade nominal de diferentes fabricantes e modelos.",
+                    "Para permitir a gravação do sistema operacional Linux CAINE na raiz.",
+                    "Porque mídias de origem podem conter trilhas fragmentadas impossíveis de compactar."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila recomenda: 'Especialmente no caso de discos rígidos, há pequenas variações na capacidade nominal de diferentes fabricantes e modelos, sendo aconselhável sempre utilizar um disco rígido de destino com capacidade superior ao de origem'."
+            },
+            {
+                q: "32. De acordo com a seção 2.2.4 (discos rígidos), quais são, literalmente, as interfaces de conectores e cabos mais comuns existentes para conectar os HDs magnéticos tradicionais à placa-mãe?",
+                opcoes: [
+                    "IDE e SATA.",
+                    "USB e RJ-45.",
+                    "HDMI e SCSI.",
+                    "PCI-Express e AGP."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. Conforme o material didático, os conectores e cabos 'mais comuns são IDE e SATA'."
+            },
+            {
+                q: "33. Na recuperação de arquivos apagados, a técnica baseada na assinatura do arquivo (Data Carving) é muito valiosa. No entanto, qual das seguintes fragilidades é listada como limitadora desse método?",
+                opcoes: [
+                    "Não funciona sob sistema operacional Linux CAINE ou Kali.",
+                    "Não irá recuperar os metadados, tal como o nome, dos arquivos.",
+                    "Apaga fisicamente do disco os arquivos que forem recuperados de forma incompleta.",
+                    "Modifica o valor de hash original dos dados recuperados impedindo sua integridade."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila explica literalmente: 'Como esse método não utiliza as informações presentes no sistema de arquivos, ele não irá recuperar os metadados, tal como o nome, dos arquivos'."
+            },
+            {
+                q: "34. Em qual grupo ou terminologia de arquivos a apostila classifica explicitamente formatos como ZIP, RAR, PST e NSF?",
+                opcoes: [
+                    "Arquivos Criptografados.",
+                    "Arquivos-Contêiner.",
+                    "Arquivos de Sistema.",
+                    "Mídias óticas digitais."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. De acordo com o item 5.1.2: 'Existe um grupo de arquivos conhecido como arquivos-contêiner. Esses arquivos nada mais são que repositórios de outros arquivos. Como exemplo, podem ser citados: arquivos compactados (ZIP, RAR) e arquivos que armazenam mensagens de e-mail (PST, NSF), entre outros'."
+            },
+            {
+                q: "35. Durante a filtragem de dados na etapa de 'Redução', o perito utiliza bases de hashes para eliminar arquivos inócuos (do Windows, jogos, etc.). De acordo com a seção 5.3.1, quais outros elementos podem ser ocultados por meio do uso de filtros?",
+                opcoes: [
+                    "Arquivos com extensões alteradas como Apostila.mp3.",
+                    "Arquivos com conteúdo duplicado (que possuem hashes idênticos) ou arquivos com tamanho zero.",
+                    "Arquivos de imagens ou vídeos recuperados exclusivamente via Data Carving.",
+                    "Arquivos protegidos por criptografia de disco completo (FDE)."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O texto é claro: 'Utilizando-se de filtros, pode-se ainda ocultar arquivos com conteúdo duplicado (que possuem hashes idênticos) ou arquivos com tamanho zero, por exemplo'."
+            },
+            {
+                q: "36. De acordo com a Portaria 1710/2026, com o objetivo específico de caracterizar o crime de posse de material de abuso sexual (MASI), a partir de qual quantidade exata de arquivos identificados alcança-se a saturação qualitativa, permitindo interromper o exame?",
+                opcoes: [
+                    "100 arquivos.",
+                    "500 arquivos.",
+                    "1000 arquivos.",
+                    "Dezenas de milhares de arquivos."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A portaria preceitua literalmente que: 'a quantidade de 500 arquivos contendo cenas de ASI como suficiente para alcançar a saturação qualitativa [...] o exame de Identificação de MASI com o propósito de caracterizar a posse pode ser interrompido quando constatar tal quantidade...'."
+            },
+            {
+                q: "37. Na seção de análise de celulares (7.2.2), qual é a recomendação literal para a análise de cartões SIM e de memória?",
+                opcoes: [
+                    "Devem ser inseridos em aparelhos novos de fábrica para visualizar as agendas.",
+                    "Devem ser analisados separadamente, utilizando-se leitores específicos, não sendo recomendável inseri-los em outro telefone.",
+                    "Devem ser processados conjuntamente e duplicados no Tableau TD3.",
+                    "Devem ser submetidos a wipe físico para revelar dados do IMSI e ICCID."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O texto estabelece textualmente: 'Os cartões SIM e de memória devem ser analisados separadamente, utilizando-se leitores específicos. Não é recomendável inserir os cartões em um aparelho diverso do telefone examinado...'."
+            },
+            {
+                q: "38. Ao analisar as especificidades da linha telefônica GSM (7.2.3), por que o perito deve detalhar com ressalvas o número de linha encontrado em opções do celular do tipo 'Meu número'?",
+                opcoes: [
+                    "Porque o número ali contido pode ter sido inserido pelo próprio usuário e não corresponder necessariamente à linha ativa real no cartão SIM.",
+                    "Porque esse campo expõe de forma automática as credenciais do eSIM.",
+                    "Pelo risco de alterar de forma remota o IMEI atrelado à operadora.",
+                    "Porque esse campo pode desabilitar as travas mecânicas de proteção de escrita."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. A apostila dita textualmente que: 'É importante notar que alguns celulares possuem opções como Meu número, que registram um número inserido pelo usuário e que não corresponde necessariamente à linha no cartão SIM em uso, mas sim ao valor do campo MSISDN do cartão SIM. Tal informação pode ser citada no Laudo, desde que acompanhada dessas ressalvas'."
+            },
+            {
+                q: "39. Nos laudos periciais da Polícia Federal, qual o mecanismo literal empregado para 'garantir a autenticidade da mídia anexa ao laudo pericial' e afastar qualquer dúvida judicial?",
+                opcoes: [
+                    "A gravação obrigatória das provas exclusivamente em mídias não-regraváveis protegidas por BitLocker.",
+                    "O cálculo do valor de hash do arquivo de texto hashes.txt e a transcrição desse valor calculado no corpo do Laudo, que é assinado digitalmente.",
+                    "A retenção da mídia física original sob custódia ininterrupta do Diretor-Geral.",
+                    "A formatação da mídia anexa pelo comando Diskpart sob o CAINE."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. De acordo com o item 8.1: 'este problema é resolvido calculando-se o valor do hash do arquivo de texto que contém a lista de hashes e transcrevendo esse valor de hash no corpo do Laudo, que é assinado digitalmente'."
+            },
+            {
+                q: "40. Dentre os tipos de bloqueios de acesso em celulares modernos, o bloqueio Biométrico (digital, íris ou facial) oferece alta praticidade. De acordo com o item 7.3.1, em quais situações obrigatórias o bloqueio de PIN ou geométrico secundário é exigido pelo sistema?",
+                opcoes: [
+                    "Toda vez que o aparelho celular perde conexão de rede móvel ou Wi-Fi.",
+                    "Toda vez que o aparelho é reiniciado ou fica um longo período sem desbloqueio.",
+                    "Sempre que se tenta desativar as credenciais eSIM virtualmente.",
+                    "Caso o telefone entre em estado AFU ou seja isolado em bolsa de Faraday."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila informa literally: 'Normalmente, este bloqueio deve ser utilizado combinado com um outro tipo, como bloqueio de PIN ou padrão geométrico, que são exigidos toda vez que o aparelho é reiniciado ou fica um longo período sem desbloqueio'."
+            }
+        ];
+
+        let htmlQuestions = "";
+        questoes.forEach((qObj, index) => {
+            htmlQuestions += `
+            <div class="question-container" id="q${index}">
+                <div class="question-text">${qObj.q}</div>
+                <ul class="options">
+            `;
+            
+            qObj.opcoes.forEach((opcao, optIndex) => {
+                htmlQuestions += `
+                    <li>
+                        <input type="radio" name="pergunta${index}" id="p${index}o${optIndex}" value="${optIndex}">
+                        <label for="p${index}o${optIndex}">${String.fromCharCode(65 + optIndex)}) ${opcao}</label>
+                    </li>
+                `;
+            });
+
+            htmlQuestions += `
+                </ul>
+                <button class="btn-responder" onclick="verificarResposta(${index}, ${qObj.correta})">Responder</button>
+                <div class="feedback" id="feedback${index}">
+                    <span id="msg${index}"></span>
+                    <div class="explanation" id="exp${index}"></div>
+                </div>
+            </div>
+            `;
+        });
+
+        document.getElementById("quiz-container").innerHTML = htmlQuestions;
+
+        function verificarResposta(questionIndex, correctAnswerIndex) {
+            const options = document.getElementsByName("pergunta" + questionIndex);
+            let selectedValue = -1;
+
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].checked) {
+                    selectedValue = parseInt(options[i].value);
+                    break;
+                }
+            }
+
+            const feedbackDiv = document.getElementById("feedback" + questionIndex);
+            const msgSpan = document.getElementById("msg" + questionIndex);
+            const expDiv = document.getElementById("exp" + questionIndex);
+
+            if (selectedValue === -1) {
+                alert("Por favor, selecione uma opção antes de clicar em Responder!");
+                return;
+            }
+
+            feedbackDiv.style.display = "block";
+            feedbackDiv.classList.remove("correct", "incorrect");
+
+            if (selectedValue === correctAnswerIndex) {
+                feedbackDiv.classList.add("correct");
+                msgSpan.innerHTML = "✅ Excelente! Resposta Correta.";
+            } else {
+                feedbackDiv.classList.add("incorrect");
+                msgSpan.innerHTML = `❌ Resposta Incorreta. Você marcou a alternativa ${String.fromCharCode(65 + selectedValue)}.`;
+            }
+
+            expDiv.innerHTML = questoes[questionIndex].explicacao;
+            
+            for (let i = 0; i < options.length; i++) {
+                options[i].disabled = true;
+            }
+            const btn = document.querySelector(`#q${questionIndex} button`);
+            btn.disabled = true;
+            btn.style.backgroundColor = '#a0aec0';
+            btn.style.cursor = 'not-allowed';
+            btn.innerText = 'Respondido';
+        }
+    </script>
+</body>
+</html>
+```
+
+Com esta rodada de revisão, expandimos o banco de dados de simulados para abranger as regras mais profundas e os conceitos mais específicos da apostila. Se você desejar, posso converter os principais conceitos operacionais de campo (como as regras de tratamento de celulares ligados ou desligados) em um material visual esquematizado!

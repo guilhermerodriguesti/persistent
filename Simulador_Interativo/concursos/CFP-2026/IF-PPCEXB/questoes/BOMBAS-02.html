@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado: Bombas e Explosivos</title>
+<style>
+  :root{--cor:#1a3a5c;--cor2:#2e6da4;--cor3:#e8f0f8;--verde:#1e7e34;--vermelho:#c0392b;--laranja:#d35400;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#222;}
+  header{background:var(--cor);color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;}
+  header h1{font-size:1.3rem;font-weight:700;}
+  .subtitle{font-size:.85rem;opacity:.8;}
+  .scorebar{background:var(--cor2);color:#fff;padding:10px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .sc{font-size:.95rem;} .sc span{font-weight:700;}
+  .lbl{opacity:.75;font-size:.85rem;}
+  .btn-reset{background:#fff;color:var(--cor);border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;}
+  .btn-reset:hover{background:#e0e8f0;}
+  .btn-wrong{background:var(--laranja);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;margin-left:auto;}
+  .btn-wrong:hover:not(:disabled){background:#b94600;}
+  .btn-wrong:disabled{opacity:.4;cursor:not-allowed;}
+  main{max-width:860px;margin:28px auto;padding:0 16px 60px;}
+  .chapter{margin-bottom:32px;}
+  .chapter-title{background:var(--cor);color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;font-weight:700;font-size:1rem;}
+  .question{background:#fff;border:1px solid #d0dcea;border-top:none;padding:20px 20px 14px;}
+  .question:last-child{border-radius:0 0 8px 8px;}
+  .question+.question{border-top:1px dashed #c8d8ea;}
+  .q-num{font-size:.78rem;color:#888;margin-bottom:4px;}
+  .q-text{font-size:1rem;font-weight:600;margin-bottom:14px;line-height:1.5;}
+  .opt{display:block;width:100%;background:var(--cor3);border:2px solid transparent;border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;text-align:left;font-size:.93rem;line-height:1.4;transition:.15s;}
+  .opt:hover:not(:disabled){background:#d5e5f8;border-color:var(--cor2);}
+  .opt.correct{background:#d4edda;border-color:var(--verde);color:var(--verde);font-weight:600;}
+  .opt.wrong{background:#fde8e8;border-color:var(--vermelho);color:var(--vermelho);}
+  .opt:disabled{cursor:default;}
+  .feedback{margin-top:8px;font-size:.88rem;padding:8px 12px;border-radius:6px;line-height:1.5;}
+  .feedback.ok{background:#d4edda;color:#155724;}
+  .feedback.err{background:#fde8e8;color:#721c24;}
+  .feedback .loc{margin-top:4px;font-size:.8rem;opacity:.8;}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Simulado: Bombas e Explosivos</h1>
+    <div class="subtitle">30 Questões Inéditas - Tópicos 1 a 3 da Apostila</div>
+  </div>
+</header>
+<div class="scorebar">
+  <div class="sc">✅ Acertos: <span id="sc-c">0</span></div>
+  <div class="sc">❌ Erros: <span id="sc-w">0</span></div>
+  <div class="sc">📝 Respondidas: <span id="sc-a">0</span> <span class="lbl" id="sc-total"></span></div>
+  <button class="btn-reset" onclick="resetAll()">↺ Reiniciar tudo</button>
+  <button class="btn-wrong" id="btn-wrong" onclick="resetWrong()" disabled>↺ Só os erros</button>
+</div>
+<main id="quiz-container"></main>
+
+<script>
+const CHAPTERS = [
+  {
+    "title": "Bombas e Explosivos",
+    "questions": [
+      {
+        "q": "1. Historicamente, qual evento de 1605 \u00e9 considerado a primeira a\u00e7\u00e3o terrorista com bombas na hist\u00f3ria, tendo Guy Fawkes como um de seus principais respons\u00e1veis?",
+        "opts": [
+          "A Revolu\u00e7\u00e3o Francesa."
+,
+          "O Atentado de Guernica."
+,
+          "The Gunpowder Plot (A Conspira\u00e7\u00e3o da P\u00f3lvora)."
+,
+          "A Intentona Comunista."
+        ],
+        "ans": 2,
+        "exp": "Em 4 de novembro de 1605, extremistas cat\u00f3licos tentaram explodir barris de p\u00f3lvora sob a Casa dos Lordes para matar o Rei James I. Este evento, conhecido como 'A Conspira\u00e7\u00e3o da P\u00f3lvora', teve a participa\u00e7\u00e3o de Guy Fawkes e \u00e9 tido como a primeira a\u00e7\u00e3o terrorista com bombas."
+      }
+,
+      {
+        "q": "2. Na Col\u00f4mbia, os atos terroristas estavam ligados apenas \u00e0 subvers\u00e3o pol\u00edtica at\u00e9 determinado momento, quando os incidentes aumentaram consideravelmente. A partir de que ano surgiu a modalidade do 'narcoterrorismo' naquele pa\u00eds?",
+        "opts": [
+          "1963."
+,
+          "1976."
+,
+          "1985."
+,
+          "1991."
+        ],
+        "ans": 1,
+        "exp": "Os registros apontam atos de terrorismo subversivo desde 1963, mas foi a partir de 1976 que surgiu o narcoterrorismo, elevando os incidentes para 262 naquele ano."
+      }
+,
+      {
+        "q": "3. O terrorista brasileiro Carlos Marighella, figura de destaque na luta armada, publicou em 1969 um texto famoso ensinando t\u00e9cnicas de guerrilha, incluindo sabotagem e terrorismo. Qual o nome desse texto?",
+        "opts": [
+          "O Livro Vermelho da Guerrilha."
+,
+          "O Manual do Anarquista."
+,
+          "Minimanual do Guerrilheiro Urbano."
+,
+          "Como Fabricar Bombas e Explosivos."
+        ],
+        "ans": 2,
+        "exp": "Marighella publicou em 1969 o 'Minimanual do Guerrilheiro Urbano', onde afirma que 'o terrorismo \u00e9 uma arma a que o revolucion\u00e1rio nunca pode renunciar'."
+      }
+,
+      {
+        "q": "4. No estudo das explos\u00f5es, como se denomina especificamente a explos\u00e3o em que restam res\u00edduos de explosivos n\u00e3o consumidos no local?",
+        "opts": [
+          "Explos\u00e3o deflagrante."
+,
+          "Explos\u00e3o de primeira ordem (ou alta ordem)."
+,
+          "Explos\u00e3o de segunda ordem (ou baixa ordem)."
+,
+          "Explos\u00e3o de efeito Monroe."
+        ],
+        "ans": 2,
+        "exp": "A explos\u00e3o em que o explosivo \u00e9 totalmente consumido chama-se de alta ordem. Aquela em que restam res\u00edduos n\u00e3o consumidos denomina-se explos\u00e3o de segunda ordem ou baixa ordem."
+      }
+,
+      {
+        "q": "5. Uma explos\u00e3o decorrente do escape s\u00fabito de energia e ruptura devido \u00e0 press\u00e3o crescente dentro de um recipiente que supera sua resist\u00eancia estrutural (como uma caldeira a vapor) \u00e9 classificada como:",
+        "opts": [
+          "Explos\u00e3o qu\u00edmica."
+,
+          "Explos\u00e3o mec\u00e2nica."
+,
+          "Explos\u00e3o nuclear."
+,
+          "Explos\u00e3o pirot\u00e9cnica."
+        ],
+        "ans": 1,
+        "exp": "A explos\u00e3o mec\u00e2nica ocorre quando a press\u00e3o interna crescente supera a resist\u00eancia estrutural do inv\u00f3lucro, como em caldeiras."
+      }
+,
+      {
+        "q": "6. Dentre os fatores a serem considerados no trato com explosivos, a doutrina estabelece como prioridade m\u00e1xima e norteadora de todo o procedimento:",
+        "opts": [
+          "A preserva\u00e7\u00e3o do patrim\u00f4nio."
+,
+          "A preven\u00e7\u00e3o da destrui\u00e7\u00e3o dos vest\u00edgios (processo investigat\u00f3rio)."
+,
+          "A seguran\u00e7a pessoal do t\u00e9cnico em bombas."
+,
+          "A neutraliza\u00e7\u00e3o qu\u00edmica das lamas explosivas."
+        ],
+        "ans": 2,
+        "exp": "Todo procedimento dever\u00e1 ser orientado, principalmente, pela busca da m\u00e1xima seguran\u00e7a do t\u00e9cnico em bombas."
+      }
+,
+      {
+        "q": "7. A propriedade do explosivo que mede sua capacidade de ruptura pela rapidez com que atinge sua press\u00e3o m\u00e1xima, destruindo os materiais que o circundam, chama-se:",
+        "opts": [
+          "Sensibilidade."
+,
+          "Bris\u00e2ncia."
+,
+          "Efeito cumulativo."
+,
+          "Hygroscopicidade."
+        ],
+        "ans": 1,
+        "exp": "Bris\u00e2ncia \u00e9 a capacidade de ruptura do explosivo, mensurada pela rapidez com que este atinge a sua m\u00e1xima press\u00e3o."
+      }
+,
+      {
+        "q": "8. Quanto ao uso, como se diferenciam os explosivos militares dos comerciais?",
+        "opts": [
+          "Os militares s\u00e3o mais sens\u00edveis, de baixo custo e menor estabilidade; os comerciais possuem alta estabilidade e alt\u00edssima bris\u00e2ncia."
+,
+          "Os comerciais n\u00e3o produzem onda de choque, enquanto os militares sim."
+,
+          "Os militares apresentam alta estabilidade, baixa sensibilidade e alta bris\u00e2ncia; os comerciais s\u00e3o mais sens\u00edveis, menos brisantes, t\u00eam baixo custo e menor estabilidade."
+,
+          "Ambos s\u00e3o id\u00eanticos quimicamente, diferindo apenas na documenta\u00e7\u00e3o exigida."
+        ],
+        "ans": 2,
+        "exp": "Explosivos militares apresentam alta estabilidade e baixa sensibilidade para seguran\u00e7a no front. Explosivos comerciais (dinamites, p\u00f3lvoras) s\u00e3o mais sens\u00edveis e menos brisantes."
+      }
+,
+      {
+        "q": "9. De acordo com a velocidade de detona\u00e7\u00e3o, quais explosivos fornecem a energia de ativa\u00e7\u00e3o no in\u00edcio da cadeia de fogo, sendo altamente sens\u00edveis a choque, calor e fric\u00e7\u00e3o?",
+        "opts": [
+          "Altos explosivos secund\u00e1rios."
+,
+          "Baixos explosivos propulsores."
+,
+          "Altos explosivos prim\u00e1rios (ou intermedi\u00e1rios)."
+,
+          "Explosivos de ruptura tipo ANFO."
+        ],
+        "ans": 2,
+        "exp": "Os altos explosivos prim\u00e1rios fornecem a energia de ativa\u00e7\u00e3o para o explosivo de ruptura, sendo muito sens\u00edveis (usados nas espoletas/detonadores)."
+      }
+,
+      {
+        "q": "10. Qual \u00e9 a composi\u00e7\u00e3o cl\u00e1ssica da P\u00f3lvora Negra (baixo explosivo) conhecida desde a Idade M\u00e9dia?",
+        "opts": [
+          "Clorato de pot\u00e1ssio, nitrocelulose e enxofre."
+,
+          "Salitre (Nitrato de pot\u00e1ssio/s\u00f3dio), carv\u00e3o e enxofre."
+,
+          "Nitroglicerina, algod\u00e3o e b\u00e1rio."
+,
+          "Fulminato de merc\u00fario e a\u00e7\u00facar."
+        ],
+        "ans": 1,
+        "exp": "A p\u00f3lvora negra continha tradicionalmente 75% de salitre (KNO3), 15% de carv\u00e3o e 10% de enxofre."
+      }
+,
+      {
+        "q": "11. Em atentados terroristas, \u00e9 comum o uso da P\u00f3lvora Cloratada. Nela, o salitre da p\u00f3lvora negra \u00e9 substitu\u00eddo, na propor\u00e7\u00e3o de 70%, por qual subst\u00e2ncia?",
+        "opts": [
+          "Nitrato de am\u00f4nio."
+,
+          "Nitroguanidina."
+,
+          "Clorato de pot\u00e1ssio."
+,
+          "\u00c1cido p\u00edcrico."
+        ],
+        "ans": 2,
+        "exp": "Na p\u00f3lvora cloratada, o salitre \u00e9 substitu\u00eddo pelo clorato de pot\u00e1ssio (KClO3), e a mistura frequentemente leva a\u00e7\u00facar refinado, carv\u00e3o e enxofre."
+      }
+,
+      {
+        "q": "12. As p\u00f3lvoras sem fuma\u00e7a s\u00e3o divididas em Bases. A p\u00f3lvora de Base Dupla (BD) cont\u00e9m em sua formula\u00e7\u00e3o, al\u00e9m de conservantes:",
+        "opts": [
+          "Nitrocelulose apenas."
+,
+          "Nitrocelulose, nitroglicerina e nitroguanidina."
+,
+          "Nitrocelulose e nitroglicerina."
+,
+          "Clorato de pot\u00e1ssio e resina fen\u00f3lica."
+        ],
+        "ans": 2,
+        "exp": "A P\u00f3lvora de Base Dupla cont\u00e9m nitrocelulose e nitroglicerina. A de Base Simples tem s\u00f3 nitrocelulose, e a de Base Tripla adiciona nitroguanidina."
+      }
+,
+      {
+        "q": "13. Qual \u00e9 o mais antigo explosivo prim\u00e1rio, de cor amarela-clara e velocidade de detona\u00e7\u00e3o de 5.000 m/s, que gradativamente foi substitu\u00eddo pelo DDNP ou pela azida de chumbo nas espoletas?",
+        "opts": [
+          "Nitropenta (PETN)."
+,
+          "Fulminato de merc\u00fario."
+,
+          "Hexog\u00eanio (RDX)."
+,
+          "Dinitrato de etileno glicol (EGDN)."
+        ],
+        "ans": 1,
+        "exp": "O fulminato de merc\u00fario \u00e9 o mais antigo explosivo prim\u00e1rio, extremamente sens\u00edvel a choque, calor e atrito."
+      }
+,
+      {
+        "q": "14. A descoberta de Ascanio Sobrero em 1846 gerou um poderoso l\u00edquido explosivo que foi posteriormente dessensibilizado por Alfred Nobel. Como se chama a mistura criada por Nobel em 1867 que saturou essa subst\u00e2ncia com s\u00edlica?",
+        "opts": [
+          "Dinamite."
+,
+          "Lama explosiva."
+,
+          "Plastex."
+,
+          "Tetril."
+        ],
+        "ans": 0,
+        "exp": "Alfred Nobel dessensibilizou a nitroglicerina saturando-a com s\u00edlica (Kieselguhr) em 1867, inventando assim a dinamite."
+      }
+,
+      {
+        "q": "15. A Nitroglicerina (NG) \u00e9 um l\u00edquido viscoso incolor com alt\u00edssima velocidade de detona\u00e7\u00e3o (7.800 m/s). Qual \u00e9 o grave perigo associado \u00e0 sua temperatura de armazenamento em ambientes frios?",
+        "opts": [
+          "Evapora rapidamente se a temperatura ficar abaixo de 10\u00b0C."
+,
+          "Solidifica-se a 13\u00b0C, tornando-se altamente inst\u00e1vel devido ao cisalhamento dos cristais."
+,
+          "Torna-se imune \u00e0 detona\u00e7\u00e3o, exigindo aquecimento pr\u00e9vio a 100\u00b0C."
+,
+          "Transforma-se em explosivo pl\u00e1stico C4 se exposta ao frio."
+        ],
+        "ans": 1,
+        "exp": "A nitroglicerina solidifica-se a 13 graus, tornando-se altamente inst\u00e1vel (cisalhamento dos cristais), sendo muito perigoso o manuseio nesse estado."
+      }
+,
+      {
+        "q": "16. Este alto explosivo secund\u00e1rio de uso militar apresenta-se sob a forma s\u00f3lida de blocos fundidos ou petardos de cor amarela, funde a 80,5\u00b0C e \u00e9 t\u00e3o seguro que \u00e9 utilizado como padr\u00e3o de refer\u00eancia para medir a efic\u00e1cia de outros explosivos. Trata-se do:",
+        "opts": [
+          "Nitrato de am\u00f4nio."
+,
+          "\u00c1cido p\u00edcrico."
+,
+          "Hexog\u00eanio."
+,
+          "Trinitrotolueno (TNT ou Trotil)."
+        ],
+        "ans": 3,
+        "exp": "O TNT (Trotil) \u00e9 um explosivo militar est\u00e1vel, muito seguro, funde a 80,5\u00b0C e \u00e9 o padr\u00e3o referencial de efic\u00e1cia (fator 1,0)."
+      }
+,
+      {
+        "q": "17. O Anfo \u00e9 um explosivo comercial est\u00e1vel e muito utilizado, fabricado a partir da mistura de prills porosos de nitrato de am\u00f4nio (94,3%). Qual \u00e9 a outra subst\u00e2ncia adicionada em 5,7% para formar o Anfo?",
+        "opts": [
+          "Querosene de avia\u00e7\u00e3o."
+,
+          "\u00d3leo diesel."
+,
+          "Nitrometano."
+,
+          "\u00c1gua e alum\u00ednio em p\u00f3."
+        ],
+        "ans": 1,
+        "exp": "O Anfo (ammonium nitrate-fuel oil) \u00e9 feito misturando nitrato de am\u00f4nio com \u00f3leo diesel na propor\u00e7\u00e3o de 5,7%."
+      }
+,
+      {
+        "q": "18. Na composi\u00e7\u00e3o dos cord\u00e9is detonantes imperme\u00e1veis usados em pedreiras e demoli\u00e7\u00f5es de pontes, h\u00e1 um alto explosivo secund\u00e1rio no n\u00facleo branco. Esse explosivo \u00e9 o:",
+        "opts": [
+          "Tetril."
+,
+          "Nitropenta (PETN)."
+,
+          "Fulminato de merc\u00fario."
+,
+          "HMX (Octog\u00eanio)."
+        ],
+        "ans": 1,
+        "exp": "A Nitropenta (PETN) \u00e9 o n\u00facleo branco do cordel detonante, detonando a 6.400 m/s."
+      }
+,
+      {
+        "q": "19. Os explosivos pl\u00e1sticos militares C4 apresentam cor branca ou r\u00f3sea, velocidade de detona\u00e7\u00e3o a 8.050 m/s e um componente explosivo base correspondente a 91% de sua massa. Qual \u00e9 esse explosivo principal do C4?",
+        "opts": [
+          "TNT."
+,
+          "Nitrocelulose."
+,
+          "Hexog\u00eanio (RDX)."
+,
+          "Nitrato de am\u00f4nio."
+        ],
+        "ans": 2,
+        "exp": "O explosivo pl\u00e1stico C4 cont\u00e9m 91% de RDX (Hexog\u00eanio) misturado a um agente plastificante."
+      }
+,
+      {
+        "q": "20. Para combater o terrorismo em aeroportos, a Conven\u00e7\u00e3o de Montreal (1991) estabeleceu que explosivos pl\u00e1sticos receber\u00e3o uma marca\u00e7\u00e3o para facilitar a leitura por detectores de vapores. Qual das subst\u00e2ncias abaixo \u00e9 um desses agentes de marca\u00e7\u00e3o?",
+        "opts": [
+          "Trotil plastificado."
+,
+          "Dinitrato de etileno glicol (EGDN)."
+,
+          "Cloreto de pot\u00e1ssio."
+,
+          "Sal zincato de o-Dianisidina."
+        ],
+        "ans": 1,
+        "exp": "Os agentes de detec\u00e7\u00e3o (marcadores) previstos pela conven\u00e7\u00e3o s\u00e3o o EGDN, DMNB, p-MNT e o-MNT."
+      }
+,
+      {
+        "q": "21. A onda de choque prim\u00e1ria da explos\u00e3o gera o fen\u00f4meno f\u00edsico do deslocamento de ar (concuss\u00e3o). Como as frentes de press\u00e3o se comportam neste processo?",
+        "opts": [
+          "H\u00e1 apenas uma press\u00e3o negativa cont\u00ednua de v\u00e1cuo."
+,
+          "Forma-se uma onda de alta press\u00e3o (press\u00e3o positiva) seguida de uma press\u00e3o negativa que puxa o ar para preencher o v\u00e1cuo rec\u00e9m-formado."
+,
+          "As ondas s\u00f3 geram press\u00e3o se o explosivo estiver em local aberto."
+,
+          "A onda termal cancela a onda de deslocamento mec\u00e2nico."
+        ],
+        "ans": 1,
+        "exp": "O deslocamento de ar cria uma onda de alta press\u00e3o (positiva) \u00e0 medida que os gases se expandem, seguida por uma onda de press\u00e3o negativa (v\u00e1cuo) quando o ar retorna violentamente."
+      }
+,
+      {
+        "q": "22. Um fen\u00f4meno utilizado para direcionar a onda de choque, obtendo maior press\u00e3o num ponto espec\u00edfico para cortar blindagens ou realizar implos\u00f5es calculadas, \u00e9 conhecido como:",
+        "opts": [
+          "Efeito Doppler."
+,
+          "Efeito Monroe (ou efeito bazuca)."
+,
+          "Descompress\u00e3o volum\u00e9trica."
+,
+          "Fragmenta\u00e7\u00e3o prim\u00e1ria."
+        ],
+        "ans": 1,
+        "exp": "O Efeito Monroe (ou efeito bazuca) ocorre com a converg\u00eancia de v\u00e1rias ondas de choque para um mesmo ponto devido \u00e0 modelagem f\u00edsica da carga oca, otimizando o corte do alvo."
+      }
+,
+      {
+        "q": "23. Com base na tabela de 'Efic\u00e1cia Relativa' fornecida pela apostila (onde o TNT \u00e9 a refer\u00eancia = 1,0), qual dos explosivos abaixo \u00e9 considerado MAIS potente que o TNT, possuindo fator 1,50?",
+        "opts": [
+          "P\u00f3lvora negra."
+,
+          "Nitrato de am\u00f4nio."
+,
+          "Hexog\u00eanio (RDX)."
+,
+          "Dinamite 60%."
+        ],
+        "ans": 2,
+        "exp": "O Hexog\u00eanio (RDX) e o Octog\u00eanio (HMX) possuem fator de efic\u00e1cia relativa de 1,50, sendo muito mais potentes que o TNT (1,0)."
+      }
+,
+      {
+        "q": "24. Nos sistemas de inicia\u00e7\u00e3o, os estopins s\u00e3o \u00e0 base de p\u00f3lvora e usados para transmitir a chama. Qual \u00e9 uma caracter\u00edstica marcante do 'Estopim Hidr\u00e1ulico'?",
+        "opts": [
+          "\u00c9 visualmente imposs\u00edvel saber em que parte do estopim a p\u00f3lvora est\u00e1 queimando."
+,
+          "Sua queima \u00e9 instant\u00e2nea, a quase 1.000 m/s."
+,
+          "N\u00e3o pode ser utilizado embaixo d'\u00e1gua."
+,
+          "Possui a menor quantidade de p\u00f3lvora entre os estopins (apenas 8 g/m)."
+        ],
+        "ans": 0,
+        "exp": "O estopim hidr\u00e1ulico \u00e9 imperme\u00e1vel (funciona sob \u00e1gua) e queima de modo uniforme (110 a 240 s/m), mas \u00e9 visualmente imposs\u00edvel ver onde a p\u00f3lvora est\u00e1 queimando."
+      }
+,
+      {
+        "q": "25. Qual \u00e9 o tempo de seguran\u00e7a (quarentena) estipulado como regra no caso de haver uma falha no momento da queima do estopim, antes que o t\u00e9cnico se aproxime do artefato?",
+        "opts": [
+          "Aguardar 5 minutos."
+,
+          "Aguardar cerca de 20 minutos."
+,
+          "Aguardar 24 horas."
+,
+          "N\u00e3o precisa aguardar se tiver colete."
+        ],
+        "ans": 1,
+        "exp": "A medida de precau\u00e7\u00e3o determina que, em caso de falhas no estopim, deve-se esperar cerca de 20 minutos para uma aproxima\u00e7\u00e3o."
+      }
+,
+      {
+        "q": "26. As c\u00e1psulas explosivas el\u00e9tricas (espoletas el\u00e9tricas) oferecem um acionamento por aquecimento do fio ponte. Qual \u00e9 a principal DESVANTAGEM de seguran\u00e7a desse sistema?",
+        "opts": [
+          "Impossibilidade de detona\u00e7\u00e3o simult\u00e2nea."
+,
+          "N\u00e3o permite aproxima\u00e7\u00e3o no caso de falhas."
+,
+          "Risco de acionamento acidental por eletricidade est\u00e1tica ou indu\u00e7\u00e3o eletromagn\u00e9tica."
+,
+          "O fio sempre congela em temperaturas baixas."
+        ],
+        "ans": 2,
+        "exp": "Enquanto oferecem precis\u00e3o, as espoletas el\u00e9tricas podem ser acionadas acidentalmente por eletricidade est\u00e1tica ou r\u00e1dio-frequ\u00eancia/indu\u00e7\u00e3o eletromagn\u00e9tica."
+      }
+,
+      {
+        "q": "27. Dentre as regras de seguran\u00e7a no manuseio de detonadores el\u00e9tricos, o que se deve fazer fisicamente com as pontas dos fios do detonador antes do seu uso?",
+        "opts": [
+          "Lixar o cobre exposto e deix\u00e1-las afastadas."
+,
+          "Unir as pontas dos fios para curto-circuit\u00e1-los, evitando inicia\u00e7\u00e3o acidental."
+,
+          "Aplicar 3 volts para testar a ponte."
+,
+          "Mergulh\u00e1-las em querosene para descarregar est\u00e1tica."
+        ],
+        "ans": 1,
+        "exp": "A regra manda unir as pontas dos fios (curto-circuito) para evitar o fechamento do circuito por indu\u00e7\u00e3o ou est\u00e1tica."
+      }
+,
+      {
+        "q": "28. O 'Sistema disparador de tubo de choque' tem sua propaga\u00e7\u00e3o baseada em uma chama que percorre o tubo. Qual material pirot\u00e9cnico reveste a parede interna deste pequeno tubo pl\u00e1stico?",
+        "opts": [
+          "TNT e cera."
+,
+          "HMX (Octog\u00eanio) e alum\u00ednio em p\u00f3."
+,
+          "Salitre e enxofre."
+,
+          "Nitroglicerina pura."
+        ],
+        "ans": 1,
+        "exp": "O tubo oco flex\u00edvel \u00e9 revestido internamente por uma fina camada de HMX (Octog\u00eanio) misturado com alum\u00ednio em p\u00f3, transmitindo a chama a cerca de 1.000 m/s."
+      }
+,
+      {
+        "q": "29. O explosivo caseiro ou improvisado amplamente conhecido como 'Mistura Armstrong' \u00e9 iniciado por meio de atrito forte ou uso de sulfeto de carbono. Qual a sua composi\u00e7\u00e3o qu\u00edmica descrita no manual?",
+        "opts": [
+          "Clorato de pot\u00e1ssio (65%) e F\u00f3sforo vermelho (35%)."
+,
+          "Nitrato de am\u00f4nio (94%) e \u00d3leo diesel (6%)."
+,
+          "A\u00e7\u00facar (50%) e Salitre (50%)."
+,
+          "\u00c1cido p\u00edcrico fundido com chumbo."
+        ],
+        "ans": 0,
+        "exp": "A mistura Armstrong \u00e9 um perigoso explosivo improvisado/caseiro feito de Clorato de pot\u00e1ssio (65%) e F\u00f3sforo vermelho (35%)."
+      }
+,
+      {
+        "q": "30. Sobre o armazenamento e manuseio, a que dist\u00e2ncia m\u00ednima os detonadores (espoletas) devem ser armazenados de quaisquer outros explosivos at\u00e9 que estejam prontos para escorvamento?",
+        "opts": [
+          "1 metro."
+,
+          "3 metros."
+,
+          "10 metros."
+,
+          "No mesmo caixote, separados apenas por papel\u00e3o."
+        ],
+        "ans": 1,
+        "exp": "A regra de seguran\u00e7a diz: 'Nunca armazenar detonadores a menos de 3 metros de quaisquer outros explosivos at\u00e9 que estejam prontos para serem escorvados'."
+      }
+    ]
+  }
+];
+
+let answered = 0, corrects = 0, wrongs = 0;
+let wrongQuestions = [];
+
+function updateScore(){
+  document.getElementById('sc-c').textContent = corrects;
+  document.getElementById('sc-w').textContent = wrongs;
+  document.getElementById('sc-a').textContent = answered;
+  document.getElementById('btn-wrong').disabled = (wrongQuestions.length === 0);
+}
+
+function buildQuiz(dataSource){
+  dataSource = dataSource || CHAPTERS;
+  window._currentData = dataSource;
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  let total = 0;
+  dataSource.forEach(ch => total += ch.questions.length);
+  document.getElementById('sc-total').textContent = '/ ' + total;
+
+  dataSource.forEach((ch, ci) => {
+    const div = document.createElement('div');
+    div.className = 'chapter';
+    let html = `<div class="chapter-title">${ch.title}</div>`;
+    ch.questions.forEach((q, qi) => {
+      const qid = 'q_' + ci + '_' + qi;
+      html += `<div class="question" id="block_${qid}">
+        <div class="q-num">Questão ${qi+1}</div>
+        <div class="q-text">${q.q}</div>`;
+      q.opts.forEach((opt, oi) => {
+        html += `<button class="opt" id="${qid}_${oi}" onclick="handleAnswer(${ci}, ${qi}, ${oi})">${opt}</button>`;
+      });
+      html += `<div class="feedback" id="fb_${qid}" style="display:none"></div></div>`;
+    });
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+}
+
+function handleAnswer(ci, qi, chosen){
+  const dataSource = window._currentData || CHAPTERS;
+  const ch = dataSource[ci];
+  const q = ch.questions[qi];
+  const qid = 'q_' + ci + '_' + qi;
+  const correct = q.ans;
+  const isRight = (chosen === correct);
+
+  q.opts.forEach((_, oi) => {
+    const btn = document.getElementById(qid + '_' + oi);
+    btn.disabled = true;
+    if(oi === correct) btn.classList.add('correct');
+    if(oi === chosen && !isRight) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('fb_' + qid);
+  fb.style.display = 'block';
+  if(isRight){
+    fb.className = 'feedback ok';
+    fb.innerHTML = `✅ <strong>Correto!</strong> ${q.exp}`;
+    corrects++;
+  } else {
+    fb.className = 'feedback err';
+    fb.innerHTML = `❌ <strong>Incorreto.</strong> ${q.exp}`;
+    wrongs++;
+    wrongQuestions.push({chTitle: ch.title, qObj: q});
+  }
+  answered++;
+  updateScore();
+}
+
+function resetAll(){
+  if(!confirm('Reiniciar o quiz completo?')) return;
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(CHAPTERS);
+  updateScore();
+}
+
+function resetWrong(){
+  if(wrongQuestions.length === 0) return;
+  if(!confirm('Reiniciar apenas com as ' + wrongQuestions.length + ' questão(ões) que você errou?')) return;
+  const chapMap = {};
+  wrongQuestions.forEach(({chTitle, qObj}) => {
+    if(!chapMap[chTitle]) chapMap[chTitle] = {title: chTitle, questions: []};
+    chapMap[chTitle].questions.push(qObj);
+  });
+  const filtered = Object.values(chapMap);
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(filtered);
+  updateScore();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

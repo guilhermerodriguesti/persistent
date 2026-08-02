@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Treino de Questões: Bombas e Explosivos</title>
+<style>
+  :root{--cor:#1a3a5c;--cor2:#2e6da4;--cor3:#e8f0f8;--verde:#1e7e34;--vermelho:#c0392b;--laranja:#d35400;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#222;}
+  header{background:var(--cor);color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;}
+  header h1{font-size:1.3rem;font-weight:700;}
+  .subtitle{font-size:.85rem;opacity:.8;}
+  .scorebar{background:var(--cor2);color:#fff;padding:10px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .sc{font-size:.95rem;} .sc span{font-weight:700;}
+  .lbl{opacity:.75;font-size:.85rem;}
+  .btn-reset{background:#fff;color:var(--cor);border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;}
+  .btn-reset:hover{background:#e0e8f0;}
+  .btn-wrong{background:var(--laranja);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;margin-left:auto;}
+  .btn-wrong:hover:not(:disabled){background:#b94600;}
+  .btn-wrong:disabled{opacity:.4;cursor:not-allowed;}
+  main{max-width:860px;margin:28px auto;padding:0 16px 60px;}
+  .chapter{margin-bottom:32px;}
+  .chapter-title{background:var(--cor);color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;font-weight:700;font-size:1rem;}
+  .question{background:#fff;border:1px solid #d0dcea;border-top:none;padding:20px 20px 14px;}
+  .question:last-child{border-radius:0 0 8px 8px;}
+  .question+.question{border-top:1px dashed #c8d8ea;}
+  .q-num{font-size:.78rem;color:#888;margin-bottom:4px;}
+  .q-text{font-size:1rem;font-weight:600;margin-bottom:14px;line-height:1.5;}
+  .opt{display:block;width:100%;background:var(--cor3);border:2px solid transparent;border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;text-align:left;font-size:.93rem;line-height:1.4;transition:.15s;}
+  .opt:hover:not(:disabled){background:#d5e5f8;border-color:var(--cor2);}
+  .opt.correct{background:#d4edda;border-color:var(--verde);color:var(--verde);font-weight:600;}
+  .opt.wrong{background:#fde8e8;border-color:var(--vermelho);color:var(--vermelho);}
+  .opt:disabled{cursor:default;}
+  .feedback{margin-top:8px;font-size:.88rem;padding:8px 12px;border-radius:6px;line-height:1.5;}
+  .feedback.ok{background:#d4edda;color:#155724;}
+  .feedback.err{background:#fde8e8;color:#721c24;}
+  .feedback .loc{margin-top:4px;font-size:.8rem;opacity:.8;}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Treino de Questões: Bombas e Explosivos</h1>
+    <div class="subtitle">Abrangendo os Capítulos 1 a 5 (com fonte ampliada)</div>
+  </div>
+</header>
+<div class="scorebar">
+  <div class="sc">✅ Acertos: <span id="sc-c">0</span></div>
+  <div class="sc">❌ Erros: <span id="sc-w">0</span></div>
+  <div class="sc">📝 Respondidas: <span id="sc-a">0</span> <span class="lbl" id="sc-total"></span></div>
+  <button class="btn-reset" onclick="resetAll()">↺ Reiniciar tudo</button>
+  <button class="btn-wrong" id="btn-wrong" onclick="resetWrong()" disabled>↺ Só os erros</button>
+</div>
+<main id="quiz-container"></main>
+
+<script>
+const CHAPTERS = [
+  {
+    "title": "Treino de Questões: Bombas e Explosivos",
+    "questions": [
+      {
+        "q": "Historicamente, qual evento ocorrido na Inglaterra em 1605 \u00e9 considerado a primeira a\u00e7\u00e3o terrorista com bombas na hist\u00f3ria?",
+        "opts": [
+          "A Revolu\u00e7\u00e3o Gloriosa"
+,
+          "A Conspira\u00e7\u00e3o da P\u00f3lvora (The Gunpowder Plot)"
+,
+          "O Atentado de Westminster"
+,
+          "A Queda da Bastilha"
+        ],
+        "ans": 1,
+        "exp": "Em 4 de novembro de 1605, um grupo de extremistas cat\u00f3licos tentou explodir o Parlamento Ingl\u00eas usando 36 barris de p\u00f3lvora. O evento ficou conhecido como 'A Conspira\u00e7\u00e3o da P\u00f3lvora'."
+      }
+,
+      {
+        "q": "Como \u00e9 classificada a explos\u00e3o que ocorre pela ruptura estrutural de um recipiente quando a press\u00e3o crescente em seu interior supera a sua resist\u00eancia (ex: caldeira a vapor)?",
+        "opts": [
+          "Explos\u00e3o at\u00f4mica"
+,
+          "Explos\u00e3o qu\u00edmica"
+,
+          "Explos\u00e3o mec\u00e2nica"
+,
+          "Explos\u00e3o secund\u00e1ria"
+        ],
+        "ans": 2,
+        "exp": "A explos\u00e3o mec\u00e2nica ocorre quando a press\u00e3o crescente dentro de um recipiente supera a sua resist\u00eancia estrutural, como na explos\u00e3o de uma caldeira a vapor."
+      }
+,
+      {
+        "q": "A capacidade de ruptura de um explosivo, mensurada pela rapidez com que este atinge a sua m\u00e1xima press\u00e3o, recebe o nome de:",
+        "opts": [
+          "Bris\u00e2ncia"
+,
+          "Sensibilidade"
+,
+          "Concuss\u00e3o"
+,
+          "Efeito Monroe"
+        ],
+        "ans": 0,
+        "exp": "Bris\u00e2ncia \u00e9 a capacidade de ruptura do explosivo, mensurada pela rapidez com que ele atinge a sua m\u00e1xima press\u00e3o."
+      }
+,
+      {
+        "q": "Como s\u00e3o denominados os altos explosivos que fornecem energia de ativa\u00e7\u00e3o dentro de uma cadeia de fogo (sendo muito sens\u00edveis ao choque, calor e fric\u00e7\u00e3o)?",
+        "opts": [
+          "Baixos explosivos deflagrantes"
+,
+          "Altos explosivos secund\u00e1rios"
+,
+          "Explosivos de ruptura"
+,
+          "Altos explosivos prim\u00e1rios"
+        ],
+        "ans": 3,
+        "exp": "Altos explosivos prim\u00e1rios s\u00e3o os explosivos intermedi\u00e1rios ou de inicia\u00e7\u00e3o que fornecem energia de ativa\u00e7\u00e3o, sens\u00edveis ao choque mec\u00e2nico, calor e fric\u00e7\u00e3o."
+      }
+,
+      {
+        "q": "A p\u00f3lvora cloratada \u00e9 frequentemente empregada em atentados terroristas devido \u00e0 facilidade de obten\u00e7\u00e3o. Nela, o salitre da f\u00f3rmula original da p\u00f3lvora negra \u00e9 substitu\u00eddo por qual subst\u00e2ncia?",
+        "opts": [
+          "Nitroglicerina"
+,
+          "Clorato de pot\u00e1ssio"
+,
+          "Dinitrato de etileno glicol"
+,
+          "\u00c1cido p\u00edcrico"
+        ],
+        "ans": 1,
+        "exp": "Na p\u00f3lvora cloratada, o salitre \u00e9 substitu\u00eddo pelo clorato de pot\u00e1ssio (KClO3) na propor\u00e7\u00e3o de 70%, misturado com a\u00e7\u00facar, carv\u00e3o e enxofre."
+      }
+,
+      {
+        "q": "Qual composto foi utilizado por Alfred Nobel em 1867 para saturar e dessensibilizar a nitroglicerina com \u00eaxito, inventando assim a dinamite?",
+        "opts": [
+          "Algod\u00e3o col\u00f3dio"
+,
+          "Hexog\u00eanio (RDX)"
+,
+          "S\u00edlica (Kieselguhr)"
+,
+          "\u00d3leo diesel"
+        ],
+        "ans": 2,
+        "exp": "Alfred Nobel dessensibilizou a nitroglicerina mediante a sua satura\u00e7\u00e3o com s\u00edlica (Kieselguhr), inventando assim a dinamite."
+      }
+,
+      {
+        "q": "A nitroglicerina \u00e9 um alto explosivo l\u00edquido, denso e viscoso. O que acontece com ela caso atinja a temperatura de 13 \u00b0C?",
+        "opts": [
+          "Ela evapora rapidamente de forma inofensiva."
+,
+          "Ela se estabiliza totalmente, tornando-se imune a atritos."
+,
+          "Ela se solidifica, tornando-se altamente inst\u00e1vel e perigosa."
+,
+          "Ela se transforma em dinamite pura."
+        ],
+        "ans": 2,
+        "exp": "A nitroglicerina solidifica-se a 13 graus, tornando-se altamente inst\u00e1vel (devido ao cisalhamento dos cristais)."
+      }
+,
+      {
+        "q": "Qual explosivo \u00e9 considerado o mais seguro, sendo utilizado em blocos fundidos de cor amarela e servindo como padr\u00e3o de refer\u00eancia de c\u00e1lculo para outros explosivos?",
+        "opts": [
+          "Fulminato de merc\u00fario"
+,
+          "TNT (Trinitrotolueno)"
+,
+          "Azida de chumbo"
+,
+          "P\u00f3lvora cloratada"
+        ],
+        "ans": 1,
+        "exp": "O TNT (Trinitrotolueno) \u00e9 o mais seguro dos explosivos, pouco sens\u00edvel e altamente est\u00e1vel, sendo usado como padr\u00e3o de refer\u00eancia para medir a efic\u00e1cia de outros explosivos."
+      }
+,
+      {
+        "q": "O explosivo comercial conhecido como Anfo \u00e9 formado por uma mistura de \u00f3leo diesel e qual outra subst\u00e2ncia comumente encontrada em fertilizantes?",
+        "opts": [
+          "TNT"
+,
+          "Clorato de pot\u00e1ssio"
+,
+          "\u00c1cido p\u00edcrico"
+,
+          "Nitrato de am\u00f4nio"
+        ],
+        "ans": 3,
+        "exp": "O Anfo \u00e9 formado pela adi\u00e7\u00e3o de \u00f3leo diesel (cerca de 5,7%) aos gr\u00e2nulos (prills) de nitrato de am\u00f4nio encontrados em fertilizantes agr\u00edcolas."
+      }
+,
+      {
+        "q": "Que classe de altos explosivos comerciais de \u00faltima gera\u00e7\u00e3o \u00e9 obtida a partir da dispers\u00e3o de \u00f3leo em solu\u00e7\u00e3o aquosa de nitrato de am\u00f4nia?",
+        "opts": [
+          "Emuls\u00f5es"
+,
+          "P\u00f3lvoras de base dupla"
+,
+          "Pl\u00e1sticos C4"
+,
+          "Explosivos prim\u00e1rios"
+        ],
+        "ans": 0,
+        "exp": "As emuls\u00f5es s\u00e3o explosivos secund\u00e1rios comerciais de \u00faltima gera\u00e7\u00e3o obtidos a partir da dispers\u00e3o de \u00f3leo em solu\u00e7\u00e3o aquosa de nitrato de am\u00f4nia."
+      }
+,
+      {
+        "q": "Dentre os efeitos prim\u00e1rios de uma explos\u00e3o, qual \u00e9 o respons\u00e1vel por gerar chamas que podem provocar inc\u00eandios em materiais inflam\u00e1veis pr\u00f3ximos?",
+        "opts": [
+          "Onda de choque"
+,
+          "Concuss\u00e3o"
+,
+          "Efeito t\u00e9rmico"
+,
+          "Fragmenta\u00e7\u00e3o"
+        ],
+        "ans": 2,
+        "exp": "O efeito t\u00e9rmico-incendi\u00e1rio ocorre quando a explos\u00e3o gera calor e surgem chamas, podendo provocar inc\u00eandios em materiais pr\u00f3ximos."
+      }
+,
+      {
+        "q": "Qual \u00e9 o nome do efeito utilizado em implos\u00f5es e perfura\u00e7\u00f5es, que consiste na converg\u00eancia intencional de v\u00e1rias ondas de choque para um mesmo ponto de menor resist\u00eancia?",
+        "opts": [
+          "Efeito Doppler"
+,
+          "Efeito Joule"
+,
+          "Efeito Monroe (ou efeito bazuca)"
+,
+          "Efeito de retardo"
+        ],
+        "ans": 2,
+        "exp": "O Efeito Monroe ou efeito bazuca \u00e9 a concentra\u00e7\u00e3o das ondas de choque em um mesmo ponto, utilizado para direcionar a explos\u00e3o e cortar/perfurar superf\u00edcies altamente resistentes."
+      }
+,
+      {
+        "q": "Na previs\u00e3o de danos e convers\u00e3o de massa de diferentes explosivos, as tabelas usam o chamado 'Fator de Efic\u00e1cia Relativa'. Qual explosivo possui o Fator exato de 1,0 como refer\u00eancia base?",
+        "opts": [
+          "Nitrato de am\u00f4nio"
+,
+          "TNT"
+,
+          "C-4"
+,
+          "P\u00f3lvora negra"
+        ],
+        "ans": 1,
+        "exp": "O explosivo utilizado como refer\u00eancia (com Fator de efic\u00e1cia relativa igual a 1,0) \u00e9 o TNT."
+      }
+,
+      {
+        "q": "No contexto dos sistemas de inicia\u00e7\u00e3o, o estopim hidr\u00e1ulico \u00e9 caracterizado por:",
+        "opts": [
+          "Queimar muito rapidamente, a 8 s/m."
+,
+          "Ser usado para deflagra\u00e7\u00e3o exclusivamente de bombas nucleares."
+,
+          "Ser imperme\u00e1vel, permitir uso subaqu\u00e1tico e queimar de modo lento sem que a queima da p\u00f3lvora seja vis\u00edvel externamente."
+,
+          "Ser altamente suscet\u00edvel a correntes de r\u00e1dio."
+        ],
+        "ans": 2,
+        "exp": "O estopim hidr\u00e1ulico \u00e9 imperme\u00e1vel (usado embaixo d'\u00e1gua), queima lenta e uniformemente, sendo visualmente imposs\u00edvel saber em que parte interna a p\u00f3lvora est\u00e1 queimando."
+      }
+,
+      {
+        "q": "O sistema disparador de tubo de choque se diferencia dos fios el\u00e9tricos pois:",
+        "opts": [
+          "Usa uma pequena corrente cont\u00ednua gerada por pilha."
+,
+          "Consiste num tubo pl\u00e1stico com material pirot\u00e9cnico (HMX+alum\u00ednio) que propaga uma chama pelo interior a 1.000 m/s."
+,
+          "Exige contato com \u00e1gua pressurizada para funcionar."
+,
+          "\u00c9 imune ao corte f\u00edsico por alicates."
+        ],
+        "ans": 1,
+        "exp": "O tubo de choque \u00e9 um tubo pl\u00e1stico oco revestido por HMX e alum\u00ednio em p\u00f3, propagando uma chama que sensibiliza a espoleta sem usar fios el\u00e9tricos."
+      }
+,
+      {
+        "q": "Em rela\u00e7\u00e3o ao uso de espoletas el\u00e9tricas, qual o principal risco ou desvantagem de seguran\u00e7a apontado pela literatura?",
+        "opts": [
+          "A impossibilidade de detonar v\u00e1rias cargas ao mesmo tempo."
+,
+          "O tempo de espera obrigat\u00f3rio de 4 horas ap\u00f3s a conex\u00e3o."
+,
+          "O acionamento acidental por eletricidade est\u00e1tica ou indu\u00e7\u00e3o eletromagn\u00e9tica."
+,
+          "A sua extrema lentid\u00e3o no disparo."
+        ],
+        "ans": 2,
+        "exp": "As c\u00e1psulas el\u00e9tricas podem ser acionadas acidentalmente por eletricidade est\u00e1tica ou indu\u00e7\u00e3o eletromagn\u00e9tica (como ondas de r\u00e1dios e celulares)."
+      }
+,
+      {
+        "q": "Ao lidar com detonadores el\u00e9tricos em uma ocorr\u00eancia, o que o t\u00e9cnico deve evitar fazer, visando a seguran\u00e7a contra indu\u00e7\u00e3o eletromagn\u00e9tica?",
+        "opts": [
+          "Evitar guardar detonadores junto com a carga explosiva principal."
+,
+          "Usar ou manter ligado radiotransmissores (HT) e celulares pr\u00f3ximos ao local."
+,
+          "Unir as pontas dos fios do detonador (curto-circuito)."
+,
+          "Medir o tempo de queima."
+        ],
+        "ans": 1,
+        "exp": "As regras de seguran\u00e7a exigem desligar radiotransmissores, incluindo HT e celulares, pr\u00f3ximos \u00e0 ocorr\u00eancia para evitar deflagra\u00e7\u00e3o induzida por ondas eletromagn\u00e9ticas."
+      }
+,
+      {
+        "q": "O mecanismo de acionamento que exige a aplica\u00e7\u00e3o de um peso/for\u00e7a para soltar o percussor ou fechar o circuito (muito usado sob assentos ou tapetes) \u00e9 do tipo:",
+        "opts": [
+          "Tra\u00e7\u00e3o"
+,
+          "Tens\u00e3o"
+,
+          "Press\u00e3o"
+,
+          "Descompress\u00e3o"
+        ],
+        "ans": 2,
+        "exp": "Os dispositivos de press\u00e3o exigem a aplica\u00e7\u00e3o de press\u00e3o (peso de quem senta ou pisa) para fechar o circuito el\u00e9trico."
+      }
+,
+      {
+        "q": "Um mecanismo cl\u00e1ssico empregado em armadilhas de cartas-bomba, que \u00e9 ativado quando a v\u00edtima levanta a aba ou remove algo de cima do artefato, \u00e9 chamado de:",
+        "opts": [
+          "Barom\u00e9trico"
+,
+          "Descompress\u00e3o"
+,
+          "Tempo"
+,
+          "Press\u00e3o"
+        ],
+        "ans": 1,
+        "exp": "A descompress\u00e3o funciona pela remo\u00e7\u00e3o de um objeto ou da press\u00e3o, sendo muito usada em cartas-bomba ou ao abrir um livro/maleta."
+      }
+,
+      {
+        "q": "No ambiente militar, armadilhas em trilhas que detonam a carga quando o soldado rompe ou esbarra em um fio esticado (cabo de trope\u00e7o) utilizam o mecanismo de:",
+        "opts": [
+          "Press\u00e3o"
+,
+          "Barom\u00e9trico"
+,
+          "Retardo qu\u00edmico"
+,
+          "Tens\u00e3o"
+        ],
+        "ans": 3,
+        "exp": "O mecanismo de tens\u00e3o \u00e9 empregado quando h\u00e1 um fio ou arame esticado (cabo de trope\u00e7o) que, ao se romper, libera o percussor."
+      }
+,
+      {
+        "q": "Uma bomba postal pode ter um pino ou um isolante amarrado a um barbante interno que, ao sofrer um simples pux\u00e3o, ativa a bomba. Esse \u00e9 o mecanismo por:",
+        "opts": [
+          "Tra\u00e7\u00e3o"
+,
+          "Descompress\u00e3o"
+,
+          "Retardo qu\u00edmico"
+,
+          "Ac\u00fastica"
+        ],
+        "ans": 0,
+        "exp": "O mecanismo por tra\u00e7\u00e3o funciona atrav\u00e9s de um fio ou isolante que, ao ser tracionado/sofrer pux\u00e3o, permite fechar o circuito el\u00e9trico ou soltar o pino percussor."
+      }
+,
+      {
+        "q": "O mecanismo de acionamento onde se utiliza a corros\u00e3o lenta de um fio de sustenta\u00e7\u00e3o por uma solu\u00e7\u00e3o de cloreto c\u00faprico encaixa-se na categoria de:",
+        "opts": [
+          "Retardo qu\u00edmico"
+,
+          "Temporizador mec\u00e2nico anal\u00f3gico"
+,
+          "Antimovimento"
+,
+          "Tra\u00e7\u00e3o magn\u00e9tica"
+        ],
+        "ans": 0,
+        "exp": "No retardo qu\u00edmico, uma solu\u00e7\u00e3o corrosiva (como o cloreto c\u00faprico) corr\u00f3i o filamento at\u00e9 ele se romper, acionando a bomba em tempos vari\u00e1veis."
+      }
+,
+      {
+        "q": "Qual o m\u00e9todo de seguran\u00e7a aplicado pelos esquadr\u00f5es para neutralizar um acionamento por controle remoto via RF (radiofrequ\u00eancia)?",
+        "opts": [
+          "Atirar na bateria usando pistola de \u00e1gua."
+,
+          "Usar uma manta met\u00e1lica/papel alum\u00ednio para criar uma blindagem eletromagn\u00e9tica e bloquear a transmiss\u00e3o."
+,
+          "Mudar a bomba rapidamente de posi\u00e7\u00e3o."
+,
+          "Iluminar o pacote com luz infravermelha."
+        ],
+        "ans": 1,
+        "exp": "Uma das solu\u00e7\u00f5es de desativa\u00e7\u00e3o contra controle remoto \u00e9 o uso de mantas met\u00e1licas ou redes para fazer blindagem eletromagn\u00e9tica e bloquear a transmiss\u00e3o."
+      }
+,
+      {
+        "q": "Os dispositivos que ativam a bomba ao menor sinal de vibra\u00e7\u00e3o ou se o artefato for inclinado (usando chaves de merc\u00fario ou p\u00eandulos) s\u00e3o conhecidos como:",
+        "opts": [
+          "Barom\u00e9tricos"
+,
+          "De tens\u00e3o"
+,
+          "De retardo qu\u00edmico"
+,
+          "Antimovimento/antidist\u00farbio"
+        ],
+        "ans": 3,
+        "exp": "Artefatos iniciados ao serem mudados de posi\u00e7\u00e3o ou por vibra\u00e7\u00e3o, utilizando chaves de merc\u00fario ou p\u00eandulos, possuem mecanismo antimovimento/antidist\u00farbio."
+      }
+,
+      {
+        "q": "Um mecanismo criado para explodir durante o voo de uma aeronave, acionando-se assim que a aeronave ganha altitude e a press\u00e3o externa diminui, chama-se:",
+        "opts": [
+          "Fotoel\u00e9trico"
+,
+          "Barom\u00e9trico"
+,
+          "Efeito Joule"
+,
+          "Tens\u00e3o de altitude"
+        ],
+        "ans": 1,
+        "exp": "Mecanismos barom\u00e9tricos s\u00e3o ativados pela diferen\u00e7a de press\u00f5es na \u00e1gua e no ar, sendo comuns em artefatos transportados com flutua\u00e7\u00f5es de altitude, como avi\u00f5es."
+      }
+,
+      {
+        "q": "No contexto das T\u00e9cnicas de Desativa\u00e7\u00e3o, a 'Criogenia' (resfriamento r\u00e1pido para desativar a fonte el\u00e9trica) e o uso do 'Raio-X' s\u00e3o classificados como:",
+        "opts": [
+          "T\u00e9cnicas Ativas Invasivas"
+,
+          "T\u00e9cnicas de Efeito Monroe"
+,
+          "T\u00e9cnicas Passivas"
+,
+          "T\u00e9cnicas de Retardo"
+        ],
+        "ans": 2,
+        "exp": "O exame por Raios X e a Criogenia s\u00e3o exemplos de T\u00e9cnicas Passivas, pois n\u00e3o provocam, em tese, altera\u00e7\u00f5es capazes de acionar a bomba."
+      }
+,
+      {
+        "q": "O equipamento ativo conhecido como Disruptor (Canh\u00e3o D'\u00c1gua) \u00e9 acionado empregando a for\u00e7a gerada por:",
+        "opts": [
+          "Uma bomba de alta press\u00e3o ligada a um caminh\u00e3o de bombeiros."
+,
+          "Um cartucho especial de calibre 12 que impulsiona a \u00e1gua e destr\u00f3i o inv\u00f3lucro."
+,
+          "Um tanque de nitrog\u00eanio l\u00edquido."
+,
+          "A explos\u00e3o secund\u00e1ria de uma granada militar acoplada."
+        ],
+        "ans": 1,
+        "exp": "O disruptor dispara uma coluna de \u00e1gua contida no cano, impulsionada pela detona\u00e7\u00e3o de um cartucho especial de calibre 12, desarticulando o artefato rapidamente."
+      }
+,
+      {
+        "q": "Ao utilizar o canh\u00e3o d'\u00e1gua contra inv\u00f3lucros mais r\u00edgidos (como bombas-tubo) onde h\u00e1 risco de ricochete, qual carga de ataque \u00e9 a mais recomendada?",
+        "opts": [
+          "\u00c1gua pura mineral"
+,
+          "Nitroglicerina gelatinosa"
+,
+          "Carga Avon (gesso + esferas ocas met\u00e1licas + \u00e1gua)"
+,
+          "Lamas explosivas bombeadas"
+        ],
+        "ans": 2,
+        "exp": "A carga Avon forma um balote r\u00edgido e resistente de gesso e esferas met\u00e1licas que n\u00e3o provoca ricochete, sendo indicada para alvos mais r\u00edgidos."
+      }
+,
+      {
+        "q": "Na t\u00e9cnica improvisada de desativa\u00e7\u00e3o que emprega uma garrafa cheia de \u00e1gua e um cordel detonador, por que se utiliza obrigatoriamente uma garrafa pl\u00e1stica (tipo PET)?",
+        "opts": [
+          "Para n\u00e3o alterar a temperatura da \u00e1gua."
+,
+          "Porque o vidro bloqueia as ondas de r\u00e1dio e o pl\u00e1stico n\u00e3o."
+,
+          "Para minimizar a possibilidade de fragmentos r\u00edgidos iniciarem o artefato explosivo alvo."
+,
+          "Para derreter e selar os contatos el\u00e9tricos."
+        ],
+        "ans": 2,
+        "exp": "O fato de a garrafa ser pl\u00e1stica minimiza a possibilidade de os seus estilha\u00e7os e fragmentos iniciarem o artefato explosivo por impacto."
+      }
+,
+      {
+        "q": "A t\u00e9cnica do 'Chicote' \u00e9 empregada frequentemente na abertura remota de envelopes suspeitos. Qual o mecanismo de atua\u00e7\u00e3o desta t\u00e9cnica?",
+        "opts": [
+          "Um jato cont\u00ednuo de \u00e1gua que derrete o papel em formato de V."
+,
+          "O arremesso de um fio r\u00edgido de cobre contra o envelope pela detona\u00e7\u00e3o de um cordel."
+,
+          "Um laser infravermelho de alta pot\u00eancia focando na borda do pacote."
+,
+          "A expans\u00e3o lenta de uma bola de gesso."
+        ],
+        "ans": 1,
+        "exp": "Na t\u00e9cnica do chicote, a detona\u00e7\u00e3o do cordel arremessa um fio r\u00edgido de cobre (chicote) em alt\u00edssima velocidade, que corta e abre o envelope suspeito."
+      }
+    ]
+  }
+];
+
+let answered = 0, corrects = 0, wrongs = 0;
+let wrongQuestions = [];
+
+function updateScore(){
+  document.getElementById('sc-c').textContent = corrects;
+  document.getElementById('sc-w').textContent = wrongs;
+  document.getElementById('sc-a').textContent = answered;
+  document.getElementById('btn-wrong').disabled = (wrongQuestions.length === 0);
+}
+
+function buildQuiz(dataSource){
+  dataSource = dataSource || CHAPTERS;
+  window._currentData = dataSource;
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  let total = 0;
+  dataSource.forEach(ch => total += ch.questions.length);
+  document.getElementById('sc-total').textContent = '/ ' + total;
+
+  dataSource.forEach((ch, ci) => {
+    const div = document.createElement('div');
+    div.className = 'chapter';
+    let html = `<div class="chapter-title">${ch.title}</div>`;
+    ch.questions.forEach((q, qi) => {
+      const qid = 'q_' + ci + '_' + qi;
+      html += `<div class="question" id="block_${qid}">
+        <div class="q-num">Questão ${qi+1}</div>
+        <div class="q-text">${q.q}</div>`;
+      q.opts.forEach((opt, oi) => {
+        html += `<button class="opt" id="${qid}_${oi}" onclick="handleAnswer(${ci}, ${qi}, ${oi})">${opt}</button>`;
+      });
+      html += `<div class="feedback" id="fb_${qid}" style="display:none"></div></div>`;
+    });
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+}
+
+function handleAnswer(ci, qi, chosen){
+  const dataSource = window._currentData || CHAPTERS;
+  const ch = dataSource[ci];
+  const q = ch.questions[qi];
+  const qid = 'q_' + ci + '_' + qi;
+  const correct = q.ans;
+  const isRight = (chosen === correct);
+
+  q.opts.forEach((_, oi) => {
+    const btn = document.getElementById(qid + '_' + oi);
+    btn.disabled = true;
+    if(oi === correct) btn.classList.add('correct');
+    if(oi === chosen && !isRight) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('fb_' + qid);
+  fb.style.display = 'block';
+  if(isRight){
+    fb.className = 'feedback ok';
+    fb.innerHTML = `✅ <strong>Correto!</strong> ${q.exp}`;
+    corrects++;
+  } else {
+    fb.className = 'feedback err';
+    fb.innerHTML = `❌ <strong>Incorreto.</strong> ${q.exp}`;
+    wrongs++;
+    wrongQuestions.push({chTitle: ch.title, qObj: q});
+  }
+  answered++;
+  updateScore();
+}
+
+function resetAll(){
+  if(!confirm('Reiniciar o quiz completo?')) return;
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(CHAPTERS);
+  updateScore();
+}
+
+function resetWrong(){
+  if(wrongQuestions.length === 0) return;
+  if(!confirm('Reiniciar apenas com as ' + wrongQuestions.length + ' questão(ões) que você errou?')) return;
+  const chapMap = {};
+  wrongQuestions.forEach(({chTitle, qObj}) => {
+    if(!chapMap[chTitle]) chapMap[chTitle] = {title: chTitle, questions: []};
+    chapMap[chTitle].questions.push(qObj);
+  });
+  const filtered = Object.values(chapMap);
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(filtered);
+  updateScore();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

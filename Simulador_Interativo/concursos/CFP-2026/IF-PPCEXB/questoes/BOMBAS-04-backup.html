@@ -1,0 +1,622 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado: Bombas e Explosivos (Tópicos 7 a 10)</title>
+<style>
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        background-color: #f8f9fa; 
+        color: #212529; 
+        margin: 0; 
+        padding: 30px; 
+        font-size: 26px; /* Letras grandes conforme diretriz */
+    }
+    .container { 
+        max-width: 1300px; 
+        margin: 0 auto; 
+        background: #ffffff; 
+        padding: 45px; 
+        border-radius: 12px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15); 
+    }
+    h1 { 
+        text-align: center; 
+        color: #0b5ed7; 
+        font-size: 44px; 
+        margin-bottom: 15px;
+    }
+    p.subtitle {
+        text-align: center; 
+        color: #6c757d; 
+        margin-bottom: 45px; 
+        font-size: 28px;
+    }
+    .question-card { 
+        margin-bottom: 50px; 
+        padding: 40px; 
+        border: 2px solid #ced4da; 
+        border-radius: 12px; 
+        background-color: #fdfdfe; 
+    }
+    .question-text { 
+        font-weight: bold; 
+        font-size: 32px; 
+        margin-bottom: 25px; 
+        color: #212529; 
+        line-height: 1.4;
+    }
+    .options { 
+        list-style-type: none; 
+        padding: 0; 
+        margin: 0;
+    }
+    .options li { 
+        margin-bottom: 18px; 
+        background: #fff; 
+        border: 2px solid #adb5bd; 
+        border-radius: 10px; 
+        transition: all 0.2s; 
+    }
+    .options li:hover { 
+        background-color: #e9ecef; 
+    }
+    .options label { 
+        cursor: pointer; 
+        display: flex; 
+        align-items: center; 
+        padding: 22px; 
+        width: 100%; 
+        box-sizing: border-box;
+        font-size: 28px;
+        line-height: 1.4;
+    }
+    .options input { 
+        margin-right: 25px; 
+        transform: scale(2.0); 
+    }
+    button { 
+        background-color: #0d6efd; 
+        color: #fff; 
+        border: none; 
+        padding: 22px 45px; 
+        border-radius: 10px; 
+        cursor: pointer; 
+        font-size: 30px; 
+        font-weight: bold;
+        margin-top: 30px; 
+        transition: background-color 0.3s;
+    }
+    button:hover { 
+        background-color: #0a58ca; 
+    }
+    button:disabled { 
+        background-color: #adb5bd; 
+        cursor: not-allowed; 
+    }
+    .feedback { 
+        margin-top: 30px; 
+        padding: 30px; 
+        border-radius: 10px; 
+        display: none; 
+        line-height: 1.5; 
+        font-size: 28px;
+    }
+    .correct { 
+        background-color: #d1e7dd; 
+        color: #0f5132; 
+        border: 2px solid #badbcc; 
+    }
+    .incorrect { 
+        background-color: #f8d7da; 
+        color: #842029; 
+        border: 2px solid #f5c2c7; 
+    }
+    .explanation { 
+        margin-top: 20px; 
+        font-style: italic; 
+        font-size: 26px; 
+        color: #495057;
+    }
+
+    /* ==================== TABLET RESPONSIVE (768px - 1024px) ==================== */
+    @media (max-width: 1024px) {
+        body { 
+            font-size: 22px; 
+            padding: 20px; 
+        }
+        .container { 
+            max-width: 100%; 
+            padding: 35px; 
+        }
+        h1 { 
+            font-size: 34px; 
+            margin-bottom: 12px;
+        }
+        p.subtitle {
+            font-size: 22px;
+            margin-bottom: 35px; 
+        }
+        .question-card { 
+            margin-bottom: 40px; 
+            padding: 30px; 
+        }
+        .question-text { 
+            font-size: 26px; 
+            margin-bottom: 20px; 
+        }
+        .options li { 
+            margin-bottom: 14px; 
+        }
+        .options label { 
+            padding: 18px; 
+            font-size: 24px;
+        }
+        .options input { 
+            transform: scale(1.6); 
+            margin-right: 18px; 
+        }
+        button { 
+            font-size: 24px; 
+            padding: 18px 35px; 
+        }
+        .feedback { 
+            font-size: 22px;
+            padding: 25px;
+        }
+        .explanation { 
+            font-size: 22px; 
+        }
+    }
+
+    /* ==================== MOBILE (< 768px) ==================== */
+    @media (max-width: 767px) {
+        body { 
+            font-size: 18px; 
+            padding: 15px; 
+        }
+        .container { 
+            max-width: 100%; 
+            padding: 20px; 
+        }
+        h1 { 
+            font-size: 28px; 
+            margin-bottom: 10px;
+        }
+        p.subtitle {
+            font-size: 18px;
+            margin-bottom: 25px; 
+        }
+        .question-card { 
+            margin-bottom: 30px; 
+            padding: 20px; 
+            border-radius: 8px;
+        }
+        .question-text { 
+            font-size: 18px; 
+            margin-bottom: 15px; 
+        }
+        .options li { 
+            margin-bottom: 12px; 
+        }
+        .options label { 
+            padding: 15px; 
+            font-size: 18px;
+        }
+        .options input { 
+            transform: scale(1.4); 
+            margin-right: 12px; 
+        }
+        button { 
+            font-size: 18px; 
+            padding: 15px 25px; 
+            width: 100%;
+        }
+        .feedback { 
+            font-size: 16px;
+            padding: 20px;
+        }
+        .explanation { 
+            font-size: 16px; 
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Simulado: Tópicos 7 a 10</h1>
+    <p class="subtitle">Inspeções, Ameaça de Bomba, Reação e Perícia de Local (30 Questões Inéditas)</p>
+    <div id="quiz-container"></div>
+</div>
+
+<script>
+const quizData = [
+    {
+        question: "1. Segundo o Tópico 7 (Inspeções de Segurança), as solicitações de varredura podem originar-se de diferentes motivos. Qual motivação se aplica quando há notícia da presença de elementos estranhos buscando apropriar-se de dados sensíveis da instituição?",
+        options: [
+            "Visita.",
+            "Vazamento de informações ou infiltrações.",
+            "Rotina.",
+            "Instalação."
+        ],
+        answer: 1,
+        explanation: " O 'vazamento de informações ou infiltrações' é um dos motivos que originam a varredura, acionado quando se tem notícia de vazamento devido à presença de elementos infiltrados."
+    },
+    {
+        question: "2. Na avaliação do ambiente durante uma varredura, o técnico deve distinguir perigos naturais de intencionais. De acordo com a apostila, é considerado um exemplo claro de 'perigo intencional':",
+        options: [
+            "Lustres mal presos no teto.",
+            "Dobras nos tapetes em escadarias.",
+            "Pisos excessivamente encerados.",
+            "Modificações feitas recentemente no ambiente, como extintores, lixeiras e telefones embutidos."
+        ],
+        answer: 3,
+        explanation: " São perigos naturais: lustres mal presos, piso encerado e dobras em tapetes. Perigos intencionais são modificações recentes no ambiente (caixas de incêndio, extintores, arranjos de flores, equipamentos de escuta, etc)."
+    },
+    {
+        question: "3. Na varredura preventiva de trajetos e locais abertos por onde passará uma autoridade, qual é a principal razão apontada para a rigorosa vistoria das laterais das pistas?",
+        options: [
+            "Para evitar a ocorrência de derrapagens dos carros oficiais.",
+            "Para impedir que manifestantes bloqueiem o trajeto com faixas.",
+            "Porque são os locais preferidos para atuação de franco-atiradores.",
+            "Porque é onde os explosivos subterrâneos causam mais danos sísmicos."
+        ],
+        answer: 2,
+        explanation: " A apostila alerta que, nos locais abertos, devem ser verificadas as laterais das pistas, justificando que estas são 'preferidas por franco-atiradores'."
+    },
+    {
+        question: "4. A lógica criminal na escolha de um local para colocação de uma bomba baseia-se em três aspectos principais. Quais são eles?",
+        options: [
+            "Luz solar abundante, presença de câmeras para documentar o ato e proximidade de rios.",
+            "Facilidade de acesso/ocultação, menor chance de ser visto e chance de causar o maior dano possível.",
+            "Impossibilidade de acesso, isolamento térmico e destruição exclusiva de monumentos.",
+            "Proximidade de torres de celular, ventilação cruzada e material bélico disponível."
+        ],
+        answer: 1,
+        explanation: " A escolha do local leva em conta: 1) facilidade de acesso e ocultação do artefato; 2) menor possibilidade de que o indivíduo seja visto; 3) chance de causar o maior dano possível."
+    },
+    {
+        question: "5. A maioria das denúncias de ameaças de bomba atinge exatamente os seus objetivos primários, mesmo que nenhum artefato real exista. Qual é o objetivo primário rotineiro dessas ameaças falsas?",
+        options: [
+            "Provar a eficiência do esquadrão antibombas da polícia.",
+            "Testar a velocidade de fuga dos moradores locais.",
+            "Causar tumulto, gerar pânico na área e provocar o adiamento ou cancelamento de eventos.",
+            "Desvalorizar os imóveis da região comercial atingida."
+        ],
+        answer: 2,
+        explanation: " Na maioria dos casos, as denúncias atingem seu objetivo, que é apenas o de causar tumulto e gerar pânico na área envolvida, provocando o adiamento ou até o cancelamento de eventos."
+    },
+    {
+        question: "6. No tratamento inicial de uma informação de ameaça por telefone, os funcionários da mesa telefônica devem adotar determinados protocolos essenciais. Assinale a ação INCORRETA:",
+        options: [
+            "Desligar imediatamente para que a linha possa ser rastreada pela central telefônica.",
+            "Manter a calma, anotar tudo e, se possível, gravar a conversa.",
+            "Prestar atenção a ruídos de fundo e características da voz da pessoa que ligou.",
+            "Tentar prolongar a conversa e fazer perguntas sobre o artefato."
+        ],
+        answer: 0,
+        explanation: " A instrução é exatamente o oposto: o funcionário não deve desligar, devendo 'procurar prolongar a conversa', extrair dados, notar ruídos e a voz do denunciante."
+    },
+    {
+        question: "7. Um dos elementos cruciais para o processamento do grau de ameaça pela Assessoria de Risco é o 'PTI' ou 'IPA' (Identificação Positiva do Alvo). O que a IPA demonstra?",
+        options: [
+            "Que a bomba foi localizada visualmente pelas equipes.",
+            "Que a ameaça contém informações restritas (como nomes, atividades e nomenclatura interna), indicando que o autor possui conhecimento singular e real do alvo.",
+            "Que o alvo se recusa a evacuar o prédio.",
+            "O número do telefone do suspeito obtido pelo bina (identificador de chamadas)."
+        ],
+        answer: 1,
+        explanation: " Identificação Positiva do Alvo (IPA/PTI) é a informação sobre o alvo (nomes, atividades específicas, nomenclatura) que não seja de conhecimento público, indicando conhecimento singular ou em primeira mão do alvo."
+    },
+    {
+        question: "8. A classificação internacional de ameaças utiliza cores. Quando o telefonema não possui IPA (Identificação Positiva do Alvo), MAS apresenta um 'fato gerador' no ambiente que lhe dá alguma base, embora com credibilidade duvidosa, trata-se de uma ameaça de nível:",
+        options: [
+            "Ameaça Verde.",
+            "Ameaça Âmbar.",
+            "Ameaça Vermelha.",
+            "Ameaça Negra."
+        ],
+        answer: 1,
+        explanation: " A Ameaça Âmbar é caracterizada por: 'Sem IPA, há fato gerador, credibilidade duvidosa'. A ação sugerida é vistoria e, se necessário, evacuação."
+    },
+    {
+        question: "9. Diante de uma 'Ameaça Vermelha', que é considerada uma ameaça real, específica, com motivo e com IPA, qual é a ação protocolar recomendada pela tabela do manual?",
+        options: [
+            "Aumentar apenas a vigilância ostensiva externa sem alarde.",
+            "Registrar e desconsiderar a denúncia para evitar falso pânico.",
+            "Providenciar vistoria rotineira apenas no dia seguinte.",
+            "Evacuação imediata total ou parcial, sendo considerado de alto risco e sem tempo para vistorias (caso extremo)."
+        ],
+        answer: 3,
+        explanation: " Na Ameaça Vermelha, a ação exigida é: 'Evacuação imediata total ou parcial, alto risco e sem tempo para vistorias (caso extremo)'."
+    },
+    {
+        question: "10. Existem três tipos básicos de vistoria. Qual delas, segundo a doutrina de segurança, alcança excelente eficácia (80% a 90%) e é a MAIS RECOMENDADA pela facilidade em reconhecer o que não pertence ao local?",
+        options: [
+            "Vistoria por equipe treinada do esquadrão antibombas (sem conhecimento prévio da sala).",
+            "Vistoria de rotina efetuada pela equipe de fiscalização geral noturna.",
+            "Vistoria efetuada pelos próprios ocupantes do local (funcionários).",
+            "Vistoria terceirizada por cães farejadores independentes."
+        ],
+        answer: 2,
+        explanation: " A 'Vistoria pelos próprios ocupantes do local' atinge 80% a 90% de eficácia pois reconhecem o que lhes é estranho. A doutrina recomenda que, na maioria dos casos, seja a realizada pelo pessoal ocupante."
+    },
+    {
+        question: "11. Apesar de altamente eficaz (acima de 90%), a Vistoria por 'Equipe Treinada' (Segurança/Polícia) apresenta uma grave DESVANTAGEM tática em locais muito grandes e fechados. Qual é essa desvantagem?",
+        options: [
+            "Essas equipes costumam detonar as bombas de propósito.",
+            "São muito vagarosas, pois os técnicos não estão familiarizados com o local ameaçado nem com o posicionamento original de seus objetos.",
+            "Recusam-se a usar qualquer proteção individual.",
+            "Não possuem treinamento para ler ameaças âmbar."
+        ],
+        answer: 1,
+        explanation: " A equipe treinada (polícia) oferece alto nível de segurança, mas 'são mais vagarosas, em função de não estar familiarizada com o local sob ameaça'."
+    },
+    {
+        question: "12. Há uma regra fundamental e progressiva na varredura e vistoria de locais confinados para não deixar lacunas para trás. A busca deve ser realizada rigorosamente em qual sentido espacial?",
+        options: [
+            "De cima para baixo e de dentro para fora.",
+            "Do centro da sala para as janelas e do teto ao chão.",
+            "De fora para dentro e de baixo para cima.",
+            "Começando pelas tubulações de ar até os alicerces do edifício."
+        ],
+        answer: 2,
+        explanation: " A regra explícita no manual é: 'A busca deve ser realizada de fora para dentro e de baixo para cima'."
+    },
+    {
+        question: "13. Em relação às áreas de acesso público do edifício (salas de espera, escadas, elevadores), qual ambiente específico a estatística aponta como o preferido para a ocultação de artefatos explosivos pelos criminosos?",
+        options: [
+            "O hall de entrada frontal.",
+            "As lixeiras da calçada.",
+            "Os banheiros (toaletes).",
+            "A cabine principal do elevador."
+        ],
+        answer: 2,
+        explanation: " O manual ressalta que banheiros (toaletes) são 'estatisticamente os locais preferidos para ocultação de artefatos explosivos'."
+    },
+    {
+        question: "14. A vistoria detalhada de uma sala por equipe policial é visualmente dividida em níveis para facilitar a varredura minuciosa. Quantas seções de altura o ambiente recebe nessa metodologia descrita no texto?",
+        options: [
+            "Duas seções: nível do piso e nível do teto falso.",
+            "Três seções: Do chão à cintura; da cintura à cabeça; e da cabeça ao teto.",
+            "Quatro seções concêntricas partindo do lustre.",
+            "Cinco seções laterais, de acordo com o compasso magnético."
+        ],
+        answer: 1,
+        explanation: " O ambiente deve ser dividido em três seções: 1) chão à altura da cintura; 2) cintura à altura da cabeça; 3) cabeça até o teto inclusive."
+    },
+    {
+        question: "15. Durante a vistoria, um técnico avista um pacote quadrado emitindo um leve som de 'tic-tac' sob a mesa do gerente. Qual deve ser o comportamento imediato perante a principal regra de segurança do manual?",
+        options: [
+            "Girar o pacote para tentar identificar o tipo de timer.",
+            "Tentar remover o pacote para a rua correndo.",
+            "NÃO TOCAR, isolar a área, abrir portas e janelas com cuidado para evitar confinamento, e evacuar o local a partir dos pisos superiores.",
+            "Encharcar o artefato com água do balde de incêndio."
+        ],
+        answer: 2,
+        explanation: " A principal regra é: NÃO O TOCAR. Evacuar a partir dos andares superiores, acionar a polícia e abrir portas e janelas (exame prévio) para facilitar o escape da onda de choque (reduzindo o confinamento)."
+    },
+    {
+        question: "16. Para a tomada de decisão de reocupação das instalações, nos casos em que o terrorista estipulou uma 'hora exata' para a explosão e o evento não aconteceu naquele instante estipulado, quanto tempo a polícia deve aguardar, no mínimo, antes de reentrar ou recomeçar as buscas?",
+        options: [
+            "5 minutos.",
+            "20 minutos.",
+            "2 horas.",
+            "Imediatamente, pois ficou provado que era trote."
+        ],
+        answer: 1,
+        explanation: " Quando a ameaça estipula a hora e isso não acontece, 'deve-se aguardar o prazo mínimo de 20 minutos antes de iniciar a reocupação, começar ou continuar a vistoria'."
+    },
+    {
+        question: "17. A vistoria externa de um automóvel sob suspeita de abrigar uma bomba deve atentar primariamente para: (Assinale a incorreta)",
+        options: [
+            "Marcas de entrada forçada ou violação das portas.",
+            "Sinais de remoção de sujeira e manuseio do chassi, suspensão ou pára-lamas na parte inferior.",
+            "Presença de fios na mesma bitola de fios de detonadores nas lanternas traseiras e na bateria.",
+            "Rebater imediatamente a porta do motorista e dar a partida no motor para testar o circuito de escape."
+        ],
+        answer: 3,
+        explanation: " Não se deve abrir imediatamente e muito menos dar partida no motor (pode ser o estopim de acionamento elétrico ou mecânico). A vistoria externa envolve olhar marcas de arrombamento, sujeira removida na parte inferior e ligações estranhas nas lanternas/bateria."
+    },
+    {
+        question: "18. Esgotada a observação inicial, a entrada tática ativa na parte interna de um carro sob suspeita de explosivos (feita por policiais especializados) deve utilizar qual das técnicas abaixo para neutralizar dispositivos acionados por antimovimento na abertura?",
+        options: [
+            "Instalar ganchos e/ou ventosas presas a cordas que serão puxadas a distância, para movimentar e abrir remotamente as portas.",
+            "Ligar o motor via ignição direta na caixa de fusíveis interna.",
+            "Cortar o freio de mão com alicate de corte frio.",
+            "Congelar a lataria e quebrar os vidros a pauladas."
+        ],
+        answer: 0,
+        explanation: " 'Instalar ganchos e/ou ventosas presas a cordas que serão puxadas a distância, provocando movimento e eliminando a possibilidade do uso de sistemas de acionamento por movimento... só deve ser usada por técnicos da polícia.'"
+    },
+    {
+        question: "19. Em casos de suspeita de bombas em Aeronaves, além da evacuação imediata, do desembarque ordenado e de isolamento de 100m, qual medida especial deve ser considerada caso o artefato explosivo seja efetivamente encontrado dentro do aparelho?",
+        options: [
+            "Mergulhar o avião no oceano se estiver na cabeceira da pista.",
+            "Atirar com armas de fogo nos trens de pouso.",
+            "Esvaziar os tanques de combustível do aparelho e tentar remover o artefato para área remota.",
+            "Ligar os motores para aquecer a estrutura e afastar a onda de choque."
+        ],
+        answer: 2,
+        explanation: " No caso de encontrar o artefato, deve-se 'pensar em esvaziar os tanques de combustível do aparelho e remover o artefato para uma área remota'."
+    },
+    {
+        question: "20. O Tópico 9, baseado no Bomb Data Center do FBI, estabelece a Filosofia central das operações antibombas com a máxima de que 'A vida não pode ser substituída'. Baseado nisso, qual é a Primeira Prioridade da ocorrência?",
+        options: [
+            "Segurança do técnico em bombas, pois seu conhecimento salva vidas.",
+            "Preservação rigorosa do patrimônio federal.",
+            "Proteção estrita dos vestígios de DNA na bomba para persecução penal.",
+            "Segurança de um cão farejador."
+        ],
+        answer: 0,
+        explanation: " A ordem de prioridades é: 1º Segurança do técnico em bombas; 2º Segurança pública; 3º Proteger propriedades; 4º Coletar e preservar vestígios."
+    },
+    {
+        question: "21. Dentro da 'Sequência de Eventos' para reações a bombas, ao chegar e avaliar preliminarmente o cenário, recomenda-se estabelecer o perímetro de isolamento protetivo (Posto de Controle) a qual distância em relação ao artefato explosivo suspeito?",
+        options: [
+            "A 10 metros, podendo observar o cronômetro visualmente.",
+            "A cerca de 30 metros, mas com visada direta para a equipe avançar rápido.",
+            "Sugere-se um raio de 100 metros e, preferencialmente, SEM visada direta do epicentro, para evitar estilhaços.",
+            "Não há distância mínima, apenas uma fita delimitadora de isolamento civil."
+        ],
+        answer: 2,
+        explanation: " A sugestão é 'que seja feita uma evacuação de 100 metros de raio e sem visada direta do epicentro de onde está o suposto artefato explosivo, para que não haja perigo de um estilhaço atingir alguém'."
+    },
+    {
+        question: "22. Qual conduta é rigorosamente OBRIGATÓRIA para o Posto de Controle quanto às transmissões de rádio ou uso de celulares para coordenação do evento?",
+        options: [
+            "O chefe de equipe deve usar o rádio colado à bomba para pedir ajuda.",
+            "Toda e qualquer comunicação com o exterior deve ser feita a partir do Posto de Controle, afastado, nunca perto do artefato explosivo, pois transmissões próximas podem acioná-lo.",
+            "Não se deve usar telefones, apenas sinais de fumaça na ocorrência.",
+            "Radiocomunicação é permitida desde que a antena aponte para baixo."
+        ],
+        answer: 1,
+        explanation: " 'Toda e qualquer comunicação com o exterior do local do chamado deve ser feita desse posto de controle. Não devem ser feitas comunicações perto do artefato explosivo...'"
+    },
+    {
+        question: "23. Na etapa de 'Observação' da bomba (onde ocorre o primeiro contato real com a ameaça), o técnico utiliza circuito de TV, binóculos ou uma câmera para tirar fotos rápidas. Qual é a regra de ouro que o perito deve seguir rigorosamente nesse contato físico primário?",
+        options: [
+            "Tempo máximo na bomba (ficar o maior tempo possível estudando).",
+            "Mudar os fios elétricos de lugar durante as fotografias.",
+            "Tempo mínimo no alvo (tirar fotos e sair o mais rapidamente possível).",
+            "Soprar a poeira de todas as fendas."
+        ],
+        answer: 2,
+        explanation: " A regra é estrita: 'Tempo mínimo no alvo'. O técnico tira fotos e sai rápido, pois quanto mais tempo, maior a chance de explosão durante a incursão."
+    },
+    {
+        question: "24. Na fase final de avaliação técnica, o chefe de equipe deve ponderar informações e ideias. Qual é o papel moral recomendado pela doutrina para a atuação do chefe do esquadrão antibombas perante seus auxiliares nesse momento?",
+        options: [
+            "O chefe é o dono da verdade, por sua vasta experiência e maior patente.",
+            "O chefe deve calar os parceiros para não se distrair.",
+            "O chefe deve discutir a melhor abordagem e SEMPRE OUVIR a sua equipe, pois o parceiro pode ter uma solução mais segura.",
+            "O chefe não atua, apenas manda o parceiro novato desarmar."
+        ],
+        answer: 2,
+        explanation: " O texto dita: 'O chefe não deve ser o dono da verdade... O chefe deve OUVIR SEMPRE SUA EQUIPE'."
+    },
+    {
+        question: "25. A classificação (categorização) do incidente é feita para adotar a postura tática de reação. O que caracteriza a 'Categoria A' de ocorrência?",
+        options: [
+            "É um pacote esquecido numa praça isolada.",
+            "Ameaça indireta à vida e direta ao patrimônio, quando a área já está vazia.",
+            "Nenhum perigo iminente. Sugere uso de contracarga (Categoria C).",
+            "Ameaça imediata/direta à vida: se o artefato explodir, irá ferir ou matar alguém. As operações começam sem demora para afastar o refém ou a bomba."
+        ],
+        answer: 3,
+        explanation: " Categoria A é quando há Ameaça imediata (direta) à vida. A ação não perde tempo com entrevistas, tentando afastar a vida em perigo ou agir no artefato transformando-o em Cat. B ou C."
+    },
+    {
+        question: "26. Ao intervir em uma ocorrência categorizada como 'Categoria B' (patrimônio em risco, local já evacuado sem risco de vida imediato), caso o técnico utilize uma técnica ATIVA (como um disruptor ou cordel de afastamento), qual é a recomendação de tempo de segurança caso ele precise voltar ao alvo?",
+        options: [
+            "Não precisa esperar, o alvo já está morto.",
+            "Aguardar o 'tempo de molho' de 20 minutos antes de se aproximar novamente do suposto artefato explosivo.",
+            "Esperar apenas a nuvem de fumaça abaixar.",
+            "Isolar o local por 48 horas inteiras e só voltar no dia seguinte."
+        ],
+        answer: 1,
+        explanation: " Na Categoria B, 'Quando for usada uma técnica ativa, deve-se esperar o 'tempo de molho' de 20 minutos antes de se aproximar novamente'."
+    },
+    {
+        question: "27. Já em relação ao Tópico 10 (Perícia de Pós-Explosão), a complexidade exige uma equipe multidisciplinar. Qual é a responsabilidade do 'Grupo de Busca de Vestígios' em oposição ao 'Grupo de Busca do Epicentro'?",
+        options: [
+            "O Grupo de Vestígios mede a cratera, e o do Epicentro fica fora anotando o tempo.",
+            "O Grupo de Vestígios determina e vistoria o perímetro externo em direção ao interno (marcando o que acha no caminho), enquanto o do Epicentro atua isolado no centro medindo e esquadrinhando a cratera.",
+            "O Grupo de Vestígios desenha o croqui e fotografa, o do Epicentro dá entrevistas à TV.",
+            "Nenhuma. Não há divisão de funções na equipe de perícia de bombas."
+        ],
+        answer: 1,
+        explanation: " O Grupo de busca de vestígios determina o perímetro externo, e vistoria do externo para o interno marcando as evidências. O Grupo do epicentro situa a cratera, mede largura/formato e coleta a amostra química e o ângulo de destruição na área imediata da explosão."
+    },
+    {
+        question: "28. Qual a fórmula/regra geral recomendada pela doutrina de Criminalística para o estabelecimento da marcação física do PERÍMETRO EXTERNO numa cena de crime pós-explosão?",
+        options: [
+            "É traçado exatamente a 200 metros do prédio atingido.",
+            "É a distância do Epicentro até o fragmento mais distante encontrado.",
+            "É calculado em um ponto 50% maior que a distância entre o local da explosão e o vestígio mais distante achado no levantamento preliminar.",
+            "Sempre usar todo o quarteirão envolvido no perímetro civil."
+        ],
+        answer: 2,
+        explanation: " A marcação se faz adicionando 50% à medida: 'O perímetro externo geralmente é marcado em um ponto 50% maior que a distância entre o local da explosão da bomba e a maior distância onde foi encontrado um vestígio'."
+    },
+    {
+        question: "29. Dentre os padrões de busca utilizados na varredura minuciosa dos escombros pós-explosão, existe um conhecido por dividir fisicamente o local utilizando cordas ou barbantes para identificar quadrados (espaços) nomeados com números e letras. Como se chama esse padrão?",
+        options: [
+            "Padrão em Espiral.",
+            "Padrão em Rede.",
+            "Padrão em Fileiras (Linhas).",
+            "Padrão Zigue-Zague."
+        ],
+        answer: 1,
+        explanation: " 'Rede - o local é dividido e marcado com fitas, cordas ou barbantes, identificando-se cada espaço com letras, números ou ambos, os quais são vistoriados individualmente'."
+    },
+    {
+        question: "30. O 'Padrão em Fileiras' ou linhas é apontado como extremamente eficiente para buscas exaustivas em grandes áreas abertas com contingente reduzido de pessoal. Como funciona a regra de comunicação fundamental nesse método ao achar uma evidência?",
+        options: [
+            "O membro do grupo pisca a lanterna em silêncio e todos guardam a peça no bolso.",
+            "O componente pega a peça, leva ao líder no final e depois a fileira avança.",
+            "Ao encontrar um vestígio, o membro grita 'PARE!', marcando e informando sobre a evidência, todos cessam o avanço até o registro, e só então a linha continua junta novamente.",
+            "A linha nunca para, joga-se uma bandeira no objeto correndo sem parar."
+        ],
+        answer: 2,
+        explanation: " No Padrão Fileiras: 'Ao encontrar um vestígio gritam: - PARE! Observam e tentam identificar a evidência, passando a informação ao resto do grupo, marcando o local... e a fileira continua vistoriando'."
+    }
+];
+
+const quizContainer = document.getElementById('quiz-container');
+
+quizData.forEach((q, index) => {
+    const questionDiv = document.createElement('div');
+    questionDiv.className = 'question-card';
+
+    let optionsHtml = '';
+    q.options.forEach((opt, i) => {
+        optionsHtml += `<li><label><input type="radio" name="q${index}" value="${i}"> ${opt}</label></li>`;
+    });
+
+    questionDiv.innerHTML = `
+        <div class="question-text">${q.question}</div>
+        <ul class="options">${optionsHtml}</ul>
+        <button onclick="checkAnswer(${index}, this)">Responder</button>
+        <div class="feedback" id="feedback-${index}"></div>
+    `;
+    quizContainer.appendChild(questionDiv);
+});
+
+function checkAnswer(index, btn) {
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    const feedbackDiv = document.getElementById(`feedback-${index}`);
+
+    if (!selected) {
+        alert('Por favor, selecione uma opção antes de confirmar sua resposta.');
+        return;
+    }
+
+    const answerObj = quizData[index];
+    const isCorrect = parseInt(selected.value) === answerObj.answer;
+
+    feedbackDiv.style.display = 'block';
+    if (isCorrect) {
+        feedbackDiv.className = 'feedback correct';
+        feedbackDiv.innerHTML = `<strong>✔️ Exato!</strong><div class="explanation"><em>Justificativa:</em> ${answerObj.explanation}</div>`;
+    } else {
+        feedbackDiv.className = 'feedback incorrect';
+        feedbackDiv.innerHTML = `<strong>❌ Errado. A alternativa certa é a ${answerObj.answer + 1}: "${answerObj.options[answerObj.answer]}"</strong><div class="explanation"><em>Justificativa:</em> ${answerObj.explanation}</div>`;
+    }
+    
+    // Desativando os inputs da questão
+    const allInputs = document.querySelectorAll(`input[name="q${index}"]`);
+    allInputs.forEach(input => input.disabled = true);
+    
+    // Mudando o botão
+    btn.disabled = true;
+    btn.textContent = 'Respondido';
+}
+</script>
+
+</body>
+</html>
+```

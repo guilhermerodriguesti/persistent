@@ -1,0 +1,714 @@
+Aqui estão as **40 novas questões inéditas**, formuladas de maneira estritamente **literal** (baseadas nos exatos termos e parágrafos da sua apostila), aprofundando-se ainda mais em rodapés, tabelas, artigos de lei e definições exatas do documento.
+
+Abaixo está o código HTML completo e corrigido, mantendo o padrão de **letras grandes** e correção automática. Salve como um arquivo `.html` (por exemplo, `simulado_forense_parte6.html`) e abra-o em seu navegador.
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulado Literal: Informática Forense (40 Questões)</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f4f8;
+            color: #1a202c;
+            /* Letras grandes conforme solicitado */
+            font-size: 24px; 
+            line-height: 1.6;
+            margin: 0;
+            padding: 30px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 38px;
+            color: #2b6cb0;
+            margin-bottom: 40px;
+        }
+        .question-container {
+            background-color: #ffffff;
+            border: 2px solid #cbd5e0;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 25px;
+            color: #2d3748;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin-bottom: 18px;
+            display: flex;
+            align-items: baseline;
+            background-color: #f7fafc;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            transition: background-color 0.2s;
+        }
+        .options li:hover {
+            background-color: #edf2f7;
+        }
+        input[type="radio"] {
+            transform: scale(1.8);
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        label {
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn-responder {
+            background-color: #4299e1;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            padding: 15px 35px;
+            font-size: 24px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+        }
+        .btn-responder:hover {
+            background-color: #3182ce;
+        }
+        .feedback {
+            display: none;
+            margin-top: 25px;
+            padding: 25px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        .correct {
+            background-color: #c6f6d5;
+            color: #22543d;
+            border: 2px solid #9ae6b4;
+        }
+        .incorrect {
+            background-color: #fed7d7;
+            color: #742a2a;
+            border: 2px solid #feb2b2;
+        }
+        .explanation {
+            margin-top: 15px;
+            font-weight: normal;
+            font-size: 22px;
+            color: #2d3748;
+        }
+
+        /* ==================== TABLET RESPONSIVE (768px - 1024px) ==================== */
+        @media (max-width: 1024px) {
+            body {
+                font-size: 20px;
+                padding: 20px;
+            }
+            h1 {
+                font-size: 30px;
+                margin-bottom: 30px;
+            }
+            .question-container {
+                padding: 25px;
+                margin-bottom: 30px;
+            }
+            .question-text {
+                font-size: 20px;
+                margin-bottom: 15px;
+            }
+            .options li {
+                margin-bottom: 12px;
+                padding: 10px;
+            }
+            input[type="radio"] {
+                transform: scale(1.5);
+                margin-right: 12px;
+            }
+            .btn-responder {
+                font-size: 20px;
+                padding: 12px 25px;
+            }
+            .feedback {
+                font-size: 18px;
+                padding: 15px;
+            }
+            .explanation {
+                font-size: 18px;
+            }
+        }
+
+        /* ==================== MOBILE (< 768px) ==================== */
+        @media (max-width: 767px) {
+            body {
+                font-size: 18px;
+                padding: 15px;
+            }
+            h1 {
+                font-size: 26px;
+                margin-bottom: 25px;
+            }
+            .question-container {
+                padding: 20px;
+                margin-bottom: 25px;
+                border-radius: 8px;
+            }
+            .question-text {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+            .options li {
+                margin-bottom: 10px;
+                padding: 10px;
+            }
+            input[type="radio"] {
+                transform: scale(1.4);
+                margin-right: 10px;
+            }
+            .btn-responder {
+                font-size: 18px;
+                padding: 12px 20px;
+                width: 100%;
+            }
+            .feedback {
+                font-size: 16px;
+                padding: 12px;
+            }
+            .explanation {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Simulado de Revisão Literal (40 Inéditas)</h1>
+    <div id="quiz-container"></div>
+
+    <script>
+        const questoes = [
+            {
+                q: "1. Segundo a apostila, qual é o principal diferencial dos equipamentos e aplicativos forenses especializados em relação às ferramentas comuns de informática?",
+                opcoes: [
+                    "A capacidade de formatar discos automaticamente em frações de segundo.",
+                    "A capacidade de analisar dados que não estejam diretamente acessíveis, além de preservar ao máximo a integridade do material original.",
+                    "A possibilidade de quebrar senhas AES e BitLocker nativamente.",
+                    "O uso exclusivo via supercomputadores conectados à rede P2P."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila afirma literalmente: 'Estes possuem como grande diferencial a capacidade de analisar dados que não estejam diretamente acessíveis, além de preservar ao máximo a integridade do material original'."
+            },
+            {
+                q: "2. De acordo com a tabela de capacidades usuais fornecida no texto base, qual é a capacidade usual atribuída a um BD (Blu-ray Disc)?",
+                opcoes: [
+                    "4,7GB ou 8,5GB.",
+                    "650MB ou 700MB.",
+                    "25GB ou 50GB.",
+                    "120GB a 8TB."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A Tabela 2 define literalmente: CD (650MB ou 700MB), DVD (4,7GB ou 8,5GB) e BD (Blu-ray Disc) (25GB ou 50GB)."
+            },
+            {
+                q: "3. A memória RAM, também chamada de memória principal, é classificada de forma explícita na apostila como uma memória:",
+                opcoes: [
+                    "Permanente e não-volátil.",
+                    "Rápida e que armazena dados somente enquanto o computador está ligado (volátil).",
+                    "Secundária e de leitura exclusivamente magnética.",
+                    "Integrada, mantendo dados estáticos mesmo sem energia."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila define: 'A memória principal, também chamada de memória volátil ou RAM... É uma memória rápida e armazena dados somente enquanto o computador está ligado'."
+            },
+            {
+                q: "4. Qual a função exata de um arquivo com extensão NSF, conforme exemplificado na seção de arquivos-contêiner do material didático?",
+                opcoes: [
+                    "Armazenar cópias do registro (registry) do Windows.",
+                    "Servir como repositório de mensagens de e-mail, juntamente com o formato PST.",
+                    "Compactar grandes volumes de arquivos de imagem.",
+                    "Guardar chaves de criptografia vinculadas ao módulo TPM."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O texto aponta: 'Como exemplo, podem ser citados: arquivos compactados (ZIP, RAR) e arquivos que armazenam mensagens de e-mail (PST, NSF)'."
+            },
+            {
+                q: "5. Ao descrever a etapa de 'Redução' de vestígios digitais, a apostila afirma que o processo baseia-se fortemente na utilização de:",
+                opcoes: [
+                    "Técnicas de Inteligência Artificial para varredura de OCR.",
+                    "Valores de hash calculados na etapa anterior comparados com uma base de dados de arquivos conhecidos.",
+                    "Pesquisas por palavras-chave utilizando caracteres curingas.",
+                    "Filtros temporais baseados na data de fabricação do hardware."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O documento cita que 'A base do processo de redução utiliza os valores de hash calculados na etapa anterior... Utilizando uma base de dados de arquivos conhecidos'."
+            },
+            {
+                q: "6. Como a apostila orienta, de forma LITERAL, o acondicionamento de discos rígidos removidos de um mesmo gabinete computacional apreendido?",
+                opcoes: [
+                    "Devem ser embalados e lacrados separadamente para evitar magnetismo cruzado.",
+                    "Devem ser embalados e lacrados em um único volume.",
+                    "Devem ser inseridos na mesma bolsa de Faraday junto com dispositivos Bluetooth.",
+                    "Devem permanecer no gabinete, sendo vedada a remoção mesmo no laboratório."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. O texto é direto na seção 3.4 Arrecadação: 'Os discos rígidos removidos de um mesmo gabinete devem ser embalados e lacrados em um único volume'."
+            },
+            {
+                q: "7. Na seção 'Busca e Apreensão', a apostila dita que o Perito não deve operar o computador no local, exceto em três casos específicos. Qual das alternativas abaixo NÃO é uma dessas três exceções textuais?",
+                opcoes: [
+                    "Em observância a determinações expressas contidas em mandado judicial.",
+                    "Para preservar evidências voláteis ou cujo acesso posterior seja inviável.",
+                    "Para racionalizar a seleção do material a ser apreendido, caso seja possível avaliar a relevância.",
+                    "Para instalar software de varredura ativa que bloqueie conexões de rede P2P antes do transporte."
+                ],
+                correta: 3,
+                explicacao: "Gabarito: D. A instalação de software para bloquear rede não é uma exceção descrita no texto. As outras três opções são reproduções literais da seção 3.2 Execução da Busca."
+            },
+            {
+                q: "8. Segundo a Tabela 1 de mapeamento de sistemas numéricos, o número decimal '14' corresponde a qual representação binária e hexadecimal, respectivamente?",
+                opcoes: [
+                    "Binário 1111 / Hexadecimal F.",
+                    "Binário 1110 / Hexadecimal E.",
+                    "Binário 1101 / Hexadecimal D.",
+                    "Binário 1010 / Hexadecimal A."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Tabela 1: Decimal 14 -> Binário 1110 -> Hexadecimal E."
+            },
+            {
+                q: "9. Sobre a 'Extração de Dados', o material assevera que esse tipo de exame é muito comum em operações policiais que envolvam qual classificação criminal?",
+                opcoes: [
+                    "Crimes Puros exclusivamente.",
+                    "Crimes Indiretos e que acabam apreendendo inúmeras mídias de armazenamento computacional.",
+                    "Crimes Impuros restritos à invasão de redes P2P.",
+                    "Apenas crimes cibernéticos de competência da Convenção de Budapeste."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Na seção 1.2.3 o texto diz: 'Esse exame é muito comum em operações que envolvam crimes indiretos e que acabam apreendendo inúmeras mídias de armazenamento computacional'."
+            },
+            {
+                q: "10. Diante de um telefone celular na situação 'ligado sem bloqueio aparente' durante o cumprimento de busca, qual deve ser a providência do perito, segundo o manual?",
+                opcoes: [
+                    "Ativar o modo avião, verificar se há senha configurada nas definições e, caso não exista bloqueio, desligar o aparelho.",
+                    "Extrair todos os arquivos imediatamente via Bluetooth.",
+                    "Retirar a bateria de imediato e empacotar em saco antiestático.",
+                    "Acionar a opção de reset de fábrica para evitar que a operadora rastreie o GPS."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. Texto literal do item 7.4.1.5: 'Nesse cenário, deve-se ativar o modo avião e verificar se há senha configurada nas definições... Caso não exista bloqueio, desligar o aparelho'."
+            },
+            {
+                q: "11. Ao citar os artefatos encontrados num celular, a categoria 'Locais do dispositivo' consolida dados de localização a partir de quais três fontes primárias físicas do aparelho?",
+                opcoes: [
+                    "Torres de celular (ERBs), Redes WiFi e GPS do próprio aparelho.",
+                    "Endereços IP estáticos, VPNs e Bluetooth veicular.",
+                    "Histórico da Web, Cookies e Dados SIM.",
+                    "Senhas, Autopreenchimento e MSISDN."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. A seção 7.2.2 informa que Locais do dispositivo compreende: 'dados de localização do telefone celular originários de torres de celular, redes WiFi e GPS do próprio aparelho'."
+            },
+            {
+                q: "12. Explicando a ineficiência do ataque de Força Bruta para senhas longas, a apostila demonstra um teste com 5 letras minúsculas. Qual a ordem literal exibida de tentativas do software?",
+                opcoes: [
+                    "aaaaa, aaaab até finalizar em zzzzz.",
+                    "aaaaa, bbbbb até finalizar em zzzzz.",
+                    "00000, 00001 até finalizar em 99999.",
+                    "abcde, fghij até finalizar em vwxyz."
+                ],
+                correta: 0,
+                explicacao: "Gabarito: A. Literalidade da página 46: 'se o universo de caracteres escolhido for de apenas letras minúsculas, por exemplo, e uma senha de 5 caracteres for explorada, a primeira tentativa desse método será aaaaa, seguida por aaaab até finalizar em zzzzz'."
+            },
+            {
+                q: "13. O procedimento rigoroso para a 'verificação' do anexo digital de um laudo (para confirmar sua integridade após entregue) exige dois cálculos matemáticos em qual ordem e sobre quais elementos?",
+                opcoes: [
+                    "1) Calcular o hash da RAM; 2) Comparar com a BIOS.",
+                    "1) Calcular o hash do arquivo hashes.txt e comparar com o corpo do Laudo; 2) Calcular o hash de todos os arquivos da mídia e comparar com a listagem hashes.txt.",
+                    "1) Descriptografar o E01; 2) Re-inserir o chip SIM no aparelho de leitura forense.",
+                    "1) Obter o log de inicialização; 2) Executar o MD5Summer sobre as senhas descriptografadas."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Descrito passo a passo no item 8.3: a) cálculo da integridade da lista de hashes (compara hashes.txt com o laudo); b) cálculo da integridade dos arquivos (compara os arquivos com a lista)."
+            },
+            {
+                q: "14. A Portaria 1710/2026 preceitua que no agendamento e identificação do material de Abuso Sexual (MASI), se os arquivos pertinentes já estiverem APAGADOS e a perícia os recuperar, qual o procedimento no IPED?",
+                opcoes: [
+                    "Descartar tais arquivos para priorizar o bem-estar psicológico da equipe.",
+                    "Encaminhá-los unicamente ao banco de 'Produção'.",
+                    "Incluí-los em um marcador próprio e específico (ex.: 'ASI – Posse (arquivos apagados)').",
+                    "Anotar que há fraude pericial e invalidar os clusters afetados."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Texto da Portaria (página 51): 'ASI – Posse: os arquivos desse grupo que estavam apagados e foram recuperados devem ser incluídos em marcador próprio (ex.: ASI – Posse (arquivos apagados))'."
+            },
+            {
+                q: "15. Na comunicação celular moderna (GSM), o identificador internacional único atrelado EXCLUSIVAMENTE ao assinante/usuário, guardado no cartão SIM e utilizado pelas operadoras, atende pela sigla:",
+                opcoes: [
+                    "IMEI.",
+                    "IMSI.",
+                    "ESN.",
+                    "ICCID."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A apostila (pág 56) frisa que o IMEI identifica o aparelho, o ICCID é o serial físico do cartão, e o IMSI (International Mobile Subscriber Identity) é o código usado para identificar um assinante do serviço."
+            },
+            {
+                q: "16. A apostila informa que a antiga tecnologia celular CDMA (hoje praticamente ausente no Brasil) não usava cartões SIM como o padrão GSM, mas sim um identificador único de hardware denominado:",
+                opcoes: [
+                    "MAC Address ou BSSID.",
+                    "ESN ou MEID.",
+                    "PUK 1 ou PUK 2.",
+                    "MSISDN ou PIN."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. 'CDMA: utiliza um número de identificação global único para cada dispositivo móvel chamado de ESN... ou MEID' (página 56)."
+            },
+            {
+                q: "17. A 'Esteganografia' é uma técnica forense e cibernética. O que o material conceitua, na nota de rodapé 4, de forma exata sobre essa terminologia?",
+                opcoes: [
+                    "Uso de IA para decodificar textos no interior de fotos (OCR).",
+                    "Técnica de ocultar uma mensagem ou arquivo dentro de outro, aparentemente inofensivo (imagem, áudio, vídeo), tornando invisível a própria existência da informação secreta.",
+                    "Conversão de arquivos suspeitos para arquivos-contêiner NSF e PST.",
+                    "Quebra de senhas complexas mediante o cruzamento gramatical condicional probabilístico."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Nota de rodapé 4 da página 44 é explícita ao definir a Esteganografia exatamente com esse texto."
+            },
+            {
+                q: "18. Como a Portaria 1710/2026 conceitua oficialmente o termo 'Puberal' nos exames visuais periciais de crianças e adolescentes?",
+                opcoes: [
+                    "Toda vítima estritamente abaixo da idade penal legalmente definida de 18 anos.",
+                    "Fase de transição entre a infância e a idade adulta.",
+                    "Estado biológico de ossificação facial comprovado mediante laudo de odontologia legal.",
+                    "Fase na qual os pêlos pubianos tornam-se completamente pigmentados e abundantes."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Terminologia (item VII da página 50): 'puberal: fase de transição entre a infância e a idade adulta'."
+            },
+            {
+                q: "19. A extração de maior nível que o Perito pode realizar num smartphone requer o acesso direto à memória Flash contornando a segurança do fabricante. O processo de 'Extração Física' é dividido textualmente em quais duas fases?",
+                opcoes: [
+                    "Decodificação de senhas AFU e Extração Lógica.",
+                    "Dumping da memória e decodificação.",
+                    "Jailbreak do chip SIM e Rooting da placa-mãe.",
+                    "Data Carving Cego e Redução Hash por BFAC."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. 'A extração física é geralmente dividida em duas fases: dumping da memória e decodificação' (página 62)."
+            },
+            {
+                q: "20. No campo da Informática Forense, a apostila traça um paralelo com um Iceberg, onde o usuário comum enxerga uma proporção diferente do Perito. Qual a porcentagem exata citada na nota de rodapé indicando o volume 'visível' tipicamente sobre a água?",
+                opcoes: [
+                    "Apenas 5%.",
+                    "Apenas 10%.",
+                    "Apenas 20%.",
+                    "Cerca de 30%."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Nota de rodapé 3, pág. 11: 'Tipicamente, apenas 10% de um iceberg está visível sobre a água'."
+            },
+            {
+                q: "21. Quando a remoção da tampa traseira colada de um celular moderno representa risco e a bateria precisa ser mantida energizada, o que a apostila sugere realizar ao invés da arriscada e complexa substituição da bateria?",
+                opcoes: [
+                    "Desligar imediatamente para conservar a tensão mínima residual (estado BFU).",
+                    "Utilizar uma fonte de alimentação externa para manter o aparelho energizado de forma estável durante o exame.",
+                    "Colocar o aparelho em um ambiente resfriado para travar os átomos da RAM.",
+                    "Quebrar a tela frontal para acessar o conector MBR da placa."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Consta nos desafios (pág 63): 'Como alternativa à substituição da bateria, pode-se utilizar uma fonte de alimentação externa para manter o aparelho energizado de forma estável durante o exame'."
+            },
+            {
+                q: "22. Qual é a correta correspondência do símbolo hexadecimal 'A' na tabela de mapeamento binário fornecida pela apostila (Tabela 1)?",
+                opcoes: [
+                    "1100.",
+                    "1011.",
+                    "1010.",
+                    "1111."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Tabela 1: Hexadecimal A = Binário 1010 (Decimal 10)."
+            },
+            {
+                q: "23. O texto elenca as principais modalidades de segurança e bloqueio de tela nos smartphones atuais. Quais são as nomenclaturas exatas citadas no item 7.3.1?",
+                opcoes: [
+                    "PIN de Cartão, Bloqueio Óptico, TPM Virtual e Root.",
+                    "Numérica (ou PIN), Padrão geométrico, Alfanumérica e Biométrica.",
+                    "FDE, FBE, AFU e BFU.",
+                    "Jailbreak, Wipe Lock, Faraday e Bootloader."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Seção 7.3.1 enumera exatamente: Numérica (ou PIN); Padrão geométrico; Alfanumérica; e Biométrica."
+            },
+            {
+                q: "24. Segundo as modalidades de extração (seção 7.2.2), qual é a grande limitação prática inerente à 'Extração Lógica' perante ferramentas de ponta?",
+                opcoes: [
+                    "Destrói o hardware do celular durante o processo de extração do núcleo.",
+                    "É o método mais fácil, porém retorna a menor quantidade de dados, pois não consegue recuperar dados apagados ou acessar a área protegida da memória.",
+                    "Bloqueia automaticamente o cartão SIM com a senha PUK.",
+                    "Exige necessariamente a quebra por ataque dicionário probabilístico."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. 'Extração Lógica: [...] porém retorna a menor quantidade de dados, pois não consegue recuperar dados apagados ou acessar a área protegida da memória do aparelho'."
+            },
+            {
+                q: "25. A etapa final do processamento na ferramenta policial IPED gera um produto de grande conveniência visual, destinado a integrar o Laudo pericial e facilitar a leitura pelos magistrados e advogados. Que produto é esse?",
+                opcoes: [
+                    "Um arquivo compacto E01 autocontido.",
+                    "Uma estrutura de diretórios e páginas HTML prontas para serem enviadas anexas ao Laudo.",
+                    "Um script em Bash que instala o arquivo 'hashes.txt' no sistema do tribunal.",
+                    "Uma varredura OCR remetida diretamente para os servidores da nuvem do MJSP."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Página 48 informa que 'outra facilidade disponível no IPED é a geração de relatórios em HTML... o IPED gera uma estrutura de diretórios e páginas HTML prontas para serem enviadas anexas ao Laudo'."
+            },
+            {
+                q: "26. Ao lidar com mídias em formatos exóticos ou disfarçados (canivetes, chaveiros, cartões peculiares) durante a Busca e Apreensão, a doutrina assevera que:",
+                opcoes: [
+                    "Devem ser sumariamente ignoradas caso não sejam HDs padrão.",
+                    "Quando uma mídia pouco usual for apreendida, deve ser arrecadado também o dispositivo de leitura correspondente, sempre que possível.",
+                    "O Perito deve desmontar as capas plásticas imediatamente no local.",
+                    "Deve-se extrair apenas o número do ICCID, descartando o invólucro do dispositivo."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Item 3.3.2 'Mídias Avulsas': 'Quando uma mídia pouco usual for apreendida, deve ser arrecadado também o dispositivo de leitura correspondente, sempre que possível'."
+            },
+            {
+                q: "27. O ataque computacional destinado à decifragem de arquivos conhecido como método de Dicionário tem como diferencial em sua lógica:",
+                opcoes: [
+                    "Basear-se apenas nas combinações do dicionário Aurélio do respectivo idioma do sistema Windows.",
+                    "Gerar todas as combinações exaustivas entre 'aaaaa' e 'zzzzz' consecutivamente, sem testar o significado lógico.",
+                    "Testar ocorrências de conjuntos de palavras que incluem informações pessoais (parentes, telefones), permitindo alterar cada entrada com regras pré-definidas (como trocar 'a' por '@').",
+                    "Substituir o firmware do telefone pelo bootloader próprio do Cellebrite."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A explicação do método de Dicionário (pág 47) menciona exatamente isso: palavras comuns, lugares famosos, telefones e nomes pessoais, modificados por regras estáticas."
+            },
+            {
+                q: "28. Os arquivos que compõem o anexo digital ao final do Laudo devem ter sua integridade aferida individualmente. Para isso, o que o Perito faz fisicamente dentro da mídia USB entregue à Justiça, conforme os passos descritos no capítulo 8?",
+                opcoes: [
+                    "Gera um arquivo BitLocker bloqueando os setores avulsos.",
+                    "Aplica uma macro em Excel com bloqueio de formatação.",
+                    "Usa um software para gerar uma lista com os hashes de todos os arquivos e armazena essa lista em um arquivo de texto, como 'hashes.txt'.",
+                    "Aplica engenharia reversa no cabeçalho dos arquivos de vídeo .MP4."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Procedimentos para geração do anexo (8.2): 'a) criação da lista de hashes... armazenando essa lista em um arquivo de nome hashes.txt'."
+            },
+            {
+                q: "29. O texto estabelece explicitamente a definição arquitetônica da 'CPU'. Segundo a apostila, de que é composta fisicamente a CPU na Informática Forense?",
+                opcoes: [
+                    "Da união física do disco magnético com os cabos IDE/SATA.",
+                    "De um módulo integrado on-board que gerencia o sistema operacional Android.",
+                    "De um pequeno chip de silício que fica encaixado na placa-mãe, localizada no interior do gabinete, responsável por cálculos e processamento.",
+                    "De toda a carcaça/gabinete que acompanha o monitor."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. 'O termo CPU não deve ser confundido com o gabinete... Fisicamente, o processador (ou CPU) é um pequeno chip de silício que fica encaixado na placa-mãe'."
+            },
+            {
+                q: "30. Na cena do crime, um dos temores da equipe técnica diz respeito às conexões 'vivas' de rede encontradas operantes. A apostila justifica o desligamento imediato das redes do local de busca afirmando que:",
+                opcoes: [
+                    "É necessário desviar o tráfego da rede para a Polícia Federal.",
+                    "O roteador pode queimar o duplicador forense devido à instabilidade do protocolo HTTPS.",
+                    "Vestígios podem ser apagados remotamente por acesso externo à rede de dados do local da busca.",
+                    "Vírus esteganográficos transmitem relatórios de hashes via FTP corrompendo a área livre do disco."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Literal no item 3.2: 'tomará outras providências cabíveis para a preservação dos dados, como interromper conexões de rede... (vestígios podem ser apagados remotamente por acesso externo)'."
+            },
+            {
+                q: "31. Considerando o vasto uso das Bolsas de Faraday e do 'Modo Avião', a apostila alerta explicitamente para os tipos de sinais (redes sem fio) dos quais o telefone deve ser isolado. São eles:",
+                opcoes: [
+                    "Apenas rede 4G e 5G.",
+                    "Rede de rádio militar e sinais infravermelhos.",
+                    "Rede celular, Wi-Fi e Bluetooth.",
+                    "Antenas de TV, modems analógicos e chips eMMC."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. 'Para manter o aparelho isolado de redes sem fio (celular, Wi-Fi ou Bluetooth)...'."
+            },
+            {
+                q: "32. No histórico da evolução dos celulares, o ESN e o MEID eram códigos utilizados por um padrão obsoleto (em extinção no Brasil), que NÃO utilizava os atuais cartões SIM. Qual a sigla dessa tecnologia?",
+                opcoes: [
+                    "GSM.",
+                    "CDMA.",
+                    "LTE.",
+                    "iDEN."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. A tecnologia descrita explicitamente é a 'CDMA (Code Division Multiple Access): utiliza um número de identificação global único... chamado de ESN... ou MEID'."
+            },
+            {
+                q: "33. Na citação sobre Sistemas Operacionais, a apostila elenca os mais famosos para o público e as divisões clássicas em dispositivos. Segundo a apostila, qual é o nome do Sistema Operacional utilizado no iPad e iPhone?",
+                opcoes: [
+                    "Mac OS X.",
+                    "Android.",
+                    "Linux.",
+                    "iOS."
+                ],
+                correta: 3,
+                explicacao: "Gabarito: C. Item 2.3: 'sendo os mais comuns o Android e o iOS (utilizado pelo iPad e iPhone)'."
+            },
+            {
+                q: "34. Ao analisar o critério físico/biológico para exames de Abuso Sexual (MASI), os 'traços faciais infantis' são listados de forma descritiva pela apostila (Portaria 1710/26). Qual alternativa reproduz esses traços literalmente?",
+                opcoes: [
+                    "Mandíbula protuberante, nariz afilado e sobrancelhas finas.",
+                    "Mandíbula retraída, bochechas arredondadas e olhos proporcionalmente maiores.",
+                    "Cabeça proporcional ao ombro e orelhas assimétricas.",
+                    "Sinais precoces de pigmentação nos lábios inferiores."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Critério III, página 52: 'traços faciais infantis, incluindo mandíbula retraída, bochechas arredondadas e olhos proporcionalmente maiores'."
+            },
+            {
+                q: "35. A manutenção do estado AFU (Após o Primeiro Desbloqueio) no momento da apreensão é imperativa nos procedimentos de campo. O que ocorre tecnicamente, na raiz do sistema, caso o aparelho perca a carga ou seja desligado, voltando para BFU?",
+                opcoes: [
+                    "Ele ativa o alarme de segurança e transmite seu último GPS.",
+                    "As chaves de criptografia são removidas da memória volátil (RAM), e os dados permanecem armazenados, porém criptografados e inacessíveis.",
+                    "Ele bloqueia o ICCID do cartão SIM até o perito informar a chave PUK 2.",
+                    "Ele executa o comando Wipe Rooting e zera o File System nativo FAT32."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Pág. 70: 'Caso o dispositivo retorne ao estado BFU... essas chaves são removidas da memória. Como consequência, os dados permanecem armazenados, porém criptografados e inacessíveis'."
+            },
+            {
+                q: "36. O Cellebrite e o GrayKey conseguem extrair diversas subcategorias. A subcategoria denominada 'Notificações' engloba exatamente o quê, segundo as descrições da apostila?",
+                opcoes: [
+                    "Sinais da rede de operadora sobre mudança de torre (handoff).",
+                    "Avisos gerados pelo modo avião quando desativado.",
+                    "Informações sobre notificações enviadas por aplicativos para o dispositivo.",
+                    "Avisos de sistema do módulo TPM sobre varredura não-autorizada."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A lista de extrações traz na letra 't' (pág 61): 'Notificações: informações sobre notificações enviadas por aplicativos para o dispositivo'."
+            },
+            {
+                q: "37. Na classificação dos crimes informáticos, os 'Indiretos' ou 'Incidentais' são caracterizados pelo uso do computador sob qual circunstância principal?",
+                opcoes: [
+                    "Quando o computador é o alvo da destruição digital, a exemplo dos vírus.",
+                    "Quando ocorrem transferências financeiras exclusivas via redes cibernéticas.",
+                    "Quando os computadores não são meio para o crime, mas são como 'testemunhas' que possuem planilhas e documentos relacionados ao crime investigado.",
+                    "Quando a invasão afeta infraestruturas de telecomunicação transnacionais."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. A definição de Indireto/Incidental (pág 10) afirma que os computadores são 'testemunhas' silentes que apenas carregam planilhas, fotos, recibos atrelados ao crime do mundo real (como tráfico)."
+            },
+            {
+                q: "38. Com o avanço das leis, a invasão de dispositivo (Art. 154-A) obteve uma pena mais gravosa. Se da invasão resultar na obtenção de conteúdo de 'comunicações eletrônicas privadas, segredos comerciais ou controle remoto', qual é a pena de reclusão disposta expressamente no § 3º?",
+                opcoes: [
+                    "Detenção, de seis meses a dois anos.",
+                    "Reclusão, de 1 (um) a 4 (quatro) anos.",
+                    "Reclusão, de 2 (dois) a 5 (cinco) anos.",
+                    "Reclusão, de 4 (quatro) a 8 (oito) anos."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. O texto da lei § 3º no Art 154-A diz: 'Pena – reclusão, de 2 (dois) a 5 (cinco) anos, e multa'."
+            },
+            {
+                q: "39. O Laudo de Celulares deve apresentar as informações de identificação dos Cartões SIM encontrados. A apostila estipula obrigatoriamente a descrição de quais quatro elementos contidos no chip?",
+                opcoes: [
+                    "Voltagem do chip, o Código PUK, o IMEI e o modelo da bateria.",
+                    "A operadora de telefonia do cartão, seu código de identificação (ICCID), o identificador do assinante (IMSI) e o MSISDN.",
+                    "As conexões IP, senhas do Wi-Fi, o endereço físico MAC e o PIN.",
+                    "Marca do celular, a capacidade em MB do chip, o e-mail do dono e as senhas salvas."
+                ],
+                correta: 1,
+                explicacao: "Gabarito: B. Seção 7.2.1: 'devendo ser informado no laudo: a operadora de telefonia do cartão, seu código de identificação (ICCID), o identificador do assinante... (IMSI) e o MSISDN'."
+            },
+            {
+                q: "40. Ao abordar o uso de computadores comuns para o procedimento forense com a utilização de distribuições como CAINE ou Kali, a apostila aponta que o 'grande problema' inerente ao ato de usar computadores que não as ferramentas especializadas (como Tableau) é:",
+                opcoes: [
+                    "A lentidão na cópia de arquivos muito pequenos e segmentados.",
+                    "A incompatibilidade de conexões SATA nativas na placa-mãe.",
+                    "O risco de se alterar acidentalmente os dados da mídia original.",
+                    "O alto custo das licenças de software Open Source associadas."
+                ],
+                correta: 2,
+                explicacao: "Gabarito: C. Pág 38: 'O grande problema de utilizar um computador comum para a duplicação forense é o risco de se alterar acidentalmente os dados da mídia original. Por isso, recomenda-se a utilização de uma distribuição forense...'."
+            }
+        ];
+
+        let htmlQuestions = "";
+        questoes.forEach((qObj, index) => {
+            htmlQuestions += `
+            <div class="question-container" id="q${index}">
+                <div class="question-text">${qObj.q}</div>
+                <ul class="options">
+            `;
+            
+            qObj.opcoes.forEach((opcao, optIndex) => {
+                htmlQuestions += `
+                    <li>
+                        <input type="radio" name="pergunta${index}" id="p${index}o${optIndex}" value="${optIndex}">
+                        <label for="p${index}o${optIndex}">${String.fromCharCode(65 + optIndex)}) ${opcao}</label>
+                    </li>
+                `;
+            });
+
+            htmlQuestions += `
+                </ul>
+                <button class="btn-responder" onclick="verificarResposta(${index}, ${qObj.correta})">Responder</button>
+                <div class="feedback" id="feedback${index}">
+                    <span id="msg${index}"></span>
+                    <div class="explanation" id="exp${index}"></div>
+                </div>
+            </div>
+            `;
+        });
+
+        document.getElementById("quiz-container").innerHTML = htmlQuestions;
+
+        function verificarResposta(questionIndex, correctAnswerIndex) {
+            const options = document.getElementsByName("pergunta" + questionIndex);
+            let selectedValue = -1;
+
+            for (let i = 0; i < options.length; i++) {
+                if (options[i].checked) {
+                    selectedValue = parseInt(options[i].value);
+                    break;
+                }
+            }
+
+            const feedbackDiv = document.getElementById("feedback" + questionIndex);
+            const msgSpan = document.getElementById("msg" + questionIndex);
+            const expDiv = document.getElementById("exp" + questionIndex);
+
+            if (selectedValue === -1) {
+                alert("Por favor, selecione uma opção antes de clicar em Responder!");
+                return;
+            }
+
+            feedbackDiv.style.display = "block";
+            
+            feedbackDiv.classList.remove("correct", "incorrect");
+
+            if (selectedValue === correctAnswerIndex) {
+                feedbackDiv.classList.add("correct");
+                msgSpan.innerHTML = "✅ Resposta Correta! Muito bem.";
+            } else {
+                feedbackDiv.classList.add("incorrect");
+                msgSpan.innerHTML = `❌ Resposta Incorreta. A alternativa certa é a letra ${String.fromCharCode(65 + correctAnswerIndex)}.`;
+            }
+
+            expDiv.innerHTML = questoes[questionIndex].explicacao;
+            
+            // Opcional: Travar as opções
+            for (let i = 0; i < options.length; i++) {
+                options[i].disabled = true;
+            }
+            const btn = document.querySelector(`#q${questionIndex} button`);
+            btn.disabled = true;
+            btn.style.backgroundColor = '#a0aec0';
+            btn.style.cursor = 'not-allowed';
+            btn.innerText = 'Respondido';
+        }
+    </script>
+</body>
+</html>
+```
