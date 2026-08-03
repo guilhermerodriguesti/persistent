@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado do Cap. 3 e 4 - Novas Substâncias e Métodos de Análise</title>
+<style>
+  :root{--cor:#1a3a5c;--cor2:#2e6da4;--cor3:#e8f0f8;--verde:#1e7e34;--vermelho:#c0392b;--laranja:#d35400;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#222;}
+  header{background:var(--cor);color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;}
+  header h1{font-size:1.3rem;font-weight:700;}
+  .subtitle{font-size:.85rem;opacity:.8;}
+  .scorebar{background:var(--cor2);color:#fff;padding:10px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .sc{font-size:.95rem;} .sc span{font-weight:700;}
+  .lbl{opacity:.75;font-size:.85rem;}
+  .btn-reset{background:#fff;color:var(--cor);border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;}
+  .btn-reset:hover{background:#e0e8f0;}
+  .btn-wrong{background:var(--laranja);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;margin-left:auto;}
+  .btn-wrong:hover:not(:disabled){background:#b94600;}
+  .btn-wrong:disabled{opacity:.4;cursor:not-allowed;}
+  main{max-width:860px;margin:28px auto;padding:0 16px 60px;}
+  .chapter{margin-bottom:32px;}
+  .chapter-title{background:var(--cor);color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;font-weight:700;font-size:1rem;}
+  .question{background:#fff;border:1px solid #d0dcea;border-top:none;padding:20px 20px 14px;}
+  .question:last-child{border-radius:0 0 8px 8px;}
+  .question+.question{border-top:1px dashed #c8d8ea;}
+  .q-num{font-size:.78rem;color:#888;margin-bottom:4px;}
+  .q-text{font-size:1rem;font-weight:600;margin-bottom:14px;line-height:1.5;}
+  .opt{display:block;width:100%;background:var(--cor3);border:2px solid transparent;border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;text-align:left;font-size:.93rem;line-height:1.4;transition:.15s;}
+  .opt:hover:not(:disabled){background:#d5e5f8;border-color:var(--cor2);}
+  .opt.correct{background:#d4edda;border-color:var(--verde);color:var(--verde);font-weight:600;}
+  .opt.wrong{background:#fde8e8;border-color:var(--vermelho);color:var(--vermelho);}
+  .opt:disabled{cursor:default;}
+  .feedback{margin-top:8px;font-size:.88rem;padding:8px 12px;border-radius:6px;line-height:1.5;}
+  .feedback.ok{background:#d4edda;color:#155724;}
+  .feedback.err{background:#fde8e8;color:#721c24;}
+  .feedback .loc{margin-top:4px;font-size:.8rem;opacity:.8;}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Simulado do Cap. 3 e 4 - Novas Substâncias e Métodos de Análise</h1>
+    <div class="subtitle">40 Questões Inéditas e Avançadas (Groundadas na Apostila Oficial da Polícia Federal)</div>
+  </div>
+</header>
+<div class="scorebar">
+  <div class="sc">✅ Acertos: <span id="sc-c">0</span></div>
+  <div class="sc">❌ Erros: <span id="sc-w">0</span></div>
+  <div class="sc">📝 Respondidas: <span id="sc-a">0</span> <span class="lbl" id="sc-total"></span></div>
+  <button class="btn-reset" onclick="resetAll()">↺ Reiniciar tudo</button>
+  <button class="btn-wrong" id="btn-wrong" onclick="resetWrong()" disabled>↺ Só os erros</button>
+</div>
+<main id="quiz-container"></main>
+
+<script>
+const CHAPTERS = [
+  {
+    "title": "do Cap. 3 e 4 - Novas Substâncias e Métodos de Análise",
+    "questions": [
+      {
+        "q": "[NSP - Defini\u00e7\u00e3o de Organismos Internacionais] 1. Como as Novas Subst\u00e2ncias Psicoativas (NSPs) s\u00e3o formalmente definidas no cen\u00e1rio internacional de controle de drogas, segundo as Na\u00e7\u00f5es Unidas e a Uni\u00e3o Europeia?",
+        "opts": [
+          "Subst\u00e2ncias sintetizadas exclusivamente nos \u00faltimos 12 meses, destinadas a fins puramente agr\u00edcolas."
+,
+          "Subst\u00e2ncias com potencial de abuso, em forma pura ou de misturas, que n\u00e3o s\u00e3o controladas nos termos das Conven\u00e7\u00f5es de 1961 ou de 1971, mas que podem representar amea\u00e7a \u00e0 sa\u00fade p\u00fablica."
+,
+          "Subst\u00e2ncias proscritas listadas nominalmente nas Conven\u00e7\u00f5es Internacionais de Combate ao Tr\u00e1fico de Viena."
+,
+          "Medicamentos fitoter\u00e1picos de comercializa\u00e7\u00e3o livre que cont\u00eam teores residuais de canabidiol (CBD)."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Cap\u00edtulo 3.1: 'Novas subst\u00e2ncias psicoativas (NSP)... s\u00e3o subst\u00e2ncias com potencial de abuso, seja na forma pura ou em prepara\u00e7\u00f5es (misturas), que n\u00e3o s\u00e3o controladas nos termos da Conven\u00e7\u00e3o \u00danica sobre Entorpecentes de 1961 ou pela Conven\u00e7\u00e3o sobre Subst\u00e2ncias Psicotr\u00f3picas de 1971, mas que podem representar uma amea\u00e7a \u00e0 sa\u00fade p\u00fablica'."
+      }
+,
+      {
+        "q": "[NSP - Significado do Termo 'Novas'] 2. De acordo com a doutrina da apostila, o que qualifica o uso do termo 'novas' no conceito das Novas Subst\u00e2ncias Psicoativas?",
+        "opts": [
+          "O fato de terem sido sintetizadas em laborat\u00f3rio qu\u00edmico pela primeira vez na atual d\u00e9cada."
+,
+          "O termo n\u00e3o se refere necessariamente \u00e0s subst\u00e2ncias criadas ou sintetizadas nos \u00faltimos anos, mas sim \u00e0s subst\u00e2ncias dispon\u00edveis no mercado recentemente."
+,
+          "A exig\u00eancia de que possuam tecnologia hifenada em sua composi\u00e7\u00e3o molecular."
+,
+          "A restri\u00e7\u00e3o de que sejam comercializadas apenas sob a forma de selos de papel\u00e3o prensado."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 3.1: 'O termo \u201cnovas\u201d n\u00e3o se refere necessariamente \u00e0s subst\u00e2ncias criadas ou sintetizadas nos \u00faltimos anos, mas sim \u00e0s subst\u00e2ncias dispon\u00edveis no mercado recentemente'."
+      }
+,
+      {
+        "q": "[NSP - Riscos e Desconhecimento do Usu\u00e1rio] 3. Qual \u00e9 o principal fator apontado pela apostila que torna as NSPs um risco severo para a sa\u00fade p\u00fablica e enganoso para os usu\u00e1rios?",
+        "opts": [
+          "A baixa afinidade de liga\u00e7\u00e3o com os receptores celulares do c\u00e9rebro."
+,
+          "O fato de apresentarem efeitos similares aos de subst\u00e2ncias controladas e serem vendidas como se fossem as drogas tradicionais, gerando desconhecimento do usu\u00e1rio sobre o que est\u00e1 usando."
+,
+          "O odor caracter\u00edstico de enxofre que impede a aproxima\u00e7\u00e3o dos c\u00e3es farejadores."
+,
+          "A impossibilidade f\u00edsica de serem analisadas por cromatografia gasosa."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 3.1: 'muitas NSP apresentam efeitos similares aos efeitos de subst\u00e2ncias controladas internacionalmente, sendo vendidas como tais, levando os usu\u00e1rios ao desconhecimento sobre o que realmente est\u00e3o usando'."
+      }
+,
+      {
+        "q": "[NSP - Tr\u00eas Grupos de Destaque no Brasil] 4. Quais s\u00e3o os tr\u00eas grupos de compostos que mais se destacam no Brasil em virtude do volume e das caracter\u00edsticas das apreens\u00f5es de NSPs pela Pol\u00edcia Federal?",
+        "opts": [
+          "Benzodiazep\u00ednicos, barbit\u00faricos e analg\u00e9sicos opioides."
+,
+          "Canabinoides sint\u00e9ticos, catinonas sint\u00e9ticas e feniletilaminas."
+,
+          "Alcaloides minorit\u00e1rios, precursores da lista D2 e solventes vol\u00e1teis."
+,
+          "Catinonas naturais, canabinoides fitoter\u00e1picos e triptaminas f\u00fangicas."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 3.1: 'Tr\u00eas grupos merecem destaque em virtude do n\u00famero e das caracter\u00edsticas das apreens\u00f5es no Brasil: canabinoides sint\u00e9ticos, catinonas sint\u00e9ticas e feniletilaminas'."
+      }
+,
+      {
+        "q": "[NSP - Canabinoides Sint\u00e9ticos] 5. Quimicamente, como os canabinoides sint\u00e9ticos atuam no organismo do usu\u00e1rio para mimetizar os efeitos da maconha e onde foram inicialmente detectados?",
+        "opts": [
+          "S\u00e3o antagonistas competitivos de canabidiol; detectados inicialmente em sementes de papoula."
+,
+          "S\u00e3o agonistas dos receptores canabinoides, com caracter\u00edsticas estruturais que permitem a liga\u00e7\u00e3o aos receptores conhecidos; detectados inicialmente em materiais vegetais."
+,
+          "S\u00e3o estimulantes que destroem os receptores serotonin\u00e9rgicos; detectados em bebidas energ\u00e9ticas."
+,
+          "Atuam reduzindo a libera\u00e7\u00e3o de dopamina; detectados originalmente em \u00f3leos essenciais de patchouli."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 3.1: 'Os canabinoides sint\u00e9ticos s\u00e3o agonistas dos receptores canabinoides, possuindo caracter\u00edsticas estruturais que permitem que se liguem a receptores canabinoides conhecidos... foram detectados inicialmente em materiais vegetais'."
+      }
+,
+      {
+        "q": "[NSP - Apresenta\u00e7\u00e3o de Canabinoides Sint\u00e9ticos no Brasil] 6. Al\u00e9m de serem encontrados em misturas de ervas (como k2/k9), sob quais outras formas f\u00edsicas os canabinoides sint\u00e9ticos t\u00eam sido detectados em apreens\u00f5es no Brasil?",
+        "opts": [
+          "Exclusivamente sob a forma de xaropes a\u00e7ucarados e aeross\u00f3is hospitalares."
+,
+          "Encontrados em pap\u00e9is ou selos (onde tradicionalmente se espera encontrar LSD), comprimidos (raro) e em p\u00f3."
+,
+          "Em formato de cristais transparentes insol\u00faveis em \u00e1gua de grande porte."
+,
+          "Como bolotas resinosas escuras id\u00eanticas ao haxixe natural."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 3.1: 'No Brasil, al\u00e9m de serem encontrados em misturas de ervas, tamb\u00e9m s\u00e3o encontrados em pap\u00e9is ou selos (nos quais tradicionalmente se espera encontrar a subst\u00e2ncia LSD), comprimidos (raro) e em p\u00f3'."
+      }
+,
+      {
+        "q": "[NSP - Catinonas Sint\u00e9ticas] 7. O que s\u00e3o as catinonas sint\u00e9ticas e qual \u00e9 o seu mecanismo b\u00e1sico de a\u00e7\u00e3o estimulante no sistema nervoso central (SNC)?",
+        "opts": [
+          "Compostos nitrogenados f\u00fangicos; agem inibindo a absor\u00e7\u00e3o de glicose nos neur\u00f4nios motores."
+,
+          "Compostos derivados estruturalmente da subst\u00e2ncia catinona, atuando como estimulantes por mediarem as a\u00e7\u00f5es de dopamina, norepinefrina e/ou serotonina."
+,
+          "Sedativos sint\u00e9ticos derivados do \u00e1cido barbit\u00farico que aumentam as ondas cerebrais lentas."
+,
+          "Dissociativos clorados que mimetizam a a\u00e7\u00e3o analg\u00e9sica t\u00f3pica da coca\u00edna."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 3.1: 'As catinonas sint\u00e9ticas s\u00e3o compostos derivados estruturalmente da subst\u00e2ncia catinona. Agem no sistema nervoso central predominantemente como estimulantes, mediando as a\u00e7\u00f5es de dopamina, norepinefrina e/ou serotonina...'."
+      }
+,
+      {
+        "q": "[NSP - Catinonas Sint\u00e9ticas e Mimetismo] 8. Quais drogas tradicionais as catinonas sint\u00e9ticas mimetizam em termos de efeitos colaterais e sob qual forma f\u00edsica s\u00e3o comumente traficadas no Brasil?",
+        "opts": [
+          "Mimetizam a maconha e o \u00f3pio; traficadas como pedras de crack marrom."
+,
+          "Mimetizam a coca\u00edna, anfetamina, metanfetamina e MDMA; apresentando-se em s\u00f3lidos (cristais/p\u00f3) e comprimidos (tentando se passar por ecstasy)."
+,
+          "Mimetizam o LSD e os barbit\u00faricos; vendidas exclusivamente em ampolas l\u00edquidas."
+,
+          "Mimetizam solventes org\u00e2nicos; comercializadas em frascos pressurizados de metal."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 3.1: '...mimetizando efeitos de drogas tradicionais como coca\u00edna, anfetamina, metanfetamina e MDMA. S\u00e3o encontradas no Brasil na forma de s\u00f3lidos (cristais ou p\u00f3) e comprimidos, em uma tentativa de se passar pela droga conhecida como ecstasy, e, em raros casos, em selos'."
+      }
+,
+      {
+        "q": "[NSP - Feniletilaminas] 9. O que caracteriza a classe de NSPs das feniletilaminas e qual a sua principal forma f\u00edsica de apresenta\u00e7\u00e3o identificada no mercado il\u00edcito nacional?",
+        "opts": [
+          "L\u00edquidos extremamente vol\u00e1teis e inflam\u00e1veis; encontrados em frascos de spray de pl\u00e1stico."
+,
+          "Subst\u00e2ncias com conhecidos efeitos psicoativos alucin\u00f3genos e/ou estimulantes; encontradas no Brasil sob a forma de p\u00f3, comprimidos, solu\u00e7\u00f5es e, principalmente, de selos."
+,
+          "Resinas pastosas extra\u00eddas do cip\u00f3 amaz\u00f4nico; encontradas na forma de ch\u00e1 escuro em garrafas de vidro."
+,
+          "Sais inorg\u00e2nicos de ferro de colora\u00e7\u00e3o avermelhada; encontrados em c\u00e1psulas de gelatina dura."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 3.1: 'As feniletilaminas referem-se a uma classe de subst\u00e2ncias com conhecidos efeitos psicoativos alucin\u00f3genos e/ou estimulantes... No Brasil, s\u00e3o encontradas sob a forma de p\u00f3, comprimidos, solu\u00e7\u00f5es e, principalmente, de selos'."
+      }
+,
+      {
+        "q": "[NSP - Legisla\u00e7\u00e3o e Portaria 344/98] 10. No Brasil, onde est\u00e3o formalmente elencadas as subst\u00e2ncias psicoativas de uso proscrito (proibido) e qual ag\u00eancia do Executivo Federal atualiza periodicamente essas listas?",
+        "opts": [
+          "Na Lista D2 do Minist\u00e9rio da Justi\u00e7a; atualizada pelo Diretor do Instituto Nacional de Criminal\u00edstica."
+,
+          "Nas Listas F do Anexo I da Portaria n\u00ba 344/98-SVS/MS; atualizadas pelas RDCs (Resolu\u00e7\u00f5es da Diretoria Colegiada) da Anvisa."
+,
+          "Nas Portarias de Produtos Controlados do Ex\u00e9rcito Brasileiro; atualizadas pelo Minist\u00e9rio da Defesa."
+,
+          "No Decreto n\u00ba 5.912/2006 do SISNAD; atualizado pela Secretaria Nacional de Pol\u00edticas sobre Drogas."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 3.2: 'No Brasil, as subst\u00e2ncias de uso proscrito s\u00e3o elencadas nas listas F do Anexo I da Portaria n.\u00ba 344/98-SVS/MS... Os anexos da referida portaria s\u00e3o frequentemente atualizados por meio de Resolu\u00e7\u00f5es da Diretoria Colegiada (RDC) da Ag\u00eancia Nacional de Vigil\u00e2ncia Sanit\u00e1ria \u2013 Anvisa'."
+      }
+,
+      {
+        "q": "[NSP - Limita\u00e7\u00e3o do Sistema de Listagem Nominal] 11. Qual a limita\u00e7\u00e3o jur\u00eddica cl\u00e1ssica que motivou a mudan\u00e7a do sistema de controle de drogas no Brasil em 2016, migrando da listagem nominal pura para abordagens gen\u00e9ricas?",
+        "opts": [
+          "O custo tribut\u00e1rio excessivo para importa\u00e7\u00e3o de padr\u00f5es anal\u00edticos de laborat\u00f3rio."
+,
+          "A velocidade do surgimento de novas subst\u00e2ncias com pequenas altera\u00e7\u00f5es estruturais para burlar a lei, superando a capacidade do Estado de inclu\u00ed-las nominalmente a tempo."
+,
+          "A proibi\u00e7\u00e3o do STF de que a Anvisa editasse atos regulat\u00f3rios sobre plantas medicinais."
+,
+          "A falta de reagentes de Marquis e Scott nas unidades descentralizadas da PF."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 3.2: 'At\u00e9 2016, o Brasil adotava somente o tradicional sistema de listagem nominal... Com o surgimento crescente de novas drogas em uma velocidade superior a inclus\u00e3o dessas subst\u00e2ncias nos instrumentos normativos do Pa\u00eds, decidiu-se adotar tamb\u00e9m formas de classifica\u00e7\u00e3o que utilizam abordagens mais gen\u00e9ricas'."
+      }
+,
+      {
+        "q": "[NSP - RDC 79/2016 Anvisa] 12. O que determinou a hist\u00f3rica Resolu\u00e7\u00e3o RDC n\u00ba 79 de 23 de maio de 2016 da Anvisa no controle de drogas no Brasil?",
+        "opts": [
+          "A proibi\u00e7\u00e3o total do plantio de c\u00e2nhamo industrial em territ\u00f3rio nacional."
+,
+          "A inclus\u00e3o de dez classes estruturais gen\u00e9ricas do grupo dos canabinoides sint\u00e9ticos na Lista F2 (Uso Proscrito)."
+,
+          "A libera\u00e7\u00e3o do com\u00e9rcio da sibutramina e do femproporex sob receita m\u00e9dica comum."
+,
+          "O controle administrativo das importa\u00e7\u00f5es de sementes aliment\u00edcias de dormideira."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 3.2: 'Em 23 de maio de 2016, com a publica\u00e7\u00e3o da RDC n.\u00ba 79, foi inclu\u00edda na Lista F2... dez classes estruturais gen\u00e9ricas do grupo dos canabinoides sint\u00e9ticos'."
+      }
+,
+      {
+        "q": "[NSP - RDC 175/2017 Anvisa] 13. Qual classe estrutural gen\u00e9rica de NSPs foi inclu\u00edda e banida no Brasil por meio da publica\u00e7\u00e3o da RDC n\u00ba 175 de 15 de setembro de 2017 da Anvisa?",
+        "opts": [
+          "As feniletilaminas alucin\u00f3genas."
+,
+          "As catinonas sint\u00e9ticas."
+,
+          "Os canabinoides sint\u00e9ticos de terceira gera\u00e7\u00e3o."
+,
+          "Os derivados nitrogenados do safrol natural."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 3.2: 'Posteriormente, com a publica\u00e7\u00e3o da RDC n.\u00ba 175/2017, de 15 de setembro de 2017, foi inclu\u00edda mais uma classe estrutural na Lista F2, a classe das catinonas sint\u00e9ticas'."
+      }
+,
+      {
+        "q": "[NSP - Defini\u00e7\u00e3o de Classifica\u00e7\u00e3o Gen\u00e9rica] 14. Como funciona conceitualmente o sistema de 'Classifica\u00e7\u00e3o Gen\u00e9rica' adotado nas RDCs da Anvisa para barrar 'designer drugs'?",
+        "opts": [
+          "Pro\u00edbe marcas comerciais conhecidas de comprimidos, independentemente do ativo presente."
+,
+          "Define uma estrutura molecular nuclear comum e aponta varia\u00e7\u00f5es particulares nessa estrutura, permitindo proibir grupos e subgrupos de forma abrangente e antecipada."
+,
+          "Consiste no banimento gen\u00e9rico de todas as misturas l\u00edquidas que contenham \u00e9ter et\u00edlico."
+,
+          "Baseia-se em tabelas que banem plantas completas pela sua fam\u00edlia e g\u00eanero taxon\u00f4mico."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 3.2: 'A classifica\u00e7\u00e3o gen\u00e9rica define uma estrutura molecular nuclear e aponta varia\u00e7\u00f5es particulares nessa estrutura que especificam as subst\u00e2ncias que devem ser controladas, permitindo a proibi\u00e7\u00e3o de grupos e subgrupos de subst\u00e2ncias de maneira abrangente, a fim de antecipar o controle sobre novas subst\u00e2ncias que porventura venham a surgir'."
+      }
+,
+      {
+        "q": "[NSP - RDC 325/2019 Anvisa] 15. A classe estrutural das feniletilaminas foi formalmente banida sob crit\u00e9rios de classifica\u00e7\u00e3o molecular gen\u00e9rica por qual resolu\u00e7\u00e3o da Anvisa?",
+        "opts": [
+          "RDC n\u00ba 79 de 2016."
+,
+          "RDC n\u00ba 325 de 4 de dezembro de 2019."
+,
+          "RDC n\u00ba 175 de 2017."
+,
+          "RDC n\u00ba 50 de 2014."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 3.2: 'Foi publicada a RDC n.\u00ba 325/2019, no DOU de 4 de dezembro de 2019, que introduziu a classe estrutural das feniletilaminas'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Exig\u00eancia de Laudo Preliminar] 16. Sob a \u00f3tica do Artigo 50 da Lei n\u00ba 11.343/2006, qual \u00e9 a finalidade jur\u00eddica e a exig\u00eancia de materialidade do laudo preliminar de constata\u00e7\u00e3o no flagrante por tr\u00e1fico?",
+        "opts": [
+          "Serve apenas para determinar a dosagem exata do princ\u00edpio ativo e \u00e9 dispens\u00e1vel no flagrante."
+,
+          "\u00c9 suficiente para a lavratura do auto de pris\u00e3o em flagrante e o estabelecimento da materialidade do delito, devendo constatar a natureza e a quantidade da droga."
+,
+          "Exige a presen\u00e7a e assinatura de tr\u00eas peritos qu\u00edmicos laboratoriais do INC."
+,
+          "Tem por objetivo principal quantificar as impurezas inorg\u00e2nicas de ferro."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.1: 'Nos termos da Lei n.\u00ba 11.343/2006... \u00e9 essencial para a lavratura do auto de pris\u00e3o em flagrante a exist\u00eancia do laudo de constata\u00e7\u00e3o da natureza e quantidade da droga apreendida... o art. 50... \u00a7 1\u00ba Para efeito da lavratura do auto de pris\u00e3o em flagrante e estabelecimento da materialidade do delito, \u00e9 suficiente o laudo de constata\u00e7\u00e3o da natureza e quantidade da droga...'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Assinatura do Laudo de Constata\u00e7\u00e3o] 17. Quem possui compet\u00eancia legal para firmar (assinar) o laudo preliminar de constata\u00e7\u00e3o, de acordo com o texto da Lei de Drogas?",
+        "opts": [
+          "Apenas o perito m\u00e9dico legista do Instituto de Medicina Legal (IML)."
+,
+          "Firmado por perito oficial ou, na falta deste, por pessoa id\u00f4nea (que pode ser um policial nomeado pela autoridade policial)."
+,
+          "Unicamente engenheiros qu\u00edmicos de ind\u00fastrias devidamente licenciadas."
+,
+          "Qualquer testemunha civil alfabetizada que presenciou a apreens\u00e3o da droga."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.1: '...realizada por Perito Oficial e, somente na falta deste, por pessoa id\u00f4nea. Essa pessoa pode ser um policial, ap\u00f3s ser nomeado por autoridade policial'. O Art. 50 \u00a7 1\u00ba repete: 'firmado por perito oficial ou, na falta deste, por pessoa id\u00f4nea'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Desafios das NSPs nos Testes de Colora\u00e7\u00e3o] 18. Qual o maior problema t\u00e9cnico enfrentado pelos Peritos Criminais ao tentar realizar os tradicionais testes qu\u00edmicos preliminares de colora\u00e7\u00e3o (narcotestes) em amostras de NSPs?",
+        "opts": [
+          "As NSPs s\u00e3o insol\u00faveis em \u00e1cidos e evaporam na placa de spot."
+,
+          "O n\u00famero de reagentes necess\u00e1rios para cobrir e reagir com a imensa quantidade de novas drogas que surgem \u00e9 imenso e invi\u00e1vel."
+,
+          "As NSPs produzem uma fuma\u00e7a t\u00f3xica que anula a colora\u00e7\u00e3o violeta do teste."
+,
+          "Todos os testes de colora\u00e7\u00e3o para NSPs d\u00e3o obrigatoriamente cor azul, gerando falsos positivos para coca\u00edna."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.1: 'Avaliando-se a aplicabilidade de testes de colora\u00e7\u00e3o nessas drogas, uma das conclus\u00f5es a que se chega \u00e9 que o n\u00famero de reagentes necess\u00e1rios para cobrir um n\u00famero significativo dessas drogas \u00e9 imenso'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Instrumenta\u00e7\u00e3o Port\u00e1til para NSPs] 19. Qual alternativa de tecnologia anal\u00edtica de campo port\u00e1til \u00e9 apontada pela apostila para realizar exames preliminares mais confi\u00e1veis em NSPs?",
+        "opts": [
+          "Cromatografia l\u00edquida de alta efici\u00eancia (CLAE/HPLC) acoplada a geradores a diesel."
+,
+          "Uso de equipamentos port\u00e1teis de instrumenta\u00e7\u00e3o anal\u00edtica, tais como o espectr\u00f4metro Raman ou espectrofot\u00f4metro de FTIR."
+,
+          "Tiras de papel indicador universal de pH impregnadas com vanilina."
+,
+          "Placas de spot aquecidas por resist\u00eancias t\u00e9rmicas de cobre."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.1: 'Uma alternativa para realizar testes preliminares de maneira mais confi\u00e1vel \u00e9 o uso de equipamentos de instrumenta\u00e7\u00e3o anal\u00edtica port\u00e1teis, tais como espectr\u00f4metro Raman ou espectrofot\u00f4metro de FTIR, por exemplo'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Espectr\u00f4metro Raman da PF] 20. Qual o modelo espec\u00edfico de equipamento Raman port\u00e1til disponibilizado para as Unidades de Criminal\u00edstica da Pol\u00edcia Federal, cujo registro de imagem consta na apostila?",
+        "opts": [
+          "FTIR Nicolet Summit da Thermo."
+,
+          "Raman port\u00e1til modelo ResQ\u2122 da empresa Rigaku."
+,
+          "Cromat\u00f3grafo gasoso de campo modelo Agilent Boxer."
+,
+          "Espectr\u00f4metro de massas tandem MS/MS Orbitrap."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.1 (Legenda da Figura 23): 'Equipamento de Raman port\u00e1til modelo ResQ\u2122 da empresa Rigaku, dispon\u00edvel para as Unidades de Criminal\u00edstica da Pol\u00edcia Federal'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Requisito do Teste em Branco] 21. Qual precau\u00e7\u00e3o metodol\u00f3gica obrigat\u00f3ria deve acompanhar a realiza\u00e7\u00e3o de exames preliminares de constata\u00e7\u00e3o em drogas para garantir a validade cient\u00edfica do teste?",
+        "opts": [
+          "A realiza\u00e7\u00e3o de um teste em branco (amostra controle que n\u00e3o cont\u00e9m a droga investigada)."
+,
+          "A lavagem pr\u00e9via da amostra com \u00e9ter de petr\u00f3leo aquecido."
+,
+          "A presen\u00e7a f\u00edsica do juiz de instru\u00e7\u00e3o penal na cena do crime."
+,
+          "O descarte completo do recipiente de Scott ap\u00f3s 30 segundos."
+        ],
+        "ans": 0,
+        "exp": "Cap\u00edtulo 4.1: 'Os exames preliminares de constata\u00e7\u00e3o devem ser acompanhados de um teste em branco, isto \u00e9, uma amostra que n\u00e3o contenha a droga que est\u00e1 sendo investigada'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Sais de Ferro na Coca\u00edna] 22. Por que alguns traficantes t\u00eam adicionado deliberadamente sais de ferro (compostos de colora\u00e7\u00e3o avermelhada) \u00e0s amostras de coca\u00edna apreendidas, conforme detalhado no Cap\u00edtulo 4?",
+        "opts": [
+          "Para aumentar o peso volum\u00e9trico e o ponto de fus\u00e3o do crack."
+,
+          "Para dificultar a realiza\u00e7\u00e3o de exames preliminares baseados em rea\u00e7\u00f5es de colora\u00e7\u00e3o (atuando como interferentes)."
+,
+          "Para catalisar a rea\u00e7\u00e3o com carbonato de s\u00f3dio na prensa hidr\u00e1ulica."
+,
+          "Para anular a toxicidade sist\u00eamica da droga no usu\u00e1rio final."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.1: 'Em alguns casos, traficantes adicionaram sais de ferro (materiais de colora\u00e7\u00e3o avermelhada) para dificultar a realiza\u00e7\u00e3o de exames preliminares baseados em rea\u00e7\u00f5es de colora\u00e7\u00e3o'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Instru\u00e7\u00e3o T\u00e9cnica n\u00ba 006/2006] 23. Qual o ato normativo do Sistema de Criminal\u00edstica da PF que disp\u00f5e sobre a padroniza\u00e7\u00e3o de procedimentos e m\u00e9todos para fins de exames qu\u00edmico-anal\u00edticos e crit\u00e9rios de amostragem?",
+        "opts": [
+          "A Norma de Servi\u00e7o n\u00ba 001/80-DG."
+,
+          "A Instru\u00e7\u00e3o T\u00e9cnica n\u00ba 006/2006/GAB/DITEC, de 27 de julho de 2006."
+,
+          "A Portaria n\u00ba 204/2022-MJSP."
+,
+          "A RDC n\u00ba 1.015/2026 da Anvisa."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.2: 'A Instru\u00e7\u00e3o T\u00e9cnica n.\u00ba 006/2006/GAB/DITEC, de 27 de julho de 2006... disp\u00f5e sobre a padroniza\u00e7\u00e3o de procedimentos e m\u00e9todos para fins de exames qu\u00edmico-anal\u00edticos no \u00e2mbito da per\u00edcia criminal de laborat\u00f3rio. Tamb\u00e9m apresenta orienta\u00e7\u00f5es sobre crit\u00e9rios de amostragem...'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Crit\u00e9rios de Amostragem (IT 06/2006)] 24. No processo de amostragem de drogas apreendidas em grandes volumes (grupo homog\u00eaneo com n unidades), qual a regra quantitativa se o n\u00famero de pacotes for superior a 100?",
+        "opts": [
+          "Amostrar exatamente 50% de todas as caixas."
+,
+          "Amostrar a raiz quadrada do n\u00famero total de unidades (\u221an), arredondando o resultado para o n\u00famero inteiro superior mais pr\u00f3ximo."
+,
+          "Amostrar obrigatoriamente 10 unidades escolhidas aleatoriamente."
+,
+          "Amostrar a totalidade do material sem exce\u00e7\u00e3o por motivos de seguran\u00e7a jur\u00eddica."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.2 (Tabela 2): 'Se n > 100: Amostrar \u221an unidades do grupo escolhidas aleatoriamente. O resultado de \u221an deve ser arredondado para o n\u00famero inteiro superior mais pr\u00f3ximo'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Amostragem de Misturas Heterog\u00eaneas L\u00edquidas] 25. No caso de amostragem de produto l\u00edquido acondicionado em recipiente que N\u00c3O permita a visualiza\u00e7\u00e3o de fases, qual a conduta t\u00e1tica correta do amostrador?",
+        "opts": [
+          "Retirar amostra apenas da superf\u00edcie l\u00edquida ap\u00f3s agita\u00e7\u00e3o for\u00e7ada."
+,
+          "A amostra dever\u00e1 ser coletada em pelo menos tr\u00eas pontos do recipiente (superf\u00edcie, meio e fundo)."
+,
+          "Enviar o recipiente de metal para incinera\u00e7\u00e3o direta na vala sem coleta."
+,
+          "Extrair apenas uma gota com seringa hipod\u00e9rmica do topo da tampa."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.2: 'No caso de produto l\u00edquido acondicionado em recipiente que n\u00e3o permita a sua visualiza\u00e7\u00e3o, a amostra dever\u00e1 ser coletada em pelo menos tr\u00eas pontos do recipiente (superf\u00edcie, meio e fundo)'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Suportes de Pesagem e Suspeitas de Res\u00edduos] 26. Diante de suspeitas de resqu\u00edcios de material controlado impregnados em suportes (como res\u00edduos de coca\u00edna em uma balan\u00e7a digital ou em pano de filtra\u00e7\u00e3o), como deve agir o perito?",
+        "opts": [
+          "Deve realizar o procedimento estat\u00edstico padr\u00e3o de raspagem e amostragem parcial."
+,
+          "N\u00e3o deve ser realizado procedimento de amostragem. O suporte suspeito deve ser encaminhado em sua totalidade para exame definitivo e em embalagem adequada."
+,
+          "Limpar o suporte com \u00e1cido clor\u00eddrico concentrado no pr\u00f3prio local do crime."
+,
+          "Coletar os res\u00edduos com fita adesiva e descartar o suporte contaminado."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.2: 'No caso de suspeita da exist\u00eancia de res\u00edduos de material questionado em suporte (ex.: res\u00edduos de coca\u00edna em uma balan\u00e7a ou pano utilizado para filtragem), n\u00e3o deve ser realizado procedimento de amostragem. O suporte suspeito deve ser encaminhado em sua totalidade para exame definitivo...'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Quantidades M\u00ednimas para Envio (Tabela 3)] 27. De acordo com a Tabela 3 da apostila (IT n\u00ba 06/2006-DITEC), quais s\u00e3o as quantidades m\u00ednimas de amostras l\u00edquidas e s\u00f3lidas que devem ser coletadas por unidade para envio ao exame laboratorial definitivo?",
+        "opts": [
+          "S\u00f3lidos: 10,0 g; L\u00edquidos: 1.000 ml."
+,
+          "S\u00f3lidos: 2,0 g (tr\u00eas colheres de sopa); L\u00edquidos: 200 ml (um copo)."
+,
+          "S\u00f3lidos: 0,5 g; L\u00edquidos: 50 ml."
+,
+          "S\u00f3lidos: uma pitada; L\u00edquidos: embalagem original pressurizada."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.2 (Tabela 3): 'S\u00f3lidos em geral: 2,0 g (tr\u00eas colheres de sopa). L\u00edquidos em geral: 200 ml (um um copo)'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Amostragem de L\u00edquidos Vol\u00e1teis] 28. Qual a especifica\u00e7\u00e3o t\u00e9cnica para a quantidade m\u00ednima de amostragem de l\u00edquidos de alta volatilidade, como o lan\u00e7a-perfume (cloreto de etila)?",
+        "opts": [
+          "Amostra m\u00ednima de 200 ml coletada em bal\u00e3o volum\u00e9trico."
+,
+          "Embalagem original."
+,
+          "Uma gota transferida para placa de spot congelada."
+,
+          "Dilui\u00e7\u00e3o imediata de 10 ml em acetona anidra."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.2 (Tabela 3): 'L\u00edquido vol\u00e1til (ex.: lan\u00e7a-perfume): Embalagem original'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Defini\u00e7\u00e3o de Peso L\u00edquido vs Bruto] 29. O laudo preliminar de constata\u00e7\u00e3o deve ser um documento claro e conciso. Qual a diretriz da apostila sobre a declara\u00e7\u00e3o de massas (pesos) do material apreendido?",
+        "opts": [
+          "Deve relatar obrigatoriamente e exclusivamente o peso bruto estimado por c\u00e1lculo volum\u00e9trico."
+,
+          "Deve relatar as caracter\u00edsticas no exame visual e o peso aferido, especificando se este \u00e9 o peso l\u00edquido (descontadas as embalagens/inv\u00f3lucros) ou o peso bruto."
+,
+          "O peso das embalagens pl\u00e1sticas deve ser somado ao ativo sem distin\u00e7\u00e3o formal."
+,
+          "A pesagem \u00e9 restrita \u00e0 fase laboratorial do laudo definitivo."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.2: 'Ele deve relatar as caracter\u00edsticas observadas no exame visual do material apreendido e o peso aferido, especificando se este \u00e9 o peso l\u00edquido (peso das subst\u00e2ncias descontadas as embalagens/inv\u00f3lucros, preferencialmente) ou peso bruto (com embalagem/inv\u00f3lucro)...'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Normas de Padroniza\u00e7\u00e3o de Formato do Laudo] 30. A padroniza\u00e7\u00e3o de formato, diagrama\u00e7\u00e3o e pre\u00e2mbulo do laudo de per\u00edcia criminal preliminar na Pol\u00edcia Federal \u00e9 regulamentada por quais normativos federais?",
+        "opts": [
+          "Decretos n\u00ba 54.216/64 e n\u00ba 79.388/77."
+,
+          "Portaria n\u00ba 002/2007-GAB/INC (regulamenta pre\u00e2mbulo) e Portaria n\u00ba 2.048/2011-DG/DPF (regulamenta formato e diagrama\u00e7\u00e3o)."
+,
+          "Norma de Servi\u00e7o n\u00ba 001/80 e RDC n\u00ba 39/2012 da Anvisa."
+,
+          "Instru\u00e7\u00e3o Normativa n\u00ba 8 de 1988 e Lei n\u00ba 10.357/01."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.2: 'O pre\u00e2mbulo do laudo preliminar... est\u00e1 regulamentado pela Portaria n.\u00ba 002/2007-GAB/INC, de 16 de janeiro de 2007. A padroniza\u00e7\u00e3o de formato e diagrama\u00e7\u00e3o foi regulamentada pela Portaria n.\u00ba 2.048/2011-DG/DPF, de 10 de janeiro de 2011'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Diferen\u00e7as de Resultados Preliminar vs Definitivo] 31. Havendo diverg\u00eancia ou contradi\u00e7\u00e3o cient\u00edfica entre os resultados do teste preliminar e do teste laboratorial definitivo, o que estabelece a apostila?",
+        "opts": [
+          "O teste preliminar prevalece por ter sido realizado imediatamente na cena do crime."
+,
+          "Diverg\u00eancias podem ocorrer devido aos diferentes poderes de discrimina\u00e7\u00e3o das t\u00e9cnicas; em caso de d\u00favida, um novo exame pode ser requerido pelo MP ou Judici\u00e1rio."
+,
+          "O laudo preliminar torna-se nulo e o perito que o assinou responde por crime de falsidade ideol\u00f3gica."
+,
+          "A amostra deve ser descartada e nova busca realizada na resid\u00eancia do infrator."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.3: 'Os resultados dos testes definitivos... podem ou n\u00e3o corroborar com os resultados dos testes preliminares... situa\u00e7\u00f5es de diverg\u00eancia podem ocorrer devido aos diferentes poderes de discrimina\u00e7\u00e3o dos exames. Em caso de d\u00favida, um novo exame pode ser requerido pelo Minist\u00e9rio P\u00fablico ou Poder Judici\u00e1rio'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Poder de Discrimina\u00e7\u00e3o (SWGDRUG / IT 06/2006)] 32. A Instru\u00e7\u00e3o T\u00e9cnica n\u00ba 006/2006-SEPLAB/INC/DITEC baseou seus exames definitivos de laborat\u00f3rio nas diretrizes de qual prestigiado comit\u00ea cient\u00edfico internacional?",
+        "opts": [
+          "UNODC (United Nations Office on Drugs and Crime)."
+,
+          "SWGDRUG (Scientific Working Group for the Analysis of Seized Drugs)."
+,
+          "FDA (Food and Drug Administration)."
+,
+          "INTERPOL - Forensic Science Committee."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.3: '...recomenda\u00e7\u00f5es presentes na Instru\u00e7\u00e3o T\u00e9cnica n.\u00ba 06/2006-SEPLAB/INC/DITEC... que se baseou nos m\u00e9todos de an\u00e1lise preconizados pelo SWGDRUG (Scientific Working Group for the Analysis of Seized Drugs)...'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Categorias Anal\u00edticas (Tabela 4)] 33. De acordo com as recomenda\u00e7\u00f5es de discrimina\u00e7\u00e3o anal\u00edtica da Tabela 4, quais t\u00e9cnicas instrumentais est\u00e3o enquadradas na seleta Categoria A (maior poder de discrimina\u00e7\u00e3o)?",
+        "opts": [
+          "Cromatografia gasosa (CG), Cromatografia l\u00edquida de alta efici\u00eancia (CLAE) e Cromatografia de camada delgada (CCD)."
+,
+          "Infravermelho (IV/FTIR), Espectrometria de massas (EM), Resson\u00e2ncia magn\u00e9tica nuclear (RMN), Espectroscopia Raman e Difratometria de raios X."
+,
+          "Testes de cor e precipita\u00e7\u00e3o, Imunoensaios e Espectroscopia de fluoresc\u00eancia."
+,
+          "Exame bot\u00e2nico morfol\u00f3gico, Propriedades f\u00edsicas e marcadores farmacol\u00f3gicos."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.3 (Tabela 4): Categoria A inclui: 'Infravermelho (IV), Espectrometria de massas (EM), Resson\u00e2ncia magn\u00e9tica nuclear (RMN), Espectroscopia Raman, Difratometria de raios X'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Categorias Anal\u00edticas B e C] 34. Em quais categorias da Tabela 4 est\u00e3o classificados, respectivamente, o exame bot\u00e2nico morfol\u00f3gico da cannabis e os testes qu\u00edmicos colorim\u00e9tricos?",
+        "opts": [
+          "Ambos na Categoria A por serem testes oficiais."
+,
+          "Exame bot\u00e2nico na Categoria B; e os testes colorim\u00e9tricos na Categoria C."
+,
+          "Exame bot\u00e2nico na Categoria C; e testes colorim\u00e9tricos na Categoria B."
+,
+          "Ambos na Categoria C devido \u00e0s suas severas limita\u00e7\u00f5es laboratoriais."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.3 (Tabela 4): A Categoria B traz 'Apenas cannabis: exame bot\u00e2nico morfol\u00f3gico' e a Categoria C traz 'Testes de cor e precipita\u00e7\u00e3o'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Regra de Identifica\u00e7\u00e3o: Uso de Categoria A] 35. Sob as regras de valida\u00e7\u00e3o da IT n\u00ba 06/2006, se um m\u00e9todo validado da Categoria A (ex.: Espectrometria de Massas) for empregado na identifica\u00e7\u00e3o de uma droga de abuso, qual o requisito complementar obrigat\u00f3rio?",
+        "opts": [
+          "N\u00e3o s\u00e3o necess\u00e1rios mais exames, sendo a t\u00e9cnica autossuficiente."
+,
+          "Ao menos um teste de outra categoria (A, B ou C) deve ser realizado."
+,
+          "Devem ser conduzidos mais tr\u00eas testes obrigatoriamente da Categoria C."
+,
+          "Exige-se a confirma\u00e7\u00e3o exclusiva por microscopia eletr\u00f4nica de varredura."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.3: 'Quando um m\u00e9todo validado do tipo A \u00e9 usado na identifica\u00e7\u00e3o, ao menos um teste de outra categoria (A, B ou C) deve ser realizado'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Regra de Identifica\u00e7\u00e3o: Aus\u00eancia de Categoria A] 36. Caso o laborat\u00f3rio forense N\u00c3O realize um teste com t\u00e9cnicas da Categoria A, qual a exig\u00eancia metodol\u00f3gica para consolidar a identifica\u00e7\u00e3o inequ\u00edvoca de uma droga de abuso?",
+        "opts": [
+          "A an\u00e1lise \u00e9 considerada inv\u00e1lida para instru\u00e7\u00e3o de processo criminal."
+,
+          "Ao menos tr\u00eas testes de outras categorias devem ser conduzidos, sendo que dois destes tr\u00eas devem ser da Categoria B (mas n\u00e3o relacionados entre si)."
+,
+          "\u00c9 necess\u00e1ria a assinatura conjunta de dois peritos bot\u00e2nicos oficiais."
+,
+          "Basta realizar um teste qu\u00edmico de colora\u00e7\u00e3o com reagente de Scott ou Marquis."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.3: 'Quando n\u00e3o for realizado um teste de categoria do tipo A, ao menos tr\u00eas testes de outras categorias devem ser conduzidos, sendo que dois destes tr\u00eas testes devem ser da categoria B (mas n\u00e3o relacionados entre si)'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Limita\u00e7\u00f5es T\u00e9rmicas do CG/EM] 37. Apesar de ser uma t\u00e9cnica poderosa com cromat\u00f3grafo gasoso acoplado a massas (CG/EM), qual a desvantagem apontada para a an\u00e1lise de algumas subst\u00e2ncias proibidas/controladas?",
+        "opts": [
+          "Muitos compostos s\u00e3o vol\u00e1teis demais para entrar na coluna do cromat\u00f3grafo."
+,
+          "Nem todas as subst\u00e2ncias proibidas/controladas podem ser analisadas em condi\u00e7\u00f5es normais, pois algumas podem sofrer degrada\u00e7\u00e3o t\u00e9rmica no processo de an\u00e1lise."
+,
+          "O CG/EM \u00e9 insol\u00favel em \u00e1gua, ao contr\u00e1rio das t\u00e9cnicas l\u00edquidas de CLAE."
+,
+          "N\u00e3o detecta a presen\u00e7a de alcaloides minorit\u00e1rios nas folhas secas de coca."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.3: 'Entretanto, apesar de ser uma t\u00e9cnica poderosa em termos anal\u00edticos, nem todas as subst\u00e2ncias proibidas/controladas podem ser analisadas em condi\u00e7\u00f5es normais de um cromat\u00f3grafo gasoso, algumas destas podem degradar no processo de an\u00e1lise'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Vantagens do FTIR] 38. Quais s\u00e3o as vantagens descritas para o espectrofot\u00f4metro de infravermelho com transformada r\u00e1pida de Fourier (FTIR) em compara\u00e7\u00e3o ao CG/EM?",
+        "opts": [
+          "O FTIR destr\u00f3i os contaminantes de ferro presentes na coca\u00edna cloridrato."
+,
+          "\u00c9 uma t\u00e9cnica robusta, normalmente mais barata e cujas an\u00e1lises ocorrem \u00e0 temperatura ambiente, sem problemas de degrada\u00e7\u00e3o t\u00e9rmica."
+,
+          "Possui capacidade de separar misturas complexas de grupos funcionais coincidentes na mesma banda de absor\u00e7\u00e3o."
+,
+          "\u00c9 classificado na Categoria C, sendo de uso livre para policiais em patrulha."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.3: 'Outro equipamento muito encontrado... \u00e9 o espectrofot\u00f4metro na regi\u00e3o do infravermelho com transformada r\u00e1pida de Fourier (FTIR). \u00c9 uma t\u00e9cnica robusta, normalmente mais barata que o CG/EM, cujas an\u00e1lises s\u00e3o realizadas \u00e0 temperatura ambiente (n\u00e3o sofre com problemas de degrada\u00e7\u00e3o t\u00e9rmica)'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Limita\u00e7\u00f5es do FTIR e Uso de MS/MS] 39. Qual \u00e9 o fator complicador das an\u00e1lises de FTIR e qual o equipamento laboratorial avan\u00e7ado de alto poder discriminativo sugerido para elucidar NSPs complexas?",
+        "opts": [
+          "A volatilidade do g\u00e1s h\u00e9lio de arraste; resolvido pelo uso do teste de chama."
+,
+          "A an\u00e1lise por FTIR pode ser dificultada em materiais que consistam em misturas de compostos com grupos funcionais observados na mesma regi\u00e3o de interesse; com equipamentos como espectrometria de massas em tandem (MS/MS) sendo muito \u00fateis na elucida\u00e7\u00e3o de NSPs."
+,
+          "O congelamento das bandas moleculares a 12 \u00b0C; resolvido pela queima do cloreto de etila."
+,
+          "A interfer\u00eancia de solventes org\u00e2nicos clorados; resolvido com imunoensaios de fluxo lateral."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.3: 'A an\u00e1lise de FTIR, contudo, pode ser dificultada em materiais questionados que consistam em misturas de compostos com grupos funcionais observados na mesma regi\u00e3o de interesse... espectr\u00f4metros de massa de alta resolu\u00e7\u00e3o (HRMS) e espectrometria de massas em tandem (MS/MS)... podem ser extremamente \u00fateis na identifica\u00e7\u00e3o de novas subst\u00e2ncias psicoativas (NSPs)'."
+      }
+,
+      {
+        "q": "[Cap\u00edtulo 4 - Preserva\u00e7\u00e3o de Contraprova de Laborat\u00f3rio] 40. Sob a \u00f3tica procedimental e jur\u00eddica da per\u00edcia qu\u00edmica de laborat\u00f3rio da Pol\u00edcia Federal, qual a regra descrita sobre a manuten\u00e7\u00e3o de contraprovas e arquivamento de dados das an\u00e1lises definitivas?",
+        "opts": [
+          "Todo o material excedente deve ser queimado em valas em 24 horas para evitar novos desvios."
+,
+          "Dever\u00e1 ser mantido material como contraprova para eventual nova per\u00edcia (salvo se a quantidade ou conserva\u00e7\u00e3o n\u00e3o permitirem) e todos os registros de laborat\u00f3rio (cromatos, fotos, fichas) devem ser devidamente arquivados para revis\u00e3o."
+,
+          "As contraprovas s\u00e3o exclusivas de exames em plantas de maconha realizadas por bot\u00e2nicos de carreira."
+,
+          "O arquivo dos cromatogramas e espectros no banco de dados PeQui substitui a necessidade f\u00edsica de reter fra\u00e7\u00f5es da amostra."
+        ],
+        "ans": 1,
+        "exp": "Cap\u00edtulo 4.3: 'Nesta fase, dever\u00e1 ser mantido material como contraprova para eventual nova per\u00edcia, a n\u00e3o ser quando a quantidade ou a conserva\u00e7\u00e3o do material analisado n\u00e3o permitirem. Tamb\u00e9m \u00e9 recomendado que todos os registros de laborat\u00f3rio (fotografias, cromatograma, fichas de an\u00e1lises) sejam devidamente arquivados, de forma que os resultados obtidos sejam pass\u00edveis de revis\u00e3o'."
+      }
+    ]
+  }
+];
+
+let answered = 0, corrects = 0, wrongs = 0;
+let wrongQuestions = [];
+
+function updateScore(){
+  document.getElementById('sc-c').textContent = corrects;
+  document.getElementById('sc-w').textContent = wrongs;
+  document.getElementById('sc-a').textContent = answered;
+  document.getElementById('btn-wrong').disabled = (wrongQuestions.length === 0);
+}
+
+function buildQuiz(dataSource){
+  dataSource = dataSource || CHAPTERS;
+  window._currentData = dataSource;
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  let total = 0;
+  dataSource.forEach(ch => total += ch.questions.length);
+  document.getElementById('sc-total').textContent = '/ ' + total;
+
+  dataSource.forEach((ch, ci) => {
+    const div = document.createElement('div');
+    div.className = 'chapter';
+    let html = `<div class="chapter-title">${ch.title}</div>`;
+    ch.questions.forEach((q, qi) => {
+      const qid = 'q_' + ci + '_' + qi;
+      html += `<div class="question" id="block_${qid}">
+        <div class="q-num">Questão ${qi+1}</div>
+        <div class="q-text">${q.q}</div>`;
+      q.opts.forEach((opt, oi) => {
+        html += `<button class="opt" id="${qid}_${oi}" onclick="handleAnswer(${ci}, ${qi}, ${oi})">${opt}</button>`;
+      });
+      html += `<div class="feedback" id="fb_${qid}" style="display:none"></div></div>`;
+    });
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+}
+
+function handleAnswer(ci, qi, chosen){
+  const dataSource = window._currentData || CHAPTERS;
+  const ch = dataSource[ci];
+  const q = ch.questions[qi];
+  const qid = 'q_' + ci + '_' + qi;
+  const correct = q.ans;
+  const isRight = (chosen === correct);
+
+  q.opts.forEach((_, oi) => {
+    const btn = document.getElementById(qid + '_' + oi);
+    btn.disabled = true;
+    if(oi === correct) btn.classList.add('correct');
+    if(oi === chosen && !isRight) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('fb_' + qid);
+  fb.style.display = 'block';
+  if(isRight){
+    fb.className = 'feedback ok';
+    fb.innerHTML = `✅ <strong>Correto!</strong> ${q.exp}`;
+    corrects++;
+  } else {
+    fb.className = 'feedback err';
+    fb.innerHTML = `❌ <strong>Incorreto.</strong> ${q.exp}`;
+    wrongs++;
+    wrongQuestions.push({chTitle: ch.title, qObj: q});
+  }
+  answered++;
+  updateScore();
+}
+
+function resetAll(){
+  if(!confirm('Reiniciar o quiz completo?')) return;
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(CHAPTERS);
+  updateScore();
+}
+
+function resetWrong(){
+  if(wrongQuestions.length === 0) return;
+  if(!confirm('Reiniciar apenas com as ' + wrongQuestions.length + ' questão(ões) que você errou?')) return;
+  const chapMap = {};
+  wrongQuestions.forEach(({chTitle, qObj}) => {
+    if(!chapMap[chTitle]) chapMap[chTitle] = {title: chTitle, questions: []};
+    chapMap[chTitle].questions.push(qObj);
+  });
+  const filtered = Object.values(chapMap);
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(filtered);
+  updateScore();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado do Capítulo 2 - Estudo Descritivo das Drogas de Abuso</title>
+<style>
+  :root{--cor:#1a3a5c;--cor2:#2e6da4;--cor3:#e8f0f8;--verde:#1e7e34;--vermelho:#c0392b;--laranja:#d35400;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#222;}
+  header{background:var(--cor);color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;}
+  header h1{font-size:1.3rem;font-weight:700;}
+  .subtitle{font-size:.85rem;opacity:.8;}
+  .scorebar{background:var(--cor2);color:#fff;padding:10px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .sc{font-size:.95rem;} .sc span{font-weight:700;}
+  .lbl{opacity:.75;font-size:.85rem;}
+  .btn-reset{background:#fff;color:var(--cor);border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;}
+  .btn-reset:hover{background:#e0e8f0;}
+  .btn-wrong{background:var(--laranja);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;margin-left:auto;}
+  .btn-wrong:hover:not(:disabled){background:#b94600;}
+  .btn-wrong:disabled{opacity:.4;cursor:not-allowed;}
+  main{max-width:860px;margin:28px auto;padding:0 16px 60px;}
+  .chapter{margin-bottom:32px;}
+  .chapter-title{background:var(--cor);color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;font-weight:700;font-size:1rem;}
+  .question{background:#fff;border:1px solid #d0dcea;border-top:none;padding:20px 20px 14px;}
+  .question:last-child{border-radius:0 0 8px 8px;}
+  .question+.question{border-top:1px dashed #c8d8ea;}
+  .q-num{font-size:.78rem;color:#888;margin-bottom:4px;}
+  .q-text{font-size:1rem;font-weight:600;margin-bottom:14px;line-height:1.5;}
+  .opt{display:block;width:100%;background:var(--cor3);border:2px solid transparent;border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;text-align:left;font-size:.93rem;line-height:1.4;transition:.15s;}
+  .opt:hover:not(:disabled){background:#d5e5f8;border-color:var(--cor2);}
+  .opt.correct{background:#d4edda;border-color:var(--verde);color:var(--verde);font-weight:600;}
+  .opt.wrong{background:#fde8e8;border-color:var(--vermelho);color:var(--vermelho);}
+  .opt:disabled{cursor:default;}
+  .feedback{margin-top:8px;font-size:.88rem;padding:8px 12px;border-radius:6px;line-height:1.5;}
+  .feedback.ok{background:#d4edda;color:#155724;}
+  .feedback.err{background:#fde8e8;color:#721c24;}
+  .feedback .loc{margin-top:4px;font-size:.8rem;opacity:.8;}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Simulado do Capítulo 2 - Estudo Descritivo das Drogas de Abuso</h1>
+    <div class="subtitle">20 Questões Inéditas de Alta Complexidade baseadas na Apostila Oficial (Polícia Federal)</div>
+  </div>
+</header>
+<div class="scorebar">
+  <div class="sc">✅ Acertos: <span id="sc-c">0</span></div>
+  <div class="sc">❌ Erros: <span id="sc-w">0</span></div>
+  <div class="sc">📝 Respondidas: <span id="sc-a">0</span> <span class="lbl" id="sc-total"></span></div>
+  <button class="btn-reset" onclick="resetAll()">↺ Reiniciar tudo</button>
+  <button class="btn-wrong" id="btn-wrong" onclick="resetWrong()" disabled>↺ Só os erros</button>
+</div>
+<main id="quiz-container"></main>
+
+<script>
+const CHAPTERS = [
+  {
+    "title": "do Capítulo 2 - Estudo Descritivo das Drogas de Abuso",
+    "questions": [
+      {
+        "q": "[Origem da Coca\u00edna - Esp\u00e9cies Cultivadas] 1. Do ponto de vista bot\u00e2nico, quais s\u00e3o as \u00fanicas esp\u00e9cies e variedades do g\u00eanero Erythroxylum que possuem quantidades de alcaloide coca\u00edna suficientes para sua explora\u00e7\u00e3o il\u00edcita?",
+        "opts": [
+          "Erythroxylum coca variedade ipadu, variedade epadu e variedade patu."
+,
+          "Erythroxylum coca (variedade coca) e Erythroxylum novogranatense (variedade novogranatense e variedade truxillense)."
+,
+          "Erythroxylum catuaba e Erythroxylum grandiflorum."
+,
+          "Erythroxylum coca variedade Ipad\u00fa, por possuir baixo teor do alcaloide estimulante."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 17-18 da apostila: 'Botanicamente, a coca ou arbusto de coca pertence \u00e0 fam\u00edlia Erythroxylaceae e ao g\u00eanero Erythroxylum. Embora sejam conhecidas cerca de 250 esp\u00e9cies de Erythroxylum, somente duas esp\u00e9cies possuem quantidades de coca\u00edna suficientes para sua explora\u00e7\u00e3o il\u00edcita, a Erythroxylum coca (variedade coca) e a Erythroxylum novogranatense (variedade novogranatense e variedade truxillense). As folhas de Erythroxylum coca variedade Ipad\u00fa... possuem baixo teor e n\u00e3o t\u00eam sido utilizadas...'"
+      }
+,
+      {
+        "q": "[Morfologia da Folha de Coca] 2. Como se caracterizam visualmente e morfologicamente as folhas de coca do g\u00eanero Erythroxylum descritas na apostila de Qu\u00edmica Forense?",
+        "opts": [
+          "Folhas alternadas, circulares e compostas de um n\u00famero \u00edmpar de fol\u00edolos estreitos com bordas serrilhadas (dentadas)."
+,
+          "Folhas ovais ou el\u00edpticas, lisas e membran\u00e1ceas, apresentando duas falsas nervuras levemente curvas e paralelas \u00e0 nervura central."
+,
+          "Folhas triangulares largas, cobertas por uma fina penugem avermelhada rica em \u00f3leos vol\u00e1teis."
+,
+          "Folhas compostas pinadas, apresentando bordas espinhosas e ramifica\u00e7\u00f5es retas perpendiculares."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 18 da apostila: 'As folhas de coca s\u00e3o ovais ou el\u00edpticas, lisas e membran\u00e1ceas, apresentando duas falsas nervuras levemente curvas e paralelas \u00e0 nervura central. Suas dimens\u00f5es variam conforme a esp\u00e9cie...'"
+      }
+,
+      {
+        "q": "[Pasta Base de Coca\u00edna - Caracter\u00edsticas] 3. O que \u00e9 a 'Pasta Base de coca\u00edna', qual o seu teor m\u00e9dio de pureza e sob qual forma f\u00edsica ela comumente se apresenta nas apreens\u00f5es reais de tr\u00e1fico?",
+        "opts": [
+          "Um p\u00f3 cristalino branco e brilhante, com teor de pureza de 92% a 98%, totalmente sol\u00favel em \u00e1gua."
+,
+          "Coca\u00edna na forma de base livre impura (ou crua/bruta), apresentando em situa\u00e7\u00f5es de tr\u00e1fico colora\u00e7\u00e3o beige ou pardacenta mais escura sob a forma de p\u00f3 e/ou grumos, com teor de coca\u00edna de 30% a 70%."
+,
+          "Uma pasta semil\u00edquida altamente hidratada de colora\u00e7\u00e3o amarela brilhante com teor de pureza de 10% a 20%."
+,
+          "Cristais incolores transparentes de pureza superior a 90%, conhecidos como free-base."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 19 da apostila: 'Pasta base de coca\u00edna: coca\u00edna na forma de base livre. \u00c9 o primeiro produto obtido... Em situa\u00e7\u00f5es de tr\u00e1fico poucas vezes se apresenta na forma pastosa, mas sim em p\u00f3 e/ou grumos... Apresenta normalmente colora\u00e7\u00e3o bege ou pardacenta mais escura. \u00c9 a coca\u00edna base impura... O teor de coca\u00edna nesse produto em geral varia de 30% a 70%'"
+      }
+,
+      {
+        "q": "[Solubilidade da Coca\u00edna (Rea\u00e7\u00f5es \u00c1cido-Base)] 4. Como as caracter\u00edsticas f\u00edsico-qu\u00edmicas e de solubilidade do alcaloide coca\u00edna variam de acordo com o pH do meio (\u00e1cido ou b\u00e1sico), conforme o Cap\u00edtulo 2?",
+        "opts": [
+          "A coca\u00edna em meio \u00e1cido se comporta na forma de base livre, sol\u00favel em solventes org\u00e2nicos; em meio b\u00e1sico apresenta-se como sal, sol\u00favel em \u00e1gua."
+,
+          "A coca\u00edna em meio b\u00e1sico se comporta na forma de base livre, sol\u00favel em solventes org\u00e2nicos (hexano, gasolina, querosene); j\u00e1 em meio \u00e1cido, apresenta-se na forma de sal e, dessa forma, sol\u00favel em \u00e1gua e insol\u00favel em diversos solventes org\u00e2nicos."
+,
+          "A solubilidade da coca\u00edna \u00e9 constante, sendo insol\u00favel em solventes org\u00e2nicos e sol\u00favel em \u00e1gua destilada fria sob qualquer pH."
+,
+          "A base livre \u00e9 altamente sol\u00favel em \u00e1gua, o que permite sua aplica\u00e7\u00e3o direta por via injet\u00e1vel intravenosa."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 20 da apostila: 'a coca\u00edna em meio b\u00e1sico se comporta na forma de base livre, sol\u00favel em solventes org\u00e2nicos (hexano, gasolina, querosene); j\u00e1 em meio \u00e1cido, a coca\u00edna se apresenta na forma de sal e, dessa forma, sol\u00favel em \u00e1gua e insol\u00favel em diversos solventes org\u00e2nicos'."
+      }
+,
+      {
+        "q": "[M\u00e9todo de Refino 'La Bomba'] 5. Diante do controle r\u00edgido de insumos qu\u00edmicos, qual m\u00e9todo alternativo de convers\u00e3o da coca\u00edna base para coca\u00edna cloridrato (sal) foi desenvolvido pelos traficantes sob a alcunha de 'la bomba'?",
+        "opts": [
+          "A dissolu\u00e7\u00e3o do cloridrato em \u00e1cido n\u00edtrico fumegante seguido de evapora\u00e7\u00e3o t\u00e9rmica a 100 \u00b0C."
+,
+          "A adi\u00e7\u00e3o direta de uma solu\u00e7\u00e3o contendo \u00e1cido clor\u00eddrico em alt\u00edssima concentra\u00e7\u00e3o em \u00e1lcool et\u00edlico sobre a coca\u00edna base, obtendo o sal com alto rendimento."
+,
+          "A lavagem da pasta base com am\u00f4nia anidra gasosa sob press\u00e3o hidr\u00e1ulica."
+,
+          "A queima do cloreto de etila diretamente sobre cristais molhados de merla."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 20-21 da apostila: 'Um bom exemplo disso \u00e9 o m\u00e9todo de produ\u00e7\u00e3o de coca\u00edna cloridrato, conhecido como \u201cla bomba\u201d: o traficante produz um insumo extremamente eficiente contendo \u00e1cido clor\u00eddrico em alt\u00edssima concentra\u00e7\u00e3o em \u00e1lcool et\u00edlico. Essa solu\u00e7\u00e3o \u00e9 adicionada diretamente sobre a coca\u00edna base, obtendo-se a coca\u00edna cloridrato em alto rendimento'."
+      }
+,
+      {
+        "q": "[Classifica\u00e7\u00e3o da Coca\u00edna: Farmacol\u00f3gica vs. Jur\u00eddica] 6. Qual contradi\u00e7\u00e3o conceitual existe entre a classifica\u00e7\u00e3o farmacol\u00f3gica da coca\u00edna e o seu enquadramento legal na Portaria n\u00ba 344/98-SVS/MS?",
+        "opts": [
+          "Farmacologicamente \u00e9 um sedativo do sistema nervoso; legalmente \u00e9 classificada como insumo de fabrica\u00e7\u00e3o da Lista D1."
+,
+          "Farmacologicamente \u00e9 uma subst\u00e2ncia estimulante do sistema nervoso central; legalmente est\u00e1 classificada como subst\u00e2ncia entorpecente na Lista F1 (Uso Proscrito) devido a tratados hist\u00f3ricos."
+,
+          "Farmacologicamente \u00e9 um alucin\u00f3geno perturbador; legalmente \u00e9 classificada como psicotr\u00f3pico de uso permitido na Lista A3."
+,
+          "N\u00e3o h\u00e1 contradi\u00e7\u00f5es, pois tanto a farmacologia quanto a lei a enquadram como analg\u00e9sico opioide."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 14 e 21 da apostila: 'A classifica\u00e7\u00e3o das drogas segue o recomendado no primeiro tratado assinado pelo Brasil... Nesse \u00ednterim, a coca\u00edna aparece classificada como entorpecente, apesar de ser farmacologicamente classificada como uma subst\u00e2ncia estimulante'. Ela est\u00e1 na Lista F1 (Subst\u00e2ncias Entorpecentes de uso proscrito)."
+      }
+,
+      {
+        "q": "[Metanfetamina - Enquadramento Legal] 7. Ao contr\u00e1rio da anfetamina comum e da dexanfetamina, qual o enquadramento legal atual da metanfetamina de acordo com a Portaria n\u00ba 344/98-SVS/MS?",
+        "opts": [
+          "Est\u00e1 enquadrada na Lista A3 (Subst\u00e2ncias Psicotr\u00f3picas), sendo permitida sua comercializa\u00e7\u00e3o sob receita amarela."
+,
+          "Est\u00e1 inclu\u00edda na Lista F2 (Subst\u00e2ncias Psicotr\u00f3picas de Uso Proscrito no Brasil), sendo de uso proibido."
+,
+          "Est\u00e1 na Lista B1 (Psicotr\u00f3picos comuns) sujeita a controle por receita azul."
+,
+          "Est\u00e1 na Lista D1 (Precursores) por ser insumo farmac\u00eautico secund\u00e1rio."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 22-23 da apostila: as anfetaminas como anfetamina e dexanfetamina est\u00e3o na Lista A3 (Notifica\u00e7\u00e3o de Receita A). J\u00e1 a 'metanfetamina est\u00e1 atualmente inclu\u00edda na Lista F2 \u2013 Drogas de Uso Proscrito, presente na atualiza\u00e7\u00e3o da Portaria n.\u00ba 344/98-SVS/MS'."
+      }
+,
+      {
+        "q": "[Anorex\u00edgenos - Associa\u00e7\u00f5es Proscritas] 8. Em rela\u00e7\u00e3o aos anorex\u00edgenos (Lista B2), quais associa\u00e7\u00f5es medicamentosas em f\u00f3rmulas magistrais s\u00e3o expressamente proibidas (proscritas) pela legisla\u00e7\u00e3o sanit\u00e1ria nacional (RDC n\u00ba 58/2007)?",
+        "opts": [
+          "A associa\u00e7\u00e3o com analg\u00e9sicos comuns e anti-inflamat\u00f3rios n\u00e3o esteroidais."
+,
+          "A associa\u00e7\u00e3o de anorex\u00edgenos com ansiol\u00edticos, diur\u00e9ticos, horm\u00f4nios ou extratos hormonais e laxantes, bem como quaisquer outras subst\u00e2ncias com a\u00e7\u00e3o medicamentosa."
+,
+          "A associa\u00e7\u00e3o com vitaminas hidrossol\u00faveis e sais minerais de ferro."
+,
+          "A associa\u00e7\u00e3o com xaropes antituss\u00edgenos \u00e0 base de code\u00edna."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 23 da apostila: 'Atualmente, encontra-se proscrita (proibida) pelo art. 48 da Portaria n.\u00ba 344-SVS/MS... e pela RDC n.\u00ba 58, de 5/9/2007, a associa\u00e7\u00e3o de anorex\u00edgenos com ansiol\u00edticos, diur\u00e9ticos, horm\u00f4nios ou extratos hormonais e laxantes...'"
+      }
+,
+      {
+        "q": "[Cannabis - Morfologia Foliar] 9. Quais s\u00e3o as caracter\u00edsticas morfol\u00f3gicas descritas na apostila para as folhas das plantas do g\u00eanero Cannabis?",
+        "opts": [
+          "Folhas simples, opostas, com margens perfeitamente lisas e duas falsas nervuras paralelas."
+,
+          "Folhas alternadas, circulares e compostas de um n\u00famero \u00edmpar de fol\u00edolos estreitos e comprimidos, separados, com bordas serrilhadas (dentadas), brilhantes e pegajosas, de colora\u00e7\u00e3o verde escura na face superior (coberta por pelos) e verde mais clara na inferior."
+,
+          "Folhas cori\u00e1ceas, trilobadas, cobertas de espinhos na bainha protetora."
+,
+          "Folhas el\u00edpticas lisas, alternadas por talo, de cor parda amarelada quando maduras."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 26 da apostila: 'Suas folhas s\u00e3o alternadas, circulares e compostas de um n\u00famero \u00edmpar de fol\u00edolos estreitos e comprimidos, separados, com bordas serrilhadas (dentadas), sendo brilhantes e pegajosas, cobertas por pelos na face superior, de cor verde escura e a face inferior de cor verde mais clara. O n\u00famero de fol\u00edolos por folha pode ser de tr\u00eas, cinco ou sete (comum), por\u00e9m h\u00e1 relatos... com at\u00e9 11...'"
+      }
+,
+      {
+        "q": "[Cannabis - Skunk e Tecnologias de Cultivo] 10. O que caracteriza a cannabis conhecida como 'Skunk', quais tecnologias s\u00e3o empregadas no seu plantio e quais os teores de tetrahidrocanabinol (THC) citados na apostila?",
+        "opts": [
+          "Variedade pura de baixo teor de resina, cultivada sem luz artificial, com 0,5% de THC."
+,
+          "Plantas com concentra\u00e7\u00e3o de THC maior (variando entre 9% e 27% ou mais), derivadas do cruzamento de diversas variedades (como do Afeganist\u00e3o, Marrocos e Tail\u00e2ndia), cultivadas sob tecnologia indoor (hiperluminosidade, controle de nutrientes, adubos, satura\u00e7\u00e3o de CO2) completando flora\u00e7\u00e3o em apenas dois meses."
+,
+          "Uma resina pastosa de cor marrom extra\u00edda por calor seco com 80% de THC."
+,
+          "Mistura desidratada de talos machos triturados com solventes vol\u00e1teis."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 27 da apostila: 'Plantas com uma concentra\u00e7\u00e3o de THC maior, derivadas do cruzamento entre diversas variedades... principalmente as origin\u00e1rias do Afeganist\u00e3o, Marrocos e Tail\u00e2ndia... O uso de tecnologia de cultivo (hiperluminosidade, dosagem de nutrientes, adubos, satura\u00e7\u00e3o do ambiente com di\u00f3xido de carbono) permitem que este h\u00edbrido complete um ciclo de flora\u00e7\u00e3o em apenas dois meses... apreendeu plantas... cujo conte\u00fado variava de 9% a 27% de THC'."
+      }
+,
+      {
+        "q": "[Haxixe vs. \u00d3leo de Haxixe - Teores de THC] 11. Quais as caracter\u00edsticas f\u00edsicas e as respectivas faixas de concentra\u00e7\u00e3o do princ\u00edpio ativo delta-9-THC no Haxixe e no \u00d3leo de Haxixe?",
+        "opts": [
+          "Haxixe possui teor de 80%; o \u00f3leo possui no m\u00e1ximo 10% de THC."
+,
+          "O haxixe \u00e9 uma subst\u00e2ncia resinosa de cor marrom ou preta com teor de THC de cerca de 10%; j\u00e1 o \u00f3leo de haxixe \u00e9 um extrato por solvente com concentra\u00e7\u00e3o de THC geralmente na faixa de 20% a 80%."
+,
+          "Ambos apresentam teores id\u00eanticos ao vegetal bruto seco, situando-se entre 0,5% e 4% de THC."
+,
+          "Haxixe \u00e9 uma solu\u00e7\u00e3o l\u00edquida aquosa de THC e o \u00f3leo de haxixe apresenta-se em pedras bege-pardacentas de 95% de pureza."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 28 da apostila: 'O haxixe \u00e9 uma subst\u00e2ncia resinosa de colora\u00e7\u00e3o marrom escura ou mesmo preta... O teor de THC no haxixe pode atingir cerca de 10%, enquanto no vegetal bruto situa-se entre 0,5% a 4%... \u00f3leo de haxixe... processos extrativos com solventes... A concentra\u00e7\u00e3o de THC no \u00f3leo de haxixe situa-se, geralmente, na faixa de 20% a 80%'."
+      }
+,
+      {
+        "q": "[Canabidiol (CBD) vs. Mevatyl] 12. De acordo com a evolu\u00e7\u00e3o regulat\u00f3ria no Brasil expressa na apostila, como s\u00e3o enquadrados legalmente o Canabidiol (CBD) puro e o medicamento registrado 'Mevatyl'?",
+        "opts": [
+          "Ambos s\u00e3o classificados na Lista F2 de subst\u00e2ncias de uso proscrito no Brasil."
+,
+          "O canabidiol (CBD) puro est\u00e1 classificado na Lista C1 (Controle Especial); enquanto o Mevatyl (medicamento com CBD e THC de at\u00e9 30mg/ml) est\u00e1 enquadrado no adendo da Lista A3 (Notifica\u00e7\u00e3o de Receita A)."
+,
+          "O CBD puro est\u00e1 na Lista B1 e o Mevatyl est\u00e1 na Lista A1."
+,
+          "Ambos s\u00e3o isentos de receita por estarem na Lista D1 de precursores."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 30 da apostila: 'O canabidiol (CBD) foi inclu\u00eddo na Lista C1 - Lista de Subst\u00e2ncias Sujeitas a Controle Especial... Os medicamentos registrados na Anvisa que possuam... no m\u00e1ximo 30 mg de THC por ml e 30 mg de CBD por ml est\u00e3o inclu\u00eddos no adendo 2 da Lista A3 \u2013 Lista das Subst\u00e2ncias Psicotr\u00f3picas (Sujeita a Notifica\u00e7\u00e3o da Receita \u201cA\u201d)... o Mevatyl'."
+      }
+,
+      {
+        "q": "[Composi\u00e7\u00e3o do \u00d3pio Bruto] 13. O \u00f3pio bruto (l\u00e1tex seco obtido do fruto imaturo da Papaver somniferum L.) cont\u00e9m mais de 20 alcaloides. Quais s\u00e3o os 5 alcaloides majorit\u00e1rios descritos na apostila com seus respectivos teores m\u00e9dios aproximados?",
+        "opts": [
+          "Hero\u00edna (45%), morfina (25%), code\u00edna (15%), teba\u00edna (10%) e noscapina (5%)."
+,
+          "Morfina (10%), code\u00edna (0,5%), narcotina ou noscapina (6%), papaverina (1%) e teba\u00edna (0,2%)."
+,
+          "Coca\u00edna (10%), nicotina (5%), cafe\u00edna (4%), atropina (1%) e code\u00edna (0,5%)."
+,
+          "Morfina (90%), code\u00edna (8%), narcotina (1%) e hero\u00edna (1%)."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 31 da apostila: 'O \u00f3pio bruto cont\u00e9m mais de 20 alcaloides, sendo os mais importantes: morfina (10%); code\u00edna (0,5%); narcotina (noscapina - 6%); papaverina (1%); e teba\u00edna (0,2%)'."
+      }
+,
+      {
+        "q": "[Hero\u00edna - Origem e S\u00edntese] 14. Como se caracteriza a origem qu\u00edmica e a hist\u00f3ria regulat\u00f3ria da hero\u00edna descritas no Cap\u00edtulo 2?",
+        "opts": [
+          "\u00c9 um alcaloide natural vol\u00e1til extra\u00eddo de cogumelos asi\u00e1ticos da fam\u00edlia Papaveraceae."
+,
+          "\u00c9 um produto sint\u00e9tico (semissint\u00e9tico) derivado da morfina (diacetilmorfina) por meio de modifica\u00e7\u00e3o qu\u00edmica (acetila\u00e7\u00e3o) da morfina natural do \u00f3pio, inicialmente comercializado como antituss\u00edgeno antes de ser banido por alto potencial de depend\u00eancia."
+,
+          "\u00c9 um tranquilizante benzodiazep\u00ednico de uso hospitalar restrito obtido do \u00e1cido barbit\u00farico."
+,
+          "\u00c9 uma planta proscrita da Lista E cujas sementes s\u00e3o utilizadas na culin\u00e1ria."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 32 da apostila: '\u00c9 um produto sint\u00e9tico derivado da morfina (f\u00e1rmaco proveniente do \u00f3pio), cuja s\u00edntese deu-se in 1874... come\u00e7ou a ser comercializada como medicamento de combate \u00e0 tosse. Com o passar dos anos, verificou-se que a hero\u00edna possu\u00eda uma capacidade de causar depend\u00eancia muito maior... diacetilmorfina'."
+      }
+,
+      {
+        "q": "[Barbit\u00faricos - Indica\u00e7\u00f5es Cl\u00ednicas e Representantes] 15. Devido aos riscos de forte depend\u00eancia e ao surgimento dos benzodiazep\u00ednicos, quais as indica\u00e7\u00f5es cl\u00ednicas atuais e os principais exemplos de barbit\u00faricos citados na apostila?",
+        "opts": [
+          "Tratamento de tosses cr\u00f4nicas e asma; representados pela code\u00edna e papaverina."
+,
+          "A\u00e7\u00e3o anticonvulsivante (fenobarbital, conhecido comercialmente como Gardenal) e pr\u00e9-anest\u00e9sico hospitalar (Tiopental)."
+,
+          "Controle do apetite e obesidade m\u00f3rbida; representados pela sibutramina e mazindol."
+,
+          "Tratamento de surtos esquizofr\u00eanicos agudos; representados pelo diazepam."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 33 da apostila: 'Atualmente, em virtude dos elevados riscos do emprego de barbit\u00faricos... al\u00e9m do surgimento dos benzodiazep\u00ednicos, seu uso praticamente ficou restrito \u00e0 a\u00e7\u00e3o anticonvulsivante (fenobarbital, nome comercial Gardenal) e como pr\u00e9-anest\u00e9sico em hospitais (Tiopental, etc.)'."
+      }
+,
+      {
+        "q": "[Flunitrazepam e Golpe 'Boa Noite, Cinderela'] 16. Qual tranquilizante benzodiazep\u00ednico (Lista B1) de forte a\u00e7\u00e3o indutora do sono \u00e9 citado na apostila como comumente associado ao golpe conhecido como 'boa noite, Cinderela'?",
+        "opts": [
+          "Diazepam (Valium)."
+,
+          "Flunitrazepam (Rohypnol\u00ae)."
+,
+          "Clonazepam (Rivotril)."
+,
+          "Meprobamato (Equanil)."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 34 da apostila: a lista de tranquilizantes traz o 'Flunitrazepam \u2013 Ex.: Rohypnol\u00ae (indutor do sono, usado como droga de estupro no golpe \u201cboa noite, Cinderela\u201d)'."
+      }
+,
+      {
+        "q": "[Fenciclidina (PCP) - Dissociativos] 17. O que \u00e9 a fenciclidina (PCP), qual o seu codinome popular e qual a sua classifica\u00e7\u00e3o legal na Portaria n\u00ba 344/98-SVS/MS?",
+        "opts": [
+          "Planta psicod\u00e9lica de sementes pretas da Lista E, conhecida como cip\u00f3 mariri."
+,
+          "Droga sint\u00e9tica desenvolvida como anest\u00e9sico, utilizada recreacionalmente para causar alucina\u00e7\u00f5es, conhecida popularmente como 'p\u00f3 de anjo' (peace pill) e inclu\u00edda na Lista A3 (Psicotr\u00f3picos)."
+,
+          "Solvente clorado industrial de inala\u00e7\u00e3o proscrita, inclu\u00eddo na Lista D2."
+,
+          "Princ\u00edpio ativo natural de cogumelos mexicanos, conhecido como peyote e classificado na Lista F2."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 35-36 da apostila: 'O PCP (fenciclidina, conhecido como \u201cp\u00f3 de anjo\u201d ou peace pill) \u00e9 uma droga sint\u00e9tica, desenvolvida como anest\u00e9sico, utilizada de maneira recreacional para causar alucina\u00e7\u00f5es, aspirada ou fumada... Na Portaria n.\u00ba 344/98-SVS/MS, a fenciclidina est\u00e1 presente na Lista A3'."
+      }
+,
+      {
+        "q": "[LSD-25, Albert Hoffmann e Flashback] 18. Quem sintetizou o alucin\u00f3geno LSD, a partir de qual mat\u00e9ria-prima f\u00fangica e o que caracteriza o fen\u00f4meno conhecido como 'flashback' descrito na apostila?",
+        "opts": [
+          "Sintetizado por Alexander Shulgin a partir do safrol; o flashback \u00e9 a paralisia muscular respirat\u00f3ria imediata."
+,
+          "Sintetizado por Albert Hoffmann a partir do \u00e1cido lis\u00e9rgico de um fungo parasita do centeio (Claviceps purpurea); o flashback \u00e9 a ocorr\u00eancia de novos efeitos alucin\u00f3genos tardios pela libera\u00e7\u00e3o da droga que ficou armazenada nos tecidos gordurosos."
+,
+          "Sintetizado por Adolf von Baeyer a partir de extratos de jurema-preta; o flashback \u00e9 a necrose g\u00e1strica cr\u00f4nica."
+,
+          "Sintetizado por Emil Fischer a partir do barbital; o flashback \u00e9 o coma profundo induzido."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 36-37 da apostila: 'O LSD... foi sintetizado em 1938 pelo qu\u00edmico su\u00ed\u00e7o Albert Hoffmann... usando como mat\u00e9ria-prima o \u00e1cido lis\u00e9rgico, obtido de extratos de um fungo parasit\u00e1rio do centeio (Claviceps purpurea)... Um dos maiores problemas do uso do LSD \u00e9 que, uma vez administrado ao organismo, ele pode ficar armazenado nos tecidos gordurosos, podendo provocar novos efeitos alucin\u00f3genos a qualquer momento posterior no indiv\u00edduo, fen\u00f4meno conhecido como flashback'."
+      }
+,
+      {
+        "q": "[Ayahuasca e o Status Legal do DMT] 19. Como se comp\u00f5e quimicamente o ch\u00e1 de Santo Daime (Ayahuasca), de quais vegetais \u00e9 extra\u00eddo e qual o status legal de seus princ\u00edpios ativos e do seu uso religioso no Brasil?",
+        "opts": [
+          "Ch\u00e1 de folhas de coca e sementes de dormideira; proibido de forma absoluta e incondicional no pa\u00eds."
+,
+          "Ch\u00e1 contendo a combina\u00e7\u00e3o de DMT (extra\u00eddo da chacrona - Psychotria viridis) com alcaloides da harmina (extra\u00eddos do cip\u00f3 mariri - Banisteriopsis caapi); embora o DMT purificado seja proscrito na Lista F2, o uso religioso e ritual do ch\u00e1 \u00e9 regulamentado e autorizado pelo CONAD."
+,
+          "Infus\u00e3o pura de cogumelos do g\u00eanero Psilocybe; enquadrado como medicamento controlado da Lista C1."
+,
+          "Mistura l\u00edquida de \u00e9ter et\u00edlico e ess\u00eancia de patchouli; enquadrado como insumo qu\u00edmico da Lista D2."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 38-41 da apostila: 'O ch\u00e1 possui a combina\u00e7\u00e3o de duas classes de subst\u00e2ncias naturais: alcaloides da harmina (harmina e harmalina) e DMT, sendo preparado a partir de... folhas de Psychotria viridis (chacrona), fonte de DMT, com caules de Banisteriopsis caapi (cip\u00f3 mariri), fonte de harmina... A dimetiltriptamina (DMT) encontra-se inclu\u00edda na Lista... F2 (Uso Proscrito)... O CONAD... regulamentou o uso da bebida de uso restrito a ambientes religiosos'."
+      }
+,
+      {
+        "q": "[Cloreto de Etila (Lan\u00e7a-perfume) - Caracter\u00edsticas] 20. Quais as propriedades f\u00edsicas do cloreto de etila (lan\u00e7a-perfume), sua temperatura de ebuli\u00e7\u00e3o, comportamento na queima e qual o seu enquadramento regulat\u00f3rio?",
+        "opts": [
+          "G\u00e1s incolor denso, n\u00e3o inflam\u00e1vel, de ebuli\u00e7\u00e3o a 100\u00b0C; enquadrado exclusivamente na Lista F2 de proscritos."
+,
+          "Solvente org\u00e2nico clorado, l\u00edquido incolor sob press\u00e3o, inflam\u00e1vel (chama verde), com ebuli\u00e7\u00e3o a 12 \u00baC; classificado de forma dupla na Lista D2 (insumo) e na Lista B1 (psicotr\u00f3pico) com uso proscrito em aeross\u00f3is/aromatizadores."
+,
+          "L\u00edquido resinoso marrom, com forte odor de patchouli e ebuli\u00e7\u00e3o a 50 \u00b0C; enquadrado na Lista E de plantas."
+,
+          "\u00c1cido forte incolor de ebuli\u00e7\u00e3o a 0 \u00b0C; isento de controle especial na Portaria 344/98."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 42 da apostila: 'O cloreto de etila \u00e9 um solvente org\u00e2nico clorado... sob press\u00e3o, apresenta-se como uma subst\u00e2ncia l\u00edquida incolor, de temperatura de ebuli\u00e7\u00e3o de 12 \u00baC, menos densa que a \u00e1gua, inflam\u00e1vel (produz uma chama verde)... inclu\u00eddo na Lista... D2 (Insumo) e na Lista... B1 (Psicotr\u00f3pico) da RDC n\u00ba 39/2012... O uso de cloreto de etila \u00e9 proscrito para fins m\u00e9dicos, bem como a sua utiliza\u00e7\u00e3o sob a forma de aerossol, aromatizador...'"
+      }
+    ]
+  }
+];
+
+let answered = 0, corrects = 0, wrongs = 0;
+let wrongQuestions = [];
+
+function updateScore(){
+  document.getElementById('sc-c').textContent = corrects;
+  document.getElementById('sc-w').textContent = wrongs;
+  document.getElementById('sc-a').textContent = answered;
+  document.getElementById('btn-wrong').disabled = (wrongQuestions.length === 0);
+}
+
+function buildQuiz(dataSource){
+  dataSource = dataSource || CHAPTERS;
+  window._currentData = dataSource;
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  let total = 0;
+  dataSource.forEach(ch => total += ch.questions.length);
+  document.getElementById('sc-total').textContent = '/ ' + total;
+
+  dataSource.forEach((ch, ci) => {
+    const div = document.createElement('div');
+    div.className = 'chapter';
+    let html = `<div class="chapter-title">${ch.title}</div>`;
+    ch.questions.forEach((q, qi) => {
+      const qid = 'q_' + ci + '_' + qi;
+      html += `<div class="question" id="block_${qid}">
+        <div class="q-num">Questão ${qi+1}</div>
+        <div class="q-text">${q.q}</div>`;
+      q.opts.forEach((opt, oi) => {
+        html += `<button class="opt" id="${qid}_${oi}" onclick="handleAnswer(${ci}, ${qi}, ${oi})">${opt}</button>`;
+      });
+      html += `<div class="feedback" id="fb_${qid}" style="display:none"></div></div>`;
+    });
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+}
+
+function handleAnswer(ci, qi, chosen){
+  const dataSource = window._currentData || CHAPTERS;
+  const ch = dataSource[ci];
+  const q = ch.questions[qi];
+  const qid = 'q_' + ci + '_' + qi;
+  const correct = q.ans;
+  const isRight = (chosen === correct);
+
+  q.opts.forEach((_, oi) => {
+    const btn = document.getElementById(qid + '_' + oi);
+    btn.disabled = true;
+    if(oi === correct) btn.classList.add('correct');
+    if(oi === chosen && !isRight) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('fb_' + qid);
+  fb.style.display = 'block';
+  if(isRight){
+    fb.className = 'feedback ok';
+    fb.innerHTML = `✅ <strong>Correto!</strong> ${q.exp}`;
+    corrects++;
+  } else {
+    fb.className = 'feedback err';
+    fb.innerHTML = `❌ <strong>Incorreto.</strong> ${q.exp}`;
+    wrongs++;
+    wrongQuestions.push({chTitle: ch.title, qObj: q});
+  }
+  answered++;
+  updateScore();
+}
+
+function resetAll(){
+  if(!confirm('Reiniciar o quiz completo?')) return;
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(CHAPTERS);
+  updateScore();
+}
+
+function resetWrong(){
+  if(wrongQuestions.length === 0) return;
+  if(!confirm('Reiniciar apenas com as ' + wrongQuestions.length + ' questão(ões) que você errou?')) return;
+  const chapMap = {};
+  wrongQuestions.forEach(({chTitle, qObj}) => {
+    if(!chapMap[chTitle]) chapMap[chTitle] = {title: chTitle, questions: []};
+    chapMap[chTitle].questions.push(qObj);
+  });
+  const filtered = Object.values(chapMap);
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(filtered);
+  updateScore();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

@@ -1,0 +1,735 @@
+Aqui está o seu simulado focado inteiramente no **Capítulo 1 (Conceitos Básicos sobre Química Forense)** da apostila oficial de *Química Forense*. 
+
+Este simulado conta com **40 questões inéditas de nível difícil e de linguagem simples**, elaboradas com base estrita no material oficial fornecido. 
+
+O simulado foi projetado de acordo com suas especificações:
+* **Letras grandes** (`font-size` de 26px para facilidade de leitura e acessibilidade).
+* **Linguagem simples e direta**, com alta cobrança conceitual das terminologias técnicas, convenções e regras de listas.
+* **Diagramas SVG integrados aos gabaritos comentados**, aparecendo na tela apenas após você selecionar uma resposta e clicar em "Responder".
+
+Para treinar, salve o código abaixo em seu computador como um arquivo `.html` (por exemplo, `simulado_química_forense_topico1.html`) e abra-o em qualquer navegador:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado Química Forense - Capítulo 1</title>
+<style>
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        background-color: #f0fdf4; 
+        color: #0f172a; 
+        margin: 0; 
+        padding: 30px; 
+        font-size: 26px; /* Letras grandes conforme solicitado */
+    }
+    .container { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        background: #ffffff; 
+        padding: 45px; 
+        border-radius: 16px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    }
+    h1 { 
+        text-align: center; 
+        color: #0d9488; 
+        font-size: 46px; 
+        margin-bottom: 10px;
+    }
+    p.subtitle {
+        text-align: center; 
+        color: #475569; 
+        margin-bottom: 50px; 
+        font-size: 28px;
+    }
+    .question-card { 
+        margin-bottom: 55px; 
+        padding: 40px; 
+        border: 2px solid #ccfbf1; 
+        border-radius: 12px; 
+        background-color: #fafbfc; 
+    }
+    .topic-tag {
+        display: inline-block;
+        background-color: #0d9488;
+        color: #ffffff;
+        font-size: 18px;
+        padding: 6px 18px;
+        border-radius: 20px;
+        margin-bottom: 22px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .question-text { 
+        font-weight: bold; 
+        font-size: 32px; 
+        margin-bottom: 25px; 
+        color: #111827; 
+        line-height: 1.4;
+    }
+    .options { 
+        list-style-type: none; 
+        padding: 0; 
+        margin: 0;
+    }
+    .options li { 
+        margin-bottom: 18px; 
+        background: #ffffff; 
+        border: 2px solid #cbd5e1; 
+        border-radius: 10px; 
+        transition: all 0.2s ease; 
+    }
+    .options li:hover { 
+        background-color: #f0fdfa; 
+        border-color: #0d9488;
+    }
+    .options label { 
+        cursor: pointer; 
+        display: flex; 
+        align-items: center; 
+        padding: 22px; 
+        width: 100%; 
+        box-sizing: border-box;
+        font-size: 28px;
+        line-height: 1.4;
+    }
+    .options input { 
+        margin-right: 25px; 
+        transform: scale(2.0); 
+    }
+    button { 
+        background-color: #0d9488; 
+        color: #ffffff; 
+        border: none; 
+        padding: 22px 45px; 
+        border-radius: 10px; 
+        cursor: pointer; 
+        font-size: 28px; 
+        font-weight: bold;
+        margin-top: 25px; 
+        transition: background-color 0.2s;
+    }
+    button:hover { 
+        background-color: #0f766e; 
+    }
+    button:disabled { 
+        background-color: #94a3b8; 
+        cursor: not-allowed; 
+    }
+    .feedback { 
+        margin-top: 25px; 
+        padding: 30px; 
+        border-radius: 10px; 
+        display: none; 
+        line-height: 1.5; 
+        font-size: 28px;
+    }
+    .correct { 
+        background-color: #d1fae5; 
+        color: #065f46; 
+        border: 2px solid #10b981; 
+    }
+    .incorrect { 
+        background-color: #fee2e2; 
+        color: #991b1b; 
+        border: 2px solid #f43f5e; 
+    }
+    .explanation { 
+        margin-top: 20px; 
+        font-style: italic; 
+        font-size: 26px; 
+        color: #334155;
+    }
+    .diagram-box {
+        margin: 20px 0;
+        text-align: center;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        border: 2px dashed #0d9488;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Simulado de Química Forense</h1>
+    <p class="subtitle">40 Questões Inéditas - Capítulo 1: Conceitos Básicos sobre Química Forense</p>
+    <div id="quiz-container"></div>
+</div>
+
+<script>
+const quizData = [
+    {
+        question: "1. Como a apostila conceitua e define a Química Forense de forma ampla?",
+        options: [
+            "É a vertente policial focada na queima direta de entorpecentes em valas abertas.",
+            "É o ramo da Perícia que processa, estuda e identifica os vestígios químicos de um crime.",
+            "É o estudo laboratorial exclusivo de drogas sintéticas de balada, como o MDMA e MDA.",
+            "É a disciplina que analisa unicamente resíduos de metal de disparos de arma de fogo (GSR)."
+        ],
+        answer: 1,
+        explanation: "A Química Forense é definida no texto como o ramo da Perícia que processa, estuda e identifica os vestígios químicos de um crime."
+    },
+    {
+        question: "2. Com quais áreas a Química Forense realiza interfaces de trabalho devido à abrangência de sua casuística na Polícia Federal?",
+        options: [
+            "Apenas com a área de trânsito e patrulhamento de rodovias.",
+            "Meio Ambiente, Local de Crime e Documentoscopia.",
+            "Somente com o setor de crimes financeiros cibernéticos.",
+            "Exclusivamente com o controle sanitário aeroportuário da Anvisa."
+        ],
+        answer: 1,
+        explanation: "O texto afirma explicitamente que a Química Forense permite diversas interfaces de trabalho com áreas tão distintas como Meio Ambiente, Local de Crime e Documentoscopia."
+    },
+    {
+        question: "3. Qual é o conceito 'clássico' de droga apresentado no texto da apostila?",
+        options: [
+            "Qualquer composto nitrogenado que apresenta caráter fortemente básico e toxicidade aguda.",
+            "Qualquer substância natural ou sintética que, ao entrar em contato com um organismo vivo, pode modificar uma ou várias de suas funções.",
+            "Apenas os produtos farmacêuticos obtidos com finalidade curativa e paliativa.",
+            "Toda forma farmacêutica terminada que cause estupor, coma ou narcose induzida."
+        ],
+        answer: 1,
+        explanation: "O conceito clássico é: 'Qualquer substância natural ou sintética que, ao entrar em contato com um organismo vivo, pode modificar uma ou várias de suas funções; é uma substância química que tem ação biológica sobre as estruturas celulares do organismo, com fins terapêuticos ou não'."
+    },
+    {
+        question: "4. Qual a definição legal de 'droga' estabelecida pela Lei nº 11.343/2006 (Lei de Drogas) descrita na apostila?",
+        options: [
+            "Toda substância que reage positivamente ao teste de Marquis gerando cores escuras.",
+            "As substâncias ou produtos capazes de causar dependência, assim especificados em lei ou relacionados em listas atualizadas periodicamente pelo Poder Executivo da União.",
+            "Qualquer alcaloide que atue bloqueando a dor de forma imediata por ação tópica.",
+            "Qualquer produto destinado a fins terapêuticos que passe por alteração ou corrupção."
+        ],
+        answer: 1,
+        explanation: "Conforme a Lei nº 11.343/2006: 'Para fins desta Lei, consideram-se como drogas as substâncias ou produtos capazes de causar dependência, assim especificados em lei ou relacionados em listas atualizadas periodicamente pelo Poder Executivo da União'."
+    },
+    {
+        question: "5. Em termos práticos de aplicação de leis, quais listas da Portaria nº 344/98-SVS/MS definem o que é considerado droga no Brasil?",
+        options: [
+            "Listas C1, C2 e D1.",
+            "Listas A, B e F.",
+            "Apenas as Listas E e F4.",
+            "Somente as Listas D2 e C5."
+        ],
+        answer: 1,
+        explanation: "O texto ressalta que, em relação às listas da Portaria nº 344/98, 'consideram-se drogas as substâncias presentes nas listas “A”, “B” e “F”'."
+    },
+    {
+        question: "6. Como a apostila define as chamadas 'drogas naturais'?",
+        options: [
+            "São aquelas criadas pelo homem unicamente em laboratórios usando safrol.",
+            "Drogas presentes na natureza que podem ser empregadas pelo uso direto de sua fonte ou purificadas por procedimentos físicos ou químicos, mas sem alteração de sua molécula original.",
+            "Substâncias obtidas modificando-se quimicamente a morfina para gerar heroína.",
+            "Quaisquer produtos que não reagem com ácidos e mantêm o caráter ácido em água."
+        ],
+        answer: 1,
+        explanation: "As drogas naturais 'já existem na natureza. Podem ser empregadas pelo uso direto de sua fonte natural ou podem, ainda, ser extraídas e purificadas por meio de determinados procedimentos químicos ou físicos, porém sem alteração da molécula original'."
+    },
+    {
+        question: "7. Assinale a alternativa que contém apenas exemplos de drogas classificadas como NATURAIS de acordo com a apostila:",
+        options: [
+            "LSD, MDMA, metadona e benzodiazepínicos.",
+            "Cocaína, THC, morfina, mescalina, psilocibina e DMT.",
+            "Heroína, anfetamina, barbitúricos e mefedrona.",
+            "Metanfetamina, DOB, mefedrona e cloreto de etila."
+        ],
+        answer: 1,
+        explanation: "O texto exemplifica como drogas naturais: 'cocaína, THC, morfina, mescalina, psilocibina, DMT, etc.'."
+    },
+    {
+        question: "8. O que caracteriza as chamadas 'drogas sintéticas'?",
+        options: [
+            "São aquelas extraídas do látex da dormideira sem alteração da molécula original.",
+            "São obtidas por meio de modificações químicas da estrutura de precursores naturais ou sintéticos, criadas pelo homem por meio de síntese química em laboratório.",
+            "Substâncias que obrigatoriamente têm origem mineral direta na natureza.",
+            "Quaisquer misturas heterogêneas sólidas adicionadas para aumentar a massa final."
+        ],
+        answer: 1,
+        explanation: "As drogas sintéticas são 'obtidas por meio de modificações químicas da estrutura de precursores naturais ou sintéticos, ou seja, não existem na natureza e são criadas pelo homem por meio de síntese química em laboratórios'."
+    },
+    {
+        question: "9. Assinale a alternativa que contém apenas exemplos de drogas classificadas como SINTÉTICAS na apostila:",
+        options: [
+            "Cocaína, THC, morfina e psilocibina.",
+            "LSD, MDMA, heroína, metadona, anfetaminas e barbitúricos.",
+            "Mescalina, DMT, ópio e folhas de coca.",
+            "Chacrona, cipó mariri, maconha e sementes de papoula."
+        ],
+        answer: 1,
+        explanation: "O texto traz expressamente como sintéticas: 'LSD, MDMA, heroína, metadona, anfetaminas, barbitúricos, benzodiazepínicos, mefedrona, DOB, etc.'.",
+        diagram: `
+            <div class="diagram-box">
+                <p style="font-size:18px; margin:5px; color:#555;"><b>Classificação das Drogas (Apostila)</b></p>
+                <svg width="360" height="120" viewBox="0 0 360 120">
+                    <rect x="10" y="30" width="150" height="70" rx="8" fill="#14b8a6" />
+                    <rect x="200" y="30" width="150" height="70" rx="8" fill="#0d9488" />
+                    <text x="85" y="55" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">NATURAIS</text>
+                    <text x="85" y="80" font-size="9" fill="#fff" text-anchor="middle">Cocaína, THC, Morfina, DMT</text>
+                    <text x="275" y="55" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">SINTÉTICAS</text>
+                    <text x="275" y="80" font-size="9" fill="#fff" text-anchor="middle">LSD, MDMA, Heroína, Anfetamina</text>
+                </svg>
+            </div>
+        `
+    },
+    {
+        question: "10. Como a apostila conceitua tecnicamente o termo 'Fármaco'?",
+        options: [
+            "Forma farmacêutica terminada que contém adjuvantes farmacotécnicos.",
+            "Substância de estrutura química definida, dotada de ação farmacológica conhecida, capaz de modificar ou explorar o sistema fisiológico ou o estado patológico, em benefício do organismo receptor.",
+            "Produto farmacêutico obtido com finalidade diagnóstica ou profilática.",
+            "Toda substância que age como diluente inerte na preparação de medicamentos."
+        ],
+        answer: 1,
+        explanation: "Fármaco é a 'Substância de estrutura química definida, dotada de ação farmacológica conhecida, capaz de modificar ou explorar o sistema fisiológico ou o estado patológico, em benefício do organismo receptor'."
+    },
+    {
+        question: "11. Qual a diferença conceitual entre 'Fármaco' e 'Medicamento' definida na apostila?",
+        options: [
+            "Fármaco é o produto final embalado; medicamento é o princípio ativo isolado.",
+            "O fármaco tem estrutura química definida e ação biológica; já o medicamento é o produto tecnicamente elaborado (forma farmacêutica terminada) que contém o fármaco associado a adjuvantes.",
+            "Medicamento é sempre de origem natural; fármaco é sempre sintético.",
+            "Não há diferença conceitual ou prática, sendo termos idênticos na ciência."
+        ],
+        answer: 1,
+        explanation: "O medicamento é o 'Produto farmacêutico, tecnicamente obtido ou elaborado [...] forma farmacêutica terminada que contém um ou mais fármacos, geralmente em associação com adjuvantes farmacotécnicos'.",
+        diagram: `
+            <div class="diagram-box">
+                <p style="font-size:18px; margin:5px; color:#555;"><b>Relação: Fármaco vs. Medicamento</b></p>
+                <svg width="300" height="110" viewBox="0 0 300 110">
+                    <rect x="20" y="20" width="100" height="50" fill="#2dd4bf" rx="5" />
+                    <text x="70" y="50" font-size="12" font-weight="bold" fill="#000" text-anchor="middle">Fármaco (Ativo)</text>
+                    <text x="140" y="50" font-size="16" fill="#000">+</text>
+                    <rect x="170" y="20" width="110" height="50" fill="#99f6e4" rx="5" />
+                    <text x="225" y="42" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">Adjuvantes</text>
+                    <text x="225" y="60" font-size="9" fill="#475569" text-anchor="middle">(Excipientes)</text>
+                    <!-- Seta apontando para baixo -->
+                    <path d="M 150,75 L 150,100" stroke="#0d9488" stroke-width="3" />
+                    <text x="150" y="108" font-size="12" font-weight="bold" fill="#0d9488" text-anchor="middle">Medicamento</text>
+                </svg>
+            </div>
+        `
+    },
+    {
+        question: "12. Qual a definição da ciência conhecida como 'Farmacologia'?",
+        options: [
+            "A ciência que investiga as rotas de síntese de precursores químicos.",
+            "A ciência que estuda como os fármacos interagem com organismos vivos.",
+            "O ramo da química que analisa pigmentos e tintas de documentos.",
+            "O estudo dos efeitos puramente nocivos e letais das substâncias."
+        ],
+        answer: 1,
+        explanation: "A Farmacologia 'pode ser definida como a ciência que estuda como os fármacos interagem com organismos vivos'."
+    },
+    {
+        question: "13. Qual é o campo de estudo da 'Toxicologia' de acordo com a nomenclatura padrão?",
+        options: [
+            "A ciência que cria novas rotas para síntese de entorpecentes.",
+            "A ciência que estuda os efeitos nocivos decorrentes das interações de substâncias químicas com os organismos.",
+            "O estudo restrito às plantas proscritas que causam dependência física.",
+            "A dosagem das massas de diluentes inertes de drogas apreendidas."
+        ],
+        answer: 1,
+        explanation: "A Toxicologia é a 'Ciência que estuda os efeitos nocivos decorrentes das interações de substâncias químicas com os organismos'."
+    },
+    {
+        question: "14. Como é definido o termo 'Tóxico' (agente tóxico ou toxicante) na apostila?",
+        options: [
+            "Qualquer fármaco de venda restrita e tarja preta hospitalar.",
+            "A substância química capaz de causar dano a um sistema biológico, alterando uma função ou levando-o à morte, sob determinadas condições de exposição.",
+            "Uma classe de drogas que produz obrigatoriamente anestesia local na pele.",
+            "Uma substância nitrogenada básica de origem puramente fúngica."
+        ],
+        answer: 1,
+        explanation: "O tóxico é o 'agente tóxico ou toxicante a substância química capaz de causar dano a um sistema biológico, alterando uma função ou levando-o à morte, sob determinadas condições de exposição'."
+    },
+    {
+        question: "15. O que são os 'Psicotrópicos' ou 'Substâncias Psicoativas'?",
+        options: [
+            "Analgésicos de ação local que agem de fora para dentro do corpo.",
+            "Termo genérico que designa drogas com efeitos significativos no sistema nervoso central (SNC), que afetam processos mentais, alterando a percepção, as emoções, o pensamento e o comportamento.",
+            "Produtos obtidos exclusivamente da resina condensada do haxixe.",
+            "Líquidos altamente voláteis que produzem uma chama esverdeada ao queimar."
+        ],
+        answer: 1,
+        explanation: "Psicotrópicos referem-se ao 'Termo genérico que designa drogas com efeitos significativos no sistema nervoso central (SNC...), que afetam processos mentais, alterando a percepção, as emoções, o pensamento e o comportamento'."
+    },
+    {
+        question: "16. Como são tecnicamente definidas as Novas Substâncias Psicoativas (NSP) segundo a apostila?",
+        options: [
+            "Substâncias de circulação rápida criadas nos últimos 12 meses.",
+            "Substâncias não listadas na Convenção de Psicotrópicos de 1971, nem nas suas atualizações, mas com potencial de abuso e que podem representar ameaça à saúde.",
+            "Qualquer anfetamina comercializada sob receita do modelo B2.",
+            "Drogas adicionadas de sais de ferro para alterar o teste Scott."
+        ],
+        answer: 1,
+        explanation: "NSPs 'São substâncias não listadas na Convenção de Psicotrópicos de 1971, nem nas suas atualizações... que não são controladas nos termos da Convenção Única sobre Entorpecentes de 1961 ou pela Convenção sobre Substâncias Psicotrópicas de 1971, mas que podem representar uma ameaça à saúde pública'."
+    },
+    {
+        question: "17. O que caracteriza quimicamente os 'Alcaloides' descritos no texto?",
+        options: [
+            "São hidrocarbonetos ácidos altamente voláteis presentes em resinas.",
+            "São substâncias nitrogenadas, muitas delas farmacologicamente ativas, encontradas predominantemente em plantas, várias delas com caráter básico.",
+            "Sais de cloreto inorgânico que se precipitam com nitrato de prata.",
+            "Solventes orgânicos clorados de baixíssimo ponto de ebulição."
+        ],
+        answer: 1,
+        explanation: "Os alcaloides 'São substâncias nitrogenadas, muitas delas farmacologicamente ativas, encontradas predominantemente em plantas. Várias delas possuem caráter básico, podendo apresentar efeitos psicotrópicos...'."
+    },
+    {
+        question: "18. Qual é a definição estrita e científica do termo farmacológico 'Entorpecente'?",
+        options: [
+            "Toda droga cuja venda seja considerada ilegal ou proibida por lei.",
+            "Agente químico que produz estupor (narcose), coma ou insensibilidade à dor, referindo-se normalmente a opioides ou opiáceos.",
+            "Substância com atividade estimulante que aumenta o trabalho do SNC.",
+            "Qualquer insumo químico utilizado como precursor na fabricação de sais."
+        ],
+        answer: 1,
+        explanation: "O termo entorpecente conceitua o 'Agente químico que que produz estupor (narcose), coma ou insensibilidade à dor. O termo se refere normalmente a opioides ou opiáceos, que são denominados analgésicos narcóticos'."
+    },
+    {
+        question: "19. Qual a crítica de imprecisão técnica feita pela apostila em relação ao uso do termo 'Entorpecente' no meio jurídico ou em linguagem coloquial?",
+        options: [
+            "Dizer que entorpecentes reduzem as batidas do coração.",
+            "Utilizar o termo de forma imprecisa para designar drogas ilícitas em geral, independentemente de sua real ação farmacológica.",
+            "Dizer que a morfina e a codeína pertencem a essa classe analgésica.",
+            "Considerar que analgésicos opioides são medicamentos de uso restrito."
+        ],
+        answer: 1,
+        explanation: "A apostila nota que: 'Em linguagem coloquial ou em uso jurídico, esta definição tem sido utilizada de maneira imprecisa, do ponto de vista científico, para designar drogas ilícitas, a despeito do seu uso farmacológico'."
+    },
+    {
+        question: "20. Como se definem os 'Adulterantes' no contexto da Química Forense?",
+        options: [
+            "Substâncias sem atividade farmacológica adicionadas para dar peso.",
+            "Substâncias com efeito farmacológico que podem potencializar ou simular algum dos efeitos das drogas de abuso no usuário.",
+            "Substâncias proscritas da lista F que evaporam à temperatura ambiente.",
+            "Ácidos fortes usados na reação de conversão para precipitar sais."
+        ],
+        answer: 1,
+        explanation: "Adulterantes são: 'Substâncias com efeito farmacológico, que podem potencializar ou simular algum dos efeitos das drogas de abuso (a cocaína, por exemplo) no usuário'."
+    },
+    {
+        question: "21. Como se definem os 'Diluentes' na preparação de drogas de abuso de acordo com a apostila?",
+        options: [
+            "Substâncias ativas de caráter básico que atuam como precursores químicos.",
+            "Substâncias sem atividade farmacológica, adicionadas para diluir drogas de abuso e aumentar a massa do produto a ser comercializado.",
+            "Solventes como o éter e o clorofórmio que liquefazem o crack.",
+            "Produtos que simulam a ação estimulante da cocaína no usuário."
+        ],
+        answer: 1,
+        explanation: "Diluentes são: 'Substâncias sem atividade farmacológica, adicionadas para diluir drogas de abuso (a cocaína, por exemplo) e aumentar a massa do produto a ser comercializado'."
+    },
+    {
+        question: "22. Qual é a finalidade central do SISNAD (Sistema Nacional de Políticas Públicas sobre Drogas) e qual o seu decreto regulamentador?",
+        options: [
+            "Fiscalizar apenas a entrada de importações da receita federal; Decreto nº 10.357/01.",
+            "Articular, integrar, organizar e coordenar as atividades relacionadas com a prevenção do uso indevido, atenção e reinserção social de dependentes, e a repressão do tráfico; regulamentado pelo Decreto nº 5.912/2006.",
+            "Controlar o mercado de medicamentos e registrar o Mevatyl; Decreto nº 12.894/13.",
+            "Emitir licenças e portarias ambientais para uso de agrotóxicos; Decreto nº 54.216/64."
+        ],
+        answer: 1,
+        explanation: "O SISNAD visa articular, integrar, organizar e coordenar as atividades de prevenção, atenção e repressão ao tráfico de drogas. 'A regulamentação do órgão encontra-se no Decreto n.º 5.912, de 27 de setembro de 2006'."
+    },
+    {
+        question: "23. A Convenção Única sobre Entorpecentes de 1961 foi ratificada no Brasil por qual ato normativo?",
+        options: [
+            "Decreto nº 79.388/77.",
+            "Decreto nº 54.216/64.",
+            "Decreto nº 154/91.",
+            "Lei nº 11.343/06."
+        ],
+        answer: 1,
+        explanation: "A 'Convenção Única sobre Entorpecentes de 1961, ratificada no Brasil através do Decreto n.º 54.216/64'."
+    },
+    {
+        question: "24. Por qual decreto presidencial o Brasil ratificou e incorporou a Convenção sobre Substâncias Psicotrópicas de 1971?",
+        options: [
+            "Decreto nº 54.216/64.",
+            "Decreto nº 79.388/77.",
+            "Decreto nº 154/91.",
+            "Decreto nº 5.912/06."
+        ],
+        answer: 1,
+        explanation: "A 'Convenção sobre Substâncias Psicotrópicas, de 1971, ratificada no Brasil através do Decreto n.º 79.388/77'."
+    },
+    {
+        question: "25. A Convenção Contra o Tráfico Ilícito de Entorpecentes e Substâncias Psicotrópicas de 1988 foi internalizada no Brasil por meio de qual decreto?",
+        options: [
+            "Decreto nº 79.388/77.",
+            "Decreto nº 154/91.",
+            "Decreto nº 54.216/64.",
+            "Decreto nº 204/22."
+        ],
+        answer: 1,
+        explanation: "A 'Convenção Contra o Tráfico Ilícito de Entorpecentes e Substâncias Psicotrópicas, de 1988, ratificada no Brasil através do Decreto n.º 154/91'."
+    },
+    {
+        question: "26. Qual é a principal norma técnica que define no Brasil as substâncias e medicamentos sujeitos a controle especial e por qual agência reguladora é atualizada?",
+        options: [
+            "Portaria nº 204/22 do Ministério da Justiça.",
+            "Portaria nº 344/98-SVS, atualizada periodicamente por Resoluções da Diretoria Colegiada (RDC) da Anvisa.",
+            "Instrução Normativa nº 28/2018 do Ministério da Saúde.",
+            "Lei nº 10.357/01 sob controle do Departamento de Polícia Federal."
+        ],
+        answer: 1,
+        explanation: "Trata-se da 'Portaria n.º 344/98-SVS, de 12 de maio de 1998, define as substâncias e medicamentos sujeitos a controle especial... atualizada pelas Resoluções da Diretoria Colegiada (RDC) da Anvisa...'."
+    },
+    {
+        question: "27. Qual o teor da Lei nº 10.357/2001 citada no arcabouço legislativo da Química Forense?",
+        options: [
+            "Institui a criação do Mevatyl e autoriza o uso médico de CBD.",
+            "Estabelece normas de controle e fiscalização sobre produtos químicos que direta ou indiretamente possam ser destinados à elaboração ilícita de substâncias entorpecentes ou psicotrópicas.",
+            "Define os tipos de receitas médicas de notificação de cor amarela.",
+            "Transfere o controle das plantas proscritas para as polícias civis."
+        ],
+        answer: 1,
+        explanation: "A Lei nº 10.357/2001 'estabelece normas de controle e fiscalização sobre produtos químicos que direta ou indiretamente possam ser destinados à elaboração ilícita de substâncias entorpecentes, psicotrópicas...'."
+    },
+    {
+        question: "28. De acordo com a Portaria nº 204/2022-MJSP, a quem compete o controle e fiscalização operacional práticos das substâncias controladas pela Lei nº 10.357/01?",
+        options: [
+            "À Vigilância Sanitária Municipal.",
+            "À Polícia Federal.",
+            "Ao Conselho Nacional Antidrogas (CONAD).",
+            "Ao Instituto Nacional de Metrologia (Inmetro)."
+        ],
+        answer: 1,
+        explanation: "O item B.4 indica a Portaria nº 204/2022-MJSP 'que regulamenta quais são as substâncias e em quais condições estão sujeitas ao controle', e as seções de inalantes (Éter/Clorofórmio) reiteram: 'seu controle é realizado pela Polícia Federal'."
+    },
+    {
+        question: "29. No tocante aos prazos legais do Art. 50 da Lei nº 11.343/06, ocorrendo prisão em flagrante por tráfico de drogas, qual o tempo máximo dado para a comunicação ao juiz e vista ao Ministério Público?",
+        options: [
+            "Imediata comunicação ao juiz; e vista ao MP em 24 horas.",
+            "Prazo limite comum de 48 horas para ambos os órgãos.",
+            "Comunicação ao juiz em 24 horas; e vista ao MP em 10 dias.",
+            "O prazo é flexível e depende do laudo definitivo de massas."
+        ],
+        answer: 0,
+        explanation: "O art. 50 diz: 'Ocorrendo prisão em flagrante, a autoridade de polícia judiciária fará, imediatamente, comunicação ao juiz competente, remetendo-lhe cópia do auto lavrado, do qual será dada vista ao órgão do Ministério Público, em 24 (vinte e quatro) horas'."
+    },
+    {
+        question: "30. Sob a ótica processual penal da Lei de Drogas (Artigo 50, parágrafos 1º e 2º), o perito que assina o laudo preliminar de constatação fica impedido de elaborar o laudo definitivo?",
+        options: [
+            "Sim, há impedimento absoluto para evitar conflitos de interesse.",
+            "Não, o perito que subscrever o laudo de constatação não ficará impedido de participar da elaboração do laudo definitivo.",
+            "O impedimento ocorre apenas se ele for um perito oficial concursado.",
+            "Fica impedido apenas no caso de exames complexos de novas drogas (NSP)."
+        ],
+        answer: 1,
+        explanation: "O art. 50, § 2º afirma taxativamente: 'O perito que subscrever o laudo a que se refere o § 1º deste artigo não ficará impedido de participar da elaboração do laudo definitivo'."
+    },
+    {
+        question: "31. A Lei nº 12.894/2013 conferiu atribuição à Polícia Federal para investigar quais crimes, quando houver repercussão interestadual ou internacional que exija repressão uniforme?",
+        options: [
+            "Crimes ambientais de descarte de mercúrio em rios federais.",
+            "Falsificação, corrupção, adulteração ou alteração de produto destinado a fins terapêuticos ou medicinais e venda (Artigo 273 do Código Penal), inclusive pela internet.",
+            "Qualquer tipo de contrabando de cigarros e sementes de papoula.",
+            "Furtos e roubos de defensivos agrícolas dentro de fazendas."
+        ],
+        answer: 1,
+        explanation: "A Lei nº 12.894/2013 acrescentou essa competência ao art. 1º da Lei nº 10.446/2002 para investigar infrações do art. 273 do Código Penal (falsificação, adulteração de produtos terapêuticos/medicinais)."
+    },
+    {
+        question: "32. Qual inconsistência técnica a apostila aponta no fato de a Portaria nº 344/98 adotar as mesmas definições práticas para 'Entorpecente' e 'Psicotrópico'?",
+        options: [
+            "Não há inconsistência, pois ambos os termos referem-se a ácidos.",
+            "A coincidência de definições não é correta do ponto de vista da Farmacologia, que as classifica em categorias totalmente distintas.",
+            "Ambas referem-se unicamente a plantas de uso proscrito.",
+            "O erro é considerar o ópio e a morfina como substâncias controladas."
+        ],
+        answer: 1,
+        explanation: "O texto pontua: 'Cabe notar que as definições legais de entorpecente e psicotrópico adotadas pela Portaria n.º 344 são coincidentes, embora isso não seja correto do ponto de vista da Farmacologia'."
+    },
+    {
+        question: "33. De acordo com a divisão de controle, qual a característica regulamentar das receitas para as substâncias da Lista C1 da Portaria nº 344/98?",
+        options: [
+            "Exigem Notificação de Receita do tipo A de cor amarela.",
+            "Sujeitas a receita de controle especial em duas vias.",
+            "Exigem receita médica comum sem retenção de vias na farmácia.",
+            "Seu uso é restrito ao ambiente hospitalar sem receita externa."
+        ],
+        answer: 1,
+        explanation: "A 'Lista C1 – Lista das outras substâncias sujeitas a controle especial (sujeitas a receita de controle especial em duas vias)'."
+    },
+    {
+        question: "34. Como se dividem as listas 'D1' e 'D2' no âmbito do controle especial de substâncias químicas?",
+        options: [
+            "D1 para anabolizantes; D2 para plantas proscritas de rituais.",
+            "D1 para substâncias precursoras sujeitas a receita sem retenção; D2 para insumos químicos precursores de síntese sujeitos a controle do Ministério da Justiça.",
+            "D1 para substâncias imunosupressoras; D2 para antirretrovirais.",
+            "Ambas destinam-se ao controle exclusivo de novos canabinoides sintéticos."
+        ],
+        answer: 1,
+        explanation: "O texto define a Lista D1 como 'substâncias precursoras... (sujeitas à receita médica sem retenção)' e a Lista D2 como 'insumos químicos utilizados como precursores para fabricação e síntese... (sujeitos a controle do Ministério da Justiça)'."
+    },
+    {
+        question: "35. Como se subdivide a Lista F, que elenca as substâncias de uso proscrito (proibido) no território nacional de acordo com a apostila?",
+        options: [
+            "Dividida em F1 (Estimulantes) e F2 (Sedativos).",
+            "F1 (Substâncias entorpecentes); F2 (Substâncias psicotrópicas); F3 (Substâncias precursoras); F4 (Outras substâncias).",
+            "Apenas F1 (Maconha) e F2 (Cocaína).",
+            "Não possui divisões por se tratar de lista única e corrida."
+        ],
+        answer: 1,
+        explanation: "A 'Lista F - Lista das substâncias de uso proscrito no Brasil: Lista F1 - Substâncias entorpecentes; Lista F2 - Substâncias psicotrópicas; Lista F3 – Substâncias precursoras; Lista F4 - Outras substâncias'."
+    },
+    {
+        question: "36. Sob a ótica regulamentar de comercialização, o que estabelece a Portaria nº 344/98 sobre substâncias e plantas sujeitas a controle especial no Brasil?",
+        options: [
+            "Define que todas as plantas podem ser plantadas para consumo individual.",
+            "Estabelece os critérios para comercialização, tipo de receituário utilizado, se o uso é restrito a hospitais, além de estabelecer quais drogas são de uso proscrito no território nacional.",
+            "Libera o comércio de cocaína cloridrato em farmácias comuns sob receita B1.",
+            "Dita que substâncias precursoras não necessitam de fiscalização da PF."
+        ],
+        answer: 1,
+        explanation: "A norma 'estabelece os critérios para a comercialização de uma substância, o tipo de receituário utilizado e se o uso é restrito ao ambiente hospitalar; além deste fato, a norma estabelece quais são as drogas de uso proscrito...'."
+    },
+    {
+        question: "37. Qual o paradoxo conceitual que a apostila aponta na classificação jurídica da COCAÍNA perante a Portaria nº 344/98 e a Farmacologia?",
+        options: [
+            "Legalmente é um sedativo de lista B1; farmacologicamente é um dissociativo.",
+            "A cocaína aparece classificada na lista F1 como entorpecente, apesar de ser farmacologicamente classificada como uma substância estimulante.",
+            "Legalmente é precursora de lista F3; farmacologicamente é canabinoide.",
+            "A legislação a classifica como planta medicinal permitida sob receita B2."
+        ],
+        answer: 1,
+        explanation: "O texto ressalta: 'Nesse ínterim, a cocaína aparece classificada como entorpecente, apesar de ser farmacologicamente classificada como uma substância estimulante'."
+    },
+    {
+        question: "38. O Código Penal, em seu Artigo 273 (redação dada pela Lei de Crimes Hediondos), pune com reclusão e multa qual conduta criminosa específica relacionada à área médica?",
+        options: [
+            "Falsificar, corromper, adulterar ou alterar produto destinado a fins terapêuticos ou medicinais.",
+            "Qualquer tipo de comércio varejista de medicamentos genéricos sem receita.",
+            "O plantio sem autorização de sementes alimentícias de dormideira.",
+            "A prescrição de anorexígenos do tipo sibutramina."
+        ],
+        answer: 0,
+        explanation: "O CP em seu art. 273 define como crime de reclusão e multa: 'falsificar, corromper, adulterar ou alterar produto destinado a fins terapêuticos ou medicinais'."
+    },
+    {
+        question: "39. Como se caracteriza o crime previsto no Artigo 272 do Código Penal, com redação dada pela Lei dos Crimes Hediondos?",
+        options: [
+            "Contrabando interestadual de insumos químicos para síntese.",
+            "Corromper, adulterar, falsificar ou alterar substância ou produto alimentício destinado a consumo, tornando-o nocivo à saúde ou reduzindo-lhe o valor nutritivo (abrangendo também bebidas).",
+            "A venda sem autorização de agrotóxicos ou fertilizantes hospitalares.",
+            "A comercialização ilegal de plantas de ayahuasca fora de ambientes religiosos."
+        ],
+        answer: 1,
+        explanation: "O CP art. 272 criminaliza: 'corromper, adulterar, falsificar ou alterar substância ou produto alimentício destinado a consumo, tornando-o nocivo à saúde ou reduzindo-lhe o valor nutritivo...'."
+    },
+    {
+        question: "40. Sob a perspectiva da dependência de drogas, qual a diferença clássica entre a 'dependência física' e a 'dependência psíquica'?",
+        options: [
+            "A física refere-se apenas ao comportamento em ambientes públicos; a psíquica à perda de massa muscular.",
+            "A física está relacionada aos fenômenos de tolerância e síndrome de abstinência (o organismo adapta-se à droga); a psíquica está relacionada à falta de controle e desejo intenso (fissura) de consumir para obter prazer ou evitar desconforto.",
+            "A física é exclusiva das drogas de abuso naturais; a psíquica é exclusiva das drogas sintéticas.",
+            "Não há distinção científica, sendo que ambas provocam coma induzido na primeira dose."
+        ],
+        answer: 1,
+        explanation: "A dependência 'apresenta elementos físicos e psíquicos (dependência física/dependência psíquica). Os elementos físicos estão relacionados à tolerância e à síndrome de abstinência... Os elementos psíquicos estão relacionados à falta de controle no uso, caracterizados pelo desejo intenso de usar...'.",
+        diagram: `
+            <div class="diagram-box">
+                <p style="font-size:18px; margin:5px; color:#555;"><b>Mecanismo da Dependência de Drogas</b></p>
+                <svg width="400" height="150" viewBox="0 0 400 150">
+                    <!-- Dependência Física -->
+                    <rect x="20" y="20" width="160" height="110" rx="8" fill="#d1fae5" stroke="#10b981" stroke-width="2" />
+                    <text x="100" y="45" font-size="12" font-weight="bold" fill="#065f46" text-anchor="middle">Dependência Física</text>
+                    <text x="100" y="75" font-size="10" fill="#065f46" text-anchor="middle">1. Tolerância</text>
+                    <text x="100" y="100" font-size="10" fill="#065f46" text-anchor="middle">2. Abstinência Física</text>
+                    
+                    <!-- Dependência Psíquica -->
+                    <rect x="220" y="20" width="160" height="110" rx="8" fill="#fee2e2" stroke="#f43f5e" stroke-width="2" />
+                    <text x="300" y="45" font-size="12" font-weight="bold" fill="#991b1b" text-anchor="middle">Dependência Psíquica</text>
+                    <text x="300" y="75" font-size="10" fill="#991b1b" text-anchor="middle">1. Desejo Intenso (Craving)</text>
+                    <text x="300" y="100" font-size="10" fill="#991b1b" text-anchor="middle">2. Perda de Controle</text>
+                </svg>
+            </div>
+        `
+    }
+];
+
+const quizContainer = document.getElementById('quiz-container');
+
+quizData.forEach((q, index) => {
+    const questionDiv = document.createElement('div');
+    questionDiv.className = 'question-card';
+
+    let optionsHtml = '';
+    q.options.forEach((opt, i) => {
+        optionsHtml += `<li><label><input type="radio" name="q${index}" value="${i}"> ${opt}</label></li>`;
+    });
+
+    questionDiv.innerHTML = `
+        <span class="topic-tag">Módulo I - Tópicos em Química Forense</span>
+        <div class="question-text">${q.question}</div>
+        <ul class="options">${optionsHtml}</ul>
+        <button onclick="checkAnswer(${index}, this)">Responder</button>
+        <div class="feedback" id="feedback-${index}"></div>
+    `;
+    quizContainer.appendChild(questionDiv);
+});
+
+function checkAnswer(index, btn) {
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    const feedbackDiv = document.getElementById(`feedback-${index}`);
+
+    if (!selected) {
+        alert('Por favor, selecione uma opção antes de enviar a resposta.');
+        return;
+    }
+
+    const answerObj = quizData[index];
+    const isCorrect = parseInt(selected.value) === answerObj.answer;
+
+    feedbackDiv.style.display = 'block';
+    
+    // Recupera o diagrama explicativo, se houver, para ser renderizado dinamicamente APENAS após a resposta
+    let diagHtml = '';
+    if (answerObj.diagram) {
+        diagHtml = answerObj.diagram;
+    }
+
+    if (isCorrect) {
+        feedbackDiv.className = 'feedback correct';
+        feedbackDiv.innerHTML = `<strong>✔️ Correto! Resposta pericial fundamentada na apostila.</strong>
+        <div class="explanation">
+            ${diagHtml}
+            <em>Justificativa Doutrinária:</em> ${answerObj.explanation}
+        </div>`;
+    } else {
+        feedbackDiv.className = 'feedback incorrect';
+        feedbackDiv.innerHTML = `<strong>❌ Incorreto. A alternativa correta é a ${answerObj.answer + 1}: "${answerObj.options[answerObj.answer]}"</strong>
+        <div class="explanation">
+            ${diagHtml}
+            <em>Justificativa Doutrinária:</em> ${answerObj.explanation}
+        </div>`;
+    }
+    
+    // Desativa os inputs de rádio da questão correspondente
+    const allInputs = document.querySelectorAll(`input[name="q${index}"]`);
+    allInputs.forEach(input => input.disabled = true);
+    
+    // Altera o estado do botão
+    btn.disabled = true;
+    btn.textContent = 'Respondido';
+}
+</script>
+
+</body>
+</html>
+```
+
+### O que este simulado aborda em profundidade:
+* **Definições e Terminologia Básica (Questões 1 a 21):** Diferenças analíticas entre Fármaco, Medicamento, Tóxico, Alcaloides e Psicotrópicos. A precisão farmacológica da palavra "Entorpecente" (narcose/stupor), o uso coloquial impreciso e as definições exatas de diluentes e adulterantes.
+* **Classificação e Origem das Drogas (Questões 6 a 9):** Identificação e separação teórica exata de drogas de origem natural (cocaína, THC, morfina, mescalina, psilocibina, DMT) e sintéticas (LSD, MDMA, heroína, metadona, anfetaminas, barbitúricos, benzodiazepínicos, mefedrona, DOB).
+* **Tratados e Legislação Correlata (Questões 22 a 28):** Convenções de 1961 (Decreto 54.216/64), 1971 (Decreto 79.388/77), 1988 (Decreto 154/91), SISNAD (Decreto 5.912/2006) e a Lei de Controle de Precursores nº 10.357/01.
+* **Aspectos Penais e Competências (Questões 29 a 31 e 37 a 39):** Prazos e materialidade para o flagrante de tráfico (Art. 50 da Lei 11.343/06), crimes hediondos contra a saúde pública (Artigos 272 e 273 do Código Penal) e a atribuição investigativa especial concedida à PF pela Lei nº 12.894/13.
+* **Organização e Conflitos de Listas da Portaria nº 344/98 (Questões 32 a 37):** A contradição farmacológica e de listas no enquadramento da cocaína, as classes regulamentares de controle de receitas (Notificações A, B, B2 e C1 em duas vias) e a estrutura interna das quatro divisões da Lista F.
+* **Mecanismos de Dependência (Questão 40):** Diferenças fisiológicas e comportamentais da dependência física (ligada às alterações orgânicas de tolerância e síndrome de abstinência) em relação à dependência psíquica (perda de controle e craving/desejo intenso).
+
+Bons treinos! Caso precise de novos simulados baseados em outras páginas da apostila de Química Forense ou em qualquer outra disciplina, estarei por aqui.

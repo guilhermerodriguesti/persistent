@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado de Química Forense</title>
+<style>
+  :root{--cor:#1a3a5c;--cor2:#2e6da4;--cor3:#e8f0f8;--verde:#1e7e34;--vermelho:#c0392b;--laranja:#d35400;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#222;}
+  header{background:var(--cor);color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;}
+  header h1{font-size:1.3rem;font-weight:700;}
+  .subtitle{font-size:.85rem;opacity:.8;}
+  .scorebar{background:var(--cor2);color:#fff;padding:10px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .sc{font-size:.95rem;} .sc span{font-weight:700;}
+  .lbl{opacity:.75;font-size:.85rem;}
+  .btn-reset{background:#fff;color:var(--cor);border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;}
+  .btn-reset:hover{background:#e0e8f0;}
+  .btn-wrong{background:var(--laranja);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;margin-left:auto;}
+  .btn-wrong:hover:not(:disabled){background:#b94600;}
+  .btn-wrong:disabled{opacity:.4;cursor:not-allowed;}
+  main{max-width:860px;margin:28px auto;padding:0 16px 60px;}
+  .chapter{margin-bottom:32px;}
+  .chapter-title{background:var(--cor);color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;font-weight:700;font-size:1rem;}
+  .question{background:#fff;border:1px solid #d0dcea;border-top:none;padding:20px 20px 14px;}
+  .question:last-child{border-radius:0 0 8px 8px;}
+  .question+.question{border-top:1px dashed #c8d8ea;}
+  .q-num{font-size:.78rem;color:#888;margin-bottom:4px;}
+  .q-text{font-size:1rem;font-weight:600;margin-bottom:14px;line-height:1.5;}
+  .opt{display:block;width:100%;background:var(--cor3);border:2px solid transparent;border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;text-align:left;font-size:.93rem;line-height:1.4;transition:.15s;}
+  .opt:hover:not(:disabled){background:#d5e5f8;border-color:var(--cor2);}
+  .opt.correct{background:#d4edda;border-color:var(--verde);color:var(--verde);font-weight:600;}
+  .opt.wrong{background:#fde8e8;border-color:var(--vermelho);color:var(--vermelho);}
+  .opt:disabled{cursor:default;}
+  .feedback{margin-top:8px;font-size:.88rem;padding:8px 12px;border-radius:6px;line-height:1.5;}
+  .feedback.ok{background:#d4edda;color:#155724;}
+  .feedback.err{background:#fde8e8;color:#721c24;}
+  .feedback .loc{margin-top:4px;font-size:.8rem;opacity:.8;}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Simulado de Química Forense</h1>
+    <div class="subtitle">40 Questões Inéditas - Capítulo 1: Conceitos Básicos sobre Química Forense</div>
+  </div>
+</header>
+<div class="scorebar">
+  <div class="sc">✅ Acertos: <span id="sc-c">0</span></div>
+  <div class="sc">❌ Erros: <span id="sc-w">0</span></div>
+  <div class="sc">📝 Respondidas: <span id="sc-a">0</span> <span class="lbl" id="sc-total"></span></div>
+  <button class="btn-reset" onclick="resetAll()">↺ Reiniciar tudo</button>
+  <button class="btn-wrong" id="btn-wrong" onclick="resetWrong()" disabled>↺ Só os erros</button>
+</div>
+<main id="quiz-container"></main>
+
+<script>
+const CHAPTERS = [
+  {
+    "title": "de Química Forense",
+    "questions": [
+      {
+        "q": "1. Como a apostila conceitua e define a Qu\u00edmica Forense de forma ampla?",
+        "opts": [
+          "\u00c9 a vertente policial focada na queima direta de entorpecentes em valas abertas."
+,
+          "\u00c9 o ramo da Per\u00edcia que processa, estuda e identifica os vest\u00edgios qu\u00edmicos de um crime."
+,
+          "\u00c9 o estudo laboratorial exclusivo de drogas sint\u00e9ticas de balada, como o MDMA e MDA."
+,
+          "\u00c9 a disciplina que analisa unicamente res\u00edduos de metal de disparos de arma de fogo (GSR)."
+        ],
+        "ans": 1,
+        "exp": "A Qu\u00edmica Forense \u00e9 definida no texto como o ramo da Per\u00edcia que processa, estuda e identifica os vest\u00edgios qu\u00edmicos de um crime."
+      }
+,
+      {
+        "q": "2. Com quais \u00e1reas a Qu\u00edmica Forense realiza interfaces de trabalho devido \u00e0 abrang\u00eancia de sua casu\u00edstica na Pol\u00edcia Federal?",
+        "opts": [
+          "Apenas com a \u00e1rea de tr\u00e2nsito e patrulhamento de rodovias."
+,
+          "Meio Ambiente, Local de Crime e Documentoscopia."
+,
+          "Somente com o setor de crimes financeiros cibern\u00e9ticos."
+,
+          "Exclusivamente com o controle sanit\u00e1rio aeroportu\u00e1rio da Anvisa."
+        ],
+        "ans": 1,
+        "exp": "O texto afirma explicitamente que a Qu\u00edmica Forense permite diversas interfaces de trabalho com \u00e1reas t\u00e3o distintas como Meio Ambiente, Local de Crime e Documentoscopia."
+      }
+,
+      {
+        "q": "3. Qual \u00e9 o conceito 'cl\u00e1ssico' de droga apresentado no texto da apostila?",
+        "opts": [
+          "Qualquer composto nitrogenado que apresenta car\u00e1ter fortemente b\u00e1sico e toxicidade aguda."
+,
+          "Qualquer subst\u00e2ncia natural ou sint\u00e9tica que, ao entrar em contato com um organismo vivo, pode modificar uma ou v\u00e1rias de suas fun\u00e7\u00f5es."
+,
+          "Apenas os produtos farmac\u00eauticos obtidos com finalidade curativa e paliativa."
+,
+          "Toda forma farmac\u00eautica terminada que cause estupor, coma ou narcose induzida."
+        ],
+        "ans": 1,
+        "exp": "O conceito cl\u00e1ssico \u00e9: 'Qualquer subst\u00e2ncia natural ou sint\u00e9tica que, ao entrar em contato com um organismo vivo, pode modificar uma ou v\u00e1rias de suas fun\u00e7\u00f5es; \u00e9 uma subst\u00e2ncia qu\u00edmica que tem a\u00e7\u00e3o biol\u00f3gica sobre as estruturas celulares do organismo, com fins terap\u00eauticos ou n\u00e3o'."
+      }
+,
+      {
+        "q": "4. Qual a defini\u00e7\u00e3o legal de 'droga' estabelecida pela Lei n\u00ba 11.343/2006 (Lei de Drogas) descrita na apostila?",
+        "opts": [
+          "Toda subst\u00e2ncia que reage positivamente ao teste de Marquis gerando cores escuras."
+,
+          "As subst\u00e2ncias ou produtos capazes de causar depend\u00eancia, assim especificados em lei ou relacionados em listas atualizadas periodicamente pelo Poder Executivo da Uni\u00e3o."
+,
+          "Qualquer alcaloide que atue bloqueando a dor de forma imediata por a\u00e7\u00e3o t\u00f3pica."
+,
+          "Qualquer produto destinado a fins terap\u00eauticos que passe por altera\u00e7\u00e3o ou corrup\u00e7\u00e3o."
+        ],
+        "ans": 1,
+        "exp": "Conforme a Lei n\u00ba 11.343/2006: 'Para fins desta Lei, consideram-se como drogas as subst\u00e2ncias ou produtos capazes de causar depend\u00eancia, assim especificados em lei ou relacionados em listas atualizadas periodicamente pelo Poder Executivo da Uni\u00e3o'."
+      }
+,
+      {
+        "q": "5. Em termos pr\u00e1ticos de aplica\u00e7\u00e3o de leis, quais listas da Portaria n\u00ba 344/98-SVS/MS definem o que \u00e9 considerado droga no Brasil?",
+        "opts": [
+          "Listas C1, C2 e D1."
+,
+          "Listas A, B e F."
+,
+          "Apenas as Listas E e F4."
+,
+          "Somente as Listas D2 e C5."
+        ],
+        "ans": 1,
+        "exp": "O texto ressalta que, em rela\u00e7\u00e3o \u00e0s listas da Portaria n\u00ba 344/98, 'consideram-se drogas as subst\u00e2ncias presentes nas listas \u201cA\u201d, \u201cB\u201d e \u201cF\u201d'."
+      }
+,
+      {
+        "q": "6. Como a apostila define as chamadas 'drogas naturais'?",
+        "opts": [
+          "S\u00e3o aquelas criadas pelo homem unicamente em laborat\u00f3rios usando safrol."
+,
+          "Drogas presentes na natureza que podem ser empregadas pelo uso direto de sua fonte ou purificadas por procedimentos f\u00edsicos ou qu\u00edmicos, mas sem altera\u00e7\u00e3o de sua mol\u00e9cula original."
+,
+          "Subst\u00e2ncias obtidas modificando-se quimicamente a morfina para gerar hero\u00edna."
+,
+          "Quaisquer produtos que n\u00e3o reagem com \u00e1cidos e mant\u00eam o car\u00e1ter \u00e1cido em \u00e1gua."
+        ],
+        "ans": 1,
+        "exp": "As drogas naturais 'j\u00e1 existem na natureza. Podem ser empregadas pelo uso direto de sua fonte natural ou podem, ainda, ser extra\u00eddas e purificadas por meio de determinados procedimentos qu\u00edmicos ou f\u00edsicos, por\u00e9m sem altera\u00e7\u00e3o da mol\u00e9cula original'."
+      }
+,
+      {
+        "q": "7. Assinale a alternativa que cont\u00e9m apenas exemplos de drogas classificadas como NATURAIS de acordo com a apostila:",
+        "opts": [
+          "LSD, MDMA, metadona e benzodiazep\u00ednicos."
+,
+          "Coca\u00edna, THC, morfina, mescalina, psilocibina e DMT."
+,
+          "Hero\u00edna, anfetamina, barbit\u00faricos e mefedrona."
+,
+          "Metanfetamina, DOB, mefedrona e cloreto de etila."
+        ],
+        "ans": 1,
+        "exp": "O texto exemplifica como drogas naturais: 'coca\u00edna, THC, morfina, mescalina, psilocibina, DMT, etc.'."
+      }
+,
+      {
+        "q": "8. O que caracteriza as chamadas 'drogas sint\u00e9ticas'?",
+        "opts": [
+          "S\u00e3o aquelas extra\u00eddas do l\u00e1tex da dormideira sem altera\u00e7\u00e3o da mol\u00e9cula original."
+,
+          "S\u00e3o obtidas por meio de modifica\u00e7\u00f5es qu\u00edmicas da estrutura de precursores naturais ou sint\u00e9ticos, criadas pelo homem por meio de s\u00edntese qu\u00edmica em laborat\u00f3rio."
+,
+          "Subst\u00e2ncias que obrigatoriamente t\u00eam origem mineral direta na natureza."
+,
+          "Quaisquer misturas heterog\u00eaneas s\u00f3lidas adicionadas para aumentar a massa final."
+        ],
+        "ans": 1,
+        "exp": "As drogas sint\u00e9ticas s\u00e3o 'obtidas por meio de modifica\u00e7\u00f5es qu\u00edmicas da estrutura de precursores naturais ou sint\u00e9ticos, ou seja, n\u00e3o existem na natureza e s\u00e3o criadas pelo homem por meio de s\u00edntese qu\u00edmica em laborat\u00f3rios'."
+      }
+,
+      {
+        "q": "9. Assinale a alternativa que cont\u00e9m apenas exemplos de drogas classificadas como SINT\u00c9TICAS na apostila:",
+        "opts": [
+          "Coca\u00edna, THC, morfina e psilocibina."
+,
+          "LSD, MDMA, hero\u00edna, metadona, anfetaminas e barbit\u00faricos."
+,
+          "Mescalina, DMT, \u00f3pio e folhas de coca."
+,
+          "Chacrona, cip\u00f3 mariri, maconha e sementes de papoula."
+        ],
+        "ans": 1,
+        "exp": "O texto traz expressamente como sint\u00e9ticas: 'LSD, MDMA, hero\u00edna, metadona, anfetaminas, barbit\u00faricos, benzodiazep\u00ednicos, mefedrona, DOB, etc.'.<br><br>\n            <div class=\"diagram-box\">\n                <p style=\"font-size:18px; margin:5px; color:#555;\"><b>Classifica\u00e7\u00e3o das Drogas (Apostila)</b></p>\n                <svg width=\"360\" height=\"120\" viewBox=\"0 0 360 120\">\n                    <rect x=\"10\" y=\"30\" width=\"150\" height=\"70\" rx=\"8\" fill=\"#14b8a6\" />\n                    <rect x=\"200\" y=\"30\" width=\"150\" height=\"70\" rx=\"8\" fill=\"#0d9488\" />\n                    <text x=\"85\" y=\"55\" font-size=\"12\" font-weight=\"bold\" fill=\"#fff\" text-anchor=\"middle\">NATURAIS</text>\n                    <text x=\"85\" y=\"80\" font-size=\"9\" fill=\"#fff\" text-anchor=\"middle\">Coca\u00edna, THC, Morfina, DMT</text>\n                    <text x=\"275\" y=\"55\" font-size=\"12\" font-weight=\"bold\" fill=\"#fff\" text-anchor=\"middle\">SINT\u00c9TICAS</text>\n                    <text x=\"275\" y=\"80\" font-size=\"9\" fill=\"#fff\" text-anchor=\"middle\">LSD, MDMA, Hero\u00edna, Anfetamina</text>\n                </svg>\n            </div>\n        "
+      }
+,
+      {
+        "q": "10. Como a apostila conceitua tecnicamente o termo 'F\u00e1rmaco'?",
+        "opts": [
+          "Forma farmac\u00eautica terminada que cont\u00e9m adjuvantes farmacot\u00e9cnicos."
+,
+          "Subst\u00e2ncia de estrutura qu\u00edmica definida, dotada de a\u00e7\u00e3o farmacol\u00f3gica conhecida, capaz de modificar ou explorar o sistema fisiol\u00f3gico ou o estado patol\u00f3gico, em benef\u00edcio do organismo receptor."
+,
+          "Produto farmac\u00eautico obtido com finalidade diagn\u00f3stica ou profil\u00e1tica."
+,
+          "Toda subst\u00e2ncia que age como diluente inerte na prepara\u00e7\u00e3o de medicamentos."
+        ],
+        "ans": 1,
+        "exp": "F\u00e1rmaco \u00e9 a 'Subst\u00e2ncia de estrutura qu\u00edmica definida, dotada de a\u00e7\u00e3o farmacol\u00f3gica conhecida, capaz de modificar ou explorar o sistema fisiol\u00f3gico ou o estado patol\u00f3gico, em benef\u00edcio do organismo receptor'."
+      }
+,
+      {
+        "q": "11. Qual a diferen\u00e7a conceitual entre 'F\u00e1rmaco' e 'Medicamento' definida na apostila?",
+        "opts": [
+          "F\u00e1rmaco \u00e9 o produto final embalado; medicamento \u00e9 o princ\u00edpio ativo isolado."
+,
+          "O f\u00e1rmaco tem estrutura qu\u00edmica definida e a\u00e7\u00e3o biol\u00f3gica; j\u00e1 o medicamento \u00e9 o produto tecnicamente elaborado (forma farmac\u00eautica terminada) que cont\u00e9m o f\u00e1rmaco associado a adjuvantes."
+,
+          "Medicamento \u00e9 sempre de origem natural; f\u00e1rmaco \u00e9 sempre sint\u00e9tico."
+,
+          "N\u00e3o h\u00e1 diferen\u00e7a conceitual ou pr\u00e1tica, sendo termos id\u00eanticos na ci\u00eancia."
+        ],
+        "ans": 1,
+        "exp": "O medicamento \u00e9 o 'Produto farmac\u00eautico, tecnicamente obtido ou elaborado [...] forma farmac\u00eautica terminada que cont\u00e9m um ou mais f\u00e1rmacos, geralmente em associa\u00e7\u00e3o com adjuvantes farmacot\u00e9cnicos'.<br><br>\n            <div class=\"diagram-box\">\n                <p style=\"font-size:18px; margin:5px; color:#555;\"><b>Rela\u00e7\u00e3o: F\u00e1rmaco vs. Medicamento</b></p>\n                <svg width=\"300\" height=\"110\" viewBox=\"0 0 300 110\">\n                    <rect x=\"20\" y=\"20\" width=\"100\" height=\"50\" fill=\"#2dd4bf\" rx=\"5\" />\n                    <text x=\"70\" y=\"50\" font-size=\"12\" font-weight=\"bold\" fill=\"#000\" text-anchor=\"middle\">F\u00e1rmaco (Ativo)</text>\n                    <text x=\"140\" y=\"50\" font-size=\"16\" fill=\"#000\">+</text>\n                    <rect x=\"170\" y=\"20\" width=\"110\" height=\"50\" fill=\"#99f6e4\" rx=\"5\" />\n                    <text x=\"225\" y=\"42\" font-size=\"11\" font-weight=\"bold\" fill=\"#000\" text-anchor=\"middle\">Adjuvantes</text>\n                    <text x=\"225\" y=\"60\" font-size=\"9\" fill=\"#475569\" text-anchor=\"middle\">(Excipientes)</text>\n                    <!-- Seta apontando para baixo -->\n                    <path d=\"M 150,75 L 150,100\" stroke=\"#0d9488\" stroke-width=\"3\" />\n                    <text x=\"150\" y=\"108\" font-size=\"12\" font-weight=\"bold\" fill=\"#0d9488\" text-anchor=\"middle\">Medicamento</text>\n                </svg>\n            </div>\n        "
+      }
+,
+      {
+        "q": "12. Qual a defini\u00e7\u00e3o da ci\u00eancia conhecida como 'Farmacologia'?",
+        "opts": [
+          "A ci\u00eancia que investiga as rotas de s\u00edntese de precursores qu\u00edmicos."
+,
+          "A ci\u00eancia que estuda como os f\u00e1rmacos interagem com organismos vivos."
+,
+          "O ramo da qu\u00edmica que analisa pigmentos e tintas de documentos."
+,
+          "O estudo dos efeitos puramente nocivos e letais das subst\u00e2ncias."
+        ],
+        "ans": 1,
+        "exp": "A Farmacologia 'pode ser definida como a ci\u00eancia que estuda como os f\u00e1rmacos interagem com organismos vivos'."
+      }
+,
+      {
+        "q": "13. Qual \u00e9 o campo de estudo da 'Toxicologia' de acordo com a nomenclatura padr\u00e3o?",
+        "opts": [
+          "A ci\u00eancia que cria novas rotas para s\u00edntese de entorpecentes."
+,
+          "A ci\u00eancia que estuda os efeitos nocivos decorrentes das intera\u00e7\u00f5es de subst\u00e2ncias qu\u00edmicas com os organismos."
+,
+          "O estudo restrito \u00e0s plantas proscritas que causam depend\u00eancia f\u00edsica."
+,
+          "A dosagem das massas de diluentes inertes de drogas apreendidas."
+        ],
+        "ans": 1,
+        "exp": "A Toxicologia \u00e9 a 'Ci\u00eancia que estuda os efeitos nocivos decorrentes das intera\u00e7\u00f5es de subst\u00e2ncias qu\u00edmicas com os organismos'."
+      }
+,
+      {
+        "q": "14. Como \u00e9 definido o termo 'T\u00f3xico' (agente t\u00f3xico ou toxicante) na apostila?",
+        "opts": [
+          "Qualquer f\u00e1rmaco de venda restrita e tarja preta hospitalar."
+,
+          "A subst\u00e2ncia qu\u00edmica capaz de causar dano a um sistema biol\u00f3gico, alterando uma fun\u00e7\u00e3o ou levando-o \u00e0 morte, sob determinadas condi\u00e7\u00f5es de exposi\u00e7\u00e3o."
+,
+          "Uma classe de drogas que produz obrigatoriamente anestesia local na pele."
+,
+          "Uma subst\u00e2ncia nitrogenada b\u00e1sica de origem puramente f\u00fangica."
+        ],
+        "ans": 1,
+        "exp": "O t\u00f3xico \u00e9 o 'agente t\u00f3xico ou toxicante a subst\u00e2ncia qu\u00edmica capaz de causar dano a um sistema biol\u00f3gico, alterando uma fun\u00e7\u00e3o ou levando-o \u00e0 morte, sob determinadas condi\u00e7\u00f5es de exposi\u00e7\u00e3o'."
+      }
+,
+      {
+        "q": "15. O que s\u00e3o os 'Psicotr\u00f3picos' ou 'Subst\u00e2ncias Psicoativas'?",
+        "opts": [
+          "Analg\u00e9sicos de a\u00e7\u00e3o local que agem de fora para dentro do corpo."
+,
+          "Termo gen\u00e9rico que designa drogas com efeitos significativos no sistema nervoso central (SNC), que afetam processos mentais, alterando a percep\u00e7\u00e3o, as emo\u00e7\u00f5es, o pensamento e o comportamento."
+,
+          "Produtos obtidos exclusivamente da resina condensada do haxixe."
+,
+          "L\u00edquidos altamente vol\u00e1teis que produzem uma chama esverdeada ao queimar."
+        ],
+        "ans": 1,
+        "exp": "Psicotr\u00f3picos referem-se ao 'Termo gen\u00e9rico que designa drogas com efeitos significativos no sistema nervoso central (SNC...), que afetam processos mentais, alterando a percep\u00e7\u00e3o, as emo\u00e7\u00f5es, o pensamento e o comportamento'."
+      }
+,
+      {
+        "q": "16. Como s\u00e3o tecnicamente definidas as Novas Subst\u00e2ncias Psicoativas (NSP) segundo a apostila?",
+        "opts": [
+          "Subst\u00e2ncias de circula\u00e7\u00e3o r\u00e1pida criadas nos \u00faltimos 12 meses."
+,
+          "Subst\u00e2ncias n\u00e3o listadas na Conven\u00e7\u00e3o de Psicotr\u00f3picos de 1971, nem nas suas atualiza\u00e7\u00f5es, mas com potencial de abuso e que podem representar amea\u00e7a \u00e0 sa\u00fade."
+,
+          "Qualquer anfetamina comercializada sob receita do modelo B2."
+,
+          "Drogas adicionadas de sais de ferro para alterar o teste Scott."
+        ],
+        "ans": 1,
+        "exp": "NSPs 'S\u00e3o subst\u00e2ncias n\u00e3o listadas na Conven\u00e7\u00e3o de Psicotr\u00f3picos de 1971, nem nas suas atualiza\u00e7\u00f5es... que n\u00e3o s\u00e3o controladas nos termos da Conven\u00e7\u00e3o \u00danica sobre Entorpecentes de 1961 ou pela Conven\u00e7\u00e3o sobre Subst\u00e2ncias Psicotr\u00f3picas de 1971, mas que podem representar uma amea\u00e7a \u00e0 sa\u00fade p\u00fablica'."
+      }
+,
+      {
+        "q": "17. O que caracteriza quimicamente os 'Alcaloides' descritos no texto?",
+        "opts": [
+          "S\u00e3o hidrocarbonetos \u00e1cidos altamente vol\u00e1teis presentes em resinas."
+,
+          "S\u00e3o subst\u00e2ncias nitrogenadas, muitas delas farmacologicamente ativas, encontradas predominantemente em plantas, v\u00e1rias delas com car\u00e1ter b\u00e1sico."
+,
+          "Sais de cloreto inorg\u00e2nico que se precipitam com nitrato de prata."
+,
+          "Solventes org\u00e2nicos clorados de baix\u00edssimo ponto de ebuli\u00e7\u00e3o."
+        ],
+        "ans": 1,
+        "exp": "Os alcaloides 'S\u00e3o subst\u00e2ncias nitrogenadas, muitas delas farmacologicamente ativas, encontradas predominantemente em plantas. V\u00e1rias delas possuem car\u00e1ter b\u00e1sico, podendo apresentar efeitos psicotr\u00f3picos...'."
+      }
+,
+      {
+        "q": "18. Qual \u00e9 a defini\u00e7\u00e3o estrita e cient\u00edfica do termo farmacol\u00f3gico 'Entorpecente'?",
+        "opts": [
+          "Toda droga cuja venda seja considerada ilegal ou proibida por lei."
+,
+          "Agente qu\u00edmico que produz estupor (narcose), coma ou insensibilidade \u00e0 dor, referindo-se normalmente a opioides ou opi\u00e1ceos."
+,
+          "Subst\u00e2ncia com atividade estimulante que aumenta o trabalho do SNC."
+,
+          "Qualquer insumo qu\u00edmico utilizado como precursor na fabrica\u00e7\u00e3o de sais."
+        ],
+        "ans": 1,
+        "exp": "O termo entorpecente conceitua o 'Agente qu\u00edmico que que produz estupor (narcose), coma ou insensibilidade \u00e0 dor. O termo se refere normalmente a opioides ou opi\u00e1ceos, que s\u00e3o denominados analg\u00e9sicos narc\u00f3ticos'."
+      }
+,
+      {
+        "q": "19. Qual a cr\u00edtica de imprecis\u00e3o t\u00e9cnica feita pela apostila em rela\u00e7\u00e3o ao uso do termo 'Entorpecente' no meio jur\u00eddico ou em linguagem coloquial?",
+        "opts": [
+          "Dizer que entorpecentes reduzem as batidas do cora\u00e7\u00e3o."
+,
+          "Utilizar o termo de forma imprecisa para designar drogas il\u00edcitas em geral, independentemente de sua real a\u00e7\u00e3o farmacol\u00f3gica."
+,
+          "Dizer que a morfina e a code\u00edna pertencem a essa classe analg\u00e9sica."
+,
+          "Considerar que analg\u00e9sicos opioides s\u00e3o medicamentos de uso restrito."
+        ],
+        "ans": 1,
+        "exp": "A apostila nota que: 'Em linguagem coloquial ou em uso jur\u00eddico, esta defini\u00e7\u00e3o tem sido utilizada de maneira imprecisa, do ponto de vista cient\u00edfico, para designar drogas il\u00edcitas, a despeito do seu uso farmacol\u00f3gico'."
+      }
+,
+      {
+        "q": "20. Como se definem os 'Adulterantes' no contexto da Qu\u00edmica Forense?",
+        "opts": [
+          "Subst\u00e2ncias sem atividade farmacol\u00f3gica adicionadas para dar peso."
+,
+          "Subst\u00e2ncias com efeito farmacol\u00f3gico que podem potencializar ou simular algum dos efeitos das drogas de abuso no usu\u00e1rio."
+,
+          "Subst\u00e2ncias proscritas da lista F que evaporam \u00e0 temperatura ambiente."
+,
+          "\u00c1cidos fortes usados na rea\u00e7\u00e3o de convers\u00e3o para precipitar sais."
+        ],
+        "ans": 1,
+        "exp": "Adulterantes s\u00e3o: 'Subst\u00e2ncias com efeito farmacol\u00f3gico, que podem potencializar ou simular algum dos efeitos das drogas de abuso (a coca\u00edna, por exemplo) no usu\u00e1rio'."
+      }
+,
+      {
+        "q": "21. Como se definem os 'Diluentes' na prepara\u00e7\u00e3o de drogas de abuso de acordo com a apostila?",
+        "opts": [
+          "Subst\u00e2ncias ativas de car\u00e1ter b\u00e1sico que atuam como precursores qu\u00edmicos."
+,
+          "Subst\u00e2ncias sem atividade farmacol\u00f3gica, adicionadas para diluir drogas de abuso e aumentar a massa do produto a ser comercializado."
+,
+          "Solventes como o \u00e9ter e o clorof\u00f3rmio que liquefazem o crack."
+,
+          "Produtos que simulam a a\u00e7\u00e3o estimulante da coca\u00edna no usu\u00e1rio."
+        ],
+        "ans": 1,
+        "exp": "Diluentes s\u00e3o: 'Subst\u00e2ncias sem atividade farmacol\u00f3gica, adicionadas para diluir drogas de abuso (a coca\u00edna, por exemplo) e aumentar a massa do produto a ser comercializado'."
+      }
+,
+      {
+        "q": "22. Qual \u00e9 a finalidade central do SISNAD (Sistema Nacional de Pol\u00edticas P\u00fablicas sobre Drogas) e qual o seu decreto regulamentador?",
+        "opts": [
+          "Fiscalizar apenas a entrada de importa\u00e7\u00f5es da receita federal; Decreto n\u00ba 10.357/01."
+,
+          "Articular, integrar, organizar e coordenar as atividades relacionadas com a preven\u00e7\u00e3o do uso indevido, aten\u00e7\u00e3o e reinser\u00e7\u00e3o social de dependentes, e a repress\u00e3o do tr\u00e1fico; regulamentado pelo Decreto n\u00ba 5.912/2006."
+,
+          "Controlar o mercado de medicamentos e registrar o Mevatyl; Decreto n\u00ba 12.894/13."
+,
+          "Emitir licen\u00e7as e portarias ambientais para uso de agrot\u00f3xicos; Decreto n\u00ba 54.216/64."
+        ],
+        "ans": 1,
+        "exp": "O SISNAD visa articular, integrar, organizar e coordenar as atividades de preven\u00e7\u00e3o, aten\u00e7\u00e3o e repress\u00e3o ao tr\u00e1fico de drogas. 'A regulamenta\u00e7\u00e3o do \u00f3rg\u00e3o encontra-se no Decreto n.\u00ba 5.912, de 27 de setembro de 2006'."
+      }
+,
+      {
+        "q": "23. A Conven\u00e7\u00e3o \u00danica sobre Entorpecentes de 1961 foi ratificada no Brasil por qual ato normativo?",
+        "opts": [
+          "Decreto n\u00ba 79.388/77."
+,
+          "Decreto n\u00ba 54.216/64."
+,
+          "Decreto n\u00ba 154/91."
+,
+          "Lei n\u00ba 11.343/06."
+        ],
+        "ans": 1,
+        "exp": "A 'Conven\u00e7\u00e3o \u00danica sobre Entorpecentes de 1961, ratificada no Brasil atrav\u00e9s do Decreto n.\u00ba 54.216/64'."
+      }
+,
+      {
+        "q": "24. Por qual decreto presidencial o Brasil ratificou e incorporou a Conven\u00e7\u00e3o sobre Subst\u00e2ncias Psicotr\u00f3picas de 1971?",
+        "opts": [
+          "Decreto n\u00ba 54.216/64."
+,
+          "Decreto n\u00ba 79.388/77."
+,
+          "Decreto n\u00ba 154/91."
+,
+          "Decreto n\u00ba 5.912/06."
+        ],
+        "ans": 1,
+        "exp": "A 'Conven\u00e7\u00e3o sobre Subst\u00e2ncias Psicotr\u00f3picas, de 1971, ratificada no Brasil atrav\u00e9s do Decreto n.\u00ba 79.388/77'."
+      }
+,
+      {
+        "q": "25. A Conven\u00e7\u00e3o Contra o Tr\u00e1fico Il\u00edcito de Entorpecentes e Subst\u00e2ncias Psicotr\u00f3picas de 1988 foi internalizada no Brasil por meio de qual decreto?",
+        "opts": [
+          "Decreto n\u00ba 79.388/77."
+,
+          "Decreto n\u00ba 154/91."
+,
+          "Decreto n\u00ba 54.216/64."
+,
+          "Decreto n\u00ba 204/22."
+        ],
+        "ans": 1,
+        "exp": "A 'Conven\u00e7\u00e3o Contra o Tr\u00e1fico Il\u00edcito de Entorpecentes e Subst\u00e2ncias Psicotr\u00f3picas, de 1988, ratificada no Brasil atrav\u00e9s do Decreto n.\u00ba 154/91'."
+      }
+,
+      {
+        "q": "26. Qual \u00e9 a principal norma t\u00e9cnica que define no Brasil as subst\u00e2ncias e medicamentos sujeitos a controle especial e por qual ag\u00eancia reguladora \u00e9 atualizada?",
+        "opts": [
+          "Portaria n\u00ba 204/22 do Minist\u00e9rio da Justi\u00e7a."
+,
+          "Portaria n\u00ba 344/98-SVS, atualizada periodicamente por Resolu\u00e7\u00f5es da Diretoria Colegiada (RDC) da Anvisa."
+,
+          "Instru\u00e7\u00e3o Normativa n\u00ba 28/2018 do Minist\u00e9rio da Sa\u00fade."
+,
+          "Lei n\u00ba 10.357/01 sob controle do Departamento de Pol\u00edcia Federal."
+        ],
+        "ans": 1,
+        "exp": "Trata-se da 'Portaria n.\u00ba 344/98-SVS, de 12 de maio de 1998, define as subst\u00e2ncias e medicamentos sujeitos a controle especial... atualizada pelas Resolu\u00e7\u00f5es da Diretoria Colegiada (RDC) da Anvisa...'."
+      }
+,
+      {
+        "q": "27. Qual o teor da Lei n\u00ba 10.357/2001 citada no arcabou\u00e7o legislativo da Qu\u00edmica Forense?",
+        "opts": [
+          "Institui a cria\u00e7\u00e3o do Mevatyl e autoriza o uso m\u00e9dico de CBD."
+,
+          "Estabelece normas de controle e fiscaliza\u00e7\u00e3o sobre produtos qu\u00edmicos que direta ou indiretamente possam ser destinados \u00e0 elabora\u00e7\u00e3o il\u00edcita de subst\u00e2ncias entorpecentes ou psicotr\u00f3picas."
+,
+          "Define os tipos de receitas m\u00e9dicas de notifica\u00e7\u00e3o de cor amarela."
+,
+          "Transfere o controle das plantas proscritas para as pol\u00edcias civis."
+        ],
+        "ans": 1,
+        "exp": "A Lei n\u00ba 10.357/2001 'estabelece normas de controle e fiscaliza\u00e7\u00e3o sobre produtos qu\u00edmicos que direta ou indiretamente possam ser destinados \u00e0 elabora\u00e7\u00e3o il\u00edcita de subst\u00e2ncias entorpecentes, psicotr\u00f3picas...'."
+      }
+,
+      {
+        "q": "28. De acordo com a Portaria n\u00ba 204/2022-MJSP, a quem compete o controle e fiscaliza\u00e7\u00e3o operacional pr\u00e1ticos das subst\u00e2ncias controladas pela Lei n\u00ba 10.357/01?",
+        "opts": [
+          "\u00c0 Vigil\u00e2ncia Sanit\u00e1ria Municipal."
+,
+          "\u00c0 Pol\u00edcia Federal."
+,
+          "Ao Conselho Nacional Antidrogas (CONAD)."
+,
+          "Ao Instituto Nacional de Metrologia (Inmetro)."
+        ],
+        "ans": 1,
+        "exp": "O item B.4 indica a Portaria n\u00ba 204/2022-MJSP 'que regulamenta quais s\u00e3o as subst\u00e2ncias e em quais condi\u00e7\u00f5es est\u00e3o sujeitas ao controle', e as se\u00e7\u00f5es de inalantes (\u00c9ter/Clorof\u00f3rmio) reiteram: 'seu controle \u00e9 realizado pela Pol\u00edcia Federal'."
+      }
+,
+      {
+        "q": "29. No tocante aos prazos legais do Art. 50 da Lei n\u00ba 11.343/06, ocorrendo pris\u00e3o em flagrante por tr\u00e1fico de drogas, qual o tempo m\u00e1ximo dado para a comunica\u00e7\u00e3o ao juiz e vista ao Minist\u00e9rio P\u00fablico?",
+        "opts": [
+          "Imediata comunica\u00e7\u00e3o ao juiz; e vista ao MP em 24 horas."
+,
+          "Prazo limite comum de 48 horas para ambos os \u00f3rg\u00e3os."
+,
+          "Comunica\u00e7\u00e3o ao juiz em 24 horas; e vista ao MP em 10 dias."
+,
+          "O prazo \u00e9 flex\u00edvel e depende do laudo definitivo de massas."
+        ],
+        "ans": 0,
+        "exp": "O art. 50 diz: 'Ocorrendo pris\u00e3o em flagrante, a autoridade de pol\u00edcia judici\u00e1ria far\u00e1, imediatamente, comunica\u00e7\u00e3o ao juiz competente, remetendo-lhe c\u00f3pia do auto lavrado, do qual ser\u00e1 dada vista ao \u00f3rg\u00e3o do Minist\u00e9rio P\u00fablico, em 24 (vinte e quatro) horas'."
+      }
+,
+      {
+        "q": "30. Sob a \u00f3tica processual penal da Lei de Drogas (Artigo 50, par\u00e1grafos 1\u00ba e 2\u00ba), o perito que assina o laudo preliminar de constata\u00e7\u00e3o fica impedido de elaborar o laudo definitivo?",
+        "opts": [
+          "Sim, h\u00e1 impedimento absoluto para evitar conflitos de interesse."
+,
+          "N\u00e3o, o perito que subscrever o laudo de constata\u00e7\u00e3o n\u00e3o ficar\u00e1 impedido de participar da elabora\u00e7\u00e3o do laudo definitivo."
+,
+          "O impedimento ocorre apenas se ele for um perito oficial concursado."
+,
+          "Fica impedido apenas no caso de exames complexos de novas drogas (NSP)."
+        ],
+        "ans": 1,
+        "exp": "O art. 50, \u00a7 2\u00ba afirma taxativamente: 'O perito que subscrever o laudo a que se refere o \u00a7 1\u00ba deste artigo n\u00e3o ficar\u00e1 impedido de participar da elabora\u00e7\u00e3o do laudo definitivo'."
+      }
+,
+      {
+        "q": "31. A Lei n\u00ba 12.894/2013 conferiu atribui\u00e7\u00e3o \u00e0 Pol\u00edcia Federal para investigar quais crimes, quando houver repercuss\u00e3o interestadual ou internacional que exija repress\u00e3o uniforme?",
+        "opts": [
+          "Crimes ambientais de descarte de merc\u00fario em rios federais."
+,
+          "Falsifica\u00e7\u00e3o, corrup\u00e7\u00e3o, adultera\u00e7\u00e3o ou altera\u00e7\u00e3o de produto destinado a fins terap\u00eauticos ou medicinais e venda (Artigo 273 do C\u00f3digo Penal), inclusive pela internet."
+,
+          "Qualquer tipo de contrabando de cigarros e sementes de papoula."
+,
+          "Furtos e roubos de defensivos agr\u00edcolas dentro de fazendas."
+        ],
+        "ans": 1,
+        "exp": "A Lei n\u00ba 12.894/2013 acrescentou essa compet\u00eancia ao art. 1\u00ba da Lei n\u00ba 10.446/2002 para investigar infra\u00e7\u00f5es do art. 273 do C\u00f3digo Penal (falsifica\u00e7\u00e3o, adultera\u00e7\u00e3o de produtos terap\u00eauticos/medicinais)."
+      }
+,
+      {
+        "q": "32. Qual inconsist\u00eancia t\u00e9cnica a apostila aponta no fato de a Portaria n\u00ba 344/98 adotar as mesmas defini\u00e7\u00f5es pr\u00e1ticas para 'Entorpecente' e 'Psicotr\u00f3pico'?",
+        "opts": [
+          "N\u00e3o h\u00e1 inconsist\u00eancia, pois ambos os termos referem-se a \u00e1cidos."
+,
+          "A coincid\u00eancia de defini\u00e7\u00f5es n\u00e3o \u00e9 correta do ponto de vista da Farmacologia, que as classifica em categorias totalmente distintas."
+,
+          "Ambas referem-se unicamente a plantas de uso proscrito."
+,
+          "O erro \u00e9 considerar o \u00f3pio e a morfina como subst\u00e2ncias controladas."
+        ],
+        "ans": 1,
+        "exp": "O texto pontua: 'Cabe notar que as defini\u00e7\u00f5es legais de entorpecente e psicotr\u00f3pico adotadas pela Portaria n.\u00ba 344 s\u00e3o coincidentes, embora isso n\u00e3o seja correto do ponto de vista da Farmacologia'."
+      }
+,
+      {
+        "q": "33. De acordo com a divis\u00e3o de controle, qual a caracter\u00edstica regulamentar das receitas para as subst\u00e2ncias da Lista C1 da Portaria n\u00ba 344/98?",
+        "opts": [
+          "Exigem Notifica\u00e7\u00e3o de Receita do tipo A de cor amarela."
+,
+          "Sujeitas a receita de controle especial em duas vias."
+,
+          "Exigem receita m\u00e9dica comum sem reten\u00e7\u00e3o de vias na farm\u00e1cia."
+,
+          "Seu uso \u00e9 restrito ao ambiente hospitalar sem receita externa."
+        ],
+        "ans": 1,
+        "exp": "A 'Lista C1 \u2013 Lista das outras subst\u00e2ncias sujeitas a controle especial (sujeitas a receita de controle especial em duas vias)'."
+      }
+,
+      {
+        "q": "34. Como se dividem as listas 'D1' e 'D2' no \u00e2mbito do controle especial de subst\u00e2ncias qu\u00edmicas?",
+        "opts": [
+          "D1 para anabolizantes; D2 para plantas proscritas de rituais."
+,
+          "D1 para subst\u00e2ncias precursoras sujeitas a receita sem reten\u00e7\u00e3o; D2 para insumos qu\u00edmicos precursores de s\u00edntese sujeitos a controle do Minist\u00e9rio da Justi\u00e7a."
+,
+          "D1 para subst\u00e2ncias imunosupressoras; D2 para antirretrovirais."
+,
+          "Ambas destinam-se ao controle exclusivo de novos canabinoides sint\u00e9ticos."
+        ],
+        "ans": 1,
+        "exp": "O texto define a Lista D1 como 'subst\u00e2ncias precursoras... (sujeitas \u00e0 receita m\u00e9dica sem reten\u00e7\u00e3o)' e a Lista D2 como 'insumos qu\u00edmicos utilizados como precursores para fabrica\u00e7\u00e3o e s\u00edntese... (sujeitos a controle do Minist\u00e9rio da Justi\u00e7a)'."
+      }
+,
+      {
+        "q": "35. Como se subdivide a Lista F, que elenca as subst\u00e2ncias de uso proscrito (proibido) no territ\u00f3rio nacional de acordo com a apostila?",
+        "opts": [
+          "Dividida em F1 (Estimulantes) e F2 (Sedativos)."
+,
+          "F1 (Subst\u00e2ncias entorpecentes); F2 (Subst\u00e2ncias psicotr\u00f3picas); F3 (Subst\u00e2ncias precursoras); F4 (Outras subst\u00e2ncias)."
+,
+          "Apenas F1 (Maconha) e F2 (Coca\u00edna)."
+,
+          "N\u00e3o possui divis\u00f5es por se tratar de lista \u00fanica e corrida."
+        ],
+        "ans": 1,
+        "exp": "A 'Lista F - Lista das subst\u00e2ncias de uso proscrito no Brasil: Lista F1 - Subst\u00e2ncias entorpecentes; Lista F2 - Subst\u00e2ncias psicotr\u00f3picas; Lista F3 \u2013 Subst\u00e2ncias precursoras; Lista F4 - Outras subst\u00e2ncias'."
+      }
+,
+      {
+        "q": "36. Sob a \u00f3tica regulamentar de comercializa\u00e7\u00e3o, o que estabelece a Portaria n\u00ba 344/98 sobre subst\u00e2ncias e plantas sujeitas a controle especial no Brasil?",
+        "opts": [
+          "Define que todas as plantas podem ser plantadas para consumo individual."
+,
+          "Estabelece os crit\u00e9rios para comercializa\u00e7\u00e3o, tipo de receitu\u00e1rio utilizado, se o uso \u00e9 restrito a hospitais, al\u00e9m de estabelecer quais drogas s\u00e3o de uso proscrito no territ\u00f3rio nacional."
+,
+          "Libera o com\u00e9rcio de coca\u00edna cloridrato em farm\u00e1cias comuns sob receita B1."
+,
+          "Dita que subst\u00e2ncias precursoras n\u00e3o necessitam de fiscaliza\u00e7\u00e3o da PF."
+        ],
+        "ans": 1,
+        "exp": "A norma 'estabelece os crit\u00e9rios para a comercializa\u00e7\u00e3o de uma subst\u00e2ncia, o tipo de receitu\u00e1rio utilizado e se o uso \u00e9 restrito ao ambiente hospitalar; al\u00e9m deste fato, a norma estabelece quais s\u00e3o as drogas de uso proscrito...'."
+      }
+,
+      {
+        "q": "37. Qual o paradoxo conceitual que a apostila aponta na classifica\u00e7\u00e3o jur\u00eddica da COCA\u00cdNA perante a Portaria n\u00ba 344/98 e a Farmacologia?",
+        "opts": [
+          "Legalmente \u00e9 um sedativo de lista B1; farmacologicamente \u00e9 um dissociativo."
+,
+          "A coca\u00edna aparece classificada na lista F1 como entorpecente, apesar de ser farmacologicamente classificada como uma subst\u00e2ncia estimulante."
+,
+          "Legalmente \u00e9 precursora de lista F3; farmacologicamente \u00e9 canabinoide."
+,
+          "A legisla\u00e7\u00e3o a classifica como planta medicinal permitida sob receita B2."
+        ],
+        "ans": 1,
+        "exp": "O texto ressalta: 'Nesse \u00ednterim, a coca\u00edna aparece classificada como entorpecente, apesar de ser farmacologicamente classificada como uma subst\u00e2ncia estimulante'."
+      }
+,
+      {
+        "q": "38. O C\u00f3digo Penal, em seu Artigo 273 (reda\u00e7\u00e3o dada pela Lei de Crimes Hediondos), pune com reclus\u00e3o e multa qual conduta criminosa espec\u00edfica relacionada \u00e0 \u00e1rea m\u00e9dica?",
+        "opts": [
+          "Falsificar, corromper, adulterar ou alterar produto destinado a fins terap\u00eauticos ou medicinais."
+,
+          "Qualquer tipo de com\u00e9rcio varejista de medicamentos gen\u00e9ricos sem receita."
+,
+          "O plantio sem autoriza\u00e7\u00e3o de sementes aliment\u00edcias de dormideira."
+,
+          "A prescri\u00e7\u00e3o de anorex\u00edgenos do tipo sibutramina."
+        ],
+        "ans": 0,
+        "exp": "O CP em seu art. 273 define como crime de reclus\u00e3o e multa: 'falsificar, corromper, adulterar ou alterar produto destinado a fins terap\u00eauticos ou medicinais'."
+      }
+,
+      {
+        "q": "39. Como se caracteriza o crime previsto no Artigo 272 do C\u00f3digo Penal, com reda\u00e7\u00e3o dada pela Lei dos Crimes Hediondos?",
+        "opts": [
+          "Contrabando interestadual de insumos qu\u00edmicos para s\u00edntese."
+,
+          "Corromper, adulterar, falsificar ou alterar subst\u00e2ncia ou produto aliment\u00edcio destinado a consumo, tornando-o nocivo \u00e0 sa\u00fade ou reduzindo-lhe o valor nutritivo (abrangendo tamb\u00e9m bebidas)."
+,
+          "A venda sem autoriza\u00e7\u00e3o de agrot\u00f3xicos ou fertilizantes hospitalares."
+,
+          "A comercializa\u00e7\u00e3o ilegal de plantas de ayahuasca fora de ambientes religiosos."
+        ],
+        "ans": 1,
+        "exp": "O CP art. 272 criminaliza: 'corromper, adulterar, falsificar ou alterar subst\u00e2ncia ou produto aliment\u00edcio destinado a consumo, tornando-o nocivo \u00e0 sa\u00fade ou reduzindo-lhe o valor nutritivo...'."
+      }
+,
+      {
+        "q": "40. Sob a perspectiva da depend\u00eancia de drogas, qual a diferen\u00e7a cl\u00e1ssica entre a 'depend\u00eancia f\u00edsica' e a 'depend\u00eancia ps\u00edquica'?",
+        "opts": [
+          "A f\u00edsica refere-se apenas ao comportamento em ambientes p\u00fablicos; a ps\u00edquica \u00e0 perda de massa muscular."
+,
+          "A f\u00edsica est\u00e1 relacionada aos fen\u00f4menos de toler\u00e2ncia e s\u00edndrome de abstin\u00eancia (o organismo adapta-se \u00e0 droga); a ps\u00edquica est\u00e1 relacionada \u00e0 falta de controle e desejo intenso (fissura) de consumir para obter prazer ou evitar desconforto."
+,
+          "A f\u00edsica \u00e9 exclusiva das drogas de abuso naturais; a ps\u00edquica \u00e9 exclusiva das drogas sint\u00e9ticas."
+,
+          "N\u00e3o h\u00e1 distin\u00e7\u00e3o cient\u00edfica, sendo que ambas provocam coma induzido na primeira dose."
+        ],
+        "ans": 1,
+        "exp": "A depend\u00eancia 'apresenta elementos f\u00edsicos e ps\u00edquicos (depend\u00eancia f\u00edsica/depend\u00eancia ps\u00edquica). Os elementos f\u00edsicos est\u00e3o relacionados \u00e0 toler\u00e2ncia e \u00e0 s\u00edndrome de abstin\u00eancia... Os elementos ps\u00edquicos est\u00e3o relacionados \u00e0 falta de controle no uso, caracterizados pelo desejo intenso de usar...'.<br><br>\n            <div class=\"diagram-box\">\n                <p style=\"font-size:18px; margin:5px; color:#555;\"><b>Mecanismo da Depend\u00eancia de Drogas</b></p>\n                <svg width=\"400\" height=\"150\" viewBox=\"0 0 400 150\">\n                    <!-- Depend\u00eancia F\u00edsica -->\n                    <rect x=\"20\" y=\"20\" width=\"160\" height=\"110\" rx=\"8\" fill=\"#d1fae5\" stroke=\"#10b981\" stroke-width=\"2\" />\n                    <text x=\"100\" y=\"45\" font-size=\"12\" font-weight=\"bold\" fill=\"#065f46\" text-anchor=\"middle\">Depend\u00eancia F\u00edsica</text>\n                    <text x=\"100\" y=\"75\" font-size=\"10\" fill=\"#065f46\" text-anchor=\"middle\">1. Toler\u00e2ncia</text>\n                    <text x=\"100\" y=\"100\" font-size=\"10\" fill=\"#065f46\" text-anchor=\"middle\">2. Abstin\u00eancia F\u00edsica</text>\n                    \n                    <!-- Depend\u00eancia Ps\u00edquica -->\n                    <rect x=\"220\" y=\"20\" width=\"160\" height=\"110\" rx=\"8\" fill=\"#fee2e2\" stroke=\"#f43f5e\" stroke-width=\"2\" />\n                    <text x=\"300\" y=\"45\" font-size=\"12\" font-weight=\"bold\" fill=\"#991b1b\" text-anchor=\"middle\">Depend\u00eancia Ps\u00edquica</text>\n                    <text x=\"300\" y=\"75\" font-size=\"10\" fill=\"#991b1b\" text-anchor=\"middle\">1. Desejo Intenso (Craving)</text>\n                    <text x=\"300\" y=\"100\" font-size=\"10\" fill=\"#991b1b\" text-anchor=\"middle\">2. Perda de Controle</text>\n                </svg>\n            </div>\n        "
+      }
+    ]
+  }
+];
+
+let answered = 0, corrects = 0, wrongs = 0;
+let wrongQuestions = [];
+
+function updateScore(){
+  document.getElementById('sc-c').textContent = corrects;
+  document.getElementById('sc-w').textContent = wrongs;
+  document.getElementById('sc-a').textContent = answered;
+  document.getElementById('btn-wrong').disabled = (wrongQuestions.length === 0);
+}
+
+function buildQuiz(dataSource){
+  dataSource = dataSource || CHAPTERS;
+  window._currentData = dataSource;
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  let total = 0;
+  dataSource.forEach(ch => total += ch.questions.length);
+  document.getElementById('sc-total').textContent = '/ ' + total;
+
+  dataSource.forEach((ch, ci) => {
+    const div = document.createElement('div');
+    div.className = 'chapter';
+    let html = `<div class="chapter-title">${ch.title}</div>`;
+    ch.questions.forEach((q, qi) => {
+      const qid = 'q_' + ci + '_' + qi;
+      html += `<div class="question" id="block_${qid}">
+        <div class="q-num">Questão ${qi+1}</div>
+        <div class="q-text">${q.q}</div>`;
+      q.opts.forEach((opt, oi) => {
+        html += `<button class="opt" id="${qid}_${oi}" onclick="handleAnswer(${ci}, ${qi}, ${oi})">${opt}</button>`;
+      });
+      html += `<div class="feedback" id="fb_${qid}" style="display:none"></div></div>`;
+    });
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+}
+
+function handleAnswer(ci, qi, chosen){
+  const dataSource = window._currentData || CHAPTERS;
+  const ch = dataSource[ci];
+  const q = ch.questions[qi];
+  const qid = 'q_' + ci + '_' + qi;
+  const correct = q.ans;
+  const isRight = (chosen === correct);
+
+  q.opts.forEach((_, oi) => {
+    const btn = document.getElementById(qid + '_' + oi);
+    btn.disabled = true;
+    if(oi === correct) btn.classList.add('correct');
+    if(oi === chosen && !isRight) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('fb_' + qid);
+  fb.style.display = 'block';
+  if(isRight){
+    fb.className = 'feedback ok';
+    fb.innerHTML = `✅ <strong>Correto!</strong> ${q.exp}`;
+    corrects++;
+  } else {
+    fb.className = 'feedback err';
+    fb.innerHTML = `❌ <strong>Incorreto.</strong> ${q.exp}`;
+    wrongs++;
+    wrongQuestions.push({chTitle: ch.title, qObj: q});
+  }
+  answered++;
+  updateScore();
+}
+
+function resetAll(){
+  if(!confirm('Reiniciar o quiz completo?')) return;
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(CHAPTERS);
+  updateScore();
+}
+
+function resetWrong(){
+  if(wrongQuestions.length === 0) return;
+  if(!confirm('Reiniciar apenas com as ' + wrongQuestions.length + ' questão(ões) que você errou?')) return;
+  const chapMap = {};
+  wrongQuestions.forEach(({chTitle, qObj}) => {
+    if(!chapMap[chTitle]) chapMap[chTitle] = {title: chTitle, questions: []};
+    chapMap[chTitle].questions.push(qObj);
+  });
+  const filtered = Object.values(chapMap);
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(filtered);
+  updateScore();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

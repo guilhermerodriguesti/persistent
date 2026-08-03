@@ -1,0 +1,573 @@
+Com prazer! Preparei o novo simulado interativo focado integralmente no **Capítulo 2: Estudo Descritivo das Drogas de Abuso** da sua apostila de *Química Forense*. 
+
+Este treinamento de **20 questões inéditas de nível difícil e linguagem direta** foi desenvolvido para fixar as características físicas, botânicas, químicas e regulatórias de todas as substâncias descritas no Capítulo 2. 
+
+Como as regras de segurança da plataforma barram a sincronização de arquivos com extensão `.html` diretamente no painel lateral do Studio, disponibilizo o código interativo completo no bloco de código abaixo. Basta copiá-lo, salvá-lo localmente em seu computador com a extensão `.html` (por exemplo, `simulado_quimica_forense_cap2.html`) e abri-lo no seu navegador favorito para praticar.
+
+---
+
+### O que este simulado aborda com máximo rigor técnico:
+*   **Cocaína e Refino (Questões 1 a 6):** As espécies botânicas produtoras (*E. coca* e *E. novogranatense*), a morfologia foliar das nervuras falsas, as propriedades físicas e teores de pureza da pasta base, a variação de solubilidade da base livre e do cloridrato em reações ácido-base, o método de precipitação alcalina "la bomba" e a classificação nominal da cocaína como entorpecente na Lista F1.
+*   **Anfetaminas e Anorexígenos (Questões 7 e 8):** O enquadramento proibitivo da metanfetamina na Lista F2 e a vedação expressa de associações farmacêuticas de anorexígenos com laxantes, diuréticos, hormônios e ansiolíticos.
+*   **Canabinoides (Questões 9 a 12):** A morfologia foliar de folíolos ímpares serrilhados, o cultivo indoor de Skunk de alta potência (com teores de THC entre 9% e 27%), a comparação de THC no haxixe (~10%) e no óleo de haxixe (20% a 80%), e a separação jurídica entre o Canabidiol puro (Lista C1) e a formulação registrada Mevatyl (Adendo da Lista A3).
+*   **Opioides, Sedativos e Dissociativos (Questões 13 a 17):** Os alcaloides majoritários e percentuais no látex do ópio bruto, a síntese semissintética da heroína, as indicações clínicas de barbitúricos anticonvulsivantes (fenobarbital) e anestésicos (tiopental), o Rohypnol (flunitrazepam) no golpe "boa noite, Cinderela", e o anestésico PCP ("pó de anjo") na Lista A3.
+*   **Alucinógenos e Inalantes (Questões 18 a 20):** A descoberta do LSD-25 a partir do fungo do centeio *Claviceps purpurea* e o mecanismo do flashback lipofílico, a composição botânica e molecular do chá de Ayahuasca (Santo Daime e UDV) protegida para rituais religiosos, e as propriedades do cloreto de etila (lança-perfume) como composto inflamável de chama verde enquadrado simultaneamente como insumo (Lista D2) e psicotrópico (Lista B1).
+
+---
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado Especialista: Capítulo 2 - Estudo Descritivo das Drogas de Abuso</title>
+<style>
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        background-color: #f0fdfa; 
+        color: #0f172a; 
+        margin: 0; 
+        padding: 30px; 
+        font-size: 26px; /* Letras grandes para conforto visual e acessibilidade */
+    }
+    .container { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        background: #ffffff; 
+        padding: 45px; 
+        border-radius: 16px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    }
+    h1 { 
+        text-align: center; 
+        color: #0d9488; 
+        font-size: 46px; 
+        margin-bottom: 10px;
+    }
+    p.subtitle {
+        text-align: center; 
+        color: #475569; 
+        margin-bottom: 50px; 
+        font-size: 28px;
+    }
+    .question-card { 
+        margin-bottom: 55px; 
+        padding: 40px; 
+        border: 2px solid #ccfbf1; 
+        border-radius: 12px; 
+        background-color: #fafbfc; 
+    }
+    .topic-tag {
+        display: inline-block;
+        background-color: #0d9488;
+        color: #ffffff;
+        font-size: 18px;
+        padding: 6px 18px;
+        border-radius: 20px;
+        margin-bottom: 22px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .question-text { 
+        font-weight: bold; 
+        font-size: 32px; 
+        margin-bottom: 25px; 
+        color: #111827; 
+        line-height: 1.4;
+    }
+    .options { 
+        list-style-type: none; 
+        padding: 0; 
+        margin: 0;
+    }
+    .options li { 
+        margin-bottom: 18px; 
+        background: #ffffff; 
+        border: 2px solid #cbd5e1; 
+        border-radius: 10px; 
+        transition: all 0.2s ease; 
+    }
+    .options li:hover { 
+        background-color: #f0fdfa; 
+        border-color: #0d9488;
+    }
+    .options label { 
+        cursor: pointer; 
+        display: flex; 
+        align-items: center; 
+        padding: 22px; 
+        width: 100%; 
+        box-sizing: border-box;
+        font-size: 28px;
+        line-height: 1.4;
+    }
+    .options input { 
+        margin-right: 25px; 
+        transform: scale(2.0); 
+    }
+    button { 
+        background-color: #0d9488; 
+        color: #ffffff; 
+        border: none; 
+        padding: 22px 45px; 
+        border-radius: 10px; 
+        cursor: pointer; 
+        font-size: 28px; 
+        font-weight: bold;
+        margin-top: 25px; 
+        transition: background-color 0.2s;
+    }
+    button:hover { 
+        background-color: #0f766e; 
+    }
+    button:disabled { 
+        background-color: #94a3b8; 
+        cursor: not-allowed; 
+    }
+    .feedback { 
+        margin-top: 25px; 
+        padding: 30px; 
+        border-radius: 10px; 
+        display: none; 
+        line-height: 1.5; 
+        font-size: 28px;
+    }
+    .correct { 
+        background-color: #d1fae5; 
+        color: #065f46; 
+        border: 2px solid #10b981; 
+    }
+    .incorrect { 
+        background-color: #fee2e2; 
+        color: #991b1b; 
+        border: 2px solid #f43f5e; 
+    }
+    .explanation { 
+        margin-top: 20px; 
+        font-style: italic; 
+        font-size: 26px; 
+        color: #334155;
+    }
+    .diagram-box {
+        margin: 20px 0;
+        text-align: center;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        border: 2px dashed #0d9488;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Simulado do Capítulo 2 - Estudo Descritivo das Drogas de Abuso</h1>
+    <p class="subtitle">20 Questões Inéditas de Alta Complexidade baseadas na Apostila Oficial (Polícia Federal)</p>
+    <div id="quiz-container"></div>
+</div>
+
+<script>
+const quizData = [
+    {
+        topic: "Origem da Cocaína - Espécies Cultivadas",
+        question: "1. Do ponto de vista botânico, quais são as únicas espécies e variedades do gênero Erythroxylum que possuem quantidades de alcaloide cocaína suficientes para sua exploração ilícita?",
+        options: [
+            "Erythroxylum coca variedade ipadu, variedade epadu e variedade patu.",
+            "Erythroxylum coca (variedade coca) e Erythroxylum novogranatense (variedade novogranatense e variedade truxillense).",
+            "Erythroxylum catuaba e Erythroxylum grandiflorum.",
+            "Erythroxylum coca variedade Ipadú, por possuir baixo teor do alcaloide estimulante."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 17-18 da apostila: 'Botanicamente, a coca ou arbusto de coca pertence à família Erythroxylaceae e ao gênero Erythroxylum. Embora sejam conhecidas cerca de 250 espécies de Erythroxylum, somente duas espécies possuem quantidades de cocaína suficientes para sua exploração ilícita, a Erythroxylum coca (variedade coca) e a Erythroxylum novogranatense (variedade novogranatense e variedade truxillense). As folhas de Erythroxylum coca variedade Ipadú... possuem baixo teor e não têm sido utilizadas...'"
+    },
+    {
+        topic: "Morfologia da Folha de Coca",
+        question: "2. Como se caracterizam visualmente e morfologicamente as folhas de coca do gênero Erythroxylum descritas na apostila de Química Forense?",
+        options: [
+            "Folhas alternadas, circulares e compostas de um número ímpar de folíolos estreitos com bordas serrilhadas (dentadas).",
+            "Folhas ovais ou elípticas, lisas e membranáceas, apresentando duas falsas nervuras levemente curvas e paralelas à nervura central.",
+            "Folhas triangulares largas, cobertas por uma fina penugem avermelhada rica em óleos voláteis.",
+            "Folhas compostas pinadas, apresentando bordas espinhosas e ramificações retas perpendiculares."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 18 da apostila: 'As folhas de coca são ovais ou elípticas, lisas e membranáceas, apresentando duas falsas nervuras levemente curvas e paralelas à nervura central. Suas dimensões variam conforme a espécie...'"
+    },
+    {
+        topic: "Pasta Base de Cocaína - Características",
+        question: "3. O que é a 'Pasta Base de cocaína', qual o seu teor médio de pureza e sob qual forma física ela comumente se apresenta nas apreensões reais de tráfico?",
+        options: [
+            "Um pó cristalino branco e brilhante, com teor de pureza de 92% a 98%, totalmente solúvel em água.",
+            "Cocaína na forma de base livre impura (ou crua/bruta), apresentando em situações de tráfico coloração beige ou pardacenta mais escura sob a forma de pó e/ou grumos, com teor de cocaína de 30% a 70%.",
+            "Uma pasta semilíquida altamente hidratada de coloração amarela brilhante com teor de pureza de 10% a 20%.",
+            "Cristais incolores transparentes de pureza superior a 90%, conhecidos como free-base."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 19 da apostila: 'Pasta base de cocaína: cocaína na forma de base livre. É o primeiro produto obtido... Em situações de tráfico poucas vezes se apresenta na forma pastosa, mas sim em pó e/ou grumos... Apresenta normalmente coloração bege ou pardacenta mais escura. É a cocaína base impura... O teor de cocaína nesse produto em geral varia de 30% a 70%'"
+    },
+    {
+        topic: "Solubilidade da Cocaína (Reações Ácido-Base)",
+        question: "4. Como as características físico-químicas e de solubilidade do alcaloide cocaína variam de acordo com o pH do meio (ácido ou básico), conforme o Capítulo 2?",
+        options: [
+            "A cocaína em meio ácido se comporta na forma de base livre, solúvel em solventes orgânicos; em meio básico apresenta-se como sal, solúvel em água.",
+            "A cocaína em meio básico se comporta na forma de base livre, solúvel em solventes orgânicos (hexano, gasolina, querosene); já em meio ácido, apresenta-se na forma de sal e, dessa forma, solúvel em água e insolúvel em diversos solventes orgânicos.",
+            "A solubilidade da cocaína é constante, sendo insolúvel em solventes orgânicos e solúvel em água destilada fria sob qualquer pH.",
+            "A base livre é altamente solúvel em água, o que permite sua aplicação direta por via injetável intravenosa."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 20 da apostila: 'a cocaína em meio básico se comporta na forma de base livre, solúvel em solventes orgânicos (hexano, gasolina, querosene); já em meio ácido, a cocaína se apresenta na forma de sal e, dessa forma, solúvel em água e insolúvel em diversos solventes orgânicos'."
+    },
+    {
+        topic: "Método de Refino 'La Bomba'",
+        question: "5. Diante do controle rígido de insumos químicos, qual método alternativo de conversão da cocaína base para cocaína cloridrato (sal) foi desenvolvido pelos traficantes sob a alcunha de 'la bomba'?",
+        options: [
+            "A dissolução do cloridrato em ácido nítrico fumegante seguido de evaporação térmica a 100 °C.",
+            "A adição direta de uma solução contendo ácido clorídrico em altíssima concentração em álcool etílico sobre a cocaína base, obtendo o sal com alto rendimento.",
+            "A lavagem da pasta base com amônia anidra gasosa sob pressão hidráulica.",
+            "A queima do cloreto de etila diretamente sobre cristais molhados de merla."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 20-21 da apostila: 'Um bom exemplo disso é o método de produção de cocaína cloridrato, conhecido como “la bomba”: o traficante produz um insumo extremamente eficiente contendo ácido clorídrico em altíssima concentração em álcool etílico. Essa solução é adicionada diretamente sobre a cocaína base, obtendo-se a cocaína cloridrato em alto rendimento'."
+    },
+    {
+        topic: "Classificação da Cocaína: Farmacológica vs. Jurídica",
+        question: "6. Qual contradição conceitual existe entre a classificação farmacológica da cocaína e o seu enquadramento legal na Portaria nº 344/98-SVS/MS?",
+        options: [
+            "Farmacologicamente é um sedativo do sistema nervoso; legalmente é classificada como insumo de fabricação da Lista D1.",
+            "Farmacologicamente é uma substância estimulante do sistema nervoso central; legalmente está classificada como substância entorpecente na Lista F1 (Uso Proscrito) devido a tratados históricos.",
+            "Farmacologicamente é um alucinógeno perturbador; legalmente é classificada como psicotrópico de uso permitido na Lista A3.",
+            "Não há contradições, pois tanto a farmacologia quanto a lei a enquadram como analgésico opioide."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 14 e 21 da apostila: 'A classificação das drogas segue o recomendado no primeiro tratado assinado pelo Brasil... Nesse ínterim, a cocaína aparece classificada como entorpecente, apesar de ser farmacologicamente classificada como uma substância estimulante'. Ela está na Lista F1 (Substâncias Entorpecentes de uso proscrito)."
+    },
+    {
+        topic: "Metanfetamina - Enquadramento Legal",
+        question: "7. Ao contrário da anfetamina comum e da dexanfetamina, qual o enquadramento legal atual da metanfetamina de acordo com a Portaria nº 344/98-SVS/MS?",
+        options: [
+            "Está enquadrada na Lista A3 (Substâncias Psicotrópicas), sendo permitida sua comercialização sob receita amarela.",
+            "Está incluída na Lista F2 (Substâncias Psicotrópicas de Uso Proscrito no Brasil), sendo de uso proibido.",
+            "Está na Lista B1 (Psicotrópicos comuns) sujeita a controle por receita azul.",
+            "Está na Lista D1 (Precursores) por ser insumo farmacêutico secundário."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 22-23 da apostila: as anfetaminas como anfetamina e dexanfetamina estão na Lista A3 (Notificação de Receita A). Já a 'metanfetamina está atualmente incluída na Lista F2 – Drogas de Uso Proscrito, presente na atualização da Portaria n.º 344/98-SVS/MS'."
+    },
+    {
+        topic: "Anorexígenos - Associações Proscritas",
+        question: "8. Em relação aos anorexígenos (Lista B2), quais associações medicamentosas em fórmulas magistrais são expressamente proibidas (proscritas) pela legislação sanitária nacional (RDC nº 58/2007)?",
+        options: [
+            "A associação com analgésicos comuns e anti-inflamatórios não esteroidais.",
+            "A associação de anorexígenos com ansiolíticos, diuréticos, hormônios ou extratos hormonais e laxantes, bem como quaisquer outras substâncias com ação medicamentosa.",
+            "A associação com vitaminas hidrossolúveis e sais minerais de ferro.",
+            "A associação com xaropes antitussígenos à base de codeína."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 23 da apostila: 'Atualmente, encontra-se proscrita (proibida) pelo art. 48 da Portaria n.º 344-SVS/MS... e pela RDC n.º 58, de 5/9/2007, a associação de anorexígenos com ansiolíticos, diuréticos, hormônios ou extratos hormonais e laxantes...'"
+    },
+    {
+        topic: "Cannabis - Morfologia Foliar",
+        question: "9. Quais são as características morfológicas descritas na apostila para as folhas das plantas do gênero Cannabis?",
+        options: [
+            "Folhas simples, opostas, com margens perfeitamente lisas e duas falsas nervuras paralelas.",
+            "Folhas alternadas, circulares e compostas de um número ímpar de folíolos estreitos e comprimidos, separados, com bordas serrilhadas (dentadas), brilhantes e pegajosas, de coloração verde escura na face superior (coberta por pelos) e verde mais clara na inferior.",
+            "Folhas coriáceas, trilobadas, cobertas de espinhos na bainha protetora.",
+            "Folhas elípticas lisas, alternadas por talo, de cor parda amarelada quando maduras."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 26 da apostila: 'Suas folhas são alternadas, circulares e compostas de um número ímpar de folíolos estreitos e comprimidos, separados, com bordas serrilhadas (dentadas), sendo brilhantes e pegajosas, cobertas por pelos na face superior, de cor verde escura e a face inferior de cor verde mais clara. O número de folíolos por folha pode ser de três, cinco ou sete (comum), porém há relatos... com até 11...'"
+    },
+    {
+        topic: "Cannabis - Skunk e Tecnologias de Cultivo",
+        question: "10. O que caracteriza a cannabis conhecida como 'Skunk', quais tecnologias são empregadas no seu plantio e quais os teores de tetrahidrocanabinol (THC) citados na apostila?",
+        options: [
+            "Variedade pura de baixo teor de resina, cultivada sem luz artificial, com 0,5% de THC.",
+            "Plantas com concentração de THC maior (variando entre 9% e 27% ou mais), derivadas do cruzamento de diversas variedades (como do Afeganistão, Marrocos e Tailândia), cultivadas sob tecnologia indoor (hiperluminosidade, controle de nutrientes, adubos, saturação de CO2) completando floração em apenas dois meses.",
+            "Uma resina pastosa de cor marrom extraída por calor seco com 80% de THC.",
+            "Mistura desidratada de talos machos triturados com solventes voláteis."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 27 da apostila: 'Plantas com uma concentração de THC maior, derivadas do cruzamento entre diversas variedades... principalmente as originárias do Afeganistão, Marrocos e Tailândia... O uso de tecnologia de cultivo (hiperluminosidade, dosagem de nutrientes, adubos, saturação do ambiente com dióxido de carbono) permitem que este híbrido complete um ciclo de floração em apenas dois meses... apreendeu plantas... cujo conteúdo variava de 9% a 27% de THC'."
+    },
+    {
+        topic: "Haxixe vs. Óleo de Haxixe - Teores de THC",
+        question: "11. Quais as características físicas e as respectivas faixas de concentração do princípio ativo delta-9-THC no Haxixe e no Óleo de Haxixe?",
+        options: [
+            "Haxixe possui teor de 80%; o óleo possui no máximo 10% de THC.",
+            "O haxixe é uma substância resinosa de cor marrom ou preta com teor de THC de cerca de 10%; já o óleo de haxixe é um extrato por solvente com concentração de THC geralmente na faixa de 20% a 80%.",
+            "Ambos apresentam teores idênticos ao vegetal bruto seco, situando-se entre 0,5% e 4% de THC.",
+            "Haxixe é uma solução líquida aquosa de THC e o óleo de haxixe apresenta-se em pedras bege-pardacentas de 95% de pureza."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 28 da apostila: 'O haxixe é uma substância resinosa de coloração marrom escura ou mesmo preta... O teor de THC no haxixe pode atingir cerca de 10%, enquanto no vegetal bruto situa-se entre 0,5% a 4%... óleo de haxixe... processos extrativos com solventes... A concentração de THC no óleo de haxixe situa-se, geralmente, na faixa de 20% a 80%'."
+    },
+    {
+        topic: "Canabidiol (CBD) vs. Mevatyl",
+        question: "12. De acordo com a evolução regulatória no Brasil expressa na apostila, como são enquadrados legalmente o Canabidiol (CBD) puro e o medicamento registrado 'Mevatyl'?",
+        options: [
+            "Ambos são classificados na Lista F2 de substâncias de uso proscrito no Brasil.",
+            "O canabidiol (CBD) puro está classificado na Lista C1 (Controle Especial); enquanto o Mevatyl (medicamento com CBD e THC de até 30mg/ml) está enquadrado no adendo da Lista A3 (Notificação de Receita A).",
+            "O CBD puro está na Lista B1 e o Mevatyl está na Lista A1.",
+            "Ambos são isentos de receita por estarem na Lista D1 de precursores."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 30 da apostila: 'O canabidiol (CBD) foi incluído na Lista C1 - Lista de Substâncias Sujeitas a Controle Especial... Os medicamentos registrados na Anvisa que possuam... no máximo 30 mg de THC por ml e 30 mg de CBD por ml estão incluídos no adendo 2 da Lista A3 – Lista das Substâncias Psicotrópicas (Sujeita a Notificação da Receita “A”)... o Mevatyl'."
+    },
+    {
+        topic: "Composição do Ópio Bruto",
+        question: "13. O ópio bruto (látex seco obtido do fruto imaturo da Papaver somniferum L.) contém mais de 20 alcaloides. Quais são os 5 alcaloides majoritários descritos na apostila com seus respectivos teores médios aproximados?",
+        options: [
+            "Heroína (45%), morfina (25%), codeína (15%), tebaína (10%) e noscapina (5%).",
+            "Morfina (10%), codeína (0,5%), narcotina ou noscapina (6%), papaverina (1%) e tebaína (0,2%).",
+            "Cocaína (10%), nicotina (5%), cafeína (4%), atropina (1%) e codeína (0,5%).",
+            "Morfina (90%), codeína (8%), narcotina (1%) e heroína (1%)."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 31 da apostila: 'O ópio bruto contém mais de 20 alcaloides, sendo os mais importantes: morfina (10%); codeína (0,5%); narcotina (noscapina - 6%); papaverina (1%); e tebaína (0,2%)'."
+    },
+    {
+        topic: "Heroína - Origem e Síntese",
+        question: "14. Como se caracteriza a origem química e a história regulatória da heroína descritas no Capítulo 2?",
+        options: [
+            "É um alcaloide natural volátil extraído de cogumelos asiáticos da família Papaveraceae.",
+            "É um produto sintético (semissintético) derivado da morfina (diacetilmorfina) por meio de modificação química (acetilação) da morfina natural do ópio, inicialmente comercializado como antitussígeno antes de ser banido por alto potencial de dependência.",
+            "É um tranquilizante benzodiazepínico de uso hospitalar restrito obtido do ácido barbitúrico.",
+            "É uma planta proscrita da Lista E cujas sementes são utilizadas na culinária."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 32 da apostila: 'É um produto sintético derivado da morfina (fármaco proveniente do ópio), cuja síntese deu-se in 1874... começou a ser comercializada como medicamento de combate à tosse. Com o passar dos anos, verificou-se que a heroína possuía uma capacidade de causar dependência muito maior... diacetilmorfina'."
+    },
+    {
+        topic: "Barbitúricos - Indicações Clínicas e Representantes",
+        question: "15. Devido aos riscos de forte dependência e ao surgimento dos benzodiazepínicos, quais as indicações clínicas atuais e os principais exemplos de barbitúricos citados na apostila?",
+        options: [
+            "Tratamento de tosses crônicas e asma; representados pela codeína e papaverina.",
+            "Ação anticonvulsivante (fenobarbital, conhecido comercialmente como Gardenal) e pré-anestésico hospitalar (Tiopental).",
+            "Controle do apetite e obesidade mórbida; representados pela sibutramina e mazindol.",
+            "Tratamento de surtos esquizofrênicos agudos; representados pelo diazepam."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 33 da apostila: 'Atualmente, em virtude dos elevados riscos do emprego de barbitúricos... além do surgimento dos benzodiazepínicos, seu uso praticamente ficou restrito à ação anticonvulsivante (fenobarbital, nome comercial Gardenal) e como pré-anestésico em hospitais (Tiopental, etc.)'."
+    },
+    {
+        topic: "Flunitrazepam e Golpe 'Boa Noite, Cinderela'",
+        question: "16. Qual tranquilizante benzodiazepínico (Lista B1) de forte ação indutora do sono é citado na apostila como comumente associado ao golpe conhecido como 'boa noite, Cinderela'?",
+        options: [
+            "Diazepam (Valium).",
+            "Flunitrazepam (Rohypnol®).",
+            "Clonazepam (Rivotril).",
+            "Meprobamato (Equanil)."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 34 da apostila: a lista de tranquilizantes traz o 'Flunitrazepam – Ex.: Rohypnol® (indutor do sono, usado como droga de estupro no golpe “boa noite, Cinderela”)'."
+    },
+    {
+        topic: "Fenciclidina (PCP) - Dissociativos",
+        question: "17. O que é a fenciclidina (PCP), qual o seu codinome popular e qual a sua classificação legal na Portaria nº 344/98-SVS/MS?",
+        options: [
+            "Planta psicodélica de sementes pretas da Lista E, conhecida como cipó mariri.",
+            "Droga sintética desenvolvida como anestésico, utilizada recreacionalmente para causar alucinações, conhecida popularmente como 'pó de anjo' (peace pill) e incluída na Lista A3 (Psicotrópicos).",
+            "Solvente clorado industrial de inalação proscrita, incluído na Lista D2.",
+            "Princípio ativo natural de cogumelos mexicanos, conhecido como peyote e classificado na Lista F2."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 35-36 da apostila: 'O PCP (fenciclidina, conhecido como “pó de anjo” ou peace pill) é uma droga sintética, desenvolvida como anestésico, utilizada de maneira recreacional para causar alucinações, aspirada ou fumada... Na Portaria n.º 344/98-SVS/MS, a fenciclidina está presente na Lista A3'."
+    },
+    {
+        topic: "LSD-25, Albert Hoffmann e Flashback",
+        question: "18. Quem sintetizou o alucinógeno LSD, a partir de qual matéria-prima fúngica e o que caracteriza o fenômeno conhecido como 'flashback' descrito na apostila?",
+        options: [
+            "Sintetizado por Alexander Shulgin a partir do safrol; o flashback é a paralisia muscular respiratória imediata.",
+            "Sintetizado por Albert Hoffmann a partir do ácido lisérgico de um fungo parasita do centeio (Claviceps purpurea); o flashback é a ocorrência de novos efeitos alucinógenos tardios pela liberação da droga que ficou armazenada nos tecidos gordurosos.",
+            "Sintetizado por Adolf von Baeyer a partir de extratos de jurema-preta; o flashback é a necrose gástrica crônica.",
+            "Sintetizado por Emil Fischer a partir do barbital; o flashback é o coma profundo induzido."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 36-37 da apostila: 'O LSD... foi sintetizado em 1938 pelo químico suíço Albert Hoffmann... usando como matéria-prima o ácido lisérgico, obtido de extratos de um fungo parasitário do centeio (Claviceps purpurea)... Um dos maiores problemas do uso do LSD é que, uma vez administrado ao organismo, ele pode ficar armazenado nos tecidos gordurosos, podendo provocar novos efeitos alucinógenos a qualquer momento posterior no indivíduo, fenômeno conhecido como flashback'."
+    },
+    {
+        topic: "Ayahuasca e o Status Legal do DMT",
+        question: "19. Como se compõe quimicamente o chá de Santo Daime (Ayahuasca), de quais vegetais é extraído e qual o status legal de seus princípios ativos e do seu uso religioso no Brasil?",
+        options: [
+            "Chá de folhas de coca e sementes de dormideira; proibido de forma absoluta e incondicional no país.",
+            "Chá contendo a combinação de DMT (extraído da chacrona - Psychotria viridis) com alcaloides da harmina (extraídos do cipó mariri - Banisteriopsis caapi); embora o DMT purificado seja proscrito na Lista F2, o uso religioso e ritual do chá é regulamentado e autorizado pelo CONAD.",
+            "Infusão pura de cogumelos do gênero Psilocybe; enquadrado como medicamento controlado da Lista C1.",
+            "Mistura líquida de éter etílico e essência de patchouli; enquadrado como insumo químico da Lista D2."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 38-41 da apostila: 'O chá possui a combinação de duas classes de substâncias naturais: alcaloides da harmina (harmina e harmalina) e DMT, sendo preparado a partir de... folhas de Psychotria viridis (chacrona), fonte de DMT, com caules de Banisteriopsis caapi (cipó mariri), fonte de harmina... A dimetiltriptamina (DMT) encontra-se incluída na Lista... F2 (Uso Proscrito)... O CONAD... regulamentou o uso da bebida de uso restrito a ambientes religiosos'."
+    },
+    {
+        topic: "Cloreto de Etila (Lança-perfume) - Características",
+        question: "20. Quais as propriedades físicas do cloreto de etila (lança-perfume), sua temperatura de ebulição, comportamento na queima e qual o seu enquadramento regulatório?",
+        options: [
+            "Gás incolor denso, não inflamável, de ebulição a 100°C; enquadrado exclusivamente na Lista F2 de proscritos.",
+            "Solvente orgânico clorado, líquido incolor sob pressão, inflamável (chama verde), com ebulição a 12 ºC; classificado de forma dupla na Lista D2 (insumo) e na Lista B1 (psicotrópico) com uso proscrito em aerossóis/aromatizadores.",
+            "Líquido resinoso marrom, com forte odor de patchouli e ebulição a 50 °C; enquadrado na Lista E de plantas.",
+            "Ácido forte incolor de ebulição a 0 °C; isento de controle especial na Portaria 344/98."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 42 da apostila: 'O cloreto de etila é um solvente orgânico clorado... sob pressão, apresenta-se como uma substância líquida incolor, de temperatura de ebulição de 12 ºC, menos densa que a água, inflamável (produz uma chama verde)... incluído na Lista... D2 (Insumo) e na Lista... B1 (Psicotrópico) da RDC nº 39/2012... O uso de cloreto de etila é proscrito para fins médicos, bem como a sua utilização sob a forma de aerossol, aromatizador...'"
+    }
+];
+
+// SVGs dinâmicos para gabaritos do Capítulo 2
+function getDiagramSvg(index) {
+    if (index === 3) { // Solubilidade base vs sal (ácido/base)
+        return `
+            <div class="diagram-box">
+                <p style="font-size:18px; margin:5px; color:#555;"><b>Comportamento Ácido-Base da Cocaína</b></p>
+                <svg width="340" height="130" viewBox="0 0 340 130">
+                    <!-- Meio Básico -->
+                    <rect x="10" y="15" width="145" height="100" rx="6" fill="#f0fdfa" stroke="#0d9488" stroke-width="2" />
+                    <text x="82" y="38" font-size="11" font-weight="bold" fill="#0d9488" text-anchor="middle">MEIO BÁSICO (pH > 7)</text>
+                    <text x="82" y="65" font-size="10" font-weight="bold" fill="#111827" text-anchor="middle">Forma: Base Livre</text>
+                    <text x="82" y="85" font-size="9" fill="#475569" text-anchor="middle">Solúvel em Solventes Orgânicos</text>
+                    
+                    <!-- Meio Ácido -->
+                    <rect x="185" y="15" width="145" height="100" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="2" />
+                    <text x="257" y="38" font-size="11" font-weight="bold" fill="#b91c1c" text-anchor="middle">MEIO ÁCIDO (pH < 7)</text>
+                    <text x="257" y="65" font-size="10" font-weight="bold" fill="#111827" text-anchor="middle">Forma: Sal (Cloridrato)</text>
+                    <text x="257" y="85" font-size="9" fill="#475569" text-anchor="middle">Solúvel em Água</text>
+                </svg>
+            </div>
+        `;
+    } else if (index === 9) { // THC Bar chart
+        return `
+            <div class="diagram-box">
+                <p style="font-size:18px; margin:5px; color:#555;"><b>Concentração de THC por Tipo de Amostra</b></p>
+                <svg width="340" height="130" viewBox="0 0 340 130">
+                    <!-- Linhas horizontais de grade -->
+                    <line x1="80" y1="20" x2="320" y2="20" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2" />
+                    <line x1="80" y1="55" x2="320" y2="55" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2" />
+                    <line x1="80" y1="90" x2="320" y2="90" stroke="#cbd5e1" stroke-width="1" stroke-dasharray="2" />
+                    <!-- Barras -->
+                    <!-- Bruta (0.5% a 4%) -->
+                    <rect x="80" y="95" width="40" height="15" fill="#10b981" />
+                    <text x="130" y="107" font-size="9" fill="#475569">Maconha Comum (0,5% a 4%)</text>
+                    <!-- Haxixe (10%) -->
+                    <rect x="80" y="60" width="100" height="15" fill="#f59e0b" />
+                    <text x="190" y="72" font-size="9" fill="#475569">Haxixe (~10%)</text>
+                    <!-- Skunk (9% a 27%) -->
+                    <rect x="80" y="25" width="220" height="15" fill="#ef4444" />
+                    <text x="310" y="37" font-size="9" fill="#b91c1c" font-weight="bold">Skunk (9% a 27%)</text>
+                    <!-- Eixo vertical -->
+                    <line x1="80" y1="10" x2="80" y2="120" stroke="#475569" stroke-width="2" />
+                </svg>
+            </div>
+        `;
+    } else if (index === 13) { // Síntese da Heroína
+        return `
+            <div class="diagram-box">
+                <p style="font-size:18px; margin:5px; color:#555;"><b>Conversão Semissintética da Heroína</b></p>
+                <svg width="340" height="100" viewBox="0 0 340 100">
+                    <rect x="10" y="25" width="85" height="50" rx="5" fill="#3b82f6" />
+                    <text x="52" y="54" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Morfina (Natural)</text>
+                    <!-- Reagente de acetilação -->
+                    <path d="M 100,50 L 160,50" stroke="#475569" stroke-width="2" />
+                    <text x="130" y="42" font-size="9" font-weight="bold" fill="#475569" text-anchor="middle">Acetilação</text>
+                    <!-- Heroína -->
+                    <rect x="165" y="25" width="165" height="50" rx="5" fill="#ef4444" />
+                    <text x="247" y="48" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Heroína (Diacetilmorfina)</text>
+                    <text x="247" y="62" font-size="8" fill="#fff" text-anchor="middle">Semissintética (Uso Proscrito - F1)</text>
+                </svg>
+            </div>
+        `;
+    } else if (index === 17) { // LSD Albert Hoffmann
+        return `
+            <div class="diagram-box">
+                <p style="font-size:18px; margin:5px; color:#555;"><b>LSD: Origem e Flashback no Tecido Adiposo</b></p>
+                <svg width="340" height="110" viewBox="0 0 340 110">
+                    <!-- Origem -->
+                    <rect x="10" y="15" width="145" height="80" rx="6" fill="#f0fdfa" stroke="#0d9488" stroke-width="2" />
+                    <text x="82" y="32" font-size="10" font-weight="bold" fill="#0d9488" text-anchor="middle">Fungo do Centeio</text>
+                    <text x="82" y="48" font-size="9" fill="#111827" text-anchor="middle">Claviceps purpurea</text>
+                    <text x="82" y="62" font-size="8" fill="#475569" text-anchor="middle">&darr;</text>
+                    <text x="82" y="78" font-size="9" font-weight="bold" fill="#111827" text-anchor="middle">Ácido Lisérgico &rarr; LSD</text>
+                    
+                    <!-- Flashback -->
+                    <rect x="185" y="15" width="145" height="80" rx="6" fill="#fdf4ff" stroke="#a21caf" stroke-width="2" />
+                    <text x="257" y="32" font-size="10" font-weight="bold" fill="#a21caf" text-anchor="middle">Fenômeno Flashback</text>
+                    <text x="257" y="52" font-size="9" fill="#111827" text-anchor="middle">Armazenamento no</text>
+                    <text x="257" y="68" font-size="9" font-weight="bold" fill="#111827" text-anchor="middle">Tecido Adiposo (Gordura)</text>
+                </svg>
+            </div>
+        `;
+    }
+    return '';
+}
+
+const quizContainer = document.getElementById('quiz-container');
+
+quizData.forEach((q, index) => {
+    const questionDiv = document.createElement('div');
+    questionDiv.className = 'question-card';
+
+    let optionsHtml = '';
+    q.options.forEach((opt, i) => {
+        optionsHtml += `<li><label><input type="radio" name="q${index}" value="${i}"> ${opt}</label></li>`;
+    });
+
+    questionDiv.innerHTML = `
+        <span class="topic-tag">${q.topic}</span>
+        <div class="question-text">${q.question}</div>
+        <ul class="options">${optionsHtml}</ul>
+        <button onclick="checkAnswer(${index}, this)">Responder</button>
+        <div class="feedback" id="feedback-${index}"></div>
+    `;
+    quizContainer.appendChild(questionDiv);
+});
+
+function checkAnswer(index, btn) {
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    const feedbackDiv = document.getElementById(`feedback-${index}`);
+
+    if (!selected) {
+        alert('Por favor, selecione uma opção antes de enviar a resposta.');
+        return;
+    }
+
+    const answerObj = quizData[index];
+    const isCorrect = parseInt(selected.value) === answerObj.answer;
+
+    feedbackDiv.style.display = 'block';
+    
+    // Resgata o SVG correspondente
+    const diagHtml = getDiagramSvg(index);
+
+    if (isCorrect) {
+        feedbackDiv.className = 'feedback correct';
+        feedbackDiv.innerHTML = `<strong>✔️ Correto! Resposta pericial fundamentada na apostila.</strong>
+        <div class="explanation">
+            ${diagHtml}
+            <em>Justificativa Oficial:</em> ${answerObj.explanation}
+        </div>`;
+    } else {
+        feedbackDiv.className = 'feedback incorrect';
+        feedbackDiv.innerHTML = `<strong>❌ Incorreto. A alternativa correta é a ${answerObj.answer + 1}: "${answerObj.options[answerObj.answer]}"</strong>
+        <div class="explanation">
+            ${diagHtml}
+            <em>Justificativa Oficial:</em> ${answerObj.explanation}
+        </div>`;
+    }
+    
+    // Desativa os inputs de rádio da questão correspondente
+    const allInputs = document.querySelectorAll(`input[name="q${index}"]`);
+    allInputs.forEach(input => input.disabled = true);
+    
+    // Altera o estado do botão
+    btn.disabled = true;
+    btn.textContent = 'Respondido';
+}
+</script>
+
+</body>
+</html>
+```
+
+---
+
+Bons estudos! Caso surja alguma dúvida conceitual ou precise de aprofundamento em alguma dessas substâncias ou reações de análise, estou à sua disposição.
+
+🎧 Se você gostar dessa abordagem, podemos criar um **áudio explicativo** (Audio Overview) resumindo os pontos mais complexos e as principais pegadinhas do Capítulo 2 para você revisar em qualquer lugar.

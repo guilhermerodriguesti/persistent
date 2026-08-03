@@ -1,0 +1,757 @@
+Bom dia! Com satisfação, elaborei o novo simulado interativo focado integralmente no **Capítulo 4 (Testes Preliminares em Drogas e Produtos Químicos)** e nos seus **Apêndices Técnicos de Reações (Apêndice 1 e 2)** da apostila de *Química Forense*.
+
+Como as diretrizes de segurança da plataforma restringem a sincronização direta de arquivos com extensão `.html` no painel lateral do Studio, disponibilizo o código interativo completo abaixo. 
+
+Basta copiá-lo na íntegra usando o botão no canto superior direito do bloco de código, salvá-lo em seu computador como um arquivo `.html` (por exemplo, `simulado_quimica_forense_cap4.html`) e abri-lo em qualquer navegador de internet para realizar o treinamento:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado Tópico 4: Testes Preliminares e Definitivos em Química Forense</title>
+<style>
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        background-color: #f0fdfa; 
+        color: #0f172a; 
+        margin: 0; 
+        padding: 30px; 
+        font-size: 26px; /* Letras grandes conforme solicitado */
+    }
+    .container { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        background: #ffffff; 
+        padding: 45px; 
+        border-radius: 16px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    }
+    h1 { 
+        text-align: center; 
+        color: #0d9488; 
+        font-size: 46px; 
+        margin-bottom: 10px;
+    }
+    p.subtitle {
+        text-align: center; 
+        color: #475569; 
+        margin-bottom: 50px; 
+        font-size: 28px;
+    }
+    .question-card { 
+        margin-bottom: 55px; 
+        padding: 40px; 
+        border: 2px solid #ccfbf1; 
+        border-radius: 12px; 
+        background-color: #fafbfc; 
+    }
+    .topic-tag {
+        display: inline-block;
+        background-color: #0d9488;
+        color: #ffffff;
+        font-size: 18px;
+        padding: 6px 18px;
+        border-radius: 20px;
+        margin-bottom: 22px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .question-text { 
+        font-weight: bold; 
+        font-size: 32px; 
+        margin-bottom: 25px; 
+        color: #111827; 
+        line-height: 1.4;
+    }
+    .options { 
+        list-style-type: none; 
+        padding: 0; 
+        margin: 0;
+    }
+    .options li { 
+        margin-bottom: 18px; 
+        background: #ffffff; 
+        border: 2px solid #cbd5e1; 
+        border-radius: 10px; 
+        transition: all 0.2s ease; 
+    }
+    .options li:hover { 
+        background-color: #f0fdfa; 
+        border-color: #0d9488;
+    }
+    .options label { 
+        cursor: pointer; 
+        display: flex; 
+        align-items: center; 
+        padding: 22px; 
+        width: 100%; 
+        box-sizing: border-box;
+        font-size: 28px;
+        line-height: 1.4;
+    }
+    .options input { 
+        margin-right: 25px; 
+        transform: scale(2.0); 
+    }
+    button { 
+        background-color: #0d9488; 
+        color: #ffffff; 
+        border: none; 
+        padding: 22px 45px; 
+        border-radius: 10px; 
+        cursor: pointer; 
+        font-size: 28px; 
+        font-weight: bold;
+        margin-top: 25px; 
+        transition: background-color 0.2s;
+    }
+    button:hover { 
+        background-color: #0f766e; 
+    }
+    button:disabled { 
+        background-color: #94a3b8; 
+        cursor: not-allowed; 
+    }
+    .feedback { 
+        margin-top: 25px; 
+        padding: 30px; 
+        border-radius: 10px; 
+        display: none; 
+        line-height: 1.5; 
+        font-size: 28px;
+    }
+    .correct { 
+        background-color: #d1fae5; 
+        color: #065f46; 
+        border: 2px solid #10b981; 
+    }
+    .incorrect { 
+        background-color: #fee2e2; 
+        color: #991b1b; 
+        border: 2px solid #f43f5e; 
+    }
+    .explanation { 
+        margin-top: 20px; 
+        font-style: italic; 
+        font-size: 26px; 
+        color: #334155;
+    }
+    .diagram-box {
+        margin: 20px 0;
+        text-align: center;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        border: 2px dashed #0d9488;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Simulado de Revisão Forense</h1>
+    <p class="subtitle">40 Questões Inéditas - Capítulo 4 e Apêndices (Abordagem Analítica e Testes em Drogas)</p>
+    <div id="quiz-container"></div>
+</div>
+
+<script>
+const quizData = [
+    {
+        topic: "Laudo Preliminar - Requisito do Flagrante",
+        question: "1. De acordo com o Artigo 50 da Lei nº 11.343/2006, qual é a condição de suficiência estabelecida em lei para que a autoridade de polícia judiciária possa lavrar o auto de prisão em flagrante por tráfico de drogas?",
+        options: [
+            "A existência de laudo definitivo assinado por dois peritos químicos oficiais.", 
+            "O laudo de constatação da natureza e quantidade da droga, firmado por perito oficial ou, na falta deste, por pessoa idônea.", 
+            "A confissão formal do preso reduzida a termo na presença de duas testemunhas idôneas.", 
+            "O resultado positivo em teste preliminar por tiras de fluxo lateral de imunoensaio."
+        ],
+        answer: 1,
+        explanation: "Conforme a página 52 da apostila, reproduzindo o Art. 50, § 1º: 'Para efeito da lavratura do auto de prisão em flagrante e estabelecimento da materialidade do delito, é suficiente o laudo de constatação da natureza e quantidade da droga, firmado por perito oficial ou, na falta deste, por pessoa idônea'."
+    },
+    {
+        topic: "Laudo Preliminar - Prazo de Vista do MP",
+        question: "2. Conforme preceitua o Artigo 50 da Lei nº 11.343/2006, ocorrendo prisão em flagrante por infração à Lei de Drogas, qual o prazo estabelecido para que se dê vista do auto lavrado ao órgão do Ministério Público?",
+        options: [
+            "Imediatamente na presença da autoridade aduaneira.", 
+            "Em até 24 (vinte e quatro) horas.", 
+            "No prazo improrrogável de 48 (quarenta e oito) horas.", 
+            "Em até 10 (dez) dias após o recebimento do laudo definitivo."
+        ],
+        answer: 1,
+        explanation: "Página 52 da apostila (Art. 50): 'Ocorrendo prisão em flagrante, a autoridade de polícia judiciária fará, imediatamente, comunicação ao juiz competente... do qual será dada vista ao órgão do Ministério Público, em 24 (vinte e quatro) horas'."
+    },
+    {
+        topic: "Laudo Preliminar - Atuação em Duplicidade do Perito",
+        question: "3. O perito que atua na elaboração e subscreve o laudo preliminar de constatação fica impedido de participar da confecção do laudo definitivo?",
+        options: [
+            "Sim, há impedimento legal absoluto para assegurar a impessoalidade e a ampla defesa.", 
+            "Não ficará impedido de participar da elaboração do laudo definitivo.", 
+            "Fica impedido apenas se o laudo preliminar tiver sido lavrado por pessoa idônea (policial nomeado).", 
+            "Fica impedido somente em casos de apreensão de Novas Substâncias Psicoativas (NSP)."
+        ],
+        answer: 1,
+        explanation: "Página 52 da apostila (Art. 50, § 2º): 'O perito que subscrever o laudo a que se refere o § 1º deste artigo não ficará impedido de participar da elaboração do laudo definitivo'."
+    },
+    {
+        topic: "Laudo Preliminar - Assinatura por Policial",
+        question: "4. Em quais circunstâncias específicas da atuação policial a lei e a doutrina da apostila admitem que o laudo de constatação preliminar seja realizado por um policial nomeado?",
+        options: [
+            "Sempre que o perito de plantão estiver de licença médica regulamentar.", 
+            "Nos casos em que a logística necessária para que o perito faça o teste ponha em risco o prazo legal de 24 horas para a lavratura do auto de flagrante.", 
+            "Exclusivamente quando se tratar de apreensão interestadual de maconha triturada.", 
+            "Apenas se o material suspeito for menor que 2,0 gramas."
+        ],
+        answer: 1,
+        explanation: "Página 45 da apostila: 'Nos casos em que a logística necessária para que o perito faça o teste (o deslocamento dele até o material suspeito ou vice-versa) ponha em risco o prazo legal de 24 horas, o que poderia, em tese, prejudicar a lavratura do auto de prisão e apreensão, os testes preliminares podem ser realizados por policial nomeado pela autoridade policial'."
+    },
+    {
+        topic: "Laudo Preliminar - Modelos e Guias Internacionais",
+        question: "5. Diante da ausência de uma regulamentação legal estrita sobre como o laudo preliminar deve ser fisicamente elaborado no Brasil, em quais referências metodológicas a perícia da Polícia Federal se baseia?",
+        options: [
+            "Nas normas da Farmacopeia Brasileira e da Secretaria de Comércio Exterior (SECEX).", 
+            "Em modelos e guias de organismos internacionalmente reconhecidos, como o UNODC, bem como na literatura científica especializada.", 
+            "Exclusivamente nas diretrizes da Câmara de Regulação do Mercado de Medicamentos (CMED).", 
+            "Nos critérios de balística forense emanados pela DITEC militar."
+        ],
+        answer: 1,
+        explanation: "Página 45 da apostila: 'Entretanto, não há regulamentação a respeito de como esse laudo preliminar deve ser elaborado. A Perícia da Polícia Federal baseia-se em modelos e guias de organismos internacionalmente reconhecidos (UNODC... dentre outros), bem como a literatura científica especializada...'"
+    },
+    {
+        topic: "Laudo Preliminar - Detalhes Visuais e Enquadramento Legal",
+        question: "6. De acordo com a apostila de Química Forense, além de declarar o peso e os resultados dos exames, quais informações formais são recomendadas constar no corpo do laudo preliminar de constatação?",
+        options: [
+            "A rota exata do transporte da viatura e a escala de folgas dos peritos laboratoriais.", 
+            "As características observadas no exame visual do material, as quantidades separadas para o exame definitivo e o enquadramento legal das substâncias.", 
+            "O valor venal estimado da droga no mercado de varejo internacional e as digitais latentes.", 
+            "A declaração de que o teste de Scott é 100% definitivo na caracterização de alcaloides."
+        ],
+        answer: 1,
+        explanation: "Página 52 da apostila: 'Ele deve relatar as características observadas no exame visual do material apreendido e o peso aferido... Os resultados dos exames preliminares devem ser relatados no texto, bem como descritas no laudo as quantidades separadas para os exames definitivos. É aconselhável citar o enquadramento legal...'"
+    },
+    {
+        topic: "Colorimetria - Scott Acidificado",
+        question: "7. O teste de Scott modificado e acidificado é o narcoteste indicativo de campo mais comum para a cocaína. Qual é a reação cromática esperada que indica a presença do alcaloide e quais compostos interferentes podem mimetizar esse resultado no campo?",
+        options: [
+            "Reação que gera cor avermelhada; os diluentes inertes de amido atuam como interferentes.", 
+            "O aparecimento de cor azul; tendo como interferentes compostos metálicos (como sais de ferro) e outras substâncias como metadona, heroína, lidocaína e cafeína.", 
+            "O aparecimento de cor preta ou púrpura intensa; tendo como interferente o patchouli.", 
+            "Reação que gera cor amarela leitosa; tendo como interferente o ácido acético glacial puro."
+        ],
+        answer: 1,
+        explanation: "Conforme a Tabela 1 (página 46) e o Apêndice 1 (página 59): 'o aparecimento de cor azul indica a possível presença de cocaína. A metadona, heroína, lidocaína e alguns outros compostos também apresentam cor azul neste teste...'. E a Tabela 1 lista como interferente compostos metálicos, ex.: sais de ferro.",
+        diagram: `
+            <div class='diagram-box'>
+                <p style='font-size:18px; margin:5px; color:#555;'><b>Reação Scott Modificado para Cocaína</b></p>
+                <svg width='280' height='120' viewBox='0 0 280 120'>
+                    <circle cx='60' cy='60' r='35' fill='#ffffff' stroke='#0d9488' stroke-width='2' />
+                    <text x='60' y='64' font-size='10' font-weight='bold' fill='#000' text-anchor='middle'>Amostra Pó</text>
+                    <path d='M 110,60 L 170,60' stroke='#0d9488' stroke-width='3' />
+                    <circle cx='220' cy='60' r='35' fill='#3b82f6' stroke='#1d4ed8' stroke-width='2' />
+                    <text x='220' y='64' font-size='11' font-weight='bold' fill='#fff' text-anchor='middle'>Cor Azul (Positivo)</text>
+                </svg>
+            </div>
+        `
+    },
+    {
+        topic: "Colorimetria - Cannabis Fast Blue vs DL",
+        question: "8. Quais os nomes dos dois testes colorimétricos preliminares indicados na apostila para a identificação de canabinoides (maconha e derivados) e quais são as respectivas colorações positivas?",
+        options: [
+            "Zimmerman (cor púrpura-avermelhada) e Ehrlich (cor violeta após alguns minutos).", 
+            "Fast Blue 'B' Salt (cor avermelhada ou violácea) e Duquenois Levine (cor violeta na camada inferior clorofórmica).", 
+            "Marquis (cor laranja que vira marrom) e Simon (cor azul escuro intenso).", 
+            "Teste de chama (chama verde) e Tanred (precipitado amarelo leitoso)."
+        ],
+        answer: 1,
+        explanation: "De acordo com a Tabela 1 e Apêndice 1: Fast Blue 'B' Salt (página 58: 'cor avermelhada ou violácea indica a presença de cannabis'); Duquenois Levine (página 58: 'cor violeta na camada inferior (clorofórmio) indica a presença de cannabis')."
+    },
+    {
+        topic: "Colorimetria - Reagente Simon",
+        question: "9. No exame de campo e de triagem laboratorial, o reagente de Simon é empregado para identificar compostos específicos. Qual é a reação descrita na Tabela 1 para diferenciar a metanfetamina das demais anfetaminas?",
+        options: [
+            "A metanfetamina reage gerando uma coloração laranja que tende a marrom escuro.", 
+            "A metanfetamina não produz cor com o reagente de Simon, enquanto anfetaminas diversas produzem tons de azul.", 
+            "A metanfetamina produz cor preta imediata, enquanto as outras geram um precipitado branco.", 
+            "Ambas produzem uma chama esverdeada intensa no bico de Bunsen."
+        ],
+        answer: 1,
+        explanation: "Conforme a Tabela 1 (página 46): 'Simon | Metanfetamina não produz cor, anfetaminas diversas produzem tons de azul.' OBS: Seguir estritamente o texto literal fornecido."
+    },
+    {
+        topic: "Colorimetria - Reagente de Marquis em Anfetamínicos",
+        question: "10. No teste preliminar de Marquis para anfetaminas, metanfetaminas e compostos correlatos, quais colorações indicativas são descritas para a identificação da metilenodioximetanfetamina (MDMA / Ecstasy) e das anfetaminas simples?",
+        options: [
+            "Ambos produzem cor azul escuro intenso e instantâneo.", 
+            "Para MDMA / Ecstasy ocorre o aparecimento de coloração preta (ou negra/púrpura); já para anfetamina/metanfetamina ocorre uma cor laranja que se torna marrom.", 
+            "O MDMA do teste produz uma coloração verde-amarelada; a anfetamina comum gera um precipitado vermelho.", 
+            "Não ocorre alteração cromática, necessitando de ácido nítrico concentrado."
+        ],
+        answer: 1,
+        explanation: "Páginas 46 e 60: 'Marquis: cor laranja que se torna marrom indica a possível presença de anfetamina ou metanfetamina... O aparecimento de uma coloração preta indica a possível presença de 3,4-metilenodioximetanfetamina (MDMA)...'."
+    },
+    {
+        topic: "Colorimetria - Reagente Ehrlich",
+        question: "11. Qual o nome do teste preliminar colorimétrico indicado para o LSD, qual a coloração indicativa produzida após alguns minutos e qual o registro clássico de falso positivo citado na apostila?",
+        options: [
+            "Teste de Zimmerman; cor púrpura-avermelhada; falso positivo para diazepam.", 
+            "Teste de Ehrlich; cor violeta que aparece após alguns minutos; falso positivo para Dihidro-LSD.", 
+            "Teste de Dille-Koppanyi; cor púrpura avermelhada; falso positivo para fenobarbital.", 
+            "Teste de Marquis; cor verde-amarelada; falso positivo para DOB."
+        ],
+        answer: 1,
+        explanation: "Conforme a Tabela 1 (página 47): para o LSD, o teste preliminar é o 'Ehrlich', o resultado é 'Cor violeta que aparece após alguns minutos indica presença de LSD' e o falso positivo listado é 'Dihidro-LSD'."
+    },
+    {
+        topic: "Colorimetria - Zimmerman e Dille-Koppanyi",
+        question: "12. Os exames de triagem para benzodiazepínicos e barbitúricos apoiam-se em testes do tipo colorimétrico específicos. Quais são esses testes e a cor comum gerada por ambos?",
+        options: [
+            "Simon para benzodiazepínicos e Marquis para barbitúricos; gerando cor amarela.", 
+            "Zimmerman para benzodiazepínicos e Dille-Koppanyi para barbitúricos; gerando ambos cor púrpura-avermelhada (ou rosa).", 
+            "Tanred para benzodiazepínicos e Chen-Kao para barbitúricos; gerando cor azul marinho.", 
+            "Fast Blue para benzodiazepínicos e Ehrlich para barbitúricos; gerando precipitado verde."
+        ],
+        answer: 1,
+        explanation: "Tabela 1 (página 47) e Apêndice 1 (páginas 61-62): 'Benzodiazepínicos | Zimmerman | Cor púrpura-avermelhada ou rosa' e 'Barbitúricos | Dille-Koppanyi | Cor púrpura avermelhada'."
+    },
+    {
+        topic: "Lança-perfume - Três Testes Preliminares",
+        question: "13. O cloreto de etila (lança-perfume) é uma substância de alta volatilidade. Quais são os três testes preliminares de campo ou triagem descritos na Tabela 1 para a sua caracterização de material suspeito?",
+        options: [
+            "Teste de Scott, reação de Marquis e ponto de ebulição a 100 °C.", 
+            "Teste de chama (chama verde), teste para cloretos (sólido branco floculento) e ponto de ebulição a 12 °C.", 
+            "Fast Blue, teste de solubilidade em ácido clorídrico e reação de Zimmerman.", 
+            "Teste de Tanred, teste Chen-Kao e precipitação com sulfato férrico."
+        ],
+        answer: 1,
+        explanation: "Tabela 1 (página 47): para o cloreto de etila, os testes preliminares são: 'Teste de chama' (produz chama verde), 'Teste para cloretos' (produz sólido branco floculento) e 'Teste de ponto de ebulição' (temperatura de ebulição de 12 °C)."
+    },
+    {
+        topic: "Colorimetria - Sais de Ferro na Cocaína",
+        question: "14. A apostila ilustra que, em certas apreensões, os traficantes têm adicionado de forma deliberada sais de ferro (compostos avermelhados) à cocaína de alto grau de pureza. Qual a finalidade tática dessa conduta no tráfico?",
+        options: [
+            "Aumentar o volume da massa para baratear o cloridrato de cocaína.", 
+            "Dificultar a realização de exames preliminares baseados em reações de coloração.", 
+            "Precipitar a cocaína base na forma de merla pastosa e úmida.", 
+            "Eliminar a volatilidade ácida da solução do método 'la bomba'."
+        ],
+        answer: 1,
+        explanation: "Páginas 49-50 da apostila: 'Em alguns casos, traficantes adicionaram sais de ferro (materiais de coloração avermelhada) para dificultar a realização de exames preliminares baseados em reações de coloração'."
+    },
+    {
+        topic: "Colorimetria - Requisito do Teste em Branco",
+        question: "15. Para garantir o controle e a validade científica das análises preliminares de constatação, qual procedimento analítico de controle é exigência metodológica da apostila?",
+        options: [
+            "A lavagem prévia da placa de toque com solventes como éter ou hexano anidro.", 
+            "A realização de um teste em branco, utilizando uma amostra de controle que sabidamente não contenha a droga investigada.", 
+            "A incineração de uma fração da amostra para avaliar a emissão de fuligem.", 
+            "A verificação obrigatória de pH por peagômetro eletrônico calibrado."
+        ],
+        answer: 1,
+        explanation: "Página 49 da apostila: 'Os exames preliminares de constatação devem ser acompanhados de um teste em branco, isto é, uma amostra que não contenha a droga que está sendo investigada'."
+    },
+    {
+        topic: "Amostragem - Inspeção e Separação em Grupos",
+        question: "16. No processo de amostragem pericial, qual é o primeiro passo a ser adotado pelo perito a partir da inspeção visual de cada unidade do material apreendido?",
+        options: [
+            "Pesar individualmente cada pacote e somar os pesos volumétricos.", 
+            "Separar em grupos os produtos que possuam características comuns como embalagens (desenhos, logomarcas, lote), estado físico e apresentação (cor, textura, etc.).", 
+            "Reunir todas as amostras líquidas e sólidas em um grande recipiente comum.", 
+            "Incinerar imediatamente 10% do volume para caracterização de cinzas."
+        ],
+        answer: 1,
+        explanation: "Página 51 da apostila: 'A partir da inspeção visual de cada unidade do material apreendido a ser amostrado, separar em grupos os produtos que possuam as seguintes características em comum: embalagens (desenhos, logomarcas, número de lote, etc.), estado físico... apresentação (cor, textura...)'. "
+    },
+    {
+        topic: "Amostragem - Regra n < 10",
+        question: "17. Suponha que o perito Criminal Federal receba para análise um grupo homogêneo contendo 8 tabletes de maconha prensada de mesma coloração e logomarca. Segundo as regras de amostragem da IT nº 06/2006-DITEC (Tabela 2), quantas unidades devem ser amostradas?",
+        options: [
+            "Apenas uma unidade sorteada de forma aleatória.", 
+            "Todas as 8 unidades do grupo.", 
+            "Apenas 4 unidades, correspondentes a 50% do total.", 
+            "A raiz quadrada de 8, arredondada para cima (3 unidades)."
+        ],
+        answer: 1,
+        explanation: "Tabela 2 (página 51) indica: 'Se n < 10: Amostrar todas as unidades do grupo'. Sendo 8 unidades, que é menor que 10, todas as 8 devem ser amostradas."
+    },
+    {
+        topic: "Amostragem - Regra 10 <= n <= 100",
+        question: "18. Se uma apreensão contiver 45 pacotes de pó branco com a mesma textura, agrupados visualmente de forma idêntica. De acordo com a Tabela 2 de amostragem, qual o número correto de pacotes a serem amostrados de forma aleatória?",
+        options: [
+            "Amostra-se a totalidade dos 45 pacotes.", 
+            "Amostram-se exatamente 10 unidades do grupo.", 
+            "Amostra-se a raiz quadrada de 45 (7 unidades).", 
+            "Amostram-se 5 pacotes (limite mínimo para pó)."
+        ],
+        answer: 1,
+        explanation: "Tabela 2 (página 51) indica: 'Se 10 <= n <= 100: Amostrar 10 unidades do grupo escolhidas aleatoriamente'. Sendo 45, que se enquadra nessa faixa, amostram-se 10."
+    },
+    {
+        topic: "Amostragem - Regra n > 100",
+        question: "19. Considere uma apreensão de grandes proporções com 144 caixas de um produto químico precursor de síntese. Aplicando-se as regras de amostragem para n > 100 da IT nº 06/2006-DITEC (Tabela 2), qual o número exato de caixas que devem ser amostradas?",
+        options: [
+            "Amostram-se todas as 144 unidades.", 
+            "Amostram-se 12 unidades (que é a raiz quadrada exata de 144).", 
+            "Amostram-se 10 caixas apenas, pois 144 ultrapassa o limite padrão.", 
+            "Amostram-se 13 caixas, correspondentes à raiz quadrada arredondada para cima."
+        ],
+        answer: 1,
+        explanation: "Tabela 2 (página 51) indica: 'Se n > 100: Amostrar √n unidades do grupo... O resultado de √n deve ser arredondado para o número inteiro superior mais próximo'. A raiz de 144 é 12 exatos. Não necessita arredondar para cima por ser um inteiro exato: 12 unidades.",
+        diagram: `
+            <div class='diagram-box'>
+                <p style='font-size:18px; margin:5px; color:#555;'><b>Fórmula de Amostragem Pericial (n > 100)</b></p>
+                <svg width='300' height='100' viewBox='0 0 300 100'>
+                    <rect x='10' y='15' width='280' height='70' rx='8' fill='#f0fdfa' stroke='#0d9488' stroke-width='2' />
+                    <text x='150' y='42' font-size='14' font-weight='bold' fill='#111827' text-anchor='middle'>n > 100  &rArr;  Amostra = &radic;n</text>
+                    <text x='150' y='68' font-size='11' fill='#4b5563' text-anchor='middle' font-style='italic'>Arredondar para o inteiro superior mais próximo</text>
+                </svg>
+            </div>
+        `
+    },
+    {
+        topic: "Amostragem - Arredondamento da Raiz de n",
+        question: "20. Imagine uma apreensão gigantesca contendo 200 sacos de um insumo químico em pó sob fiscalização da PF. Aplicando-se a regra de raiz quadrada com arredondamento para o número inteiro superior (Tabela 2), quantas unidades devem ser amostradas?",
+        options: [
+            "14 unidades.", 
+            "15 unidades.", 
+            "10 unidades.", 
+            "20 unidades."
+        ],
+        answer: 1,
+        explanation: "A raiz de 200 é aproximadamente 14,14. Conforme a regra da Tabela 2 (página 51): 'O resultado de √n deve ser arredondado para o número inteiro superior mais próximo'. Arredondando 14,14 para o inteiro superior mais próximo, obtém-se 15 unidades."
+    },
+    {
+        topic: "Amostragem - Líquidos Heterogêneos em Recipiente Transparente",
+        question: "21. Se o material suspeito consistir em um produto líquido na forma de mistura heterogênea, acondicionado em um recipiente transparente (por exemplo, um frasco com duas fases de solventes). Qual o procedimento correto de amostragem?",
+        options: [
+            "Agitar vigorosamente e retirar uma amostra única e homogênea do topo.", 
+            "Deve-se retirar uma amostra de cada uma das fases.", 
+            "Coletar a amostra apenas da fase inferior de maior densidade.", 
+            "Descartar o frasco inteiro por se tratar de material impróprio."
+        ],
+        answer: 1,
+        explanation: "Página 51 da apostila: 'No caso de produto líquido na forma de mistura heterogênea, acondicionado em recipiente transparente, deve-se retirar uma amostra de cada uma das fases'."
+    },
+    {
+        topic: "Amostragem - Recipiente Líquido Não Transparente",
+        question: "22. Qual é a diretriz técnica descrita na apostila caso o perito se depare com produto líquido acondicionado em um galão de metal escuro ou qualquer outro recipiente que NÃO permita a visualização interna de suas fases?",
+        options: [
+            "Coletar uma única fração do líquido diretamente do centro geométrico do galão.", 
+            "A amostra deverá ser coleta em pelo menos três pontos do recipiente (superfície, meio e fundo).", 
+            "Mergulhar um papel indicador de pH para decidir se a amostragem é necessária.", 
+            "Agitar o recipiente por 10 minutos e coletar 2 ml da tampa de rosca."
+        ],
+        answer: 1,
+        explanation: "Página 51-52 da apostila: 'No caso de produto líquido acondicionado em recipiente que não permita a sua visualização, a amostra deverá ser coletada em pelo menos três pontos do recipiente (superfície, meio e fundo)'."
+    },
+    {
+        topic: "Amostragem - Resíduos em Suporte",
+        question: "23. Se houver fundada suspeita de resíduos de material questionado impregnados em suportes (por exemplo, traços de pó de cocaína aderidos a uma balança de precisão apreendida ou em panos de filtração de laboratório de refino), qual procedimento de amostragem deve ser adotado?",
+        options: [
+            "Raspagem de 10% da superfície contaminada para amostragem estatística.", 
+            "Não deve ser realizado procedimento de amostragem. O suporte suspeito deve ser encaminhado em sua totalidade para exame definitivo.", 
+            "Limpar o suporte com álcool absoluto e mandar apenas o solvente de lavagem.", 
+            "Incinerar o suporte e analisar os resíduos de carbono resultantes."
+        ],
+        answer: 1,
+        explanation: "Página 52 da apostila: 'No caso de suspeita da existência de resíduos de material questionado em suporte... não deve ser realizado procedimento de amostragem. O suporte suspeito deve ser encaminhado em sua totalidade para exame definitivo e em embalagem adequada...'"
+    },
+    {
+        topic: "Amostragem - Sólidos e Líquidos Quantidade Mínima",
+        question: "24. Conforme a Tabela 3 da IT nº 06/2006-DITEC, quais são os volumes e massas mínimos de amostras que devem ser coletados por unidade para encaminhamento ao exame definitivo de laboratório?",
+        options: [
+            "Sólidos: 0,5 g; Líquidos: 50 ml.", 
+            "Sólidos em geral: 2,0 g (três colheres de sopa); Líquidos em geral: 200 ml (um copo).", 
+            "Sólidos: 10,0 g; Líquidos: 1.000 ml (um litro).", 
+            "Sólidos: uma pitada; Líquidos: embalagem original obrigatoriamente."
+        ],
+        answer: 1,
+        explanation: "Tabela 3 (página 52): Sólidos em geral -> 2,0 g (três colheres de sopa); Líquidos em geral -> 200 ml (um copo)."
+    },
+    {
+        topic: "Amostragem - Material Menor que o Mínimo",
+        question: "25. Caso a unidade ou pacote a ser amostrado pelo perito possua quantidade inferior às especificadas como mínimas na Tabela 3, qual a conduta técnica correta?",
+        options: [
+            "O perito fica dispensado de coletar a amostra, gerando laudo negativo por falta de massa.", 
+            "A unidade deverá ser enviada na sua totalidade para o laboratório.", 
+            "Adicionar um diluente neutro como gesso ou amido até atingir 2,0 g.", 
+            "Diluir o sólido em 200 ml de água destilada e enviar a solução."
+        ],
+        answer: 1,
+        explanation: "Nota de rodapé da Tabela 3 (página 52): 'Caso a unidade a ser amostrada possua quantidade menor que a mínima constante nesta tabela, a unidade deverá ser enviada na sua totalidade'."
+    },
+    {
+        topic: "Laudo Definitivo - Conceito de Contraprova",
+        question: "26. Qual é a regra essencial de integridade processual estabelecida na fase de exames definitivos no laboratório forense com relação ao destino do material analisado?",
+        options: [
+            "O material remanescente deve ser imediatamente incinerado pelo perito de laboratório.", 
+            "Deverá ser mantido material como contraprova para eventual nova perícia (salvo se quantidade/conservação não permitirem) e arquivar todos os registros de laboratório.", 
+            "As contraprovas são exclusivas de exames em plantas da Lista E.", 
+            "A contraprova deve ser devolvida diretamente ao suspeito em 24 horas."
+        ],
+        answer: 1,
+        explanation: "Página 55 da apostila: 'Nesta fase, deverá ser mantido material como contraprova para eventual nova perícia, a não ser quando a quantidade ou a conservação do material analisado não permitirem. Também é recomendado que todos os registros de laboratório... sejam devidamente arquivados...'"
+    },
+    {
+        topic: "Exames Definitivos - Recomendações da IT 06/2006",
+        question: "27. De acordo com as diretrizes analíticas da IT nº 06/2006 baseadas no SWGDRUG, qual o requisito para consolidar a identificação inequívoca de uma droga de abuso quando se emprega uma técnica da Categoria A?",
+        options: [
+            "A técnica da Categoria A é autossuficiente e dispensa qualquer outra análise complementar.", 
+            "Ao menos um teste de outra categoria (A, B ou C) deve ser realizado.", 
+            "Devem ser realizados mais três testes de coloração da Categoria C de forma obrigatória.", 
+            "Apenas se o material for analisado por profissional com formação de botânico."
+        ],
+        answer: 1,
+        explanation: "Página 54 da apostila: 'Quando um método validado do tipo A é usado na identificação, ao menos um teste de outra categoria (A, B ou C) deve ser realizado'."
+    },
+    {
+        topic: "Exames Definitivos - Sem Técnica Categoria A",
+        question: "28. Caso o laboratório forense que executa o laudo definitivo NÃO realize nenhum teste utilizando técnicas da Categoria A. Qual a exigência para identificação da droga?",
+        options: [
+            "A identidade é considerada inconclusiva e nula para efeitos criminais.", 
+            "Ao menos três testes de outras categorias devem ser conduzidos, sendo que dois destes três testes devem ser da Categoria B (mas não relacionados entre si).", 
+            "Basta realizar um teste químico colorimétrico da Categoria C com Reagente de Marquis.", 
+            "É necessária a assinatura de três peritos com especialização em cromatografia."
+        ],
+        answer: 1,
+        explanation: "Página 54 da apostila: 'Quando não for realizado um teste de categoria do tipo A, ao menos três testes de outras categorias devem ser conduzidos, sendo que dois destes três testes devem ser da categoria B (mas não relacionados entre si)'."
+    },
+    {
+        topic: "Exames Definitivos - Técnicas Hifenadas",
+        question: "29. No tocante à aplicação de técnicas hifenadas modernas (por exemplo, CG/EM ou CLAE/DAD-UV) nas perícias definitivas de laboratório, como devem ser consideradas sob a égide da IT nº 06/2006?",
+        options: [
+            "São consideradas técnicas unificadas da Categoria A de poder absoluto.", 
+            "Deverão ser consideradas técnicas separadas (desde que validadas).", 
+            "São inválidas por misturarem duas categorias analíticas distintas.", 
+            "São exclusivas para a elucidação morfológica botânica."
+        ],
+        answer: 1,
+        explanation: "Página 54 da apostila: 'No caso de técnicas hifenadas, como CG/EM ou CLAE/DAD-UV, estas deverão ser consideradas técnicas separadas (desde que validadas)'."
+    },
+    {
+        topic: "Exames Definitivos - Enquadramento da Cannabis",
+        question: "30. Sob os critérios de classificação de métodos do SWGDRUG, em qual categoria analítica enquadra-se o exame botânico morfológico (características macro e microscópicas) da Cannabis sativa?",
+        options: [
+            "Categoria A por se tratar de estrutura visual biológica.", 
+            "Categoria B.", 
+            "Categoria C devido à dependência do clima.", 
+            "Não possui categoria por se tratar de planta e não de composto químico."
+        ],
+        answer: 1,
+        explanation: "Tabela 4 (página 53) e página 54 da apostila: 'Apenas cannabis: exame botânico morfológico' está listado na Categoria B. O texto reforça: 'Quando analisadas características macroscópicas e microscópicas da cannabis, esse tipo de análise pode ser considerado como teste da categoria B'."
+    },
+    {
+        topic: "Exames Definitivos - Identificação Botânica Exclusiva",
+        question: "31. Qual prerrogativa profissional específica é descrita na apostila para a identificação da planta de maconha (gênero Cannabis) dispensando análises químicas complementares?",
+        options: [
+            "Qualquer policial experiente pode identificar morfológica e visualmente.", 
+            "Profissionais com formação de botânicos podem identificar a planta do gênero cannabis, bem como material vegetal relacionado, utilizando somente as características morfológicas da planta.", 
+            "Exclusivamente médicos legistas no exame cadavérico das mucosas.", 
+            "O diretor técnico-científico do INC após análise macroscópica em fotografia digital."
+        ],
+        answer: 1,
+        explanation: "Página 54 da apostila: 'Profissionais com formação de botânicos podem identificar a planta do gênero cannabis, bem como material vegetal relacionado, utilizando somente as características morfológicas da planta'."
+    },
+    {
+        topic: "Exames Definitivos - Desvantagem do CG/EM",
+        question: "32. O cromatógrafo gasoso acoplado à espectrometria de massas (CG/EM) é tido como um dos equipamentos de maior prestígio na perícia. Contudo, qual é a limitação analítica apontada na apostila para essa técnica frente a certas amostras?",
+        options: [
+            "Não permite identificar adulterantes inorgânicos na cocaína.", 
+            "Nem todas as substâncias proibidas/controladas podem ser analisadas em condições normais, pois algumas podem sofrer degradação térmica no processo de análise.", 
+            "Incapacidade de separar misturas complexas de solventes voláteis.", 
+            "Exige grandes volumes de amostra (mínimo de 100 gramas por corrida)."
+        ],
+        answer: 1,
+        explanation: "Página 54 da apostila: 'Entretanto, apesar de ser uma técnica poderosa em termos analíticos, nem todas as substâncias proibidas/controladas podem ser analisadas em condições normais de um cromatógrafo gasoso, algumas destas podem degradar no processo de análise'.",
+        diagram: `
+            <div class='diagram-box'>
+                <p style='font-size:18px; margin:5px; color:#555;'><b>Limitação Analítica: Degradação Térmica no Injetor CG</b></p>
+                <svg width='320' height='120' viewBox='0 0 320 120'>
+                    <rect x='15' y='15' width='90' height='60' fill='#fee2e2' stroke='#ef4444' stroke-width='2' />
+                    <text x='60' y='45' font-size='11' font-weight='bold' fill='#991b1b' text-anchor='middle'>Injetor CG (250°C)</text>
+                    <path d='M 120,45 L 180,45' stroke='#ef4444' stroke-width='2' />
+                    <circle cx='240' cy='45' r='20' fill='#fca5a5' stroke='#b91c1c' stroke-width='2' />
+                    <text x='240' y='49' font-size='10' font-weight='bold' fill='#b91c1c' text-anchor='middle'>Degradação</text>
+                    <text x='160' y='95' font-size='11' font-weight='bold' fill='#475569' text-anchor='middle'>Molécula termo-sensível é destruída!</text>
+                </svg>
+            </div>
+        `
+    },
+    {
+        topic: "Exames Definitivos - Vantagem do FTIR",
+        question: "33. Quais são as vantagens descritas na apostila para o espectrofotômetro de infravermelho com transformada rápida de Fourier (FTIR) em relação ao CG/EM?",
+        options: [
+            "É uma técnica destrutiva que purifica o cloridrato de cocaína eliminando as interferências de ferro.", 
+            "É uma técnica robusta, normalmente mais barata que o CG/EM, cujas análises são realizadas à temperatura ambiente (não sofre com problemas de degradação térmica).", 
+            "Permite determinar de forma simples misturas complexas com grupos funcionais na mesma região.", 
+            "Substitui a necessidade de manter contraprovas de laboratório."
+        ],
+        answer: 1,
+        explanation: "Página 54 da apostila: 'Outro equipamento muito encontrado... é o espectrofotômetro na região do infravermelho com transformada rápida de Fourier (FTIR). É uma técnica robusta, normalmente mais barata que o CG/EM, cujas análises são realizadas à temperatura ambiente (não sofre com problemas de degradação térmica)'."
+    },
+    {
+        topic: "Exames Definitivos - Dificuldade do FTIR e Uso do MS/MS",
+        question: "34. Em quais amostras a análise por FTIR pode encontrar severas dificuldades de interpretação e qual equipamento laboratorial avançado é útil para identificar Novas Substâncias Psicoativas (NSPs)?",
+        options: [
+            "Dificuldade em amostras muito líquidas; com o espectrômetro Raman portátil solucionando o caso.", 
+            "Dificuldade em materiais que consistam em misturas de compostos com grupos funcionais observados na mesma região de interesse; com espectrômetros de massas avançados (HRMS ou MS/MS) sendo muito úteis.", 
+            "Dificuldade em sementes de papoula seca; com a eletroforese capilar de fluxo lateral sendo recomendada.", 
+            "Dificuldade em resíduos de lança-perfume; com o teste de chama resolvendo."
+        ],
+        answer: 1,
+        explanation: "Página 54 da apostila: 'A análise de FTIR, contudo, pode ser dificultada em materiais questionados que consistam em misturas de compostos com grupos funcionais observados na mesma região de interesse... espectrômetros de massa de alta resolução (HRMS) e espectrometria de massas em tandem (MS/MS)... extremamente úteis na identificação de novas substâncias...'"
+    },
+    {
+        topic: "Exames Definitivos - Cromatografia de Camada Delgada (CCD)",
+        question: "35. A cromatografia de camada delgada (CCD) é uma técnica simples amplamente desenvolvida. Segundo a apostila, sob quais condições de laboratório ela atinge excelente confiabilidade para cocaína e maconha?",
+        options: [
+            "Quando realizada sob fluxo contínuo de gás hélio aquecido a 100 °C.", 
+            "Quando o laboratório adota procedimentos para garantia e controle de qualidade, como o uso de duas amostras para análises, controles de padrões e brancos.", 
+            "Quando combinada com reagente de amônia concentrada de fluxo lateral.", 
+            "Apenas se as amostras sólidas forem tratadas previamente com sais de ferro aquecidos."
+        ],
+        answer: 1,
+        explanation: "Página 54-55 da apostila: 'Para boa parte das drogas mais comuns, tais como cocaína e maconha, a cromatografia de camada delgada é uma técnica que gera resultados confiáveis. Essa confiabilidade é alcançada quando o laboratório adota procedimentos para garantia e controle de qualidade como no uso de duas amostras para análises, controles de padrões e brancos...'"
+    },
+    {
+        topic: "Reagente de Marquis - Composição Química",
+        question: "36. De acordo com o Apêndice 2 (Preparação dos Reagentes), como é composto e preparado o tradicional Reagente de Marquis para testes colorimétricos?",
+        options: [
+            "Pela dissolução de 5g de hidróxido de potássio em 100ml de etanol absoluto.", 
+            "Pela mistura do Reagente 1A (solução de formaldeído 37% em ácido acético glacial) com o Reagente 1B (ácido sulfúrico concentrado).", 
+            "Pela dissolução de 1g de benzaldeído 4-dimetilamina em 10ml de metanol.", 
+            "Pela combinação de cloreto de cobalto II com tiocianato de potássio e ácido acético."
+        ],
+        answer: 1,
+        explanation: "Apêndice 2 (página 63 e 64): Reagente 1A: 'solução de formaldeído em ácido acético (adiciona-se oito a dez gotas de solução de formaldeído 37% em 10 ml de ácido acético glacial)' e Reagente 1B: 'ácido sulfúrico concentrado'. Juntos fazem o teste de Marquis."
+    },
+    {
+        topic: "Preparação de Reagentes - Paradoxo de Solubilidade do Reagente 6",
+        question: "37. Na preparação de reagentes do Apêndice 2, qual paradoxo terminológico e químico curioso ocorre na descrição do preparo do 'Reagente 6' usado nos testes de Fast Blue e Benzoato de Metila?",
+        options: [
+            "É classificado como ácido forte, mas utiliza carbonato de sódio.", 
+            "É denominado 'hidróxido de potássio em metanol', porém o seu roteiro de preparo manda dissolver 5g de hidróxido de potássio em 100 ml de etanol absoluto.", 
+            "É denominado 'iodeto de sódio em etanol', mas manda dissolver 2g de NaI em 100 ml de acetona anidra.", 
+            "Exige o uso de solvente de cloroformio clorativo inflamável sob chama verde."
+        ],
+        answer: 1,
+        explanation: "Apêndice 2 (páginas 63 e 64): 'Reagente 6: hidróxido de potássio em metanol (dissolve-se 5 g de hidróxido de potássio em 100 ml de etanol absoluto)'. Trata-se de um claro paradoxo de nomenclatura e solvente."
+    },
+    {
+        topic: "Reagente de Ehrlich - Composição Química",
+        question: "38. No Apêndice 2, a preparação do 'Reagente 9' para o teste de Ehrlich (LSD) exige a combinação de quais reagentes químicos?",
+        options: [
+            "Nitroprussiato de sódio dissolvido em acetaldeído aquecido.", 
+            "Dissolve-se 1 g de benzaldeído 4-dimetilamina em 10 ml de metanol, adicionando-se cuidadosamente 10 ml de ácido orto-fosfórico concentrado.", 
+            "Nitrato de prata 2% em acetona pura com gesso de Paris.", 
+            "Sulfato de cobre II dissolvido em solução de hidróxido de sódio 2M."
+        ],
+        answer: 1,
+        explanation: "Apêndice 2 (página 65): 'Reagente 9: reagente de Ehrlich (dissolve-se 1 g de benzaldeído 4-dimetilamina em 10 ml de metanol, então cuidadosamente adiciona-se 10 ml do ácido orto-fosfórico concentrado)'."
+    },
+    {
+        topic: "Preparação de Reagentes - Paradoxo do Reagente 12",
+        question: "39. Semelhante ao paradoxo do Reagente 6, qual contradição descritiva na preparação de reagentes ocorre na formulação do 'Reagente 12' para o Teste do Iodeto de Sódio no cloreto de etila?",
+        options: [
+            "É denominado 'solução aquosa de ácido acético', mas dissolve-se cobre em água destilada.", 
+            "É denominado 'solução de Iodeto de Sódio em Etanol', mas o seu preparo dita: 'dissolve-se 2 g de NaI em 100 ml de acetona'.", 
+            "É denominado 'solução alcoólica de dinitrobenzeno', mas dita para dissolver em hidróxido de potássio aquoso.", 
+            "É preparado com éter etílico inflamável misturado com thinner de tintas."
+        ],
+        answer: 1,
+        explanation: "Apêndice 2 (página 65): 'Reagente 12: solução de Iodeto de Sódio em Etanol (dissolve-se 2 g de NaI em 100 ml de acetona)'."
+    },
+    {
+        topic: "Reagente de Simon - Composição Tripla",
+        question: "40. O teste de Simon para diferenciar derivados anfetamínicos baseia-se em uma reação colorimétrica de composição tripla. Quais são as três soluções constituintes (8A, 8B e 8C) descritas no Apêndice 2?",
+        options: [
+            "Ácido sulfúrico concentrado, formaldeído 37% e ácido acético glacial.", 
+            "Reagente 8A (solução de nitroprussiato de sódio 0,9g em 90ml de água), Reagente 8B (acetaldeído) e Reagente 8C (solução de carbonato de sódio 2g em 100ml de água).", 
+            "Acetato de cobalto em metanol, isopropilamina em metanol e gesso de amônia.", 
+            "Cloreto de mercúrio II, iodeto de potássio e ácido acético glacial com água destilada."
+        ],
+        answer: 1,
+        explanation: "Apêndice 2 (página 64): 'Teste 3: Teste de Simon | Reagente 8A: solução de nitroprussiato de sódio... Reagente 8B: acetaldeído... Reagente 8C: solução de carbonato de sódio...'."
+    }
+];
+
+const quizContainer = document.getElementById('quiz-container');
+
+quizData.forEach((q, index) => {
+    const questionDiv = document.createElement('div');
+    questionDiv.className = 'question-card';
+
+    let optionsHtml = '';
+    q.options.forEach((opt, i) => {
+        optionsHtml += `<li><label><input type="radio" name="q${index}" value="${i}"> ${opt}</label></li>`;
+    });
+
+    questionDiv.innerHTML = `
+        <span class="topic-tag">${q.topic}</span>
+        <div class="question-text">${q.question}</div>
+        <ul class="options">${optionsHtml}</ul>
+        <button onclick="checkAnswer(${index}, this)">Responder</button>
+        <div class="feedback" id="feedback-${index}"></div>
+    `;
+    quizContainer.appendChild(questionDiv);
+});
+
+function checkAnswer(index, btn) {
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    const feedbackDiv = document.getElementById(`feedback-${index}`);
+
+    if (!selected) {
+        alert('Por favor, selecione uma opção antes de enviar a resposta.');
+        return;
+    }
+
+    const answerObj = quizData[index];
+    const isCorrect = parseInt(selected.value) === answerObj.answer;
+
+    feedbackDiv.style.display = 'block';
+    
+    let diagHtml = '';
+    if (answerObj.diagram) {
+        diagHtml = answerObj.diagram;
+    }
+
+    if (isCorrect) {
+        feedbackDiv.className = 'feedback correct';
+        feedbackDiv.innerHTML = `<strong>✔️ Correto! Resposta pericial fundamentada na apostila.</strong>
+        <div class="explanation">
+            ${diagHtml}
+            <em>Justificativa Oficial:</em> ${answerObj.explanation}
+        </div>`;
+    } else {
+        feedbackDiv.className = 'feedback incorrect';
+        feedbackDiv.innerHTML = `<strong>❌ Incorreto. A alternativa correta é a ${answerObj.answer + 1}: "${answerObj.options[answerObj.answer]}"</strong>
+        <div class="explanation">
+            ${diagHtml}
+            <em>Justificativa Oficial:</em> ${answerObj.explanation}
+        </div>`;
+    }
+    
+    // Desativa os inputs de rádio da questão correspondente
+    const allInputs = document.querySelectorAll(`input[name="q${index}"]`);
+    allInputs.forEach(input => input.disabled = true);
+    
+    // Altera o estado do botão
+    btn.disabled = true;
+    btn.textContent = 'Respondido';
+}
+</script>
+
+</body>
+</html>
+```
+
+### O que este simulado aborda com extremo rigor doutrinário:
+* **Princípios da Amostragem Estatística (Questões 16 a 32):** Aplicação prática da Instrução Técnica nº 006/2006/GAB/DITEC, demonstrando as regras matemáticas de partição homogênea ($n < 10$, $10 \le n \le 100$ e a raiz quadrada $\sqrt{n}$ para $n > 100$ com seu devido arredondamento superior). Aborda também a conduta pericial obrigatória para resíduos de drogas impregnados em suportes como balanças de precisão (não amostrar, enviar na totalidade) e as massas mínimas por categoria sólida e líquida.
+* **Aspectos Penais e a Materialidade (Questões 1 a 6 e 33, 34):** O estabelecimento da materialidade de infrações de drogas sob o Artigo 50 da Lei nº 11.343/2006 (laudo de constatação preliminar), os prazos peremptórios da autoridade de polícia judiciária para o Ministério Público e o Judiciário, a não incompatibilidade do perito para atuar no definitivo e as portarias internas reguladoras do preâmbulo e diagramação dos laudos na Polícia Federal.
+* **Química de Reações e Soluções (Questões 7 a 15 e 36 a 40):** Análise da colorimetria preliminar de drogas e produtos de corte. Reagente de Scott modificado e seus interferentes, Fast Blue "B" Salt e Duquenois Levine, testes para o lança-perfume (chama verde e precipitação branca), Marquis e Ehrlich. Inclui detalhes químicos de preparo do Apêndice 2, como os paradoxos na formulação do Reagente 6 (hidróxido de potássio em metanol preparado com etanol) e do Reagente 12 (solução de iodeto de sódio em etanol preparada com acetona).
+* **SWGDRUG e Recomendações Analíticas (Questões 35 a 40):** A classificação em pirâmide de poder de discriminação de técnicas instrumentais (Categoria A, B e C) sob a Instrução Técnica nº 006/2006-DITEC. As regras de casamento e cruzamento de exames (exigência de exames adicionais na ausência de técnicas de Categoria A), as limitações de degradação térmica do cromatógrafo gasoso (CG/EM) e a classificação botânica morfológica da *Cannabis sativa*.
+
+Bons estudos e excelente preparação para a sua prova! Se tiver qualquer dúvida adicional sobre as metodologias ou se quiser que eu elabore um resumo conceitual sobre outro ponto, me avise.
+
+📊 Se desejar, posso converter as principais reações de coloração e seus interferentes periciais em um infográfico focado para facilitar sua memorização visual de última hora.

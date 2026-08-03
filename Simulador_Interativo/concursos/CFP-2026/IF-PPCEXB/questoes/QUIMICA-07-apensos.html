@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado dos Apêndices 1 e 2 - Química Forense</title>
+<style>
+  :root{--cor:#1a3a5c;--cor2:#2e6da4;--cor3:#e8f0f8;--verde:#1e7e34;--vermelho:#c0392b;--laranja:#d35400;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#222;}
+  header{background:var(--cor);color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;}
+  header h1{font-size:1.3rem;font-weight:700;}
+  .subtitle{font-size:.85rem;opacity:.8;}
+  .scorebar{background:var(--cor2);color:#fff;padding:10px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .sc{font-size:.95rem;} .sc span{font-weight:700;}
+  .lbl{opacity:.75;font-size:.85rem;}
+  .btn-reset{background:#fff;color:var(--cor);border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;}
+  .btn-reset:hover{background:#e0e8f0;}
+  .btn-wrong{background:var(--laranja);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;margin-left:auto;}
+  .btn-wrong:hover:not(:disabled){background:#b94600;}
+  .btn-wrong:disabled{opacity:.4;cursor:not-allowed;}
+  main{max-width:860px;margin:28px auto;padding:0 16px 60px;}
+  .chapter{margin-bottom:32px;}
+  .chapter-title{background:var(--cor);color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;font-weight:700;font-size:1rem;}
+  .question{background:#fff;border:1px solid #d0dcea;border-top:none;padding:20px 20px 14px;}
+  .question:last-child{border-radius:0 0 8px 8px;}
+  .question+.question{border-top:1px dashed #c8d8ea;}
+  .q-num{font-size:.78rem;color:#888;margin-bottom:4px;}
+  .q-text{font-size:1rem;font-weight:600;margin-bottom:14px;line-height:1.5;}
+  .opt{display:block;width:100%;background:var(--cor3);border:2px solid transparent;border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;text-align:left;font-size:.93rem;line-height:1.4;transition:.15s;}
+  .opt:hover:not(:disabled){background:#d5e5f8;border-color:var(--cor2);}
+  .opt.correct{background:#d4edda;border-color:var(--verde);color:var(--verde);font-weight:600;}
+  .opt.wrong{background:#fde8e8;border-color:var(--vermelho);color:var(--vermelho);}
+  .opt:disabled{cursor:default;}
+  .feedback{margin-top:8px;font-size:.88rem;padding:8px 12px;border-radius:6px;line-height:1.5;}
+  .feedback.ok{background:#d4edda;color:#155724;}
+  .feedback.err{background:#fde8e8;color:#721c24;}
+  .feedback .loc{margin-top:4px;font-size:.8rem;opacity:.8;}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Simulado dos Apêndices 1 e 2 - Química Forense</h1>
+    <div class="subtitle">20 Questões Inéditas - Foco em Reações, Colorações e Roteiros de Preparo (Págs. 57 a 66)</div>
+  </div>
+</header>
+<div class="scorebar">
+  <div class="sc">✅ Acertos: <span id="sc-c">0</span></div>
+  <div class="sc">❌ Erros: <span id="sc-w">0</span></div>
+  <div class="sc">📝 Respondidas: <span id="sc-a">0</span> <span class="lbl" id="sc-total"></span></div>
+  <button class="btn-reset" onclick="resetAll()">↺ Reiniciar tudo</button>
+  <button class="btn-wrong" id="btn-wrong" onclick="resetWrong()" disabled>↺ Só os erros</button>
+</div>
+<main id="quiz-container"></main>
+
+<script>
+const CHAPTERS = [
+  {
+    "title": "dos Apêndices 1 e 2 - Química Forense",
+    "questions": [
+      {
+        "q": "[Opioides - Teste de Marquis] 1. No Teste n\u00ba 1 do Ap\u00eandice 1 para morfina, code\u00edna ou hero\u00edna, qual \u00e9 a colora\u00e7\u00e3o indicativa esperada na placa de spot ap\u00f3s a rea\u00e7\u00e3o com os Reagentes 1A e 1B?",
+        "opts": [
+          "Aparecimento de uma colora\u00e7\u00e3o azul intensa imediata."
+,
+          "Uma colora\u00e7\u00e3o de violeta \u00e0 p\u00farpura-avermelhado."
+,
+          "Forma\u00e7\u00e3o de um s\u00f3lido ou precipitado amarelo leitoso."
+,
+          "Chama verde-esmeralda cintilante."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 1 (p\u00e1gina 57): 'RESULTADO: uma colora\u00e7\u00e3o de violeta \u00e0 p\u00farpura-avermelhado indica a presen\u00e7a de morfina, code\u00edna ou hero\u00edna'."
+      }
+,
+      {
+        "q": "[Opioides - Teste de \u00c1cido N\u00edtrico] 2. Adicionando o Reagente 3 (\u00c1cido N\u00edtrico concentrado) no Teste n\u00ba 2 do Ap\u00eandice 1, qual comportamento crom\u00e1tico \u00e9 indicativo espec\u00edfico de morfina?",
+        "opts": [
+          "Uma cor amarela que vira lentamente verde-claro."
+,
+          "Uma cor laranja que se torna rapidamente vermelha e logo lentamente se torna amarelo."
+,
+          "Uma cor laranja que lentamente se torna amarela."
+,
+          "N\u00e3o deve aparecer nenhuma altera\u00e7\u00e3o ou evolu\u00e7\u00e3o de cor."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 1 (p\u00e1ginas 57-58): para morfina, o resultado do \u00e1cido n\u00edtrico \u00e9 'uma cor laranja que se torna rapidamente vermelha e logo lentamente se torna amarelo'."
+      }
+,
+      {
+        "q": "[Morfina - Teste de Sulfato F\u00e9rrico] 3. No Teste n\u00ba 3 do Ap\u00eandice 1 para Morfina, qual \u00e9 a cor resultante que indica a prov\u00e1vel presen\u00e7a dessa droga ap\u00f3s a adi\u00e7\u00e3o direta do Reagente 2 (Sulfato F\u00e9rrico)?",
+        "opts": [
+          "A cor vermelha."
+,
+          "A cor azul real."
+,
+          "A cor verde-claro."
+,
+          "Precipitado preto."
+        ],
+        "ans": 0,
+        "exp": "Conforme o Ap\u00eandice 1 (p\u00e1gina 58): 'RESULTADO: a cor vermelha indica a prov\u00e1vel presen\u00e7a de morfina'."
+      }
+,
+      {
+        "q": "[Cannabis - Teste do Fast Blue B Salt] 4. No Teste n\u00ba 1 do Ap\u00eandice 1 para Cannabis, qual o aviso de seguran\u00e7a listado textualmente na apostila para o reagente comercial 'Fast Blue B Salt' e qual a cor de resultado indicativo positivo?",
+        "opts": [
+          "CUIDADO T\u00d3XICO POR INALA\u00c7\u00c3O; cor azul-turquesa."
+,
+          "CUIDADO CANCER\u00cdGENO; cor avermelhada ou viol\u00e1cea."
+,
+          "CUIDADO INFLAM\u00c1VEL; cor amarela brilhante."
+,
+          "CUIDADO CORROSIVO \u00c1CIDO; cor preta opaca."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 1 (p\u00e1gina 58): 'Adicionar uma pequena quantidade... do reagente \u201cFast Blue B Salt\u201d (CUIDADO CANCER\u00cdGENO)... RESULTADO: cor avermelhada ou viol\u00e1cea indica a presen\u00e7a de cannabis'."
+      }
+,
+      {
+        "q": "[Cannabis - Teste de Duquenois Levine] 5. No Teste de Duquenois Levine (Cannabis - Teste n\u00ba 2), em qual local ou fase do tubo de ensaio se localiza a colora\u00e7\u00e3o positiva de indica\u00e7\u00e3o pericial ap\u00f3s agitar suavemente com clorof\u00f3rmio?",
+        "opts": [
+          "Na camada aquosa superior do tubo."
+,
+          "Na camada inferior (clorof\u00f3rmio)."
+,
+          "Dispersa uniformemente e emulsionada em fase \u00fanica."
+,
+          "Em suspens\u00e3o s\u00f3lida na boca do tubo de ensaio."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 1 (p\u00e1gina 58): 'RESULTADO: cor violeta na camada inferior (clorof\u00f3rmio) indica a presen\u00e7a de cannabis'."
+      }
+,
+      {
+        "q": "[Coca\u00edna - Limita\u00e7\u00f5es do Scott Acidificado] 6. Por que o teste preliminar de Scott acidificado (Coca\u00edna - Teste n\u00ba 1) gera cor azul indicativa, mas N\u00c3O pode ser considerado definitivo para instru\u00e7\u00e3o criminal?",
+        "opts": [
+          "Porque a cor azul gerada evapora rapidamente em contato com o ar ambiente."
+,
+          "Porque outras subst\u00e2ncias como metadona, hero\u00edna, lidoca\u00edna e cafe\u00edna tamb\u00e9m apresentam cor azul ou resultado positivo neste teste preliminar."
+,
+          "Porque ele \u00e9 destrutivo e impede o envio de contraprovas ao laborat\u00f3rio."
+,
+          "Porque ele falha e gera cor vermelha na presen\u00e7a de cloridrato de coca\u00edna."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 1 (p\u00e1gina 59): 'RESULTADO: o aparecimento de cor azul indica a poss\u00edvel presen\u00e7a de coca\u00edna. A metadona, hero\u00edna, lidoca\u00edna e alguns outros compostos tamb\u00e9m apresentam cor azul neste teste, portanto ele n\u00e3o pode ser definitivo... [e tamb\u00e9m] subst\u00e2ncias diversas... tais como a lidoca\u00edna e a cafe\u00edna'."
+      }
+,
+      {
+        "q": "[Coca\u00edna - Teste de Benzoato de Metila] 7. No Teste n\u00ba 2 para Coca\u00edna (Teste de benzoato de metila), qual altera\u00e7\u00e3o sensorial o perito deve constatar e qual a cautela m\u00e9dica/fisiol\u00f3gica apontada na apostila?",
+        "opts": [
+          "Turva\u00e7\u00e3o visual; cautela devido \u00e0 fadiga ocular do perito."
+,
+          "Odor igual ao da refer\u00eancia de benzoato de metila; com a cautela de que parte da popula\u00e7\u00e3o n\u00e3o sente o odor de benzoato de metila, exigindo o reagente de refer\u00eancia."
+,
+          "Resfriamento t\u00e9rmico do tubo de ensaio; com a cautela de congelamento das m\u00e3os."
+,
+          "Emiss\u00e3o de ru\u00eddo gasoso; exigindo o uso de protetor auricular."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 1 (p\u00e1gina 59): 'RESULTADO: se o odor da amostra \u00e9 igual ao da amostra de benzoato de metila tomada como refer\u00eancia, isto indica a prov\u00e1vel presen\u00e7a de coca\u00edna. Parte da popula\u00e7\u00e3o n\u00e3o sente o odor de benzoato de metila. Por essa raz\u00e3o, \u00e9 necess\u00e1rio ter o reagente de refer\u00eancia'."
+      }
+,
+      {
+        "q": "[Coca\u00edna - Teste de Tanred] 8. No Teste n\u00ba 3 do Ap\u00eandice 1 para Coca\u00edna (Teste de Tanred / Mayer), qual \u00e9 o resultado visual esperado ap\u00f3s a adi\u00e7\u00e3o sequencial de \u00e1gua e do Reagente 7?",
+        "opts": [
+          "Se se formar um precipitado amarelo leitoso indica a poss\u00edvel presen\u00e7a de coca\u00edna."
+,
+          "O surgimento de uma colora\u00e7\u00e3o preta instant\u00e2nea na placa de spot."
+,
+          "Produ\u00e7\u00e3o de uma chama verde ao queimar na esp\u00e1tula."
+,
+          "Nenhuma rea\u00e7\u00e3o vis\u00edvel ocorre, permanecendo uma solu\u00e7\u00e3o incolor l\u00edmpida."
+        ],
+        "ans": 0,
+        "exp": "Conforme o Ap\u00eandice 1 (p\u00e1gina 60): 'RESULTADO: se se formar um precipitado amarelo leitoso indica a poss\u00edvel presen\u00e7a de coca\u00edna'."
+      }
+,
+      {
+        "q": "[Derivados Anfetam\u00ednicos - Teste de Marquis] 9. No Teste n\u00ba 1 para anfetaminas com o reagente de Marquis, quais cores indicam a poss\u00edvel presen\u00e7a de anfetamina/metanfetamina e de MDMA (ecstasy), respectivamente?",
+        "opts": [
+          "Cor azul para anfetamina; e cor vermelha para MDMA."
+,
+          "Uma cor laranja que se torna marrom para anfetamina/metanfetamina; e colora\u00e7\u00e3o preta para MDMA."
+,
+          "Cor amarela para anfetamina; e cor verde para MDMA."
+,
+          "Ambos produzem uma colora\u00e7\u00e3o violeta \u00e0 p\u00farpura-avermelhada."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 1 (p\u00e1gina 60): '...cor laranja que se torna marrom indica a poss\u00edvel presen\u00e7a de anfetamina ou metanfetamina... O aparecimento de uma colora\u00e7\u00e3o preta indica a poss\u00edvel presen\u00e7a de 3,4-metilenodioximetananfetamina (MDMA)...'."
+      }
+,
+      {
+        "q": "[Derivados Anfetam\u00ednicos - Alucin\u00f3genos no Marquis] 10. No teste de Marquis para estimulantes e alucin\u00f3genos, qual \u00e9 a indica\u00e7\u00e3o crom\u00e1tica para subst\u00e2ncias psicod\u00e9licas como o DMA ou DOB, segundo o Ap\u00eandice 1?",
+        "opts": [
+          "Cor amarela \u00e0 marrom-amarelado."
+,
+          "Uma cor verde-amarelada \u00e0 verde."
+,
+          "Uma cor preta intensa."
+,
+          "Aus\u00eancia de qualquer altera\u00e7\u00e3o de cor."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 1 (p\u00e1ginas 60-61): 'Uma cor verde-amarelada \u00e0 verde aponta a poss\u00edvel presen\u00e7a de 2,5-dimetoxi-anfetamina (DMA) ou 2,5-dimet\u00f3xi-4-bromoanfetamina (DOB)'."
+      }
+,
+      {
+        "q": "[Derivados Anfetam\u00ednicos - Teste do \u00c1cido Sulf\u00farico] 11. Qual \u00e9 o resultado esperado no Teste n\u00ba 2 (Teste do \u00e1cido sulf\u00farico com Reagente 1B) na presen\u00e7a de anfetamina e metanfetamina, e qual \u00e9 a utilidade pr\u00e1tica dessa rea\u00e7\u00e3o?",
+        "opts": [
+          "Aparece cor vermelha; \u00fatil para quantificar o teor de pureza do sal."
+,
+          "N\u00e3o deve aparecer nenhuma cor; \u00fatil para diferenciar a anfetamina e a metanfetamina de outros derivados que reagem produzindo cores."
+,
+          "Forma\u00e7\u00e3o de um precipitado branco cristalino r\u00e1pido; \u00fatil para triagem de adulterantes met\u00e1licos."
+,
+          "Cor amarela fluorescente; \u00fatil para diferenciar de inalantes org\u00e2nicos."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 1 (p\u00e1gina 61): 'RESULTADO: n\u00e3o deve aparecer nenhuma cor na presen\u00e7a de anfetamina e metanfetamina. OBS.: este reagente \u00e9 \u00fatil para diferenciar a anfetamina e a metanfetamina de outros derivados... enquanto muitos outros derivados anfetam\u00ednicos reagem produzindo diversas cores'."
+      }
+,
+      {
+        "q": "[Derivados Anfetam\u00ednicos - Teste de Simon] 12. Qual \u00e9 o resultado crom\u00e1tico do Teste de Simon (Teste n\u00ba 3 do Ap\u00eandice 1) que indica a poss\u00edvel presen\u00e7a de metanfetamina ou MDMA?",
+        "opts": [
+          "Cor verde-claro."
+,
+          "Cor azul."
+,
+          "Cor laranja."
+,
+          "Cor amarela."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 1 (p\u00e1gina 61): 'RESULTADO: cor azul indica a poss\u00edvel presen\u00e7a de metanfetamina ou MDMA (\u00eaxtase)'."
+      }
+,
+      {
+        "q": "[LSD - Teste de Ehrlich] 13. No teste preliminar de Ehrlich para LSD (LSD - Teste n\u00ba 1), qual altera\u00e7\u00e3o colorim\u00e9trica e comportamento temporal indicam a presen\u00e7a da droga?",
+        "opts": [
+          "Cor preta instant\u00e2nea ap\u00f3s adi\u00e7\u00e3o de \u00e1cido sulf\u00farico."
+,
+          "Cor violeta que aparece em alguns minutos."
+,
+          "Precipitado ou turva\u00e7\u00e3o branca lenta que aparece em 24 horas."
+,
+          "Chama azulada brilhante sob o bico de Bunsen."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 1 (p\u00e1gina 61): 'RESULTADO: cor violeta que aparece em alguns minutos indica a poss\u00edvel presen\u00e7a de LSD'."
+      }
+,
+      {
+        "q": "[Barbit\u00faricos e Benzodiazep\u00ednicos - Testes de Triagem] 14. Quais os testes de colora\u00e7\u00e3o e a respectiva cor positiva listados nos ap\u00eandices para triagem preliminar de Barbit\u00faricos e Diazepam?",
+        "opts": [
+          "Barbit\u00faricos: Teste de Simon (azul); Diazepam: Teste de Marquis (laranja)."
+,
+          "Barbit\u00faricos: Teste de Dille-Koppanyi (cor p\u00farpura-avermelhada); Diazepam: Teste de Zimmerman (cor p\u00farpura-avermelhada ou rosa)."
+,
+          "Barbit\u00faricos: Teste de Tanred (amarelo); Diazepam: Teste Chen-Kao (violeta)."
+,
+          "Ambas utilizam o reagente de Ehrlich, gerando cor verde brilhante."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 1 (p\u00e1ginas 61-62): 'BARBIT\u00daRICOS | Teste n.\u00ba 1: Teste de Dille-Koppanyi... RESULTADO: cor p\u00farpura-avermelhada' e 'DIAZEPAM... | Teste n.\u00ba 1: Teste de Zimmerman... RESULTADO: cor p\u00farpura avermelhada...'"
+      }
+,
+      {
+        "q": "[Cloreto de Etila - AgNO3 e NaI] 15. Para a caracteriza\u00e7\u00e3o preliminar do cloreto de etila (lan\u00e7a-perfume), quais os resultados correspondentes no teste com Nitrato de Prata (Teste n\u00ba 1) e com Iodeto de S\u00f3dio (Teste n\u00ba 2)?",
+        "opts": [
+          "Efervesc\u00eancia \u00e1cida no Teste n\u00ba 1; e precipitado de colora\u00e7\u00e3o preta no Teste n\u00ba 2."
+,
+          "Um precipitado ou turva\u00e7\u00e3o branca que aparece lentamente no Teste n\u00ba 1; e um precipitado branco cristalino que aparece lentamente no Teste n\u00ba 2."
+,
+          "Chama verde no Teste n\u00ba 1; e colora\u00e7\u00e3o azul instant\u00e2nea no Teste n\u00ba 2."
+,
+          "Ambos geram uma solu\u00e7\u00e3o amarela brilhante instant\u00e2nea."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 1 (p\u00e1gina 62): no Teste n\u00ba 1 do cloreto de etila, 'um precipitado ou turva\u00e7\u00e3o branca que aparece lentamente indica a presen\u00e7a'; no Teste n\u00ba 2, 'um precipitado branco cristalino que aparece lentamente indica a presen\u00e7a'."
+      }
+,
+      {
+        "q": "[Ap\u00eandice 2 - Prepara\u00e7\u00e3o do Reagente 1A] 16. De acordo com o roteiro de prepara\u00e7\u00e3o de solu\u00e7\u00f5es do Ap\u00eandice 2, como deve ser preparado o Reagente 1A utilizado no teste de Marquis?",
+        "opts": [
+          "Dissolvendo 5g de nitrato de prata em 100ml de etanol absoluto."
+,
+          "Adicionando oito a dez gotas de solu\u00e7\u00e3o de formalde\u00eddo 37% em 10 ml de \u00e1cido ac\u00e9tico glacial."
+,
+          "Misturando clorof\u00f3rmio comercial com \u00e1cido clor\u00eddrico concentrado."
+,
+          "Dissolvendo 1g de nitroprussiato de s\u00f3dio em 90ml de \u00e1gua destilada."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 2 (p\u00e1gina 63): 'Reagente 1A: solu\u00e7\u00e3o de formalde\u00eddo em \u00e1cido ac\u00e9tico (adiciona-se oito a dez gotas de solu\u00e7\u00e3o de formalde\u00eddo 37% em 10 ml de \u00e1cido ac\u00e9tico glacial)'."
+      }
+,
+      {
+        "q": "[Ap\u00eandice 2 - Paradoxo do Reagente 6] 17. Qual contradi\u00e7\u00e3o terminol\u00f3gica e qu\u00edmica curiosa ocorre na descri\u00e7\u00e3o literal de preparo do 'Reagente 6' (usado no Fast Blue para maconha e no Benzoato de metila) no Ap\u00eandice 2?",
+        "opts": [
+          "Chama-se solu\u00e7\u00e3o \u00e1cida, mas usa bicarbonato b\u00e1sico de s\u00f3dio."
+,
+          "\u00c9 denominado 'hidr\u00f3xido de pot\u00e1ssio em metanol', por\u00e9m o seu roteiro de prepara\u00e7\u00e3o manda dissolver 5 g de hidr\u00f3xido de pot\u00e1ssio em 100 ml de etanol absoluto."
+,
+          "\u00c9 denominado 'sulfato de cobre', mas dita dissolver sais f\u00e9rricos na acetona."
+,
+          "Manda misturar solventes vol\u00e1teis inflam\u00e1veis sob aquecimento direto."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 2 (p\u00e1gina 63 e 64): 'Reagente 6: hidr\u00f3xido de pot\u00e1ssio em metanol (dissolve-se 5 g de hidr\u00f3xido de pot\u00e1ssio em 100 ml de etanol absoluto)'."
+      }
+,
+      {
+        "q": "[Ap\u00eandice 2 - Prepara\u00e7\u00e3o do Reagente 5] 18. Como \u00e9 formulado e preparado o Reagente 5 (utilizado no teste preliminar de Scott para coca\u00edna) conforme o Ap\u00eandice 2?",
+        "opts": [
+          "Dissolvendo 1g de vanilina em 100ml de etanol 95% e adicionando 2,5ml de acetalde\u00eddo."
+,
+          "Misturando em bal\u00e3o de 100 ml as solu\u00e7\u00f5es de cloreto de cobalto II hexahidratado (1 g em 3 ml de \u00e1gua) e tiocianato de pot\u00e1ssio (1,5 g em 3 ml de \u00e1gua), acrescentando 90 ml de \u00e1gua, 1 ml de \u00e1cido ac\u00e9tico glacial e completando o volume."
+,
+          "Dissolvendo 13,5g de cloreto de merc\u00fario II e 33,2g de iodeto de pot\u00e1ssio em \u00e1gua destilada."
+,
+          "Dissolvendo 1g de benzalde\u00eddo 4-dimetilamina em metanol com \u00e1cido orto-fosf\u00f3rico."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 2 (p\u00e1gina 63-64): 'Reagente 5: misturar em bal\u00e3o volum\u00e9trico de 100 ml solu\u00e7\u00f5es de cloreto de cobalto II hexahidratado (1 g em 3 ml de \u00e1gua) e tiocianato de pot\u00e1ssio (1,5 g em 3 ml de \u00e1gua) e acrescentar 90 ml de \u00e1gua destilada. Em seguida adicionar 1 ml de \u00e1cido ac\u00e9tico glacial e por fim completar o volume com \u00e1gua destilada'."
+      }
+,
+      {
+        "q": "[Ap\u00eandice 2 - Paradoxo do Reagente 12] 19. De forma id\u00eantica ao Reagente 6, qual contradi\u00e7\u00e3o descritiva de nomenclatura e de solvente ocorre no preparo do 'Reagente 12' no Ap\u00eandice 2?",
+        "opts": [
+          "\u00c9 denominado 'solu\u00e7\u00e3o aquosa de \u00e1cido', mas dita para ferver cobre em \u00e1gua."
+,
+          "\u00c9 denominado 'solu\u00e7\u00e3o de Iodeto de S\u00f3dio em Etanol', mas o seu preparo dita: 'dissolve-se 2 g de NaI em 100 ml de acetona'."
+,
+          "\u00c9 denominado 'solu\u00e7\u00e3o alco\u00f3lica', mas dita para usar \u00e1gua sanit\u00e1ria."
+,
+          "Exige o uso de solvente de \u00e9ter et\u00edlico sob aquecimento em bico de Bunsen."
+        ],
+        "ans": 1,
+        "exp": "Conforme o Ap\u00eandice 2 (p\u00e1gina 65): 'Reagente 12: solution de Iodeto de S\u00f3dio em Etanol (dissolve-se 2 g de NaI em 100 ml de acetona)'."
+      }
+,
+      {
+        "q": "[Efedrina e Pseudoefedrina - Reagentes Chen-Kao] 20. O teste de Chen-Kao (Ap\u00eandice 2) exige tr\u00eas solu\u00e7\u00f5es reagentes. Quais s\u00e3o os Reagentes 13A, 13B e 13C especificados?",
+        "opts": [
+          "13A: solu\u00e7\u00e3o aquosa de \u00e1cido ac\u00e9tico 1%; 13B: solu\u00e7\u00e3o de sulfato de cobre II (1 g em 100 ml de \u00e1gua); e 13C: solu\u00e7\u00e3o de hidr\u00f3xido de s\u00f3dio 2M (8 g em 100 ml de \u00e1gua)."
+,
+          "13A: formalde\u00eddo; 13B: \u00e1cido sulf\u00farico concentrado; e 13C: \u00e1cido n\u00edtrico concentrado."
+,
+          "13A: nitrato de prata 2%; 13B: iodeto de s\u00f3dio; e 13C: acetona."
+,
+          "13A: vanilina; 13B: acetalde\u00eddo; e 13C: \u00e1cido clor\u00eddrico concentrado."
+        ],
+        "ans": 0,
+        "exp": "Conforme o Ap\u00eandice 2 (p\u00e1gina 65-66): 'Reagente 13A: solu\u00e7\u00e3o aquosa de \u00e1cido ac\u00e9tico 1% | Reagente 13B: solu\u00e7\u00e3o de sulfato de cobre II (dissolve-se 1 g de CuSO4 (II) em 100 ml de \u00e1gua) | Reagente 13C: solu\u00e7\u00e3o de hidr\u00f3xido de s\u00f3dio 2M (dissolve-se 8 g de NaOH em 100 ml de \u00e1gua)'."
+      }
+    ]
+  }
+];
+
+let answered = 0, corrects = 0, wrongs = 0;
+let wrongQuestions = [];
+
+function updateScore(){
+  document.getElementById('sc-c').textContent = corrects;
+  document.getElementById('sc-w').textContent = wrongs;
+  document.getElementById('sc-a').textContent = answered;
+  document.getElementById('btn-wrong').disabled = (wrongQuestions.length === 0);
+}
+
+function buildQuiz(dataSource){
+  dataSource = dataSource || CHAPTERS;
+  window._currentData = dataSource;
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  let total = 0;
+  dataSource.forEach(ch => total += ch.questions.length);
+  document.getElementById('sc-total').textContent = '/ ' + total;
+
+  dataSource.forEach((ch, ci) => {
+    const div = document.createElement('div');
+    div.className = 'chapter';
+    let html = `<div class="chapter-title">${ch.title}</div>`;
+    ch.questions.forEach((q, qi) => {
+      const qid = 'q_' + ci + '_' + qi;
+      html += `<div class="question" id="block_${qid}">
+        <div class="q-num">Questão ${qi+1}</div>
+        <div class="q-text">${q.q}</div>`;
+      q.opts.forEach((opt, oi) => {
+        html += `<button class="opt" id="${qid}_${oi}" onclick="handleAnswer(${ci}, ${qi}, ${oi})">${opt}</button>`;
+      });
+      html += `<div class="feedback" id="fb_${qid}" style="display:none"></div></div>`;
+    });
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+}
+
+function handleAnswer(ci, qi, chosen){
+  const dataSource = window._currentData || CHAPTERS;
+  const ch = dataSource[ci];
+  const q = ch.questions[qi];
+  const qid = 'q_' + ci + '_' + qi;
+  const correct = q.ans;
+  const isRight = (chosen === correct);
+
+  q.opts.forEach((_, oi) => {
+    const btn = document.getElementById(qid + '_' + oi);
+    btn.disabled = true;
+    if(oi === correct) btn.classList.add('correct');
+    if(oi === chosen && !isRight) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('fb_' + qid);
+  fb.style.display = 'block';
+  if(isRight){
+    fb.className = 'feedback ok';
+    fb.innerHTML = `✅ <strong>Correto!</strong> ${q.exp}`;
+    corrects++;
+  } else {
+    fb.className = 'feedback err';
+    fb.innerHTML = `❌ <strong>Incorreto.</strong> ${q.exp}`;
+    wrongs++;
+    wrongQuestions.push({chTitle: ch.title, qObj: q});
+  }
+  answered++;
+  updateScore();
+}
+
+function resetAll(){
+  if(!confirm('Reiniciar o quiz completo?')) return;
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(CHAPTERS);
+  updateScore();
+}
+
+function resetWrong(){
+  if(wrongQuestions.length === 0) return;
+  if(!confirm('Reiniciar apenas com as ' + wrongQuestions.length + ' questão(ões) que você errou?')) return;
+  const chapMap = {};
+  wrongQuestions.forEach(({chTitle, qObj}) => {
+    if(!chapMap[chTitle]) chapMap[chTitle] = {title: chTitle, questions: []};
+    chapMap[chTitle].questions.push(qObj);
+  });
+  const filtered = Object.values(chapMap);
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(filtered);
+  updateScore();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

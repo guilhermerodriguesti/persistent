@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado de Revisão Forense</title>
+<style>
+  :root{--cor:#1a3a5c;--cor2:#2e6da4;--cor3:#e8f0f8;--verde:#1e7e34;--vermelho:#c0392b;--laranja:#d35400;}
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:'Segoe UI',Arial,sans-serif;background:#f0f4f8;color:#222;}
+  header{background:var(--cor);color:#fff;padding:18px 24px;display:flex;align-items:center;gap:14px;}
+  header h1{font-size:1.3rem;font-weight:700;}
+  .subtitle{font-size:.85rem;opacity:.8;}
+  .scorebar{background:var(--cor2);color:#fff;padding:10px 24px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;}
+  .sc{font-size:.95rem;} .sc span{font-weight:700;}
+  .lbl{opacity:.75;font-size:.85rem;}
+  .btn-reset{background:#fff;color:var(--cor);border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;}
+  .btn-reset:hover{background:#e0e8f0;}
+  .btn-wrong{background:var(--laranja);color:#fff;border:none;border-radius:6px;padding:6px 14px;font-size:.85rem;cursor:pointer;font-weight:600;transition:.2s;margin-left:auto;}
+  .btn-wrong:hover:not(:disabled){background:#b94600;}
+  .btn-wrong:disabled{opacity:.4;cursor:not-allowed;}
+  main{max-width:860px;margin:28px auto;padding:0 16px 60px;}
+  .chapter{margin-bottom:32px;}
+  .chapter-title{background:var(--cor);color:#fff;padding:10px 18px;border-radius:8px 8px 0 0;font-weight:700;font-size:1rem;}
+  .question{background:#fff;border:1px solid #d0dcea;border-top:none;padding:20px 20px 14px;}
+  .question:last-child{border-radius:0 0 8px 8px;}
+  .question+.question{border-top:1px dashed #c8d8ea;}
+  .q-num{font-size:.78rem;color:#888;margin-bottom:4px;}
+  .q-text{font-size:1rem;font-weight:600;margin-bottom:14px;line-height:1.5;}
+  .opt{display:block;width:100%;background:var(--cor3);border:2px solid transparent;border-radius:6px;padding:10px 14px;margin-bottom:8px;cursor:pointer;text-align:left;font-size:.93rem;line-height:1.4;transition:.15s;}
+  .opt:hover:not(:disabled){background:#d5e5f8;border-color:var(--cor2);}
+  .opt.correct{background:#d4edda;border-color:var(--verde);color:var(--verde);font-weight:600;}
+  .opt.wrong{background:#fde8e8;border-color:var(--vermelho);color:var(--vermelho);}
+  .opt:disabled{cursor:default;}
+  .feedback{margin-top:8px;font-size:.88rem;padding:8px 12px;border-radius:6px;line-height:1.5;}
+  .feedback.ok{background:#d4edda;color:#155724;}
+  .feedback.err{background:#fde8e8;color:#721c24;}
+  .feedback .loc{margin-top:4px;font-size:.8rem;opacity:.8;}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Simulado de Revisão Forense</h1>
+    <div class="subtitle">40 Questões Inéditas - Capítulo 4 e Apêndices (Abordagem Analítica e Testes em Drogas)</div>
+  </div>
+</header>
+<div class="scorebar">
+  <div class="sc">✅ Acertos: <span id="sc-c">0</span></div>
+  <div class="sc">❌ Erros: <span id="sc-w">0</span></div>
+  <div class="sc">📝 Respondidas: <span id="sc-a">0</span> <span class="lbl" id="sc-total"></span></div>
+  <button class="btn-reset" onclick="resetAll()">↺ Reiniciar tudo</button>
+  <button class="btn-wrong" id="btn-wrong" onclick="resetWrong()" disabled>↺ Só os erros</button>
+</div>
+<main id="quiz-container"></main>
+
+<script>
+const CHAPTERS = [
+  {
+    "title": "de Revisão Forense",
+    "questions": [
+      {
+        "q": "[Laudo Preliminar - Requisito do Flagrante] 1. De acordo com o Artigo 50 da Lei n\u00ba 11.343/2006, qual \u00e9 a condi\u00e7\u00e3o de sufici\u00eancia estabelecida em lei para que a autoridade de pol\u00edcia judici\u00e1ria possa lavrar o auto de pris\u00e3o em flagrante por tr\u00e1fico de drogas?",
+        "opts": [
+          "A exist\u00eancia de laudo definitivo assinado por dois peritos qu\u00edmicos oficiais."
+,
+          "O laudo de constata\u00e7\u00e3o da natureza e quantidade da droga, firmado por perito oficial ou, na falta deste, por pessoa id\u00f4nea."
+,
+          "A confiss\u00e3o formal do preso reduzida a termo na presen\u00e7a de duas testemunhas id\u00f4neas."
+,
+          "O resultado positivo em teste preliminar por tiras de fluxo lateral de imunoensaio."
+        ],
+        "ans": 1,
+        "exp": "Conforme a p\u00e1gina 52 da apostila, reproduzindo o Art. 50, \u00a7 1\u00ba: 'Para efeito da lavratura do auto de pris\u00e3o em flagrante e estabelecimento da materialidade do delito, \u00e9 suficiente o laudo de constata\u00e7\u00e3o da natureza e quantidade da droga, firmado por perito oficial ou, na falta deste, por pessoa id\u00f4nea'."
+      }
+,
+      {
+        "q": "[Laudo Preliminar - Prazo de Vista do MP] 2. Conforme preceitua o Artigo 50 da Lei n\u00ba 11.343/2006, ocorrendo pris\u00e3o em flagrante por infra\u00e7\u00e3o \u00e0 Lei de Drogas, qual o prazo estabelecido para que se d\u00ea vista do auto lavrado ao \u00f3rg\u00e3o do Minist\u00e9rio P\u00fablico?",
+        "opts": [
+          "Imediatamente na presen\u00e7a da autoridade aduaneira."
+,
+          "Em at\u00e9 24 (vinte e quatro) horas."
+,
+          "No prazo improrrog\u00e1vel de 48 (quarenta e oito) horas."
+,
+          "Em at\u00e9 10 (dez) dias ap\u00f3s o recebimento do laudo definitivo."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 52 da apostila (Art. 50): 'Ocorrendo pris\u00e3o em flagrante, a autoridade de pol\u00edcia judici\u00e1ria far\u00e1, imediatamente, comunica\u00e7\u00e3o ao juiz competente... do qual ser\u00e1 dada vista ao \u00f3rg\u00e3o do Minist\u00e9rio P\u00fablico, em 24 (vinte e quatro) horas'."
+      }
+,
+      {
+        "q": "[Laudo Preliminar - Atua\u00e7\u00e3o em Duplicidade do Perito] 3. O perito que atua na elabora\u00e7\u00e3o e subscreve o laudo preliminar de constata\u00e7\u00e3o fica impedido de participar da confec\u00e7\u00e3o do laudo definitivo?",
+        "opts": [
+          "Sim, h\u00e1 impedimento legal absoluto para assegurar a impessoalidade e a ampla defesa."
+,
+          "N\u00e3o ficar\u00e1 impedido de participar da elabora\u00e7\u00e3o do laudo definitivo."
+,
+          "Fica impedido apenas se o laudo preliminar tiver sido lavrado por pessoa id\u00f4nea (policial nomeado)."
+,
+          "Fica impedido somente em casos de apreens\u00e3o de Novas Subst\u00e2ncias Psicoativas (NSP)."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 52 da apostila (Art. 50, \u00a7 2\u00ba): 'O perito que subscrever o laudo a que se refere o \u00a7 1\u00ba deste artigo n\u00e3o ficar\u00e1 impedido de participar da elabora\u00e7\u00e3o do laudo definitivo'."
+      }
+,
+      {
+        "q": "[Laudo Preliminar - Assinatura por Policial] 4. Em quais circunst\u00e2ncias espec\u00edficas da atua\u00e7\u00e3o policial a lei e a doutrina da apostila admitem que o laudo de constata\u00e7\u00e3o preliminar seja realizado por um policial nomeado?",
+        "opts": [
+          "Sempre que o perito de plant\u00e3o estiver de licen\u00e7a m\u00e9dica regulamentar."
+,
+          "Nos casos em que a log\u00edstica necess\u00e1ria para que o perito fa\u00e7a o teste ponha em risco o prazo legal de 24 horas para a lavratura do auto de flagrante."
+,
+          "Exclusivamente quando se tratar de apreens\u00e3o interestadual de maconha triturada."
+,
+          "Apenas se o material suspeito for menor que 2,0 gramas."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 45 da apostila: 'Nos casos em que a log\u00edstica necess\u00e1ria para que o perito fa\u00e7a o teste (o deslocamento dele at\u00e9 o material suspeito ou vice-versa) ponha em risco o prazo legal de 24 horas, o que poderia, em tese, prejudicar a lavratura do auto de pris\u00e3o e apreens\u00e3o, os testes preliminares podem ser realizados por policial nomeado pela autoridade policial'."
+      }
+,
+      {
+        "q": "[Laudo Preliminar - Modelos e Guias Internacionais] 5. Diante da aus\u00eancia de uma regulamenta\u00e7\u00e3o legal estrita sobre como o laudo preliminar deve ser fisicamente elaborado no Brasil, em quais refer\u00eancias metodol\u00f3gicas a per\u00edcia da Pol\u00edcia Federal se baseia?",
+        "opts": [
+          "Nas normas da Farmacopeia Brasileira e da Secretaria de Com\u00e9rcio Exterior (SECEX)."
+,
+          "Em modelos e guias de organismos internacionalmente reconhecidos, como o UNODC, bem como na literatura cient\u00edfica especializada."
+,
+          "Exclusivamente nas diretrizes da C\u00e2mara de Regula\u00e7\u00e3o do Mercado de Medicamentos (CMED)."
+,
+          "Nos crit\u00e9rios de bal\u00edstica forense emanados pela DITEC militar."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 45 da apostila: 'Entretanto, n\u00e3o h\u00e1 regulamenta\u00e7\u00e3o a respeito de como esse laudo preliminar deve ser elaborado. A Per\u00edcia da Pol\u00edcia Federal baseia-se em modelos e guias de organismos internacionalmente reconhecidos (UNODC... dentre outros), bem como a literatura cient\u00edfica especializada...'"
+      }
+,
+      {
+        "q": "[Laudo Preliminar - Detalhes Visuais e Enquadramento Legal] 6. De acordo com a apostila de Qu\u00edmica Forense, al\u00e9m de declarar o peso e os resultados dos exames, quais informa\u00e7\u00f5es formais s\u00e3o recomendadas constar no corpo do laudo preliminar de constata\u00e7\u00e3o?",
+        "opts": [
+          "A rota exata do transporte da viatura e a escala de folgas dos peritos laboratoriais."
+,
+          "As caracter\u00edsticas observadas no exame visual do material, as quantidades separadas para o exame definitivo e o enquadramento legal das subst\u00e2ncias."
+,
+          "O valor venal estimado da droga no mercado de varejo internacional e as digitais latentes."
+,
+          "A declara\u00e7\u00e3o de que o teste de Scott \u00e9 100% definitivo na caracteriza\u00e7\u00e3o de alcaloides."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 52 da apostila: 'Ele deve relatar as caracter\u00edsticas observadas no exame visual do material apreendido e o peso aferido... Os resultados dos exames preliminares devem ser relatados no texto, bem como descritas no laudo as quantidades separadas para os exames definitivos. \u00c9 aconselh\u00e1vel citar o enquadramento legal...'"
+      }
+,
+      {
+        "q": "[Colorimetria - Scott Acidificado] 7. O teste de Scott modificado e acidificado \u00e9 o narcoteste indicativo de campo mais comum para a coca\u00edna. Qual \u00e9 a rea\u00e7\u00e3o crom\u00e1tica esperada que indica a presen\u00e7a do alcaloide e quais compostos interferentes podem mimetizar esse resultado no campo?",
+        "opts": [
+          "Rea\u00e7\u00e3o que gera cor avermelhada; os diluentes inertes de amido atuam como interferentes."
+,
+          "O aparecimento de cor azul; tendo como interferentes compostos met\u00e1licos (como sais de ferro) e outras subst\u00e2ncias como metadona, hero\u00edna, lidoca\u00edna e cafe\u00edna."
+,
+          "O aparecimento de cor preta ou p\u00farpura intensa; tendo como interferente o patchouli."
+,
+          "Rea\u00e7\u00e3o que gera cor amarela leitosa; tendo como interferente o \u00e1cido ac\u00e9tico glacial puro."
+        ],
+        "ans": 1,
+        "exp": "Conforme a Tabela 1 (p\u00e1gina 46) e o Ap\u00eandice 1 (p\u00e1gina 59): 'o aparecimento de cor azul indica a poss\u00edvel presen\u00e7a de coca\u00edna. A metadona, hero\u00edna, lidoca\u00edna e alguns outros compostos tamb\u00e9m apresentam cor azul neste teste...'. E a Tabela 1 lista como interferente compostos met\u00e1licos, ex.: sais de ferro.<br><br>\n            <div class='diagram-box'>\n                <p style='font-size:18px; margin:5px; color:#555;'><b>Rea\u00e7\u00e3o Scott Modificado para Coca\u00edna</b></p>\n                <svg width='280' height='120' viewBox='0 0 280 120'>\n                    <circle cx='60' cy='60' r='35' fill='#ffffff' stroke='#0d9488' stroke-width='2' />\n                    <text x='60' y='64' font-size='10' font-weight='bold' fill='#000' text-anchor='middle'>Amostra P\u00f3</text>\n                    <path d='M 110,60 L 170,60' stroke='#0d9488' stroke-width='3' />\n                    <circle cx='220' cy='60' r='35' fill='#3b82f6' stroke='#1d4ed8' stroke-width='2' />\n                    <text x='220' y='64' font-size='11' font-weight='bold' fill='#fff' text-anchor='middle'>Cor Azul (Positivo)</text>\n                </svg>\n            </div>\n        "
+      }
+,
+      {
+        "q": "[Colorimetria - Cannabis Fast Blue vs DL] 8. Quais os nomes dos dois testes colorim\u00e9tricos preliminares indicados na apostila para a identifica\u00e7\u00e3o de canabinoides (maconha e derivados) e quais s\u00e3o as respectivas colora\u00e7\u00f5es positivas?",
+        "opts": [
+          "Zimmerman (cor p\u00farpura-avermelhada) e Ehrlich (cor violeta ap\u00f3s alguns minutos)."
+,
+          "Fast Blue 'B' Salt (cor avermelhada ou viol\u00e1cea) e Duquenois Levine (cor violeta na camada inferior clorof\u00f3rmica)."
+,
+          "Marquis (cor laranja que vira marrom) e Simon (cor azul escuro intenso)."
+,
+          "Teste de chama (chama verde) e Tanred (precipitado amarelo leitoso)."
+        ],
+        "ans": 1,
+        "exp": "De acordo com a Tabela 1 e Ap\u00eandice 1: Fast Blue 'B' Salt (p\u00e1gina 58: 'cor avermelhada ou viol\u00e1cea indica a presen\u00e7a de cannabis'); Duquenois Levine (p\u00e1gina 58: 'cor violeta na camada inferior (clorof\u00f3rmio) indica a presen\u00e7a de cannabis')."
+      }
+,
+      {
+        "q": "[Colorimetria - Reagente Simon] 9. No exame de campo e de triagem laboratorial, o reagente de Simon \u00e9 empregado para identificar compostos espec\u00edficos. Qual \u00e9 a rea\u00e7\u00e3o descrita na Tabela 1 para diferenciar a metanfetamina das demais anfetaminas?",
+        "opts": [
+          "A metanfetamina reage gerando uma colora\u00e7\u00e3o laranja que tende a marrom escuro."
+,
+          "A metanfetamina n\u00e3o produz cor com o reagente de Simon, enquanto anfetaminas diversas produzem tons de azul."
+,
+          "A metanfetamina produz cor preta imediata, enquanto as outras geram um precipitado branco."
+,
+          "Ambas produzem uma chama esverdeada intensa no bico de Bunsen."
+        ],
+        "ans": 1,
+        "exp": "Conforme a Tabela 1 (p\u00e1gina 46): 'Simon | Metanfetamina n\u00e3o produz cor, anfetaminas diversas produzem tons de azul.' OBS: Seguir estritamente o texto literal fornecido."
+      }
+,
+      {
+        "q": "[Colorimetria - Reagente de Marquis em Anfetam\u00ednicos] 10. No teste preliminar de Marquis para anfetaminas, metanfetaminas e compostos correlatos, quais colora\u00e7\u00f5es indicativas s\u00e3o descritas para a identifica\u00e7\u00e3o da metilenodioximetanfetamina (MDMA / Ecstasy) e das anfetaminas simples?",
+        "opts": [
+          "Ambos produzem cor azul escuro intenso e instant\u00e2neo."
+,
+          "Para MDMA / Ecstasy ocorre o aparecimento de colora\u00e7\u00e3o preta (ou negra/p\u00farpura); j\u00e1 para anfetamina/metanfetamina ocorre uma cor laranja que se torna marrom."
+,
+          "O MDMA do teste produz uma colora\u00e7\u00e3o verde-amarelada; a anfetamina comum gera um precipitado vermelho."
+,
+          "N\u00e3o ocorre altera\u00e7\u00e3o crom\u00e1tica, necessitando de \u00e1cido n\u00edtrico concentrado."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1ginas 46 e 60: 'Marquis: cor laranja que se torna marrom indica a poss\u00edvel presen\u00e7a de anfetamina ou metanfetamina... O aparecimento de uma colora\u00e7\u00e3o preta indica a poss\u00edvel presen\u00e7a de 3,4-metilenodioximetanfetamina (MDMA)...'."
+      }
+,
+      {
+        "q": "[Colorimetria - Reagente Ehrlich] 11. Qual o nome do teste preliminar colorim\u00e9trico indicado para o LSD, qual a colora\u00e7\u00e3o indicativa produzida ap\u00f3s alguns minutos e qual o registro cl\u00e1ssico de falso positivo citado na apostila?",
+        "opts": [
+          "Teste de Zimmerman; cor p\u00farpura-avermelhada; falso positivo para diazepam."
+,
+          "Teste de Ehrlich; cor violeta que aparece ap\u00f3s alguns minutos; falso positivo para Dihidro-LSD."
+,
+          "Teste de Dille-Koppanyi; cor p\u00farpura avermelhada; falso positivo para fenobarbital."
+,
+          "Teste de Marquis; cor verde-amarelada; falso positivo para DOB."
+        ],
+        "ans": 1,
+        "exp": "Conforme a Tabela 1 (p\u00e1gina 47): para o LSD, o teste preliminar \u00e9 o 'Ehrlich', o resultado \u00e9 'Cor violeta que aparece ap\u00f3s alguns minutos indica presen\u00e7a de LSD' e o falso positivo listado \u00e9 'Dihidro-LSD'."
+      }
+,
+      {
+        "q": "[Colorimetria - Zimmerman e Dille-Koppanyi] 12. Os exames de triagem para benzodiazep\u00ednicos e barbit\u00faricos apoiam-se em testes do tipo colorim\u00e9trico espec\u00edficos. Quais s\u00e3o esses testes e a cor comum gerada por ambos?",
+        "opts": [
+          "Simon para benzodiazep\u00ednicos e Marquis para barbit\u00faricos; gerando cor amarela."
+,
+          "Zimmerman para benzodiazep\u00ednicos e Dille-Koppanyi para barbit\u00faricos; gerando ambos cor p\u00farpura-avermelhada (ou rosa)."
+,
+          "Tanred para benzodiazep\u00ednicos e Chen-Kao para barbit\u00faricos; gerando cor azul marinho."
+,
+          "Fast Blue para benzodiazep\u00ednicos e Ehrlich para barbit\u00faricos; gerando precipitado verde."
+        ],
+        "ans": 1,
+        "exp": "Tabela 1 (p\u00e1gina 47) e Ap\u00eandice 1 (p\u00e1ginas 61-62): 'Benzodiazep\u00ednicos | Zimmerman | Cor p\u00farpura-avermelhada ou rosa' e 'Barbit\u00faricos | Dille-Koppanyi | Cor p\u00farpura avermelhada'."
+      }
+,
+      {
+        "q": "[Lan\u00e7a-perfume - Tr\u00eas Testes Preliminares] 13. O cloreto de etila (lan\u00e7a-perfume) \u00e9 uma subst\u00e2ncia de alta volatilidade. Quais s\u00e3o os tr\u00eas testes preliminares de campo ou triagem descritos na Tabela 1 para a sua caracteriza\u00e7\u00e3o de material suspeito?",
+        "opts": [
+          "Teste de Scott, rea\u00e7\u00e3o de Marquis e ponto de ebuli\u00e7\u00e3o a 100 \u00b0C."
+,
+          "Teste de chama (chama verde), teste para cloretos (s\u00f3lido branco floculento) e ponto de ebuli\u00e7\u00e3o a 12 \u00b0C."
+,
+          "Fast Blue, teste de solubilidade em \u00e1cido clor\u00eddrico e rea\u00e7\u00e3o de Zimmerman."
+,
+          "Teste de Tanred, teste Chen-Kao e precipita\u00e7\u00e3o com sulfato f\u00e9rrico."
+        ],
+        "ans": 1,
+        "exp": "Tabela 1 (p\u00e1gina 47): para o cloreto de etila, os testes preliminares s\u00e3o: 'Teste de chama' (produz chama verde), 'Teste para cloretos' (produz s\u00f3lido branco floculento) e 'Teste de ponto de ebuli\u00e7\u00e3o' (temperatura de ebuli\u00e7\u00e3o de 12 \u00b0C)."
+      }
+,
+      {
+        "q": "[Colorimetria - Sais de Ferro na Coca\u00edna] 14. A apostila ilustra que, em certas apreens\u00f5es, os traficantes t\u00eam adicionado de forma deliberada sais de ferro (compostos avermelhados) \u00e0 coca\u00edna de alto grau de pureza. Qual a finalidade t\u00e1tica dessa conduta no tr\u00e1fico?",
+        "opts": [
+          "Aumentar o volume da massa para baratear o cloridrato de coca\u00edna."
+,
+          "Dificultar a realiza\u00e7\u00e3o de exames preliminares baseados em rea\u00e7\u00f5es de colora\u00e7\u00e3o."
+,
+          "Precipitar a coca\u00edna base na forma de merla pastosa e \u00famida."
+,
+          "Eliminar a volatilidade \u00e1cida da solu\u00e7\u00e3o do m\u00e9todo 'la bomba'."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1ginas 49-50 da apostila: 'Em alguns casos, traficantes adicionaram sais de ferro (materiais de colora\u00e7\u00e3o avermelhada) para dificultar a realiza\u00e7\u00e3o de exames preliminares baseados em rea\u00e7\u00f5es de colora\u00e7\u00e3o'."
+      }
+,
+      {
+        "q": "[Colorimetria - Requisito do Teste em Branco] 15. Para garantir o controle e a validade cient\u00edfica das an\u00e1lises preliminares de constata\u00e7\u00e3o, qual procedimento anal\u00edtico de controle \u00e9 exig\u00eancia metodol\u00f3gica da apostila?",
+        "opts": [
+          "A lavagem pr\u00e9via da placa de toque com solventes como \u00e9ter ou hexano anidro."
+,
+          "A realiza\u00e7\u00e3o de um teste em branco, utilizando uma amostra de controle que sabidamente n\u00e3o contenha a droga investigada."
+,
+          "A incinera\u00e7\u00e3o de uma fra\u00e7\u00e3o da amostra para avaliar a emiss\u00e3o de fuligem."
+,
+          "A verifica\u00e7\u00e3o obrigat\u00f3ria de pH por peag\u00f4metro eletr\u00f4nico calibrado."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 49 da apostila: 'Os exames preliminares de constata\u00e7\u00e3o devem ser acompanhados de um teste em branco, isto \u00e9, uma amostra que n\u00e3o contenha a droga que est\u00e1 sendo investigada'."
+      }
+,
+      {
+        "q": "[Amostragem - Inspe\u00e7\u00e3o e Separa\u00e7\u00e3o em Grupos] 16. No processo de amostragem pericial, qual \u00e9 o primeiro passo a ser adotado pelo perito a partir da inspe\u00e7\u00e3o visual de cada unidade do material apreendido?",
+        "opts": [
+          "Pesar individualmente cada pacote e somar os pesos volum\u00e9tricos."
+,
+          "Separar em grupos os produtos que possuam caracter\u00edsticas comuns como embalagens (desenhos, logomarcas, lote), estado f\u00edsico e apresenta\u00e7\u00e3o (cor, textura, etc.)."
+,
+          "Reunir todas as amostras l\u00edquidas e s\u00f3lidas em um grande recipiente comum."
+,
+          "Incinerar imediatamente 10% do volume para caracteriza\u00e7\u00e3o de cinzas."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 51 da apostila: 'A partir da inspe\u00e7\u00e3o visual de cada unidade do material apreendido a ser amostrado, separar em grupos os produtos que possuam as seguintes caracter\u00edsticas em comum: embalagens (desenhos, logomarcas, n\u00famero de lote, etc.), estado f\u00edsico... apresenta\u00e7\u00e3o (cor, textura...)'. "
+      }
+,
+      {
+        "q": "[Amostragem - Regra n < 10] 17. Suponha que o perito Criminal Federal receba para an\u00e1lise um grupo homog\u00eaneo contendo 8 tabletes de maconha prensada de mesma colora\u00e7\u00e3o e logomarca. Segundo as regras de amostragem da IT n\u00ba 06/2006-DITEC (Tabela 2), quantas unidades devem ser amostradas?",
+        "opts": [
+          "Apenas uma unidade sorteada de forma aleat\u00f3ria."
+,
+          "Todas as 8 unidades do grupo."
+,
+          "Apenas 4 unidades, correspondentes a 50% do total."
+,
+          "A raiz quadrada de 8, arredondada para cima (3 unidades)."
+        ],
+        "ans": 1,
+        "exp": "Tabela 2 (p\u00e1gina 51) indica: 'Se n < 10: Amostrar todas as unidades do grupo'. Sendo 8 unidades, que \u00e9 menor que 10, todas as 8 devem ser amostradas."
+      }
+,
+      {
+        "q": "[Amostragem - Regra 10 <= n <= 100] 18. Se uma apreens\u00e3o contiver 45 pacotes de p\u00f3 branco com a mesma textura, agrupados visualmente de forma id\u00eantica. De acordo com a Tabela 2 de amostragem, qual o n\u00famero correto de pacotes a serem amostrados de forma aleat\u00f3ria?",
+        "opts": [
+          "Amostra-se a totalidade dos 45 pacotes."
+,
+          "Amostram-se exatamente 10 unidades do grupo."
+,
+          "Amostra-se a raiz quadrada de 45 (7 unidades)."
+,
+          "Amostram-se 5 pacotes (limite m\u00ednimo para p\u00f3)."
+        ],
+        "ans": 1,
+        "exp": "Tabela 2 (p\u00e1gina 51) indica: 'Se 10 <= n <= 100: Amostrar 10 unidades do grupo escolhidas aleatoriamente'. Sendo 45, que se enquadra nessa faixa, amostram-se 10."
+      }
+,
+      {
+        "q": "[Amostragem - Regra n > 100] 19. Considere uma apreens\u00e3o de grandes propor\u00e7\u00f5es com 144 caixas de um produto qu\u00edmico precursor de s\u00edntese. Aplicando-se as regras de amostragem para n > 100 da IT n\u00ba 06/2006-DITEC (Tabela 2), qual o n\u00famero exato de caixas que devem ser amostradas?",
+        "opts": [
+          "Amostram-se todas as 144 unidades."
+,
+          "Amostram-se 12 unidades (que \u00e9 a raiz quadrada exata de 144)."
+,
+          "Amostram-se 10 caixas apenas, pois 144 ultrapassa o limite padr\u00e3o."
+,
+          "Amostram-se 13 caixas, correspondentes \u00e0 raiz quadrada arredondada para cima."
+        ],
+        "ans": 1,
+        "exp": "Tabela 2 (p\u00e1gina 51) indica: 'Se n > 100: Amostrar \u221an unidades do grupo... O resultado de \u221an deve ser arredondado para o n\u00famero inteiro superior mais pr\u00f3ximo'. A raiz de 144 \u00e9 12 exatos. N\u00e3o necessita arredondar para cima por ser um inteiro exato: 12 unidades.<br><br>\n            <div class='diagram-box'>\n                <p style='font-size:18px; margin:5px; color:#555;'><b>F\u00f3rmula de Amostragem Pericial (n > 100)</b></p>\n                <svg width='300' height='100' viewBox='0 0 300 100'>\n                    <rect x='10' y='15' width='280' height='70' rx='8' fill='#f0fdfa' stroke='#0d9488' stroke-width='2' />\n                    <text x='150' y='42' font-size='14' font-weight='bold' fill='#111827' text-anchor='middle'>n > 100  &rArr;  Amostra = &radic;n</text>\n                    <text x='150' y='68' font-size='11' fill='#4b5563' text-anchor='middle' font-style='italic'>Arredondar para o inteiro superior mais pr\u00f3ximo</text>\n                </svg>\n            </div>\n        "
+      }
+,
+      {
+        "q": "[Amostragem - Arredondamento da Raiz de n] 20. Imagine uma apreens\u00e3o gigantesca contendo 200 sacos de um insumo qu\u00edmico em p\u00f3 sob fiscaliza\u00e7\u00e3o da PF. Aplicando-se a regra de raiz quadrada com arredondamento para o n\u00famero inteiro superior (Tabela 2), quantas unidades devem ser amostradas?",
+        "opts": [
+          "14 unidades."
+,
+          "15 unidades."
+,
+          "10 unidades."
+,
+          "20 unidades."
+        ],
+        "ans": 1,
+        "exp": "A raiz de 200 \u00e9 aproximadamente 14,14. Conforme a regra da Tabela 2 (p\u00e1gina 51): 'O resultado de \u221an deve ser arredondado para o n\u00famero inteiro superior mais pr\u00f3ximo'. Arredondando 14,14 para o inteiro superior mais pr\u00f3ximo, obt\u00e9m-se 15 unidades."
+      }
+,
+      {
+        "q": "[Amostragem - L\u00edquidos Heterog\u00eaneos em Recipiente Transparente] 21. Se o material suspeito consistir em um produto l\u00edquido na forma de mistura heterog\u00eanea, acondicionado em um recipiente transparente (por exemplo, um frasco com duas fases de solventes). Qual o procedimento correto de amostragem?",
+        "opts": [
+          "Agitar vigorosamente e retirar uma amostra \u00fanica e homog\u00eanea do topo."
+,
+          "Deve-se retirar uma amostra de cada uma das fases."
+,
+          "Coletar a amostra apenas da fase inferior de maior densidade."
+,
+          "Descartar o frasco inteiro por se tratar de material impr\u00f3prio."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 51 da apostila: 'No caso de produto l\u00edquido na forma de mistura heterog\u00eanea, acondicionado em recipiente transparente, deve-se retirar uma amostra de cada uma das fases'."
+      }
+,
+      {
+        "q": "[Amostragem - Recipiente L\u00edquido N\u00e3o Transparente] 22. Qual \u00e9 a diretriz t\u00e9cnica descrita na apostila caso o perito se depare com produto l\u00edquido acondicionado em um gal\u00e3o de metal escuro ou qualquer outro recipiente que N\u00c3O permita a visualiza\u00e7\u00e3o interna de suas fases?",
+        "opts": [
+          "Coletar uma \u00fanica fra\u00e7\u00e3o do l\u00edquido diretamente do centro geom\u00e9trico do gal\u00e3o."
+,
+          "A amostra dever\u00e1 ser coleta em pelo menos tr\u00eas pontos do recipiente (superf\u00edcie, meio e fundo)."
+,
+          "Mergulhar um papel indicador de pH para decidir se a amostragem \u00e9 necess\u00e1ria."
+,
+          "Agitar o recipiente por 10 minutos e coletar 2 ml da tampa de rosca."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 51-52 da apostila: 'No caso de produto l\u00edquido acondicionado em recipiente que n\u00e3o permita a sua visualiza\u00e7\u00e3o, a amostra dever\u00e1 ser coletada em pelo menos tr\u00eas pontos do recipiente (superf\u00edcie, meio e fundo)'."
+      }
+,
+      {
+        "q": "[Amostragem - Res\u00edduos em Suporte] 23. Se houver fundada suspeita de res\u00edduos de material questionado impregnados em suportes (por exemplo, tra\u00e7os de p\u00f3 de coca\u00edna aderidos a uma balan\u00e7a de precis\u00e3o apreendida ou em panos de filtra\u00e7\u00e3o de laborat\u00f3rio de refino), qual procedimento de amostragem deve ser adotado?",
+        "opts": [
+          "Raspagem de 10% da superf\u00edcie contaminada para amostragem estat\u00edstica."
+,
+          "N\u00e3o deve ser realizado procedimento de amostragem. O suporte suspeito deve ser encaminhado em sua totalidade para exame definitivo."
+,
+          "Limpar o suporte com \u00e1lcool absoluto e mandar apenas o solvente de lavagem."
+,
+          "Incinerar o suporte e analisar os res\u00edduos de carbono resultantes."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 52 da apostila: 'No caso de suspeita da exist\u00eancia de res\u00edduos de material questionado em suporte... n\u00e3o deve ser realizado procedimento de amostragem. O suporte suspeito deve ser encaminhado em sua totalidade para exame definitivo e em embalagem adequada...'"
+      }
+,
+      {
+        "q": "[Amostragem - S\u00f3lidos e L\u00edquidos Quantidade M\u00ednima] 24. Conforme a Tabela 3 da IT n\u00ba 06/2006-DITEC, quais s\u00e3o os volumes e massas m\u00ednimos de amostras que devem ser coletados por unidade para encaminhamento ao exame definitivo de laborat\u00f3rio?",
+        "opts": [
+          "S\u00f3lidos: 0,5 g; L\u00edquidos: 50 ml."
+,
+          "S\u00f3lidos em geral: 2,0 g (tr\u00eas colheres de sopa); L\u00edquidos em geral: 200 ml (um copo)."
+,
+          "S\u00f3lidos: 10,0 g; L\u00edquidos: 1.000 ml (um litro)."
+,
+          "S\u00f3lidos: uma pitada; L\u00edquidos: embalagem original obrigatoriamente."
+        ],
+        "ans": 1,
+        "exp": "Tabela 3 (p\u00e1gina 52): S\u00f3lidos em geral -> 2,0 g (tr\u00eas colheres de sopa); L\u00edquidos em geral -> 200 ml (um copo)."
+      }
+,
+      {
+        "q": "[Amostragem - Material Menor que o M\u00ednimo] 25. Caso a unidade ou pacote a ser amostrado pelo perito possua quantidade inferior \u00e0s especificadas como m\u00ednimas na Tabela 3, qual a conduta t\u00e9cnica correta?",
+        "opts": [
+          "O perito fica dispensado de coletar a amostra, gerando laudo negativo por falta de massa."
+,
+          "A unidade dever\u00e1 ser enviada na sua totalidade para o laborat\u00f3rio."
+,
+          "Adicionar um diluente neutro como gesso ou amido at\u00e9 atingir 2,0 g."
+,
+          "Diluir o s\u00f3lido em 200 ml de \u00e1gua destilada e enviar a solu\u00e7\u00e3o."
+        ],
+        "ans": 1,
+        "exp": "Nota de rodap\u00e9 da Tabela 3 (p\u00e1gina 52): 'Caso a unidade a ser amostrada possua quantidade menor que a m\u00ednima constante nesta tabela, a unidade dever\u00e1 ser enviada na sua totalidade'."
+      }
+,
+      {
+        "q": "[Laudo Definitivo - Conceito de Contraprova] 26. Qual \u00e9 a regra essencial de integridade processual estabelecida na fase de exames definitivos no laborat\u00f3rio forense com rela\u00e7\u00e3o ao destino do material analisado?",
+        "opts": [
+          "O material remanescente deve ser imediatamente incinerado pelo perito de laborat\u00f3rio."
+,
+          "Dever\u00e1 ser mantido material como contraprova para eventual nova per\u00edcia (salvo se quantidade/conserva\u00e7\u00e3o n\u00e3o permitirem) e arquivar todos os registros de laborat\u00f3rio."
+,
+          "As contraprovas s\u00e3o exclusivas de exames em plantas da Lista E."
+,
+          "A contraprova deve ser devolvida diretamente ao suspeito em 24 horas."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 55 da apostila: 'Nesta fase, dever\u00e1 ser mantido material como contraprova para eventual nova per\u00edcia, a n\u00e3o ser quando a quantidade ou a conserva\u00e7\u00e3o do material analisado n\u00e3o permitirem. Tamb\u00e9m \u00e9 recomendado que todos os registros de laborat\u00f3rio... sejam devidamente arquivados...'"
+      }
+,
+      {
+        "q": "[Exames Definitivos - Recomenda\u00e7\u00f5es da IT 06/2006] 27. De acordo com as diretrizes anal\u00edticas da IT n\u00ba 06/2006 baseadas no SWGDRUG, qual o requisito para consolidar a identifica\u00e7\u00e3o inequ\u00edvoca de uma droga de abuso quando se emprega uma t\u00e9cnica da Categoria A?",
+        "opts": [
+          "A t\u00e9cnica da Categoria A \u00e9 autossuficiente e dispensa qualquer outra an\u00e1lise complementar."
+,
+          "Ao menos um teste de outra categoria (A, B ou C) deve ser realizado."
+,
+          "Devem ser realizados mais tr\u00eas testes de colora\u00e7\u00e3o da Categoria C de forma obrigat\u00f3ria."
+,
+          "Apenas se o material for analisado por profissional com forma\u00e7\u00e3o de bot\u00e2nico."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 54 da apostila: 'Quando um m\u00e9todo validado do tipo A \u00e9 usado na identifica\u00e7\u00e3o, ao menos um teste de outra categoria (A, B ou C) deve ser realizado'."
+      }
+,
+      {
+        "q": "[Exames Definitivos - Sem T\u00e9cnica Categoria A] 28. Caso o laborat\u00f3rio forense que executa o laudo definitivo N\u00c3O realize nenhum teste utilizando t\u00e9cnicas da Categoria A. Qual a exig\u00eancia para identifica\u00e7\u00e3o da droga?",
+        "opts": [
+          "A identidade \u00e9 considerada inconclusiva e nula para efeitos criminais."
+,
+          "Ao menos tr\u00eas testes de outras categorias devem ser conduzidos, sendo que dois destes tr\u00eas testes devem ser da Categoria B (mas n\u00e3o relacionados entre si)."
+,
+          "Basta realizar um teste qu\u00edmico colorim\u00e9trico da Categoria C com Reagente de Marquis."
+,
+          "\u00c9 necess\u00e1ria a assinatura de tr\u00eas peritos com especializa\u00e7\u00e3o em cromatografia."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 54 da apostila: 'Quando n\u00e3o for realizado um teste de categoria do tipo A, ao menos tr\u00eas testes de outras categorias devem ser conduzidos, sendo que dois destes tr\u00eas testes devem ser da categoria B (mas n\u00e3o relacionados entre si)'."
+      }
+,
+      {
+        "q": "[Exames Definitivos - T\u00e9cnicas Hifenadas] 29. No tocante \u00e0 aplica\u00e7\u00e3o de t\u00e9cnicas hifenadas modernas (por exemplo, CG/EM ou CLAE/DAD-UV) nas per\u00edcias definitivas de laborat\u00f3rio, como devem ser consideradas sob a \u00e9gide da IT n\u00ba 06/2006?",
+        "opts": [
+          "S\u00e3o consideradas t\u00e9cnicas unificadas da Categoria A de poder absoluto."
+,
+          "Dever\u00e3o ser consideradas t\u00e9cnicas separadas (desde que validadas)."
+,
+          "S\u00e3o inv\u00e1lidas por misturarem duas categorias anal\u00edticas distintas."
+,
+          "S\u00e3o exclusivas para a elucida\u00e7\u00e3o morfol\u00f3gica bot\u00e2nica."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 54 da apostila: 'No caso de t\u00e9cnicas hifenadas, como CG/EM ou CLAE/DAD-UV, estas dever\u00e3o ser consideradas t\u00e9cnicas separadas (desde que validadas)'."
+      }
+,
+      {
+        "q": "[Exames Definitivos - Enquadramento da Cannabis] 30. Sob os crit\u00e9rios de classifica\u00e7\u00e3o de m\u00e9todos do SWGDRUG, em qual categoria anal\u00edtica enquadra-se o exame bot\u00e2nico morfol\u00f3gico (caracter\u00edsticas macro e microsc\u00f3picas) da Cannabis sativa?",
+        "opts": [
+          "Categoria A por se tratar de estrutura visual biol\u00f3gica."
+,
+          "Categoria B."
+,
+          "Categoria C devido \u00e0 depend\u00eancia do clima."
+,
+          "N\u00e3o possui categoria por se tratar de planta e n\u00e3o de composto qu\u00edmico."
+        ],
+        "ans": 1,
+        "exp": "Tabela 4 (p\u00e1gina 53) e p\u00e1gina 54 da apostila: 'Apenas cannabis: exame bot\u00e2nico morfol\u00f3gico' est\u00e1 listado na Categoria B. O texto refor\u00e7a: 'Quando analisadas caracter\u00edsticas macrosc\u00f3picas e microsc\u00f3picas da cannabis, esse tipo de an\u00e1lise pode ser considerado como teste da categoria B'."
+      }
+,
+      {
+        "q": "[Exames Definitivos - Identifica\u00e7\u00e3o Bot\u00e2nica Exclusiva] 31. Qual prerrogativa profissional espec\u00edfica \u00e9 descrita na apostila para a identifica\u00e7\u00e3o da planta de maconha (g\u00eanero Cannabis) dispensando an\u00e1lises qu\u00edmicas complementares?",
+        "opts": [
+          "Qualquer policial experiente pode identificar morfol\u00f3gica e visualmente."
+,
+          "Profissionais com forma\u00e7\u00e3o de bot\u00e2nicos podem identificar a planta do g\u00eanero cannabis, bem como material vegetal relacionado, utilizando somente as caracter\u00edsticas morfol\u00f3gicas da planta."
+,
+          "Exclusivamente m\u00e9dicos legistas no exame cadav\u00e9rico das mucosas."
+,
+          "O diretor t\u00e9cnico-cient\u00edfico do INC ap\u00f3s an\u00e1lise macrosc\u00f3pica em fotografia digital."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 54 da apostila: 'Profissionais com forma\u00e7\u00e3o de bot\u00e2nicos podem identificar a planta do g\u00eanero cannabis, bem como material vegetal relacionado, utilizando somente as caracter\u00edsticas morfol\u00f3gicas da planta'."
+      }
+,
+      {
+        "q": "[Exames Definitivos - Desvantagem do CG/EM] 32. O cromat\u00f3grafo gasoso acoplado \u00e0 espectrometria de massas (CG/EM) \u00e9 tido como um dos equipamentos de maior prest\u00edgio na per\u00edcia. Contudo, qual \u00e9 a limita\u00e7\u00e3o anal\u00edtica apontada na apostila para essa t\u00e9cnica frente a certas amostras?",
+        "opts": [
+          "N\u00e3o permite identificar adulterantes inorg\u00e2nicos na coca\u00edna."
+,
+          "Nem todas as subst\u00e2ncias proibidas/controladas podem ser analisadas em condi\u00e7\u00f5es normais, pois algumas podem sofrer degrada\u00e7\u00e3o t\u00e9rmica no processo de an\u00e1lise."
+,
+          "Incapacidade de separar misturas complexas de solventes vol\u00e1teis."
+,
+          "Exige grandes volumes de amostra (m\u00ednimo de 100 gramas por corrida)."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 54 da apostila: 'Entretanto, apesar de ser uma t\u00e9cnica poderosa em termos anal\u00edticos, nem todas as subst\u00e2ncias proibidas/controladas podem ser analisadas em condi\u00e7\u00f5es normais de um cromat\u00f3grafo gasoso, algumas destas podem degradar no processo de an\u00e1lise'.<br><br>\n            <div class='diagram-box'>\n                <p style='font-size:18px; margin:5px; color:#555;'><b>Limita\u00e7\u00e3o Anal\u00edtica: Degrada\u00e7\u00e3o T\u00e9rmica no Injetor CG</b></p>\n                <svg width='320' height='120' viewBox='0 0 320 120'>\n                    <rect x='15' y='15' width='90' height='60' fill='#fee2e2' stroke='#ef4444' stroke-width='2' />\n                    <text x='60' y='45' font-size='11' font-weight='bold' fill='#991b1b' text-anchor='middle'>Injetor CG (250\u00b0C)</text>\n                    <path d='M 120,45 L 180,45' stroke='#ef4444' stroke-width='2' />\n                    <circle cx='240' cy='45' r='20' fill='#fca5a5' stroke='#b91c1c' stroke-width='2' />\n                    <text x='240' y='49' font-size='10' font-weight='bold' fill='#b91c1c' text-anchor='middle'>Degrada\u00e7\u00e3o</text>\n                    <text x='160' y='95' font-size='11' font-weight='bold' fill='#475569' text-anchor='middle'>Mol\u00e9cula termo-sens\u00edvel \u00e9 destru\u00edda!</text>\n                </svg>\n            </div>\n        "
+      }
+,
+      {
+        "q": "[Exames Definitivos - Vantagem do FTIR] 33. Quais s\u00e3o as vantagens descritas na apostila para o espectrofot\u00f4metro de infravermelho com transformada r\u00e1pida de Fourier (FTIR) em rela\u00e7\u00e3o ao CG/EM?",
+        "opts": [
+          "\u00c9 uma t\u00e9cnica destrutiva que purifica o cloridrato de coca\u00edna eliminando as interfer\u00eancias de ferro."
+,
+          "\u00c9 uma t\u00e9cnica robusta, normalmente mais barata que o CG/EM, cujas an\u00e1lises s\u00e3o realizadas \u00e0 temperatura ambiente (n\u00e3o sofre com problemas de degrada\u00e7\u00e3o t\u00e9rmica)."
+,
+          "Permite determinar de forma simples misturas complexas com grupos funcionais na mesma regi\u00e3o."
+,
+          "Substitui a necessidade de manter contraprovas de laborat\u00f3rio."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 54 da apostila: 'Outro equipamento muito encontrado... \u00e9 o espectrofot\u00f4metro na regi\u00e3o do infravermelho com transformada r\u00e1pida de Fourier (FTIR). \u00c9 uma t\u00e9cnica robusta, normalmente mais barata que o CG/EM, cujas an\u00e1lises s\u00e3o realizadas \u00e0 temperatura ambiente (n\u00e3o sofre com problemas de degrada\u00e7\u00e3o t\u00e9rmica)'."
+      }
+,
+      {
+        "q": "[Exames Definitivos - Dificuldade do FTIR e Uso do MS/MS] 34. Em quais amostras a an\u00e1lise por FTIR pode encontrar severas dificuldades de interpreta\u00e7\u00e3o e qual equipamento laboratorial avan\u00e7ado \u00e9 \u00fatil para identificar Novas Subst\u00e2ncias Psicoativas (NSPs)?",
+        "opts": [
+          "Dificuldade em amostras muito l\u00edquidas; com o espectr\u00f4metro Raman port\u00e1til solucionando o caso."
+,
+          "Dificuldade em materiais que consistam em misturas de compostos com grupos funcionais observados na mesma regi\u00e3o de interesse; com espectr\u00f4metros de massas avan\u00e7ados (HRMS ou MS/MS) sendo muito \u00fateis."
+,
+          "Dificuldade em sementes de papoula seca; com a eletroforese capilar de fluxo lateral sendo recomendada."
+,
+          "Dificuldade em res\u00edduos de lan\u00e7a-perfume; com o teste de chama resolvendo."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 54 da apostila: 'A an\u00e1lise de FTIR, contudo, pode ser dificultada em materiais questionados que consistam em misturas de compostos com grupos funcionais observados na mesma regi\u00e3o de interesse... espectr\u00f4metros de massa de alta resolu\u00e7\u00e3o (HRMS) e espectrometria de massas em tandem (MS/MS)... extremamente \u00fateis na identifica\u00e7\u00e3o de novas subst\u00e2ncias...'"
+      }
+,
+      {
+        "q": "[Exames Definitivos - Cromatografia de Camada Delgada (CCD)] 35. A cromatografia de camada delgada (CCD) \u00e9 uma t\u00e9cnica simples amplamente desenvolvida. Segundo a apostila, sob quais condi\u00e7\u00f5es de laborat\u00f3rio ela atinge excelente confiabilidade para coca\u00edna e maconha?",
+        "opts": [
+          "Quando realizada sob fluxo cont\u00ednuo de g\u00e1s h\u00e9lio aquecido a 100 \u00b0C."
+,
+          "Quando o laborat\u00f3rio adota procedimentos para garantia e controle de qualidade, como o uso de duas amostras para an\u00e1lises, controles de padr\u00f5es e brancos."
+,
+          "Quando combinada com reagente de am\u00f4nia concentrada de fluxo lateral."
+,
+          "Apenas se as amostras s\u00f3lidas forem tratadas previamente com sais de ferro aquecidos."
+        ],
+        "ans": 1,
+        "exp": "P\u00e1gina 54-55 da apostila: 'Para boa parte das drogas mais comuns, tais como coca\u00edna e maconha, a cromatografia de camada delgada \u00e9 uma t\u00e9cnica que gera resultados confi\u00e1veis. Essa confiabilidade \u00e9 alcan\u00e7ada quando o laborat\u00f3rio adota procedimentos para garantia e controle de qualidade como no uso de duas amostras para an\u00e1lises, controles de padr\u00f5es e brancos...'"
+      }
+,
+      {
+        "q": "[Reagente de Marquis - Composi\u00e7\u00e3o Qu\u00edmica] 36. De acordo com o Ap\u00eandice 2 (Prepara\u00e7\u00e3o dos Reagentes), como \u00e9 composto e preparado o tradicional Reagente de Marquis para testes colorim\u00e9tricos?",
+        "opts": [
+          "Pela dissolu\u00e7\u00e3o de 5g de hidr\u00f3xido de pot\u00e1ssio em 100ml de etanol absoluto."
+,
+          "Pela mistura do Reagente 1A (solu\u00e7\u00e3o de formalde\u00eddo 37% em \u00e1cido ac\u00e9tico glacial) com o Reagente 1B (\u00e1cido sulf\u00farico concentrado)."
+,
+          "Pela dissolu\u00e7\u00e3o de 1g de benzalde\u00eddo 4-dimetilamina em 10ml de metanol."
+,
+          "Pela combina\u00e7\u00e3o de cloreto de cobalto II com tiocianato de pot\u00e1ssio e \u00e1cido ac\u00e9tico."
+        ],
+        "ans": 1,
+        "exp": "Ap\u00eandice 2 (p\u00e1gina 63 e 64): Reagente 1A: 'solu\u00e7\u00e3o de formalde\u00eddo em \u00e1cido ac\u00e9tico (adiciona-se oito a dez gotas de solu\u00e7\u00e3o de formalde\u00eddo 37% em 10 ml de \u00e1cido ac\u00e9tico glacial)' e Reagente 1B: '\u00e1cido sulf\u00farico concentrado'. Juntos fazem o teste de Marquis."
+      }
+,
+      {
+        "q": "[Prepara\u00e7\u00e3o de Reagentes - Paradoxo de Solubilidade do Reagente 6] 37. Na prepara\u00e7\u00e3o de reagentes do Ap\u00eandice 2, qual paradoxo terminol\u00f3gico e qu\u00edmico curioso ocorre na descri\u00e7\u00e3o do preparo do 'Reagente 6' usado nos testes de Fast Blue e Benzoato de Metila?",
+        "opts": [
+          "\u00c9 classificado como \u00e1cido forte, mas utiliza carbonato de s\u00f3dio."
+,
+          "\u00c9 denominado 'hidr\u00f3xido de pot\u00e1ssio em metanol', por\u00e9m o seu roteiro de preparo manda dissolver 5g de hidr\u00f3xido de pot\u00e1ssio em 100 ml de etanol absoluto."
+,
+          "\u00c9 denominado 'iodeto de s\u00f3dio em etanol', mas manda dissolver 2g de NaI em 100 ml de acetona anidra."
+,
+          "Exige o uso de solvente de cloroformio clorativo inflam\u00e1vel sob chama verde."
+        ],
+        "ans": 1,
+        "exp": "Ap\u00eandice 2 (p\u00e1ginas 63 e 64): 'Reagente 6: hidr\u00f3xido de pot\u00e1ssio em metanol (dissolve-se 5 g de hidr\u00f3xido de pot\u00e1ssio em 100 ml de etanol absoluto)'. Trata-se de um claro paradoxo de nomenclatura e solvente."
+      }
+,
+      {
+        "q": "[Reagente de Ehrlich - Composi\u00e7\u00e3o Qu\u00edmica] 38. No Ap\u00eandice 2, a prepara\u00e7\u00e3o do 'Reagente 9' para o teste de Ehrlich (LSD) exige a combina\u00e7\u00e3o de quais reagentes qu\u00edmicos?",
+        "opts": [
+          "Nitroprussiato de s\u00f3dio dissolvido em acetalde\u00eddo aquecido."
+,
+          "Dissolve-se 1 g de benzalde\u00eddo 4-dimetilamina em 10 ml de metanol, adicionando-se cuidadosamente 10 ml de \u00e1cido orto-fosf\u00f3rico concentrado."
+,
+          "Nitrato de prata 2% em acetona pura com gesso de Paris."
+,
+          "Sulfato de cobre II dissolvido em solu\u00e7\u00e3o de hidr\u00f3xido de s\u00f3dio 2M."
+        ],
+        "ans": 1,
+        "exp": "Ap\u00eandice 2 (p\u00e1gina 65): 'Reagente 9: reagente de Ehrlich (dissolve-se 1 g de benzalde\u00eddo 4-dimetilamina em 10 ml de metanol, ent\u00e3o cuidadosamente adiciona-se 10 ml do \u00e1cido orto-fosf\u00f3rico concentrado)'."
+      }
+,
+      {
+        "q": "[Prepara\u00e7\u00e3o de Reagentes - Paradoxo do Reagente 12] 39. Semelhante ao paradoxo do Reagente 6, qual contradi\u00e7\u00e3o descritiva na prepara\u00e7\u00e3o de reagentes ocorre na formula\u00e7\u00e3o do 'Reagente 12' para o Teste do Iodeto de S\u00f3dio no cloreto de etila?",
+        "opts": [
+          "\u00c9 denominado 'solu\u00e7\u00e3o aquosa de \u00e1cido ac\u00e9tico', mas dissolve-se cobre em \u00e1gua destilada."
+,
+          "\u00c9 denominado 'solu\u00e7\u00e3o de Iodeto de S\u00f3dio em Etanol', mas o seu preparo dita: 'dissolve-se 2 g de NaI em 100 ml de acetona'."
+,
+          "\u00c9 denominado 'solu\u00e7\u00e3o alco\u00f3lica de dinitrobenzeno', mas dita para dissolver em hidr\u00f3xido de pot\u00e1ssio aquoso."
+,
+          "\u00c9 preparado com \u00e9ter et\u00edlico inflam\u00e1vel misturado com thinner de tintas."
+        ],
+        "ans": 1,
+        "exp": "Ap\u00eandice 2 (p\u00e1gina 65): 'Reagente 12: solu\u00e7\u00e3o de Iodeto de S\u00f3dio em Etanol (dissolve-se 2 g de NaI em 100 ml de acetona)'."
+      }
+,
+      {
+        "q": "[Reagente de Simon - Composi\u00e7\u00e3o Tripla] 40. O teste de Simon para diferenciar derivados anfetam\u00ednicos baseia-se em uma rea\u00e7\u00e3o colorim\u00e9trica de composi\u00e7\u00e3o tripla. Quais s\u00e3o as tr\u00eas solu\u00e7\u00f5es constituintes (8A, 8B e 8C) descritas no Ap\u00eandice 2?",
+        "opts": [
+          "\u00c1cido sulf\u00farico concentrado, formalde\u00eddo 37% e \u00e1cido ac\u00e9tico glacial."
+,
+          "Reagente 8A (solu\u00e7\u00e3o de nitroprussiato de s\u00f3dio 0,9g em 90ml de \u00e1gua), Reagente 8B (acetalde\u00eddo) e Reagente 8C (solu\u00e7\u00e3o de carbonato de s\u00f3dio 2g em 100ml de \u00e1gua)."
+,
+          "Acetato de cobalto em metanol, isopropilamina em metanol e gesso de am\u00f4nia."
+,
+          "Cloreto de merc\u00fario II, iodeto de pot\u00e1ssio e \u00e1cido ac\u00e9tico glacial com \u00e1gua destilada."
+        ],
+        "ans": 1,
+        "exp": "Ap\u00eandice 2 (p\u00e1gina 64): 'Teste 3: Teste de Simon | Reagente 8A: solu\u00e7\u00e3o de nitroprussiato de s\u00f3dio... Reagente 8B: acetalde\u00eddo... Reagente 8C: solu\u00e7\u00e3o de carbonato de s\u00f3dio...'."
+      }
+    ]
+  }
+];
+
+let answered = 0, corrects = 0, wrongs = 0;
+let wrongQuestions = [];
+
+function updateScore(){
+  document.getElementById('sc-c').textContent = corrects;
+  document.getElementById('sc-w').textContent = wrongs;
+  document.getElementById('sc-a').textContent = answered;
+  document.getElementById('btn-wrong').disabled = (wrongQuestions.length === 0);
+}
+
+function buildQuiz(dataSource){
+  dataSource = dataSource || CHAPTERS;
+  window._currentData = dataSource;
+  const container = document.getElementById('quiz-container');
+  container.innerHTML = '';
+  let total = 0;
+  dataSource.forEach(ch => total += ch.questions.length);
+  document.getElementById('sc-total').textContent = '/ ' + total;
+
+  dataSource.forEach((ch, ci) => {
+    const div = document.createElement('div');
+    div.className = 'chapter';
+    let html = `<div class="chapter-title">${ch.title}</div>`;
+    ch.questions.forEach((q, qi) => {
+      const qid = 'q_' + ci + '_' + qi;
+      html += `<div class="question" id="block_${qid}">
+        <div class="q-num">Questão ${qi+1}</div>
+        <div class="q-text">${q.q}</div>`;
+      q.opts.forEach((opt, oi) => {
+        html += `<button class="opt" id="${qid}_${oi}" onclick="handleAnswer(${ci}, ${qi}, ${oi})">${opt}</button>`;
+      });
+      html += `<div class="feedback" id="fb_${qid}" style="display:none"></div></div>`;
+    });
+    div.innerHTML = html;
+    container.appendChild(div);
+  });
+}
+
+function handleAnswer(ci, qi, chosen){
+  const dataSource = window._currentData || CHAPTERS;
+  const ch = dataSource[ci];
+  const q = ch.questions[qi];
+  const qid = 'q_' + ci + '_' + qi;
+  const correct = q.ans;
+  const isRight = (chosen === correct);
+
+  q.opts.forEach((_, oi) => {
+    const btn = document.getElementById(qid + '_' + oi);
+    btn.disabled = true;
+    if(oi === correct) btn.classList.add('correct');
+    if(oi === chosen && !isRight) btn.classList.add('wrong');
+  });
+
+  const fb = document.getElementById('fb_' + qid);
+  fb.style.display = 'block';
+  if(isRight){
+    fb.className = 'feedback ok';
+    fb.innerHTML = `✅ <strong>Correto!</strong> ${q.exp}`;
+    corrects++;
+  } else {
+    fb.className = 'feedback err';
+    fb.innerHTML = `❌ <strong>Incorreto.</strong> ${q.exp}`;
+    wrongs++;
+    wrongQuestions.push({chTitle: ch.title, qObj: q});
+  }
+  answered++;
+  updateScore();
+}
+
+function resetAll(){
+  if(!confirm('Reiniciar o quiz completo?')) return;
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(CHAPTERS);
+  updateScore();
+}
+
+function resetWrong(){
+  if(wrongQuestions.length === 0) return;
+  if(!confirm('Reiniciar apenas com as ' + wrongQuestions.length + ' questão(ões) que você errou?')) return;
+  const chapMap = {};
+  wrongQuestions.forEach(({chTitle, qObj}) => {
+    if(!chapMap[chTitle]) chapMap[chTitle] = {title: chTitle, questions: []};
+    chapMap[chTitle].questions.push(qObj);
+  });
+  const filtered = Object.values(chapMap);
+  answered = 0; corrects = 0; wrongs = 0;
+  wrongQuestions = [];
+  buildQuiz(filtered);
+  updateScore();
+}
+
+buildQuiz();
+</script>
+</body>
+</html>

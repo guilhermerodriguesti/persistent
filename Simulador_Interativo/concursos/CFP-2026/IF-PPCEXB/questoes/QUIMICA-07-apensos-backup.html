@@ -1,0 +1,542 @@
+Aqui está o simulado interativo focado de forma exclusiva e minuciosa no **Apêndice 1 (Testes Preliminares para Drogas de Abuso)** e **Apêndice 2 (Preparação de Reagentes Químicos)**, abrangendo as reações, os roteiros de preparo de reagentes e os paradoxos de formulação descritos entre as **páginas 57 e 66** da sua apostila de *Química Forense*.
+
+O simulado contém **20 questões inéditas de nível difícil e linguagem simples**, projetadas com **letras grandes** para conforto visual. Ele traz **diagramas espaciais em formato SVG** integrados aos gabaritos, que se revelam dinamicamente após cada clique em "Responder" para fixação visual das reações e dos paradoxos.
+
+Basta copiar o código abaixo (utilizando o botão no canto superior direito do bloco de código), salvá-lo em seu computador com a extensão `.html` (por exemplo, `simulado_quimica_apendices.html`) e abri-lo em qualquer navegador de internet:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado Especialista: Apêndices de Química Forense (Págs 57-66)</title>
+<style>
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        background-color: #fcfdfa; 
+        color: #0f172a; 
+        margin: 0; 
+        padding: 30px; 
+        font-size: 26px; /* Letras grandes para conforto e acessibilidade */
+    }
+    .container { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        background: #ffffff; 
+        padding: 45px; 
+        border-radius: 16px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    }
+    h1 { 
+        text-align: center; 
+        color: #0d9488; 
+        font-size: 46px; 
+        margin-bottom: 10px;
+    }
+    p.subtitle {
+        text-align: center; 
+        color: #475569; 
+        margin-bottom: 50px; 
+        font-size: 28px;
+    }
+    .question-card { 
+        margin-bottom: 55px; 
+        padding: 40px; 
+        border: 2px solid #ccfbf1; 
+        border-radius: 12px; 
+        background-color: #fafbfc; 
+    }
+    .topic-tag {
+        display: inline-block;
+        background-color: #0d9488;
+        color: #ffffff;
+        font-size: 18px;
+        padding: 6px 18px;
+        border-radius: 20px;
+        margin-bottom: 22px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .question-text { 
+        font-weight: bold; 
+        font-size: 32px; 
+        margin-bottom: 25px; 
+        color: #111827; 
+        line-height: 1.4;
+    }
+    .options { 
+        list-style-type: none; 
+        padding: 0; 
+        margin: 0;
+    }
+    .options li { 
+        margin-bottom: 18px; 
+        background: #ffffff; 
+        border: 2px solid #cbd5e1; 
+        border-radius: 10px; 
+        transition: all 0.2s ease; 
+    }
+    .options li:hover { 
+        background-color: #f0fdfa; 
+        border-color: #0d9488;
+    }
+    .options label { 
+        cursor: pointer; 
+        display: flex; 
+        align-items: center; 
+        padding: 22px; 
+        width: 100%; 
+        box-sizing: border-box;
+        font-size: 28px;
+        line-height: 1.4;
+    }
+    .options input { 
+        margin-right: 25px; 
+        transform: scale(2.0); 
+    }
+    button { 
+        background-color: #0d9488; 
+        color: #ffffff; 
+        border: none; 
+        padding: 22px 45px; 
+        border-radius: 10px; 
+        cursor: pointer; 
+        font-size: 28px; 
+        font-weight: bold;
+        margin-top: 25px; 
+        transition: background-color 0.2s;
+    }
+    button:hover { 
+        background-color: #0f766e; 
+    }
+    button:disabled { 
+        background-color: #94a3b8; 
+        cursor: not-allowed; 
+    }
+    .feedback { 
+        margin-top: 25px; 
+        padding: 30px; 
+        border-radius: 10px; 
+        display: none; 
+        line-height: 1.5; 
+        font-size: 28px;
+    }
+    .correct { 
+        background-color: #d1fae5; 
+        color: #065f46; 
+        border: 2px solid #10b981; 
+    }
+    .incorrect { 
+        background-color: #fee2e2; 
+        color: #991b1b; 
+        border: 2px solid #f43f5e; 
+    }
+    .explanation { 
+        margin-top: 20px; 
+        font-style: italic; 
+        font-size: 26px; 
+        color: #334155;
+    }
+    .diagram-box {
+        margin: 20px 0;
+        text-align: center;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        border: 2px dashed #0d9488;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Simulado dos Apêndices 1 e 2 - Química Forense</h1>
+    <p class="subtitle">20 Questões Inéditas - Foco em Reações, Colorações e Roteiros de Preparo (Págs. 57 a 66)</p>
+    <div id="quiz-container"></div>
+</div>
+
+<script>
+const quizData = [
+    {
+        topic: "Opioides - Teste de Marquis",
+        question: "1. No Teste nº 1 do Apêndice 1 para morfina, codeína ou heroína, qual é a coloração indicativa esperada na placa de spot após a reação com os Reagentes 1A e 1B?",
+        options: [
+            "Aparecimento de uma coloração azul intensa imediata.",
+            "Uma coloração de violeta à púrpura-avermelhado.",
+            "Formação de um sólido ou precipitado amarelo leitoso.",
+            "Chama verde-esmeralda cintilante."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 1 (página 57): 'RESULTADO: uma coloração de violeta à púrpura-avermelhado indica a presença de morfina, codeína ou heroína'."
+    },
+    {
+        topic: "Opioides - Teste de Ácido Nítrico",
+        question: "2. Adicionando o Reagente 3 (Ácido Nítrico concentrado) no Teste nº 2 do Apêndice 1, qual comportamento cromático é indicativo específico de morfina?",
+        options: [
+            "Uma cor amarela que vira lentamente verde-claro.",
+            "Uma cor laranja que se torna rapidamente vermelha e logo lentamente se torna amarelo.",
+            "Uma cor laranja que lentamente se torna amarela.",
+            "Não deve aparecer nenhuma alteração ou evolução de cor."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 1 (páginas 57-58): para morfina, o resultado do ácido nítrico é 'uma cor laranja que se torna rapidamente vermelha e logo lentamente se torna amarelo'."
+    },
+    {
+        topic: "Morfina - Teste de Sulfato Férrico",
+        question: "3. No Teste nº 3 do Apêndice 1 para Morfina, qual é a cor resultante que indica a provável presença dessa droga após a adição direta do Reagente 2 (Sulfato Férrico)?",
+        options: [
+            "A cor vermelha.",
+            "A cor azul real.",
+            "A cor verde-claro.",
+            "Precipitado preto."
+        ],
+        answer: 0,
+        explanation: "Conforme o Apêndice 1 (página 58): 'RESULTADO: a cor vermelha indica a provável presença de morfina'."
+    },
+    {
+        topic: "Cannabis - Teste do Fast Blue B Salt",
+        question: "4. No Teste nº 1 do Apêndice 1 para Cannabis, qual o aviso de segurança listado textualmente na apostila para o reagente comercial 'Fast Blue B Salt' e qual a cor de resultado indicativo positivo?",
+        options: [
+            "CUIDADO TÓXICO POR INALAÇÃO; cor azul-turquesa.",
+            "CUIDADO CANCERÍGENO; cor avermelhada ou violácea.",
+            "CUIDADO INFLAMÁVEL; cor amarela brilhante.",
+            "CUIDADO CORROSIVO ÁCIDO; cor preta opaca."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 1 (página 58): 'Adicionar uma pequena quantidade... do reagente “Fast Blue B Salt” (CUIDADO CANCERÍGENO)... RESULTADO: cor avermelhada ou violácea indica a presença de cannabis'."
+    },
+    {
+        topic: "Cannabis - Teste de Duquenois Levine",
+        question: "5. No Teste de Duquenois Levine (Cannabis - Teste nº 2), em qual local ou fase do tubo de ensaio se localiza a coloração positiva de indicação pericial após agitar suavemente com clorofórmio?",
+        options: [
+            "Na camada aquosa superior do tubo.",
+            "Na camada inferior (clorofórmio).",
+            "Dispersa uniformemente e emulsionada em fase única.",
+            "Em suspensão sólida na boca do tubo de ensaio."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 1 (página 58): 'RESULTADO: cor violeta na camada inferior (clorofórmio) indica a presença de cannabis'."
+    },
+    {
+        topic: "Cocaína - Limitações do Scott Acidificado",
+        question: "6. Por que o teste preliminar de Scott acidificado (Cocaína - Teste nº 1) gera cor azul indicativa, mas NÃO pode ser considerado definitivo para instrução criminal?",
+        options: [
+            "Porque a cor azul gerada evapora rapidamente em contato com o ar ambiente.",
+            "Porque outras substâncias como metadona, heroína, lidocaína e cafeína também apresentam cor azul ou resultado positivo neste teste preliminar.",
+            "Porque ele é destrutivo e impede o envio de contraprovas ao laboratório.",
+            "Porque ele falha e gera cor vermelha na presença de cloridrato de cocaína."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 1 (página 59): 'RESULTADO: o aparecimento de cor azul indica a possível presença de cocaína. A metadona, heroína, lidocaína e alguns outros compostos também apresentam cor azul neste teste, portanto ele não pode ser definitivo... [e também] substâncias diversas... tais como a lidocaína e a cafeína'."
+    },
+    {
+        topic: "Cocaína - Teste de Benzoato de Metila",
+        question: "7. No Teste nº 2 para Cocaína (Teste de benzoato de metila), qual alteração sensorial o perito deve constatar e qual a cautela médica/fisiológica apontada na apostila?",
+        options: [
+            "Turvação visual; cautela devido à fadiga ocular do perito.",
+            "Odor igual ao da referência de benzoato de metila; com a cautela de que parte da população não sente o odor de benzoato de metila, exigindo o reagente de referência.",
+            "Resfriamento térmico do tubo de ensaio; com a cautela de congelamento das mãos.",
+            "Emissão de ruído gasoso; exigindo o uso de protetor auricular."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 1 (página 59): 'RESULTADO: se o odor da amostra é igual ao da amostra de benzoato de metila tomada como referência, isto indica a provável presença de cocaína. Parte da população não sente o odor de benzoato de metila. Por essa razão, é necessário ter o reagente de referência'."
+    },
+    {
+        topic: "Cocaína - Teste de Tanred",
+        question: "8. No Teste nº 3 do Apêndice 1 para Cocaína (Teste de Tanred / Mayer), qual é o resultado visual esperado após a adição sequencial de água e do Reagente 7?",
+        options: [
+            "Se se formar um precipitado amarelo leitoso indica a possível presença de cocaína.",
+            "O surgimento de uma coloração preta instantânea na placa de spot.",
+            "Produção de uma chama verde ao queimar na espátula.",
+            "Nenhuma reação visível ocorre, permanecendo uma solução incolor límpida."
+        ],
+        answer: 0,
+        explanation: "Conforme o Apêndice 1 (página 60): 'RESULTADO: se se formar um precipitado amarelo leitoso indica a possível presença de cocaína'."
+    },
+    {
+        topic: "Derivados Anfetamínicos - Teste de Marquis",
+        question: "9. No Teste nº 1 para anfetaminas com o reagente de Marquis, quais cores indicam a possível presença de anfetamina/metanfetamina e de MDMA (ecstasy), respectivamente?",
+        options: [
+            "Cor azul para anfetamina; e cor vermelha para MDMA.",
+            "Uma cor laranja que se torna marrom para anfetamina/metanfetamina; e coloração preta para MDMA.",
+            "Cor amarela para anfetamina; e cor verde para MDMA.",
+            "Ambos produzem uma coloração violeta à púrpura-avermelhada."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 1 (página 60): '...cor laranja que se torna marrom indica a possível presença de anfetamina ou metanfetamina... O aparecimento de uma coloração preta indica a possível presença de 3,4-metilenodioximetananfetamina (MDMA)...'."
+    },
+    {
+        topic: "Derivados Anfetamínicos - Alucinógenos no Marquis",
+        question: "10. No teste de Marquis para estimulantes e alucinógenos, qual é a indicação cromática para substâncias psicodélicas como o DMA ou DOB, segundo o Apêndice 1?",
+        options: [
+            "Cor amarela à marrom-amarelado.",
+            "Uma cor verde-amarelada à verde.",
+            "Uma cor preta intensa.",
+            "Ausência de qualquer alteração de cor."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 1 (páginas 60-61): 'Uma cor verde-amarelada à verde aponta a possível presença de 2,5-dimetoxi-anfetamina (DMA) ou 2,5-dimetóxi-4-bromoanfetamina (DOB)'."
+    },
+    {
+        topic: "Derivados Anfetamínicos - Teste do Ácido Sulfúrico",
+        question: "11. Qual é o resultado esperado no Teste nº 2 (Teste do ácido sulfúrico com Reagente 1B) na presença de anfetamina e metanfetamina, e qual é a utilidade prática dessa reação?",
+        options: [
+            "Aparece cor vermelha; útil para quantificar o teor de pureza do sal.",
+            "Não deve aparecer nenhuma cor; útil para diferenciar a anfetamina e a metanfetamina de outros derivados que reagem produzindo cores.",
+            "Formação de um precipitado branco cristalino rápido; útil para triagem de adulterantes metálicos.",
+            "Cor amarela fluorescente; útil para diferenciar de inalantes orgânicos."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 1 (página 61): 'RESULTADO: não deve aparecer nenhuma cor na presença de anfetamina e metanfetamina. OBS.: este reagente é útil para diferenciar a anfetamina e a metanfetamina de outros derivados... enquanto muitos outros derivados anfetamínicos reagem produzindo diversas cores'."
+    },
+    {
+        topic: "Derivados Anfetamínicos - Teste de Simon",
+        question: "12. Qual é o resultado cromático do Teste de Simon (Teste nº 3 do Apêndice 1) que indica a possível presença de metanfetamina ou MDMA?",
+        options: [
+            "Cor verde-claro.",
+            "Cor azul.",
+            "Cor laranja.",
+            "Cor amarela."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 1 (página 61): 'RESULTADO: cor azul indica a possível presença de metanfetamina ou MDMA (êxtase)'."
+    },
+    {
+        topic: "LSD - Teste de Ehrlich",
+        question: "13. No teste preliminar de Ehrlich para LSD (LSD - Teste nº 1), qual alteração colorimétrica e comportamento temporal indicam a presença da droga?",
+        options: [
+            "Cor preta instantânea após adição de ácido sulfúrico.",
+            "Cor violeta que aparece em alguns minutos.",
+            "Precipitado ou turvação branca lenta que aparece em 24 horas.",
+            "Chama azulada brilhante sob o bico de Bunsen."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 1 (página 61): 'RESULTADO: cor violeta que aparece em alguns minutos indica a possível presença de LSD'."
+    },
+    {
+        topic: "Barbitúricos e Benzodiazepínicos - Testes de Triagem",
+        question: "14. Quais os testes de coloração e a respectiva cor positiva listados nos apêndices para triagem preliminar de Barbitúricos e Diazepam?",
+        options: [
+            "Barbitúricos: Teste de Simon (azul); Diazepam: Teste de Marquis (laranja).",
+            "Barbitúricos: Teste de Dille-Koppanyi (cor púrpura-avermelhada); Diazepam: Teste de Zimmerman (cor púrpura-avermelhada ou rosa).",
+            "Barbitúricos: Teste de Tanred (amarelo); Diazepam: Teste Chen-Kao (violeta).",
+            "Ambas utilizam o reagente de Ehrlich, gerando cor verde brilhante."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 1 (páginas 61-62): 'BARBITÚRICOS | Teste n.º 1: Teste de Dille-Koppanyi... RESULTADO: cor púrpura-avermelhada' e 'DIAZEPAM... | Teste n.º 1: Teste de Zimmerman... RESULTADO: cor púrpura avermelhada...'"
+    },
+    {
+        topic: "Cloreto de Etila - AgNO3 e NaI",
+        question: "15. Para a caracterização preliminar do cloreto de etila (lança-perfume), quais os resultados correspondentes no teste com Nitrato de Prata (Teste nº 1) e com Iodeto de Sódio (Teste nº 2)?",
+        options: [
+            "Efervescência ácida no Teste nº 1; e precipitado de coloração preta no Teste nº 2.",
+            "Um precipitado ou turvação branca que aparece lentamente no Teste nº 1; e um precipitado branco cristalino que aparece lentamente no Teste nº 2.",
+            "Chama verde no Teste nº 1; e coloração azul instantânea no Teste nº 2.",
+            "Ambos geram uma solução amarela brilhante instantânea."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 1 (página 62): no Teste nº 1 do cloreto de etila, 'um precipitado ou turvação branca que aparece lentamente indica a presença'; no Teste nº 2, 'um precipitado branco cristalino que aparece lentamente indica a presença'."
+    },
+    {
+        topic: "Apêndice 2 - Preparação do Reagente 1A",
+        question: "16. De acordo com o roteiro de preparação de soluções do Apêndice 2, como deve ser preparado o Reagente 1A utilizado no teste de Marquis?",
+        options: [
+            "Dissolvendo 5g de nitrato de prata em 100ml de etanol absoluto.",
+            "Adicionando oito a dez gotas de solução de formaldeído 37% em 10 ml de ácido acético glacial.",
+            "Misturando clorofórmio comercial com ácido clorídrico concentrado.",
+            "Dissolvendo 1g de nitroprussiato de sódio em 90ml de água destilada."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 2 (página 63): 'Reagente 1A: solução de formaldeído em ácido acético (adiciona-se oito a dez gotas de solução de formaldeído 37% em 10 ml de ácido acético glacial)'."
+    },
+    {
+        topic: "Apêndice 2 - Paradoxo do Reagente 6",
+        question: "17. Qual contradição terminológica e química curiosa ocorre na descrição literal de preparo do 'Reagente 6' (usado no Fast Blue para maconha e no Benzoato de metila) no Apêndice 2?",
+        options: [
+            "Chama-se solução ácida, mas usa bicarbonato básico de sódio.",
+            "É denominado 'hidróxido de potássio em metanol', porém o seu roteiro de preparação manda dissolver 5 g de hidróxido de potássio em 100 ml de etanol absoluto.",
+            "É denominado 'sulfato de cobre', mas dita dissolver sais férricos na acetona.",
+            "Manda misturar solventes voláteis inflamáveis sob aquecimento direto."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 2 (página 63 e 64): 'Reagente 6: hidróxido de potássio em metanol (dissolve-se 5 g de hidróxido de potássio em 100 ml de etanol absoluto)'."
+    },
+    {
+        topic: "Apêndice 2 - Preparação do Reagente 5",
+        question: "18. Como é formulado e preparado o Reagente 5 (utilizado no teste preliminar de Scott para cocaína) conforme o Apêndice 2?",
+        options: [
+            "Dissolvendo 1g de vanilina em 100ml de etanol 95% e adicionando 2,5ml de acetaldeído.",
+            "Misturando em balão de 100 ml as soluções de cloreto de cobalto II hexahidratado (1 g em 3 ml de água) e tiocianato de potássio (1,5 g em 3 ml de água), acrescentando 90 ml de água, 1 ml de ácido acético glacial e completando o volume.",
+            "Dissolvendo 13,5g de cloreto de mercúrio II e 33,2g de iodeto de potássio em água destilada.",
+            "Dissolvendo 1g de benzaldeído 4-dimetilamina em metanol com ácido orto-fosfórico."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 2 (página 63-64): 'Reagente 5: misturar em balão volumétrico de 100 ml soluções de cloreto de cobalto II hexahidratado (1 g em 3 ml de água) e tiocianato de potássio (1,5 g em 3 ml de água) e acrescentar 90 ml de água destilada. Em seguida adicionar 1 ml de ácido acético glacial e por fim completar o volume com água destilada'."
+    },
+    {
+        topic: "Apêndice 2 - Paradoxo do Reagente 12",
+        question: "19. De forma idêntica ao Reagente 6, qual contradição descritiva de nomenclatura e de solvente ocorre no preparo do 'Reagente 12' no Apêndice 2?",
+        options: [
+            "É denominado 'solução aquosa de ácido', mas dita para ferver cobre em água.",
+            "É denominado 'solução de Iodeto de Sódio em Etanol', mas o seu preparo dita: 'dissolve-se 2 g de NaI em 100 ml de acetona'.",
+            "É denominado 'solução alcoólica', mas dita para usar água sanitária.",
+            "Exige o uso de solvente de éter etílico sob aquecimento em bico de Bunsen."
+        ],
+        answer: 1,
+        explanation: "Conforme o Apêndice 2 (página 65): 'Reagente 12: solution de Iodeto de Sódio em Etanol (dissolve-se 2 g de NaI em 100 ml de acetona)'."
+    },
+    {
+        topic: "Efedrina e Pseudoefedrina - Reagentes Chen-Kao",
+        question: "20. O teste de Chen-Kao (Apêndice 2) exige três soluções reagentes. Quais são os Reagentes 13A, 13B e 13C especificados?",
+        options: [
+            "13A: solução aquosa de ácido acético 1%; 13B: solução de sulfato de cobre II (1 g em 100 ml de água); e 13C: solução de hidróxido de sódio 2M (8 g em 100 ml de água).",
+            "13A: formaldeído; 13B: ácido sulfúrico concentrado; e 13C: ácido nítrico concentrado.",
+            "13A: nitrato de prata 2%; 13B: iodeto de sódio; e 13C: acetona.",
+            "13A: vanilina; 13B: acetaldeído; e 13C: ácido clorídrico concentrado."
+        ],
+        answer: 0,
+        explanation: "Conforme o Apêndice 2 (página 65-66): 'Reagente 13A: solução aquosa de ácido acético 1% | Reagente 13B: solução de sulfato de cobre II (dissolve-se 1 g de CuSO4 (II) em 100 ml de água) | Reagente 13C: solução de hidróxido de sódio 2M (dissolve-se 8 g de NaOH em 100 ml de água)'."
+    }
+];
+
+const quizContainer = document.getElementById('quiz-container');
+
+quizData.forEach((q, index) => {
+    const questionDiv = document.createElement('div');
+    questionDiv.className = 'question-card';
+
+    let optionsHtml = '';
+    q.options.forEach((opt, i) => {
+        optionsHtml += `<li><label><input type="radio" name="q${index}" value="${i}"> ${opt}</label></li>`;
+    });
+
+    questionDiv.innerHTML = `
+        <span class="topic-tag">${q.topic}</span>
+        <div class="question-text">${q.question}</div>
+        <ul class="options">${optionsHtml}</ul>
+        <button onclick="checkAnswer(${index}, this)">Responder</button>
+        <div class="feedback" id="feedback-${index}"></div>
+    `;
+    quizContainer.appendChild(questionDiv);
+});
+
+// Geração dinâmica de diagramas espaciais em SVG para reforço analítico
+function getDiagramSvg(index) {
+    if (index === 0) { // Marquis color violeta
+        return `
+            <div class="diagram-box">
+                <p style="font-size:18px; margin:5px; color:#555;"><b>Mecanismo Cromático Marquis (Opioides)</b></p>
+                <svg width="220" height="110" viewBox="0 0 220 110">
+                    <circle cx="60" cy="55" r="30" fill="#ffffff" stroke="#0d9488" stroke-width="2" />
+                    <text x="60" y="59" font-size="10" font-weight="bold" fill="#000" text-anchor="middle">Amostra</text>
+                    <path d="M 100,55 L 130,55" stroke="#0d9488" stroke-width="2" />
+                    <circle cx="170" cy="55" r="30" fill="#701a75" stroke="#4a044e" stroke-width="2" />
+                    <text x="170" y="59" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Violeta/Púrpura</text>
+                </svg>
+            </div>
+        `;
+    } else if (index === 4) { // Duquenois Levine phase split
+        return `
+            <div class="diagram-box">
+                <p style="font-size:18px; margin:5px; color:#555;"><b>Divisão de Fases: Duquenois Levine (Cannabis)</b></p>
+                <svg width="180" height="150" viewBox="0 0 180 150">
+                    <rect x="65" y="10" width="50" height="120" rx="25" fill="none" stroke="#475569" stroke-width="3" />
+                    <rect x="67" y="50" width="46" height="40" fill="#fef08a" opacity="0.6" />
+                    <path d="M 67,90 L 113,90 A 23,23 0 0,1 67,110 Z" fill="#a21caf" />
+                    <rect x="67" y="90" width="46" height="20" fill="#a21caf" />
+                    <text x="130" y="70" font-size="10" font-weight="bold" fill="#475569">Fase Aquosa</text>
+                    <text x="130" y="105" font-size="10" font-weight="bold" fill="#a21caf">Clorofórmio (Violeta)</text>
+                </svg>
+            </div>
+        `;
+    } else if (index === 16) { // Reagente 6 paradox (KOH em Etanol)
+        return `
+            <div class="diagram-box">
+                <p style="font-size:18px; margin:5px; color:#555;"><b>Paradoxo Químico: Reagente 6 (KOH)</b></p>
+                <svg width="240" height="110" viewBox="0 0 240 110">
+                    <rect x="15" y="20" width="90" height="70" rx="5" fill="#f87171" opacity="0.15" stroke="#ef4444" stroke-width="2" />
+                    <text x="60" y="45" font-size="10" font-weight="bold" fill="#b91c1c" text-anchor="middle">Nome Oficial</text>
+                    <text x="60" y="65" font-size="9" fill="#000" text-anchor="middle">KOH em METANOL</text>
+                    <path d="M 115,55 L 135,55" stroke="#475569" stroke-width="2" />
+                    <rect x="145" y="20" width="85" height="70" rx="5" fill="#34d399" opacity="0.15" stroke="#059669" stroke-width="2" />
+                    <text x="187" y="45" font-size="10" font-weight="bold" fill="#047857" text-anchor="middle">Formulação Real</text>
+                    <text x="187" y="65" font-size="9" fill="#000" text-anchor="middle">KOH em ETANOL Abs.</text>
+                </svg>
+            </div>
+        `;
+    } else if (index === 18) { // Reagente 12 paradox (NaI em Acetona)
+        return `
+            <div class="diagram-box">
+                <p style="font-size:18px; margin:5px; color:#555;"><b>Paradoxo Químico: Reagente 12 (NaI)</b></p>
+                <svg width="240" height="110" viewBox="0 0 240 110">
+                    <rect x="15" y="20" width="90" height="70" rx="5" fill="#f87171" opacity="0.15" stroke="#ef4444" stroke-width="2" />
+                    <text x="60" y="45" font-size="10" font-weight="bold" fill="#b91c1c" text-anchor="middle">Nome Oficial</text>
+                    <text x="60" y="65" font-size="9" fill="#000" text-anchor="middle">NaI em ETANOL</text>
+                    <path d="M 115,55 L 135,55" stroke="#475569" stroke-width="2" />
+                    <rect x="145" y="20" width="85" height="70" rx="5" fill="#34d399" opacity="0.15" stroke="#059669" stroke-width="2" />
+                    <text x="187" y="45" font-size="10" font-weight="bold" fill="#047857" text-anchor="middle">Formulação Real</text>
+                    <text x="187" y="65" font-size="9" fill="#000" text-anchor="middle">NaI em ACETONA</text>
+                </svg>
+            </div>
+        `;
+    }
+    return '';
+}
+
+function checkAnswer(index, btn) {
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    const feedbackDiv = document.getElementById(`feedback-${index}`);
+
+    if (!selected) {
+        alert('Por favor, selecione uma opção antes de enviar a resposta.');
+        return;
+    }
+
+    const answerObj = quizData[index];
+    const isCorrect = parseInt(selected.value) === answerObj.answer;
+
+    feedbackDiv.style.display = 'block';
+    const diagHtml = getDiagramSvg(index);
+
+    if (isCorrect) {
+        feedbackDiv.className = 'feedback correct';
+        feedbackDiv.innerHTML = `<strong>✔️ Correto! Resposta pericial fundamentada na apostila.</strong>
+        <div class="explanation">
+            ${diagHtml}
+            <em>Justificativa Oficial:</em> ${answerObj.explanation}
+        </div>`;
+    } else {
+        feedbackDiv.className = 'feedback incorrect';
+        feedbackDiv.innerHTML = `<strong>❌ Incorreto. A alternativa correta é a ${answerObj.answer + 1}: "${answerObj.options[answerObj.answer]}"</strong>
+        <div class="explanation">
+            ${diagHtml}
+            <em>Justificativa Oficial:</em> ${answerObj.explanation}
+        </div>`;
+    }
+    
+    // Desativa os inputs de rádio da questão correspondente
+    const allInputs = document.querySelectorAll(`input[name="q${index}"]`);
+    allInputs.forEach(input => input.disabled = true);
+    
+    // Altera o estado do botão
+    btn.disabled = true;
+    btn.textContent = 'Respondido';
+}
+</script>
+
+</body>
+</html>
+```
+
+### O que este simulado aborda com rigor pericial:
+* **Evoluções de Cor e Testes de Triagem (Questões 1 a 15):** Cobre detalhadamente todas as reações do Apêndice 1. Explora as colorações de evolução de opioides no Marquis e ácido nítrico, a insolubilidade e partição em clorofórmio no teste de Duquenois Levine, as limitações e falsos positivos do teste de Scott, a discriminação de derivados anfetamínicos no Marquis e Simon, o teste de Ehrlich para LSD, os testes Zimmermann e Dille-Koppanyi, e a turvação de cloreto de etila.
+* **Preparação e Formulação de Reagentes (Questões 16 a 20):** Aborda as receitas de soluções descritas no Apêndice 2. Detalha de forma estrita as concentrações e componentes moleculares e, acima de tudo, os **dois paradoxos de preparo** presentes na doutrina:
+  1. O **Reagente 6** (denominado *"hidróxido de potássio em metanol"*, mas formulado com *etanol absoluto*).
+  2. O **Reagente 12** (denominado *"solução de Iodeto de Sódio em Etanol"*, mas formulado com *acetona*).
+* **Reagentes Auxiliares (Questão 20):** Detalha de forma estrita o preparo e a formulação sequencial do teste de Chen-Kao para caracterização de Efedrina e Pseudoefedrina.
+
+Bons treinos! Caso precise de qualquer esclarecimento sobre as reações periciais ou queira estender a revisão para outro módulo, estou à sua disposição.
+
+📊 Se desejar, posso transformar os principais paradoxos de formulação pericial e as tabelas de reações de cor em um relatório técnico em formato de e-book para guiar seus estudos teóricos de laboratório.

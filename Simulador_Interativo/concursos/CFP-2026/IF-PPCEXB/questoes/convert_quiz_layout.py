@@ -178,6 +178,12 @@ def extract_questions_from_old_format(filepath):
     with open(filepath, 'r', encoding='utf-8') as f:
         content = f.read()
     
+    # Se o arquivo é QUIMICA, usar formato QUIMICA
+    if 'QUIMICA' in filepath:
+        match = re.search(r'const quizData = \[(.*?)\];', content, re.DOTALL)
+        if match:
+            return extract_quimica_format(match.group(1))
+    
     # Tentar formato "questoes" (IF files)
     match = re.search(r'const questoes = \[(.*?)\];', content, re.DOTALL)
     if match:
@@ -249,6 +255,52 @@ def extract_quiz_data_format(questions_str):
             'ans': correct,
             'exp': explanation
         })
+    
+    return questions
+
+def extract_quimica_format(questions_str):
+    """Extrai questões do formato QUIMICA (com topic opcional e diagram opcional)"""
+    questions = []
+    
+    # Tentar primeiro com aspas nos nomes dos campos (formato JSON padrão)
+    question_pattern_with_quotes = r'\{\s*(?:"topic":\s*"([^"]+)",\s*)?"question":\s*"((?:[^"\\]|\\.)*)",\s*"options":\s*\[(.*?)\],\s*"answer":\s*(\d+),\s*"explanation":\s*"((?:[^"\\]|\\.)*)"(?:,\s*"diagram":\s*`([^`]*)`)?\s*\}'
+    
+    matches = list(re.finditer(question_pattern_with_quotes, questions_str, re.DOTALL))
+    
+    # Se não encontrar com aspas, tentar sem aspas
+    if not matches:
+        question_pattern_without_quotes = r'\{\s*(?:topic:\s*"([^"]+)",\s*)?question:\s*"((?:[^"\\]|\\.)*)",\s*options:\s*\[(.*?)\],\s*answer:\s*(\d+),\s*explanation:\s*"((?:[^"\\]|\\.)*)"(?:,\s*diagram:\s*`([^`]*)`)?\s*\}'
+        matches = list(re.finditer(question_pattern_without_quotes, questions_str, re.DOTALL))
+    
+    for match in matches:
+        topic = match.group(1) if match.group(1) else ""
+        q_text = match.group(2)
+        opts_str = match.group(3)
+        correct = int(match.group(4))
+        explanation = match.group(5)
+        diagram = match.group(6) if match.group(6) else ""
+        
+        # Extrair opções
+        options = []
+        opt_pattern = r'"((?:[^"\\]|\\.)*)"'
+        for opt_match in re.finditer(opt_pattern, opts_str):
+            options.append(opt_match.group(1))
+        
+        # Adicionar topic ao início da questão se existir
+        if topic:
+            q_text = f"[{topic}] {q_text}"
+        
+        # Adicionar diagram à explicação se existir
+        if diagram:
+            explanation = f"{explanation}<br><br>{diagram}"
+        
+        if options:
+            questions.append({
+                'q': q_text,
+                'opts': options,
+                'ans': correct,
+                'exp': explanation
+            })
     
     return questions
 
@@ -347,14 +399,25 @@ def main():
         "BOMBAS-01-backup.html",
         "BOMBAS-02-backup.html",
         "BOMBAS-03-backup.html",
-        "BOMBAS-04-backup.html"
+        "BOMBAS-04-backup.html",
+        "QUIMICA-04-topico1.html",
+        "QUIMICA-04-topico2.html",
+        "QUIMICA-05-topico3.html",
+        "QUIMICA-06-topico4.html",
+        "QUIMICA-07-apensos.html",
+        "QUIMICA-08-tipos-de-drogas.html"
     ]
     
     # Primeiro, criar backups dos arquivos originais se não existirem
     for filename in files_to_convert:
-        original = filename.replace("-backup", "")
-        backup_path = os.path.join(questoes_dir, filename)
-        original_path = os.path.join(questoes_dir, original)
+        # Para arquivos QUIMICA, o backup é o próprio arquivo original
+        if filename.startswith("QUIMICA-"):
+            original_path = os.path.join(questoes_dir, filename)
+            backup_path = os.path.join(questoes_dir, filename.replace(".html", "-backup.html"))
+        else:
+            original = filename.replace("-backup", "")
+            backup_path = os.path.join(questoes_dir, filename)
+            original_path = os.path.join(questoes_dir, original)
         
         if not os.path.exists(backup_path) and os.path.exists(original_path):
             import shutil
@@ -363,8 +426,12 @@ def main():
     
     # Converter arquivos
     for filename in files_to_convert:
-        backup_path = os.path.join(questoes_dir, filename)
-        output_path = os.path.join(questoes_dir, filename.replace("-backup", ""))
+        if filename.startswith("QUIMICA-"):
+            backup_path = os.path.join(questoes_dir, filename.replace(".html", "-backup.html"))
+            output_path = os.path.join(questoes_dir, filename)
+        else:
+            backup_path = os.path.join(questoes_dir, filename)
+            output_path = os.path.join(questoes_dir, filename.replace("-backup", ""))
         
         if os.path.exists(backup_path):
             try:

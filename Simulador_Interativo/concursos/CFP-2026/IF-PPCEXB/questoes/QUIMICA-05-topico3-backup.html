@@ -1,0 +1,812 @@
+Com prazer! O **Capítulo 3 (Novas Substâncias Psicoativas - NSP)** e o **Capítulo 4 (Abordagem Analítica e Testes em Drogas de Abuso e NSPs)** formam o núcleo de maior complexidade tecnológica e regulatória da sua apostila de Química Forense. 
+
+Como as regras da plataforma restringem o envio de arquivos com extensão `.html` diretamente no painel lateral do Studio para segurança do usuário, disponibilizo o código interativo completo abaixo. Basta copiar o bloco de código (utilizando o botão no canto superior direito do campo de texto), salvá-lo em seu computador com a extensão `.html` (por exemplo, `simulado_quimica_cap3_4.html`) e abri-lo no seu navegador favorito.
+
+Este simulado de **40 questões inéditas de nível difícil e de linguagem simples** foi projetado com:
+* **Letras grandes** (`font-size` de 26px a 32px) para leitura confortável.
+* **Forte cobrança de detalhes técnicos**, como as resoluções da Anvisa (RDCs), mecanismos de ação das NSPs, e a classificação instrumental do SWGDRUG/IT 06/2006.
+* **Diagramas espaciais em formato SVG** que aparecem dinamicamente no gabarito comentado apenas **após você responder cada questão correspondente**.
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado Avançado: Capítulos 3 e 4 - Química Forense</title>
+<style>
+    body { 
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        background-color: #f0fdfa; 
+        color: #0f172a; 
+        margin: 0; 
+        padding: 30px; 
+        font-size: 26px; /* Letras grandes para conforto visual e acessibilidade */
+    }
+    .container { 
+        max-width: 1400px; 
+        margin: 0 auto; 
+        background: #ffffff; 
+        padding: 45px; 
+        border-radius: 16px; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+    }
+    h1 { 
+        text-align: center; 
+        color: #0f766e; 
+        font-size: 46px; 
+        margin-bottom: 10px;
+    }
+    p.subtitle {
+        text-align: center; 
+        color: #475569; 
+        margin-bottom: 50px; 
+        font-size: 28px;
+    }
+    .question-card { 
+        margin-bottom: 55px; 
+        padding: 40px; 
+        border: 2px solid #ccfbf1; 
+        border-radius: 12px; 
+        background-color: #fafbfc; 
+    }
+    .topic-tag {
+        display: inline-block;
+        background-color: #0f766e;
+        color: #ffffff;
+        font-size: 18px;
+        padding: 6px 18px;
+        border-radius: 20px;
+        margin-bottom: 22px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    .question-text { 
+        font-weight: bold; 
+        font-size: 32px; 
+        margin-bottom: 25px; 
+        color: #111827; 
+        line-height: 1.4;
+    }
+    .options { 
+        list-style-type: none; 
+        padding: 0; 
+        margin: 0;
+    }
+    .options li { 
+        margin-bottom: 18px; 
+        background: #ffffff; 
+        border: 2px solid #cbd5e1; 
+        border-radius: 10px; 
+        transition: all 0.2s ease; 
+    }
+    .options li:hover { 
+        background-color: #f0fdfa; 
+        border-color: #0f766e;
+    }
+    .options label { 
+        cursor: pointer; 
+        display: flex; 
+        align-items: center; 
+        padding: 22px; 
+        width: 100%; 
+        box-sizing: border-box;
+        font-size: 28px;
+        line-height: 1.4;
+    }
+    .options input { 
+        margin-right: 25px; 
+        transform: scale(2.0); 
+    }
+    button { 
+        background-color: #0f766e; 
+        color: #ffffff; 
+        border: none; 
+        padding: 22px 45px; 
+        border-radius: 10px; 
+        cursor: pointer; 
+        font-size: 28px; 
+        font-weight: bold;
+        margin-top: 25px; 
+        transition: background-color 0.2s;
+    }
+    button:hover { 
+        background-color: #115e59; 
+    }
+    button:disabled { 
+        background-color: #94a3b8; 
+        cursor: not-allowed; 
+    }
+    .feedback { 
+        margin-top: 25px; 
+        padding: 30px; 
+        border-radius: 10px; 
+        display: none; 
+        line-height: 1.5; 
+        font-size: 28px;
+    }
+    .correct { 
+        background-color: #d1fae5; 
+        color: #065f46; 
+        border: 2px solid #10b981; 
+    }
+    .incorrect { 
+        background-color: #fee2e2; 
+        color: #991b1b; 
+        border: 2px solid #f43f5e; 
+    }
+    .explanation { 
+        margin-top: 20px; 
+        font-style: italic; 
+        font-size: 26px; 
+        color: #334155;
+    }
+    .diagram-box {
+        margin: 20px 0;
+        text-align: center;
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        border: 2px dashed #0f766e;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Simulado do Cap. 3 e 4 - Novas Substâncias e Métodos de Análise</h1>
+    <p class="subtitle">40 Questões Inéditas e Avançadas (Groundadas na Apostila Oficial da Polícia Federal)</p>
+    <div id="quiz-container"></div>
+</div>
+
+<script>
+const quizData = [
+    {
+        topic: "NSP - Definição de Organismos Internacionais",
+        question: "1. Como as Novas Substâncias Psicoativas (NSPs) são formalmente definidas no cenário internacional de controle de drogas, segundo as Nações Unidas e a União Europeia?",
+        options: [
+            "Substâncias sintetizadas exclusivamente nos últimos 12 meses, destinadas a fins puramente agrícolas.",
+            "Substâncias com potencial de abuso, em forma pura ou de misturas, que não são controladas nos termos das Convenções de 1961 ou de 1971, mas que podem representar ameaça à saúde pública.",
+            "Substâncias proscritas listadas nominalmente nas Convenções Internacionais de Combate ao Tráfico de Viena.",
+            "Medicamentos fitoterápicos de comercialização livre que contêm teores residuais de canabidiol (CBD)."
+        ],
+        answer: 1,
+        explanation: "Conforme o Capítulo 3.1: 'Novas substâncias psicoativas (NSP)... são substâncias com potencial de abuso, seja na forma pura ou em preparações (misturas), que não são controladas nos termos da Convenção Única sobre Entorpecentes de 1961 ou pela Convenção sobre Substâncias Psicotrópicas de 1971, mas que podem representar uma ameaça à saúde pública'."
+    },
+    {
+        topic: "NSP - Significado do Termo 'Novas'",
+        question: "2. De acordo com a doutrina da apostila, o que qualifica o uso do termo 'novas' no conceito das Novas Substâncias Psicoativas?",
+        options: [
+            "O fato de terem sido sintetizadas em laboratório químico pela primeira vez na atual década.",
+            "O termo não se refere necessariamente às substâncias criadas ou sintetizadas nos últimos anos, mas sim às substâncias disponíveis no mercado recentemente.",
+            "A exigência de que possuam tecnologia hifenada em sua composição molecular.",
+            "A restrição de que sejam comercializadas apenas sob a forma de selos de papelão prensado."
+        ],
+        answer: 1,
+        explanation: "Capítulo 3.1: 'O termo “novas” não se refere necessariamente às substâncias criadas ou sintetizadas nos últimos anos, mas sim às substâncias disponíveis no mercado recentemente'."
+    },
+    {
+        topic: "NSP - Riscos e Desconhecimento do Usuário",
+        question: "3. Qual é o principal fator apontado pela apostila que torna as NSPs um risco severo para a saúde pública e enganoso para os usuários?",
+        options: [
+            "A baixa afinidade de ligação com os receptores celulares do cérebro.",
+            "O fato de apresentarem efeitos similares aos de substâncias controladas e serem vendidas como se fossem as drogas tradicionais, gerando desconhecimento do usuário sobre o que está usando.",
+            "O odor característico de enxofre que impede a aproximação dos cães farejadores.",
+            "A impossibilidade física de serem analisadas por cromatografia gasosa."
+        ],
+        answer: 1,
+        explanation: "Capítulo 3.1: 'muitas NSP apresentam efeitos similares aos efeitos de substâncias controladas internacionalmente, sendo vendidas como tais, levando os usuários ao desconhecimento sobre o que realmente estão usando'."
+    },
+    {
+        topic: "NSP - Três Grupos de Destaque no Brasil",
+        question: "4. Quais são os três grupos de compostos que mais se destacam no Brasil em virtude do volume e das características das apreensões de NSPs pela Polícia Federal?",
+        options: [
+            "Benzodiazepínicos, barbitúricos e analgésicos opioides.",
+            "Canabinoides sintéticos, catinonas sintéticas e feniletilaminas.",
+            "Alcaloides minoritários, precursores da lista D2 e solventes voláteis.",
+            "Catinonas naturais, canabinoides fitoterápicos e triptaminas fúngicas."
+        ],
+        answer: 1,
+        explanation: "Capítulo 3.1: 'Três grupos merecem destaque em virtude do número e das características das apreensões no Brasil: canabinoides sintéticos, catinonas sintéticas e feniletilaminas'."
+    },
+    {
+        topic: "NSP - Canabinoides Sintéticos",
+        question: "5. Quimicamente, como os canabinoides sintéticos atuam no organismo do usuário para mimetizar os efeitos da maconha e onde foram inicialmente detectados?",
+        options: [
+            "São antagonistas competitivos de canabidiol; detectados inicialmente em sementes de papoula.",
+            "São agonistas dos receptores canabinoides, com características estruturais que permitem a ligação aos receptores conhecidos; detectados inicialmente em materiais vegetais.",
+            "São estimulantes que destroem os receptores serotoninérgicos; detectados em bebidas energéticas.",
+            "Atuam reduzindo a liberação de dopamina; detectados originalmente em óleos essenciais de patchouli."
+        ],
+        answer: 1,
+        explanation: "Capítulo 3.1: 'Os canabinoides sintéticos são agonistas dos receptores canabinoides, possuindo características estruturais que permitem que se liguem a receptores canabinoides conhecidos... foram detectados inicialmente em materiais vegetais'."
+    },
+    {
+        topic: "NSP - Apresentação de Canabinoides Sintéticos no Brasil",
+        question: "6. Além de serem encontrados em misturas de ervas (como k2/k9), sob quais outras formas físicas os canabinoides sintéticos têm sido detectados em apreensões no Brasil?",
+        options: [
+            "Exclusivamente sob a forma de xaropes açucarados e aerossóis hospitalares.",
+            "Encontrados em papéis ou selos (onde tradicionalmente se espera encontrar LSD), comprimidos (raro) e em pó.",
+            "Em formato de cristais transparentes insolúveis em água de grande porte.",
+            "Como bolotas resinosas escuras idênticas ao haxixe natural."
+        ],
+        answer: 1,
+        explanation: "Capítulo 3.1: 'No Brasil, além de serem encontrados em misturas de ervas, também são encontrados em papéis ou selos (nos quais tradicionalmente se espera encontrar a substância LSD), comprimidos (raro) e em pó'."
+    },
+    {
+        topic: "NSP - Catinonas Sintéticas",
+        question: "7. O que são as catinonas sintéticas e qual é o seu mecanismo básico de ação estimulante no sistema nervoso central (SNC)?",
+        options: [
+            "Compostos nitrogenados fúngicos; agem inibindo a absorção de glicose nos neurônios motores.",
+            "Compostos derivados estruturalmente da substância catinona, atuando como estimulantes por mediarem as ações de dopamina, norepinefrina e/ou serotonina.",
+            "Sedativos sintéticos derivados do ácido barbitúrico que aumentam as ondas cerebrais lentas.",
+            "Dissociativos clorados que mimetizam a ação analgésica tópica da cocaína."
+        ],
+        answer: 1,
+        explanation: "Capítulo 3.1: 'As catinonas sintéticas são compostos derivados estruturalmente da substância catinona. Agem no sistema nervoso central predominantemente como estimulantes, mediando as ações de dopamina, norepinefrina e/ou serotonina...'."
+    },
+    {
+        topic: "NSP - Catinonas Sintéticas e Mimetismo",
+        question: "8. Quais drogas tradicionais as catinonas sintéticas mimetizam em termos de efeitos colaterais e sob qual forma física são comumente traficadas no Brasil?",
+        options: [
+            "Mimetizam a maconha e o ópio; traficadas como pedras de crack marrom.",
+            "Mimetizam a cocaína, anfetamina, metanfetamina e MDMA; apresentando-se em sólidos (cristais/pó) e comprimidos (tentando se passar por ecstasy).",
+            "Mimetizam o LSD e os barbitúricos; vendidas exclusivamente em ampolas líquidas.",
+            "Mimetizam solventes orgânicos; comercializadas em frascos pressurizados de metal."
+        ],
+        answer: 1,
+        explanation: "Capítulo 3.1: '...mimetizando efeitos de drogas tradicionais como cocaína, anfetamina, metanfetamina e MDMA. São encontradas no Brasil na forma de sólidos (cristais ou pó) e comprimidos, em uma tentativa de se passar pela droga conhecida como ecstasy, e, em raros casos, em selos'."
+    },
+    {
+        topic: "NSP - Feniletilaminas",
+        question: "9. O que caracteriza a classe de NSPs das feniletilaminas e qual a sua principal forma física de apresentação identificada no mercado ilícito nacional?",
+        options: [
+            "Líquidos extremamente voláteis e inflamáveis; encontrados em frascos de spray de plástico.",
+            "Substâncias com conhecidos efeitos psicoativos alucinógenos e/ou estimulantes; encontradas no Brasil sob a forma de pó, comprimidos, soluções e, principalmente, de selos.",
+            "Resinas pastosas extraídas do cipó amazônico; encontradas na forma de chá escuro em garrafas de vidro.",
+            "Sais inorgânicos de ferro de coloração avermelhada; encontrados em cápsulas de gelatina dura."
+        ],
+        answer: 1,
+        explanation: "Capítulo 3.1: 'As feniletilaminas referem-se a uma classe de substâncias com conhecidos efeitos psicoativos alucinógenos e/ou estimulantes... No Brasil, são encontradas sob a forma de pó, comprimidos, soluções e, principalmente, de selos'."
+    },
+    {
+        topic: "NSP - Legislação e Portaria 344/98",
+        question: "10. No Brasil, onde estão formalmente elencadas as substâncias psicoativas de uso proscrito (proibido) e qual agência do Executivo Federal atualiza periodicamente essas listas?",
+        options: [
+            "Na Lista D2 do Ministério da Justiça; atualizada pelo Diretor do Instituto Nacional de Criminalística.",
+            "Nas Listas F do Anexo I da Portaria nº 344/98-SVS/MS; atualizadas pelas RDCs (Resoluções da Diretoria Colegiada) da Anvisa.",
+            "Nas Portarias de Produtos Controlados do Exército Brasileiro; atualizadas pelo Ministério da Defesa.",
+            "No Decreto nº 5.912/2006 do SISNAD; atualizado pela Secretaria Nacional de Políticas sobre Drogas."
+        ],
+        answer: 1,
+        explanation: "Capítulo 3.2: 'No Brasil, as substâncias de uso proscrito são elencadas nas listas F do Anexo I da Portaria n.º 344/98-SVS/MS... Os anexos da referida portaria são frequentemente atualizados por meio de Resoluções da Diretoria Colegiada (RDC) da Agência Nacional de Vigilância Sanitária – Anvisa'."
+    },
+    {
+        topic: "NSP - Limitação do Sistema de Listagem Nominal",
+        question: "11. Qual a limitação jurídica clássica que motivou a mudança do sistema de controle de drogas no Brasil em 2016, migrando da listagem nominal pura para abordagens genéricas?",
+        options: [
+            "O custo tributário excessivo para importação de padrões analíticos de laboratório.",
+            "A velocidade do surgimento de novas substâncias com pequenas alterações estruturais para burlar a lei, superando a capacidade do Estado de incluí-las nominalmente a tempo.",
+            "A proibição do STF de que a Anvisa editasse atos regulatórios sobre plantas medicinais.",
+            "A falta de reagentes de Marquis e Scott nas unidades descentralizadas da PF."
+        ],
+        answer: 1,
+        explanation: "Capítulo 3.2: 'Até 2016, o Brasil adotava somente o tradicional sistema de listagem nominal... Com o surgimento crescente de novas drogas em uma velocidade superior a inclusão dessas substâncias nos instrumentos normativos do País, decidiu-se adotar também formas de classificação que utilizam abordagens mais genéricas'."
+    },
+    {
+        topic: "NSP - RDC 79/2016 Anvisa",
+        question: "12. O que determinou a histórica Resolução RDC nº 79 de 23 de maio de 2016 da Anvisa no controle de drogas no Brasil?",
+        options: [
+            "A proibição total do plantio de cânhamo industrial em território nacional.",
+            "A inclusão de dez classes estruturais genéricas do grupo dos canabinoides sintéticos na Lista F2 (Uso Proscrito).",
+            "A liberação do comércio da sibutramina e do femproporex sob receita médica comum.",
+            "O controle administrativo das importações de sementes alimentícias de dormideira."
+        ],
+        answer: 1,
+        explanation: "Capítulo 3.2: 'Em 23 de maio de 2016, com a publicação da RDC n.º 79, foi incluída na Lista F2... dez classes estruturais genéricas do grupo dos canabinoides sintéticos'."
+    },
+    {
+        topic: "NSP - RDC 175/2017 Anvisa",
+        question: "13. Qual classe estrutural genérica de NSPs foi incluída e banida no Brasil por meio da publicação da RDC nº 175 de 15 de setembro de 2017 da Anvisa?",
+        options: [
+            "As feniletilaminas alucinógenas.",
+            "As catinonas sintéticas.",
+            "Os canabinoides sintéticos de terceira geração.",
+            "Os derivados nitrogenados do safrol natural."
+        ],
+        answer: 1,
+        explanation: "Capítulo 3.2: 'Posteriormente, com a publicação da RDC n.º 175/2017, de 15 de setembro de 2017, foi incluída mais uma classe estrutural na Lista F2, a classe das catinonas sintéticas'."
+    },
+    {
+        topic: "NSP - Definição de Classificação Genérica",
+        question: "14. Como funciona conceitualmente o sistema de 'Classificação Genérica' adotado nas RDCs da Anvisa para barrar 'designer drugs'?",
+        options: [
+            "Proíbe marcas comerciais conhecidas de comprimidos, independentemente do ativo presente.",
+            "Define uma estrutura molecular nuclear comum e aponta variações particulares nessa estrutura, permitindo proibir grupos e subgrupos de forma abrangente e antecipada.",
+            "Consiste no banimento genérico de todas as misturas líquidas que contenham éter etílico.",
+            "Baseia-se em tabelas que banem plantas completas pela sua família e gênero taxonômico."
+        ],
+        answer: 1,
+        explanation: "Capítulo 3.2: 'A classificação genérica define uma estrutura molecular nuclear e aponta variações particulares nessa estrutura que especificam as substâncias que devem ser controladas, permitindo a proibição de grupos e subgrupos de substâncias de maneira abrangente, a fim de antecipar o controle sobre novas substâncias que porventura venham a surgir'."
+    },
+    {
+        topic: "NSP - RDC 325/2019 Anvisa",
+        question: "15. A classe estrutural das feniletilaminas foi formalmente banida sob critérios de classificação molecular genérica por qual resolução da Anvisa?",
+        options: [
+            "RDC nº 79 de 2016.",
+            "RDC nº 325 de 4 de dezembro de 2019.",
+            "RDC nº 175 de 2017.",
+            "RDC nº 50 de 2014."
+        ],
+        answer: 1,
+        explanation: "Capítulo 3.2: 'Foi publicada a RDC n.º 325/2019, no DOU de 4 de dezembro de 2019, que introduziu a classe estrutural das feniletilaminas'."
+    },
+    {
+        topic: "Capítulo 4 - Exigência de Laudo Preliminar",
+        question: "16. Sob a ótica do Artigo 50 da Lei nº 11.343/2006, qual é a finalidade jurídica e a exigência de materialidade do laudo preliminar de constatação no flagrante por tráfico?",
+        options: [
+            "Serve apenas para determinar a dosagem exata do princípio ativo e é dispensável no flagrante.",
+            "É suficiente para a lavratura do auto de prisão em flagrante e o estabelecimento da materialidade do delito, devendo constatar a natureza e a quantidade da droga.",
+            "Exige a presença e assinatura de três peritos químicos laboratoriais do INC.",
+            "Tem por objetivo principal quantificar as impurezas inorgânicas de ferro."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.1: 'Nos termos da Lei n.º 11.343/2006... é essencial para a lavratura do auto de prisão em flagrante a existência do laudo de constatação da natureza e quantidade da droga apreendida... o art. 50... § 1º Para efeito da lavratura do auto de prisão em flagrante e estabelecimento da materialidade do delito, é suficiente o laudo de constatação da natureza e quantidade da droga...'."
+    },
+    {
+        topic: "Capítulo 4 - Assinatura do Laudo de Constatação",
+        question: "17. Quem possui competência legal para firmar (assinar) o laudo preliminar de constatação, de acordo com o texto da Lei de Drogas?",
+        options: [
+            "Apenas o perito médico legista do Instituto de Medicina Legal (IML).",
+            "Firmado por perito oficial ou, na falta deste, por pessoa idônea (que pode ser um policial nomeado pela autoridade policial).",
+            "Unicamente engenheiros químicos de indústrias devidamente licenciadas.",
+            "Qualquer testemunha civil alfabetizada que presenciou a apreensão da droga."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.1: '...realizada por Perito Oficial e, somente na falta deste, por pessoa idônea. Essa pessoa pode ser um policial, após ser nomeado por autoridade policial'. O Art. 50 § 1º repete: 'firmado por perito oficial ou, na falta deste, por pessoa idônea'."
+    },
+    {
+        topic: "Capítulo 4 - Desafios das NSPs nos Testes de Coloração",
+        question: "18. Qual o maior problema técnico enfrentado pelos Peritos Criminais ao tentar realizar os tradicionais testes químicos preliminares de coloração (narcotestes) em amostras de NSPs?",
+        options: [
+            "As NSPs são insolúveis em ácidos e evaporam na placa de spot.",
+            "O número de reagentes necessários para cobrir e reagir com a imensa quantidade de novas drogas que surgem é imenso e inviável.",
+            "As NSPs produzem uma fumaça tóxica que anula a coloração violeta do teste.",
+            "Todos os testes de coloração para NSPs dão obrigatoriamente cor azul, gerando falsos positivos para cocaína."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.1: 'Avaliando-se a aplicabilidade de testes de coloração nessas drogas, uma das conclusões a que se chega é que o número de reagentes necessários para cobrir um número significativo dessas drogas é imenso'."
+    },
+    {
+        topic: "Capítulo 4 - Instrumentação Portátil para NSPs",
+        question: "19. Qual alternativa de tecnologia analítica de campo portátil é apontada pela apostila para realizar exames preliminares mais confiáveis em NSPs?",
+        options: [
+            "Cromatografia líquida de alta eficiência (CLAE/HPLC) acoplada a geradores a diesel.",
+            "Uso de equipamentos portáteis de instrumentação analítica, tais como o espectrômetro Raman ou espectrofotômetro de FTIR.",
+            "Tiras de papel indicador universal de pH impregnadas com vanilina.",
+            "Placas de spot aquecidas por resistências térmicas de cobre."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.1: 'Uma alternativa para realizar testes preliminares de maneira mais confiável é o uso de equipamentos de instrumentação analítica portáteis, tais como espectrômetro Raman ou espectrofotômetro de FTIR, por exemplo'."
+    },
+    {
+        topic: "Capítulo 4 - Espectrômetro Raman da PF",
+        question: "20. Qual o modelo específico de equipamento Raman portátil disponibilizado para as Unidades de Criminalística da Polícia Federal, cujo registro de imagem consta na apostila?",
+        options: [
+            "FTIR Nicolet Summit da Thermo.",
+            "Raman portátil modelo ResQ™ da empresa Rigaku.",
+            "Cromatógrafo gasoso de campo modelo Agilent Boxer.",
+            "Espectrômetro de massas tandem MS/MS Orbitrap."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.1 (Legenda da Figura 23): 'Equipamento de Raman portátil modelo ResQ™ da empresa Rigaku, disponível para as Unidades de Criminalística da Polícia Federal'."
+    },
+    {
+        topic: "Capítulo 4 - Requisito do Teste em Branco",
+        question: "21. Qual precaução metodológica obrigatória deve acompanhar a realização de exames preliminares de constatação em drogas para garantir a validade científica do teste?",
+        options: [
+            "A realização de um teste em branco (amostra controle que não contém a droga investigada).",
+            "A lavagem prévia da amostra com éter de petróleo aquecido.",
+            "A presença física do juiz de instrução penal na cena do crime.",
+            "O descarte completo do recipiente de Scott após 30 segundos."
+        ],
+        answer: 0,
+        explanation: "Capítulo 4.1: 'Os exames preliminares de constatação devem ser acompanhados de um teste em branco, isto é, uma amostra que não contenha a droga que está sendo investigada'."
+    },
+    {
+        topic: "Capítulo 4 - Sais de Ferro na Cocaína",
+        question: "22. Por que alguns traficantes têm adicionado deliberadamente sais de ferro (compostos de coloração avermelhada) às amostras de cocaína apreendidas, conforme detalhado no Capítulo 4?",
+        options: [
+            "Para aumentar o peso volumétrico e o ponto de fusão do crack.",
+            "Para dificultar a realização de exames preliminares baseados em reações de coloração (atuando como interferentes).",
+            "Para catalisar a reação com carbonato de sódio na prensa hidráulica.",
+            "Para anular a toxicidade sistêmica da droga no usuário final."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.1: 'Em alguns casos, traficantes adicionaram sais de ferro (materiais de coloração avermelhada) para dificultar a realização de exames preliminares baseados em reações de coloração'."
+    },
+    {
+        topic: "Capítulo 4 - Instrução Técnica nº 006/2006",
+        question: "23. Qual o ato normativo do Sistema de Criminalística da PF que dispõe sobre a padronização de procedimentos e métodos para fins de exames químico-analíticos e critérios de amostragem?",
+        options: [
+            "A Norma de Serviço nº 001/80-DG.",
+            "A Instrução Técnica nº 006/2006/GAB/DITEC, de 27 de julho de 2006.",
+            "A Portaria nº 204/2022-MJSP.",
+            "A RDC nº 1.015/2026 da Anvisa."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.2: 'A Instrução Técnica n.º 006/2006/GAB/DITEC, de 27 de julho de 2006... dispõe sobre a padronização de procedimentos e métodos para fins de exames químico-analíticos no âmbito da perícia criminal de laboratório. Também apresenta orientações sobre critérios de amostragem...'."
+    },
+    {
+        topic: "Capítulo 4 - Critérios de Amostragem (IT 06/2006)",
+        question: "24. No processo de amostragem de drogas apreendidas em grandes volumes (grupo homogêneo com n unidades), qual a regra quantitativa se o número de pacotes for superior a 100?",
+        options: [
+            "Amostrar exatamente 50% de todas as caixas.",
+            "Amostrar a raiz quadrada do número total de unidades (√n), arredondando o resultado para o número inteiro superior mais próximo.",
+            "Amostrar obrigatoriamente 10 unidades escolhidas aleatoriamente.",
+            "Amostrar a totalidade do material sem exceção por motivos de segurança jurídica."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.2 (Tabela 2): 'Se n > 100: Amostrar √n unidades do grupo escolhidas aleatoriamente. O resultado de √n deve ser arredondado para o número inteiro superior mais próximo'."
+    },
+    {
+        topic: "Capítulo 4 - Amostragem de Misturas Heterogêneas Líquidas",
+        question: "25. No caso de amostragem de produto líquido acondicionado em recipiente que NÃO permita a visualização de fases, qual a conduta tática correta do amostrador?",
+        options: [
+            "Retirar amostra apenas da superfície líquida após agitação forçada.",
+            "A amostra deverá ser coletada em pelo menos três pontos do recipiente (superfície, meio e fundo).",
+            "Enviar o recipiente de metal para incineração direta na vala sem coleta.",
+            "Extrair apenas uma gota com seringa hipodérmica do topo da tampa."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.2: 'No caso de produto líquido acondicionado em recipiente que não permita a sua visualização, a amostra deverá ser coletada em pelo menos três pontos do recipiente (superfície, meio e fundo)'."
+    },
+    {
+        topic: "Capítulo 4 - Suportes de Pesagem e Suspeitas de Resíduos",
+        question: "26. Diante de suspeitas de resquícios de material controlado impregnados em suportes (como resíduos de cocaína em uma balança digital ou em pano de filtração), como deve agir o perito?",
+        options: [
+            "Deve realizar o procedimento estatístico padrão de raspagem e amostragem parcial.",
+            "Não deve ser realizado procedimento de amostragem. O suporte suspeito deve ser encaminhado em sua totalidade para exame definitivo e em embalagem adequada.",
+            "Limpar o suporte com ácido clorídrico concentrado no próprio local do crime.",
+            "Coletar os resíduos com fita adesiva e descartar o suporte contaminado."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.2: 'No caso de suspeita da existência de resíduos de material questionado em suporte (ex.: resíduos de cocaína em uma balança ou pano utilizado para filtragem), não deve ser realizado procedimento de amostragem. O suporte suspeito deve ser encaminhado em sua totalidade para exame definitivo...'."
+    },
+    {
+        topic: "Capítulo 4 - Quantidades Mínimas para Envio (Tabela 3)",
+        question: "27. De acordo com a Tabela 3 da apostila (IT nº 06/2006-DITEC), quais são as quantidades mínimas de amostras líquidas e sólidas que devem ser coletadas por unidade para envio ao exame laboratorial definitivo?",
+        options: [
+            "Sólidos: 10,0 g; Líquidos: 1.000 ml.",
+            "Sólidos: 2,0 g (três colheres de sopa); Líquidos: 200 ml (um copo).",
+            "Sólidos: 0,5 g; Líquidos: 50 ml.",
+            "Sólidos: uma pitada; Líquidos: embalagem original pressurizada."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.2 (Tabela 3): 'Sólidos em geral: 2,0 g (três colheres de sopa). Líquidos em geral: 200 ml (um um copo)'."
+    },
+    {
+        topic: "Capítulo 4 - Amostragem de Líquidos Voláteis",
+        question: "28. Qual a especificação técnica para a quantidade mínima de amostragem de líquidos de alta volatilidade, como o lança-perfume (cloreto de etila)?",
+        options: [
+            "Amostra mínima de 200 ml coletada em balão volumétrico.",
+            "Embalagem original.",
+            "Uma gota transferida para placa de spot congelada.",
+            "Diluição imediata de 10 ml em acetona anidra."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.2 (Tabela 3): 'Líquido volátil (ex.: lança-perfume): Embalagem original'."
+    },
+    {
+        topic: "Capítulo 4 - Definição de Peso Líquido vs Bruto",
+        question: "29. O laudo preliminar de constatação deve ser um documento claro e conciso. Qual a diretriz da apostila sobre a declaração de massas (pesos) do material apreendido?",
+        options: [
+            "Deve relatar obrigatoriamente e exclusivamente o peso bruto estimado por cálculo volumétrico.",
+            "Deve relatar as características no exame visual e o peso aferido, especificando se este é o peso líquido (descontadas as embalagens/invólucros) ou o peso bruto.",
+            "O peso das embalagens plásticas deve ser somado ao ativo sem distinção formal.",
+            "A pesagem é restrita à fase laboratorial do laudo definitivo."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.2: 'Ele deve relatar as características observadas no exame visual do material apreendido e o peso aferido, especificando se este é o peso líquido (peso das substâncias descontadas as embalagens/invólucros, preferencialmente) ou peso bruto (com embalagem/invólucro)...'."
+    },
+    {
+        topic: "Capítulo 4 - Normas de Padronização de Formato do Laudo",
+        question: "30. A padronização de formato, diagramação e preâmbulo do laudo de perícia criminal preliminar na Polícia Federal é regulamentada por quais normativos federais?",
+        options: [
+            "Decretos nº 54.216/64 e nº 79.388/77.",
+            "Portaria nº 002/2007-GAB/INC (regulamenta preâmbulo) e Portaria nº 2.048/2011-DG/DPF (regulamenta formato e diagramação).",
+            "Norma de Serviço nº 001/80 e RDC nº 39/2012 da Anvisa.",
+            "Instrução Normativa nº 8 de 1988 e Lei nº 10.357/01."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.2: 'O preâmbulo do laudo preliminar... está regulamentado pela Portaria n.º 002/2007-GAB/INC, de 16 de janeiro de 2007. A padronização de formato e diagramação foi regulamentada pela Portaria n.º 2.048/2011-DG/DPF, de 10 de janeiro de 2011'."
+    },
+    {
+        topic: "Capítulo 4 - Diferenças de Resultados Preliminar vs Definitivo",
+        question: "31. Havendo divergência ou contradição científica entre os resultados do teste preliminar e do teste laboratorial definitivo, o que estabelece a apostila?",
+        options: [
+            "O teste preliminar prevalece por ter sido realizado imediatamente na cena do crime.",
+            "Divergências podem ocorrer devido aos diferentes poderes de discriminação das técnicas; em caso de dúvida, um novo exame pode ser requerido pelo MP ou Judiciário.",
+            "O laudo preliminar torna-se nulo e o perito que o assinou responde por crime de falsidade ideológica.",
+            "A amostra deve ser descartada e nova busca realizada na residência do infrator."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.3: 'Os resultados dos testes definitivos... podem ou não corroborar com os resultados dos testes preliminares... situações de divergência podem ocorrer devido aos diferentes poderes de discriminação dos exames. Em caso de dúvida, um novo exame pode ser requerido pelo Ministério Público ou Poder Judiciário'."
+    },
+    {
+        topic: "Capítulo 4 - Poder de Discriminação (SWGDRUG / IT 06/2006)",
+        question: "32. A Instrução Técnica nº 006/2006-SEPLAB/INC/DITEC baseou seus exames definitivos de laboratório nas diretrizes de qual prestigiado comitê científico internacional?",
+        options: [
+            "UNODC (United Nations Office on Drugs and Crime).",
+            "SWGDRUG (Scientific Working Group for the Analysis of Seized Drugs).",
+            "FDA (Food and Drug Administration).",
+            "INTERPOL - Forensic Science Committee."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.3: '...recomendações presentes na Instrução Técnica n.º 06/2006-SEPLAB/INC/DITEC... que se baseou nos métodos de análise preconizados pelo SWGDRUG (Scientific Working Group for the Analysis of Seized Drugs)...'."
+    },
+    {
+        topic: "Capítulo 4 - Categorias Analíticas (Tabela 4)",
+        question: "33. De acordo com as recomendações de discriminação analítica da Tabela 4, quais técnicas instrumentais estão enquadradas na seleta Categoria A (maior poder de discriminação)?",
+        options: [
+            "Cromatografia gasosa (CG), Cromatografia líquida de alta eficiência (CLAE) e Cromatografia de camada delgada (CCD).",
+            "Infravermelho (IV/FTIR), Espectrometria de massas (EM), Ressonância magnética nuclear (RMN), Espectroscopia Raman e Difratometria de raios X.",
+            "Testes de cor e precipitação, Imunoensaios e Espectroscopia de fluorescência.",
+            "Exame botânico morfológico, Propriedades físicas e marcadores farmacológicos."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.3 (Tabela 4): Categoria A inclui: 'Infravermelho (IV), Espectrometria de massas (EM), Ressonância magnética nuclear (RMN), Espectroscopia Raman, Difratometria de raios X'."
+    },
+    {
+        topic: "Capítulo 4 - Categorias Analíticas B e C",
+        question: "34. Em quais categorias da Tabela 4 estão classificados, respectivamente, o exame botânico morfológico da cannabis e os testes químicos colorimétricos?",
+        options: [
+            "Ambos na Categoria A por serem testes oficiais.",
+            "Exame botânico na Categoria B; e os testes colorimétricos na Categoria C.",
+            "Exame botânico na Categoria C; e testes colorimétricos na Categoria B.",
+            "Ambos na Categoria C devido às suas severas limitações laboratoriais."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.3 (Tabela 4): A Categoria B traz 'Apenas cannabis: exame botânico morfológico' e a Categoria C traz 'Testes de cor e precipitação'."
+    },
+    {
+        topic: "Capítulo 4 - Regra de Identificação: Uso de Categoria A",
+        question: "35. Sob as regras de validação da IT nº 06/2006, se um método validado da Categoria A (ex.: Espectrometria de Massas) for empregado na identificação de uma droga de abuso, qual o requisito complementar obrigatório?",
+        options: [
+            "Não são necessários mais exames, sendo a técnica autossuficiente.",
+            "Ao menos um teste de outra categoria (A, B ou C) deve ser realizado.",
+            "Devem ser conduzidos mais três testes obrigatoriamente da Categoria C.",
+            "Exige-se a confirmação exclusiva por microscopia eletrônica de varredura."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.3: 'Quando um método validado do tipo A é usado na identificação, ao menos um teste de outra categoria (A, B ou C) deve ser realizado'."
+    },
+    {
+        topic: "Capítulo 4 - Regra de Identificação: Ausência de Categoria A",
+        question: "36. Caso o laboratório forense NÃO realize um teste com técnicas da Categoria A, qual a exigência metodológica para consolidar a identificação inequívoca de uma droga de abuso?",
+        options: [
+            "A análise é considerada inválida para instrução de processo criminal.",
+            "Ao menos três testes de outras categorias devem ser conduzidos, sendo que dois destes três devem ser da Categoria B (mas não relacionados entre si).",
+            "É necessária a assinatura conjunta de dois peritos botânicos oficiais.",
+            "Basta realizar um teste químico de coloração com reagente de Scott ou Marquis."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.3: 'Quando não for realizado um teste de categoria do tipo A, ao menos três testes de outras categorias devem ser conduzidos, sendo que dois destes três testes devem ser da categoria B (mas não relacionados entre si)'."
+    },
+    {
+        topic: "Capítulo 4 - Limitações Térmicas do CG/EM",
+        question: "37. Apesar de ser uma técnica poderosa com cromatógrafo gasoso acoplado a massas (CG/EM), qual a desvantagem apontada para a análise de algumas substâncias proibidas/controladas?",
+        options: [
+            "Muitos compostos são voláteis demais para entrar na coluna do cromatógrafo.",
+            "Nem todas as substâncias proibidas/controladas podem ser analisadas em condições normais, pois algumas podem sofrer degradação térmica no processo de análise.",
+            "O CG/EM é insolúvel em água, ao contrário das técnicas líquidas de CLAE.",
+            "Não detecta a presença de alcaloides minoritários nas folhas secas de coca."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.3: 'Entretanto, apesar de ser uma técnica poderosa em termos analíticos, nem todas as substâncias proibidas/controladas podem ser analisadas em condições normais de um cromatógrafo gasoso, algumas destas podem degradar no processo de análise'."
+    },
+    {
+        topic: "Capítulo 4 - Vantagens do FTIR",
+        question: "38. Quais são as vantagens descritas para o espectrofotômetro de infravermelho com transformada rápida de Fourier (FTIR) em comparação ao CG/EM?",
+        options: [
+            "O FTIR destrói os contaminantes de ferro presentes na cocaína cloridrato.",
+            "É uma técnica robusta, normalmente mais barata e cujas análises ocorrem à temperatura ambiente, sem problemas de degradação térmica.",
+            "Possui capacidade de separar misturas complexas de grupos funcionais coincidentes na mesma banda de absorção.",
+            "É classificado na Categoria C, sendo de uso livre para policiais em patrulha."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.3: 'Outro equipamento muito encontrado... é o espectrofotômetro na região do infravermelho com transformada rápida de Fourier (FTIR). É uma técnica robusta, normalmente mais barata que o CG/EM, cujas análises são realizadas à temperatura ambiente (não sofre com problemas de degradação térmica)'."
+    },
+    {
+        topic: "Capítulo 4 - Limitações do FTIR e Uso de MS/MS",
+        question: "39. Qual é o fator complicador das análises de FTIR e qual o equipamento laboratorial avançado de alto poder discriminativo sugerido para elucidar NSPs complexas?",
+        options: [
+            "A volatilidade do gás hélio de arraste; resolvido pelo uso do teste de chama.",
+            "A análise por FTIR pode ser dificultada em materiais que consistam em misturas de compostos com grupos funcionais observados na mesma região de interesse; com equipamentos como espectrometria de massas em tandem (MS/MS) sendo muito úteis na elucidação de NSPs.",
+            "O congelamento das bandas moleculares a 12 °C; resolvido pela queima do cloreto de etila.",
+            "A interferência de solventes orgânicos clorados; resolvido com imunoensaios de fluxo lateral."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.3: 'A análise de FTIR, contudo, pode ser dificultada em materiais questionados que consistam em misturas de compostos com grupos funcionais observados na mesma região de interesse... espectrômetros de massa de alta resolução (HRMS) e espectrometria de massas em tandem (MS/MS)... podem ser extremamente úteis na identificação de novas substâncias psicoativas (NSPs)'."
+    },
+    {
+        topic: "Capítulo 4 - Preservação de Contraprova de Laboratório",
+        question: "40. Sob a ótica procedimental e jurídica da perícia química de laboratório da Polícia Federal, qual a regra descrita sobre a manutenção de contraprovas e arquivamento de dados das análises definitivas?",
+        options: [
+            "Todo o material excedente deve ser queimado em valas em 24 horas para evitar novos desvios.",
+            "Deverá ser mantido material como contraprova para eventual nova perícia (salvo se a quantidade ou conservação não permitirem) e todos os registros de laboratório (cromatos, fotos, fichas) devem ser devidamente arquivados para revisão.",
+            "As contraprovas são exclusivas de exames em plantas de maconha realizadas por botânicos de carreira.",
+            "O arquivo dos cromatogramas e espectros no banco de dados PeQui substitui a necessidade física de reter frações da amostra."
+        ],
+        answer: 1,
+        explanation: "Capítulo 4.3: 'Nesta fase, deverá ser mantido material como contraprova para eventual nova perícia, a não ser quando a quantidade ou a conservação do material analisado não permitirem. Também é recomendado que todos os registros de laboratório (fotografias, cromatograma, fichas de análises) sejam devidamente arquivados, de forma que os resultados obtidos sejam passíveis de revisão'."
+    }
+];
+
+// Injeção dinâmica de diagramas vetoriais SVGs para reforço pericial espacial
+function getDiagramSvg(index) {
+    if (index === 13) { // Classificação genérica molecular vs nominal
+        return `
+            <div class="diagram-box">
+                <p style="font-size:18px; margin:5px; color:#555;"><b>Inovação Jurídico-Científica: Sistema de Proibição Genérica (Anvisa)</b></p>
+                <svg width="360" height="150" viewBox="0 0 360 150">
+                    <!-- Núcleo Molecular Proibido -->
+                    <rect x="110" y="30" width="140" height="50" rx="8" fill="#14b8a6" stroke="#0d9488" stroke-width="2" />
+                    <text x="180" y="60" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Núcleo Estrutural Comum</text>
+                    <!-- Variações -->
+                    <circle cx="60" cy="115" r="22" fill="#ef4444" opacity="0.8" />
+                    <text x="60" y="119" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Var. R1</text>
+                    <circle cx="180" cy="115" r="22" fill="#ef4444" opacity="0.8" />
+                    <text x="180" y="119" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Var. R2</text>
+                    <circle cx="300" cy="115" r="22" fill="#ef4444" opacity="0.8" />
+                    <text x="300" y="119" font-size="10" font-weight="bold" fill="#fff" text-anchor="middle">Var. R3</text>
+                    <!-- Linhas -->
+                    <line x1="110" y1="55" x2="60" y2="93" stroke="#0d9488" stroke-width="2" stroke-dasharray="2" />
+                    <line x1="180" y1="80" x2="180" y2="93" stroke="#0d9488" stroke-width="2" stroke-dasharray="2" />
+                    <line x1="250" y1="55" x2="300" y2="93" stroke="#0d9488" stroke-width="2" stroke-dasharray="2" />
+                    <text x="180" y="18" font-size="11" font-weight="bold" fill="#b91c1c" text-anchor="middle">Toda a classe molecular é proibida de forma antecipada!</text>
+                </svg>
+            </div>
+        `;
+    } else if (index === 19) { // Raman portátil funcionamento
+        return `
+            <div class="diagram-box">
+                <p style="font-size:18px; margin:5px; color:#555;"><b>Princípio de Funcionamento Raman Portátil (Não Destrutivo)</b></p>
+                <svg width="340" height="130" viewBox="0 0 340 130">
+                    <!-- Equipamento -->
+                    <rect x="20" y="25" width="100" height="60" rx="5" fill="#0f766e" />
+                    <text x="70" y="60" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Raman ResQ</text>
+                    <!-- Laser emitido -->
+                    <line x1="120" y1="55" x2="200" y2="55" stroke="#ef4444" stroke-width="3" />
+                    <text x="160" y="45" font-size="10" font-weight="bold" fill="#ef4444" text-anchor="middle">Laser Emissão</text>
+                    <!-- Frasco com amostra intacta -->
+                    <rect x="220" y="15" width="90" height="80" rx="8" fill="#93c5fd" opacity="0.6" stroke="#1d4ed8" stroke-width="2" />
+                    <text x="265" y="55" font-size="11" font-weight="bold" fill="#1e3a8a" text-anchor="middle">Amostra Selada</text>
+                    <text x="265" y="75" font-size="9" fill="#1e3a8a" text-anchor="middle">(Não Destrutivo)</text>
+                    <!-- Luz espalhada -->
+                    <path d="M 200,65 Q 160,85 120,65" fill="none" stroke="#22c55e" stroke-width="2" stroke-dasharray="2" />
+                    <text x="160" y="95" font-size="10" font-weight="bold" fill="#22c55e" text-anchor="middle">Espalhamento Raman</text>
+                </svg>
+            </div>
+        `;
+    } else if (index === 32) { // Pirâmide analítica do SWGDRUG
+        return `
+            <div class="diagram-box">
+                <p style="font-size:18px; margin:5px; color:#555;"><b>Hierarquia de Discriminação de Técnicas (SWGDRUG)</b></p>
+                <svg width="360" height="150" viewBox="0 0 360 150">
+                    <polygon points="180,10 60,140 300,140" fill="none" stroke="#0f766e" stroke-width="3" />
+                    <!-- Divisões -->
+                    <line x1="130" y1="65" x2="230" y2="65" stroke="#0f766e" stroke-width="2" />
+                    <line x1="90" y1="105" x2="270" y2="105" stroke="#0f766e" stroke-width="2" />
+                    <!-- Rótulos -->
+                    <text x="180" y="50" font-size="12" font-weight="bold" fill="#b91c1c" text-anchor="middle">CAT. A: Estrutural (EM, IV, Raman)</text>
+                    <text x="180" y="90" font-size="11" font-weight="bold" fill="#000" text-anchor="middle">CAT. B: Separação (CG, CLAE, CCD)</text>
+                    <text x="180" y="130" font-size="11" font-weight="bold" fill="#475569" text-anchor="middle">CAT. C: Triagem (Cor, UV, Imuno)</text>
+                </svg>
+            </div>
+        `;
+    } else if (index === 35) { // Fluxograma de decisão sem Categoria A
+        return `
+            <div class="diagram-box">
+                <p style="font-size:18px; margin:5px; color:#555;"><b>Fluxograma de Confirmação: Sem Categoria A (IT 06/2006)</b></p>
+                <svg width="380" height="110" viewBox="0 0 380 110">
+                    <!-- Técnica B1 -->
+                    <rect x="10" y="25" width="100" height="50" rx="5" fill="#f59e0b" />
+                    <text x="60" y="48" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">Técnica B (1)</text>
+                    <text x="60" y="65" font-size="9" fill="#fff" text-anchor="middle">Ex: CCD</text>
+                    <!-- Mais -->
+                    <text x="122" y="58" font-size="18" font-weight="bold" fill="#000" text-anchor="middle">+</text>
+                    <!-- Técnica B2 -->
+                    <rect x="140" y="25" width="100" height="50" rx="5" fill="#f59e0b" />
+                    <text x="190" y="48" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">Técnica B (2)</text>
+                    <text x="190" y="65" font-size="9" fill="#fff" text-anchor="middle">Ex: CG-FID</text>
+                    <!-- Mais -->
+                    <text x="252" y="58" font-size="18" font-weight="bold" fill="#000" text-anchor="middle">+</text>
+                    <!-- Técnica C -->
+                    <rect x="270" y="25" width="100" height="50" rx="5" fill="#3b82f6" />
+                    <text x="320" y="48" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">Qualquer Técnica</text>
+                    <text x="320" y="65" font-size="9" fill="#fff" text-anchor="middle">Ex: Teste Cor (C)</text>
+                </svg>
+            </div>
+        `;
+    }
+    return '';
+}
+
+const quizContainer = document.getElementById('quiz-container');
+
+quizData.forEach((q, index) => {
+    const questionDiv = document.createElement('div');
+    questionDiv.className = 'question-card';
+
+    let optionsHtml = '';
+    q.options.forEach((opt, i) => {
+        optionsHtml += `<li><label><input type="radio" name="q${index}" value="${i}"> ${opt}</label></li>`;
+    });
+
+    questionDiv.innerHTML = `
+        <span class="topic-tag">${q.topic}</span>
+        <div class="question-text">${q.question}</div>
+        <ul class="options">${optionsHtml}</ul>
+        <button onclick="checkAnswer(${index}, this)">Responder</button>
+        <div class="feedback" id="feedback-${index}"></div>
+    `;
+    quizContainer.appendChild(questionDiv);
+});
+
+function checkAnswer(index, btn) {
+    const selected = document.querySelector(`input[name="q${index}"]:checked`);
+    const feedbackDiv = document.getElementById(`feedback-${index}`);
+
+    if (!selected) {
+        alert('Selecione uma opção antes de submeter.');
+        return;
+    }
+
+    const answerObj = quizData[index];
+    const isCorrect = parseInt(selected.value) === answerObj.answer;
+
+    feedbackDiv.style.display = 'block';
+    
+    // Obtém o diagrama SVG correspondente, se houver
+    const diagHtml = getDiagramSvg(index);
+
+    if (isCorrect) {
+        feedbackDiv.className = 'feedback correct';
+        feedbackDiv.innerHTML = `<strong>✔️ Correto!</strong>
+        <div class="explanation">
+            ${diagHtml}
+            <b>Justificativa Oficial:</b> ${answerObj.explanation}
+        </div>`;
+    } else {
+        feedbackDiv.className = 'feedback incorrect';
+        feedbackDiv.innerHTML = `<strong>❌ Errado. A resposta correta é a ${answerObj.answer + 1}: "${answerObj.options[answerObj.answer]}"</strong>
+        <div class="explanation">
+            ${diagHtml}
+            <b>Justificativa Oficial:</b> ${answerObj.explanation}
+        </div>`;
+    }
+    
+    // Desativar inputs de rádio da questão
+    const allInputs = document.querySelectorAll(`input[name="q${index}"]`);
+    allInputs.forEach(input => input.disabled = true);
+    
+    // Travar botão
+    btn.disabled = true;
+    btn.textContent = 'Respondido';
+}
+</script>
+
+</body>
+</html>
+```
+
+### O que este simulado aborda em profundidade:
+1. **Conceitos de NSPs (Questões 1 a 9):** Definição conceitual, histórico do termo "Novas", o risco do desconhecimento do usuário final, detalhes e formas físicas de apresentação no Brasil das três classes de destaque: Canabinoides Sintéticos, Catinonas Sintéticas e Feniletilaminas.
+2. **Questões Regulatórias e RDCs (Questões 10 a 15):** Transição do controle nominal pura para o sistema de **classificação genérica** de núcleos e substituintes para neutralizar "designer drugs", e as datas das portarias cruciais: canabinoides sintéticos (RDC 79/2016), catinonas sintéticas (RDC 175/2017) e feniletilaminas (RDC 325/2019).
+3. **Procedimentos do Laudo Preliminar (Questões 16 a 21 e 29, 30):** Diferenças de materialidade e competências do laudo provisório sob o Artigo 50 da Lei Antidrogas, a metodologia técnica do **teste em branco** obrigatório, as portarias internas da Polícia Federal que unificam o preâmbulo (Portaria nº 002/2007-GAB/INC) e o design formal do laudo (Portaria nº 2.048/2011-DG/DPF).
+4. **Instruções Técnicas e Amostragem (Questões 23 a 28):** Execução prática da Instrução Técnica nº 006/2006/GAB/DITEC, a fórmula matemática de amostragem estatística se $n > 100$ ($√n$), regras de suporte com suspeitas de traços (não amostrar, enviar em sua totalidade), volumes de fluidos voláteis, líquidos gerais e sólidos para remessa laboratorial.
+5. **Classificação e Métodos Analíticos Definitivos (Questões 22, 24 e 31 a 40):** O impacto analítico de interferências em testes de coloração preliminares (sais de ferro atuando como redutores), o uso de espectroscopia Raman (Rigaku ResQ™ portátil) e FTIR na triagem rápida, os três níveis de poder de discriminação molecular do **SWGDRUG** (Categoria A, B e C), as regras de casamento de categorias analíticas (IT 06/2006), o tratamento de técnicas hifenadas e a obrigatoriedade científica de guarda de contraprovas analíticas e registros arquivados.
+
+🎧 Este simulado reúne as regras e procedimentos químicos mais cobrados em avaliações de Química Forense. Se desejar, posso gerar um **áudio explicativo** (Audio Overview) resumindo os desafios na caracterização de Novas Substâncias Psicoativas pelas RDCs da Anvisa para você ouvir.
