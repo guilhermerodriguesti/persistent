@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resumo Completo - Balística Forense</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #dc2626;
+            --secondary-color: #991b1b;
+            --bg-color: #fef2f2;
+            --text-color: #1f2937;
+            --card-bg: #ffffff;
+            --border-color: #fecaca;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.1);
+        }
+        
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .subsection {
+            background: #fff5f5;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid var(--border-color);
+        }
+        
+        .subsection h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .subsection h4 {
+            color: var(--primary-color);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            margin-top: 12px;
+        }
+        
+        ul, ol {
+            margin-bottom: 10px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+            line-height: 1.6;
+        }
+        
+        .important {
+            background-color: #fee2e2;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .stats-bar {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.1);
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .stat-item i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .toc {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.1);
+        }
+        
+        .toc h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 8px;
+        }
+        
+        .toc a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        
+        .toc a:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1><i class="fa-solid fa-crosshairs"></i> Resumo Completo - Balística Forense</h1>
+            <p>Material completo baseado em apostila oficial de Balística Forense</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Voltar para a página principal</a>
+        
+        <div class="stats-bar">
+            <div class="stat-item">
+                <i class="fa-solid fa-book"></i>
+                <span>8 Macro-temas</span>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-list"></i>
+                <span>40+ Subtópicos</span>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>~1.500 linhas</span>
+            </div>
+        </div>
+        
+        <div class="toc">
+            <h3><i class="fa-solid fa-compass"></i> Sumário</h3>
+            <ul>
+                <li><a href="#prefacio">1. Prefácio</a></li>
+                <li><a href="#conceituacao">2. Balística - Conceituação e Divisões</a></li>
+                <li><a href="#arma-municao">3. Arma e Munição</a></li>
+                <li><a href="#armas-curtas">4. Estudo das Armas Curtas</a></li>
+                <li><a href="#armas-longas">5. Estudo das Armas Longas</a></li>
+                <li><a href="#exames-armas">6. Exames em Armas de Fogo</a></li>
+                <li><a href="#exames-municao">7. Exames em Cartuchos e Elementos de Munição</a></li>
+                <li><a href="#anexos">8. Anexos</a></li>
+            </ul>
+        </div>
+        
+        <div class="section" id="prefacio">
+            <h2><i class="fa-solid fa-info-circle"></i> Prefácio</h2>
+            <div class="subsection">
+                <h3>Objetivo e Abrangência</h3>
+                <ul>
+                    <li><strong>Objetivo:</strong> Proporcionar conhecimentos básicos sobre armas de fogo e munições</li>
+                    <li><strong>Abrange:</strong> Características, classificação, funcionamento e realização de exames periciais</li>
+                    <li><strong>Não abrange:</strong> Balística Terminal (lesões traumáticas em alvos humanos)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section" id="conceituacao">
+            <h2><i class="fa-solid fa-bullseye"></i> Balística - Conceituação e Divisões</h2>
+            
+            <div class="subsection">
+                <h3>Etimologia</h3>
+                <ul>
+                    <li>Do latim <em>baleare</em> → do grego βαλλω (ballo) = atirar, arremessar</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Balística Geral</h3>
+                <ul>
+                    <li>Parte da Física (Mecânica) que estuda o movimento dos projéteis</li>
+                    <li><strong>Projétil:</strong> Todo corpo que se desloca livre no espaço em virtude de um impulso recebido</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Balística Forense</h3>
+                <ul>
+                    <li>Disciplina da Criminalística</li>
+                    <li>Estuda armas de fogo, sua munição e os efeitos dos disparos</li>
+                    <li>Sempre que tiverem relação direta ou indireta com infrações penais</li>
+                    <li><strong>Objetivo:</strong> Esclarecer e provar a ocorrência de infrações</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Divisões da Balística Forense</h3>
+                <h4>Balística Interna</h4>
+                <ul>
+                    <li>Estuda a estrutura, mecanismos, funcionamento e características das armas de fogo</li>
+                    <li>Estuda os fenômenos e efeitos ocorridos na arma</li>
+                    <li>Do momento da detonação da espoleta até o projétil sair do cano</li>
+                </ul>
+                
+                <h4>Balística Externa</h4>
+                <ul>
+                    <li>Estuda o projétil desde a saída do cano até a parada final</li>
+                    <li>Analisa trajetória, velocidade e energia</li>
+                    <li>Considera: características do projétil (geometria, massa, movimentos) e fatores externos (resistência do ar, gravidade)</li>
+                    <li>Inclui: alcance de tiro, alcance útil, alcance máximo, alcance com precisão</li>
+                </ul>
+                
+                <h4>Balística Terminal</h4>
+                <ul>
+                    <li>Estuda os efeitos produzidos pelo projétil ao atingir um alvo</li>
+                    <li><strong>Alvo humano:</strong> Medicina Legal (vestígios intrínsecos) + Balística (vestígios extrínsecos)</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Principais Campos de Estudo (PF)</h3>
+                <ul>
+                    <li><strong>Caracterização das armas de fogo:</strong> Determinação das características diferenciais; verificação de adulteração</li>
+                    <li><strong>Identificação das armas de fogo:</strong> Imediata (características do armamento) e Mediata (confrontos balísticos em estojos e projéteis)</li>
+                    <li><strong>Verificação de eficiência:</strong> Verificação das propriedades e capacidade de efetuar disparos</li>
+                    <li><strong>Regeneração de elementos identificadores:</strong> Determinação de marca, modelo, procedência e número de série; revelação de caracteres removidos</li>
+                    <li><strong>Exames em munições:</strong> Determinação de calibre, procedência, eficiência, energia; identificação de munições recarregadas</li>
+                    <li><strong>Efeitos de impactos:</strong> Diferenciação entre perfurações de projéteis e outros objetos; resistência de materiais; diferenciação entre orifícios de entrada e saída</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section" id="arma-municao">
+            <h2><i class="fa-solid fa-gun"></i> Arma e Munição</h2>
+            
+            <div class="subsection">
+                <h3>Definição de Arma</h3>
+                <ul>
+                    <li>Todo objeto que pode aumentar a capacidade de ataque ou defesa do homem</li>
+                    <li><strong>Armas próprias:</strong> Concebidas com finalidade específica (espada, arma de fogo)</li>
+                    <li><strong>Armas impróprias:</strong> Não projetadas como arma, mas podem ser utilizadas como tal (garfo, enxada)</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Arma de Fogo</h3>
+                <ul>
+                    <li><strong>Definição:</strong> Engenhos mecânicos dotados da propriedade de expelir projéteis</li>
+                    <li>Utilizam a força expansiva de gases resultantes da combustão da pólvora</li>
+                    <li>Classificam-se como armas de arremesso complexas</li>
+                </ul>
+                
+                <div class="important">
+                    <strong>Três elementos essenciais:</strong>
+                    <ul>
+                        <li><strong>a) Aparato arremessador:</strong> Recebe o projétil com a carga de projeção; permite expansão dos gases; guia e conduz o projétil</li>
+                        <li><strong>b) Carga de projeção:</strong> Substância inflamável sólida granular; produz grande volume de gases</li>
+                        <li><strong>c) Projétil:</strong> Parte vulnerante da arma; produz os efeitos primários</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="subsection">
+                <h3>Munição de Arma de Fogo</h3>
+                <h4>Quatro elementos do cartucho de munição</h4>
+                <ol>
+                    <li>Estojo</li>
+                    <li>Cápsula de espoletamento (espoleta)</li>
+                    <li>Propelente (carga de projeção)</li>
+                    <li>Projétil</li>
+                </ol>
+                
+                <h4>O Estojo</h4>
+                <ul>
+                    <li>Material: geralmente metal</li>
+                    <li>Partes: Boca (onde fica engastado o projétil) e Culote (alojamento da cápsula de espoletamento)</li>
+                    <li>Formatos: Cilíndrico, levemente cônico, garrafa (com estrangulamento frontal)</li>
+                    <li>Tipos de culote: Rim (aro saliente - revólver), Semi-rim, Rimless (sem borda - pistola)</li>
+                </ul>
+                
+                <h4>A Cápsula de Espoletamento</h4>
+                <ul>
+                    <li>Contém a escorva (mistura iniciadora)</li>
+                    <li>Deflagração por ação mecânica (percussão) inflama a carga de projeção</li>
+                    <li>Tipos: Boxer, Berdan, bateria</li>
+                    <li><strong>Bigorna:</strong> Estrutura rígida que fornece superfície de impacto</li>
+                    <li><strong>Mistura iniciadora:</strong> Estifinato de chumbo + nitrato de bário + trissulfeto de antimônio + alumínio em pó</li>
+                </ul>
+                
+                <h4>A Carga de Projeção (Propelente)</h4>
+                <ul>
+                    <li>Combustível sólido granular que se inflama sem necessitar de oxigênio</li>
+                    <li><strong>Pólvora negra (obsoleta):</strong> Salitre + carvão + enxofre</li>
+                    <li><strong>Pólvoras químicas (sem fumaça):</strong> Base simples (nitrocelulose) ou base dupla (nitrocelulose + nitroglicerina)</li>
+                    <li><strong>Pólvoras vivas:</strong> Armas curtas (queima mais rápida)</li>
+                    <li><strong>Pólvoras progressivas:</strong> Armas longas (queima mais lenta)</li>
+                </ul>
+                
+                <h4>O Projétil</h4>
+                <ul>
+                    <li><strong>Projéteis de liga de chumbo (chumbo nu):</strong> Compostos por misturas de chumbo com estanho, antimônio e arsênio</li>
+                    <li><strong>Projéteis semiencamisados:</strong> Encamisamento parcial + núcleo de liga de chumbo (revólveres)</li>
+                    <li><strong>Projéteis encamisados:</strong> Encamisamento total + núcleo de liga de chumbo (pistolas)</li>
+                    <li><strong>Funções do encamisamento:</strong> Evitar derretimento do projétil; prevenir chumbamento do cano</li>
+                    <li><strong>Projéteis expansivos especiais:</strong> Hydra-shok®, Black-talon®, Silver tip®, Quick-shok®, Expo-gold®</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Classificação das Armas de Fogo</h3>
+                <h4>Quanto à Alma</h4>
+                <ul>
+                    <li><strong>Alma lisa:</strong> Superfície interna lisa; exemplo: espingardas</li>
+                    <li><strong>Alma raiada:</strong> Estrias paralelas e helicoidais (sulcos/raias intercalados com cristas/cheios); objetivo: imprimir rotação ao projétil (estabilidade giroscópica); exemplos: revólveres, pistolas, carabinas, rifles, fuzis</li>
+                    <li><strong>Alma mista:</strong> Cano de alma lisa e outro de alma raiada</li>
+                </ul>
+                
+                <h4>Quanto ao Sistema de Carregamento</h4>
+                <ul>
+                    <li><strong>Antecarga:</strong> Carregamento pela boca do cano (obsoleto)</li>
+                    <li><strong>Retrocarga:</strong> Carregamento por inserção de cartucho em câmara na parte posterior (quase totalidade das armas modernas)</li>
+                </ul>
+                
+                <h4>Quanto ao Sistema de Inflamação</h4>
+                <ul>
+                    <li><strong>Percussão intrínseca central:</strong> Cápsula no centro da base do cartucho (tipo mais utilizado)</li>
+                    <li><strong>Percussão intrínseca radial (rimfire):</strong> Mistura iniciadora na borda do cartucho (restrito ao calibre .22")</li>
+                    <li><strong>Percussão direta:</strong> Pino percussor ligado diretamente ao cão</li>
+                    <li><strong>Percussão indireta:</strong> Energia do cão transferida por pino percussor flutuante</li>
+                </ul>
+                
+                <h4>Quanto ao Funcionamento</h4>
+                <ul>
+                    <li><strong>Tiro unitário:</strong> Retrocarga manual; câmara única; carregamento individual após cada disparo</li>
+                    <li><strong>Repetição:</strong> Carga para dois ou mais tiros; força muscular aciona mecanismos de disparo e repetição</li>
+                    <li><strong>Semiautomática:</strong> Força muscular aciona apenas o disparo; energia dos gases aciona a ciclagem</li>
+                    <li><strong>Automática:</strong> Energia dos gases continua a ciclagem enquanto o gatilho estiver acionado (tiro contínuo)</li>
+                </ul>
+                
+                <h4>Quanto à Mobilidade (Decreto 11.615/2023)</h4>
+                <ul>
+                    <li><strong>Arma de porte:</strong> Dimensão e peso reduzidos; disparada com apenas uma mão (pistola, revólver, garrucha)</li>
+                    <li><strong>Arma portátil:</strong> Transportada por um indivíduo; exige ambas as mãos para disparo</li>
+                    <li><strong>Arma não portátil:</strong> Precisa ser transportada por mais de uma pessoa ou fixada em estrutura permanente</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>O Calibre das Armas de Fogo e Munição</h3>
+                <ul>
+                    <li><strong>Calibre Real:</strong> Medida tomada na boca do cano; diâmetro interno da alma; expresso em milímetros</li>
+                    <li><strong>Calibre Nominal:</strong> Designativo de um tipo particular de munição e da arma; expresso em frações de polegada ou milímetros; exemplos: .223" Remington = 5,56x45mm OTAN; .308" Winchester = 7,62x51mm OTAN</li>
+                    <li><strong>Classificação Legal:</strong> Energia de disparo como critério (uso permitido ou restrito); Decreto nº 11.615/2023; Portarias Conjuntas C EX/DG-PF nº 2/2023 e nº 3/2024</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section" id="armas-curtas">
+            <h2><i class="fa-solid fa-handgun"></i> Estudo das Armas Curtas</h2>
+            
+            <div class="subsection">
+                <h3>Características fundamentais</h3>
+                <ul>
+                    <li>Raramente ultrapassam 30 cm totais ou 15 cm de cano</li>
+                    <li>Peso habitualmente inferior a 1 kg</li>
+                    <li>Mecanismos de disparo compactos</li>
+                    <li>Ângulo anatômico entre coronha e cano (permite uso com apenas uma mão)</li>
+                    <li><strong>Principais exemplares:</strong> Revólveres e pistolas</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Estudo Particular do Revólver</h3>
+                <ul>
+                    <li>Arma de fogo de porte com sistema de repetição não automático</li>
+                    <li>Maior robustez e tolerância a condições adversas</li>
+                    <li><strong>Características únicas:</strong> Cano não possui câmara de combustão; presença de cartucho íntegro alinhado com o cano não significa que está carregado; câmaras abertas em ambos os lados (não apresentam culatra)</li>
+                    <li><strong>Quatro partes principais:</strong> Armação (corpo da arma), Tambor (receptáculo para os cartuchos), Cano (conduz o projétil), Mecanismo (disparo, repetição e segurança)</li>
+                </ul>
+                
+                <h4>Classificação dos Revólveres</h4>
+                <ul>
+                    <li><strong>Quanto à armação:</strong> Rígida (introdução/extração por janela lateral) ou Articulada (extração simultânea)</li>
+                    <li><strong>Quanto ao mecanismo de disparo:</strong> Movimento simples (ação simples ou ação dupla) ou Movimento duplo (funciona indiferentemente em ambos)</li>
+                    <li><strong>Quanto à percussão:</strong> Extrínseca (obsoleta), Intrínseca radial (.22" apenas), Intrínseca central (maioria), Direta ou Indireta</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Estudo Particular da Pistola Semiautomática</h3>
+                <ul>
+                    <li>Aproveitamento dos gases da detonação para efetuar a ciclagem</li>
+                    <li><strong>Quatro partes principais:</strong> Armação (suporte do cano e ferrolho), Carregador (tubo oco para armazenar munição), Cano (câmara de combustão + alma raiada), Ferrolho (peça móvel que desliza nas fases de recuo e recuperação)</li>
+                </ul>
+                
+                <h4>Classificação das Pistolas</h4>
+                <ul>
+                    <li><strong>Quanto ao funcionamento (culatra):</strong> Desaferrolhada (calibres menores) ou Aferrolhada (grande potência)</li>
+                    <li><strong>Quanto à percussão:</strong> Direta (sem cão) ou Indireta (com cão convencional)</li>
+                    <li><strong>Quanto ao mecanismo de disparo:</strong> Movimento simples ou Movimento duplo</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section" id="armas-longas">
+            <h2><i class="fa-solid fa-crosshairs"></i> Estudo das Armas de Fogo Longas</h2>
+            
+            <div class="subsection">
+                <h3>Características gerais</h3>
+                <ul>
+                    <li>Comprimento acentuado em razão das dimensões do cano e da coronha</li>
+                    <li>Não consideradas armas de defesa pessoal</li>
+                    <li>Uso requer ambas as mãos e o ombro</li>
+                    <li><strong>Principais categorias:</strong> Rifle, fuzil, carabina, mosquetão e espingarda</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Rifle</h3>
+                <ul>
+                    <li>Arma de fogo longa, portátil, de repetição, com cano de alma raiada de mais de 20 polegadas</li>
+                    <li>Diferencia-se das carabinas pelo maior número de variações</li>
+                    <li>Sistemas de alimentação: não automáticos (ferrolho ou alavanca) ou semiautomático (recuperação a gás)</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Fuzil</h3>
+                <ul>
+                    <li>Arma de fogo longa com cano de alma raiada</li>
+                    <li>Pode ser semiautomática, automática ou não automática</li>
+                    <li>Sempre de calibres potentes</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Carabina</h3>
+                <ul>
+                    <li>Arma de fogo longa, portátil, de repetição</li>
+                    <li>Cano de alma raiada de menor comprimento que rifles e fuzis</li>
+                    <li>Limite de comprimento: 20" (50,8cm) ou 22½" (57,15cm)</li>
+                    <li>Carregador geralmente tubular, colocado abaixo do cano</li>
+                    <li>Sistemas: bomba (pump) ou alavanca (lever action)</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Mosquetão</h3>
+                <ul>
+                    <li>Arma de fogo longa, de porte e de repetição com cano de alma raiada</li>
+                    <li>Comprimento geral do cano: 30 polegadas (76,2 cm)</li>
+                    <li>Carregador denominado "depósito", localizado no interior da coronha</li>
+                    <li>Ferrolho com alavanca característica</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Espingarda</h3>
+                <ul>
+                    <li><strong>Característica principal:</strong> Cano de alma lisa</li>
+                    <li>No Brasil: espingarda = qualquer arma de fogo longa, portátil e com alma lisa</li>
+                    <li><strong>Cartucho:</strong> Bucha (plástica ou de papelão) que impele os projéteis (diferente de alma raiada onde o projétil é impelido pelos gases)</li>
+                    <li><strong>Projéteis:</strong> Chumbos (balins) de formato esférico; balotes (projéteis únicos com massas de até 30g)</li>
+                </ul>
+                
+                <h4>Calibre em Armas de Alma Lisa</h4>
+                <ul>
+                    <li><strong>Calibre real:</strong> Diâmetro interno medido na porção mediana do cano</li>
+                    <li><strong>Choke (choque):</strong> Estrangulamento do diâmetro da boca do cano; objetivo: forçar o agrupamento dos balins</li>
+                    <li><strong>Calibre nominal:</strong> Número de esferas de chumbo com diâmetro igual ao cano que poderiam ser produzidas a partir de 1 libra (453,6g)</li>
+                </ul>
+                
+                <div class="table-responsive">
+                    <table class="table table-sm">
+                        <thead>
+                            <tr>
+                                <th>Calibre Nominal</th>
+                                <th>Calibre Real</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>12</td><td>18,5mm</td></tr>
+                            <tr><td>16</td><td>16,2mm</td></tr>
+                            <tr><td>20</td><td>15,9mm</td></tr>
+                            <tr><td>24</td><td>14,3mm</td></tr>
+                            <tr><td>28</td><td>13,0mm</td></tr>
+                            <tr><td>32</td><td>12,2mm</td></tr>
+                            <tr><td>36</td><td>10,2mm</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section" id="exames-armas">
+            <h2><i class="fa-solid fa-microscope"></i> Exames em Armas de Fogo</h2>
+            
+            <div class="subsection">
+                <h3>Tipos de identificação</h3>
+                <ul>
+                    <li><strong>Imediata (direta):</strong> Exame efetuado diretamente na arma</li>
+                    <li><strong>Mediata (indireta):</strong> Exame nas marcas impressas pela arma em elementos de munição</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Cuidados com o Material Questionado</h3>
+                <ul>
+                    <li>Verificar antes do exame: necessidade de exames papiloscópicos, DNA ou outros microvestígios</li>
+                    <li><strong>Desmuniciamento obrigatório:</strong> Retirar pente carregador e cartuchos/estojos</li>
+                    <li>Acondicionamento em envelope de segurança</li>
+                    <li>Arma que não pode ser tornada segura: etiqueta "PERIGO: ARMA QUENTE"</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Caracterização Imediata</h3>
+                <ul>
+                    <li>Descrição das características mais genéricas para as mais específicas</li>
+                    <li>Tipo de arma, marca, modelo, calibre, número de série</li>
+                    <li>Registro fotográfico geral e individual</li>
+                    <li>Mecanismo, sistema de percussão, cano, tambor, carregador, material de construção</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Revelação de Caracteres Suprimidos</h3>
+                <ul>
+                    <li><strong>Fundamento:</strong> Cunhagem a frio altera a estrutura metálica por baixo dos caracteres</li>
+                    <li>Procedimento: proteger partes não relacionadas; limpeza e polimento; tratamento com reagente apropriado conforme o metal</li>
+                    <li><strong>Infrutífero quando:</strong> Impressão não foi por cunhagem a frio (ex.: laser); adulteração muito profunda</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Exame de Eficiência</h3>
+                <ul>
+                    <li>Normativo: Instrução Técnica nº 016/2012-DITEC/DPF</li>
+                    <li>Testar: alimentação, percussão, extração e ejeção</li>
+                    <li><strong>Defeito de funcionamento:</strong> Qualquer incidente que determine interrupção do tiro (exceto problemas com munição)</li>
+                    <li><strong>EPIs recomendados:</strong> Óculos, abafador e colete balístico</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Exames em Resíduos Provenientes de Armas de Fogo</h3>
+                <ul>
+                    <li>Disparos geram resíduos na arma, anteparos e mãos do atirador</li>
+                    <li><strong>Efeitos primários:</strong> Ação do projétil sobre o alvo</li>
+                    <li><strong>Efeitos secundários:</strong> Ação dos gases (resíduos de combustão e microprojéteis)</li>
+                </ul>
+                
+                <h4>Resíduos na Arma e Recenticidade de Disparos</h4>
+                <ul>
+                    <li>Técnica baseada na detecção de nitritos (produzidos pela combustão incompleta da pólvora)</li>
+                    <li>Reagente de Griess: detecta nitritos (coloração rosa)</li>
+                    <li><strong>Limitações:</strong> Nitritos são instáveis; degradação variável; encontrados em outras fontes</li>
+                    <li><strong>Interpretação:</strong> Positivo não comprova origem no disparo; negativo não comprova ausência de disparo</li>
+                    <li>Tendência internacional: abolição do exame por baixa confiabilidade</li>
+                </ul>
+                
+                <h4>Resíduos nas Mãos do Atirador</h4>
+                <ul>
+                    <li><strong>Técnica moderna:</strong> Microscopia Eletrônica de Varredura (MEV)</li>
+                    <li>Detecta partículas microscópicas com metais da mistura iniciadora: chumbo, bário e antimônio</li>
+                    <li>Essas partículas são provenientes unicamente de disparos com arma de fogo</li>
+                    <li><strong>Influência:</strong> Coleta imediata (90% positivos); ~2 horas após (60% positivos); lavagem com água e sabão (eliminação completa)</li>
+                </ul>
+                
+                <h4>Resíduos em Anteparos e Distância de Tiro</h4>
+                <ul>
+                    <li><strong>Tiro a curta distância:</strong> Dentro da região onde efeitos secundários imprimem marcas</li>
+                    <li><strong>Limite prático:</strong> ~1 metro (sem vento) / ~0,5 metro (com vento)</li>
+                    <li><strong>Três zonas:</strong> Zona de chama (tecido queimado, pelos crestados - até 10cm); Zona de esfumaçamento (resíduos de combustão); Zona de tatuagem (grãos de pólvora incombusta)</li>
+                    <li><strong>Substâncias pesquisáveis:</strong> Nitritos (Griess - rosa), Chumbo (Rodizonato - violeta), Cobre (Ditiooxamida - verde), Compostos sulfurados (Azida + iodo)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section" id="exames-municao">
+            <h2><i class="fa-solid fa-bullet"></i> Exames em Cartuchos e Elementos de Munição</h2>
+            
+            <div class="subsection">
+                <h3>Tipos de exames possíveis</h3>
+                <ul>
+                    <li>Identificação direta: descrição de características e procedência</li>
+                    <li>Teste de eficiência: cartuchos íntegros</li>
+                    <li>Confronto balístico: elementos de munição disparados</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Exame de Confronto Balístico</h3>
+                <ul>
+                    <li><strong>Fundamentos:</strong> Reprodutibilidade (marcas que se repetem a cada disparo) e Unicidade (marcas únicas para cada arma)</li>
+                    <li><strong>Etapas:</strong> Coleta/recuperação do material questionado; Coleta de padrões; Cotejo (comparação) dos materiais</li>
+                </ul>
+                
+                <h4>Cuidados com o Material Questionado</h4>
+                <ul>
+                    <li>Nunca extrair projétil incrustado com ferramentas metálicas diretas</li>
+                    <li>Separar materiais conforme a região de coleta</li>
+                    <li>Nunca escrever ou marcar projéteis e estojos questionados</li>
+                    <li>Materiais recuperados de vivos/mortos: limpar com água corrente, secar e acondicionar</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Padrões em Balística Forense</h3>
+                <ul>
+                    <li><strong>Requisitos:</strong> Autenticidade, adequabilidade, contemporaneidade e quantidade</li>
+                </ul>
+                
+                <h4>Autenticidade</h4>
+                <ul>
+                    <li>Critério mais importante</li>
+                    <li>Padrão autêntico: origem certa e inquestionável (coletado com a arma questionada)</li>
+                    <li>Perito deve coletar os próprios padrões</li>
+                </ul>
+                
+                <h4>Adequabilidade</h4>
+                <ul>
+                    <li>Padrão adequado: características mais similares possíveis ao material questionado</li>
+                    <li>Estojos: mesma marca, calibre e composição</li>
+                    <li>Projéteis: mesma composição, tipo de encamisamento, forma e massa</li>
+                </ul>
+                
+                <h4>Contemporaneidade</h4>
+                <ul>
+                    <li>Padrão deve ser coletado no menor lapso de tempo após a produção do material questionado</li>
+                    <li>Cada disparo causa pequeno desgaste do cano</li>
+                </ul>
+                
+                <h4>Quantidade</h4>
+                <ul>
+                    <li>Mínimo de quatro padrões por arma (se impossível enviar a arma ao perito)</li>
+                    <li>Identificar claramente os padrões como tais</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Comparação de Projéteis e Estojos</h3>
+                <ul>
+                    <li>Equipamento: microscópio comparador balístico</li>
+                    <li><strong>Confronto em projéteis:</strong> Deformações normais (impressão das características mediatas) vs acidentais (impacto contra objetos)</li>
+                    <li><strong>Confronto em estojos:</strong> Marcas de percussão, ejeção, extração, culatra ou chapa de obturação</li>
+                    <li>Espingardas e armas de alta energia: comparação feita apenas nos estojos</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Banco de Dados Balísticos</h3>
+                <ul>
+                    <li><strong>Legislação:</strong> Lei nº 13.964/2019 criou o Banco Nacional de Perfis Balísticos (BNPB); Decreto nº 10.711/2021 instituiu formalmente o BNPB e criou o SINAB</li>
+                    <li><strong>Arquitetura:</strong> Rede nacional de laboratórios; Sistema de Identificação Balístico (SIB) conectado a servidor central</li>
+                    <li><strong>Tecnologia:</strong> Sistema IBIS®</li>
+                    <li><strong>Funcionalidades:</strong> Aquisição padronizada de imagens; armazenamento centralizado; correlação automatizada; geração de listas de possíveis correspondências (HITs)</li>
+                    <li><strong>Resultados:</strong> Uma das maiores redes balísticas criminais do mundo; identifica milhares de ligações entre crimes</li>
+                    <li><strong>Normativo PF:</strong> Portaria DITEC/PF nº 1493/2024</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section" id="anexos">
+            <h2><i class="fa-solid fa-paperclip"></i> Anexos</h2>
+            
+            <div class="subsection">
+                <h3>Anexo I - Soluções Reveladoras de Caracteres</h3>
+                <h4>Aço-Carbono ou Titânio</h4>
+                <ul>
+                    <li><strong>Reagente de Hatcher (brando):</strong> 55 ml HCl + 4 g CuCl + 11 g CuCl₂ + 31 ml H₂O</li>
+                    <li><strong>Reagente de Hatcher (agressivo):</strong> 120 ml HCl + 90 g CuCl₂ + 100 ml H₂O</li>
+                    <li><strong>Reagente de Hatcher (variante):</strong> 40 ml HCl + 5 g CuCl₂ + 30 ml H₂O + 25 ml etanol</li>
+                </ul>
+                
+                <h4>Aço Inoxidável</h4>
+                <ul>
+                    <li><strong>Reagente de Besseman & Haemers (brando):</strong> 120 ml HCl + 1000 ml etanol + 130 g FeCl₃ + 80 g CuCl₂</li>
+                    <li><strong>Reagente de Besseman & Haemers (agressivo):</strong> 120 ml HCl + 100 ml etanol + 8 g FeCl₃ + 6 g CuCl₂</li>
+                </ul>
+                
+                <h4>Alumínio e Suas Ligas</h4>
+                <ul>
+                    <li><strong>Reagente de Keller (brando):</strong> 2 ml HF + 3 ml HCl + 5 ml HNO₃ + 190 ml H₂O</li>
+                    <li><strong>Reagente de Tucker (agressivo):</strong> 15 ml HF + 45 ml HCl + 15 ml HNO₃ + 75 ml H₂O</li>
+                    <li><strong>Reagente de Hume Rothery:</strong> 200 g CuCl₂ + 5 ml HCl + 1000 ml H₂O</li>
+                </ul>
+                
+                <h4>Cobre e Suas Ligas</h4>
+                <ul>
+                    <li>19 g FeCl₃ + 6 ml HCl + 100 ml H₂O</li>
+                </ul>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Voltar para a página principal</a>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
