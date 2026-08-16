@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizu Pericial - LOC Prova</title>
+    <meta name="description" content="Resumo completo de Local de Ocorrência de Crime para concursos periciais - Base Legal, Processamento, Documentação, Vestígios e Laudo.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Tema Claro Premium (Branco) */
+            --bg-body: #f1f5f9;
+            --bg-sidebar: #ffffff;
+            --bg-card: #ffffff;
+            --border-color: #cbd5e1;
+            
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-light: #64748b;
+            
+            --color-primary: #1e3a8a; /* Azul Marinho Pericial */
+            --color-accent: #f97316; /* Laranja Alerta */
+            --color-success: #16a34a;
+            --color-danger: #dc2626;
+            
+            --color-loc: #7f1d1d;
+            --color-loc-bg: #fef2f2;
+            
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            
+            --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-display: 'Outfit', sans-serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            line-height: 1.6;
+        }
+
+        /* SIDEBAR */
+        aside {
+            width: 280px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            flex-shrink: 0;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+            overflow-y: auto;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .brand-icon {
+            background-color: var(--color-loc-bg);
+            color: var(--color-loc);
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .brand-text h1 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+
+        .brand-text span {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+        }
+
+        .menu-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border: 1px solid transparent;
+            margin-bottom: 8px;
+        }
+
+        .menu-item:hover {
+            background-color: var(--bg-body);
+            color: var(--color-primary);
+        }
+
+        .menu-item.active {
+            background-color: var(--color-primary);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+        }
+
+        .menu-item kbd {
+            margin-left: auto;
+            font-family: monospace;
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1px 5px;
+            border-radius: 4px;
+            font-size: 10px;
+        }
+
+        .menu-item.active kbd {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+
+        /* MAIN CONTENT AREA */
+        main {
+            flex-grow: 1;
+            padding: 32px 40px;
+            overflow-y: auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .header-title h2 {
+            font-family: var(--font-display);
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+
+        .header-title p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-action {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-action:hover {
+            background-color: var(--bg-body);
+            color: var(--color-primary);
+        }
+
+        .btn-action.primary {
+            background-color: var(--color-primary);
+            color: #ffffff;
+            border-color: var(--color-primary);
+        }
+
+        .btn-action.primary:hover {
+            background-color: #1e40af;
+        }
+
+        /* CONTENT SECTIONS */
+        .content-section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* BIZU CARDS */
+        .bizu-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 20px;
+        }
+
+        .bizu-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .bizu-card-icon {
+            background-color: #f0fdf4;
+            color: var(--color-success);
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .bizu-card-icon.danger {
+            background-color: #fef2f2;
+            color: var(--color-danger);
+        }
+
+        .bizu-card-icon.warning {
+            background-color: #fff7ed;
+            color: var(--color-accent);
+        }
+
+        .bizu-card-icon.info {
+            background-color: #eff6ff;
+            color: var(--color-primary);
+        }
+
+        .bizu-card-header h3 {
+            font-family: var(--font-display);
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .bizu-card-content {
+            padding-top: 16px;
+        }
+
+        /* FLOW STEPS */
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .flow-step {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: var(--transition-smooth);
+        }
+
+        .flow-step:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(4px);
+        }
+
+        .step-number {
+            background-color: var(--color-loc);
+            color: #ffffff;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .step-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .step-content li {
+            font-size: 13px;
+            color: var(--text-muted);
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 4px;
+        }
+
+        .step-content li::before {
+            content: "•";
+            color: var(--color-loc);
+            position: absolute;
+            left: 4px;
+            font-weight: 700;
+        }
+
+        /* TABLES */
+        table.bizu-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        table.bizu-table th {
+            background-color: #f8fafc;
+            padding: 12px;
+            text-align: left;
+            font-weight: 700;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        table.bizu-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        table.bizu-table tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        /* HIGHLIGHT BOXES */
+        .highlight-box {
+            background-color: #fef2f2;
+            border-left: 4px solid var(--color-danger);
+            padding: 16px;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+
+        .highlight-box.success {
+            background-color: #f0fdf4;
+            border-left-color: var(--color-success);
+        }
+
+        .highlight-box.warning {
+            background-color: #fff7ed;
+            border-left-color: var(--color-accent);
+        }
+
+        .highlight-box.info {
+            background-color: #eff6ff;
+            border-left-color: var(--color-primary);
+        }
+
+        .highlight-box h4 {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* TAGS */
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tag.legal {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        .tag.chemical {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        .tag.biological {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        .tag.physical {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+
+        .tag.micro {
+            background-color: #f3e8ff;
+            color: #6b21a8;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            aside {
+                width: 240px;
+            }
+            
+            main {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            
+            aside {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 16px;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            main {
+                padding: 20px;
+                height: auto;
+            }
+            
+            .header-title h2 {
+                font-size: 20px;
+            }
+            
+            .header-title p {
+                font-size: 13px;
+            }
+            
+            .top-actions {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .btn-action {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .flow-container {
+                gap: 10px;
+            }
+            
+            .flow-step {
+                padding: 12px;
+                gap: 12px;
+            }
+            
+            .step-number {
+                width: 28px;
+                height: 28px;
+                font-size: 12px;
+            }
+            
+            .step-content h4 {
+                font-size: 14px;
+            }
+            
+            .step-content li {
+                font-size: 12px;
+            }
+            
+            table.bizu-table {
+                font-size: 11px;
+            }
+            
+            table.bizu-table th,
+            table.bizu-table td {
+                padding: 8px;
+            }
+            
+            .bizu-card-content > div[style*="grid"] {
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
+            }
+            
+            .highlight-box {
+                padding: 12px;
+            }
+            
+            .highlight-box h4 {
+                font-size: 13px;
+            }
+            
+            .highlight-box p {
+                font-size: 12px;
+            }
+            
+            .menu-item {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+            
+            .menu-item kbd {
+                display: none;
+            }
+            
+            .brand {
+                margin-bottom: 20px;
+            }
+            
+            .brand-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+            }
+            
+            .brand-text h1 {
+                font-size: 16px;
+            }
+            
+            .brand-text span {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                padding: 16px;
+            }
+            
+            .header-title h2 {
+                font-size: 18px;
+            }
+            
+            .header-title p {
+                font-size: 12px;
+            }
+            
+            .bizu-card {
+                padding: 16px;
+            }
+            
+            .bizu-card-header h3 {
+                font-size: 15px;
+            }
+            
+            .flow-step {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+            
+            .bizu-card-content {
+                overflow-x: auto;
+            }
+            
+            table.bizu-table {
+                min-width: 100%;
+            }
+            
+            .tag {
+                font-size: 10px;
+                padding: 3px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <aside>
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-location-dot"></i>
+            </div>
+            <div class="brand-text">
+                <h1>Bizu Pericial</h1>
+                <span>LOC Prova</span>
+            </div>
+        </div>
+
+        <div class="menu-title">Navegação</div>
+        
+        <div class="menu-item active" onclick="showSection('base-legal')" data-section="base-legal">
+            <i class="fa-solid fa-scale-balanced"></i>
+            <span>Base Legal</span>
+            <kbd>1</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('roteiro')" data-section="roteiro">
+            <i class="fa-solid fa-route"></i>
+            <span>Roteiro Processamento</span>
+            <kbd>2</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('documentacao')" data-section="documentacao">
+            <i class="fa-solid fa-camera"></i>
+            <span>Documentação</span>
+            <kbd>3</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('fotografia')" data-section="fotografia">
+            <i class="fa-solid fa-camera-retro"></i>
+            <span>Fotografia Forense</span>
+            <kbd>4</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('vestigios-quimicos')" data-section="vestigios-quimicos">
+            <i class="fa-solid fa-flask"></i>
+            <span>Vestígios Químicos</span>
+            <kbd>5</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('vestigios-biologicos')" data-section="vestigios-biologicos">
+            <i class="fa-solid fa-dna"></i>
+            <span>Vestígios Biológicos</span>
+            <kbd>6</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('vestigios-fisicos')" data-section="vestigios-fisicos">
+            <i class="fa-solid fa-gun"></i>
+            <span>Vestígios Físicos</span>
+            <kbd>7</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('microvestigios')" data-section="microvestigios">
+            <i class="fa-solid fa-microscope"></i>
+            <span>Microvestígios</span>
+            <kbd>8</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('disparo-af')" data-section="disparo-af">
+            <i class="fa-solid fa-crosshairs"></i>
+            <span>Disparo de AF</span>
+            <kbd>9</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('morte-violenta')" data-section="morte-violenta">
+            <i class="fa-solid fa-skull"></i>
+            <span>Morte Violenta</span>
+            <kbd>0</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('manchas-sangue')" data-section="manchas-sangue">
+            <i class="fa-solid fa-droplet"></i>
+            <span>Manchas de Sangue</span>
+            <kbd>Q</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('patrimonio')" data-section="patrimonio">
+            <i class="fa-solid fa-building"></i>
+            <span>Crime Patrimônio</span>
+            <kbd>W</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('reproducao')" data-section="reproducao">
+            <i class="fa-solid fa-theater-masks"></i>
+            <span>Reprodução Simulada</span>
+            <kbd>E</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('laudo')" data-section="laudo">
+            <i class="fa-solid fa-file-contract"></i>
+            <span>Estrutura Laudo</span>
+            <kbd>R</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('pegadinhas')" data-section="pegadinhas">
+            <i class="fa-solid fa-exclamation-triangle"></i>
+            <span>Pegadinhas</span>
+            <kbd>T</kbd>
+        </div>
+
+        <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border-color);">
+            <a href="../IF-PPCEXB/index.html" style="text-decoration: none; color: var(--text-muted); font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-arrow-left"></i>
+                Voltar ao Index
+            </a>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <header>
+            <div class="header-title">
+                <h2>Local de Ocorrência de Crime</h2>
+                <p>Resumo completo para concursos periciais</p>
+            </div>
+            <div class="top-actions">
+                <button class="btn-action" onclick="window.print()">
+                    <i class="fa-solid fa-print"></i>
+                    Imprimir
+                </button>
+                <button class="btn-action primary" onclick="showSection('roteiro')">
+                    <i class="fa-solid fa-play"></i>
+                    Começar
+                </button>
+            </div>
+        </header>
+
+        <!-- SECTION 1: BASE LEGAL -->
+        <div class="content-section active" id="base-legal">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon info">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3>Base Legal e Fundamentos da Perícia</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box info">
+                        <h4><i class="fa-solid fa-gavel"></i> Ponto de Abertura</h4>
+                        <p>"A questão legal que dá sustentação à perícia"</p>
+                    </div>
+                    
+                    <div class="highlight-box danger" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-exclamation-circle"></i> CPP Art. 158 - O MAIS COBRADO</h4>
+                        <p>Quando a infração deixar vestígios, é indispensável o exame de corpo de delito, direto ou indireto. Não pode ser suprido pela confissão do acusado.</p>
+                    </div>
+                    
+                    <div style="margin-top: 16px;">
+                        <h4 style="font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 8px;">CPP Art. 158-A, §3º</h4>
+                        <p style="font-size: 13px; color: var(--text-muted);">Conceito de vestígio: todo objeto ou material bruto, visível ou latente, constatado ou recolhido, relacionado à infração penal (Base legal: Lei 13.964/2019)</p>
+                    </div>
+                    
+                    <div class="highlight-box warning" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-question-circle"></i> PERGUNTA ARMADILHA</h4>
+                        <p><strong>"Tem hierarquia entre as informações objetivas e as subjetivas?"</strong></p>
+                        <p style="margin-top: 8px;"><strong>Resposta: NÃO</strong> - Apesar de a perícia ser conhecida como "rainha das provas", legalmente não há hierarquia entre as provas. Alternativa incorreta se disser que a prova pericial "prevalece sobre" ou "se sobrepõe à" prova testemunhal.</p>
+                    </div>
+                    
+                    <table class="bizu-table" style="margin-top: 16px;">
+                        <thead>
+                            <tr>
+                                <th>Tipo de Informação</th>
+                                <th>Papel na Perícia</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Vestígios (objetivos)</strong></td>
+                                <td>Matéria-prima da perícia - o perito só conclui a partir deles</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Declarações (subjetivas)</strong></td>
+                                <td>Servem para direcionar os trabalhos - NÃO são objeto de avaliação no laudo</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="highlight-box success" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-lightbulb"></i> Conceito Ampliado de Local (Eraldo Rabelo)</h4>
+                        <p>Porção do espaço compreendida num raio a partir do ponto de constatação do fato. Abrange lugares onde foram praticados atos preliminares ou posteriores à consumação do delito.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                    </div>
+                    <h3>Classificação de Locais</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <table class="bizu-table">
+                        <thead>
+                            <tr>
+                                <th>Classificação</th>
+                                <th>Tipos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Imediato x Mediato</strong></td>
+                                <td>Imediato: onde ocorreu o evento, maior concentração de vestígios. Mediato: adjacências, continuidade geográfica.</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Preservação</strong></td>
+                                <td>Idôneos (não violados) vs Inidôneos (perturbados/devassados)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Natureza do Fato</strong></td>
+                                <td>Furto, roubo, dano, acidente de trânsito, morte violenta, explosão, incêndio, laboratório clandestino, plantio de drogas, desmatamento, garimpo ilegal, cativeiro, tráfico de animais, achado de ossada</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: ROTEIRO DE PROCESSAMENTO -->
+        <div class="content-section" id="roteiro">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon warning">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <h3>Sete Etapas - Ordem Exata</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box danger">
+                        <h4><i class="fa-solid fa-exclamation-triangle"></i> Cobrança do Professor</h4>
+                        <p>"Você tem que saber tudo que tem que fazer em cada uma dessas etapas"</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-container">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Preparação</h4>
+                        <ul>
+                            <li>Obtenção de informações adicionais</li>
+                            <li>Localização da cena (endereço, coordenadas, referências)</li>
+                            <li>Tipo de local/crime</li>
+                            <li>Condições do isolamento e da preservação</li>
+                            <li>Urgência do exame</li>
+                            <li>Material e equipamento</li>
+                            <li>Transporte de pessoal</li>
+                            <li>Meios de comunicação</li>
+                            <li><strong>Planejar é o ponto crucial - começa antes de sair</strong></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Chegada ao Local</h4>
+                        <ul>
+                            <li>Assumir o local (formal, segura e clara, pelo perito-chefe)</li>
+                            <li>Oportunidade única</li>
+                            <li>Reunião preliminar</li>
+                            <li>Busca inicial</li>
+                            <li>Cadeia de comando</li>
+                            <li>Entrevistas</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Busca de Vestígios</h4>
+                        <ul>
+                            <li>Busca completa, com os padrões de busca (espiral, linha, linha cruzada, quadrante)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Documentação (Fixação)</h4>
+                        <ul>
+                            <li>Descrição narrativa</li>
+                            <li>Fotografia (pode ser complementada por filmagem)</li>
+                            <li>Croqui</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Coleta e Acondicionamento</h4>
+                        <ul>
+                            <li>Só depois de posicionado, fotografado e descrito</li>
+                            <li>Amostragem e amostras controle</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h4>Reunião Final</h4>
+                        <ul>
+                            <li>"Fizemos tudo o que era necessário?"</li>
+                            <li>Conferência dos 6 itens antes da entrega</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">7</div>
+                    <div class="step-content">
+                        <h4>Liberação do Local</h4>
+                        <ul>
+                            <li>"A gente entrega o local para quem? Para o DELEGADO" - ou ao policial encarregado</li>
+                            <li>Entrega formal pelo perito-chefe</li>
+                            <li>Geralmente verbal, mas deve ser consignada em laudo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon danger">
+                        <i class="fa-solid fa-exclamation-circle"></i>
+                    </div>
+                    <h3>Pegadinhas Clássicas</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box warning">
+                        <h4><i class="fa-solid fa-times-circle"></i> Amostra Controle</h4>
+                        <p>A amostra controle é colhida na etapa de COLETA - não em outra fase. Como no local nem sempre dá para saber se ela será necessária, a regra geral é sempre coletá-la.</p>
+                    </div>
+                    
+                    <div class="highlight-box warning" style="margin-top: 12px;">
+                        <h4><i class="fa-solid fa-times-circle"></i> Isolamento</h4>
+                        <p>"Como é que a gente faz o isolamento? Só com fita?" - Não. Pode ser com cordas, cones, cavaletes ou qualquer barreira. Geralmente quem faz o isolamento é a PM ou bombeiros. A função da perícia é REAVALIAR o isolamento: ampliar ou reduzir o perímetro.</p>
+                    </div>
+                    
+                    <div class="highlight-box warning" style="margin-top: 12px;">
+                        <h4><i class="fa-solid fa-times-circle"></i> Coleta Imediata</h4>
+                        <p>Os vestígios NÃO devem ser coletados assim que encontrados. Devem ser marcados, para serem descritos, fotografados e ter a posição anotada no croqui. Só depois vem a coleta.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: DOCUMENTAÇÃO -->
+        <div class="content-section" id="documentacao">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon info">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                    <h3>Documentação: Narrativa, Croqui e Fotografia</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; margin-bottom: 8px;">3.1 Descrição Narrativa</h4>
+                    <ul style="font-size: 13px; color: var(--text-muted); padding-left: 16px;">
+                        <li>Pode ser escrita, gravada em áudio ou gravada em áudio e vídeo</li>
+                        <li>Do geral para o específico</li>
+                        <li>Em princípio, nenhum item é insignificante</li>
+                        <li>A melhor oportunidade e lugar para descrever tudo é na própria cena de crime</li>
+                    </ul>
+                    
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; margin: 16px 0 8px;">3.2 Croqui - Foco na Triangulação</h4>
+                    <div class="highlight-box success">
+                        <h4><i class="fa-solid fa-star"></i> Triangulação - DOMINAR</h4>
+                        <p>Consiste em tirar a distância do vestígio a DOIS referenciais fixos. Os referenciais têm que ser PERENES (permanentes). Objeto puntual → basta uma triangulação. Objeto grande → duas triangulações.</p>
+                    </div>
+                    
+                    <table class="bizu-table" style="margin-top: 16px;">
+                        <thead>
+                            <tr>
+                                <th>Método</th>
+                                <th>Princípio</th>
+                                <th>Quando Usar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Triangulação</strong></td>
+                                <td>Distância do vestígio a dois referenciais fixos</td>
+                                <td>Mais usado (simplicidade e precisão)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Coordenadas Cartesianas</strong></td>
+                                <td>Medições como em plano cartesiano</td>
+                                <td>Áreas fechadas (uma parede é eixo x, outra eixo y)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Coordenadas Polares</strong></td>
+                                <td>Um referencial + ângulo</td>
+                                <td>Áreas abertas, difícil segundo referencial</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Linha Base</strong></td>
+                                <td>Duas trenas - uma linha base, outra mede até ela</td>
+                                <td>Concentração de vestígios numa mesma direção</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: FOTOGRAFIA FORENSE -->
+        <div class="content-section" id="fotografia">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon warning">
+                        <i class="fa-solid fa-camera-retro"></i>
+                    </div>
+                    <h3>Fotografia Forense - Triângulo da Exposição</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box danger">
+                        <h4><i class="fa-solid fa-exclamation-triangle"></i> Ponto onde o professor gastou o maior tempo</h4>
+                        <p>"Pode ter mais de uma questão" - "Você não precisa decorar os valores - precisa saber andar na tabela"</p>
+                    </div>
+                    
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; margin: 16px 0 8px;">4.1 As Três Grandezas</h4>
+                    <table class="bizu-table">
+                        <thead>
+                            <tr>
+                                <th>Grandeza</th>
+                                <th>Função</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Abertura do Diafragma (números f)</strong></td>
+                                <td>Controla a quantidade/intensidade de luz que passa pela objetiva</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tempo de Exposição (obturador)</strong></td>
+                                <td>Controla por quanto tempo o sensor fica exposto à luz</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ISO</strong></td>
+                                <td>Sensibilidade do sensor</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="highlight-box info" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-lightbulb"></i> A Regra que Resolve Toda Questão</h4>
+                        <p>Nas escalas, esquerda = mais luz e direita = menos luz. Para manter a mesma luminosidade: ande o mesmo número de "cliques" na outra escala, na direção que devolve a luz.</p>
+                        <p style="margin-top: 8px;"><strong>AVISO:</strong> Nunca decore "esquerda = mais luz" - leia o sentido da tabela que vier e raciocine pelo saldo de luz.</p>
+                    </div>
+                    
+                    <div class="highlight-box success" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-calculator"></i> Exemplo Resolvido</h4>
+                        <p><strong>Situação:</strong> Tempo 1/15, abertura f/8. Altera tempo para 1/125.</p>
+                        <p><strong>Raciocínio:</strong> 1/15→1/30→1/60→1/125 = 3 cliques perdendo luz. Compensar abrindo 3: f/8→f/5.6→f/4→f/2.8.</p>
+                        <p><strong>Resposta:</strong> f/2.8</p>
+                    </div>
+                    
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; margin: 16px 0 8px;">4.2 Fotografia Noturna</h4>
+                    <ul style="font-size: 13px; color: var(--text-muted); padding-left: 16px;">
+                        <li>Pouca luminosidade → alto tempo de exposição → exige TRIPÉ</li>
+                        <li>Sem tripé, a foto sai borrada/tremida</li>
+                        <li>Pode-se aumentar o ISO, mas valores muito elevados geram ruído</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon">
+                        <i class="fa-solid fa-images"></i>
+                    </div>
+                    <h3>Registro Fotográfico do Local</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box">
+                        <h4><i class="fa-solid fa-list-ol"></i> Regra dos 3 Registros por Vestígio</h4>
+                        <ol style="font-size: 13px; color: var(--text-muted); margin-top: 8px; padding-left: 20px;">
+                            <li>Uma foto do vestígio contextualizado no local</li>
+                            <li>Uma foto em close, SEM escala</li>
+                            <li>A mesma foto em close, agora COM escala</li>
+                        </ol>
+                    </div>
+                    
+                    <ul style="font-size: 13px; color: var(--text-muted); padding-left: 16px; margin-top: 16px;">
+                        <li>Fotografar do geral para o específico</li>
+                        <li>O vestígio é fotografado no local, antes da coleta</li>
+                        <li>Fotos preferencialmente ao nível dos olhos</li>
+                        <li>Pegadas, impressões papilares e marcas de pneus: câmera em posição ORTOGONAL</li>
+                        <li>Registrar todos os acessos ao local e a área externa</li>
+                        <li>Guardar em dossiê todas as fotografias sem edição</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: VESTÍGIOS QUÍMICOS -->
+        <div class="content-section" id="vestigios-quimicos">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon chemical">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+                    <h3>Vestígios Químicos</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box danger">
+                        <h4><i class="fa-solid fa-exclamation-triangle"></i> A Regra do pH - CAI NA PROVA</h4>
+                        <p><strong>Líquido:</strong> mede o pH primeiro</p>
+                        <ul style="margin-top: 8px; padding-left: 20px;">
+                            <li>pH ÁCIDO (ou neutro) → frasco de VIDRO (âmbar, boca estreita) - <strong>Exceção:</strong> ácido fluorídrico vai em plástico</li>
+                            <li>pH BÁSICO → frasco de PLÁSTICO (polietileno, boca estreita) - <strong>Sem exceção</strong></li>
+                        </ul>
+                        <p style="margin-top: 8px;"><strong>Sólidos:</strong> frasco de plástico de boca larga (admite-se saco plástico bem vedado)</p>
+                    </div>
+                    
+                    <div class="highlight-box warning" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-exclamation-circle"></i> Onde a Banca Pega</h4>
+                        <p>pH básico exige FRASCO de plástico - não é "saquinho de plástico". Boca larga ou estreita não interessa para o acerto.</p>
+                    </div>
+                    
+                    <div class="highlight-box info" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-info-circle"></i> Diferença que a Banca Adora</h4>
+                        <p>Embalagem de vestígio químico: precisa estar limpa, mas NÃO precisa ser estéril. Embalagem de vestígio biológico: limpa não basta, tem que ser estéril/nova.</p>
+                    </div>
+                    
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; margin: 16px 0 8px;">5.1 Amostragem (IT 006/2006)</h4>
+                    <table class="bizu-table">
+                        <thead>
+                            <tr>
+                                <th>Número de Unidades (n)</th>
+                                <th>Amostragem</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>n < 10</td>
+                                <td>Todas as unidades do grupo (uma amostra de cada)</td>
+                            </tr>
+                            <tr>
+                                <td>10 ≤ n ≤ 100</td>
+                                <td>10 unidades escolhidas aleatoriamente, uma amostra de cada</td>
+                            </tr>
+                            <tr>
+                                <td>n > 100</td>
+                                <td>√n unidades aleatórias, uma amostra de cada (arredondado para o inteiro superior)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 6: VESTÍGIOS BIOLÓGICOS -->
+        <div class="content-section" id="vestigios-biologicos">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon biological">
+                        <i class="fa-solid fa-dna"></i>
+                    </div>
+                    <h3>Vestígios Biológicos</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box danger">
+                        <h4><i class="fa-solid fa-exclamation-triangle"></i> Ponto Vermelho - NÃO ERREM ISSO</h4>
+                        <p>Mesmo que o vestígio esteja SECO, a embalagem precisa ser PERMEÁVEL AO AR (e opaca): envelopes, sacos e caixas de papel ou papelão. Por quê: o ar contém água; fechado num saco plástico lacrado, forma-se efeito estufa/abafamento, e a bactéria degrada o material.</p>
+                    </div>
+                    
+                    <div class="highlight-box warning" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-exclamation-circle"></i> Limpa Não Basta</h4>
+                        <p>Para biológicos: materiais sempre LIMPOS, NOVOS ou ESTÉREIS. A embalagem tem que ser estéril - não basta estar limpa.</p>
+                    </div>
+                    
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; margin: 16px 0 8px;">6.1 Quais São</h4>
+                    <p style="font-size: 13px; color: var(--text-muted);">Sangue, saliva, sêmen, urina, fezes, suor, cabelos e pelos, células epiteliais, tecidos moles. Permitem: identificação genética, vínculo genético, identificação de espécies.</p>
+                    
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; margin: 16px 0 8px;">6.2 Regra de Ouro do Acondicionamento</h4>
+                    <table class="bizu-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Embalagem</th>
+                                <th>Armazenamento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Seco/secável</strong></td>
+                                <td>Papel, permeável ao ar e opaca</td>
+                                <td>Temperatura ambiente, ao abrigo da luz</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Úmido/líquido</strong></td>
+                                <td>Recipiente plástico estéril que não vaze</td>
+                                <td>Refrigerar no local (~4°C) e congelar assim que possível</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sangue em tubo com EDTA</strong></td>
+                                <td>Tubo</td>
+                                <td>Refrigerar a 4°C</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Tecidos moles, fluidos líquidos, cabelos e pelos</strong></td>
+                                <td>Plástica (retirar o ar)</td>
+                                <td>Congelar a -20°C, evitando degelo</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Suabes</strong></td>
+                                <td>Porta-suabes</td>
+                                <td>Local arejado, de preferência com ar-condicionado</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="highlight-box info" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-lightbulb"></i> Mnemônica</h4>
+                        <p>Materiais limpos/novos/estéreis · proteger da LUZ · SECAR sempre que possível · quando não puder secar, REFRIGERAR ou CONGELAR · NÃO ABAFAR</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 7: VESTÍGIOS FÍSICOS -->
+        <div class="content-section" id="vestigios-fisicos">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon physical">
+                        <i class="fa-solid fa-gun"></i>
+                    </div>
+                    <h3>Vestígios Físicos</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <p style="font-size: 13px; color: var(--text-muted);">"O que não é biológico, não é químico e não é microvestígio, é físico" - Gama enorme: instrumentos, objetos e vestígios balísticos.</p>
+                    
+                    <div class="highlight-box">
+                        <h4><i class="fa-solid fa-shield-alt"></i> Regra de Prioridade</h4>
+                        <p>1º lugar: segurança das pessoas. 2º lugar: segurança dos vestígios.</p>
+                    </div>
+                    
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; margin: 16px 0 8px;">7.1 Armas de Fogo e Munição</h4>
+                    <ul style="font-size: 13px; color: var(--text-muted); padding-left: 16px;">
+                        <li>Remover o carregador, desmuniciar, fazer o check de segurança</li>
+                        <li>Segurar pelo cabo (placas estriadas), para preservar impressões papilares</li>
+                        <li>O transporte é sempre com a arma DESMUNICIADA</li>
+                        <li>Havendo mais de uma arma: acondicionar cada uma separadamente</li>
+                    </ul>
+                    
+                    <div class="highlight-box warning" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-exclamation-triangle"></i> Divergência - Seguir o Professor</h4>
+                        <p>Arma e munição vão embaladas SEPARADAMENTE. Marque SEPARADO na prova.</p>
+                    </div>
+                    
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; margin: 16px 0 8px;">7.2 Projétil Incrustado</h4>
+                    <ul style="font-size: 13px; color: var(--text-muted); padding-left: 16px;">
+                        <li>Trabalhar no SUPORTE: cortar, escavar e levar um pedaço do material junto com o projétil</li>
+                        <li>Nunca ir com chave de fenda, alicate ou pinça e puxar o projétil</li>
+                        <li>Não remover os resíduos/incrustações aderidos ao projétil</li>
+                        <li>Coletar o projétil com a mão enluvada ou saco plástico - não com pinça metálica</li>
+                        <li>Acondicionar individualmente, envolto em algodão, em envelope de papel</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon">
+                        <i class="fa-solid fa-glass"></i>
+                    </div>
+                    <h3>7.3 Vidros</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box success">
+                        <h4><i class="fa-solid fa-star"></i> As Três Respostas Cobradas</h4>
+                        <ul style="margin-top: 8px; padding-left: 20px;">
+                            <li><strong>Cone de Transfixação:</strong> A BASE do cone fica na superfície OPOSTA à que recebeu o choque (na SAÍDA, onde há maior perda de massa)</li>
+                            <li><strong>Rupturas Radiais:</strong> Começam a se formar no LADO OPOSTO ao do impacto (essa face fica submetida a maior estado de tensão)</li>
+                            <li><strong>Rupturas Concêntricas (Espirais):</strong> Formam-se depois das radiais e iniciam do lado do impacto ("o lado da pancada")</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="highlight-box info" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-list-ol"></i> Ordem dos Disparos</h4>
+                        <p>As rupturas radiais do segundo impacto PARAM (são interrompidas) nas radiais do primeiro. Regra: quem "para" é o mais novo; quem "barra" é o mais antigo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 8: MICROVESTÍGIOS -->
+        <div class="content-section" id="microvestigios">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon micro">
+                        <i class="fa-solid fa-microscope"></i>
+                    </div>
+                    <h3>Microvestígios e Ajuste Físico</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box danger">
+                        <h4><i class="fa-solid fa-quote-left"></i> A Frase que o Professor Mandou Gravar</h4>
+                        <p><strong>Qual o fundamento científico do exame de ajuste físico?</strong></p>
+                        <p style="margin-top: 8px;">Premissa: eventos de separação (quebras, cortes, rasgos) NÃO são reproduzíveis. Causas: combinação de forças aplicadas, características de construção e propriedades do material. Isso confere características INDIVIDUAIS. Cada rasgo/interação gera marcas únicas, não reprodutíveis.</p>
+                    </div>
+                    
+                    <div class="highlight-box warning" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-exclamation-circle"></i> Pegadinha de Negativa</h4>
+                        <p>A ausência de um ajuste físico NÃO implica que os itens comparados tenham se originado de fontes diferentes. A ausência de detalhes de borda nem sempre descarta a possibilidade de um ajuste físico.</p>
+                    </div>
+                    
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; margin: 16px 0 8px;">8.1 Conceito de Microvestígios</h4>
+                    <p style="font-size: 13px; color: var(--text-muted);">Vestígios físicos, geralmente de difícil visualização sem equipamentos especializados. Devido ao pequeno tamanho ou quantidade. Premissa geral: todo contato deixa marcas.</p>
+                    
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; margin: 16px 0 8px;">8.2 Coleta de Microvestígios</h4>
+                    <table class="bizu-table">
+                        <thead>
+                            <tr>
+                                <th>Técnica</th>
+                                <th>Quando Usar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Pinças</strong></td>
+                                <td>Material particulado (sem excesso de pressão)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Fita Adesiva / Gelatina</strong></td>
+                                <td>Detritos superficiais (NÃO usar em tinta, polímeros, vestígios úmidos ou biológicos)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Raspagem</strong></td>
+                                <td>Espátula para material solto, bisturi para material aderido</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Varredura a Vácuo</strong></td>
+                                <td>Fendas profundas, áreas grandes, local processado meses depois (usar por último)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 9: DISPARO DE ARMA DE FOGO -->
+        <div class="content-section" id="disparo-af">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon danger">
+                        <i class="fa-solid fa-crosshairs"></i>
+                    </div>
+                    <h3>Local com Disparo de Arma de Fogo</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box info">
+                        <h4><i class="fa-solid fa-calculator"></i> Matemática Cobrada</h4>
+                        <p>"Não tem cosseno, não tem tangente" - O que cai é semelhança de triângulos. "Traça o triângulo"</p>
+                    </div>
+                    
+                    <div class="highlight-box success" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-lightbulb"></i> A Questão do Muro - Resolvida</h4>
+                        <p><strong>Enunciado:</strong> Orifício a 20 m de um muro de 3 m. A 450 m além do muro, prédio de 100 m. Trajetória retilínea. Pergunta: é possível que o disparo tenha partido do prédio? De que altura?</p>
+                        <p style="margin-top: 8px;"><strong>Solução:</strong> Triângulo menor: base 20 m, altura 3 m. Triângulo maior: base 470 m, altura H. Semelhança: H/3 = 470/20 → H = 70,5 m.</p>
+                        <p style="margin-top: 8px;"><strong>Resposta:</strong> Sim, é possível - 70,5 m é menor que os 100 m do prédio.</p>
+                    </div>
+                    
+                    <div class="highlight-box warning" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-times-circle"></i> Os Dois Erros que Derrubam</h4>
+                        <ul style="margin-top: 8px; padding-left: 20px;">
+                            <li>Usar B = 450 em vez de 470 (os dois triângulos partem do mesmo vértice - o orifício)</li>
+                            <li>Jogar a altura do prédio na conta desde o início (ela só serve depois, para verificar compatibilidade)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 10: MORTE VIOLENTA -->
+        <div class="content-section" id="morte-violenta">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon danger">
+                        <i class="fa-solid fa-skull"></i>
+                    </div>
+                    <h3>Local de Morte Violenta - Exame Perinecroscópico</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box">
+                        <h4><i class="fa-solid fa-list-ol"></i> As Três Etapas - Ordem Exata</h4>
+                    </div>
+                    
+                    <div class="flow-container" style="margin-top: 12px;">
+                        <div class="flow-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Exame VISUAL do Cadáver</h4>
+                                <p style="font-size: 13px; color: var(--text-muted);">Só observação, sem tocar. Descrição de características físicas, posição e relação com objetos do local.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Exame das VESTES</h4>
+                                <p style="font-size: 13px; color: var(--text-muted);">Como estão dispostas, orifícios, manchas, outros vestígios, conteúdo dos bolsos.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Exame do CADÁVER Sem Vestes</h4>
+                                <p style="font-size: 13px; color: var(--text-muted);">Exame externo de todas as regiões anatômicas, descrição de todas as lesões.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="highlight-box warning" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-question-circle"></i> Pergunta Feita de Propósito</h4>
+                        <p>"Posso dizer que a principal função do exame perinecroscópico é levantar impressões digitais?" - NÃO. Função principal: caracterização completa - buscar a causa da morte e a dinâmica dos fatos.</p>
+                    </div>
+                    
+                    <div class="highlight-box info" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-info-circle"></i> Onde e por Quem</h4>
+                        <p><strong>Perinecroscópico:</strong> NO LOCAL, pelo PERITO CRIMINAL. <strong>Necroscópico:</strong> no IML, pelo MÉDICO LEGISTA.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 11: MANCHAS DE SANGUE -->
+        <div class="content-section" id="manchas-sangue">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon danger">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <h3>Local com Manchas de Sangue</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box danger">
+                        <h4><i class="fa-solid fa-exclamation-triangle"></i> Introdução</h4>
+                        <p>"Se você não souber identificar e classificar, você vai morrer na praia - não vai saber fazer a dinâmica"</p>
+                    </div>
+                    
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; margin: 16px 0 8px;">11.1 Manchas Regulares - pelo Mecanismo</h4>
+                    <table class="bizu-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Mecanismo</th>
+                                <th>Aparência</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Gotejadas</strong></td>
+                                <td>Gotas geradas pela GRAVIDADE</td>
+                                <td>Circular (queda perpendicular) ou elíptico</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Arterial</strong></td>
+                                <td>Corte de artéria + bombeamento cardíaco</td>
+                                <td>Elípticas, com escorrimento característico</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Cast-off</strong></td>
+                                <td>Sangue que se desprende de instrumento em movimento</td>
+                                <td>Sequência em LINHA - começa circular e termina elíptica</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Impactadas</strong></td>
+                                <td>Impacto sobre fonte de sangue</td>
+                                <td>Conjunto RADIAL a partir da origem</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <h4 style="font-family: var(--font-display); font-size: 15px; font-weight: 700; margin: 16px 0 8px;">11.2 Manchas Alteradas</h4>
+                    <table class="bizu-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Por Contato</strong></td>
+                                <td>A principal alteração - alguém pisa ou passa a mão na mancha</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Por Diluição</strong></td>
+                                <td>Água alterou a mancha (chuva)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Sombra</strong></td>
+                                <td>AUSÊNCIA de sangue - objeto estava no local e foi removido</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="highlight-box warning" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-bolt"></i> A Regra da Energia</h4>
+                        <p>Maior energia → maior ATOMIZAÇÃO → MENORES os diâmetros das manchas resultantes. Atomizar significa dividir em partículas menores.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 12: CRME CONTRA PATRIMÔNIO -->
+        <div class="content-section" id="patrimonio">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3>Locais de Crime contra o Patrimônio</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <table class="bizu-table">
+                        <thead>
+                            <tr>
+                                <th>Crime</th>
+                                <th>Características</th>
+                                <th>Vestígios</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Furto</strong></td>
+                                <td>Subtrair coisa alheia móvel. Não existe furto culposo.</td>
+                                <td>Quantidade SIGNIFICATIVA de vestígios (arrombamento, circulação, subtração)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Roubo</strong></td>
+                                <td>Subtrair mediante grave ameaça ou violência à pessoa</td>
+                                <td>ESCASSEZ de vestígios (ação rápida e dinâmica)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dano</strong></td>
+                                <td>Destruir, inutilizar ou deteriorar coisa alheia</td>
+                                <td>Pichações, quebras, marcas de ferramenta, objetos abandonados</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="highlight-box info" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-video"></i> CFTV</h4>
+                        <p>Antes de iniciar a busca por vestígios, cheque o CFTV. As imagens revelam: dinâmica, horário, quantidade de envolvidos, rotas de ingresso e evasão, e quais objetos foram tocados.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 13: REPRODUÇÃO SIMULADA -->
+        <div class="content-section" id="reproducao">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon warning">
+                        <i class="fa-solid fa-theater-masks"></i>
+                    </div>
+                    <h3>Reprodução Simulada</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box danger">
+                        <h4><i class="fa-solid fa-exclamation-triangle"></i> A Pergunta Certa</h4>
+                        <p><strong>A reprodução simulada é uma prova pericial PURA?</strong> NÃO. Porque trabalha com elementos SUBJETIVOS - as versões narradas pelos envolvidos.</p>
+                    </div>
+                    
+                    <div class="highlight-box info" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-users"></i> Quem Apresenta Versão</h4>
+                        <p>VÍTIMA, ACUSADO (suspeito), TESTEMUNHA - só esses três. Perito, juiz e policiais NÃO são atores da infração.</p>
+                    </div>
+                    
+                    <div class="highlight-box warning" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-exclamation-circle"></i> A Pegadinha Mais Fina</h4>
+                        <p>No local, a perícia NÃO diz se a versão é verdade ou mentira. A valoração vem depois, na análise e no confronto posteriores, já no laudo.</p>
+                    </div>
+                    
+                    <div class="highlight-box success" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-quote-right"></i> Citação de Referência</h4>
+                        <p>"O depoimento escrito é um cadáver mumificado, em que tudo aquilo que podia subsistir de útil e de sincero desapareceu definitivamente" - Edmond Locard, 1934</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 14: ESTRUTURA DO LAUDO -->
+        <div class="content-section" id="laudo">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon success">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <h3>Estrutura do Laudo Pericial</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box danger">
+                        <h4><i class="fa-solid fa-exclamation-triangle"></i> Obrigatórios x Facultativos</h4>
+                        <p><strong>Obrigatórios (Portaria DITEC/PF 1.192/2022, Art. 24):</strong> Preâmbulo, Objeto, Objetivo, Exame, Conclusão.</p>
+                        <p style="margin-top: 8px;"><strong>Facultativos:</strong> Resumo, Sumário, Histórico.</p>
+                        <p style="margin-top: 8px;"><strong>Atenção:</strong> O Histórico é FACULTATIVO, apesar de ser um dos tópicos mais citados - a questão adora inverter isso.</p>
+                    </div>
+                    
+                    <div class="highlight-box success" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-lightbulb"></i> Macete - Os 5 Obrigatórios</h4>
+                        <p>"Pré-Ob-Ob-Ex-Con" → Preâmbulo · Objeto · Objetivo · Exame · Conclusão</p>
+                    </div>
+                    
+                    <table class="bizu-table" style="margin-top: 16px;">
+                        <thead>
+                            <tr>
+                                <th>Tópico</th>
+                                <th>Conteúdo</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Preâmbulo</strong></td>
+                                <td>Número sequencial, título, nome dos peritos, quem designou, informações da requisição, transcrição dos quesitos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Histórico</strong></td>
+                                <td>Meio pelo qual a perícia foi solicitada, dados da equipe, horários, endereço, entrevistas, alterações do estado das coisas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Objeto</strong></td>
+                                <td>O que foi periciado (o local, o material, o veículo)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Objetivo</strong></td>
+                                <td>As finalidades dos exames, alinhadas ao tipo de solicitação ou aos quesitos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Exame</strong></td>
+                                <td>Caracterização minuciosa do local e dos vestígios, metodologias, técnicas, exames complementares e resultados</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Conclusão</strong></td>
+                                <td>Clara e objetiva, com as respostas aos quesitos. Se não for possível concluir: deve constar a impossibilidade e os motivos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="highlight-box info" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-star"></i> A Definição de Dinâmica - Decore Esta</h4>
+                        <p>Contextualizar e correlacionar as informações do levantamento de local com os resultados dos exames complementares. Objetivo: formar a convicção sobre COMO o delito ocorreu.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 15: PEGADINHAS -->
+        <div class="content-section" id="pegadinhas">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon danger">
+                        <i class="fa-solid fa-exclamation-triangle"></i>
+                    </div>
+                    <h3>Pegadinhas e Conflitos com a Apostila</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box danger">
+                        <h4><i class="fa-solid fa-times-circle"></i> As Afirmativas que Derrubam Candidato</h4>
+                    </div>
+                    
+                    <div class="flow-container" style="margin-top: 12px;">
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-danger);">✗</div>
+                            <div class="step-content">
+                                <p style="font-size: 13px; color: var(--text-muted);">"Vestígio biológico seco pode ir em saco plástico lacrado" - Mesmo seco, a embalagem tem que ser permeável ao ar</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-danger);">✗</div>
+                            <div class="step-content">
+                                <p style="font-size: 13px; color: var(--text-muted);">"Basta a embalagem estar limpa" - Verdadeiro para químicos; ERRADO para biológicos (exigem estéril/novo)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-danger);">✗</div>
+                            <div class="step-content">
+                                <p style="font-size: 13px; color: var(--text-muted);">"pH básico pode ir em saquinho plástico" - Tem que ser FRASCO de plástico</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-danger);">✗</div>
+                            <div class="step-content">
+                                <p style="font-size: 13px; color: var(--text-muted);">"O ácido fluorídrico vai em vidro como os demais ácidos" - É a única exceção: vai em plástico</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-danger);">✗</div>
+                            <div class="step-content">
+                                <p style="font-size: 13px; color: var(--text-muted);">"O vestígio deve ser coletado assim que encontrado" - Marca-se, descreve-se, fotografa-se e plota-se no croqui antes</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-danger);">✗</div>
+                            <div class="step-content">
+                                <p style="font-size: 13px; color: var(--text-muted);">"A base do cone de transfixação fica do lado do impacto" - Fica na face oposta (saída)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-danger);">✗</div>
+                            <div class="step-content">
+                                <p style="font-size: 13px; color: var(--text-muted);">"As rupturas radiais começam do lado do impacto" - Começam do lado oposto</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-danger);">✗</div>
+                            <div class="step-content">
+                                <p style="font-size: 13px; color: var(--text-muted);">"As radiais do primeiro disparo param nas do segundo" - INVERTIDO: as do segundo param nas do primeiro</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-danger);">✗</div>
+                            <div class="step-content">
+                                <p style="font-size: 13px; color: var(--text-muted);">"A ausência de ajuste físico prova que os itens vieram de fontes diferentes" - Não implica nada disso</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-danger);">✗</div>
+                            <div class="step-content">
+                                <p style="font-size: 13px; color: var(--text-muted);">"Maior energia produz manchas de sangue maiores" - Maior energia = maior atomização = manchas menores</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-danger);">✗</div>
+                            <div class="step-content">
+                                <p style="font-size: 13px; color: var(--text-muted);">"A prova pericial prevalece sobre a prova testemunhal" - Não há hierarquia entre prova objetiva e subjetiva</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-danger);">✗</div>
+                            <div class="step-content">
+                                <p style="font-size: 13px; color: var(--text-muted);">"O isolamento do local é feito obrigatoriamente com fita" - Cordas, cones e cavaletes servem</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-danger);">✗</div>
+                            <div class="step-content">
+                                <p style="font-size: 13px; color: var(--text-muted);">"Na reprodução simulada, o perito atesta no local se a versão é verdadeira" - A valoração é posterior</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-danger);">✗</div>
+                            <div class="step-content">
+                                <p style="font-size: 13px; color: var(--text-muted);">"O Histórico é item obrigatório do laudo" - É facultativo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show target section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update menu items
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.dataset.section === sectionId) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const sections = ['base-legal', 'roteiro', 'documentacao', 'fotografia', 'vestigios-quimicos', 'vestigios-biologicos', 'vestigios-fisicos', 'microvestigios', 'disparo-af', 'morte-violenta', 'manchas-sangue', 'patrimonio', 'reproducao', 'laudo', 'pegadinhas'];
+            const activeSection = document.querySelector('.content-section.active');
+            const currentIndex = sections.indexOf(activeSection.id);
+            
+            if (e.key >= '1' && e.key <= '9') {
+                const index = parseInt(e.key) - 1;
+                if (index < sections.length) {
+                    showSection(sections[index]);
+                }
+            }
+            
+            if (e.key === '0') {
+                showSection('morte-violenta');
+            }
+            
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+                e.preventDefault();
+                const nextIndex = (currentIndex + 1) % sections.length;
+                showSection(sections[nextIndex]);
+            }
+            
+            if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                e.preventDefault();
+                const prevIndex = (currentIndex - 1 + sections.length) % sections.length;
+                showSection(sections[prevIndex]);
+            }
+        });
+    </script>
+</body>
+</html>
