@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revisão - Criminalística</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #7f1d1d;
+            --secondary-color: #dc2626;
+            --bg-color: #fef2f2;
+            --text-color: #1f2937;
+            --card-bg: #ffffff;
+            --border-color: #fecaca;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 40px 0;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .section {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+            box-shadow: 0 2px 8px rgba(127, 29, 29, 0.1);
+        }
+        
+        .section h2 {
+            color: var(--primary-color);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .subsection {
+            background: #fff5f5;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 3px solid var(--border-color);
+        }
+        
+        .subsection h3 {
+            color: var(--secondary-color);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .subsection h4 {
+            color: var(--primary-color);
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            margin-top: 12px;
+        }
+        
+        ul, ol {
+            margin-bottom: 10px;
+        }
+        
+        li {
+            margin-bottom: 5px;
+            line-height: 1.6;
+        }
+        
+        .important {
+            background-color: #fee2e2;
+            padding: 10px;
+            border-radius: 6px;
+            margin: 10px 0;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin: 20px 0;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .stats-bar {
+            background: white;
+            padding: 15px 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 8px rgba(127, 29, 29, 0.1);
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .stat-item i {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .toc {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(127, 29, 29, 0.1);
+        }
+        
+        .toc h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .toc ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .toc li {
+            margin-bottom: 8px;
+        }
+        
+        .toc a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        
+        .toc a:hover {
+            color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+            <h1><i class="fa-solid fa-magnifying-glass"></i> Revisão - Criminalística</h1>
+            <p>Material de revisão rápida baseado em apostila de Criminalística</p>
+        </div>
+    </div>
+    
+    <div class="container">
+        <a href="../IF-PPCEXB/index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Voltar para a página principal</a>
+        
+        <div class="stats-bar">
+            <div class="stat-item">
+                <i class="fa-solid fa-book"></i>
+                <span>5 Macro-temas</span>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-list"></i>
+                <span>30+ Subtópicos</span>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>Revisão estruturada</span>
+            </div>
+        </div>
+        
+        <div class="toc">
+            <h3><i class="fa-solid fa-compass"></i> Sumário</h3>
+            <ul>
+                <li><a href="#previsao-legal">1. Previsão Legal da Perícia (Art. 158 CPP)</a></li>
+                <li><a href="#roteiro-processamento">2. Roteiro de Processamento do Local</a></li>
+                <li><a href="#tipos-vestigios">3. Tipos de Vestígios</a></li>
+                <li><a href="#locais-especiais">4. Locais Especiais</a></li>
+                <li><a href="#estrutura-laudo">5. Estrutura do Laudo Pericial</a></li>
+            </ul>
+        </div>
+        
+        <div class="section" id="previsao-legal">
+            <h2><i class="fa-solid fa-scale-balanced"></i> Previsão Legal da Perícia (Art. 158 CPP)</h2>
+            
+            <div class="subsection">
+                <h3>Artigo 158 do Código de Processo Penal</h3>
+                <ul>
+                    <li>Quando a infração deixar vestígios, será indispensável o exame de corpo de delito, direto ou indireto, não podendo supri-lo a confissão do acusado</li>
+                    <li>O exame de corpo de delito é obrigatório quando houver vestígios materiais da infração penal</li>
+                    <li>A confissão do acusado não pode substituir o exame pericial quando existirem vestígios</li>
+                    <li>Exame direto: realizado no próprio local ou sobre os vestígios</li>
+                    <li>Exame indireto: realizado por meio de testemunhas ou documentos quando os vestígios não mais existem</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section" id="roteiro-processamento">
+            <h2><i class="fa-solid fa-route"></i> Roteiro de Processamento do Local</h2>
+            
+            <div class="important">
+                <strong>Fluxo das Etapas:</strong> PREPARAR → CHEGAR → ISOLAR → BUSCAR → DOCUMENTAR (Fixação) → COLETAR → REUNIÃO FINAL → LIBERAR o local
+            </div>
+            
+            <div class="subsection">
+                <h3>1 – Preparação</h3>
+                <ul>
+                    <li>Verificação dos equipamentos e materiais necessários</li>
+                    <li>Planejamento da equipe e atribuição de funções</li>
+                    <li>Verificação das informações preliminares sobre a ocorrência</li>
+                    <li>Preparação dos kits de coleta e documentação</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>2 – Chegada no Local</h3>
+                <ul>
+                    <li>Identificação da autoridade policial responsável</li>
+                    <li>Breve briefing sobre a ocorrência</li>
+                    <li>Verificação das condições de segurança do local</li>
+                    <li>Planejamento inicial do acesso ao local</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>3 – Isolamento</h3>
+                <ul>
+                    <li>Delimitação da área de perícia</li>
+                    <li>Controle de acesso ao local</li>
+                    <li>Proteção dos vestígios contra alterações</li>
+                    <li>Registro das pessoas que entram e saem do local</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>4 – Busca de Vestígios (Inicial e Completa)</h3>
+                <ul>
+                    <li><strong>Busca inicial:</strong> Reconhecimento rápido do local e identificação dos vestígios mais evidentes</li>
+                    <li><strong>Busca completa:</strong> Exame minucioso e sistemático de toda a área</li>
+                    <li>Utilização de métodos de busca (espiral, grade, zona, linha)</li>
+                    <li>Identificação e catalogação de todos os vestígios encontrados</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>5 – Documentação (Fixação)</h3>
+                <ul>
+                    <li><strong>Croqui:</strong></li>
+                    <ul>
+                        <li>Triangulação: localização de pontos através de medidas de três referências fixas</li>
+                        <li>Coordenadas cartesianas: sistema de eixos X e Y para posicionamento</li>
+                        <li>Linha de base: referência linear para medições</li>
+                    </ul>
+                    <li><strong>Fotografia:</strong></li>
+                    <ul>
+                        <li>Fotografia geral do local</li>
+                        <li>Fotografia de médio alcance</li>
+                        <li>Fotografia de pormenor (close-up)</li>
+                        <li>Fotografia com escala de referência</li>
+                    </ul>
+                    <li><strong>Descrição escrita:</strong> Registro detalhado em caderno de campo</li>
+                    <li><strong>Vídeo:</strong> Documentação em movimento quando necessário</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>6 – Coleta e Acondicionamento</h3>
+                <ul>
+                    <li>Coleta sistemática dos vestígios identificados</li>
+                    <li>Uso de materiais novos ou estéreis</li>
+                    <li>Acondicionamento adequado em embalagens primárias e secundárias</li>
+                    <li>Identificação e rotulagem das amostras</li>
+                    <li>Cadeia de custódia: registro de todas as transferências</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>7 – Reunião Final</h3>
+                <ul>
+                    <li>Conferência de todos os materiais coletados</li>
+                    <li>Verificação da integridade da documentação</li>
+                    <li>Briefing final da equipe</li>
+                    <li>Planejamento dos exames complementares</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>8 – Liberação do Local</h3>
+                <ul>
+                    <li>Verificação de que todos os vestígios foram coletados</li>
+                    <li>Comunicação à autoridade competente</li>
+                    <li>Registro formal da liberação</li>
+                    <li>Devolução do local às autoridades responsáveis</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section" id="tipos-vestigios">
+            <h2><i class="fa-solid fa-fingerprint"></i> Tipos de Vestígios</h2>
+            
+            <div class="subsection">
+                <h3>Vestígios Químicos</h3>
+                <ul>
+                    <li>Resíduos de explosivos</li>
+                    <li>Substâncias entorpecentes</li>
+                    <li>Produtos de combustão</li>
+                    <li>Venenos e tóxicos</li>
+                    <li>Solventes e combustíveis</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Vestígios Biológicos</h3>
+                <ul>
+                    <li>Sangue e fluidos corporais</li>
+                    <li>Cabelos e pelos</li>
+                    <li>Epitélio e células</li>
+                    <li>DNA</li>
+                    <li>Restos de tecidos</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Vestígios Físicos</h3>
+                <ul>
+                    <li>Armas e munições</li>
+                    <li>Projéteis e estojos</li>
+                    <li>Vidros e fragmentos</li>
+                    <li>Impressões digitais</li>
+                    <li>Pegadas e pisadas</li>
+                    <li>Ferramentas e instrumentos</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Microvestígios</h3>
+                <ul>
+                    <li>Fibras têxteis</li>
+                    <li>Partículas de solo</li>
+                    <li>Pólen e esporos</li>
+                    <li>Resíduos de pintura</li>
+                    <li>Fragmentos microscópicos</li>
+                    <li>Exame de ajuste físico (eventos de quebra e rasgo)</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section" id="locais-especiais">
+            <h2><i class="fa-solid fa-location-dot"></i> Locais Especiais</h2>
+            
+            <div class="subsection">
+                <h3>Locais com Disparo de Arma de Fogo</h3>
+                <ul>
+                    <li>Semelhança de triângulos para encontrar distância do atirador</li>
+                    <li>Análise de trajetórias</li>
+                    <li>Localização de projéteis</li>
+                    <li>Identificação de estojos</li>
+                    <li>Análise de resíduos de disparo</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Locais de Morte Violenta</h3>
+                <h4>Exame Perinecroscópico</h4>
+                <ul>
+                    <li>Visual → Vestes → Cadáver</li>
+                </ul>
+                
+                <div class="important">
+                    <strong>Função Principal:</strong>
+                    <ul>
+                        <li>NÃO é levantamento de impressões digitais - é uma das etapas, mas não é a função principal</li>
+                        <li>Sinais de luta > violência > dinâmica do evento > defesa...</li>
+                    </ul>
+                </div>
+                
+                <ul>
+                    <li>Realizado no local que é encontrado o corpo para relacionar com outros vestígios do local</li>
+                    <li>Análise da posição do corpo</li>
+                    <li>Identificação de lesões</li>
+                    <li>Documentação de vestes e pertences</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Locais com Manchas de Sangue</h3>
+                <h4>Manchas Regulares</h4>
+                <ul>
+                    <li><strong>Gotejadas:</strong> Gravidade → velocidade → ângulo → altura → superfície; formato circular ou elíptico a depender do ângulo de impacto</li>
+                    <li><strong>Arterial:</strong> Bombeamento cardíaco → manchas elípticas com escorrimento; a partir do movimento sístole e diástole cardíaco</li>
+                    <li><strong>Cast-Off:</strong> Desprendimento do instrumento - início regular e final elíptico; projetadas de movimentos circundantes</li>
+                    <li><strong>Impactada:</strong> Sai do impacto com o objeto; quanto maior a energia menor as gotas de sangue e mais manchas/pulverizados; formato radial a partir da origem do impacto</li>
+                </ul>
+                
+                <h4>Manchas Irregulares</h4>
+                <ul>
+                    <li><strong>Alteradas:</strong></li>
+                    <ul>
+                        <li>Contato: transferido, formado de objeto</li>
+                        <li>Diluída: chuva</li>
+                        <li>Sombra: retirada de objeto no local</li>
+                        <li>Ocasionadas devido a ação humana ou ambiental</li>
+                    </ul>
+                    <li><strong>Acúmulo:</strong></li>
+                    <ul>
+                        <li>Sangue sobre sangue</li>
+                        <li>Poça</li>
+                        <li>Saturação</li>
+                    </ul>
+                    <li><strong>Escorrimento</strong></li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Locais de Crime Contra o Patrimônio</h3>
+                <ul>
+                    <li><strong>Roubo:</strong> Grave ameaça ou violência à pessoa</li>
+                    <li><strong>Furto:</strong> Subtração sem violência</li>
+                    <li><strong>Dano:</strong> Destruição ou deterioração de coisa alheia</li>
+                    <li>Classificar o tipo de crime e os tipos de vestígios</li>
+                    <li>Todos sempre tem dolo e não se admite culpa</li>
+                </ul>
+            </div>
+            
+            <div class="subsection">
+                <h3>Locais de Reprodução Simulada</h3>
+                <ul>
+                    <li>Não é considerada uma prova material PURA</li>
+                </ul>
+                
+                <div class="important">
+                    <strong>Características:</strong>
+                    <ul>
+                        <li>Muitas versões e depoimento</li>
+                        <li>Versões da vítima – Acusado – Testemunhas</li>
+                        <li>Perito, delegado e juiz não fazem versões</li>
+                    </ul>
+                </div>
+                
+                <ul>
+                    <li>Executada na cena do crime "in loco"</li>
+                    <li>A pessoa no local pode mudar a sua versão</li>
+                    <li>O perito deve continuar independentemente da versão apresentada pela vítima/acusado/testemunha</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="section" id="estrutura-laudo">
+            <h2><i class="fa-solid fa-file-contract"></i> Estrutura do Laudo Pericial</h2>
+            
+            <div class="subsection">
+                <h3>Componentes do Laudo</h3>
+                <ul>
+                    <li><strong>Preâmbulo:</strong> Número, título, nome dos peritos e informações sobre a requisição</li>
+                </ul>
+                
+                <h4>Histórico</h4>
+                <ul>
+                    <li>Deve apresentar as informações a respeito da ocorrência e providências iniciais adotadas</li>
+                    <li>É na seção histórico que se registrará, também, qualquer outro fato relevante</li>
+                </ul>
+                
+                <h4>Objeto (ou material, veículo, local ou outro)</h4>
+                <ul>
+                    <li>O que será analisado no laudo</li>
+                </ul>
+                
+                <h4>Objetivo</h4>
+                <ul>
+                    <li>Devem ser descritas as finalidades dos exames realizados</li>
+                    <li>Devem estar alinhadas com o tipo de solicitação ou com os quesitos apresentados</li>
+                </ul>
+                
+                <h4>Exame</h4>
+                <ul>
+                    <li>Contém todos os elementos que darão suporte à análise e interpretação dos vestígios</li>
+                    <li>Ao estabelecimento da dinâmica da prática delituosa e emissão da conclusão</li>
+                    <li>Deve ser realizada a caracterização minuciosa do local periciado e dos vestígios constatados</li>
+                    <li>São descritas as metodologias e técnicas empregadas</li>
+                    <li>Exames complementares realizados e os resultados encontrados</li>
+                </ul>
+                
+                <h4>Dinâmica</h4>
+                <ul>
+                    <li>Consiste em contextualizar e correlacionar as informações do levantamento de local com os resultados de exames complementares</li>
+                    <li>Para formar a convicção sobre como ocorreu o fato</li>
+                </ul>
+                
+                <div class="important">
+                    <strong>OBRIGATÓRIO:</strong> Dinâmica - Consiste em contextualizar e correlacionar as informações do levantamento de local com os resultados de exames complementares para formar a convicção sobre como ocorreu o fato
+                </div>
+                
+                <h4>Considerações Técnicas</h4>
+                <ul>
+                    <li>No laudo pericial, muitas vezes, são explorados assuntos técnicos e científicos de forma mais aprofundada</li>
+                    <li>Nem sempre esse conteúdo se encaixa adequadamente no corpo do laudo, em seções anteriores</li>
+                    <li>Deve-se inserir um tópico à parte para se tratar e discutir de forma mais abrangente tais assuntos de cunho técnico</li>
+                </ul>
+                
+                <h4>Conclusão (ou respostas aos quesitos)</h4>
+                <ul>
+                    <li>A conclusão deve ser clara e objetiva</li>
+                    <li>Deve ser representada no capítulo "Conclusão"</li>
+                    <li>Juntamente, quando for o caso, com as respostas aos quesitos que porventura tenham sido previamente formulados</li>
+                </ul>
+            </div>
+        </div>
+        
+        <a href="../IF-PPCEXB/index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Voltar para a página principal</a>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

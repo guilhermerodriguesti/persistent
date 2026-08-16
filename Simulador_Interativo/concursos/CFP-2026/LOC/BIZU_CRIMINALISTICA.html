@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizu Pericial - Criminalística</title>
+    <meta name="description" content="Resumo de alto rendimento para concursos periciais cobrindo Processamento de Local, Tipos de Vestígios, Locais Especiais e Estrutura do Laudo.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Tema Claro Premium (Branco) */
+            --bg-body: #f1f5f9;
+            --bg-sidebar: #ffffff;
+            --bg-card: #ffffff;
+            --border-color: #cbd5e1;
+            
+            --text-main: #0f172a;
+            --text-muted: #475569;
+            --text-light: #64748b;
+            
+            --color-primary: #1e3a8a; /* Azul Marinho Pericial */
+            --color-accent: #f97316; /* Laranja Alerta */
+            --color-success: #16a34a;
+            --color-danger: #dc2626;
+            
+            --color-criminalistica: #7f1d1d;
+            --color-criminalistica-bg: #fef2f2;
+            
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -1px rgba(0,0,0,0.04);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+            
+            --transition-smooth: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            --font-display: 'Outfit', sans-serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            line-height: 1.6;
+        }
+
+        /* SIDEBAR */
+        aside {
+            width: 280px;
+            background-color: var(--bg-sidebar);
+            border-right: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            flex-shrink: 0;
+            height: 100vh;
+            position: sticky;
+            top: 0;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 32px;
+        }
+
+        .brand-icon {
+            background-color: var(--color-criminalistica-bg);
+            color: var(--color-criminalistica);
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+        }
+
+        .brand-text h1 {
+            font-family: var(--font-display);
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+
+        .brand-text span {
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-light);
+        }
+
+        .menu-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            border-radius: 12px;
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            border: 1px solid transparent;
+            margin-bottom: 8px;
+        }
+
+        .menu-item:hover {
+            background-color: var(--bg-body);
+            color: var(--color-primary);
+        }
+
+        .menu-item.active {
+            background-color: var(--color-primary);
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+        }
+
+        .menu-item kbd {
+            margin-left: auto;
+            font-family: monospace;
+            background: rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 1px 5px;
+            border-radius: 4px;
+            font-size: 10px;
+        }
+
+        .menu-item.active kbd {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.3);
+            color: #ffffff;
+        }
+
+        /* MAIN CONTENT AREA */
+        main {
+            flex-grow: 1;
+            padding: 32px 40px;
+            overflow-y: auto;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .header-title h2 {
+            font-family: var(--font-display);
+            font-size: 26px;
+            font-weight: 800;
+            color: var(--color-primary);
+        }
+
+        .header-title p {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .top-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-action {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-action:hover {
+            background-color: var(--bg-body);
+            color: var(--color-primary);
+        }
+
+        .btn-action.primary {
+            background-color: var(--color-primary);
+            color: #ffffff;
+            border-color: var(--color-primary);
+        }
+
+        .btn-action.primary:hover {
+            background-color: #1e40af;
+        }
+
+        /* CONTENT SECTIONS */
+        .content-section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* BIZU CARDS */
+        .bizu-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 20px;
+        }
+
+        .bizu-card-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
+        }
+
+        .bizu-card-icon {
+            background-color: #f0fdf4;
+            color: var(--color-success);
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .bizu-card-icon.danger {
+            background-color: #fef2f2;
+            color: var(--color-danger);
+        }
+
+        .bizu-card-icon.warning {
+            background-color: #fff7ed;
+            color: var(--color-accent);
+        }
+
+        .bizu-card-icon.info {
+            background-color: #eff6ff;
+            color: var(--color-primary);
+        }
+
+        .bizu-card-header h3 {
+            font-family: var(--font-display);
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .bizu-card-content {
+            padding-top: 16px;
+        }
+
+        /* FLOW STEPS */
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .flow-step {
+            background-color: #f8fafc;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            transition: var(--transition-smooth);
+        }
+
+        .flow-step:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateX(4px);
+        }
+
+        .step-number {
+            background-color: var(--color-criminalistica);
+            color: #ffffff;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-family: var(--font-display);
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .step-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .step-content li {
+            font-size: 13px;
+            color: var(--text-muted);
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 4px;
+        }
+
+        .step-content li::before {
+            content: "•";
+            color: var(--color-criminalistica);
+            position: absolute;
+            left: 4px;
+            font-weight: 700;
+        }
+
+        /* TABLES */
+        table.bizu-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 13px;
+        }
+
+        table.bizu-table th {
+            background-color: #f8fafc;
+            padding: 12px;
+            text-align: left;
+            font-weight: 700;
+            color: var(--text-main);
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        table.bizu-table td {
+            padding: 12px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-muted);
+        }
+
+        table.bizu-table tr:hover td {
+            background-color: #f8fafc;
+        }
+
+        /* HIGHLIGHT BOXES */
+        .highlight-box {
+            background-color: #fef2f2;
+            border-left: 4px solid var(--color-danger);
+            padding: 16px;
+            border-radius: 8px;
+            margin: 12px 0;
+        }
+
+        .highlight-box.success {
+            background-color: #f0fdf4;
+            border-left-color: var(--color-success);
+        }
+
+        .highlight-box.warning {
+            background-color: #fff7ed;
+            border-left-color: var(--color-accent);
+        }
+
+        .highlight-box h4 {
+            font-family: var(--font-display);
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .highlight-box p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 0;
+        }
+
+        /* TAGS */
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tag.chemical {
+            background-color: #dbeafe;
+            color: #1e40af;
+        }
+
+        .tag.biological {
+            background-color: #dcfce7;
+            color: #166534;
+        }
+
+        .tag.physical {
+            background-color: #fef3c7;
+            color: #92400e;
+        }
+
+        .tag.micro {
+            background-color: #f3e8ff;
+            color: #6b21a8;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            aside {
+                width: 240px;
+            }
+            
+            main {
+                padding: 24px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+            
+            aside {
+                width: 100%;
+                height: auto;
+                position: relative;
+                padding: 16px;
+                border-right: none;
+                border-bottom: 1px solid var(--border-color);
+            }
+            
+            main {
+                padding: 20px;
+                height: auto;
+            }
+            
+            .header-title h2 {
+                font-size: 20px;
+            }
+            
+            .header-title p {
+                font-size: 13px;
+            }
+            
+            .top-actions {
+                flex-direction: column;
+                gap: 8px;
+            }
+            
+            .btn-action {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            /* Grid layouts */
+            .flow-container {
+                gap: 10px;
+            }
+            
+            .flow-step {
+                padding: 12px;
+                gap: 12px;
+            }
+            
+            .step-number {
+                width: 28px;
+                height: 28px;
+                font-size: 12px;
+            }
+            
+            .step-content h4 {
+                font-size: 14px;
+            }
+            
+            .step-content li {
+                font-size: 12px;
+            }
+            
+            /* Tables */
+            table.bizu-table {
+                font-size: 11px;
+            }
+            
+            table.bizu-table th,
+            table.bizu-table td {
+                padding: 8px;
+            }
+            
+            /* Cards with grid */
+            .bizu-card-content > div[style*="grid"] {
+                grid-template-columns: 1fr !important;
+                gap: 12px !important;
+            }
+            
+            /* Highlight boxes */
+            .highlight-box {
+                padding: 12px;
+            }
+            
+            .highlight-box h4 {
+                font-size: 13px;
+            }
+            
+            .highlight-box p {
+                font-size: 12px;
+            }
+            
+            /* Menu items */
+            .menu-item {
+                padding: 10px 12px;
+                font-size: 13px;
+            }
+            
+            .menu-item kbd {
+                display: none;
+            }
+            
+            /* Brand */
+            .brand {
+                margin-bottom: 20px;
+            }
+            
+            .brand-icon {
+                width: 36px;
+                height: 36px;
+                font-size: 18px;
+            }
+            
+            .brand-text h1 {
+                font-size: 16px;
+            }
+            
+            .brand-text span {
+                font-size: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            main {
+                padding: 16px;
+            }
+            
+            .header-title h2 {
+                font-size: 18px;
+            }
+            
+            .header-title p {
+                font-size: 12px;
+            }
+            
+            .bizu-card {
+                padding: 16px;
+            }
+            
+            .bizu-card-header h3 {
+                font-size: 15px;
+            }
+            
+            .flow-step {
+                flex-direction: column;
+            }
+            
+            .step-number {
+                width: 32px;
+                height: 32px;
+                font-size: 14px;
+            }
+            
+            /* Table scroll on mobile */
+            .bizu-card-content {
+                overflow-x: auto;
+            }
+            
+            table.bizu-table {
+                min-width: 100%;
+            }
+            
+            /* Tags */
+            .tag {
+                font-size: 10px;
+                padding: 3px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SIDEBAR -->
+    <aside>
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="brand-text">
+                <h1>Bizu Pericial</h1>
+                <span>Criminalística</span>
+            </div>
+        </div>
+
+        <div class="menu-title">Navegação</div>
+        
+        <div class="menu-item active" onclick="showSection('previsao-legal')" data-section="previsao-legal">
+            <i class="fa-solid fa-scale-balanced"></i>
+            <span>Previsão Legal</span>
+            <kbd>1</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('roteiro')" data-section="roteiro">
+            <i class="fa-solid fa-route"></i>
+            <span>Roteiro do Local</span>
+            <kbd>2</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('vestigios')" data-section="vestigios">
+            <i class="fa-solid fa-fingerprint"></i>
+            <span>Tipos de Vestígios</span>
+            <kbd>3</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('locais')" data-section="locais">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>Locais Especiais</span>
+            <kbd>4</kbd>
+        </div>
+        
+        <div class="menu-item" onclick="showSection('laudo')" data-section="laudo">
+            <i class="fa-solid fa-file-contract"></i>
+            <span>Estrutura do Laudo</span>
+            <kbd>5</kbd>
+        </div>
+
+        <div style="margin-top: auto; padding-top: 20px; border-top: 1px solid var(--border-color);">
+            <a href="../IF-PPCEXB/index.html" style="text-decoration: none; color: var(--text-muted); font-size: 13px; font-weight: 600; display: flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-arrow-left"></i>
+                Voltar ao Index
+            </a>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <header>
+            <div class="header-title">
+                <h2>Criminalística Forense</h2>
+                <p>Resumo estruturado para concursos periciais</p>
+            </div>
+            <div class="top-actions">
+                <button class="btn-action" onclick="window.print()">
+                    <i class="fa-solid fa-print"></i>
+                    Imprimir
+                </button>
+                <button class="btn-action primary" onclick="showSection('roteiro')">
+                    <i class="fa-solid fa-play"></i>
+                    Começar
+                </button>
+            </div>
+        </header>
+
+        <!-- SECTION 1: PREVISÃO LEGAL -->
+        <div class="content-section active" id="previsao-legal">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon info">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3>Art. 158 do Código de Processo Penal</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box">
+                        <h4><i class="fa-solid fa-gavel"></i> Preceito Fundamental</h4>
+                        <p>Quando a infração deixar vestígios, será indispensável o exame de corpo de delito, direto ou indireto, não podendo supri-lo a confissão do acusado.</p>
+                    </div>
+                    
+                    <table class="bizu-table" style="margin-top: 16px;">
+                        <thead>
+                            <tr>
+                                <th>Conceito</th>
+                                <th>Descrição</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Exame Direto</strong></td>
+                                <td>Realizado no próprio local ou sobre os vestígios materiais</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Exame Indireto</strong></td>
+                                <td>Realizado por meio de testemunhas ou documentos quando os vestígios não mais existem</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Confissão</strong></td>
+                                <td>NÃO pode substituir o exame pericial quando existirem vestígios</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 2: ROTEIRO DO LOCAL -->
+        <div class="content-section" id="roteiro">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon warning">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <h3>Fluxo das Etapas</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box success">
+                        <h4><i class="fa-solid fa-arrow-right"></i> Sequência Obrigatória</h4>
+                        <p>PREPARAR → CHEGAR → ISOLAR → BUSCAR → DOCUMENTAR (Fixação) → COLETAR → REUNIÃO FINAL → LIBERAR o local</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-container">
+                <div class="flow-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Preparação</h4>
+                        <ul>
+                            <li>Verificação dos equipamentos e materiais necessários</li>
+                            <li>Planejamento da equipe e atribuição de funções</li>
+                            <li>Verificação das informações preliminares sobre a ocorrência</li>
+                            <li>Preparação dos kits de coleta e documentação</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Chegada no Local</h4>
+                        <ul>
+                            <li>Identificação da autoridade policial responsável</li>
+                            <li>Breve briefing sobre a ocorrência</li>
+                            <li>Verificação das condições de segurança do local</li>
+                            <li>Planejamento inicial do acesso ao local</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Isolamento</h4>
+                        <ul>
+                            <li>Delimitação da área de perícia</li>
+                            <li>Controle de acesso ao local</li>
+                            <li>Proteção dos vestígios contra alterações</li>
+                            <li>Registro das pessoas que entram e saem do local</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Busca de Vestígios (Inicial e Completa)</h4>
+                        <ul>
+                            <li><strong>Busca inicial:</strong> Reconhecimento rápido e identificação dos vestígios mais evidentes</li>
+                            <li><strong>Busca completa:</strong> Exame minucioso e sistemático de toda a área</li>
+                            <li>Utilização de métodos de busca (espiral, grade, zona, linha)</li>
+                            <li>Identificação e catalogação de todos os vestígios encontrados</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Documentação (Fixação)</h4>
+                        <ul>
+                            <li><strong>Croqui:</strong> Triangulação, coordenadas cartesianas, linha de base</li>
+                            <li><strong>Fotografia:</strong> Geral, médio alcance, pormenor (close-up), com escala</li>
+                            <li><strong>Descrição escrita:</strong> Registro detalhado em caderno de campo</li>
+                            <li><strong>Vídeo:</strong> Documentação em movimento quando necessário</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">6</div>
+                    <div class="step-content">
+                        <h4>Coleta e Acondicionamento</h4>
+                        <ul>
+                            <li>Coleta sistemática dos vestígios identificados</li>
+                            <li>Uso de materiais novos ou estéreis</li>
+                            <li>Acondicionamento adequado em embalagens primárias e secundárias</li>
+                            <li>Identificação e rotulagem das amostras</li>
+                            <li>Cadeia de custódia: registro de todas as transferências</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">7</div>
+                    <div class="step-content">
+                        <h4>Reunião Final</h4>
+                        <ul>
+                            <li>Conferência de todos os materiais coletados</li>
+                            <li>Verificação da integridade da documentação</li>
+                            <li>Briefing final da equipe</li>
+                            <li>Planejamento dos exames complementares</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="flow-step">
+                    <div class="step-number">8</div>
+                    <div class="step-content">
+                        <h4>Liberação do Local</h4>
+                        <ul>
+                            <li>Verificação de que todos os vestígios foram coletados</li>
+                            <li>Comunicação à autoridade competente</li>
+                            <li>Registro formal da liberação</li>
+                            <li>Devolução do local às autoridades responsáveis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 3: TIPOS DE VESTÍGIOS -->
+        <div class="content-section" id="vestigios">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon info">
+                        <i class="fa-solid fa-fingerprint"></i>
+                    </div>
+                    <h3>Classificação dos Vestígios</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <table class="bizu-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Exemplos</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="tag chemical">Químicos</span></td>
+                                <td>Resíduos de explosivos, substâncias entorpecentes, produtos de combustão, venenos e tóxicos, solventes e combustíveis</td>
+                            </tr>
+                            <tr>
+                                <td><span class="tag biological">Biológicos</span></td>
+                                <td>Sangue e fluidos corporais, cabelos e pelos, epitélio e células, DNA, restos de tecidos</td>
+                            </tr>
+                            <tr>
+                                <td><span class="tag physical">Físicos</span></td>
+                                <td>Armas e munições, projéteis e estojos, vidros e fragmentos, impressões digitais, pegadas e pisadas, ferramentas e instrumentos</td>
+                            </tr>
+                            <tr>
+                                <td><span class="tag micro">Microvestígios</span></td>
+                                <td>Fibras têxteis, partículas de solo, pólen e esporos, resíduos de pintura, fragmentos microscópicos, exame de ajuste físico</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 4: LOCAIS ESPECIAIS -->
+        <div class="content-section" id="locais">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon warning">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3>Locais Especiais</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 16px;">
+                        <div style="background-color: #f8fafc; padding: 16px; border-radius: 12px; border: 1px solid var(--border-color);">
+                            <h4 style="font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 8px; color: var(--text-main);">
+                                <i class="fa-solid fa-gun" style="color: var(--color-danger); margin-right: 8px;"></i>Disparo de Arma de Fogo
+                            </h4>
+                            <ul style="font-size: 12px; color: var(--text-muted); padding-left: 16px;">
+                                <li>Semelhança de triângulos para distância</li>
+                                <li>Análise de trajetórias</li>
+                                <li>Localização de projéteis e estojos</li>
+                                <li>Análise de resíduos de disparo</li>
+                            </ul>
+                        </div>
+                        
+                        <div style="background-color: #f8fafc; padding: 16px; border-radius: 12px; border: 1px solid var(--border-color);">
+                            <h4 style="font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 8px; color: var(--text-main);">
+                                <i class="fa-solid fa-skull" style="color: var(--color-danger); margin-right: 8px;"></i>Morte Violenta
+                            </h4>
+                            <ul style="font-size: 12px; color: var(--text-muted); padding-left: 16px;">
+                                <li>Exame Perinecroscópico (Visual → Vestes → Cadáver)</li>
+                                <li>NÃO é levantamento de impressões digitais</li>
+                                <li>Sinais de luta > violência > dinâmica</li>
+                                <li>Análise da posição do corpo e lesões</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon danger">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <h3>Manchas de Sangue</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                        <div>
+                            <h4 style="font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 12px; color: var(--text-main);">Regulares</h4>
+                            <ul style="font-size: 13px; color: var(--text-muted); padding-left: 16px;">
+                                <li><strong>Gotejadas:</strong> Gravidade → velocidade → ângulo → altura → superfície</li>
+                                <li><strong>Arterial:</strong> Bombeamento cardíaco (sístole/diástole)</li>
+                                <li><strong>Cast-Off:</strong> Desprendimento do instrumento</li>
+                                <li><strong>Impactada:</strong> Sai do impacto com o objeto</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 style="font-family: var(--font-display); font-size: 14px; font-weight: 700; margin-bottom: 12px; color: var(--text-main);">Irregulares</h4>
+                            <ul style="font-size: 13px; color: var(--text-muted); padding-left: 16px;">
+                                <li><strong>Alteradas:</strong> Contato, Diluída (chuva), Sombra</li>
+                                <li><strong>Acúmulo:</strong> Sangue sobre sangue, Poça, Saturação</li>
+                                <li><strong>Escorrimento</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon info">
+                        <i class="fa-solid fa-building"></i>
+                    </div>
+                    <h3>Crime Contra o Patrimônio</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <table class="bizu-table">
+                        <thead>
+                            <tr>
+                                <th>Tipo</th>
+                                <th>Característica</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Roubo</strong></td>
+                                <td>Grave ameaça ou violência à pessoa</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Furto</strong></td>
+                                <td>Subtração sem violência</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Dano</strong></td>
+                                <td>Destruição ou deterioração de coisa alheia</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="highlight-box warning" style="margin-top: 16px;">
+                        <h4><i class="fa-solid fa-exclamation-triangle"></i> Importante</h4>
+                        <p>Todos sempre tem dolo e não se admite culpa. Classificar o tipo de crime e os tipos de vestígios.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon">
+                        <i class="fa-solid fa-theater-masks"></i>
+                    </div>
+                    <h3>Reprodução Simulada</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="highlight-box">
+                        <h4><i class="fa-solid fa-info-circle"></i> Características</h4>
+                        <ul style="margin-top: 8px; padding-left: 16px;">
+                            <li>NÃO é considerada uma prova material PURA</li>
+                            <li>Muitas versões e depoimento (vítima, acusado, testemunhas)</li>
+                            <li>Perito, delegado e juiz não fazem versões</li>
+                            <li>Executada na cena do crime "in loco"</li>
+                            <li>O perito deve continuar independentemente da versão apresentada</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION 5: ESTRUTURA DO LAUDO -->
+        <div class="content-section" id="laudo">
+            <div class="bizu-card">
+                <div class="bizu-card-header">
+                    <div class="bizu-card-icon success">
+                        <i class="fa-solid fa-file-contract"></i>
+                    </div>
+                    <h3>Componentes do Laudo Pericial</h3>
+                </div>
+                <div class="bizu-card-content">
+                    <div class="flow-container">
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-primary);">1</div>
+                            <div class="step-content">
+                                <h4>Preâmbulo</h4>
+                                <p style="font-size: 13px; color: var(--text-muted);">Número, título, nome dos peritos e informações sobre a requisição</p>
+                            </div>
+                        </div>
+
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-primary);">2</div>
+                            <div class="step-content">
+                                <h4>Histórico</h4>
+                                <p style="font-size: 13px; color: var(--text-muted);">Informações sobre a ocorrência, providências iniciais e fatos relevantes</p>
+                            </div>
+                        </div>
+
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-primary);">3</div>
+                            <div class="step-content">
+                                <h4>Objeto</h4>
+                                <p style="font-size: 13px; color: var(--text-muted);">O que será analisado no laudo (material, veículo, local ou outro)</p>
+                            </div>
+                        </div>
+
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-primary);">4</div>
+                            <div class="step-content">
+                                <h4>Objetivo</h4>
+                                <p style="font-size: 13px; color: var(--text-muted);">Finalidades dos exames realizados, alinhadas com a solicitação ou quesitos</p>
+                            </div>
+                        </div>
+
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-primary);">5</div>
+                            <div class="step-content">
+                                <h4>Exame</h4>
+                                <p style="font-size: 13px; color: var(--text-muted);">Elementos que dão suporte à análise, metodologias empregadas e resultados encontrados</p>
+                            </div>
+                        </div>
+
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-danger);">6</div>
+                            <div class="step-content">
+                                <h4>Dinâmica <span style="background-color: var(--color-danger); color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; margin-left: 8px;">OBRIGATÓRIO</span></h4>
+                                <p style="font-size: 13px; color: var(--text-muted);">Contextualização e correlação das informações para formar a convicção sobre como ocorreu o fato</p>
+                            </div>
+                        </div>
+
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-primary);">7</div>
+                            <div class="step-content">
+                                <h4>Considerações Técnicas</h4>
+                                <p style="font-size: 13px; color: var(--text-muted);">Discussão mais abrangente de assuntos técnicos e científicos de cunho técnico</p>
+                            </div>
+                        </div>
+
+                        <div class="flow-step">
+                            <div class="step-number" style="background-color: var(--color-primary);">8</div>
+                            <div class="step-content">
+                                <h4>Conclusão</h4>
+                                <p style="font-size: 13px; color: var(--text-muted);">Clara e objetiva, com respostas aos quesitos quando formulados</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Show target section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update menu items
+            document.querySelectorAll('.menu-item').forEach(item => {
+                item.classList.remove('active');
+                if (item.dataset.section === sectionId) {
+                    item.classList.add('active');
+                }
+            });
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const sections = ['previsao-legal', 'roteiro', 'vestigios', 'locais', 'laudo'];
+            const activeSection = document.querySelector('.content-section.active');
+            const currentIndex = sections.indexOf(activeSection.id);
+            
+            if (e.key >= '1' && e.key <= '5') {
+                const index = parseInt(e.key) - 1;
+                if (index < sections.length) {
+                    showSection(sections[index]);
+                }
+            }
+            
+            if (e.key === 'ArrowDown' || e.key === 'ArrowRight') {
+                e.preventDefault();
+                const nextIndex = (currentIndex + 1) % sections.length;
+                showSection(sections[nextIndex]);
+            }
+            
+            if (e.key === 'ArrowUp' || e.key === 'ArrowLeft') {
+                e.preventDefault();
+                const prevIndex = (currentIndex - 1 + sections.length) % sections.length;
+                showSection(sections[prevIndex]);
+            }
+        });
+    </script>
+</body>
+</html>
